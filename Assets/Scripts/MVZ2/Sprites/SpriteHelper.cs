@@ -56,6 +56,26 @@ namespace MVZ2.Sprites
             texture.Apply();
         }
 
+        public static void FlipColors(this Texture2D texture)
+        {
+            var colors = texture.GetPixels32();
+            var width = texture.width;
+            var height = texture.height;
+
+            Color32[] tempRow = new Color32[width];
+            for (int y = 0; y < height / 2; y++)
+            {
+                int topRowIndex = y * width;
+                int bottomRowIndex = (height - y - 1) * width;
+
+                // 交换顶部和底部的像素行
+                Array.Copy(colors, topRowIndex, tempRow, 0, width);
+                Array.Copy(colors, bottomRowIndex, colors, topRowIndex, width);
+                Array.Copy(tempRow, 0, colors, bottomRowIndex, width);
+            }
+
+            texture.SetPixels32(colors);
+        }
         private static bool TryAdjacent(ref Color32 pixel, Color32 adjacent)
         {
             if (adjacent.a == 0)

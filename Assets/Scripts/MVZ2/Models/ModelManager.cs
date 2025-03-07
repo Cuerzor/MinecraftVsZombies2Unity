@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 namespace MVZ2.Models
 {
@@ -27,8 +28,7 @@ namespace MVZ2.Models
             modelShotCamera.enabled = false;
 
             // 相机渲染。
-            var scale = SystemInfo.graphicsUVStartsAtTop ? 1 : -1;
-            modelShotCamera.orthographicSize = height * 0.005f * scale;
+            modelShotCamera.orthographicSize = height * 0.005f;
 
             var localPos = modelShotPositionTransform.localPosition;
             localPos.x = modelOffset.x * 0.01f;
@@ -36,7 +36,22 @@ namespace MVZ2.Models
             modelShotPositionTransform.localPosition = localPos;
 
             SortingGroup.UpdateAllSortingGroups();
-            modelShotCamera.Render();
+
+            // Create a standard request
+            RenderPipeline.StandardRequest request = new RenderPipeline.StandardRequest();
+
+            // Check if the request is supported by the active render pipeline
+            if (RenderPipeline.SupportsRenderRequest(modelShotCamera, request))
+            {
+                // 2D Texture
+                request.destination = renderTexture;
+                // Render camera and fill texture2D with its view
+                RenderPipeline.SubmitRenderRequest(modelShotCamera, request);
+            }
+            else
+            {
+                modelShotCamera.Render();
+            }
 
             // 从Render Texture读取像素并保存为图片
             Texture2D texture = new Texture2D(width, height);
