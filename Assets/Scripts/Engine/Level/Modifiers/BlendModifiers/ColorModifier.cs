@@ -4,19 +4,19 @@ namespace PVZEngine.Modifiers
 {
     public class ColorModifier : PropertyModifier<Color>
     {
-        public ColorModifier(PropertyKey propertyName, Color valueConst) : this(propertyName, BlendOperator.SrcAlpha, BlendOperator.OneMinusSrcAlpha, valueConst)
+        public ColorModifier(PropertyKey propertyName, Color valueConst, int priority = 0) : this(propertyName, BlendOperator.SrcAlpha, BlendOperator.OneMinusSrcAlpha, valueConst, priority)
         {
         }
-        public ColorModifier(PropertyKey propertyName, PropertyKey buffPropertyName) : this(propertyName, BlendOperator.SrcAlpha, BlendOperator.OneMinusSrcAlpha, buffPropertyName)
+        public ColorModifier(PropertyKey propertyName, PropertyKey buffPropertyName, int priority = 0) : this(propertyName, BlendOperator.SrcAlpha, BlendOperator.OneMinusSrcAlpha, buffPropertyName, priority)
         {
         }
-        public ColorModifier(PropertyKey propertyName, BlendOperator src, BlendOperator dest, Color valueConst) : base(propertyName, valueConst)
+        public ColorModifier(PropertyKey propertyName, BlendOperator src, BlendOperator dest, Color valueConst, int priority = 0) : base(propertyName, valueConst, priority)
         {
             SrcOperator = src;
             DstOperator = dest;
         }
 
-        public ColorModifier(PropertyKey propertyName, BlendOperator src, BlendOperator dest, PropertyKey buffPropertyName) : base(propertyName, buffPropertyName)
+        public ColorModifier(PropertyKey propertyName, BlendOperator src, BlendOperator dest, PropertyKey buffPropertyName, int priority = 0) : base(propertyName, buffPropertyName, priority)
         {
             SrcOperator = src;
             DstOperator = dest;

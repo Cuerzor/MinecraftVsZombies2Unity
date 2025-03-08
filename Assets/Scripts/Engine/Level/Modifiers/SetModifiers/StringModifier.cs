@@ -2,16 +2,12 @@
 {
     public class StringModifier : PropertyModifier<string>
     {
-        public StringModifier(PropertyKey propertyName, string valueConst) : base(propertyName, null)
+        public StringModifier(PropertyKey propertyName, string valueConst, int priority = 0) : base(propertyName, valueConst, priority)
         {
-            ConstValue = valueConst;
         }
-        public static StringModifier FromPropertyName(PropertyKey propertyName, PropertyKey buffPropertyName)
+
+        public StringModifier(PropertyKey propertyName, PropertyKey buffPropertyName, int priority = 0) : base(propertyName, buffPropertyName, priority)
         {
-            return new StringModifier(propertyName, null)
-            {
-                UsingContainerPropertyName = buffPropertyName
-            };
         }
         public override ModifierCalculator GetCalculator()
         {

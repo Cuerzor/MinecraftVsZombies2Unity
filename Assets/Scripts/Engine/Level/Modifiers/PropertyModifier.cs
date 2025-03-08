@@ -9,15 +9,17 @@ namespace PVZEngine.Modifiers
     }
     public abstract class PropertyModifier : IPropertyModifier
     {
-        public PropertyModifier(PropertyKey propertyName, object valueConst)
+        public PropertyModifier(PropertyKey propertyName, object valueConst, int priority)
         {
             PropertyName = propertyName;
             ConstValue = valueConst;
+            Priority = priority;
         }
-        public PropertyModifier(PropertyKey propertyName, PropertyKey containerPropertyName)
+        public PropertyModifier(PropertyKey propertyName, PropertyKey containerPropertyName, int priority)
         {
             PropertyName = propertyName;
             UsingContainerPropertyName = containerPropertyName;
+            Priority = priority;
         }
         public virtual void PostAdd(IModifierContainer container)
         {
@@ -42,14 +44,15 @@ namespace PVZEngine.Modifiers
         public PropertyKey PropertyName { get; set; }
         public object ConstValue { get; set; }
         public PropertyKey UsingContainerPropertyName { get; set; }
+        public int Priority { get; set; }
     }
     public abstract class PropertyModifier<T> : PropertyModifier
     {
-        protected PropertyModifier(PropertyKey propertyName, T valueConst) : base(propertyName, valueConst)
+        protected PropertyModifier(PropertyKey propertyName, T valueConst, int priority) : base(propertyName, valueConst, priority)
         {
         }
 
-        protected PropertyModifier(PropertyKey propertyName, PropertyKey buffPropertyName) : base(propertyName, buffPropertyName)
+        protected PropertyModifier(PropertyKey propertyName, PropertyKey buffPropertyName, int priority) : base(propertyName, buffPropertyName, priority)
         {
         }
         public T GetModifierValueGeneric(IModifierContainer container)

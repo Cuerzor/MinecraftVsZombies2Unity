@@ -1,4 +1,5 @@
-﻿using MVZ2.Vanilla.Properties;
+﻿using MVZ2.Vanilla.Modifiers;
+using MVZ2.Vanilla.Properties;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
 using PVZEngine.Level;
@@ -12,7 +13,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
     {
         public ProjectileWaitBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new Vector3Modifier(EngineEntityProps.VELOCITY_DAMPEN, NumberOperator.ForceSet, Vector3.one));
+            AddModifier(new Vector3Modifier(EngineEntityProps.VELOCITY_DAMPEN, NumberOperator.Set, Vector3.one, VanillaModifierPriorities.FORCE));
         }
         public override void PostUpdate(Buff buff)
         {

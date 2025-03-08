@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace PVZEngine.Modifiers
@@ -7,7 +8,10 @@ namespace PVZEngine.Modifiers
     {
         public override Color CalculateGeneric(Color value, IEnumerable<ModifierContainerItem> modifiers)
         {
-            foreach (var item in modifiers)
+            if (modifiers.Count() == 0)
+                return value;
+
+            foreach (var item in modifiers.OrderBy(m => m.modifier?.Priority ?? 0))
             {
                 var buff = item.container;
                 var modi = item.modifier;

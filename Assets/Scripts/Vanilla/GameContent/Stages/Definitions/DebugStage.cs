@@ -48,10 +48,10 @@ namespace MVZ2.GameContent.Stages
                 VanillaContraptionID.stoneShield,
                 VanillaContraptionID.forcePad,
                 VanillaContraptionID.glowstone,
-                VanillaContraptionID.soulFurnace,
-                VanillaContraptionID.dreamSilk,
-                VanillaBossID.seija,
-                VanillaEnemyID.mutantZombie,
+                VanillaEnemyID.spider,
+                VanillaEnemyID.ghast,
+                VanillaEnemyID.anubisand,
+                VanillaEnemyID.dullahanHead,
             });
             level.SetArtifactSlotCount(3);
             level.ReplaceArtifacts(new NamespaceID[]

@@ -1,4 +1,5 @@
 ﻿using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Modifiers;
 using PVZEngine.Buffs;
 using PVZEngine.Level;
 using PVZEngine.Modifiers;
@@ -10,7 +11,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
     {
         public CarriedByLilyPadBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new IntModifier(VanillaEntityProps.WATER_INTERACTION, NumberOperator.ForceSet, WaterInteraction.NONE));
+            AddModifier(new IntModifier(VanillaEntityProps.WATER_INTERACTION, NumberOperator.Set, WaterInteraction.NONE, VanillaModifierPriorities.FORCE));
         }
     }
 }

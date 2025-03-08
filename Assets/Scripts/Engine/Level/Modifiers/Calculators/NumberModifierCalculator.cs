@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace PVZEngine.Modifiers
@@ -7,44 +8,38 @@ namespace PVZEngine.Modifiers
     {
         public override T CalculateGeneric(T value, IEnumerable<ModifierContainerItem> modifiers)
         {
-            T setValue = value;
-            T addValue = default;
-            T multiple = GetDefaultMultiple();
-            T multiply = GetDefaultMultiple();
-            bool hasForceSet = false;
-            T forceSet = default;
-            foreach (var modi in modifiers)
+            if (modifiers.Count() == 0)
+                return value;
+
+            var grouped = modifiers.GroupBy(m => m.modifier?.Priority ?? 0).OrderBy(g => g.Key);
+            foreach (var layerModifiers in grouped)
             {
-                var buff = modi.container;
-                if (modi.modifier is not NumberModifier<T> modifier)
-                    continue;
-                var modifierValue = modifier.GetModifierValueGeneric(buff);
-                switch (modifier.Operator)
+                T setValue = value;
+                T addValue = default;
+                T multiple = GetDefaultMultiple();
+                T multiply = GetDefaultMultiple();
+                foreach (var modi in layerModifiers)
                 {
-                    case NumberOperator.Set:
-                        setValue = modifierValue;
-                        break;
-                    case NumberOperator.Add:
-                        addValue = AddValue(addValue, modifierValue);
-                        break;
-                    case NumberOperator.AddMultiplie:
-                        multiple = AddValue(multiple, modifierValue);
-                        break;
-                    case NumberOperator.Multiply:
-                        multiply = MultiplyValue(multiply, modifierValue);
-                        break;
-                    case NumberOperator.ForceSet:
-                        hasForceSet = true;
-                        forceSet = modifierValue;
-                        break;
+                    var buff = modi.container;
+                    if (modi.modifier is not NumberModifier<T> modifier)
+                        continue;
+                    var modifierValue = modifier.GetModifierValueGeneric(buff);
+                    switch (modifier.Operator)
+                    {
+                        case NumberOperator.Set:
+                            setValue = modifierValue;
+                            break;
+                        case NumberOperator.Add:
+                            addValue = AddValue(addValue, modifierValue);
+                            break;
+                        case NumberOperator.AddMultiplie:
+                            multiple = AddValue(multiple, modifierValue);
+                            break;
+                        case NumberOperator.Multiply:
+                            multiply = MultiplyValue(multiply, modifierValue);
+                            break;
+                    }
                 }
-            }
-            if (hasForceSet)
-            {
-                value = forceSet;
-            }
-            else
-            {
                 value = setValue;
                 value = AddValue(value, addValue);
                 value = MultiplyValue(value, multiple);

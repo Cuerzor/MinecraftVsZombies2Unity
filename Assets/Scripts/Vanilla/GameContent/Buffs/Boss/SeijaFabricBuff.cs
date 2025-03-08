@@ -1,4 +1,5 @@
-﻿using PVZEngine.Buffs;
+﻿using MVZ2.Vanilla.Modifiers;
+using PVZEngine.Buffs;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Modifiers;
@@ -11,8 +12,8 @@ namespace MVZ2.GameContent.Buffs.Enemies
     {
         public SeijaFabricBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new IntModifier(EngineEntityProps.COLLISION_DETECTION, NumberOperator.ForceSet, EntityCollisionHelper.DETECTION_IGNORE));
-            AddModifier(new Vector3Modifier(EngineEntityProps.VELOCITY_DAMPEN, NumberOperator.ForceSet, Vector3.one));
+            AddModifier(new IntModifier(EngineEntityProps.COLLISION_DETECTION, NumberOperator.Set, EntityCollisionHelper.DETECTION_IGNORE, VanillaModifierPriorities.FORCE));
+            AddModifier(new Vector3Modifier(EngineEntityProps.VELOCITY_DAMPEN, NumberOperator.Set, Vector3.one, VanillaModifierPriorities.FORCE));
             AddModifier(new BooleanModifier(EngineEntityProps.INVINCIBLE, true));
         }
     }

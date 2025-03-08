@@ -2,11 +2,11 @@
 {
     public class BooleanModifier : PropertyModifier<bool>
     {
-        public BooleanModifier(PropertyKey propertyName, bool valueConst) : base(propertyName, valueConst)
+        public BooleanModifier(PropertyKey propertyName, bool valueConst, int priority = 0) : base(propertyName, valueConst, priority)
         {
         }
 
-        public BooleanModifier(PropertyKey propertyName, PropertyKey buffPropertyName) : base(propertyName, buffPropertyName)
+        public BooleanModifier(PropertyKey propertyName, PropertyKey buffPropertyName, int priority = 0) : base(propertyName, buffPropertyName, priority)
         {
         }
         public override ModifierCalculator GetCalculator()

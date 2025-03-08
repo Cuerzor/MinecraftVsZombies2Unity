@@ -1,4 +1,5 @@
 ﻿using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Modifiers;
 using MVZ2.Vanilla.Properties;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
@@ -13,7 +14,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
     {
         public SacrificedBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new FloatModifier(EngineEntityProps.GRAVITY, NumberOperator.ForceSet, -0.5f));
+            AddModifier(new FloatModifier(EngineEntityProps.GRAVITY, NumberOperator.Set, -0.5f, VanillaModifierPriorities.FORCE));
             AddModifier(new Vector3Modifier(VanillaEntityProps.LIGHT_RANGE, NumberOperator.Multiply, PROP_LIGHT_RANGE));
         }
         public override void PostUpdate(Buff buff)
