@@ -16,7 +16,7 @@ namespace MVZ2.GameContent.Implements
         {
             mod.AddTrigger(VanillaLevelCallbacks.POST_USE_ENTITY_BLUEPRINT, PostUseEntityBlueprintCallback);
             mod.AddTrigger(VanillaLevelCallbacks.POST_CONTRAPTION_DESTROY, PostContraptionDestroyCallback);
-            mod.AddTrigger(VanillaLevelCallbacks.POST_USE_STARSHARD, PostUseStarshardCallback);
+            mod.AddTrigger(VanillaLevelCallbacks.POST_CONTRAPTION_EVOKE, PostContraptionEvokeCallback);
 
             mod.AddTrigger(LevelCallbacks.POST_ENEMY_SPAWNED, PostEnemySpawnedCallback);
             mod.AddTrigger(VanillaLevelCallbacks.POST_ENEMY_NEUTRALIZE, PostEnemyNeutralizeCallback);
@@ -32,7 +32,7 @@ namespace MVZ2.GameContent.Implements
         {
             Global.AddSaveStat(VanillaStats.CATEGORY_CONTRAPTION_DESTROY, contraption.GetDefinitionID(), 1);
         }
-        private void PostUseStarshardCallback(Entity contraption)
+        private void PostContraptionEvokeCallback(Entity contraption)
         {
             Global.AddSaveStat(VanillaStats.CATEGORY_CONTRAPTION_EVOKE, contraption.GetDefinitionID(), 1);
         }
