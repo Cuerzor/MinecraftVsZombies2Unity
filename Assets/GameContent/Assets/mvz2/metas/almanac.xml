@@ -1260,7 +1260,7 @@
         <group id="mvz2:starshards" name="星之碎片" order="500">
             <entry id="mvz2:starshard.lucid_dream" name="星之碎片：神奇糖果" model="mvz2:entity.starshard.halloween">
                 <header>
-                    <p>星之碎片会唤醒你的器械，爆发出真正的潜力。</p>
+                    <p><![CDATA[星之碎片会<b>激发</b>你的器械，触发它们的技能，爆发出器械真正的潜力。]]></p>
                 </header>
                 <flavor>
                     <p>未知人士留下了一些记录。</p>
@@ -1272,7 +1272,7 @@
             </entry>
             <entry id="mvz2:starshard.lucid_dream" name="星之碎片：清明梦" model="mvz2:entity.starshard.dream" unlock="mvz2:level.dream_1">
                 <header>
-                    <p>星之碎片会唤醒你的器械，爆发出真正的潜力。</p>
+                    <p><![CDATA[星之碎片会<b>激发</b>你的器械，触发它们的技能，爆发出器械真正的潜力。]]></p>
                 </header>
                 <flavor>
                     <p>未知人士留下了一些记录。</p>
@@ -1285,7 +1285,7 @@
             </entry>
             <entry id="mvz2:starshard.miracle_mallet" name="星之碎片：万宝槌" model="mvz2:entity.starshard.castle" unlock="mvz2:level.castle_1">
                 <header>
-                    <p>星之碎片会唤醒你的器械，爆发出真正的潜力。</p>
+                    <p><![CDATA[星之碎片会<b>激发</b>你的器械，触发它们的技能，爆发出器械真正的潜力。]]></p>
                 </header>
                 <flavor>
                     <p>未知人士留下了一些记录。</p>

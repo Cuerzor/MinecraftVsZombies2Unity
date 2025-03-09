@@ -1,7 +1,7 @@
 <stats>
     <category id="contraption_place" name="放置器械" type="entity" />
     <category id="contraption_destroy" name="器械被摧毁" type="entity" />
-    <category id="contraption_evoke" name="使用星之碎片" type="entity" />
+    <category id="contraption_evoke" name="激发器械" type="entity" />
     <category id="enemy_spawn" name="敌人生成" type="entity" />
     <category id="enemy_neutralize" name="消灭敌人" type="entity" />
     <category id="enemy_gameover" name="被敌人击杀" type="entity" />
