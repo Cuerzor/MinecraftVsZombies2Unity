@@ -123,7 +123,7 @@
         <sentence speaker="mvz2:steve" sounds="mvz2:talk">……嗯？这个凋灵骷髅是？</sentence>
         <sentence speaker="mvz2:steve" sounds="mvz2:talk">头上戴着个金质头冠，手里拿着法杖。是干什么的呢？</sentence>
         <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_long2">我也不知道啊，不过我有一种预感！</sentence>
-        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_short3" onClick="end">你会用到萤石的，邻居！</sentence>
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_short3" onClick="end">你会用到荧石的，邻居！</sentence>
       </sentences>
     </section>
   </group>
@@ -219,7 +219,7 @@
         <character id="mvz2:steve" side="self" />
       </characters>
       <sentences>
-        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_long2">这个是石制投掷器！他能弹射出微小的石子！</sentence>
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_long2">这个是石制投掷器！它能弹射出微小的石子！</sentence>
         <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_long3">不过，有时候它也能射出能击退敌人并且分裂的巨石！</sentence>
         <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_long1" onClick="end">在洞穴中，你最好当心脚下的踏板！</sentence>
       </sentences>

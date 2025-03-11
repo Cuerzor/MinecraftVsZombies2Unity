@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2025-02-27 07:48+0800\n"
-"PO-Revision-Date: 2025-02-27 19:48+0800\n"
+"POT-Creation-Date: 2025-03-11 09:30+0800\n"
+"PO-Revision-Date: 2025-03-11 21:31+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -305,7 +305,7 @@ msgstr "Don't ask me! But my gut is telling me..."
 #. Text for talk sentence 3 in talk group castle_2's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:castle_2"
-msgid "你会用到萤石的，邻居！"
+msgid "你会用到荧石的，邻居！"
 msgstr "You oughta bring some glowstone, Neighbor!"
 
 #. Archive name for talk group castle_2_over
@@ -532,7 +532,7 @@ msgstr "Castle Day 3 Outro"
 #. Text for talk sentence 0 in talk group castle_3_over's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:castle_3_over"
-msgid "这个是石制投掷器！他能弹射出微小的石子！"
+msgid "这个是石制投掷器！它能弹射出微小的石子！"
 msgstr "This is the stone dropper! It spits out itty-bitty stones!"
 
 #. Text for talk sentence 1 in talk group castle_3_over's section 0
