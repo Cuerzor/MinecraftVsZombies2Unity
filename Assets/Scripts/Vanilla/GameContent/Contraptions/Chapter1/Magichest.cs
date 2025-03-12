@@ -111,10 +111,10 @@ namespace MVZ2.GameContent.Contraptions
                         }
                         else if (stateTimer.Expired)
                         {
-                            var nearest = eatDetector.DetectWithTheLeast(entity, e => (e.GetCenter() - entity.Position).magnitude);
+                            var nearest = eatDetector.DetectEntityWithTheLeast(entity, e => (e.GetCenter() - entity.Position).magnitude);
                             if (nearest != null)
                             {
-                                Eat(entity, nearest.Entity);
+                                Eat(entity, nearest);
                                 entity.State = VanillaEntityStates.MAGICHEST_EAT;
                                 stateTimer.ResetTime(30);
                             }

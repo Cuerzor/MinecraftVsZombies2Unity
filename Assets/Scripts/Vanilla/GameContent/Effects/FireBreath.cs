@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
@@ -38,7 +39,9 @@ namespace MVZ2.GameContent.Effects
                 cooldown--;
                 if (cooldown <= 0)
                 {
-                    foreach (var collision in entity.GetCurrentCollisions())
+                    collisionBuffer.Clear();
+                    entity.GetCurrentCollisions(collisionBuffer);
+                    foreach (var collision in collisionBuffer)
                     {
                         collision.OtherCollider.TakeDamage(entity.GetDamage(), new DamageEffectList(VanillaDamageEffects.FIRE), entity);
                     }
@@ -58,5 +61,6 @@ namespace MVZ2.GameContent.Effects
         public const int MAX_TIMEOUT = 30;
         public static readonly VanillaEntityPropertyMeta PROP_LIGHT_RANGE_MULTIPLIER = new VanillaEntityPropertyMeta("LightRangeMultiplier");
         private static readonly VanillaEntityPropertyMeta PROP_DAMAGE_COOLDOWN = new VanillaEntityPropertyMeta("DamageCooldown");
+        private List<EntityCollision> collisionBuffer = new List<EntityCollision>();
     }
 }

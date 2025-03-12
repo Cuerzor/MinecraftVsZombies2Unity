@@ -155,7 +155,7 @@ namespace MVZ2.GameContent.Contraptions
         public const int STATE_ATTACK = VanillaEntityStates.TESLA_COIL_ATTACK;
 
         private Detector detector;
-        private static List<EntityCollider> detectBuffer = new List<EntityCollider>();
+        private static List<IEntityCollider> detectBuffer = new List<IEntityCollider>();
         private static HashSet<LawnGrid> gridDetectBuffer = new HashSet<LawnGrid>();
         private static readonly NamespaceID ID = VanillaContraptionID.teslaCoil;
     }

@@ -19,7 +19,7 @@ namespace MVZ2.Vanilla.Detections
                 return false;
             return true;
         }
-        public EntityCollider Detect(DetectionParams self)
+        public IEntityCollider Detect(DetectionParams self)
         {
             foreach (var collider in DetectColliders(self))
             {
@@ -29,9 +29,9 @@ namespace MVZ2.Vanilla.Detections
             }
             return null;
         }
-        public EntityCollider DetectWithTheLeast<T>(DetectionParams self, Func<EntityCollider, T> keySelector)
+        public IEntityCollider DetectWithTheLeast<T>(DetectionParams self, Func<IEntityCollider, T> keySelector)
         {
-            EntityCollider least = null;
+            IEntityCollider least = null;
             T leastKey = default;
             var comparer = Comparer<T>.Default;
             foreach (var collider in DetectColliders(self))
@@ -46,9 +46,9 @@ namespace MVZ2.Vanilla.Detections
             }
             return least;
         }
-        public EntityCollider DetectWithTheMost<T>(DetectionParams self, Func<EntityCollider, T> keySelector)
+        public IEntityCollider DetectWithTheMost<T>(DetectionParams self, Func<IEntityCollider, T> keySelector)
         {
-            EntityCollider most = null;
+            IEntityCollider most = null;
             T mostKey = default;
             var comparer = Comparer<T>.Default;
             foreach (var collider in DetectColliders(self))
@@ -63,7 +63,7 @@ namespace MVZ2.Vanilla.Detections
             }
             return most;
         }
-        public void DetectMultiple(DetectionParams self, List<EntityCollider> results)
+        public void DetectMultiple(DetectionParams self, List<IEntityCollider> results)
         {
             foreach (var collider in DetectColliders(self))
             {
@@ -155,7 +155,7 @@ namespace MVZ2.Vanilla.Detections
             return true;
         }
         protected abstract Bounds GetDetectionBounds(Entity self);
-        protected virtual bool ValidateCollider(DetectionParams param, EntityCollider collider)
+        protected virtual bool ValidateCollider(DetectionParams param, IEntityCollider collider)
         {
             if (!ValidateTarget(param, collider.Entity))
                 return false;
@@ -178,7 +178,7 @@ namespace MVZ2.Vanilla.Detections
             }
             return cache;
         }
-        private List<EntityCollider> DetectColliders(DetectionParams param)
+        private List<IEntityCollider> DetectColliders(DetectionParams param)
         {
             var bounds = GetDetectionBounds(param.entity);
 
@@ -194,7 +194,7 @@ namespace MVZ2.Vanilla.Detections
         public bool ignoreBoss;
         public bool includeSelf;
         public Func<DetectionParams, Entity, bool> invulnerableFilter;
-        private List<EntityCollider> resultsBuffer = new List<EntityCollider>();
+        private List<IEntityCollider> resultsBuffer = new List<IEntityCollider>();
         private List<Entity> entityBuffer = new List<Entity>();
         private Dictionary<NamespaceID, EntityDefinition> definitionCaches = new Dictionary<NamespaceID, EntityDefinition>();
     }

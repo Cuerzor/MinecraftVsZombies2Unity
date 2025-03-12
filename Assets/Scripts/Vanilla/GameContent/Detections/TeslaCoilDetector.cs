@@ -23,29 +23,16 @@ namespace MVZ2.GameContent.Detections
             var centerZ = self.Position.z;
             return new Bounds(new Vector3(centerX, centerY, centerZ), new Vector3(sizeX, sizeY, sizeZ));
         }
-        protected override bool ValidateCollider(DetectionParams param, EntityCollider collider)
+        protected override bool ValidateCollider(DetectionParams param, IEntityCollider collider)
         {
             if (!base.ValidateCollider(param, collider))
                 return false;
             var self = param.entity;
 
             var range = self.GetRange();
-            var center = new Vector2(self.Position.x, self.Position.z);
+            var center = self.GetCenter();
 
-            var hitboxCount = collider.GetHitboxCount();
-            for (int i = 0; i < hitboxCount; i++)
-            {
-                var hitbox = collider.GetHitbox(i);
-                var hitboxCenter = hitbox.GetBoundsCenter();
-                var hitboxSize = hitbox.GetBoundsSize();
-                var hitboxCenter2D = new Vector2(hitboxCenter.x, hitboxCenter.z);
-                var hitboxSize2D = new Vector2(hitboxSize.x, hitboxSize.z);
-                if (MathTool.CollideBetweenRectangleAndCircle(center, range, hitboxCenter2D, hitboxSize2D))
-                {
-                    return true;
-                }
-            }
-            return false;
+            return collider.CheckSphere(center, range);
         }
         private float attackHeight;
     }

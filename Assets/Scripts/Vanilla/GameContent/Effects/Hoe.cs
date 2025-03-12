@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using MVZ2.GameContent.Artifacts;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Callbacks;
@@ -52,9 +55,15 @@ namespace MVZ2.GameContent.Effects
                 timer.Run();
                 if (timer.Expired)
                 {
-                    var target = entity.Level.FindFirstEntity(e => CanDamage(entity, e));
-                    if (target != null)
+                    damageBuffer.Clear();
+                    entity.GetCurrentCollisions(damageBuffer);
+                    foreach (var collision in damageBuffer)
                     {
+                        var target = collision.Other;
+                        if (target == null)
+                            continue;
+                        if (!entity.IsHostile(target) || target.Type != EntityTypes.ENEMY)
+                            continue;
                         target.Die(entity);
                         entity.PlaySound(VanillaSoundID.bonk);
                     }
@@ -82,14 +91,11 @@ namespace MVZ2.GameContent.Effects
                 hoe.Remove();
             }
         }
-        public static bool CanDamage(Entity hoe, Entity target)
-        {
-            return hoe.IsHostile(target) && target.Type == EntityTypes.ENEMY && hoe.MainHitbox.Intersects(target.MainHitbox);
-        }
         public static void SetStateTimer(Entity entity, FrameTimer timer) => entity.SetBehaviourField(ID, PROP_STATE_TIMER, timer);
         public static FrameTimer GetStateTimer(Entity entity) => entity.GetBehaviourField<FrameTimer>(ID, PROP_STATE_TIMER);
 
         public static readonly NamespaceID ID = VanillaEffectID.hoe;
         public static readonly VanillaEntityPropertyMeta PROP_STATE_TIMER = new VanillaEntityPropertyMeta("StateTimer");
+        private List<EntityCollision> damageBuffer = new List<EntityCollision>();
     }
 }

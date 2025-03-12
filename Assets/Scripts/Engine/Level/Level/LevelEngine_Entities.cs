@@ -18,7 +18,7 @@ namespace PVZEngine.Level
         {
             entities.Remove(entity);
             entityTrash.Add(entity);
-            collisionSystem.RemoveEntity(entity);
+            collisionSystem.DestroyEntity(entity);
             OnEntityRemove?.Invoke(entity);
         }
         public Entity Spawn(EntityDefinition entityDef, Vector3 pos, Entity spawner, SpawnParams param = null)
@@ -37,6 +37,7 @@ namespace PVZEngine.Level
             long id = AllocEntityID();
             var spawned = new Entity(this, id, new EntityReferenceChain(spawner), entityDef, seed);
             spawned.Position = pos;
+            collisionSystem.InitEntity(spawned);
             if (param != null)
             {
                 param.Apply(spawned);
@@ -44,7 +45,6 @@ namespace PVZEngine.Level
             entities.Add(spawned);
             OnEntitySpawn?.Invoke(spawned);
             spawned.Init(spawner);
-            collisionSystem.AddEntity(spawned);
             return spawned;
         }
         public Entity Spawn(NamespaceID entityRef, Vector3 pos, Entity spawner, int seed, SpawnParams param = null)
@@ -245,31 +245,40 @@ namespace PVZEngine.Level
         #endregion
 
         #region 碰撞检测
-        public EntityCollider[] OverlapBox(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask)
+        public IEntityCollider[] OverlapBox(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask)
         {
             return collisionSystem.OverlapBox(center, size, faction, hostileMask, friendlyMask);
         }
-        public void OverlapBoxNonAlloc(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results)
+        public void OverlapBoxNonAlloc(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
         {
             collisionSystem.OverlapBoxNonAlloc(center, size, faction, hostileMask, friendlyMask, results);
         }
-        public EntityCollider[] OverlapSphere(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask)
+        public IEntityCollider[] OverlapSphere(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask)
         {
             return collisionSystem.OverlapSphere(center, radius, faction, hostileMask, friendlyMask);
         }
-        public void OverlapSphereNonAlloc(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results)
+        public void OverlapSphereNonAlloc(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
         {
             collisionSystem.OverlapSphereNonAlloc(center, radius, faction, hostileMask, friendlyMask, results);
         }
-        public EntityCollider[] OverlapCapsule(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask)
+        public IEntityCollider[] OverlapCapsule(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask)
         {
             return collisionSystem.OverlapCapsule(center, radius, height, faction, hostileMask, friendlyMask);
         }
-        public void OverlapCapsuleNonAlloc(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results)
+        public void OverlapCapsuleNonAlloc(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
         {
             collisionSystem.OverlapCapsuleNonAlloc(center, radius, height, faction, hostileMask, friendlyMask, results);
         }
+        public IEntityCollider GetEntityCollider(Entity entity, string name)
+        {
+            return collisionSystem.GetCollider(entity, name);
+        }
+        public void GetEntityCurrentCollisions(Entity entity, List<EntityCollision> collisions)
+        {
+            collisionSystem.GetCurrentCollisions(entity, collisions);
+        }
         #endregion
+
         private long AllocEntityID()
         {
             long id = currentEntityID;

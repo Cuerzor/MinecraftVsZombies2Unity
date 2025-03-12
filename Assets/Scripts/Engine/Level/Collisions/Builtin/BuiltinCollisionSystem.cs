@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PVZEngine.Entities;
 using Tools.Mathematics;
 using UnityEngine;
@@ -84,83 +80,149 @@ namespace PVZEngine.Level.Collisions
                     }
                 }
 
-                ent1.ExitCollision();
+                ExitCollision(ent1);
             }
         }
-        public void AddEntity(Entity entity)
+        public void InitEntity(Entity entity)
         {
-            for (int i = 0; i < entity.GetEnabledColliderCount(); i++)
+            var mainCollider = new EntityCollider(entity, EntityCollisionHelper.NAME_MAIN, new EntityHitbox(entity));
+            AddCollider(entity, mainCollider);
+        }
+        public void DestroyEntity(Entity entity)
+        {
+            if (!entityColliders.TryGetValue(entity.ID, out var colliders))
+                return;
+            var flag = entity.TypeCollisionFlag;
+            foreach (var collider in colliders)
             {
-                var collider = entity.GetEnabledColliderAt(i);
-                var flag = entity.TypeCollisionFlag;
-                InsertCollider(flag, collider);
+                collider.OnEnabled -= OnColliderEnabledCallback;
+                collider.OnDisabled -= OnColliderDisabledCallback;
+                if (collider.Enabled)
+                {
+                    RemoveColliderFromTree(flag, collider);
+                }
             }
-            entity.OnColliderEnabled += OnColliderEnabledCallback;
-            entity.OnColliderDisabled += OnColliderDisabledCallback;
+            colliders.Clear();
+            entityColliders.Remove(entity.ID);
         }
-        public void RemoveEntity(Entity entity)
+        public void GetCurrentCollisions(Entity entity, List<EntityCollision> collisions)
         {
-            for (int i = 0; i < entity.GetEnabledColliderCount(); i++)
+            if (!entityColliders.TryGetValue(entity.ID, out var colliders))
+                return;
+            foreach (var collider in colliders)
             {
-                var collider = entity.GetEnabledColliderAt(i);
-                var flag = entity.TypeCollisionFlag;
-                RemoveCollider(flag, collider);
+                collider.GetCollisions(collisions);
             }
-            entity.OnColliderEnabled -= OnColliderEnabledCallback;
-            entity.OnColliderDisabled -= OnColliderDisabledCallback;
         }
-        public QuadTreeCollider GetCollisionQuadTree(int flag)
+        private void ExitCollision(Entity entity)
         {
-            if (quadTrees.TryGetValue(flag, out var tree))
-                return tree;
-            return null;
+            if (!entityColliders.TryGetValue(entity.ID, out var colliders))
+                return;
+            foreach (var collider in colliders)
+            {
+                collider.ExitCollision();
+            }
         }
 
+
+        #region 碰撞体
+        public void AddCollider(Entity entity, IEntityCollider collider)
+        {
+            if (collider is not EntityCollider entCol)
+                return;
+            var flag = entity.TypeCollisionFlag;
+            InsertColliderToTree(flag, entCol);
+            if (!entityColliders.TryGetValue(entity.ID, out var colliders))
+            {
+                colliders = new List<EntityCollider>();
+                entityColliders.Add(entity.ID, colliders);
+            }
+            colliders.Add(entCol);
+            entCol.OnEnabled += OnColliderEnabledCallback;
+            entCol.OnDisabled += OnColliderDisabledCallback;
+        }
+        public bool RemoveCollider(Entity entity, string name)
+        {
+            if (entityColliders.TryGetValue(entity.ID, out var colliders))
+            {
+                foreach (var collider in colliders)
+                {
+                    if (collider.Name == name)
+                    {
+                        colliders.Remove(collider);
+                        collider.OnEnabled -= OnColliderEnabledCallback;
+                        collider.OnDisabled -= OnColliderDisabledCallback;
+                        if (collider.Enabled)
+                        {
+                            var flag = entity.TypeCollisionFlag;
+                            RemoveColliderFromTree(flag, collider);
+                        }
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public EntityCollider GetCollider(Entity entity, string name)
+        {
+            if (entityColliders.TryGetValue(entity.ID, out var colliders))
+            {
+                foreach (var collider in colliders)
+                {
+                    if (collider.Name == name)
+                        return collider;
+                }
+            }
+            return null;
+        }
+        IEntityCollider ICollisionSystem.GetCollider(Entity entity, string name) => GetCollider(entity, name);
+        #endregion
+
         #region 检测
-        public EntityCollider[] OverlapBox(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask)
+        public IEntityCollider[] OverlapBox(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask)
         {
             var min = center - size * 0.5f;
             var filterRect = new Rect(min.x, min.z, size.x, size.y);
             var bounds = new Bounds(center, size);
             return Overlap(filterRect, faction, hostileMask, friendlyMask, h => bounds.Intersects(h.GetBounds()));
         }
-        public void OverlapBoxNonAlloc(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results)
+        public void OverlapBoxNonAlloc(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
         {
             var min = center - size * 0.5f;
-            var filterRect = new Rect(min.x, min.z, size.x, size.y);
+            var filterRect = new Rect(min.x, min.z, size.x, size.z);
             var bounds = new Bounds(center, size);
             OverlapNonAlloc(filterRect, faction, hostileMask, friendlyMask, h => bounds.Intersects(h.GetBounds()), results);
         }
-        public EntityCollider[] OverlapSphere(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask)
+        public IEntityCollider[] OverlapSphere(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask)
         {
             var min = center - Vector3.one * radius;
             var filterRect = new Rect(min.x, min.z, radius * 2, radius * 2);
             return Overlap(filterRect, faction, hostileMask, friendlyMask, h => MathTool.CollideBetweenCubeAndSphere(center, radius, h.GetBoundsCenter(), h.GetBoundsSize()));
         }
-        public void OverlapSphereNonAlloc(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results)
+        public void OverlapSphereNonAlloc(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
         {
             var min = center - Vector3.one * radius;
             var filterRect = new Rect(min.x, min.z, radius * 2, radius * 2);
             OverlapNonAlloc(filterRect, faction, hostileMask, friendlyMask, h => MathTool.CollideBetweenCubeAndSphere(center, radius, h.GetBoundsCenter(), h.GetBoundsSize()), results);
         }
-        public EntityCollider[] OverlapCapsule(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask)
+        public IEntityCollider[] OverlapCapsule(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask)
         {
             var min = center - Vector3.one * radius;
             var filterRect = new Rect(min.x, min.z, radius * 2, radius * 2);
             var capsule = new Capsule(Axis.Y, center, height, radius);
             return Overlap(filterRect, faction, hostileMask, friendlyMask, h => MathTool.CollideBetweenCubeAndCapsule(capsule, h.GetBoundsCenter(), h.GetBoundsSize()));
         }
-        public void OverlapCapsuleNonAlloc(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results)
+        public void OverlapCapsuleNonAlloc(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
         {
             var min = center - Vector3.one * radius;
             var filterRect = new Rect(min.x, min.z, radius * 2, radius * 2);
             var capsule = new Capsule(Axis.Y, center, height, radius);
             OverlapNonAlloc(filterRect, faction, hostileMask, friendlyMask, h => MathTool.CollideBetweenCubeAndCapsule(capsule, h.GetBoundsCenter(), h.GetBoundsSize()), results);
         }
-        public EntityCollider[] Overlap(Rect filterRect, int faction, int hostileMask, int friendlyMask, Predicate<Hitbox> predicate)
+        public IEntityCollider[] Overlap(Rect filterRect, int faction, int hostileMask, int friendlyMask, Predicate<Hitbox> predicate)
         {
             if (predicate == null)
-                return Array.Empty<EntityCollider>();
+                return Array.Empty<IEntityCollider>();
             var entityColliders = new List<EntityCollider>();
             var totalMask = hostileMask | friendlyMask;
             FindCollidersRange(totalMask, filterRect, entityColliders);
@@ -190,7 +252,7 @@ namespace PVZEngine.Level.Collisions
             }
             return entityColliders.ToArray();
         }
-        private void OverlapNonAlloc(Rect filterRect, int faction, int hostileMask, int friendlyMask, Predicate<Hitbox> predicate, List<EntityCollider> results)
+        private void OverlapNonAlloc(Rect filterRect, int faction, int hostileMask, int friendlyMask, Predicate<Hitbox> predicate, List<IEntityCollider> results)
         {
             if (predicate == null)
                 return;
@@ -219,6 +281,14 @@ namespace PVZEngine.Level.Collisions
             }
         }
         #endregion
+
+        #region 四叉树
+        public QuadTreeCollider GetCollisionQuadTree(int flag)
+        {
+            if (quadTrees.TryGetValue(flag, out var tree))
+                return tree;
+            return null;
+        }
         private void FindCollidersRange(int mask, Rect rect, List<EntityCollider> collider)
         {
             foreach (var pair in quadTrees)
@@ -230,7 +300,7 @@ namespace PVZEngine.Level.Collisions
                 quadTree.FindTargetsInRect(rect, collider);
             }
         }
-        private void InsertCollider(int flag, EntityCollider collider)
+        private void InsertColliderToTree(int flag, EntityCollider collider)
         {
             if (!quadTrees.TryGetValue(flag, out var tree))
             {
@@ -239,7 +309,7 @@ namespace PVZEngine.Level.Collisions
             }
             tree.Insert(collider);
         }
-        private void RemoveCollider(int flag, EntityCollider collider)
+        private void RemoveColliderFromTree(int flag, EntityCollider collider)
         {
             if (!quadTrees.TryGetValue(flag, out var tree))
             {
@@ -247,22 +317,89 @@ namespace PVZEngine.Level.Collisions
             }
             tree.Remove(collider);
         }
-        private void OnColliderEnabledCallback(EntityCollider collider)
-        {
-            InsertCollider(collider.Entity.TypeCollisionFlag, collider);
-        }
-        private void OnColliderDisabledCallback(EntityCollider collider)
-        {
-            RemoveCollider(collider.Entity.TypeCollisionFlag, collider);
-        }
         private QuadTreeCollider CreateQuadTree()
         {
             return new QuadTreeCollider(quadTreeParams.size, quadTreeParams.maxObjects, quadTreeParams.maxDepth);
         }
-        public LevelEngine level;
+        #endregion
+
+        #region 回调
+        private void OnColliderEnabledCallback(EntityCollider collider)
+        {
+            InsertColliderToTree(collider.Entity.TypeCollisionFlag, collider);
+        }
+        private void OnColliderDisabledCallback(EntityCollider collider)
+        {
+            RemoveColliderFromTree(collider.Entity.TypeCollisionFlag, collider);
+        }
+        #endregion
+
+        public SerializableBuiltinCollisionSystem ToSerializable()
+        {
+            var seri = new SerializableBuiltinCollisionSystem();
+            var entities = new List<SerializableBuiltinCollisionSystemEntity>();
+            foreach (var pair in entityColliders)
+            {
+                var entity = new SerializableBuiltinCollisionSystemEntity()
+                {
+                    id = pair.Key,
+                    colliders = pair.Value.ConvertAll(g => g.ToSerializable()).ToArray()
+                };
+                entities.Add(entity);
+            }
+            seri.entities = entities.ToArray();
+            return seri;
+        }
+        public void LoadFromSerializable(LevelEngine level, SerializableBuiltinCollisionSystem seri)
+        {
+            foreach (var seriEnt in seri.entities)
+            {
+                var colliders = new List<EntityCollider>();
+                entityColliders.Add(seriEnt.id, colliders);
+                var ent = level.FindEntityByID(seriEnt.id);
+                foreach (var seriCollider in seriEnt.colliders)
+                {
+                    var collider = EntityCollider.FromSerializable(seriCollider, ent);
+                    colliders.Add(collider);
+                }
+            }
+            foreach (var seriEnt in seri.entities)
+            {
+                var colliders = entityColliders[seriEnt.id];
+                for (int i = 0; i < colliders.Count; i++)
+                {
+                    var collider = colliders[i];
+                    var seriCollider = seriEnt.colliders[i];
+                    collider.LoadCollisions(level, seriCollider);
+                }
+            }
+        }
+        ISerializableCollisionSystem ICollisionSystem.ToSerializable()
+        {
+            return ToSerializable();
+        }
+        void ICollisionSystem.LoadFromSerializable(LevelEngine level, ISerializableCollisionSystem seri)
+        {
+            if (seri is not SerializableBuiltinCollisionSystem sys)
+                return;
+            LoadFromSerializable(level, sys);
+        }
+
+
         private List<EntityCollider> colliderBuffer = new List<EntityCollider>();
         private List<EntityCollider> collisionBuffer = new List<EntityCollider>();
         private Dictionary<int, QuadTreeCollider> quadTrees = new Dictionary<int, QuadTreeCollider>();
         private QuadTreeParams quadTreeParams;
+
+        private Dictionary<long, List<EntityCollider>> entityColliders = new Dictionary<long, List<EntityCollider>>();
+    }
+    public class SerializableBuiltinCollisionSystem : ISerializableCollisionSystem
+    {
+        public SerializableBuiltinCollisionSystemEntity[] entities;
+    }
+    public class SerializableBuiltinCollisionSystemEntity
+    {
+        public long id;
+        public SerializableEntityCollider[] colliders;
     }
 }

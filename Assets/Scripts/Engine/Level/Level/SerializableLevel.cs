@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
+using PVZEngine.Level.Collisions;
 using PVZEngine.SeedPacks;
 using Tools;
 
@@ -61,6 +62,7 @@ namespace PVZEngine.Level
         public bool levelProgressVisible;
         public List<int> spawnedLanes;
         public List<NamespaceID> spawnedID;
+        public ISerializableCollisionSystem collisionSystem;
 
         public SerializableBuffList buffs;
 

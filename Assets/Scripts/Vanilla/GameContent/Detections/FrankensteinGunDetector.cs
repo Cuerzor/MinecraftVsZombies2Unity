@@ -27,7 +27,7 @@ namespace MVZ2.GameContent.Detections
             var centerZ = source.z;
             return new Bounds(new Vector3(centerX, centerY, centerZ), new Vector3(sizeX, sizeY, sizeZ));
         }
-        protected override bool ValidateCollider(DetectionParams self, EntityCollider collider)
+        protected override bool ValidateCollider(DetectionParams self, IEntityCollider collider)
         {
             if (!base.ValidateCollider(self, collider))
                 return false;

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
@@ -75,7 +76,9 @@ namespace MVZ2.GameContent.Effects
         }
         private void Burn(Entity gas)
         {
-            foreach (var collision in gas.GetCurrentCollisions())
+            collisionBuffer.Clear();
+            gas.GetCurrentCollisions(collisionBuffer);
+            foreach (var collision in collisionBuffer)
             {
                 if (!collision.Entity.IsVulnerableEntity())
                     continue;
@@ -90,5 +93,6 @@ namespace MVZ2.GameContent.Effects
         #endregion
 
         public const int DISAPPEAR_TIMEOUT = 30;
+        private List<EntityCollision> collisionBuffer = new List<EntityCollision>();
     }
 }

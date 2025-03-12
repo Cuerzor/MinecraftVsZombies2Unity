@@ -272,7 +272,7 @@ namespace MVZ2.GameContent.Bosses
                 }
                 // Jab.
                 bool jabbed = false;
-                foreach (EntityCollider collider in entity.Level.OverlapBox(target.GetCenter(), Vector3.one * 40, entity.GetFaction(), EntityCollisionHelper.MASK_VULNERABLE, 0))
+                foreach (IEntityCollider collider in entity.Level.OverlapBox(target.GetCenter(), Vector3.one * 40, entity.GetFaction(), EntityCollisionHelper.MASK_VULNERABLE, 0))
                 {
                     collider.TakeDamage(10000, new DamageEffectList(), entity);
                     jabbed = true;
@@ -412,7 +412,7 @@ namespace MVZ2.GameContent.Bosses
                     var rng = GetStateRNG(entity);
                     detectBuffer.Clear();
                     level.OverlapCapsuleNonAlloc(entity.GetCenter(), SPIN_RADIUS, SPIN_HEIGHT, entity.GetFaction(), EntityCollisionHelper.MASK_VULNERABLE, 0, detectBuffer);
-                    foreach (EntityCollider collider in detectBuffer)
+                    foreach (IEntityCollider collider in detectBuffer)
                     {
                         var target = collider.Entity;
                         var colliderReference = collider.ToReference();
@@ -463,7 +463,7 @@ namespace MVZ2.GameContent.Bosses
             public const int SUBSTATE_START = 0;
             public const int SUBSTATE_LOOP = 1;
             public const int SUBSTATE_END = 2;
-            private List<EntityCollider> detectBuffer = new List<EntityCollider>();
+            private List<IEntityCollider> detectBuffer = new List<IEntityCollider>();
         }
         #endregion
 

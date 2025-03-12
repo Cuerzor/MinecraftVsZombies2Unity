@@ -66,7 +66,7 @@ namespace MVZ2.Vanilla.Level
         public static DamageOutput[] Explode(this LevelEngine level, Vector3 center, float radius, int faction, float amount, DamageEffectList effects, EntityReferenceChain source)
         {
             List<DamageOutput> damageOutputs = new List<DamageOutput>();
-            foreach (EntityCollider entityCollider in level.OverlapSphere(center, radius, faction, EntityCollisionHelper.MASK_VULNERABLE, 0))
+            foreach (IEntityCollider entityCollider in level.OverlapSphere(center, radius, faction, EntityCollisionHelper.MASK_VULNERABLE, 0))
             {
                 var damageOutput = entityCollider.TakeDamage(amount, effects, source);
                 if (damageOutput != null)

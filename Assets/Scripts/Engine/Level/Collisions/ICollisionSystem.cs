@@ -12,13 +12,27 @@ namespace PVZEngine.Level.Collisions
     public interface ICollisionSystem
     {
         void Update();
-        void AddEntity(Entity entity);
-        void RemoveEntity(Entity entity);
-        EntityCollider[] OverlapBox(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask);
-        void OverlapBoxNonAlloc(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results);
-        EntityCollider[] OverlapSphere(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask);
-        void OverlapSphereNonAlloc(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results);
-        EntityCollider[] OverlapCapsule(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask);
-        void OverlapCapsuleNonAlloc(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results);
+        void InitEntity(Entity entity);
+        void DestroyEntity(Entity entity);
+        void AddCollider(Entity entity, IEntityCollider collider);
+        bool RemoveCollider(Entity entity, string name);
+        IEntityCollider GetCollider(Entity entity, string name);
+        void GetCurrentCollisions(Entity entity, List<EntityCollision> collisions);
+
+
+        ISerializableCollisionSystem ToSerializable();
+        void LoadFromSerializable(LevelEngine level, ISerializableCollisionSystem seri);
+
+
+        IEntityCollider[] OverlapBox(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask);
+        void OverlapBoxNonAlloc(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results);
+        IEntityCollider[] OverlapSphere(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask);
+        void OverlapSphereNonAlloc(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results);
+        IEntityCollider[] OverlapCapsule(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask);
+        void OverlapCapsuleNonAlloc(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results);
+    }
+    public interface ISerializableCollisionSystem
+    {
+
     }
 }

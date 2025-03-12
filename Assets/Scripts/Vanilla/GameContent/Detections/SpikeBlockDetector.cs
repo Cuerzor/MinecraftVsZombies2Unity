@@ -27,7 +27,7 @@ namespace MVZ2.GameContent.Detections
             }
             return bounds;
         }
-        protected override bool ValidateCollider(DetectionParams param, EntityCollider collider)
+        protected override bool ValidateCollider(DetectionParams param, IEntityCollider collider)
         {
             if (!collider.IsMain())
                 return false;

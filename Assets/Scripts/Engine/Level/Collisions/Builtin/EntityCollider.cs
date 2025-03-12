@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using PVZEngine.Level;
 using PVZEngine.Level.Collisions;
+using Tools.Mathematics;
 using UnityEngine;
 
 namespace PVZEngine.Entities
 {
-    public class EntityCollider : IQuadTreeNodeObject
+    public class EntityCollider : IEntityCollider, IQuadTreeNodeObject
     {
         public EntityCollider(Entity entity, string name, params Hitbox[] hitboxes)
         {
@@ -16,6 +17,7 @@ namespace PVZEngine.Entities
             Entity = entity;
             Name = name;
             this.hitboxes.AddRange(hitboxes);
+            ReevaluateBounds();
         }
         private EntityCollider()
         {
@@ -34,16 +36,29 @@ namespace PVZEngine.Entities
                 OnDisabled?.Invoke(this);
             }
         }
-
-        #region 碰撞箱
-        public void Update()
+        public void ReevaluateBounds()
         {
             foreach (var hitbox in hitboxes)
             {
-                hitbox.Update();
+                hitbox.ReevaluateBounds();
             }
             EvaluateBoundingBox();
         }
+
+        #region 检测
+        public bool CheckSphere(Vector3 center, float radius)
+        {
+            for (int i = 0; i < GetHitboxCount(); i++)
+            {
+                var hitbox = GetHitbox(i);
+                if (hitbox.IsInSphere(center, radius))
+                    return true;
+            }
+            return false;
+        }
+        #endregion
+
+        #region 碰撞箱
         public void DoCollision(EntityCollider other, Vector3 offset)
         {
             for (int i1 = 0; i1 < hitboxes.Count; i1++)
@@ -110,7 +125,7 @@ namespace PVZEngine.Entities
             var max = new Vector3(-10000, -10000, -10000);
             foreach (var hitbox in hitboxes)
             {
-                var bounds = hitbox.GetBounds();
+                var bounds = hitbox.GetLocalBounds();
                 min = Vector3.Min(bounds.min, min);
                 max = Vector3.Max(bounds.max, max);
             }
@@ -121,19 +136,20 @@ namespace PVZEngine.Entities
         }
         public Bounds GetBoundingBox()
         {
-            return boundingBox;
+            var box = boundingBox;
+            box.center += Entity.Position;
+            return box;
         }
         public Vector3 GetCenter()
         {
-            return boundingBox.center;
+            return boundingBox.center + Entity.Position;
         }
         public Rect GetCollisionRect(float rewind = 0)
         {
-            if (rewind == 0)
-                return bottomRect;
             var rect = bottomRect;
-            var entityMotion = Entity.Position - Entity.PreviousPosition;
-            var offset = -entityMotion * rewind;
+            var entityPos = Entity.Position;
+            var entityMotion = entityPos - Entity.PreviousPosition;
+            var offset = entityPos - entityMotion * rewind;
             rect.x += offset.x;
             rect.y += offset.z;
             return rect;
@@ -141,9 +157,9 @@ namespace PVZEngine.Entities
         #endregion
 
         #region 碰撞
-        public IEnumerable<EntityCollision> GetCollisions()
+        public void GetCollisions(List<EntityCollision> collisions)
         {
-            return collisionList.ToArray();
+            collisions.AddRange(collisionList);
         }
         public void ExitCollision()
         {
@@ -165,11 +181,11 @@ namespace PVZEngine.Entities
         }
         private bool CallPreCollision(EntityCollision collision)
         {
-            return PreCollision?.Invoke(collision) ?? true;
+            return Entity.PreCollision(collision);
         }
         private void CallPostCollision(EntityCollision collision, int state)
         {
-            PostCollision?.Invoke(collision, state);
+            Entity.PostCollision(collision, state);
         }
         #endregion
 
@@ -211,8 +227,6 @@ namespace PVZEngine.Entities
             return this == collider;
         }
 
-        public event Func<EntityCollision, bool> PreCollision;
-        public event Action<EntityCollision, int> PostCollision;
         public event Action<EntityCollider> OnEnabled;
         public event Action<EntityCollider> OnDisabled;
         public bool Enabled { get; private set; } = true;

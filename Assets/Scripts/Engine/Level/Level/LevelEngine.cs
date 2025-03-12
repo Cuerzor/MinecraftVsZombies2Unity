@@ -403,6 +403,7 @@ namespace PVZEngine.Level
                 conveyorSeedPacks = conveyorSeedPacks.Select(s => s != null ? s.Serialize() : null).ToArray(),
                 conveyorSlotCount = conveyorSlotCount,
                 conveyorSeedSpendRecord = conveyorSeedSpendRecord.ToSerializable(),
+                collisionSystem = collisionSystem.ToSerializable(),
 
                 currentEntityID = currentEntityID,
                 currentBuffID = currentBuffID,
@@ -472,7 +473,7 @@ namespace PVZEngine.Level
             level.entities = seri.entities.ConvertAll(e => 
             {
                 var entity = Entity.CreateDeserializingEntity(e, level);
-                level.collisionSystem.AddEntity(entity);
+                level.collisionSystem.InitEntity(entity);
                 return entity;
             });
             level.entityTrash = seri.entityTrash.ConvertAll(e => Entity.CreateDeserializingEntity(e, level));
@@ -485,6 +486,7 @@ namespace PVZEngine.Level
                 level.entityTrash[i].ApplyDeserialize(seri.entityTrash[i]);
             }
             // 在实体加载后面
+            level.collisionSystem.LoadFromSerializable(level, seri.collisionSystem);
             // 加载所有网格的属性。
             for (int i = 0; i < level.grids.Length; i++)
             {

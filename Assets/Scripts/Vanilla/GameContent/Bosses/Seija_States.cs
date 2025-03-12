@@ -288,7 +288,7 @@ namespace MVZ2.GameContent.Bosses
                 }
             }
 
-            private List<EntityCollider> smashDetectBuffer = new List<EntityCollider>();
+            private List<IEntityCollider> smashDetectBuffer = new List<IEntityCollider>();
             public const int SUBSTATE_RAISE = 0;
             public const int SUBSTATE_HAMMERED = 1;
         }

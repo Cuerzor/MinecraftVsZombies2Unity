@@ -100,7 +100,7 @@ namespace MVZ2.GameContent.Enemies
             stateTimer.Reset();
             SetCasting(entity, false);
         }
-        private bool ColliderFilter(Entity self, EntityCollider collider)
+        private bool ColliderFilter(Entity self, IEntityCollider collider)
         {
             if (!collider.IsMain())
                 return false;

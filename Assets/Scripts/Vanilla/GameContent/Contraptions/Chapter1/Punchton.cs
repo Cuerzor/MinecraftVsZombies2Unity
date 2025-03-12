@@ -214,6 +214,6 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly VanillaEntityPropertyMeta PROP_STATE_TIMER = new VanillaEntityPropertyMeta("StateTimer");
         private Detector detector;
         private Detector evokedDetector;
-        private List<EntityCollider> detectBuffer = new List<EntityCollider>();
+        private List<IEntityCollider> detectBuffer = new List<IEntityCollider>();
     }
 }

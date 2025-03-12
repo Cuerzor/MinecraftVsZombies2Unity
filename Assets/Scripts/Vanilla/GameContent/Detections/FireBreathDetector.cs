@@ -23,7 +23,7 @@ namespace MVZ2.GameContent.Detections
             }
             return new Bounds(self.Position + positionOffset, fireSize);
         }
-        protected override bool ValidateCollider(DetectionParams self, EntityCollider collider)
+        protected override bool ValidateCollider(DetectionParams self, IEntityCollider collider)
         {
             if (!base.ValidateCollider(self, collider))
                 return false;

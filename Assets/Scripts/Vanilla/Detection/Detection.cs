@@ -22,20 +22,6 @@ namespace MVZ2.Vanilla.Detections
             var bounds2 = new Bounds(center2, size2);
             return bounds1.Intersects(bounds2);
         }
-        public static bool InFrontShooterRange(Entity self, Entity target, float projectileZSpan, float heightOffset)
-        {
-            return IsInFrontOf(self, target) &&
-                target.MainHitbox.CoincidesYDown(self.Position.y + heightOffset) &&
-                IsZCoincide(self.Position.z, projectileZSpan, target.Position.z, target.GetSize().z);
-        }
-
-        public static bool InFrontShooterRange(Entity self, Entity target, float projectileZSpan, float heightOffset, float frontRange)
-        {
-            return IsInFrontOf(self, target, 0, frontRange) &&
-                target.MainHitbox.CoincidesYDown(self.Position.y + heightOffset) &&
-                IsZCoincide(self.Position.z, projectileZSpan, target.Position.z, target.GetSize().z);
-        }
-
         public static bool CanDetect(Entity entity)
         {
             return !entity.IsInvisible();
@@ -85,20 +71,10 @@ namespace MVZ2.Vanilla.Detections
         {
             return bounds.min.y < y;
         }
-        public static bool CoincidesYDown(this Hitbox hitbox, float y)
-        {
-            return hitbox.GetBounds().min.y < y;
-        }
-
         public static bool CoincidesYUp(this Bounds bounds, float y)
         {
             return bounds.max.y > y;
         }
-        public static bool CoincidesYUp(this Hitbox hitbox, float y)
-        {
-            return hitbox.GetBounds().max.y > y;
-        }
-
         public static bool IsYCoincide(float y1, float yLength1, float y2, float yLength2)
         {
             return MathTool.DoRangesIntersect(y1, y1 + yLength1, y2, y2 + yLength2);
@@ -118,22 +94,7 @@ namespace MVZ2.Vanilla.Detections
         }
         #endregion
 
-        public static bool IsInSphere(this Hitbox hitbox, Vector3 center, float radius)
-        {
-            var bounds = hitbox.GetBounds();
-            return MathTool.CollideBetweenCubeAndSphere(center, radius, bounds.center, bounds.size);
-        }
-        public static bool IsInSphere(this EntityCollider collider, Vector3 center, float radius)
-        {
-            for (int i = 0; i < collider.GetHitboxCount(); i++)
-            {
-                var hitbox = collider.GetHitbox(i);
-                if (hitbox.IsInSphere(center, radius))
-                    return true;
-            }
-            return false;
-        }
-        public static void OverlapGridGroundNonAlloc(this LevelEngine level, int column, int lane, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results)
+        public static void OverlapGridGroundNonAlloc(this LevelEngine level, int column, int lane, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
         {
             var minX = level.GetColumnX(column);
             var minZ = level.GetLaneZ(lane);

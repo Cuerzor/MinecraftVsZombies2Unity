@@ -30,7 +30,6 @@ namespace PVZEngine.Entities
         public Vector3 scale;
         public int collisionMaskHostile;
         public int collisionMaskFriendly;
-        public SerializableEntityCollider[] colliders;
         public Vector3 renderRotation;
         public Vector3 renderScale;
         public Dictionary<string, int> takenConveyorSeeds;

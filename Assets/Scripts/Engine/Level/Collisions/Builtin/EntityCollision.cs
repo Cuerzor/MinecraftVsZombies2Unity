@@ -6,7 +6,7 @@ namespace PVZEngine.Entities
 {
     public class EntityCollision
     {
-        public EntityCollision(EntityCollider collider, EntityCollider otherCollider)
+        public EntityCollision(IEntityCollider collider, IEntityCollider otherCollider)
         {
             Collider = collider;
             OtherCollider = otherCollider;
@@ -27,8 +27,8 @@ namespace PVZEngine.Entities
                 Seperation = serializable.seperation
             };
         }
-        public EntityCollider Collider { get; set; }
-        public EntityCollider OtherCollider { get; set; }
+        public IEntityCollider Collider { get; set; }
+        public IEntityCollider OtherCollider { get; set; }
         public Vector3 Seperation { get; set; }
         public Entity Entity => Collider.Entity;
         public Entity Other => OtherCollider.Entity;
@@ -46,7 +46,7 @@ namespace PVZEngine.Entities
         public long entityId;
         public string unitName;
 
-        public EntityColliderReference(EntityCollider collider) : this(collider.Entity.ID, collider.Name)
+        public EntityColliderReference(IEntityCollider collider) : this(collider.Entity.ID, collider.Name)
         {
         }
         public EntityColliderReference(long entityId, string unitName)
@@ -55,7 +55,7 @@ namespace PVZEngine.Entities
             this.unitName = unitName;
         }
 
-        public EntityCollider GetCollider(LevelEngine engine)
+        public IEntityCollider GetCollider(LevelEngine engine)
         {
             var entity = engine.FindEntityByID(entityId);
             if (entity == null)

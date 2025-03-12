@@ -200,6 +200,6 @@ namespace MVZ2.GameContent.Contraptions
         public const int MAX_FUEL = 60;
         public const int REFUEL_THRESOLD = 10;
         private Detector evocationDetector;
-        private List<EntityCollider> detectBuffer = new List<EntityCollider>();
+        private List<IEntityCollider> detectBuffer = new List<IEntityCollider>();
     }
 }

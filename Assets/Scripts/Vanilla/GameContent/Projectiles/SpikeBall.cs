@@ -45,7 +45,7 @@ namespace MVZ2.GameContent.Projectiles
                 return false;
             if (!self.IsHostile(target))
                 return false;
-            if (!Detection.Intersects(self.MainHitbox, target.MainHitbox))
+            if (!self.GetBounds().Intersects(target.GetBounds()))
                 return false;
             return true;
         }

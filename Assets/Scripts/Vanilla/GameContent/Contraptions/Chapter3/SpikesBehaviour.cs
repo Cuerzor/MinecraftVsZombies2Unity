@@ -128,6 +128,6 @@ namespace MVZ2.GameContent.Contraptions
         public virtual NamespaceID SpikeParticleID => VanillaEffectID.spikeParticles;
         private Detector detector;
         private Detector detectorEvoked;
-        private List<EntityCollider> detectBuffer = new List<EntityCollider>();
+        private List<IEntityCollider> detectBuffer = new List<IEntityCollider>();
     }
 }

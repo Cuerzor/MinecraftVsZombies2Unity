@@ -1,4 +1,6 @@
-﻿using MVZ2.Vanilla.Detections;
+﻿using System.Collections.Generic;
+using MVZ2.GameContent.Detections;
+using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using PVZEngine.Buffs;
@@ -13,6 +15,10 @@ namespace MVZ2.GameContent.Buffs.Contraptions
     {
         public DreamCrystalEvocationBuff(string nsp, string name) : base(nsp, name)
         {
+            healDetector = new SphereDetector(100)
+            {
+                factionTarget = FactionTarget.Friendly
+            };
             AddModifier(new BooleanModifier(EngineEntityProps.INVINCIBLE, true));
         }
         public override void PostAdd(Buff buff)
@@ -26,9 +32,11 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             var contraption = buff.GetEntity();
             if (contraption == null)
                 return;
-            foreach (Entity target in contraption.Level.FindEntities(e => CanHeal(contraption, e)))
+            healBuffer.Clear();
+            healDetector.DetectEntities(contraption, healBuffer);
+            foreach (Entity target in healBuffer)
             {
-                target.Heal(HEAL_PER_FRAME, contraption);
+                target.HealEffects(HEAL_PER_FRAME, contraption);
             }
             var time = buff.GetProperty<int>(PROP_TIMEOUT);
             time--;
@@ -38,12 +46,10 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             }
             buff.SetProperty(PROP_TIMEOUT, time);
         }
-        private static bool CanHeal(Entity self, Entity target)
-        {
-            return Detection.IsInSphere(target.MainHitbox, self.GetCenter(), 100) && self.IsFriendly(target);
-        }
         public static readonly VanillaBuffPropertyMeta PROP_TIMEOUT = new VanillaBuffPropertyMeta("Timeout");
         public const int MAX_TIMEOUT = 150;
         public const float HEAL_PER_FRAME = 20;
+        private List<Entity> healBuffer = new List<Entity>();
+        private Detector healDetector;
     }
 }

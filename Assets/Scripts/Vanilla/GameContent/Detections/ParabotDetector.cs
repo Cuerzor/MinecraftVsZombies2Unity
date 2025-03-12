@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Detections
             var center = self.GetCenter();
             return new Bounds(center, new Vector3(sizeX, sizeY, sizeZ));
         }
-        protected override bool ValidateCollider(DetectionParams param, EntityCollider collider)
+        protected override bool ValidateCollider(DetectionParams param, IEntityCollider collider)
         {
             if (!base.ValidateCollider(param, collider))
                 return false;

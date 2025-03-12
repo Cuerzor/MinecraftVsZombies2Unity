@@ -157,7 +157,7 @@ namespace MVZ2.Vanilla.Enemies
             }
             public const int SUBSTATE_START = 0;
             public const int SUBSTATE_ATTACKED = 1;
-            private List<EntityCollider> detectBuffer = new List<EntityCollider>();
+            private List<IEntityCollider> detectBuffer = new List<IEntityCollider>();
         }
         #endregion
 

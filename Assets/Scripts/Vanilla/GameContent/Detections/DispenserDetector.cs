@@ -54,7 +54,7 @@ namespace MVZ2.GameContent.Detections
 
             return new Bounds(new Vector3(centerX, centerY, centerZ), new Vector3(sizeX, sizeY, sizeZ));
         }
-        protected override bool ValidateCollider(DetectionParams self, EntityCollider collider)
+        protected override bool ValidateCollider(DetectionParams self, IEntityCollider collider)
         {
             if (!ValidateTarget(self, collider.Entity))
                 return false;
@@ -68,6 +68,6 @@ namespace MVZ2.GameContent.Detections
         }
         public bool ignoreLowEnemy;
         public bool ignoreHighEnemy;
-        public Func<DetectionParams, EntityCollider, bool> colliderFilter;
+        public Func<DetectionParams, IEntityCollider, bool> colliderFilter;
     }
 }

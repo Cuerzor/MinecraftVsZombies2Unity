@@ -14,7 +14,7 @@ namespace MVZ2.GameContent.Detections
         {
             return self.GetBounds();
         }
-        protected override bool ValidateCollider(DetectionParams param, EntityCollider collider)
+        protected override bool ValidateCollider(DetectionParams param, IEntityCollider collider)
         {
             var target = collider.Entity;
             if (target.Type == EntityTypes.PROJECTILE)
