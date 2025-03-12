@@ -88,7 +88,7 @@ namespace PVZEngine.Entities
                             {
                                 CallPostCollision(collision, EntityCollisionHelper.STATE_STAY);
                             }
-                            collisionThisTick.Add(collision);
+                            collision.Checked = true;
                         }
                         return;
                     }
@@ -165,19 +165,18 @@ namespace PVZEngine.Entities
         {
             exitBuffer.Clear();
             exitBuffer.AddRange(collisionList);
-            foreach (var collision in collisionThisTick)
-            {
-                exitBuffer.Remove(collision);
-            }
             foreach (var collision in exitBuffer)
             {
-                if (collision != null)
+                if (!collision.Checked)
                 {
-                    CallPostCollision(collision, EntityCollisionHelper.STATE_EXIT);
+                    if (collision != null)
+                    {
+                        CallPostCollision(collision, EntityCollisionHelper.STATE_EXIT);
+                    }
+                    collisionList.Remove(collision);
                 }
-                collisionList.Remove(collision);
+                collision.Checked = false;
             }
-            collisionThisTick.Clear();
         }
         private bool CallPreCollision(EntityCollision collision)
         {
@@ -235,7 +234,6 @@ namespace PVZEngine.Entities
         private Bounds boundingBox;
         private Rect bottomRect;
         private List<Hitbox> hitboxes = new List<Hitbox>();
-        private List<EntityCollision> collisionThisTick = new List<EntityCollision>();
         private List<EntityCollision> collisionList = new List<EntityCollision>();
         private List<EntityCollision> exitBuffer = new List<EntityCollision>();
     }

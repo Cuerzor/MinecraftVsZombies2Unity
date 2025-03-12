@@ -28,8 +28,8 @@ namespace PVZEngine.Level.Collisions
         void OverlapBoxNonAlloc(Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results);
         IEntityCollider[] OverlapSphere(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask);
         void OverlapSphereNonAlloc(Vector3 center, float radius, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results);
-        IEntityCollider[] OverlapCapsule(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask);
-        void OverlapCapsuleNonAlloc(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results);
+        IEntityCollider[] OverlapCapsule(Vector3 point0, Vector3 point1, float radius, int faction, int hostileMask, int friendlyMask);
+        void OverlapCapsuleNonAlloc(Vector3 point0, Vector3 point1, float radius, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results);
     }
     public interface ISerializableCollisionSystem
     {

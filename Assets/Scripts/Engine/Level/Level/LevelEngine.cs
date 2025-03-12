@@ -473,7 +473,6 @@ namespace PVZEngine.Level
             level.entities = seri.entities.ConvertAll(e => 
             {
                 var entity = Entity.CreateDeserializingEntity(e, level);
-                level.collisionSystem.InitEntity(entity);
                 return entity;
             });
             level.entityTrash = seri.entityTrash.ConvertAll(e => Entity.CreateDeserializingEntity(e, level));

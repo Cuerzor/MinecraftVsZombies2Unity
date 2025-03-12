@@ -18,6 +18,7 @@ using PVZEngine.Entities;
 using PVZEngine.Grids;
 using PVZEngine.Level;
 using PVZEngine.Level.BsonSerializers;
+using PVZEngine.Level.Collisions;
 using PVZEngine.SeedPacks;
 using Tools;
 using Tools.BsonSerializers;
@@ -54,6 +55,8 @@ namespace MVZ2Logic
             RegisterClass<SerializableCustomHitbox>();
             RegisterClass<SerializableEntityHitbox>();
             RegisterClass<SerializableEntityCollider>();
+            RegisterClass<SerializableBuiltinCollisionSystem>();
+            RegisterClass<SerializableBuiltinCollisionSystemEntity>();
 
             RegisterClass<BuffReference>();
             RegisterClass<BuffReferenceEntity>();
@@ -74,6 +77,7 @@ namespace MVZ2Logic
             RegisterClass<SerializableConveyorSeedPack>();
             RegisterClass<SerializableConveyorSeedSpendRecords>();
             RegisterClass<SerializableConveyorSeedSendRecordEntry>();
+
 
             // MVZ2.Logic
             RegisterClass<ShakeInt>();

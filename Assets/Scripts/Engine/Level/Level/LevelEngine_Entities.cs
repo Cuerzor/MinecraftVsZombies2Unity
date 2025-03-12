@@ -261,13 +261,13 @@ namespace PVZEngine.Level
         {
             collisionSystem.OverlapSphereNonAlloc(center, radius, faction, hostileMask, friendlyMask, results);
         }
-        public IEntityCollider[] OverlapCapsule(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask)
+        public IEntityCollider[] OverlapCapsule(Vector3 point0, Vector3 point1, float radius, int faction, int hostileMask, int friendlyMask)
         {
-            return collisionSystem.OverlapCapsule(center, radius, height, faction, hostileMask, friendlyMask);
+            return collisionSystem.OverlapCapsule(point0, point1, radius, faction, hostileMask, friendlyMask);
         }
-        public void OverlapCapsuleNonAlloc(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
+        public void OverlapCapsuleNonAlloc(Vector3 point0, Vector3 point1, float radius, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
         {
-            collisionSystem.OverlapCapsuleNonAlloc(center, radius, height, faction, hostileMask, friendlyMask, results);
+            collisionSystem.OverlapCapsuleNonAlloc(point0, point1, radius, faction, hostileMask, friendlyMask, results);
         }
         public IEntityCollider GetEntityCollider(Entity entity, string name)
         {

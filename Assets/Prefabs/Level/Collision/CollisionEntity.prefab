@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4310462209250662581}
   - component: {fileID: 8742500281217274428}
+  - component: {fileID: 6524813662452865971}
   m_Layer: 15
   m_Name: CollisionEntity
   m_TagString: Untagged
@@ -49,10 +50,10 @@ Rigidbody:
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 8355840
+    m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 31735
+    m_Bits: 0
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_UseGravity: 0
@@ -60,6 +61,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 3
+--- !u!114 &6524813662452865971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637890604758349292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c040e0dbeb9276418767031c76e27ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigid: {fileID: 8742500281217274428}
+  colliders: []
+  colliderTemplate: {fileID: 3127084627272758031}
+  colliderRoot: {fileID: 4310462209250662581}
 --- !u!1001 &7965390871419793020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,6 +138,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a98076e5bd15e374fb205308f20db061, type: 3}
+--- !u!1 &3127084627272758031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5039354453651676531, guid: a98076e5bd15e374fb205308f20db061, type: 3}
+  m_PrefabInstance: {fileID: 7965390871419793020}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7121911355036571248 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 890829197136312332, guid: a98076e5bd15e374fb205308f20db061, type: 3}

@@ -20,6 +20,15 @@ TagManager:
   - Background
   - LevelShading
   - GlobalUI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - Contraption
   - Enemy
   - Obstacle
@@ -28,15 +37,6 @@ TagManager:
   - Pickup
   - Projectile
   - Effect
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   m_SortingLayers:
   - name: Background
     uniqueID: 2237204161

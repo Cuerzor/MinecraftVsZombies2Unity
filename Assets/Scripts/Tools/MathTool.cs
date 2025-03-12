@@ -612,8 +612,8 @@ namespace Tools.Mathematics
         {
             // 扩展立方体
             var expandedSize = cubeSize + Vector3.one * capsule.radius * 2;
-            var capsuleStart = capsule.GetPoint1();
-            var capsuleEnd = capsule.GetPoint2();
+            var capsuleStart = capsule.point0;
+            var capsuleEnd = capsule.point1;
 
             // 检测线段与扩展后的AABB是否相交
             return CollideBetweenCubeAndLine(capsuleStart, capsuleEnd, cubeCenter, expandedSize);
@@ -680,38 +680,14 @@ namespace Tools.Mathematics
     }
     public struct Capsule
     {
-        public Capsule(Axis axis, Vector3 center, float length, float radius)
+        public Capsule(Vector3 point0, Vector3 point1, float radius)
         {
-            this.axis = axis;
-            this.center = center;
-            this.length = length;
+            this.point0 = point0;
+            this.point1 = point1;
             this.radius = radius;
         }
-        public Vector3 GetDirection()
-        {
-            switch (axis)
-            {
-                case Axis.X:
-                    return Vector3.right;
-                case Axis.Y:
-                    return Vector3.up;
-                case Axis.Z:
-                    return Vector3.forward;
-                default:
-                    return Vector3.zero;
-            }
-        }
-        public Vector3 GetPoint1()
-        {
-            return center + GetDirection() * length * 0.5f;
-        }
-        public Vector3 GetPoint2()
-        {
-            return center - GetDirection() * length * 0.5f;
-        }
-        public Axis axis;
-        public Vector3 center;
-        public float length;
+        public Vector3 point0;
+        public Vector3 point1;
         public float radius;
     }
     public struct RoundRect

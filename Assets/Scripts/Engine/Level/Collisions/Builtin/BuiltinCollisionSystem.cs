@@ -205,18 +205,20 @@ namespace PVZEngine.Level.Collisions
             var filterRect = new Rect(min.x, min.z, radius * 2, radius * 2);
             OverlapNonAlloc(filterRect, faction, hostileMask, friendlyMask, h => MathTool.CollideBetweenCubeAndSphere(center, radius, h.GetBoundsCenter(), h.GetBoundsSize()), results);
         }
-        public IEntityCollider[] OverlapCapsule(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask)
+        public IEntityCollider[] OverlapCapsule(Vector3 point0, Vector3 point1, float radius, int faction, int hostileMask, int friendlyMask)
         {
+            var center = (point1 + point0) * 0.5f;
             var min = center - Vector3.one * radius;
             var filterRect = new Rect(min.x, min.z, radius * 2, radius * 2);
-            var capsule = new Capsule(Axis.Y, center, height, radius);
+            var capsule = new Capsule(point0, point1, radius);
             return Overlap(filterRect, faction, hostileMask, friendlyMask, h => MathTool.CollideBetweenCubeAndCapsule(capsule, h.GetBoundsCenter(), h.GetBoundsSize()));
         }
-        public void OverlapCapsuleNonAlloc(Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
+        public void OverlapCapsuleNonAlloc(Vector3 point0, Vector3 point1, float radius, int faction, int hostileMask, int friendlyMask, List<IEntityCollider> results)
         {
+            var center = (point1 + point0) * 0.5f;
             var min = center - Vector3.one * radius;
             var filterRect = new Rect(min.x, min.z, radius * 2, radius * 2);
-            var capsule = new Capsule(Axis.Y, center, height, radius);
+            var capsule = new Capsule(point0, point1, radius);
             OverlapNonAlloc(filterRect, faction, hostileMask, friendlyMask, h => MathTool.CollideBetweenCubeAndCapsule(capsule, h.GetBoundsCenter(), h.GetBoundsSize()), results);
         }
         public IEntityCollider[] Overlap(Rect filterRect, int faction, int hostileMask, int friendlyMask, Predicate<Hitbox> predicate)

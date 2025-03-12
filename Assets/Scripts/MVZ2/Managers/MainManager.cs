@@ -8,6 +8,7 @@ using MVZ2.Almanacs;
 using MVZ2.Assets.Scripts.MVZ2.Managers;
 using MVZ2.Audios;
 using MVZ2.Cameras;
+using MVZ2.Collisions;
 using MVZ2.Cursors;
 using MVZ2.GameContent.Effects;
 using MVZ2.Games;
@@ -25,6 +26,7 @@ using MVZ2.Supporters;
 using MVZ2Logic;
 using MVZ2Logic.Games;
 using PVZEngine;
+using PVZEngine.Level.Collisions;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 
@@ -211,6 +213,10 @@ namespace MVZ2.Managers
             SerializeHelper.RegisterClass<SerializableGraphicElement>();
             SerializeHelper.RegisterClass<SerializableRendererElement>();
             SerializeHelper.RegisterClass<SerializableImageElement>();
+
+            SerializeHelper.RegisterClass<SerializableUnityCollisionSystem>();
+            SerializeHelper.RegisterClass<SerializableUnityCollisionEntity>();
+            SerializeHelper.RegisterClass<SerializableUnityEntityCollider>();
         }
         private void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
         {

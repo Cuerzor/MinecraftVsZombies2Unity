@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MukioI18n;
+using MVZ2.Collisions;
 using MVZ2.Entities;
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Effects;
@@ -234,12 +235,7 @@ namespace MVZ2.Level
 
         private ICollisionSystem GetCollisionSystem()
         {
-            return new BuiltinCollisionSystem(new QuadTreeParams()
-            {
-                size = new Rect(0, -500, 1600, 1600),
-                maxDepth = 6,
-                maxObjects = 1
-            });
+            return unityCollisionSystem;
         }
 
         #endregion
@@ -270,6 +266,8 @@ namespace MVZ2.Level
         private EntityController entityTemplate;
         [SerializeField]
         private Transform entitiesRoot;
+        [SerializeField]
+        private UnityCollisionSystem unityCollisionSystem;
         #endregion
 
         private class EntityTooltipSource : ITooltipSource
