@@ -198,7 +198,7 @@ namespace MVZ2.Level
                 Main.SaveManager.SetCurrentEndlessFlag(stageID, flags);
             }
         }
-        public const int CURRENT_DATA_VERSION = 1;
+        public const int CURRENT_DATA_VERSION = 2;
         public float LawnToTransScale => 1 / transToLawnScale;
         public float TransToLawnScale => transToLawnScale;
         public MainManager Main => main;
