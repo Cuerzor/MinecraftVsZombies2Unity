@@ -1,6 +1,9 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using MVZ2.GameContent.Damages;
+using MVZ2.GameContent.Detections;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Damages;
@@ -15,6 +18,7 @@ namespace MVZ2.GameContent.Contraptions
     {
         public Anvil(string nsp, string name) : base(nsp, name)
         {
+            smashDetector = new CollisionDetector();
         }
         public override void Init(Entity entity)
         {
@@ -50,6 +54,23 @@ namespace MVZ2.GameContent.Contraptions
         public override void PostContactGround(Entity anvil, Vector3 velocity)
         {
             base.PostContactGround(anvil, velocity);
+
+            if (velocity != Vector3.zero)
+            {
+                smashBuffer.Clear();
+                smashDetector.DetectMultiple(anvil, smashBuffer);
+                foreach (var target in smashBuffer)
+                {
+                    var other = target.Entity;
+                    if (CanSmash(anvil, other))
+                    {
+                        float damageModifier = Mathf.Clamp(velocity.magnitude, 0, 1);
+                        target.TakeDamage(1800 * damageModifier, new DamageEffectList(VanillaDamageEffects.PUNCH, VanillaDamageEffects.MUTE, VanillaDamageEffects.DAMAGE_BOTH_ARMOR_AND_BODY), anvil);
+                    }
+                }
+            }
+
+
             anvil.PlaySound(VanillaSoundID.anvil);
 
             var grid = anvil.GetGrid();
@@ -81,5 +102,7 @@ namespace MVZ2.GameContent.Contraptions
                 return false;
             return selfGridLayers.Any(l => otherGridLayers.Contains(l));
         }
+        private List<IEntityCollider> smashBuffer = new List<IEntityCollider>();
+        private Detector smashDetector;
     }
 }
