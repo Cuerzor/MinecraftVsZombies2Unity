@@ -15,19 +15,19 @@ TagManager:
   - Shadow
   - ModelShot
   - RaycastReceiver
-  - Pickup
+  - 
   - Light
   - Background
   - LevelShading
   - GlobalUI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Contraption
+  - Enemy
+  - Obstacle
+  - Boss
+  - Cart
+  - Pickup
+  - Projectile
+  - Effect
   - 
   - 
   - 
