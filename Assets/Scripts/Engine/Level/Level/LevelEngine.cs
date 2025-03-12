@@ -19,14 +19,14 @@ namespace PVZEngine.Level
     public partial class LevelEngine : IBuffTarget, IDisposable, IPropertyModifyTarget
     {
         #region 公有方法
-        public LevelEngine(IGameContent contentProvider, IGameLocalization translator, IGameTriggerSystem triggers, QuadTreeParams quadTreeParams)
+        public LevelEngine(IGameContent contentProvider, IGameLocalization translator, IGameTriggerSystem triggers, ICollisionSystem collisionSystem)
         {
             Content = contentProvider;
             Localization = translator;
             Triggers = triggers;
             buffs.OnPropertyChanged += UpdateBuffedProperty;
             properties = new PropertyBlock(this);
-            this.quadTreeParams = quadTreeParams;
+            this.collisionSystem = collisionSystem;
         }
 
 
@@ -425,9 +425,9 @@ namespace PVZEngine.Level
                 components = levelComponents.ToDictionary(c => c.GetID().ToString(), c => c.ToSerializable())
             };
         }
-        public static LevelEngine Deserialize(SerializableLevel seri, IGameContent provider, IGameLocalization translator, IGameTriggerSystem triggers, QuadTreeParams quadTreeParams)
+        public static LevelEngine Deserialize(SerializableLevel seri, IGameContent provider, IGameLocalization translator, IGameTriggerSystem triggers, ICollisionSystem collisionSystem)
         {
-            var level = new LevelEngine(provider, translator, triggers, quadTreeParams);
+            var level = new LevelEngine(provider, translator, triggers, collisionSystem);
             level.Seed = seri.seed;
             level.levelRandom = RandomGenerator.FromSerializable(seri.levelRandom);
             level.entityRandom = RandomGenerator.FromSerializable(seri.entityRandom);
@@ -472,7 +472,7 @@ namespace PVZEngine.Level
             level.entities = seri.entities.ConvertAll(e => 
             {
                 var entity = Entity.CreateDeserializingEntity(e, level);
-                level.AddEntityToQuadTree(entity);
+                level.collisionSystem.AddEntity(entity);
                 return entity;
             });
             level.entityTrash = seri.entityTrash.ConvertAll(e => Entity.CreateDeserializingEntity(e, level));

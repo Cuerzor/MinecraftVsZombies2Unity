@@ -534,11 +534,11 @@ namespace PVZEngine.Entities
                 }
             }
         }
-        public void ExitCollision(LevelEngine level)
+        public void ExitCollision()
         {
             foreach (var unit in colliders)
             {
-                unit.ExitCollision(level);
+                unit.ExitCollision();
             }
         }
         #endregion

@@ -76,8 +76,8 @@ namespace MVZ2.Level
             SetActive(true);
             rng = new RandomGenerator(Guid.NewGuid().GetHashCode());
 
-            var quadTreeParams = GetQuadTreeParams();
-            level = new LevelEngine(game, game, game, quadTreeParams);
+            var collisionSystem = GetCollisionSystem();
+            level = new LevelEngine(game, game, game, collisionSystem);
             InitLevelEngine(level, game, areaID, stageID);
             
             var option = new LevelOption()
@@ -583,39 +583,6 @@ namespace MVZ2.Level
         private void OnApplicationFocus(bool focus)
         {
             UpdateFocusLost(focus);
-        }
-        private void OnDrawGizmos()
-        {
-            if (level == null)
-                return;
-            for (int i = 1; i < 8; i++)
-            {
-                var flag = EntityCollisionHelper.GetTypeMask(i);
-                var quadTree = level.GetCollisionQuadTree(flag);
-                if (quadTree == null)
-                    continue;
-                var node = quadTree.GetRootNode();
-                Gizmos.color = Color.HSVToRGB(flag / 7f, 1, 1);
-                DrawQuadTreeNode(node);
-            }
-        }
-        private void DrawQuadTreeNode(QuadTreeNode<EntityCollider> node)
-        {
-            Rect rect = node.GetRect();
-            var min = LawnToTrans(rect.min);
-            min.z = 0;
-            var max = LawnToTrans(rect.max);
-            max.z = 0;
-            var size = max - min;
-            var center = min + size * 0.5f;
-            Gizmos.DrawWireCube(center, size);
-
-            var childCount = node.GetChildCount();
-            for (int i = 0; i < childCount; i++)
-            {
-                var child = node.GetChild(i);
-                DrawQuadTreeNode(child);
-            }
         }
         #endregion
 

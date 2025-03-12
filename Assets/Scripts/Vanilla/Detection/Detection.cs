@@ -133,89 +133,19 @@ namespace MVZ2.Vanilla.Detections
             }
             return false;
         }
-        public static IEnumerable<EntityCollider> Overlap(this LevelEngine level, Rect filterRect, int faction, int hostileMask, int friendlyMask, Predicate<Hitbox> predicate)
-        {
-            if (predicate == null)
-                yield break;
-            var entityColliders = new List<EntityCollider>();
-            var totalMask = hostileMask | friendlyMask;
-            level.FindCollidersRange(totalMask, filterRect, entityColliders);
-            foreach (var collider in entityColliders)
-            {
-                var entity = collider.Entity;
-                var mask = entity.IsHostile(faction) ? hostileMask : friendlyMask;
-                if (!EntityCollisionHelper.CanCollide(mask, entity))
-                    continue;
-                if (entity.GetCollisionDetection() == EntityCollisionHelper.DETECTION_IGNORE)
-                    continue;
-                for (int i = 0; i < collider.GetHitboxCount(); i++)
-                {
-                    var hitbox = collider.GetHitbox(i);
-                    if (predicate(hitbox))
-                    {
-                        yield return collider;
-                        break;
-                    }
-                }
-            }
-        }
-        public static void OverlapNonAlloc(this LevelEngine level, Rect filterRect, int faction, int hostileMask, int friendlyMask, Predicate<Hitbox> predicate, HashSet<EntityCollider> results)
-        {
-            if (predicate == null)
-                return;
-            var entityColliders = new List<EntityCollider>();
-            var totalMask = hostileMask | friendlyMask;
-            level.FindCollidersRange(totalMask, filterRect, entityColliders);
-            foreach (var collider in entityColliders)
-            {
-                var entity = collider.Entity;
-                var mask = entity.IsHostile(faction) ? hostileMask : friendlyMask;
-                if (!EntityCollisionHelper.CanCollide(mask, entity))
-                    continue;
-                if (entity.GetCollisionDetection() == EntityCollisionHelper.DETECTION_IGNORE)
-                    continue;
-                for (int i = 0; i < collider.GetHitboxCount(); i++)
-                {
-                    var hitbox = collider.GetHitbox(i);
-                    if (predicate(hitbox))
-                    {
-                        results.Add(collider);
-                        break;
-                    }
-                }
-            }
-        }
-        public static IEnumerable<EntityCollider> OverlapBox(this LevelEngine level, Vector3 center, Vector3 size, int faction, int hostileMask, int friendlyMask)
-        {
-            var min = center - size * 0.5f;
-            var filterRect = new Rect(min.x, min.z, size.x, size.y);
-            return level.Overlap(filterRect, faction, hostileMask, friendlyMask, h => Detection.Intersects(center, size, h.GetBoundsCenter(), h.GetBoundsSize()));
-        }
-        public static IEnumerable<EntityCollider> OverlapCylinder(this LevelEngine level, Vector3 center, float radius, float height, int faction, int hostileMask, int friendlyMask)
-        {
-            var min = center - Vector3.one * radius;
-            var filterRect = new Rect(min.x, min.z, radius * 2, radius * 2);
-            var cylinder = new Cylinder(Axis.Y, center, height, radius);
-            return level.Overlap(filterRect, faction, hostileMask, friendlyMask, h => MathTool.CollideBetweenCubeAndCylinder(cylinder, h.GetBounds()));
-        }
-        public static IEnumerable<EntityCollider> OverlapSphere(this LevelEngine level, Vector3 center, float radius, int faction, int hostileMask, int friendlyMask)
-        {
-            var min = center - Vector3.one * radius;
-            var filterRect = new Rect(min.x, min.z, radius * 2, radius * 2);
-            return level.Overlap(filterRect, faction, hostileMask, friendlyMask, h => MathTool.CollideBetweenCubeAndSphere(center, radius, h.GetBoundsCenter(), h.GetBoundsSize()));
-        }
-        public static void OverlapSphereNonAlloc(this LevelEngine level, Vector3 center, float radius, int faction, int hostileMask, int friendlyMask, HashSet<EntityCollider> results)
-        {
-            var min = center - Vector3.one * radius;
-            var filterRect = new Rect(min.x, min.z, radius * 2, radius * 2);
-            level.OverlapNonAlloc(filterRect, faction, hostileMask, friendlyMask, h => MathTool.CollideBetweenCubeAndSphere(center, radius, h.GetBoundsCenter(), h.GetBoundsSize()), results);
-        }
-        public static void OverlapGridGroundNonAlloc(this LevelEngine level, int column, int lane, int faction, int hostileMask, int friendlyMask, HashSet<EntityCollider> results)
+        public static void OverlapGridGroundNonAlloc(this LevelEngine level, int column, int lane, int faction, int hostileMask, int friendlyMask, List<EntityCollider> results)
         {
             var minX = level.GetColumnX(column);
             var minZ = level.GetLaneZ(lane);
-            var filterRect = new Rect(minX, minZ, level.GetGridWidth(), level.GetGridHeight());
-            level.OverlapNonAlloc(filterRect, faction, hostileMask, friendlyMask, h => h.Entity.GetRelativeY() <= 0, results);
+            var sizeX = minX + level.GetGridWidth();
+            var sizeY = 200;
+            var sizeZ = minZ + level.GetGridHeight();
+            var centerX = minX + sizeX * 0.5f;
+            var centerZ = minZ + sizeZ * 0.5f;
+            var centerY = level.GetGroundY(centerX, centerZ) - sizeY * 0.5f;
+            var center = new Vector3(centerX, centerY, centerZ);
+            var size = new Vector3(sizeX, sizeY, sizeZ);
+            level.OverlapBoxNonAlloc(center, size, faction, hostileMask, friendlyMask, results);
         }
     }
 }

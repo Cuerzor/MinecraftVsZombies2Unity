@@ -410,7 +410,9 @@ namespace MVZ2.GameContent.Bosses
                 {
                     spinDamageTimer.Reset();
                     var rng = GetStateRNG(entity);
-                    foreach (EntityCollider collider in level.OverlapCylinder(entity.GetCenter(), SPIN_RADIUS, SPIN_HEIGHT, entity.GetFaction(), EntityCollisionHelper.MASK_VULNERABLE, 0))
+                    detectBuffer.Clear();
+                    level.OverlapCapsuleNonAlloc(entity.GetCenter(), SPIN_RADIUS, SPIN_HEIGHT, entity.GetFaction(), EntityCollisionHelper.MASK_VULNERABLE, 0, detectBuffer);
+                    foreach (EntityCollider collider in detectBuffer)
                     {
                         var target = collider.Entity;
                         var colliderReference = collider.ToReference();
@@ -461,6 +463,7 @@ namespace MVZ2.GameContent.Bosses
             public const int SUBSTATE_START = 0;
             public const int SUBSTATE_LOOP = 1;
             public const int SUBSTATE_END = 2;
+            private List<EntityCollider> detectBuffer = new List<EntityCollider>();
         }
         #endregion
 

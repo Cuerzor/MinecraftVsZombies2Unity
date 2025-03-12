@@ -113,7 +113,7 @@ namespace MVZ2.GameContent.Contraptions
             var level = source.Level;
             detectBuffer.Clear();
             gridDetectBuffer.Clear();
-            Detection.OverlapSphereNonAlloc(level, targetPosition, shockRadius, faction, EntityCollisionHelper.MASK_VULNERABLE, 0, detectBuffer);
+            level.OverlapSphereNonAlloc(targetPosition, shockRadius, faction, EntityCollisionHelper.MASK_VULNERABLE, 0, detectBuffer);
             if (targetPosition.y <= level.GetGroundY(targetPosition.x, targetPosition.z) && level.IsWaterAt(targetPosition.x, targetPosition.z))
             {
                 level.GetConnectedWaterGrids(targetPosition, 1, 1, gridDetectBuffer);
@@ -155,7 +155,7 @@ namespace MVZ2.GameContent.Contraptions
         public const int STATE_ATTACK = VanillaEntityStates.TESLA_COIL_ATTACK;
 
         private Detector detector;
-        private static HashSet<EntityCollider> detectBuffer = new HashSet<EntityCollider>();
+        private static List<EntityCollider> detectBuffer = new List<EntityCollider>();
         private static HashSet<LawnGrid> gridDetectBuffer = new HashSet<LawnGrid>();
         private static readonly NamespaceID ID = VanillaContraptionID.teslaCoil;
     }

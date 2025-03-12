@@ -145,7 +145,7 @@ namespace PVZEngine.Entities
         {
             return collisionList.ToArray();
         }
-        public void ExitCollision(LevelEngine level)
+        public void ExitCollision()
         {
             exitBuffer.Clear();
             exitBuffer.AddRange(collisionList);

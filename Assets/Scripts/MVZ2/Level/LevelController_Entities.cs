@@ -232,14 +232,14 @@ namespace MVZ2.Level
             }
         }
 
-        private QuadTreeParams GetQuadTreeParams()
+        private ICollisionSystem GetCollisionSystem()
         {
-            return new QuadTreeParams()
+            return new BuiltinCollisionSystem(new QuadTreeParams()
             {
                 size = new Rect(0, -500, 1600, 1600),
                 maxDepth = 6,
                 maxObjects = 1
-            };
+            });
         }
 
         #endregion

@@ -181,19 +181,11 @@ namespace MVZ2.Vanilla.Detections
         private List<EntityCollider> DetectColliders(DetectionParams param)
         {
             var bounds = GetDetectionBounds(param.entity);
-            var filterRect = bounds.GetBottomRect();
 
+            var hostileMask = factionTarget == FactionTarget.Friendly ? 0 : mask;
+            var friendlyMask = factionTarget == FactionTarget.Hostile ? 0 : mask;
             resultsBuffer.Clear();
-            param.entity.Level.FindCollidersRange(mask, filterRect, resultsBuffer);
-            for (int i = resultsBuffer.Count - 1; i >= 0; i--)
-            {
-                var collider = resultsBuffer[i];
-
-                if (!bounds.Intersects(collider.GetBoundingBox()))
-                {
-                    resultsBuffer.RemoveAt(i);
-                }
-            }
+            param.entity.Level.OverlapBoxNonAlloc(bounds.center, bounds.size, param.faction, hostileMask, friendlyMask, resultsBuffer);
             return resultsBuffer;
         }
         public int mask = EntityCollisionHelper.MASK_VULNERABLE;
