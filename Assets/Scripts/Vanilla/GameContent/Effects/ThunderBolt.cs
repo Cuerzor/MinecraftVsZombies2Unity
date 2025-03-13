@@ -19,7 +19,7 @@ namespace MVZ2.GameContent.Effects
         {
             base.Init(entity);
             entity.Level.PlaySound(VanillaSoundID.thunder);
-            entity.AddBuff<ThunderLightFadeoutBuff>();
+            entity.AddBuff<LightFadeoutBuff>();
         }
         public override void Update(Entity entity)
         {

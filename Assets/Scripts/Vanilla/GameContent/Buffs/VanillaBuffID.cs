@@ -77,7 +77,7 @@ namespace MVZ2.GameContent.Buffs
         public const string passengerEnterHouse = "passenger_enter_house";
         // Obstacle
         public const string temporaryUpdateBeforeGame = "temporary_update_before_game";
-        public const string thunderLightFadeout = "thunder_light_fadeout";
+        public const string lightFadeout = "light_fadeout";
 
         // Projectile
         public const string projectileWait = "projectile_wait";
@@ -154,7 +154,7 @@ namespace MVZ2.GameContent.Buffs
         public static readonly NamespaceID obsidianArmor = Get(VanillaBuffNames.obsidianArmor);
         public static readonly NamespaceID starshardCarrier = Get(VanillaBuffNames.starshardCarrier);
         public static readonly NamespaceID temporaryUpdateBeforeGame = Get(VanillaBuffNames.temporaryUpdateBeforeGame);
-        public static readonly NamespaceID thunderLightFadeout = Get(VanillaBuffNames.thunderLightFadeout);
+        public static readonly NamespaceID thunderLightFadeout = Get(VanillaBuffNames.lightFadeout);
         public static readonly NamespaceID cartFadeIn = Get(VanillaBuffNames.cartFadeIn);
         public static readonly NamespaceID easyContraption = Get(VanillaBuffNames.easyContraption);
         public static readonly NamespaceID easyArmor = Get(VanillaBuffNames.easyArmor);

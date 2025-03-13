@@ -1373,6 +1373,9 @@
             <int name="maxTimeout" value="30"/>
         </effect>
         <effect id="slice_spark">
+            <bool name="isLightSource" value="true"/>
+            <vector3 name="lightRange" x="80" y="80" z="80"/>
+            <color name="lightColor" value="#FFAA00FF"/>
             <int name="maxTimeout" value="12"/>
         </effect>
         <effect id="crushing_walls" name="梦魇碾压墙" >

@@ -8,10 +8,10 @@ using UnityEngine;
 namespace MVZ2.GameContent.Buffs.Effects
 {
 
-    [BuffDefinition(VanillaBuffNames.thunderLightFadeout)]
-    public class ThunderLightFadeoutBuff : BuffDefinition
+    [BuffDefinition(VanillaBuffNames.lightFadeout)]
+    public class LightFadeoutBuff : BuffDefinition
     {
-        public ThunderLightFadeoutBuff(string nsp, string name) : base(nsp, name)
+        public LightFadeoutBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(ColorModifier.Multiply(VanillaEntityProps.LIGHT_COLOR, PROP_COLOR_MULTIPLIER));
         }
@@ -30,7 +30,7 @@ namespace MVZ2.GameContent.Buffs.Effects
             var entity = buff.GetEntity();
             if (entity == null)
                 return;
-            var alpha = Mathf.Clamp01(entity.Timeout / 30f);
+            var alpha = Mathf.Clamp01(entity.Timeout / (float)entity.GetMaxTimeout());
             var color = new Color(1, 1, 1, alpha);
             buff.SetProperty(PROP_COLOR_MULTIPLIER, color);
         }
