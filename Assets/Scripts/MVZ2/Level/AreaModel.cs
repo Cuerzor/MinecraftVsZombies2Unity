@@ -15,11 +15,12 @@ namespace MVZ2.Level
         {
             updateGroup.SetSimulationSpeed(simulationSpeed);
         }
-        public void SetDarknessValue(float value)
+        public void SetLighting(Color lighting)
         {
+            var darknessValue = new Color(1 - lighting.r, 1 - lighting.g, 1 - lighting.b, 1 - lighting.a);
             foreach (var renderer in darknessRenderers)
             {
-                renderer.color = new Color(0, 0, 0, value);
+                renderer.color = darknessValue;
             }
         }
         public void SetPreset(string name)

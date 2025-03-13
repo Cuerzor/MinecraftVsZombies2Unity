@@ -4,6 +4,7 @@ using MVZ2.IO;
 using MVZ2Logic;
 using MVZ2Logic.Level;
 using PVZEngine;
+using UnityEngine;
 
 namespace MVZ2.Metas
 {
@@ -19,7 +20,8 @@ namespace MVZ2.Metas
         public float EnemySpawnX { get; private set; }
         public float DoorZ { get; private set; }
 
-        public float NightValue { get; private set; }
+        public Color BackgroundLight { get; private set; }
+        public Color GlobalLight { get; private set; }
 
         public float GridWidth { get; private set; }
         public float GridHeight { get; private set; }
@@ -48,11 +50,13 @@ namespace MVZ2.Metas
                 doorZ = positionsNode.GetAttributeFloat("doorZ") ?? doorZ;
             }
 
-            float nightValue = 0;
+            Color backgroundLight = Color.white;
+            Color globalLight = Color.white;
             var lightingNode = node["lighting"];
             if (lightingNode != null)
             {
-                nightValue = lightingNode.GetAttributeFloat("night") ?? 0;
+                backgroundLight = lightingNode.GetAttributeColor("background") ?? Color.white;
+                globalLight = lightingNode.GetAttributeColor("global") ?? Color.white;
             }
 
             float gridWidth = 80;
@@ -94,7 +98,8 @@ namespace MVZ2.Metas
                 EnemySpawnX = enemySpawnX,
                 DoorZ = doorZ,
 
-                NightValue = nightValue,
+                BackgroundLight = backgroundLight,
+                GlobalLight = globalLight,
 
                 GridWidth = gridWidth,
                 GridHeight = gridHeight,

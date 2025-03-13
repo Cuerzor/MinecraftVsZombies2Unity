@@ -198,7 +198,8 @@ namespace MVZ2.Vanilla
                 area.SetProperty(EngineAreaProps.ENEMY_SPAWN_X, meta.EnemySpawnX);
                 area.SetProperty(VanillaAreaProps.DOOR_Z, meta.DoorZ);
 
-                area.SetProperty(VanillaAreaProps.NIGHT_VALUE, meta.NightValue);
+                area.SetProperty(VanillaAreaProps.BACKGROUND_LIGHT, meta.BackgroundLight);
+                area.SetProperty(VanillaAreaProps.GLOBAL_LIGHT, meta.GlobalLight);
 
                 area.SetProperty(EngineAreaProps.GRID_WIDTH, meta.GridWidth);
                 area.SetProperty(EngineAreaProps.GRID_HEIGHT, meta.GridHeight);

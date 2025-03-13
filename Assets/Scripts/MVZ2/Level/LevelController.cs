@@ -98,6 +98,7 @@ namespace MVZ2.Level
             uiPreset.UpdateFrame(0);
             SetStarshardIcon();
             SetUnlockedUIActive();
+            UpdateLighting();
         }
         public void StartLevelIntro(float delay)
         {
@@ -452,7 +453,7 @@ namespace MVZ2.Level
                     darknessSpeed = -2;
                 }
                 darknessFactor = Mathf.Clamp01(darknessFactor + darknessSpeed * uiDeltaTime);
-                SetDarknessValue(level.GetNightValue(), level.GetDarknessValue() * darknessFactor);
+                UpdateLighting();
                 ui.SetScreenCover(level.GetScreenCover());
                 UpdateCamera();
                 UpdateMoney();
@@ -947,10 +948,14 @@ namespace MVZ2.Level
         {
             isGameStarted = value;
         }
-        private void SetDarknessValue(float night, float darkness)
+        private void UpdateLighting()
         {
-            ui.SetDarknessValue(night, darkness);
-            model.SetDarknessValue(darkness);
+            SetLighting(level.GetBackgroundLight(), Color.Lerp(Color.white, level.GetGlobalLight(), darknessFactor));
+        }
+        private void SetLighting(Color night, Color darkness)
+        {
+            ui.SetLighting(night, darkness);
+            model.SetLighting(darkness);
         }
         #endregion
 

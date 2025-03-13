@@ -12,7 +12,12 @@ namespace MVZ2.GameContent.Buffs.Enemies
     {
         public NightmareaperDarknessBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new FloatModifier(VanillaAreaProps.DARKNESS_VALUE, NumberOperator.Add, PROP_DARKNESS_ADDITION));
+            AddModifier(ColorModifier.Multiply(VanillaAreaProps.GLOBAL_LIGHT, PROP_LIGHT_MULTIPLIER));
+        }
+        public override void PostAdd(Buff buff)
+        {
+            base.PostAdd(buff);
+            buff.SetProperty(PROP_LIGHT_MULTIPLIER, Color.white);
         }
         public override void PostUpdate(Buff buff)
         {
@@ -25,9 +30,9 @@ namespace MVZ2.GameContent.Buffs.Enemies
             time++;
             buff.SetProperty(PROP_TIME, time);
 
-            var darkness = Mathf.Min(time, timeout) / (float)FADE_TIME;
+            var light = Mathf.Clamp01(1 - Mathf.Min(time, timeout) / (float)FADE_TIME);
 
-            buff.SetProperty(PROP_DARKNESS_ADDITION, Mathf.Clamp01(darkness));
+            buff.SetProperty(PROP_LIGHT_MULTIPLIER, new Color(light, light, light, 1));
 
             if (timeout <= 0)
             {
@@ -38,7 +43,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
         {
             buff.SetProperty(PROP_TIMEOUT, FADE_TIME);
         }
-        public static readonly VanillaBuffPropertyMeta PROP_DARKNESS_ADDITION = new VanillaBuffPropertyMeta("DarknessAddition");
+        public static readonly VanillaBuffPropertyMeta PROP_LIGHT_MULTIPLIER = new VanillaBuffPropertyMeta("LightMultiplier");
         public static readonly VanillaBuffPropertyMeta PROP_TIME = new VanillaBuffPropertyMeta("Time");
         public static readonly VanillaBuffPropertyMeta PROP_TIMEOUT = new VanillaBuffPropertyMeta("Timeout");
         public const float MAX_DARKNESS = 1;

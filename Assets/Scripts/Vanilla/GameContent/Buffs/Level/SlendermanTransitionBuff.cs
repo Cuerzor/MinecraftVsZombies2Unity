@@ -19,13 +19,14 @@ namespace MVZ2.GameContent.Buffs.Level
     {
         public SlendermanTransitionBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new FloatModifier(VanillaAreaProps.NIGHT_VALUE, NumberOperator.Add, PROP_NIGHT_ADDITION));
+            AddModifier(ColorModifier.Multiply(VanillaAreaProps.BACKGROUND_LIGHT, PROP_LIGHT_MULTIPLIER));
             AddModifier(new BooleanModifier(LogicLevelProps.PAUSE_DISABLED, true));
         }
         public override void PostAdd(Buff buff)
         {
             base.PostAdd(buff);
             buff.SetProperty(PROP_TIMEOUT, MAX_TIMEOUT);
+            buff.SetProperty(PROP_LIGHT_MULTIPLIER, Color.white);
         }
         public override void PostUpdate(Buff buff)
         {
@@ -71,18 +72,20 @@ namespace MVZ2.GameContent.Buffs.Level
                 buff.Remove();
             }
 
-            var addition = buff.GetProperty<float>(PROP_NIGHT_ADDITION);
-            var nightSpeed = NIGHT_SPEED;
+            var multiplier = buff.GetProperty<Color>(PROP_LIGHT_MULTIPLIER);
+            var lightSpeed = -LIGHT_SPEED;
             if (timeout < FADEOUT_TIMEOUT)
             {
-                nightSpeed = -NIGHT_SPEED;
+                lightSpeed = LIGHT_SPEED;
             }
-            addition = Mathf.Clamp01(addition + nightSpeed);
-            buff.SetProperty(PROP_NIGHT_ADDITION, addition);
+            multiplier.r = Mathf.Clamp01(multiplier.r + lightSpeed);
+            multiplier.g = Mathf.Clamp01(multiplier.g + lightSpeed);
+            multiplier.b = Mathf.Clamp01(multiplier.b + lightSpeed);
+            buff.SetProperty(PROP_LIGHT_MULTIPLIER, multiplier);
         }
         public static readonly VanillaBuffPropertyMeta PROP_TIMEOUT = new VanillaBuffPropertyMeta("Timeout");
-        public static readonly VanillaBuffPropertyMeta PROP_NIGHT_ADDITION = new VanillaBuffPropertyMeta("NightAddition");
-        public const float NIGHT_SPEED = 0.07f;
+        public static readonly VanillaBuffPropertyMeta PROP_LIGHT_MULTIPLIER = new VanillaBuffPropertyMeta("LightMultiplier");
+        public const float LIGHT_SPEED = 0.07f;
         public const int MAX_TIMEOUT = CREATE_DARKNESS_TIMEOUT + 90;
         public const int CREATE_DARKNESS_TIMEOUT = FADEOUT_TIMEOUT + 165;
         public const int FADEOUT_TIMEOUT = 15;

@@ -56,7 +56,7 @@
     </area>
     <area id="halloween" model="mvz2:halloween" music="mvz2:halloween" cart="mvz2:pumpkin_carriage" starshard="mvz2:starshards/halloween" tags="mvz2:night;mvz2:no_water">
         <positions enemySpawnX="1080" doorZ="160" />
-        <lighting night="0.5" />
+        <lighting background="#7F7F7F" />
         <grids width="80" height="80" leftX="260" bottomZ="80" lanes="5" columns="9">
             <!-- Lane 1 -->
             <grid id="mvz2:grass" />
@@ -177,7 +177,7 @@
     </area>
     <area id="castle" model="mvz2:castle" music="mvz2:castle_level" cart="mvz2:bowl_chariot" starshard="mvz2:starshards/castle" tags="mvz2:night;mvz2:no_water">
         <positions enemySpawnX="1080" doorZ="240" />
-        <lighting night="0.5" />
+        <lighting background="#7F7F7F" />
         <grids width="80" height="80" leftX="260" bottomZ="40" lanes="5" columns="9">
             <!-- Lane 1 -->
             <grid id="mvz2:wood" yOffset="80" sprite="mvz2:level/grids/bevel" slope="16" />

@@ -43,20 +43,20 @@ namespace MVZ2.Vanilla.Level
         }
 
         public static readonly PropertyMeta DOOR_Z = Get("doorZ");
-        public static readonly PropertyMeta NIGHT_VALUE = Get("nightValue");
-        public static readonly PropertyMeta DARKNESS_VALUE = Get("darknessValue");
+        public static readonly PropertyMeta BACKGROUND_LIGHT = Get("backgroundLight");
+        public static readonly PropertyMeta GLOBAL_LIGHT = Get("globalLight");
 
         public static float GetDoorZ(this LevelEngine game)
         {
             return game.GetProperty<float>(DOOR_Z);
         }
-        public static float GetNightValue(this LevelEngine level)
+        public static Color GetBackgroundLight(this LevelEngine level)
         {
-            return level.GetProperty<float>(NIGHT_VALUE);
+            return level.GetProperty<Color>(BACKGROUND_LIGHT);
         }
-        public static float GetDarknessValue(this LevelEngine level)
+        public static Color GetGlobalLight(this LevelEngine level)
         {
-            return level.GetProperty<float>(DARKNESS_VALUE);
+            return level.GetProperty<Color>(GLOBAL_LIGHT);
         }
     }
 }

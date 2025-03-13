@@ -128,7 +128,7 @@
             <spawn id="mvz2:ghost"/>
         </spawns>
         <properties>
-            <float name="darknessValue" value="0.5"/>
+            <color name="globalLight" value="#7F7F7F"/>
             <bool name="noEnergy" value="true"/>
             <bool name="autoCollect" value="true"/>
         </properties>

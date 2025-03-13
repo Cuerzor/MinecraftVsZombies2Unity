@@ -14,10 +14,10 @@ namespace MVZ2.UI
         {
             GetUIPreset().SetReceiveRaycasts(value);
         }
-        public void SetDarknessValue(float night, float darkness)
+        public void SetLighting(Color background, Color global)
         {
-            backgroundLight.intensity = (1 - night) * (1 - darkness);
-            entityLight.intensity = 1 - darkness;
+            backgroundLight.color = background * global;
+            entityLight.color = global;
         }
         public void SetScreenCover(Color value)
         {
