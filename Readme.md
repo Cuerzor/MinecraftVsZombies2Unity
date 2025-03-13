@@ -240,6 +240,7 @@ For v0.3.0+ versions, save structures are cross-platform compatible (Windows/And
 - Slenderman will turn blueprints into zombies, and zombie blueprints will not be turned into other blueprints.
 - Nightmareaper's Crushing Wall closes faster.
 - Nightmareaper's time limit is 1 minute.
+- Nightmareaper's Wheel of Death attack deals 40% more damage.
 - Contraptions damaged by Wither Skulls will be withering, losing 10 HP per second in 30 seconds.
 
 **Misc**
