@@ -431,6 +431,8 @@ namespace MVZ2.GameContent.Bosses
             }
             private void PostSpinDamage(Entity entity, DamageOutput damage)
             {
+                if (damage == null)
+                    return;
                 if (damage.ShieldResult != null)
                 {
                     PostSpinDamageByResult(entity, damage.ShieldResult);
