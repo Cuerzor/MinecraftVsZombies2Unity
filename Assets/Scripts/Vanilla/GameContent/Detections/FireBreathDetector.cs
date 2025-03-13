@@ -13,10 +13,9 @@ namespace MVZ2.GameContent.Detections
             if (fireBreathDef == null)
                 return new Bounds(Vector3.zero, Vector3.zero);
             var fireSize = fireBreathDef.GetSize();
-            var fireBoundsOffset = fireBreathDef.GetBoundsOffset();
+            var fireBoundsPivot = fireBreathDef.GetBoundsPivot();
 
-            var positionOffset = offset;
-            positionOffset += fireBoundsOffset;
+            var positionOffset = Vector3.Scale(Vector3.one * 0.5f - fireBoundsPivot, fireSize);
             if (self.IsFacingLeft())
             {
                 positionOffset.x *= -1;
@@ -35,7 +34,6 @@ namespace MVZ2.GameContent.Detections
             return true;
         }
         public NamespaceID fireBreathID;
-        public Vector3 offset;
         public static readonly Vector3 defaultPivot = new Vector3(0.5f, 0f, 0.5f);
     }
 }

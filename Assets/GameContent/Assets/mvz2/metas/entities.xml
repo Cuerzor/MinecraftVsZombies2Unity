@@ -5,6 +5,7 @@
             <float name="shadowAlpha" value="1"/>
             <vector3 name="shadowScale" x="1" y="1" z="1"/>
             <vector3 name="scale" x="1" y="1" z="1"/>
+            <vector3 name="boundsPivot" x="0.5" y="0" z="0.5" />
             <vector3 name="displayScale" x="1" y="1" z="1"/>
             <color name="tint" value="#FFFFFF"/>
             <id name="placement" value="mvz2:any"/>
@@ -1331,7 +1332,7 @@
             <bool name="isFire" value="true" />
 
             <int name="maxTimeout" value="30"/>
-            <vector3 name="boundsOffset" x="100" y="0" z="0" />
+            <vector3 name="boundsPivot" x="0" y="0" z="0.5" />
             <vector3 name="size" x="200" y="40" z="40" />
         </effect>
         <effect id="weakness_gas">

@@ -11,7 +11,7 @@ namespace PVZEngine.Entities
         {
             return new SerializableEntityHitbox(this);
         }
-        public override Vector3 GetSize() => Entity.GetSize();
-        public override Vector3 GetOffset() => Entity.GetBoundsOffset();
+        public override Vector3 GetSize() => Entity.Cache.Size;
+        public override Vector3 GetPivot() => Entity.Cache.BoundsPivot;
     }
 }

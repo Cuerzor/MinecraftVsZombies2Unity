@@ -7,17 +7,17 @@ namespace PVZEngine.Entities
         public SerializableCustomHitbox(CustomHitbox hitbox) : base(hitbox)
         {
             size = hitbox.GetSize();
-            offset = hitbox.GetOffset();
+            pivot = hitbox.GetPivot();
         }
         public override Hitbox ToDeserialized(Entity entity)
         {
             var hitbox = new CustomHitbox(entity);
             hitbox.SetSize(size);
-            hitbox.SetOffset(offset);
+            hitbox.SetPivot(pivot);
             DeserializeProperties(hitbox);
             return hitbox;
         }
         public Vector3 size;
-        public Vector3 offset;
+        public Vector3 pivot;
     }
 }

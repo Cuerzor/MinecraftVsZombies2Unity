@@ -13,12 +13,11 @@ namespace PVZEngine.Entities
         {
             var scale = Entity.GetScale();
 
-            Vector3 offset = GetOffset();
+            Vector3 pivot = GetPivot();
             Vector3 size = GetSize();
-            offset.Scale(scale);
             size.Scale(scale);
 
-            var center = Vector3.up * (0.5f * size.y) + offset;
+            var center = Vector3.Scale(Vector3.one * 0.5f - pivot, size);
 
             size.x = Mathf.Abs(size.x);
             size.y = Mathf.Abs(size.y);
@@ -73,7 +72,7 @@ namespace PVZEngine.Entities
             return false;
         }
         public abstract Vector3 GetSize();
-        public abstract Vector3 GetOffset();
+        public abstract Vector3 GetPivot();
         public abstract SerializableHitbox ToSerializable();
         public Entity Entity { get; }
         private Bounds cache;

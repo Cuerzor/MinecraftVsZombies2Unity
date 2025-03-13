@@ -20,7 +20,7 @@ namespace PVZEngine.Entities
         public static readonly PropertyMeta GRAVITY = Get("gravity");
         public static readonly PropertyMeta VELOCITY_DAMPEN = Get("velocityDampen");
         public static readonly PropertyMeta SIZE = Get("size");
-        public static readonly PropertyMeta BOUNDS_OFFSET = Get("boundsOffset");
+        public static readonly PropertyMeta BOUNDS_PIVOT = Get("boundsPivot");
         public static readonly PropertyMeta GROUND_LIMIT_OFFSET = Get("groundLimitOffset");
 
         public static readonly PropertyMeta HEALTH = Get("health");
@@ -121,17 +121,17 @@ namespace PVZEngine.Entities
         {
             entity.SetProperty(SIZE, value);
         }
-        public static Vector3 GetBoundsOffset(this EntityDefinition entity)
+        public static Vector3 GetBoundsPivot(this EntityDefinition entity)
         {
-            return entity.GetProperty<Vector3>(BOUNDS_OFFSET);
+            return entity.GetProperty<Vector3>(BOUNDS_PIVOT);
         }
-        public static Vector3 GetBoundsOffset(this Entity entity, bool ignoreBuffs = false)
+        public static Vector3 GetBoundsPivot(this Entity entity, bool ignoreBuffs = false)
         {
-            return entity.GetProperty<Vector3>(BOUNDS_OFFSET, ignoreBuffs: ignoreBuffs);
+            return entity.GetProperty<Vector3>(BOUNDS_PIVOT, ignoreBuffs: ignoreBuffs);
         }
-        public static void SetBoundsOffset(this Entity entity, Vector3 value)
+        public static void SetBoundsPivot(this Entity entity, Vector3 value)
         {
-            entity.SetProperty(BOUNDS_OFFSET, value);
+            entity.SetProperty(BOUNDS_PIVOT, value);
         }
         public static float GetMaxHealth(this Entity entity, bool ignoreBuffs = false)
         {

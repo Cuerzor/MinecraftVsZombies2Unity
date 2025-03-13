@@ -46,11 +46,11 @@ namespace MVZ2.GameContent.Stages
                 VanillaContraptionID.dreamCrystal,
                 VanillaContraptionID.gravityPad,
                 VanillaContraptionID.stoneShield,
-                VanillaContraptionID.forcePad,
+                VanillaContraptionID.totenser,
                 VanillaContraptionID.teslaCoil,
                 VanillaBossID.nightmareaper,
                 VanillaEnemyID.zombie,
-                VanillaEnemyID.anubisand,
+                VanillaEnemyID.mesmerizer,
                 VanillaEnemyID.dullahanHead,
             });
             level.SetArtifactSlotCount(3);

@@ -25,7 +25,7 @@ namespace MVZ2.Collisions
                 if (collider.Name == EntityCollisionHelper.NAME_MAIN)
                 {
                     var size = Entity.GetScaledSize();
-                    var offset = Vector3.up * (size.y * 0.5f);
+                    var offset = Vector3.Scale(Vector3.one * 0.5f - Entity.GetBoundsPivot(), size);
                     collider.UpdateBounds(offset, size);
                 }
                 collider.Simulate();
