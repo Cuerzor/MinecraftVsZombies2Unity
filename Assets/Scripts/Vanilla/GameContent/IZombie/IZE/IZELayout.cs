@@ -24,7 +24,7 @@ namespace MVZ2.GameContent.IZombie
         {
             var furnaceCount = Mathf.Max(3, 8 - map.Rounds / 2);
             RandomFill(map, VanillaContraptionID.furnace, furnaceCount, rng);
-            RandomFill(map, VanillaContraptionID.smallDispenser, 8 - furnaceCount, rng);
+            RandomFill(map, VanillaContraptionID.dispenser, 8 - furnaceCount, rng);
         }
     }
 }
