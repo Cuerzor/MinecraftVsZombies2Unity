@@ -8,6 +8,7 @@
 - Pick Starshards while holding blueprints now immediately evokes the placed contraption.
 - Added dialogue explanations about artifacts to Halloween Day 7.
 - Added the zoom feature to the Misc Almanac.
+- Added 6 new Random China events.
 
 ## Modified
 - Renamed the "Evoke" action in Simplified Chinese.

@@ -41,8 +41,6 @@ namespace PVZEngine.Level
         public SerializablePropertyBlock properties;
 
         public SerializableGrid[] grids;
-        public float rechargeSpeed;
-        public float rechargeTimeMultiplier;
         public SerializableClassicSeedPack[] seedPacks;
         public SerializableConveyorSeedPack[] conveyorSeedPacks;
         public bool requireCards;

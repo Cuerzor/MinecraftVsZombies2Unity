@@ -53,7 +53,7 @@ namespace MVZ2.GameContent.Stages
             level.AreaDefinition.PrepareForBattle(level);
             if (!level.HasNoCarts() && level.CurrentFlag <= 0)
             {
-                var cartRef = level.GetProperty<NamespaceID>(EngineAreaProps.CART_REFERENCE);
+                var cartRef = level.GetCartReference();
                 level.SpawnCarts(cartRef, VanillaLevelExt.CART_START_X, 20);
             }
         }

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2025-05-23 02:59+0800\n"
-"PO-Revision-Date: 2025-05-23 14:59+0800\n"
+"POT-Creation-Date: 2025-05-23 05:11+0800\n"
+"PO-Revision-Date: 2025-05-23 17:12+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -368,6 +368,78 @@ msgstr "Do you want to continue with the latest progress?"
 msgid "错误"
 msgstr "Error"
 
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\AceOfDiamondsEvent.cs:37
+msgctxt "random_china.event_name"
+msgid "方片A"
+msgstr "Ace of Diamonds"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\AnvilShowerEvent.cs:38
+msgctxt "random_china.event_name"
+msgid "铁砧雨"
+msgstr "Anvil Shower"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\ChinaTownEvent.cs:33
+msgctxt "random_china.event_name"
+msgid "陶瓷镇"
+msgstr "China Town"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\HellMetalEvent.cs:30
+msgctxt "random_china.event_name"
+msgid "地狱金属"
+msgstr "Hell Metal"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\ObsidianPrisonEvent.cs:54
+msgctxt "random_china.event_name"
+msgid "黑曜石囚牢"
+msgstr "Obsidian Prisons"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\RaceCarsEvent.cs:28
+msgctxt "random_china.event_name"
+msgid "赛车"
+msgstr "Race Cars"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\RedstoneReadyEvent.cs:39
+msgctxt "random_china.event_name"
+msgid "红石俱备"
+msgstr "Redstone Ready"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\SuperRechargeEvent.cs:26
+msgctxt "random_china.event_name"
+msgid "超级充能"
+msgstr "Super Recharge"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\TheHangedManEvent.cs:28
+msgctxt "random_china.event_name"
+msgid "倒吊人-XII"
+msgstr "The Hanged Man - XII"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\TheTowerEvent.cs:32
+msgctxt "random_china.event_name"
+msgid "塔-XVI"
+msgstr "The Tower - XVI"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\WorldwideCelebrationEvent.cs:31
+msgctxt "random_china.event_name"
+msgid "普天同庆"
+msgstr "Worldwide Celebration"
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\WrathOfTheSmallEvent.cs:31
+msgctxt "random_china.event_name"
+msgid "小型之怒"
+msgstr "Wrath of the Small"
+
 #: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:199
 msgctxt "advice.starshard_tutorial.0"
 msgid "点击星之碎片槽选中星之碎片！"
@@ -572,42 +644,6 @@ msgstr "Click to collect the gem!"
 msgctxt "advice.collect_money"
 msgid "收集宝石来获得更酷的道具吧！"
 msgstr "Collect gems to purchase COOL stuff!"
-
-# 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\Contraptions\Prologue\RandomChina.cs:216
-msgctxt "random_china.event_name"
-msgid "黑曜石囚牢"
-msgstr "Obsidian Prisons"
-
-# 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\Contraptions\Prologue\RandomChina.cs:218
-msgctxt "random_china.event_name"
-msgid "陶瓷镇"
-msgstr "China Town"
-
-# 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\Contraptions\Prologue\RandomChina.cs:220
-msgctxt "random_china.event_name"
-msgid "塔-XVI"
-msgstr "The Tower - XVI"
-
-# 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\Contraptions\Prologue\RandomChina.cs:222
-msgctxt "random_china.event_name"
-msgid "红石俱备"
-msgstr "Redstone Ready"
-
-# 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\Contraptions\Prologue\RandomChina.cs:224
-msgctxt "random_china.event_name"
-msgid "方片A"
-msgstr "Ace of Diamonds"
-
-# 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\Contraptions\Prologue\RandomChina.cs:226
-msgctxt "random_china.event_name"
-msgid "地狱金属"
-msgstr "Hell Metal"
 
 #: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:485
 msgid "选择你的命运"

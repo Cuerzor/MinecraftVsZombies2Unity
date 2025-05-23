@@ -234,17 +234,18 @@ namespace PVZEngine.Level
         #region 私有方法
         private void UpdateSeedPacks()
         {
+            var rechargeSpeed = this.GetRechargeSpeed();
             foreach (var seedPack in seedPacks)
             {
                 if (seedPack == null)
                     continue;
-                seedPack.Update(RechargeSpeed);
+                seedPack.Update(rechargeSpeed);
             }
             foreach (var seedPack in conveyorSeedPacks)
             {
                 if (seedPack == null)
                     continue;
-                seedPack.Update(RechargeSpeed);
+                seedPack.Update(rechargeSpeed);
             }
         }
 
@@ -259,8 +260,6 @@ namespace PVZEngine.Level
         public event Action<int> OnConveyorSeedRemoved;
         public event Action<int> OnConveyorSeedSlotCountChanged;
         #region 属性字段
-        public float RechargeSpeed { get; set; } = 1;
-        public float RechargeTimeMultiplier { get; set; } = 1;
         private int conveyorSlotCount = 10;
         private long currentSeedPackID = 1;
         private ClassicSeedPack[] seedPacks = Array.Empty<ClassicSeedPack>();

@@ -28,7 +28,7 @@ namespace MVZ2.GameContent.Stages
             level.LevelProgressVisible = true;
             level.SetProgressBarToBoss(VanillaProgressBarID.theGiant);
             level.SetTriggerActive(true);
-            var cartRef = level.GetProperty<NamespaceID>(EngineAreaProps.CART_REFERENCE);
+            var cartRef = level.GetCartReference();
             level.SpawnCarts(cartRef, VanillaLevelExt.CART_START_X, 20);
         }
         public override void OnUpdate(LevelEngine level)
@@ -54,7 +54,7 @@ namespace MVZ2.GameContent.Stages
                 VanillaContraptionID.hellfire,
                 VanillaContraptionID.necrotombstone,
                 VanillaContraptionID.gravitationBomb,
-                VanillaContraptionID.desirePot,
+                VanillaContraptionID.randomChina,
             });
             level.SetArtifactSlotCount(3);
             level.ReplaceArtifacts(new NamespaceID[]
@@ -63,7 +63,7 @@ namespace MVZ2.GameContent.Stages
                 VanillaArtifactID.greedyVacuum,
                 VanillaArtifactID.theCreaturesHeart,
             });
-            level.RechargeSpeed = 9999999;
+            level.SetRechargeSpeed(9999999);
         }
         private void ConveyorStart(LevelEngine level)
         {

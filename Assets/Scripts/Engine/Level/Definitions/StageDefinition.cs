@@ -12,6 +12,7 @@ namespace PVZEngine.Definitions
         public StageDefinition(string nsp, string name) : base(nsp, name)
         {
             SetProperty(EngineStageProps.WAVES_PER_FLAG, 10);
+            SetProperty(EngineLevelProps.RECHARGE_SPEED, 1);
         }
         public void Setup(LevelEngine level)
         {

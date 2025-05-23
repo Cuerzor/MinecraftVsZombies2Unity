@@ -15,7 +15,8 @@ namespace MVZ2.GameContent.Buffs
         public const string faction = "faction";
         public const string withered = "withered";
         public const string changeLane = "change_lane";
-        public const string divineShield = "divine-shield";
+        public const string divineShield = "divine_shield";
+        public const string worldwideCelebration = "worldwide_celebration";
 
         // Contraption
         public const string productionColor = "production_color";
@@ -142,6 +143,7 @@ namespace MVZ2.GameContent.Buffs
             public const string reverseSatellite = "reverse_satellite";
             public const string littleZombieLevel = "little_zombie_level";
             public const string delayedSpawnerTrigger = "delayed_spawner_trigger";
+            public const string superRecharge = "super_recharge";
 
             // 难度
             public const string levelEasy = "level_easy";

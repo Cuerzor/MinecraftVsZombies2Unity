@@ -420,8 +420,6 @@ namespace PVZEngine.Level
 
                 properties = properties.ToSerializable(),
                 grids = grids.Select(g => g.Serialize()).ToArray(),
-                rechargeSpeed = RechargeSpeed,
-                rechargeTimeMultiplier = RechargeTimeMultiplier,
                 seedPacks = seedPacks.Select(g => g != null ? g.Serialize() : null).ToArray(),
                 conveyorSeedPacks = conveyorSeedPacks.Select(s => s != null ? s.Serialize() : null).ToArray(),
                 conveyorSlotCount = conveyorSlotCount,
@@ -471,8 +469,6 @@ namespace PVZEngine.Level
             level.grids = seri.grids.Select(g => LawnGrid.Deserialize(g, level)).ToArray();
             level.properties = PropertyBlock.FromSerializable(seri.properties, level);
 
-            level.RechargeSpeed = seri.rechargeSpeed;
-            level.RechargeTimeMultiplier = seri.rechargeTimeMultiplier;
             level.seedPacks = seri.seedPacks.Select(g => g != null ? ClassicSeedPack.Deserialize(g, level) : null).ToArray();
             level.conveyorSeedPacks = seri.conveyorSeedPacks.Select(s => s != null ? ConveyorSeedPack.Deserialize(s, level) : null).ToList();
             level.conveyorSlotCount = seri.conveyorSlotCount;

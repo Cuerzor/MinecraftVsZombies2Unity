@@ -27,5 +27,6 @@ namespace PVZEngine.Definitions
         {
             return level.GetProperty<NamespaceID[]>(AREA_TAGS);
         }
+        public static NamespaceID GetCartReference(this LevelEngine level) => level.GetProperty<NamespaceID>(CART_REFERENCE);
     }
 }
