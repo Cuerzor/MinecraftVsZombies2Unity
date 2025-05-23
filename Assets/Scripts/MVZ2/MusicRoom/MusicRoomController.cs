@@ -71,8 +71,15 @@ namespace MVZ2.MusicRoom
         }
         private void OnTrackButtonClickCallback()
         {
-            playingSubTrack = !playingSubTrack;
-            ui.SetTrackButtonStyle(playingSubTrack);
+            if (currentMusicId == Main.MusicManager.GetCurrentMusicID())
+            {
+                playingSubTrack = !playingSubTrack;
+                ui.SetTrackButtonStyle(playingSubTrack);
+            }
+            else
+            {
+                ui.SetTrackButtonStyle(false);
+            }
         }
         private void OnMusicBarDragCallback(float value)
         {
