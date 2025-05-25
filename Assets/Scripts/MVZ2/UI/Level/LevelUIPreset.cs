@@ -67,6 +67,10 @@ namespace MVZ2.Level.UI
         {
             pickaxeSlot.SetDisabled(selected);
         }
+        public void SetPickaxeNumberText(PickaxeNumberText info)
+        {
+            pickaxeSlot.SetNumberText(info);
+        }
         public PickaxeSlot GetPickaxeSlot()
         {
             return pickaxeSlot;

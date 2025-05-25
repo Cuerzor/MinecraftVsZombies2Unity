@@ -65,9 +65,19 @@ namespace MVZ2.Vanilla.Level
         public static readonly PropertyMeta PICKAXE_DISABLED = Get("pickaxeDisabled");
         public static readonly PropertyMeta PICKAXE_DISABLE_MESSAGE = Get("pickaxeDisableMessage");
         public static readonly PropertyMeta PICKAXE_DISABLE_ICON = Get("pickaxeDisableIcon");
+        public static readonly PropertyMeta PICKAXE_REMAIN_COUNT = Get("pickaxeRemainCount");
+        public static readonly PropertyMeta PICKAXE_COUNT_LIMITED = Get("pickaxeCountLimited");
         public static bool IsPickaxeDisabled(this LevelEngine level)
         {
             return level.GetProperty<bool>(PICKAXE_DISABLED);
+        }
+        public static bool CanUsePickaxe(this LevelEngine level)
+        {
+            if (level.IsPickaxeDisabled())
+                return false;
+            if (level.IsPickaxeCountLimited() && level.GetPickaxeRemainCount() <= 0)
+                return false;
+            return true;
         }
         public static string GetPickaxeDisableMessage(this LevelEngine level)
         {
@@ -76,6 +86,27 @@ namespace MVZ2.Vanilla.Level
         public static bool ShouldShowPickaxeDisableIcon(this LevelEngine level)
         {
             return level.GetProperty<bool>(PICKAXE_DISABLE_ICON);
+        }
+        public static int GetPickaxeRemainCount(this LevelEngine level)
+        {
+            return level.GetProperty<int>(PICKAXE_REMAIN_COUNT);
+        }
+        public static void SetPickaxeRemainCount(this LevelEngine level, int value)
+        {
+            level.SetProperty(PICKAXE_REMAIN_COUNT, value);
+        }
+        public static void AddPickaxeRemainCount(this LevelEngine level, int value) => level.SetPickaxeRemainCount(level.GetPickaxeRemainCount() + value);
+        public static bool IsPickaxeCountLimited(this LevelEngine level)
+        {
+            return level.GetProperty<bool>(PICKAXE_COUNT_LIMITED);
+        }
+        public static void SetPickaxeCountLimited(this LevelEngine level, bool value)
+        {
+            level.SetProperty(PICKAXE_COUNT_LIMITED, value);
+        }
+        public static void SetPickaxeCountLimited(this StageDefinition level, bool value)
+        {
+            level.SetProperty(PICKAXE_COUNT_LIMITED, value);
         }
         #endregion
         public static bool IsTriggerDisabled(this LevelEngine level)

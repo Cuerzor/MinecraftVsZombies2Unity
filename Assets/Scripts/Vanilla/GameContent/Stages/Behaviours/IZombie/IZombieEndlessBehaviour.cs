@@ -15,6 +15,7 @@ namespace MVZ2.GameContent.Stages
         public IZombieEndlessBehaviour(StageDefinition stageDef) : base(stageDef)
         {
             stageDef.SetProperty(VanillaStageProps.ENDLESS, true);
+            stageDef.SetPickaxeCountLimited(true);
             normalLayouts.Add(new IZELayoutItem(VanillaIZombieLayoutID.izeComposite, 1.5f));
             normalLayouts.Add(new IZELayoutItem(VanillaIZombieLayoutID.izeControl, 1.5f));
             normalLayouts.Add(new IZELayoutItem(VanillaIZombieLayoutID.izeInstakill));
@@ -58,6 +59,7 @@ namespace MVZ2.GameContent.Stages
                 VanillaBlueprintID.FromEntity(VanillaEnemyID.dullahan),
             });
         }
+        public override bool AllowPickaxe => true;
         private List<IZELayoutItem> normalLayouts = new List<IZELayoutItem>();
         private List<IZELayoutItem> awardLayouts = new List<IZELayoutItem>();
     }

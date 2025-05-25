@@ -2,6 +2,7 @@
 using MVZ2.GameContent.Buffs;
 using MVZ2.GameContent.Buffs.Enemies;
 using MVZ2.GameContent.Buffs.Level;
+using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla;
@@ -48,7 +49,10 @@ namespace MVZ2.GameContent.Stages
             level.SetEnergy(level.GetStartEnergy());
             level.SetSeedSlotCount(10);
             level.SetStarshardActive(false);
-            level.SetPickaxeActive(false);
+            if (!AllowPickaxe)
+            {
+                level.SetPickaxeActive(false);
+            }
             level.SetTriggerActive(false);
             level.WaveState = STATE_NORMAL;
 
@@ -142,6 +146,12 @@ namespace MVZ2.GameContent.Stages
             var layout = level.Content.GetIZombieLayoutDefinition(layoutID);
             GenerateMap(level, layout);
             ReplaceBlueprints(level, layout);
+            if (level.IsPickaxeCountLimited())
+            {
+                var pickaxeCount = level.GetPickaxeRemainCount();
+                pickaxeCount = Mathf.Min(MaxPickaxeCount, pickaxeCount + 1);
+                level.SetPickaxeRemainCount(pickaxeCount);
+            }
             level.WaveState = STATE_NORMAL;
 
             if (level.IsEndless())
@@ -209,11 +219,16 @@ namespace MVZ2.GameContent.Stages
             }
             if (cannotAfford)
             {
-                if (!level.EntityExists(e => e.Type == EntityTypes.ENEMY && e.IsHostileEntity() && !e.IsNotActiveEnemy()) && 
-                    !level.EntityExists(e => e.Type == EntityTypes.PICKUP && e.GetEnergyValue() > 0))
-                {
-                    level.GameOver(GameOverTypes.INSTANT, null, VanillaStrings.DEATH_MESSAGE_IZ_LOSE_ALL_ENEMIES);
-                }
+                // 存在有效怪物
+                if (level.EntityExists(e => e.Type == EntityTypes.ENEMY && e.IsHostileEntity() && !e.IsNotActiveEnemy()))
+                    return;
+                // 存在能量掉落物
+                if (level.EntityExists(e => e.Type == EntityTypes.PICKUP && e.GetEnergyValue() > 0))
+                    return;
+                // 可以使用铁镐并且存在熔炉
+                if (level.CanUsePickaxe() && level.EntityExists(e => e.IsEntityOf(VanillaContraptionID.furnace)))
+                    return;
+                level.GameOver(GameOverTypes.INSTANT, null, VanillaStrings.DEATH_MESSAGE_IZ_LOSE_ALL_ENEMIES);
             }
         }
         public NamespaceID GetCurrentLayout(LevelEngine level) => level.GetBehaviourField<NamespaceID>(PROP_CURRENT_LAYOUT);
@@ -232,6 +247,8 @@ namespace MVZ2.GameContent.Stages
         public const int STATE_NEXT_ROUND = VanillaLevelStates.STATE_IZ_NEXT;
         public const int STATE_FINISHED = VanillaLevelStates.STATE_IZ_FINISHED;
         public const float ZOMBIE_RANDOM_SPEED = 1.5f;
+        public virtual int MaxPickaxeCount => 3;
+        public virtual bool AllowPickaxe => false;
         #endregion
     }
 }

@@ -154,6 +154,10 @@ namespace PVZEngine.Level
         {
             return properties.GetProperty<T>(name, ignoreBuffs);
         }
+        public bool TryGetProperty<T>(PropertyKey name, out T value, bool ignoreBuffs = false)
+        {
+            return properties.TryGetProperty<T>(name, out value, ignoreBuffs);
+        }
         public void SetProperty(PropertyKey name, object value)
         {
             properties.SetProperty(name, value);

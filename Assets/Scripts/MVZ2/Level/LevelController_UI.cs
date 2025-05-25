@@ -578,18 +578,28 @@ namespace MVZ2.Level
         }
         private void UpdateHeldSlotUI()
         {
-            bool pickaxeDisabled = level.IsPickaxeDisabled();
+            bool pickaxeDisabled = !level.CanUsePickaxe();
             bool starshardDisabled = level.IsStarshardDisabled();
             var uiPreset = GetUIPreset();
             uiPreset.SetStarshardSelected(level.IsHoldingStarshard());
             uiPreset.SetStarshardDisabled(starshardDisabled && level.ShouldShowStarshardDisableIcon());
+
+            var remainCount = level.GetPickaxeRemainCount();
+            var pickaxeNumberText = new PickaxeNumberText()
+            {
+                show = level.IsPickaxeCountLimited(),
+                text = remainCount.ToString(),
+                color = remainCount <= 0 ? Color.red : Color.white
+            };
             uiPreset.SetPickaxeSelected(level.IsHoldingPickaxe());
             uiPreset.SetPickaxeDisabled(pickaxeDisabled && level.ShouldShowPickaxeDisableIcon());
+            uiPreset.SetPickaxeNumberText(pickaxeNumberText);
+
             uiPreset.SetTriggerSelected(level.IsHoldingTrigger());
         }
         private void ValidateHeldItem()
         {
-            bool pickaxeDisabled = level.IsPickaxeDisabled();
+            bool pickaxeDisabled = !level.CanUsePickaxe();
             bool starshardDisabled = level.IsStarshardDisabled();
             if (pickaxeDisabled && level.IsHoldingPickaxe())
             {
@@ -653,7 +663,7 @@ namespace MVZ2.Level
                 }
                 return;
             }
-            if (level.IsPickaxeDisabled())
+            if (!level.CanUsePickaxe())
                 return;
             level.PlaySound(VanillaSoundID.pickaxe);
             level.SetHeldItem(VanillaHeldTypes.pickaxe, 0, 0);
@@ -926,7 +936,7 @@ namespace MVZ2.Level
             public TooltipViewData GetViewData(LevelController level)
             {
                 string error = null;
-                if (level.level.IsPickaxeDisabled())
+                if (!level.level.CanUsePickaxe())
                 {
                     var message = level.level.GetPickaxeDisableMessage();
                     if (!string.IsNullOrEmpty(message))
