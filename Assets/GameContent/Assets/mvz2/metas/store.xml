@@ -18,11 +18,11 @@
                 <condition required="mvz2:level.castle_6" requiredNot="mvz2:kourindou_visited_castle"/>
             </conditions>
         </talk>
-        <talk id="mvz2:kourindou_visit_mausoleum_1">
+        <!-- <talk id="mvz2:kourindou_visit_mausoleum_1">
             <conditions>
                 <condition required="mvz2:level.castle_11" requiredNot="mvz2:kourindou_visited_mausoleum_1"/>
             </conditions>
-        </talk>
+        </talk> -->
         <talk id="mvz2:kourindou_visit_mausoleum_2">
             <conditions>
                 <condition required="mvz2:level.mausoleum_5" requiredNot="mvz2:kourindou_visited_mausoleum_2"/>
