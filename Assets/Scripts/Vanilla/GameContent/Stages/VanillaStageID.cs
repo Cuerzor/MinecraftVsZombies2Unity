@@ -88,6 +88,7 @@ namespace MVZ2.GameContent.Stages
         public const string frankensteinsRevenge = "frankensteins_revenge";
         public const string nightmaresRevenge = "nightmares_revenge";
         public const string withersRevenge = "withers_revenge";
+        public const string theGiantsRevenge = "the_giants_revenge";
 
         // Puzzles
         public const string puzzleIZombie = "puzzle_i_zombie";
