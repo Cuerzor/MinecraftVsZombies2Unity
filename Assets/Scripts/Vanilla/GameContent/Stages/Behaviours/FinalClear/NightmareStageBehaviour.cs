@@ -111,7 +111,7 @@ namespace MVZ2.GameContent.Stages
             {
                 level.WaveState = VanillaLevelStates.STATE_AFTER_BOSS;
                 level.StopMusic();
-                if (!level.IsRerun && !level.IsBossRevenge())
+                if (!level.IsRerun && level.IsAdventure())
                 {
                     // 隐藏UI，关闭输入
                     level.ResetHeldItem();
@@ -144,7 +144,7 @@ namespace MVZ2.GameContent.Stages
         {
             base.AfterBossWaveUpdate(level);
             ClearEnemies(level);
-            if (!level.IsRerun && !level.IsBossRevenge() && !level.IsCleared)
+            if (!level.IsRerun && level.IsAdventure() && !level.IsCleared)
             {
                 if (!level.EntityExists(e => e.Type == EntityTypes.BOSS && e.IsHostileEntity()))
                 {

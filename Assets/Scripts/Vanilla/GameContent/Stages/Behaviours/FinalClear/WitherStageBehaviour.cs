@@ -2,6 +2,7 @@
 
 using MVZ2.GameContent.Bosses;
 using MVZ2.GameContent.Buffs.Level;
+using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Level;
@@ -18,6 +19,17 @@ namespace MVZ2.GameContent.Stages
     {
         public WitherStageBehaviour(StageDefinition stageDef) : base(stageDef)
         {
+        }
+        public override void PostWave(LevelEngine level, int wave)
+        {
+            base.PostWave(level, wave);
+            if (wave <= 10 || wave >= level.GetTotalWaveCount())
+                return;
+            if (!level.EntityExists(VanillaEffectID.castleTwilight))
+            {
+                var pos = new Vector3((VanillaLevelExt.LEFT_BORDER + VanillaLevelExt.RIGHT_BORDER) * 0.5f, 0, VanillaLevelExt.LAWN_HEIGHT * 0.5f);
+                level.Spawn(VanillaEffectID.castleTwilight, pos, null);
+            }
         }
         protected override void AfterFinalWaveUpdate(LevelEngine level)
         {
@@ -46,7 +58,7 @@ namespace MVZ2.GameContent.Stages
             {
                 level.WaveState = VanillaLevelStates.STATE_AFTER_BOSS;
                 level.StopMusic();
-                if (!level.IsRerun)
+                if (!level.IsRerun && level.IsAdventure())
                 {
                     // 隐藏UI，关闭输入
                     level.ResetHeldItem();
@@ -79,7 +91,7 @@ namespace MVZ2.GameContent.Stages
         {
             base.AfterBossWaveUpdate(level);
             ClearEnemies(level);
-            if (!level.IsRerun)
+            if (!level.IsRerun && level.IsAdventure())
             {
                 if (!level.IsCleared && !level.EntityExists(e => e.Type == EntityTypes.BOSS && e.IsHostileEntity()))
                 {

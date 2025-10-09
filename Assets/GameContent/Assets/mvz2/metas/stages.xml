@@ -303,6 +303,7 @@
         <properties>
             <bool name="noEnergy" value="true"/>
             <integer name="statueCount" value="10" />
+            <bool name="mvz2:adventure" value="true"/>
         </properties>
     </stage>
     <stage id="halloween_endless" name="万圣夜无尽" type="endless" >
@@ -537,6 +538,7 @@
         <time firstWave="1"/>
         <properties>
             <bool name="noEnergy" value="true"/>
+            <bool name="mvz2:adventure" value="true"/>
         </properties>
     </stage>
     <stage id="dream_endless" name="梦境世界无尽" type="endless" >
@@ -781,6 +783,7 @@
         <time firstWave="1"/>
         <properties>
             <bool name="noEnergy" value="true"/>
+            <bool name="mvz2:adventure" value="true"/>
         </properties>
     </stage>
     <stage id="castle_endless" name="辉针城无尽" type="endless" >
@@ -1035,6 +1038,7 @@
         <properties>
             <bool name="noEnergy" value="true"/>
             <integer name="spawnerCount" value="8" />
+            <bool name="mvz2:adventure" value="true"/>
         </properties>
     </stage>
     <stage id="mausoleum_endless" name="梦殿大祀庙无尽" type="endless" >
@@ -1276,6 +1280,7 @@
         <time firstWave="1"/>
         <properties>
             <bool name="noEnergy" value="true"/>
+            <bool name="mvz2:adventure" value="true"/>
         </properties>
     </stage>
     <stage id="ship_endless" name="圣辇船无尽" type="endless" >
@@ -1378,6 +1383,21 @@
             <spawn id="mvz2:cave_spider"/>
             <spawn id="mvz2:ghast"/>
             <spawn id="mvz2:mother_terror"/>
+        </spawns>
+        <properties>
+            <bool name="mvz2:boss_revenge" value="true"/>
+        </properties>
+    </stage>
+    <stage id="withers_revenge" name="凋灵的复仇" type="minigame" music="mvz2:castle_final" >
+        <clear pickupModel="mvz2:entity.trophy" trophy="true"/>
+        <spawns flags="2" >
+            <spawn id="mvz2:zombie"/>
+            <spawn id="mvz2:leather_capped_zombie"/>
+            <spawn id="mvz2:iron_helmetted_zombie"/>
+            <spawn id="mvz2:mesmerizer"/>
+            <spawn id="mvz2:berserker"/>
+            <spawn id="mvz2:dullahan"/>
+            <spawn id="mvz2:hell_chariot"/>
         </spawns>
         <properties>
             <bool name="mvz2:boss_revenge" value="true"/>

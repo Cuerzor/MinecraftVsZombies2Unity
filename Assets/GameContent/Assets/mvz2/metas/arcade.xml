@@ -6,8 +6,8 @@
     <minigame/>
     <minigame id="frankensteins_revenge" stage="mvz2:frankensteins_revenge" area="mvz2:halloween" icon="mvz2:arcade/frankensteins_revenge"/>
     <minigame id="nightmare_revenge" stage="mvz2:nightmares_revenge" area="mvz2:dream" icon="mvz2:arcade/nightmares_revenge"/>
-    <minigame id="withers_revenge" stage="mvz2:withers_revenge" area="mvz2:dream" icon="mvz2:arcade/withers_revenge"/>
-    <minigame id="the_giants_revenge" stage="mvz2:the_giants_revenge" area="mvz2:dream" icon="mvz2:arcade/the_giants_revenge"/>
+    <minigame id="withers_revenge" stage="mvz2:withers_revenge" area="mvz2:castle" icon="mvz2:arcade/withers_revenge"/>
+    <minigame id="the_giants_revenge" stage="mvz2:the_giants_revenge" area="mvz2:mausoleum" icon="mvz2:arcade/the_giants_revenge"/>
 
     <puzzle id="puzzle_i_zombie" stage="mvz2:puzzle_i_zombie" area="mvz2:mausoleum_minigame" icon="mvz2:arcade/i_zombie"/>
     <puzzle id="puzzle_i_skeleton" stage="mvz2:puzzle_i_skeleton" area="mvz2:mausoleum_minigame" icon="mvz2:arcade/i_zombie"/>

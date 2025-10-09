@@ -151,6 +151,18 @@ namespace MVZ2.Vanilla.Level
         public static bool IsIZombie(this StageDefinition stage) => stage.GetProperty<bool>(I_ZOMBIE);
         public static bool IsIZombie(this LevelEngine level) => level.GetProperty<bool>(I_ZOMBIE);
         public static void SetIZombie(this StageDefinition stage, bool value) => stage.SetProperty(I_ZOMBIE, value);
+        
+        #region Boss复仇模式
+        public static readonly PropertyMeta<bool> ADVENTURE = Get<bool>("adventure");
+        public static bool IsAdventure(this LevelEngine level)
+        {
+            return level.GetProperty<bool>(ADVENTURE);
+        }
+        public static void SetAdventure(this LevelEngine level, bool value)
+        {
+            level.SetProperty(ADVENTURE, value);
+        }
+        #endregion
 
         #region Boss复仇模式
         public static readonly PropertyMeta<bool> BOSS_REVENGE = Get<bool>("boss_revenge");

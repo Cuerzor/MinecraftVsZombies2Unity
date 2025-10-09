@@ -51,6 +51,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: eb0eb64f7392deb41831563ed71fa81a, type: 3}
   - name: arcade/whack_a_ghost
     sprite: {fileID: 21300000, guid: ba09814b17fbf24438727f22089f7192, type: 3}
+  - name: arcade/withers_revenge
+    sprite: {fileID: 21300000, guid: cf276e1f4880f4c40b8cd6fdc9e9640e, type: 3}
   - name: archive/castle_note
     sprite: {fileID: 21300000, guid: b43c7c77cd3ff54418daebbaccf227db, type: 3}
   - name: archive/dream_note
