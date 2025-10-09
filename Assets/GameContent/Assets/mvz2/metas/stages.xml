@@ -1350,6 +1350,25 @@
         </properties>
     </stage>
 
+    <!-- Bosses' Revenge -->
+    <stage id="frankensteins_revenge" name="科学怪人的复仇" type="minigame" music="mvz2:ultimate_battle" >
+        <model preset="cloudy" />
+        <clear pickupModel="mvz2:entity.trophy" trophy="true"/>
+        <spawns flags="2" >
+            <spawn id="mvz2:zombie"/>
+            <spawn id="mvz2:leather_capped_zombie"/>
+            <spawn id="mvz2:iron_helmetted_zombie"/>
+            <spawn id="mvz2:skeleton"/>
+            <spawn id="mvz2:ghost"/>
+            <spawn id="mvz2:mummy"/>
+            <spawn id="mvz2:necromancer"/>
+        </spawns>
+        <properties>
+            <integer name="statueCount" value="10" />
+        </properties>
+    </stage>
+
+
     <!-- Puzzles -->
     <stage id="puzzle_i_zombie" name="我是僵尸" needBlueprints="false" type="puzzle" startEnergy="150" music="mvz2:puzzle" >
         <clear pickupModel="mvz2:entity.trophy" trophy="true"/>

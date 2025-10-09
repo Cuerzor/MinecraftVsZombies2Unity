@@ -16,124 +16,58 @@ namespace PVZEngine.Definitions
             SetProperty(EngineStageProps.WAVES_PER_FLAG, 10);
             SetProperty(EngineLevelProps.RECHARGE_SPEED, 1f);
         }
-        public void Setup(LevelEngine level)
+        private void ExecuteBehaviours(Action<StageBehaviour> action, string debugName)
         {
             foreach (var b in behaviours)
             {
                 try
                 {
-                    b.Setup(level);
+                    action(b);
                 }
                 catch (Exception ex)
                 {
-                    Debug.LogError($"关卡行为{b}在执行Setup时出现错误：{ex}");
+                    Debug.LogError($"关卡行为{b}在执行{debugName}时出现错误：{ex}");
                 }
             }
+        }
+        public void Setup(LevelEngine level)
+        {
+            ExecuteBehaviours(b => b.Setup(level), "Setup");
             OnSetup(level);
         }
         public void Start(LevelEngine level)
         {
-            foreach (var b in behaviours)
-            {
-                try
-                {
-                    b.Start(level);
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"关卡行为{b}在执行Start时出现错误：{ex}");
-                }
-            }
+            ExecuteBehaviours(b => b.Start(level), "Start");
             OnStart(level);
         }
         public void Update(LevelEngine level)
         {
-            foreach (var b in behaviours)
-            {
-                try
-                {
-                    b.Update(level);
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"关卡行为{b}在执行Update时出现错误：{ex}");
-                }
-            }
+            ExecuteBehaviours(b => b.Update(level), "Update");
             OnUpdate(level);
         }
         public void PrepareForBattle(LevelEngine level)
         {
-            foreach (var b in behaviours)
-            {
-                try
-                {
-                    b.PrepareForBattle(level);
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"关卡行为{b}在执行PrepareForBattle时出现错误：{ex}");
-                }
-            }
+            ExecuteBehaviours(b => b.PrepareForBattle(level), "PrepareForBattle");
             OnPrepareForBattle(level);
         }
         public void PostWave(LevelEngine level, int wave)
         {
-            foreach (var b in behaviours)
-            {
-                try
-                {
-                    b.PostWave(level, wave);
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"关卡行为{b}在执行PostWave时出现错误：{ex}");
-                }
-            }
+            ExecuteBehaviours(b => b.PostWave(level, wave), "PostWave");
             OnPostWave(level, wave);
         }
         public void PostHugeWaveEvent(LevelEngine level)
         {
-            foreach (var b in behaviours)
-            {
-                try
-                {
-                    b.PostHugeWaveEvent(level);
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"关卡行为{b}在执行PostHugeWaveEvent时出现错误：{ex}");
-                }
-            }
+            ExecuteBehaviours(b => b.PostHugeWaveEvent(level), "PostHugeWaveEvent");
             OnPostHugeWave(level);
         }
         public void PostFinalWaveEvent(LevelEngine level)
         {
-            foreach (var b in behaviours)
-            {
-                try
-                {
-                    b.PostFinalWaveEvent(level);
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"关卡行为{b}在执行PostFinalWaveEvent时出现错误：{ex}");
-                }
-            }
+            ExecuteBehaviours(b => b.PostFinalWaveEvent(level), "PostFinalWaveEvent");
             OnPostFinalWave(level);
         }
         public void PostEnemySpawned(Entity entity)
         {
-            foreach (var b in behaviours)
-            {
-                try
-                {
-                    b.PostEnemySpawned(entity);
-                }
-                catch (Exception ex)
-                {
-                    Debug.LogError($"关卡行为{b}在执行PostEnemySpawned时出现错误：{ex}");
-                }
-            }
+            ExecuteBehaviours(b => b.PostEnemySpawned(entity), "PostEnemySpawned");
             OnPostEnemySpawned(entity);
         }
         public virtual void OnSetup(LevelEngine level) { }

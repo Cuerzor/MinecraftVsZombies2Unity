@@ -3263,6 +3263,13 @@ MonoBehaviour:
     - Main
     - Spritesheet
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47bb6e3e6595451449c147cdca10b84c
+    m_Address: mvz2:arcade/frankensteins_revenge
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 47e358101a35f3c4eb66d746582948c4
     m_Address: mvz2:entity/boss/the_giant_snake_tail
     m_ReadOnly: 0

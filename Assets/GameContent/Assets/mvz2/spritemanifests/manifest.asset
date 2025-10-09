@@ -41,6 +41,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 0966a8cb4bb36ec4f8354fc756227214, type: 3}
   - name: arcade/breakout
     sprite: {fileID: 21300000, guid: b0de64e2af2016c45ae16c1d0b361591, type: 3}
+  - name: arcade/frankensteins_revenge
+    sprite: {fileID: 21300000, guid: 47bb6e3e6595451449c147cdca10b84c, type: 3}
   - name: arcade/i_zombie
     sprite: {fileID: 21300000, guid: 954f4a9aadd5d0141a70086f5aaedcc5, type: 3}
   - name: arcade/locked
