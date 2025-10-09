@@ -155,7 +155,10 @@ namespace MVZ2.Managers
             {
                 foreach (var meta in modResource.ArcadeMetaList.metas)
                 {
-                    arcadeCache.Add(new NamespaceID(modNamespace, meta.ID));
+                    if (!string.IsNullOrEmpty(meta.ID))
+                    {
+                        arcadeCache.Add(new NamespaceID(modNamespace, meta.ID));
+                    }
                 }
             }
             LoadModResourceUnlocks(modResource);

@@ -86,6 +86,7 @@ namespace MVZ2.GameContent.Stages
         public const string bigTroubleAndLittleZombie = "big_trouble_and_little_zombie";
 
         public const string frankensteinsRevenge = "frankensteins_revenge";
+        public const string nightmaresRevenge = "nightmares_revenge";
 
         // Puzzles
         public const string puzzleIZombie = "puzzle_i_zombie";

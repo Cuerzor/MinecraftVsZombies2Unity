@@ -1365,6 +1365,22 @@
         </spawns>
         <properties>
             <integer name="statueCount" value="10" />
+            <bool name="mvz2:boss_revenge" value="true"/>
+        </properties>
+    </stage>
+    <stage id="nightmares_revenge" name="梦魇的复仇" type="minigame" music="mvz2:nightmare_final" >
+        <clear pickupModel="mvz2:entity.trophy" trophy="true"/>
+        <spawns flags="2" >
+            <spawn id="mvz2:zombie"/>
+            <spawn id="mvz2:leather_capped_zombie"/>
+            <spawn id="mvz2:iron_helmetted_zombie"/>
+            <spawn id="mvz2:spider"/>
+            <spawn id="mvz2:cave_spider"/>
+            <spawn id="mvz2:ghast"/>
+            <spawn id="mvz2:mother_terror"/>
+        </spawns>
+        <properties>
+            <bool name="mvz2:boss_revenge" value="true"/>
         </properties>
     </stage>
 

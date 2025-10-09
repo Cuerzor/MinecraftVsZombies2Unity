@@ -47,6 +47,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 954f4a9aadd5d0141a70086f5aaedcc5, type: 3}
   - name: arcade/locked
     sprite: {fileID: 21300000, guid: 2f65e88c41fd23d4987bba1066e05ba3, type: 3}
+  - name: arcade/nightmares_revenge
+    sprite: {fileID: 21300000, guid: eb0eb64f7392deb41831563ed71fa81a, type: 3}
   - name: arcade/whack_a_ghost
     sprite: {fileID: 21300000, guid: ba09814b17fbf24438727f22089f7192, type: 3}
   - name: archive/castle_note
