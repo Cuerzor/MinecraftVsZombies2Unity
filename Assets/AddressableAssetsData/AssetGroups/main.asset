@@ -591,6 +591,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d4b43785901a8f4390699a767958f94
+    m_Address: mvz2:arcade/the_giants_revenge
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0d4ebeebf58039f44b54ff10434c99d4
     m_Address: mvz2:entity/effect/static
     m_ReadOnly: 0
@@ -9030,6 +9037,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf276e1f4880f4c40b8cd6fdc9e9640e
+    m_Address: mvz2:arcade/withers_revenge
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf47d35dbe85ad449b1e674c2e6c2bf9
     m_Address: mvz2:starshard_use
     m_ReadOnly: 0
@@ -10082,6 +10096,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ead2b534e897e48469cac6037a937e50
     m_Address: mvz2:starshards/halloween
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb0eb64f7392deb41831563ed71fa81a
+    m_Address: mvz2:arcade/nightmares_revenge
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
