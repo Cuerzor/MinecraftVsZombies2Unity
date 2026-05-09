@@ -14,7 +14,11 @@ namespace MVZ2.Level
             if (!poolElement)
                 return;
             poolElement.SetFloat("_WarpTime", warpTime);
-            poolElement.SetFloat("_CausticTime", causticTime);
+
+            var caustic1ST = new Vector4(caustic1Scale.x, caustic1Scale.y, Mathf.Repeat(causticTime * caustic1Speed.x, 1), Mathf.Repeat(causticTime * caustic1Speed.y, 1));
+            var caustic2ST = new Vector4(caustic2Scale.x, caustic2Scale.y, Mathf.Repeat(causticTime * caustic2Speed.x, 1), Mathf.Repeat(causticTime * caustic2Speed.y, 1));
+            poolElement.SetVector("_CausticTex1_ST", caustic1ST);
+            poolElement.SetVector("_CausticTex2_ST", caustic2ST);
             poolElement.ApplyShaderProperties();
             if (animator)
             {
@@ -25,6 +29,14 @@ namespace MVZ2.Level
         private Animator animator = null!;
         [SerializeField]
         private RendererElement poolElement = null!;
+        [SerializeField]
+        private Vector2 caustic1Scale = new Vector2(0.5f, 1);
+        [SerializeField]
+        private Vector2 caustic2Scale = new Vector2(1, 1);
+        [SerializeField]
+        private Vector2 caustic1Speed = new Vector2(0, 1);
+        [SerializeField]
+        private Vector2 caustic2Speed = new Vector2(0, -1);
         [Range(0, 1)]
         [SerializeField]
         private float warpTime;

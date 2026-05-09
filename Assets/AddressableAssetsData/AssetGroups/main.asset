@@ -4320,6 +4320,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f49e7cb5332bb2429602c3e7c3b7c46
+    m_Address: mvz2:mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - AreaModel
+    - Main
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4f7414fe4f7f95d45bf01a7dc436be7a
     m_Address: mvz2:contraption/upgrade/skyward_beacon
     m_ReadOnly: 0
@@ -7677,6 +7684,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ed4f649f7283ff46a05dba827b3b776
+    m_Address: mvz2:entity/effects/maple_leaf
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8ee7e3c6233a6be4191bfd80ff87e80e
     m_Address: mvz2:entity/enemy/boat
@@ -12722,6 +12736,13 @@ MonoBehaviour:
     - Main
     - Spritesheet
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f16e98473504f134db30f1e9655cf837
+    m_Address: mvz2:level/mountain/river
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f173973887b669a4f94c0bca7a3f56e6
     m_Address: mvz2:splash_big
     m_ReadOnly: 0
@@ -13295,6 +13316,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fcc498786d8ffd744a2bb35848dc6b3b
+    m_Address: mvz2:level/mountain/mountain_house
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fcc8c28521d9eea499aa79c2dd397c1a
     m_Address: mvz2:talk/dialog_objection
     m_ReadOnly: 0
@@ -13378,6 +13406,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - AreaModel
     - Main
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe5483b57b4f942498536011ab35c856
+    m_Address: mvz2:level/mountain/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe5c3b6b658b05c478ffb6c1397dcd0f
     m_Address: mvz2:effect/breakout_board

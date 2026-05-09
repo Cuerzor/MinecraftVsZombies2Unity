@@ -7,13 +7,10 @@
         _ShadeTex("Shade", 2D) = "white" {}
         _CausticTex("Caustic", 2D) = "white" {}
         _CausticTex1_ST ("Caustic 1 ST", Vector) = (0,0,0,0)
-        _Caustic1_Speed("Caustic 1 Speed", Int) = 0
         _CausticTex2_ST ("Caustic 2 ST", Vector) = (0,0,0,0)
-        _Caustic2_Speed("Caustic 2 Speed", Int) = 0
         _WarpTile("Warp Tile", Vector) = (0,0,0,0)
         _WarpTime("Warp Time", Range(0,1)) = 0
         _Warp("Warp", Float) = 0
-        _CausticTime("Caustic Time", Float) = 0
         _CausticAlpha("Caustic Alpha", Float) = 0
 
 		[Header(Lighting)]
@@ -123,14 +120,13 @@
             sampler2D _CausticTex;
 
             half4 _MainTex_ST;
+            float4 _ShadeTex_ST;
+            float4 _CausticTex_ST;
             float4 _CausticTex1_ST;
             float4 _CausticTex2_ST;
             float _CausticAlpha;
-            int _Caustic1_Speed;
-            int _Caustic2_Speed;
             float2 _WarpTile;
             float _Warp;
-            float _CausticTime;
             half _WarpTime;
             float4 _Color;
             half4 _RendererColor;
@@ -159,16 +155,13 @@
                 return uv;
             }
 
-            half3 SampleCaustic(half2 uv, float time, half2 poolUV)
+            half3 SampleCaustic(half2 uv, half2 poolUV)
             {
-                half2 firstUV = uv;
-                firstUV.xy *= _CausticTex1_ST.xy;
-                firstUV.y += time * _Caustic1_Speed;
+                half2 firstUV = TRANSFORM_TEX(uv, _CausticTex);
+                firstUV.xy = firstUV.xy * _CausticTex1_ST.xy + _CausticTex1_ST.zw;
 
-                half2 secondUV = uv;
-                secondUV.xy *= _CausticTex2_ST.xy;
-                secondUV.y -= time * _Caustic2_Speed;
-                    
+                half2 secondUV = TRANSFORM_TEX(uv, _CausticTex);
+                secondUV.xy = secondUV.xy * _CausticTex2_ST.xy + _CausticTex2_ST.zw;
                     
                 half3 result = tex2D(_CausticTex, firstUV).rgb;
                 half3 secondColor =  tex2D(_CausticTex,secondUV).rgb;
@@ -201,8 +194,9 @@
 				half2 uv = i.uv;
                 half2 poolUv = PoolModifyUV(uv, time);
                 const half4 poolColor = tex2D(_MainTex, i.uv);
-                half4 shadeColor = tex2D(_ShadeTex, poolUv);
-                half3 causticColor = SampleCaustic(poolUv, _CausticTime, i.uv);
+                float2 shadeUV = TRANSFORM_TEX(poolUv, _ShadeTex);
+                half4 shadeColor = tex2D(_ShadeTex, shadeUV);
+                half3 causticColor = SampleCaustic(poolUv, i.uv);
                     
                 half4 result = PoolBlend(poolColor, shadeColor, causticColor) * i.color;
                 result = saturate(result);

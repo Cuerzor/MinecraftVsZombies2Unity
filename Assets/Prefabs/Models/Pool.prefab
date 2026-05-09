@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2821378046002204198
 Transform:
   m_ObjectHideFlags: 0
@@ -269,6 +269,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3030616924203518204}
   poolElement: {fileID: 3334008634162295374}
+  caustic1Scale: {x: 0.5, y: 1}
+  caustic2Scale: {x: 1, y: 1}
+  caustic1Speed: {x: 0, y: -1}
+  caustic2Speed: {x: 0, y: 1}
   warpTime: 0
   warpSpeed: 1
   causticTime: 0
@@ -304,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7246600224108457673
 Transform:
   m_ObjectHideFlags: 0
