@@ -3,7 +3,10 @@
 using MVZ2.GameContent.Effects;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic.Callbacks;
 using MVZ2Logic.Grids;
+using MVZ2Logic.Level;
+using PVZEngine.Callbacks;
 using PVZEngine.Definitions;
 using PVZEngine.Level;
 using UnityEngine;
@@ -17,6 +20,7 @@ namespace MVZ2.GameContent.Areas
         {
             SetProperty(VanillaAreaProps.WATER_COLOR, new Color(0, 0.48f, 0.89f, 1));
             SetProperty(VanillaAreaProps.WATER_COLOR_CENSORED, new Color(0, 0.48f, 0.89f, 1));
+            AddTrigger(LogicLevelCallbacks.IS_TERRAIN, IsWaterCallback, filter: LogicTerrainTypes.water);
         }
         public override void Setup(LevelEngine level)
         {
@@ -41,6 +45,18 @@ namespace MVZ2.GameContent.Areas
                 return -1 + Mathf.Sin(((x + z) * 0.01f + GetPoolWave(level)) * 4 * Mathf.PI);
             }
             return base.GetGroundY(level, x, z);
+        }
+        private void IsWaterCallback(LogicLevelCallbacks.IsTerrainCallbackParams args, CallbackResult result)
+        {
+            var level = args.level;
+            if (level.AreaID != VanillaAreaID.mountain)
+                return;
+            var column = level.GetColumn(args.x);
+            var lane = level.GetLane(args.z);
+            if (lane >= 1 && lane <= 4 && (column <= 9 || column >= 13))
+            {
+                result.SetValue(true);
+            }
         }
         public static float GetPoolWave(LevelEngine level)
         {

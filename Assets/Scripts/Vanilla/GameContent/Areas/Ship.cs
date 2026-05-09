@@ -9,9 +9,11 @@ using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Armors;
+using MVZ2Logic.Callbacks;
 using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Buffs;
+using PVZEngine.Callbacks;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
@@ -26,6 +28,7 @@ namespace MVZ2.GameContent.Areas
     {
         public Ship(string nsp, string name) : base(nsp, name)
         {
+            AddTrigger(LogicLevelCallbacks.IS_TERRAIN, IsCloudCallback, filter: LogicTerrainTypes.air);
         }
         public override void Setup(LevelEngine level)
         {
@@ -110,6 +113,18 @@ namespace MVZ2.GameContent.Areas
         private static NamespaceID GetParatroopToSpawn(RandomGenerator rng)
         {
             return paratroopsToSpawn.Random(rng);
+        }
+        private void IsCloudCallback(LogicLevelCallbacks.IsTerrainCallbackParams args, CallbackResult result)
+        {
+            var level = args.level;
+            if (level.AreaID != VanillaAreaID.ship)
+                return;
+            var column = level.GetColumn(args.x);
+            var lane = level.GetLane(args.z);
+            if (column >= 0 && column < level.GetMaxColumnCount() && (lane < 0 || lane >= level.GetMaxLaneCount()))
+            {
+                result.SetValue(true);
+            }
         }
         public static float GetSkyOffsetSpeed(LevelEngine level) => level.GetProperty<float>(PROP_SKY_OFFSET_SPEED);
         public static void SetSkyOffsetSpeed(LevelEngine level, float value) => level.SetProperty<float>(PROP_SKY_OFFSET_SPEED, value);

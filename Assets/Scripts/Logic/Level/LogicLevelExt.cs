@@ -533,7 +533,8 @@ namespace MVZ2Logic.Level
         {
             var column = level.GetColumn(x);
             var lane = level.GetLane(z);
-            return level.IsWaterGrid(column, lane);
+            var result = level.IsWaterGrid(column, lane);
+            return IsTerrainAt(level, x, z, LogicTerrainTypes.water, result);
         }
         #endregion
 
@@ -565,7 +566,15 @@ namespace MVZ2Logic.Level
         {
             var column = level.GetColumn(x);
             var lane = level.GetLane(z);
-            return level.IsAirGrid(column, lane);
+            var result = level.IsAirGrid(column, lane);
+            return IsTerrainAt(level, x, z, LogicTerrainTypes.air, result);
+        }
+        public static bool IsTerrainAt(this LevelEngine level, float x, float z, NamespaceID terrainType, bool value)
+        {
+            var callbackResult = new CallbackResult(value);
+            var args = new LogicLevelCallbacks.IsTerrainCallbackParams(level, x, z, terrainType);
+            level.Triggers.RunCallbackWithResultFiltered(LogicLevelCallbacks.IS_TERRAIN, args, callbackResult, terrainType);
+            return callbackResult.GetValue<bool>();
         }
         #endregion
 

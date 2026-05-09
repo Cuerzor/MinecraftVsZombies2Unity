@@ -136,6 +136,21 @@ namespace MVZ2Logic.Callbacks
                 this.pointerInteraction = pointerInteraction;
             }
         }
+        public struct IsTerrainCallbackParams
+        {
+            public LevelEngine level;
+            public float x;
+            public float z;
+            public NamespaceID terrainType;
+
+            public IsTerrainCallbackParams(LevelEngine level, float x, float z, NamespaceID terrainType)
+            {
+                this.level = level;
+                this.x = x;
+                this.z = z;
+                this.terrainType = terrainType;
+            }
+        }
         public readonly static CallbackType<LevelCallbackParams> POST_LEVEL_STOP = new();
         public readonly static CallbackType<LevelCallbackParams> PRE_BATTLE = new();
         public readonly static CallbackType<GetBlueprintNotRecommondedParams> GET_BLUEPRINT_NOT_RECOMMONDED = new();
@@ -153,5 +168,6 @@ namespace MVZ2Logic.Callbacks
         public readonly static CallbackType<PostHeldItemEventParams> POST_HELD_ITEM_EVENT = new();
         public readonly static CallbackType<LevelCallbackParams> POST_PAUSE = new();
         public readonly static CallbackType<LevelCallbackParams> POST_RESUME = new();
+        public readonly static CallbackType<IsTerrainCallbackParams> IS_TERRAIN = new();
     }
 }
