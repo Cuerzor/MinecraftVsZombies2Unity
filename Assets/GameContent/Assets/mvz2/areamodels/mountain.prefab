@@ -493,7 +493,6 @@ GameObject:
   - component: {fileID: 1560646121247791446}
   - component: {fileID: 7709226219782035696}
   - component: {fileID: 215704875111019792}
-  - component: {fileID: 7376873938876744736}
   m_Layer: 12
   m_Name: House
   m_TagString: Untagged
@@ -581,20 +580,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &7376873938876744736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4267032628575324233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a287da23b59d7e42be6baeb5ac11e8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  whenFalse: 0
-  propertyName: GameOver
 --- !u!1 &5977425712239297246
 GameObject:
   m_ObjectHideFlags: 0

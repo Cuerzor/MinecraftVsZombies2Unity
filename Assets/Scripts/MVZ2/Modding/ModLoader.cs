@@ -484,7 +484,8 @@ namespace MVZ2.Modding
                 area.SetProperty(LogicAreaProps.STARSHARD_ICON, meta.StarshardIcon);
 
                 area.SetProperty(EngineAreaProps.ENEMY_SPAWN_X, meta.EnemySpawnX);
-                area.SetProperty(LogicAreaProps.DOOR_Z, meta.DoorZ);
+                area.SetProperty(LogicAreaProps.DOOR_Z_MIN, meta.DoorZMin);
+                area.SetProperty(LogicAreaProps.DOOR_Z_MAX, meta.DoorZMax);
 
                 area.SetProperty(LogicAreaProps.BACKGROUND_LIGHT, meta.BackgroundLight);
                 area.SetProperty(LogicAreaProps.GLOBAL_LIGHT, meta.GlobalLight);

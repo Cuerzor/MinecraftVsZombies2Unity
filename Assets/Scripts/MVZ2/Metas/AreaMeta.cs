@@ -24,7 +24,8 @@ namespace MVZ2.Metas
         public SpriteReference? StarshardIcon { get; private set; }
 
         public float EnemySpawnX { get; private set; }
-        public float DoorZ { get; private set; }
+        public float DoorZMin { get; private set; }
+        public float DoorZMax { get; private set; }
 
         public Color BackgroundLight { get; private set; }
         public Color GlobalLight { get; private set; }
@@ -53,12 +54,16 @@ namespace MVZ2.Metas
             var tags = node.GetAttributeNamespaceIDArray("tags", defaultNsp);
 
             float enemySpawnX = 1080;
-            float doorZ = 240;
+            float doorZMin = 240;
+            float doorZMax = 240;
             var positionsNode = node["positions"];
             if (positionsNode != null)
             {
                 enemySpawnX = positionsNode.GetAttributeFloat("enemySpawnX") ?? enemySpawnX;
-                doorZ = positionsNode.GetAttributeFloat("doorZ") ?? doorZ;
+
+                var doorZ = positionsNode.GetAttributeFloat("doorZ");
+                doorZMin = positionsNode.GetAttributeFloat("doorZMin") ?? doorZ ?? doorZMin;
+                doorZMax = positionsNode.GetAttributeFloat("doorZMax") ?? doorZ ?? doorZMax;
             }
 
             Color backgroundLight = Color.white;
@@ -112,7 +117,8 @@ namespace MVZ2.Metas
                 Tags = tags,
 
                 EnemySpawnX = enemySpawnX,
-                DoorZ = doorZ,
+                DoorZMin = doorZMin,
+                DoorZMax = doorZMax,
 
                 BackgroundLight = backgroundLight,
                 GlobalLight = globalLight,

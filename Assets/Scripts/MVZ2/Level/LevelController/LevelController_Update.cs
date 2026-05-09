@@ -64,11 +64,23 @@ namespace MVZ2.Level
             var killerCtrl = killerEntity;
             if (killerCtrl.Exists())
             {
+
+
                 var killerEnt = killerCtrl.Entity;
                 var pos = killerEnt.Position;
                 pos.x -= 1;
-                pos.z = pos.z * 0.5f + level.GetDoorZ() * 0.5f;
-                pos.y = pos.y * 0.5f + level.GetGroundY(pos.x, pos.z) * 0.5f;
+
+                var groundY = level.GetGroundY(pos.x, pos.z);
+                var groundYOffseted = groundY + killerEnt.GetGroundLimitOffset();
+                if (pos.y < groundYOffseted)
+                    pos.y = pos.y * 0.5f + groundYOffseted * 0.5f;
+
+                var doorZMin = level.GetDoorZMin();
+                var doorZMax = level.GetDoorZMax();
+                float targetZ = Mathf.Clamp(pos.z, doorZMin, doorZMax);
+                pos.z = pos.z * 0.5f + targetZ * 0.5f;
+
+
                 killerEnt.Position = pos;
                 killerCtrl.UpdateFixed();
 

@@ -10,9 +10,9 @@ namespace MVZ2Logic.Level
     [PropertyRegistryRegion(PropertyRegions.level)]
     public static class LogicAreaProps
     {
-        private static PropertyMeta<T> Get<T>(string name, T? defaultValue = default)
+        private static PropertyMeta<T> Get<T>(string name, T? defaultValue = default, params string[] obsoleteNames)
         {
-            return new PropertyMeta<T>(name, defaultValue);
+            return new PropertyMeta<T>(name, defaultValue, obsoleteNames);
         }
 
         #region 模型ID
@@ -54,10 +54,15 @@ namespace MVZ2Logic.Level
         #endregion
 
         #region 门位置
-        public static readonly PropertyMeta<float> DOOR_Z = Get<float>("doorZ");
-        public static float GetDoorZ(this LevelEngine game)
+        public static readonly PropertyMeta<float> DOOR_Z_MIN = Get<float>("door_z_min");
+        public static float GetDoorZMin(this LevelEngine game)
         {
-            return game.GetProperty<float>(DOOR_Z);
+            return game.GetProperty<float>(DOOR_Z_MIN);
+        }
+        public static readonly PropertyMeta<float> DOOR_Z_MAX = Get<float>("door_z_max");
+        public static float GetDoorZMax(this LevelEngine game)
+        {
+            return game.GetProperty<float>(DOOR_Z_MAX);
         }
         #endregion
     }
