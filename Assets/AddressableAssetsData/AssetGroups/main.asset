@@ -8839,6 +8839,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4f84c97b0906344cb14c77ab661a61e
+    m_Address: mvz2:mountain_level_sub
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Music
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a4fb4d341a16ba64cbad7dd992c94206
     m_Address: mvz2:products/blueprint_slot
     m_ReadOnly: 0
@@ -9426,6 +9433,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Spritesheet
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0b7fb1291c31244989792048cfa3bf0
+    m_Address: mvz2:mountain_level
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Music
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b0c6ae85b0b767a4f95ea74b25aee1ba
     m_Address: mvz2:enemy/palace/shadow_cell

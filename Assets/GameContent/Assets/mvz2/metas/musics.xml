@@ -470,4 +470,18 @@
             <p>不可名状的巨型血肉墙壁正在朝你冲过来！！！！！</p>
         </description>
     </music>
+    <music id="mountain_level" name="秋意阑珊之瀑">
+        <unlock>
+            <condition required="mvz2:level.mountain_1" />
+        </unlock>
+        <track main="mvz2:mountain_level" sub="mvz2:mountain_level_sub" />
+        <source>东方风神录</source>
+        <origin>Fall of Fall　～ 秋意渐浓之瀑</origin>
+        <author>Dr.糕萌酸钾-Studio</author>
+        <description>
+            <p>妖怪之山关卡的音乐。</p>
+            <p>原曲是《东方风神录》中第四关的音乐《Fall of Fall　～ 秋意渐浓之瀑》。</p>
+            <p>===乐评施工中===</p>
+        </description>
+    </music>
 </musics>
