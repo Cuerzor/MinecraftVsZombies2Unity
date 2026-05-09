@@ -1214,6 +1214,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 163cb95c171780b46bd64f7d8cd2c279
+    m_Address: mvz2:entity/carts/pool_cleaner
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 16432db882004f24084a9ab5a4c88143
     m_Address: mvz2:random/glass_break2
     m_ReadOnly: 0
@@ -4376,6 +4383,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 509cc235dc93627478d4291db3d2ed44
+    m_Address: mvz2:pool_cleaner
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 50bf732bad4c58e4594fe0d57da0eeff
     m_Address: mvz2:misc/abandoned_house
     m_ReadOnly: 0
@@ -6893,6 +6907,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7f21f14edc9f5ad4aafc2149dbd2f006
+    m_Address: mvz2:cart/pool_cleaner
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7f3395beab3ab1e48af75779a006eae7
     m_Address: mvz2:entity/effects/soulfire_particle
@@ -10245,6 +10266,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c1117451f365fbf44a7ad86109cb038c
+    m_Address: mvz2:waterfall
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c12e1db49f78c4141a010f0e2c92453d
     m_Address: mvz2:random/netherrack/break4
     m_ReadOnly: 0
@@ -12813,6 +12841,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1ea97cf2ae2923468cd65767a4c2b71
+    m_Address: mvz2:level/mountain/bridge
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f24e02b7e9159cb4ebd603ab477f2152
     m_Address: mvz2:mobile_blueprint/high_frequency_pulse_dispenser
     m_ReadOnly: 0
@@ -13022,6 +13057,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6cb35860e573c04da360becf0381fe4
+    m_Address: mvz2:effect/waterfall
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f70064fbad3e8e249acbd5365f606f06
     m_Address: mvz2:starshard_rings/castle

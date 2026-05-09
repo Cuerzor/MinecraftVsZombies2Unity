@@ -2933,6 +2933,13 @@
                 <id name="mvz2:fragmentId" value="mvz2:corpse_cart" />
             </properties>
         </entity>
+        <entity template="cart" id="pool_cleaner" name="泳池清洁器">
+            <properties>
+                <id name="mvz2:cartTriggerSound" value="mvz2:pool_cleaner" />
+                <int name="mvz2:waterInteraction" value="3" />
+                <int name="mvz2:airInteraction" value="2" />
+            </properties>
+        </entity>
 
         <!-- Pickups -->
         <entity template="energyPickup" id="redstone" name="红石">
@@ -4512,5 +4519,6 @@
                 <bool name="mvz2:decorative" value="true" />
             </properties>
         </entity>
+        <entity template="effect" id="waterfall"/>
     </entries>
 </entities>

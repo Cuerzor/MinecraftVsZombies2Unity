@@ -148,6 +148,10 @@ namespace MVZ2.Mainmenu
                 {
                     StartCoroutine(GotoDebugStage(VanillaAreaID.palace));
                 }
+                else if (Input.GetKeyDown(KeyCode.F7))
+                {
+                    StartCoroutine(GotoDebugStage(VanillaAreaID.mountain));
+                }
             }
             if (animatorBlendTimeout > 0)
             {

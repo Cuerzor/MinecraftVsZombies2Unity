@@ -249,6 +249,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID vortex = Get("vortex");
         public readonly static NamespaceID wakeup = Get("wakeup");
         public readonly static NamespaceID water = Get("water");
+        public readonly static NamespaceID waterfall = Get("waterfall");
         public readonly static NamespaceID wind = Get("wind");
         public readonly static NamespaceID witherCry = Get("wither_cry");
         public readonly static NamespaceID witherDamage = Get("wither_damage");

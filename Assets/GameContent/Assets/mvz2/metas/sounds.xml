@@ -679,7 +679,10 @@
     <sound name="poison_gas" maxCount="1">
         <sample path="mvz2:poison_gas" weight="1" />
     </sound>
-    <sound name="pop" maxCount="1">
+    <sound name="pool_cleaner">
+        <sample path="mvz2:pool_cleaner" weight="1" />
+    </sound>
+    <sound name="pop">
         <sample path="mvz2:pop" weight="1" />
     </sound>
     <sound name="pot_break">
@@ -1029,6 +1032,9 @@
     </sound>
     <sound name="water">
         <sample path="mvz2:water" weight="1" />
+    </sound>
+    <sound name="waterfall" loopVolume="0.5">
+        <sample path="mvz2:waterfall" weight="1" />
     </sound>
     <sound name="wheel_of_death_start">
         <sample path="mvz2:entity/nightmareaper/wheel_of_death_start" weight="1" />

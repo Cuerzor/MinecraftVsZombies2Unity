@@ -351,6 +351,7 @@
     <model name="ballista" type="entity" path="mvz2:cart/ballista" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="unzan_fist" type="entity" path="mvz2:cart/unzan_fist" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="corpse_cart" type="entity" path="mvz2:cart/corpse_cart" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="pool_cleaner" type="entity" path="mvz2:cart/pool_cleaner" width="64" height="64" xOffset="0" yOffset="-28" />
 
     <!-- Pickups -->
     <model name="redstone" type="entity" path="mvz2:pickup/redstone" width="64" height="64" xOffset="0" yOffset="-16" />
@@ -501,6 +502,8 @@
     <model name="wither_summoning_blocks" type="entity" path="mvz2:effect/wither_summoning_blocks" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
     <model name="soul_effect" type="entity" path="mvz2:effect/soul_effect" width="16" height="16" xOffset="0" yOffset="-4" />
     <model name="soul_storm" type="entity" path="mvz2:effect/soul_storm" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
+    
+    <model name="waterfall" type="entity" path="mvz2:effect/waterfall" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     
     <!-- Projectiles -->
     <model name="arrow" type="entity" path="mvz2:projectile/arrow" width="32" height="10" xOffset="0" yOffset="-1" />
