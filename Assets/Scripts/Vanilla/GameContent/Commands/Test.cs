@@ -2,10 +2,14 @@
 
 using System.Linq;
 using MVZ2.GameContent.Areas;
+using MVZ2.GameContent.Contraptions;
+using MVZ2.GameContent.Effects;
+using MVZ2.GameContent.Enemies;
 using MVZ2Logic;
 using MVZ2Logic.Armors;
 using MVZ2Logic.Commands;
 using MVZ2Logic.Definitions;
+using MVZ2Logic.Grids;
 using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Entities;
@@ -26,38 +30,71 @@ namespace MVZ2.GameContent.Commands
             if (level == null)
                 return;
 
-            if (parameters[0] == "spawnenemies")
+            switch (parameters[0])
             {
-                var page = 0;
-                if (parameters.Length > 1)
-                {
-                    page = CommandUtility.ParseOptionalInt(parameters[1], 0);
-                }
-                SpawnEnemies(level, page);
-            }
-            else if (parameters[0] == "armor")
-            {
-                var id = NamespaceID.Parse(parameters[1], Global.BuiltinNamespace);
-                EquipArmors(level, id, LogicArmorSlots.main);
-            }
-            else if (parameters[0] == "shield")
-            {
-                var id = NamespaceID.Parse(parameters[1], Global.BuiltinNamespace);
-                EquipArmors(level, id, LogicArmorSlots.shield);
-            }
-            else if (parameters[0] == "paratroops")
-            {
-                Ship.SpawnParatroops(level, 3);
-            }
-            else if (parameters[0] == "wave")
-            {
-                var count = ParseHelper.ParseInt(parameters[1]);
-                level.CurrentWave = count;
-            }
-            else if (parameters[0] == "flags")
-            {
-                level.CurrentFlag = ParseHelper.ParseInt(parameters[1]);
-                level.UpdateLevelName();
+                case "spawnenemies":
+                    {
+                        var page = 0;
+                        if (parameters.Length > 1)
+                        {
+                            page = CommandUtility.ParseOptionalInt(parameters[1], 0);
+                        }
+                        SpawnEnemies(level, page);
+                        break;
+                    }
+
+                case "armor":
+                    {
+                        var id = NamespaceID.Parse(parameters[1], Global.BuiltinNamespace);
+                        EquipArmors(level, id, LogicArmorSlots.main);
+                        break;
+                    }
+
+                case "shield":
+                    {
+                        var id = NamespaceID.Parse(parameters[1], Global.BuiltinNamespace);
+                        EquipArmors(level, id, LogicArmorSlots.shield);
+                        break;
+                    }
+
+                case "paratroops":
+                    Ship.SpawnParatroops(level, 3);
+                    break;
+                case "wave":
+                    {
+                        var count = ParseHelper.ParseInt(parameters[1]);
+                        level.CurrentWave = count;
+                        break;
+                    }
+
+                case "flags":
+                    level.CurrentFlag = ParseHelper.ParseInt(parameters[1]);
+                    level.UpdateLevelName();
+                    break;
+                case "commandblock":
+                    {
+                        var contraptions = Global.Saves.GetUnlockedContraptions();
+                        var grids = level.GetAllGrids();
+                        for (int i = 0; i < contraptions.Length; i++)
+                        {
+                            var contraption = contraptions[i];
+                            var grid = grids.FirstOrDefault(g => g.CanSpawnEntity(contraption));
+                            if (grid == null)
+                                continue;
+                            var spawnParams = CommandBlock.GetImitateSpawnParams(contraption);
+                            grid.SpawnPlacedEntity(VanillaContraptionID.commandBlock, spawnParams);
+                        }
+
+                        break;
+                    }
+                case "horde":
+                    {
+                        for (int i = 0; i < 50; i++)
+                        {
+                            level.SpawnEnemyAtRandomLane(VanillaSpawnID.zombie);
+                        }
+                    }
+                    break;
             }
         }
         private void SpawnEnemies(LevelEngine level, int page)

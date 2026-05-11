@@ -5,7 +5,6 @@ using System.Linq;
 using MVZ2.Options;
 using MVZ2.View.Level;
 using MVZ2Logic.Audios;
-using MVZ2Logic.Grids;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
@@ -228,10 +227,7 @@ namespace MVZ2.Level
         }
         private void OnFastKillKey()
         {
-            foreach (var enemy in level.FindEntities(e => e.Type == EntityTypes.ENEMY && e.IsHostile(SelfFaction) && !e.IsDead))
-            {
-                enemy.Die();
-            }
+            Main.DebugManager.ExecuteCommand("/kill");
         }
         private void OnSaveKey()
         {
@@ -251,31 +247,15 @@ namespace MVZ2.Level
         }
         private void OnPerformanceTestKey()
         {
-            for (int i = 0; i < 50; i++)
-            {
-                level.SpawnEnemyAtRandomLane(MVZ2SpawnID.zombie);
-            }
+            Main.DebugManager.ExecuteCommand("/test horde");
         }
         private void OnFastKillBossKey()
         {
-            foreach (var boss in level.FindEntities(e => e.Type == EntityTypes.BOSS && !e.IsDead))
-            {
-                boss.Die();
-            }
+            Main.DebugManager.ExecuteCommand("/kill boss");
         }
         private void OnCommandBlockTestKey()
         {
-            var contraptions = Main.SaveManager.GetUnlockedContraptions();
-            var grids = level.GetAllGrids();
-            for (int i = 0; i < contraptions.Length; i++)
-            {
-                var contraption = contraptions[i];
-                var grid = grids.FirstOrDefault(g => g.CanSpawnEntity(contraption));
-                if (grid == null)
-                    continue;
-                var spawnParams = CommandBlock.GetImitateSpawnParams(contraption);
-                var command = grid.SpawnPlacedEntity(LogicContraptionID.commandBlock, spawnParams);
-            }
+            Main.DebugManager.ExecuteCommand("/test commandblock");
         }
         private void OnAdvancedPauseKey()
         {

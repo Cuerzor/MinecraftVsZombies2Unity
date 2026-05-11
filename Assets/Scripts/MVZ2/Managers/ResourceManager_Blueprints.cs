@@ -8,6 +8,7 @@ using MVZ2.UI;
 using MVZ2Logic;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Callbacks;
+using MVZ2Logic.Contraptions;
 using MVZ2Logic.Games;
 using MVZ2Logic.Level;
 using MVZ2Logic.Localization;

@@ -12,6 +12,7 @@ using MVZ2Logic.Artifacts;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Callbacks;
+using MVZ2Logic.Contraptions;
 using MVZ2Logic.Games;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
