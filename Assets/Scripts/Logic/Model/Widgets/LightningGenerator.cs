@@ -3,7 +3,7 @@
 using Tools;
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models.Widgets
 {
     [RequireComponent(typeof(LineRenderer))]
     public class LightningGenerator : MonoBehaviour

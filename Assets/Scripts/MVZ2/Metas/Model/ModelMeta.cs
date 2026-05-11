@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml;
 using MVZ2.IO;
-using MVZ2.Models;
+using MVZ2Logic.Models;
 using PVZEngine;
 using UnityEngine;
 

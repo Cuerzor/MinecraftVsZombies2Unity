@@ -2,10 +2,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using MVZ2Logic.Models.Elements;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models
 {
     public class ModelGroupEntity : ModelGroupRenderer
     {

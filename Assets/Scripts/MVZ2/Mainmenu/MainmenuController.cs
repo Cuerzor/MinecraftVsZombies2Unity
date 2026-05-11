@@ -13,7 +13,6 @@ using MVZ2.Metas;
 using MVZ2.Options;
 using MVZ2.Saves;
 using MVZ2.Scenes;
-using MVZ2.Supporters;
 using MVZ2.UI;
 using MVZ2.UI.Mainmenu;
 using MVZ2Logic.Audios;

@@ -2,7 +2,6 @@
 
 using MVZ2.Blueprints;
 using MVZ2.Managers;
-using MVZ2.Models;
 using MVZ2.UI;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;

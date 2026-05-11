@@ -5,8 +5,6 @@ using MVZ2.GameContent.Buffs;
 using MVZ2.GameContent.Buffs.SeedPacks;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Level;
-using MVZ2Logic.Modding;
-using MVZ2Logic.Resources;
 using PVZEngine;
 using PVZEngine.Auras;
 using PVZEngine.Buffs;

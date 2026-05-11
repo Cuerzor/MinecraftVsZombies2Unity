@@ -2,7 +2,7 @@
 
 using UnityEngine.Rendering;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models.Elements
 {
     public class SortingGroupElement : GraphicElement
     {

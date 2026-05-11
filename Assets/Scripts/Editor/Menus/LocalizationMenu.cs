@@ -7,7 +7,6 @@ using MVZ2.Localization;
 using MVZ2.Metas;
 using MVZ2.TalkData;
 using MVZ2.Vanilla;
-using MVZ2Logic;
 using MVZ2Logic.Localization;
 using Newtonsoft.Json;
 using PVZEngine;

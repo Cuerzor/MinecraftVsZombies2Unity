@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models.Widgets
 {
     [ExecuteAlways]
     public class PositionLocker : MonoBehaviour

@@ -5,7 +5,7 @@ using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
 using MVZ2.Metas;
-using MVZ2.Models;
+using MVZ2Logic.Models;
 using PVZEngine;
 using UnityEngine;
 

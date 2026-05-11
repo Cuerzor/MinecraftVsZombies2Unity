@@ -6,6 +6,7 @@ using MVZ2.Entities;
 using MVZ2.Grids;
 using MVZ2.Models;
 using MVZ2.UI.Level;
+using MVZ2Logic.Models;
 using PVZEngine;
 using PVZEngine.Level;
 using Tools;

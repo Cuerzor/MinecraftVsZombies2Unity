@@ -2,9 +2,7 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using MVZ2.Localization;
 using MVZ2.Modding;
-using MVZ2.Options;
 using MVZ2.Sprites;
 using MVZ2Logic.Options;
 using MVZ2Logic.Resources;

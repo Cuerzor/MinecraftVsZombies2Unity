@@ -4,7 +4,7 @@ using PVZEngine;
 using PVZEngine.Models;
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models
 {
     public abstract class ModelInterface : IModelInterface
     {

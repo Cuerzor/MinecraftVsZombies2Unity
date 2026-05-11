@@ -12,6 +12,7 @@ using MVZ2Logic.Games;
 using MVZ2Logic.Grids;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
+using MVZ2Logic.Models;
 using MVZ2Logic.Options;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;

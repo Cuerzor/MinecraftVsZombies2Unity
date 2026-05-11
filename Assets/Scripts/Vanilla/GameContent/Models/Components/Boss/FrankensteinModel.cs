@@ -2,9 +2,11 @@
 
 using MVZ2.Vanilla.Audios;
 using MVZ2Logic;
+using MVZ2Logic.Models;
+using MVZ2Logic.Models.Elements;
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2.GameContent.Models
 {
     public class FrankensteinModel : ModelComponent
     {

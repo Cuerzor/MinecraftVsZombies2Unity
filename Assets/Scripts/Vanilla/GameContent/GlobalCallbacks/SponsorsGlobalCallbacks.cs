@@ -2,7 +2,6 @@
 
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Effects;
-using MVZ2.GameContent.GlobalCallbacks;
 using MVZ2Logic;
 using MVZ2Logic.Callbacks;
 using MVZ2Logic.Modding;
@@ -13,7 +12,7 @@ using PVZEngine.Entities;
 using PVZEngine.Level;
 using Tools;
 
-namespace MVZ2.Level
+namespace MVZ2.GameContent.GlobalCallbacks
 {
     [ModGlobalCallbacks]
     public class SponsorsGlobalCallbacks : VanillaGlobalCallbacks

@@ -3,10 +3,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MVZ2Logic;
+using MVZ2Logic.Models.Elements;
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models
 {
     public abstract class ModelGroupRenderer : ModelGroup
     {

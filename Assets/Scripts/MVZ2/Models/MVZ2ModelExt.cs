@@ -2,6 +2,7 @@
 
 using MVZ2Logic;
 using MVZ2Logic.Games;
+using MVZ2Logic.Models;
 using PVZEngine;
 using PVZEngine.Armors;
 

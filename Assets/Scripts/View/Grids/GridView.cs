@@ -4,6 +4,7 @@ using System;
 using MVZ2.Models;
 using MVZ2.View.Level;
 using MVZ2Logic.Inputs;
+using MVZ2Logic.Models;
 using PVZEngine.Buffs;
 using UnityEngine;
 using UnityEngine.EventSystems;

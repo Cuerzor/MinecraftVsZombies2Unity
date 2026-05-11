@@ -12,7 +12,6 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-
 namespace MVZ2.UI.DebugConsole
 {
     /// <summary>

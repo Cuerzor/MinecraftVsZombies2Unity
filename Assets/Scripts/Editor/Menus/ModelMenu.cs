@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using MVZ2.Models;
+using MVZ2Logic.Models;
 using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;

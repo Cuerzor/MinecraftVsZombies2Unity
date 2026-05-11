@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2.GameContent.Models
 {
     public class CrushingWallsModelPlatform : MonoBehaviour
     {

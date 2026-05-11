@@ -3,10 +3,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MVZ2Logic.Models.Elements;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models
 {
     [RequireComponent(typeof(Canvas))]
     public class ModelGroupUI : ModelGroup

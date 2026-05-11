@@ -3,7 +3,7 @@
 using PVZEngine;
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models
 {
     public static class ModelFactories
     {

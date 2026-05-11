@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Security.Cryptography;
 using MVZ2.Managers;
 using MVZ2.Metas;
 using MVZ2Logic.Armors;

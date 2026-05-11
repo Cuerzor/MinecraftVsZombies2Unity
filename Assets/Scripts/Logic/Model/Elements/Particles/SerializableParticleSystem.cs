@@ -3,7 +3,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models.Elements
 {
     public class SerializableParticleSystem
     {

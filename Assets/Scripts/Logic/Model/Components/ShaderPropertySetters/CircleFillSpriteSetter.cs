@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models.Components
 {
     [ExecuteAlways]
     public class CircleFillSpriteSetter : ShaderPropertySetter<float>

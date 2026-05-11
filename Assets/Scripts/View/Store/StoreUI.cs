@@ -3,6 +3,7 @@
 using System;
 using MVZ2.UI.Talk;
 using TMPro;
+using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 

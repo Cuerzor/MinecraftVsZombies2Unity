@@ -5,7 +5,7 @@ using MVZ2Logic.Models;
 using PVZEngine;
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2.GameContent.Models
 {
     public class BlueprintPickupSetter : ModelComponent
     {

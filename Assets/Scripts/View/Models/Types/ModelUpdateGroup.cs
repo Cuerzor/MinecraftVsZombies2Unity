@@ -2,6 +2,8 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using MVZ2Logic.Models;
+using MVZ2Logic.Models.Elements;
 using UnityEngine;
 
 namespace MVZ2.Models

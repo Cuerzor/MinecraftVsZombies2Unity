@@ -1,4 +1,4 @@
-using MVZ2.Models;
+using MVZ2Logic.Models;
 using UnityEditor;
 using UnityEngine;
 

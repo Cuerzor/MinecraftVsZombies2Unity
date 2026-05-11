@@ -2,9 +2,11 @@
 
 using System.Collections.Generic;
 using MVZ2.GameContent.Effects;
+using MVZ2Logic.Models;
+using MVZ2Logic.Models.Elements;
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2.GameContent.Models
 {
     public class NightmareDarknessModel : ModelComponent
     {

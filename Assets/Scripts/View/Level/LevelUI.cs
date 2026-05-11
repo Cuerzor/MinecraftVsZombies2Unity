@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2.Models;
+using MVZ2Logic.Models;
 using UnityEngine;
 using UnityEngine.UI;
 

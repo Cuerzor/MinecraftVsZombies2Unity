@@ -2,7 +2,7 @@
 
 using PVZEngine;
 
-namespace MVZ2Logic.Level 
+namespace MVZ2Logic.Level
 {
     public static class LogicTerrainTypes
     {

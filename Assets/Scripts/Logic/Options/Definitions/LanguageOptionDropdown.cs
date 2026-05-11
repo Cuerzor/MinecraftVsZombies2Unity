@@ -2,11 +2,10 @@
 
 using System;
 using System.Collections.Generic;
-using MVZ2Logic;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.Options;
 
-namespace MVZ2.GameContent.Options
+namespace MVZ2Logic.Contents.Options
 {
     [AutoOptionWidgetDefinition(LogicOptionWidgetNames.language)]
     public class LanguageOptionDropdown : OptionDropdownDefinition

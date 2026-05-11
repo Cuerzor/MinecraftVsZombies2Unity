@@ -3,7 +3,7 @@
 using PVZEngine.Models;
 using UnityEngine;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models.Elements
 {
     [RequireComponent(typeof(Animator))]
     public class AnimatorElement : MonoBehaviour, IAnimatorInterface

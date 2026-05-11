@@ -4,12 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MukioI18n;
-using MVZ2Logic;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.Options;
 using UnityEngine;
 
-namespace MVZ2.GameContent.Options
+namespace MVZ2Logic.Contents.Options
 {
     [AutoOptionWidgetDefinition(LogicOptionWidgetNames.resolution)]
     public class ResolutionOptionDropdown : OptionDropdownDefinition

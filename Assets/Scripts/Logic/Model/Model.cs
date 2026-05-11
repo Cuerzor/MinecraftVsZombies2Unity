@@ -3,7 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using MVZ2Logic.Models;
+using MVZ2Logic.Models.Elements;
 using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Models;
@@ -11,7 +11,7 @@ using Tools;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace MVZ2.Models
+namespace MVZ2Logic.Models
 {
     public abstract class Model : MonoBehaviour
     {
