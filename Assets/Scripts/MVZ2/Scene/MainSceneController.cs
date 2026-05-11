@@ -391,7 +391,7 @@ namespace MVZ2.Scenes
         }
         public void GotoMapOrMainmenu()
         {
-            if (main.SaveManager.IsLevelCleared(MVZ2StageID.prologue))
+            if (main.SaveManager.IsPrologueCleared())
             {
                 var lastMapID = main.SaveManager.GetLastMapID() ?? main.ResourceManager.GetFirstMapID();
                 DisplayMap(lastMapID);

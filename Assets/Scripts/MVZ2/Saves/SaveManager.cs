@@ -501,6 +501,12 @@ namespace MVZ2.Saves
             saveData.SetCurrentEndlessFlag(stageID.Path, value);
         }
 
+        public bool IsPrologueCleared()
+        {
+            var stageID = Main.Settings.FirstLevelStageID;
+            return this.IsLevelCleared(stageID);
+        }
+
         #region 统计
         public UserStats? GetUserStats(string nsp)
         {

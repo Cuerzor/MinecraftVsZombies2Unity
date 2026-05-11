@@ -158,7 +158,7 @@ namespace MVZ2.Arcade
                 var def = game.GetDifficultyDefinition(difficulty);
                 if (def == null)
                 {
-                    def = game.GetDifficultyDefinition(MVZ2Difficulties.normal);
+                    def = game.GetDifficultyDefinition(Main.Settings.DefaultDifficultyID);
                 }
                 if (def != null)
                 {

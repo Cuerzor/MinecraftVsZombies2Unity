@@ -118,64 +118,10 @@ namespace MVZ2.Managers
         }
 
         #region 贴图
-        public Sprite? GetFinalSprite(SpriteReference? spriteRef)
-        {
-            if (!SpriteReference.IsValid(spriteRef))
-                return null;
-            if (!OptionsManager.HasBloodAndGore())
-            {
-                var id = spriteRef.ID;
-                var censoredId = new NamespaceID(id.SpaceName, $"{id.Path}_censored");
-                SpriteReference censoredRef;
-                if (spriteRef.IsSheet)
-                {
-                    censoredRef = new SpriteReference(censoredId, spriteRef.Index);
-                }
-                else
-                {
-                    censoredRef = new SpriteReference(censoredId);
-                }
-                var sprite = LanguageManager.GetCurrentLanguageSprite(censoredRef) ?? ResourceManager.GetSprite(censoredRef);
-                if (sprite)
-                    return sprite;
-            }
-            return LanguageManager.GetCurrentLanguageSprite(spriteRef) ?? ResourceManager.GetSprite(spriteRef);
-        }
-        public Sprite GetFinalSprite(Sprite sprite)
-        {
-            var spriteID = ResourceManager.GetSpriteReference(sprite);
-            if (!SpriteReference.IsValid(spriteID))
-                return sprite;
-            return GetFinalSprite(spriteID) ?? sprite;
-        }
-        public Sprite? GetFinalSprite(SpriteReference spriteRef, string language)
-        {
-            if (!OptionsManager.HasBloodAndGore())
-            {
-                var id = spriteRef.ID;
-                var censoredId = new NamespaceID(id.SpaceName, $"{id.Path}_censored");
-                SpriteReference censoredRef;
-                if (spriteRef.IsSheet)
-                {
-                    censoredRef = new SpriteReference(censoredId, spriteRef.Index);
-                }
-                else
-                {
-                    censoredRef = new SpriteReference(censoredId);
-                }
-                var sprite = LanguageManager.GetLocalizedSprite(censoredRef, language) ?? ResourceManager.GetSprite(censoredRef);
-                if (sprite)
-                    return sprite;
-            }
-            return LanguageManager.GetLocalizedSprite(spriteRef, language) ?? ResourceManager.GetSprite(spriteRef);
-        }
-        public Sprite GetFinalSprite(Sprite sprite, string language)
-        {
-            var spriteID = ResourceManager.GetSpriteReference(sprite);
-            if (!SpriteReference.IsValid(spriteID))
-                return sprite;
-            return GetFinalSprite(spriteID, language) ?? sprite;
-        }
+        public Sprite? GetFinalSprite(SpriteReference? spriteRef) => ResourceManager.GetFinalSprite(spriteRef);
+        public Sprite GetFinalSprite(Sprite sprite) => ResourceManager.GetFinalSprite(sprite);
+        public Sprite? GetFinalSprite(SpriteReference spriteRef, string language) => ResourceManager.GetFinalSprite(spriteRef, language);
+        public Sprite GetFinalSprite(Sprite sprite, string language) => ResourceManager.GetFinalSprite(sprite, language);
         #endregion
 
 
@@ -238,6 +184,8 @@ namespace MVZ2.Managers
                 debug = DebugManager,
                 cursors = CursorManager,
                 sponsors = SponsorManager,
+                resources = ResourceManager,
+                sounds = SoundManager,
             });
         }
         private void InitSerializable()
@@ -369,6 +317,7 @@ namespace MVZ2.Managers
         public MainSceneController Scene => scene;
         public PerformanceManager PerformanceManager => performanceManager;
         public TalkManager TalkManager => talkManager;
+        public GameSettings Settings => settings;
 
         private Task? initTask;
         private TaskPipeline? loadPipeline;
@@ -432,6 +381,8 @@ namespace MVZ2.Managers
         private TalkManager talkManager = null!;
         [SerializeField]
         private MainSceneController scene = null!;
+        [SerializeField]
+        private GameSettings settings = null!;
         public enum PlatformMode
         {
             Default,

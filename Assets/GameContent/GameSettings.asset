@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35bac41d01613f49a792dd37405dda9, type: 3}
+  m_Name: GameSettings
+  m_EditorClassIdentifier: 
+  defaultDifficultyID:
+    spacename: mvz2
+    path: normal
+  defaultStarshardSprite: {fileID: 21300000, guid: 5fe877b614795e144996e5d0ede65e81, type: 3}
+  helpNoteID:
+    spacename: mvz2
+    path: helper
+  firstLevelAreaID:
+    spacename: mvz2
+    path: day
+  firstLevelStageID:
+    spacename: mvz2
+    path: prologue
+  defaultMapID:
+    spacename: mvz2
+    path: halloween
+  mainMapID:
+    spacename: mvz2
+    path: gensokyo
+  gridPlaceHolderModelID:
+    spacename: mvz2
+    path: grid.grid_placeholder
+  hpBarLayerOrders:
+  - spacename: mvz2
+    path: tool
+  - spacename: mvz2
+    path: main
+  - spacename: mvz2
+    path: protector
+  - spacename: mvz2
+    path: carrier
+  debugLevelStageID:
+    spacename: mvz2
+    path: debug
+  debugLevelAreas:
+  - spacename: mvz2
+    path: halloween
+  - spacename: mvz2
+    path: dream
+  - spacename: mvz2
+    path: castle
+  - spacename: mvz2
+    path: mausoleum
+  - spacename: mvz2
+    path: ship
+  - spacename: mvz2
+    path: palace
+  - spacename: mvz2
+    path: mountain

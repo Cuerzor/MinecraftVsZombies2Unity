@@ -89,24 +89,27 @@ namespace MVZ2.Level
         private void UpdateHeldItemIcons(HeldItemDefinition definition, IHeldItemData data)
         {
             bool triggerVisible = false;
-            if (data.Type == LogicHeldTypes.blueprintPickup)
+            var behaviour = definition.GetBehaviour<IBlueprintHeldItemBehaviour>();
+            if (behaviour != null)
             {
-                var blueprintPickup = data.GetHoldingEntity(level);
-                if (blueprintPickup != null)
+                var seedPack = behaviour.GetSeedPack(level, data);
+                if (seedPack != null)
                 {
-                    var seedDef = BlueprintPickup.GetSeedDefinition(blueprintPickup);
-                    if (seedDef != null && seedDef.IsTriggerActive() && seedDef.CanInstantTrigger())
+                    if (seedPack.IsTriggerActive() && seedPack.CanInstantTrigger())
                     {
                         triggerVisible = true;
                     }
                 }
-            }
-            else
-            {
-                SeedPack? blueprint = definition.GetSeedPack(level, data);
-                if (blueprint != null && blueprint.IsTriggerActive() && blueprint.CanInstantTrigger())
+                else
                 {
-                    triggerVisible = true;
+                    var seedDefinition = behaviour.GetSeedDefinition(level, data);
+                    if (seedDefinition != null)
+                    {
+                        if (seedDefinition.IsTriggerActive() && seedDefinition.CanInstantTrigger())
+                        {
+                            triggerVisible = true;
+                        }
+                    }
                 }
             }
             ui.SetHeldItemTrigger(triggerVisible, data.IsInstantTrigger());

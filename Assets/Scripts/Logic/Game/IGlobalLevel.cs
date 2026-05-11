@@ -3,6 +3,7 @@
 using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Level;
+using UnityEngine;
 
 namespace MVZ2Logic.Games
 {
@@ -10,6 +11,10 @@ namespace MVZ2Logic.Games
     {
         void InitLevel(NamespaceID areaId, NamespaceID stageId, float introDelay = 0, LevelExitTarget exitTarget = LevelExitTarget.MapOrMainmenu);
         LevelEngine? GetLevel();
+        Vector3 LawnToTrans(Vector3 pos);
+        Vector3 TransToLawn(Vector3 pos);
+        float LawnToTransScale { get; }
+        float TransToLawnScale { get; }
         public bool IsInLevel()
         {
             return GetLevel() != null;

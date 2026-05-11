@@ -207,6 +207,7 @@ MonoBehaviour:
   performanceManager: {fileID: 3219927806255042467}
   talkManager: {fileID: 8975892867408784812}
   scene: {fileID: 0}
+  settings: {fileID: 11400000, guid: 3d8ed40a222ec8a4181186d4126b3881, type: 2}
 --- !u!1 &1252652136287316531
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 8461513829554171411}
-  characterImageScale: 0.8
   defaultSprite: {fileID: 21300000, guid: ada34604e282038429a0cd4310662aa1, type: 3}
   generatedSpriteManifest: {fileID: 11400000, guid: cd706561546c5454c978c77fd4f32daa, type: 2}
 --- !u!1 &1307615763681535639

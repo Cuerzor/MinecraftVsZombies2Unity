@@ -88,7 +88,7 @@ namespace MVZ2.Map
             }
             Main.SaveManager.SetLastMapID(mapId);
 
-            if (mapId == VanillaMapID.gensokyo)
+            if (mapId == Main.Settings.MainMapID)
             {
                 ui.SetButtonActive(MapUI.ButtonType.Map, false);
                 ui.SetHintText(string.Empty);
@@ -232,7 +232,7 @@ namespace MVZ2.Map
                     Main.Scene.DisplayStore(() => Main.Scene.DisplayMap(MapID), true);
                     break;
                 case MapUI.ButtonType.Map:
-                    Main.Scene.DisplayMap(VanillaMapID.gensokyo);
+                    Main.Scene.DisplayMap(Main.Settings.MainMapID);
                     break;
                 case MapUI.ButtonType.Setting:
                     ui.SetOptionsDialogActive(true);
@@ -663,7 +663,8 @@ namespace MVZ2.Map
             var storeTalks = Main.ResourceManager.GetCurrentStoreLoreTalks();
             ui.SetStoreArrowVisible(storeTalks.Length > 0);
 
-            var meta = Main.ResourceManager.GetMapMeta(VanillaMapID.gensokyo);
+            var mapID = Main.Settings.MainMapID;
+            var meta = Main.ResourceManager.GetMapMeta(mapID);
             var mapTalks = meta?.loreTalks?.GetLoreTalks(Main.SaveManager);
             ui.SetMapArrowVisible(mapTalks != null && mapTalks.Length > 0);
         }

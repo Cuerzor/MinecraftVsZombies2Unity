@@ -2,8 +2,11 @@
 
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MVZ2.Localization;
 using MVZ2.Modding;
+using MVZ2.Options;
 using MVZ2.Sprites;
+using MVZ2Logic.Options;
 using MVZ2Logic.Resources;
 using PVZEngine;
 using UnityEngine;
@@ -52,6 +55,47 @@ namespace MVZ2.Managers
                 return sprRef;
             }
             return null;
+        }
+        public Sprite? GetFinalSprite(SpriteReference? spriteRef)
+        {
+            if (!SpriteReference.IsValid(spriteRef))
+                return null;
+            return GetFinalSprite(spriteRef, Main.LanguageManager.GetCurrentLanguage());
+        }
+        public Sprite GetFinalSprite(Sprite sprite)
+        {
+            var spriteID = GetSpriteReference(sprite);
+            if (!SpriteReference.IsValid(spriteID))
+                return sprite;
+            return GetFinalSprite(spriteID) ?? sprite;
+        }
+        public Sprite? GetFinalSprite(SpriteReference spriteRef, string language)
+        {
+            if (!Main.OptionsManager.HasBloodAndGore())
+            {
+                var id = spriteRef.ID;
+                var censoredId = new NamespaceID(id.SpaceName, $"{id.Path}_censored");
+                SpriteReference censoredRef;
+                if (spriteRef.IsSheet)
+                {
+                    censoredRef = new SpriteReference(censoredId, spriteRef.Index);
+                }
+                else
+                {
+                    censoredRef = new SpriteReference(censoredId);
+                }
+                var sprite = Main.LanguageManager.GetLocalizedSprite(censoredRef, language) ?? GetSprite(censoredRef);
+                if (sprite)
+                    return sprite;
+            }
+            return Main.LanguageManager.GetLocalizedSprite(spriteRef, language) ?? GetSprite(spriteRef);
+        }
+        public Sprite GetFinalSprite(Sprite sprite, string language)
+        {
+            var spriteID = GetSpriteReference(sprite);
+            if (!SpriteReference.IsValid(spriteID))
+                return sprite;
+            return GetFinalSprite(spriteID, language) ?? sprite;
         }
         public Sprite GetDefaultSprite()
         {

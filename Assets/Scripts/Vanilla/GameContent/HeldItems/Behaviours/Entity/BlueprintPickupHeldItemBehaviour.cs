@@ -23,7 +23,7 @@ using PVZEngine.SeedPacks;
 namespace MVZ2.GameContent.HeldItems
 {
     [AutoHeldItemBehaviourDefinition(VanillaHeldItemBehaviourNames.blueprintPickup)]
-    public class BlueprintPickupHeldItemBehaviour : EntityHeldItemBehaviour, IHeldTwinkleEntityBehaviour
+    public class BlueprintPickupHeldItemBehaviour : EntityHeldItemBehaviour, IHeldTwinkleEntityBehaviour, IBlueprintHeldItemBehaviour
     {
         public BlueprintPickupHeldItemBehaviour(string nsp, string name) : base(nsp, name)
         {
@@ -236,6 +236,19 @@ namespace MVZ2.GameContent.HeldItems
             if (method == null)
                 return false;
             return method.ShouldMakeEntityTwinkle(placementDef, entity, entityDef);
+        }
+
+        public SeedPack? GetSeedPack(LevelEngine level, IHeldItemData data)
+        {
+            return null;
+        }
+
+        public SeedDefinition? GetSeedDefinition(LevelEngine level, IHeldItemData data)
+        {
+            var blueprintPickup = GetEntity(level, data);
+            if (blueprintPickup == null)
+                return null;
+            return BlueprintPickup.GetSeedDefinition(blueprintPickup);
         }
     }
 }

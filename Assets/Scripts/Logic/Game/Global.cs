@@ -22,6 +22,8 @@ namespace MVZ2Logic
             Debugs = param.debug;
             Cursors = param.cursors;
             Sponsors = param.sponsors;
+            Resources = param.resources;
+            Sounds = param.sounds;
         }
         public static void InitGame(IGlobalGame game)
         {
@@ -45,6 +47,8 @@ namespace MVZ2Logic
         public static IGlobalDebug Debugs { get; private set; } = null!;
         public static IGlobalCursors Cursors { get; private set; } = null!;
         public static IGlobalSponsors Sponsors { get; private set; } = null!;
+        public static IGlobalResources? Resources { get; private set; }
+        public static IGlobalSounds Sounds { get; private set; } = null!;
         public static IVanillaInterface VanillaInterface { get; private set; } = null!;
         public static string BuiltinNamespace => Game.DefaultNamespace;
     }
@@ -63,5 +67,7 @@ namespace MVZ2Logic
         public IGlobalDebug debug;
         public IGlobalCursors cursors;
         public IGlobalSponsors sponsors;
+        public IGlobalResources resources;
+        public IGlobalSounds sounds;
     }
 }

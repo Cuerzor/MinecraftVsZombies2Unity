@@ -8,5 +8,6 @@ namespace MVZ2Logic.HeldItems
     public interface IBlueprintHeldItemBehaviour
     {
         SeedPack? GetSeedPack(LevelEngine level, IHeldItemData data);
+        SeedDefinition? GetSeedDefinition(LevelEngine level, IHeldItemData data);
     }
 }

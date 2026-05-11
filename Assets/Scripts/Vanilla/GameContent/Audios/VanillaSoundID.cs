@@ -205,6 +205,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID siren = Get("siren");
         public readonly static NamespaceID slice = Get("slice");
         public readonly static NamespaceID shadowCast = Get("shadow_cast");
+        public readonly static NamespaceID shellCaseDrop = Get("shell_case_drop");
         public readonly static NamespaceID shieldHit = Get("shield_hit");
         public readonly static NamespaceID shrink = Get("shrink");
         public readonly static NamespaceID shutter = Get("shutter");

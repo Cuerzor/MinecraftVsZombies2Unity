@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2Logic.Inputs;
+using MVZ2Logic.Models;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

@@ -2,6 +2,7 @@
 
 using MVZ2.UI;
 using MVZ2Logic.Level;
+using MVZ2Logic.Models;
 using PVZEngine.SeedPacks;
 using UnityEngine;
 

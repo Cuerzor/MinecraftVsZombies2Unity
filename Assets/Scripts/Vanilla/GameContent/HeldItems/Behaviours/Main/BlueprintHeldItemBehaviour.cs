@@ -162,6 +162,7 @@ namespace MVZ2.GameContent.HeldItems
 
         }
         public abstract SeedPack? GetSeedPack(LevelEngine level, IHeldItemData data);
+        public abstract SeedDefinition? GetSeedDefinition(LevelEngine level, IHeldItemData data);
         public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
         {
             var seed = GetSeedPack(level, data);
@@ -208,6 +209,13 @@ namespace MVZ2.GameContent.HeldItems
         {
             return level.GetSeedPackAt(data.GetSeedPackIndex());
         }
+        public override SeedDefinition? GetSeedDefinition(LevelEngine level, IHeldItemData data)
+        {
+            var seedPack = GetSeedPack(level, data);
+            if (seedPack == null)
+                return null;
+            return seedPack.Definition;
+        }
     }
     [AutoHeldItemBehaviourDefinition(VanillaHeldItemBehaviourNames.conveyorBlueprint)]
     public class ConveyorBlueprintHeldItemBehaviour : BlueprintHeldItemBehaviour
@@ -223,6 +231,13 @@ namespace MVZ2.GameContent.HeldItems
         public override SeedPack? GetSeedPack(LevelEngine level, IHeldItemData data)
         {
             return level.GetConveyorSeedPackAt(data.GetSeedPackIndex());
+        }
+        public override SeedDefinition? GetSeedDefinition(LevelEngine level, IHeldItemData data)
+        {
+            var seedPack = GetSeedPack(level, data);
+            if (seedPack == null)
+                return null;
+            return seedPack.Definition;
         }
     }
 }

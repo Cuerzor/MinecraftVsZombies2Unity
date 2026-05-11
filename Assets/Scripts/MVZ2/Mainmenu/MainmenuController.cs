@@ -122,33 +122,16 @@ namespace MVZ2.Mainmenu
         {
             if (Application.isEditor)
             {
-                if (Input.GetKeyDown(KeyCode.F1))
+                var settings = main.Settings;
+                for (int i = 0; i < Mathf.Min(settings.DebugStageAreaCount, 12); i++)
                 {
-                    StartCoroutine(GotoDebugStage(VanillaAreaID.halloween));
-                }
-                else if (Input.GetKeyDown(KeyCode.F2))
-                {
-                    StartCoroutine(GotoDebugStage(VanillaAreaID.dream));
-                }
-                else if (Input.GetKeyDown(KeyCode.F3))
-                {
-                    StartCoroutine(GotoDebugStage(VanillaAreaID.castle));
-                }
-                else if (Input.GetKeyDown(KeyCode.F4))
-                {
-                    StartCoroutine(GotoDebugStage(VanillaAreaID.mausoleum));
-                }
-                else if (Input.GetKeyDown(KeyCode.F5))
-                {
-                    StartCoroutine(GotoDebugStage(VanillaAreaID.ship));
-                }
-                else if (Input.GetKeyDown(KeyCode.F6))
-                {
-                    StartCoroutine(GotoDebugStage(VanillaAreaID.palace));
-                }
-                else if (Input.GetKeyDown(KeyCode.F7))
-                {
-                    StartCoroutine(GotoDebugStage(VanillaAreaID.mountain));
+                    if (Input.GetKeyDown(KeyCode.F1 + i))
+                    {
+                        var areaID = settings.GetDebugStageArea(i);
+                        if (!NamespaceID.IsValid(areaID))
+                            continue;
+                        StartCoroutine(GotoDebugStage(areaID));
+                    }
                 }
             }
             if (animatorBlendTimeout > 0)
@@ -203,7 +186,9 @@ namespace MVZ2.Mainmenu
             main.SoundManager.Play2D(LogicSoundID.paper);
             main.MusicManager.Stop();
             var buttonText = main.LanguageManager._(LogicStrings.BACK);
-            main.Scene.DisplayNote(VanillaNoteID.help, buttonText);
+
+            var noteID = main.Settings.HelpNoteID;
+            main.Scene.DisplayNote(noteID, buttonText);
         }
         private void OnUserManageButtonClickCallback()
         {
@@ -480,7 +465,7 @@ namespace MVZ2.Mainmenu
 
                 yield return new WaitForSeconds(6);
             }
-            if (main.SaveManager.IsLevelCleared(MVZ2StageID.prologue))
+            if (main.SaveManager.IsPrologueCleared())
             {
                 var lastMapID = main.SaveManager.GetLastMapID() ?? main.ResourceManager.GetFirstMapID();
                 main.Scene.DisplayMap(lastMapID);
@@ -501,7 +486,9 @@ namespace MVZ2.Mainmenu
         private async Task GotoPrologue()
         {
             await main.LevelManager.GotoLevelSceneAsync();
-            main.LevelManager.InitLevel(MVZ2AreaID.day, MVZ2StageID.prologue);
+            var areaID = main.Settings.FirstLevelAreaID;
+            var stageID = main.Settings.FirstLevelStageID;
+            main.LevelManager.InitLevel(areaID, stageID);
             Hide();
         }
         private IEnumerator GotoDebugStage(NamespaceID areaID)
@@ -509,7 +496,8 @@ namespace MVZ2.Mainmenu
             var task = main.LevelManager.GotoLevelSceneAsync();
             while (!task.IsCompleted)
                 yield return null;
-            main.LevelManager.InitLevel(areaID, MVZ2StageID.debug);
+            var stageID = main.Settings.DebugLevelStageID;
+            main.LevelManager.InitLevel(areaID, stageID);
             Hide();
         }
 

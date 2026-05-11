@@ -17,6 +17,7 @@ using MVZ2Logic.Games;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
 using MVZ2Logic.Localization;
+using MVZ2Logic.Models;
 using MVZ2Logic.Options;
 using MVZ2Logic.Resources;
 using MVZ2Logic.Saves;

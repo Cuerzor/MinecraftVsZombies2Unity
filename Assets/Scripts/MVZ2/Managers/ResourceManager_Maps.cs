@@ -24,7 +24,7 @@ namespace MVZ2.Managers
                     continue;
                 return new NamespaceID(mod.Namespace, meta.id);
             }
-            return MVZ2MapID.halloween;
+            return Main.Settings.DefaultMapID;
         }
         public MapMetaList? GetModMapMetaList(string spaceName)
         {

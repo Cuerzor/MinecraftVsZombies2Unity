@@ -423,7 +423,7 @@ namespace MVZ2.Options
         }
         protected void UpdateLeaveLevelButton()
         {
-            var textKey = Global.Saves.IsLevelCleared(MVZ2StageID.prologue) ? LogicStrings.BACK_TO_MAP : LogicStrings.BACK_TO_MAINMENU;
+            var textKey = Main.SaveManager.IsPrologueCleared() ? LogicStrings.BACK_TO_MAP : LogicStrings.BACK_TO_MAINMENU;
             var text = Main.LanguageManager._(textKey);
             ui.Main.SetButtonText(TextButtonType.LeaveLevel, text);
         }

@@ -132,7 +132,7 @@ namespace MVZ2.Level
             var sprite = Main.GetFinalSprite(spriteRef);
             if (!sprite.Exists())
             {
-                sprite = Main.GetFinalSprite(MVZ2Sprites.starshardDefault);
+                sprite = Main.GetFinalSprite(Main.Settings.DefaultStarshardSprite);
             }
             levelUI.SetStarshardIcon(sprite);
         }

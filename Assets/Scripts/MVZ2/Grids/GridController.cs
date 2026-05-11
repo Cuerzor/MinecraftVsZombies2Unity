@@ -253,7 +253,7 @@ namespace MVZ2.Grids
             var amountMode = Main.OptionsManager.GetHPBarAmountMode();
 
             bool shouldShow = level?.ShouldShowHPBars() ?? false;
-            var layers = grid.GetLayers().OrderBy(l => Array.IndexOf(MVZ2GridLayers.hpBarLayerOrders, l));
+            var layers = grid.GetLayers().OrderBy(l => Main.Settings.GetHPBarLayerOrder(l));
             foreach (var layer in layers)
             {
                 var layerDefinition = Main.Game.GetGridLayerDefinition(layer);

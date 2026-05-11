@@ -12,6 +12,7 @@ using MVZ2Logic.Contraptions;
 using MVZ2Logic.Games;
 using MVZ2Logic.Level;
 using MVZ2Logic.Localization;
+using MVZ2Logic.Models;
 using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Level;

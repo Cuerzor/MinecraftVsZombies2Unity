@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MVZ2.Managers;
 using MVZ2.Options;
+using MVZ2Logic.Games;
 using MVZ2Logic.Options;
 using PVZEngine;
 using UnityEngine;
@@ -11,7 +12,7 @@ using UnityEngine.Audio;
 
 namespace MVZ2.Audios
 {
-    public class SoundManager : MonoBehaviour
+    public class SoundManager : MonoBehaviour, IGlobalSounds
     {
         public void SetGlobalVolume(float volume)
         {
@@ -180,6 +181,13 @@ namespace MVZ2.Audios
             soundSources.Remove(source);
             Destroy(source.gameObject);
         }
+
+        #region 接口实现
+        void IGlobalSounds.Play2D(NamespaceID soundID)
+        {
+            Play2D(soundID);
+        }
+        #endregion
         public MainManager Main => main;
         [SerializeField]
         private MainManager main = null!;
