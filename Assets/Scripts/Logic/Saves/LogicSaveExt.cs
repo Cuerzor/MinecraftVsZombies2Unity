@@ -113,7 +113,7 @@ namespace MVZ2Logic.Saves
             return Global.VanillaInterface.IsEnemyEncountered(save, enemyID);
         }
 
-        #region 解锁
+        #region 瑙ｉ攣
         public static bool IsAlmanacUnlocked(this IGlobalSaveData save)
         {
             return save.IsGroupUnlocked(LogicUnlockGroupID.almanac);
@@ -150,23 +150,9 @@ namespace MVZ2Logic.Saves
         {
             return save.IsGroupUnlocked(LogicUnlockGroupID.hpBar);
         }
-        /// <summary>
-        /// 梦境世界是否是梦魇状态。
-        /// </summary>
-        /// <param name="save"></param>
-        /// <returns></returns>
-        public static bool DreamIsNightmare(this IGlobalSaveData save)
-        {
-            // 玩家设置。
-            return Global.VanillaInterface.DreamIsNightmare(save);
-        }
-        public static void SetDreamIsNightmare(this IGlobalSaveData save, bool value)
-        {
-            Global.VanillaInterface.SetDreamIsNightmare(save, value);
-        }
         #endregion
 
-        #region 解锁判断
+        #region 瑙ｉ攣鍒ゆ柇
         public static bool IsValidAndLocked(this IGlobalSaveData save, NamespaceID? unlockId)
         {
             return NamespaceID.IsValid(unlockId) && !save.IsUnlocked(unlockId);
@@ -187,7 +173,7 @@ namespace MVZ2Logic.Saves
         }
         #endregion
 
-        #region 调试用户
+        #region 璋冭瘯鐢ㄦ埛
         public static bool IsDebugUser(this IGlobalSaveData saves)
         {
             var userName = saves.GetCurrentUserName();

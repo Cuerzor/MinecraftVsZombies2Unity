@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MukioI18n;
-using MVZ2.GameContent.Maps;
 using MVZ2.Managers;
 using MVZ2.Metas;
 using MVZ2.Options;
@@ -267,11 +266,6 @@ namespace MVZ2.Map
         {
             var stageID = mapMeta.endlessStage;
             StartCoroutine(EnterLevel(mapMeta.area, stageID));
-        }
-        private void OnMapNightmareBoxClickCallback()
-        {
-            Main.SaveManager.SetDreamIsNightmare(!Main.SaveManager.DreamIsNightmare());
-            ReloadMap();
         }
         #endregion
 

@@ -3,7 +3,6 @@
 using System;
 using System.Linq;
 using System.Text;
-using MVZ2.GameContent.Contraptions;
 using MVZ2.Metas;
 using MVZ2.UI;
 using MVZ2Logic;
@@ -80,7 +79,7 @@ namespace MVZ2.Managers
             string costStr = string.Empty;
 
             var seedID = seedDef.GetID();
-            bool commandBlock = seedID == VanillaContraptionID.commandBlock;
+            bool commandBlock = seedID == LogicContraptionID.commandBlock;
             if (!commandBlock)
             {
                 var costSB = new StringBuilder();

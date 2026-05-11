@@ -2,8 +2,6 @@
 
 using System.Collections.Generic;
 using MVZ2.Entities;
-using MVZ2.GameContent.HeldItems;
-using MVZ2.GameContent.Pickups;
 using MVZ2.HeldItems;
 using MVZ2.Models;
 using MVZ2.UI.Level;
@@ -91,7 +89,7 @@ namespace MVZ2.Level
         private void UpdateHeldItemIcons(HeldItemDefinition definition, IHeldItemData data)
         {
             bool triggerVisible = false;
-            if (data.Type == VanillaHeldTypes.blueprintPickup)
+            if (data.Type == LogicHeldTypes.blueprintPickup)
             {
                 var blueprintPickup = data.GetHoldingEntity(level);
                 if (blueprintPickup != null)

@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MukioI18n;
-using MVZ2.GameContent.Difficulties;
 using MVZ2.Managers;
 using MVZ2.Saves;
 using MVZ2.Scenes;
@@ -159,7 +158,7 @@ namespace MVZ2.Arcade
                 var def = game.GetDifficultyDefinition(difficulty);
                 if (def == null)
                 {
-                    def = game.GetDifficultyDefinition(VanillaDifficulties.normal);
+                    def = game.GetDifficultyDefinition(MVZ2Difficulties.normal);
                 }
                 if (def != null)
                 {

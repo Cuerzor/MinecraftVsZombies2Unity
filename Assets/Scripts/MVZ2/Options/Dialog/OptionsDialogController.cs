@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using MukioI18n;
 using MVZ2.Cameras;
-using MVZ2.GameContent.Stages;
 using MVZ2.Managers;
 using MVZ2.UI;
 using MVZ2Logic;
@@ -424,7 +423,7 @@ namespace MVZ2.Options
         }
         protected void UpdateLeaveLevelButton()
         {
-            var textKey = Global.Saves.IsLevelCleared(VanillaStageID.prologue) ? LogicStrings.BACK_TO_MAP : LogicStrings.BACK_TO_MAINMENU;
+            var textKey = Global.Saves.IsLevelCleared(MVZ2StageID.prologue) ? LogicStrings.BACK_TO_MAP : LogicStrings.BACK_TO_MAINMENU;
             var text = Main.LanguageManager._(textKey);
             ui.Main.SetButtonText(TextButtonType.LeaveLevel, text);
         }

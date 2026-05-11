@@ -7,9 +7,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using MukioI18n;
-using MVZ2.GameContent.Areas;
-using MVZ2.GameContent.Notes;
-using MVZ2.GameContent.Stages;
 using MVZ2.IO;
 using MVZ2.Managers;
 using MVZ2.Metas;
@@ -482,7 +479,7 @@ namespace MVZ2.Mainmenu
 
                 yield return new WaitForSeconds(6);
             }
-            if (main.SaveManager.IsLevelCleared(VanillaStageID.prologue))
+            if (main.SaveManager.IsLevelCleared(MVZ2StageID.prologue))
             {
                 var lastMapID = main.SaveManager.GetLastMapID() ?? main.ResourceManager.GetFirstMapID();
                 main.Scene.DisplayMap(lastMapID);
@@ -503,7 +500,7 @@ namespace MVZ2.Mainmenu
         private async Task GotoPrologue()
         {
             await main.LevelManager.GotoLevelSceneAsync();
-            main.LevelManager.InitLevel(VanillaAreaID.day, VanillaStageID.prologue);
+            main.LevelManager.InitLevel(MVZ2AreaID.day, MVZ2StageID.prologue);
             Hide();
         }
         private IEnumerator GotoDebugStage(NamespaceID areaID)
@@ -511,7 +508,7 @@ namespace MVZ2.Mainmenu
             var task = main.LevelManager.GotoLevelSceneAsync();
             while (!task.IsCompleted)
                 yield return null;
-            main.LevelManager.InitLevel(areaID, VanillaStageID.debug);
+            main.LevelManager.InitLevel(areaID, MVZ2StageID.debug);
             Hide();
         }
 

@@ -3,7 +3,6 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using MVZ2.GameContent.Maps;
 using MVZ2.Map;
 using MVZ2.Metas;
 using PVZEngine;
@@ -25,7 +24,7 @@ namespace MVZ2.Managers
                     continue;
                 return new NamespaceID(mod.Namespace, meta.id);
             }
-            return VanillaMapID.halloween;
+            return MVZ2MapID.halloween;
         }
         public MapMetaList? GetModMapMetaList(string spaceName)
         {

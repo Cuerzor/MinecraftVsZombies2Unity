@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using MukioI18n;
-using MVZ2.GameContent.Contraptions;
 using MVZ2.UI;
 using MVZ2.UI.Level;
 using MVZ2Logic.Artifacts;
@@ -631,7 +630,7 @@ namespace MVZ2.Level
             }
 
             // 更新命令方块项。
-            var commandBlockSlotViewData = Main.AlmanacManager.GetChoosingBlueprintViewData(VanillaContraptionID.commandBlock, isEndless);
+            var commandBlockSlotViewData = Main.AlmanacManager.GetChoosingBlueprintViewData(LogicContraptionID.commandBlock, isEndless);
             chooseUI.UpdateCommandBlockItem(commandBlockSlotViewData);
             UpdateCommandBlockItem();
         }
@@ -1120,7 +1119,7 @@ namespace MVZ2.Level
                     var ui = chooseUI.GetCommandBlockSlotBlueprint();
                     if (ui.Exists())
                     {
-                        Controller.ShowTooltip(new BlueprintTooltipSource(this, VanillaContraptionID.commandBlock, ui, false));
+                        Controller.ShowTooltip(new BlueprintTooltipSource(this, LogicContraptionID.commandBlock, ui, false));
                     }
                     else
                     {

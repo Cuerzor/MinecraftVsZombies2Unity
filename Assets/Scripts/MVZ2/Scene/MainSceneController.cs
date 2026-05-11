@@ -10,7 +10,6 @@ using MVZ2.Arcade;
 using MVZ2.Archives;
 using MVZ2.ChapterTransition;
 using MVZ2.DebugConsole;
-using MVZ2.GameContent.Stages;
 using MVZ2.Level;
 using MVZ2.Mainmenu;
 using MVZ2.Managers;
@@ -392,7 +391,7 @@ namespace MVZ2.Scenes
         }
         public void GotoMapOrMainmenu()
         {
-            if (main.SaveManager.IsLevelCleared(VanillaStageID.prologue))
+            if (main.SaveManager.IsLevelCleared(MVZ2StageID.prologue))
             {
                 var lastMapID = main.SaveManager.GetLastMapID() ?? main.ResourceManager.GetFirstMapID();
                 DisplayMap(lastMapID);

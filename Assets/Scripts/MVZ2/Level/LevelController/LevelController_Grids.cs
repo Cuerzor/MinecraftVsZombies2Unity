@@ -2,7 +2,6 @@
 
 using System;
 using System.Linq;
-using MVZ2.GameContent.Models;
 using MVZ2.Grids;
 using MVZ2.Models;
 using MVZ2Logic.Grids;
@@ -23,7 +22,7 @@ namespace MVZ2.Level
             var gridWidth = level.GetGridWidth();
             var gridHeight = level.GetGridHeight();
             var initDatas = new GridInitData[level.GetMaxLaneCount()][];
-            var modelBuilder = new ModelBuilder(VanillaModelID.gridPlaceHolder, levelCamera.Camera);
+            var modelBuilder = new ModelBuilder(MVZ2ModelID.gridPlaceHolder, levelCamera.Camera);
             for (int lane = 0; lane < initDatas.Length; lane++)
             {
                 initDatas[lane] = new GridInitData[maxColumn];

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using MukioI18n;
-using MVZ2.GameContent.Contraptions;
 using MVZ2.Managers;
 using MVZ2.Metas;
 using MVZ2.Models;
@@ -118,7 +117,7 @@ namespace MVZ2.Almanacs
         {
             if (eventData.IsMouseButNotLeft())
                 return;
-            SetActiveContraptionEntry(VanillaContraptionID.commandBlock);
+            SetActiveContraptionEntry(LogicContraptionID.commandBlock);
             Main.SoundManager.Play2D(LogicSoundID.tap);
         }
         private void OnContraptionEntryClickCallback(int index, PointerEventData data)
@@ -330,7 +329,7 @@ namespace MVZ2.Almanacs
 
             var contraptionViewDatas = contraptionEntries.Select(c => Main.AlmanacManager.GetChoosingBlueprintViewData(c, false)).ToArray();
             var commandBlock = Main.SaveManager.IsCommandBlockUnlocked();
-            var commandBlockViewData = Main.AlmanacManager.GetChoosingBlueprintViewData(VanillaContraptionID.commandBlock, false);
+            var commandBlockViewData = Main.AlmanacManager.GetChoosingBlueprintViewData(LogicContraptionID.commandBlock, false);
             ui.SetContraptionEntries(contraptionViewDatas, commandBlock, commandBlockViewData);
 
             var enemyViewDatas = enemyEntries.Select(c => Main.AlmanacManager.GetEnemyEntryViewData(c)).ToArray();
@@ -898,7 +897,7 @@ namespace MVZ2.Almanacs
             switch (type)
             {
                 case HYPERLINK_TYPE_CONTRAPTIONS:
-                    if (pageID == VanillaContraptionID.commandBlock)
+                    if (pageID == LogicContraptionID.commandBlock)
                     {
                         if (!Main.SaveManager.IsCommandBlockUnlocked())
                             return false;

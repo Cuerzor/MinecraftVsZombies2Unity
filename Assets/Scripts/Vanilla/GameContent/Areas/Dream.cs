@@ -5,6 +5,7 @@ using MVZ2.GameContent.Effects;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
+using MVZ2.Vanilla.Saves;
 using MVZ2Logic;
 using MVZ2Logic.Grids;
 using MVZ2Logic.Level;

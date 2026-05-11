@@ -2,8 +2,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using MVZ2.GameContent.Contraptions;
-using MVZ2.GameContent.Enemies;
 using MVZ2.Options;
 using MVZ2.View.Level;
 using MVZ2Logic.Audios;
@@ -255,7 +253,7 @@ namespace MVZ2.Level
         {
             for (int i = 0; i < 50; i++)
             {
-                level.SpawnEnemyAtRandomLane(VanillaSpawnID.zombie);
+                level.SpawnEnemyAtRandomLane(MVZ2SpawnID.zombie);
             }
         }
         private void OnFastKillBossKey()
@@ -276,7 +274,7 @@ namespace MVZ2.Level
                 if (grid == null)
                     continue;
                 var spawnParams = CommandBlock.GetImitateSpawnParams(contraption);
-                var command = grid.SpawnPlacedEntity(VanillaContraptionID.commandBlock, spawnParams);
+                var command = grid.SpawnPlacedEntity(LogicContraptionID.commandBlock, spawnParams);
             }
         }
         private void OnAdvancedPauseKey()

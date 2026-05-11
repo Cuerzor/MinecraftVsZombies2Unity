@@ -9,8 +9,5 @@ namespace MVZ2Logic.Modding
     {
         // Stats
         bool IsEnemyEncountered(IGlobalSaveData saves, NamespaceID enemyID);
-
-        bool DreamIsNightmare(IGlobalSaveData saves);
-        void SetDreamIsNightmare(IGlobalSaveData saves, bool value);
     }
 }

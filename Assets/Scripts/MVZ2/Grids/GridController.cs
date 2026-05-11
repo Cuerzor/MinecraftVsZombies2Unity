@@ -7,7 +7,6 @@ using MVZ2.Level;
 using MVZ2.Managers;
 using MVZ2.Models;
 using MVZ2.UI.Level;
-using MVZ2.Vanilla.Grids;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Games;
 using MVZ2Logic.Grids;
@@ -254,7 +253,7 @@ namespace MVZ2.Grids
             var amountMode = Main.OptionsManager.GetHPBarAmountMode();
 
             bool shouldShow = level?.ShouldShowHPBars() ?? false;
-            var layers = grid.GetLayers().OrderBy(l => Array.IndexOf(VanillaGridLayers.normalLayerOrders, l));
+            var layers = grid.GetLayers().OrderBy(l => Array.IndexOf(MVZ2GridLayers.hpBarLayerOrders, l));
             foreach (var layer in layers)
             {
                 var layerDefinition = Main.Game.GetGridLayerDefinition(layer);

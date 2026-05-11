@@ -5,6 +5,7 @@ using MVZ2.GameContent.Buffs;
 using MVZ2.GameContent.Buffs.SeedPacks;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Level;
+using MVZ2Logic.Modding;
 using MVZ2Logic.Resources;
 using PVZEngine;
 using PVZEngine.Auras;
@@ -16,7 +17,7 @@ namespace MVZ2.GameContent.Seeds
 {
     public class EntitySeed : SeedDefinition
     {
-        public EntitySeed(string nsp, string name, EntitySeedInfo info) : base(nsp, name)
+        public EntitySeed(string nsp, string name, SeedParameters info) : base(nsp, name)
         {
             SetProperty(LogicSeedProps.SEED_TYPE, SeedTypes.ENTITY);
             SetProperty(LogicSeedProps.SEED_ENTITY_ID, info.entityID);
@@ -66,19 +67,5 @@ namespace MVZ2.GameContent.Seeds
             }
             public const float ADDITION = 50;
         }
-    }
-    public struct EntitySeedInfo
-    {
-        public NamespaceID entityID;
-        public int cost;
-        public NamespaceID? rechargeID;
-        public bool triggerActive;
-        public bool canInstantTrigger;
-        public bool upgrade;
-        public bool canInstantEvoke;
-        public int variant;
-        public SpriteReference? icon;
-        public SpriteReference? mobileIcon;
-        public NamespaceID? model;
     }
 }
