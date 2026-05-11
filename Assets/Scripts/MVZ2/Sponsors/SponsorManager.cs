@@ -12,12 +12,14 @@ using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
 using MVZ2.IO;
 using MVZ2.Managers;
+using MVZ2Logic.Games;
 using UnityEngine;
 using UnityEngine.Networking;
+using static MVZ2Logic.Sponsors.SponsorPlans;
 
 namespace MVZ2.Supporters
 {
-    public class SponsorManager : MonoBehaviour
+    public class SponsorManager : MonoBehaviour, IGlobalSponsors
     {
         public async Task PullSponsors(TaskProgress progress)
         {
@@ -39,7 +41,7 @@ namespace MVZ2.Supporters
                     return;
                 }
                 var items = await GetAllSponsors(progress);
-                sponserCache = new SponsorInfos(items);
+                sponserCache = new SponsorInfos(this, items);
                 sponserCache.lastUpdateTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 SetCurrentSponsorInfos(sponserCache);
                 SaveSponsorsCache(sponserCache);
@@ -60,6 +62,22 @@ namespace MVZ2.Supporters
             if (currentSponsors == null)
                 return false;
             return currentSponsors.sponsors.Any(s => s.name == name && s.plans.Any(p => p.rankType == rankType && p.rank >= rank));
+        }
+        public bool TryGetPlanByID(string? id, out (int type, int rank) plan)
+        {
+            plan = (0, 0);
+            if (string.IsNullOrEmpty(id))
+            {
+                return false;
+            }
+            foreach (var entry in planEntries)
+            {
+                if (entry.hash != id)
+                    continue;
+                plan = (entry.type, entry.rank);
+                return true;
+            }
+            return false;
         }
         private async Task<SponsorItem[]> GetAllSponsors(TaskProgress progress)
         {
@@ -257,6 +275,8 @@ namespace MVZ2.Supporters
         private string sponsorQueryPath = "/open/query-sponsor";
         [SerializeField]
         private int responseTimeout = 10;
+        [SerializeField]
+        private List<PlanEntry> planEntries = new List<PlanEntry>();
         private byte[] key = new byte[] {
             0x58, 0x11, 0x58, 0x11, 0x53, 0x10, 0x53, 0x10,
             0x58, 0x11, 0x58, 0x11, 0x53, 0x10, 0x53, 0x10
@@ -265,5 +285,19 @@ namespace MVZ2.Supporters
             0x11, 0x45, 0x14, 0x19, 0x19, 0x81, 0x08, 0x10,
             0x11, 0x45, 0x14, 0x19, 0x19, 0x81, 0x08, 0x10
         };
+
+        private static readonly Dictionary<string, (int type, int rank)> planMap = new Dictionary<string, (int type, int rank)>()
+        {
+            { "25afa204d56311ef9a3552540025c377", (Sensor.TYPE, Sensor.MOONLIGHT_SENSOR) },
+            { "3d36f9e0d56311efa99a52540025c377", (Furnace.TYPE, Furnace.FURNACE) },
+            { "6f26d290d56311efa5aa52540025c377", (Furnace.TYPE, Furnace.GUNPOWDER_BARREL) },
+            { "b3a2d76cd56211efb2f852540025c377", (Furnace.TYPE, Furnace.BLAST_FURNACE) },
+        };
+        public struct PlanEntry
+        {
+            public string hash;
+            public int type;
+            public int rank;
+        }
     }
 }

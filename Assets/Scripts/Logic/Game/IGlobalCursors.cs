@@ -9,4 +9,8 @@ namespace MVZ2Logic.Games
         void AddCursorSource(CursorSource source);
         bool RemoveCursorSource(CursorSource source);
     }
+    public interface IGlobalSponsors
+    {
+        string[] GetSponsorPlanNames(int type, int rank);
+    }
 }

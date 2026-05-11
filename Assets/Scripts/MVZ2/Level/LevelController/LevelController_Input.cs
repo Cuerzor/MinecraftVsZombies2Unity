@@ -9,7 +9,6 @@ using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
 using MVZ2Logic.Options;
-using PVZEngine.Entities;
 using PVZEngine.SeedPacks;
 using UnityEngine;
 using UnityEngine.EventSystems;

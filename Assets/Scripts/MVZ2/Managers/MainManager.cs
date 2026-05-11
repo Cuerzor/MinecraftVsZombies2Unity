@@ -236,7 +236,8 @@ namespace MVZ2.Managers
                 scene = Scene,
                 localization = LanguageManager,
                 debug = DebugManager,
-                cursors = CursorManager
+                cursors = CursorManager,
+                sponsors = SponsorManager,
             });
         }
         private void InitSerializable()

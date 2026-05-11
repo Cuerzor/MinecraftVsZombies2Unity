@@ -21,6 +21,7 @@ using MVZ2Logic.Games;
 using MVZ2Logic.Localization;
 using MVZ2Logic.Resources;
 using MVZ2Logic.Saves;
+using MVZ2Logic.Sponsors;
 using PVZEngine;
 using Tools.Mathematics;
 using UnityEngine;

@@ -85,7 +85,6 @@ namespace MVZ2.Level
         {
             AddLevelCallbacks_Entities(level);
             AddLevelCallbacks_GameFlow(level);
-            AddLevelCallbacks_Sponsors(level);
             level.OnPropertyChanged += OnLevelPropertyChangedCallback;
 
             foreach (var controller in parts)
