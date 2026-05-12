@@ -41,5 +41,26 @@ namespace MVZ2.Vanilla.Level
             level.SetProperty(GRID_FIRE_ADVICED, value);
         }
         #endregion
+
+        #region 装饰性风速
+        public static readonly PropertyMeta<float> TARGET_DECORATIVE_WIND_SPEED = Get<float>("target_decorative_wind_speed");
+        public static float GetTargetDecorativeWindSpeed(this LevelEngine level)
+        {
+            return level.GetProperty<float>(TARGET_DECORATIVE_WIND_SPEED);
+        }
+        public static void SetTargetDecorativeWindSpeed(this LevelEngine level, float value)
+        {
+            level.SetProperty(TARGET_DECORATIVE_WIND_SPEED, value);
+        }
+        public static readonly PropertyMeta<float> CURRENT_DECORATIVE_WIND_SPEED = Get<float>("current_decorative_wind_speed");
+        public static float GetCurrentDecorativeWindSpeed(this LevelEngine level)
+        {
+            return level.GetProperty<float>(CURRENT_DECORATIVE_WIND_SPEED);
+        }
+        public static void SetCurrentDecorativeWindSpeed(this LevelEngine level, float value)
+        {
+            level.SetProperty(CURRENT_DECORATIVE_WIND_SPEED, value);
+        }
+        #endregion
     }
 }

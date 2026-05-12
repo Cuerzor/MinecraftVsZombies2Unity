@@ -67,6 +67,9 @@ namespace MVZ2.GameContent.Buffs
             public const string lockedChestStage = "locked_chest_stage";
             public const string levelEnemiesCleared = "level_enemies_cleared";
 
+            // Chapter 7
+            public const string decorativeWindSpeed = "decorative_wind_speed";
+
             // Random China
             public const string greedyVacuum = "greedy_vacuum";
             public const string superRecharge = "super_recharge";
@@ -411,6 +414,9 @@ namespace MVZ2.GameContent.Buffs
             public static readonly NamespaceID beaconMeteor = Get(VanillaBuffNames.Level.beaconMeteor);
             public static readonly NamespaceID sorcerersScrollStarshard = Get(VanillaBuffNames.Level.sorcerersScrollStarshard);
             public static readonly NamespaceID skywardNight = Get(VanillaBuffNames.Level.skywardNight);
+
+            // Chapter 7
+            public static readonly NamespaceID decorativeWindSpeed = Get(VanillaBuffNames.Level.decorativeWindSpeed);
 
             // Random China
             public static readonly NamespaceID superRecharge = Get(VanillaBuffNames.Level.superRecharge);

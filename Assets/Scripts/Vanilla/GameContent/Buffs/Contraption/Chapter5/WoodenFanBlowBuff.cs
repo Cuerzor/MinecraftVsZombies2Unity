@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using MVZ2.GameContent.Buffs.Enemies;
+using MVZ2.GameContent.Buffs.Level;
 using MVZ2.GameContent.Detections;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
@@ -32,6 +33,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
                 canDetectInvisible = true,
             };
             AddAura(new Aura());
+            AddAura(new WindSpeedAura());
             AddModifier(new BooleanModifier(EngineEntityProps.INVINCIBLE, true));
         }
         public override void PostUpdate(Buff buff)
@@ -63,6 +65,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
         public static bool IsEvoked(Buff buff) => buff.GetProperty<bool>(PROP_EVOKED);
         public static void SetEvoked(Buff buff, bool value) => buff.SetProperty(PROP_EVOKED, value);
         public static readonly VanillaBuffPropertyMeta<bool> PROP_EVOKED = new VanillaBuffPropertyMeta<bool>("evoked");
+        public const float DECORATIVE_WIND_SPEED_ADDITION = 1000;
         private Detector detector;
         private Detector evokedDetector;
 
@@ -112,6 +115,33 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             private Detector detector;
             private Detector evokedDetector;
             private List<Entity> detectBuffer = new List<Entity>();
+        }
+        public class WindSpeedAura : AuraEffectDefinition
+        {
+            public WindSpeedAura() : base(VanillaBuffID.Level.decorativeWindSpeed, 4)
+            {
+            }
+
+            public override void GetAuraTargets(AuraEffect auraEffect, List<IBuffTarget> results)
+            {
+                var sourceBuff = auraEffect.Source as Buff;
+                if (sourceBuff == null)
+                    return;
+                if (!IsEvoked(sourceBuff))
+                    return;
+                results.Add(auraEffect.Level);
+            }
+            public override void UpdateTargetBuff(AuraEffect effect, IBuffTarget target, Buff buff)
+            {
+                base.UpdateTargetBuff(effect, target, buff);
+                var sourceBuff = effect.Source as Buff;
+                if (sourceBuff == null)
+                    return;
+                var sourceEntity = sourceBuff.GetEntity();
+                if (sourceEntity == null)
+                    return;
+                DecorativeWindSpeedBuff.SetWindSpeed(buff, DECORATIVE_WIND_SPEED_ADDITION * sourceEntity.GetFacingX());
+            }
         }
     }
 }

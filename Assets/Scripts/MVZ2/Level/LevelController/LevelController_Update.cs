@@ -134,6 +134,10 @@ namespace MVZ2.Level
                 if (!IsGameRunning())
                     break;
                 UpdateLogicOnce();
+                if (model.Exists())
+                {
+                    model.UpdateFixed();
+                }
             }
         }
         private void UpdateLogicOnce()

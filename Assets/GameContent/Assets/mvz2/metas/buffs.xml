@@ -211,6 +211,9 @@
     <buff id="stone_eye_charged" polarity="positive" level="0" target="contraption" />
     <buff id="burning" polarity="negative" level="0" target="entity" />
     <buff id="level_enemies_cleared" polarity="none" level="5000" target="level" />
+    
+    <!-- Chapter 7 -->
+    <buff id="decorative_wind_speed" polarity="none" level="5000" target="level" />
 
     <!-- Random China -->
     <buff id="super_recharge" polarity="positive" level="0" target="blueprint" />

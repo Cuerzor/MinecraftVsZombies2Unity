@@ -34,6 +34,12 @@ namespace MVZ2.GameContent.Areas
             var wave = GetPoolWave(level);
             wave = (wave + 0.01f) % 1;
             SetPoolWave(level, wave);
+
+            var model = level.GetAreaModelInterface();
+            if (model != null)
+            {
+                model.SetModelProperty("WindSpeed", level.GetCurrentDecorativeWindSpeed());
+            }
         }
         public override float GetGroundY(LevelEngine level, float x, float z)
         {
