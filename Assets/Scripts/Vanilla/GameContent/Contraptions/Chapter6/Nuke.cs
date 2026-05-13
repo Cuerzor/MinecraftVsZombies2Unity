@@ -40,7 +40,7 @@ namespace MVZ2.GameContent.Contraptions
                 ExplodeEffects(contraption);
             }
 
-            if (contraption.GetRelativeY() < BREAK_TILE_HEIGHT)
+            if (!contraption.IsAboveLeaveGridHeight())
             {
                 BreakTile(contraption);
             }
@@ -111,6 +111,5 @@ namespace MVZ2.GameContent.Contraptions
                 entity.DieOrRemove(damageEffects, entity);
             }
         }
-        public const float BREAK_TILE_HEIGHT = 64f;
     }
 }

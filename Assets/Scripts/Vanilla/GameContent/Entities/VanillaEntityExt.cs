@@ -626,11 +626,15 @@ namespace MVZ2.Vanilla.Entities
                 return false;
             if (!entity.ExistsAndAlive())
                 return false;
-            if (entity.GetRelativeY() > leaveGridHeight)
+            if (entity.IsAboveLeaveGridHeight())
                 return false;
             return true;
         }
-        private const float leaveGridHeight = 64;
+        public static bool IsAboveLeaveGridHeight(this Entity entity)
+        {
+            return entity.GetRelativeY() > LEAVE_GRID_HEIGHT;
+        }
+        public const float LEAVE_GRID_HEIGHT = 64;
         private static ListUpdater<GridLayerData> entityGridUpdater = new ListUpdater<GridLayerData>();
         private static List<GridLayerData> targetGridLayerDataBuffer = new List<GridLayerData>();
         private static List<GridLayerData> takenGridLayerDataBuffer = new List<GridLayerData>();
