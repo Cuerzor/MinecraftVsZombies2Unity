@@ -81,7 +81,7 @@ namespace MVZ2.GameContent.Contraptions
         }
         public override bool CanTrigger(Entity entity)
         {
-            return base.CanTrigger(entity) && !entity.IsEvoked() && !IsBroken(entity);
+            return base.CanTrigger(entity) && !entity.IsEvoked() && !IsBroken(entity) && entity.IsOnGround;
         }
         protected override void OnTrigger(Entity entity)
         {
@@ -90,6 +90,10 @@ namespace MVZ2.GameContent.Contraptions
             SetBroken(entity, true);
             var restoreTimer = GetRestoreTimer(entity);
             restoreTimer?.ResetTime(RESTORE_TIME);
+        }
+        public override bool CanEvoke(Entity entity)
+        {
+            return base.CanEvoke(entity) && entity.IsOnGround;
         }
         protected override void OnEvoke(Entity entity)
         {
