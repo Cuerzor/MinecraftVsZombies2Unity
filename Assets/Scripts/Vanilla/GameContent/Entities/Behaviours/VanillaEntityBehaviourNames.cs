@@ -22,6 +22,7 @@ namespace MVZ2.Vanilla.Entities
         public const string fadeoutByTimeout = "fadeout_by_timeout";
         public const string fadeoutByMaxTimeout = "fadeout_by_max_timeout";
         public const string destroyOutsideWater = "destroy_outside_water";
+        public const string destroyOnSlab = "destroy_on_slab";
         public const string burnAtDay = "burn_at_day";
         public const string explodeOnFireDeath = "explode_on_fire_death";
         public const string ignitable = "ignitable";

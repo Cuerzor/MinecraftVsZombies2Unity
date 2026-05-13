@@ -770,6 +770,14 @@ namespace MVZ2.Vanilla.Entities
         {
             return entity.IsAboveCloud() && entity.IsOnGround;
         }
+        public static bool IsAboveSlab(this Entity entity)
+        {
+            return entity.Level.IsSlabAt(entity.Position.x, entity.Position.z);
+        }
+        public static bool IsOnSlab(this Entity entity)
+        {
+            return entity.IsAboveSlab() && entity.IsOnGround;
+        }
         public static bool IsAboveLand(this Entity entity)
         {
             var grid = entity.GetGrid();

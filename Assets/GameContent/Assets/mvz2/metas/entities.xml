@@ -333,6 +333,9 @@
             </properties>
         </entity>
         <entity template="contraption" id="mine_tnt" name="地雷TNT" tooltip="接触时爆炸，但需要时间准备">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:destroy_on_slab" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:loyal" value="true" />
@@ -925,6 +928,9 @@
             <unlock>
                 <condition requiredGroups="mvz2:contraption.necrotombstone" />
             </unlock>
+            <behaviours>
+                <behaviour operator="add" id="mvz2:destroy_on_slab" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:nocturnal" value="true" />
                 <id name="mvz2:fragmentId" value="mvz2:furnace" />
