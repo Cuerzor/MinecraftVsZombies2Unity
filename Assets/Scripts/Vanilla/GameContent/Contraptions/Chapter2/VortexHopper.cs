@@ -21,11 +21,6 @@ namespace MVZ2.GameContent.Contraptions
         public VortexHopper(string nsp, string name) : base(nsp, name)
         {
         }
-        public override void Init(Entity entity)
-        {
-            base.Init(entity);
-            entity.CollisionMaskHostile |= EntityCollisionHelper.MASK_ENEMY;
-        }
         protected override void UpdateLogic(Entity entity)
         {
             base.UpdateLogic(entity);

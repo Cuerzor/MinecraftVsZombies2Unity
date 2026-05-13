@@ -26,9 +26,6 @@ namespace MVZ2.GameContent.Effects
         {
             base.Init(entity);
             entity.Level.AddLoopSoundEntity(VanillaSoundID.tornado, entity.ID);
-            var mask = EntityCollisionHelper.MASK_PLANT | EntityCollisionHelper.MASK_ENEMY | EntityCollisionHelper.MASK_EFFECT;
-            entity.CollisionMaskHostile |= mask;
-            entity.CollisionMaskFriendly |= mask;
             UpdateVariant(entity);
         }
         public override void Update(Entity entity)

@@ -38,7 +38,6 @@ namespace MVZ2.GameContent.Bosses
             base.Init(boss);
             stateMachine.Init(boss);
             stateMachine.StartState(boss, STATE_IDLE);
-            boss.CollisionMaskHostile |= EntityCollisionHelper.MASK_PLANT;
         }
         protected override void UpdateAI(Entity entity)
         {

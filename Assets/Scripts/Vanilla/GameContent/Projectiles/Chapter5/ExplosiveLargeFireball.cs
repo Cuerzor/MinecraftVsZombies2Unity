@@ -33,7 +33,6 @@ namespace MVZ2.GameContent.Projectiles
         {
             base.Init(entity);
             SetTriggerTimer(entity, TimerHelper.NewSecondTimer(TRIGGER_SECONDS));
-            entity.CollisionMaskHostile |= EntityCollisionHelper.MASK_BOSS;
         }
         public override void PostCollision(EntityCollision collision, int state)
         {

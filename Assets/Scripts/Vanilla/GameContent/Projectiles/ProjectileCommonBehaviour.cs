@@ -28,10 +28,6 @@ namespace MVZ2.GameContent.Projectiles
         {
             base.Init(entity);
             entity.Timeout = entity.GetMaxTimeout();
-            entity.CollisionMaskHostile = EntityCollisionHelper.MASK_PLANT
-                | EntityCollisionHelper.MASK_ENEMY
-                | EntityCollisionHelper.MASK_OBSTACLE
-                | EntityCollisionHelper.MASK_BOSS;
             SetStartHitSpawnerProtectTimeout(entity, 2);
         }
 

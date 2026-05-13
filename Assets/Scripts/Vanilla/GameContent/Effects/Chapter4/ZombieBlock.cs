@@ -31,7 +31,6 @@ namespace MVZ2.GameContent.Effects
         {
             base.Init(entity);
             SetMoveCooldownTimer(entity, new FrameTimer(0));
-            entity.CollisionMaskHostile |= EntityCollisionHelper.MASK_VULNERABLE;
         }
         public override void Update(Entity entity)
         {

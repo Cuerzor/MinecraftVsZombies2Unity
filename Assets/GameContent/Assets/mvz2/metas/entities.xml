@@ -83,6 +83,7 @@
                 <id name="mvz2:deathSound" value="mvz2:zombie_death" />
                 <id name="mvz2:placement" value="mvz2:enemy" />
                 <int name="mvz2:lit_mask" value="255" />
+                <int name="mvz2:collision_mask_hostile" value="15" />
                 <bool name="mvz2:faceLeftAtDefault" value="true" />
                 <bool name="mvz2:undead" value="true" />
                 <bool name="mvz2:canDeactive" value="true" />
@@ -171,6 +172,7 @@
                 <behaviour operator="add" id="mvz2:projectile_common" />
             </behaviours>
             <properties>
+                <int name="mvz2:collision_mask_hostile" value="15" />
                 <bool name="mvz2:killOnGround" value="true" />
                 <int name="mvz2:maxTimeout" value="900" />
                 <float name="mvz2:changeLaneSpeed" value="10" />
@@ -343,6 +345,7 @@
                 <id name="mvz2:deathSound" value="mvz2:grass" />
                 <vector3 name="mvz2:size" x="48" y="24" z="48" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
+                <int name="mvz2:collision_mask_hostile" value="2" />
 
                 <int name="mvz2:cost" value="25" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
@@ -577,6 +580,7 @@
                 <int name="mvz2:waterInteraction" value="3" />
                 <id name="mvz2:fragmentId" value="mvz2:anvil" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
+                <int name="mvz2:collision_mask_hostile" value="2" />
 
                 <int name="mvz2:cost" value="25" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
@@ -1090,6 +1094,7 @@
                 <int name="mvz2:waterInteraction" value="0" />
                 <int name="mvz2:airInteraction" value="0" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
+                <int name="mvz2:collision_mask_hostile" value="2" />
 
                 <int name="mvz2:cost" value="100" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
@@ -1588,6 +1593,8 @@
                 <float name="mvz2:maxHealth" value="2500" />
                 <float name="mvz2:fallResistance" value="10000" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
+                <int name="mvz2:collision_mask_hostile" value="15" />
+                <int name="mvz2:collision_mask_friendly" value="15" />
 
                 <int name="mvz2:cost" value="25" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
@@ -2854,6 +2861,7 @@
             <properties>
                 <bool name="mvz2:undead" value="true" />
                 <int name="mvz2:waterInteraction" value="1" />
+                <int name="mvz2:collision_mask_hostile" value="5" />
                 <float name="mvz2:maxHealth" value="12000" />
                 <float name="mvz2:gravity" value="0" />
                 <id name="mvz2:shell" value="mvz2:nether" />
@@ -2875,6 +2883,7 @@
             <properties>
                 <bool name="mvz2:undead" value="true" />
                 <int name="mvz2:waterInteraction" value="1" />
+                <int name="mvz2:collision_mask_hostile" value="31" />
                 <float name="mvz2:maxHealth" value="20000" />
                 <vector3 name="mvz2:size" x="240" y="320" z="320" />
                 <vector3 name="mvz2:shadowOffset" x="0" y="-100" z="0" />
@@ -2891,6 +2900,8 @@
                 <bool name="mvz2:undead" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <int name="mvz2:waterInteraction" value="1" />
+                <int name="mvz2:collision_mask_hostile" value="15" />
+                <int name="mvz2:collision_mask_friendly" value="8" />
                 <float name="mvz2:maxHealth" value="1" />
                 <float name="mvz2:damage" value="1" />
                 <vector3 name="mvz2:size" x="80" y="80" z="80" />
@@ -2915,6 +2926,7 @@
         <entity template="boss" id="locked_chest" name="上锁的箱子">
             <properties>
                 <int name="mvz2:waterInteraction" value="1" />
+                <int name="mvz2:collision_mask_hostile" value="1" />
                 <float name="mvz2:maxHealth" value="18000" />
                 <float name="mvz2:gravity" value="2" />
                 <id name="mvz2:shell" value="mvz2:wood" />
@@ -3428,6 +3440,7 @@
         </entity>
         <entity template="projectile" id="note">
             <properties>
+                <int name="mvz2:collision_mask_friendly" value="1" />
                 <float name="mvz2:damage" value="5" />
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
                 <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
@@ -3798,6 +3811,8 @@
                 <bool name="mvz2:decorative" value="false" />
                 <float name="mvz2:gravity" value="1" />
                 <int name="mvz2:maxTimeout" value="270" />
+                <int name="mvz2:collision_mask_hostile" value="207" />
+                <int name="mvz2:collision_mask_friendly" value="207" />
                 <float name="mvz2:damage" value="1" />
                 <color name="mvz2:tint" value="#FF60FF" />
                 <vector3 name="mvz2:size" x="240" y="70" z="40" />
@@ -3910,6 +3925,7 @@
         </entity>
         <entity template="effect" id="fire_breath">
             <properties>
+                <int name="mvz2:collision_mask_hostile" value="15" />
                 <bool name="mvz2:decorative" value="false" />
                 <bool name="mvz2:isLightSource" value="true" />
                 <vector3 name="mvz2:lightRange" x="240" y="80" z="80" />
@@ -3927,6 +3943,7 @@
                 <behaviour operator="add" id="mvz2:gas_blown" />
             </behaviours>
             <properties>
+                <int name="mvz2:collision_mask_hostile" value="207" />
                 <bool name="mvz2:decorative" value="false" />
                 <float name="mvz2:gravity" value="1" />
                 <int name="mvz2:maxTimeout" value="270" />
@@ -3941,6 +3958,7 @@
                 <bool name="mvz2:decorative" value="false" />
                 <float name="mvz2:gravity" value="1" />
                 <vector3 name="mvz2:size" x="20" y="20" z="20" />
+                <int name="mvz2:collision_mask_hostile" value="2" />
             </properties>
         </entity>
         <entity template="effect" id="breakout_board">
@@ -3949,6 +3967,7 @@
                 <bool name="mvz2:shadowHidden" value="false" />
                 <vector3 name="mvz2:size" x="32" y="64" z="160" />
                 <vector3 name="mvz2:shadowScale" x="1" y="5" z="1" />
+                <int name="mvz2:collision_mask_friendly" value="64" />
             </properties>
         </entity>
         <entity template="effect" id="nightmare_watching_eye">
@@ -4232,6 +4251,7 @@
         </entity>
         <entity template="effect" id="zombie_block">
             <properties>
+                <int name="mvz2:collision_mask_hostile" value="15" />
                 <bool name="mvz2:decorative" value="false" />
                 <float name="mvz2:damage" value="50" />
                 <vector3 name="mvz2:size" x="80" y="80" z="80" />
@@ -4302,6 +4322,8 @@
                 <int name="mvz2:sortingOrder" value="100" />
                 <int name="mvz2:maxTimeout" value="1200" />
                 <int name="mvz2:collision_interval" value="4" />
+                <int name="mvz2:collision_mask_hostile" value="255" />
+                <int name="mvz2:collision_mask_friendly" value="255" />
                 <vector3 name="mvz2:size" x="32" y="8" z="32" />
                 <bool name="mvz2:decorative" value="false" />
                 <color name="mvz2:tint" value="#007fe3" />
@@ -4327,6 +4349,7 @@
         </entity>
         <entity template="effect" id="combat_punch">
             <properties>
+                <int name="mvz2:collision_mask_hostile" value="15" />
                 <vector3 name="mvz2:size" x="160" y="80" z="80" />
                 <bool name="mvz2:decorative" value="false" />
             </properties>
@@ -4372,6 +4395,7 @@
             </behaviours>
             <properties>
                 <int name="mvz2:maxTimeout" value="15" />
+                <int name="mvz2:collision_mask_hostile" value="15" />
                 <vector3 name="mvz2:size" x="64" y="800" z="64" />
                 <bool name="mvz2:decorative" value="false" />
                 <bool name="mvz2:isLightSource" value="true" />
@@ -4410,6 +4434,8 @@
             </behaviours>
             <properties>
                 <int name="mvz2:maxTimeout" value="150"/>
+                <int name="mvz2:collision_mask_hostile" value="131" />
+                <int name="mvz2:collision_mask_friendly" value="131" />
                 <vector3 name="mvz2:size" x="48" y="200" z="48" />
                 <vector3 name="mvz2:lightRange" x="120" y="240" z="120" />
                 <color name="mvz2:lightColor" value="#FFAA00" />
@@ -4422,6 +4448,7 @@
             </behaviours>
             <properties>
                 <int name="mvz2:maxTimeout" value="60"/>
+                <int name="mvz2:collision_mask_hostile" value="15" />
                 <vector3 name="mvz2:size" x="96" y="96" z="96" />
                 <bool name="mvz2:isFire" value="true" />
                 <bool name="mvz2:isLightSource" value="true" />

@@ -30,11 +30,6 @@ namespace MVZ2.GameContent.Enemies
             RandomEnemySpeedBuff.SetSpeed(buff, entity.RNG.Next(1, 1.5f));
             entity.AddBuff(buff);
 
-            entity.CollisionMaskHostile = EntityCollisionHelper.MASK_PLANT
-                | EntityCollisionHelper.MASK_ENEMY
-                | EntityCollisionHelper.MASK_OBSTACLE
-                | EntityCollisionHelper.MASK_BOSS;
-
             var startingArmor = entity.GetStartingArmor();
             var startingShield = entity.GetStartingShield();
             if (NamespaceID.IsValid(startingArmor))

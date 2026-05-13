@@ -3718,6 +3718,13 @@ MonoBehaviour:
     - Main
     - Spritesheet
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 43ab9df27e6a88f499c8292ce16c7f47
+    m_Address: mvz2:entity/contraption/ejector
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Spritesheet
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 43d0c46d78f545946b9f8472fc64be72
     m_Address: mvz2:ui/level/progress_bar/level_progress_banner
     m_ReadOnly: 0
@@ -9735,6 +9742,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b476d5a275691b241bf16b7ecd5224c7
+    m_Address: mvz2:contraption/mountain/ejector
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b47d03bd743710345b665a5cac672aee
     m_Address: mvz2:ui/map/map_back_button
     m_ReadOnly: 0
@@ -11861,6 +11875,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd80db5638ab4f4409fd0f60371294bd
+    m_Address: mvz2:mobile_blueprint/ejector
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dd81e2f5e01461d4c9186fe9648f2c1f
     m_Address: mvz2:entity/effects/zombie_block

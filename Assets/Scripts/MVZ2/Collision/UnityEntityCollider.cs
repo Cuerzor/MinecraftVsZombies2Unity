@@ -161,7 +161,7 @@ namespace MVZ2.Collisions
                 return;
             var targetEnt = otherCollider.Entity;
             var cache = new ColliderCache(other, Entity, targetEnt.ID);
-            var mask = Entity.IsHostile(targetEnt) ? Entity.CollisionMaskHostile : Entity.CollisionMaskFriendly;
+            var mask = Entity.IsHostile(targetEnt) ? Entity.GetCollisionMaskHostile() : Entity.GetCollisionMaskFriendly();
             if (!EntityCollisionHelper.CanCollide(mask, targetEnt))
                 return;
             var index = touchingColliders.BinarySearch(cache);

@@ -147,8 +147,22 @@ namespace MVZ2.Vanilla.Projectiles
             var horiVector = new Vector2(relativePosition.x, relativePosition.z);
             var horiDirection = horiVector.normalized;
             var length = horiVector.magnitude;
-            float highestLength;
+            // 到达最高点t帧过后的y速度y1 = -gt
+            // 到达最高点t帧过后的y位置 = k + y1 * (1 + t) / 2
+            // 按照目标的最终y位置求出到达最高点后的时间。
             var sign = passesMaxY ? -1 : 1;
+            var a = -gravity / 2;
+            var b = 0;
+            var c = k - relativePosition.y;
+            var fallTime = (-b + sign * Mathf.Sqrt(b * b - 4 * a * c)) / (2 * a);
+            if (Mathf.Approximately(length, 0))
+            {
+                // 两点位置一致
+                return new Vector3(0, fallTime * gravity, 0);
+            }
+
+            // 两点位置不同
+            float highestLength;
             if (Mathf.Approximately(relativePosition.y, 0))
             {
                 highestLength = length * 0.5f;
@@ -160,13 +174,6 @@ namespace MVZ2.Vanilla.Projectiles
                 var factor = Mathf.Sqrt(sqrLength * (sqrMaxY - k * relativePosition.y));
                 highestLength = (k * length + sign * factor) / relativePosition.y;
             }
-            // 到达最高点t帧过后的y速度y1 = -gt
-            // 到达最高点t帧过后的y位置 = k + y1 * (1 + t) / 2
-            // 按照目标的最终y位置求出到达最高点后的时间。
-            var a = -gravity / 2;
-            var b = 0;
-            var c = k - relativePosition.y;
-            var fallTime = (-b + sign * Mathf.Sqrt(b * b - 4 * a * c)) / (2 * a);
             // 根据后半段时间求出总时间。
             var fallPercent = (length - highestLength) / length;
             var totalTime = fallTime / fallPercent;

@@ -32,13 +32,6 @@ namespace MVZ2.GameContent.Effects
             AddModifier(new Vector3Modifier(EngineEntityProps.DISPLAY_SCALE, NumberOperator.Multiply, PROP_DISPLAY_SCALE_MULTIPLIER));
             AddModifier(ColorModifier.Multiply(EngineEntityProps.TINT, PROP_TINT_MULTIPLIER));
         }
-        public override void Init(Entity entity)
-        {
-            base.Init(entity);
-            var collisionMask = EntityCollisionHelper.MASK_ALL;
-            entity.CollisionMaskFriendly = collisionMask;
-            entity.CollisionMaskHostile = collisionMask;
-        }
         public override void Update(Entity entity)
         {
             base.Update(entity);

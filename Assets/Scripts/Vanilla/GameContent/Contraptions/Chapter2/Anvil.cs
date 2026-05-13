@@ -24,12 +24,6 @@ namespace MVZ2.GameContent.Contraptions
         {
             smashDetector = new CollisionDetector(true);
         }
-        public override void Init(Entity entity)
-        {
-            base.Init(entity);
-            entity.CollisionMaskFriendly |= EntityCollisionHelper.MASK_PLANT | EntityCollisionHelper.MASK_ENEMY | EntityCollisionHelper.MASK_OBSTACLE | EntityCollisionHelper.MASK_BOSS;
-            entity.CollisionMaskHostile |= EntityCollisionHelper.MASK_PLANT | EntityCollisionHelper.MASK_ENEMY | EntityCollisionHelper.MASK_OBSTACLE | EntityCollisionHelper.MASK_BOSS;
-        }
         public override void PostCollision(EntityCollision collision, int state)
         {
             base.PostCollision(collision, state);

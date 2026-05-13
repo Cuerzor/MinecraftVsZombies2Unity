@@ -175,7 +175,6 @@ namespace MVZ2.GameContent.Contraptions
             devourTimer?.ResetTime(EVOCATION_DURATION);
             devourer.State = STATE_GHOST;
             FindPacmanGhostTarget(devourer);
-            devourer.CollisionMaskHostile |= EntityCollisionHelper.MASK_VULNERABLE;
         }
         private void UpdateNotEvoked(Entity devourer)
         {

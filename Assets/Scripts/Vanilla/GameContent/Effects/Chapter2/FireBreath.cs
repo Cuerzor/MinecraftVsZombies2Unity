@@ -26,7 +26,6 @@ namespace MVZ2.GameContent.Effects
         public override void Init(Entity entity)
         {
             base.Init(entity);
-            entity.CollisionMaskHostile = EntityCollisionHelper.MASK_PLANT | EntityCollisionHelper.MASK_ENEMY | EntityCollisionHelper.MASK_OBSTACLE | EntityCollisionHelper.MASK_BOSS;
             entity.Level.AddLoopSoundEntity(VanillaSoundID.fireBreath, entity.ID);
         }
         public override void Update(Entity entity)

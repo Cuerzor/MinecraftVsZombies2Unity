@@ -22,7 +22,6 @@ namespace MVZ2.GameContent.Effects
         public override void Init(Entity entity)
         {
             base.Init(entity);
-            entity.CollisionMaskHostile |= EntityCollisionHelper.MASK_VULNERABLE;
             entity.Velocity = entity.GetFacingDirection() * 60;
             entity.Spawn(VanillaEffectID.combatPunchTrail, entity.Position)?.Let(e =>
             {

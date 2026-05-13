@@ -6,6 +6,7 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Modifiers;
 
 namespace MVZ2.GameContent.Enemies
 {
@@ -14,14 +15,8 @@ namespace MVZ2.GameContent.Enemies
     {
         public CrusherBall(string nsp, string name) : base(nsp, name)
         {
+            AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_HOSTILE, IntegerOperator.BitOr, EntityCollisionHelper.MASK_CART));
         }
-
-        public override void Init(Entity entity)
-        {
-            base.Init(entity);
-            entity.CollisionMaskHostile |= EntityCollisionHelper.MASK_CART;
-        }
-
         public override void PostCollision(EntityCollision collision, int state)
         {
             base.PostCollision(collision, state);

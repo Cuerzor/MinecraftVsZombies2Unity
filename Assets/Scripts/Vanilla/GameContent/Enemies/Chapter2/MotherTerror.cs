@@ -13,6 +13,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Modifiers;
 
 namespace MVZ2.GameContent.Enemies
 {
@@ -21,11 +22,7 @@ namespace MVZ2.GameContent.Enemies
     {
         public MotherTerror(string nsp, string name) : base(nsp, name)
         {
-        }
-        public override void Init(Entity entity)
-        {
-            base.Init(entity);
-            entity.CollisionMaskFriendly |= EntityCollisionHelper.MASK_ENEMY;
+            AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_FRIENDLY, IntegerOperator.BitOr, EntityCollisionHelper.MASK_ENEMY));
         }
         public override void PostCollision(EntityCollision collision, int state)
         {

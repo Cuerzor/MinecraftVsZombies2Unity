@@ -22,7 +22,6 @@ namespace MVZ2.GameContent.Effects
         public override void Init(Entity entity)
         {
             base.Init(entity);
-            entity.CollisionMaskHostile |= EntityCollisionHelper.MASK_VULNERABLE;
             targetBuffer.Clear();
             var overlapParam = OverlapParams.Hostile(entity.GetFaction(), EntityCollisionHelper.MASK_VULNERABLE);
             entity.Level.OverlapBoxNonAlloc(entity.GetCenter(), entity.GetScaledSize(), overlapParam, targetBuffer);

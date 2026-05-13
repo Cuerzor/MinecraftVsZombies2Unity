@@ -29,11 +29,6 @@ namespace MVZ2.GameContent.Effects
         {
             AddTrigger(LogicCallbacks.POST_POINTER_ACTION, PostPointerActionCallback);
         }
-        public override void Init(Entity entity)
-        {
-            base.Init(entity);
-            entity.CollisionMaskFriendly = EntityCollisionHelper.MASK_PROJECTILE;
-        }
         public override void Update(Entity entity)
         {
             base.Update(entity);

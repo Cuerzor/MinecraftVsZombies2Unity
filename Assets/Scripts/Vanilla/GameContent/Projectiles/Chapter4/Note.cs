@@ -29,7 +29,6 @@ namespace MVZ2.GameContent.Projectiles
         public override void Init(Entity entity)
         {
             base.Init(entity);
-            entity.CollisionMaskFriendly |= EntityCollisionHelper.MASK_PLANT;
             SetDamageGrowth(entity, MIN_GROWTH);
         }
         public override void Update(Entity projectile)

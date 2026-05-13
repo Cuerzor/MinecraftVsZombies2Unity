@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Buffs.Contraptions;
 using MVZ2.GameContent.Entities;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.Projectiles;
 using MVZ2Logic.Entities;
@@ -37,10 +38,12 @@ namespace MVZ2.GameContent.Contraptions
         public static void Throw(Entity ejector, Entity thrown, LawnGrid targetGrid)
         {
             var maxY = ejector.Position.y + MAX_HEIGHT;
-            thrown.AddBuff<ThrownByEjectorBuff>();
+            var buff = thrown.AddBuff<ThrownByEjectorBuff>();
+            ThrownByEjectorBuff.SetDamageMultiplier(buff, ejector.GetDamage() / DAMAGE_MULTIPLIER_VALUE);
             thrown.Velocity = VanillaProjectileExt.GetLobVelocity(thrown.Position, targetGrid.GetEntityPosition(), maxY, thrown.GetGravity());
             ejector.PlaySound(VanillaSoundID.launch);
         }
         public const float MAX_HEIGHT = 280f;
+        public const float DAMAGE_MULTIPLIER_VALUE = 100;
     }
 }

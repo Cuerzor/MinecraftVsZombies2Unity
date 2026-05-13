@@ -26,12 +26,6 @@ namespace MVZ2.GameContent.Bosses
         public override void Init(Entity boss)
         {
             base.Init(boss);
-            boss.CollisionMaskHostile |=
-                EntityCollisionHelper.MASK_PLANT |
-                EntityCollisionHelper.MASK_ENEMY |
-                EntityCollisionHelper.MASK_OBSTACLE |
-                EntityCollisionHelper.MASK_BOSS;
-            boss.CollisionMaskFriendly |= EntityCollisionHelper.MASK_BOSS;
             SetTargetGridIndex(boss, boss.GetGridIndex());
         }
         protected override void UpdateLogic(Entity entity)

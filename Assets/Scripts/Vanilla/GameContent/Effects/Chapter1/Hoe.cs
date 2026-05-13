@@ -26,7 +26,6 @@ namespace MVZ2.GameContent.Effects
         public override void Init(Entity entity)
         {
             base.Init(entity);
-            entity.CollisionMaskHostile = EntityCollisionHelper.MASK_ENEMY;
             SetStateTimer(entity, new FrameTimer(5));
         }
         public override void PostCollision(EntityCollision collision, int state)

@@ -20,24 +20,6 @@ namespace MVZ2.GameContent.Effects
         public MummyGas(string nsp, string name) : base(nsp, name)
         {
         }
-        public override void Init(Entity entity)
-        {
-            base.Init(entity);
-            entity.CollisionMaskHostile |=
-                EntityCollisionHelper.MASK_PLANT |
-                EntityCollisionHelper.MASK_ENEMY |
-                EntityCollisionHelper.MASK_BOSS |
-                EntityCollisionHelper.MASK_OBSTACLE |
-                EntityCollisionHelper.MASK_PROJECTILE |
-                EntityCollisionHelper.MASK_EFFECT;
-            entity.CollisionMaskFriendly |=
-                EntityCollisionHelper.MASK_PLANT |
-                EntityCollisionHelper.MASK_ENEMY |
-                EntityCollisionHelper.MASK_BOSS |
-                EntityCollisionHelper.MASK_OBSTACLE |
-                EntityCollisionHelper.MASK_PROJECTILE |
-                EntityCollisionHelper.MASK_EFFECT;
-        }
         public override void PostCollision(EntityCollision collision, int state)
         {
             base.PostCollision(collision, state);

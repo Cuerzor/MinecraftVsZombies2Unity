@@ -6,6 +6,7 @@ using MVZ2Logic.Entities;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Modifiers;
 
 namespace MVZ2.GameContent.Effects
 {
@@ -14,11 +15,7 @@ namespace MVZ2.GameContent.Effects
     {
         public DOTCollisionDamageBehaviour(string nsp, string name) : base(nsp, name)
         {
-        }
-        public override void Init(Entity entity)
-        {
-            base.Init(entity);
-            entity.CollisionMaskHostile |= EntityCollisionHelper.MASK_VULNERABLE;
+            AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_HOSTILE, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
         }
         public override void PostCollision(EntityCollision collision, int state)
         {

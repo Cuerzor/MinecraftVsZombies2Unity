@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Properties;
 using MVZ2.Vanilla.Shells;
 using MVZ2Logic.Entities;
 using PVZEngine.Buffs;
@@ -22,6 +23,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
         {
             AddModifier(new FloatModifier(EngineEntityProps.FRICTION, NumberOperator.Set, 0));
             AddModifier(new FloatModifier(EngineEntityProps.GRAVITY, NumberOperator.Set, 1));
+            AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_HOSTILE, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
             AddTrigger(LevelCallbacks.POST_ENTITY_COLLISION, PostEntityCollisionCallback);
             AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostEntityContactGroundCallback);
         }
@@ -32,10 +34,16 @@ namespace MVZ2.GameContent.Buffs.Contraptions
                 return;
             var collision = args.collision;
             var entity = collision.Entity;
-            if (!entity.HasBuff<ThrownByEjectorBuff>())
+            var buffs = entity.GetBuffs<ThrownByEjectorBuff>();
+            if (buffs.Length <= 0)
                 return;
+            float multiplier = 1;
+            foreach (var buff in buffs)
+            {
+                multiplier *= GetDamageMultiplier(buff);
+            }
             var other = collision.OtherCollider;
-            var damage = CalculateSmashDamage(entity);
+            var damage = CalculateSmashDamage(entity) * multiplier;
             other.TakeDamage(damage, new DamageEffectList(VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN), entity);
             other.Entity.PlaySound(VanillaSoundID.punch);
         }
@@ -46,6 +54,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
                 return;
             entity.Position = entity.Level.GetEntityGridPosition(entity.GetColumn(), entity.GetLane());
             entity.Velocity = Vector3.zero;
+            entity.DestroyConflictGridEntities();
             entity.RemoveBuffs<ThrownByEjectorBuff>();
         }
         public static float CalculateSmashDamage(Entity entity)
@@ -57,6 +66,9 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             var damage = volume * VOLUME_DAMAGE_MULTIPLIER * density;
             return damage;
         }
+        public static float GetDamageMultiplier(Buff buff) => buff.GetProperty<float>(PROP_DAMAGE_MULTIPLIER);
+        public static void SetDamageMultiplier(Buff buff, float value) => buff.SetProperty(PROP_DAMAGE_MULTIPLIER, value);
         public const float VOLUME_DAMAGE_MULTIPLIER = 0.005f;
+        public static readonly VanillaBuffPropertyMeta<float> PROP_DAMAGE_MULTIPLIER = new VanillaBuffPropertyMeta<float>("damage_multiplier", 1);
     }
 }
