@@ -194,6 +194,18 @@ namespace MVZ2.Vanilla.Callbacks
         }
 
 
+        public struct PostEjectedEntityLandParams
+        {
+            public Entity entity;
+            public float damageMultiplier;
+
+            public PostEjectedEntityLandParams(Entity entity, float damageMultiplier)
+            {
+                this.entity = entity;
+                this.damageMultiplier = damageMultiplier;
+            }
+        }
+
 
         public readonly static CallbackType<PreTakeDamageParams> PRE_ENTITY_TAKE_DAMAGE = new();
         public readonly static CallbackType<PostTakeDamageParams> POST_ENTITY_TAKE_DAMAGE = new();
@@ -239,5 +251,6 @@ namespace MVZ2.Vanilla.Callbacks
         public readonly static CallbackType<PostProjectileHitParams> POST_PROJECTILE_HIT = new();
 
         public readonly static CallbackType<EntityCallbackParams> POST_USE_STARSHARD = new();
+        public readonly static CallbackType<PostEjectedEntityLandParams> POST_EJECTED_ENTITY_LAND = new();
     }
 }

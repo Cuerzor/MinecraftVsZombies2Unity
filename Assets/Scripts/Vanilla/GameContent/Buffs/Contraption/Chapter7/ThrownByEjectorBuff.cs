@@ -2,6 +2,7 @@
 
 using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using MVZ2.Vanilla.Shells;
@@ -25,7 +26,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             AddModifier(new FloatModifier(EngineEntityProps.GRAVITY, NumberOperator.Set, 1));
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_HOSTILE, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
             AddTrigger(LevelCallbacks.POST_ENTITY_COLLISION, PostEntityCollisionCallback);
-            AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostEntityContactGroundCallback);
+            AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostEntityContactGroundCallback, priority: 1);
         }
         private void PostEntityCollisionCallback(LevelCallbacks.PostEntityCollisionParams args, CallbackResult result)
         {
@@ -50,11 +51,19 @@ namespace MVZ2.GameContent.Buffs.Contraptions
         private void PostEntityContactGroundCallback(LevelCallbacks.PostEntityContactGroundParams args, CallbackResult result)
         {
             var entity = args.entity;
-            if (!entity.HasBuff<ThrownByEjectorBuff>())
+            var buffs = entity.GetBuffs<ThrownByEjectorBuff>();
+            if (buffs.Length <= 0)
                 return;
+            float multiplier = 1;
+            foreach (var buff in buffs)
+            {
+                multiplier *= GetDamageMultiplier(buff);
+            }
             entity.Position = entity.Level.GetEntityGridPosition(entity.GetColumn(), entity.GetLane());
             entity.Velocity = Vector3.zero;
             entity.DestroyConflictGridEntities();
+            var callbackArgs = new VanillaLevelCallbacks.PostEjectedEntityLandParams(entity, multiplier);
+            entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_EJECTED_ENTITY_LAND, callbackArgs, entity.GetDefinitionID());
             entity.RemoveBuffs<ThrownByEjectorBuff>();
         }
         public static float CalculateSmashDamage(Entity entity)
