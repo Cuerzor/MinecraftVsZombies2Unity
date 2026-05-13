@@ -25,6 +25,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         public override void Apply(Mod mod)
         {
             mod.AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostContactGroundCallback);
+            mod.AddTrigger(VanillaLevelCallbacks.PRE_ENTITY_TAKE_DAMAGE, PreEntityTakeDamageCallback);
             mod.AddTrigger(VanillaLevelCallbacks.POST_ENTITY_TAKE_DAMAGE, PostDamageCallback);
             mod.AddTrigger(VanillaLevelCallbacks.APPLY_DAMAGE_SPECIAL_EFFECTS, ApplyDamageEffectsCallback);
             mod.AddTrigger(LevelCallbacks.POST_ENTITY_UPDATE, HealParticlesUpdateCallback);
@@ -98,6 +99,15 @@ namespace MVZ2.GameContent.GlobalCallbacks
             else if (slow)
             {
                 entity.InflictSlow(300, slowSource);
+            }
+        }
+        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams args, CallbackResult result)
+        {
+            var damageInfo = args.input;
+            var entity = damageInfo.Entity;
+            if (entity.ImmuneFire() && damageInfo.Effects.HasEffect(VanillaDamageEffects.FIRE))
+            {
+                damageInfo.Multiply(0);
             }
         }
         private void PostDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResult callbackResult)

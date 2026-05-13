@@ -15,7 +15,7 @@ namespace MVZ2.GameContent.Shells
         public const string grass = "grass";
         public const string metal = "metal";
         public const string wood = "wood";
-        public const string nether = "nether";
+        public const string witherBone = "wither_bone";
         public const string diamond = "diamond";
         public const string sand = "sand";
         public const string netherrack = "netherrack";
@@ -23,6 +23,7 @@ namespace MVZ2.GameContent.Shells
         public const string lightning = "lightning";
         public const string shadow = "shadow";
         public const string ice = "ice";
+        public const string apparition = "apparition";
     }
     public static class VanillaShellID
     {
@@ -34,7 +35,7 @@ namespace MVZ2.GameContent.Shells
         public static readonly NamespaceID grass = Get(VanillaShellNames.grass);
         public static readonly NamespaceID metal = Get(VanillaShellNames.metal);
         public static readonly NamespaceID wood = Get(VanillaShellNames.wood);
-        public static readonly NamespaceID nether = Get(VanillaShellNames.nether);
+        public static readonly NamespaceID witherBone = Get(VanillaShellNames.witherBone);
         public static readonly NamespaceID diamond = Get(VanillaShellNames.diamond);
         public static readonly NamespaceID sand = Get(VanillaShellNames.sand);
         public static readonly NamespaceID netherrack = Get(VanillaShellNames.netherrack);
@@ -42,6 +43,7 @@ namespace MVZ2.GameContent.Shells
         public static readonly NamespaceID lightning = Get(VanillaShellNames.lightning);
         public static readonly NamespaceID shadow = Get(VanillaShellNames.shadow);
         public static readonly NamespaceID ice = Get(VanillaShellNames.ice);
+        public static readonly NamespaceID apparition = Get(VanillaShellNames.apparition);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

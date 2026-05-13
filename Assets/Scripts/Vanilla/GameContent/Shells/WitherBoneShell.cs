@@ -9,12 +9,12 @@ using PVZEngine.Shells;
 
 namespace MVZ2.GameContent.Shells
 {
-    [AutoShellDefinition(VanillaShellNames.nether)]
-    public class NetherShell : ShellDefinition
+    [AutoShellDefinition(VanillaShellNames.witherBone)]
+    public class WitherBoneShell : ShellDefinition
     {
-        public NetherShell(string nsp, string name) : base(nsp, name)
+        public WitherBoneShell(string nsp, string name) : base(nsp, name)
         {
-            SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.splat);
+            SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.boneHit);
             SetProperty(VanillaShellProps.DENSITY, 0.7f);
         }
         public override void EvaluateDamage(DamageInput damageInfo)

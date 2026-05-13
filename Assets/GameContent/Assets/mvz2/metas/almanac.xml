@@ -153,6 +153,10 @@
             <icon sprite="mvz2:ui/almanac/attribute_tags[13]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[2]" color="#3b5b3b" />
         </tag>
+        <tag id="fire_immunity" name="火焰免疫" description="免疫火焰伤害" priority="4000">
+            <icon sprite="mvz2:ui/almanac/attribute_tags[14]" />
+            <background sprite="mvz2:ui/almanac/tag_backgrounds[2]" color="#96503a" />
+        </tag>
 
 
         <enum id="mass" type="int">
@@ -170,7 +174,7 @@
             <value value="mvz2:metal" name="金属" description="阻挡锐利物体" sprite="mvz2:ui/almanac/shell_tags[4]" backgroundColor="#aaaaaa" />
             <value value="mvz2:bone" name="骨" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[5]" backgroundColor="#494b3e" />
             <value value="mvz2:wood" name="木头" description="受到2x火焰伤害" sprite="mvz2:ui/almanac/shell_tags[6]" backgroundColor="#b28553" />
-            <value value="mvz2:nether" name="下界" description="免疫火焰伤害" sprite="mvz2:ui/almanac/shell_tags[7]" backgroundColor="#36131d" />
+            <value value="mvz2:wither_bone" name="凋灵骨" description="免疫火焰伤害" sprite="mvz2:ui/almanac/shell_tags[7]" backgroundColor="#36131d" />
             <value value="mvz2:diamond" name="钻石" description="阻挡锐利物体" sprite="mvz2:ui/almanac/shell_tags[8]" backgroundColor="#417368" />
             <value value="mvz2:sand" name="沙子" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[9]" backgroundColor="#b4b590" />
             <value value="mvz2:netherrack" name="下界岩" description="免疫火焰伤害，阻挡锐利物体和火焰溅射，但受到20x冲击伤害" sprite="mvz2:ui/almanac/shell_tags[10]" backgroundColor="#36131d" />
@@ -179,6 +183,7 @@
             <value value="mvz2:shadow" name="暗影" description="受到1.5x火焰、闪电和光明伤害" sprite="mvz2:ui/almanac/shell_tags[13]" backgroundColor="#3f3f3f" />
             <value value="mvz2:normal" name="普通" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[14]" backgroundColor="#6b6b6b" />
             <value value="mvz2:ice" name="冰" description="阻挡锐利物体，但受到20x冲击伤害和2x火焰伤害" sprite="mvz2:ui/almanac/shell_tags[15]" backgroundColor="#1b67a3" />
+            <value value="mvz2:apparition" name="灵体" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[16]" backgroundColor="#ffffff" />
         </enum>
     </tags>
     <globalVariables>
@@ -1521,7 +1526,7 @@
                 <variable name="head_speed">property("mvz2:entity/speed", "mvz2:dullahan_head", "entity")</variable>
             </variables>
             <tags>
-                <tag id="mvz2:shell_head" value="mvz2:nether" />
+                <tag id="mvz2:shell_head" value="mvz2:wither_bone" />
                 <tag id="mvz2:shell_horse" value="mvz2:bone" />
                 <tag id="mvz2:mass_head" value="-1" />
                 <tag id="mvz2:mass_horse" value="0" />
