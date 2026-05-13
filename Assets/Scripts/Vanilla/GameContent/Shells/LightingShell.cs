@@ -23,6 +23,7 @@ namespace MVZ2.GameContent.Shells
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.energyShieldHit);
             AddTrigger(VanillaLevelCallbacks.PRE_BODY_TAKE_DAMAGE, PreBodyTakeDamageCallback, VanillaCallbackPriorities.LATE);
             AddTrigger(VanillaLevelCallbacks.PRE_ARMOR_TAKE_DAMAGE, PreArmorTakeDamageCallback, VanillaCallbackPriorities.LATE);
+            SetProperty(VanillaShellProps.DENSITY, 0f);
         }
         private void PreBodyTakeDamageCallback(VanillaLevelCallbacks.PreBodyTakeDamageParams param, CallbackResult result)
         {

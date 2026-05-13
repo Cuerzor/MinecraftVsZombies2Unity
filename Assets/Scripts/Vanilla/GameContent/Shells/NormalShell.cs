@@ -13,6 +13,7 @@ namespace MVZ2.GameContent.Shells
         public NormalShell(string nsp, string name) : base(nsp, name)
         {
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.splat);
+            SetProperty(VanillaShellProps.DENSITY, 1f);
         }
     }
 }

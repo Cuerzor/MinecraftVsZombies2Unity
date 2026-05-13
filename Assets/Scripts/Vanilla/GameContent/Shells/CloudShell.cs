@@ -15,6 +15,7 @@ namespace MVZ2.GameContent.Shells
         public CloudShell(string nsp, string name) : base(nsp, name)
         {
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.cloth);
+            SetProperty(VanillaShellProps.DENSITY, 0f);
         }
         public override void EvaluateDamage(DamageInput damageInfo)
         {

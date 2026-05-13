@@ -15,6 +15,7 @@ namespace MVZ2.GameContent.Shells
         public ShadowShell(string nsp, string name) : base(nsp, name)
         {
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.splat);
+            SetProperty(VanillaShellProps.DENSITY, 0.1f);
         }
         public override void EvaluateDamage(DamageInput damageInfo)
         {

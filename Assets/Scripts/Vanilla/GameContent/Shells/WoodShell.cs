@@ -15,6 +15,7 @@ namespace MVZ2.GameContent.Shells
         public WoodShell(string nsp, string name) : base(nsp, name)
         {
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.wood);
+            SetProperty(VanillaShellProps.DENSITY, 0.25f);
         }
         public override void EvaluateDamage(DamageInput damageInfo)
         {

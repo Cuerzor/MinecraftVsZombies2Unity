@@ -17,6 +17,7 @@ namespace MVZ2.GameContent.Shells
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.stone);
             SetProperty(VanillaShellProps.BLOCKS_SLICE, true);
             SetProperty(VanillaShellProps.BLOCKS_FIRE, true);
+            SetProperty(VanillaShellProps.DENSITY, 1f);
         }
         public override void EvaluateDamage(DamageInput damageInfo)
         {

@@ -337,6 +337,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 8866a258ae8eb3e458f9c444ebdba22c, type: 3}
   - name: mobile_blueprint/dullahan_head
     sprite: {fileID: 21300000, guid: 9e859336bcdaf054593a5dc4ca4b79ae, type: 3}
+  - name: mobile_blueprint/ejector
+    sprite: {fileID: 21300000, guid: dd80db5638ab4f4409fd0f60371294bd, type: 3}
   - name: mobile_blueprint/elastic_cloud
     sprite: {fileID: 21300000, guid: 22f0f8968ce066b4daa774bc72595ce1, type: 3}
   - name: mobile_blueprint/emperor_zombie
@@ -751,6 +753,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 0d22b25f0f1398d4bb06d82e81299708, type: 3}
   - name: entity/carts/minecart
     sprite: {fileID: 21300000, guid: 3d9178829e9e3e340b9f8df54bfcbbb5, type: 3}
+  - name: entity/carts/pool_cleaner
+    sprite: {fileID: 21300000, guid: 163cb95c171780b46bd64f7d8cd2c279, type: 3}
   - name: entity/carts/pumpkin_carriage
     sprite: {fileID: 21300000, guid: 65b141497a801624881cf387625a6801, type: 3}
   - name: entity/carts/unzan_fist
@@ -885,6 +889,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 415fd322dbcf5fa4882d851c6a5717ab, type: 3}
   - name: entity/effects/magic_star
     sprite: {fileID: 21300000, guid: 6a6baf812492dec40ba2154d360755bb, type: 3}
+  - name: entity/effects/maple_leaf
+    sprite: {fileID: 21300000, guid: 8ed4f649f7283ff46a05dba827b3b776, type: 3}
   - name: entity/effects/mega_glowing_laser
     sprite: {fileID: 21300000, guid: 3b43d3948455b4a4a9461c41899ae6bf, type: 3}
   - name: entity/effects/mind_control_line
@@ -1183,6 +1189,14 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: a536357a72bfdb04184c7a08c9a9d57d, type: 3}
   - name: level/mausoleum/pillbox
     sprite: {fileID: 21300000, guid: 7513cd2470186434dac756e22275249b, type: 3}
+  - name: level/mountain/bridge
+    sprite: {fileID: 21300000, guid: f1ea97cf2ae2923468cd65767a4c2b71, type: 3}
+  - name: level/mountain/mountain
+    sprite: {fileID: 21300000, guid: fe5483b57b4f942498536011ab35c856, type: 3}
+  - name: level/mountain/mountain_house
+    sprite: {fileID: 21300000, guid: fcc498786d8ffd744a2bb35848dc6b3b, type: 3}
+  - name: level/mountain/river
+    sprite: {fileID: 21300000, guid: f16e98473504f134db30f1e9655cf837, type: 3}
   - name: level/palace/palace
     sprite: {fileID: 21300000, guid: 0c0f98f27759223459980f9a2226fe56, type: 3}
   - name: level/palace/palace_gate
@@ -2062,6 +2076,11 @@ MonoBehaviour:
     - {fileID: 320034190, guid: 407fad964d6763c4485f90c8ab1d907a, type: 3}
     - {fileID: 1628297157, guid: 407fad964d6763c4485f90c8ab1d907a, type: 3}
     - {fileID: 789365403, guid: 407fad964d6763c4485f90c8ab1d907a, type: 3}
+  - name: entity/contraption/ejector
+    spritesheet:
+    - {fileID: -546047925, guid: 43ab9df27e6a88f499c8292ce16c7f47, type: 3}
+    - {fileID: -506522540, guid: 43ab9df27e6a88f499c8292ce16c7f47, type: 3}
+    - {fileID: -133694658, guid: 43ab9df27e6a88f499c8292ce16c7f47, type: 3}
   - name: entity/contraption/elastic_cloud
     spritesheet:
     - {fileID: -551871915, guid: 52dd30b9122fbb9419354452c8af0a1f, type: 3}

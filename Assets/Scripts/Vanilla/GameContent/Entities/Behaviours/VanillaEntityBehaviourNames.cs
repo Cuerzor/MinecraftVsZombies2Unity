@@ -53,6 +53,7 @@ namespace MVZ2.Vanilla.Entities
         public const string amethystPylon_Evoke = "amethyst_pylon/evoke";
         public const string netherReactorCore_Evoke = "nether_reactor_core/evoke";
 
+        public const string ejector_Trigger = "ejector/trigger";
         public const string nestingTNT_Evoke = "nesting_tnt/evoke";
 
         #endregion

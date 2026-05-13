@@ -8,9 +8,9 @@ namespace MVZ2.Vanilla.Shells
     [PropertyRegistryRegion(PropertyRegions.shell)]
     public static class VanillaShellProps
     {
-        private static PropertyMeta<T> Get<T>(string name)
+        private static PropertyMeta<T> Get<T>(string name, T? defaultValue = default)
         {
-            return new PropertyMeta<T>(name);
+            return new PropertyMeta<T>(name, defaultValue);
         }
         public static readonly PropertyMeta<bool> SLICE_CRITICAL = Get<bool>("sliceCritical");
         public static readonly PropertyMeta<bool> BLOCKS_FIRE = Get<bool>("blocksFire");
@@ -33,5 +33,12 @@ namespace MVZ2.Vanilla.Shells
         {
             return shell.GetProperty<NamespaceID>(HIT_SOUND);
         }
+        #region √‹∂»
+        public static readonly PropertyMeta<float> DENSITY = Get<float>("density", 1);
+        public static float GetDensity(this ShellDefinition shell)
+        {
+            return shell.GetProperty<float>(DENSITY);
+        }
+        #endregion
     }
 }

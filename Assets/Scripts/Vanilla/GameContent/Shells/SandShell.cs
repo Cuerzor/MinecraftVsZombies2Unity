@@ -13,6 +13,7 @@ namespace MVZ2.GameContent.Shells
         public SandShell(string nsp, string name) : base(nsp, name)
         {
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.sand);
+            SetProperty(VanillaShellProps.DENSITY, 0.55f);
         }
     }
 }

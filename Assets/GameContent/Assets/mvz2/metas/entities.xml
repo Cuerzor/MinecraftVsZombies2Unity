@@ -1325,7 +1325,7 @@
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </entity>
-
+        
         <!-- Mountain Contraptions -->
         <entity template="dispenser" id="freezenser" name="寒冰发射器" tooltip="发射减速的冰箭">
             <unlock>
@@ -1336,6 +1336,25 @@
                 <id name="mvz2:deathSound" value="mvz2:glass_break" />
 
                 <int name="mvz2:cost" value="175" />
+            </properties>
+        </entity>
+        <entity template="contraption" id="ejector" name="弹射器" tooltip="点击投掷内部的器械">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.ejector" />
+            </unlock>
+            <behaviours>
+                <behaviour operator="add" id="mvz2:ejector/trigger" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:canDeactive" value="false" />
+                <vector3 name="mvz2:size" x="80" y="40" z="64" />
+                <idArray name="mvz2:gridLayers" value="mvz2:protector" />
+                <id name="mvz2:shell" value="mvz2:metal" />
+                <bool name="mvz2:loyal" value="true" />
+
+                <id name="mvz2:placeSound" value="mvz2:metal_break" />
+                <int name="mvz2:cost" value="75" />
+                <id name="mvz2:rechargeId" value="mvz2:short" />
             </properties>
         </entity>
         <entity template="contraption" id="nesting_tnt" name="套娃TNT" tooltip="触发后爆炸，可以爆炸三次">

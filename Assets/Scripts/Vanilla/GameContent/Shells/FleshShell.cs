@@ -16,6 +16,7 @@ namespace MVZ2.GameContent.Shells
         {
             SetProperty(VanillaShellProps.SLICE_CRITICAL, true);
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.splat);
+            SetProperty(VanillaShellProps.DENSITY, 0.4f);
         }
         public override void EvaluateDamage(DamageInput damageInfo)
         {

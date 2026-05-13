@@ -14,6 +14,7 @@ namespace MVZ2.GameContent.Shells
         {
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.crystal);
             SetProperty(VanillaShellProps.BLOCKS_SLICE, true);
+            SetProperty(VanillaShellProps.DENSITY, 1.3f);
         }
     }
 }

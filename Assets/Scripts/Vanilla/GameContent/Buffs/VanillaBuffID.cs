@@ -206,6 +206,9 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 6
             public const string psychicShackled = "psychic_shackled";
             public const string stoneEyeCharged = "stone_eye_charged";
+
+            // Chapter 7
+            public const string thrownByEjector = "thrown_by_ejector";
         }
         public static class Enemy
         {

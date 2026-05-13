@@ -13,6 +13,7 @@ namespace MVZ2.GameContent.Shells
         public LeatherShell(string nsp, string name) : base(nsp, name)
         {
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.leatherHit);
+            SetProperty(VanillaShellProps.DENSITY, 0.35f);
         }
     }
 }

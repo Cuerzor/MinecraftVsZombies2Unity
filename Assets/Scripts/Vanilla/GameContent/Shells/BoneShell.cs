@@ -13,6 +13,7 @@ namespace MVZ2.GameContent.Shells
         public BoneShell(string nsp, string name) : base(nsp, name)
         {
             SetProperty(VanillaShellProps.HIT_SOUND, VanillaSoundID.boneHit);
+            SetProperty(VanillaShellProps.DENSITY, 66.6666667f);
         }
     }
 }
