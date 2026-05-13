@@ -1349,6 +1349,7 @@
             </unlock>
             <behaviours>
                 <behaviour operator="add" id="mvz2:ejector/trigger" />
+                <behaviour operator="add" id="mvz2:ejector/evoke" />
             </behaviours>
             <properties>
                 <bool name="mvz2:canDeactive" value="false" />
