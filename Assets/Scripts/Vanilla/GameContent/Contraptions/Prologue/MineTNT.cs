@@ -50,7 +50,11 @@ namespace MVZ2.GameContent.Contraptions
             base.UpdateAI(entity);
             RiseUpdate(entity);
         }
-
+        protected override void UpdateLogic(Entity entity)
+        {
+            base.UpdateLogic(entity);
+            entity.SetModelProperty("NoDirt", entity.IsAboveLeaveGridHeight());
+        }
         protected override void OnEvoke(Entity entity)
         {
             base.OnEvoke(entity);

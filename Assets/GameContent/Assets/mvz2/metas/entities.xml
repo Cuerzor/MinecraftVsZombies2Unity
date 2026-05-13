@@ -346,6 +346,7 @@
                 <vector3 name="mvz2:size" x="48" y="24" z="48" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
                 <int name="mvz2:collision_mask_hostile" value="2" />
+                <float name="mvz2:fallResistance" value="10000" />
 
                 <int name="mvz2:cost" value="25" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
