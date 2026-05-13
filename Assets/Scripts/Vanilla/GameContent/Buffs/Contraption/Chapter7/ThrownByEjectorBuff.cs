@@ -67,7 +67,14 @@ namespace MVZ2.GameContent.Buffs.Contraptions
                 multiplier *= GetDamageMultiplier(buff);
             }
             entity.Position = entity.Level.GetEntityGridPosition(entity.GetColumn(), entity.GetLane());
-            entity.Velocity = Vector3.zero;
+            var vel = entity.Velocity;
+            vel.x = 0;
+            vel.z = 0;
+            if (!entity.IsAboveCloud())
+            {
+                vel.y = 0;
+            }
+            entity.Velocity = vel;
             entity.DestroyConflictGridEntities();
             var callbackArgs = new VanillaLevelCallbacks.PostEjectedEntityLandParams(entity, faction, multiplier);
             entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_EJECTED_ENTITY_LAND, callbackArgs, entity.GetDefinitionID());
