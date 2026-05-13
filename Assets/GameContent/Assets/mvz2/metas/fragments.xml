@@ -267,6 +267,12 @@
             <key hex="#1b67a3" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="ejector">
+        <colorKeys>
+            <key hex="#dc7b55" time="0.5" />
+            <key hex="#a2a2b1" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="nesting_tnt">
         <colorKeys>
             <key hex="#00FFFF" time="0.6" />

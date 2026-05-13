@@ -39,6 +39,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             var maxY = ejector.Position.y + MAX_HEIGHT;
             var buff = thrown.AddBuff<ThrownByEjectorBuff>();
+            ThrownByEjectorBuff.SetFaction(buff, ejector.GetFaction());
             ThrownByEjectorBuff.SetDamageMultiplier(buff, ejector.GetDamage() / DAMAGE_MULTIPLIER_VALUE);
             thrown.Velocity = VanillaProjectileExt.GetLobVelocity(thrown.Position, targetGrid.GetEntityPosition(), maxY, thrown.GetGravity());
             ejector.PlaySound(VanillaSoundID.launch);

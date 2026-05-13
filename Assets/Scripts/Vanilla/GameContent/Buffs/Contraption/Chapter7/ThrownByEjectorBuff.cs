@@ -25,6 +25,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             AddModifier(new FloatModifier(EngineEntityProps.FRICTION, NumberOperator.Set, 0));
             AddModifier(new FloatModifier(EngineEntityProps.GRAVITY, NumberOperator.Set, 1));
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_HOSTILE, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
+            AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_FRIENDLY, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
             AddTrigger(LevelCallbacks.POST_ENTITY_COLLISION, PostEntityCollisionCallback);
             AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostEntityContactGroundCallback, priority: 1);
         }
@@ -38,12 +39,16 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             var buffs = entity.GetBuffs<ThrownByEjectorBuff>();
             if (buffs.Length <= 0)
                 return;
+            int faction = 0;
             float multiplier = 1;
             foreach (var buff in buffs)
             {
+                faction = GetFaction(buff);
                 multiplier *= GetDamageMultiplier(buff);
             }
             var other = collision.OtherCollider;
+            if (!EngineEntityExt.IsHostile(faction, other.Entity.GetFaction()))
+                return;
             var damage = CalculateSmashDamage(entity) * multiplier;
             other.TakeDamage(damage, new DamageEffectList(VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN), entity);
             other.Entity.PlaySound(VanillaSoundID.punch);
@@ -54,15 +59,17 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             var buffs = entity.GetBuffs<ThrownByEjectorBuff>();
             if (buffs.Length <= 0)
                 return;
+            int faction = 0;
             float multiplier = 1;
             foreach (var buff in buffs)
             {
+                faction = GetFaction(buff);
                 multiplier *= GetDamageMultiplier(buff);
             }
             entity.Position = entity.Level.GetEntityGridPosition(entity.GetColumn(), entity.GetLane());
             entity.Velocity = Vector3.zero;
             entity.DestroyConflictGridEntities();
-            var callbackArgs = new VanillaLevelCallbacks.PostEjectedEntityLandParams(entity, multiplier);
+            var callbackArgs = new VanillaLevelCallbacks.PostEjectedEntityLandParams(entity, faction, multiplier);
             entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_EJECTED_ENTITY_LAND, callbackArgs, entity.GetDefinitionID());
             entity.RemoveBuffs<ThrownByEjectorBuff>();
         }
@@ -75,9 +82,12 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             var damage = volume * VOLUME_DAMAGE_MULTIPLIER * density;
             return damage;
         }
+        public static int GetFaction(Buff buff) => buff.GetProperty<int>(PROP_FACTION);
+        public static void SetFaction(Buff buff, int value) => buff.SetProperty(PROP_FACTION, value);
         public static float GetDamageMultiplier(Buff buff) => buff.GetProperty<float>(PROP_DAMAGE_MULTIPLIER);
         public static void SetDamageMultiplier(Buff buff, float value) => buff.SetProperty(PROP_DAMAGE_MULTIPLIER, value);
         public const float VOLUME_DAMAGE_MULTIPLIER = 0.005f;
+        public static readonly VanillaBuffPropertyMeta<int> PROP_FACTION = new VanillaBuffPropertyMeta<int>("faction");
         public static readonly VanillaBuffPropertyMeta<float> PROP_DAMAGE_MULTIPLIER = new VanillaBuffPropertyMeta<float>("damage_multiplier", 1);
     }
 }

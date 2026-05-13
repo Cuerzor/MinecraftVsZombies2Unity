@@ -29,7 +29,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             base.Evoke(entity);
 
-            entity.Spawn(VanillaContraptionID.tnt, entity.Position);
+            entity.SpawnWithParams(VanillaContraptionID.tnt, entity.Position);
             entity.PlaySound(VanillaSoundID.gunReload);
         }
     }

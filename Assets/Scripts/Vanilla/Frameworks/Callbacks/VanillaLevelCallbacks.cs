@@ -197,11 +197,13 @@ namespace MVZ2.Vanilla.Callbacks
         public struct PostEjectedEntityLandParams
         {
             public Entity entity;
+            public int faction;
             public float damageMultiplier;
 
-            public PostEjectedEntityLandParams(Entity entity, float damageMultiplier)
+            public PostEjectedEntityLandParams(Entity entity, int faction, float damageMultiplier)
             {
                 this.entity = entity;
+                this.faction = faction;
                 this.damageMultiplier = damageMultiplier;
             }
         }

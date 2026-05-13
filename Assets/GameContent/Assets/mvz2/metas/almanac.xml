@@ -1059,7 +1059,54 @@
         <entry />
         <entry />
         <entry />
-        <entry />
+        <entry id="mvz2:ejector">
+            <variables>
+                <variable name="metal_density">property("mvz2:shell/density", "mvz2:metal", "shell") * 100</variable>
+                <variable name="diamond_density">property("mvz2:shell/density", "mvz2:diamond", "shell") * 100</variable>
+                <variable name="stone_density">property("mvz2:shell/density", "mvz2:stone", "shell") * 100</variable>
+                <variable name="netherrack_density">property("mvz2:shell/density", "mvz2:netherrack", "shell") * 100</variable>
+                <variable name="wither_bone_density">property("mvz2:shell/density", "mvz2:wither_bone", "shell") * 100</variable>
+                <variable name="bone_density">property("mvz2:shell/density", "mvz2:bone", "shell") * 100</variable>
+                <variable name="sand_density">property("mvz2:shell/density", "mvz2:sand", "shell") * 100</variable>
+                <variable name="flesh_density">property("mvz2:shell/density", "mvz2:flesh", "shell") * 100</variable>
+                <variable name="leather_density">property("mvz2:shell/density", "mvz2:leather", "shell") * 100</variable>
+                <variable name="grass_density">property("mvz2:shell/density", "mvz2:grass", "shell") * 100</variable>
+                <variable name="wood_density">property("mvz2:shell/density", "mvz2:wood", "shell") * 100</variable>
+                <variable name="shadow_density">property("mvz2:shell/density", "mvz2:shadow", "shell") * 100</variable>
+                <variable name="cloud_density">property("mvz2:shell/density", "mvz2:cloud", "shell") * 100</variable>
+                <variable name="lightning_density">property("mvz2:shell/density", "mvz2:lightning", "shell") * 100</variable>
+                <variable name="apparition_density">property("mvz2:shell/density", "mvz2:apparition", "shell") * 100</variable>
+            </variables>
+            <header>
+                <p>弹射器内部可以放置其他器械。点击弹射器可以将内部的器械抛投至任意位置并砸伤敌人。被投出的器械也会因此受到摔落伤害。</p>
+            </header>
+            <properties>
+                <p>伤害：<![CDATA[<color=red>根据被投掷的器械的材质和体积而定</color>]]></p>
+                <p>特殊：<![CDATA[<color=red>部分材质和器械被投出时会有特殊效果</color>]]></p>
+                <p>技能：<![CDATA[<color=red>在内部没有器械时，装填一个<ref=[contraptions]mvz2:tnt>TNT</ref></color>]]></p>
+            </properties>
+            <flavor>
+                <p>“你实在是太暴力了！你就不能和其他器械们和平共处吗？”</p>
+                <p>“你离我近一点，我来告诉你我能不能。”</p>
+                <p/>
+                <p><![CDATA[<b>附录：</b>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:metal" />：<color=red><var local="metal_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:diamond" />：<color=red><var local="diamond_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:stone" />：<color=red><var local="stone_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:netherrack" />：<color=red><var local="netherrack_density"/>%（在周围产生火焰）</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:wither_bone" />：<color=red><var local="wither_bone_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:bone" />：<color=red><var local="bone_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:sand" />：<color=red><var local="sand_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:flesh" />：<color=red><var local="flesh_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:leather" />：<color=red><var local="leather_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:grass" />：<color=red><var local="grass_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:wood" />：<color=red><var local="wood_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:shadow" />：<color=red><var local="shadow_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:cloud" />：<color=red><var local="cloud_density"/>%（震飞周围敌怪）</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:lightning" />：<color=red><var local="lightning_density"/>%（电击周围敌怪）</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:apparition" />：<color=red><var local="lightning_density"/>%</color>]]></p>
+            </flavor>
+        </entry>
         <entry />
         <entry id="mvz2:nesting_tnt">
             <variables>
