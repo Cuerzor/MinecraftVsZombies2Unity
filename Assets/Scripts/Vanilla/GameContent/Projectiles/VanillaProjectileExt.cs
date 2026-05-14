@@ -53,10 +53,9 @@ namespace MVZ2.Vanilla.Projectiles
             var param = parameters.spawnParam;
             param.SetProperty(VanillaEntityProps.DAMAGE, parameters.damage);
             param.SetProperty(EngineEntityProps.FACTION, parameters.faction);
+            param.EntityVelocity = velocity;
             return entity.Spawn(projectileDefinition, position, param)?.Let(e =>
             {
-                e.Velocity = velocity;
-                e.UpdatePointTowardsDirection();
                 entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_PROJECTILE_SHOT, new EntityCallbackParams(e), e.GetDefinitionID());
             });
 
@@ -87,14 +86,6 @@ namespace MVZ2.Vanilla.Projectiles
             Vector3 offset = entity.GetShotOffset();
             offset = entity.ModifyShotOffset(offset);
             return entity.Position + offset;
-        }
-        public static void UpdatePointTowardsDirection(this Entity entity)
-        {
-            if (entity.PointsTowardDirection())
-            {
-                var vel = new Vector2(entity.Velocity.x, entity.Velocity.y + entity.Velocity.z);
-                entity.RenderRotation = Vector3.forward * Vector2.SignedAngle(Vector2.right, vel);
-            }
         }
         public static Vector3 GetLobVelocity(Vector3 source, Vector3 target, float maxY, float gravity, bool passesMaxY = true)
         {

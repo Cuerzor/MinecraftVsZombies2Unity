@@ -32,7 +32,6 @@ namespace MVZ2.GameContent.Projectiles
                 | EntityCollisionHelper.MASK_ENEMY
                 | EntityCollisionHelper.MASK_OBSTACLE
                 | EntityCollisionHelper.MASK_BOSS;
-            entity.UpdatePointTowardsDirection();
             SetStartHitSpawnerProtectTimeout(entity, 2);
         }
 
@@ -50,7 +49,6 @@ namespace MVZ2.GameContent.Projectiles
                 projectile.Remove();
                 return;
             }
-            projectile.UpdatePointTowardsDirection();
 
             var protectTimout = GetStartHitSpawnerProtectTimeout(projectile);
             if (protectTimout > 0)

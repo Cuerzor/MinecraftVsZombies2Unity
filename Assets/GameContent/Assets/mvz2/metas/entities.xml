@@ -3090,6 +3090,7 @@
         <entity template="projectile" id="arrow">
             <behaviours includeSelf="false">
                 <behaviour operator="add" id="mvz2:hellfire_ignited_arrow" />
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
             </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
@@ -3141,6 +3142,9 @@
             </properties>
         </entity>
         <entity template="projectile" id="knife">
+            <behaviours includeSelf="false">
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
                 <vector3 name="mvz2:size" x="32" y="6" z="2" />
@@ -3148,7 +3152,9 @@
             </properties>
         </entity>
         <entity template="projectile" id="bullet">
-            <behaviours includeSelf="false" />
+            <behaviours includeSelf="false">
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
                 <vector3 name="mvz2:size" x="32" y="6" z="2" />
@@ -3158,6 +3164,7 @@
         <entity template="projectile" id="missile">
             <behaviours includeSelf="false">
                 <behaviour operator="add" id="mvz2:projectile_explode" />
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
             </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
@@ -3182,6 +3189,7 @@
         <entity template="projectile" id="large_arrow">
             <behaviours>
                 <behaviour operator="add" id="mvz2:hellfire_ignited_arrow" />
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
             </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
@@ -3191,7 +3199,9 @@
             </properties>
         </entity>
         <entity template="projectile" id="spike">
-            <behaviours includeSelf="false" />
+            <behaviours includeSelf="false">
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
                 <vector3 name="mvz2:size" x="20" y="11" z="11" />
@@ -3217,12 +3227,18 @@
             </properties>
         </entity>
         <entity template="projectile" id="dart">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
                 <vector3 name="mvz2:size" x="32" y="6" z="6" />
             </properties>
         </entity>
         <entity template="projectile" id="poison_javelin">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+            </behaviours>
             <properties>
                 <float name="mvz2:gravity" value="1" />
                 <bool name="mvz2:pointToDirection" value="true" />
@@ -3232,6 +3248,9 @@
             </properties>
         </entity>
         <entity template="projectile" id="parabot">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
                 <vector3 name="mvz2:size" x="24" y="24" z="24" />
@@ -3313,6 +3332,9 @@
             </properties>
         </entity>
         <entity template="projectile" id="seija_bullet">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
                 <vector3 name="mvz2:size" x="28" y="16" z="16" />
@@ -3328,7 +3350,9 @@
             </properties>
         </entity>
         <entity template="projectile" id="crossbow_bolt">
-            <behaviours includeSelf="false" />
+            <behaviours includeSelf="false">
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
                 <bool name="mvz2:piercing" value="true" />
@@ -3362,6 +3386,9 @@
             </properties>
         </entity>
         <entity template="projectile" id="ice_bolt">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
                 <bool name="mvz2:is_frost" value="true" />
@@ -3449,6 +3476,7 @@
         <entity template="projectile" id="firework">
             <behaviours includeSelf="false">
                 <behaviour operator="add" id="mvz2:projectile_explode_firework" />
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
                 <properties behaviour="mvz2:projectile_explode_firework">
                     <id name="blast_sound" value="mvz2:firework_blast" />
                 </properties>
@@ -3460,12 +3488,14 @@
                 <float name="mvz2:damage" value="200" />
                 <float name="mvz2:range" value="120" />
                 <int name="mvz2:maxTimeout" value="10" />
+                <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
             </properties>
         </entity>
         <entity template="projectile" id="firework_big">
             <behaviours includeSelf="false">
                 <behaviour operator="add" id="mvz2:projectile_explode_firework" />
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
                 <properties behaviour="mvz2:projectile_explode_firework">
                     <id name="blast_sound" value="mvz2:firework_large_blast" />
                 </properties>
@@ -3477,11 +3507,14 @@
                 <float name="mvz2:damage" value="200" />
                 <float name="mvz2:range" value="280" />
                 <int name="mvz2:maxTimeout" value="10" />
+                <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
             </properties>
         </entity>
         <entity template="projectile" id="falling_star">
-            <behaviours />
+            <behaviours>
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:noDestroyOutsideLawn" value="true" />
                 <bool name="mvz2:isLightSource" value="true" />
@@ -3508,6 +3541,7 @@
         <entity template="projectile" id="spectral_arrow">
             <behaviours>
                 <behaviour operator="add" id="mvz2:hellfire_ignited_arrow" />
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
             </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
@@ -3544,6 +3578,7 @@
             <behaviours>
                 <behaviour operator="add" id="mvz2:projectile_explode_cannon_missile" />
                 <behaviour operator="add" id="mvz2:set_model_property_variant" />
+                <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
             </behaviours>
             <properties>
                 <bool name="mvz2:noDestroyOutsideLawn" value="true" />
@@ -3551,7 +3586,7 @@
                 <bool name="mvz2:noHitEntities" value="true" />
                 <bool name="mvz2:ignore_force_pad" value="true" />
                 <float name="mvz2:range" value="120" />
-                <vector3 name="mvz2:size" x="24" y="100" z="24" />
+                <vector3 name="mvz2:size" x="100" y="24" z="24" />
                 <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
                 <int name="mvz2:maxTimeout" value="60" />
             </properties>
