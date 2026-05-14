@@ -2,6 +2,9 @@
 - Added entity material "Apparition" and "Wither Bone", removed entity material "Nether".
 - Added entity attribute "Fire Immunity".
 
+## Modified
+- When a projectile entity undergoes angular rotation due to directional deflection, its hitbox will now rotate correctly.
+
 ---
 
 # 0.6.2
