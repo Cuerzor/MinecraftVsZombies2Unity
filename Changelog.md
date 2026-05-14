@@ -1,3 +1,9 @@
+## Added
+- Added entity material "Apparition" and "Wither Bone", removed entity material "Nether".
+- Added entity attribute "Fire Immunity".
+
+---
+
 # 0.6.2
 ## Modified
 - Updated music "The Exacerbated Castle Keep".
