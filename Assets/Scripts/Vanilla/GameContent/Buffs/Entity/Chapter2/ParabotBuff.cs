@@ -64,11 +64,7 @@ namespace MVZ2.GameContent.Buffs.Entities
             var level = buff.Level;
             Vector3 centerPos = entity.GetCenter();
 
-            var param = new DetectionParams()
-            {
-                entity = entity,
-                faction = GetFaction(buff)
-            };
+            var param = new EntityDetectionParams(entity, GetFaction(buff));
             var target = detector.DetectEntityWithTheLeast(param, e => GetTargetPriority(centerPos, e));
             if (target != null)
             {

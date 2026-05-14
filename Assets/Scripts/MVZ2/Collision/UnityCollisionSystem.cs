@@ -18,7 +18,7 @@ namespace MVZ2.Collisions
             ClearEntityTrash();
             Physics.Simulate(1);
             simulateBuffer.Clear();
-            simulateBuffer.CopyFrom(entities.Values);
+            simulateBuffer.AddRange(entities.Values);
             for (int i = 0; i < simulateBuffer.Count; i++)
             {
                 var entity = simulateBuffer[i];
@@ -305,7 +305,7 @@ namespace MVZ2.Collisions
         [SerializeField]
         private Transform entityRoot = null!;
         private Collider[] overlapBuffer = new Collider[2048];
-        private ArrayBuffer<UnityCollisionEntity> simulateBuffer = new ArrayBuffer<UnityCollisionEntity>(2048);
+        private List<UnityCollisionEntity> simulateBuffer = new List<UnityCollisionEntity>(2048);
         private Dictionary<long, UnityCollisionEntity> entities = new Dictionary<long, UnityCollisionEntity>();
         private Dictionary<long, UnityCollisionEntity> entityTrash = new Dictionary<long, UnityCollisionEntity>();
         private Queue<UnityCollisionEntity> disabledEntities = new Queue<UnityCollisionEntity>();

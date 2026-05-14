@@ -6,7 +6,6 @@ using MVZ2.Vanilla.Entities;
 using MVZ2Logic;
 using MVZ2Logic.Level;
 using PVZEngine;
-using PVZEngine.Base;
 using PVZEngine.Collisions;
 using PVZEngine.Collisions.Level;
 using PVZEngine.Entities;
@@ -17,77 +16,74 @@ namespace MVZ2.Vanilla.Detections
 {
     public abstract class Detector
     {
-        public bool DetectExists(DetectionParams self)
+        #region ¼ì²â
+        public bool DetectExists(EntityDetectionParams self)
         {
             var collider = Detect(self);
-            if (collider == null || collider.Entity == null || !collider.Entity.Exists())
+            if (collider == null || collider.Entity == null)
                 return false;
             return true;
         }
-        public IEntityCollider? Detect(DetectionParams self)
+        public IEntityCollider? Detect(EntityDetectionParams self)
         {
-            foreach (var collider in DetectColliders(self))
+            var args = GetDetectionParams(self);
+            foreach (var collider in DetectColliders(args))
             {
-                if (!ValidateCollider(self, collider))
+                if (!ValidateCollider(args, collider))
                     continue;
                 return collider;
             }
             return null;
         }
-        public IEntityCollider? DetectWithTheLeast<T>(DetectionParams self, Func<IEntityCollider, T> keySelector)
+        public IEntityCollider? DetectWithTheLeast<T>(EntityDetectionParams self, Func<IEntityCollider, T> keySelector)
         {
+            var args = GetDetectionParams(self);
             IEntityCollider? least = null;
             T? leastKey = default;
             var comparer = Comparer<T>.Default;
-            foreach (var collider in DetectColliders(self))
+            foreach (var collider in DetectColliders(args))
             {
-                if (!ValidateCollider(self, collider))
+                if (!ValidateCollider(args, collider))
                     continue;
                 var key = keySelector(collider);
                 comparer.GetLessOne(collider, ref least, key, ref leastKey);
             }
             return least;
         }
-        public IEntityCollider? DetectWithTheMost<T>(DetectionParams self, Func<IEntityCollider, T> keySelector)
+        public IEntityCollider? DetectWithTheMost<T>(EntityDetectionParams self, Func<IEntityCollider, T> keySelector)
         {
+            var args = GetDetectionParams(self);
             IEntityCollider? most = null;
             T? mostKey = default;
             var comparer = Comparer<T>.Default;
-            foreach (var collider in DetectColliders(self))
+            foreach (var collider in DetectColliders(args))
             {
-                if (!ValidateCollider(self, collider))
+                if (!ValidateCollider(args, collider))
                     continue;
                 var key = keySelector(collider);
                 comparer.GetGreaterOne(collider, ref most, key, ref mostKey);
             }
             return most;
         }
-        public void DetectMultiple(DetectionParams self, ICollection<IEntityCollider> results)
+        public void DetectMultiple(EntityDetectionParams self, ICollection<IEntityCollider> results)
         {
-            foreach (var collider in DetectColliders(self))
+            var args = GetDetectionParams(self);
+            foreach (var collider in DetectColliders(args))
             {
-                if (!ValidateCollider(self, collider))
+                if (!ValidateCollider(args, collider))
                     continue;
                 results.Add(collider);
             }
         }
-        public void DetectMultiple(DetectionParams self, ArrayBuffer<IEntityCollider> results)
+        public Entity? DetectEntityWithTheLeast<T>(EntityDetectionParams self, Func<Entity, T> keySelector)
         {
-            foreach (var collider in DetectColliders(self))
-            {
-                if (!ValidateCollider(self, collider))
-                    continue;
-                results.Add(collider);
-            }
-        }
-        public Entity? DetectEntityWithTheLeast<T>(DetectionParams self, Func<Entity, T> keySelector)
-        {
+            var args = GetDetectionParams(self);
             Entity? least = null;
             T? leastKey = default;
             var comparer = Comparer<T>.Default;
-            foreach (var collider in DetectColliders(self))
+            foreach (var collider in DetectColliders(args))
             {
-                if (!ValidateCollider(self, collider))
+                if (!ValidateCollider(args, collider))
                     continue;
                 var entity = collider.Entity;
                 var key = keySelector(entity);
@@ -95,14 +91,15 @@ namespace MVZ2.Vanilla.Detections
             }
             return least;
         }
-        public Entity? DetectEntityWithTheMost<T>(DetectionParams self, Func<Entity, T> keySelector)
+        public Entity? DetectEntityWithTheMost<T>(EntityDetectionParams self, Func<Entity, T> keySelector)
         {
+            var args = GetDetectionParams(self);
             Entity? most = null;
             T? mostKey = default;
             var comparer = Comparer<T>.Default;
-            foreach (var collider in DetectColliders(self))
+            foreach (var collider in DetectColliders(args))
             {
-                if (!ValidateCollider(self, collider))
+                if (!ValidateCollider(args, collider))
                     continue;
                 var entity = collider.Entity;
                 var key = keySelector(entity);
@@ -110,43 +107,66 @@ namespace MVZ2.Vanilla.Detections
             }
             return most;
         }
-        public void DetectEntities(DetectionParams self, ICollection<Entity> results)
+        public void DetectEntities(EntityDetectionParams self, ICollection<Entity> results)
         {
+            var args = GetDetectionParams(self);
             entityBuffer.Clear();
-            foreach (var collider in DetectColliders(self))
+            foreach (var collider in DetectColliders(args))
             {
-                if (!ValidateCollider(self, collider))
+                if (!ValidateCollider(args, collider))
                     continue;
                 var entity = collider.Entity;
-                if (entityBuffer.Contains(entity))
-                    continue;
-                entityBuffer.Add(entity);
-                results.Add(entity);
+                if (entityBuffer.Add(entity))
+                    results.Add(entity);
             }
         }
-        public int DetectEntityCount(DetectionParams self)
+        public int DetectEntityCount(EntityDetectionParams self)
         {
+            var args = GetDetectionParams(self);
             entityBuffer.Clear();
             int count = 0;
-            foreach (var collider in DetectColliders(self))
+            foreach (var collider in DetectColliders(args))
             {
-                if (!ValidateCollider(self, collider))
+                if (!ValidateCollider(args, collider))
                     continue;
                 var entity = collider.Entity;
-                if (entityBuffer.Contains(entity))
-                    continue;
-                entityBuffer.Add(entity);
-                count++;
+                if (entityBuffer.Add(entity))
+                    count++;
             }
             return count;
         }
+        private DetectionParams GetDetectionParams(EntityDetectionParams entity)
+        {
+            return new DetectionParams(entity.entity, entity.faction, GetDetectionBounds(entity.entity));
+        }
+        private List<IEntityCollider> DetectColliders(DetectionParams param)
+        {
+            var bounds = param.bounds;
+
+            var hostileMask = factionTarget == FactionTarget.Friendly ? 0 : mask;
+            var friendlyMask = factionTarget == FactionTarget.Hostile ? 0 : mask;
+            resultsBuffer.Clear();
+
+            var entity = param.entity;
+            var faction = param.faction;
+
+            var overlapParam = new OverlapParams(faction, hostileMask, friendlyMask, includeOverlapDisabled);
+            entity.Level.OverlapBoxNonAlloc(bounds.center, bounds.size, overlapParam, resultsBuffer);
+            return resultsBuffer;
+        }
+        #endregion
+
+        #region ÑéÖ¤
+        public bool ValidateTarget(EntityDetectionParams self, Entity target)
+        {
+            var detectionParams = GetDetectionParams(self);
+            return ValidateTarget(detectionParams, target);
+        }
         public virtual bool ValidateTarget(DetectionParams self, Entity target)
         {
-            if (target == null)
+            if (!target.ExistsAndAlive())
                 return false;
             if (self.entity == target && !includeSelf)
-                return false;
-            if (target.IsDead)
                 return false;
             if (!target.IsFactionTarget(self.faction, factionTarget))
                 return false;
@@ -154,13 +174,24 @@ namespace MVZ2.Vanilla.Detections
                 return false;
             return true;
         }
-        protected abstract Bounds GetDetectionBounds(Entity self);
+        public bool ValidateCollider(EntityDetectionParams self, IEntityCollider target)
+        {
+            var detectionParams = GetDetectionParams(self);
+            return ValidateCollider(detectionParams, target);
+        }
         protected virtual bool ValidateCollider(DetectionParams param, IEntityCollider collider)
         {
             if (!ValidateTarget(param, collider.Entity))
                 return false;
             return true;
         }
+        #endregion
+
+        #region ¼ì²â¿ò
+        protected abstract Bounds GetDetectionBounds(Entity self);
+        #endregion
+
+        #region ¹¤¾ß
         protected bool TargetInLawn(Entity target)
         {
             return TargetInLawn(target.Position.x);
@@ -189,47 +220,50 @@ namespace MVZ2.Vanilla.Detections
         }
         protected Vector3 GetEntitySize(NamespaceID? projectileID, Vector3 defaultValue)
         {
-            if (NamespaceID.IsValid(projectileID))
-            {
-                var projectileDef = GetEntityDefinition(projectileID);
-                if (projectileDef != null)
-                    return projectileDef.GetSize();
-            }
+            var projectileDef = GetEntityDefinition(projectileID);
+            if (projectileDef != null)
+                return projectileDef.GetSize();
             return defaultValue;
         }
-        private List<IEntityCollider> DetectColliders(DetectionParams param)
-        {
-            var bounds = GetDetectionBounds(param.entity);
+        #endregion
 
-            var hostileMask = factionTarget == FactionTarget.Friendly ? 0 : mask;
-            var friendlyMask = factionTarget == FactionTarget.Hostile ? 0 : mask;
-            resultsBuffer.Clear();
-
-            var overlapParam = new OverlapParams(param.faction, hostileMask, friendlyMask, includeOverlapDisabled);
-            param.entity.Level.OverlapBoxNonAlloc(bounds.center, bounds.size, overlapParam, resultsBuffer);
-            return resultsBuffer;
-        }
+        #region ÊôÐÔ×Ö¶Î
         public int mask = EntityCollisionHelper.MASK_VULNERABLE;
         public FactionTarget factionTarget = FactionTarget.Hostile;
         public bool canDetectInvisible;
         public bool includeSelf;
         public bool includeOverlapDisabled;
         private List<IEntityCollider> resultsBuffer = new List<IEntityCollider>();
-        private List<Entity> entityBuffer = new List<Entity>();
+        private HashSet<Entity> entityBuffer = new HashSet<Entity>();
         private Dictionary<NamespaceID, EntityDefinition> definitionCaches = new Dictionary<NamespaceID, EntityDefinition>();
+        #endregion
+    }
+    public struct EntityDetectionParams
+    {
+        public Entity entity;
+        public int faction;
+
+        public EntityDetectionParams(Entity entity, int faction)
+        {
+            this.entity = entity;
+            this.faction = faction;
+        }
+
+        public static implicit operator EntityDetectionParams(Entity entity)
+        {
+            return new EntityDetectionParams(entity, entity.GetFaction());
+        }
     }
     public struct DetectionParams
     {
         public Entity entity;
         public int faction;
-
-        public static implicit operator DetectionParams(Entity entity)
+        public Bounds bounds;
+        public DetectionParams(Entity entity, int faction, Bounds bounds)
         {
-            return new DetectionParams()
-            {
-                entity = entity,
-                faction = entity.GetFaction()
-            };
+            this.entity = entity;
+            this.faction = faction;
+            this.bounds = bounds;
         }
     }
 }

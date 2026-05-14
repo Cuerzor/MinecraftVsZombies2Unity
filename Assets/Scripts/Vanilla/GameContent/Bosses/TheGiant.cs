@@ -17,7 +17,6 @@ using MVZ2.Vanilla.Modifiers;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
-using PVZEngine.Base;
 using PVZEngine.Buffs;
 using PVZEngine.Collisions;
 using PVZEngine.Damages;
@@ -635,7 +634,7 @@ namespace MVZ2.GameContent.Bosses
         public static Detector outerArmDamageDetector = new TheGiantArmDetector(true) { canDetectInvisible = true };
         public static Detector innerArmDamageDetector = new TheGiantArmDetector(false) { canDetectInvisible = true };
         public static Detector pacmanDetector = new DevourerEvokedDetector();
-        private static ArrayBuffer<IEntityCollider> smashDetectBuffer = new ArrayBuffer<IEntityCollider>(8);
+        private static List<IEntityCollider> smashDetectBuffer = new List<IEntityCollider>(8);
 
         #endregion 常量
 

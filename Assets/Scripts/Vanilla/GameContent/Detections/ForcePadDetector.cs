@@ -11,17 +11,17 @@ namespace MVZ2.GameContent.Detections
 {
     public class ForcePadDetector : Detector
     {
-        public ForcePadDetector(int mask, float affectHeight, float sizeMultiplier)
+        public ForcePadDetector(int mask, float affectHeight, bool mustContainCenter)
         {
             canDetectInvisible = true;
             this.mask = mask;
             factionTarget = FactionTarget.Any;
             this.affectHeight = affectHeight;
-            this.sizeMultiplier = sizeMultiplier;
+            this.mustContainCenter = mustContainCenter;
         }
         protected override Bounds GetDetectionBounds(Entity self)
         {
-            var padSize = self.GetScaledSize() * sizeMultiplier;
+            var padSize = self.GetScaledSize();
             var sizeX = padSize.x;
             var sizeY = affectHeight;
             var sizeZ = padSize.z;
@@ -43,9 +43,17 @@ namespace MVZ2.GameContent.Detections
                 return false;
             if (target.IgnoreForcePad())
                 return false;
+            if (mustContainCenter)
+            {
+                var bounds = self.bounds;
+                if (!bounds.Contains(target.GetCenter()))
+                {
+                    return false;
+                }
+            }
             return true;
         }
         private float affectHeight;
-        private float sizeMultiplier;
+        private bool mustContainCenter;
     }
 }

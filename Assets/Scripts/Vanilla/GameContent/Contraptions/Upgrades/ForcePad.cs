@@ -30,8 +30,8 @@ namespace MVZ2.GameContent.Contraptions
         public ForcePad(string nsp, string name) : base(nsp, name)
         {
             AddAura(new DragAura());
-            enemyDetector = new ForcePadDetector(EntityCollisionHelper.MASK_ENEMY, AFFECT_HEIGHT, 1);
-            projectileDetector = new ForcePadDetector(EntityCollisionHelper.MASK_PROJECTILE, AFFECT_HEIGHT, 0.5f);
+            enemyDetector = new ForcePadDetector(EntityCollisionHelper.MASK_ENEMY, AFFECT_HEIGHT, false);
+            projectileDetector = new ForcePadDetector(EntityCollisionHelper.MASK_PROJECTILE, AFFECT_HEIGHT, true);
         }
         protected override void UpdateAI(Entity entity)
         {

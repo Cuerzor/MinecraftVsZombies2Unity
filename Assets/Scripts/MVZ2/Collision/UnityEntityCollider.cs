@@ -118,7 +118,7 @@ namespace MVZ2.Collisions
                 collision.Checked = true;
             }
             collisionBuffer.Clear();
-            collisionBuffer.CopyFrom(collisionList);
+            collisionBuffer.AddRange(collisionList);
             for (int i = 0; i < collisionBuffer.Count; i++)
             {
                 var collision = collisionBuffer[i];
@@ -270,7 +270,7 @@ namespace MVZ2.Collisions
         private BoxCollider boxCollider = null!;
         private List<ColliderCache> touchingColliders = new List<ColliderCache>();
         private List<EntityCollision> collisionList = new List<EntityCollision>();
-        private ArrayBuffer<EntityCollision> collisionBuffer = new ArrayBuffer<EntityCollision>(1024);
+        private List<EntityCollision> collisionBuffer = new List<EntityCollision>(1024);
 
         private struct ColliderCache : IComparable<ColliderCache>, IEquatable<ColliderCache>
         {
