@@ -10,6 +10,7 @@ namespace MVZ2.Vanilla.Almanac
         public static readonly NamespaceID placementLand = Get("placement_land");
         public static readonly NamespaceID placementAquatic = Get("placement_aquatic");
         public static readonly NamespaceID placementSuspension = Get("placement_suspension");
+        public static readonly NamespaceID placementAmphibious = Get("placement_amphibious");
 
         public static readonly NamespaceID lightSource = Get("light_source");
         public static readonly NamespaceID nocturnal = Get("nocturnal");

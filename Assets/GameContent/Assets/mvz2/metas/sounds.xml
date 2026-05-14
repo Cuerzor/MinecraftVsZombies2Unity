@@ -987,6 +987,12 @@
     <sound name="train_whistle" maxCount="1">
         <sample path="mvz2:train_whistle" weight="1" />
     </sound>
+    <sound name="trap_open">
+        <sample path="mvz2:trap_open" weight="1" />
+    </sound>
+    <sound name="trap_close">
+        <sample path="mvz2:trap_close" weight="1" />
+    </sound>
     <sound name="travel" priority="64">
         <sample path="mvz2:travel" weight="1" />
     </sound>

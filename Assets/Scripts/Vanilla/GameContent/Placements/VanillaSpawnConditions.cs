@@ -15,5 +15,6 @@ namespace MVZ2.GameContent.Placements
         public static readonly SpawnCondition coolingCell = new CoolingCellSpawnCondition();
         public static readonly SpawnCondition suspension = new SuspensionSpawnCondition();
         public static readonly SpawnCondition devourer = new DevourerSpawnCondition();
+        public static readonly SpawnCondition amphibious = new AmphibiousSpawnCondition();
     }
 }

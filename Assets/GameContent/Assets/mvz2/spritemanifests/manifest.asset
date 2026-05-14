@@ -307,6 +307,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 2d37eb66e5d769343ab9e6ee42496b68, type: 3}
   - name: mobile_blueprint/anvil
     sprite: {fileID: 21300000, guid: 07fea5983538e114e87a25057c32b6c2, type: 3}
+  - name: mobile_blueprint/autotrap
+    sprite: {fileID: 21300000, guid: 6dc64b2a1e31a4a4f852c619472d2ba1, type: 3}
   - name: mobile_blueprint/beacon
     sprite: {fileID: 21300000, guid: af016291e3e050b418ac40e349963a65, type: 3}
   - name: mobile_blueprint/bedserker
@@ -2021,6 +2023,12 @@ MonoBehaviour:
     - {fileID: -1083742067, guid: 4928638317c505a4e86671ea24a68c7f, type: 3}
     - {fileID: 413586417, guid: 4928638317c505a4e86671ea24a68c7f, type: 3}
     - {fileID: 1656711901, guid: 4928638317c505a4e86671ea24a68c7f, type: 3}
+  - name: entity/contraption/autotrap
+    spritesheet:
+    - {fileID: 1211409969, guid: 86ab0ad19e2c051439926512398a3d25, type: 3}
+    - {fileID: -471008698, guid: 86ab0ad19e2c051439926512398a3d25, type: 3}
+    - {fileID: 1143668857, guid: 86ab0ad19e2c051439926512398a3d25, type: 3}
+    - {fileID: -940101659, guid: 86ab0ad19e2c051439926512398a3d25, type: 3}
   - name: entity/contraption/beacon
     spritesheet:
     - {fileID: 616420050, guid: 19334bb02ae9acb499abf76dbcaa51f9, type: 3}
@@ -2977,6 +2985,7 @@ MonoBehaviour:
     - {fileID: 321962143, guid: 5d2c28a61405a06409579f821db2bf10, type: 3}
     - {fileID: 875420487, guid: 5d2c28a61405a06409579f821db2bf10, type: 3}
     - {fileID: -782307434, guid: 5d2c28a61405a06409579f821db2bf10, type: 3}
+    - {fileID: -1511003530, guid: 5d2c28a61405a06409579f821db2bf10, type: 3}
   - name: ui/almanac/placement_tags_upgrade_new
     spritesheet:
     - {fileID: -1064595, guid: c88dad8213774ad48b823b141be673dc, type: 3}

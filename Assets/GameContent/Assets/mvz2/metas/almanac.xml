@@ -16,6 +16,10 @@
             <icon sprite="mvz2:ui/almanac/placement_tags[3]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#4587a6" />
         </tag>
+        <tag id="placement_amphibious" name="两栖器械" description="可以放置在水中或者陆地上" priority="0">
+            <icon sprite="mvz2:ui/almanac/placement_tags[4]" />
+            <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#57433c" />
+        </tag>
 
         <tag id="placement_infectenser" name="升级器械：小型发射器" description="必须放置在小型发射器上" priority="0">
             <icon sprite="mvz2:ui/almanac/placement_tags_upgrade_new[0]" />

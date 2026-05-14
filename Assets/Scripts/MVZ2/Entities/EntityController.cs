@@ -228,9 +228,7 @@ namespace MVZ2.Entities
             // 3. 执行线性插值（Lerp）
             var pos = Entity.Position;
             var currentTransPos = Level.LawnToTrans(pos);
-            var posOffset = GetTransformOffset();
-            var currPosition = currentTransPos + posOffset;
-            Vector3 smoothPosition = Vector3.Lerp(lastPosition, currPosition, alpha);
+            Vector3 smoothPosition = Vector3.Lerp(lastPosition, currentTransPos, alpha);
 
             // 4. 将最终平滑后的位置赋值给渲染组件（如 Mesh / SpriteRenderer）
             return smoothPosition;
@@ -418,20 +416,6 @@ namespace MVZ2.Entities
                 var indicatorColor = Color.Lerp(HEIGHT_INDICATOR_COLOR_MIN, HEIGHT_INDICATOR_COLOR_MAX, t);
                 heightIndicator.SetColor(indicatorColor);
             }
-        }
-        protected float GetZOffset()
-        {
-            float zOffset = 0;
-            if (zOffsetDict.TryGetValue(Entity.Type, out float offset))
-            {
-                zOffset = offset * Level.LawnToTransScale;
-            }
-            return zOffset;
-        }
-        protected Vector3 GetTransformOffset()
-        {
-            float zOffset = GetZOffset();
-            return Vector3.back * zOffset;
         }
         #endregion
 
@@ -795,17 +779,6 @@ namespace MVZ2.Entities
         public static readonly Color HEIGHT_INDICATOR_COLOR_MIN = Color.white;
         public static readonly Color HEIGHT_INDICATOR_COLOR_MAX = new Color(1, 1, 1, 0);
 
-        public static readonly Dictionary<int, float> zOffsetDict = new Dictionary<int, float>()
-        {
-            { EntityTypes.PLANT, 0 },
-            { EntityTypes.OBSTACLE, 0 },
-            { EntityTypes.BOSS, 2 },
-            { EntityTypes.ENEMY, 3 },
-            { EntityTypes.PROJECTILE, 4 },
-            { EntityTypes.CART, 5 },
-            { EntityTypes.EFFECT, 6 },
-            { EntityTypes.PICKUP, 7 },
-        };
         [TranslateMsg("血条的文字")]
         public const string HP_BAR_TEXT_DEATH = "死亡";
         [TranslateMsg("血条的文字")]

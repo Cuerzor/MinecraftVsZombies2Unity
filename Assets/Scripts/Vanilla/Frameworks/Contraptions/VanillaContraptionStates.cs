@@ -40,6 +40,11 @@ namespace MVZ2.Vanilla.Contraptions
         public const int BRICK_CANNON_RELOAD = PRIVATE_NUMBER + 0;
         public const int BRICK_CANNON_LAUNCH = PRIVATE_NUMBER + 1;
 
+        public const int AUTOTRAP_OPEN = IDLE;
+        public const int AUTOTRAP_CLOSING = PRIVATE_NUMBER + 0;
+        public const int AUTOTRAP_CLOSED = PRIVATE_NUMBER + 1;
+        public const int AUTOTRAP_OPENING = PRIVATE_NUMBER + 2;
+
         private const int PRIVATE_NUMBER = 10000;
     }
 }

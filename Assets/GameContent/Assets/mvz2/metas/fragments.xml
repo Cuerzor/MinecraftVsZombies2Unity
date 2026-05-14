@@ -273,6 +273,12 @@
             <key hex="#a2a2b1" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="autotrap">
+        <colorKeys>
+            <key hex="#dde8ea" time="0.5" />
+            <key hex="#0095ff" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="nesting_tnt">
         <colorKeys>
             <key hex="#00FFFF" time="0.6" />

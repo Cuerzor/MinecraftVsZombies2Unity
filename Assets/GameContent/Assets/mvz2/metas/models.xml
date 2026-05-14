@@ -94,6 +94,7 @@
 
     <model name="freezenser" type="entity" path="mvz2:contraption/mountain/freezenser" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="ejector" type="entity" path="mvz2:contraption/mountain/ejector" width="80" height="80" xOffset="0" yOffset="-28" />
+    <model name="autotrap" type="entity" path="mvz2:contraption/mountain/autotrap" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="nesting_tnt" type="entity" path="mvz2:contraption/mountain/nesting_tnt" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="nesting_tnt_medium" type="entity" path="mvz2:contraption/mountain/nesting_tnt" width="64" height="64" xOffset="0" yOffset="-28">
         <properties>

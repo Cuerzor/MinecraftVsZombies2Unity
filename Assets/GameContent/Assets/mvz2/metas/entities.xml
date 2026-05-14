@@ -55,6 +55,7 @@
                 <id name="mvz2:placeSound" value="mvz2:stone" />
                 <id name="mvz2:deathSound" value="mvz2:stone" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main" />
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="0"/>
             </properties>
         </contraption>
         <enemy type="2" parent="entity">
@@ -94,6 +95,7 @@
 
                 <int name="mvz2:waterInteraction" value="1" />
                 <int name="mvz2:airInteraction" value="2" />
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-3"/>
             </properties>
         </enemy>
         <obstacle type="3" parent="entity">
@@ -116,6 +118,7 @@
                 <int name="mvz2:waterInteraction" value="1" />
                 <int name="mvz2:airInteraction" value="2" />
                 <int name="mvz2:faction" value="1" />
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="0"/>
             </properties>
         </obstacle>
         <boss type="4" parent="entity">
@@ -138,6 +141,7 @@
                 <bool name="mvz2:faceLeftAtDefault" value="true" />
                 <int name="mvz2:faction" value="1" />
                 <int name="mvz2:airInteraction" value="1" />
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-2"/>
             </properties>
         </boss>
         <cart type="5" parent="entity">
@@ -151,6 +155,7 @@
                 <float name="mvz2:gravity" value="1" />
                 <int name="mvz2:waterInteraction" value="1" />
                 <int name="mvz2:airInteraction" value="2" />
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-5"/>
             </properties>
         </cart>
         <pickup type="6" parent="entity">
@@ -165,6 +170,7 @@
                 <float name="mvz2:gravity" value="1" />
                 <float name="mvz2:friction" value="0.15" />
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-7"/>
             </properties>
         </pickup>
         <projectile type="7" parent="entity">
@@ -180,6 +186,7 @@
                 <vector3 name="mvz2:shadowScale" x="0.5" y="0.5" z="0.5" />
                 <int name="mvz2:waterInteraction" value="1" />
                 <int name="mvz2:airInteraction" value="2" />
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-4"/>
             </properties>
         </projectile>
         <effect type="8" parent="entity">
@@ -190,6 +197,7 @@
                 <int name="mvz2:maxTimeout" value="-1" />
                 <bool name="mvz2:shadowHidden" value="true" />
                 <bool name="mvz2:decorative" value="true" />
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-6"/>
             </properties>
         </effect>
 
@@ -1395,6 +1403,28 @@
                 <id name="mvz2:placeSound" value="mvz2:metal_break" />
                 <int name="mvz2:cost" value="25" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
+            </properties>
+        </entity>
+        <entity template="contraption" id="autotrap" name="自动兽夹" tooltip="夹住怪物并撕扯">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.autotrap" />
+            </unlock>
+            <behaviours>
+                <behaviour operator="add" id="mvz2:autotrap/evoke" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:canDeactive" value="true" />
+                <vector3 name="mvz2:size" x="48" y="16" z="48" />
+                <id name="mvz2:shell" value="mvz2:metal" />
+                <id name="mvz2:placement" value="mvz2:amphibious" />
+                <int name="mvz2:waterInteraction" value="3" />
+                <int name="mvz2:collision_mask_hostile" value="2" />
+                <bool name="mvz2:isFloor" value="true" />
+
+                <id name="mvz2:placeSound" value="mvz2:trap_open" />
+                <int name="mvz2:cost" value="75" />
+                <id name="mvz2:rechargeId" value="mvz2:long" />
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-5"/>
             </properties>
         </entity>
         <entity template="nestingTNT" id="nesting_tnt" name="套娃TNT" tooltip="触发后爆炸，可以触发三次">

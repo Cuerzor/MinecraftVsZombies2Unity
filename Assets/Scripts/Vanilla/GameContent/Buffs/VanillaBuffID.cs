@@ -274,6 +274,9 @@ namespace MVZ2.GameContent.Buffs
             public const string gravelOnFace = "gravel_on_face";
             public const string smallShadowCell = "small_shadow_cell";
             public const string controlRodUnstable = "control_rod_unstable";
+
+            // Chapter 7
+            public const string trapped = "trapped";
         }
         public static class Obstacle
         {
@@ -623,6 +626,9 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 6
             public static readonly NamespaceID gravelOnFace = Get(VanillaBuffNames.Enemy.gravelOnFace);
             public static readonly NamespaceID controlRodUnstable = Get(VanillaBuffNames.Enemy.controlRodUnstable);
+
+            // Chapter 7
+            public static readonly NamespaceID trapped = Get(VanillaBuffNames.Enemy.trapped);
         }
         public static class Obstacle
         {

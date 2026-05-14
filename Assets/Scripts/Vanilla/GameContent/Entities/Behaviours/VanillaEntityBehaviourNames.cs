@@ -56,6 +56,7 @@ namespace MVZ2.Vanilla.Entities
 
         public const string ejector_Trigger = "ejector/trigger";
         public const string ejector_Evoke = "ejector/evoke";
+        public const string autotrap_Evoke = "autotrap/evoke";
         public const string nestingTNT_Evoke = "nesting_tnt/evoke";
 
         #endregion

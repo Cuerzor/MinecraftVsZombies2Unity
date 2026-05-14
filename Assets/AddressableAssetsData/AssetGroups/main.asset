@@ -3207,6 +3207,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b15a07e81d96f84bbee5350e18a408c
+    m_Address: mvz2:trap_close
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3b43d3948455b4a4a9461c41899ae6bf
     m_Address: mvz2:entity/effects/mega_glowing_laser
     m_ReadOnly: 0
@@ -6027,6 +6034,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6dc64b2a1e31a4a4f852c619472d2ba1
+    m_Address: mvz2:mobile_blueprint/autotrap
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6df58b28f03d1f9479095d6398aec3a7
     m_Address: mvz2:soul_sand5
     m_ReadOnly: 0
@@ -7097,6 +7111,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 809ed7d5c7beadb4fbfdaa38f91b05ba
+    m_Address: mvz2:contraption/mountain/autotrap
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 80ab3f88e3042a2429696411af0b0810
     m_Address: mvz2:nightmare_level
     m_ReadOnly: 0
@@ -7372,6 +7393,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 86a0b0aabb4ceca42a409ee8c656695a
     m_Address: mvz2:entity/contraption/obsidian
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Spritesheet
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 86ab0ad19e2c051439926512398a3d25
+    m_Address: mvz2:entity/contraption/autotrap
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -10279,6 +10307,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Spritesheet
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bd9f0772a46443e4093d345af8813961
+    m_Address: mvz2:trap_open
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bdab62905818ab343b09f4857c660b11
     m_Address: mvz2:characters/shinmyoumaru_big

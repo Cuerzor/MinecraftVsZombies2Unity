@@ -85,6 +85,8 @@ namespace MVZ2.GameContent.Contraptions
         public const string diamondSpikes = "diamond_spikes";
         public const string brickCannon = "brick_cannon";
 
+        public const string autotrap = "autotrap";
+
         public const string anvil = "anvil";
         public const string randomChina = "random_china";
         public const string errorBlock = "error_block";

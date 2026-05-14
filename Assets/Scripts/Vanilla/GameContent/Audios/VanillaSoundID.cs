@@ -250,6 +250,8 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID tractorBeam = Get("tractor_beam");
         public readonly static NamespaceID trainTravel = Get("train_travel");
         public readonly static NamespaceID trainWhistle = Get("train_whistle");
+        public readonly static NamespaceID trapClose = Get("trap_close");
+        public readonly static NamespaceID trapOpen = Get("trap_open");
         public readonly static NamespaceID tridentThunder = Get("trident_thunder");
         public readonly static NamespaceID ufo = Get("ufo");
         public readonly static NamespaceID ufoAlert = Get("ufo_alert");
