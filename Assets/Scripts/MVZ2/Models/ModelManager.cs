@@ -75,7 +75,7 @@ namespace MVZ2.Models
             Shader.SetGlobalInt("_PixelSnap", 0);
 
             // 从Render Texture读取像素并保存为图片
-            Texture2D texture = new Texture2D(width, height);
+            Texture2D texture = Main.ResourceManager.GenerateTexture2D(width, height);
             texture.filterMode = FilterMode.Bilinear;
             RenderTexture.active = renderTexture;
             texture.ReadPixels(new Rect(0, 0, renderTexture.width, renderTexture.height), 0, 0);

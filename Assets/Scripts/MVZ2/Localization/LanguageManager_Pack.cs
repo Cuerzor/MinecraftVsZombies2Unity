@@ -15,6 +15,7 @@ using NGettext;
 using PVZEngine;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.XR;
 
 namespace MVZ2.Localization
 {
@@ -226,7 +227,8 @@ namespace MVZ2.Localization
             var metadata = GetLanguagePackMetadata(reference);
             if (metadata != null && metadata.icon)
             {
-                main.ResourceManager.RemoveCreatedSprite(metadata.icon, reference.GetKey(), "language_pack_icon");
+                main.ResourceManager.RemoveGeneratedTexture(metadata.icon.texture);
+                main.ResourceManager.RemoveGeneratedSprite(metadata.icon, reference.GetKey(), "language_pack_icon");
             }
             languagePackMetadatas.Remove(reference);
         }
@@ -334,15 +336,19 @@ namespace MVZ2.Localization
                     continue;
                 foreach (var pair in assets.Sprites)
                 {
-                    main.ResourceManager.RemoveCreatedSprite(pair.Value, pair.Key.ToString(), GetLanguagePackSpriteCategory(pack.Key));
+                    main.ResourceManager.RemoveGeneratedSprite(pair.Value, pair.Key.ToString(), GetLanguagePackSpriteCategory(pack.Key));
                 }
                 foreach (var pair in assets.SpriteSheets)
                 {
                     for (int i = 0; i < pair.Value.Length; i++)
                     {
                         var sprite = pair.Value[i];
-                        main.ResourceManager.RemoveCreatedSprite(sprite, $"{pair.Key}[{i}]", GetLanguagePackSpriteCategory(pack.Key));
+                        main.ResourceManager.RemoveGeneratedSprite(sprite, $"{pair.Key}[{i}]", GetLanguagePackSpriteCategory(pack.Key));
                     }
+                }
+                foreach (var pair in assets.textures)
+                {
+                    main.ResourceManager.RemoveGeneratedTexture(pair.Value);
                 }
             }
         }
@@ -386,7 +392,7 @@ namespace MVZ2.Localization
                     if (iconEntry != null)
                     {
                         var bytes = iconEntry.ReadBytes();
-                        var texture = SpriteHelper.LoadTextureFromBytes(bytes);
+                        var texture = Main.ResourceManager.GenerateTextureFromBytes(bytes, metadata.name ?? "pack");
                         metadata.icon = Main.ResourceManager.CreateSprite(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(texture.width * 0.5f, texture.height * 0.5f), key, "language_pack_icon");
                     }
                 }
@@ -434,20 +440,23 @@ namespace MVZ2.Localization
                     var lang = splitedPaths[2].Replace('_', '-');
                     if (splitedPaths.Length == 4)
                     {
-                        var asset = languagePack.GetOrCreateLanguageAsset(lang);
                         string filename = splitedPaths[3];
+                        var asset = languagePack.GetOrCreateLanguageAsset(lang);
                         if (Path.GetExtension(filename) == ".mo")
                         {
+                            // 加载MO翻译文件。
                             var filenameWithoutExt = Path.GetFileNameWithoutExtension(filename);
                             var catalog = entry.ReadCatalog(lang);
                             asset.catalogs.Add(filenameWithoutExt, catalog);
                         }
                         else if (filename == SPRITE_MANIFEST_FILENAME)
                         {
+                            // 加载Sprite Manifest文件。
                             var manifestJson = entry.ReadString(Encoding.UTF8);
                             var manifest = JsonConvert.DeserializeObject<LocalizedSpriteManifest>(manifestJson);
                             if (manifest != null)
                             {
+                                // 加载Sprite。
                                 if (manifest.sprites != null)
                                 {
                                     foreach (var localizedSprite in manifest.sprites)
@@ -457,12 +466,18 @@ namespace MVZ2.Localization
 
                                         if (textureEntry == null || string.IsNullOrEmpty(localizedSprite.name))
                                             continue;
+                                        if (!asset.textures.TryGetValue(texturePath, out var texture2D))
+                                        {
+                                            texture2D = ReadTexture2DZip(textureEntry, texturePath);
+                                            asset.textures.Add(texturePath, texture2D);
+                                        }
+
                                         var resID = new NamespaceID(nsp, localizedSprite.name);
-                                        var bytes = textureEntry.ReadBytes();
-                                        var sprite = ReadEntryToSprite(resID, bytes, localizedSprite, key);
+                                        var sprite = ReadEntryToSprite(resID, texture2D, localizedSprite, key);
                                         asset.Sprites.Add(resID, sprite);
                                     }
                                 }
+                                // 加载Spritesheet。
                                 if (manifest.spritesheets != null)
                                 {
                                     foreach (var localizedSpritesheet in manifest.spritesheets)
@@ -472,9 +487,14 @@ namespace MVZ2.Localization
 
                                         if (textureEntry == null || string.IsNullOrEmpty(localizedSpritesheet.name))
                                             continue;
+                                        if (!asset.textures.TryGetValue(texturePath, out var texture2D))
+                                        {
+                                            texture2D = ReadTexture2DZip(textureEntry, texturePath);
+                                            asset.textures.Add(texturePath, texture2D);
+                                        }
+
                                         var resID = new NamespaceID(nsp, localizedSpritesheet.name);
-                                        var bytes = textureEntry.ReadBytes();
-                                        var spritesheet = ReadEntryToSpriteSheet(resID, bytes, localizedSpritesheet, key);
+                                        var spritesheet = ReadEntryToSpriteSheet(resID, texture2D, localizedSpritesheet, key);
                                         asset.SpriteSheets.Add(resID, spritesheet);
                                     }
                                 }
@@ -489,6 +509,11 @@ namespace MVZ2.Localization
                 Debug.LogError($"读取语言包Zip失败：{e}");
                 return null;
             }
+        }
+        private Texture2D ReadTexture2DZip(ZipArchiveEntry textureEntry, string name = "texture2D")
+        {
+            var bytes = textureEntry.ReadBytes();
+            return Main.ResourceManager.GenerateTextureFromBytes(bytes, name);
         }
         #endregion
 
@@ -514,7 +539,7 @@ namespace MVZ2.Localization
                         textureStream.CopyTo(textureMemory);
                         var bytes = textureMemory.ToArray();
 
-                        var texture = SpriteHelper.LoadTextureFromBytes(bytes);
+                        var texture = Main.ResourceManager.GenerateTextureFromBytes(bytes, metadata.name ?? "pack");
                         metadata.icon = Main.ResourceManager.CreateSprite(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(texture.width * 0.5f, texture.height * 0.5f), key, "language_pack_icon");
                     }
                 }
@@ -590,12 +615,14 @@ namespace MVZ2.Localization
 
                             if (!File.Exists(texturePath) || string.IsNullOrEmpty(localizedSprite.name))
                                 continue;
-                            var resID = new NamespaceID(nsp, localizedSprite.name);
-                            using var spriteStream = File.Open(texturePath, FileMode.Open);
-                            using var spriteMemory = new MemoryStream();
-                            spriteStream.CopyTo(spriteMemory);
+                            if (!asset.textures.TryGetValue(texturePath, out var texture))
+                            {
+                                texture = ReadTexture2DDirectory(texturePath);
+                                asset.textures.Add(texturePath, texture);
+                            }
 
-                            var sprite = ReadEntryToSprite(resID, spriteMemory.ToArray(), localizedSprite, key);
+                            var resID = new NamespaceID(nsp, localizedSprite.name);
+                            var sprite = ReadEntryToSprite(resID, texture, localizedSprite, key);
                             asset.Sprites.Add(resID, sprite);
                         }
                     }
@@ -607,26 +634,36 @@ namespace MVZ2.Localization
 
                             if (!File.Exists(texturePath) || string.IsNullOrEmpty(localizedSpritesheet.name))
                                 continue;
-                            var resID = new NamespaceID(nsp, localizedSpritesheet.name);
-                            using var spriteStream = File.Open(texturePath, FileMode.Open);
-                            using var spriteMemory = new MemoryStream();
-                            spriteStream.CopyTo(spriteMemory);
+                            if (!asset.textures.TryGetValue(texturePath, out var texture))
+                            {
+                                texture = ReadTexture2DDirectory(texturePath);
+                                asset.textures.Add(texturePath, texture);
+                            }
 
-                            var spritesheet = ReadEntryToSpriteSheet(resID, spriteMemory.ToArray(), localizedSpritesheet, key);
+                            var resID = new NamespaceID(nsp, localizedSpritesheet.name);
+                            var spritesheet = ReadEntryToSpriteSheet(resID, texture, localizedSpritesheet, key);
                             asset.SpriteSheets.Add(resID, spritesheet);
                         }
                     }
                 }
             }
         }
+        private Texture2D ReadTexture2DDirectory(string texturePath)
+        {
+            using var spriteStream = File.Open(texturePath, FileMode.Open);
+            using var spriteMemory = new MemoryStream();
+            spriteStream.CopyTo(spriteMemory);
+
+            var bytes = spriteMemory.ToArray();
+            return Main.ResourceManager.GenerateTextureFromBytes(bytes, texturePath);
+        }
         #endregion
 
         #region 加载贴图
-        private Sprite ReadEntryToSprite(NamespaceID spriteId, byte[] bytes, LocalizedSprite meta, string key)
+        private Sprite ReadEntryToSprite(NamespaceID spriteId, Texture2D texture2D, LocalizedSprite meta, string key)
         {
             try
             {
-                var texture2D = SpriteHelper.LoadTextureFromBytes(bytes);
                 Rect spriteRect = new Rect(0, 0, texture2D.width, texture2D.height);
                 Vector2 spritePivot;
                 if (meta != null)
@@ -646,11 +683,10 @@ namespace MVZ2.Localization
                 return Main.ResourceManager.GetDefaultSpriteClone();
             }
         }
-        private Sprite[] ReadEntryToSpriteSheet(NamespaceID spriteId, byte[] bytes, LocalizedSpriteSheet meta, string key)
+        private Sprite[] ReadEntryToSpriteSheet(NamespaceID spriteId, Texture2D texture2D, LocalizedSpriteSheet meta, string key)
         {
             try
             {
-                var texture2D = SpriteHelper.LoadTextureFromBytes(bytes);
                 (Rect rect, Vector2 pivot)[] spriteInfos;
                 if (meta?.slices != null)
                 {

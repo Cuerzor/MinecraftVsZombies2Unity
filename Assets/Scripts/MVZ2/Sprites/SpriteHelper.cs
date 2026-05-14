@@ -8,13 +8,6 @@ namespace MVZ2.Sprites
 {
     public static class SpriteHelper
     {
-        public static Texture2D LoadTextureFromBytes(byte[] bytes)
-        {
-            Texture2D texture = new Texture2D(2, 2);
-            texture.LoadImage(bytes);
-            texture.FixTransparency();
-            return texture;
-        }
         public static void SaveToPath(this Texture2D texture, string path)
         {
             var bytes = texture.EncodeToPNG();

@@ -100,10 +100,7 @@ namespace MVZ2.Managers
         #region 私有方法
         private void OnApplicationQuit()
         {
-            if (generatedSpriteManifest && Application.isEditor)
-            {
-                generatedSpriteManifest.Reset();
-            }
+            ClearGeneratedSpriteManifest();
         }
         private async Task LoadModResourcesInit(string modNamespace, ModResource modResource)
         {

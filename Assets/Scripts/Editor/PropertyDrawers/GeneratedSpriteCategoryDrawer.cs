@@ -57,7 +57,7 @@ namespace MVZ2.Editor
                     Log.LogWarning("name property of a sprite preview is missing.");
                     continue;
                 }
-                var name = SpritePreviewDrawer.ToFilename(nameProperty.stringValue);
+                var name = GeneratedSpriteDrawer.ToFilename(nameProperty.stringValue);
                 var spriteProperty = previewProperty.FindPropertyRelative("sprite");
                 if (spriteProperty == null)
                 {

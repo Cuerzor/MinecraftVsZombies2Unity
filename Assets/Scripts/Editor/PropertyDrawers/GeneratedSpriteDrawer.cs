@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace MVZ2.Editor
 {
-    [CustomPropertyDrawer(typeof(SpritePreview))]
-    public class SpritePreviewDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(GeneratedSprite))]
+    public class GeneratedSpriteDrawer : PropertyDrawer
     {
         public const float MAX_WIDTH = 200;
         public const float MAX_HEIGHT = 200;

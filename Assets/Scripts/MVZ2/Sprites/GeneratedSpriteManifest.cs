@@ -12,7 +12,36 @@ namespace MVZ2.Sprites
     {
         public void Reset()
         {
+            textures.Clear();
             categories.Clear();
+        }
+        public void Clear()
+        {
+            foreach (var category in categories)
+            {
+                foreach (var sprite in category.sprites)
+                {
+                    Destroy(sprite.sprite);
+                }
+                category.sprites.Clear();
+            }
+            foreach (var texture in textures)
+            {
+                Destroy(texture.texture);
+            }
+            Reset();
+        }
+        public void AddTexture2D(Texture2D texture2D)
+        {
+            textures.Add(new GeneratedTexture2D(texture2D));
+        }
+        public bool RemoveTexture2D(Texture2D texture2D)
+        {
+            var generated = textures.FindIndex(g => g.texture == texture2D);
+            if (generated < 0)
+                return false;
+            textures.RemoveAt(generated);
+            return true;
         }
         public void AddSprite(string category, Sprite sprite, Sprite background)
         {
@@ -35,8 +64,8 @@ namespace MVZ2.Sprites
                 categories.Remove(cat);
             }
         }
-        [SerializeField]
-        private List<GeneratedSpriteCategory> categories = new List<GeneratedSpriteCategory>();
+        public List<GeneratedTexture2D> textures = new List<GeneratedTexture2D>();
+        public List<GeneratedSpriteCategory> categories = new List<GeneratedSpriteCategory>();
     }
     [Serializable]
     public class GeneratedSpriteCategory
@@ -47,7 +76,7 @@ namespace MVZ2.Sprites
         }
         public void AddSprite(Sprite sprite, Sprite preview)
         {
-            sprites.Add(new SpritePreview(sprite, preview));
+            sprites.Add(new GeneratedSprite(sprite, preview));
         }
         public void RemoveSprite(string name)
         {
@@ -55,13 +84,23 @@ namespace MVZ2.Sprites
         }
         public int Count => sprites.Count;
         public string name;
-        [SerializeField]
-        private List<SpritePreview> sprites = new List<SpritePreview>();
+        public List<GeneratedSprite> sprites = new List<GeneratedSprite>();
     }
     [Serializable]
-    public class SpritePreview
+    public class GeneratedTexture2D
     {
-        public SpritePreview(Sprite sprite, Sprite background)
+        public GeneratedTexture2D(Texture2D texture)
+        {
+            this.name = texture.name;
+            this.texture = texture;
+        }
+        public string name;
+        public Texture2D texture;
+    }
+    [Serializable]
+    public class GeneratedSprite
+    {
+        public GeneratedSprite(Sprite sprite, Sprite background)
         {
             this.name = sprite.name;
             this.sprite = sprite;

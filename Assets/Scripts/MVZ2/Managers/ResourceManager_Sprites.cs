@@ -15,6 +15,7 @@ namespace MVZ2.Managers
 {
     public partial class ResourceManager : MonoBehaviour
     {
+        #region 获取Sprite
         public Sprite? GetSprite(string nsp, string path)
         {
             return GetSprite(new NamespaceID(nsp, path));
@@ -41,10 +42,16 @@ namespace MVZ2.Managers
                 return GetSprite(spriteRef.ID);
             }
         }
+        #endregion
+
+        #region 获取Spritesheet
         public Sprite[]? GetSpriteSheet(NamespaceID id)
         {
             return FindInMods(id, mod => mod.SpriteSheets);
         }
+        #endregion
+
+        #region 获取SpriteReference
         public SpriteReference? GetSpriteReference(Sprite sprite)
         {
             if (!sprite)
@@ -55,6 +62,9 @@ namespace MVZ2.Managers
             }
             return null;
         }
+        #endregion
+
+        #region 获取最终Sprite
         public Sprite? GetFinalSprite(SpriteReference? spriteRef)
         {
             if (!SpriteReference.IsValid(spriteRef))
@@ -96,6 +106,9 @@ namespace MVZ2.Managers
                 return sprite;
             return GetFinalSprite(spriteID, language) ?? sprite;
         }
+        #endregion
+
+        #region 获取默认贴图
         public Sprite GetDefaultSprite()
         {
             return defaultSprite;
@@ -104,26 +117,89 @@ namespace MVZ2.Managers
         {
             return Instantiate(defaultSprite);
         }
+        #endregion
+
+        #region 生成Texture2D
+        public Texture2D GenerateTexture2D(int width, int height, string name = "texture2D")
+        {
+            Texture2D texture = new Texture2D(width, height);
+            texture.name = name;
+            texture.hideFlags = HideFlags.HideAndDontSave;
+            texture.alphaIsTransparency = true;
+            RegisterGeneratedTexture2D(texture);
+            return texture;
+        }
+        public Texture2D GenerateTextureFromBytes(byte[] bytes, string name = "texture2D")
+        {
+            Texture2D texture = GenerateTexture2D(2, 2, name);
+            texture.LoadImage(bytes);
+            texture.FixTransparency();
+            return texture;
+        }
+        public void RemoveGeneratedTexture(Texture2D texture2D)
+        {
+            UnregisterGeneratedTexture2D(texture2D);
+            Destroy(texture2D);
+        }
+        private void RegisterGeneratedTexture2D(Texture2D texture2D)
+        {
+            if (generatedSpriteManifest)
+            {
+                generatedSpriteManifest.AddTexture2D(texture2D);
+            }
+        }
+        private void UnregisterGeneratedTexture2D(Texture2D texture2D)
+        {
+            if (generatedSpriteManifest)
+            {
+                generatedSpriteManifest.RemoveTexture2D(texture2D);
+            }
+        }
+        #endregion
+
+        #region 生成Sprite
         public Sprite CreateSprite(Texture2D texture, Rect rect, Vector2 pivot, string name, string category = "default")
         {
             var sprite = Sprite.Create(texture, rect, pivot);
             sprite.name = name;
-            if (generatedSpriteManifest && Application.isEditor)
-            {
-                var background = Sprite.Create(backgroundTex, rect, pivot);
-                background.name = name;
-                generatedSpriteManifest.AddSprite(category, sprite, background);
-            }
+            sprite.hideFlags = HideFlags.HideAndDontSave;
+            RegisterGeneratedSprite(sprite, category);
             return sprite;
         }
-        public void RemoveCreatedSprite(Sprite sprite, string name, string category)
+        public void RemoveGeneratedSprite(Sprite sprite, string name, string category)
         {
-            if (generatedSpriteManifest && Application.isEditor)
-            {
-                generatedSpriteManifest.RemoveSprite(category, sprite.name);
-            }
+            UnregisterGeneratedSprite(name, category);
             Destroy(sprite);
         }
+        private void RegisterGeneratedSprite(Sprite sprite, string category)
+        {
+            if (generatedSpriteManifest)
+            {
+                var background = Sprite.Create(backgroundTex, sprite.rect, sprite.pivot);
+                background.name = sprite.name;
+                generatedSpriteManifest.AddSprite(category, sprite, background);
+            }
+        }
+        private void UnregisterGeneratedSprite(string name, string category)
+        {
+            if (generatedSpriteManifest)
+            {
+                generatedSpriteManifest.RemoveSprite(category, name);
+            }
+        }
+        #endregion
+
+        #region 清除生成的贴图
+        private void ClearGeneratedSpriteManifest()
+        {
+            if (generatedSpriteManifest)
+            {
+                generatedSpriteManifest.Clear();
+            }
+        }
+        #endregion
+
+        #region 初始化
         private void Init_Sprites()
         {
             if (Application.isEditor)
@@ -131,6 +207,9 @@ namespace MVZ2.Managers
                 backgroundTex = GenerateSpriteBackgroundTexture(MAX_BACKGROUND_TEX_WIDTH, MAX_BACKGROUND_TEX_HEIGHT);
             }
         }
+        #endregion
+
+        #region SpriteManifest
         private async Task LoadInitSpriteManifests(string modNamespace)
         {
             var modResource = GetModResource(modNamespace);
@@ -187,6 +266,9 @@ namespace MVZ2.Managers
                 }
             }
         }
+        #endregion
+
+        #region 加载贴图
         private async Task LoadSpriteSheets(string modNamespace)
         {
             var modResource = GetModResource(modNamespace);
@@ -216,13 +298,19 @@ namespace MVZ2.Managers
                 AddSpriteReferenceCache(sprRef, res);
             }
         }
+        #endregion
+
+        #region 添加贴图引用缓存
         private void AddSpriteReferenceCache(SpriteReference sprRef, Sprite sprite)
         {
             spriteReferenceCacheDict.Add(sprite, sprRef);
         }
+        #endregion
+
+        #region 生成贴图背景
         private Texture2D GenerateSpriteBackgroundTexture(int width, int height)
         {
-            var tex = new Texture2D(width, height);
+            var tex = GenerateTexture2D(width, height);
             tex.name = "sprite_background_texture";
             var gray = new Color32(127, 127, 127, 255);
             var darkGray = new Color32(63, 63, 63, 255);
@@ -249,8 +337,9 @@ namespace MVZ2.Managers
             tex.Apply();
             return tex;
         }
+        #endregion
+
         private Dictionary<Sprite, SpriteReference> spriteReferenceCacheDict = new Dictionary<Sprite, SpriteReference>();
-        private Dictionary<Texture2D, Texture2D> generatedSpriteTextureDict = new Dictionary<Texture2D, Texture2D>();
         private const int COLOR_BUFFER_WIDTH = 128;
         private const int COLOR_BUFFER_HEIGHT = 128;
         private const int MAX_BACKGROUND_TEX_WIDTH = 2560;

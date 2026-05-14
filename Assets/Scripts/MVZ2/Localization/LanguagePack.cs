@@ -6,7 +6,9 @@ using System.Linq;
 using Newtonsoft.Json;
 using NGettext;
 using PVZEngine;
+using UnityEditor.VersionControl;
 using UnityEngine;
+using UnityEngine.XR;
 
 namespace MVZ2.Localization
 {
@@ -136,6 +138,7 @@ namespace MVZ2.Localization
     {
         public string language;
         public Dictionary<string, Catalog> catalogs = new Dictionary<string, Catalog>();
+        public Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
         public Dictionary<NamespaceID, Sprite> Sprites = new Dictionary<NamespaceID, Sprite>();
         public Dictionary<NamespaceID, Sprite[]> SpriteSheets = new Dictionary<NamespaceID, Sprite[]>();
         public LanguageAssets(string lang)
