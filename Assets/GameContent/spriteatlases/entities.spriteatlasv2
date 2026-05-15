@@ -13,15 +13,9 @@ SpriteAtlasAsset:
     packables:
     - {fileID: 102900000, guid: 37c13011bb4224847a8034e58e2bd51e, type: 3}
     - {fileID: 102900000, guid: fda14398a4a413e468722baff6b15e9f, type: 3}
-    - {fileID: 102900000, guid: 66a14e7afe7fce64ab6cf80f7700fe97, type: 3}
-    - {fileID: 102900000, guid: 452bb4624229b4248bf19b61dd062b19, type: 3}
-    - {fileID: 102900000, guid: d374234078e9f944d95853a07322537b, type: 3}
     - {fileID: 102900000, guid: 1abaa9869b264ae41a6852139ab2e474, type: 3}
-    - {fileID: 102900000, guid: cde1c4b447780a648bd66bc96b375d17, type: 3}
-    - {fileID: 102900000, guid: e78448079fa76f04b917c5fd029f4225, type: 3}
     - {fileID: 102900000, guid: 06045152e369f2d4e80b937080ec3b0c, type: 3}
     - {fileID: 102900000, guid: 620f3512f0637f64c997e08469928b6e, type: 3}
     - {fileID: 102900000, guid: b3a41b552e281ab47bf669ed4d8b2d4c, type: 3}
     - {fileID: 102900000, guid: bf4e873195dea9643aacd8447b2d1321, type: 3}
-    - {fileID: 102900000, guid: 2a68a79ae6fb6f144accdc352168c827, type: 3}
   m_IsVariant: 0

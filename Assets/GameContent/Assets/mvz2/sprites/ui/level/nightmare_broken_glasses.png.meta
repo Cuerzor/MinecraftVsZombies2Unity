@@ -1,0 +1,756 @@
+fileFormatVersion: 2
+guid: 211657565d216cd4a9fb3b2c489ff0af
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -496670632954994581
+    second: nightmare_broken_glasses_0
+  - first:
+      213: 8269609324391817686
+    second: nightmare_broken_glasses_1
+  - first:
+      213: 3401429139997365564
+    second: nightmare_broken_glasses_2
+  - first:
+      213: 3358884720331307487
+    second: nightmare_broken_glasses_3
+  - first:
+      213: 6874442815973686135
+    second: nightmare_broken_glasses_4
+  - first:
+      213: 4679210846951038084
+    second: nightmare_broken_glasses_5
+  - first:
+      213: -6495485243686058542
+    second: nightmare_broken_glasses_6
+  - first:
+      213: -2610206509431346792
+    second: nightmare_broken_glasses_7
+  - first:
+      213: 2461164191611283521
+    second: nightmare_broken_glasses_8
+  - first:
+      213: 5417238220393675570
+    second: nightmare_broken_glasses_9
+  - first:
+      213: -9112802057215566970
+    second: nightmare_broken_glasses_10
+  - first:
+      213: 463742695704995586
+    second: nightmare_broken_glasses_11
+  - first:
+      213: -8139932753208879606
+    second: nightmare_broken_glasses_12
+  - first:
+      213: 846718947521563388
+    second: nightmare_broken_glasses_13
+  - first:
+      213: 7416995959784659540
+    second: nightmare_broken_glasses_14
+  - first:
+      213: 8208414520498518862
+    second: nightmare_broken_glasses_15
+  - first:
+      213: 8004326224164664021
+    second: nightmare_broken_glasses_16
+  - first:
+      213: 7724346793561393014
+    second: nightmare_broken_glasses_17
+  - first:
+      213: 3823601113008493474
+    second: nightmare_broken_glasses_18
+  - first:
+      213: -7756604054095924733
+    second: nightmare_broken_glasses_19
+  - first:
+      213: -7821657702799450650
+    second: nightmare_broken_glasses_20
+  - first:
+      213: 2380259279533041994
+    second: nightmare_broken_glasses_21
+  - first:
+      213: 4360235884385069951
+    second: nightmare_broken_glasses_22
+  - first:
+      213: 3439651553194031847
+    second: nightmare_broken_glasses_23
+  - first:
+      213: -2918477655606386715
+    second: nightmare_broken_glasses_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 3
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 3
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 617
+        width: 481
+        height: 361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b606958d0b87b19f0800000000000000
+      internalID: -496670632954994581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_1
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 682
+        width: 528
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1e1a3cddd83c270800000000000000
+      internalID: 8269609324391817686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_2
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 610
+        width: 326
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c35943208cd443f20800000000000000
+      internalID: 3401429139997365564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_3
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 732
+        width: 208
+        height: 246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9b5d46bd72d9e20800000000000000
+      internalID: 3358884720331307487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_4
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 440
+        width: 478
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77bf8da915de66f50800000000000000
+      internalID: 6874442815973686135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_5
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 627
+        width: 182
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cdba94975efe040800000000000000
+      internalID: 4679210846951038084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 376
+        width: 407
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d50d4ed5966bd5a0800000000000000
+      internalID: -6495485243686058542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_7
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 338
+        width: 95
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148e6eedacfc72220800000000000000
+      internalID: 2461164191611283521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_8
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 296
+        width: 259
+        height: 313
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23bfb3ea575ed2b40800000000000000
+      internalID: 5417238220393675570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_9
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 390
+        width: 347
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b97378fc2d88180800000000000000
+      internalID: -9112802057215566970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 174
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207ada4568b8f6600800000000000000
+      internalID: 463742695704995586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_11
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 275
+        width: 170
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06da65c946290f80800000000000000
+      internalID: -8139932753208879606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_12
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 263
+        width: 455
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa8d9b856620cb00800000000000000
+      internalID: 846718947521563388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_13
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 113
+        width: 255
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ad87b47867ee660800000000000000
+      internalID: 7416995959784659540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_14
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 165
+        width: 270
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bf87f24852ae170800000000000000
+      internalID: 8208414520498518862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_15
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 186
+        width: 85
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2bda9ca44151f60800000000000000
+      internalID: 8004326224164664021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_16
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 155
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6778720cb74623b60800000000000000
+      internalID: 7724346793561393014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_17
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 152
+        width: 311
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3d8a734f8201530800000000000000
+      internalID: 3823601113008493474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_18
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 143
+        width: 250
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 302f14485b10b5490800000000000000
+      internalID: -7756604054095924733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_19
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 181
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6edd0fd92c3e37390800000000000000
+      internalID: -7821657702799450650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_20
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 40
+        width: 182
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49e4ed1431680120800000000000000
+      internalID: 2380259279533041994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_21
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 42
+        width: 130
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7beea17f6ba28c30800000000000000
+      internalID: 4360235884385069951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_22
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 38
+        width: 123
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea30431dd81cbf20800000000000000
+      internalID: 3439651553194031847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightmare_broken_glasses_23
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 74
+        width: 163
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef9aa4f80c7f77d0800000000000000
+      internalID: -2918477655606386715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      nightmare_broken_glasses_0: -496670632954994581
+      nightmare_broken_glasses_1: 8269609324391817686
+      nightmare_broken_glasses_10: -9112802057215566970
+      nightmare_broken_glasses_11: 463742695704995586
+      nightmare_broken_glasses_12: -8139932753208879606
+      nightmare_broken_glasses_13: 846718947521563388
+      nightmare_broken_glasses_14: 7416995959784659540
+      nightmare_broken_glasses_15: 8208414520498518862
+      nightmare_broken_glasses_16: 8004326224164664021
+      nightmare_broken_glasses_17: 7724346793561393014
+      nightmare_broken_glasses_18: 3823601113008493474
+      nightmare_broken_glasses_19: -7756604054095924733
+      nightmare_broken_glasses_2: 3401429139997365564
+      nightmare_broken_glasses_20: -7821657702799450650
+      nightmare_broken_glasses_21: 2380259279533041994
+      nightmare_broken_glasses_22: 4360235884385069951
+      nightmare_broken_glasses_23: 3439651553194031847
+      nightmare_broken_glasses_24: -2918477655606386715
+      nightmare_broken_glasses_3: 3358884720331307487
+      nightmare_broken_glasses_4: 6874442815973686135
+      nightmare_broken_glasses_5: 4679210846951038084
+      nightmare_broken_glasses_6: -6495485243686058542
+      nightmare_broken_glasses_8: 2461164191611283521
+      nightmare_broken_glasses_9: 5417238220393675570
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
