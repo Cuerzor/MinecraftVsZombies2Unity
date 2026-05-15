@@ -6,7 +6,7 @@ namespace MVZ2.Localization
 {
     public class ResourcePackSprite
     {
-        public SpriteReference? replaces;
+        public string? replaces;
         public string[]? tags;
         public float x;
         public float y;

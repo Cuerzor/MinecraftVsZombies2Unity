@@ -44,7 +44,7 @@ namespace MVZ2.Editor
         [MenuItem("MVZ2/Assets/Localization/Update Localized Sprite Manifest", priority = 3100, secondaryPriority = 0)]
         public static void UpdateLocalizedSpriteManifest()
         {
-            LocalizationMenu.UpdateLocalizedSpriteManifest();
+            LocalizationMenu.UpdateResourcePackManifest();
         }
         [MenuItem("MVZ2/Assets/Localization/Update Language Pack Demo", priority = 3200, secondaryPriority = 0)]
         public static void UpdateLanguagePackDemo()

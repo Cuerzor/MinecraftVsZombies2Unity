@@ -159,9 +159,6 @@ namespace MVZ2.Editor
                 case "sprites":
                     labels.Add("Sprite");
                     break;
-                case "spritesheets":
-                    labels.Add("Spritesheet");
-                    break;
                 case "mapmodels":
                     labels.Add("MapModel");
                     break;

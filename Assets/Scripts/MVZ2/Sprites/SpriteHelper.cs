@@ -2,6 +2,7 @@
 
 using System;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 
 namespace MVZ2.Sprites
@@ -104,6 +105,12 @@ namespace MVZ2.Sprites
         public static string GetLanguageSpriteTag(string languageCode)
         {
             return languageCode;
+        }
+        public static void ParseIDAndTags(string path, out string id, out string[] tags)
+        {
+            var splitTagTexturePaths = path.Split("@");
+            id = splitTagTexturePaths[0];
+            tags = splitTagTexturePaths.Skip(1).ToArray();
         }
         public const string SPRITE_TAG_CENSORED = "censored";
     }

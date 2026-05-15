@@ -10,12 +10,17 @@ namespace MVZ2.Editor
 {
     public class SpriteMenu : MonoBehaviour
     {
+        public static SpriteImportMode GetSpriteImportMode(string path)
+        {
+            var textureImporter = AssetImporter.GetAtPath(path) as TextureImporter;
+            return textureImporter.spriteImportMode;
+        }
         public static Sprite[] GetOrderedSpriteSheet(string path, SpriteDataProviderFactories factories)
         {
             var textureImporter = AssetImporter.GetAtPath(path) as TextureImporter;
             var dataProvider = factories.GetSpriteEditorDataProviderFromObject(textureImporter);
 
-            dataProvider.InitSpriteEditorDataProvider();
+            dataProvider.InitSpriteEditorDataProvider(); ;
             var spriteRects = dataProvider.GetSpriteRects();//if you don't have the initial sprite rects, just create them manually, this example just changes the pivot points
             var spriteOrders = spriteRects.Select((rect, index) => (rect.name, index)).ToDictionary(p => p.name, p => p.index);
             return AssetDatabase.LoadAllAssetsAtPath(path).OfType<Sprite>().OrderBy(s => spriteOrders[s.name]).ToArray();
@@ -49,9 +54,7 @@ namespace MVZ2.Editor
                 var resourceName = Path.Combine(resourceDirectory, Path.GetFileNameWithoutExtension(filePath)).Replace("\\", "/");
 
                 // 从资源名中拆出资源标签。
-                var splitResourceNames = resourceName.Split('@');
-                resourceName = splitResourceNames[0];
-                var tags = splitResourceNames.Skip(1);
+                SpriteHelper.ParseIDAndTags(resourceName, out resourceName, out var tags);
 
                 var assetPath = AssetsMenu.FileToAssetPath(filePath);
                 var sprites = GetOrderedSpriteSheet(assetPath, factories);

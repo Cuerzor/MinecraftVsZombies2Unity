@@ -120,6 +120,10 @@ namespace MVZ2.Sprites
             }
             return hash;
         }
+        public override string ToString()
+        {
+            return $"{reference}({string.Join(',', tags)})";
+        }
         public bool Equals(SpriteLookupKey other)
         {
             return reference == other.reference && tags.SetEquals(other.tags);

@@ -1,0 +1,907 @@
+{
+  "textures": [
+    {
+      "texture": "mvz2/sprites/ready_set_build.png",
+      "slices": [
+        {
+          "replaces": "mvz2:ready_set_build",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 148.0,
+          "width": 165.0,
+          "height": 74.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:ready_set_build[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 74.0,
+          "width": 165.0,
+          "height": 74.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:ready_set_build[2]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 165.0,
+          "height": 74.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/archive/castle_note.png",
+      "slices": [
+        {
+          "replaces": "mvz2:archive/castle_note",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1020.0,
+          "height": 600.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/archive/dream_note.png",
+      "slices": [
+        {
+          "replaces": "mvz2:archive/dream_note",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1020.0,
+          "height": 600.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/archive/halloween_note.png",
+      "slices": [
+        {
+          "replaces": "mvz2:archive/halloween_note",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1020.0,
+          "height": 600.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/archive/palace_note.png",
+      "slices": [
+        {
+          "replaces": "mvz2:archive/palace_note",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1020.0,
+          "height": 600.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/chapter_transition/chapter_title_end.png",
+      "slices": [
+        {
+          "replaces": "mvz2:chapter_transition/chapter_title_end",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 203.0,
+          "height": 85.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/chapter_transition/title_castle.png",
+      "slices": [
+        {
+          "replaces": "mvz2:chapter_transition/title_castle",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 800.0,
+          "height": 232.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/chapter_transition/title_dream.png",
+      "slices": [
+        {
+          "replaces": "mvz2:chapter_transition/title_dream",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 800.0,
+          "height": 320.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/chapter_transition/title_halloween.png",
+      "slices": [
+        {
+          "replaces": "mvz2:chapter_transition/title_halloween",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 800.0,
+          "height": 320.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/chapter_transition/title_mausoleum.png",
+      "slices": [
+        {
+          "replaces": "mvz2:chapter_transition/title_mausoleum",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 800.0,
+          "height": 320.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/chapter_transition/title_palace.png",
+      "slices": [
+        {
+          "replaces": "mvz2:chapter_transition/title_palace",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 800.0,
+          "height": 320.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/chapter_transition/title_ship.png",
+      "slices": [
+        {
+          "replaces": "mvz2:chapter_transition/title_ship",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 800.0,
+          "height": 320.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/icons/disabled.png",
+      "slices": [
+        {
+          "replaces": "mvz2:icons/disabled",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 64.0,
+          "height": 64.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/icons/short_circuited.png",
+      "slices": [
+        {
+          "replaces": "mvz2:icons/short_circuited",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 64.0,
+          "height": 64.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/icons/sleeping.png",
+      "slices": [
+        {
+          "replaces": "mvz2:icons/sleeping",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 64.0,
+          "height": 64.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/init/logo.png",
+      "slices": [
+        {
+          "replaces": "mvz2:init/logo",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1024.0,
+          "height": 256.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/mainmenu/almanac.png",
+      "slices": [
+        {
+          "replaces": "mvz2:mainmenu/almanac",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 318.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/almanac[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 359.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 318.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/almanac[2]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 718.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 318.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/mainmenu/arcade.png",
+      "slices": [
+        {
+          "replaces": "mvz2:mainmenu/arcade",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 281.0,
+          "height": 164.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/arcade[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 282.0,
+          "y": 0.0,
+          "width": 281.0,
+          "height": 164.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/arcade[2]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 564.0,
+          "y": 0.0,
+          "width": 281.0,
+          "height": 164.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/mainmenu/back_to_mainmenu.png",
+      "slices": [
+        {
+          "replaces": "mvz2:mainmenu/back_to_mainmenu",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 37.0,
+          "width": 79.0,
+          "height": 36.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/back_to_mainmenu[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 79.0,
+          "height": 36.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/mainmenu/help.png",
+      "slices": [
+        {
+          "replaces": "mvz2:mainmenu/help",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/help[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 90.0,
+          "y": 0.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/help[2]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 180.0,
+          "y": 0.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/mainmenu/more_menus.png",
+      "slices": [
+        {
+          "replaces": "mvz2:mainmenu/more_menus",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 37.0,
+          "width": 73.0,
+          "height": 36.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/more_menus[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.5,
+          "width": 73.0,
+          "height": 36.5,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/mainmenu/music_room.png",
+      "slices": [
+        {
+          "replaces": "mvz2:mainmenu/music_room",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 390.0,
+          "width": 311.0,
+          "height": 194.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/music_room[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 195.0,
+          "width": 311.0,
+          "height": 194.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/music_room[2]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 311.0,
+          "height": 194.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/mainmenu/options.png",
+      "slices": [
+        {
+          "replaces": "mvz2:mainmenu/options",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 1.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/options[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 90.0,
+          "y": 1.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/options[2]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 180.0,
+          "y": 1.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/mainmenu/quit.png",
+      "slices": [
+        {
+          "replaces": "mvz2:mainmenu/quit",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 340.0,
+          "width": 262.0,
+          "height": 169.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/quit[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 170.0,
+          "width": 262.0,
+          "height": 169.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/quit[2]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 1.0,
+          "width": 262.0,
+          "height": 168.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/mainmenu/store.png",
+      "slices": [
+        {
+          "replaces": "mvz2:mainmenu/store",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 277.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/store[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 359.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 277.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/store[2]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 718.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 277.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/mainmenu/user_manage.png",
+      "slices": [
+        {
+          "replaces": "mvz2:mainmenu/user_manage",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 41.5,
+          "width": 109.0,
+          "height": 41.5,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "replaces": "mvz2:mainmenu/user_manage[1]",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.5,
+          "width": 109.0,
+          "height": 41.5,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/misc/letter_for_help.png",
+      "slices": [
+        {
+          "replaces": "mvz2:misc/letter_for_help",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 1020.0,
+          "height": 600.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/note/castle.png",
+      "slices": [
+        {
+          "replaces": "mvz2:note/castle",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 800.0,
+          "height": 600.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/note/dream.png",
+      "slices": [
+        {
+          "replaces": "mvz2:note/dream",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 480.0,
+          "height": 384.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/note/halloween.png",
+      "slices": [
+        {
+          "replaces": "mvz2:note/halloween",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 480.0,
+          "height": 384.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/note/help_back.png",
+      "slices": [
+        {
+          "replaces": "mvz2:note/help_back",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 480.0,
+          "height": 384.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/note/help_front.png",
+      "slices": [
+        {
+          "replaces": "mvz2:note/help_front",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 480.0,
+          "height": 384.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/note/palace.png",
+      "slices": [
+        {
+          "replaces": "mvz2:note/palace",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 480.0,
+          "height": 384.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/entity/effect/boom.png",
+      "slices": [
+        {
+          "replaces": "mvz2:entity/effect/boom",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 147.0,
+          "height": 59.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/entity/effect/pow.png",
+      "slices": [
+        {
+          "replaces": "mvz2:entity/effect/pow",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 136.0,
+          "height": 123.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/ui/level/final_wave.png",
+      "slices": [
+        {
+          "replaces": "mvz2:ui/level/final_wave",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 296.0,
+          "height": 74.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/ui/level/huge_wave.png",
+      "slices": [
+        {
+          "replaces": "mvz2:ui/level/huge_wave",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 800.0,
+          "height": 64.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/ui/level/level_progress_back.png",
+      "slices": [
+        {
+          "replaces": "mvz2:ui/level/level_progress_back",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 124.0,
+          "height": 24.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/ui/level/lose.png",
+      "slices": [
+        {
+          "replaces": "mvz2:ui/level/lose",
+          "tags": [
+            "en-US"
+          ],
+          "x": 0.0,
+          "y": 0.0,
+          "width": 427.0,
+          "height": 136.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    }
+  ],
+  "localization": {
+    "languages": [
+      {
+        "code": "en-US",
+        "catalogs": [
+          "mvz2/catalogs/en-US/almanac.mo",
+          "mvz2/catalogs/en-US/general.mo",
+          "mvz2/catalogs/en-US/talk.mo"
+        ]
+      }
+    ]
+  }
+}

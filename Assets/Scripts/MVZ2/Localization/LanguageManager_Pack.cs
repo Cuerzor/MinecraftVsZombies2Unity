@@ -298,16 +298,13 @@ namespace MVZ2.Localization
         }
         public void UnloadLanguagePack(ResourcePack pack)
         {
-            foreach (var lang in pack.GetLanguages())
+            foreach (var pair in pack.sprites)
             {
-                foreach (var pair in pack.sprites)
-                {
-                    main.ResourceManager.RemoveGeneratedSprite(pair.Value, pair.Key.ToString(), GetLanguagePackSpriteCategory(pack.Key));
-                }
-                foreach (var pair in pack.textures)
-                {
-                    main.ResourceManager.RemoveGeneratedTexture(pair.Value);
-                }
+                main.ResourceManager.RemoveGeneratedSprite(pair.Value, pair.Key.ToString(), GetLanguagePackSpriteCategory(pack.Key));
+            }
+            foreach (var pair in pack.textures)
+            {
+                main.ResourceManager.RemoveGeneratedTexture(pair.Value);
             }
             RemoveSpriteProvider(pack);
         }

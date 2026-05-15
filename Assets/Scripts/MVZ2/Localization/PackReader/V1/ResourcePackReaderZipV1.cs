@@ -94,7 +94,7 @@ namespace MVZ2.Localization
                         foreach (var relativePath in language.catalogs)
                         {
                             // 获取catalog的路径，并加载。
-                            var catalogPath = Path.Combine("assets", relativePath).Replace("\\", "/");
+                            var catalogPath = Path.Combine("assets", relativePath).Replace("/", "\\");
                             var catalogEntry = archive.GetEntry(catalogPath);
                             var catalog = catalogEntry.ReadCatalog(code);
 
@@ -122,10 +122,11 @@ namespace MVZ2.Localization
                     continue;
 
                 // 获取贴图路径。
-                var texturePath = Path.Combine("assets", packTexture.texture).Replace("\\", "/");
+                var texturePath = Path.Combine("assets", packTexture.texture).Replace("/", "\\");
 
                 // 文件不存在，直接跳过。
-                if (!File.Exists(texturePath))
+                var textureEntry = archive.GetEntry(texturePath);
+                if (textureEntry == null)
                     continue;
 
                 var slices = packTexture.slices;
@@ -136,7 +137,6 @@ namespace MVZ2.Localization
                 // 如果没有获取到，新建一个。
                 if (!pack.textures.TryGetValue(texturePath, out var texture))
                 {
-                    var textureEntry = archive.GetEntry(texturePath);
                     texture = ReadTexture2DZip(textureEntry);
                     pack.textures.Add(texturePath, texture);
                 }
@@ -154,16 +154,13 @@ namespace MVZ2.Localization
                     nsp = string.Empty;
                     textureId = string.Join("/", splitTexturePaths);
                 }
-                var splitTagTexturePaths = textureId.Split("@");
-                textureId = splitTagTexturePaths[0];
-                var tags = splitTagTexturePaths.Skip(1).ToArray();
+                SpriteHelper.ParseIDAndTags(textureId, out textureId, out var tags);
 
                 // 加载贴图。
                 for (int i = 0; i < slices.Length; i++)
                 {
                     var slice = slices[i];
-                    var spriteRef = slice.replaces;
-                    if (spriteRef == null)
+                    if (slice.replaces == null || !SpriteReference.TryParse(slice.replaces, Main.BuiltinNamespace, out var spriteRef))
                     {
                         if (string.IsNullOrEmpty(nsp))
                         {
@@ -173,8 +170,8 @@ namespace MVZ2.Localization
                         var spriteID = new NamespaceID(nsp, textureId);
                         spriteRef = new SpriteReference(spriteID, i);
                     }
-                    var spriteKey = new SpriteLookupKey(spriteRef, tags);
-                    var sprite = CreateSprite(texture, slice, spriteKey.ToString(), generatedCategory);
+                    var spriteKey = new SpriteLookupKey(spriteRef, slice.tags ?? tags);
+                    var sprite = CreateSprite(texture, slice, generatedCategory, spriteKey.ToString());
                     pack.AddSprite(spriteKey, sprite);
                 }
             }

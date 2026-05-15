@@ -113,70 +113,67 @@ namespace MVZ2.Localization
         private void LoadSpritesFromManifest(string path, ResourcePackManifest manifest, ResourcePack pack, string key)
         {
             // 加载贴图
-            if (manifest.textures != null)
+            if (manifest.textures == null)
+                return;
+
+            var generatedCategory = GetLanguagePackSpriteCategory(key);
+
+            foreach (var packTexture in manifest.textures)
             {
-                var generatedCategory = GetLanguagePackSpriteCategory(key);
+                if (string.IsNullOrEmpty(packTexture.texture))
+                    continue;
 
-                foreach (var packTexture in manifest.textures)
+                // 获取贴图路径。
+                var texturePath = Path.Combine(path, "assets", packTexture.texture).Replace("\\", "/");
+
+                // 文件不存在，直接跳过。
+                if (!File.Exists(texturePath))
+                    continue;
+
+                var slices = packTexture.slices;
+                if (slices == null)
+                    continue;
+
+                // 尝试获取资源包中的这个texture对象。
+                // 如果没有获取到，新建一个。
+                if (!pack.textures.TryGetValue(texturePath, out var texture))
                 {
-                    if (string.IsNullOrEmpty(packTexture.texture))
-                        continue;
+                    texture = ReadTexture2DDirectory(texturePath);
+                    pack.textures.Add(texturePath, texture);
+                }
 
-                    // 获取贴图路径。
-                    var texturePath = Path.Combine(path, "assets", packTexture.texture).Replace("\\", "/");
+                // 获取ID和图片标签。
+                var splitTexturePaths = Path.ChangeExtension(packTexture.texture, string.Empty).TrimEnd('.').Split('/', '\\');
+                string nsp, textureId;
+                if (splitTexturePaths.Length > 1)
+                {
+                    nsp = splitTexturePaths[0];
+                    textureId = string.Join("/", splitTexturePaths.Skip(1));
+                }
+                else
+                {
+                    nsp = string.Empty;
+                    textureId = string.Join("/", splitTexturePaths);
+                }
+                SpriteHelper.ParseIDAndTags(textureId, out textureId, out var tags);
 
-                    // 文件不存在，直接跳过。
-                    if (!File.Exists(texturePath))
-                        continue;
-
-                    var slices = packTexture.slices;
-                    if (slices == null)
-                        continue;
-
-                    // 尝试获取资源包中的这个texture对象。
-                    // 如果没有获取到，新建一个。
-                    if (!pack.textures.TryGetValue(texturePath, out var texture))
+                // 加载贴图。
+                for (int i = 0; i < slices.Length; i++)
+                {
+                    var slice = slices[i];
+                    if (slice.replaces == null || !SpriteReference.TryParse(slice.replaces, Main.BuiltinNamespace, out var spriteRef))
                     {
-                        texture = ReadTexture2DDirectory(texturePath);
-                        pack.textures.Add(texturePath, texture);
-                    }
-
-                    // 获取ID和图片标签。
-                    var splitTexturePaths = Path.ChangeExtension(packTexture.texture, string.Empty).TrimEnd('.').Split('/', '\\');
-                    string nsp, textureId;
-                    if (splitTexturePaths.Length > 1)
-                    {
-                        nsp = splitTexturePaths[0];
-                        textureId = string.Join("/", splitTexturePaths.Skip(1));
-                    }
-                    else
-                    {
-                        nsp = string.Empty;
-                        textureId = string.Join("/", splitTexturePaths);
-                    }
-                    var splitTagTexturePaths = textureId.Split("@");
-                    textureId = splitTagTexturePaths[0];
-                    var tags = splitTagTexturePaths.Skip(1).ToArray();
-
-                    // 加载贴图。
-                    for (int i = 0; i < slices.Length; i++)
-                    {
-                        var slice = slices[i];
-                        var spriteRef = slice.replaces;
-                        if (spriteRef == null)
+                        if (string.IsNullOrEmpty(nsp))
                         {
-                            if (string.IsNullOrEmpty(nsp))
-                            {
-                                Log.LogWarning($"Cannot load sprite {packTexture.texture} from resource pack: Invalid file path.");
-                                continue;
-                            }
-                            var spriteID = new NamespaceID(nsp, textureId);
-                            spriteRef = new SpriteReference(spriteID, i);
+                            Log.LogWarning($"Cannot load sprite {packTexture.texture} from resource pack: Invalid file path.");
+                            continue;
                         }
-                        var spriteKey = new SpriteLookupKey(spriteRef, tags);
-                        var sprite = CreateSprite(texture, slice, spriteKey.ToString(), generatedCategory);
-                        pack.AddSprite(spriteKey, sprite);
+                        var spriteID = new NamespaceID(nsp, textureId);
+                        spriteRef = new SpriteReference(spriteID, i);
                     }
+                    var spriteKey = new SpriteLookupKey(spriteRef, slice.tags ?? tags);
+                    var sprite = CreateSprite(texture, slice, generatedCategory, spriteKey.ToString());
+                    pack.AddSprite(spriteKey, sprite);
                 }
             }
         }
