@@ -15,7 +15,7 @@ using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public class LanguagePackReaderZipV0 : LanguagePackReaderV0
+    public class LanguagePackReaderZipV0 : LanguagePackReaderV0, IResourcePackReaderZip
     {
         public LanguagePackReaderZipV0(MainManager main) : base(main)
         {

@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public class LanguagePackReaderDirectoryV0 : LanguagePackReaderV0
+    public class LanguagePackReaderDirectoryV0 : LanguagePackReaderV0, IResourcePackReaderDirectory
     {
         public LanguagePackReaderDirectoryV0(MainManager main) : base(main)
         {

@@ -47,9 +47,9 @@ namespace MVZ2.Localization
             ResourcePackMetadataReader reader = isDirectory ? new ResourcePackMetadataReaderDirectory(manager.Main) : new ResourcePackMetadataReaderZip(manager.Main);
             return Task.FromResult(reader.ReadMetadata(GetKey(), path));
         }
-        public override Task<ResourcePack?> LoadPack(LanguageManager manager)
+        public override Task<ResourcePack?> LoadPack(LanguageManager manager, int dataVersion)
         {
-            ResourcePackReader reader = isDirectory ? new LanguagePackReaderDirectoryV0(manager.Main) : new LanguagePackReaderZipV0(manager.Main);
+            IResourcePackReader reader = isDirectory ? ResourcePackReaderFactory.CreateDirectory(manager.Main, dataVersion) : ResourcePackReaderFactory.CreateZip(manager.Main, dataVersion);
             return Task.FromResult(reader.ReadPack(GetKey(), path));
         }
         public override Task<bool> Export(LanguageManager manager, string destPath)

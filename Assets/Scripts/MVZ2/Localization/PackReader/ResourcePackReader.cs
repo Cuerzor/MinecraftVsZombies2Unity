@@ -4,7 +4,7 @@ using MVZ2.Managers;
 
 namespace MVZ2.Localization
 {
-    public abstract class ResourcePackReader
+    public abstract class ResourcePackReader : IResourcePackReader
     {
         protected ResourcePackReader(MainManager main)
         {

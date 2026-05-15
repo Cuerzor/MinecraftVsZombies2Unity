@@ -30,10 +30,10 @@ namespace MVZ2.Localization
             var reader = new ResourcePackMetadataReaderZip(manager.Main);
             return reader.ReadMetadata(GetKey(), bytes);
         }
-        public override async Task<ResourcePack?> LoadPack(LanguageManager manager)
+        public override async Task<ResourcePack?> LoadPack(LanguageManager manager, int dataVersion)
         {
             var bytes = await manager.LoadBuiltinBytes();
-            var reader = new LanguagePackReaderZipV0(manager.Main);
+            var reader = ResourcePackReaderFactory.CreateZip(manager.Main, dataVersion);
             return reader.ReadPack(GetKey(), bytes);
         }
         public override async Task<bool> Export(LanguageManager manager, string destPath)

@@ -2,23 +2,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using MVZ2.IO;
-using MVZ2.Sprites;
-using MVZ2Logic.Resources;
 using Newtonsoft.Json;
-using NGettext;
-using PVZEngine;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.XR;
-using static UnityEditor.PlayerSettings.Switch;
 
 namespace MVZ2.Localization
 {
@@ -266,7 +255,10 @@ namespace MVZ2.Localization
             {
                 var reference = enabledLanguagePacks[i];
                 var priority = enabledLanguagePacks.Count - i;
-                var pack = await reference.LoadPack(this);
+                var metadata = GetLanguagePackMetadata(reference);
+                if (metadata == null)
+                    continue;
+                var pack = await reference.LoadPack(this, metadata.dataVersion);
                 if (pack == null)
                     continue;
                 pack.Priority = priority;
@@ -334,7 +326,8 @@ namespace MVZ2.Localization
         {
             foreach (var reference in references)
             {
-                if (languagePackMetadatas.TryGetValue(reference, out var metadata))
+                var metadata = GetLanguagePackMetadata(reference);
+                if (metadata != null)
                 {
                     if (IsOutdated(metadata.dataVersion))
                     {
@@ -346,7 +339,7 @@ namespace MVZ2.Localization
         }
         #endregion
 
-        public const int LATEST_DATA_VERSION = 0;
+        public const int LATEST_DATA_VERSION = 1;
         [SerializeField]
         private string externalLangaugePackDir = "language_packs";
         [SerializeField]

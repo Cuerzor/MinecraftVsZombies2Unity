@@ -8,7 +8,7 @@ namespace MVZ2.Localization
     {
         public virtual bool IsBuiltin => false;
         public abstract Task<ResourcePackMetadata?> LoadMetadata(LanguageManager manager);
-        public abstract Task<ResourcePack?> LoadPack(LanguageManager manager);
+        public abstract Task<ResourcePack?> LoadPack(LanguageManager manager, int dataVersion);
         public abstract Task<bool> Export(LanguageManager manager, string destPath);
         public abstract bool Delete();
         public abstract string GetKey();
