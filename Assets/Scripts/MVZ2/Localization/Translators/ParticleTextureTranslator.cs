@@ -35,7 +35,7 @@ namespace MVZ2.Localization
             context.languageCode = language;
             for (int i = 0; i < sprites.Length; i++)
             {
-                part.SetSprite(i, MainManager.Instance.GetFinalSprite(sprites[i], context));
+                part.SetSprite(i, main.GetFinalSprite(sprites[i], context));
             }
         }
     }
