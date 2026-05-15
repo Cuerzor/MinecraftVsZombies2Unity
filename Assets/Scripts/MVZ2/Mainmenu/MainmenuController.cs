@@ -659,15 +659,19 @@ namespace MVZ2.Mainmenu
             var metas = viewsID.Select(id => resources.GetMainmenuViewMeta(id)).OfType<MainmenuViewMeta>();
             var ordered = metas.OrderByDescending(m => m.Priority);
             Sprite? sprite = null;
-            int sheetIndex = isDark ? 1 : 0;
             foreach (var meta in ordered)
             {
-                if (meta.Conditions.IsNullOrMeetsConditions(saves) && NamespaceID.IsValid(meta.SpritesheetID))
+                if (meta.Conditions.IsNullOrMeetsConditions(saves))
                 {
-                    var spriteRef = new SpriteReference(meta.SpritesheetID, sheetIndex);
+                    var spriteRef = isDark ? meta.DarkSpriteReference : meta.BrightSpriteReference;
                     if (SpriteReference.IsValid(spriteRef))
                     {
                         sprite = main.GetFinalSprite(spriteRef);
+                        break;
+                    }
+                    if (SpriteReference.IsValid(meta.BrightSpriteReference))
+                    {
+                        sprite = main.GetFinalSprite(meta.BrightSpriteReference);
                         break;
                     }
                 }

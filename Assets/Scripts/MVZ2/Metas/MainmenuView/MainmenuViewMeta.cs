@@ -2,6 +2,7 @@
 
 using System.Xml;
 using MVZ2.IO;
+using MVZ2Logic.Resources;
 using PVZEngine;
 using PVZEngine.Tools.Unity;
 
@@ -16,7 +17,8 @@ namespace MVZ2.Metas
 
         public string ID { get; private set; }
         public int Priority { get; private set; }
-        public NamespaceID? SpritesheetID { get; private set; }
+        public SpriteReference? BrightSpriteReference { get; private set; }
+        public SpriteReference? DarkSpriteReference { get; private set; }
         public XMLConditionList? Conditions { get; private set; }
         public static MainmenuViewMeta? FromXmlNode(XmlNode node, string defaultNsp)
         {
@@ -27,7 +29,20 @@ namespace MVZ2.Metas
                 return null;
             }
             var priority = node.GetAttributeInt("priority") ?? 0;
-            var spritesheet = node.GetAttributeNamespaceID("spritesheet", defaultNsp);
+
+            SpriteReference? brightSpriteReference = null;
+            var brightNode = node["bright"];
+            if (brightNode != null)
+            {
+                brightSpriteReference = SpriteReference.Parse(brightNode.InnerText, defaultNsp);
+            }
+            SpriteReference? darkSpriteReference = null;
+            var darkNode = node["dark"];
+            if (darkNode != null)
+            {
+                darkSpriteReference = SpriteReference.Parse(darkNode.InnerText, defaultNsp);
+            }
+
             var conditionsNode = node["conditions"];
             XMLConditionList? conditions = null;
             if (conditionsNode != null)
@@ -37,7 +52,8 @@ namespace MVZ2.Metas
             return new MainmenuViewMeta(id)
             {
                 Priority = priority,
-                SpritesheetID = spritesheet,
+                BrightSpriteReference = brightSpriteReference,
+                DarkSpriteReference = darkSpriteReference,
                 Conditions = conditions
             };
         }
