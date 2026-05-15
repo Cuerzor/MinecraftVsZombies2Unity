@@ -54,7 +54,7 @@ namespace MVZ2.Localization
         }
         public bool TryGetLocalizedString(string text, string language, [NotNullWhen(true)] out string? translated, params object?[] args)
         {
-            foreach (var languagePack in loadedLanguagePacks)
+            foreach (var languagePack in loadedResourcePacks)
             {
                 if (languagePack == null)
                     continue;
@@ -77,7 +77,7 @@ namespace MVZ2.Localization
         }
         public bool TryGetLocalizedStringParticular(string context, string text, string language, [NotNullWhen(true)] out string? translated, params object?[] args)
         {
-            foreach (var languagePack in loadedLanguagePacks)
+            foreach (var languagePack in loadedResourcePacks)
             {
                 if (languagePack == null)
                     continue;
@@ -100,7 +100,7 @@ namespace MVZ2.Localization
         }
         public bool TryGetLocalizedStringPlural(string text, string textPlural, long n, string language, [NotNullWhen(true)] out string? translated, params object?[] args)
         {
-            foreach (var languagePack in loadedLanguagePacks)
+            foreach (var languagePack in loadedResourcePacks)
             {
                 if (languagePack == null)
                     continue;
@@ -123,7 +123,7 @@ namespace MVZ2.Localization
         }
         public bool TryGetLocalizedStringParticularPlural(string context, string text, string textPlural, long n, string language, [NotNullWhen(true)] out string? translated, params object?[] args)
         {
-            foreach (var languagePack in loadedLanguagePacks)
+            foreach (var languagePack in loadedResourcePacks)
             {
                 if (languagePack == null)
                     continue;
@@ -151,32 +151,6 @@ namespace MVZ2.Localization
             {
                 return language;
             }
-        }
-        public Sprite GetCurrentLanguageSprite(Sprite sprite)
-        {
-            return GetLocalizedSprite(sprite, GetCurrentLanguage());
-        }
-        public Sprite? GetCurrentLanguageSprite(SpriteReference spriteRef)
-        {
-            return GetLocalizedSprite(spriteRef, GetCurrentLanguage());
-        }
-        public Sprite GetLocalizedSprite(Sprite sprite, string language)
-        {
-            var spriteID = main.ResourceManager.GetSpriteReference(sprite);
-            if (!SpriteReference.IsValid(spriteID))
-                return sprite;
-            return GetLocalizedSprite(spriteID, language) ?? sprite;
-        }
-        public Sprite? GetLocalizedSprite(SpriteReference spriteRef, string language)
-        {
-            foreach (var languagePack in loadedLanguagePacks)
-            {
-                if (languagePack == null)
-                    continue;
-                if (languagePack.TryGetSprite(language, spriteRef, out var localizedSpr))
-                    return localizedSpr;
-            }
-            return null;
         }
         public string GetCurrentLanguage()
         {

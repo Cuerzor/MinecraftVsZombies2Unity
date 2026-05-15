@@ -8,13 +8,11 @@ using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public class LanguageAssets
+    public class LanguageCatalogs
     {
         public string language;
         public Dictionary<string, Catalog> catalogs = new Dictionary<string, Catalog>();
-        public Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
-        public Dictionary<SpriteReference, Sprite> Sprites = new Dictionary<SpriteReference, Sprite>();
-        public LanguageAssets(string lang)
+        public LanguageCatalogs(string lang)
         {
             language = lang;
         }

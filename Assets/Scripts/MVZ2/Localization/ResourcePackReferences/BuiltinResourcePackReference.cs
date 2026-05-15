@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace MVZ2.Localization
 {
-    public class BuiltinLanguagePackReference : LanguagePackReference
+    public class BuiltinResourcePackReference : ResourcePackReference
     {
         public override bool IsBuiltin => true;
         public override bool Equals(object obj)
         {
-            return obj is BuiltinLanguagePackReference;
+            return obj is BuiltinResourcePackReference;
         }
         public override int GetHashCode()
         {
@@ -24,13 +24,13 @@ namespace MVZ2.Localization
         {
             return "builtin";
         }
-        public override async Task<LanguagePackMetadata?> LoadMetadata(LanguageManager manager)
+        public override async Task<ResourcePackMetadata?> LoadMetadata(LanguageManager manager)
         {
             var bytes = await manager.LoadBuiltinBytes();
-            var reader = new LanguagePackMetadataReaderZip(manager.Main);
+            var reader = new ResourcePackMetadataReaderZip(manager.Main);
             return reader.ReadMetadata(GetKey(), bytes);
         }
-        public override async Task<LanguagePack?> LoadLanguagePack(LanguageManager manager)
+        public override async Task<ResourcePack?> LoadPack(LanguageManager manager)
         {
             var bytes = await manager.LoadBuiltinBytes();
             var reader = new LanguagePackReaderZipV0(manager.Main);

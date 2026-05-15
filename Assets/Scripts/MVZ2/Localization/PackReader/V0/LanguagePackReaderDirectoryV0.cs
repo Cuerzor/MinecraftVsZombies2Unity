@@ -4,6 +4,7 @@ using System;
 using System.Globalization;
 using System.IO;
 using MVZ2.Managers;
+using MVZ2.Sprites;
 using MVZ2Logic.Resources;
 using Newtonsoft.Json;
 using NGettext;
@@ -18,11 +19,11 @@ namespace MVZ2.Localization
         {
         }
 
-        public override LanguagePack? ReadPack(string key, string path)
+        public override ResourcePack? ReadPack(string key, string path)
         {
             try
             {
-                var languagePack = new LanguagePack(key);
+                var languagePack = new ResourcePack(key);
                 var assetsDir = Path.Combine(path, "assets");
                 foreach (var nspDir in Directory.EnumerateDirectories(assetsDir))
                 {
@@ -41,15 +42,15 @@ namespace MVZ2.Localization
                 return null;
             }
         }
-        private void LoadPackLanguageDirectroy(string nsp, string lang, string dir, LanguagePack pack, string key)
+        private void LoadPackLanguageDirectroy(string nsp, string lang, string dir, ResourcePack pack, string key)
         {
-            var asset = pack.GetOrCreateLanguageAsset(lang);
+            var catalogs = pack.GetOrCreateLanguageCatalogs(lang);
             // 加载文本
             foreach (var moFile in Directory.EnumerateFiles(dir, "*.mo"))
             {
                 var filenameWithoutExt = Path.GetFileNameWithoutExtension(moFile);
                 var catalog = LoadPackMOFileDirectory(moFile, lang);
-                asset.catalogs.Add(filenameWithoutExt, catalog);
+                catalogs.catalogs.Add(filenameWithoutExt, catalog);
             }
             // 加载贴图
             var manifestPath = Path.Combine(dir, SPRITE_MANIFEST_FILENAME);
@@ -60,7 +61,7 @@ namespace MVZ2.Localization
                 var manifestJson = manifestReader.ReadToEnd();
 
                 var manifest = JsonConvert.DeserializeObject<LocalizedSpriteManifest>(manifestJson);
-                LoadLocalizedSpriteManifestDirectory(nsp, dir, asset, manifest, key);
+                LoadLocalizedSpriteManifestDirectory(nsp, lang, dir, pack, manifest, key);
             }
         }
         private Catalog LoadPackMOFileDirectory(string moFile, string lang)
@@ -75,7 +76,7 @@ namespace MVZ2.Localization
                 }
             }
         }
-        private void LoadLocalizedSpriteManifestDirectory(string nsp, string dir, LanguageAssets asset, LocalizedSpriteManifest? manifest, string key)
+        private void LoadLocalizedSpriteManifestDirectory(string nsp, string lang, string dir, ResourcePack pack, LocalizedSpriteManifest? manifest, string key)
         {
             if (manifest == null)
                 return;
@@ -87,15 +88,17 @@ namespace MVZ2.Localization
 
                     if (!File.Exists(texturePath) || string.IsNullOrEmpty(localizedSprite.name))
                         continue;
-                    if (!asset.textures.TryGetValue(texturePath, out var texture))
+                    if (!pack.textures.TryGetValue(texturePath, out var texture))
                     {
                         texture = ReadTexture2DDirectory(texturePath);
-                        asset.textures.Add(texturePath, texture);
+                        pack.textures.Add(texturePath, texture);
                     }
 
                     var resID = new NamespaceID(nsp, localizedSprite.name);
                     var sprite = CreateSprite(resID, texture, localizedSprite, key);
-                    asset.Sprites.Add(new SpriteReference(resID), sprite);
+                    var spriteRef = new SpriteReference(resID);
+                    var spriteKey = new SpriteLookupKey(spriteRef, SpriteHelper.GetLanguageSpriteTag(lang));
+                    pack.AddSprite(spriteKey, sprite);
                 }
             }
             if (manifest.spritesheets != null)
@@ -106,10 +109,10 @@ namespace MVZ2.Localization
 
                     if (!File.Exists(texturePath) || string.IsNullOrEmpty(localizedSpritesheet.name))
                         continue;
-                    if (!asset.textures.TryGetValue(texturePath, out var texture))
+                    if (!pack.textures.TryGetValue(texturePath, out var texture))
                     {
                         texture = ReadTexture2DDirectory(texturePath);
-                        asset.textures.Add(texturePath, texture);
+                        pack.textures.Add(texturePath, texture);
                     }
 
                     var resID = new NamespaceID(nsp, localizedSpritesheet.name);
@@ -117,7 +120,8 @@ namespace MVZ2.Localization
                     for (int i = 0; i < spritesheet.Length; i++)
                     {
                         var spriteRef = new SpriteReference(resID, i);
-                        asset.Sprites.Add(spriteRef, spritesheet[i]);
+                        var spriteKey = new SpriteLookupKey(spriteRef, SpriteHelper.GetLanguageSpriteTag(lang));
+                        pack.AddSprite(spriteKey, spritesheet[i]);
                     }
                 }
             }

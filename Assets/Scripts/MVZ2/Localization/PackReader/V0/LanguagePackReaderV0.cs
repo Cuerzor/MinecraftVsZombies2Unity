@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public abstract class LanguagePackReaderV0 : LanguagePackReader
+    public abstract class LanguagePackReaderV0 : ResourcePackReader
     {
         protected LanguagePackReaderV0(MainManager main) : base(main)
         {

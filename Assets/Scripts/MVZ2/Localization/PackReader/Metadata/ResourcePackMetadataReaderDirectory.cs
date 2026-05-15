@@ -8,13 +8,13 @@ using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public class LanguagePackMetadataReaderDirectory : LanguagePackMetadataReader
+    public class ResourcePackMetadataReaderDirectory : ResourcePackMetadataReader
     {
-        public LanguagePackMetadataReaderDirectory(MainManager main) : base(main)
+        public ResourcePackMetadataReaderDirectory(MainManager main) : base(main)
         {
         }
 
-        public override LanguagePackMetadata? ReadMetadata(string key, string path)
+        public override ResourcePackMetadata? ReadMetadata(string key, string path)
         {
             var metadataPath = Path.Combine(path, METADATA_FILENAME);
             if (!File.Exists(metadataPath))
@@ -24,7 +24,7 @@ namespace MVZ2.Localization
                 using var metadataStream = File.Open(metadataPath, FileMode.Open);
                 using var metadataReader = new StreamReader(metadataStream);
                 var json = metadataReader.ReadToEnd();
-                var metadata = JsonConvert.DeserializeObject<LanguagePackMetadata>(json);
+                var metadata = JsonConvert.DeserializeObject<ResourcePackMetadata>(json);
                 if (metadata != null)
                 {
                     var iconPath = Path.Combine(path, ICON_FILENAME);

@@ -7,13 +7,13 @@ using UnityEngine;
 namespace MVZ2.Localization
 {
     [Serializable]
-    public class LanguagePackMetadata
+    public class ResourcePackMetadata
     {
         public string? name;
         public string? author;
         public string? description;
         public int dataVersion;
-        public LanguagePackMetadataVersion? version;
+        public ResourcePackMetadataVersion? version;
         [JsonIgnore]
         public Sprite icon = null!;
     }

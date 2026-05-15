@@ -278,12 +278,12 @@ namespace MVZ2.Addons
             var disabled = GetDisabledReferences();
             var disabledViewDatas = disabled
                 .Select(r => Main.LanguageManager.GetLanguagePackMetadata(r))
-                .OfType<LanguagePackMetadata>()
+                .OfType<ResourcePackMetadata>()
                 .Select(p => GetLanguagePackViewData(p))
                 .ToArray();
             var enabledViewDatas = enabledReferences
                 .Select(r => Main.LanguageManager.GetLanguagePackMetadata(r))
-                .OfType<LanguagePackMetadata>()
+                .OfType<ResourcePackMetadata>()
                 .Select(p => GetLanguagePackViewData(p))
                 .ToArray();
             ui.SetDisabledLanguagePacks(disabledViewDatas);
@@ -302,7 +302,7 @@ namespace MVZ2.Addons
             ui.SetButtonInteractable(LanguagePacksUI.Buttons.MoveUp, enabled && selected && index > 0);
             ui.SetButtonInteractable(LanguagePacksUI.Buttons.MoveDown, enabled && selected && index < enabledReferences.Count - 1);
         }
-        private IEnumerable<LanguagePackReference> GetDisabledReferences()
+        private IEnumerable<ResourcePackReference> GetDisabledReferences()
         {
             return references.Except(enabledReferences);
         }
@@ -310,7 +310,7 @@ namespace MVZ2.Addons
         {
             return overridedFile || !enabledReferences.SequenceEqual(Main.LanguageManager.GetEnabledLanguagePackList());
         }
-        private LanguagePackReference GetLanguagePackReferenceByUI(bool enabled, int index)
+        private ResourcePackReference GetLanguagePackReferenceByUI(bool enabled, int index)
         {
             if (enabled)
             {
@@ -322,7 +322,7 @@ namespace MVZ2.Addons
                 return disabled.ElementAtOrDefault(index);
             }
         }
-        private int GetItemUIIndex(bool enabled, LanguagePackReference reference)
+        private int GetItemUIIndex(bool enabled, ResourcePackReference reference)
         {
             if (enabled)
             {
@@ -334,7 +334,7 @@ namespace MVZ2.Addons
                 return Array.IndexOf(disabled, reference);
             }
         }
-        private LanguagePackViewData GetLanguagePackViewData(LanguagePackMetadata metadata)
+        private LanguagePackViewData GetLanguagePackViewData(ResourcePackMetadata metadata)
         {
             return new LanguagePackViewData()
             {
@@ -365,9 +365,9 @@ namespace MVZ2.Addons
         [SerializeField]
         private float maxRefreshInterval = 1;
         private bool overridedFile;
-        private LanguagePackReference? selectedLanguagePack;
-        private List<LanguagePackReference> enabledReferences = new List<LanguagePackReference>();
-        private List<LanguagePackReference> references = new List<LanguagePackReference>();
+        private ResourcePackReference? selectedLanguagePack;
+        private List<ResourcePackReference> enabledReferences = new List<ResourcePackReference>();
+        private List<ResourcePackReference> references = new List<ResourcePackReference>();
         private float refreshInterval;
 
     }

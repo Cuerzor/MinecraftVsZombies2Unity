@@ -18,10 +18,10 @@ using PVZEngine;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.XR;
+using static UnityEditor.PlayerSettings.Switch;
 
 namespace MVZ2.Localization
 {
-    public delegate bool TryGetTranslation<in TKey, TResult>(LanguagePack pack, TKey key, out TResult result);
     public partial class LanguageManager
     {
         public async Task InitLanguagePacks()
@@ -72,7 +72,7 @@ namespace MVZ2.Localization
             }
             return changed;
         }
-        public async Task ReloadLanguagePacks(LanguagePackReference[] enabled)
+        public async Task ReloadLanguagePacks(ResourcePackReference[] enabled)
         {
             enabledLanguagePacks.Clear();
             enabledLanguagePacks.AddRange(enabled.Where(r => languagePackMetadatas.Keys.Contains(r)));
@@ -107,7 +107,7 @@ namespace MVZ2.Localization
                 return false;
             try
             {
-                var reference = new ExternalLanguagePackReference(sourcePath, false);
+                var reference = new ExternalResourcePackReference(sourcePath, false);
                 var metadata = await reference.LoadMetadata(this);
                 return metadata != null;
             }
@@ -119,21 +119,21 @@ namespace MVZ2.Localization
         #endregion
 
         #region 导出
-        public async Task<bool> ExportLanguagePack(LanguagePackReference reference, string destPath)
+        public async Task<bool> ExportLanguagePack(ResourcePackReference reference, string destPath)
         {
             return await reference.Export(this, destPath);
         }
         #endregion
 
         #region 删除
-        public bool DeleteLanguagePack(LanguagePackReference reference)
+        public bool DeleteLanguagePack(ResourcePackReference reference)
         {
             return reference.Delete();
         }
         #endregion
 
         #region 语言包引用/元数据
-        public LanguagePackMetadata? GetLanguagePackMetadata(LanguagePackReference reference)
+        public ResourcePackMetadata? GetLanguagePackMetadata(ResourcePackReference reference)
         {
             if (languagePackMetadatas.TryGetValue(reference, out var metadata))
             {
@@ -141,13 +141,13 @@ namespace MVZ2.Localization
             }
             return null;
         }
-        public LanguagePackReference[] GetAllLanguagePackReferences()
+        public ResourcePackReference[] GetAllLanguagePackReferences()
         {
             return languagePackMetadatas.Keys.ToArray();
         }
-        private LanguagePackReference[] EvaluateAllLanguagePackReferences()
+        private ResourcePackReference[] EvaluateAllLanguagePackReferences()
         {
-            List<LanguagePackReference> results = new List<LanguagePackReference>();
+            List<ResourcePackReference> results = new List<ResourcePackReference>();
             results.Add(builtinLanguagePackRef);
 
             // 外部引用。
@@ -157,12 +157,12 @@ namespace MVZ2.Localization
                 // Zip语言包
                 foreach (var zip in Directory.EnumerateFiles(dir, "*.zip", SearchOption.TopDirectoryOnly))
                 {
-                    results.Add(new ExternalLanguagePackReference(zip, false));
+                    results.Add(new ExternalResourcePackReference(zip, false));
                 }
                 // 文件夹语言包
                 foreach (var langDir in Directory.EnumerateDirectories(dir))
                 {
-                    results.Add(new ExternalLanguagePackReference(langDir, true));
+                    results.Add(new ExternalResourcePackReference(langDir, true));
                 }
             }
             return results.ToArray();
@@ -171,7 +171,7 @@ namespace MVZ2.Localization
         {
             return Path.Combine(Application.persistentDataPath, externalLangaugePackDir);
         }
-        private async Task LoadLanguagePackMetadata(LanguagePackReference reference)
+        private async Task LoadLanguagePackMetadata(ResourcePackReference reference)
         {
             try
             {
@@ -184,7 +184,7 @@ namespace MVZ2.Localization
                 Debug.LogError($"加载语言包引用{reference}失败：{e}");
             }
         }
-        private void RemoveLanguagePackMetadata(LanguagePackReference reference)
+        private void RemoveLanguagePackMetadata(ResourcePackReference reference)
         {
             if (reference == null)
                 return;
@@ -210,7 +210,7 @@ namespace MVZ2.Localization
                     using var stream = File.Open(path, FileMode.Open);
                     using var reader = new StreamReader(stream);
                     var json = reader.ReadToEnd();
-                    var packList = JsonConvert.DeserializeObject<EnabledLanguagePackList>(json);
+                    var packList = JsonConvert.DeserializeObject<EnabledResourcePackList>(json);
                     if (packList != null)
                     {
                         foreach (var key in packList.enabled)
@@ -238,7 +238,7 @@ namespace MVZ2.Localization
             try
             {
                 var path = Path.Combine(Application.persistentDataPath, enabledPackListFileName);
-                var list = new EnabledLanguagePackList();
+                var list = new EnabledResourcePackList();
                 foreach (var reference in enabledLanguagePacks)
                 {
                     list.enabled.Add(reference.GetKey());
@@ -253,7 +253,7 @@ namespace MVZ2.Localization
                 Debug.LogError($"保存启用的语言包列表失败：{e}");
             }
         }
-        public LanguagePackReference[] GetEnabledLanguagePackList()
+        public ResourcePackReference[] GetEnabledLanguagePackList()
         {
             return enabledLanguagePacks.ToArray();
         }
@@ -265,15 +265,17 @@ namespace MVZ2.Localization
             for (int i = 0; i < enabledLanguagePacks.Count; i++)
             {
                 var reference = enabledLanguagePacks[i];
-                var languagePack = await reference.LoadLanguagePack(this);
-                if (languagePack == null)
+                var priority = enabledLanguagePacks.Count - i;
+                var pack = await reference.LoadPack(this);
+                if (pack == null)
                     continue;
-                LoadLanguagePack(languagePack, enabledLanguagePacks.Count - i);
+                pack.Priority = priority;
+                LoadLanguagePack(pack);
             }
         }
-        public void LoadLanguagePack(LanguagePack pack, int priority)
+        public void LoadLanguagePack(ResourcePack pack)
         {
-            loadedLanguagePacks.Add(pack);
+            loadedResourcePacks.Add(pack);
             foreach (var lang in pack.GetLanguages())
             {
                 if (!allLanguages.Contains(lang))
@@ -282,62 +284,44 @@ namespace MVZ2.Localization
                 }
             }
             // 添加Sprite覆盖。
-            AddSpriteProvider(pack, priority);
+            AddSpriteProvider(pack);
         }
-        private void AddSpriteProvider(LanguagePack pack, int priority)
+        private void AddSpriteProvider(ResourcePack pack)
         {
-            var provider = new LanguagePackSpriteProvider() { Priority = priority };
-            pack.Provider = provider;
-            foreach (var assets in pack.GetAllLanguageAssets())
-            {
-                var language = assets.language;
-                foreach (var pair in assets.Sprites)
-                {
-                    var tag = SpriteHelper.GetLanguageSpriteTag(language);
-                    provider.Register(new SpriteLookupKey(pair.Key, tag), pair.Value);
-                }
-            }
-            Main.ResourceManager.AddSpriteProvider(provider);
+            Main.ResourceManager.AddSpriteProvider(pack);
         }
         #endregion
 
         #region 卸载语言包
         public void UnloadLanguagePacks()
         {
-            foreach (var enabledLanguagePack in loadedLanguagePacks)
+            foreach (var enabledLanguagePack in loadedResourcePacks)
             {
                 UnloadLanguagePack(enabledLanguagePack);
             }
 
             allLanguages.Clear();
             allLanguages.Add(SOURCE_LANGUAGE);
-            loadedLanguagePacks.Clear();
+            loadedResourcePacks.Clear();
         }
-        public void UnloadLanguagePack(LanguagePack pack)
+        public void UnloadLanguagePack(ResourcePack pack)
         {
             foreach (var lang in pack.GetLanguages())
             {
-                var assets = pack.GetLanguageAssets(lang);
-                if (assets == null)
-                    continue;
-                foreach (var pair in assets.Sprites)
+                foreach (var pair in pack.sprites)
                 {
                     main.ResourceManager.RemoveGeneratedSprite(pair.Value, pair.Key.ToString(), GetLanguagePackSpriteCategory(pack.Key));
                 }
-                foreach (var pair in assets.textures)
+                foreach (var pair in pack.textures)
                 {
                     main.ResourceManager.RemoveGeneratedTexture(pair.Value);
                 }
             }
             RemoveSpriteProvider(pack);
         }
-        private void RemoveSpriteProvider(LanguagePack pack)
+        private void RemoveSpriteProvider(ResourcePack pack)
         {
-            if (pack.Provider != null)
-            {
-                Main.ResourceManager.RemoveSpriteProvider(pack.Provider);
-            }
-            pack.Provider = null;
+            Main.ResourceManager.RemoveSpriteProvider(pack);
         }
         #endregion
 
@@ -346,7 +330,7 @@ namespace MVZ2.Localization
         {
             return dataVersion < LATEST_DATA_VERSION;
         }
-        public bool HasOutdatedEnabledPacks(IEnumerable<LanguagePackReference> references)
+        public bool HasOutdatedEnabledPacks(IEnumerable<ResourcePackReference> references)
         {
             foreach (var reference in references)
             {
@@ -367,9 +351,9 @@ namespace MVZ2.Localization
         private string externalLangaugePackDir = "language_packs";
         [SerializeField]
         private string enabledPackListFileName = "language_packs.json";
-        private Dictionary<LanguagePackReference, LanguagePackMetadata> languagePackMetadatas = new Dictionary<LanguagePackReference, LanguagePackMetadata>();
-        private List<LanguagePackReference> enabledLanguagePacks = new List<LanguagePackReference>();
-        private List<LanguagePack> loadedLanguagePacks = new List<LanguagePack>();
-        private BuiltinLanguagePackReference builtinLanguagePackRef = new BuiltinLanguagePackReference();
+        private Dictionary<ResourcePackReference, ResourcePackMetadata> languagePackMetadatas = new Dictionary<ResourcePackReference, ResourcePackMetadata>();
+        private List<ResourcePackReference> enabledLanguagePacks = new List<ResourcePackReference>();
+        private List<ResourcePack> loadedResourcePacks = new List<ResourcePack>();
+        private BuiltinResourcePackReference builtinLanguagePackRef = new BuiltinResourcePackReference();
     }
 }

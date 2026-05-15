@@ -11,23 +11,23 @@ using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public class LanguagePackMetadataReaderZip: LanguagePackMetadataReader
+    public class ResourcePackMetadataReaderZip: ResourcePackMetadataReader
     {
-        public LanguagePackMetadataReaderZip(MainManager main) : base(main)
+        public ResourcePackMetadataReaderZip(MainManager main) : base(main)
         {
         }
 
-        public override LanguagePackMetadata? ReadMetadata(string key, string path)
+        public override ResourcePackMetadata? ReadMetadata(string key, string path)
         {
             using var stream = File.Open(path, FileMode.Open);
             return ReadMetadata(key, stream);
         }
-        public LanguagePackMetadata? ReadMetadata(string key, byte[] bytes)
+        public ResourcePackMetadata? ReadMetadata(string key, byte[] bytes)
         {
             using var memory = new MemoryStream(bytes);
             return ReadMetadata(key, memory);
         }
-        public LanguagePackMetadata? ReadMetadata(string key, Stream stream)
+        public ResourcePackMetadata? ReadMetadata(string key, Stream stream)
         {
             try
             {
@@ -38,7 +38,7 @@ namespace MVZ2.Localization
                     return null;
 
                 var json = metadataEntry.ReadString(Encoding.UTF8);
-                var metadata = JsonConvert.DeserializeObject<LanguagePackMetadata>(json);
+                var metadata = JsonConvert.DeserializeObject<ResourcePackMetadata>(json);
                 if (metadata != null)
                 {
                     var iconEntry = archive.GetEntry(ICON_FILENAME);

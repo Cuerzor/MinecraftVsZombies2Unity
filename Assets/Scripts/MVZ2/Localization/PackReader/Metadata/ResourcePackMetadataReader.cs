@@ -4,13 +4,13 @@ using MVZ2.Managers;
 
 namespace MVZ2.Localization
 {
-    public abstract class LanguagePackMetadataReader
+    public abstract class ResourcePackMetadataReader
     {
-        protected LanguagePackMetadataReader(MainManager main)
+        protected ResourcePackMetadataReader(MainManager main)
         {
             Main = main;
         }
-        public abstract LanguagePackMetadata? ReadMetadata(string key, string path);
+        public abstract ResourcePackMetadata? ReadMetadata(string key, string path);
         public MainManager Main { get; private set; }
         public const string METADATA_FILENAME = "pack.json";
         public const string ICON_FILENAME = "pack.png";

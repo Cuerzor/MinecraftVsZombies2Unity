@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace MVZ2.Localization
 {
-    public class ExternalLanguagePackReference : LanguagePackReference
+    public class ExternalResourcePackReference : ResourcePackReference
     {
         public string path;
         public bool isDirectory;
 
-        public ExternalLanguagePackReference(string path, bool isDirectory)
+        public ExternalResourcePackReference(string path, bool isDirectory)
         {
             this.path = path;
             this.isDirectory = isDirectory;
@@ -19,7 +19,7 @@ namespace MVZ2.Localization
 
         public override bool Equals(object obj)
         {
-            return obj is ExternalLanguagePackReference other &&
+            return obj is ExternalResourcePackReference other &&
                 path == other.path &&
                 isDirectory == other.isDirectory;
         }
@@ -42,14 +42,14 @@ namespace MVZ2.Localization
         {
             return Path.GetFileName(path);
         }
-        public override Task<LanguagePackMetadata?> LoadMetadata(LanguageManager manager)
+        public override Task<ResourcePackMetadata?> LoadMetadata(LanguageManager manager)
         {
-            LanguagePackMetadataReader reader = isDirectory ? new LanguagePackMetadataReaderDirectory(manager.Main) : new LanguagePackMetadataReaderZip(manager.Main);
+            ResourcePackMetadataReader reader = isDirectory ? new ResourcePackMetadataReaderDirectory(manager.Main) : new ResourcePackMetadataReaderZip(manager.Main);
             return Task.FromResult(reader.ReadMetadata(GetKey(), path));
         }
-        public override Task<LanguagePack?> LoadLanguagePack(LanguageManager manager)
+        public override Task<ResourcePack?> LoadPack(LanguageManager manager)
         {
-            LanguagePackReader reader = isDirectory ? new LanguagePackReaderDirectoryV0(manager.Main) : new LanguagePackReaderZipV0(manager.Main);
+            ResourcePackReader reader = isDirectory ? new LanguagePackReaderDirectoryV0(manager.Main) : new LanguagePackReaderZipV0(manager.Main);
             return Task.FromResult(reader.ReadPack(GetKey(), path));
         }
         public override Task<bool> Export(LanguageManager manager, string destPath)

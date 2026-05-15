@@ -4,11 +4,11 @@ using System.Threading.Tasks;
 
 namespace MVZ2.Localization
 {
-    public abstract class LanguagePackReference
+    public abstract class ResourcePackReference
     {
         public virtual bool IsBuiltin => false;
-        public abstract Task<LanguagePackMetadata?> LoadMetadata(LanguageManager manager);
-        public abstract Task<LanguagePack?> LoadLanguagePack(LanguageManager manager);
+        public abstract Task<ResourcePackMetadata?> LoadMetadata(LanguageManager manager);
+        public abstract Task<ResourcePack?> LoadPack(LanguageManager manager);
         public abstract Task<bool> Export(LanguageManager manager, string destPath);
         public abstract bool Delete();
         public abstract string GetKey();

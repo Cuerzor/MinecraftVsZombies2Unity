@@ -5,7 +5,7 @@ using System;
 namespace MVZ2.Localization
 {
     [Serializable]
-    public class LanguagePackMetadataVersion
+    public class ResourcePackMetadataVersion
     {
         public int major;
         public int minor;

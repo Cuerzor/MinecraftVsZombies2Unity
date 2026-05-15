@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace MVZ2.Localization
 {
-    public class EnabledLanguagePackList
+    public class EnabledResourcePackList
     {
         public List<string> enabled = new List<string>();
     }

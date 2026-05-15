@@ -4,9 +4,9 @@ using MVZ2.Managers;
 
 namespace MVZ2.Localization
 {
-    public abstract class LanguagePackReader
+    public abstract class ResourcePackReader
     {
-        protected LanguagePackReader(MainManager main)
+        protected ResourcePackReader(MainManager main)
         {
             Main = main;
         }
@@ -14,7 +14,7 @@ namespace MVZ2.Localization
         {
             return Main.LanguageManager.GetLanguagePackSpriteCategory(key);
         }
-        public abstract LanguagePack? ReadPack(string key, string path);
+        public abstract ResourcePack? ReadPack(string key, string path);
         public MainManager Main { get; private set; }
     }
 }

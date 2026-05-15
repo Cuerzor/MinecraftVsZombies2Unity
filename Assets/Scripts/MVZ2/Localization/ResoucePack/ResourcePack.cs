@@ -5,39 +5,43 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using MVZ2.Sprites;
 using MVZ2Logic.Resources;
-using Newtonsoft.Json;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public class LanguagePack
+    public class ResourcePack : ISpriteProvider
     {
-        public LanguagePack(string key)
+        public ResourcePack(string key)
         {
             Key = key;
         }
-        public LanguageAssets GetOrCreateLanguageAsset(string lang)
+        #region 语言资源
+        public LanguageCatalogs GetOrCreateLanguageCatalogs(string lang)
         {
-            var asset = assets.FirstOrDefault(a => a.language == lang);
+            var asset = GetLanguageCatalogs(lang);
             if (asset == null)
             {
-                asset = new LanguageAssets(lang);
-                assets.Add(asset);
+                asset = new LanguageCatalogs(lang);
+                catalogs.Add(lang, asset);
             }
             return asset;
         }
-        public LanguageAssets GetLanguageAssets(string lang)
+        public LanguageCatalogs? GetLanguageCatalogs(string lang)
         {
-            return assets.FirstOrDefault(a => a.language == lang);
+            return this.catalogs.TryGetValue(lang, out var catalogs) ? catalogs : null;
         }
-        public LanguageAssets[] GetAllLanguageAssets()
+        public LanguageCatalogs[] GetAllLanguageCatalogs()
         {
-            return assets.ToArray();
+            return catalogs.Values.ToArray();
         }
+        #endregion
+
+        #region 翻译文本
         public bool TryGetString(string language, string text, [NotNullWhen(true)] out string? result, params object?[] args)
         {
             result = null;
-            var asset = assets.FirstOrDefault(a => a.language == language);
+            var asset = GetLanguageCatalogs(language);
             if (asset == null)
                 return false;
             foreach (var catalog in asset.catalogs.Values)
@@ -53,7 +57,7 @@ namespace MVZ2.Localization
         public bool TryGetStringParticular(string language, string context, string text, [NotNullWhen(true)] out string? result, params object?[] args)
         {
             result = null;
-            var asset = assets.FirstOrDefault(a => a.language == language);
+            var asset = GetLanguageCatalogs(language);
             if (asset == null)
                 return false;
             foreach (var catalog in asset.catalogs.Values)
@@ -69,7 +73,7 @@ namespace MVZ2.Localization
         public bool TryGetStringPlural(string language, string text, string textPlural, long n, [NotNullWhen(true)] out string? result, params object?[] args)
         {
             result = null;
-            var asset = assets.FirstOrDefault(a => a.language == language);
+            var asset = GetLanguageCatalogs(language);
             if (asset == null)
                 return false;
             foreach (var catalog in asset.catalogs.Values)
@@ -85,7 +89,7 @@ namespace MVZ2.Localization
         public bool TryGetStringParticularPlural(string language, string context, string text, string textPlural, long n, [NotNullWhen(true)] out string? result, params object?[] args)
         {
             result = null;
-            var asset = assets.FirstOrDefault(a => a.language == language);
+            var asset = GetLanguageCatalogs(language);
             if (asset == null)
                 return false;
             foreach (var catalog in asset.catalogs.Values)
@@ -98,23 +102,47 @@ namespace MVZ2.Localization
             }
             return false;
         }
-        public bool TryGetSprite(string language, SpriteReference id, [NotNullWhen(true)] out Sprite? spr)
+        #endregion
+
+        #region Texture2D
+        public void AddTexture2D(string path, Texture2D texture2D)
         {
-            spr = null;
-            foreach (var asset in assets)
-            {
-                if (asset.language != language)
-                    continue;
-                return asset.Sprites.TryGetValue(id, out spr);
-            }
-            return false;
+            textures.Add(path, texture2D);
         }
+        public bool TryGetTexture2D(string path, Texture2D texture2D)
+        {
+            return textures.TryGetValue(path, out texture2D);
+        }
+        #endregion
+
+        #region Sprite
+        public void AddSprite(SpriteLookupKey id, Sprite spr)
+        {
+            sprites.Add(id, spr);
+        }
+        public bool TryGetSprite(SpriteLookupKey id, [NotNullWhen(true)] out Sprite? spr)
+        {
+            return sprites.TryGetValue(id, out spr);
+        }
+        #endregion
+
+        #region 获取语言
         public string[] GetLanguages()
         {
-            return assets.Select(a => a.language).ToArray();
+            return catalogs.Keys.ToArray();
         }
-        private List<LanguageAssets> assets = new List<LanguageAssets>();
+        #endregion
+        bool ISpriteProvider.TryGet(SpriteLookupKey spriteReference, out Sprite? sprite)
+        {
+            return TryGetSprite(spriteReference, out sprite);
+        }
+
+
+        private Dictionary<string, LanguageCatalogs> catalogs = new Dictionary<string, LanguageCatalogs>();
+        public Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
+        public Dictionary<SpriteLookupKey, Sprite> sprites = new Dictionary<SpriteLookupKey, Sprite>();
         public string Key { get; private set; }
-        public ISpriteProvider? Provider { get; set; }
+        public int Priority { get; set; }
+
     }
 }
