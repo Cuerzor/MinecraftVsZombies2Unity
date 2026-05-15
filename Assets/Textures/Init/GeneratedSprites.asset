@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a99f3edf571240643b7524eb0de8f059, type: 3}
   m_Name: GeneratedSprites
   m_EditorClassIdentifier: 
+  textures: []
   categories: []

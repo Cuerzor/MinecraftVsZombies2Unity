@@ -34,7 +34,6 @@ namespace MVZ2.Editor
             //var directory = Path.Combine(Application.dataPath, "GameContent", "Sprites");
             var filePaths = Directory.GetFiles(directory, "*.png", SearchOption.AllDirectories);
             spriteManifest.spriteEntries.Clear();
-            spriteManifest.spritesheetEntries.Clear();
 
             var factories = new SpriteDataProviderFactories();
             factories.Init();
@@ -43,30 +42,30 @@ namespace MVZ2.Editor
             {
                 var relativePath = Path.GetRelativePath(directory, filePath);
                 var splitPath = relativePath.Split('/', '\\');
-                bool isSheet = splitPath[0] == "spritesheets";
                 bool isInitSprite = splitPath.Contains("init");
                 if (isInitSprite != init)
                     continue;
                 var resourceDirectory = string.Join('/', splitPath.Skip(1).SkipLast(1));
                 var resourceName = Path.Combine(resourceDirectory, Path.GetFileNameWithoutExtension(filePath)).Replace("\\", "/");
+
+                // 从资源名中拆出资源标签。
+                var splitResourceNames = resourceName.Split('@');
+                resourceName = splitResourceNames[0];
+                var tags = splitResourceNames.Skip(1);
+
                 var assetPath = AssetsMenu.FileToAssetPath(filePath);
                 var sprites = GetOrderedSpriteSheet(assetPath, factories);
-                if (isSheet)
+                for (int i = 0; i < sprites.Length; i++)
                 {
-                    spriteManifest.spritesheetEntries.Add(new SpriteSheetEntry()
+                    var sprite = sprites[i];
+                    var entry = new SpriteEntry()
                     {
                         name = resourceName,
-                        spritesheet = sprites.ToArray()
-                    });
-                }
-                else if (sprites.Length == 1)
-                {
-                    var sprite = sprites[0];
-                    spriteManifest.spriteEntries.Add(new SpriteEntry()
-                    {
-                        name = resourceName,
-                        sprite = sprite
-                    });
+                        index = i,
+                        sprite = sprite,
+                    };
+                    entry.tags.AddRange(tags);
+                    spriteManifest.spriteEntries.Add(entry);
                 }
                 EditorUtility.SetDirty(spriteManifest);
             }

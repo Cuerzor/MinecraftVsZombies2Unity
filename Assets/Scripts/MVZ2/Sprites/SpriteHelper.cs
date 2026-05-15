@@ -101,5 +101,10 @@ namespace MVZ2.Sprites
             pixel.b = adjacent.b;
             return true;
         }
+        public static string GetLanguageSpriteTag(string languageCode)
+        {
+            return languageCode;
+        }
+        public const string SPRITE_TAG_CENSORED = "censored";
     }
 }

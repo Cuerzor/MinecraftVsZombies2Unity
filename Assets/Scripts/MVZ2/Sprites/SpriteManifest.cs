@@ -2,6 +2,8 @@
 
 using System;
 using System.Collections.Generic;
+using MVZ2Logic.Resources;
+using PVZEngine.Base;
 using UnityEngine;
 
 namespace MVZ2.Sprites
@@ -9,19 +11,14 @@ namespace MVZ2.Sprites
     [CreateAssetMenu(fileName = "NewSpriteManifest", menuName = "MVZ2/Sprite Manifest", order = 0)]
     public class SpriteManifest : ScriptableObject
     {
-        public List<SpriteEntry>? spriteEntries;
-        public List<SpriteSheetEntry>? spritesheetEntries;
+        public List<SpriteEntry> spriteEntries = new List<SpriteEntry>();
     }
     [Serializable]
     public class SpriteEntry
     {
         public string? name;
+        public int index;
         public Sprite? sprite;
-    }
-    [Serializable]
-    public class SpriteSheetEntry
-    {
-        public string? name;
-        public Sprite[]? spritesheet;
+        public List<string> tags = new List<string>();
     }
 }

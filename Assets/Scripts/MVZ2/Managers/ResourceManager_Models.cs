@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MVZ2.Metas;
 using MVZ2Logic.Models;
+using MVZ2Logic.Resources;
 using PVZEngine;
 using PVZEngine.Models;
 using PVZEngine.Tools.Unity;
@@ -129,7 +130,8 @@ namespace MVZ2.Managers
                     Debug.LogWarning($"Model prefab {metaID} is missing.");
                 }
                 modResource.ModelIcons.Add(metaPath, modelSprite);
-                modResource.Sprites.Add(spritePath, modelSprite);
+                var spriteRef = new SpriteReference(new NamespaceID(modNamespace, spritePath));
+                RegisterSprite(spriteRef, modelSprite);
 
                 progress.SetProgress(1 / (float)count, metaID.ToString());
                 yieldCounter++;

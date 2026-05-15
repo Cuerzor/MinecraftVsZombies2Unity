@@ -30,9 +30,12 @@ namespace MVZ2.Localization
             var sprites = Keys;
             if (sprites == null)
                 return;
+            var main = MainManager.Instance;
+            var context = main.GetSpriteVariantContenxt();
+            context.languageCode = language;
             for (int i = 0; i < sprites.Length; i++)
             {
-                part.SetSprite(i, MainManager.Instance.GetFinalSprite(sprites[i], language));
+                part.SetSprite(i, MainManager.Instance.GetFinalSprite(sprites[i], context));
             }
         }
     }

@@ -10,15 +10,9 @@ namespace MVZ2Logic.Resources
     [Serializable]
     public class SpriteReference
     {
-        public SpriteReference(NamespaceID id)
+        public SpriteReference(NamespaceID id, int index = 0)
         {
             this.id = id;
-            valid = CheckValidation();
-        }
-        public SpriteReference(NamespaceID id, int index)
-        {
-            this.id = id;
-            isSheet = true;
             this.index = index;
             valid = CheckValidation();
         }
@@ -70,6 +64,16 @@ namespace MVZ2Logic.Resources
                 return false;
             return true;
         }
+        public SpriteReference AddPrefix(string prefix)
+        {
+            var newID = ID.AddPrefix(prefix);
+            return new SpriteReference(newID, Index);
+        }
+        public SpriteReference AddSuffix(string suffix)
+        {
+            var newID = ID.AddSuffix(suffix);
+            return new SpriteReference(newID, Index);
+        }
         private bool CheckValidation()
         {
             if (!NamespaceID.IsValid(ID))
@@ -81,7 +85,6 @@ namespace MVZ2Logic.Resources
         public override int GetHashCode()
         {
             var hash = id.GetHashCode();
-            hash = hash * 31 + IsSheet.GetHashCode();
             hash = hash * 31 + Index.GetHashCode();
             return hash;
         }
@@ -89,13 +92,13 @@ namespace MVZ2Logic.Resources
         {
             if (obj is SpriteReference otherRef)
             {
-                return otherRef.id == id && otherRef.IsSheet == IsSheet && otherRef.Index == Index;
+                return otherRef.id == id && otherRef.Index == Index;
             }
             return base.Equals(obj);
         }
         public override string ToString()
         {
-            return $"{id}{(IsSheet ? $"[{Index}]" : string.Empty)}";
+            return $"{id}{(Index >= 1 ? $"[{Index}]" : string.Empty)}";
         }
         public static bool operator ==(SpriteReference? lhs, SpriteReference? rhs)
         {
@@ -110,13 +113,10 @@ namespace MVZ2Logic.Resources
             return !(lhs == rhs);
         }
         public NamespaceID ID { get => id; }
-        public bool IsSheet { get => isSheet; }
         public int Index { get => index; }
 
         [SerializeField]
         private NamespaceID id;
-        [SerializeField]
-        private bool isSheet;
         [SerializeField]
         private int index;
 

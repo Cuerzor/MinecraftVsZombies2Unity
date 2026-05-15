@@ -169,33 +169,11 @@ namespace MVZ2.Localization
         }
         public Sprite? GetLocalizedSprite(SpriteReference spriteRef, string language)
         {
-            if (spriteRef.IsSheet)
-            {
-                var sheet = GetLocalizedSpriteSheet(spriteRef.ID, language);
-                if (sheet == null || spriteRef.Index < 0 || spriteRef.Index >= sheet.Length)
-                    return null;
-                return sheet[spriteRef.Index];
-            }
-            return GetLocalizedSprite(spriteRef.ID, language);
-        }
-        public Sprite? GetLocalizedSprite(NamespaceID spriteID, string language)
-        {
             foreach (var languagePack in loadedLanguagePacks)
             {
                 if (languagePack == null)
                     continue;
-                if (languagePack.TryGetSprite(language, spriteID, out var localizedSpr))
-                    return localizedSpr;
-            }
-            return null;
-        }
-        public Sprite[]? GetLocalizedSpriteSheet(NamespaceID spriteID, string language)
-        {
-            foreach (var languagePack in loadedLanguagePacks)
-            {
-                if (languagePack == null)
-                    continue;
-                if (languagePack.TryGetSpriteSheet(language, spriteID, out var localizedSpr))
+                if (languagePack.TryGetSprite(language, spriteRef, out var localizedSpr))
                     return localizedSpr;
             }
             return null;

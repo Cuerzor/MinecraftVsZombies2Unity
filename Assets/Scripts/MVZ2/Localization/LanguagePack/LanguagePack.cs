@@ -3,12 +3,10 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using MVZ2.Sprites;
+using MVZ2Logic.Resources;
 using Newtonsoft.Json;
-using NGettext;
-using PVZEngine;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.XR;
 
 namespace MVZ2.Localization
 {
@@ -31,6 +29,10 @@ namespace MVZ2.Localization
         public LanguageAssets GetLanguageAssets(string lang)
         {
             return assets.FirstOrDefault(a => a.language == lang);
+        }
+        public LanguageAssets[] GetAllLanguageAssets()
+        {
+            return assets.ToArray();
         }
         public bool TryGetString(string language, string text, [NotNullWhen(true)] out string? result, params object?[] args)
         {
@@ -96,7 +98,7 @@ namespace MVZ2.Localization
             }
             return false;
         }
-        public bool TryGetSprite(string language, NamespaceID id, [NotNullWhen(true)] out Sprite? spr)
+        public bool TryGetSprite(string language, SpriteReference id, [NotNullWhen(true)] out Sprite? spr)
         {
             spr = null;
             foreach (var asset in assets)
@@ -107,43 +109,12 @@ namespace MVZ2.Localization
             }
             return false;
         }
-        public bool TryGetSpriteSheet(string language, NamespaceID id, [NotNullWhen(true)] out Sprite[]? res)
-        {
-            res = null;
-            foreach (var asset in assets)
-            {
-                if (asset.language != language)
-                    continue;
-                return asset.SpriteSheets.TryGetValue(id, out res);
-            }
-            return false;
-        }
         public string[] GetLanguages()
         {
             return assets.Select(a => a.language).ToArray();
         }
         private List<LanguageAssets> assets = new List<LanguageAssets>();
         public string Key { get; private set; }
-    }
-    public class LanguagePackMetadata
-    {
-        public string? name;
-        public string? author;
-        public string? description;
-        public int dataVersion;
-        [JsonIgnore]
-        public Sprite icon = null!;
-    }
-    public class LanguageAssets
-    {
-        public string language;
-        public Dictionary<string, Catalog> catalogs = new Dictionary<string, Catalog>();
-        public Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
-        public Dictionary<NamespaceID, Sprite> Sprites = new Dictionary<NamespaceID, Sprite>();
-        public Dictionary<NamespaceID, Sprite[]> SpriteSheets = new Dictionary<NamespaceID, Sprite[]>();
-        public LanguageAssets(string lang)
-        {
-            language = lang;
-        }
+        public ISpriteProvider? Provider { get; set; }
     }
 }

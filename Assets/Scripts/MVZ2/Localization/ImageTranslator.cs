@@ -18,7 +18,12 @@ namespace MVZ2.Localization
         {
             base.Translate(language);
             if (Component.Exists() && Key.Exists())
-                Component.sprite = MainManager.Instance.GetFinalSprite(Key, language);
+            {
+                var main = MainManager.Instance;
+                var context = main.GetSpriteVariantContenxt();
+                context.languageCode = language;
+                Component.sprite = MainManager.Instance.GetFinalSprite(Key, context);
+            }
         }
     }
 }

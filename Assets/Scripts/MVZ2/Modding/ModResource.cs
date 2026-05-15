@@ -46,8 +46,6 @@ namespace MVZ2.Modding
         public OptionMetaList? OptionMetaList { get; set; }
         public Dictionary<string, AudioClip> Sounds = new();
         public Dictionary<string, AudioClip> Musics = new();
-        public Dictionary<string, Sprite[]> SpriteSheets = new();
-        public Dictionary<string, Sprite> Sprites = new();
         public Dictionary<string, CharacterVariantSprite[]> CharacterVariantSprites = new();
         public Dictionary<string, TalkMeta> TalkMetas = new();
         public Dictionary<string, MapModel> MapModels = new();

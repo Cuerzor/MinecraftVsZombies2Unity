@@ -23,6 +23,7 @@ using MVZ2.Models;
 using MVZ2.Options;
 using MVZ2.Saves;
 using MVZ2.Scenes;
+using MVZ2.Sprites;
 using MVZ2.Store;
 using MVZ2.Supporters;
 using MVZ2Logic;
@@ -121,8 +122,9 @@ namespace MVZ2.Managers
         #region 贴图
         public Sprite? GetFinalSprite(SpriteReference? spriteRef) => ResourceManager.GetFinalSprite(spriteRef);
         public Sprite GetFinalSprite(Sprite sprite) => ResourceManager.GetFinalSprite(sprite);
-        public Sprite? GetFinalSprite(SpriteReference spriteRef, string language) => ResourceManager.GetFinalSprite(spriteRef, language);
-        public Sprite GetFinalSprite(Sprite sprite, string language) => ResourceManager.GetFinalSprite(sprite, language);
+        public Sprite? GetFinalSprite(SpriteReference spriteRef, SpriteVariantContext args) => ResourceManager.GetFinalSprite(spriteRef, args);
+        public Sprite GetFinalSprite(Sprite sprite, SpriteVariantContext args) => ResourceManager.GetFinalSprite(sprite, args);
+        public SpriteVariantContext GetSpriteVariantContenxt() => ResourceManager.GetSpriteVariantContext();
         #endregion
 
 

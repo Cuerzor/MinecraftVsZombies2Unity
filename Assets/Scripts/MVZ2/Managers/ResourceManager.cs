@@ -27,7 +27,7 @@ namespace MVZ2.Managers
         public void ClearResources()
         {
             modResources.Clear();
-            spriteReferenceCacheDict.Clear();
+            ClearResources_Sprites();
             talksCacheDict.Clear();
             achievementCacheDict.Clear();
             mainmenuViewCacheDict.Clear();

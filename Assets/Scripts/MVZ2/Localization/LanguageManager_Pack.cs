@@ -6,10 +6,12 @@ using System.Globalization;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using MVZ2.IO;
 using MVZ2.Sprites;
+using MVZ2Logic.Resources;
 using Newtonsoft.Json;
 using NGettext;
 using PVZEngine;
@@ -298,20 +300,42 @@ namespace MVZ2.Localization
         #region 加载语言包
         public async Task LoadLanguagePacks()
         {
-            foreach (var reference in enabledLanguagePacks)
+            for (int i = 0; i < enabledLanguagePacks.Count; i++)
             {
+                var reference = enabledLanguagePacks[i];
                 var languagePack = await reference.LoadLanguagePack(this);
                 if (languagePack == null)
                     continue;
-                loadedLanguagePacks.Add(languagePack);
-                foreach (var lang in languagePack.GetLanguages())
+                LoadLanguagePack(languagePack, enabledLanguagePacks.Count - i);
+            }
+        }
+        public void LoadLanguagePack(LanguagePack pack, int priority)
+        {
+            loadedLanguagePacks.Add(pack);
+            foreach (var lang in pack.GetLanguages())
+            {
+                if (!allLanguages.Contains(lang))
                 {
-                    if (!allLanguages.Contains(lang))
-                    {
-                        allLanguages.Add(lang);
-                    }
+                    allLanguages.Add(lang);
                 }
             }
+            // 添加Sprite覆盖。
+            AddSpriteProvider(pack, priority);
+        }
+        private void AddSpriteProvider(LanguagePack pack, int priority)
+        {
+            var provider = new LanguagePackSpriteProvider() { Priority = priority };
+            pack.Provider = provider;
+            foreach (var assets in pack.GetAllLanguageAssets())
+            {
+                var language = assets.language;
+                foreach (var pair in assets.Sprites)
+                {
+                    var tag = SpriteHelper.GetLanguageSpriteTag(language);
+                    provider.Register(new SpriteLookupKey(pair.Key, tag), pair.Value);
+                }
+            }
+            Main.ResourceManager.AddSpriteProvider(provider);
         }
         #endregion
 
@@ -338,19 +362,20 @@ namespace MVZ2.Localization
                 {
                     main.ResourceManager.RemoveGeneratedSprite(pair.Value, pair.Key.ToString(), GetLanguagePackSpriteCategory(pack.Key));
                 }
-                foreach (var pair in assets.SpriteSheets)
-                {
-                    for (int i = 0; i < pair.Value.Length; i++)
-                    {
-                        var sprite = pair.Value[i];
-                        main.ResourceManager.RemoveGeneratedSprite(sprite, $"{pair.Key}[{i}]", GetLanguagePackSpriteCategory(pack.Key));
-                    }
-                }
                 foreach (var pair in assets.textures)
                 {
                     main.ResourceManager.RemoveGeneratedTexture(pair.Value);
                 }
             }
+            RemoveSpriteProvider(pack);
+        }
+        private void RemoveSpriteProvider(LanguagePack pack)
+        {
+            if (pack.Provider != null)
+            {
+                Main.ResourceManager.RemoveSpriteProvider(pack.Provider);
+            }
+            pack.Provider = null;
         }
         #endregion
 
@@ -474,7 +499,7 @@ namespace MVZ2.Localization
 
                                         var resID = new NamespaceID(nsp, localizedSprite.name);
                                         var sprite = ReadEntryToSprite(resID, texture2D, localizedSprite, key);
-                                        asset.Sprites.Add(resID, sprite);
+                                        asset.Sprites.Add(new SpriteReference(resID), sprite);
                                     }
                                 }
                                 // 加载Spritesheet。
@@ -495,7 +520,11 @@ namespace MVZ2.Localization
 
                                         var resID = new NamespaceID(nsp, localizedSpritesheet.name);
                                         var spritesheet = ReadEntryToSpriteSheet(resID, texture2D, localizedSpritesheet, key);
-                                        asset.SpriteSheets.Add(resID, spritesheet);
+                                        for (int i = 0; i < spritesheet.Length; i++)
+                                        {
+                                            var spriteRef = new SpriteReference(resID, i);
+                                            asset.Sprites.Add(spriteRef, spritesheet[i]);
+                                        }
                                     }
                                 }
                             }
@@ -623,7 +652,7 @@ namespace MVZ2.Localization
 
                             var resID = new NamespaceID(nsp, localizedSprite.name);
                             var sprite = ReadEntryToSprite(resID, texture, localizedSprite, key);
-                            asset.Sprites.Add(resID, sprite);
+                            asset.Sprites.Add(new SpriteReference(resID), sprite);
                         }
                     }
                     if (manifest.spritesheets != null)
@@ -642,7 +671,11 @@ namespace MVZ2.Localization
 
                             var resID = new NamespaceID(nsp, localizedSpritesheet.name);
                             var spritesheet = ReadEntryToSpriteSheet(resID, texture, localizedSpritesheet, key);
-                            asset.SpriteSheets.Add(resID, spritesheet);
+                            for (int i = 0; i < spritesheet.Length; i++)
+                            {
+                                var spriteRef = new SpriteReference(resID, i);
+                                asset.Sprites.Add(spriteRef, spritesheet[i]);
+                            }
                         }
                     }
                 }
@@ -674,7 +707,8 @@ namespace MVZ2.Localization
                 {
                     spritePivot = new Vector2(0.5f, 0.5f);
                 }
-                var spr = main.ResourceManager.CreateSprite(texture2D, spriteRect, spritePivot, spriteId.ToString(), GetLanguagePackSpriteCategory(key));
+                var spriteReference = new SpriteReference(spriteId);
+                var spr = main.ResourceManager.CreateSprite(texture2D, spriteRect, spritePivot, spriteReference.ToString(), GetLanguagePackSpriteCategory(key));
                 return spr;
             }
             catch (Exception e)
@@ -713,7 +747,8 @@ namespace MVZ2.Localization
                     var rect = info.rect;
                     rect.width = Math.Min(rect.width, texture2D.width);
                     rect.height = Math.Min(rect.height, texture2D.height);
-                    var spr = main.ResourceManager.CreateSprite(texture2D, rect, info.pivot, $"{spriteId}[{i}]", GetLanguagePackSpriteCategory(key));
+                    var spriteRef = new SpriteReference(spriteId, i);
+                    var spr = main.ResourceManager.CreateSprite(texture2D, rect, info.pivot, spriteRef.ToString(), GetLanguagePackSpriteCategory(key));
                     sprites[i] = spr;
                 }
                 return sprites;
