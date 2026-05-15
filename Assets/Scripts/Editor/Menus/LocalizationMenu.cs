@@ -421,7 +421,7 @@ namespace MVZ2.Editor
                     };
                     var manifestJson = JsonConvert.SerializeObject(manifest, Newtonsoft.Json.Formatting.Indented);
 
-                    var destPath = Path.Combine(langDir, LanguageManager.SPRITE_MANIFEST_FILENAME);
+                    var destPath = Path.Combine(langDir, LanguagePackReaderV0.SPRITE_MANIFEST_FILENAME);
                     FileHelper.ValidateDirectory(destPath);
                     using var stream = File.Open(destPath, FileMode.Create);
                     using var writer = new StreamWriter(stream);
@@ -440,10 +440,10 @@ namespace MVZ2.Editor
             // 将spriteManifest.json复制到LanguagePack\templates中。
             Debug.Log("更新语言包贴图清单……");
             var templatesDir = Path.Combine(Application.dataPath, "LanguagePack", "templates");
-            var sourceManifestPath = Path.Combine(Application.dataPath, "Localization", "pack", "assets", "mvz2", "en-US", LanguageManager.SPRITE_MANIFEST_FILENAME);
+            var sourceManifestPath = Path.Combine(Application.dataPath, "Localization", "pack", "assets", "mvz2", "en-US", LanguagePackReaderV0.SPRITE_MANIFEST_FILENAME);
             if (File.Exists(sourceManifestPath))
             {
-                var destPath = Path.Combine(templatesDir, LanguageManager.SPRITE_MANIFEST_FILENAME);
+                var destPath = Path.Combine(templatesDir, LanguagePackReaderV0.SPRITE_MANIFEST_FILENAME);
                 FileHelper.ValidateDirectory(destPath);
                 File.Copy(sourceManifestPath, destPath, true);
             }

@@ -14,6 +14,7 @@ namespace MVZ2.UI.Addons
             nameText.text = viewData.name;
             descriptionText.text = viewData.description;
             icon.sprite = viewData.icon;
+            outdatedObject.SetActive(viewData.outdated);
         }
         public void SetToggled(bool value)
         {
@@ -31,6 +32,8 @@ namespace MVZ2.UI.Addons
         [SerializeField]
         private TextMeshProUGUI descriptionText = null!;
         [SerializeField]
+        private GameObject outdatedObject = null!;
+        [SerializeField]
         private Image icon = null!;
     }
     public struct LanguagePackViewData
@@ -38,5 +41,6 @@ namespace MVZ2.UI.Addons
         public string name;
         public string description;
         public Sprite icon;
+        public bool outdated;
     }
 }
