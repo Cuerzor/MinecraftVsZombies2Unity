@@ -1,7 +1,10 @@
+#nullable enable
+
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using MVZ2.Sprites;
+using PVZEngine.Tools.Unity;
 using UnityEditor;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
@@ -13,12 +16,20 @@ namespace MVZ2.Editor
         public static SpriteImportMode GetSpriteImportMode(string path)
         {
             var textureImporter = AssetImporter.GetAtPath(path) as TextureImporter;
+            if (textureImporter == null)
+                return SpriteImportMode.None;
             return textureImporter.spriteImportMode;
         }
-        public static Sprite[] GetOrderedSpriteSheet(string path, SpriteDataProviderFactories factories)
+        public static Sprite[]? GetOrderedSpriteSheet(string path, SpriteDataProviderFactories factories)
         {
             var textureImporter = AssetImporter.GetAtPath(path) as TextureImporter;
             var dataProvider = factories.GetSpriteEditorDataProviderFromObject(textureImporter);
+
+            if (dataProvider == null)
+            {
+                Log.LogWarning($"Could not find texture at path {path}.");
+                return null;
+            }
 
             dataProvider.InitSpriteEditorDataProvider(); ;
             var spriteRects = dataProvider.GetSpriteRects();//if you don't have the initial sprite rects, just create them manually, this example just changes the pivot points
@@ -58,6 +69,10 @@ namespace MVZ2.Editor
 
                 var assetPath = AssetsMenu.FileToAssetPath(filePath);
                 var sprites = GetOrderedSpriteSheet(assetPath, factories);
+                if (sprites == null)
+                {
+                    continue;
+                }
                 for (int i = 0; i < sprites.Length; i++)
                 {
                     var sprite = sprites[i];
@@ -105,7 +120,11 @@ namespace MVZ2.Editor
                 var texture2D = AssetDatabase.LoadAssetAtPath<Texture2D>(assetPath);
 
                 var textureImporter = AssetImporter.GetAtPath(assetPath) as TextureImporter;
+                if (textureImporter == null)
+                    continue;
                 var dataProvider = factory.GetSpriteEditorDataProviderFromObject(textureImporter);
+                if (dataProvider == null)
+                    continue;
 
                 dataProvider.InitSpriteEditorDataProvider();
                 var spriteRects = dataProvider.GetSpriteRects();//if you don't have the initial sprite rects, just create them manually, this example just changes the pivot points

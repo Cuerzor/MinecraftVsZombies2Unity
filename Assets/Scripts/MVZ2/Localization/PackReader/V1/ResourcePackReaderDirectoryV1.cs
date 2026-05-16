@@ -163,13 +163,8 @@ namespace MVZ2.Localization
                     var slice = slices[i];
                     if (slice.replaces == null || !SpriteReference.TryParse(slice.replaces, Main.BuiltinNamespace, out var spriteRef))
                     {
-                        if (string.IsNullOrEmpty(nsp))
-                        {
-                            Log.LogWarning($"Cannot load sprite {packTexture.texture} from resource pack: Invalid file path.");
-                            continue;
-                        }
-                        var spriteID = new NamespaceID(nsp, textureId);
-                        spriteRef = new SpriteReference(spriteID, i);
+                        Log.LogWarning($"Cannot load sprite {packTexture.texture}[{i}] from resource pack: No sprite to replace.");
+                        continue;
                     }
                     var spriteKey = new SpriteLookupKey(spriteRef, slice.tags ?? tags);
                     var sprite = CreateSprite(texture, slice, generatedCategory, spriteKey.ToString());

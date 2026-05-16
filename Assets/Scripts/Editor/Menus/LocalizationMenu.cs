@@ -380,35 +380,64 @@ namespace MVZ2.Editor
                 {
                     List<ResourcePackSprite> resoucePackSprites = new List<ResourcePackSprite>();
 
+                    // 获取贴图路径相对于sprites文件夹的路径。
                     var spriteRelativePath = Path.GetRelativePath(spritesDir, spritePath).Replace("\\", "/");
-                    var originSpritePath = Path.Combine(databaseDir, nsp, "sprites", spriteRelativePath).Replace("\\", "/");
 
+                    // 去掉文件名的扩展名。
+                    var extension = Path.GetExtension(spriteRelativePath);
                     var spriteTexturePathWithoutExt = Path.ChangeExtension(spriteRelativePath, string.Empty).TrimEnd('.');
 
-                    SpriteHelper.ParseIDAndTags(spriteTexturePathWithoutExt, out spriteTexturePathWithoutExt, out var tags);
-                    var id = new NamespaceID(nsp, spriteTexturePathWithoutExt);
+                    // 分割路径的tag。
+                    SpriteHelper.ParseIDAndTags(spriteTexturePathWithoutExt, out var spriteIDPath, out var tags);
 
+                    // 寻找Assets中的原贴图。
+                    var originSpriteFilename = $"{spriteIDPath}{extension}";
+                    var originSpritePath = Path.Combine(databaseDir, nsp, "sprites", originSpriteFilename).Replace("\\", "/");
+
+                    // 新建贴图ID。
+                    var id = new NamespaceID(nsp, spriteIDPath);
+
+                    // 从Assets中导入原贴图。
                     var sprites = SpriteMenu.GetOrderedSpriteSheet(originSpritePath, factories);
                     for (int i = 0; i < sprites.Length; i++)
                     {
                         var sprite = sprites[i];
                         var replaces = new SpriteReference(id, i);
-                        resoucePackSprites.Add(new ResourcePackSprite()
+                        ResourcePackSprite packSprite;
+                        if (sprites.Length <= 1)
                         {
-                            replaces = replaces.ToString(),
-                            tags = tags.Append("en-US").ToArray(),
-                            x = sprite.rect.x,
-                            y = sprite.rect.y,
-                            width = sprite.rect.width,
-                            height = sprite.rect.height,
-                            pivotX = sprite.pivot.x / sprite.rect.width,
-                            pivotY = sprite.pivot.y / sprite.rect.height,
-                        });
+                            packSprite = new ResourcePackSprite()
+                            {
+                                replaces = replaces.ToString(),
+                                tags = tags,
+                                single = true,
+                                pivotX = sprite.pivot.x / sprite.rect.width,
+                                pivotY = sprite.pivot.y / sprite.rect.height,
+                            };
+                        }
+                        else
+                        {
+                            packSprite = new ResourcePackSprite()
+                            {
+                                replaces = replaces.ToString(),
+                                tags = tags,
+                                single = false,
+                                x = sprite.rect.x,
+                                y = sprite.rect.y,
+                                width = sprite.rect.width,
+                                height = sprite.rect.height,
+                                pivotX = sprite.pivot.x / sprite.rect.width,
+                                pivotY = sprite.pivot.y / sprite.rect.height,
+                            };
+                        }
+                        resoucePackSprites.Add(packSprite);
                     }
 
+                    // 获取包中的Texture相对路径。
+                    var texturePath = Path.GetRelativePath(packAssetsDir, spritePath).Replace("\\", "/");
                     resoucePackTextures.Add(new ResourcePackTexture()
                     {
-                        texture = Path.GetRelativePath(packAssetsDir, spritePath).Replace("\\", "/"),
+                        texture = texturePath,
                         slices = resoucePackSprites.ToArray()
                     });
                 }

@@ -17,7 +17,15 @@ namespace MVZ2.Localization
         {
             try
             {
-                var rect = new Rect(packSprite.x, packSprite.y, packSprite.width, packSprite.height);
+                Rect rect;
+                if (packSprite.single)
+                {
+                    rect = new Rect(0, 0, texture2D.width, texture2D.height);
+                }
+                else
+                {
+                    rect = new Rect(packSprite.x, packSprite.y, packSprite.width, packSprite.height);
+                }
                 var pivot = new Vector2(packSprite.pivotX, packSprite.pivotY);
                 rect.width = Math.Min(rect.width, texture2D.width);
                 rect.height = Math.Min(rect.height, texture2D.height);
