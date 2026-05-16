@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 21300004, guid: 20e366ae3ad04144489c4e881a2d2b4a, type: 3}
     - target: {fileID: 5989548653584316206, guid: 796d2dd04d3149241927586ae6890e75, type: 3}
       propertyPath: m_Name
-      value: humanoid Variant
+      value: skeleton
       objectReference: {fileID: 0}
     - target: {fileID: 6034419408456948935, guid: 796d2dd04d3149241927586ae6890e75, type: 3}
       propertyPath: m_Sprite

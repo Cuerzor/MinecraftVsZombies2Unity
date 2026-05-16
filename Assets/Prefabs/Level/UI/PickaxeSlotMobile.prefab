@@ -133,6 +133,7 @@ MonoBehaviour:
   animator: {fileID: 9115125493321339334}
   tooltipAnchor: {fileID: 7390052010646372039}
   numberText: {fileID: 33045638449536605}
+  hotkeyText: {fileID: 0}
 --- !u!114 &3032903214186562567
 MonoBehaviour:
   m_ObjectHideFlags: 0

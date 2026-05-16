@@ -2,6 +2,7 @@
 
 using MVZ2Logic;
 using MVZ2Logic.Models;
+using MVZ2Logic.UI;
 using PVZEngine;
 using PVZEngine.Level;
 using UnityEngine;
@@ -27,12 +28,12 @@ namespace MVZ2.GameContent.Models
                         var modelID = def.GetModelID();
                         sprite = Global.Resources.GetModelIcon(modelID);
                     }
-                    iconRenderer.sprite = sprite;
+                    iconRenderer.SetSprite(sprite);
                 }
             }
         }
         [SerializeField]
-        private SpriteRenderer iconRenderer = null!;
+        private SpriteRendererResolver iconRenderer = null!;
         private NamespaceID? entityID;
     }
 }

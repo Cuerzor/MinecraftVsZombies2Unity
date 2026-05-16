@@ -409,6 +409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorType: 2
+  trackSelectable: {fileID: 0}
 --- !u!114 &1191406390391552695
 MonoBehaviour:
   m_ObjectHideFlags: 0

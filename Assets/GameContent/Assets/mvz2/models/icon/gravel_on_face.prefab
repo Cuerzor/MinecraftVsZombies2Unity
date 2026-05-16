@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5503614261599378647}
   - component: {fileID: 1522634350192816767}
   - component: {fileID: 326088111103203851}
+  - component: {fileID: 6368518692491884407}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &6368518692491884407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3110211894139270521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4723090301322735833
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using MVZ2Logic.UI;
 using TMPro;
 using UnityEngine;
 
@@ -52,7 +53,7 @@ namespace MVZ2.UI.Mainmenu
         }
         public void SetWindowViewSprite(Sprite? sprite)
         {
-            windowViewSpriteRenderer.sprite = sprite;
+            windowViewSpriteRenderer.SetSprite(sprite);
         }
         public void SetBackgroundDark(bool dark)
         {
@@ -145,7 +146,7 @@ namespace MVZ2.UI.Mainmenu
         [SerializeField]
         private TextMeshPro versionText = null!;
         [SerializeField]
-        private SpriteRenderer windowViewSpriteRenderer = null!;
+        private SpriteRendererResolver windowViewSpriteRenderer = null!;
 
         [Header("Dialogs")]
         [SerializeField]

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1635808376182299998}
   - component: {fileID: 1014853371353465149}
   - component: {fileID: 2369096279398682476}
+  - component: {fileID: 4090344678033046949}
   m_Layer: 0
   m_Name: Miner
   m_TagString: Untagged
@@ -116,6 +117,18 @@ MonoBehaviour:
   - {fileID: -864480218, guid: 23518f4eda2b37a4d93c7c80da15582c, type: 3}
   - {fileID: 191063626, guid: 23518f4eda2b37a4d93c7c80da15582c, type: 3}
   index: 0
+--- !u!114 &4090344678033046949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7288155914815098650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4119865965957771829
 PrefabInstance:
   m_ObjectHideFlags: 0

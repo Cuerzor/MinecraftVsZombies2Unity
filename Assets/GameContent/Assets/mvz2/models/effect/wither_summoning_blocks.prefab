@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3848217211800365483}
   - component: {fileID: 7301591011535650334}
   - component: {fileID: 1076688630102193597}
+  - component: {fileID: 9103491654434537835}
   m_Layer: 0
   m_Name: Center
   m_TagString: Untagged
@@ -114,6 +115,18 @@ MonoBehaviour:
   propertyName: Progress
   comparer: 4
   constValue: 1
+--- !u!114 &9103491654434537835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783421738552735997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2506007783336819599
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,6 +139,7 @@ GameObject:
   - component: {fileID: 3536218125435868616}
   - component: {fileID: 2317381691305226198}
   - component: {fileID: 4330032366597868508}
+  - component: {fileID: 891108078644302954}
   m_Layer: 0
   m_Name: Outer
   m_TagString: Untagged
@@ -228,6 +242,18 @@ MonoBehaviour:
   propertyName: Progress
   comparer: 4
   constValue: 3
+--- !u!114 &891108078644302954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506007783336819599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4234002706325974435
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +300,7 @@ GameObject:
   - component: {fileID: 6402592794310165254}
   - component: {fileID: 8725455649929873131}
   - component: {fileID: 2957146563894632053}
+  - component: {fileID: 8227637241897138418}
   m_Layer: 0
   m_Name: Down
   m_TagString: Untagged
@@ -361,6 +388,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &8227637241897138418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4518142050416029441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4676990040431577063
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,6 +412,7 @@ GameObject:
   - component: {fileID: 3163488655681571663}
   - component: {fileID: 1677086295533920339}
   - component: {fileID: 6624979407857969583}
+  - component: {fileID: 1015175192242613845}
   m_Layer: 0
   m_Name: Outer
   m_TagString: Untagged
@@ -475,6 +515,18 @@ MonoBehaviour:
   propertyName: Progress
   comparer: 4
   constValue: 5
+--- !u!114 &1015175192242613845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4676990040431577063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5420459076642926491
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,6 +539,7 @@ GameObject:
   - component: {fileID: 7010038909810391482}
   - component: {fileID: 3818225322244791646}
   - component: {fileID: 2378741350628577072}
+  - component: {fileID: 4375279714639867393}
   m_Layer: 0
   m_Name: Center
   m_TagString: Untagged
@@ -589,6 +642,18 @@ MonoBehaviour:
   propertyName: Progress
   comparer: 4
   constValue: 6
+--- !u!114 &4375279714639867393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5420459076642926491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5441813674890575409
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,6 +700,7 @@ GameObject:
   - component: {fileID: 9214813944861939685}
   - component: {fileID: 4073529647706810554}
   - component: {fileID: 4021396793135011176}
+  - component: {fileID: 7449446881384349262}
   m_Layer: 0
   m_Name: Inner
   m_TagString: Untagged
@@ -737,6 +803,18 @@ MonoBehaviour:
   propertyName: Progress
   comparer: 4
   constValue: 2
+--- !u!114 &7449446881384349262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6936423866705340307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7198708168271597067
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +827,7 @@ GameObject:
   - component: {fileID: 1151967345477886864}
   - component: {fileID: 4010286259888931832}
   - component: {fileID: 3816207120386795915}
+  - component: {fileID: 7897174716838304035}
   m_Layer: 0
   m_Name: Inner
   m_TagString: Untagged
@@ -851,6 +930,18 @@ MonoBehaviour:
   propertyName: Progress
   comparer: 4
   constValue: 4
+--- !u!114 &7897174716838304035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198708168271597067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3434038563449739033
 PrefabInstance:
   m_ObjectHideFlags: 0

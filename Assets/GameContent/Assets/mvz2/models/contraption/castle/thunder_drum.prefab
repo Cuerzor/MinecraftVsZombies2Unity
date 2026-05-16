@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4006515201760143443}
   - component: {fileID: 1853357837050598413}
   - component: {fileID: 8712503194714334976}
+  - component: {fileID: 3104141619330214904}
   m_Layer: 0
   m_Name: ChargeFigure
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &3104141619330214904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929198025699241108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3735844109049228261
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +232,7 @@ GameObject:
   - component: {fileID: 7937004442600083546}
   - component: {fileID: 5698212048655848914}
   - component: {fileID: 3973470642477153793}
+  - component: {fileID: 710637395732119114}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -322,6 +336,18 @@ MonoBehaviour:
   - {fileID: 473868895, guid: 824ceee383f361649b57e79656c673da, type: 3}
   - {fileID: -502181682, guid: 824ceee383f361649b57e79656c673da, type: 3}
   index: 0
+--- !u!114 &710637395732119114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330586659171578927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6187257247977101251
 PrefabInstance:
   m_ObjectHideFlags: 0

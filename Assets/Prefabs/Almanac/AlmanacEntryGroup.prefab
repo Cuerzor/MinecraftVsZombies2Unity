@@ -231,6 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listRoot: {fileID: 7909911673053392628}
   _template: {fileID: 4944666969231860267}
+  pooled: 0
   itemList: []
 --- !u!1 &5115631319176778227
 GameObject:
@@ -409,6 +410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listRoot: {fileID: 7909911673053392628}
   _template: {fileID: 4944666969231860267}
+  pooled: 0
   itemList: []
 --- !u!114 &3174499883507794140
 MonoBehaviour:

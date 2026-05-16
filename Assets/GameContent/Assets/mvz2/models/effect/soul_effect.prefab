@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6202040637354339719}
   - component: {fileID: 8284457740926043369}
   - component: {fileID: 7092485240484802208}
+  - component: {fileID: 8061551661645497097}
   m_Layer: 0
   m_Name: Soul
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &8061551661645497097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3880688133713757009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7215623030826523418
 GameObject:
   m_ObjectHideFlags: 0

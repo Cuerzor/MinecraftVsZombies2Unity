@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3032790284462156415}
   - component: {fileID: 802016633393034446}
   - component: {fileID: 7369158371763339355}
+  - component: {fileID: 4022297979448921316}
   m_Layer: 0
   m_Name: Thunder
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &4022297979448921316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2781634703307989793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2113348354311097032
 PrefabInstance:
   m_ObjectHideFlags: 0

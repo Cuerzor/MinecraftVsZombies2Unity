@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7498304747945701410}
   - component: {fileID: 2019315702330710743}
   - component: {fileID: 2662811186834439350}
+  - component: {fileID: 2215013535382252228}
   m_Layer: 0
   m_Name: Orb
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &2215013535382252228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4007558824007984010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4476828409614125344
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,6 +123,7 @@ GameObject:
   - component: {fileID: 1538013565312921842}
   - component: {fileID: 8791805125345911370}
   - component: {fileID: 7189884874298414169}
+  - component: {fileID: 2239040353917963928}
   m_Layer: 0
   m_Name: Lightning1
   m_TagString: Untagged
@@ -214,6 +228,18 @@ MonoBehaviour:
   - {fileID: -1699391314, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
   - {fileID: 2132736026, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
   index: 0
+--- !u!114 &2239040353917963928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476828409614125344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5857408878612454500
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +363,7 @@ GameObject:
   - component: {fileID: 2051865926960842560}
   - component: {fileID: 852677690000759172}
   - component: {fileID: 3838355549186360678}
+  - component: {fileID: 6211423380505616024}
   m_Layer: 0
   m_Name: Lightning2
   m_TagString: Untagged
@@ -441,6 +468,18 @@ MonoBehaviour:
   - {fileID: -1699391314, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
   - {fileID: 2132736026, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
   index: 0
+--- !u!114 &6211423380505616024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8668656683893329378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8671741989493178863
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +492,7 @@ GameObject:
   - component: {fileID: 5789261790515560176}
   - component: {fileID: 8092691801128695201}
   - component: {fileID: 2229842449285848244}
+  - component: {fileID: 7415861796208916594}
   m_Layer: 0
   m_Name: Lightning0
   m_TagString: Untagged
@@ -557,6 +597,18 @@ MonoBehaviour:
   - {fileID: -1699391314, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
   - {fileID: 2132736026, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
   index: 0
+--- !u!114 &7415861796208916594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8671741989493178863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &448292223497093091
 PrefabInstance:
   m_ObjectHideFlags: 0

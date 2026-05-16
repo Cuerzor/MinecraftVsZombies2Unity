@@ -7,6 +7,7 @@ using MVZ2.Modding;
 using MVZ2.Sprites;
 using MVZ2Logic.Options;
 using MVZ2Logic.Resources;
+using MVZ2Logic.UI;
 using PVZEngine;
 using PVZEngine.Tools.Unity;
 using UnityEngine;

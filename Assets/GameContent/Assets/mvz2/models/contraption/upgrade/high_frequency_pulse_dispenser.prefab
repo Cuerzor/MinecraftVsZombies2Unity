@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 8041601787654633111}
   - component: {fileID: 3410148466498230442}
   - component: {fileID: 5463886486861918316}
+  - component: {fileID: 8502007394603230691}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -271,6 +272,18 @@ MonoBehaviour:
   - {fileID: -474296180, guid: 57298386a0b940c498c0ff59a77ac315, type: 3}
   - {fileID: -22312393, guid: 57298386a0b940c498c0ff59a77ac315, type: 3}
   propertyName: Upgraded
+--- !u!114 &8502007394603230691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670011073837519269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2519295849329159604
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +362,7 @@ GameObject:
   - component: {fileID: 1940690291232689156}
   - component: {fileID: 8711245699720153737}
   - component: {fileID: 2721773553311899504}
+  - component: {fileID: 9034314060690105160}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -452,6 +466,18 @@ MonoBehaviour:
   - {fileID: 1527027455, guid: 57298386a0b940c498c0ff59a77ac315, type: 3}
   - {fileID: -2143279266, guid: 57298386a0b940c498c0ff59a77ac315, type: 3}
   propertyName: GatlinAlt
+--- !u!114 &9034314060690105160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2822826502139831942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3889782155490486113
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +652,7 @@ GameObject:
   - component: {fileID: 6564792039587429452}
   - component: {fileID: 6295880609361968164}
   - component: {fileID: 2936871883428208098}
+  - component: {fileID: 5151391127385943866}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -713,6 +740,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &5151391127385943866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8166193881845106678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &901534581694236051
 PrefabInstance:
   m_ObjectHideFlags: 0

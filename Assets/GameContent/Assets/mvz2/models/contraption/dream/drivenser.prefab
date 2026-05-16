@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5725830391136360519}
   - component: {fileID: 2173464585849601794}
   - component: {fileID: 405149212337754715}
+  - component: {fileID: 8403918051087315874}
   m_Layer: 0
   m_Name: Blocker
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &8403918051087315874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061841661541600823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3183829672023156001
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +122,7 @@ GameObject:
   - component: {fileID: 8131220163904941982}
   - component: {fileID: 2384492915216544322}
   - component: {fileID: 8313551257784159224}
+  - component: {fileID: 8370667716007562590}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -197,6 +211,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &8370667716007562590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183829672023156001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5115919738781494343
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,6 +343,7 @@ GameObject:
   - component: {fileID: 2776439347565044689}
   - component: {fileID: 1978298579617502249}
   - component: {fileID: 4106020711644020336}
+  - component: {fileID: 1971556819703705380}
   m_Layer: 0
   m_Name: Pillar
   m_TagString: Untagged
@@ -405,6 +432,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &1971556819703705380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630256343979808731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8965055627277226933
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,6 +456,7 @@ GameObject:
   - component: {fileID: 98378003366550944}
   - component: {fileID: 3955743138004399777}
   - component: {fileID: 2220852000667967047}
+  - component: {fileID: 8982882101292086749}
   m_Layer: 0
   m_Name: Gear
   m_TagString: Untagged
@@ -523,6 +563,18 @@ MonoBehaviour:
   - {fileID: 1628297157, guid: 407fad964d6763c4485f90c8ab1d907a, type: 3}
   - {fileID: 789365403, guid: 407fad964d6763c4485f90c8ab1d907a, type: 3}
   propertyName: Level
+--- !u!114 &8982882101292086749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965055627277226933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1422019704930297413
 PrefabInstance:
   m_ObjectHideFlags: 0

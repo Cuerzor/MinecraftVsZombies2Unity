@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7543019054286572646}
   - component: {fileID: 4804265035784361962}
   - component: {fileID: 686960470478949763}
+  - component: {fileID: 3021725128473364312}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &3021725128473364312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349274131081088442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2068729840573541780
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +157,7 @@ GameObject:
   - component: {fileID: 5279055590070324156}
   - component: {fileID: 1304991244924088695}
   - component: {fileID: 6513650636658680101}
+  - component: {fileID: 7725263289550127988}
   m_Layer: 0
   m_Name: HourHand
   m_TagString: Untagged
@@ -244,6 +258,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 0, y: 0, z: 0}
+--- !u!114 &7725263289550127988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2504336480766496183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3850889535726579249
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +282,7 @@ GameObject:
   - component: {fileID: 8708550500281623622}
   - component: {fileID: 1628842956768314891}
   - component: {fileID: 2775084950943424909}
+  - component: {fileID: 5272477564063590418}
   m_Layer: 0
   m_Name: MinuteHand
   m_TagString: Untagged
@@ -356,6 +383,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 0, y: 0, z: 0}
+--- !u!114 &5272477564063590418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3850889535726579249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5319574097833547990
 GameObject:
   m_ObjectHideFlags: 0

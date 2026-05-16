@@ -2,6 +2,7 @@
 
 using MVZ2Logic.Models;
 using MVZ2Logic.Models.Components;
+using MVZ2Logic.UI;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Models
@@ -19,7 +20,7 @@ namespace MVZ2.GameContent.Models
         [SerializeField]
         private GameObject chargeBarRoot = null!;
         [SerializeField]
-        private SpriteRenderer chargeBarRenderer = null!;
+        private SpriteRendererResolver chargeBarRenderer = null!;
         [SerializeField]
         private CircleFillSpriteSetter circleSetter = null!;
         [SerializeField]

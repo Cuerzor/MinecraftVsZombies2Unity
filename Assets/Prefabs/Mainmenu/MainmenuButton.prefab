@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6226617942729633562}
   - component: {fileID: 6593236132113763212}
+  - component: {fileID: 1495255418841594766}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -84,6 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1495255418841594766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2072880938009062162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2742125469936148500
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: 1
-  spriteRenderer: {fileID: 6593236132113763212}
+  spriteRenderer: {fileID: 1495255418841594766}
   normalSprite: {fileID: -2128004668, guid: a5fe0dd11f7539a43a66c14d3952b30e, type: 3}
   hoveredSprite: {fileID: -1271579674, guid: a5fe0dd11f7539a43a66c14d3952b30e, type: 3}
   disabledSprite: {fileID: 809021128, guid: a5fe0dd11f7539a43a66c14d3952b30e, type: 3}

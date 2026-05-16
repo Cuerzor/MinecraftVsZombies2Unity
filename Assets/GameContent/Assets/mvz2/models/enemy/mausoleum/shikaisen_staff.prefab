@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4510736666660830453}
   - component: {fileID: 5637773903567548555}
   - component: {fileID: 5344002280200321574}
+  - component: {fileID: 3532392918471320906}
   m_Layer: 0
   m_Name: Dirt
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &3532392918471320906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285937128317789551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &876750726118110145
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,6 +182,7 @@ GameObject:
   - component: {fileID: 3482386630744649370}
   - component: {fileID: 3054530617167808124}
   - component: {fileID: 633543938262813991}
+  - component: {fileID: 5377835250317028682}
   m_Layer: 0
   m_Name: Sprite2
   m_TagString: Untagged
@@ -256,6 +270,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 1
+--- !u!114 &5377835250317028682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999638315339384124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2917979028440298365
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +293,7 @@ GameObject:
   - component: {fileID: 3933938860523985341}
   - component: {fileID: 2374396978139558080}
   - component: {fileID: 4787171081366861245}
+  - component: {fileID: 648051321728292227}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -354,6 +381,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 1
+--- !u!114 &648051321728292227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2917979028440298365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3676110526091464136
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +576,7 @@ GameObject:
   - component: {fileID: 2231678415002606946}
   - component: {fileID: 5387280062806865997}
   - component: {fileID: 5411713577818097887}
+  - component: {fileID: 3643400083678421808}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -642,6 +682,18 @@ MonoBehaviour:
   - {fileID: 405859414, guid: d486f2b8240e28443aaeb03d25e81b9c, type: 3}
   - {fileID: 1555804945, guid: d486f2b8240e28443aaeb03d25e81b9c, type: 3}
   - {fileID: 1858951590, guid: d486f2b8240e28443aaeb03d25e81b9c, type: 3}
+--- !u!114 &3643400083678421808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5291272643244354463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6179150655282233724
 GameObject:
   m_ObjectHideFlags: 0

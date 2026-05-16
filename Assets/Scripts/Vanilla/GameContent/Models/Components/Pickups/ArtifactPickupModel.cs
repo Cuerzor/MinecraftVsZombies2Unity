@@ -4,6 +4,7 @@ using MVZ2Logic;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Games;
 using MVZ2Logic.Models;
+using MVZ2Logic.UI;
 using PVZEngine;
 using UnityEngine;
 
@@ -22,14 +23,11 @@ namespace MVZ2.GameContent.Models
                 if (artifactDef == null)
                     return;
                 var sprRef = artifactDef.GetSpriteReference();
-                if (Global.Resources != null)
-                {
-                    artifactSprite.sprite = Global.Resources.GetFinalSprite(sprRef);
-                }
+                artifactSprite.SetSprite(Global.Resources?.GetSprite(sprRef));
             }
         }
         [SerializeField]
-        private SpriteRenderer artifactSprite = null!;
+        private SpriteRendererResolver artifactSprite = null!;
         private NamespaceID? lastID;
     }
 }

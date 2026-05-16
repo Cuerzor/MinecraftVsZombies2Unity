@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6219736078876838341}
   - component: {fileID: 7329388876700997388}
   - component: {fileID: 1260857132104661418}
+  - component: {fileID: 3875361128181190555}
   m_Layer: 0
   m_Name: Artifact
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &3875361128181190555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3254492916371630052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2448080787058689307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -410,7 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abdf5e903bce6c4284ed35b5bd03b34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  artifactSprite: {fileID: 7329388876700997388}
+  artifactSprite: {fileID: 3875361128181190555}
 --- !u!4 &7560415298407034546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3693395534727488135, guid: 20878af0986885c4793b4099d7815082, type: 3}

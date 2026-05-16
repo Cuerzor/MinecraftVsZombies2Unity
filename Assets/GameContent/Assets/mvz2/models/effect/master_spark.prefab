@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4042749846939289654}
   - component: {fileID: 3478941123492973144}
   - component: {fileID: 7631340197789718280}
+  - component: {fileID: 4561115046589877363}
   m_Layer: 0
   m_Name: Laser4
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &4561115046589877363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2629341344410492232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3924783842833563379
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +122,7 @@ GameObject:
   - component: {fileID: 4073297881295134832}
   - component: {fileID: 8439335519074110534}
   - component: {fileID: 7506579445834479209}
+  - component: {fileID: 1861100512313821357}
   m_Layer: 0
   m_Name: Laser1
   m_TagString: Untagged
@@ -196,6 +210,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &1861100512313821357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924783842833563379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4347350393658685246
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +233,7 @@ GameObject:
   - component: {fileID: 1019017920943326141}
   - component: {fileID: 8537470286038393291}
   - component: {fileID: 8355886096722161546}
+  - component: {fileID: 6198870767530069221}
   m_Layer: 0
   m_Name: Laser5
   m_TagString: Untagged
@@ -294,6 +321,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &6198870767530069221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347350393658685246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5122257057377584712
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +344,7 @@ GameObject:
   - component: {fileID: 7020658516536971695}
   - component: {fileID: 3400587334327765825}
   - component: {fileID: 5236921218240144393}
+  - component: {fileID: 3237296932957094776}
   m_Layer: 0
   m_Name: Laser3
   m_TagString: Untagged
@@ -392,6 +432,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &3237296932957094776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5122257057377584712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9048752361106015098
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +455,7 @@ GameObject:
   - component: {fileID: 6951598621636251840}
   - component: {fileID: 2254278538154522275}
   - component: {fileID: 3169827371246618588}
+  - component: {fileID: 6286498800992308129}
   m_Layer: 0
   m_Name: Laser2
   m_TagString: Untagged
@@ -490,6 +543,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &6286498800992308129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9048752361106015098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &179640361905755136
 PrefabInstance:
   m_ObjectHideFlags: 0

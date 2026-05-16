@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5449501466631849404}
   - component: {fileID: 4588089647981796281}
   - component: {fileID: 3337367472605832283}
+  - component: {fileID: 2027779659817077730}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -115,6 +116,18 @@ MonoBehaviour:
   - {fileID: -1184294957, guid: 47ac2610c2e27e341820f80884cd641a, type: 3}
   - {fileID: 8436474, guid: 47ac2610c2e27e341820f80884cd641a, type: 3}
   - {fileID: 1529302494, guid: 47ac2610c2e27e341820f80884cd641a, type: 3}
+--- !u!114 &2027779659817077730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81928423762502979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &275196446025925932
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +141,7 @@ GameObject:
   - component: {fileID: 8141578408672868981}
   - component: {fileID: 7792657340211113375}
   - component: {fileID: 6801861897371722992}
+  - component: {fileID: 4218372781712690405}
   m_Layer: 0
   m_Name: SpriteRaised
   m_TagString: Untagged
@@ -245,6 +259,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whenFalse: 0
   propertyName: Raised
+--- !u!114 &4218372781712690405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275196446025925932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1867621282444290666
 GameObject:
   m_ObjectHideFlags: 0
@@ -324,6 +350,7 @@ GameObject:
   - component: {fileID: 5432332194177690929}
   - component: {fileID: 4965886301419984861}
   - component: {fileID: 613554058280428718}
+  - component: {fileID: 4838713664895955012}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -441,6 +468,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whenFalse: 1
   propertyName: Raised
+--- !u!114 &4838713664895955012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367564821639696310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6362348530100145580
 PrefabInstance:
   m_ObjectHideFlags: 0

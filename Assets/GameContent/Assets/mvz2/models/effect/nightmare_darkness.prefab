@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 346213273565450809}
   - component: {fileID: 5063909524581875482}
   - component: {fileID: 7508816364030938774}
+  - component: {fileID: 278616388556027467}
   m_Layer: 0
   m_Name: Eye
   m_TagString: Untagged
@@ -166,8 +167,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a97ff389ef17a5e4db3506f7a95512d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eyeRenderer: {fileID: 8916495347096820001}
+  eyeRenderer: {fileID: 278616388556027467}
   spriteSetter: {fileID: 346213273565450809}
+--- !u!114 &278616388556027467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244657208519923181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8068042931274797831
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,6 +192,7 @@ GameObject:
   - component: {fileID: 8836098098974363995}
   - component: {fileID: 1292109500901204975}
   - component: {fileID: 4595642028551801721}
+  - component: {fileID: 6191148376685379183}
   m_Layer: 0
   m_Name: Darkness
   m_TagString: Untagged
@@ -266,6 +280,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &6191148376685379183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8068042931274797831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6786798762085130619
 PrefabInstance:
   m_ObjectHideFlags: 0

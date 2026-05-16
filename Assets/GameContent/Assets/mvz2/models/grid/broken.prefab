@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 8281669614504346550}
   - component: {fileID: 6660798044709961442}
   - component: {fileID: 5944824562432508897}
+  - component: {fileID: 7401892156880353212}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -211,6 +212,18 @@ MonoBehaviour:
   - {fileID: -191510257, guid: cc6b3e7a91e2c864fb023c7055695568, type: 3}
   - {fileID: -91686001, guid: cc6b3e7a91e2c864fb023c7055695568, type: 3}
   propertyName: Decayed
+--- !u!114 &7401892156880353212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381184886731208156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2543873568833787431
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +236,7 @@ GameObject:
   - component: {fileID: 5717235470810231421}
   - component: {fileID: 6983100699767270482}
   - component: {fileID: 5085484206099259015}
+  - component: {fileID: 3430458835108704659}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -326,6 +340,18 @@ MonoBehaviour:
   - {fileID: 1738887678, guid: a2b58e19d655689418bc8cd8b5cdf84b, type: 3}
   - {fileID: 1531079360, guid: a2b58e19d655689418bc8cd8b5cdf84b, type: 3}
   propertyName: Decayed
+--- !u!114 &3430458835108704659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2543873568833787431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5387964072069558479
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +364,7 @@ GameObject:
   - component: {fileID: 4368920310405122316}
   - component: {fileID: 4472493779212690239}
   - component: {fileID: 3037369340367796515}
+  - component: {fileID: 7697417006392453264}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -441,6 +468,18 @@ MonoBehaviour:
   - {fileID: -1056659739, guid: 3bb835826f0becf4fbca23d9d96b230a, type: 3}
   - {fileID: 1389607526, guid: 3bb835826f0becf4fbca23d9d96b230a, type: 3}
   propertyName: Decayed
+--- !u!114 &7697417006392453264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5387964072069558479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8785159459675831589
 GameObject:
   m_ObjectHideFlags: 0

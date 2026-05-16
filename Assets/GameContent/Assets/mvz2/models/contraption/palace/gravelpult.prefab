@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 5332854313863176881}
   - component: {fileID: 7239608087280989914}
   - component: {fileID: 7508733252013777696}
+  - component: {fileID: 6606759890027333822}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -295,6 +296,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &6606759890027333822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914834649222162878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3212347488258356766
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +319,7 @@ GameObject:
   - component: {fileID: 8525184055961361144}
   - component: {fileID: 869972996947223886}
   - component: {fileID: 5737358372690644367}
+  - component: {fileID: 2047789695716506565}
   m_Layer: 0
   m_Name: BackSprite
   m_TagString: Untagged
@@ -393,6 +407,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &2047789695716506565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3212347488258356766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3809632739871124631
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,6 +478,7 @@ GameObject:
   - component: {fileID: 997616572357247960}
   - component: {fileID: 4978529493883690800}
   - component: {fileID: 5969550702079937316}
+  - component: {fileID: 7309769380789089501}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -558,6 +585,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &7309769380789089501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6296084261719012666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6751155615767268439
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +608,7 @@ GameObject:
   - component: {fileID: 8585952463229003577}
   - component: {fileID: 4553012961343012140}
   - component: {fileID: 6468343971966164149}
+  - component: {fileID: 7301022068843089693}
   m_Layer: 0
   m_Name: CoverSprite
   m_TagString: Untagged
@@ -656,6 +696,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &7301022068843089693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6751155615767268439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7267938707202362703
 GameObject:
   m_ObjectHideFlags: 0

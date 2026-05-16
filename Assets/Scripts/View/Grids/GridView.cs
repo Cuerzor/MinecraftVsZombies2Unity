@@ -6,6 +6,7 @@ using MVZ2.Models;
 using MVZ2.View.Level;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Models;
+using MVZ2Logic.UI;
 using PVZEngine.Buffs;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
@@ -81,7 +82,7 @@ namespace MVZ2.Grids
         }
         public void SetSprite(Sprite? sprite)
         {
-            spriteRenderer.sprite = sprite;
+            spriteRenderer.SetSprite(sprite);
             UpdateSpriteEnabled();
         }
         public void SetColor(Color color)
@@ -112,7 +113,7 @@ namespace MVZ2.Grids
         }
         private void UpdateSpriteEnabled()
         {
-            spriteRenderer.enabled = spriteRenderer.sprite && spriteRenderer.color.a > 0 && spriteRenderer.size.sqrMagnitude > 0;
+            spriteRenderer.SetEnabled(spriteRenderer.GetSprite() && spriteRenderer.color.a > 0 && spriteRenderer.size.sqrMagnitude > 0);
         }
         #endregion
 
@@ -120,7 +121,7 @@ namespace MVZ2.Grids
         [SerializeField]
         private Transform rendererTransform = null!;
         [SerializeField]
-        private SpriteRenderer spriteRenderer = null!;
+        private SpriteRendererResolver spriteRenderer = null!;
         [SerializeField]
         private LevelPointerInteractionHandler holdStreakHandler = null!;
         [SerializeField]

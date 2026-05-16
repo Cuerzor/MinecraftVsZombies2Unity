@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7924571943454393108}
   - component: {fileID: 914576061031416462}
   - component: {fileID: 6152664943874210160}
+  - component: {fileID: 2185101126628908102}
   m_Layer: 0
   m_Name: Minecart
   m_TagString: Untagged
@@ -115,6 +116,18 @@ MonoBehaviour:
   - {fileID: -1314042680, guid: 66fb8eb08bbc74b40895bb373bead3ee, type: 3}
   - {fileID: -1447101269, guid: 66fb8eb08bbc74b40895bb373bead3ee, type: 3}
   propertyName: Running
+--- !u!114 &2185101126628908102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6076215379220383769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &342386323964050853
 PrefabInstance:
   m_ObjectHideFlags: 0

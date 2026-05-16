@@ -11,6 +11,7 @@ namespace MVZ2Logic.Games
     {
         Sprite GetDefaultSprite();
         Sprite? GetModelIcon(NamespaceID modelID);
+        Sprite? GetSprite(SpriteReference? sprite);
         Sprite? GetFinalSprite(SpriteReference? sprite);
         Sprite GetFinalSprite(Sprite sprite);
         BlueprintViewData GetBlueprintViewData(NamespaceID? blueprintID, bool endless, bool commandBlock);

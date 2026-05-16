@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7847855768382015648}
   - component: {fileID: 1996964567480175046}
   - component: {fileID: 4325651410721537570}
+  - component: {fileID: 3364096927067427177}
   m_Layer: 0
   m_Name: Palm
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &3364096927067427177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7607988681458311337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1341921963643143
 PrefabInstance:
   m_ObjectHideFlags: 0

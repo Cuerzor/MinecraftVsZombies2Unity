@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2699010420527782378}
   - component: {fileID: 4761358345390073436}
   - component: {fileID: 4241141240542821444}
+  - component: {fileID: 8514401012946525970}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -131,6 +132,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &8514401012946525970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2653405390061277575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5683353409616182588
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,6 +155,7 @@ GameObject:
   - component: {fileID: 5926615587392445271}
   - component: {fileID: 5954978678893057659}
   - component: {fileID: 7991887495237965500}
+  - component: {fileID: 8521190679470452717}
   m_Layer: 11
   m_Name: Light
   m_TagString: Untagged
@@ -229,6 +243,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &8521190679470452717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5683353409616182588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6238990236565550128
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,6 +266,7 @@ GameObject:
   - component: {fileID: 4261149161296241240}
   - component: {fileID: 1308778174961987473}
   - component: {fileID: 5642087860045960311}
+  - component: {fileID: 5407609149758126741}
   m_Layer: 0
   m_Name: Rope2
   m_TagString: Untagged
@@ -327,6 +354,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &5407609149758126741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6238990236565550128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7262241718349913941
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +377,7 @@ GameObject:
   - component: {fileID: 3789170101202737604}
   - component: {fileID: 3639915293804616926}
   - component: {fileID: 2991146990112713435}
+  - component: {fileID: 2771573651516444574}
   m_Layer: 0
   m_Name: Rope1
   m_TagString: Untagged
@@ -425,6 +465,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &2771573651516444574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7262241718349913941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1447768638270826068
 PrefabInstance:
   m_ObjectHideFlags: 0

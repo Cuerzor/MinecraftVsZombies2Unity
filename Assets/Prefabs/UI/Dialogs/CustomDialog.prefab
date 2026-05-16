@@ -705,6 +705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listRoot: {fileID: 4798857660094689629}
   _template: {fileID: 6553883807658024404}
+  pooled: 0
   itemList: []
 --- !u!114 &4475251066206747051
 MonoBehaviour:

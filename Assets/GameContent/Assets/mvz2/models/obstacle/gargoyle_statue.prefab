@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 5739955724992537314}
   - component: {fileID: 1075185545380030477}
   - component: {fileID: 1764543813411416992}
+  - component: {fileID: 1262885715229608569}
   m_Layer: 0
   m_Name: Statue
   m_TagString: Untagged
@@ -217,6 +218,18 @@ MonoBehaviour:
   - {fileID: 1066313923, guid: 684ec7aa8b558924d9d579d222e0eac5, type: 3}
   - {fileID: 639807706, guid: 684ec7aa8b558924d9d579d222e0eac5, type: 3}
   - {fileID: 26981402, guid: 684ec7aa8b558924d9d579d222e0eac5, type: 3}
+--- !u!114 &1262885715229608569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2711724986720348009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3961043934498520850
 GameObject:
   m_ObjectHideFlags: 0

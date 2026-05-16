@@ -50,7 +50,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7115639321957275279, guid: 20878af0986885c4793b4099d7815082, type: 3}
       propertyPath: m_Name
-      value: bone Variant
+      value: fireburn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

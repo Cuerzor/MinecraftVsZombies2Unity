@@ -40,10 +40,6 @@ namespace MVZ2Logic.Models.Widgets
             index = Mathf.Clamp(i, 0, sprites.Length - 1);
             beforeIndex = index;
             Sprite sprite = sprites[index];
-            if (Global.Resources != null)
-            {
-                sprite = Global.Resources.GetFinalSprite(sprite);
-            }
             Renderer.SetSprite(sprite);
         }
         private ImageResolver Renderer

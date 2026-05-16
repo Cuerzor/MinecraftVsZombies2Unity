@@ -728,6 +728,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listRoot: {fileID: 5667267432707996271}
   _template: {fileID: 8335789633281373665}
+  pooled: 0
   itemList: []
 --- !u!224 &5667267432707996271 stripped
 RectTransform:

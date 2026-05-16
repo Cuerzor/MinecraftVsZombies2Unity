@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grids: {fileID: 298835514030117024}
-  gridWidth: 0.8
 --- !u!114 &298835514030117024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listRoot: {fileID: 8786721627005968435}
   _template: {fileID: 1307240081318352291}
+  pooled: 0
   itemList: []
 --- !u!1001 &996055722589852006
 PrefabInstance:

@@ -49,7 +49,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   view: {fileID: 5642770827677979630}
-  hpBarView: {fileID: 0}
   size: {x: 0.8, y: 0.8}
 --- !u!114 &5642770827677979630
 MonoBehaviour:
@@ -64,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rendererTransform: {fileID: 2923234992898687305}
-  spriteRenderer: {fileID: 8345045272177654768}
+  spriteRenderer: {fileID: 1559516451782175885}
   holdStreakHandler: {fileID: 6577921544806083142}
   polygonCollider: {fileID: 1469516605759971153}
   modelRoot: {fileID: 2278733089808412021}
@@ -235,6 +234,7 @@ GameObject:
   m_Component:
   - component: {fileID: 231144033771535923}
   - component: {fileID: 8345045272177654768}
+  - component: {fileID: 1559516451782175885}
   m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
@@ -309,3 +309,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1559516451782175885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7099712193963439809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

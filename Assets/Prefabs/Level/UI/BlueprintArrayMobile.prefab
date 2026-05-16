@@ -332,6 +332,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8908475050902059641, guid: b149303dbaf941b4ba2483460e17bf86, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8946175105839993692, guid: b149303dbaf941b4ba2483460e17bf86, type: 3}
       propertyPath: m_Layer
       value: 5

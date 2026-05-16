@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 2838041724427969639}
   - component: {fileID: 7505956373723998801}
   - component: {fileID: 1034011333283104825}
+  - component: {fileID: 6490794548733020165}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -277,6 +278,18 @@ MonoBehaviour:
   hue: -30
   saturation: 0
   value: 0
+--- !u!114 &6490794548733020165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2578051745235027094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2613435047771497638
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +302,7 @@ GameObject:
   - component: {fileID: 7787668162967854878}
   - component: {fileID: 8065756966098006372}
   - component: {fileID: 1068902033492576215}
+  - component: {fileID: 4403277252084402416}
   m_Layer: 0
   m_Name: Ring
   m_TagString: Untagged
@@ -391,6 +405,18 @@ MonoBehaviour:
   hue: -30
   saturation: 0
   value: 0
+--- !u!114 &4403277252084402416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2613435047771497638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &705542471486471521
 PrefabInstance:
   m_ObjectHideFlags: 0

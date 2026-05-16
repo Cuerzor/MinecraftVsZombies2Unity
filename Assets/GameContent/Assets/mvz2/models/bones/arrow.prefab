@@ -1,5 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &2646723809705743153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3756126550419925602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2781950013822587328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4806077969181058768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7991917737455612904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9170461748216678775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1532419178294587656
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,6 +110,7 @@ GameObject:
   - component: {fileID: 1216651210162878645}
   - component: {fileID: 3027486246590841048}
   - component: {fileID: 1809867046921418998}
+  - component: {fileID: 2646723809705743153}
   m_Layer: 0
   m_Name: ArrowHorizontal
   m_TagString: Untagged
@@ -190,6 +227,7 @@ GameObject:
   - component: {fileID: 2931182340171549808}
   - component: {fileID: 6081147602293051566}
   - component: {fileID: 3332097258649018195}
+  - component: {fileID: 2781950013822587328}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -350,6 +388,7 @@ GameObject:
   - component: {fileID: 2511105304949660224}
   - component: {fileID: 1602095418309025502}
   - component: {fileID: 1705875129185329169}
+  - component: {fileID: 7991917737455612904}
   m_Layer: 0
   m_Name: ArrowVertical
   m_TagString: Untagged

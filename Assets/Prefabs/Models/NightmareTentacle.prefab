@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 146998060468328315}
   - component: {fileID: 4370474106191956106}
   - component: {fileID: 6615876369756992814}
+  - component: {fileID: 4399016335797468244}
   m_Layer: 0
   m_Name: Tentacle
   m_TagString: Untagged
@@ -117,6 +118,18 @@ MonoBehaviour:
   - {fileID: 5653982790268467409, guid: ae1a22e91a039eb4ab8bed023d69ca2d, type: 3}
   - {fileID: 5039749940984752654, guid: ae1a22e91a039eb4ab8bed023d69ca2d, type: 3}
   index: 0
+--- !u!114 &4399016335797468244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262999418767946144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2541727702646479933
 GameObject:
   m_ObjectHideFlags: 0

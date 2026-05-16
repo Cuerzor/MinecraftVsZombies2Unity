@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 735567861274095850}
   - component: {fileID: 7350024698793395454}
   - component: {fileID: 6728507045426914852}
+  - component: {fileID: 6772096800598391473}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -229,6 +230,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &6772096800598391473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702284697925099085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1431240748924407185
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,6 +687,7 @@ GameObject:
   - component: {fileID: 3867620175369817405}
   - component: {fileID: 2650246049846582190}
   - component: {fileID: 212319084127107617}
+  - component: {fileID: 3442651252592741384}
   m_Layer: 0
   m_Name: InnerCoatSprite
   m_TagString: Untagged
@@ -776,6 +790,18 @@ MonoBehaviour:
   sprites:
   - {fileID: -1066980213, guid: 3751b098f9b403943aaf5f03eb4626e9, type: 3}
   - {fileID: -662110431, guid: 3751b098f9b403943aaf5f03eb4626e9, type: 3}
+--- !u!114 &3442651252592741384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7847272104404947970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8206120729271869687
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +814,7 @@ GameObject:
   - component: {fileID: 7845390779384252331}
   - component: {fileID: 2731749350690481277}
   - component: {fileID: 2140164734348950138}
+  - component: {fileID: 5729974695050446817}
   m_Layer: 0
   m_Name: OuterCoatSprite
   m_TagString: Untagged
@@ -890,6 +917,18 @@ MonoBehaviour:
   sprites:
   - {fileID: -497240914, guid: 3751b098f9b403943aaf5f03eb4626e9, type: 3}
   - {fileID: -1722542415, guid: 3751b098f9b403943aaf5f03eb4626e9, type: 3}
+--- !u!114 &5729974695050446817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8206120729271869687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3545627255051338951
 PrefabInstance:
   m_ObjectHideFlags: 0

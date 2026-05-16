@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5916568526226006265}
   - component: {fileID: 7382559276255134206}
   - component: {fileID: 1628380043194151879}
+  - component: {fileID: 2618126861025749479}
   m_Layer: 0
   m_Name: Sensor
   m_TagString: Untagged
@@ -118,6 +119,18 @@ MonoBehaviour:
   - {fileID: 662959243, guid: 6b600f1f5110d7644843e4595de25748, type: 3}
   - {fileID: 2073939680, guid: 6b600f1f5110d7644843e4595de25748, type: 3}
   index: 0
+--- !u!114 &2618126861025749479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2620626095483736055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5947148816323580384
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4022329968716029526}
   - component: {fileID: 5559762522035910853}
   - component: {fileID: 7599177163246078791}
+  - component: {fileID: 44585454547312673}
   m_Layer: 0
   m_Name: Shadow
   m_TagString: Untagged
@@ -112,6 +113,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   propertyName: ShadowSprite
+--- !u!114 &44585454547312673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2723240856861886981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3179895316033899172
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,6 +136,7 @@ GameObject:
   - component: {fileID: 4042294556943731337}
   - component: {fileID: 3326115812694816766}
   - component: {fileID: 8789286424391694555}
+  - component: {fileID: 980277860265109527}
   m_Layer: 0
   m_Name: Main
   m_TagString: Untagged
@@ -210,6 +224,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &980277860265109527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3179895316033899172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1738793092069441511
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3702343458702107888}
   - component: {fileID: 2021674221249197679}
   - component: {fileID: 588197779043864210}
+  - component: {fileID: 9217386435185736753}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -115,6 +116,18 @@ MonoBehaviour:
   - {fileID: -8387447821006724102, guid: 74da7e893d261a549a659cfaef15b372, type: 3}
   - {fileID: 1910782003597169381, guid: 74da7e893d261a549a659cfaef15b372, type: 3}
   propertyName: Steel
+--- !u!114 &9217386435185736753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4825078248239013641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1340873413173779825
 PrefabInstance:
   m_ObjectHideFlags: 0

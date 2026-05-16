@@ -58,7 +58,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9abc2d1d73694ef4798b808c036c46ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destroyDelay: 0
+  onDelayedDestroy:
+    m_PersistentCalls:
+      m_Calls: []
   sortingGroup: {fileID: 6247621814009837820}
+  modelCollider: {fileID: 0}
   group: {fileID: 4945177359727147975}
   bone: {fileID: 0}
 --- !u!114 &4945177359727147975

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2111983628199379808}
   - component: {fileID: 8678551366490053832}
   - component: {fileID: 1198910240252037089}
+  - component: {fileID: 8540315776726909783}
   m_Layer: 0
   m_Name: Stain
   m_TagString: Untagged
@@ -115,6 +116,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c49340a60ad150a4895d58f3e7e9b9ce, type: 3}
   - {fileID: 21300000, guid: fc48781f16aacf545871a4e206555d4b, type: 3}
   propertyName: Frozen
+--- !u!114 &8540315776726909783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3253438922338791084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3178845773382510260
 PrefabInstance:
   m_ObjectHideFlags: 0

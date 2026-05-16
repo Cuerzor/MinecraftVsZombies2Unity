@@ -3816,6 +3816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _listRoot: {fileID: 6006865120943666496}
   _template: {fileID: 4763588751856144916}
+  pooled: 0
   itemList: []
 --- !u!114 &4539132053221348561
 MonoBehaviour:

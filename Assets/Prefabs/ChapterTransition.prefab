@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6276775300587129163}
   - component: {fileID: 4208888071819193841}
+  - component: {fileID: 8814655373878798354}
   m_Layer: 0
   m_Name: Blackscreen
   m_TagString: Untagged
@@ -84,6 +85,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8814655373878798354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364277512408665318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1830656831045827510
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,7 +205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelRoot: {fileID: 397742612468732641}
-  titleRenderer: {fileID: 3610029245878666668}
+  titleRenderer: {fileID: 2956440860600898631}
 --- !u!114 &3328942860822422723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fb9c05dc319b86488f990e81c869cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  titleRenderer: {fileID: 3610029245878666668}
+  titleRenderer: {fileID: 2956440860600898631}
   titleBlur: 0
 --- !u!114 &5547798918175058454
 MonoBehaviour:
@@ -357,6 +370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4025070711961199997}
   - component: {fileID: 3610029245878666668}
+  - component: {fileID: 2956440860600898631}
   m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
@@ -431,6 +445,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2956440860600898631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5650983915837926890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6852599679434878468
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4397096177199626742}
   - component: {fileID: 3468404799839812615}
+  - component: {fileID: 7849869563950411630}
   m_Layer: 0
   m_Name: Wheel
   m_TagString: Untagged
@@ -515,6 +542,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7849869563950411630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6852599679434878468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7751727151459404030
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6615759158297214109}
   - component: {fileID: 214608146644628353}
+  - component: {fileID: 7697634821467895225}
   m_Layer: 0
   m_Name: Darkness
   m_TagString: Untagged
@@ -631,6 +671,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7697634821467895225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989153381135569167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8341338576704618475
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,6 +694,7 @@ GameObject:
   - component: {fileID: 871682962494404246}
   - component: {fileID: 6342863947646295851}
   - component: {fileID: 7596592764214401793}
+  - component: {fileID: 8569609125468638964}
   m_Layer: 0
   m_Name: End
   m_TagString: Untagged
@@ -726,5 +779,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8569609125468638964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8341338576704618475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

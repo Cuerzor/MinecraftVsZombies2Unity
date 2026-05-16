@@ -382,6 +382,7 @@ GameObject:
   - component: {fileID: 4472467867800038710}
   - component: {fileID: 3274010518531646179}
   - component: {fileID: 7994544155754036024}
+  - component: {fileID: 7565845588646819748}
   m_Layer: 0
   m_Name: Curtain
   m_TagString: Untagged
@@ -469,6 +470,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &7565845588646819748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4778825464043581759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5882583212920831278
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,10 +780,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4480636592742951136, guid: 5a9f85f0223f0be40be634a6232c618d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5285671923790247154}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5733510557835331678, guid: 5a9f85f0223f0be40be634a6232c618d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5051571344827232164}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a9f85f0223f0be40be634a6232c618d, type: 3}
 --- !u!114 &1073367641098590307 stripped
 MonoBehaviour:
@@ -791,6 +801,17 @@ Transform:
 --- !u!114 &2121933975748928659 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4302299650272933009, guid: 5a9f85f0223f0be40be634a6232c618d, type: 3}
+  m_PrefabInstance: {fileID: 2794000924494188546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47ce2b2a42b33624081ebb4fff663cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2623145442206827467 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 189434755982988233, guid: 5a9f85f0223f0be40be634a6232c618d, type: 3}
   m_PrefabInstance: {fileID: 2794000924494188546}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -854,24 +875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ce2b2a42b33624081ebb4fff663cf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7590760478585706588 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5733510557835331678, guid: 5a9f85f0223f0be40be634a6232c618d, type: 3}
-  m_PrefabInstance: {fileID: 2794000924494188546}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5051571344827232164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7590760478585706588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47ce2b2a42b33624081ebb4fff663cf7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  excludedInGroup: 0
 --- !u!1001 &3895552992249988518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -894,7 +897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.size
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: animators.Array.data[0]
@@ -927,47 +930,47 @@ PrefabInstance:
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[5]
       value: 
-      objectReference: {fileID: 5051571344827232164}
+      objectReference: {fileID: 5706442315815232827}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[6]
       value: 
-      objectReference: {fileID: 5706442315815232827}
+      objectReference: {fileID: 4328803127767828908}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[7]
       value: 
-      objectReference: {fileID: 4328803127767828908}
+      objectReference: {fileID: 4117714550789246499}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[8]
       value: 
-      objectReference: {fileID: 4117714550789246499}
+      objectReference: {fileID: 5866052947867655360}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[9]
       value: 
-      objectReference: {fileID: 5866052947867655360}
+      objectReference: {fileID: 99917727326187895}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[10]
       value: 
-      objectReference: {fileID: 99917727326187895}
+      objectReference: {fileID: 3408429686489242143}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[11]
       value: 
-      objectReference: {fileID: 3408429686489242143}
+      objectReference: {fileID: 5990137272651935967}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[12]
       value: 
-      objectReference: {fileID: 5990137272651935967}
+      objectReference: {fileID: 360707278672909581}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[13]
       value: 
-      objectReference: {fileID: 360707278672909581}
+      objectReference: {fileID: 306586310885818592}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[14]
       value: 
-      objectReference: {fileID: 306586310885818592}
+      objectReference: {fileID: 7994544155754036024}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[15]
       value: 
-      objectReference: {fileID: 7994544155754036024}
+      objectReference: {fileID: 2623145442206827467}
     - target: {fileID: 4945177359727147975, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: renderers.Array.data[18]
       value: 

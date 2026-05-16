@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3870385993966908238}
   - component: {fileID: 988253211570855314}
   - component: {fileID: 5772685401457965703}
+  - component: {fileID: 5210444447271592477}
   m_Layer: 0
   m_Name: Bolt
   m_TagString: Untagged
@@ -117,6 +118,18 @@ MonoBehaviour:
   - {fileID: 783071837, guid: cdb53ab5c1044c94bbfc0ef3da28259e, type: 3}
   - {fileID: -807408713, guid: cdb53ab5c1044c94bbfc0ef3da28259e, type: 3}
   index: 0
+--- !u!114 &5210444447271592477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7605545891275307262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8918371213287305409
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +141,7 @@ GameObject:
   - component: {fileID: 7923479635667080659}
   - component: {fileID: 6069824882498335468}
   - component: {fileID: 90344900663075075}
+  - component: {fileID: 876666528754341421}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -215,6 +229,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &876666528754341421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8918371213287305409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1957028669466390670
 PrefabInstance:
   m_ObjectHideFlags: 0

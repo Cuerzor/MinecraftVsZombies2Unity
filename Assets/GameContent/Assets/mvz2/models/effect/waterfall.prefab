@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7272831113734245911}
   - component: {fileID: 1032831004613601801}
   - component: {fileID: 122438409387008578}
+  - component: {fileID: 1318897481240451090}
   m_Layer: 0
   m_Name: Pool
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &1318897481240451090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57842395309868413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1063749595974324716
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4acf9890a39d264d90d78afbbe59557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolRenderer: {fileID: 1032831004613601801}
+  poolRenderer: {fileID: 1318897481240451090}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   censoredColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &281691067127905594

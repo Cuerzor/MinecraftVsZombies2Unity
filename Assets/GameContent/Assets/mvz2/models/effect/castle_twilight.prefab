@@ -93,6 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 635138468073117114}
   - component: {fileID: 5151215307685955765}
+  - component: {fileID: 8018781700189617584}
   m_Layer: 11
   m_Name: Light
   m_TagString: Untagged
@@ -167,6 +168,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!114 &8018781700189617584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045184246633458992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4273512824499618131
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +191,7 @@ GameObject:
   - component: {fileID: 3955713309370829442}
   - component: {fileID: 2404406206675393813}
   - component: {fileID: 3349710650950147585}
+  - component: {fileID: 7590541204304682857}
   m_Layer: 0
   m_Name: Twilight
   m_TagString: Untagged
@@ -265,6 +279,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &7590541204304682857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4273512824499618131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7389156391784151491
 GameObject:
   m_ObjectHideFlags: 0

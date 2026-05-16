@@ -56,6 +56,11 @@ namespace MVZ2.Editor
         {
             ModelMenu.UpdateModelElements();
         }
+        [MenuItem("MVZ2/Assets/Models/Update Sprite Renderer Resolvers", priority = 4000, secondaryPriority = 1)]
+        public static void UpdateSpriteRendererResolvers()
+        {
+            ModelMenu.UpdateSpriteRendererResolvers();
+        }
         [MenuItem("MVZ2/Assets/Models/Convert Models to New", priority = 4100, secondaryPriority = 0)]
         public static void ConvertOldModel()
         {

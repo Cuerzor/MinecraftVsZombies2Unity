@@ -469,7 +469,7 @@ MonoBehaviour:
   userNameText: {fileID: 19190233221325566}
   userNameGoldText: {fileID: 4140980917551548810}
   versionText: {fileID: 5654465003447727250}
-  windowViewSpriteRenderer: {fileID: 5157202091593183788}
+  windowViewSpriteRenderer: {fileID: 734472882306927563}
   optionsDialog: {fileID: 8293594323133074325}
   userManageDialog: {fileID: 6334633390785555530}
   adventureButton: {fileID: 3632213752652413621}
@@ -518,6 +518,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2630623573357852188}
   - component: {fileID: 1270517634782119671}
+  - component: {fileID: 2920285675885720910}
   m_Layer: 0
   m_Name: Submenu
   m_TagString: Untagged
@@ -592,6 +593,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2920285675885720910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2580350333158591808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2660910645110331576
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1846521207395852747}
   - component: {fileID: 5965524282451574722}
+  - component: {fileID: 4116941921942594354}
   m_Layer: 0
   m_Name: Ceiling
   m_TagString: Untagged
@@ -715,6 +729,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4116941921942594354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294473366680493767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3474497901137875857
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 836383285485733382}
   - component: {fileID: 5360371866293965292}
+  - component: {fileID: 1898900966033733726}
   m_Layer: 0
   m_Name: Achievements
   m_TagString: Untagged
@@ -971,6 +998,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1898900966033733726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3749734889460143402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3871183180979033227
 GameObject:
   m_ObjectHideFlags: 0
@@ -1294,6 +1333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 205225621350609543}
   - component: {fileID: 6107847509214811578}
+  - component: {fileID: 1350816277799806377}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1368,6 +1408,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1350816277799806377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4770079366468216719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4929754387445247282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,6 +1466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2368351954063993691}
   - component: {fileID: 4534457991966726518}
+  - component: {fileID: 8899308177410063511}
   m_Layer: 0
   m_Name: Stats
   m_TagString: Untagged
@@ -1488,6 +1541,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8899308177410063511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509717916310958908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6533362251711783935
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6842752271637437419}
   - component: {fileID: 5157202091593183788}
+  - component: {fileID: 734472882306927563}
   m_Layer: 0
   m_Name: WindowView
   m_TagString: Untagged
@@ -2329,6 +2395,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &734472882306927563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8223062333882560628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8339815030163890691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2377,6 +2455,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3186201173771559409}
   - component: {fileID: 1280920538643880501}
+  - component: {fileID: 4102611160777362284}
   m_Layer: 0
   m_Name: Mainmenu
   m_TagString: Untagged
@@ -2451,6 +2530,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4102611160777362284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610870351637890168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8739841834603325366
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,7 +3281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1274556583748770706, guid: ea9d985dfb9230e48a94a6f60fe2170c, type: 3}
       propertyPath: m_Size
-      value: 0.9999972
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1274556583748770706, guid: ea9d985dfb9230e48a94a6f60fe2170c, type: 3}
       propertyPath: m_Value

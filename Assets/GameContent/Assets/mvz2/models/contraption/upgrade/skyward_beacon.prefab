@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3655697085259681412}
   - component: {fileID: 1000801742655251867}
   - component: {fileID: 2344782722834667103}
+  - component: {fileID: 7395972739002573853}
   m_Layer: 0
   m_Name: ForeSprite
   m_TagString: Untagged
@@ -115,6 +116,18 @@ MonoBehaviour:
   - {fileID: 2146546806, guid: b18e3e85e3d64b14d9e17ae88b752b33, type: 3}
   - {fileID: -998674976, guid: b18e3e85e3d64b14d9e17ae88b752b33, type: 3}
   propertyName: Night
+--- !u!114 &7395972739002573853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807094339084967006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3176229489359200969
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +380,7 @@ GameObject:
   - component: {fileID: 4893658799845965426}
   - component: {fileID: 7883722454208648621}
   - component: {fileID: 5471036716157503138}
+  - component: {fileID: 1208210504069561970}
   m_Layer: 0
   m_Name: BackSprite
   m_TagString: Untagged
@@ -470,6 +484,18 @@ MonoBehaviour:
   - {fileID: -130671910, guid: b18e3e85e3d64b14d9e17ae88b752b33, type: 3}
   - {fileID: 888369719, guid: b18e3e85e3d64b14d9e17ae88b752b33, type: 3}
   propertyName: Night
+--- !u!114 &1208210504069561970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7563218703950780463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7719893742884899469
 GameObject:
   m_ObjectHideFlags: 0

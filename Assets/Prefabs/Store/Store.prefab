@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storeUIRoot: {fileID: 9203681357615537371}
-  background: {fileID: 4924578231499276459}
+  background: {fileID: 4917241606865700160}
   speechBubble: {fileID: 6891927361206327742}
   returnButton: {fileID: 498202363231637578}
   prevPageButton: {fileID: 2186780436203108119}
@@ -803,6 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2156681049817311595}
   - component: {fileID: 4924578231499276459}
+  - component: {fileID: 4917241606865700160}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -877,6 +878,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4917241606865700160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7749121592149574103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8192202595335793075
 GameObject:
   m_ObjectHideFlags: 0

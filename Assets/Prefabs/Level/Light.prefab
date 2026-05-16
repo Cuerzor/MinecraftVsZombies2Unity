@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 869df0aaae665414cb6229f9edee93f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightRenderer: {fileID: 9092457047127972368}
+  lightRenderer: {fileID: 6716489674646073383}
   shakeRange: 0.02
 --- !u!1 &4330566560682359567
 GameObject:
@@ -57,6 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5886555114499679842}
   - component: {fileID: 9092457047127972368}
+  - component: {fileID: 6716489674646073383}
   m_Layer: 11
   m_Name: Renderer
   m_TagString: Untagged
@@ -131,3 +132,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6716489674646073383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330566560682359567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

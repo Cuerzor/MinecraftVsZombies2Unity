@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2.UI.Talk;
+using MVZ2Logic.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -57,7 +58,7 @@ namespace MVZ2.UI.Store
         }
         public void SetBackground(Sprite? sprite)
         {
-            background.sprite = sprite;
+            background.SetSprite(sprite);
         }
         public void ShowTalk(string message)
         {
@@ -94,7 +95,7 @@ namespace MVZ2.UI.Store
         [SerializeField]
         private GameObject storeUIRoot = null!;
         [SerializeField]
-        private SpriteRenderer background = null!;
+        private SpriteRendererResolver background = null!;
         [SerializeField]
         private SpeechBubble speechBubble = null!;
         [SerializeField]

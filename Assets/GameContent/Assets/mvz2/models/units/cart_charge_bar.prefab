@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 931557168292887779}
   - component: {fileID: 8288673465000163810}
   - component: {fileID: 321177010604674883}
+  - component: {fileID: 3920708502840920993}
   m_Layer: 0
   m_Name: Bar
   m_TagString: Untagged
@@ -112,6 +113,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 1
+--- !u!114 &3920708502840920993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392958270068540075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2855240463619704614
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,7 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargeBarRoot: {fileID: 2855240463619704614}
-  chargeBarRenderer: {fileID: 931557168292887779}
+  chargeBarRenderer: {fileID: 3920708502840920993}
   circleSetter: {fileID: 8288673465000163810}
   barGradient:
     serializedVersion: 2
@@ -202,6 +215,7 @@ GameObject:
   - component: {fileID: 8114017695227672404}
   - component: {fileID: 1861302573581554911}
   - component: {fileID: 1956129483546867841}
+  - component: {fileID: 9059725987735043983}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -289,3 +303,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 1
+--- !u!114 &9059725987735043983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4758127171048753891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
