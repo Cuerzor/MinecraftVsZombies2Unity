@@ -18,7 +18,7 @@ namespace MVZ2.ChapterTransition
                 return;
             animator.SetInteger("Mode", end ? ChapterTransitionMeta.MODE_END : meta.Mode);
             ui.SetWheelRootRotation(meta.Angle);
-            ui.SetTitleSprite(Main.GetFinalSprite(meta.TextSprite));
+            ui.SetTitleSprite(Main.GetSprite(meta.TextSprite));
         }
         public async Task DisplayAsync(NamespaceID id, bool end)
         {

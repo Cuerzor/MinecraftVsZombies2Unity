@@ -84,7 +84,7 @@ namespace MVZ2.Entities
                 if (!Controller.ShouldShowArmorHPBar(armor))
                     continue;
 
-                var icon = Main.GetFinalSprite(armorSlotDefinition.HPBarIcon);
+                var icon = Main.GetSprite(armorSlotDefinition.HPBarIcon);
                 var viewData = new HPBarViewData()
                 {
                     barAmount = Controller.GetArmorHPBarAmount(armor),

@@ -194,9 +194,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 242
-        y: 48
-        width: 112
-        height: 7
+        y: 0
+        width: 120
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: card_mobile_3
       rect:
         serializedVersion: 2
-        x: 242
-        y: 23
-        width: 24
-        height: 24
+        x: 363
+        y: 0
+        width: 120
+        height: 55
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

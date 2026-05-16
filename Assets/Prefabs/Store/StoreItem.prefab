@@ -633,7 +633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 5529587560801571177}
   root: {fileID: 8461494916374480835}
-  iconImage: {fileID: 2262010051491210584}
+  iconImage: {fileID: 6495420116276396077}
   blueprintRoot: {fileID: 5937501744187399393}
   blueprintStandalone: {fileID: 3262997980578660946}
   blueprintMobile: {fileID: 2439367174085539586}
@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 4333291388934512981}
   - component: {fileID: 4220877880523061170}
   - component: {fileID: 2262010051491210584}
+  - component: {fileID: 6495420116276396077}
   m_Layer: 14
   m_Name: Icon
   m_TagString: Untagged
@@ -772,6 +773,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6495420116276396077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8421449440950970095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8461494916374480835
 GameObject:
   m_ObjectHideFlags: 0

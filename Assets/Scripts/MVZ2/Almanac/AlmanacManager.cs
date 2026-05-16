@@ -251,7 +251,7 @@ namespace MVZ2.Almanacs
             var spriteRef = def.GetSpriteReference();
             if (SpriteReference.IsValid(spriteRef))
             {
-                icon = Main.GetFinalSprite(spriteRef);
+                icon = Main.GetSprite(spriteRef);
             }
             return icon;
         }
@@ -265,7 +265,7 @@ namespace MVZ2.Almanacs
                 return null;
             Sprite? sprite = null;
             if (picture.sprite != null)
-                sprite = Main.GetFinalSprite(picture.sprite);
+                sprite = Main.GetSprite(picture.sprite);
 
             if (sprite)
                 return sprite;

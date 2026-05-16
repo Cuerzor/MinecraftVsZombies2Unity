@@ -24,8 +24,8 @@ namespace MVZ2.Note
                 return;
             definition = def;
             isFlipped = false;
-            ui.SetNoteSprite(main.GetFinalSprite(def.GetNoteSprite()));
-            ui.SetBackground(main.GetFinalSprite(def.GetNoteBackground()));
+            ui.SetNoteSprite(main.GetSprite(def.GetNoteSprite()));
+            ui.SetBackground(main.GetSprite(def.GetNoteBackground()));
             ui.SetCanFlip(def.CanFlip());
             ui.SetFlipAtLeft(isFlipped);
             var startTalk = def.GetStartTalk() ?? new NamespaceID(id.SpaceName, $"{id.Path}_note");
@@ -59,7 +59,7 @@ namespace MVZ2.Note
             isFlipped = !isFlipped;
             main.SoundManager.Play2D(LogicSoundID.paper);
             var sprRef = isFlipped ? definition.GetFlipNoteSprite() : definition.GetNoteSprite();
-            ui.SetNoteSprite(main.GetFinalSprite(sprRef));
+            ui.SetNoteSprite(main.GetSprite(sprRef));
             ui.SetFlipAtLeft(isFlipped);
         }
         private void OnButtonClickCallback()

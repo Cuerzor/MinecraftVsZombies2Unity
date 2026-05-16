@@ -125,7 +125,7 @@ namespace MVZ2.Level.Components
                 bool glowing = false;
                 if (artifact != null)
                 {
-                    icon = Main.GetFinalSprite(artifact.Definition.GetSpriteReference());
+                    icon = Main.GetSprite(artifact.Definition.GetSpriteReference());
                     var displayText = artifact.GetDisplayText();
                     if (!string.IsNullOrEmpty(displayText))
                     {

@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2.Models;
+using MVZ2Logic.UI;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,10 +59,8 @@ namespace MVZ2.UI.Almanac
             entryModel.gameObject.SetActive(false);
             if (sized)
             {
-                entryImageFull.sprite = null;
-                entryImageFull.enabled = false;
-                entryImageSized.sprite = image;
-                entryImageSized.enabled = image;
+                entryImageFull.SetSpriteAndEnabled(null);
+                entryImageSized.SetSpriteAndEnabled(image);
                 entryImageSized.color = color;
                 if (image.Exists())
                 {
@@ -70,11 +69,9 @@ namespace MVZ2.UI.Almanac
             }
             else
             {
-                entryImageFull.sprite = image;
-                entryImageFull.enabled = image;
+                entryImageFull.SetSpriteAndEnabled(image);
                 entryImageFull.color = color;
-                entryImageSized.sprite = null;
-                entryImageSized.enabled = false;
+                entryImageSized.SetSpriteAndEnabled(null);
                 entryImageSized.rectTransform.sizeDelta = Vector2.zero;
             }
             iconZoomButtonRoot.SetActive(zoom);
@@ -112,9 +109,9 @@ namespace MVZ2.UI.Almanac
         [SerializeField]
         private GameObject entryImageRegion = null!;
         [SerializeField]
-        private Image entryImageFull = null!;
+        private ImageResolver entryImageFull = null!;
         [SerializeField]
-        private Image entryImageSized = null!;
+        private ImageResolver entryImageSized = null!;
         [SerializeField]
         private GameObject iconZoomButtonRoot = null!;
         [SerializeField]

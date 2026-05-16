@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2Logic.Models;
+using MVZ2Logic.UI;
 using TMPro;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
@@ -15,8 +16,8 @@ namespace MVZ2.UI.Store
         public void UpdateItem(ProductItemViewData viewData)
         {
             root.SetActive(!viewData.empty);
-            iconImage.sprite = viewData.icon;
-            iconImage.enabled = !viewData.isBlueprint && iconImage.sprite;
+            iconImage.SetSprite(viewData.icon);
+            iconImage.SetEnabled(!viewData.isBlueprint && viewData.icon);
 
             blueprintRoot.SetActive(viewData.isBlueprint);
             if (blueprintStandalone.Exists())
@@ -55,7 +56,7 @@ namespace MVZ2.UI.Store
         [SerializeField]
         private GameObject root = null!;
         [SerializeField]
-        private Image iconImage = null!;
+        private ImageResolver iconImage = null!;
         [SerializeField]
         private GameObject blueprintRoot = null!;
         [SerializeField]

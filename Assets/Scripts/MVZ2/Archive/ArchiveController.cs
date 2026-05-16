@@ -100,7 +100,7 @@ namespace MVZ2.Archives
 
         void IArchiveInterface.SetBackground(SpriteReference backgroundRef)
         {
-            var background = Main.GetFinalSprite(backgroundRef);
+            var background = Main.GetSprite(backgroundRef);
             ui.SetSimulationBackground(background);
         }
         private void ShowReplayDialog()
@@ -157,7 +157,7 @@ namespace MVZ2.Archives
                 return;
             var name = GetTranslatedString(LogicStrings.CONTEXT_ARCHIVE, group.archive.name);
             var backgroundRef = group.archive.background;
-            var background = Main.GetFinalSprite(backgroundRef);
+            var background = Main.GetSprite(backgroundRef);
             var musicID = group.archive.music;
             var music = Main.ResourceManager.GetMusicName(musicID);
             var tags = string.Join(", ", group.tags.Select(t => Main.ResourceManager.GetArchiveTagName(t)));
@@ -226,7 +226,7 @@ namespace MVZ2.Archives
             if (group == null || group.archive == null)
                 return;
             var backgroundRef = group.archive.background;
-            var background = Main.GetFinalSprite(backgroundRef);
+            var background = Main.GetSprite(backgroundRef);
             var musicID = group.archive.music;
             ui.SetSimulationBackground(background);
             ui.DisplayPage(ArchiveUI.Page.Simulation);

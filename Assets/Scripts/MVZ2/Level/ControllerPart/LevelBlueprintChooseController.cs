@@ -956,7 +956,7 @@ namespace MVZ2.Level
             var spriteRef = def.GetSpriteReference();
             if (!SpriteReference.IsValid(spriteRef))
                 return null;
-            return Main.GetFinalSprite(spriteRef);
+            return Main.GetSprite(spriteRef);
         }
         private bool CanChooseArtifact(NamespaceID? id)
         {

@@ -77,7 +77,7 @@ namespace MVZ2.Store
         }
         public void SetPreset(StorePresetMeta preset)
         {
-            var backgroundSprite = Main.GetFinalSprite(preset.Background);
+            var backgroundSprite = Main.GetSprite(preset.Background);
             ui.SetBackground(backgroundSprite);
 
             var characterID = preset.Character;

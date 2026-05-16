@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6992744642440276694}
   - component: {fileID: 7022608227862251349}
   - component: {fileID: 7675628790308943275}
+  - component: {fileID: 6356886087268741374}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -75,6 +76,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6356886087268741374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404396382492211960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2142596925042753480
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,8 +393,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f143525f8f919c84a92ad7721d6711ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteImage: {fileID: 6021254685125182719}
-  backgroundImage: {fileID: 7675628790308943275}
+  noteImage: {fileID: 7679221829025419098}
+  backgroundImage: {fileID: 6356886087268741374}
   flipObj: {fileID: 5850381940999132336}
   flipButtonLeft: {fileID: 978366860576805380}
   flipButtonRight: {fileID: 5977438748193614181}
@@ -859,6 +872,7 @@ GameObject:
   - component: {fileID: 6007436206665906630}
   - component: {fileID: 6021254685125182719}
   - component: {fileID: 8905961706380872251}
+  - component: {fileID: 7679221829025419098}
   m_Layer: 0
   m_Name: Note
   m_TagString: Untagged
@@ -938,6 +952,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 3
   m_AspectRatio: 1.25
+--- !u!114 &7679221829025419098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8762115426738943047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1509569316075645337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1149,7 +1175,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8176978000391200131, guid: bf689ec965f1a93419d22bcf54d03206, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 499.99997
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8176978000391200131, guid: bf689ec965f1a93419d22bcf54d03206, type: 3}
       propertyPath: m_AnchoredPosition.y

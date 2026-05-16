@@ -149,7 +149,7 @@ namespace MVZ2.Arcade
                 var flags = Main.SaveManager.GetStat(LogicStats.CATEGORY_MAX_ENDLESS_FLAGS, stageID);
                 hint = GetTranslatedString(ENDLESS_MAX_STREAKS, flags);
             }
-            var icon = Main.GetFinalSprite(meta.Icon);
+            var icon = Main.GetSprite(meta.Icon);
 
             Sprite? clearSprite = null;
             if (Main.SaveManager.IsLevelCleared(stageID))
@@ -164,7 +164,7 @@ namespace MVZ2.Arcade
                 if (def != null)
                 {
                     var clearSpriteID = def.GetArcadeIcon();
-                    clearSprite = Main.GetFinalSprite(clearSpriteID);
+                    clearSprite = Main.GetSprite(clearSpriteID);
                 }
             }
             return new ArcadeItemViewData()

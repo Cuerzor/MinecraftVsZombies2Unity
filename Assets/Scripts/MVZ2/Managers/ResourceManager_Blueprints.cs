@@ -150,7 +150,7 @@ namespace MVZ2.Managers
                 var sprRef = seedDef.GetMobileIcon();
                 if (sprRef == null)
                     return null;
-                return Main.GetFinalSprite(sprRef);
+                return Main.GetSprite(sprRef);
             }
             return GetDefaultSprite();
         }
@@ -162,7 +162,7 @@ namespace MVZ2.Managers
 
                 var iconRef = seedDef.GetIcon();
                 if (iconRef != null)
-                    sprite = Main.GetFinalSprite(iconRef);
+                    sprite = Main.GetSprite(iconRef);
 
                 if (sprite)
                     return sprite;
@@ -192,10 +192,10 @@ namespace MVZ2.Managers
         private void SetBlueprintViewDataStyle(ref BlueprintViewData viewData, BlueprintStyleMeta? styleMeta)
         {
             var main = Main;
-            viewData.standaloneBackground = main.GetFinalSprite(styleMeta?.StandaloneBackground);
-            viewData.mobileBackground = main.GetFinalSprite(styleMeta?.MobileBackground);
-            viewData.mobileFrameTop = main.GetFinalSprite(styleMeta?.MobileFrameTop);
-            viewData.mobileFrameBottom = main.GetFinalSprite(styleMeta?.MobileFrameBottom);
+            viewData.standaloneBackground = main.GetSprite(styleMeta?.StandaloneBackground);
+            viewData.mobileBackground = main.GetSprite(styleMeta?.MobileBackground);
+            viewData.mobileFrameTop = main.GetSprite(styleMeta?.MobileFrameTop);
+            viewData.mobileFrameBottom = main.GetSprite(styleMeta?.MobileFrameBottom);
         }
     }
 }

@@ -145,7 +145,7 @@ namespace MVZ2.Level
         {
             var sprite = pauseImages.Random(rng);
             ui.SetPauseDialogActive(true);
-            ui.SetPauseDialogImage(Main.GetFinalSprite(sprite));
+            ui.SetPauseDialogImage(sprite);
         }
         private void UI_OnPauseDialogResumeClickedCallback()
         {

@@ -907,6 +907,7 @@ GameObject:
   - component: {fileID: 2902647475786786140}
   - component: {fileID: 3413564443117529296}
   - component: {fileID: 3657868704250761626}
+  - component: {fileID: 3484025286271829592}
   m_Layer: 14
   m_Name: ScreenCover
   m_TagString: Untagged
@@ -981,6 +982,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6abadcaddc169fe40aa3e29fb12f7f57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3484025286271829592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4077540474257370161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4778834448980054165
@@ -1761,7 +1774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltip: {fileID: 3769618580586818851}
   dialog: {fileID: 6257896535643423245}
-  blackscreenImage: {fileID: 3413564443117529296}
+  blackscreenImage: {fileID: 3484025286271829592}
   screenCoverFader: {fileID: 3657868704250761626}
   debugConsoleIcon: {fileID: 7502026848991266976}
 --- !u!1 &7982360634355135093
@@ -5319,6 +5332,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 2937300014092132915, guid: c6556b1377cef8c41a02a06b394ab236, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f1647e2400793da43be7f9344136d81d, type: 3}
     - target: {fileID: 4158866887933857120, guid: c6556b1377cef8c41a02a06b394ab236, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

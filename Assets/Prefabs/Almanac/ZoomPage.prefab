@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2598043033061453256}
   - component: {fileID: 6969019279021660435}
   - component: {fileID: 7455938593825971508}
+  - component: {fileID: 4898424468546749452}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -75,6 +76,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4898424468546749452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307707102139185194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &372138250575502574
 GameObject:
   m_ObjectHideFlags: 0
@@ -486,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintText: {fileID: 6874973162916971010}
-  image: {fileID: 7455938593825971508}
+  image: {fileID: 4898424468546749452}
   panZoomController: {fileID: 321294830652182889}
   prevButton: {fileID: 478856127605605955}
   nextButton: {fileID: 9149464432529124285}

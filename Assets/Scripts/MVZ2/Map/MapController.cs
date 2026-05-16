@@ -366,9 +366,9 @@ namespace MVZ2.Map
                 var difficultyMeta = game.GetDifficultyDefinition(difficulty);
                 if (difficultyMeta != null)
                 {
-                    var back = Main.GetFinalSprite(difficultyMeta.GetMapButtonBorderBack());
-                    var bottom = Main.GetFinalSprite(difficultyMeta.GetMapButtonBorderBottom());
-                    var overlay = Main.GetFinalSprite(difficultyMeta.GetMapButtonBorderOverlay());
+                    var back = Main.GetSprite(difficultyMeta.GetMapButtonBorderBack());
+                    var bottom = Main.GetSprite(difficultyMeta.GetMapButtonBorderBottom());
+                    var overlay = Main.GetSprite(difficultyMeta.GetMapButtonBorderOverlay());
                     model.SetMapButtonBorder(index, back, bottom, overlay);
                     return;
                 }

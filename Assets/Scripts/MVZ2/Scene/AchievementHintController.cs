@@ -35,7 +35,7 @@ namespace MVZ2.Scenes
                 if (meta != null)
                 {
                     name = main.LanguageManager._p(LogicStrings.CONTEXT_ACHIEVEMENT, meta.Name ?? string.Empty);
-                    icon = main.GetFinalSprite(meta.Icon);
+                    icon = main.GetSprite(meta.Icon);
                 }
                 if (ui.Exists())
                     ui.UpdateAchievement(icon, name);

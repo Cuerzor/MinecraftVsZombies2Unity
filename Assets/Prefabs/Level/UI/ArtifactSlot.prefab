@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f87f4d38d206d74fb0bde8649f63fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 3539065054506554617}
+  image: {fileID: 1964173343688471665}
   button: {fileID: 8354071261881997009}
   tooltipAnchor: {fileID: 6042185770789318851}
 --- !u!114 &8354071261881997009
@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 2540166497997761064}
   - component: {fileID: 2572609326455126188}
   - component: {fileID: 3539065054506554617}
+  - component: {fileID: 1964173343688471665}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -335,3 +336,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1964173343688471665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5405145362828050250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

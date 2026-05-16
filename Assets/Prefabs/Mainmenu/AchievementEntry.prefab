@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6358937606693170132}
   - component: {fileID: 8380776520958511692}
   - component: {fileID: 7779296118183544728}
+  - component: {fileID: 8815095148769148316}
   m_Layer: 0
   m_Name: IconNotEarned
   m_TagString: Untagged
@@ -75,6 +76,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8815095148769148316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170152559183996945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &279852789930473329
 GameObject:
   m_ObjectHideFlags: 0
@@ -113,7 +126,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 300, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7935173843385396270
 MonoBehaviour:
@@ -173,8 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6bced0a65679bb4bb28ee8417918c01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  iconImage: {fileID: 4025941794198656085}
-  notEarnedIconImage: {fileID: 7779296118183544728}
+  iconImage: {fileID: 7574092478850508782}
+  notEarnedIconImage: {fileID: 8815095148769148316}
   nameText: {fileID: 8270899865663377352}
   earnedObj: {fileID: 7948184760500450938}
   descriptionText: {fileID: 6558836500231852684}
@@ -189,6 +202,7 @@ GameObject:
   - component: {fileID: 5040106270915758793}
   - component: {fileID: 2156345842873869782}
   - component: {fileID: 4025941794198656085}
+  - component: {fileID: 7574092478850508782}
   m_Layer: 0
   m_Name: Icon
   m_TagString: Untagged
@@ -253,6 +267,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7574092478850508782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2936147185067171270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5798051703937119901
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +732,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 12.1
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8271310135709646690}
   - component: {fileID: 2788842467358015792}
   - component: {fileID: 1302801097931955432}
+  - component: {fileID: 6290719950169425149}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -90,6 +91,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 4
   m_AspectRatio: 1
+--- !u!114 &6290719950169425149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709919424497071172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1782417174934947624
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +381,7 @@ MonoBehaviour:
   rootObject: {fileID: 1782417174934947624}
   button: {fileID: 6334385118769728034}
   iconRoot: {fileID: 7488876145676737733}
-  icon: {fileID: 2788842467358015792}
+  icon: {fileID: 6290719950169425149}
   ratioFitter: {fileID: 1302801097931955432}
 --- !u!1 &7802098310364782245
 GameObject:

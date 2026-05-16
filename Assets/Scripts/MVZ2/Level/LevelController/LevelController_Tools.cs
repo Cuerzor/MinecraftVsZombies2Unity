@@ -130,10 +130,10 @@ namespace MVZ2.Level
         {
             var levelUI = GetUIPreset();
             var spriteRef = level.GetStarshardIcon();
-            var sprite = Main.GetFinalSprite(spriteRef);
+            var sprite = Main.GetSprite(spriteRef);
             if (!sprite.Exists())
             {
-                sprite = Main.GetFinalSprite(Main.Settings.DefaultStarshardSprite);
+                sprite = Main.Settings.DefaultStarshardSprite;
             }
             levelUI.SetStarshardIcon(sprite);
         }

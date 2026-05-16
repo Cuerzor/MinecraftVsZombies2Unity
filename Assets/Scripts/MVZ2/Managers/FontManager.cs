@@ -53,7 +53,7 @@ namespace MVZ2.Managers
             foreach (var group in iconGroups)
             {
                 var id = group.Key;
-                var sprites = group.Select(r => Main.GetFinalSprite(r)).OfType<Sprite>().Where(s => s).ToArray();
+                var sprites = group.Select(r => Main.GetSprite(r)).OfType<Sprite>().Where(s => s).ToArray();
                 if (sprites == null || sprites.Length <= 0)
                     continue;
                 var texture = sprites.FirstOrDefault().texture;
@@ -63,7 +63,7 @@ namespace MVZ2.Managers
             foreach (var group in backgroundGroups)
             {
                 var id = group.Key;
-                var sprites = group.Select(r => Main.GetFinalSprite(r)).OfType<Sprite>().Where(s => s).ToArray();
+                var sprites = group.Select(r => Main.GetSprite(r)).OfType<Sprite>().Where(s => s).ToArray();
                 if (sprites == null || sprites.Length <= 0)
                     continue;
                 var texture = sprites.FirstOrDefault().texture;

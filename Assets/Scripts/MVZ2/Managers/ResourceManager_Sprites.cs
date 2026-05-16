@@ -48,7 +48,7 @@ namespace MVZ2.Managers
         }
 
         #region 获取Sprite
-        public Sprite? GetSprite(SpriteReference spriteRef)
+        public Sprite? GetSprite(SpriteReference? spriteRef)
         {
             if (!SpriteReference.IsValid(spriteRef))
                 return null;

@@ -2,6 +2,7 @@
 
 using System;
 using System.Threading.Tasks;
+using MVZ2Logic.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -86,7 +87,7 @@ namespace MVZ2.UI.Scene
         [SerializeField]
         private CustomDialog dialog = null!;
         [SerializeField]
-        private Image blackscreenImage = null!;
+        private ImageResolver blackscreenImage = null!;
         [SerializeField]
         private ColorFader screenCoverFader = null!;
         [SerializeField]

@@ -79,11 +79,11 @@ namespace MVZ2.Level
                 var overlaySpriteRef = grid.GetOverlaySprite();
                 if (SpriteReference.IsValid(overlaySpriteRef))
                 {
-                    sprite = Main.GetFinalSprite(overlaySpriteRef);
+                    sprite = Main.GetSprite(overlaySpriteRef);
                 }
                 else
                 {
-                    sprite = Main.GetFinalSprite(defaultGridSprite);
+                    sprite = defaultGridSprite;
                 }
 
                 var slope = grid.GetSlope() * LawnToTransScale;

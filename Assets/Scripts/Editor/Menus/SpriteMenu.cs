@@ -64,7 +64,7 @@ namespace MVZ2.Editor
                 var resourceDirectory = string.Join('/', splitPath.Skip(1).SkipLast(1));
                 var resourceName = Path.Combine(resourceDirectory, Path.GetFileNameWithoutExtension(filePath)).Replace("\\", "/");
 
-                // ´Ó×ÊÔ´ÃûÖĞ²ğ³ö×ÊÔ´±êÇ©¡£
+                // ä»èµ„æºåä¸­æ‹†å‡ºèµ„æºæ ‡ç­¾ã€‚
                 SpriteHelper.ParseIDAndTags(resourceName, out resourceName, out var tags);
 
                 var assetPath = AssetsMenu.FileToAssetPath(filePath);

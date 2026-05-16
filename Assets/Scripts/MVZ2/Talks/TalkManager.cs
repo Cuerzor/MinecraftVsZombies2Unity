@@ -16,7 +16,7 @@ namespace MVZ2.Managers
             for (int i = 0; i < layers.Length; i++)
             {
                 var layer = variant.layers[i];
-                var sprite = Main.GetFinalSprite(layer.sprite);
+                var sprite = Main.GetSprite(layer.sprite);
                 layers[i] = new CharacterPortraitLayerViewData()
                 {
                     position = new Vector2(layer.positionX, variant.height - layer.positionY),

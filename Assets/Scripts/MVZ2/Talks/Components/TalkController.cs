@@ -342,7 +342,10 @@ namespace MVZ2.Talk
                         switch (args[0])
                         {
                             case "change":
-                                ui.SetForegroundSprite(Main.GetFinalSprite(ParseArgumentSpriteReference(args[1])));
+                                {
+                                    var sprite = Main.GetSprite(ParseArgumentSpriteReference(args[1]));
+                                    ui.SetForegroundSprite(sprite);
+                                }
                                 break;
                             case "alpha":
                                 ui.SetForegroundAlpha(ParseArgumentFloat(args[1]));
@@ -370,7 +373,10 @@ namespace MVZ2.Talk
                         switch (args[0])
                         {
                             case "change":
-                                ui.SetBackgroundSprite(Main.GetFinalSprite(ParseArgumentSpriteReference(args[1])));
+                                {
+                                    var sprite = Main.GetSprite(ParseArgumentSpriteReference(args[1]));
+                                    ui.SetBackgroundSprite(sprite);
+                                }
                                 break;
                             case "alpha":
                                 ui.SetBackgroundAlpha(ParseArgumentFloat(args[1]));
@@ -588,7 +594,7 @@ namespace MVZ2.Talk
                         switch (args[0])
                         {
                             case "show":
-                                var sprite = Main.GetFinalSprite(ParseArgumentSpriteReference(args[1]));
+                                var sprite = Main.GetSprite(ParseArgumentSpriteReference(args[1]));
                                 ui.ShowTalkItem(sprite);
                                 showingTalkItem = true;
                                 Main.SoundManager.Play2D(LogicSoundID.dialogItemShow);

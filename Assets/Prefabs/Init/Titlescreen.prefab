@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 8996919601465698958}
-  buttonFillImage: {fileID: 3981590062228481014}
+  buttonFillImage: {fileID: 8511887173237459174}
   languageDialog: {fileID: 3430458048583423981}
   languageDialogObj: {fileID: 9034174269180753178}
   buttonText: {fileID: 6860951484572520028}
@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 4895077946257471919}
   - component: {fileID: 8317007164496176418}
   - component: {fileID: 3981590062228481014}
+  - component: {fileID: 8511887173237459174}
   m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
@@ -269,6 +270,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8511887173237459174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043014015069137743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4759870285332794710
 GameObject:
   m_ObjectHideFlags: 0

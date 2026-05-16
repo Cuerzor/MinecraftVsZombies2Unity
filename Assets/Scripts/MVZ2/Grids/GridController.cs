@@ -284,7 +284,7 @@ namespace MVZ2.Grids
                     var barColor = layerDefinition?.HPBarColor ?? Color.red;
                     var amount = entityCtrl.GetMainHPBarAmount();
                     var text = entityCtrl.GetMainHPBarText(amountMode);
-                    Sprite? icon = Main.GetFinalSprite(layerDefinition?.HPBarIcon);
+                    Sprite? icon = Main.GetSprite(layerDefinition?.HPBarIcon);
                     gridHPBarBuffer.Add(new HPBarViewData()
                     {
                         barColor = barColor,

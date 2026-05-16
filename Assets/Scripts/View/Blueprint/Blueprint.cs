@@ -5,6 +5,7 @@ using MVZ2.Models;
 using MVZ2.View.Level;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Models;
+using MVZ2Logic.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -21,16 +22,16 @@ namespace MVZ2.UI
             SetTriggerActive(viewData.triggerActive);
 
             // Styles.
-            if (standaloneBackground) standaloneBackground.sprite = viewData.standaloneBackground;
-            if (mobileBackground) mobileBackground.sprite = viewData.mobileBackground;
-            if (mobileFrameTop) mobileFrameTop.sprite = viewData.mobileFrameTop;
-            if (mobileFrameBottom) mobileFrameBottom.sprite = viewData.mobileFrameBottom;
+            if (standaloneBackground) standaloneBackground.SetSprite(viewData.standaloneBackground);
+            if (mobileBackground) mobileBackground.SetSprite(viewData.mobileBackground);
+            if (mobileFrameTop) mobileFrameTop.SetSprite(viewData.mobileFrameTop);
+            if (mobileFrameBottom) mobileFrameBottom.SetSprite(viewData.mobileFrameBottom);
 
             var icon = viewData.icon;
-            iconImage.enabled = icon && !viewData.iconGrayscale;
-            iconImage.sprite = icon;
-            iconImageCommandBlock.enabled = icon && viewData.iconGrayscale;
-            iconImageCommandBlock.sprite = icon;
+            iconImage.SetEnabled(icon && !viewData.iconGrayscale);
+            iconImage.SetSprite(icon);
+            iconImageCommandBlock.SetEnabled(icon && viewData.iconGrayscale);
+            iconImageCommandBlock.SetSprite(icon);
         }
         public void SetEmpty(bool empty)
         {
@@ -112,21 +113,21 @@ namespace MVZ2.UI
 
         [Header("Styles (Standalone)")]
         [SerializeField]
-        private Image standaloneBackground = null!;
+        private ImageResolver standaloneBackground = null!;
 
         [Header("Styles (Mobile)")]
         [SerializeField]
-        private Image mobileBackground = null!;
+        private ImageResolver mobileBackground = null!;
         [SerializeField]
-        private Image mobileFrameTop = null!;
+        private ImageResolver mobileFrameTop = null!;
         [SerializeField]
-        private Image mobileFrameBottom = null!;
+        private ImageResolver mobileFrameBottom = null!;
 
         [Header("Elements")]
         [SerializeField]
-        private Image iconImage = null!;
+        private ImageResolver iconImage = null!;
         [SerializeField]
-        private Image iconImageCommandBlock = null!;
+        private ImageResolver iconImageCommandBlock = null!;
         [SerializeField]
         private GameObject triggerCostObject = null!;
         [SerializeField]
@@ -134,11 +135,11 @@ namespace MVZ2.UI
 
         [Header("Overlays")]
         [SerializeField]
-        private Image twinkleImage = null!;
+        private ImageResolver twinkleImage = null!;
         [SerializeField]
-        private Image rechargeImage = null!;
+        private ImageResolver rechargeImage = null!;
         [SerializeField]
-        private Image rechargeFlashImage = null!;
+        private ImageResolver rechargeFlashImage = null!;
         [SerializeField]
         private float rechargeFlashTime = 0.5f;
         [SerializeField]

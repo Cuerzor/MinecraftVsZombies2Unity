@@ -593,7 +593,7 @@ namespace MVZ2.Almanacs
             var spriteReference = definition.GetSpriteReference();
             if (spriteReference == null)
                 return;
-            sprite = Main.GetFinalSprite(spriteReference);
+            sprite = Main.GetSprite(spriteReference);
         }
         private string GetAlmanacDescription(NamespaceID almanacID, string almanacCategory)
         {
@@ -727,9 +727,9 @@ namespace MVZ2.Almanacs
                     linkID = GetLinkIDByTag(i, tagIDStr);
                 }
 
-                var iconSprite = Main.GetFinalSprite(iconSpriteRef);
-                var backgroundSprite = Main.GetFinalSprite(backgroundSpriteRef);
-                var markSprite = Main.GetFinalSprite(markSpriteRef);
+                var iconSprite = Main.GetSprite(iconSpriteRef);
+                var backgroundSprite = Main.GetSprite(backgroundSpriteRef);
+                var markSprite = Main.GetSprite(markSpriteRef);
                 var size = new Vector2(32, 32);
                 if (backgroundSprite.Exists())
                 {
@@ -833,9 +833,9 @@ namespace MVZ2.Almanacs
                 return default;
             GetTagMetaViewProperties(tagMeta, info.enumValue, out var iconSpriteRef, out var backgroundSpriteRef, out var backgroundColor, out var markSpriteRef);
 
-            var iconSprite = Main.GetFinalSprite(iconSpriteRef);
-            var backgroundSprite = Main.GetFinalSprite(backgroundSpriteRef);
-            var markSprite = Main.GetFinalSprite(markSpriteRef);
+            var iconSprite = Main.GetSprite(iconSpriteRef);
+            var backgroundSprite = Main.GetSprite(backgroundSpriteRef);
+            var markSprite = Main.GetSprite(markSpriteRef);
 
             return new AlmanacTagIconViewData()
             {

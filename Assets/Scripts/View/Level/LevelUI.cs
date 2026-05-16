@@ -3,6 +3,7 @@
 using System;
 using MVZ2.Models;
 using MVZ2Logic.Models;
+using MVZ2Logic.UI;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.UI;
@@ -213,7 +214,7 @@ namespace MVZ2.UI.Level
 
         [Header("Shading")]
         [SerializeField]
-        private Image blackscreenImage = null!;
+        private ImageResolver blackscreenImage = null!;
 
         [Header("HeldItem")]
         [SerializeField]

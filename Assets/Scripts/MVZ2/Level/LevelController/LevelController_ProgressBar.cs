@@ -55,10 +55,10 @@ namespace MVZ2.Level
             var meta = Main.ResourceManager.GetProgressBarMeta(barStyleID);
             if (meta == null)
                 return;
-            var background = Main.GetFinalSprite(meta.BackgroundSprite);
-            var foreground = Main.GetFinalSprite(meta.ForegroundSprite);
-            var bar = Main.GetFinalSprite(meta.BarSprite);
-            var icon = Main.GetFinalSprite(meta.IconSprite);
+            var background = Main.GetSprite(meta.BackgroundSprite);
+            var foreground = Main.GetSprite(meta.ForegroundSprite);
+            var bar = Main.GetSprite(meta.BarSprite);
+            var icon = Main.GetSprite(meta.IconSprite);
             var viewData = new ProgressBarTemplateViewData()
             {
                 backgroundSprite = background,

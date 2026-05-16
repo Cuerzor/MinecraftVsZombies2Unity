@@ -151,16 +151,15 @@ namespace MVZ2.Mainmenu
         #region 事件回调
         private void OnMainmenuButtonUpdateSpriteCallback(MainmenuButtonType type, MainmenuButton button)
         {
-            var sprKey = button.NormalSprite;
+            var spr = button.NormalSprite;
             if (!button.Interactable)
             {
-                sprKey = button.DisabledSprite;
+                spr = button.DisabledSprite;
             }
             else if (button.IsHovered)
             {
-                sprKey = button.HoveredSprite;
+                spr = button.HoveredSprite;
             }
-            var spr = main.GetFinalSprite(sprKey);
             button.SetSprite(spr);
         }
         private void OnMainmenuButtonClickCallback(MainmenuButtonType type)
@@ -666,12 +665,12 @@ namespace MVZ2.Mainmenu
                     var spriteRef = isDark ? meta.DarkSpriteReference : meta.BrightSpriteReference;
                     if (SpriteReference.IsValid(spriteRef))
                     {
-                        sprite = main.GetFinalSprite(spriteRef);
+                        sprite = main.GetSprite(spriteRef);
                         break;
                     }
                     if (SpriteReference.IsValid(meta.BrightSpriteReference))
                     {
-                        sprite = main.GetFinalSprite(meta.BrightSpriteReference);
+                        sprite = main.GetSprite(meta.BrightSpriteReference);
                         break;
                     }
                 }
@@ -814,7 +813,7 @@ namespace MVZ2.Mainmenu
                     var metaName = meta.Name;
                     var metaDescription = meta.Description;
 
-                    var icon = main.GetFinalSprite(iconRef);
+                    var icon = main.GetSprite(iconRef);
                     var name = main.LanguageManager._p(LogicStrings.CONTEXT_ACHIEVEMENT, metaName);
                     var earned = main.SaveManager.IsAchievementEarned(new NamespaceID(nsp, meta.ID));
                     var description = main.LanguageManager._p(LogicStrings.CONTEXT_ACHIEVEMENT, metaDescription);

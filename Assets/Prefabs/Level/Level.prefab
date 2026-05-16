@@ -488,7 +488,7 @@ MonoBehaviour:
   animator: {fileID: 2951044086554233565}
   standaloneUI: {fileID: 1587674339041403651}
   mobileUI: {fileID: 6042123331359194785}
-  blackscreenImage: {fileID: 5106304934054347391}
+  blackscreenImage: {fileID: 8233487568276720579}
   heldItem: {fileID: 265175817109581011}
   pauseDialogObj: {fileID: 4415083458318115112}
   pauseDialog: {fileID: 941217931892381776}
@@ -1169,6 +1169,7 @@ GameObject:
   - component: {fileID: 2730502654153128994}
   - component: {fileID: 3452719491233279883}
   - component: {fileID: 31445038277895387}
+  - component: {fileID: 2120946744642757474}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1233,6 +1234,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2120946744642757474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4142247460472442700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4200696970939669414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,7 +1458,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25f8212df4ceb942a9cad7fffc214c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausedImage: {fileID: 31445038277895387}
+  pausedImage: {fileID: 2120946744642757474}
   resumeButton: {fileID: 1550788125962505880}
 --- !u!222 &3348737186954682380
 CanvasRenderer:
@@ -2035,6 +2048,7 @@ GameObject:
   - component: {fileID: 6756416965140433759}
   - component: {fileID: 4428805864416409661}
   - component: {fileID: 5106304934054347391}
+  - component: {fileID: 8233487568276720579}
   m_Layer: 5
   m_Name: Blackscreen
   m_TagString: Untagged
@@ -2099,6 +2113,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8233487568276720579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5986657322879752363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6108037360579652874
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ namespace MVZ2.Store
                 return ProductItemViewData.Empty;
 
             bool isBlueprint = NamespaceID.IsValid(productMeta.BlueprintID);
-            var icon = Main.GetFinalSprite(productMeta.Sprite);
+            var icon = Main.GetSprite(productMeta.Sprite);
             var blueprint = Main.ResourceManager.GetBlueprintViewData(productMeta.BlueprintID, false);
 
             string price = string.Empty;

@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2Logic.Models;
+using MVZ2Logic.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -33,8 +34,7 @@ namespace MVZ2.UI.Level
         {
             foreach (var icon in iconImages)
             {
-                icon.sprite = sprite;
-                icon.enabled = icon.sprite;
+                icon.SetSpriteAndEnabled(sprite);
             }
         }
         public void SetNumber(string number)
@@ -70,7 +70,7 @@ namespace MVZ2.UI.Level
         [SerializeField]
         private Animator animator = null!;
         [SerializeField]
-        private Image[] iconImages = null!;
+        private ImageResolver[] iconImages = null!;
         [SerializeField]
         private TextMeshProUGUI numText = null!;
         [SerializeField]

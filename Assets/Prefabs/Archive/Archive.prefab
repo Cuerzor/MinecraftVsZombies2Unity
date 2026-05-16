@@ -1165,6 +1165,7 @@ GameObject:
   - component: {fileID: 6427073123882941761}
   - component: {fileID: 2213178626034115036}
   - component: {fileID: 360017371237278392}
+  - component: {fileID: 5254263656752568352}
   m_Layer: 14
   m_Name: Background
   m_TagString: Untagged
@@ -1243,6 +1244,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AspectMode: 4
   m_AspectRatio: 1
+--- !u!114 &5254263656752568352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2663973062465361023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2678886839086538145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2586,7 +2599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   returnButton: {fileID: 1859329264883056291}
   nameText: {fileID: 4945989501972463672}
-  backgroundImage: {fileID: 1286349847764993879}
+  backgroundImage: {fileID: 827184582501241462}
   segmentsText: {fileID: 2178856796370301750}
   musicText: {fileID: 1946753438540592535}
   tagsText: {fileID: 430973184543595693}
@@ -3539,6 +3552,7 @@ GameObject:
   - component: {fileID: 7652154303342635782}
   - component: {fileID: 1286349847764993879}
   - component: {fileID: 7022178004426252355}
+  - component: {fileID: 827184582501241462}
   m_Layer: 14
   m_Name: Image
   m_TagString: Untagged
@@ -3623,6 +3637,18 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &827184582501241462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7991867840535571232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8033939413734164999
 GameObject:
   m_ObjectHideFlags: 0
@@ -4290,7 +4316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeRoot: {fileID: 7821787796350223940}
-  backgroundImage: {fileID: 2213178626034115036}
+  backgroundImage: {fileID: 5254263656752568352}
   backgroundRatioFitter: {fileID: 360017371237278392}
 --- !u!1 &8982199310189472267
 GameObject:
