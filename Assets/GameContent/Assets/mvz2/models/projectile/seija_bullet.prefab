@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5050759259473064660}
   - component: {fileID: 322646449407236132}
   - component: {fileID: 409010479009166382}
+  - component: {fileID: 1247190412516153122}
   m_Layer: 0
   m_Name: BulletDark
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &1247190412516153122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3462380860964258493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4631108268840817915
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 7876271815295350603}
   - component: {fileID: 1395367057834016485}
   - component: {fileID: 6449733115848479925}
+  - component: {fileID: 687323678781928595}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -152,6 +153,18 @@ MonoBehaviour:
   - {fileID: 1143668857, guid: 86ab0ad19e2c051439926512398a3d25, type: 3}
   - {fileID: -940101659, guid: 86ab0ad19e2c051439926512398a3d25, type: 3}
   index: 0
+--- !u!114 &687323678781928595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749825451314432756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7458324436514810293
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +177,7 @@ GameObject:
   - component: {fileID: 3024345052393958470}
   - component: {fileID: 5366704244500692282}
   - component: {fileID: 6958434983258937143}
+  - component: {fileID: 2165865087199821077}
   m_Layer: 0
   m_Name: WaterBody
   m_TagString: Untagged
@@ -269,6 +283,18 @@ MonoBehaviour:
   - {fileID: 1143668857, guid: 86ab0ad19e2c051439926512398a3d25, type: 3}
   - {fileID: -940101659, guid: 86ab0ad19e2c051439926512398a3d25, type: 3}
   index: 0
+--- !u!114 &2165865087199821077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7458324436514810293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7915516476184296149
 GameObject:
   m_ObjectHideFlags: 0

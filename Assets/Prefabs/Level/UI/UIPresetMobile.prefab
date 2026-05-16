@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 7444366164880310162}
   - component: {fileID: 7320600082970651508}
   - component: {fileID: 6512464542113104654}
+  - component: {fileID: 3709453920469143634}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -526,6 +527,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3709453920469143634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024175426335181433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2107798604196112026
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,6 +644,7 @@ GameObject:
   - component: {fileID: 7404793487639271323}
   - component: {fileID: 3851566572064406767}
   - component: {fileID: 5215543303816220703}
+  - component: {fileID: 7629838255420965829}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -715,6 +729,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &7629838255420965829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2852604908867634900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2886587474841092428
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +752,7 @@ GameObject:
   - component: {fileID: 9212259281049622552}
   - component: {fileID: 4061378266695772389}
   - component: {fileID: 5706003506948999376}
+  - component: {fileID: 9136269818474343241}
   m_Layer: 5
   m_Name: Belt
   m_TagString: Untagged
@@ -790,6 +817,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9136269818474343241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886587474841092428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3042553211520452539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1049,7 @@ GameObject:
   - component: {fileID: 6716535170042684888}
   - component: {fileID: 3132253588199936032}
   - component: {fileID: 8482267356631583603}
+  - component: {fileID: 7210690233287930039}
   m_Layer: 5
   m_Name: Hitbox
   m_TagString: Untagged
@@ -1074,6 +1114,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7210690233287930039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3732185055776024588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4332177382874172320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1318,7 @@ GameObject:
   - component: {fileID: 1358154450345341408}
   - component: {fileID: 2000161055863931560}
   - component: {fileID: 6289235607478111567}
+  - component: {fileID: 28003194275143858}
   m_Layer: 5
   m_Name: Gear
   m_TagString: Untagged
@@ -1330,6 +1383,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &28003194275143858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5062316988487636813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5262756501107648401
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,6 +1936,7 @@ GameObject:
   - component: {fileID: 4963153957508421585}
   - component: {fileID: 6080457781222043244}
   - component: {fileID: 7298220643992182412}
+  - component: {fileID: 4748102722486500555}
   m_Layer: 5
   m_Name: BeltMask
   m_TagString: Untagged
@@ -1971,6 +2037,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &4748102722486500555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283326562991253973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9145907771988842137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +2061,7 @@ GameObject:
   - component: {fileID: 2971873103174088887}
   - component: {fileID: 831025861636409043}
   - component: {fileID: 8566267819959792240}
+  - component: {fileID: 425333355809630744}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -2067,6 +2146,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &425333355809630744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145907771988842137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1015596754268002141
 PrefabInstance:
   m_ObjectHideFlags: 0

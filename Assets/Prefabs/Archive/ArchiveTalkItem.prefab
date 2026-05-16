@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 1795295091705686480}
   - component: {fileID: 3081523872435317116}
   - component: {fileID: 8114226548622381018}
+  - component: {fileID: 6913729233423943773}
   m_Layer: 5
   m_Name: Hover
   m_TagString: Untagged
@@ -209,6 +210,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6913729233423943773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067478310414246353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7819033520694328959
 GameObject:
   m_ObjectHideFlags: 0

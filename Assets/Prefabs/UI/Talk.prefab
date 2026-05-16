@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9033640622105894141}
   - component: {fileID: 527402222335206946}
   - component: {fileID: 8523015409515159962}
+  - component: {fileID: 6921475422914724806}
   m_Layer: 0
   m_Name: SlotImage
   m_TagString: Untagged
@@ -75,6 +76,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6921475422914724806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514159191504687989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &812562271374237775
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +288,7 @@ GameObject:
   - component: {fileID: 559571422404713151}
   - component: {fileID: 8107068639390817539}
   - component: {fileID: 5333661403492931636}
+  - component: {fileID: 3397070553087981943}
   m_Layer: 0
   m_Name: RaycastReceiver
   m_TagString: Untagged
@@ -349,6 +363,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62a73a82ea82e3749965fe3032d150f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3397070553087981943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2288200955233584974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2379081211412670028
@@ -1003,6 +1029,7 @@ GameObject:
   - component: {fileID: 8138631716575344406}
   - component: {fileID: 3662280814057871403}
   - component: {fileID: 5504998123350391805}
+  - component: {fileID: 1147531975184654695}
   m_Layer: 0
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -1069,6 +1096,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1147531975184654695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6466180377371486113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6788356510418540978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1310,7 @@ GameObject:
   - component: {fileID: 1681477446480129488}
   - component: {fileID: 5642296033247241616}
   - component: {fileID: 2474282981840366388}
+  - component: {fileID: 7620315748360646792}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -1335,6 +1375,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7620315748360646792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8485788977161600526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8562295504330421035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,6 +1398,7 @@ GameObject:
   - component: {fileID: 1972507474956330896}
   - component: {fileID: 7835891226238520218}
   - component: {fileID: 3152040743796298011}
+  - component: {fileID: 8721324807063716256}
   m_Layer: 0
   m_Name: RaycastBlocker
   m_TagString: Untagged
@@ -1410,6 +1463,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8721324807063716256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8562295504330421035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9166068300293855654
 GameObject:
   m_ObjectHideFlags: 0

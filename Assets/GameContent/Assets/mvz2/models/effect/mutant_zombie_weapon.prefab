@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 203500207795992783}
   - component: {fileID: 2889582806450607965}
   - component: {fileID: 2487565797716962550}
+  - component: {fileID: 1302232751885902766}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -148,6 +149,18 @@ MonoBehaviour:
   propertyName: Weapon
   comparer: 0
   constValue: 2
+--- !u!114 &1302232751885902766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4446289839444058803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6175157969121902570
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +173,7 @@ GameObject:
   - component: {fileID: 6717995563939281085}
   - component: {fileID: 1770291006992954588}
   - component: {fileID: 1816661467098076593}
+  - component: {fileID: 7979274628964956100}
   m_Layer: 0
   m_Name: SukimaAhead
   m_TagString: Untagged
@@ -262,6 +276,18 @@ MonoBehaviour:
   propertyName: Weapon
   comparer: 0
   constValue: 1
+--- !u!114 &7979274628964956100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175157969121902570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7634308927828776402
 GameObject:
   m_ObjectHideFlags: 0

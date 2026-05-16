@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8012909422758366981}
   - component: {fileID: 5904103282700046279}
   - component: {fileID: 692890730862987326}
+  - component: {fileID: 168408212185146629}
   m_Layer: 5
   m_Name: ArtifactEffect
   m_TagString: Untagged
@@ -91,3 +92,15 @@ MonoBehaviour:
   graphic: {fileID: 5904103282700046279}
   grayscale: 0
   brighten: 0.5
+--- !u!114 &168408212185146629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9123581252412822306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

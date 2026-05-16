@@ -335,6 +335,7 @@ GameObject:
   - component: {fileID: 5317433012207967024}
   - component: {fileID: 6626686124413113830}
   - component: {fileID: 577310148530574920}
+  - component: {fileID: 2555640091158127059}
   m_Layer: 12
   m_Name: BossSky
   m_TagString: Untagged
@@ -446,6 +447,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2555640091158127059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6200636921570509447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8421743361687171107

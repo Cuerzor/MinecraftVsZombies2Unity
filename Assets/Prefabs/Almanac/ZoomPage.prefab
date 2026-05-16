@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 6132288858103388685}
   - component: {fileID: 6466976791562144801}
   - component: {fileID: 8613085833032934540}
+  - component: {fileID: 900145248260385954}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -264,6 +265,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &900145248260385954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789113052192834663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2767001965817412181
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +568,7 @@ GameObject:
   - component: {fileID: 4746561961680483747}
   - component: {fileID: 8727942047738621929}
   - component: {fileID: 7653991484805495137}
+  - component: {fileID: 5711190825171099364}
   m_Layer: 14
   m_Name: Blocker
   m_TagString: Untagged
@@ -619,6 +633,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5711190825171099364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4710615321505741654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4761883612528767392
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,6 +722,7 @@ GameObject:
   - component: {fileID: 4597193625630690824}
   - component: {fileID: 6029777379974282080}
   - component: {fileID: 898857004486523722}
+  - component: {fileID: 8356756315928051302}
   m_Layer: 5
   m_Name: Viewport
   m_TagString: Untagged
@@ -774,6 +801,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!114 &8356756315928051302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165281944621549690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7253431923905585412
 GameObject:
   m_ObjectHideFlags: 0

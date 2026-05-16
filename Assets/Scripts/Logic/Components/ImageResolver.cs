@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 namespace MVZ2Logic.UI
 {
+    [DisallowMultipleComponent]
     [RequireComponent(typeof(Image))]
     public class ImageResolver : MonoBehaviour, ISpriteResolver
     {

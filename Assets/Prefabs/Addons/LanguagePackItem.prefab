@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8128265581501869878}
   - component: {fileID: 3291592675029000300}
   - component: {fileID: 3964545519232001708}
+  - component: {fileID: 2904634419406580596}
   m_Layer: 5
   m_Name: OutdateMark
   m_TagString: Untagged
@@ -96,6 +97,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2904634419406580596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096727567792773292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2294631806086697980
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +431,7 @@ GameObject:
   - component: {fileID: 7060605254680595211}
   - component: {fileID: 7518370502443112736}
   - component: {fileID: 5504184971541018501}
+  - component: {fileID: 2918834218066476859}
   m_Layer: 5
   m_Name: CheckMark
   m_TagString: Untagged
@@ -502,6 +516,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2918834218066476859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3598040370710174549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4104908848516612234
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +889,7 @@ GameObject:
   - component: {fileID: 5616212491749165519}
   - component: {fileID: 7824952761628540653}
   - component: {fileID: 5112658758658831725}
+  - component: {fileID: 1235723771561875509}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -947,3 +974,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1235723771561875509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258328337022616989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

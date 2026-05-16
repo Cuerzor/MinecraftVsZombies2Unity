@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3026015352339939288}
   - component: {fileID: 8169100198625547083}
   - component: {fileID: 865395303108905302}
+  - component: {fileID: 5655640410984926058}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -98,6 +99,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &5655640410984926058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286101607361840149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &859354557662804288
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +122,7 @@ GameObject:
   - component: {fileID: 8897340569518935327}
   - component: {fileID: 8648312426972318893}
   - component: {fileID: 5955910810290486253}
+  - component: {fileID: 7200458985690837596}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -196,6 +210,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &7200458985690837596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859354557662804288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1742001742203927110
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +233,7 @@ GameObject:
   - component: {fileID: 5968686145569318219}
   - component: {fileID: 8398341783166655623}
   - component: {fileID: 402216152495003313}
+  - component: {fileID: 7656012351475230165}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -294,6 +321,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &7656012351475230165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1742001742203927110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1969129033686207812
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +538,7 @@ GameObject:
   - component: {fileID: 7588947988802836863}
   - component: {fileID: 754338891948851483}
   - component: {fileID: 6751638594517467311}
+  - component: {fileID: 628305739959552388}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -586,6 +626,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &628305739959552388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4128123950991701763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4595363014561312011
 GameObject:
   m_ObjectHideFlags: 0

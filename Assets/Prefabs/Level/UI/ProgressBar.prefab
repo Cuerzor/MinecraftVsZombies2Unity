@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 3339329545188797046}
   - component: {fileID: 7349999178149271819}
   - component: {fileID: 1346783250139137600}
+  - component: {fileID: 7861404004754423085}
   m_Layer: 0
   m_Name: TextRegion
   m_TagString: Untagged
@@ -259,6 +260,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7861404004754423085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626520175515773847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1597954307474370563
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +319,7 @@ GameObject:
   - component: {fileID: 4053217935618909476}
   - component: {fileID: 5297150161250281952}
   - component: {fileID: 6062031703770386834}
+  - component: {fileID: 4795866117711982953}
   m_Layer: 0
   m_Name: Pole
   m_TagString: Untagged
@@ -371,6 +385,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4795866117711982953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733895429897341571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1770718094195118305
 GameObject:
   m_ObjectHideFlags: 0
@@ -640,6 +666,7 @@ GameObject:
   - component: {fileID: 3365859076590552570}
   - component: {fileID: 8906702273972649985}
   - component: {fileID: 5264177867385178799}
+  - component: {fileID: 6479539864747789118}
   m_Layer: 0
   m_Name: Banner
   m_TagString: Untagged
@@ -704,6 +731,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6479539864747789118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531874931688967608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2908846272613921154
 GameObject:
   m_ObjectHideFlags: 0

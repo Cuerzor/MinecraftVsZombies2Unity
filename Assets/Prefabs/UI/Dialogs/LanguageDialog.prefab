@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 723470929312766181}
   - component: {fileID: 3110840728394402673}
   - component: {fileID: 2188131604015687631}
+  - component: {fileID: 210354958006223073}
   m_Layer: 5
   m_Name: RaycastBox
   m_TagString: Untagged
@@ -249,6 +250,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &210354958006223073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016131076087203001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5766415721975609420
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +460,7 @@ GameObject:
   - component: {fileID: 8514678216418130006}
   - component: {fileID: 3199731902351942972}
   - component: {fileID: 2668779970398122794}
+  - component: {fileID: 1952022855477822793}
   m_Layer: 0
   m_Name: Blocker
   m_TagString: Untagged
@@ -511,6 +525,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1952022855477822793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7464290248932978805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7934215474384992326
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,6 +719,7 @@ GameObject:
   - component: {fileID: 2758692685546490791}
   - component: {fileID: 6141388284069299232}
   - component: {fileID: 6184524245350312764}
+  - component: {fileID: 6278177334143153771}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -757,6 +784,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6278177334143153771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869120177206393603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4967405070701730406
 PrefabInstance:
   m_ObjectHideFlags: 0

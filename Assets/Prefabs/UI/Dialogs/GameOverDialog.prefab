@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 2003017818612358097}
   - component: {fileID: 514304807791447052}
   - component: {fileID: 2897974917097505868}
+  - component: {fileID: 1701670670793765078}
   m_Layer: 0
   m_Name: GameOverDialog
   m_TagString: Untagged
@@ -255,6 +256,18 @@ MonoBehaviour:
   messageText: {fileID: 6381089719420039352}
   retryButton: {fileID: 6276898770412802991}
   backButton: {fileID: 243877112705372290}
+--- !u!114 &1701670670793765078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047643042328513758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3656346423446132395
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,6 +649,7 @@ GameObject:
   - component: {fileID: 565457495091787023}
   - component: {fileID: 8107046297564109203}
   - component: {fileID: 7725485738059154785}
+  - component: {fileID: 3359753543925984979}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -720,6 +734,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3359753543925984979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699731939551950180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8133103501964744973
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,6 +902,7 @@ GameObject:
   - component: {fileID: 8282034164843998157}
   - component: {fileID: 7557066345847579412}
   - component: {fileID: 4837471366034494884}
+  - component: {fileID: 6743208402596934004}
   m_Layer: 0
   m_Name: DragRegion
   m_TagString: Untagged
@@ -967,6 +994,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragTarget: {fileID: 1452752815760928397}
+--- !u!114 &6743208402596934004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8262042991891738736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &253422843400414279
 PrefabInstance:
   m_ObjectHideFlags: 0

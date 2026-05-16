@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8840479218567136348}
   - component: {fileID: 5887569897282393426}
   - component: {fileID: 4245843625920479085}
+  - component: {fileID: 6837735770766712098}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -75,6 +76,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6837735770766712098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3551455046954791622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3591083934633112290
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +100,7 @@ GameObject:
   - component: {fileID: 3473408417475583563}
   - component: {fileID: 6842200635749214293}
   - component: {fileID: 8319762798033727711}
+  - component: {fileID: 8261627526773403557}
   m_Layer: 0
   m_Name: YouDied
   m_TagString: Untagged
@@ -161,6 +175,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a35cbd7b091ff134fb70819c318f7651, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8261627526773403557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3591083934633112290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7776820854237374164

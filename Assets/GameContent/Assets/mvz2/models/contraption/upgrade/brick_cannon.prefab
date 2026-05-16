@@ -1656,6 +1656,7 @@ GameObject:
   - component: {fileID: 7968401191567824588}
   - component: {fileID: 2672675694837953855}
   - component: {fileID: 857898774052809893}
+  - component: {fileID: 1209493882556401859}
   m_Layer: 11
   m_Name: Light
   m_TagString: Untagged
@@ -1743,6 +1744,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &1209493882556401859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8295839725175373568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8478551416049477156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,6 +1814,7 @@ GameObject:
   - component: {fileID: 8768237650298169729}
   - component: {fileID: 708519910625466068}
   - component: {fileID: 6124015513808786134}
+  - component: {fileID: 4062475968987503298}
   m_Layer: 0
   m_Name: Overlay
   m_TagString: Untagged
@@ -1888,6 +1902,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &4062475968987503298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8603382677527497230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1768105974198518358
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -261,6 +261,7 @@ GameObject:
   - component: {fileID: 4775583922064716767}
   - component: {fileID: 1665036962720592861}
   - component: {fileID: 5489703747346005801}
+  - component: {fileID: 7611817361218642216}
   m_Layer: 0
   m_Name: BanishedMark
   m_TagString: Untagged
@@ -325,6 +326,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7611817361218642216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217915071084983369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4394773466280662562
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +349,7 @@ GameObject:
   - component: {fileID: 8255923225849821353}
   - component: {fileID: 8646567815726110406}
   - component: {fileID: 840612802204118159}
+  - component: {fileID: 6872020324505593808}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -400,6 +414,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6872020324505593808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4394773466280662562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5532206624984301541
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +437,7 @@ GameObject:
   - component: {fileID: 726509055087255611}
   - component: {fileID: 1470442064235128187}
   - component: {fileID: 7462567857865010268}
+  - component: {fileID: 6970137265857117031}
   m_Layer: 0
   m_Name: Pickaxe
   m_TagString: Untagged
@@ -475,6 +502,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6970137265857117031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5532206624984301541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7014065614021919770
 GameObject:
   m_ObjectHideFlags: 0

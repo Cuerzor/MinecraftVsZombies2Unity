@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3699776777514418907}
   - component: {fileID: 7403962952957149573}
   - component: {fileID: 4021250222232527092}
+  - component: {fileID: 3280510309820361162}
   m_Layer: 9
   m_Name: SideReceiver
   m_TagString: Untagged
@@ -123,5 +124,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c46f785c236ca5408a98fccc55501be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3280510309820361162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7636116833788136396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

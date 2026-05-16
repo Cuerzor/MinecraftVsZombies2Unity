@@ -494,6 +494,7 @@ GameObject:
   - component: {fileID: 6820799436738267014}
   - component: {fileID: 8160357284649888200}
   - component: {fileID: 7505017703582358047}
+  - component: {fileID: 2460295189702021635}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -596,6 +597,18 @@ MonoBehaviour:
   propertyName: Weapon
   comparer: 0
   constValue: 2
+--- !u!114 &2460295189702021635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561126069298752134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &690919050973989388
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +781,7 @@ GameObject:
   - component: {fileID: 3496396857035945650}
   - component: {fileID: 6471970745801548331}
   - component: {fileID: 1888191263639769501}
+  - component: {fileID: 8909169574584960542}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -855,6 +869,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 1
+--- !u!114 &8909169574584960542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346896179479149715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1703929563625535364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,6 +2496,7 @@ GameObject:
   - component: {fileID: 3130183841986765416}
   - component: {fileID: 3694425292888243705}
   - component: {fileID: 155097244761286125}
+  - component: {fileID: 9201451400807370803}
   m_Layer: 0
   m_Name: Front
   m_TagString: Untagged
@@ -2557,6 +2584,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 1
+--- !u!114 &9201451400807370803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7152143544154051181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7215516241914704323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2755,6 +2794,7 @@ GameObject:
   - component: {fileID: 7849249634773652996}
   - component: {fileID: 7794118149013665894}
   - component: {fileID: 3999587806372115989}
+  - component: {fileID: 6175890135929974213}
   m_Layer: 0
   m_Name: Flag
   m_TagString: Untagged
@@ -2842,6 +2882,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 1
+--- !u!114 &6175890135929974213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7375323623015916413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7569539759184542839
 GameObject:
   m_ObjectHideFlags: 0
@@ -3077,6 +3129,7 @@ GameObject:
   - component: {fileID: 6832615838901575277}
   - component: {fileID: 4395403838569432634}
   - component: {fileID: 7338492633063714678}
+  - component: {fileID: 6469237989480411509}
   m_Layer: 0
   m_Name: SukimaAhead
   m_TagString: Untagged
@@ -3179,6 +3232,18 @@ MonoBehaviour:
   propertyName: Weapon
   comparer: 0
   constValue: 1
+--- !u!114 &6469237989480411509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9213634906671326995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &282421628878908727
 PrefabInstance:
   m_ObjectHideFlags: 0

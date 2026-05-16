@@ -332,6 +332,7 @@ GameObject:
   - component: {fileID: 2397372327799801054}
   - component: {fileID: 4272377357257067527}
   - component: {fileID: 1191406390391552695}
+  - component: {fileID: 3401683540282024378}
   m_Layer: 0
   m_Name: DragRegion
   m_TagString: Untagged
@@ -423,6 +424,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragTarget: {fileID: 5153148913436836254}
+--- !u!114 &3401683540282024378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2378519683180617571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2437685728913590935
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +592,7 @@ GameObject:
   - component: {fileID: 6085057747398695452}
   - component: {fileID: 2533447383153604224}
   - component: {fileID: 4079398178446371442}
+  - component: {fileID: 1483996455477055551}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -663,6 +677,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1483996455477055551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138929244473268855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5232687161190339167
 GameObject:
   m_ObjectHideFlags: 0
@@ -903,6 +929,7 @@ GameObject:
   - component: {fileID: 5217060939406111938}
   - component: {fileID: 6091595821962781471}
   - component: {fileID: 956160591087168595}
+  - component: {fileID: 9220861231803885058}
   m_Layer: 0
   m_Name: LevelLoadedDialog
   m_TagString: Untagged
@@ -983,6 +1010,18 @@ MonoBehaviour:
   resumeButton: {fileID: 339627543940152508}
   restartButton: {fileID: 690362203144719088}
   exitButton: {fileID: 5821170448809983889}
+--- !u!114 &9220861231803885058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8782573892596769741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &310927839648188537
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7475265280414594047}
   - component: {fileID: 1361757471678650141}
   - component: {fileID: 3297625765258537125}
+  - component: {fileID: 2877927049732823662}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -89,6 +90,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &2877927049732823662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807529066393604985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8554367213614360391
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +114,7 @@ GameObject:
   - component: {fileID: 1648211470952973146}
   - component: {fileID: 7567475838889401914}
   - component: {fileID: 978378565555035748}
+  - component: {fileID: 8596798415446187858}
   m_Layer: 0
   m_Name: Overlay
   m_TagString: Untagged
@@ -178,6 +192,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &8596798415446187858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8554367213614360391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5167846908364248370
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -88,6 +88,7 @@ GameObject:
   - component: {fileID: 2528230895564740300}
   - component: {fileID: 7594095537354518601}
   - component: {fileID: 9026440552189073673}
+  - component: {fileID: 3271526654608301931}
   m_Layer: 0
   m_Name: CakeBack
   m_TagString: Untagged
@@ -175,6 +176,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &3271526654608301931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007894236011151835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6869079451900271493
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +199,7 @@ GameObject:
   - component: {fileID: 5167389999715629437}
   - component: {fileID: 7285746204975164359}
   - component: {fileID: 1332087111507180104}
+  - component: {fileID: 7542102719299367315}
   m_Layer: 0
   m_Name: CakeFront
   m_TagString: Untagged
@@ -273,6 +287,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &7542102719299367315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6869079451900271493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7893260204966896535
 GameObject:
   m_ObjectHideFlags: 0

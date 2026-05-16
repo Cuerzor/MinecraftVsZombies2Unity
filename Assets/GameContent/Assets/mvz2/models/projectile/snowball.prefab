@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7174867012349272668}
   - component: {fileID: 782365821217353372}
   - component: {fileID: 5191850104885370550}
+  - component: {fileID: 4554090990715019192}
   m_Layer: 0
   m_Name: Stoneball
   m_TagString: Untagged
@@ -113,6 +114,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whenFalse: 0
   propertyName: Melted
+--- !u!114 &4554090990715019192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3933418522486829812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8819650826712843692
 GameObject:
   m_ObjectHideFlags: 0

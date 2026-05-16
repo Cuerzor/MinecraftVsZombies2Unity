@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 7531965311279459213}
   - component: {fileID: 2801182425891156437}
   - component: {fileID: 8373971722107593871}
+  - component: {fileID: 4907660151605279027}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -224,6 +225,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4907660151605279027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2638829037954479167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3966678725290979654
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +250,7 @@ GameObject:
   - component: {fileID: 4435812733930165786}
   - component: {fileID: 3589432558608623374}
   - component: {fileID: 2326135088095198706}
+  - component: {fileID: 1184155281386713286}
   m_Layer: 5
   m_Name: DragRegion
   m_TagString: Untagged
@@ -328,6 +342,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragTarget: {fileID: 8164003325542305960}
+--- !u!114 &1184155281386713286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966678725290979654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4248109858227210516
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,6 +469,7 @@ GameObject:
   - component: {fileID: 7840170617263307782}
   - component: {fileID: 8020666272965106155}
   - component: {fileID: 2198341995213043009}
+  - component: {fileID: 3812657281785876153}
   m_Layer: 5
   m_Name: SelectArtifactDialog
   m_TagString: Untagged
@@ -536,6 +563,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   artifactList: {fileID: 5619495334330595716}
   backButton: {fileID: 3681111565402099879}
+--- !u!114 &3812657281785876153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6664035130379125161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7252879989417723343
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,7 +990,8 @@ PrefabInstance:
       propertyPath: m_VerticalScrollbarVisibility
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2610160527676069237, guid: 9845f7cb147bd40448edb0dfdb89ece7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6454550316427138002, guid: 9845f7cb147bd40448edb0dfdb89ece7, type: 3}

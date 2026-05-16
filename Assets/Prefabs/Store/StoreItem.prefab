@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1661742998796375107}
   - component: {fileID: 7540685818499956899}
   - component: {fileID: 6661562901677954539}
+  - component: {fileID: 409114440710037326}
   m_Layer: 14
   m_Name: Price
   m_TagString: Untagged
@@ -104,6 +105,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &409114440710037326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006982538072527826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5549453083529132133
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +434,7 @@ GameObject:
   - component: {fileID: 2068396125723017581}
   - component: {fileID: 107886446904997671}
   - component: {fileID: 6920028693084953771}
+  - component: {fileID: 6542052233984728832}
   m_Layer: 14
   m_Name: Icon
   m_TagString: Untagged
@@ -505,6 +519,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &6542052233984728832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215716372556602096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7413432660260003268
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +542,7 @@ GameObject:
   - component: {fileID: 5207740717842261947}
   - component: {fileID: 4159043664371229538}
   - component: {fileID: 4065111454381960029}
+  - component: {fileID: 9085274955367703565}
   m_Layer: 14
   m_Name: Background
   m_TagString: Untagged
@@ -580,6 +607,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &9085274955367703565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7413432660260003268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 255741293ee1f8345a85a252afb0b643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7491223995268837776
 GameObject:
   m_ObjectHideFlags: 0

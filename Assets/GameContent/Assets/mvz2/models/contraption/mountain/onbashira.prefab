@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 91343875583948641}
   - component: {fileID: 2132798544676111919}
   - component: {fileID: 6171081966153408048}
+  - component: {fileID: 1993381274302270069}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -254,6 +255,18 @@ MonoBehaviour:
   - {fileID: 1198336802, guid: 566962d72728f4a4594b36d42a0639a9, type: 3}
   - {fileID: -1120700401, guid: 566962d72728f4a4594b36d42a0639a9, type: 3}
   - {fileID: -55959917, guid: 566962d72728f4a4594b36d42a0639a9, type: 3}
+--- !u!114 &1993381274302270069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4155049223136090164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7167408633331525864
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +379,7 @@ GameObject:
   - component: {fileID: 4716339822135085393}
   - component: {fileID: 3210383337701779026}
   - component: {fileID: 4310041299259813651}
+  - component: {fileID: 5410447518071743748}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -487,6 +501,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whenFalse: 1
   propertyName: NoDirt
+--- !u!114 &5410447518071743748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8485952617793021830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2440530658531347550
 PrefabInstance:
   m_ObjectHideFlags: 0

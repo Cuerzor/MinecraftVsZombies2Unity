@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3259436161218607530}
   - component: {fileID: 578854545851700953}
   - component: {fileID: 966957246850259024}
+  - component: {fileID: 2447856805486617732}
   m_Layer: 0
   m_Name: Dirt
   m_TagString: Untagged
@@ -100,6 +101,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &2447856805486617732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957325795555075288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2711724986720348009
 GameObject:
   m_ObjectHideFlags: 0
