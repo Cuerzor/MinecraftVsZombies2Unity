@@ -18,7 +18,7 @@ MonoBehaviour:
   defaultStarshardSprite: {fileID: 21300000, guid: 5fe877b614795e144996e5d0ede65e81, type: 3}
   helpNoteID:
     spacename: mvz2
-    path: helper
+    path: help
   firstLevelAreaID:
     spacename: mvz2
     path: day
