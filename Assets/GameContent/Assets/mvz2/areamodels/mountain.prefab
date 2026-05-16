@@ -200,6 +200,7 @@ GameObject:
   - component: {fileID: 8673395110526065982}
   - component: {fileID: 1584770639048987584}
   - component: {fileID: 6960443523431434761}
+  - component: {fileID: 8840587197548608166}
   m_Layer: 12
   m_Name: Ground
   m_TagString: Untagged
@@ -287,6 +288,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &8840587197548608166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740164926114532115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2437534884611980727
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,6 +311,7 @@ GameObject:
   - component: {fileID: 337607569910385903}
   - component: {fileID: 715412506587184767}
   - component: {fileID: 7468902909954209506}
+  - component: {fileID: 2383103633395644334}
   m_Layer: 16
   m_Name: WaterTerrain
   m_TagString: Untagged
@@ -385,6 +399,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 1
+--- !u!114 &2383103633395644334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2437534884611980727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4267032628575324233
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +422,7 @@ GameObject:
   - component: {fileID: 1560646121247791446}
   - component: {fileID: 7709226219782035696}
   - component: {fileID: 215704875111019792}
+  - component: {fileID: 1196823411014974775}
   m_Layer: 12
   m_Name: House
   m_TagString: Untagged
@@ -483,6 +510,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &1196823411014974775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267032628575324233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5977425712239297246
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +533,7 @@ GameObject:
   - component: {fileID: 5123399467784072192}
   - component: {fileID: 5659812004118726760}
   - component: {fileID: 1386401164362782938}
+  - component: {fileID: 8530318277549388698}
   m_Layer: 16
   m_Name: PoolTerrain
   m_TagString: Untagged
@@ -581,6 +621,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 1
+--- !u!114 &8530318277549388698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5977425712239297246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6773616898382068834
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,6 +644,7 @@ GameObject:
   - component: {fileID: 2003003640227573624}
   - component: {fileID: 1155801593362711395}
   - component: {fileID: 1173630526855872544}
+  - component: {fileID: 172819710184912324}
   m_Layer: 0
   m_Name: Bridge
   m_TagString: Untagged
@@ -679,6 +732,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &172819710184912324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6773616898382068834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6998498364343983427
 GameObject:
   m_ObjectHideFlags: 0

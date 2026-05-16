@@ -107,7 +107,6 @@ GameObject:
   - component: {fileID: 5983623046133623908}
   - component: {fileID: 8281669614504346550}
   - component: {fileID: 6660798044709961442}
-  - component: {fileID: 3245541939840278012}
   - component: {fileID: 8019725600490102548}
   m_Layer: 0
   m_Name: Sprite
@@ -196,18 +195,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &3245541939840278012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1381184886731208156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8019725600490102548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +266,6 @@ GameObject:
   - component: {fileID: 2497962417576228108}
   - component: {fileID: 5717235470810231421}
   - component: {fileID: 6983100699767270482}
-  - component: {fileID: 5933341062171712943}
   - component: {fileID: 630908827382129203}
   m_Layer: 0
   m_Name: Sprite
@@ -368,18 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &5933341062171712943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2543873568833787431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &630908827382129203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -403,7 +377,6 @@ GameObject:
   - component: {fileID: 2034941151195409518}
   - component: {fileID: 758052685440822967}
   - component: {fileID: 6698971485452492862}
-  - component: {fileID: 7303798558810376861}
   - component: {fileID: 5475981194507500495}
   m_Layer: 16
   m_Name: TerrainMask
@@ -492,18 +465,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &7303798558810376861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4289357181909992338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5475981194507500495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,7 +488,6 @@ GameObject:
   - component: {fileID: 3096975344214635763}
   - component: {fileID: 4672333427961794649}
   - component: {fileID: 1875971014078533612}
-  - component: {fileID: 6092087165585487983}
   - component: {fileID: 2636135794589635986}
   m_Layer: 0
   m_Name: Sprite
@@ -616,18 +576,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &6092087165585487983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4501071885790676216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2636135794589635986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,7 +599,6 @@ GameObject:
   - component: {fileID: 353922931092859385}
   - component: {fileID: 4368920310405122316}
   - component: {fileID: 4472493779212690239}
-  - component: {fileID: 8230938004245639595}
   - component: {fileID: 7710126840323564734}
   m_Layer: 0
   m_Name: Sprite
@@ -740,18 +687,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &8230938004245639595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5387964072069558479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7710126840323564734
 MonoBehaviour:
   m_ObjectHideFlags: 0

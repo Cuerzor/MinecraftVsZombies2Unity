@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6145598306648322856}
   - component: {fileID: 8053271038901133512}
   - component: {fileID: 1773526140820516392}
-  - component: {fileID: 2268061449924351000}
   - component: {fileID: 3982947327444501543}
   m_Layer: 0
   m_Name: Pow
@@ -100,18 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &2268061449924351000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6321662689766374069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3982947327444501543
 MonoBehaviour:
   m_ObjectHideFlags: 0

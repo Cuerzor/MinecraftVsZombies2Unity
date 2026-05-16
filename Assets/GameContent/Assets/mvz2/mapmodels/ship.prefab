@@ -44,6 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1470666696347255599}
   - component: {fileID: 315745297645979337}
+  - component: {fileID: 2306693374445033348}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -118,6 +119,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2306693374445033348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878990562917509723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3699352213710147459
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1103746020677042693}
   - component: {fileID: 7641805905162927278}
+  - component: {fileID: 6570938938433749118}
   m_Layer: 0
   m_Name: EndShip
   m_TagString: Untagged
@@ -202,6 +216,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6570938938433749118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3699352213710147459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8612306283910572009
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4232143835043131195}
   - component: {fileID: 8770601264974850641}
+  - component: {fileID: 8279729762440505574}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -286,6 +313,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8279729762440505574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8612306283910572009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &278563738932209548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -872,7 +911,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: jeweled_pagoda
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 403979267893116814, guid: 3b7a228ae2a7d014c98080474f73e92b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

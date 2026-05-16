@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 4636384370776918479}
   - component: {fileID: 4657986925663552092}
   - component: {fileID: 1789361462865224144}
+  - component: {fileID: 970909758811433293}
   m_Layer: 12
   m_Name: House
   m_TagString: Untagged
@@ -224,6 +225,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whenFalse: 0
   propertyName: GameOver
+--- !u!114 &970909758811433293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117517435329094587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1389958381528177754
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,6 +248,7 @@ GameObject:
   - component: {fileID: 6341743493426562188}
   - component: {fileID: 3828659817573894563}
   - component: {fileID: 1375663780093131122}
+  - component: {fileID: 2945024808023846523}
   m_Layer: 12
   m_Name: Sky
   m_TagString: Untagged
@@ -322,6 +336,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &2945024808023846523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389958381528177754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1422624688117353730
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,6 +360,7 @@ GameObject:
   - component: {fileID: 7654298452214251579}
   - component: {fileID: 9065717416945931614}
   - component: {fileID: 1033388257478227118}
+  - component: {fileID: 6964579097477781267}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -435,6 +462,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whenFalse: 1
   propertyName: GameOver
+--- !u!114 &6964579097477781267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422624688117353730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1740164926114532115
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,6 +485,7 @@ GameObject:
   - component: {fileID: 8673395110526065982}
   - component: {fileID: 1584770639048987584}
   - component: {fileID: 6960443523431434761}
+  - component: {fileID: 6767637285694611731}
   m_Layer: 12
   m_Name: Ground
   m_TagString: Untagged
@@ -533,6 +573,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &6767637285694611731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740164926114532115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2796639141508409817
 GameObject:
   m_ObjectHideFlags: 0

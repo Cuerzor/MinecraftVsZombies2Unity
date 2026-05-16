@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6333747646779811084}
   - component: {fileID: 8711903070184923585}
   - component: {fileID: 3527294573120162350}
-  - component: {fileID: 2268061607172060100}
   - component: {fileID: 7079546073460024077}
   m_Layer: 0
   m_Name: Boom
@@ -100,18 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &2268061607172060100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2315401951337163950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7079546073460024077
 MonoBehaviour:
   m_ObjectHideFlags: 0

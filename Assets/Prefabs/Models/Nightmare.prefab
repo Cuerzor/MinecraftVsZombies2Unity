@@ -112,7 +112,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3586407520138787017}
   - component: {fileID: 1013193901397775874}
-  - component: {fileID: 4964758438971343425}
   - component: {fileID: 7972751304801033874}
   m_Layer: 12
   m_Name: Ground
@@ -188,18 +187,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4964758438971343425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4593619633203608753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7972751304801033874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,7 +209,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5177672818655921893}
   - component: {fileID: 7877394157724804623}
-  - component: {fileID: 8928661964147120426}
   - component: {fileID: 7636489952120917508}
   m_Layer: 12
   m_Name: Sky
@@ -298,18 +284,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8928661964147120426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5690380308663726064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7636489952120917508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +308,6 @@ GameObject:
   - component: {fileID: 9066033358763612531}
   - component: {fileID: 5317433012207967024}
   - component: {fileID: 6626686124413113830}
-  - component: {fileID: 577310148530574920}
   - component: {fileID: 2555640091158127059}
   m_Layer: 12
   m_Name: BossSky
@@ -437,18 +410,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &577310148530574920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6200636921570509447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2555640091158127059
 MonoBehaviour:
   m_ObjectHideFlags: 0

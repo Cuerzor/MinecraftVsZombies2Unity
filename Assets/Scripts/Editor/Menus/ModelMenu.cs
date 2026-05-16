@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using MVZ2.Localization;
 using MVZ2.Models;
 using MVZ2Logic.Models;
 using MVZ2Logic.UI;
@@ -33,7 +34,7 @@ namespace MVZ2.Editor
         {
             Debug.Log("Updating sprite renderer resolvers...");
             var prefabsDirectory = Path.Combine(Application.dataPath, "Prefabs");
-            var modelDirectory = Path.Combine(Application.dataPath, "GameContent", "Assets", "mvz2", "models");
+            var modelDirectory = Path.Combine(Application.dataPath, "GameContent", "Assets", "mvz2");
             var filePaths = new List<string>();
             SearchPrefabPaths(prefabsDirectory, filePaths);
             SearchPrefabPaths(modelDirectory, filePaths);
@@ -42,19 +43,21 @@ namespace MVZ2.Editor
             var addedImageResolvers = 0;
             foreach (string path in filePaths)
             {
-                addedSpriteResolvers += UpdateSpriteRendererResolver(Path.Combine("Assets", Path.GetRelativePath(Application.dataPath, path)));
-                addedImageResolvers += UpdateImageResolver(Path.Combine("Assets", Path.GetRelativePath(Application.dataPath, path)));
+                var fullPath = Path.Combine("Assets", Path.GetRelativePath(Application.dataPath, path));
+                addedSpriteResolvers += UpdateSpriteRendererResolver(fullPath);
+                addedImageResolvers += UpdateImageResolver(fullPath);
             }
             var removedSpriteResolvers = 0;
             var removedImageResolvers = 0;
             foreach (string path in filePaths)
             {
-                removedSpriteResolvers += CheckDuplicateSpriteRendererResolver(Path.Combine("Assets", Path.GetRelativePath(Application.dataPath, path)));
-                removedImageResolvers += CheckDuplicateImageResolver(Path.Combine("Assets", Path.GetRelativePath(Application.dataPath, path)));
+                var fullPath = Path.Combine("Assets", Path.GetRelativePath(Application.dataPath, path));
+                removedSpriteResolvers += CheckDuplicateSpriteRendererResolver(fullPath);
+                removedImageResolvers += CheckDuplicateImageResolver(fullPath);
             }
             var addedResolvers = addedSpriteResolvers + addedImageResolvers;
             var removedResolvers = removedSpriteResolvers + removedImageResolvers;
-            Debug.Log($"Update sprite renderer resolvers completed: added {addedResolvers}, removed {removedResolvers}, totally {addedResolvers - removedResolvers}.");
+            Debug.Log($"Update sprite renderer resolvers completed: added {addedResolvers}, removed {removedResolvers} duplicated, totally {addedResolvers - removedResolvers}.");
         }
         private static void SearchPrefabPaths(string folder, List<string> pathList)
         {
@@ -138,6 +141,32 @@ namespace MVZ2.Editor
             PrefabUtility.SaveAsPrefabAsset(obj, path, out var successfully);
             PrefabUtility.UnloadPrefabContents(obj);
             Debug.Log($"{path}: Removed {removedComponents} duplicate components ({typeof(T).Name})");
+            return removedComponents;
+        }
+        private static int RemoveComponents<T>(string path) where T : Component
+        {
+            var obj = PrefabUtility.LoadPrefabContents(path);
+
+            var components = obj.GetComponentsInChildren<T>(true);
+            int removedComponents = 0;
+            foreach (var component in components)
+            {
+                if (!component)
+                    continue;
+                var resolvers = component.gameObject.GetComponents<T>();
+                if (resolvers.Length <= 0)
+                    continue;
+                for (int i = resolvers.Length - 1; i >= 0; i--)
+                {
+                    var resolver = resolvers[i];
+                    Object.DestroyImmediate(resolver, true);
+                    removedComponents++;
+                }
+            }
+
+            PrefabUtility.SaveAsPrefabAsset(obj, path, out var successfully);
+            PrefabUtility.UnloadPrefabContents(obj);
+            Debug.Log($"{path}: Removed {removedComponents} components ({typeof(T).Name})");
             return removedComponents;
         }
 

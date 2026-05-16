@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6308626840368984279}
   - component: {fileID: 8355275595334335122}
   - component: {fileID: 8552086615005638141}
-  - component: {fileID: 5431511646485940420}
   - component: {fileID: 6323059759926683732}
   m_Layer: 0
   m_Name: Frame
@@ -100,18 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &5431511646485940420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415690778614399724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6323059759926683732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +122,6 @@ GameObject:
   - component: {fileID: 669261439229034366}
   - component: {fileID: 5836118874107791995}
   - component: {fileID: 2460508481364334424}
-  - component: {fileID: 5632202406635239315}
   - component: {fileID: 6287546822418663705}
   m_Layer: 0
   m_Name: Flash
@@ -224,18 +210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
---- !u!114 &5632202406635239315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2628972231362742887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc407fef2adb174fbe34d5fb6918389, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6287546822418663705
 MonoBehaviour:
   m_ObjectHideFlags: 0

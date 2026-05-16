@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbda779261963f4a91009d236781513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 0}
+  button: {fileID: 0}
   definitionID:
     spacename: mvz2
     path: 
