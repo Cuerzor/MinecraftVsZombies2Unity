@@ -26,5 +26,15 @@ namespace MVZ2.Localization
         [DefaultValue(0.5f)]
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public float pivotY = 0.5f;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public float borderLeft;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public float borderBottom;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public float borderRight;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public float borderTop;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public bool fullRect;
     }
 }

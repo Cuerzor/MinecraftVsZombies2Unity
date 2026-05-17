@@ -46,9 +46,13 @@ namespace MVZ2.Managers
         #endregion
 
         #region 生成Sprite
-        public Sprite CreateSprite(Texture2D texture, Rect rect, Vector2 pivot, string name, string category = "default")
+        public Sprite CreateSprite(Texture2D texture, Rect rect, Vector2 pivot, string name, SpriteMeshType meshType = SpriteMeshType.Tight, string category = "default")
         {
-            var sprite = Sprite.Create(texture, rect, pivot);
+            return CreateSprite(texture, rect, pivot, name, Vector4.zero, meshType, category);
+        }
+        public Sprite CreateSprite(Texture2D texture, Rect rect, Vector2 pivot, string name, Vector4 border, SpriteMeshType meshType = SpriteMeshType.Tight, string category = "default")
+        {
+            var sprite = Sprite.Create(texture, rect, pivot, 100f, 0, meshType, border);
             sprite.name = name;
             sprite.hideFlags = HideFlags.HideAndDontSave;
             RegisterGeneratedSprite(sprite, category);

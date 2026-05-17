@@ -29,7 +29,9 @@ namespace MVZ2.Localization
                 var pivot = new Vector2(packSprite.pivotX, packSprite.pivotY);
                 rect.width = Math.Min(rect.width, texture2D.width);
                 rect.height = Math.Min(rect.height, texture2D.height);
-                var spr = Main.ResourceManager.CreateSprite(texture2D, rect, pivot, generatedName, generatedCategory);
+                var meshType = packSprite.fullRect ? SpriteMeshType.FullRect : SpriteMeshType.Tight;
+                var border = new Vector4(packSprite.borderLeft, packSprite.borderBottom, packSprite.borderRight, packSprite.borderTop);
+                var spr = Main.ResourceManager.CreateSprite(texture2D, rect, pivot, generatedName, border, meshType, category: generatedCategory);
                 return spr;
             }
             catch (Exception e)

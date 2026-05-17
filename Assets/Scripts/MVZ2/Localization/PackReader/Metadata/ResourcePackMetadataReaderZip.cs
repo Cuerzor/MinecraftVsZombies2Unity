@@ -46,7 +46,9 @@ namespace MVZ2.Localization
                     {
                         var bytes = iconEntry.ReadBytes();
                         var texture = Main.ResourceManager.GenerateTextureFromBytes(bytes, metadata.name ?? "pack");
-                        metadata.icon = Main.ResourceManager.CreateSprite(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(texture.width * 0.5f, texture.height * 0.5f), key, "language_pack_icon");
+                        var rect = new Rect(0, 0, texture.width, texture.height);
+                        var pivot = new Vector2(0.5f, 0.5f);
+                        metadata.icon = Main.ResourceManager.CreateSprite(texture, rect, pivot, key, category: "language_pack_icon");
                     }
                 }
                 return metadata;

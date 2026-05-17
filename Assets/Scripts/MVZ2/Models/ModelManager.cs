@@ -87,7 +87,7 @@ namespace MVZ2.Models
             DestroyImmediate(modelInstance.gameObject);
 
             // 创建Sprite。
-            Sprite sprite = main.ResourceManager.CreateSprite(texture, new Rect(0, 0, width, height), Vector2.one * 0.5f, pictureName, "modelIcon");
+            Sprite sprite = main.ResourceManager.CreateSprite(texture, new Rect(0, 0, width, height), Vector2.one * 0.5f, pictureName, category: "modelIcon");
 
             return sprite;
         }

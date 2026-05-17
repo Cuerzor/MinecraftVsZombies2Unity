@@ -28,7 +28,7 @@ namespace MVZ2.Localization
                     spritePivot = new Vector2(0.5f, 0.5f);
                 }
                 var spriteReference = new SpriteReference(spriteId);
-                var spr = Main.ResourceManager.CreateSprite(texture2D, spriteRect, spritePivot, spriteReference.ToString(), GetLanguagePackSpriteCategory(key));
+                var spr = Main.ResourceManager.CreateSprite(texture2D, spriteRect, spritePivot, spriteReference.ToString(), category: GetLanguagePackSpriteCategory(key));
                 return spr;
             }
             catch (Exception e)
@@ -68,7 +68,7 @@ namespace MVZ2.Localization
                     rect.width = Math.Min(rect.width, texture2D.width);
                     rect.height = Math.Min(rect.height, texture2D.height);
                     var spriteRef = new SpriteReference(spriteId, i);
-                    var spr = Main.ResourceManager.CreateSprite(texture2D, rect, info.pivot, spriteRef.ToString(), GetLanguagePackSpriteCategory(key));
+                    var spr = Main.ResourceManager.CreateSprite(texture2D, rect, info.pivot, spriteRef.ToString(), category: GetLanguagePackSpriteCategory(key));
                     sprites[i] = spr;
                 }
                 return sprites;
