@@ -8,26 +8,26 @@
           "tags": [
             "en-US"
           ],
-          "y": 148.0,
-          "width": 165.0,
-          "height": 74.0
+          "y": 148,
+          "width": 165,
+          "height": 74
         },
         {
           "replaces": "mvz2:ready_set_build[1]",
           "tags": [
             "en-US"
           ],
-          "y": 74.0,
-          "width": 165.0,
-          "height": 74.0
+          "y": 74,
+          "width": 165,
+          "height": 74
         },
         {
           "replaces": "mvz2:ready_set_build[2]",
           "tags": [
             "en-US"
           ],
-          "width": 165.0,
-          "height": 74.0
+          "width": 165,
+          "height": 74
         }
       ]
     },
@@ -219,26 +219,26 @@
           "tags": [
             "en-US"
           ],
-          "width": 358.0,
-          "height": 318.0
+          "width": 358,
+          "height": 318
         },
         {
           "replaces": "mvz2:mainmenu/almanac[1]",
           "tags": [
             "en-US"
           ],
-          "x": 359.0,
-          "width": 358.0,
-          "height": 318.0
+          "x": 359,
+          "width": 358,
+          "height": 318
         },
         {
           "replaces": "mvz2:mainmenu/almanac[2]",
           "tags": [
             "en-US"
           ],
-          "x": 718.0,
-          "width": 358.0,
-          "height": 318.0
+          "x": 718,
+          "width": 358,
+          "height": 318
         }
       ]
     },
@@ -250,26 +250,26 @@
           "tags": [
             "en-US"
           ],
-          "width": 281.0,
-          "height": 164.0
+          "width": 281,
+          "height": 164
         },
         {
           "replaces": "mvz2:mainmenu/arcade[1]",
           "tags": [
             "en-US"
           ],
-          "x": 282.0,
-          "width": 281.0,
-          "height": 164.0
+          "x": 282,
+          "width": 281,
+          "height": 164
         },
         {
           "replaces": "mvz2:mainmenu/arcade[2]",
           "tags": [
             "en-US"
           ],
-          "x": 564.0,
-          "width": 281.0,
-          "height": 164.0
+          "x": 564,
+          "width": 281,
+          "height": 164
         }
       ]
     },
@@ -281,17 +281,17 @@
           "tags": [
             "en-US"
           ],
-          "y": 37.0,
-          "width": 79.0,
-          "height": 36.0
+          "y": 37,
+          "width": 79,
+          "height": 36
         },
         {
           "replaces": "mvz2:mainmenu/back_to_mainmenu[1]",
           "tags": [
             "en-US"
           ],
-          "width": 79.0,
-          "height": 36.0
+          "width": 79,
+          "height": 36
         }
       ]
     },
@@ -303,26 +303,26 @@
           "tags": [
             "en-US"
           ],
-          "width": 89.0,
-          "height": 125.0
+          "width": 89,
+          "height": 125
         },
         {
           "replaces": "mvz2:mainmenu/help[1]",
           "tags": [
             "en-US"
           ],
-          "x": 90.0,
-          "width": 89.0,
-          "height": 125.0
+          "x": 90,
+          "width": 89,
+          "height": 125
         },
         {
           "replaces": "mvz2:mainmenu/help[2]",
           "tags": [
             "en-US"
           ],
-          "x": 180.0,
-          "width": 89.0,
-          "height": 125.0
+          "x": 180,
+          "width": 89,
+          "height": 125
         }
       ]
     },
@@ -334,18 +334,17 @@
           "tags": [
             "en-US"
           ],
-          "y": 37.0,
-          "width": 73.0,
-          "height": 36.0
+          "y": 37,
+          "width": 73,
+          "height": 36
         },
         {
           "replaces": "mvz2:mainmenu/more_menus[1]",
           "tags": [
             "en-US"
           ],
-          "y": 0.5,
-          "width": 73.0,
-          "height": 36.5
+          "width": 73,
+          "height": 36
         }
       ]
     },
@@ -357,26 +356,26 @@
           "tags": [
             "en-US"
           ],
-          "y": 390.0,
-          "width": 311.0,
-          "height": 194.0
+          "y": 390,
+          "width": 311,
+          "height": 194
         },
         {
           "replaces": "mvz2:mainmenu/music_room[1]",
           "tags": [
             "en-US"
           ],
-          "y": 195.0,
-          "width": 311.0,
-          "height": 194.0
+          "y": 195,
+          "width": 311,
+          "height": 194
         },
         {
           "replaces": "mvz2:mainmenu/music_room[2]",
           "tags": [
             "en-US"
           ],
-          "width": 311.0,
-          "height": 194.0
+          "width": 311,
+          "height": 194
         }
       ]
     },
@@ -388,29 +387,29 @@
           "tags": [
             "en-US"
           ],
-          "y": 1.0,
-          "width": 89.0,
-          "height": 125.0
+          "y": 1,
+          "width": 89,
+          "height": 125
         },
         {
           "replaces": "mvz2:mainmenu/options[1]",
           "tags": [
             "en-US"
           ],
-          "x": 90.0,
-          "y": 1.0,
-          "width": 89.0,
-          "height": 125.0
+          "x": 90,
+          "y": 1,
+          "width": 89,
+          "height": 125
         },
         {
           "replaces": "mvz2:mainmenu/options[2]",
           "tags": [
             "en-US"
           ],
-          "x": 180.0,
-          "y": 1.0,
-          "width": 89.0,
-          "height": 125.0
+          "x": 180,
+          "y": 1,
+          "width": 89,
+          "height": 125
         }
       ]
     },
@@ -422,27 +421,27 @@
           "tags": [
             "en-US"
           ],
-          "y": 340.0,
-          "width": 262.0,
-          "height": 169.0
+          "y": 340,
+          "width": 262,
+          "height": 169
         },
         {
           "replaces": "mvz2:mainmenu/quit[1]",
           "tags": [
             "en-US"
           ],
-          "y": 170.0,
-          "width": 262.0,
-          "height": 169.0
+          "y": 170,
+          "width": 262,
+          "height": 169
         },
         {
           "replaces": "mvz2:mainmenu/quit[2]",
           "tags": [
             "en-US"
           ],
-          "y": 1.0,
-          "width": 262.0,
-          "height": 168.0
+          "y": 1,
+          "width": 262,
+          "height": 168
         }
       ]
     },
@@ -454,26 +453,26 @@
           "tags": [
             "en-US"
           ],
-          "width": 358.0,
-          "height": 277.0
+          "width": 358,
+          "height": 277
         },
         {
           "replaces": "mvz2:mainmenu/store[1]",
           "tags": [
             "en-US"
           ],
-          "x": 359.0,
-          "width": 358.0,
-          "height": 277.0
+          "x": 359,
+          "width": 358,
+          "height": 277
         },
         {
           "replaces": "mvz2:mainmenu/store[2]",
           "tags": [
             "en-US"
           ],
-          "x": 718.0,
-          "width": 358.0,
-          "height": 277.0
+          "x": 718,
+          "width": 358,
+          "height": 277
         }
       ]
     },
@@ -485,18 +484,17 @@
           "tags": [
             "en-US"
           ],
-          "y": 41.5,
-          "width": 109.0,
-          "height": 41.5
+          "y": 42,
+          "width": 109,
+          "height": 41
         },
         {
           "replaces": "mvz2:mainmenu/user_manage[1]",
           "tags": [
             "en-US"
           ],
-          "y": 0.5,
-          "width": 109.0,
-          "height": 41.5
+          "width": 109,
+          "height": 41
         }
       ]
     },

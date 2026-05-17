@@ -13,13 +13,13 @@ namespace MVZ2.Localization
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool single;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public float x;
+        public int x;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public float y;
+        public int y;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public float width;
+        public int width;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public float height;
+        public int height;
         [DefaultValue(0.5f)]
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public float pivotX = 0.5f;
@@ -27,13 +27,13 @@ namespace MVZ2.Localization
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public float pivotY = 0.5f;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public float borderLeft;
+        public int borderLeft;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public float borderBottom;
+        public int borderBottom;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public float borderRight;
+        public int borderRight;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public float borderTop;
+        public int borderTop;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool fullRect;
     }
