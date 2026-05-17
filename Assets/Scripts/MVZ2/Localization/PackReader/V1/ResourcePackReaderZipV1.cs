@@ -160,7 +160,7 @@ namespace MVZ2.Localization
                 for (int i = 0; i < slices.Length; i++)
                 {
                     var slice = slices[i];
-                    if (slice.replaces == null || !SpriteReference.TryParse(slice.replaces, Main.BuiltinNamespace, out var spriteRef))
+                    if (slice.key == null || !SpriteReference.TryParse(slice.key, Main.BuiltinNamespace, out var spriteRef))
                     {
                         Log.LogWarning($"Cannot load sprite {packTexture.texture}[{i}] from resource pack: No sprite to replace.");
                         continue;

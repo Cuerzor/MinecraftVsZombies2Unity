@@ -408,7 +408,7 @@ namespace MVZ2.Editor
                         {
                             packSprite = new ResourcePackSprite()
                             {
-                                replaces = replaces.ToString(),
+                                key = replaces.ToString(),
                                 tags = tags,
                                 single = true,
                                 pivotX = sprite.pivot.x / sprite.rect.width,
@@ -419,7 +419,7 @@ namespace MVZ2.Editor
                         {
                             packSprite = new ResourcePackSprite()
                             {
-                                replaces = replaces.ToString(),
+                                key = replaces.ToString(),
                                 tags = tags,
                                 single = false,
                                 x = (int)sprite.rect.x,
