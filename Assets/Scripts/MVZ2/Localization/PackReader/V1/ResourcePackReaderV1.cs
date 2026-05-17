@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2.Managers;
+using MVZ2.Sprites;
 using MVZ2Logic.Resources;
 using PVZEngine;
 using UnityEngine;
@@ -24,7 +25,8 @@ namespace MVZ2.Localization
                 }
                 else
                 {
-                    rect = new Rect(packSprite.x, packSprite.y, packSprite.width, packSprite.height);
+                    var y = SpriteHelper.FromTopToFromBottomY(packSprite.y, texture2D.height, packSprite.height);
+                    rect = new Rect(packSprite.x, y, packSprite.width, packSprite.height);
                 }
                 var pivot = new Vector2(packSprite.pivotX, packSprite.pivotY);
                 rect.width = Math.Min(rect.width, texture2D.width);

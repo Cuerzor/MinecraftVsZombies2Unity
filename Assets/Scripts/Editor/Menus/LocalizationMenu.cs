@@ -417,13 +417,14 @@ namespace MVZ2.Editor
                         }
                         else
                         {
+                            var y = SpriteHelper.FromBottomToFromTopY((int)sprite.rect.y, sprite.texture.height, (int)sprite.rect.height);
                             packSprite = new ResourcePackSprite()
                             {
                                 key = replaces.ToString(),
                                 tags = tags,
                                 single = false,
                                 x = (int)sprite.rect.x,
-                                y = (int)sprite.rect.y,
+                                y = y,
                                 width = (int)sprite.rect.width,
                                 height = (int)sprite.rect.height,
                                 pivotX = sprite.pivot.x / sprite.rect.width,

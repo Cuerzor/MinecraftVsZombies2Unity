@@ -112,6 +112,14 @@ namespace MVZ2.Sprites
             id = splitTagTexturePaths[0];
             tags = splitTagTexturePaths.Skip(1).ToArray();
         }
+        public static int FromBottomToFromTopY(int fromBottomY, int textureHeight, int rectHeight)
+        {
+            return textureHeight - fromBottomY - rectHeight;
+        }
+        public static int FromTopToFromBottomY(int fromTopY, int textureHeight, int rectHeight)
+        {
+            return textureHeight - fromTopY - rectHeight;
+        }
         public const string SPRITE_TAG_CENSORED = "censored";
     }
 }
