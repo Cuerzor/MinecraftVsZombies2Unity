@@ -2,18 +2,16 @@
   "textures": [
     {
       "texture": "mvz2/sprites/ready_set_build@en-US.png",
+      "key": "mvz2:ready_set_build",
       "slices": [
         {
-          "key": "mvz2:ready_set_build",
           "tags": [
             "en-US"
           ],
-          "y": 148,
           "width": 165,
           "height": 74
         },
         {
-          "key": "mvz2:ready_set_build[1]",
           "tags": [
             "en-US"
           ],
@@ -22,10 +20,10 @@
           "height": 74
         },
         {
-          "key": "mvz2:ready_set_build[2]",
           "tags": [
             "en-US"
           ],
+          "y": 148,
           "width": 165,
           "height": 74
         }
@@ -33,9 +31,9 @@
     },
     {
       "texture": "mvz2/sprites/archive/castle_note@en-US.png",
+      "key": "mvz2:archive/castle_note",
       "slices": [
         {
-          "key": "mvz2:archive/castle_note",
           "tags": [
             "en-US"
           ],
@@ -45,9 +43,9 @@
     },
     {
       "texture": "mvz2/sprites/archive/dream_note@en-US.png",
+      "key": "mvz2:archive/dream_note",
       "slices": [
         {
-          "key": "mvz2:archive/dream_note",
           "tags": [
             "en-US"
           ],
@@ -57,9 +55,9 @@
     },
     {
       "texture": "mvz2/sprites/archive/halloween_note@en-US.png",
+      "key": "mvz2:archive/halloween_note",
       "slices": [
         {
-          "key": "mvz2:archive/halloween_note",
           "tags": [
             "en-US"
           ],
@@ -69,9 +67,9 @@
     },
     {
       "texture": "mvz2/sprites/archive/palace_note@en-US.png",
+      "key": "mvz2:archive/palace_note",
       "slices": [
         {
-          "key": "mvz2:archive/palace_note",
           "tags": [
             "en-US"
           ],
@@ -81,9 +79,9 @@
     },
     {
       "texture": "mvz2/sprites/chapter_transition/chapter_title_end@en-US.png",
+      "key": "mvz2:chapter_transition/chapter_title_end",
       "slices": [
         {
-          "key": "mvz2:chapter_transition/chapter_title_end",
           "tags": [
             "en-US"
           ],
@@ -93,9 +91,9 @@
     },
     {
       "texture": "mvz2/sprites/chapter_transition/title_castle@en-US.png",
+      "key": "mvz2:chapter_transition/title_castle",
       "slices": [
         {
-          "key": "mvz2:chapter_transition/title_castle",
           "tags": [
             "en-US"
           ],
@@ -105,9 +103,9 @@
     },
     {
       "texture": "mvz2/sprites/chapter_transition/title_dream@en-US.png",
+      "key": "mvz2:chapter_transition/title_dream",
       "slices": [
         {
-          "key": "mvz2:chapter_transition/title_dream",
           "tags": [
             "en-US"
           ],
@@ -117,9 +115,9 @@
     },
     {
       "texture": "mvz2/sprites/chapter_transition/title_halloween@en-US.png",
+      "key": "mvz2:chapter_transition/title_halloween",
       "slices": [
         {
-          "key": "mvz2:chapter_transition/title_halloween",
           "tags": [
             "en-US"
           ],
@@ -129,9 +127,9 @@
     },
     {
       "texture": "mvz2/sprites/chapter_transition/title_mausoleum@en-US.png",
+      "key": "mvz2:chapter_transition/title_mausoleum",
       "slices": [
         {
-          "key": "mvz2:chapter_transition/title_mausoleum",
           "tags": [
             "en-US"
           ],
@@ -141,9 +139,9 @@
     },
     {
       "texture": "mvz2/sprites/chapter_transition/title_palace@en-US.png",
+      "key": "mvz2:chapter_transition/title_palace",
       "slices": [
         {
-          "key": "mvz2:chapter_transition/title_palace",
           "tags": [
             "en-US"
           ],
@@ -153,9 +151,9 @@
     },
     {
       "texture": "mvz2/sprites/chapter_transition/title_ship@en-US.png",
+      "key": "mvz2:chapter_transition/title_ship",
       "slices": [
         {
-          "key": "mvz2:chapter_transition/title_ship",
           "tags": [
             "en-US"
           ],
@@ -165,9 +163,9 @@
     },
     {
       "texture": "mvz2/sprites/icons/disabled@en-US.png",
+      "key": "mvz2:icons/disabled",
       "slices": [
         {
-          "key": "mvz2:icons/disabled",
           "tags": [
             "en-US"
           ],
@@ -177,9 +175,9 @@
     },
     {
       "texture": "mvz2/sprites/icons/short_circuited@en-US.png",
+      "key": "mvz2:icons/short_circuited",
       "slices": [
         {
-          "key": "mvz2:icons/short_circuited",
           "tags": [
             "en-US"
           ],
@@ -189,9 +187,9 @@
     },
     {
       "texture": "mvz2/sprites/icons/sleeping@en-US.png",
+      "key": "mvz2:icons/sleeping",
       "slices": [
         {
-          "key": "mvz2:icons/sleeping",
           "tags": [
             "en-US"
           ],
@@ -201,9 +199,9 @@
     },
     {
       "texture": "mvz2/sprites/init/logo@en-US.png",
+      "key": "mvz2:init/logo",
       "slices": [
         {
-          "key": "mvz2:init/logo",
           "tags": [
             "en-US"
           ],
@@ -213,9 +211,9 @@
     },
     {
       "texture": "mvz2/sprites/mainmenu/almanac@en-US.png",
+      "key": "mvz2:mainmenu/almanac",
       "slices": [
         {
-          "key": "mvz2:mainmenu/almanac",
           "tags": [
             "en-US"
           ],
@@ -223,7 +221,6 @@
           "height": 318
         },
         {
-          "key": "mvz2:mainmenu/almanac[1]",
           "tags": [
             "en-US"
           ],
@@ -232,7 +229,6 @@
           "height": 318
         },
         {
-          "key": "mvz2:mainmenu/almanac[2]",
           "tags": [
             "en-US"
           ],
@@ -244,9 +240,9 @@
     },
     {
       "texture": "mvz2/sprites/mainmenu/arcade@en-US.png",
+      "key": "mvz2:mainmenu/arcade",
       "slices": [
         {
-          "key": "mvz2:mainmenu/arcade",
           "tags": [
             "en-US"
           ],
@@ -254,7 +250,6 @@
           "height": 164
         },
         {
-          "key": "mvz2:mainmenu/arcade[1]",
           "tags": [
             "en-US"
           ],
@@ -263,7 +258,6 @@
           "height": 164
         },
         {
-          "key": "mvz2:mainmenu/arcade[2]",
           "tags": [
             "en-US"
           ],
@@ -275,21 +269,20 @@
     },
     {
       "texture": "mvz2/sprites/mainmenu/back_to_mainmenu@en-US.png",
+      "key": "mvz2:mainmenu/back_to_mainmenu",
       "slices": [
         {
-          "key": "mvz2:mainmenu/back_to_mainmenu",
           "tags": [
             "en-US"
           ],
-          "y": 37,
           "width": 79,
           "height": 36
         },
         {
-          "key": "mvz2:mainmenu/back_to_mainmenu[1]",
           "tags": [
             "en-US"
           ],
+          "y": 37,
           "width": 79,
           "height": 36
         }
@@ -297,9 +290,9 @@
     },
     {
       "texture": "mvz2/sprites/mainmenu/help@en-US.png",
+      "key": "mvz2:mainmenu/help",
       "slices": [
         {
-          "key": "mvz2:mainmenu/help",
           "tags": [
             "en-US"
           ],
@@ -307,7 +300,6 @@
           "height": 125
         },
         {
-          "key": "mvz2:mainmenu/help[1]",
           "tags": [
             "en-US"
           ],
@@ -316,7 +308,6 @@
           "height": 125
         },
         {
-          "key": "mvz2:mainmenu/help[2]",
           "tags": [
             "en-US"
           ],
@@ -328,21 +319,20 @@
     },
     {
       "texture": "mvz2/sprites/mainmenu/more_menus@en-US.png",
+      "key": "mvz2:mainmenu/more_menus",
       "slices": [
         {
-          "key": "mvz2:mainmenu/more_menus",
           "tags": [
             "en-US"
           ],
-          "y": 37,
           "width": 73,
           "height": 36
         },
         {
-          "key": "mvz2:mainmenu/more_menus[1]",
           "tags": [
             "en-US"
           ],
+          "y": 37,
           "width": 73,
           "height": 36
         }
@@ -350,18 +340,16 @@
     },
     {
       "texture": "mvz2/sprites/mainmenu/music_room@en-US.png",
+      "key": "mvz2:mainmenu/music_room",
       "slices": [
         {
-          "key": "mvz2:mainmenu/music_room",
           "tags": [
             "en-US"
           ],
-          "y": 390,
           "width": 311,
           "height": 194
         },
         {
-          "key": "mvz2:mainmenu/music_room[1]",
           "tags": [
             "en-US"
           ],
@@ -370,10 +358,10 @@
           "height": 194
         },
         {
-          "key": "mvz2:mainmenu/music_room[2]",
           "tags": [
             "en-US"
           ],
+          "y": 390,
           "width": 311,
           "height": 194
         }
@@ -381,33 +369,28 @@
     },
     {
       "texture": "mvz2/sprites/mainmenu/options@en-US.png",
+      "key": "mvz2:mainmenu/options",
       "slices": [
         {
-          "key": "mvz2:mainmenu/options",
           "tags": [
             "en-US"
           ],
-          "y": 1,
           "width": 89,
           "height": 125
         },
         {
-          "key": "mvz2:mainmenu/options[1]",
           "tags": [
             "en-US"
           ],
           "x": 90,
-          "y": 1,
           "width": 89,
           "height": 125
         },
         {
-          "key": "mvz2:mainmenu/options[2]",
           "tags": [
             "en-US"
           ],
           "x": 180,
-          "y": 1,
           "width": 89,
           "height": 125
         }
@@ -415,18 +398,16 @@
     },
     {
       "texture": "mvz2/sprites/mainmenu/quit@en-US.png",
+      "key": "mvz2:mainmenu/quit",
       "slices": [
         {
-          "key": "mvz2:mainmenu/quit",
           "tags": [
             "en-US"
           ],
-          "y": 340,
           "width": 262,
           "height": 169
         },
         {
-          "key": "mvz2:mainmenu/quit[1]",
           "tags": [
             "en-US"
           ],
@@ -435,11 +416,10 @@
           "height": 169
         },
         {
-          "key": "mvz2:mainmenu/quit[2]",
           "tags": [
             "en-US"
           ],
-          "y": 1,
+          "y": 340,
           "width": 262,
           "height": 168
         }
@@ -447,9 +427,9 @@
     },
     {
       "texture": "mvz2/sprites/mainmenu/store@en-US.png",
+      "key": "mvz2:mainmenu/store",
       "slices": [
         {
-          "key": "mvz2:mainmenu/store",
           "tags": [
             "en-US"
           ],
@@ -457,7 +437,6 @@
           "height": 277
         },
         {
-          "key": "mvz2:mainmenu/store[1]",
           "tags": [
             "en-US"
           ],
@@ -466,7 +445,6 @@
           "height": 277
         },
         {
-          "key": "mvz2:mainmenu/store[2]",
           "tags": [
             "en-US"
           ],
@@ -478,21 +456,20 @@
     },
     {
       "texture": "mvz2/sprites/mainmenu/user_manage@en-US.png",
+      "key": "mvz2:mainmenu/user_manage",
       "slices": [
         {
-          "key": "mvz2:mainmenu/user_manage",
           "tags": [
             "en-US"
           ],
-          "y": 42,
           "width": 109,
           "height": 41
         },
         {
-          "key": "mvz2:mainmenu/user_manage[1]",
           "tags": [
             "en-US"
           ],
+          "y": 42,
           "width": 109,
           "height": 41
         }
@@ -500,9 +477,9 @@
     },
     {
       "texture": "mvz2/sprites/misc/letter_for_help@en-US.png",
+      "key": "mvz2:misc/letter_for_help",
       "slices": [
         {
-          "key": "mvz2:misc/letter_for_help",
           "tags": [
             "en-US"
           ],
@@ -512,9 +489,9 @@
     },
     {
       "texture": "mvz2/sprites/note/castle@en-US.png",
+      "key": "mvz2:note/castle",
       "slices": [
         {
-          "key": "mvz2:note/castle",
           "tags": [
             "en-US"
           ],
@@ -524,9 +501,9 @@
     },
     {
       "texture": "mvz2/sprites/note/dream@en-US.png",
+      "key": "mvz2:note/dream",
       "slices": [
         {
-          "key": "mvz2:note/dream",
           "tags": [
             "en-US"
           ],
@@ -536,9 +513,9 @@
     },
     {
       "texture": "mvz2/sprites/note/halloween@en-US.png",
+      "key": "mvz2:note/halloween",
       "slices": [
         {
-          "key": "mvz2:note/halloween",
           "tags": [
             "en-US"
           ],
@@ -548,9 +525,9 @@
     },
     {
       "texture": "mvz2/sprites/note/help_back@en-US.png",
+      "key": "mvz2:note/help_back",
       "slices": [
         {
-          "key": "mvz2:note/help_back",
           "tags": [
             "en-US"
           ],
@@ -560,9 +537,9 @@
     },
     {
       "texture": "mvz2/sprites/note/help_front@en-US.png",
+      "key": "mvz2:note/help_front",
       "slices": [
         {
-          "key": "mvz2:note/help_front",
           "tags": [
             "en-US"
           ],
@@ -572,9 +549,9 @@
     },
     {
       "texture": "mvz2/sprites/note/palace@en-US.png",
+      "key": "mvz2:note/palace",
       "slices": [
         {
-          "key": "mvz2:note/palace",
           "tags": [
             "en-US"
           ],
@@ -584,9 +561,9 @@
     },
     {
       "texture": "mvz2/sprites/entity/effect/boom@en-US.png",
+      "key": "mvz2:entity/effect/boom",
       "slices": [
         {
-          "key": "mvz2:entity/effect/boom",
           "tags": [
             "en-US"
           ],
@@ -596,9 +573,9 @@
     },
     {
       "texture": "mvz2/sprites/entity/effect/pow@en-US.png",
+      "key": "mvz2:entity/effect/pow",
       "slices": [
         {
-          "key": "mvz2:entity/effect/pow",
           "tags": [
             "en-US"
           ],
@@ -608,9 +585,9 @@
     },
     {
       "texture": "mvz2/sprites/ui/level/final_wave@en-US.png",
+      "key": "mvz2:ui/level/final_wave",
       "slices": [
         {
-          "key": "mvz2:ui/level/final_wave",
           "tags": [
             "en-US"
           ],
@@ -620,9 +597,9 @@
     },
     {
       "texture": "mvz2/sprites/ui/level/huge_wave@en-US.png",
+      "key": "mvz2:ui/level/huge_wave",
       "slices": [
         {
-          "key": "mvz2:ui/level/huge_wave",
           "tags": [
             "en-US"
           ],
@@ -632,9 +609,9 @@
     },
     {
       "texture": "mvz2/sprites/ui/level/level_progress_back@en-US.png",
+      "key": "mvz2:ui/level/level_progress_back",
       "slices": [
         {
-          "key": "mvz2:ui/level/level_progress_back",
           "tags": [
             "en-US"
           ],
@@ -644,9 +621,9 @@
     },
     {
       "texture": "mvz2/sprites/ui/level/lose@en-US.png",
+      "key": "mvz2:ui/level/lose",
       "slices": [
         {
-          "key": "mvz2:ui/level/lose",
           "tags": [
             "en-US"
           ],

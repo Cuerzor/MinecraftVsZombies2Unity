@@ -8,7 +8,9 @@ namespace MVZ2.Localization
 {
     public class ResourcePackSprite
     {
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? key;
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string[]? tags;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool single;

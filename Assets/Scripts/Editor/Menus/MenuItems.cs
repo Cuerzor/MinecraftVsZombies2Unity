@@ -41,16 +41,6 @@ namespace MVZ2.Editor
         {
             LocalizationMenu.UpdateTalkTranslations();
         }
-        [MenuItem("MVZ2/Assets/Localization/Update Localized Sprite Manifest", priority = 3100, secondaryPriority = 0)]
-        public static void UpdateLocalizedSpriteManifest()
-        {
-            LocalizationMenu.UpdateResourcePackManifest();
-        }
-        [MenuItem("MVZ2/Assets/Localization/Update Language Pack Demo", priority = 3200, secondaryPriority = 0)]
-        public static void UpdateLanguagePackDemo()
-        {
-            LocalizationMenu.UpdateLanguagePackDemo();
-        }
         [MenuItem("MVZ2/Assets/Models/Update Model Elements", priority = 4000, secondaryPriority = 0)]
         public static void UpdateModelElements()
         {
@@ -74,7 +64,17 @@ namespace MVZ2.Editor
         [MenuItem("MVZ2/Assets/Resource Packs/Update Resolver Components", priority = 6000, secondaryPriority = 0)]
         public static void UpdateResolverComponents()
         {
-            ResourcePackMenu.UpdateResolverComponents();
+            ResourcePackMenu.UpdateAllResolverComponents();
+        }
+        [MenuItem("MVZ2/Assets/Resource Packs/Update Resource Pack Sprite Manifest", priority = 6000, secondaryPriority = 1)]
+        public static void UpdateLocalizedSpriteManifest()
+        {
+            ResourcePackMenu.UpdateResourcePackManifest();
+        }
+        [MenuItem("MVZ2/Assets/Resource Packs/Update Resource Pack Demo", priority = 6000, secondaryPriority = 2)]
+        public static void UpdateResourcePackDemo()
+        {
+            ResourcePackMenu.UpdateResourcePackDemo();
         }
         [MenuItem("MVZ2/Assets/Talk/Format Talk Datas", priority = 6000, secondaryPriority = 0)]
         public static void FormatTalkDatas()

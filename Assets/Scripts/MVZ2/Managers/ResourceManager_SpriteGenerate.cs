@@ -131,7 +131,6 @@ namespace MVZ2.Managers
         [Header("Sprite Generate")]
         [SerializeField]
         private GeneratedSpriteManifest generatedSpriteManifest = null!;
-        private Texture2D backgroundTex = null!;
         private Color32[] spriteColorBuffer = new Color32[COLOR_BUFFER_WIDTH * COLOR_BUFFER_HEIGHT];
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using MVZ2.IO;
 using MVZ2.Managers;
+using MVZ2.Resources;
 using MVZ2.Sprites;
 using MVZ2Logic.Resources;
 using Newtonsoft.Json;
@@ -120,26 +121,35 @@ namespace MVZ2.Localization
             {
                 if (string.IsNullOrEmpty(packTexture.texture))
                     continue;
+                
+                if (string.IsNullOrEmpty(packTexture.key))
+                {
+                    Log.LogWarning($"Missing resource pack texture key {packTexture.texture}.");
+                    continue;
+                }
 
                 // 获取贴图路径。
                 var texturePath = Path.Combine("assets", packTexture.texture).Replace("/", "\\");
+                var textureID = NamespaceID.Parse(packTexture.key, Main.BuiltinNamespace);
 
                 // 文件不存在，直接跳过。
                 var textureEntry = archive.GetEntry(texturePath);
                 if (textureEntry == null)
                     continue;
 
+                // 尝试获取资源包中的这个texture对象。
+                // 如果没有获取到，新建一个。
+                if (!pack.TryGetTexture2D(textureID, out var texture))
+                {
+                    texture = ReadTexture2DZip(textureEntry);
+                    texture.filterMode = (FilterMode)packTexture.filter;
+                    pack.AddTexture2D(textureID, texture);
+                }
+
                 var slices = packTexture.slices;
                 if (slices == null)
                     continue;
 
-                // 尝试获取资源包中的这个texture对象。
-                // 如果没有获取到，新建一个。
-                if (!pack.textures.TryGetValue(texturePath, out var texture))
-                {
-                    texture = ReadTexture2DZip(textureEntry);
-                    pack.textures.Add(texturePath, texture);
-                }
 
                 // 获取ID和图片标签。
                 var splitTexturePaths = Path.ChangeExtension(packTexture.texture, string.Empty).TrimEnd('.').Split('/', '\\');
@@ -160,10 +170,15 @@ namespace MVZ2.Localization
                 for (int i = 0; i < slices.Length; i++)
                 {
                     var slice = slices[i];
-                    if (slice.key == null || !SpriteReference.TryParse(slice.key, Main.BuiltinNamespace, out var spriteRef))
+                    var sliceKey = slice.key;
+                    SpriteReference? spriteRef = null;
+                    if (sliceKey != null && SpriteReference.TryParse(sliceKey, Main.BuiltinNamespace, out var sprRef))
                     {
-                        Log.LogWarning($"Cannot load sprite {packTexture.texture}[{i}] from resource pack: No sprite to replace.");
-                        continue;
+                        spriteRef = sprRef;
+                    }
+                    if (spriteRef == null)
+                    {
+                        spriteRef = new SpriteReference(textureID, i);
                     }
                     var spriteKey = new SpriteLookupKey(spriteRef, slice.tags ?? tags);
                     var sprite = CreateSprite(texture, slice, generatedCategory, spriteKey.ToString());

@@ -8,6 +8,7 @@ using PVZEngine.Tools.Unity;
 using UnityEditor;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace MVZ2.Editor
 {
@@ -49,6 +50,7 @@ namespace MVZ2.Editor
             var directory = GetSpriteAssetsDirectory();
             //var directory = Path.Combine(Application.dataPath, "GameContent", "Sprites");
             var filePaths = Directory.GetFiles(directory, "*.png", SearchOption.AllDirectories);
+            spriteManifest.textureEntries.Clear();
             spriteManifest.spriteEntries.Clear();
 
             var factories = new SpriteDataProviderFactories();
@@ -68,6 +70,17 @@ namespace MVZ2.Editor
                 SpriteHelper.ParseIDAndTags(resourceName, out resourceName, out var tags);
 
                 var assetPath = AssetsMenu.FileToAssetPath(filePath);
+
+                var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(assetPath);
+                if (texture != null)
+                {
+                    spriteManifest.textureEntries.Add(new TextureEntry()
+                    {
+                        name = resourceName,
+                        texture = texture,
+                    });
+                }
+
                 var sprites = GetOrderedSpriteSheet(assetPath, factories);
                 if (sprites == null)
                 {

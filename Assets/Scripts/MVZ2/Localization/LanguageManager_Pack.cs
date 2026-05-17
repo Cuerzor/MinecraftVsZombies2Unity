@@ -281,6 +281,7 @@ namespace MVZ2.Localization
         private void AddSpriteProvider(ResourcePack pack)
         {
             Main.ResourceManager.AddSpriteProvider(pack);
+            Main.ResourceManager.AddTextureProvider(pack);
         }
         #endregion
 
@@ -311,6 +312,7 @@ namespace MVZ2.Localization
         private void RemoveSpriteProvider(ResourcePack pack)
         {
             Main.ResourceManager.RemoveSpriteProvider(pack);
+            Main.ResourceManager.RemoveTextureProvider(pack);
         }
         #endregion
 

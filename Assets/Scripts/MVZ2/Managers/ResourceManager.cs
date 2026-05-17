@@ -28,6 +28,7 @@ namespace MVZ2.Managers
         {
             modResources.Clear();
             ClearResources_Sprites();
+            ClearResources_Textures();
             talksCacheDict.Clear();
             achievementCacheDict.Clear();
             mainmenuViewCacheDict.Clear();
@@ -38,6 +39,7 @@ namespace MVZ2.Managers
         public async Task Init()
         {
             Init_Sprites();
+            Init_Textures();
             ClearResources();
             foreach (var mod in main.ModManager.GetAllModInfos())
             {

@@ -1,22 +1,16 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Xml;
 using MukioI18n;
 using MVZ2.IO;
 using MVZ2.Localization;
 using MVZ2.Metas;
-using MVZ2.Sprites;
 using MVZ2.TalkData;
 using MVZ2.Vanilla;
 using MVZ2Logic.Localization;
-using MVZ2Logic.Resources;
-using Newtonsoft.Json;
 using PVZEngine;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.SceneManagement;
-using UnityEditor.U2D.Sprites;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -26,7 +20,7 @@ namespace MVZ2.Editor
     {
         public static void CompressLanguagePack()
         {
-            UpdateResourcePackManifest();
+            ResourcePackMenu.UpdateResourcePackManifest();
             MoveMOFiles();
 
             var path = GetLanguagePackDirectory();
@@ -353,161 +347,6 @@ namespace MVZ2.Editor
             potGenerator.WriteOut(GetPoTemplatePath("talk.pot"));
             Debug.Log("Talk Translations Updated.");
         }
-        public static void UpdateResourcePackManifest()
-        {
-            // 根据语言包内的已有贴图和项目内的已有贴图生成spriteManifest.json，并将其保存到Localization\pack\assets\mvz2\en-US中。
-            var path = GetLanguagePackDirectory();
-
-            var packDir = Path.Combine(Application.dataPath, "Localization", "pack");
-            var manifestPath = Path.Combine(packDir, ResourcePackReaderV1.MANIFEST_FILENAME);
-
-            var packAssetsDir = Path.Combine(packDir, "assets");
-            var databaseDir = Path.Combine("Assets", "GameContent", "Assets");
-
-            var factories = new SpriteDataProviderFactories();
-            factories.Init();
-
-            List<ResourcePackTexture> resoucePackTextures = new List<ResourcePackTexture>();
-            List<ResourcePackLanguage> resourcePackLanguages = new List<ResourcePackLanguage>();
-
-            foreach (var nspDir in Directory.EnumerateDirectories(packAssetsDir))
-            {
-                var nsp = Path.GetRelativePath(packAssetsDir, nspDir);
-
-                // 贴图。
-                var spritesDir = Path.Combine(nspDir, "sprites");
-                foreach (var spritePath in Directory.EnumerateFiles(spritesDir, "*.png", SearchOption.AllDirectories))
-                {
-                    List<ResourcePackSprite> resoucePackSprites = new List<ResourcePackSprite>();
-
-                    // 获取贴图路径相对于sprites文件夹的路径。
-                    var spriteRelativePath = Path.GetRelativePath(spritesDir, spritePath).Replace("\\", "/");
-
-                    // 去掉文件名的扩展名。
-                    var extension = Path.GetExtension(spriteRelativePath);
-                    var spriteTexturePathWithoutExt = Path.ChangeExtension(spriteRelativePath, string.Empty).TrimEnd('.');
-
-                    // 分割路径的tag。
-                    SpriteHelper.ParseIDAndTags(spriteTexturePathWithoutExt, out var spriteIDPath, out var tags);
-
-                    // 寻找Assets中的原贴图。
-                    var originSpriteFilename = $"{spriteIDPath}{extension}";
-                    var originSpritePath = Path.Combine(databaseDir, nsp, "sprites", originSpriteFilename).Replace("\\", "/");
-
-                    // 新建贴图ID。
-                    var id = new NamespaceID(nsp, spriteIDPath);
-
-                    // 从Assets中导入原贴图。
-                    var sprites = SpriteMenu.GetOrderedSpriteSheet(originSpritePath, factories);
-                    for (int i = 0; i < sprites.Length; i++)
-                    {
-                        var sprite = sprites[i];
-                        var replaces = new SpriteReference(id, i);
-                        ResourcePackSprite packSprite;
-                        if (sprites.Length <= 1)
-                        {
-                            packSprite = new ResourcePackSprite()
-                            {
-                                key = replaces.ToString(),
-                                tags = tags,
-                                single = true,
-                                pivotX = sprite.pivot.x / sprite.rect.width,
-                                pivotY = sprite.pivot.y / sprite.rect.height,
-                            };
-                        }
-                        else
-                        {
-                            var y = SpriteHelper.FromBottomToFromTopY((int)sprite.rect.y, sprite.texture.height, (int)sprite.rect.height);
-                            packSprite = new ResourcePackSprite()
-                            {
-                                key = replaces.ToString(),
-                                tags = tags,
-                                single = false,
-                                x = (int)sprite.rect.x,
-                                y = y,
-                                width = (int)sprite.rect.width,
-                                height = (int)sprite.rect.height,
-                                pivotX = sprite.pivot.x / sprite.rect.width,
-                                pivotY = sprite.pivot.y / sprite.rect.height,
-                            };
-                        }
-                        resoucePackSprites.Add(packSprite);
-                    }
-
-                    // 获取包中的Texture相对路径。
-                    var texturePath = Path.GetRelativePath(packAssetsDir, spritePath).Replace("\\", "/");
-                    resoucePackTextures.Add(new ResourcePackTexture()
-                    {
-                        texture = texturePath,
-                        slices = resoucePackSprites.ToArray()
-                    });
-                }
-
-
-                // 翻译文本。
-                var catalogsDir = Path.Combine(nspDir, "catalogs");
-                foreach (var langDir in Directory.EnumerateDirectories(catalogsDir))
-                {
-                    var code = Path.GetRelativePath(catalogsDir, langDir);
-
-                    List<string> resourcePackCatalogs = new List<string>();
-                    foreach (var catalogPath in Directory.EnumerateFiles(langDir, "*.mo", SearchOption.AllDirectories))
-                    {
-                        resourcePackCatalogs.Add(Path.GetRelativePath(packAssetsDir, catalogPath).Replace("\\", "/"));
-                    }
-                    resourcePackLanguages.Add(new ResourcePackLanguage()
-                    {
-                        code = code,
-                        catalogs = resourcePackCatalogs.ToArray(),
-                    });
-                }
-            }
-
-            ResourcePackLocalization resoucePackLocalization = new ResourcePackLocalization()
-            {
-                languages = resourcePackLanguages.ToArray()
-            };
-
-            ResourcePackManifest manifest = new ResourcePackManifest()
-            {
-                textures = resoucePackTextures.ToArray(),
-                localization = resoucePackLocalization
-            };
-            var manifestJson = JsonConvert.SerializeObject(manifest, Newtonsoft.Json.Formatting.Indented);
-
-            FileHelper.ValidateDirectory(manifestPath);
-            using var stream = File.Open(manifestPath, FileMode.Create);
-            using var writer = new StreamWriter(stream);
-            writer.Write(manifestJson);
-
-            Debug.Log($"语言包清单已更新：{manifestPath}");
-        }
-        public static void UpdateLanguagePackDemo()
-        {
-            // 根据语言包内的已有贴图和项目内的已有贴图生成spriteManifest.json，并将其保存到Localization\pack\assets\mvz2\en-US中。
-            UpdateResourcePackManifest();
-
-            // 将spriteManifest.json复制到LanguagePack\templates中。
-            Debug.Log("更新语言包贴图清单……");
-            var sourceManifestPath = Path.Combine(Application.dataPath, "Localization", "pack", ResourcePackReaderV1.MANIFEST_FILENAME);
-            var templatesDir = Path.Combine(Application.dataPath, "LanguagePack", "templates");
-            if (File.Exists(sourceManifestPath))
-            {
-                var destPath = Path.Combine(templatesDir, ResourcePackReaderV1.MANIFEST_FILENAME);
-                FileHelper.ValidateDirectory(destPath);
-                File.Copy(sourceManifestPath, destPath, true);
-            }
-
-            // 将*.pot文件复制到LanguagePack\templates\text_templates中。
-            Debug.Log("更新语言包文本模板……");
-            CopyDirectory(GetPoTemplateDirectory(), Path.Combine(templatesDir, "text_templates"), "*.pot");
-
-            // 将英文的*.po文件复制到LanguagePack\templates\text_en中。
-            Debug.Log("更新语言包英文文本翻译……");
-            CopyDirectory(GetPoDirectory("en-US"), Path.Combine(templatesDir, "text_en"), "*.po");
-
-            Debug.Log("语言包示例更新完成。");
-        }
         private static void MoveMOFiles()
         {
             var sourceDir = Path.Combine(Application.dataPath, "Localization", "source");
@@ -517,25 +356,6 @@ namespace MVZ2.Editor
                 var relativePath = Path.GetRelativePath(sourceDir, file);
                 var destFile = Path.Combine(targetDir, relativePath);
                 File.Copy(file, destFile, true);
-            }
-        }
-        private static void CopyDirectory(string source, string dest, string pattern)
-        {
-            if (!Directory.Exists(source))
-                return;
-            if (Directory.Exists(dest))
-            {
-                Directory.Delete(dest, true);
-            }
-            Directory.CreateDirectory(dest);
-            foreach (var sourcePath in Directory.EnumerateFiles(source, pattern, SearchOption.AllDirectories))
-            {
-                if (Path.GetExtension(sourcePath) == ".meta")
-                    continue;
-                var relativePath = Path.GetRelativePath(source, sourcePath);
-                var destPath = Path.Combine(dest, relativePath);
-                FileHelper.ValidateDirectory(destPath);
-                File.Copy(sourcePath, destPath, true);
             }
         }
         public static string GetLanguagePackDirectory()
@@ -570,20 +390,19 @@ namespace MVZ2.Editor
                 }
             }
         }
-        private static string GetPoTemplateDirectory()
+        public static string GetPoTemplateDirectory()
         {
             return Path.Combine(Application.dataPath, "Localization", "source");
         }
-        private static string GetPoDirectory(string language)
+        public static string GetPoDirectory(string language)
         {
             return Path.Combine(Application.dataPath, "Localization", "source", language);
         }
-        private static string GetPoTemplatePath(string fileName)
+        public static string GetPoTemplatePath(string fileName)
         {
             return Path.Combine(GetPoTemplateDirectory(), fileName);
         }
-
-        private static string GetMetaDirectory(string nsp)
+        public static string GetMetaDirectory(string nsp)
         {
             return Path.Combine(Application.dataPath, "GameContent", "Assets", nsp, "metas");
         }

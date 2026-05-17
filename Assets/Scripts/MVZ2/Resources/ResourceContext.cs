@@ -2,9 +2,9 @@
 
 using System;
 
-namespace MVZ2.Sprites
+namespace MVZ2.Resources
 {
-    public struct SpriteVariantContext
+    public struct ResourceContext
     {
         public string languageCode;
         public bool censored;

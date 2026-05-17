@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MVZ2.Modding;
+using MVZ2.Resources;
 using MVZ2.Sprites;
 using MVZ2Logic.Options;
 using MVZ2Logic.Resources;
@@ -17,9 +18,9 @@ namespace MVZ2.Managers
 {
     public partial class ResourceManager : MonoBehaviour
     {
-        public SpriteVariantContext GetSpriteVariantContext()
+        public ResourceContext GetSpriteVariantContext()
         {
-            return new SpriteVariantContext()
+            return new ResourceContext()
             {
                 censored = !Main.OptionsManager.HasBloodAndGore(),
                 languageCode = Main.LanguageManager.GetCurrentLanguage(),
@@ -64,7 +65,7 @@ namespace MVZ2.Managers
             var spriteRef = GetSpriteReference(sprite);
             return GetFinalSprite(spriteRef) ?? sprite;
         }
-        public Sprite GetFinalSprite(Sprite sprite, SpriteVariantContext args)
+        public Sprite GetFinalSprite(Sprite sprite, ResourceContext args)
         {
             var spriteRef = GetSpriteReference(sprite);
             return GetFinalSprite(spriteRef, args) ?? sprite;
@@ -73,11 +74,12 @@ namespace MVZ2.Managers
         {
             return GetFinalSprite(spriteRef, GetSpriteVariantContext());
         }
-        public Sprite? GetFinalSprite(SpriteReference? spriteRef, SpriteVariantContext context)
+        public Sprite? GetFinalSprite(SpriteReference? spriteRef, ResourceContext context)
         {
             if (!SpriteReference.IsValid(spriteRef))
                 return null;
-            return spriteResolver.Resolve(spriteRef, context);
+            var key = new SpriteLookupKey(spriteRef);
+            return spriteResolver.Resolve(key, context);
         }
         #endregion
 
@@ -102,10 +104,6 @@ namespace MVZ2.Managers
         #region 初始化
         private void Init_Sprites()
         {
-            if (Application.isEditor)
-            {
-                backgroundTex = GenerateSpriteBackgroundTexture(MAX_BACKGROUND_TEX_WIDTH, MAX_BACKGROUND_TEX_HEIGHT);
-            }
             spriteResolver.AddProvider(baseGameSprites);
         }
         private void ClearResources_Sprites()
@@ -141,6 +139,16 @@ namespace MVZ2.Managers
         {
             if (manifest.spriteEntries != null)
             {
+                foreach (var entry in manifest.textureEntries)
+                {
+                    if (string.IsNullOrEmpty(entry.name))
+                        continue;
+                    var texture = entry.texture;
+                    if (!texture.Exists())
+                        continue;
+                    var id = new NamespaceID(modNamespace, entry.name);
+                    RegisterTexture2D(id, texture);
+                }
                 foreach (var entry in manifest.spriteEntries)
                 {
                     if (string.IsNullOrEmpty(entry.name))
@@ -160,7 +168,7 @@ namespace MVZ2.Managers
         [Header("Sprites")]
         [SerializeField]
         private Sprite defaultSprite = null!;
-        private SpriteResolver spriteResolver = new SpriteResolver();
+        private SpriteResourceResolver spriteResolver = new SpriteResourceResolver();
         private SpriteDatabase baseGameSprites = new SpriteDatabase();
     }
 }

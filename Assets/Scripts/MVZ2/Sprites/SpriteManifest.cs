@@ -11,7 +11,14 @@ namespace MVZ2.Sprites
     [CreateAssetMenu(fileName = "NewSpriteManifest", menuName = "MVZ2/Sprite Manifest", order = 0)]
     public class SpriteManifest : ScriptableObject
     {
+        public List<TextureEntry> textureEntries = new List<TextureEntry>();
         public List<SpriteEntry> spriteEntries = new List<SpriteEntry>();
+    }
+    [Serializable]
+    public class TextureEntry
+    {
+        public string? name;
+        public Texture2D? texture;
     }
     [Serializable]
     public class SpriteEntry

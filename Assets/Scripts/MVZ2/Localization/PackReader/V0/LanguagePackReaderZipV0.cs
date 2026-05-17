@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using MVZ2.IO;
 using MVZ2.Managers;
+using MVZ2.Resources;
 using MVZ2.Sprites;
 using MVZ2Logic.Resources;
 using Newtonsoft.Json;
@@ -74,15 +75,20 @@ namespace MVZ2.Localization
                                 {
                                     foreach (var localizedSprite in manifest.sprites)
                                     {
+                                        if (string.IsNullOrEmpty(localizedSprite.texture))
+                                            continue;
+
                                         var texturePath = Path.Combine(splitedPaths[0], splitedPaths[1], splitedPaths[2], "sprites", localizedSprite.texture);
                                         var textureEntry = entries.FirstOrDefault(e => e.FullName.Replace("\\", "/") == texturePath.Replace("\\", "/"));
 
                                         if (textureEntry == null || string.IsNullOrEmpty(localizedSprite.name))
                                             continue;
-                                        if (!pack.textures.TryGetValue(texturePath, out var texture2D))
+
+                                        var textureID = new NamespaceID(nsp, localizedSprite.texture);
+                                        if (!pack.TryGetTexture2D(textureID, out var texture2D))
                                         {
-                                            texture2D = ReadTexture2DZip(textureEntry, texturePath);
-                                            pack.textures.Add(texturePath, texture2D);
+                                            texture2D = ReadTexture2DZip(entry);
+                                            pack.AddTexture2D(textureID, texture2D);
                                         }
 
                                         var resID = new NamespaceID(nsp, localizedSprite.name);
@@ -97,15 +103,20 @@ namespace MVZ2.Localization
                                 {
                                     foreach (var localizedSpritesheet in manifest.spritesheets)
                                     {
+                                        if (string.IsNullOrEmpty(localizedSpritesheet.texture))
+                                            continue;
+
                                         var texturePath = Path.Combine(splitedPaths[0], splitedPaths[1], splitedPaths[2], "spritesheets", localizedSpritesheet.texture);
                                         var textureEntry = entries.FirstOrDefault(e => e.FullName.Replace("\\", "/") == texturePath.Replace("\\", "/"));
 
                                         if (textureEntry == null || string.IsNullOrEmpty(localizedSpritesheet.name))
                                             continue;
-                                        if (!pack.textures.TryGetValue(texturePath, out var texture2D))
+
+                                        var textureID = new NamespaceID(nsp, localizedSpritesheet.texture);
+                                        if (!pack.TryGetTexture2D(textureID, out var texture2D))
                                         {
-                                            texture2D = ReadTexture2DZip(textureEntry, texturePath);
-                                            pack.textures.Add(texturePath, texture2D);
+                                            texture2D = ReadTexture2DZip(entry);
+                                            pack.AddTexture2D(textureID, texture2D);
                                         }
 
                                         var resID = new NamespaceID(nsp, localizedSpritesheet.name);

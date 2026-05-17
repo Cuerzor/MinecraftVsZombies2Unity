@@ -14,6 +14,7 @@ namespace MVZ2Logic.Games
         Sprite? GetSprite(SpriteReference? sprite);
         Sprite? GetFinalSprite(SpriteReference? sprite);
         Sprite GetFinalSprite(Sprite sprite);
+        Texture2D GetFinalTexture(Texture2D sprite);
         BlueprintViewData GetBlueprintViewData(NamespaceID? blueprintID, bool endless, bool commandBlock);
         Gradient? GetFragmentGradient(NamespaceID fragmentID);
     }

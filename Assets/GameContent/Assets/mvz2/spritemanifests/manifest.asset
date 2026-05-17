@@ -12,6 +12,1853 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227f1415773a5194c8d41771c4329d23, type: 3}
   m_Name: manifest
   m_EditorClassIdentifier: 
+  textureEntries:
+  - name: map_button
+    texture: {fileID: 2800000, guid: 9c248fa89323d594a9c08ed0413b6aea, type: 3}
+  - name: portal
+    texture: {fileID: 2800000, guid: f1647e2400793da43be7f9344136d81d, type: 3}
+  - name: ready_set_build
+    texture: {fileID: 2800000, guid: 164c517f4b3a40f49a48c0f998d7fd7e, type: 3}
+  - name: achievements/bonebreaker
+    texture: {fileID: 2800000, guid: 7c96fdff5dc5fde4ab6559e24a67dc99, type: 3}
+  - name: achievements/double_trouble
+    texture: {fileID: 2800000, guid: 2becb83796290cb438ce963aff698ae4, type: 3}
+  - name: achievements/ghost_buster
+    texture: {fileID: 2800000, guid: cd6294e0e010f934b90fb1f9ca35e623, type: 3}
+  - name: achievements/let_them_eat_cake
+    texture: {fileID: 2800000, guid: 9434fba9801d2cf498f5cb99a0cf8980, type: 3}
+  - name: achievements/mesmerised_matchup
+    texture: {fileID: 2800000, guid: 1f79614fcb97c93488cfbb1f01cd6ec4, type: 3}
+  - name: achievements/midas_touchdown
+    texture: {fileID: 2800000, guid: cd013cb802051944b8075dab86de61d0, type: 3}
+  - name: achievements/overdraw
+    texture: {fileID: 2800000, guid: 5ddce6aa3c01acf40aa89b5845c9d961, type: 3}
+  - name: achievements/railgun
+    texture: {fileID: 2800000, guid: 26cdc94fcf90e7d41b47a89f4fc2c7f8, type: 3}
+  - name: achievements/reforged
+    texture: {fileID: 2800000, guid: 7b5ab4ce3e848bf4f95807e6a0a2cc4d, type: 3}
+  - name: achievements/return_to_sender
+    texture: {fileID: 2800000, guid: d9dd31bf028bdda498cb850149535586, type: 3}
+  - name: achievements/rickroll_drown
+    texture: {fileID: 2800000, guid: da694241d06a5a0429d9929813653171, type: 3}
+  - name: achievements/sculpting_strike
+    texture: {fileID: 2800000, guid: 86f1fb229d7285b4f965d653bd48d85b, type: 3}
+  - name: arcade/arcade_category_minigame
+    texture: {fileID: 2800000, guid: 70de6ddff3a791547a9503617054e1c9, type: 3}
+  - name: arcade/arcade_category_puzzle
+    texture: {fileID: 2800000, guid: 2cf19462984a14b4cbd808d15638e9bd, type: 3}
+  - name: arcade/big_trouble_and_little_zombie
+    texture: {fileID: 2800000, guid: 0966a8cb4bb36ec4f8354fc756227214, type: 3}
+  - name: arcade/breakout
+    texture: {fileID: 2800000, guid: b0de64e2af2016c45ae16c1d0b361591, type: 3}
+  - name: arcade/frankensteins_revenge
+    texture: {fileID: 2800000, guid: 47bb6e3e6595451449c147cdca10b84c, type: 3}
+  - name: arcade/heavy_weapon
+    texture: {fileID: 2800000, guid: ff7053569e162c6489dce24f636dd305, type: 3}
+  - name: arcade/i_zombie
+    texture: {fileID: 2800000, guid: 954f4a9aadd5d0141a70086f5aaedcc5, type: 3}
+  - name: arcade/locked
+    texture: {fileID: 2800000, guid: 2f65e88c41fd23d4987bba1066e05ba3, type: 3}
+  - name: arcade/locked_chests_revenge
+    texture: {fileID: 2800000, guid: 583169e4c3795c444bb2eff0e41f0dde, type: 3}
+  - name: arcade/nightmares_revenge
+    texture: {fileID: 2800000, guid: eb0eb64f7392deb41831563ed71fa81a, type: 3}
+  - name: arcade/red_dragons_revenge
+    texture: {fileID: 2800000, guid: d48244988b1911e418e1b2b636f88599, type: 3}
+  - name: arcade/the_giants_revenge
+    texture: {fileID: 2800000, guid: 0d4b43785901a8f4390699a767958f94, type: 3}
+  - name: arcade/ufo_blitz
+    texture: {fileID: 2800000, guid: d062afaff4776ff409fec750fe591d05, type: 3}
+  - name: arcade/whack_a_ghost
+    texture: {fileID: 2800000, guid: ba09814b17fbf24438727f22089f7192, type: 3}
+  - name: arcade/withers_revenge
+    texture: {fileID: 2800000, guid: cf276e1f4880f4c40b8cd6fdc9e9640e, type: 3}
+  - name: archive/castle_note
+    texture: {fileID: 2800000, guid: b43c7c77cd3ff54418daebbaccf227db, type: 3}
+  - name: archive/dream_note
+    texture: {fileID: 2800000, guid: 0d2aba7e3e7fc2b44a60708edca144b6, type: 3}
+  - name: archive/halloween_note
+    texture: {fileID: 2800000, guid: b8b94582569820d4ea902e962c410bd0, type: 3}
+  - name: archive/mausoleum_note
+    texture: {fileID: 2800000, guid: 3cc2a4067785bbb479556fa02098483e, type: 3}
+  - name: archive/palace_note
+    texture: {fileID: 2800000, guid: d17d37c1a790e63419fc44c2c577189a, type: 3}
+  - name: archive/prologue_note
+    texture: {fileID: 2800000, guid: 41531d8ef0693fa41a5341fcbd896474, type: 3}
+  - name: archive/ship_note
+    texture: {fileID: 2800000, guid: ae189aa75b161e44f93053f5011c464e, type: 3}
+  - name: artifacts/almanac
+    texture: {fileID: 2800000, guid: 8a7f5424a199e2544939f0b98e1afc83, type: 3}
+  - name: artifacts/bottled_blackhole
+    texture: {fileID: 2800000, guid: 58b4152dc1f89a4449e6487a09e19d47, type: 3}
+  - name: artifacts/broken_lantern
+    texture: {fileID: 2800000, guid: 2e2acf8f4e91cab468eae2cf860e025a, type: 3}
+  - name: artifacts/broken_lock
+    texture: {fileID: 2800000, guid: 610273fe8572b5d4abc29354cc157783, type: 3}
+  - name: artifacts/censer_of_forgotten
+    texture: {fileID: 2800000, guid: 319433371d6e7c945a25348c8bd53839, type: 3}
+  - name: artifacts/control_rod
+    texture: {fileID: 2800000, guid: 7661d066eb4c9de4989300fb69c48e31, type: 3}
+  - name: artifacts/dark_matter
+    texture: {fileID: 2800000, guid: 1a62ec6260923674096be59047f89949, type: 3}
+  - name: artifacts/dowsing_rods
+    texture: {fileID: 2800000, guid: bb0351b5a0eaaf74487e8b755535e76a, type: 3}
+  - name: artifacts/dragon_tooth
+    texture: {fileID: 2800000, guid: 54ecd9cd84713b046b9df22f056c36c9, type: 3}
+  - name: artifacts/dream_butterfly
+    texture: {fileID: 2800000, guid: 5d23376e7a066774ab671e71271015fc, type: 3}
+  - name: artifacts/dream_key
+    texture: {fileID: 2800000, guid: 34e619cc0502d6c499f470950cf5acec, type: 3}
+  - name: artifacts/eye_of_the_giant
+    texture: {fileID: 2800000, guid: 8e09eb5034d8901409cccb88e3f86633, type: 3}
+  - name: artifacts/ghostly_cart
+    texture: {fileID: 2800000, guid: 6bd825bd837f3f443b9f6ca347065e61, type: 3}
+  - name: artifacts/greedy_vacuum
+    texture: {fileID: 2800000, guid: 0b687cc971691aa4786964a361a0d14c, type: 3}
+  - name: artifacts/hoe
+    texture: {fileID: 2800000, guid: 3099084e873c11d4084a10707cd96120, type: 3}
+  - name: artifacts/inverted_mirror
+    texture: {fileID: 2800000, guid: d12e7157df0411749ab53333da0a507d, type: 3}
+  - name: artifacts/lightbomb
+    texture: {fileID: 2800000, guid: 36eda47ce4c8f0e40ab52622c040d37d, type: 3}
+  - name: artifacts/magma_stone
+    texture: {fileID: 2800000, guid: 58e9f34d21943544ebeddf8f336f0379, type: 3}
+  - name: artifacts/manipulative_talismans
+    texture: {fileID: 2800000, guid: 85fea51de096f7d48b2e6c902cc7cd20, type: 3}
+  - name: artifacts/miracle_mallet_replica
+    texture: {fileID: 2800000, guid: 70875885371f09444af751a1676e6f71, type: 3}
+  - name: artifacts/nether_star
+    texture: {fileID: 2800000, guid: 58b00e65f2d3cf54e95b866108f55a09, type: 3}
+  - name: artifacts/pagoda_branch
+    texture: {fileID: 2800000, guid: 48d03b03b358d9948863f3eb0517933a, type: 3}
+  - name: artifacts/smart_phone
+    texture: {fileID: 2800000, guid: 5a71c983a20b667478dd88d44c1a96b3, type: 3}
+  - name: artifacts/sorcerers_scroll
+    texture: {fileID: 2800000, guid: 4512afe926ba882489e16c87aa81a65e, type: 3}
+  - name: artifacts/sweet_sleep_pillow
+    texture: {fileID: 2800000, guid: 6aeedebbc3d6f934c8d4f7afb3614d86, type: 3}
+  - name: artifacts/the_creatures_heart
+    texture: {fileID: 2800000, guid: 47aa6cbff8c048c40a3da0ad86fa845d, type: 3}
+  - name: artifacts/ufo_toy
+    texture: {fileID: 2800000, guid: 839decadd93608a458dfa0676ac6ce7f, type: 3}
+  - name: chapter_transition/chapter_title_end
+    texture: {fileID: 2800000, guid: 132beb45039de2d47a6cff39a62a56b3, type: 3}
+  - name: chapter_transition/chapter_wheel
+    texture: {fileID: 2800000, guid: f022b6ff2c7efb247b94a9b7a2f0d006, type: 3}
+  - name: chapter_transition/chapter_wheel_dark
+    texture: {fileID: 2800000, guid: f307ca42f92ea0343bc5a7916590a612, type: 3}
+  - name: chapter_transition/title_castle
+    texture: {fileID: 2800000, guid: 0bbae907f96e6c648a0990646a551c2c, type: 3}
+  - name: chapter_transition/title_dream
+    texture: {fileID: 2800000, guid: 4020decd1a5c0cb49be19fd1c17e9698, type: 3}
+  - name: chapter_transition/title_halloween
+    texture: {fileID: 2800000, guid: aa82843b9b0ef4c43a15446e94370464, type: 3}
+  - name: chapter_transition/title_mausoleum
+    texture: {fileID: 2800000, guid: e67606b0e90b7e940844495857add1f7, type: 3}
+  - name: chapter_transition/title_palace
+    texture: {fileID: 2800000, guid: 23c593eab5a6c084f8279e3507114199, type: 3}
+  - name: chapter_transition/title_ship
+    texture: {fileID: 2800000, guid: 6b2ac3f4f375c3e4c9ae0837f95feb18, type: 3}
+  - name: characters/armor_stand
+    texture: {fileID: 2800000, guid: 79a357758cd7dff4d83ebc2928ce0812, type: 3}
+  - name: characters/byakuren
+    texture: {fileID: 2800000, guid: 4dce52e9fb4e43b4a9bf9a9af890bcf9, type: 3}
+  - name: characters/crazy_villager
+    texture: {fileID: 2800000, guid: c321612661c274844b82586aba232f9f, type: 3}
+  - name: characters/dim_vision
+    texture: {fileID: 2800000, guid: 2ab4a75a9055bfe45b77160fc117ae13, type: 3}
+  - name: characters/doremy
+    texture: {fileID: 2800000, guid: 66d6b2cec1b5a03498ee84ec03d69134, type: 3}
+  - name: characters/doremy_suffering
+    texture: {fileID: 2800000, guid: 7bf781a25449e494cb164af741da24e7, type: 3}
+  - name: characters/eirin
+    texture: {fileID: 2800000, guid: 744d21f4b3d72674e9d855641bebf711, type: 3}
+  - name: characters/futo
+    texture: {fileID: 2800000, guid: ecf0ee3020934614c9673de172a435cd, type: 3}
+  - name: characters/hologram
+    texture: {fileID: 2800000, guid: 39cde1f66d40cb14d8f732d41ea867f2, type: 3}
+  - name: characters/koishi
+    texture: {fileID: 2800000, guid: db8130de60f980943a44383aed09ce5d, type: 3}
+  - name: characters/marisa
+    texture: {fileID: 2800000, guid: 87b336d7b20b7a145a9300914c7bf0e8, type: 3}
+  - name: characters/miko
+    texture: {fileID: 2800000, guid: 2ed94ca4477dddd4d8e58ecc9da541c5, type: 3}
+  - name: characters/nue
+    texture: {fileID: 2800000, guid: ea907a3e2eaa545429191634d8af4841, type: 3}
+  - name: characters/orant
+    texture: {fileID: 2800000, guid: 403593c82a7adb74b8cc7ce5e0a7e925, type: 3}
+  - name: characters/rin
+    texture: {fileID: 2800000, guid: 93dd3cca0a6f1a24da49df3b3eed57fa, type: 3}
+  - name: characters/satori
+    texture: {fileID: 2800000, guid: 61b36d39f1febbd40978c7f4cfc4156d, type: 3}
+  - name: characters/seiga
+    texture: {fileID: 2800000, guid: 34556420d8f5af5449796aad4f0ca3f1, type: 3}
+  - name: characters/seija
+    texture: {fileID: 2800000, guid: 1723b13d8d44a654a8424dc59197b0aa, type: 3}
+  - name: characters/sekibanki
+    texture: {fileID: 2800000, guid: 5e391a23c6381c14c9f44d8b0da02c2b, type: 3}
+  - name: characters/shinmyoumaru
+    texture: {fileID: 2800000, guid: d0159b237963ff745a734fae1c80132f, type: 3}
+  - name: characters/shinmyoumaru_big
+    texture: {fileID: 2800000, guid: bdab62905818ab343b09f4857c660b11, type: 3}
+  - name: characters/shinmyoumaru_bottle
+    texture: {fileID: 2800000, guid: c2e6ace3e57f0964eb3d1cfe1113a3cd, type: 3}
+  - name: characters/shou
+    texture: {fileID: 2800000, guid: 160f9fc9ad1c8524f8dc892654dc1557, type: 3}
+  - name: characters/tokiko
+    texture: {fileID: 2800000, guid: b2bf598c00945bb44bb3ca45c9a2a9f6, type: 3}
+  - name: characters/utsuho
+    texture: {fileID: 2800000, guid: 1be099efb0a0d3841ad50caee17e9761, type: 3}
+  - name: entity/height_indicator
+    texture: {fileID: 2800000, guid: 3d0f094a3020c1a4bbec297a273a5ed4, type: 3}
+  - name: icons/blueprint_lock
+    texture: {fileID: 2800000, guid: 274fe14239cfc904690be243b7a2e8dc, type: 3}
+  - name: icons/blueprint_lock_white
+    texture: {fileID: 2800000, guid: 985a095921e1dbd48a14fc1b44a5b1e3, type: 3}
+  - name: icons/disabled
+    texture: {fileID: 2800000, guid: fc3e815806f7eaf4694e0d4333cc9185, type: 3}
+  - name: icons/divine_shield
+    texture: {fileID: 2800000, guid: bbbfd6a4e3820bb4c9fafefc9a604b80, type: 3}
+  - name: icons/dream_key_shield
+    texture: {fileID: 2800000, guid: 536be77b316de444c86963d500ad1922, type: 3}
+  - name: icons/parasitized_icon
+    texture: {fileID: 2800000, guid: b3a86d0fdd9f49043b0ec319c8c28d4c, type: 3}
+  - name: icons/petrified
+    texture: {fileID: 2800000, guid: 5388781fbbfc0eb4a81b878677ee7ac0, type: 3}
+  - name: icons/shackled
+    texture: {fileID: 2800000, guid: 1b82b7d34692bad4eb891394918059df, type: 3}
+  - name: icons/short_circuited
+    texture: {fileID: 2800000, guid: ef8e70ac08eeb9a4aa57ec0abfff3b47, type: 3}
+  - name: icons/sleeping
+    texture: {fileID: 2800000, guid: cac832a88b0c87445b15d989123caa7a, type: 3}
+  - name: icons/z
+    texture: {fileID: 2800000, guid: b4afc6a6c73738d48818d19fcc98eab8, type: 3}
+  - name: level/hp_bar
+    texture: {fileID: 2800000, guid: 885cf94d2d3f2844895b0a87b1fcc5ea, type: 3}
+  - name: level/hp_bar_background
+    texture: {fileID: 2800000, guid: 96c070c484796114fa82d278e609fca9, type: 3}
+  - name: level/hp_bar_icons
+    texture: {fileID: 2800000, guid: 453d4fef4f85ab847b33d20eb562157d, type: 3}
+  - name: level/hp_bar_icons_armor
+    texture: {fileID: 2800000, guid: c9420b8f2b2ab334a92664dc5717e0fa, type: 3}
+  - name: level/light
+    texture: {fileID: 2800000, guid: 4b231be250a3cbf49a9bb3175eeca43c, type: 3}
+  - name: level/shadow
+    texture: {fileID: 2800000, guid: 85fc4cf81c16b5f40a5aca54cdc85565, type: 3}
+  - name: mainmenu/achievement
+    texture: {fileID: 2800000, guid: d5a796bc539a0c245afcb4ad033aef4f, type: 3}
+  - name: mainmenu/addons
+    texture: {fileID: 2800000, guid: a02daf75bb803ad4a9a1307f593ad6a1, type: 3}
+  - name: mainmenu/adventure
+    texture: {fileID: 2800000, guid: a5fe0dd11f7539a43a66c14d3952b30e, type: 3}
+  - name: mainmenu/almanac
+    texture: {fileID: 2800000, guid: 2844d55fd599f0348a29e3ba6776c932, type: 3}
+  - name: mainmenu/arcade
+    texture: {fileID: 2800000, guid: 55b2b4fade47008488fe31d71fcbbb96, type: 3}
+  - name: mainmenu/archive
+    texture: {fileID: 2800000, guid: f74ea0e5623da9347962fc99538ad869, type: 3}
+  - name: mainmenu/back_to_mainmenu
+    texture: {fileID: 2800000, guid: 2c42c8de90a7c30499eae9212c363c7d, type: 3}
+  - name: mainmenu/birch_planks
+    texture: {fileID: 2800000, guid: c833ac401af4ce44c872c8fe55574646, type: 3}
+  - name: mainmenu/gold_name_shine
+    texture: {fileID: 2800000, guid: bd020c04ecf41f542b2e72b0e73bf3d7, type: 3}
+  - name: mainmenu/help
+    texture: {fileID: 2800000, guid: 3358e00bce0b2da4cafbb5941d366592, type: 3}
+  - name: mainmenu/mainmenu
+    texture: {fileID: 2800000, guid: 1fa7f21a7f8675f47a19b64ae5086153, type: 3}
+  - name: mainmenu/mainmenu_background_dark
+    texture: {fileID: 2800000, guid: 8d7f3c7369b68684b9a88018c6176f7b, type: 3}
+  - name: mainmenu/more_menus
+    texture: {fileID: 2800000, guid: b183abb28c7b13c4995d0fc7bfaa8299, type: 3}
+  - name: mainmenu/music_room
+    texture: {fileID: 2800000, guid: a3466850321615b4a9148287cd926dd3, type: 3}
+  - name: mainmenu/options
+    texture: {fileID: 2800000, guid: b6265be12c87a324eae9c9efa6f6735d, type: 3}
+  - name: mainmenu/quit
+    texture: {fileID: 2800000, guid: 246bf4383058f29459ba61df6b57ff55, type: 3}
+  - name: mainmenu/spruce_planks
+    texture: {fileID: 2800000, guid: 0fbbba219c45ca74497d29cf6fea2c5e, type: 3}
+  - name: mainmenu/stats
+    texture: {fileID: 2800000, guid: 0560677ce3ebb444a8893193b27d43fc, type: 3}
+  - name: mainmenu/store
+    texture: {fileID: 2800000, guid: d6bc73c94a1f99a4783bbd0bb5714d72, type: 3}
+  - name: mainmenu/submenu_background
+    texture: {fileID: 2800000, guid: 0bad8dd7ca96eb047840a09bdbdcc162, type: 3}
+  - name: mainmenu/user_manage
+    texture: {fileID: 2800000, guid: 504d237734e4940488bbf711d9083635, type: 3}
+  - name: misc/abandoned_house
+    texture: {fileID: 2800000, guid: 50bf732bad4c58e4594fe0d57da0eeff, type: 3}
+  - name: misc/blazing_hell_cliff
+    texture: {fileID: 2800000, guid: f395daa66520f244ab609c2feaea92c7, type: 3}
+  - name: misc/boat_zombie
+    texture: {fileID: 2800000, guid: bf74c11d6e254354486cefc7df391641, type: 3}
+  - name: misc/castle
+    texture: {fileID: 2800000, guid: 25c22dffe2340ef439d6ebbc3478357e, type: 3}
+  - name: misc/dead_red_dragon
+    texture: {fileID: 2800000, guid: 0da8ea7b3ec83e94793e912ac5ea6c81, type: 3}
+  - name: misc/downed_tokiko
+    texture: {fileID: 2800000, guid: afa886669857a1e418b0316c139ebcc2, type: 3}
+  - name: misc/dragon_fallen_place
+    texture: {fileID: 2800000, guid: 4793d226f42daea46946880a3e168402, type: 3}
+  - name: misc/dream
+    texture: {fileID: 2800000, guid: 8826f776dff1c6a4d8d72030535a150e, type: 3}
+  - name: misc/dream_darkness
+    texture: {fileID: 2800000, guid: ea1dc867602a6da4cac4f2bc72dd4f5e, type: 3}
+  - name: misc/eientei_inside
+    texture: {fileID: 2800000, guid: 7115796f746855040a8dba6478a983f0, type: 3}
+  - name: misc/end_ship
+    texture: {fileID: 2800000, guid: 7e371a692db43054c88eb8560c9ebd74, type: 3}
+  - name: misc/eternal_night_swamp
+    texture: {fileID: 2800000, guid: 95c5376f1e749954692fa0c793e7dafb, type: 3}
+  - name: misc/explosion_before_3_years
+    texture: {fileID: 2800000, guid: 831f7ad8d2311d448970951982d07ad8, type: 3}
+  - name: misc/fall_from_ship
+    texture: {fileID: 2800000, guid: a81e7ee6085bf10488c8ac5cec8948f8, type: 3}
+  - name: misc/frankenstein
+    texture: {fileID: 2800000, guid: c52ffe26b09fa8d43bfa1881edcd3b04, type: 3}
+  - name: misc/giant_in_mausoleum
+    texture: {fileID: 2800000, guid: 7891ad9049ccbeb45810adbce12d4cfa, type: 3}
+  - name: misc/graveyard
+    texture: {fileID: 2800000, guid: 6661be6b03238a2409e5b705222184e0, type: 3}
+  - name: misc/grave_in_dream
+    texture: {fileID: 2800000, guid: 7aa4f566f4d21f94ab8a60d2c9dac47c, type: 3}
+  - name: misc/human_village
+    texture: {fileID: 2800000, guid: 1a6935911a14b294597e34fb03cfb049, type: 3}
+  - name: misc/kourindou_front
+    texture: {fileID: 2800000, guid: 1d01c78f7d98df044b653eab390c102e, type: 3}
+  - name: misc/letter_for_help
+    texture: {fileID: 2800000, guid: 7c77b2bc79808994aaee8edec5031dc8, type: 3}
+  - name: misc/locked_chest
+    texture: {fileID: 2800000, guid: a5915bbae8a80114c8cdfa95740c5d8a, type: 3}
+  - name: misc/locked_chest_item
+    texture: {fileID: 2800000, guid: fd4b7d847c665b8468da3c89099ccb53, type: 3}
+  - name: misc/mausoleum
+    texture: {fileID: 2800000, guid: ea93029bdd8e6d44bbca9f126b03388c, type: 3}
+  - name: misc/memory_with_unknown_person
+    texture: {fileID: 2800000, guid: bb754e26dee4d5441be3bad97415c324, type: 3}
+  - name: misc/murder
+    texture: {fileID: 2800000, guid: 944683e1f0da086409759e5b63d9d066, type: 3}
+  - name: misc/murder
+    texture: {fileID: 2800000, guid: 9b9a2f9380fc526438941269f2b944e5, type: 3}
+  - name: misc/mysterious_hacker
+    texture: {fileID: 2800000, guid: bae54dd42f53f3647bb2d151a04d3d1d, type: 3}
+  - name: misc/nightmare
+    texture: {fileID: 2800000, guid: 8f515a416fe31cb4b8033bfb9fb4dc5b, type: 3}
+  - name: misc/nightmare
+    texture: {fileID: 2800000, guid: 7a8db72eb32f2374786990b1c3e9de7a, type: 3}
+  - name: misc/nightmare_appear
+    texture: {fileID: 2800000, guid: aeb8f84fd7f52684e9107599101bf807, type: 3}
+  - name: misc/nightmare_art
+    texture: {fileID: 2800000, guid: 80c498f2605fad848859bce97a8c16ed, type: 3}
+  - name: misc/palace
+    texture: {fileID: 2800000, guid: a834091dfc5d3884cb48abf3ecb36da3, type: 3}
+  - name: misc/red_dragon
+    texture: {fileID: 2800000, guid: 0fc841fb9e17aad4eb59243fd0144927, type: 3}
+  - name: misc/red_dragon_and_byakuren
+    texture: {fileID: 2800000, guid: 53824a27cae636544b1d80094c86f879, type: 3}
+  - name: misc/rin_saved_tokiko
+    texture: {fileID: 2800000, guid: 8d32570468daa3544b723ff7ac17e429, type: 3}
+  - name: misc/satori_in_chest
+    texture: {fileID: 2800000, guid: b92eb15f1b9344a4fa60934521955a8c, type: 3}
+  - name: misc/ship
+    texture: {fileID: 2800000, guid: 8e2855d040c62c5448c709e7cd230d01, type: 3}
+  - name: misc/steves_house
+    texture: {fileID: 2800000, guid: b54bd6db18c4f8d418444457577bbd31, type: 3}
+  - name: misc/surrounded_kourindou
+    texture: {fileID: 2800000, guid: f27fff12ebffcfe4cb3a825f5f701c61, type: 3}
+  - name: misc/two_travelers
+    texture: {fileID: 2800000, guid: f0f2c4189e67b6e42987f8f1b3af835d, type: 3}
+  - name: misc/visitor_which_finding_child
+    texture: {fileID: 2800000, guid: b522d5e4d42cf19448322c74ae697a63, type: 3}
+  - name: misc/wither
+    texture: {fileID: 2800000, guid: cb2161762d5c5c54f989ec0a1e6d85e9, type: 3}
+  - name: mobile_blueprint/add_pearl
+    texture: {fileID: 2800000, guid: db41f5cca7edeb34a8465f62eae3d2c3, type: 3}
+  - name: mobile_blueprint/amethyst_pylon
+    texture: {fileID: 2800000, guid: 44691debf33607e4a85f6e43c29ba535, type: 3}
+  - name: mobile_blueprint/anubisand
+    texture: {fileID: 2800000, guid: 2d37eb66e5d769343ab9e6ee42496b68, type: 3}
+  - name: mobile_blueprint/anvil
+    texture: {fileID: 2800000, guid: 07fea5983538e114e87a25057c32b6c2, type: 3}
+  - name: mobile_blueprint/beacon
+    texture: {fileID: 2800000, guid: af016291e3e050b418ac40e349963a65, type: 3}
+  - name: mobile_blueprint/bedserker
+    texture: {fileID: 2800000, guid: 10f0a75a79063264f8e9d4e7413c683f, type: 3}
+  - name: mobile_blueprint/berserker
+    texture: {fileID: 2800000, guid: 02d02d3206dc8484c8e80a0aa53c8725, type: 3}
+  - name: mobile_blueprint/black_hole_bomb
+    texture: {fileID: 2800000, guid: a947efd639075f8479b747319d6fad58, type: 3}
+  - name: mobile_blueprint/brick_cannon
+    texture: {fileID: 2800000, guid: 8a3366b53f8c5664da6cfeea30c441e9, type: 3}
+  - name: mobile_blueprint/cannonball_zombie
+    texture: {fileID: 2800000, guid: 8cdebccec54e7554e9fa0219707d489d, type: 3}
+  - name: mobile_blueprint/cannoneer_zombie
+    texture: {fileID: 2800000, guid: 36644e32a58432140b6b7f7339f2bac1, type: 3}
+  - name: mobile_blueprint/cave_spider
+    texture: {fileID: 2800000, guid: 2be33464724166c4fa3a121643edceb8, type: 3}
+  - name: mobile_blueprint/command_block
+    texture: {fileID: 2800000, guid: c5e0b87d540b275409a8860725de7933, type: 3}
+  - name: mobile_blueprint/cooling_cell
+    texture: {fileID: 2800000, guid: e3e1596d953b94b41ae3901ea2d4e8af, type: 3}
+  - name: mobile_blueprint/cursed_candle
+    texture: {fileID: 2800000, guid: ca9c1b4e6437f494c925cd74e28e6346, type: 3}
+  - name: mobile_blueprint/desire_pot
+    texture: {fileID: 2800000, guid: 2bc07992dc30ad441aa98588cf8d0e90, type: 3}
+  - name: mobile_blueprint/devourer
+    texture: {fileID: 2800000, guid: f9f35a26c043a7b4fa4d6f5836941b01, type: 3}
+  - name: mobile_blueprint/diamond_helmetted_zombie
+    texture: {fileID: 2800000, guid: e434ee7060be04d429244b2b884afb04, type: 3}
+  - name: mobile_blueprint/diamond_spikes
+    texture: {fileID: 2800000, guid: a91f725ba10a5c545a6a951003948a10, type: 3}
+  - name: mobile_blueprint/dispenser
+    texture: {fileID: 2800000, guid: ec64b1f344d5e534899c5676939afb2e, type: 3}
+  - name: mobile_blueprint/dream_crystal
+    texture: {fileID: 2800000, guid: adecf731c88b78646a29bb745f5ada9b, type: 3}
+  - name: mobile_blueprint/dream_silk
+    texture: {fileID: 2800000, guid: 4b5d435139279434d9a7cc073987d99f, type: 3}
+  - name: mobile_blueprint/drivenser
+    texture: {fileID: 2800000, guid: dc3f43337866cef4c94af92af1159b8f, type: 3}
+  - name: mobile_blueprint/dullahan
+    texture: {fileID: 2800000, guid: 8866a258ae8eb3e458f9c444ebdba22c, type: 3}
+  - name: mobile_blueprint/dullahan_head
+    texture: {fileID: 2800000, guid: 9e859336bcdaf054593a5dc4ca4b79ae, type: 3}
+  - name: mobile_blueprint/elastic_cloud
+    texture: {fileID: 2800000, guid: 22f0f8968ce066b4daa774bc72595ce1, type: 3}
+  - name: mobile_blueprint/emperor_zombie
+    texture: {fileID: 2800000, guid: d018395fbcf32f44c92a79b061e11d83, type: 3}
+  - name: mobile_blueprint/error_block
+    texture: {fileID: 2800000, guid: 4a95d1fe4c3e9f342a64658402ac3669, type: 3}
+  - name: mobile_blueprint/firework_dispenser
+    texture: {fileID: 2800000, guid: ced04377ba2ef5c4997601c45b6ca7e7, type: 3}
+  - name: mobile_blueprint/flag_zombie
+    texture: {fileID: 2800000, guid: 4756509eba10d744bb3323a794303f92, type: 3}
+  - name: mobile_blueprint/force_pad
+    texture: {fileID: 2800000, guid: f25d2b94a621a1e4d8cd823493b4a29f, type: 3}
+  - name: mobile_blueprint/furnace
+    texture: {fileID: 2800000, guid: acc2e6159831cab4bb25141293768c3c, type: 3}
+  - name: mobile_blueprint/gargoyle
+    texture: {fileID: 2800000, guid: b72151badb68c8846ac8c796bf412fa4, type: 3}
+  - name: mobile_blueprint/ghast
+    texture: {fileID: 2800000, guid: 91391702dfa4fa749b9e1ea735de8da2, type: 3}
+  - name: mobile_blueprint/ghost
+    texture: {fileID: 2800000, guid: 2eb6e56aede81b84988e3f747de09c05, type: 3}
+  - name: mobile_blueprint/giant_bowl
+    texture: {fileID: 2800000, guid: 36b2d82a0eba62b4fa29a20e722ca6a3, type: 3}
+  - name: mobile_blueprint/glowstone
+    texture: {fileID: 2800000, guid: eb5396e8d49b71b4b899a73dae8c9ce9, type: 3}
+  - name: mobile_blueprint/golden_apple
+    texture: {fileID: 2800000, guid: 03a01e1df2865d441a9fa227eab6a1f6, type: 3}
+  - name: mobile_blueprint/golden_dropper
+    texture: {fileID: 2800000, guid: 55c4fb06ca097e24eaa9171673390143, type: 3}
+  - name: mobile_blueprint/gravelpult
+    texture: {fileID: 2800000, guid: 6edd9e40e4ec07849b044419d54304d8, type: 3}
+  - name: mobile_blueprint/gravity_pad
+    texture: {fileID: 2800000, guid: b362171cd0a32824e9b3ac7c42f24dd7, type: 3}
+  - name: mobile_blueprint/gunpowder_barrel
+    texture: {fileID: 2800000, guid: c7c2c17e30f15d84fa48bd11657b600a, type: 3}
+  - name: mobile_blueprint/hacker
+    texture: {fileID: 2800000, guid: 259d5765d58e26d40bcd0e31330e9195, type: 3}
+  - name: mobile_blueprint/heavy_weapon_flashbang
+    texture: {fileID: 2800000, guid: 17c098ee993d42047b94d6e31b6fe77b, type: 3}
+  - name: mobile_blueprint/heavy_weapon_nuke
+    texture: {fileID: 2800000, guid: 6f03c87f9ae558d46b68a9fb3b0a0c3d, type: 3}
+  - name: mobile_blueprint/heavy_weapon_rapid
+    texture: {fileID: 2800000, guid: 4ad05a8a9f2400944964d89c9833fab0, type: 3}
+  - name: mobile_blueprint/heavy_weapon_spread
+    texture: {fileID: 2800000, guid: e2fcfb282a3d6aa4eb0b3512fce5fc79, type: 3}
+  - name: mobile_blueprint/hellfire
+    texture: {fileID: 2800000, guid: 358463c4a1670b441b15bd6423009e35, type: 3}
+  - name: mobile_blueprint/hell_chariot
+    texture: {fileID: 2800000, guid: b9be44ffa4015754eaf65066f0522ab8, type: 3}
+  - name: mobile_blueprint/high_frequency_pulse_dispenser
+    texture: {fileID: 2800000, guid: f24e02b7e9159cb4ebd603ab477f2152, type: 3}
+  - name: mobile_blueprint/imp
+    texture: {fileID: 2800000, guid: 159a0c84d11598e48abae3c94be1ed5f, type: 3}
+  - name: mobile_blueprint/infectenser
+    texture: {fileID: 2800000, guid: 7ad59fee145905345a3241aca0804d48, type: 3}
+  - name: mobile_blueprint/iron_helmetted_zombie
+    texture: {fileID: 2800000, guid: a2c663f155f7ff44eb88ea0b4b0a285e, type: 3}
+  - name: mobile_blueprint/jeweled_pagoda
+    texture: {fileID: 2800000, guid: 91145db7ce144ae46b011cc317c0fd39, type: 3}
+  - name: mobile_blueprint/leather_capped_zombie
+    texture: {fileID: 2800000, guid: 682a1f5ec6af4b54d81d95c0fcf56384, type: 3}
+  - name: mobile_blueprint/lengthen_board
+    texture: {fileID: 2800000, guid: 2c0f3cc55c6401d458ad5611a9d70c0e, type: 3}
+  - name: mobile_blueprint/lightning_orb
+    texture: {fileID: 2800000, guid: a5efa495de93d644a90de2fa44e1cf16, type: 3}
+  - name: mobile_blueprint/lily_pad
+    texture: {fileID: 2800000, guid: d502efd9e6fce1543ae6919e926b244c, type: 3}
+  - name: mobile_blueprint/locked_chest
+    texture: {fileID: 2800000, guid: bc5a3188e1dc04a46a66afd4a30e671b, type: 3}
+  - name: mobile_blueprint/magichest
+    texture: {fileID: 2800000, guid: 2f3ddf82a6251b743b3e647d2f839e64, type: 3}
+  - name: mobile_blueprint/mega_mutant_zombie
+    texture: {fileID: 2800000, guid: a06de87c0a73e074abeebac969e592ec, type: 3}
+  - name: mobile_blueprint/mesmerizer
+    texture: {fileID: 2800000, guid: 56017a37b9eab0d489db5ba250433934, type: 3}
+  - name: mobile_blueprint/mine_tnt
+    texture: {fileID: 2800000, guid: 3eeaaee3b5925f349bc67370a4813884, type: 3}
+  - name: mobile_blueprint/monster_spawner
+    texture: {fileID: 2800000, guid: b757bff462de5454c97df5bc746a6c23, type: 3}
+  - name: mobile_blueprint/moonlight_sensor
+    texture: {fileID: 2800000, guid: 579cf24a5de6c3449ba61159e5649187, type: 3}
+  - name: mobile_blueprint/mother_terror
+    texture: {fileID: 2800000, guid: 3a4d775ca16aed8489fddf37bc1ced64, type: 3}
+  - name: mobile_blueprint/mummy
+    texture: {fileID: 2800000, guid: 9471881cde5f3d841abcd44501e0f922, type: 3}
+  - name: mobile_blueprint/mutant_zombie
+    texture: {fileID: 2800000, guid: 4bc6ce89adce4a6418ff0875e511fd9b, type: 3}
+  - name: mobile_blueprint/necromancer
+    texture: {fileID: 2800000, guid: 8a0fa8e6a83d14c4581f8cee8ce07eed, type: 3}
+  - name: mobile_blueprint/necrotombstone
+    texture: {fileID: 2800000, guid: d1bf852fe2722b54e9735417e907a23c, type: 3}
+  - name: mobile_blueprint/nether_hunter
+    texture: {fileID: 2800000, guid: 457f7a981eb5b634788558bb96099823, type: 3}
+  - name: mobile_blueprint/nether_mage
+    texture: {fileID: 2800000, guid: fdc7423050cadcd4ea47886ef15e78fc, type: 3}
+  - name: mobile_blueprint/nether_mage_fire
+    texture: {fileID: 2800000, guid: 8b716f35d6aa1244598083b3b6c468e9, type: 3}
+  - name: mobile_blueprint/nether_mage_frost
+    texture: {fileID: 2800000, guid: 42c1f6818cdc98a4a93e475bc0ad3fea, type: 3}
+  - name: mobile_blueprint/nether_mage_lightning
+    texture: {fileID: 2800000, guid: e6f619d8a994df64fa008fbd0106d382, type: 3}
+  - name: mobile_blueprint/nether_reactor_core
+    texture: {fileID: 2800000, guid: bd62b007f1f07454caaa39796ab08f5c, type: 3}
+  - name: mobile_blueprint/nightmareaper
+    texture: {fileID: 2800000, guid: dfe9b9c4204e8234d86ec16eb408a6da, type: 3}
+  - name: mobile_blueprint/note_block
+    texture: {fileID: 2800000, guid: 25a4420fd4681d943a556df9d9a939d2, type: 3}
+  - name: mobile_blueprint/nuke
+    texture: {fileID: 2800000, guid: f285042715f1c8647a115c7920592f44, type: 3}
+  - name: mobile_blueprint/obsidian
+    texture: {fileID: 2800000, guid: 4d49d253e83fc104d9eb629a8a238ee3, type: 3}
+  - name: mobile_blueprint/parasite_terror
+    texture: {fileID: 2800000, guid: 333296bf7a142dd43a413222f3881bcb, type: 3}
+  - name: mobile_blueprint/pistenser
+    texture: {fileID: 2800000, guid: cdec7faf255eabe4195b58d4652126e3, type: 3}
+  - name: mobile_blueprint/pop_captain
+    texture: {fileID: 2800000, guid: 9f4e32b5f413e874aa0d2661531c8b78, type: 3}
+  - name: mobile_blueprint/punchton
+    texture: {fileID: 2800000, guid: 1d8a7cdd4327da14ea5a749df090984d, type: 3}
+  - name: mobile_blueprint/random_china
+    texture: {fileID: 2800000, guid: 739dc404e782a0c4dae8390f142f0cc5, type: 3}
+  - name: mobile_blueprint/red_dragon
+    texture: {fileID: 2800000, guid: 61de7625116ab1d499a71a5aaff6ec07, type: 3}
+  - name: mobile_blueprint/reflective_barrier_zombie
+    texture: {fileID: 2800000, guid: 61e062545e6a32f479757806ec86d744, type: 3}
+  - name: mobile_blueprint/repeatenser
+    texture: {fileID: 2800000, guid: 8ca4037f1d5fcf342b4ffe04c46d6590, type: 3}
+  - name: mobile_blueprint/return_pearl
+    texture: {fileID: 2800000, guid: 90b1efed9d95d3b43a897fa9d566324a, type: 3}
+  - name: mobile_blueprint/reverse_satellite
+    texture: {fileID: 2800000, guid: 35f80fb8af94a064f86a987dc6dae8e0, type: 3}
+  - name: mobile_blueprint/seija
+    texture: {fileID: 2800000, guid: 9390c4e06c35d1849b57a496ba6b0339, type: 3}
+  - name: mobile_blueprint/seija_cursed_doll
+    texture: {fileID: 2800000, guid: f178164255d2e4740ba2c8e66ba459e5, type: 3}
+  - name: mobile_blueprint/shadow_cell
+    texture: {fileID: 2800000, guid: e94d62cb3c30c4c4c85137b88b64587a, type: 3}
+  - name: mobile_blueprint/shikaisen_staff
+    texture: {fileID: 2800000, guid: 6990d1364b53e3b40b784f6e3b7754e5, type: 3}
+  - name: mobile_blueprint/shikaisen_zombie
+    texture: {fileID: 2800000, guid: bf91b1cffcf2bb948bcdb815c1916e71, type: 3}
+  - name: mobile_blueprint/silvenser
+    texture: {fileID: 2800000, guid: 3c7cacc742c9f154e80d19b1b5b133c2, type: 3}
+  - name: mobile_blueprint/skeleton
+    texture: {fileID: 2800000, guid: f8d0d1426f88a6b4bb83eb101121870e, type: 3}
+  - name: mobile_blueprint/skeleton_horse
+    texture: {fileID: 2800000, guid: 6423a491a15f75342ad5caf161cf634d, type: 3}
+  - name: mobile_blueprint/skeleton_mage
+    texture: {fileID: 2800000, guid: ae918595844e8b446a1aca7d71291b61, type: 3}
+  - name: mobile_blueprint/skeleton_mage_fire
+    texture: {fileID: 2800000, guid: 58e2346d2fb90df44b58aebece0d82ad, type: 3}
+  - name: mobile_blueprint/skeleton_mage_frost
+    texture: {fileID: 2800000, guid: 50f49ea46da419e4dafa5ecbbd64b606, type: 3}
+  - name: mobile_blueprint/skeleton_mage_lightning
+    texture: {fileID: 2800000, guid: c58e2047282dbf342864f9b099d799c4, type: 3}
+  - name: mobile_blueprint/skeleton_statue
+    texture: {fileID: 2800000, guid: 2f92cbb3f1ef5464797729e47701048d, type: 3}
+  - name: mobile_blueprint/skeleton_warrior
+    texture: {fileID: 2800000, guid: de2f50015df9b2341aa191a0813d294f, type: 3}
+  - name: mobile_blueprint/skyward_beacon
+    texture: {fileID: 2800000, guid: 36364eaf3189ea241a7fe1ef5b5027fb, type: 3}
+  - name: mobile_blueprint/slenderman
+    texture: {fileID: 2800000, guid: 9c37df297dc5c5a47a8448c48eba0204, type: 3}
+  - name: mobile_blueprint/small_dispenser
+    texture: {fileID: 2800000, guid: df4339844dabc79468b681d3c124227f, type: 3}
+  - name: mobile_blueprint/snipenser
+    texture: {fileID: 2800000, guid: 38bfad2b886a15d4f8de762e006761d1, type: 3}
+  - name: mobile_blueprint/soulsand
+    texture: {fileID: 2800000, guid: ee236b9bf29256844b94ea76798c4239, type: 3}
+  - name: mobile_blueprint/soul_furnace
+    texture: {fileID: 2800000, guid: 11ac6f32e59e29e4aa1067a79c215185, type: 3}
+  - name: mobile_blueprint/spider
+    texture: {fileID: 2800000, guid: a11a5b163ead6624ea57a93be24665a2, type: 3}
+  - name: mobile_blueprint/spike_block
+    texture: {fileID: 2800000, guid: d0f973bcd4babdc40b8ee0cfc233300c, type: 3}
+  - name: mobile_blueprint/splitenser
+    texture: {fileID: 2800000, guid: b8020c439faa36e4a93b2a903db60899, type: 3}
+  - name: mobile_blueprint/stone_dropper
+    texture: {fileID: 2800000, guid: 7daa974a99689d84d8b0323b1817ce90, type: 3}
+  - name: mobile_blueprint/stone_eye
+    texture: {fileID: 2800000, guid: 7fc99bc79b9678544a8fd5c1f35cfa60, type: 3}
+  - name: mobile_blueprint/stone_shield
+    texture: {fileID: 2800000, guid: a001063ac6b540b42a716f3b66388328, type: 3}
+  - name: mobile_blueprint/talisman_zombie
+    texture: {fileID: 2800000, guid: 70bd3779c2eea2b4fb4e071481e6acb1, type: 3}
+  - name: mobile_blueprint/tesla_coil
+    texture: {fileID: 2800000, guid: d8b4a6fef193f41428666f3177af2af7, type: 3}
+  - name: mobile_blueprint/the_giant
+    texture: {fileID: 2800000, guid: 68a34c0352f30f44fbe869081863c16f, type: 3}
+  - name: mobile_blueprint/thunder_drum
+    texture: {fileID: 2800000, guid: 904706dca625dc84db7ba9432de30ec2, type: 3}
+  - name: mobile_blueprint/tnt
+    texture: {fileID: 2800000, guid: 3a2d8f0334da2b349b397a3ed1cf7b97, type: 3}
+  - name: mobile_blueprint/totenser
+    texture: {fileID: 2800000, guid: ed576f37fbc44b44d9396b8ea59f7911, type: 3}
+  - name: mobile_blueprint/transfenser
+    texture: {fileID: 2800000, guid: ad5ce8632a283454da6a8493ff25a8d5, type: 3}
+  - name: mobile_blueprint/triplenser
+    texture: {fileID: 2800000, guid: 9cea67f824319f140bbd61d186dca978, type: 3}
+  - name: mobile_blueprint/undead_flying_object
+    texture: {fileID: 2800000, guid: f341858279d9e0e4cadea5a1467728a1, type: 3}
+  - name: mobile_blueprint/undead_flying_object_blue
+    texture: {fileID: 2800000, guid: 0ee514c074ca3dd4cafad1abc2e8d5a6, type: 3}
+  - name: mobile_blueprint/undead_flying_object_green
+    texture: {fileID: 2800000, guid: 80dd7dcc96e791f4fa2769903da9fb52, type: 3}
+  - name: mobile_blueprint/undead_flying_object_rainbow
+    texture: {fileID: 2800000, guid: 5ff28871fd459c0479645419965e61d4, type: 3}
+  - name: mobile_blueprint/undead_flying_object_red
+    texture: {fileID: 2800000, guid: 32e27889327ee5243a74df156f0839ce, type: 3}
+  - name: mobile_blueprint/vortex_hopper
+    texture: {fileID: 2800000, guid: 9e43064c78598fd4493a1d5c14308edb, type: 3}
+  - name: mobile_blueprint/wicked_hermit_zombie
+    texture: {fileID: 2800000, guid: 8bfd3910470132e4a94c08e6054dcebc, type: 3}
+  - name: mobile_blueprint/wisp_fly
+    texture: {fileID: 2800000, guid: f1c1f36a0e28e5e4daa91d206193c16d, type: 3}
+  - name: mobile_blueprint/wither
+    texture: {fileID: 2800000, guid: 7e0654a046a25aa49a4938aded15c81b, type: 3}
+  - name: mobile_blueprint/wooden_dropper
+    texture: {fileID: 2800000, guid: 98ceb6465d489164ab22b423d1a3d218, type: 3}
+  - name: mobile_blueprint/wooden_fan
+    texture: {fileID: 2800000, guid: f79c654b2f8fb7246a6a8a3e9f3c6ba6, type: 3}
+  - name: mobile_blueprint/zombie
+    texture: {fileID: 2800000, guid: 6514a857fb8b7fc4d992741ae15f66e5, type: 3}
+  - name: mobile_blueprint/zombie_cat
+    texture: {fileID: 2800000, guid: 9e8b96acd54be694a9e26a07bd64fb2b, type: 3}
+  - name: mobile_blueprint/zombie_cloud
+    texture: {fileID: 2800000, guid: 6cee1e618aa7aaa4290570ca7f2eb1c8, type: 3}
+  - name: mobile_blueprint/zombie_cloud_snow
+    texture: {fileID: 2800000, guid: c4e76c1f36a4c274eb3f93e48e82f1cc, type: 3}
+  - name: mobile_blueprint/zombie_cloud_thunder
+    texture: {fileID: 2800000, guid: 067521958e94fd440bf2d5a8c1b62383, type: 3}
+  - name: note/background_castle
+    texture: {fileID: 2800000, guid: cdb5a00e33b0dda46876f58eb7acc614, type: 3}
+  - name: note/background_day
+    texture: {fileID: 2800000, guid: 4e864b8c475a1ea43babf97b5de8c9a0, type: 3}
+  - name: note/background_dream
+    texture: {fileID: 2800000, guid: f8dbc419c62dfc148a2d10db9f0ce0d3, type: 3}
+  - name: note/background_halloween
+    texture: {fileID: 2800000, guid: 13026b5d2e6efdc4e9f551e6433d1600, type: 3}
+  - name: note/background_mausoleum
+    texture: {fileID: 2800000, guid: e22d8952fb88ae345a9f5ae2e633b5d4, type: 3}
+  - name: note/background_palace
+    texture: {fileID: 2800000, guid: 5fe8cc97fa275b24c8696a7ff5c984fa, type: 3}
+  - name: note/background_ship
+    texture: {fileID: 2800000, guid: b33024c345002ad49ae6387d3b1fc9de, type: 3}
+  - name: note/castle
+    texture: {fileID: 2800000, guid: de792c288e4a5a2479cdbbca7dfb0fb5, type: 3}
+  - name: note/dream
+    texture: {fileID: 2800000, guid: e732382db38cd764888b963c49cc59c5, type: 3}
+  - name: note/halloween
+    texture: {fileID: 2800000, guid: 30972c61ea296a2468f76e78a6efa1f3, type: 3}
+  - name: note/help_back
+    texture: {fileID: 2800000, guid: f33715c080e647f4eb47909df824bc60, type: 3}
+  - name: note/help_front
+    texture: {fileID: 2800000, guid: 8f85d3d605c8bf34b9c860577f50ba8c, type: 3}
+  - name: note/mausoleum
+    texture: {fileID: 2800000, guid: b453b81b803463f4ba41b29936133619, type: 3}
+  - name: note/palace
+    texture: {fileID: 2800000, guid: 41b8b1da0aae7ce4ca2f884df9b30083, type: 3}
+  - name: note/prologue
+    texture: {fileID: 2800000, guid: 32f36e28f5381c345b9988e80c40ee5a, type: 3}
+  - name: note/ship
+    texture: {fileID: 2800000, guid: df7c136338ab89e43af4d789fbcbfa52, type: 3}
+  - name: options/add_pearl
+    texture: {fileID: 2800000, guid: 7fe15cf03f7a8c64cb0f6007db72398c, type: 3}
+  - name: options/heavy_weapon_flashbang
+    texture: {fileID: 2800000, guid: 5ed7b76c963151d47a1c3bf49aa4af1f, type: 3}
+  - name: options/heavy_weapon_nuke
+    texture: {fileID: 2800000, guid: f8e1af0de3d03d143b01fe266b03435b, type: 3}
+  - name: options/heavy_weapon_rapid
+    texture: {fileID: 2800000, guid: a190da7a89dae4444b93a2bd2f3721d4, type: 3}
+  - name: options/heavy_weapon_spread
+    texture: {fileID: 2800000, guid: 4aa84362f484602499fc2245def60efa, type: 3}
+  - name: options/lengthen_board
+    texture: {fileID: 2800000, guid: 37615d759a134794786c955d0039509e, type: 3}
+  - name: options/return_pearl
+    texture: {fileID: 2800000, guid: 9314f1d33a68e1e40b9abba26d9eb400, type: 3}
+  - name: products/artifact_slot
+    texture: {fileID: 2800000, guid: 850d4c9b6833d8047ac10f992af536ff, type: 3}
+  - name: products/blueprint_slot
+    texture: {fileID: 2800000, guid: a4fb4d341a16ba64cbad7dd992c94206, type: 3}
+  - name: products/cake
+    texture: {fileID: 2800000, guid: 78ada02b958a3804fac1e795d393ee64, type: 3}
+  - name: products/obsidian_first_aid
+    texture: {fileID: 2800000, guid: beb139d5d07db39408272c27eaea0034, type: 3}
+  - name: products/satori_detector
+    texture: {fileID: 2800000, guid: 9e904d74c82bc6f4c8203ec8ae847ec2, type: 3}
+  - name: products/starshard_slot
+    texture: {fileID: 2800000, guid: b944e3154656ac74f8054ed14cb53335, type: 3}
+  - name: shading/beacon_beam
+    texture: {fileID: 2800000, guid: b1900c06e1957174da8b8d05764e05e6, type: 3}
+  - name: shading/charge_bar
+    texture: {fileID: 2800000, guid: 875c02db89f827e4fb926c954366d39e, type: 3}
+  - name: shading/circle
+    texture: {fileID: 2800000, guid: d250ca6640bb83b4a98ea6c9fdc46e67, type: 3}
+  - name: shading/fire_block_0
+    texture: {fileID: 2800000, guid: 1143ec22777085e4da98117d2864f022, type: 3}
+  - name: shading/fire_block_1
+    texture: {fileID: 2800000, guid: 25f988ff03e536a4e82397cc65d1cd24, type: 3}
+  - name: shading/nightmare_boss_sky
+    texture: {fileID: 2800000, guid: 0d2c48cde3441c649b93560520f96272, type: 3}
+  - name: shading/nightmare_boss_sky
+    texture: {fileID: 2800000, guid: 40db1b532555e104184c1eca82025505, type: 3}
+  - name: shading/pool
+    texture: {fileID: 2800000, guid: 5a43bbbdfc2dfc64382269576cdd5203, type: 3}
+  - name: shading/pool_shade
+    texture: {fileID: 2800000, guid: 0d7f2041adf80d54c9e2d84f3b4a6f2c, type: 3}
+  - name: shading/pool_shade_nightmare
+    texture: {fileID: 2800000, guid: 237ffa5c541517f40ac8dbcb9bdd1f01, type: 3}
+  - name: shading/soul_furnace_fuel_bar
+    texture: {fileID: 2800000, guid: 6af7dae5c4c813148a830a41c92b2706, type: 3}
+  - name: starshards/castle
+    texture: {fileID: 2800000, guid: 32a9da2bd3c99b64298ce54bba1a8611, type: 3}
+  - name: starshards/default
+    texture: {fileID: 2800000, guid: 5fe877b614795e144996e5d0ede65e81, type: 3}
+  - name: starshards/dream
+    texture: {fileID: 2800000, guid: 870eee8567c7c8948aa1357afdc15d62, type: 3}
+  - name: starshards/halloween
+    texture: {fileID: 2800000, guid: ead2b534e897e48469cac6037a937e50, type: 3}
+  - name: starshards/mausoleum
+    texture: {fileID: 2800000, guid: b405364c48af1734683363a805c66044, type: 3}
+  - name: starshards/mountain
+    texture: {fileID: 2800000, guid: 2f323def3212a0b42b94148483971c52, type: 3}
+  - name: starshards/palace
+    texture: {fileID: 2800000, guid: c84189a7e82909d42ac73e1210b21918, type: 3}
+  - name: starshards/ship
+    texture: {fileID: 2800000, guid: de297cfa423d4064ba27277d2746f079, type: 3}
+  - name: starshard_rings/castle
+    texture: {fileID: 2800000, guid: f70064fbad3e8e249acbd5365f606f06, type: 3}
+  - name: starshard_rings/default
+    texture: {fileID: 2800000, guid: a87b33e84a23ca14eb7f301beca38504, type: 3}
+  - name: starshard_rings/dream
+    texture: {fileID: 2800000, guid: e8196c198b390f343b2370b0aa2c81b3, type: 3}
+  - name: starshard_rings/halloween
+    texture: {fileID: 2800000, guid: b71a3502ba3935b49a514559f8734478, type: 3}
+  - name: starshard_rings/mausoleum
+    texture: {fileID: 2800000, guid: f74aabbf5c6403f4b908c053d7ecc630, type: 3}
+  - name: starshard_rings/mountain
+    texture: {fileID: 2800000, guid: 262b03a328c716845b99a6b3e5be91a9, type: 3}
+  - name: starshard_rings/palace
+    texture: {fileID: 2800000, guid: 21ed16a8b3b89414b857ea8a81b8d80a, type: 3}
+  - name: starshard_rings/ship
+    texture: {fileID: 2800000, guid: 1dcd2061d05fd3c429fd6b75083a5b5d, type: 3}
+  - name: store/background_kourindou
+    texture: {fileID: 2800000, guid: f14a7915d621a6d41b9c33aa5e927a0c, type: 3}
+  - name: store/background_village
+    texture: {fileID: 2800000, guid: c7f50d8658623a44886293ea828537fd, type: 3}
+  - name: talk/speech_bubble
+    texture: {fileID: 2800000, guid: da0c5367a9a28744296833a41ea6087a, type: 3}
+  - name: talk/speech_bubble_center
+    texture: {fileID: 2800000, guid: d6a955717c4507e4aa60b1e721268640, type: 3}
+  - name: talk/speech_bubble_no_arrow
+    texture: {fileID: 2800000, guid: 2a4746211870c7249adf3104c2ebdac4, type: 3}
+  - name: ui/banished_mark
+    texture: {fileID: 2800000, guid: 994dcad1586f82f45bf48985a9e06321, type: 3}
+  - name: ui/charge_bar_background
+    texture: {fileID: 2800000, guid: 43fcd92f2a72ca443ab18701d0b8563c, type: 3}
+  - name: ui/close
+    texture: {fileID: 2800000, guid: ecbd7380d218ae0499f9db9112f463a4, type: 3}
+  - name: ui/combat
+    texture: {fileID: 2800000, guid: 2e64b12488b10c340838892bf9f9db3e, type: 3}
+  - name: ui/debug_console_icon
+    texture: {fileID: 2800000, guid: c853afac5f602874e877872193826015, type: 3}
+  - name: ui/gear
+    texture: {fileID: 2800000, guid: e0c7697228ff843469a11a3a633766bb, type: 3}
+  - name: ui/gear_banned
+    texture: {fileID: 2800000, guid: d7ad17d08589c04459d3a3030abbf9f5, type: 3}
+  - name: ui/refresh
+    texture: {fileID: 2800000, guid: 92e692ae88b62a541bef812a89e2bac3, type: 3}
+  - name: ui/snipenser_life
+    texture: {fileID: 2800000, guid: 7b77566262542ea459cba42fe15d4825, type: 3}
+  - name: ui/sword
+    texture: {fileID: 2800000, guid: 6bfc7d9706121e5458ed36aa87ece92c, type: 3}
+  - name: ui/zoom
+    texture: {fileID: 2800000, guid: 6d34689b106ed35498dffaa3069fa3f5, type: 3}
+  - name: entity/armor/bedserker_helmet
+    texture: {fileID: 2800000, guid: e44b0e9757080bf4dbf0ae5b2420e15c, type: 3}
+  - name: entity/armor/berserker_helmet
+    texture: {fileID: 2800000, guid: 7b5b04fa7d4703a48867a2ec9b7c31f6, type: 3}
+  - name: entity/armor/cannon
+    texture: {fileID: 2800000, guid: fef5240ef6b58184c95282c0fa82357c, type: 3}
+  - name: entity/armor/diamond_helmet
+    texture: {fileID: 2800000, guid: 8c33626bd6dc68e43a68a3b6d0b5f0aa, type: 3}
+  - name: entity/armor/emperor_crown
+    texture: {fileID: 2800000, guid: 58755531f1cc59b4ab7563c5bedf58b2, type: 3}
+  - name: entity/armor/flag
+    texture: {fileID: 2800000, guid: 58eadcb8281219a418802875c2f38bbe, type: 3}
+  - name: entity/armor/iron_helmet
+    texture: {fileID: 2800000, guid: 4604673f13e91a847a5781f0d106be31, type: 3}
+  - name: entity/armor/leather_cap
+    texture: {fileID: 2800000, guid: 03832b8b573fa884993ba7232246622f, type: 3}
+  - name: entity/armor/mesmerizer_crown
+    texture: {fileID: 2800000, guid: 5a0ed5d8cf792294fb28827ccdea1c42, type: 3}
+  - name: entity/armor/pop_captain_cap
+    texture: {fileID: 2800000, guid: 33c49e1a293e6d94f8836070fff9c226, type: 3}
+  - name: entity/armor/reflective_barrier
+    texture: {fileID: 2800000, guid: 5fd5dd6553755524490a5b49f96a2b43, type: 3}
+  - name: entity/armor/skeleton_warrior_helmet
+    texture: {fileID: 2800000, guid: 8f4a25505be15d244b85ae394574d811, type: 3}
+  - name: entity/armor/umbrella
+    texture: {fileID: 2800000, guid: 47ac2610c2e27e341820f80884cd641a, type: 3}
+  - name: entity/armor/wicked_hermit_hat
+    texture: {fileID: 2800000, guid: 97bbf718dcb8d714cbce072750f648a2, type: 3}
+  - name: entity/boss/frankenstein
+    texture: {fileID: 2800000, guid: 74da7e893d261a549a659cfaef15b372, type: 3}
+  - name: entity/boss/gun_fire
+    texture: {fileID: 2800000, guid: c6834e54b22c072438a7aa1583ebc4f5, type: 3}
+  - name: entity/boss/locked_chest
+    texture: {fileID: 2800000, guid: 3a54d5bb3b16e9e4fa22639a67ef8836, type: 3}
+  - name: entity/boss/nightmareaper
+    texture: {fileID: 2800000, guid: 9b42d523d4b6eae419bc6d9e83b028f1, type: 3}
+  - name: entity/boss/nightmareaper_head
+    texture: {fileID: 2800000, guid: 7ebac2534124b00449659de6a1056649, type: 3}
+  - name: entity/boss/red_dragon
+    texture: {fileID: 2800000, guid: 07a88248ffda4ee4f9e109e8e44ab62e, type: 3}
+  - name: entity/boss/seija
+    texture: {fileID: 2800000, guid: b2385c35695e45846a215788533e520a, type: 3}
+  - name: entity/boss/seija_bomb
+    texture: {fileID: 2800000, guid: cd0fcd035e19f2b4c8f8a3029a1241d3, type: 3}
+  - name: entity/boss/seija_camera
+    texture: {fileID: 2800000, guid: 5b26f4e24b68dee49b2c8d3592d95d91, type: 3}
+  - name: entity/boss/seija_doll
+    texture: {fileID: 2800000, guid: 0812e0f0861318c47b85593400d1388d, type: 3}
+  - name: entity/boss/seija_fabric
+    texture: {fileID: 2800000, guid: 8049c7a1615839440a581a9703083ac7, type: 3}
+  - name: entity/boss/seija_gap
+    texture: {fileID: 2800000, guid: a983f0772541d504c8614fb33d2a87ec, type: 3}
+  - name: entity/boss/seija_gap_mask
+    texture: {fileID: 2800000, guid: 7d7bc503117076b49827e5fc02ef7b96, type: 3}
+  - name: entity/boss/seija_mallet
+    texture: {fileID: 2800000, guid: 1e0913b19fcf5c44984c5217dba3a10e, type: 3}
+  - name: entity/boss/slenderman
+    texture: {fileID: 2800000, guid: 3f675fd783eb69c4ba235b5c1f510cd8, type: 3}
+  - name: entity/boss/slenderman_death
+    texture: {fileID: 2800000, guid: 7ca6a0a6b98011d47ac97026866f323e, type: 3}
+  - name: entity/boss/slenderman_tentacle
+    texture: {fileID: 2800000, guid: ae1a22e91a039eb4ab8bed023d69ca2d, type: 3}
+  - name: entity/boss/the_giant
+    texture: {fileID: 2800000, guid: cd590dd9f5d29994db2a5356364308e6, type: 3}
+  - name: entity/boss/the_giant_pacman
+    texture: {fileID: 2800000, guid: d666b54ec2852694a99c839ab3cea3b6, type: 3}
+  - name: entity/boss/the_giant_snake_tail
+    texture: {fileID: 2800000, guid: 47e358101a35f3c4eb66d746582948c4, type: 3}
+  - name: entity/boss/wither
+    texture: {fileID: 2800000, guid: 52224e26acb83e248a1a595c220c3f0d, type: 3}
+  - name: entity/boss/wither_armor_white
+    texture: {fileID: 2800000, guid: fea59b92a83db3a448792917749dda4a, type: 3}
+  - name: entity/boss/wither_crack_light
+    texture: {fileID: 2800000, guid: 1572d8be8ee0060479965033d1f67013, type: 3}
+  - name: entity/boss/wither_skull
+    texture: {fileID: 2800000, guid: 1c22aba89e1241c4986a031d470be726, type: 3}
+  - name: entity/cart/ballista_body
+    texture: {fileID: 2800000, guid: 9b0ae17858b30854380a3a68f83e2a5f, type: 3}
+  - name: entity/cart/ballista_reel
+    texture: {fileID: 2800000, guid: 461ae90987867834c88f68d9efb6b836, type: 3}
+  - name: entity/cart/bowl_chariot
+    texture: {fileID: 2800000, guid: 66fb8eb08bbc74b40895bb373bead3ee, type: 3}
+  - name: entity/cart/corpse_cart
+    texture: {fileID: 2800000, guid: 0d22b25f0f1398d4bb06d82e81299708, type: 3}
+  - name: entity/cart/minecart
+    texture: {fileID: 2800000, guid: 3d9178829e9e3e340b9f8df54bfcbbb5, type: 3}
+  - name: entity/cart/nightmare_trail
+    texture: {fileID: 2800000, guid: 7fb868cd756467a47a78f7ef5cd25ba2, type: 3}
+  - name: entity/cart/nyaightmare
+    texture: {fileID: 2800000, guid: 1adb67d35f526fa46b4f9eef62188a56, type: 3}
+  - name: entity/cart/nyan_cat
+    texture: {fileID: 2800000, guid: 071d4c30cf6fe5042ba032e38c0b03ef, type: 3}
+  - name: entity/cart/pool_cleaner
+    texture: {fileID: 2800000, guid: 163cb95c171780b46bd64f7d8cd2c279, type: 3}
+  - name: entity/cart/pumpkin_carriage
+    texture: {fileID: 2800000, guid: 65b141497a801624881cf387625a6801, type: 3}
+  - name: entity/cart/rainbow_trail
+    texture: {fileID: 2800000, guid: 97fb6eef6b0b240438ad3bc4f783cf48, type: 3}
+  - name: entity/cart/unzan_fist
+    texture: {fileID: 2800000, guid: 135dff09421d4164c91798ffaa81d047, type: 3}
+  - name: entity/contraption/amethyst_pylon
+    texture: {fileID: 2800000, guid: 1ee8150da861dd84b850d645ca19c458, type: 3}
+  - name: entity/contraption/anvil
+    texture: {fileID: 2800000, guid: 4928638317c505a4e86671ea24a68c7f, type: 3}
+  - name: entity/contraption/beacon
+    texture: {fileID: 2800000, guid: 19334bb02ae9acb499abf76dbcaa51f9, type: 3}
+  - name: entity/contraption/black_hole_bomb
+    texture: {fileID: 2800000, guid: 412713fe007467441a2952c3fd3f3ba9, type: 3}
+  - name: entity/contraption/brick_cannon
+    texture: {fileID: 2800000, guid: dce15c317b704d949a0d980b190d97be, type: 3}
+  - name: entity/contraption/catapult_pole
+    texture: {fileID: 2800000, guid: ced76b57ae0468641b35fc8ea48e8bfb, type: 3}
+  - name: entity/contraption/command_block
+    texture: {fileID: 2800000, guid: 8efa2e79b292918498e73ab732763604, type: 3}
+  - name: entity/contraption/cooling_cell
+    texture: {fileID: 2800000, guid: d4bcf7cba68b73548a93f2447318868f, type: 3}
+  - name: entity/contraption/cursed_candle
+    texture: {fileID: 2800000, guid: b64d127ba254f6f4b9e04521dd13e6fd, type: 3}
+  - name: entity/contraption/desire_pot
+    texture: {fileID: 2800000, guid: 5a0c08fed03edc745bbc7ea6e497cf14, type: 3}
+  - name: entity/contraption/devourer
+    texture: {fileID: 2800000, guid: 0f9ff25f9f164584e85c12f40dbebdd0, type: 3}
+  - name: entity/contraption/diamond_spikes
+    texture: {fileID: 2800000, guid: a3186b48658bcbe458396f03e2f38590, type: 3}
+  - name: entity/contraption/dispenser
+    texture: {fileID: 2800000, guid: a3ffec953f3b51d4fbe1130f7e6f67e5, type: 3}
+  - name: entity/contraption/dream_alarm
+    texture: {fileID: 2800000, guid: 09e33d4b66b1efa4eb15944bf80b140f, type: 3}
+  - name: entity/contraption/dream_crystal
+    texture: {fileID: 2800000, guid: 9decbf7bacbe3b0429fa80811d0a000a, type: 3}
+  - name: entity/contraption/dream_crystal_supernatural
+    texture: {fileID: 2800000, guid: f6655a00eb7e10343929a4e216bb0f2b, type: 3}
+  - name: entity/contraption/dream_rainbow
+    texture: {fileID: 2800000, guid: 16a5d5b9d17ccb14bbd97dd03a234894, type: 3}
+  - name: entity/contraption/dream_silk
+    texture: {fileID: 2800000, guid: 45e4ec0a78ad63e4da7576e9c122689c, type: 3}
+  - name: entity/contraption/drivenser
+    texture: {fileID: 2800000, guid: ded137b9dc7a3e54fae7243bc2863c71, type: 3}
+  - name: entity/contraption/drivenser_blocker
+    texture: {fileID: 2800000, guid: ab45c539e2bb18040b691583b08639f1, type: 3}
+  - name: entity/contraption/drivenser_gears
+    texture: {fileID: 2800000, guid: 407fad964d6763c4485f90c8ab1d907a, type: 3}
+  - name: entity/contraption/elastic_cloud
+    texture: {fileID: 2800000, guid: 52dd30b9122fbb9419354452c8af0a1f, type: 3}
+  - name: entity/contraption/error_block
+    texture: {fileID: 2800000, guid: 1106f96e2391f404caf8c7b2974ba5ea, type: 3}
+  - name: entity/contraption/firework_dispenser
+    texture: {fileID: 2800000, guid: 4fa4eb018eeee64479e6ea997fc1968a, type: 3}
+  - name: entity/contraption/force_pad
+    texture: {fileID: 2800000, guid: 9b59635ff8434c74fa29b53b688e15fb, type: 3}
+  - name: entity/contraption/force_pad_evoking
+    texture: {fileID: 2800000, guid: bafd8d60319920d40a5881b8a2776d56, type: 3}
+  - name: entity/contraption/force_wave
+    texture: {fileID: 2800000, guid: c91919e3f10e9004f85638cba2384e3e, type: 3}
+  - name: entity/contraption/furnace
+    texture: {fileID: 2800000, guid: 516d74eccaaf1e24fb1a0ab53d0f2657, type: 3}
+  - name: entity/contraption/giant_bowl
+    texture: {fileID: 2800000, guid: 84a7f7624ce186d43bdfe0a7c6d53f6b, type: 3}
+  - name: entity/contraption/giant_bowl_point
+    texture: {fileID: 2800000, guid: 75127238d9b7c934395ce66830a82cf1, type: 3}
+  - name: entity/contraption/glowstone
+    texture: {fileID: 2800000, guid: 9b11711b1da870544827beb40076b98b, type: 3}
+  - name: entity/contraption/golden_apple
+    texture: {fileID: 2800000, guid: 05a6ec8521020404c9c82ea5d9243bbc, type: 3}
+  - name: entity/contraption/golden_apple_halo
+    texture: {fileID: 2800000, guid: 6794bb31d9d949f4398a80691187140f, type: 3}
+  - name: entity/contraption/golden_dropper
+    texture: {fileID: 2800000, guid: 49ce9f6fb80015c47ae81c9411d9d103, type: 3}
+  - name: entity/contraption/gravelpult
+    texture: {fileID: 2800000, guid: e944251ff7facca478d5b942a1d1ea40, type: 3}
+  - name: entity/contraption/gravity_force
+    texture: {fileID: 2800000, guid: 87605de12ede6fe43818bbbae557666e, type: 3}
+  - name: entity/contraption/gravity_pad
+    texture: {fileID: 2800000, guid: 3fd63c7920860ce4f8bc0be1188ae567, type: 3}
+  - name: entity/contraption/gunpowder_barrel
+    texture: {fileID: 2800000, guid: 2c2cb3e709a9af442bc70a6482d2ec2a, type: 3}
+  - name: entity/contraption/halo
+    texture: {fileID: 2800000, guid: efce82eceb86bb44f90591042d0607b3, type: 3}
+  - name: entity/contraption/hellfire_base
+    texture: {fileID: 2800000, guid: 2562dbc08cdc1bd459d0a70219d7d4e4, type: 3}
+  - name: entity/contraption/high_frequency_pulse_dispenser
+    texture: {fileID: 2800000, guid: 57298386a0b940c498c0ff59a77ac315, type: 3}
+  - name: entity/contraption/infectenser
+    texture: {fileID: 2800000, guid: d8130bf7140daa14a9605dddcd5bd851, type: 3}
+  - name: entity/contraption/jeweled_pagoda
+    texture: {fileID: 2800000, guid: 05a99924b9cf1f54087955dfe63848e1, type: 3}
+  - name: entity/contraption/lightning_orb
+    texture: {fileID: 2800000, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
+  - name: entity/contraption/lily_pad
+    texture: {fileID: 2800000, guid: e81ac283d392c4f40badaaf0d30184b2, type: 3}
+  - name: entity/contraption/loms
+    texture: {fileID: 2800000, guid: 5005bdd978e5a304a871e9d6929ee180, type: 3}
+  - name: entity/contraption/magichest
+    texture: {fileID: 2800000, guid: 2a8e7dd36e83bd041a7b0fd5acce604b, type: 3}
+  - name: entity/contraption/magichest_flash
+    texture: {fileID: 2800000, guid: ab1cac139d76a6f478c12842a619042d, type: 3}
+  - name: entity/contraption/mine_dirt
+    texture: {fileID: 2800000, guid: caad8c3049dedbb4796afa81b872ead5, type: 3}
+  - name: entity/contraption/moonlight_sensor
+    texture: {fileID: 2800000, guid: 6b600f1f5110d7644843e4595de25748, type: 3}
+  - name: entity/contraption/necrotombstone
+    texture: {fileID: 2800000, guid: 373251590bef7dc429d28962770f900b, type: 3}
+  - name: entity/contraption/nether_reactor_core
+    texture: {fileID: 2800000, guid: 51034f3ae31016a40be01e52b28751b6, type: 3}
+  - name: entity/contraption/nether_reactor_core_bar
+    texture: {fileID: 2800000, guid: 8dfc059bdbbc9174bb6b803e2051e4b4, type: 3}
+  - name: entity/contraption/note_block
+    texture: {fileID: 2800000, guid: a53f70388487dae4eb3d8ef53db323a3, type: 3}
+  - name: entity/contraption/nuke
+    texture: {fileID: 2800000, guid: 8d300c068c2e2c2479354ddfb6468e0f, type: 3}
+  - name: entity/contraption/obsidian
+    texture: {fileID: 2800000, guid: 86a0b0aabb4ceca42a409ee8c656695a, type: 3}
+  - name: entity/contraption/pistenser
+    texture: {fileID: 2800000, guid: ba5959cbb21e70e46930dced2270fecb, type: 3}
+  - name: entity/contraption/pistenser_arm
+    texture: {fileID: 2800000, guid: 3c47f11cc215a5b4cad099f4d1d6158e, type: 3}
+  - name: entity/contraption/pressure_plate
+    texture: {fileID: 2800000, guid: 7cd67e193c23b1f46ae2e123c4a0bd3a, type: 3}
+  - name: entity/contraption/punchton
+    texture: {fileID: 2800000, guid: f821b6a9d26a8a643b60d869c28ce5fd, type: 3}
+  - name: entity/contraption/punchton_arm
+    texture: {fileID: 2800000, guid: d00aabb5514ee4743a361ad46e38de95, type: 3}
+  - name: entity/contraption/random_china
+    texture: {fileID: 2800000, guid: d1792fc8e74e78044ba9bd1d4212f8f7, type: 3}
+  - name: entity/contraption/repeatenser
+    texture: {fileID: 2800000, guid: e45d0cf1efcdf424ca5b2b1bbc8b18a8, type: 3}
+  - name: entity/contraption/silvenser
+    texture: {fileID: 2800000, guid: 4b61b6a8f9cd754419a8862656f249c1, type: 3}
+  - name: entity/contraption/skyward_beacon
+    texture: {fileID: 2800000, guid: b18e3e85e3d64b14d9e17ae88b752b33, type: 3}
+  - name: entity/contraption/snipenser_heads
+    texture: {fileID: 2800000, guid: 8cd62d619528c294fa8aec7ad673d04b, type: 3}
+  - name: entity/contraption/snipenser_pillar
+    texture: {fileID: 2800000, guid: 91a213214c945d84a864047eff5a7532, type: 3}
+  - name: entity/contraption/soul_furnace
+    texture: {fileID: 2800000, guid: 24543ba35a4b2b248b19964dc8587095, type: 3}
+  - name: entity/contraption/soul_furnace_light
+    texture: {fileID: 2800000, guid: d04fa54aea815bb44be98b8a3bb2ed5b, type: 3}
+  - name: entity/contraption/spike_block
+    texture: {fileID: 2800000, guid: 44bd337d7a161b2498137668fbec6e35, type: 3}
+  - name: entity/contraption/splitenser
+    texture: {fileID: 2800000, guid: 824a13f315e37c0479a2e4a8e03f358f, type: 3}
+  - name: entity/contraption/stone_dropper
+    texture: {fileID: 2800000, guid: b54fb45c2064c9149942a6ea99c593f3, type: 3}
+  - name: entity/contraption/stone_eye
+    texture: {fileID: 2800000, guid: 387847971738747468a7be3c39ce89b6, type: 3}
+  - name: entity/contraption/stone_eye_ray
+    texture: {fileID: 2800000, guid: 2440037b2007e8048a8817eab8c62e4c, type: 3}
+  - name: entity/contraption/stone_shield
+    texture: {fileID: 2800000, guid: 966a0e1617ca8a143ac09df2e9c328ff, type: 3}
+  - name: entity/contraption/tesla_coil
+    texture: {fileID: 2800000, guid: 073caa400cee98e4f9adafc78fdd521a, type: 3}
+  - name: entity/contraption/thunder_drum
+    texture: {fileID: 2800000, guid: 824ceee383f361649b57e79656c673da, type: 3}
+  - name: entity/contraption/tnt
+    texture: {fileID: 2800000, guid: 1f0a8eaf9b153b3429a373a0155f968f, type: 3}
+  - name: entity/contraption/totenser
+    texture: {fileID: 2800000, guid: ec212abe3448fae468e8a869c194bb7c, type: 3}
+  - name: entity/contraption/transfenser
+    texture: {fileID: 2800000, guid: 05319a9c945f1744b991d1e95cf4dd75, type: 3}
+  - name: entity/contraption/triplenser
+    texture: {fileID: 2800000, guid: 1ce6dc58e8464274cb75bcc29d1ce3f8, type: 3}
+  - name: entity/contraption/vortex_hopper
+    texture: {fileID: 2800000, guid: 58158142a20bad54bb1d4d18b73f88aa, type: 3}
+  - name: entity/contraption/wooden_dropper
+    texture: {fileID: 2800000, guid: 9ff472ab3deed244c8552a2bd5d7c949, type: 3}
+  - name: entity/contraption/wooden_fan
+    texture: {fileID: 2800000, guid: 4a2d45b88f244f34b89fbde87c9353a5, type: 3}
+  - name: entity/effect/absorb_line
+    texture: {fileID: 2800000, guid: 73ddfc766e9b88f43bb441a689469065, type: 3}
+  - name: entity/effect/aim_target
+    texture: {fileID: 2800000, guid: e9e2d13662f474a4d9ee76c4eaa53bae, type: 3}
+  - name: entity/effect/aura
+    texture: {fileID: 2800000, guid: 3948499a4aba6874da51b8a013304ee0, type: 3}
+  - name: entity/effect/binary
+    texture: {fileID: 2800000, guid: f01f837c93d457f419e47ac4a3528a7e, type: 3}
+  - name: entity/effect/blackhole_core
+    texture: {fileID: 2800000, guid: 582cedb9b6522194f81088aa7777208e, type: 3}
+  - name: entity/effect/blackhole_ring
+    texture: {fileID: 2800000, guid: 1e61769d70b3e5d4eb4a6eddeb6ebdb9, type: 3}
+  - name: entity/effect/blackhole_star
+    texture: {fileID: 2800000, guid: dff4473dc445dc440931e5ad7992ff90, type: 3}
+  - name: entity/effect/blackhole_vortex
+    texture: {fileID: 2800000, guid: dc2e7ced59042654cb859d0e409c5700, type: 3}
+  - name: entity/effect/boat_item
+    texture: {fileID: 2800000, guid: b412e38a906dfb1429079b79047f12d3, type: 3}
+  - name: entity/effect/boom
+    texture: {fileID: 2800000, guid: 8c835075b9c05e84dac89a36e61236bb, type: 3}
+  - name: entity/effect/breakout_board
+    texture: {fileID: 2800000, guid: d26b719675efdbf49b1e6342f7270818, type: 3}
+  - name: entity/effect/breakout_board_long
+    texture: {fileID: 2800000, guid: a6f5c16aaaa862f4a8000dbbb824d5a0, type: 3}
+  - name: entity/effect/camera_frame
+    texture: {fileID: 2800000, guid: 5005e9bfb3edbd84082f1c1dbc01250b, type: 3}
+  - name: entity/effect/combat_trail_punch
+    texture: {fileID: 2800000, guid: 56d9698bb3001c84ca50c3f36113cb5d, type: 3}
+  - name: entity/effect/combat_trail_smash
+    texture: {fileID: 2800000, guid: 68f28b4944673ed47805d4d9455edb75, type: 3}
+  - name: entity/effect/combat_trail_uppercut
+    texture: {fileID: 2800000, guid: 4de17fa916d0f324b8a0e7936a1cc303, type: 3}
+  - name: entity/effect/combat_trail_wave
+    texture: {fileID: 2800000, guid: 727d9b6ad4e6962458354304fc84ccbc, type: 3}
+  - name: entity/effect/dark_hole_circle
+    texture: {fileID: 2800000, guid: d019990e5b66306429a8c40bebc19912, type: 3}
+  - name: entity/effect/desire_lump
+    texture: {fileID: 2800000, guid: c278e895010ef2449998e67c90983780, type: 3}
+  - name: entity/effect/diamond_spike_particles
+    texture: {fileID: 2800000, guid: 832e7d1ecf7d7eb42a2921e2909679f6, type: 3}
+  - name: entity/effect/ember
+    texture: {fileID: 2800000, guid: d135750d2a9f15040ba57b8b867fe2c1, type: 3}
+  - name: entity/effect/ember_cursed
+    texture: {fileID: 2800000, guid: 7a0cd4afb32350244b65a02292e94dfa, type: 3}
+  - name: entity/effect/evil_soul
+    texture: {fileID: 2800000, guid: 866b86d6fcb5fff4d8a3cda6be16944a, type: 3}
+  - name: entity/effect/evocation_star
+    texture: {fileID: 2800000, guid: 8b93445b685c42440938fc5154ea419c, type: 3}
+  - name: entity/effect/explosion
+    texture: {fileID: 2800000, guid: 615b479630858fa49a2d7717e8adf4ec, type: 3}
+  - name: entity/effect/filled_smoke
+    texture: {fileID: 2800000, guid: 700aed4be18069141a38feb57b823f77, type: 3}
+  - name: entity/effect/fire_particle
+    texture: {fileID: 2800000, guid: 4f1e8833ddcff2246a43e4d3b98c6fc4, type: 3}
+  - name: entity/effect/flash
+    texture: {fileID: 2800000, guid: 25c080cbfda0cb24ab261eb38b1e7f3d, type: 3}
+  - name: entity/effect/flesh_part
+    texture: {fileID: 2800000, guid: 5cf3f949b8fc04941865ff67a358fcbb, type: 3}
+  - name: entity/effect/flesh_part
+    texture: {fileID: 2800000, guid: c1f7123b5f8de1640b46858b3fc6914e, type: 3}
+  - name: entity/effect/fragment
+    texture: {fileID: 2800000, guid: a86b26689fa937a498456ef9f0f05b95, type: 3}
+  - name: entity/effect/frankenstein_jump_trail
+    texture: {fileID: 2800000, guid: 7fb8f9b8ab883a64887b34f86731c9b9, type: 3}
+  - name: entity/effect/gas_diffusion
+    texture: {fileID: 2800000, guid: e5e566d19ad3e024c8c3e91f928d8be1, type: 3}
+  - name: entity/effect/heart_particle
+    texture: {fileID: 2800000, guid: fe713e5300f7e974ba913b9c644552c4, type: 3}
+  - name: entity/effect/iz_observer
+    texture: {fileID: 2800000, guid: 3dbdc96cab9eea847bf295ab52b4a5de, type: 3}
+  - name: entity/effect/locked_chest_shadow
+    texture: {fileID: 2800000, guid: 78d2df784ddbd3c499324ac0f5a31020, type: 3}
+  - name: entity/effect/lock_sigil
+    texture: {fileID: 2800000, guid: 415fd322dbcf5fa4882d851c6a5717ab, type: 3}
+  - name: entity/effect/magic_star
+    texture: {fileID: 2800000, guid: 6a6baf812492dec40ba2154d360755bb, type: 3}
+  - name: entity/effect/maple_leaf
+    texture: {fileID: 2800000, guid: 8ed4f649f7283ff46a05dba827b3b776, type: 3}
+  - name: entity/effect/master_spark
+    texture: {fileID: 2800000, guid: 0dbb7eec752b56740a4fc2bd819739f7, type: 3}
+  - name: entity/effect/mega_glowing_laser
+    texture: {fileID: 2800000, guid: 3b43d3948455b4a4a9461c41899ae6bf, type: 3}
+  - name: entity/effect/mind_control_line
+    texture: {fileID: 2800000, guid: 5d8ca2a31157783449fded634ef57f1f, type: 3}
+  - name: entity/effect/minecart_rideable
+    texture: {fileID: 2800000, guid: 8a7c6b1ce921d3448a2c572376d7e0ea, type: 3}
+  - name: entity/effect/miner
+    texture: {fileID: 2800000, guid: 23518f4eda2b37a4d93c7c80da15582c, type: 3}
+  - name: entity/effect/mine_debris
+    texture: {fileID: 2800000, guid: 2d8cc2e256684364897cd68a561a74bf, type: 3}
+  - name: entity/effect/nightmareaper_shadow
+    texture: {fileID: 2800000, guid: 79171aca3bcf918459cf2160bda1f9f2, type: 3}
+  - name: entity/effect/nightmare_eyes
+    texture: {fileID: 2800000, guid: d69e436bf37b3d34d868afa95187baa1, type: 3}
+  - name: entity/effect/nightmare_portal_background
+    texture: {fileID: 2800000, guid: 22e179046dae5d843b78cf65056dad99, type: 3}
+  - name: entity/effect/nightmare_portal_background
+    texture: {fileID: 2800000, guid: 457b5a24e00ab4e4dbfda04a0d313e49, type: 3}
+  - name: entity/effect/nightmare_portal_frame
+    texture: {fileID: 2800000, guid: 9f887f3e85dc48d4e8d4bd36aa0a9e12, type: 3}
+  - name: entity/effect/nightmare_portal_frame
+    texture: {fileID: 2800000, guid: ffe7678ba632c984daedf8d9223f6c42, type: 3}
+  - name: entity/effect/nightmare_portal_mask
+    texture: {fileID: 2800000, guid: 04dcfd1cd164cbb41b834f5a6fdfba4b, type: 3}
+  - name: entity/effect/pagoda_laser
+    texture: {fileID: 2800000, guid: 047996c4841327442a24b5f86e763852, type: 3}
+  - name: entity/effect/particle_outline
+    texture: {fileID: 2800000, guid: d8b5fc6bc8605c7498d0a162438727ce, type: 3}
+  - name: entity/effect/particle_pure
+    texture: {fileID: 2800000, guid: 3d38c1fa4b0e4e641a7bb81ade3dad97, type: 3}
+  - name: entity/effect/petrified_shard
+    texture: {fileID: 2800000, guid: 63abeb6d055623e498bc8080744c6d37, type: 3}
+  - name: entity/effect/pink_wither
+    texture: {fileID: 2800000, guid: 1bd6770921b59a545a33b610d50aef19, type: 3}
+  - name: entity/effect/potion_effect
+    texture: {fileID: 2800000, guid: aa0f21a4d0383d14187681560eb75815, type: 3}
+  - name: entity/effect/pow
+    texture: {fileID: 2800000, guid: 8bf802c92af01e14ab7d98dedcdb86a1, type: 3}
+  - name: entity/effect/psychic_shackle
+    texture: {fileID: 2800000, guid: 4d3d29d16a0b1324cb4ae241a835c361, type: 3}
+  - name: entity/effect/rail
+    texture: {fileID: 2800000, guid: 2d2a403402d787f4899dc5408d294318, type: 3}
+  - name: entity/effect/rain
+    texture: {fileID: 2800000, guid: e6ef82d213584ae4e8a121cddec4c0ca, type: 3}
+  - name: entity/effect/redline
+    texture: {fileID: 2800000, guid: 03686950f619ced4a8354b626d1c347e, type: 3}
+  - name: entity/effect/shell_case
+    texture: {fileID: 2800000, guid: 3e0db9919161e1f4d8204af2dba2d3d6, type: 3}
+  - name: entity/effect/shine_ring
+    texture: {fileID: 2800000, guid: 0fd484fcbd2c9ed4dbad79aa98011525, type: 3}
+  - name: entity/effect/skyward_beacon_target
+    texture: {fileID: 2800000, guid: 0121fc9dc727c4e42bcbcaf151c5a077, type: 3}
+  - name: entity/effect/skyward_beam
+    texture: {fileID: 2800000, guid: 1e506edb309b8d746a23a81efefd33c2, type: 3}
+  - name: entity/effect/smoke
+    texture: {fileID: 2800000, guid: ef0c4e33486bc0b44bd32da3f6b7c34f, type: 3}
+  - name: entity/effect/snowflake
+    texture: {fileID: 2800000, guid: 9584835b8a325b742a157b068f72ad5d, type: 3}
+  - name: entity/effect/sonic_wave
+    texture: {fileID: 2800000, guid: 68ec678f2e1fdfc4eab7a8de70fdf77c, type: 3}
+  - name: entity/effect/soul
+    texture: {fileID: 2800000, guid: a6593d9123fd3ed40b97b320a74e5da3, type: 3}
+  - name: entity/effect/soulfire_particle
+    texture: {fileID: 2800000, guid: 7f3395beab3ab1e48af75779a006eae7, type: 3}
+  - name: entity/effect/speed_line
+    texture: {fileID: 2800000, guid: e94aed10d8dd86742a549eb789938806, type: 3}
+  - name: entity/effect/spike_particles
+    texture: {fileID: 2800000, guid: f09ba06086cfa354b8cfda77f33d71aa, type: 3}
+  - name: entity/effect/stab_effect
+    texture: {fileID: 2800000, guid: a5bfcffb5577f264d8ee8708c5b0f355, type: 3}
+  - name: entity/effect/star
+    texture: {fileID: 2800000, guid: 9274a6de61534f940b4da30c3fffcb67, type: 3}
+  - name: entity/effect/static
+    texture: {fileID: 2800000, guid: 0d4ebeebf58039f44b54ff10434c99d4, type: 3}
+  - name: entity/effect/thunder_bolt
+    texture: {fileID: 2800000, guid: 498cfe5e32569bc43ae84fc47f7622ce, type: 3}
+  - name: entity/effect/tornado_model
+    texture: {fileID: 2800000, guid: caca3af0af5361a46ab0d57829875c5c, type: 3}
+  - name: entity/effect/tornado_model_burning
+    texture: {fileID: 2800000, guid: 164a1955926ffd74f91690054fa78281, type: 3}
+  - name: entity/effect/vortex
+    texture: {fileID: 2800000, guid: 57a43fd6f9e8d124fb3ac37bc690d4aa, type: 3}
+  - name: entity/effect/vulnerable_particle
+    texture: {fileID: 2800000, guid: ca6d456fa79f841498d3f9ba6f35e9db, type: 3}
+  - name: entity/effect/water_splash
+    texture: {fileID: 2800000, guid: 9d730e080bace4646938c15cdabc88d0, type: 3}
+  - name: entity/effect/water_stain
+    texture: {fileID: 2800000, guid: c49340a60ad150a4895d58f3e7e9b9ce, type: 3}
+  - name: entity/effect/water_stain_frozen
+    texture: {fileID: 2800000, guid: fc48781f16aacf545871a4e206555d4b, type: 3}
+  - name: entity/effect/wither_skeleton_skulls
+    texture: {fileID: 2800000, guid: 93e2f9e0bfa5b694baa6f369a01161b8, type: 3}
+  - name: entity/effect/wither_soulsand
+    texture: {fileID: 2800000, guid: 0ffb8f5c07b9abc459cc588c2b0efab6, type: 3}
+  - name: entity/effect/wither_summoning_blocks
+    texture: {fileID: 2800000, guid: dd04b8c5c11ca914da142856e975b76c, type: 3}
+  - name: entity/effect/zombie_block
+    texture: {fileID: 2800000, guid: dd81e2f5e01461d4c9186fe9648f2c1f, type: 3}
+  - name: entity/enemy/anubisand
+    texture: {fileID: 2800000, guid: bb9cb8c96cd65034d97163c167129eb9, type: 3}
+  - name: entity/enemy/balloon
+    texture: {fileID: 2800000, guid: 92c38217e084470499178a44014b451c, type: 3}
+  - name: entity/enemy/bedserker_bed
+    texture: {fileID: 2800000, guid: 4ac894cccf343c44e81c86c063ac4d75, type: 3}
+  - name: entity/enemy/bedserker_face_light
+    texture: {fileID: 2800000, guid: 404f2482a784dcc4ebb7ce8ff27780f8, type: 3}
+  - name: entity/enemy/bedserker_head
+    texture: {fileID: 2800000, guid: 41e9ae37d1663c94ba25b6f38590132b, type: 3}
+  - name: entity/enemy/bedserker_rope
+    texture: {fileID: 2800000, guid: abf5d1c7941cccc408352d67a4f72003, type: 3}
+  - name: entity/enemy/berserker_head
+    texture: {fileID: 2800000, guid: f5471f5e7879eec41accb98281bd3d2c, type: 3}
+  - name: entity/enemy/boat
+    texture: {fileID: 2800000, guid: 8ee7e3c6233a6be4191bfd80ff87e80e, type: 3}
+  - name: entity/enemy/bone_wall
+    texture: {fileID: 2800000, guid: 7bf48cdb4ddd8074c8c39a084c5e181f, type: 3}
+  - name: entity/enemy/bow_texture
+    texture: {fileID: 2800000, guid: a517e81da420e4941880bb250f059923, type: 3}
+  - name: entity/enemy/cannonball_zombie
+    texture: {fileID: 2800000, guid: b11db4b170db8634b901f6162c53376e, type: 3}
+  - name: entity/enemy/cannoneer_zombie
+    texture: {fileID: 2800000, guid: 67a299599bce8ba49a895bdf56cbdace, type: 3}
+  - name: entity/enemy/cave_spider
+    texture: {fileID: 2800000, guid: 20cb1b235fabd9f49b957a6cb970904b, type: 3}
+  - name: entity/enemy/cave_spider_death
+    texture: {fileID: 2800000, guid: d59a40ebc8e2cc64392de05f2870d045, type: 3}
+  - name: entity/enemy/dullahan_bended_arm
+    texture: {fileID: 2800000, guid: c9bb0408ef5a7624eb4980e99c0c4888, type: 3}
+  - name: entity/enemy/dullahan_head
+    texture: {fileID: 2800000, guid: c5e542b668451eb45987e6cfc2d49ead, type: 3}
+  - name: entity/enemy/emperor_zombie
+    texture: {fileID: 2800000, guid: a9654ff76c5f31a4d87e757c55e35a6d, type: 3}
+  - name: entity/enemy/gargoyle
+    texture: {fileID: 2800000, guid: 7379af57c598c9a438cfd765804f71e3, type: 3}
+  - name: entity/enemy/ghast
+    texture: {fileID: 2800000, guid: 5ced55b015735534ea11b4302ca7f87b, type: 3}
+  - name: entity/enemy/ghost_headwear
+    texture: {fileID: 2800000, guid: 7667a381c5230374d9c5b5a7bf629dd9, type: 3}
+  - name: entity/enemy/ghost_tail
+    texture: {fileID: 2800000, guid: 8b9310b7e61da30448b5d9b66c4cf9f3, type: 3}
+  - name: entity/enemy/golden_axe
+    texture: {fileID: 2800000, guid: ffc82409076aa3e4481bb54a1438d1db, type: 3}
+  - name: entity/enemy/hacker
+    texture: {fileID: 2800000, guid: 1cffeb798b5d3c646b2556be70630109, type: 3}
+  - name: entity/enemy/hacker_progress
+    texture: {fileID: 2800000, guid: 19f6ee992227b4b4cbbb4f5510375217, type: 3}
+  - name: entity/enemy/hay_block_model
+    texture: {fileID: 2800000, guid: b4bcd83773a2fd64dac5dca5973eaf59, type: 3}
+  - name: entity/enemy/hell_chariot
+    texture: {fileID: 2800000, guid: db4a7538480f6ac45bd2ed7e224f0bb5, type: 3}
+  - name: entity/enemy/holy_sword
+    texture: {fileID: 2800000, guid: 1774c2ed9635c694080b89ce4c6e09bf, type: 3}
+  - name: entity/enemy/iron_shovel
+    texture: {fileID: 2800000, guid: 414519a6962fb994b855ea73bd0d44e9, type: 3}
+  - name: entity/enemy/mesmerizer_head
+    texture: {fileID: 2800000, guid: 580a757d547930b41a026df31631b7c9, type: 3}
+  - name: entity/enemy/mesmerizer_rod
+    texture: {fileID: 2800000, guid: c722a1dec874bb34e9a87bb1dd009e63, type: 3}
+  - name: entity/enemy/mother_terror
+    texture: {fileID: 2800000, guid: 614ed32a96b18ee45b196d855175f379, type: 3}
+  - name: entity/enemy/mother_terror_death
+    texture: {fileID: 2800000, guid: 5ce8038d74bfbca429e3e9ad92eded0f, type: 3}
+  - name: entity/enemy/mummy
+    texture: {fileID: 2800000, guid: eb1d4fd287008034c97609f5686628e6, type: 3}
+  - name: entity/enemy/mutant_zombie
+    texture: {fileID: 2800000, guid: f661948e8fac49542be1f0cbf157b316, type: 3}
+  - name: entity/enemy/napstablook
+    texture: {fileID: 2800000, guid: 3b8ba75cdb635b54db18d67e1674ea4d, type: 3}
+  - name: entity/enemy/necromancer
+    texture: {fileID: 2800000, guid: 6255f755251c3b04ea24eab5a0800695, type: 3}
+  - name: entity/enemy/nether_hunter_head
+    texture: {fileID: 2800000, guid: daacd6431b68345418543c8d8f49fa95, type: 3}
+  - name: entity/enemy/nether_mage_head
+    texture: {fileID: 2800000, guid: bf13519ae2dc4d14d863408fe29d69be, type: 3}
+  - name: entity/enemy/oak_wood_model
+    texture: {fileID: 2800000, guid: 6160c1714d820684e97058d3939b3a7f, type: 3}
+  - name: entity/enemy/parasite_terror
+    texture: {fileID: 2800000, guid: 8b6fcf46139505d41b1ef83b75aedd0d, type: 3}
+  - name: entity/enemy/parasite_terror_death
+    texture: {fileID: 2800000, guid: 7f65243c614e7c64abc683911c4ad91c, type: 3}
+  - name: entity/enemy/pop_captain
+    texture: {fileID: 2800000, guid: 3751b098f9b403943aaf5f03eb4626e9, type: 3}
+  - name: entity/enemy/reverse_satellite
+    texture: {fileID: 2800000, guid: 95a0ff4bc65b3c3489a4dd2274848c9d, type: 3}
+  - name: entity/enemy/shadow_cell
+    texture: {fileID: 2800000, guid: c8cf80ec0c6f32249bbd035547173f6d, type: 3}
+  - name: entity/enemy/shikaisen_staff
+    texture: {fileID: 2800000, guid: d486f2b8240e28443aaeb03d25e81b9c, type: 3}
+  - name: entity/enemy/shikaisen_zombie
+    texture: {fileID: 2800000, guid: 8fa972da5f508ff4fb74e14c8fc0ac2b, type: 3}
+  - name: entity/enemy/skeleton
+    texture: {fileID: 2800000, guid: 20e366ae3ad04144489c4e881a2d2b4a, type: 3}
+  - name: entity/enemy/skeleton_face_light
+    texture: {fileID: 2800000, guid: 940eb15b5d256ad4fb1eb9e59a010c53, type: 3}
+  - name: entity/enemy/skeleton_horse
+    texture: {fileID: 2800000, guid: b9619c28f3ceeb8459f0dd1912cf572a, type: 3}
+  - name: entity/enemy/skeleton_mage_headwear
+    texture: {fileID: 2800000, guid: babb5d02ad003f04386275ffa8ddfc64, type: 3}
+  - name: entity/enemy/skeleton_statue
+    texture: {fileID: 2800000, guid: ef3b71d01f17e8a4887c220d4e42fd6e, type: 3}
+  - name: entity/enemy/skeleton_warrior_weapons
+    texture: {fileID: 2800000, guid: 7933393e5a9fbec4495c064e00c7d75d, type: 3}
+  - name: entity/enemy/soulsand
+    texture: {fileID: 2800000, guid: 72ab79aa07a6b4b44b40ccea8c6d5bd8, type: 3}
+  - name: entity/enemy/spider
+    texture: {fileID: 2800000, guid: b05d578e666fa614c871c4984041189f, type: 3}
+  - name: entity/enemy/spider_death
+    texture: {fileID: 2800000, guid: bd7c4ef1623396741baeff42ae95e4d8, type: 3}
+  - name: entity/enemy/stone_model
+    texture: {fileID: 2800000, guid: 02ca0605cd3b9ee4780201d36a424d5f, type: 3}
+  - name: entity/enemy/stone_sword
+    texture: {fileID: 2800000, guid: 53ae426afe3ebb8438ab6c1165ed0448, type: 3}
+  - name: entity/enemy/talisman_zombie
+    texture: {fileID: 2800000, guid: b4d85ffb8a267074f81e4c9862d40fed, type: 3}
+  - name: entity/enemy/ufo
+    texture: {fileID: 2800000, guid: 5fa006a3a6b49704c8fdf300d77d032d, type: 3}
+  - name: entity/enemy/ufo_spotlight
+    texture: {fileID: 2800000, guid: aff8b41543694e649bc9659d6b690072, type: 3}
+  - name: entity/enemy/wicked_hermit_zombie
+    texture: {fileID: 2800000, guid: 1d01491d6c38d40428fedd37cfac8db6, type: 3}
+  - name: entity/enemy/wisp_fly
+    texture: {fileID: 2800000, guid: 149345eececfd584193cee0c24c868d1, type: 3}
+  - name: entity/enemy/wither_skeleton
+    texture: {fileID: 2800000, guid: 2223b622235c77b41858ab56433232a5, type: 3}
+  - name: entity/enemy/zombie
+    texture: {fileID: 2800000, guid: 1bf54b349ebb4ae48b1cee1197c7c2ae, type: 3}
+  - name: entity/enemy/zombie_cat
+    texture: {fileID: 2800000, guid: 8daf65bcf7b24b04e99daa72b94bfee5, type: 3}
+  - name: entity/enemy/zombie_cat_death
+    texture: {fileID: 2800000, guid: 4809b60a7695d2c43a07158c171a48f9, type: 3}
+  - name: entity/enemy/zombie_cat_wounds
+    texture: {fileID: 2800000, guid: b923f5c63e44e7a4b8ef1274512ad86a, type: 3}
+  - name: entity/enemy/zombie_cloud
+    texture: {fileID: 2800000, guid: daa11bf204159aa4ba9261b3b3bb7063, type: 3}
+  - name: entity/enemy/zombie_cloud_particle
+    texture: {fileID: 2800000, guid: 3fb9e3cc152d92149914e1b4e20ea5f1, type: 3}
+  - name: entity/obstacle/gargoyle_statue
+    texture: {fileID: 2800000, guid: 684ec7aa8b558924d9d579d222e0eac5, type: 3}
+  - name: entity/obstacle/monster_spawner
+    texture: {fileID: 2800000, guid: 9d7d8c34fc25cfc48886195628af3adf, type: 3}
+  - name: entity/pickup/almanac_book
+    texture: {fileID: 2800000, guid: 343af9cde9d29df4eb4188060da23847, type: 3}
+  - name: entity/pickup/diamond
+    texture: {fileID: 2800000, guid: 842c7ddcc4687ac43bd7fd5d478c0b7f, type: 3}
+  - name: entity/pickup/emerald
+    texture: {fileID: 2800000, guid: 11c66b9ab6ebf1c49b3ad1c98403f288, type: 3}
+  - name: entity/pickup/ender_chest
+    texture: {fileID: 2800000, guid: 329b9a3401e28284e914a54eee51e840, type: 3}
+  - name: entity/pickup/furious_gunpowder
+    texture: {fileID: 2800000, guid: 6b616186e5a21fc438c9a232f796d56d, type: 3}
+  - name: entity/pickup/gunpowder
+    texture: {fileID: 2800000, guid: 3d448719755b3604297b30ed821122ef, type: 3}
+  - name: entity/pickup/map_pickup
+    texture: {fileID: 2800000, guid: aad19d3d7617e834f8cccff23f786aa5, type: 3}
+  - name: entity/pickup/money_chest
+    texture: {fileID: 2800000, guid: 2aa6e1715df244b4bb2e23736a2e751c, type: 3}
+  - name: entity/pickup/redstone
+    texture: {fileID: 2800000, guid: 99fdfba4aeff67c43b3124c97a3a0dd7, type: 3}
+  - name: entity/pickup/ruby
+    texture: {fileID: 2800000, guid: de6b0433a1c4ece4bb335cdc66630b49, type: 3}
+  - name: entity/pickup/sapphire
+    texture: {fileID: 2800000, guid: 7d587f3c033da1846a38537e4e37d193, type: 3}
+  - name: entity/pickup/trophy
+    texture: {fileID: 2800000, guid: 10fd435303e04864a945dd541211ea75, type: 3}
+  - name: entity/pickup/wither_scroll
+    texture: {fileID: 2800000, guid: 04587031da372a346b8b1a8c9b7c5026, type: 3}
+  - name: entity/pickup/zombie_scroll
+    texture: {fileID: 2800000, guid: 4544057c662730c4797c8c0641b95ff3, type: 3}
+  - name: entity/projectile/arrow
+    texture: {fileID: 2800000, guid: 01ea06eaff14a0746a137123701e46b3, type: 3}
+  - name: entity/projectile/boulder
+    texture: {fileID: 2800000, guid: 844a4d9460ff7f340960531d826fa7f0, type: 3}
+  - name: entity/projectile/boulder_fire
+    texture: {fileID: 2800000, guid: 51e325cd593ea764aa13e806bdfdeac1, type: 3}
+  - name: entity/projectile/breakout_pearl
+    texture: {fileID: 2800000, guid: 1180289811b708d4781f5bd9065fb543, type: 3}
+  - name: entity/projectile/bullet
+    texture: {fileID: 2800000, guid: ee8a95d990407e34ea9ff1aa13122998, type: 3}
+  - name: entity/projectile/cannon_missile
+    texture: {fileID: 2800000, guid: c33a8ddc48fc1234fac0f86c973b8e49, type: 3}
+  - name: entity/projectile/cannon_missile_danger
+    texture: {fileID: 2800000, guid: 1d0d45bb8eb65ba41952a96406398809, type: 3}
+  - name: entity/projectile/charged_bolt
+    texture: {fileID: 2800000, guid: cdb53ab5c1044c94bbfc0ef3da28259e, type: 3}
+  - name: entity/projectile/cobble
+    texture: {fileID: 2800000, guid: b619b60be7108ed4fafb8ba9257d68ce, type: 3}
+  - name: entity/projectile/compelling_orb
+    texture: {fileID: 2800000, guid: f1e4625420d356e4eb58b79513629607, type: 3}
+  - name: entity/projectile/crossbow_bolt
+    texture: {fileID: 2800000, guid: 838820327528a4d439a51f03582183f9, type: 3}
+  - name: entity/projectile/cursed_fireball
+    texture: {fileID: 2800000, guid: 0d1eecefbebaead49b85fb2324fde531, type: 3}
+  - name: entity/projectile/dart
+    texture: {fileID: 2800000, guid: 0a0f7cbdb4c6650409a18d59ba158a03, type: 3}
+  - name: entity/projectile/falling_star
+    texture: {fileID: 2800000, guid: a01552dca04bda94385d92805ccac257, type: 3}
+  - name: entity/projectile/fireball
+    texture: {fileID: 2800000, guid: c8fd47e22cd27394895621742e549446, type: 3}
+  - name: entity/projectile/firework
+    texture: {fileID: 2800000, guid: ea9e51fb7fdbc524d8798ab1b604258c, type: 3}
+  - name: entity/projectile/firework_big
+    texture: {fileID: 2800000, guid: 8e2905d730b40b3468f8b5ab3bb1a3f8, type: 3}
+  - name: entity/projectile/fire_charge
+    texture: {fileID: 2800000, guid: 98f6783386f0a7b43bea535a34495e61, type: 3}
+  - name: entity/projectile/fire_trail
+    texture: {fileID: 2800000, guid: 8b54263a7ca06cd478193e70b407f293, type: 3}
+  - name: entity/projectile/flint
+    texture: {fileID: 2800000, guid: 66e4a79edf2ff7a48883eeec0da4f528, type: 3}
+  - name: entity/projectile/gas
+    texture: {fileID: 2800000, guid: 985fbd93414b34845b4a0a7ee830eb1a, type: 3}
+  - name: entity/projectile/giant_spike
+    texture: {fileID: 2800000, guid: 4d88a598c5aab984891215c1f4414390, type: 3}
+  - name: entity/projectile/golden_ball
+    texture: {fileID: 2800000, guid: 77e47ba4e4bc65a46bf4e84b41c40576, type: 3}
+  - name: entity/projectile/gravel
+    texture: {fileID: 2800000, guid: 89ffd072a000e754d8587bd2c89267c1, type: 3}
+  - name: entity/projectile/hell_planets
+    texture: {fileID: 2800000, guid: ffb9065a06ea7a345978dc5d8d0d0bea, type: 3}
+  - name: entity/projectile/ice_bolt
+    texture: {fileID: 2800000, guid: 74521e763130e2249885ce873fba23f2, type: 3}
+  - name: entity/projectile/ignited_wooden_ball
+    texture: {fileID: 2800000, guid: 1bfca53233078f04bbeb35d311715ae8, type: 3}
+  - name: entity/projectile/ignited_wooden_ball_cursed
+    texture: {fileID: 2800000, guid: b8edef59b9ae0284082846af29941760, type: 3}
+  - name: entity/projectile/javelin
+    texture: {fileID: 2800000, guid: 8af07b31f932791429fddf24a251679f, type: 3}
+  - name: entity/projectile/knife
+    texture: {fileID: 2800000, guid: 85842c2e1aa457b418e743fc8faeae75, type: 3}
+  - name: entity/projectile/large_fireball
+    texture: {fileID: 2800000, guid: 5d32c904c5a41ec4a98e3a8b28e408fa, type: 3}
+  - name: entity/projectile/locked_chest_trashes
+    texture: {fileID: 2800000, guid: 103c5d2ba5cab4749ab48c91a1fd44e6, type: 3}
+  - name: entity/projectile/mine_tnt_seed
+    texture: {fileID: 2800000, guid: b71c1daafbba0124f80126366dd3a4e6, type: 3}
+  - name: entity/projectile/missile
+    texture: {fileID: 2800000, guid: a5c1e4e7edb774e48a12ea382df65f15, type: 3}
+  - name: entity/projectile/note
+    texture: {fileID: 2800000, guid: f0868a1c34ff49d46967deee9863b838, type: 3}
+  - name: entity/projectile/parabot
+    texture: {fileID: 2800000, guid: d270746c6b1f84442af0d2614257f2e6, type: 3}
+  - name: entity/projectile/reflection_bullet
+    texture: {fileID: 2800000, guid: 779caaadbdd68fb40b71d160c2305c1c, type: 3}
+  - name: entity/projectile/seija_bullet
+    texture: {fileID: 2800000, guid: 15206f91cba867643894b071e1884fc8, type: 3}
+  - name: entity/projectile/seija_bullet_dark
+    texture: {fileID: 2800000, guid: 5d6681133238a864eb4f3882be1730fe, type: 3}
+  - name: entity/projectile/shuriken
+    texture: {fileID: 2800000, guid: a0b32ddee03147744b7b625e4c60863a, type: 3}
+  - name: entity/projectile/snowball
+    texture: {fileID: 2800000, guid: 0b6aa6449e74e064eb7a4dc5dd9cc283, type: 3}
+  - name: entity/projectile/soulfire_ball
+    texture: {fileID: 2800000, guid: a84ced210884b2b4cac4a4b7d7f4f6a6, type: 3}
+  - name: entity/projectile/soulfire_ball_trail
+    texture: {fileID: 2800000, guid: 3e623a643b588284a9d22ed7fc755230, type: 3}
+  - name: entity/projectile/spectral_arrow
+    texture: {fileID: 2800000, guid: 768d5bd8b12081f43af6e415553299a5, type: 3}
+  - name: entity/projectile/spike
+    texture: {fileID: 2800000, guid: 62ae9a026747aea4f83506787af8d75a, type: 3}
+  - name: entity/projectile/spike_ball
+    texture: {fileID: 2800000, guid: b9edefea292182b489711acd39777a42, type: 3}
+  - name: entity/projectile/stoneball
+    texture: {fileID: 2800000, guid: 02b2a6769dd3bb84d92a60b6d1867601, type: 3}
+  - name: entity/projectile/tnt_model
+    texture: {fileID: 2800000, guid: 2dcf2a5a02a900846ab9ca6458a25522, type: 3}
+  - name: entity/projectile/wooden_ball
+    texture: {fileID: 2800000, guid: 64ae02f38e804074894acb6967767dff, type: 3}
+  - name: level/castle/castle
+    texture: {fileID: 2800000, guid: aba492ffb3d38f745a0619b198a8ff73, type: 3}
+  - name: level/castle/castle_twilight
+    texture: {fileID: 2800000, guid: bb5ecf4eaca68cc49be8e39e2b78bda8, type: 3}
+  - name: level/castle/foreground
+    texture: {fileID: 2800000, guid: 7eb25f3d547617c4bb047d1f95e5f495, type: 3}
+  - name: level/day/day
+    texture: {fileID: 2800000, guid: eb15cd6c556e4824c941a7c77c3eb86e, type: 3}
+  - name: level/day/day_door
+    texture: {fileID: 2800000, guid: 9b2e55d12d554ed4f9bf1c03efdee504, type: 3}
+  - name: level/day/day_house_cover
+    texture: {fileID: 2800000, guid: a9e913e5bc94c0c49808cc3e0c25228a, type: 3}
+  - name: level/dream/dream_ground
+    texture: {fileID: 2800000, guid: a3399410694747943aee3e605146f887, type: 3}
+  - name: level/dream/dream_house_cover
+    texture: {fileID: 2800000, guid: 64951a0026f5ef54bbb28092c064d4ea, type: 3}
+  - name: level/dream/dream_sky
+    texture: {fileID: 2800000, guid: ced932759e970e74891ad58675bf4e53, type: 3}
+  - name: level/dream/nightmare_broken_glass
+    texture: {fileID: 2800000, guid: bbeefbb207c94ad428e3fdbcab7acbbd, type: 3}
+  - name: level/dream/nightmare_eye_mask
+    texture: {fileID: 2800000, guid: 0e5714ba6ca6d674889c791b36a58067, type: 3}
+  - name: level/dream/nightmare_ground
+    texture: {fileID: 2800000, guid: 4a34d2e0337c5e24196eb44240e1b00c, type: 3}
+  - name: level/dream/nightmare_ground
+    texture: {fileID: 2800000, guid: e65c8602a6db8284fa1069847600d372, type: 3}
+  - name: level/dream/nightmare_sky
+    texture: {fileID: 2800000, guid: f0125c799657eb041aea02f63549e0a0, type: 3}
+  - name: level/dream/nightmare_sky
+    texture: {fileID: 2800000, guid: 227ed731d72488f4aa762e37f9d60767, type: 3}
+  - name: level/dream/pool_sparkle
+    texture: {fileID: 2800000, guid: bfce65959617bce4ab0ffb4a5d19df4c, type: 3}
+  - name: level/grids/bevel
+    texture: {fileID: 2800000, guid: 173171cbb92903f4abbd185ff17f0e74, type: 3}
+  - name: level/grids/broken_tile
+    texture: {fileID: 2800000, guid: 3bb835826f0becf4fbca23d9d96b230a, type: 3}
+  - name: level/grids/broken_tile_slope
+    texture: {fileID: 2800000, guid: cc6b3e7a91e2c864fb023c7055695568, type: 3}
+  - name: level/grids/broken_tile_water
+    texture: {fileID: 2800000, guid: a2b58e19d655689418bc8cd8b5cdf84b, type: 3}
+  - name: level/grids/golden_grid
+    texture: {fileID: 2800000, guid: f6b4ceef27227b94aabc22a85d5eae78, type: 3}
+  - name: level/grids/golden_grid_cloud
+    texture: {fileID: 2800000, guid: cd68e6940e19fea4380d9bca7fb77473, type: 3}
+  - name: level/grids/golden_grid_slope
+    texture: {fileID: 2800000, guid: a352f6d9e2e0b4847a4098f315cd2802, type: 3}
+  - name: level/grids/golden_grid_water
+    texture: {fileID: 2800000, guid: e24ff6ec892f18b448dbf22d3d1b3c08, type: 3}
+  - name: level/grids/normal
+    texture: {fileID: 2800000, guid: 50c9e8ccf09318c4c811ae6d530b985a, type: 3}
+  - name: level/halloween/halloween
+    texture: {fileID: 2800000, guid: bd7b2da4545106b46b4afbf8863f9926, type: 3}
+  - name: level/halloween/halloween_cloudy
+    texture: {fileID: 2800000, guid: 2f37ee72c04034a4d930b31185d1e90e, type: 3}
+  - name: level/halloween/halloween_house
+    texture: {fileID: 2800000, guid: 6c353c60defe28b4e917138418d92484, type: 3}
+  - name: level/halloween/halloween_house_cover
+    texture: {fileID: 2800000, guid: ec5ff71ab8787124f871adc517ed1852, type: 3}
+  - name: level/mausoleum/mausoleum
+    texture: {fileID: 2800000, guid: 7490e9324285caa4194143af3411c4df, type: 3}
+  - name: level/mausoleum/mausoleum_minigame
+    texture: {fileID: 2800000, guid: a536357a72bfdb04184c7a08c9a9d57d, type: 3}
+  - name: level/mausoleum/pillbox
+    texture: {fileID: 2800000, guid: 7513cd2470186434dac756e22275249b, type: 3}
+  - name: level/mountain/bridge
+    texture: {fileID: 2800000, guid: f1ea97cf2ae2923468cd65767a4c2b71, type: 3}
+  - name: level/mountain/mountain
+    texture: {fileID: 2800000, guid: fe5483b57b4f942498536011ab35c856, type: 3}
+  - name: level/mountain/mountain_house
+    texture: {fileID: 2800000, guid: fcc498786d8ffd744a2bb35848dc6b3b, type: 3}
+  - name: level/mountain/river
+    texture: {fileID: 2800000, guid: f16e98473504f134db30f1e9655cf837, type: 3}
+  - name: level/palace/palace
+    texture: {fileID: 2800000, guid: 0c0f98f27759223459980f9a2226fe56, type: 3}
+  - name: level/palace/palace_gate
+    texture: {fileID: 2800000, guid: 7209a46c5a99e914c842dcd3fb8ce137, type: 3}
+  - name: level/ship/clouds
+    texture: {fileID: 2800000, guid: c1584df56dfc82b429b7dc438127d3c2, type: 3}
+  - name: level/ship/deck
+    texture: {fileID: 2800000, guid: e80ea5436acf0b544906c4d53a5919e4, type: 3}
+  - name: level/ship/end_ship
+    texture: {fileID: 2800000, guid: 1af0b1831d8e64641ad5caca61364c6c, type: 3}
+  - name: level/ship/ship_back
+    texture: {fileID: 2800000, guid: 0d763afc8cc9cb644953bb63087e098a, type: 3}
+  - name: level/ship/ship_depth
+    texture: {fileID: 2800000, guid: 7bf9c6f0c642bdd42af1ea3a5cb5bdbc, type: 3}
+  - name: level/ship/ship_depth_2
+    texture: {fileID: 2800000, guid: 3197d6937f6ec6b489717190a1a006f8, type: 3}
+  - name: level/ship/sky
+    texture: {fileID: 2800000, guid: 13f4669be302ba24296364d49d0b1219, type: 3}
+  - name: mainmenu/view/castle
+    texture: {fileID: 2800000, guid: 03dafdf2ab6ba7e499b6f7a6f350be32, type: 3}
+  - name: mainmenu/view/default
+    texture: {fileID: 2800000, guid: e8710503c9c16c94d9f45067c0169396, type: 3}
+  - name: mainmenu/view/dream
+    texture: {fileID: 2800000, guid: 2dfedcec3d1897541a307c6e344bced5, type: 3}
+  - name: mainmenu/view/halloween
+    texture: {fileID: 2800000, guid: f5552ce73b0b41f449c646da8a2a69c2, type: 3}
+  - name: mainmenu/view/mausoleum
+    texture: {fileID: 2800000, guid: 3e57f352886e4c34095d087c6410bcda, type: 3}
+  - name: mainmenu/view/nightmare
+    texture: {fileID: 2800000, guid: 8887a1348e7752d4bb4aab022fbc8847, type: 3}
+  - name: mainmenu/view/nightmare
+    texture: {fileID: 2800000, guid: 8a2e7dea253a9e84c910acffe8c3e79e, type: 3}
+  - name: mainmenu/view/palace
+    texture: {fileID: 2800000, guid: 4a54974cb99c15d4da1dce7d5d408a9e, type: 3}
+  - name: mainmenu/view/ship
+    texture: {fileID: 2800000, guid: efe7279b9efd4e149afa436e1e203195, type: 3}
+  - name: map/castle/map
+    texture: {fileID: 2800000, guid: eb7696c6ae30a5844aeb6c8c789f3acc, type: 3}
+  - name: map/dream/apollo_meridian_blue
+    texture: {fileID: 2800000, guid: c2578011139751f4ebed15184256f29d, type: 3}
+  - name: map/dream/apollo_meridian_red
+    texture: {fileID: 2800000, guid: 3dbd91e96448f5e4fbe0aa7bfdd4e675, type: 3}
+  - name: map/dream/bubble
+    texture: {fileID: 2800000, guid: 88d242bbad7e8d543a90ae63fb6aeeb5, type: 3}
+  - name: map/dream/map
+    texture: {fileID: 2800000, guid: 508b6af64add28a4aa27df24e84640ff, type: 3}
+  - name: map/dream/nightmare
+    texture: {fileID: 2800000, guid: 482bc6c937f3f2345b34075e5d1a3f69, type: 3}
+  - name: map/dream/nightmare
+    texture: {fileID: 2800000, guid: cbe2117cde68d914493afb8f0aaa9bb0, type: 3}
+  - name: map/dream/nightmare_box
+    texture: {fileID: 2800000, guid: cbf4d95aac8683e4db2faa1ae9e6cdfe, type: 3}
+  - name: map/dream/nightmare_box_open
+    texture: {fileID: 2800000, guid: b75237ff7ac07d84ca23add635c58097, type: 3}
+  - name: map/dream/nightmare_sleepenser
+    texture: {fileID: 2800000, guid: f47cc08bb024bd04d87a290c78ab60de, type: 3}
+  - name: map/dream/sleepenser
+    texture: {fileID: 2800000, guid: f5346a49dd46a2a4194dcbca45d9a022, type: 3}
+  - name: map/gensokyo/map
+    texture: {fileID: 2800000, guid: e9ab803f0d271bd48b365bc8766feb6b, type: 3}
+  - name: map/halloween/dream_key_map
+    texture: {fileID: 2800000, guid: 5f078c67087fbfb4aa46cf7965c4f6c2, type: 3}
+  - name: map/halloween/map
+    texture: {fileID: 2800000, guid: 18170164ed705914ebb03c0ee8ca6ef9, type: 3}
+  - name: map/mausoleum/map
+    texture: {fileID: 2800000, guid: faa2211777e02a84b8a7e50170afab89, type: 3}
+  - name: map/palace/map
+    texture: {fileID: 2800000, guid: 9b1e8f9e4a726fb4bb190e3b0b8511d2, type: 3}
+  - name: map/ship/end_ship
+    texture: {fileID: 2800000, guid: 46fd845ce654ebb43bd75d875facaea1, type: 3}
+  - name: map/ship/ship
+    texture: {fileID: 2800000, guid: f771d42a2d0c8f94986cc56fa505e972, type: 3}
+  - name: shading/musicroom/background
+    texture: {fileID: 2800000, guid: 794c8f0b77af644418898bcd66583207, type: 3}
+  - name: shading/musicroom/starmap
+    texture: {fileID: 2800000, guid: f904563dade24ec4cb7f5defb42d07a0, type: 3}
+  - name: ui/achievements/frame
+    texture: {fileID: 2800000, guid: 8e4506b73a85267499be23c6916344ef, type: 3}
+  - name: ui/achievements/pop_up_frame
+    texture: {fileID: 2800000, guid: ac1f70b601142f7408e769da02898fc5, type: 3}
+  - name: ui/almanac/attribute_tags
+    texture: {fileID: 2800000, guid: c419009eb7b0cae44aca6be02f48b0d4, type: 3}
+  - name: ui/almanac/background
+    texture: {fileID: 2800000, guid: eb748549348de4d458c512aac07bb380, type: 3}
+  - name: ui/almanac/book
+    texture: {fileID: 2800000, guid: a06be91936876c74d8f5b245197688cf, type: 3}
+  - name: ui/almanac/grid_layer_tags
+    texture: {fileID: 2800000, guid: f4743b7a556142b4db02b61d15e9da06, type: 3}
+  - name: ui/almanac/mass_tags
+    texture: {fileID: 2800000, guid: b54c9c31fd15a2049873ac7dd3397b9b, type: 3}
+  - name: ui/almanac/placement_tags
+    texture: {fileID: 2800000, guid: 5d2c28a61405a06409579f821db2bf10, type: 3}
+  - name: ui/almanac/placement_tags_upgrade_new
+    texture: {fileID: 2800000, guid: c88dad8213774ad48b823b141be673dc, type: 3}
+  - name: ui/almanac/placement_tags_upgrade_origin
+    texture: {fileID: 2800000, guid: cab57ed8db44e444f856b2a84c122438, type: 3}
+  - name: ui/almanac/shell_tags
+    texture: {fileID: 2800000, guid: 2d508ee9563c4a64aa13edf30218cd42, type: 3}
+  - name: ui/almanac/special_marks
+    texture: {fileID: 2800000, guid: 8f5188cc46ef9a44696613996b27b1ec, type: 3}
+  - name: ui/almanac/tag_backgrounds
+    texture: {fileID: 2800000, guid: fd045d9b19051854898d84facdd55d17, type: 3}
+  - name: ui/arcade/background
+    texture: {fileID: 2800000, guid: 327c7ca17fc1da84993f3b15a675a7e7, type: 3}
+  - name: ui/arcade/clear_trophy
+    texture: {fileID: 2800000, guid: 84d24c865b8c9b341a85b8104370a001, type: 3}
+  - name: ui/effect/crushing_wall_left
+    texture: {fileID: 2800000, guid: 2574e617cf0030645966d0a257f50050, type: 3}
+  - name: ui/effect/crushing_wall_left
+    texture: {fileID: 2800000, guid: 42226c15cb218274b8576006d9f58dc6, type: 3}
+  - name: ui/effect/crushing_wall_right
+    texture: {fileID: 2800000, guid: 6a18698f112f8244db4b1e5de5873248, type: 3}
+  - name: ui/effect/crushing_wall_right
+    texture: {fileID: 2800000, guid: 26dc0bfdc50bd814f9f2c3f60f62e366, type: 3}
+  - name: ui/level/card
+    texture: {fileID: 2800000, guid: 23576b1f7e3a27e45af33cb0ad4f201b, type: 3}
+  - name: ui/level/card_command_block
+    texture: {fileID: 2800000, guid: f06b4e6d36bea8c4bb91bc0eeb3d059c, type: 3}
+  - name: ui/level/card_command_block_mobile
+    texture: {fileID: 2800000, guid: f45a057d7f3b72d4883d7d18d28ea03a, type: 3}
+  - name: ui/level/card_curtain
+    texture: {fileID: 2800000, guid: 8377ca22c43dd784f85308891f7c59a7, type: 3}
+  - name: ui/level/card_mobile
+    texture: {fileID: 2800000, guid: a62d2d86c3da6164fb85ab8fef46149f, type: 3}
+  - name: ui/level/card_recharge_flash
+    texture: {fileID: 2800000, guid: e29fc40df52a5fd498fcf99ae5d4fe10, type: 3}
+  - name: ui/level/card_upgrade
+    texture: {fileID: 2800000, guid: 8cf98dd491e96bf47ad3a5767c1578b2, type: 3}
+  - name: ui/level/card_upgrade_mobile
+    texture: {fileID: 2800000, guid: a2cfaa6b4cafa4e4cb84af18ad63d07f, type: 3}
+  - name: ui/level/conveyor_belt_part
+    texture: {fileID: 2800000, guid: dc224faa8e569ed409210f50b54a311f, type: 3}
+  - name: ui/level/conveyor_belt_part_mobile
+    texture: {fileID: 2800000, guid: fe83ffae5970de14a9a107d4947b87b0, type: 3}
+  - name: ui/level/energy_gear
+    texture: {fileID: 2800000, guid: e58665a25470bdf438fd493d170f6cc4, type: 3}
+  - name: ui/level/energy_slot
+    texture: {fileID: 2800000, guid: d9f046bb0bbb46546bff5500c0c6fdab, type: 3}
+  - name: ui/level/final_wave
+    texture: {fileID: 2800000, guid: 003fea51ebc7be1498297e7b66cc61d1, type: 3}
+  - name: ui/level/hint_arrow
+    texture: {fileID: 2800000, guid: e54f2595624bbc447b98881de587ce72, type: 3}
+  - name: ui/level/huge_wave
+    texture: {fileID: 2800000, guid: f033484ae726acf46924c7b84c0c592b, type: 3}
+  - name: ui/level/imbued_icon
+    texture: {fileID: 2800000, guid: e4338c72026e47949a5e8edc50e80692, type: 3}
+  - name: ui/level/level_progress_back
+    texture: {fileID: 2800000, guid: b5bea0ef6d58f2d47ad694ab28830cba, type: 3}
+  - name: ui/level/lose
+    texture: {fileID: 2800000, guid: 3c0108de01484784fa9b10b13d99aed0, type: 3}
+  - name: ui/level/mind_swap_blackhole
+    texture: {fileID: 2800000, guid: 4c4c1d5c3108f034bbb656243270b2fd, type: 3}
+  - name: ui/level/nightmare_broken_glasses
+    texture: {fileID: 2800000, guid: 211657565d216cd4a9fb3b2c489ff0af, type: 3}
+  - name: ui/level/pause_image_0
+    texture: {fileID: 2800000, guid: 3cb42106841fca546970463cc36fbf45, type: 3}
+  - name: ui/level/pause_image_1
+    texture: {fileID: 2800000, guid: 9d42af99014807345b8b7fa93e6acadf, type: 3}
+  - name: ui/level/pause_image_2
+    texture: {fileID: 2800000, guid: a8cf5193a3c0b9a4ea8d1119e96dfa2b, type: 3}
+  - name: ui/level/pause_image_3
+    texture: {fileID: 2800000, guid: 8494573086f607245af4f3dd35644156, type: 3}
+  - name: ui/level/pause_image_4
+    texture: {fileID: 2800000, guid: b27d973956921144f81710753ef50c35, type: 3}
+  - name: ui/level/pause_image_5
+    texture: {fileID: 2800000, guid: 7f17579a8f0c42344b02ba3589ca2d6e, type: 3}
+  - name: ui/level/pause_image_6
+    texture: {fileID: 2800000, guid: 16ff246ec2a095242a62262d2ac32272, type: 3}
+  - name: ui/level/pause_image_loss
+    texture: {fileID: 2800000, guid: 53000fe10b2b2114a9d2a2a204f7c143, type: 3}
+  - name: ui/level/pickaxe
+    texture: {fileID: 2800000, guid: c98850842ba8ff14f919f63ce5114326, type: 3}
+  - name: ui/level/pickaxe_slot
+    texture: {fileID: 2800000, guid: 4339bf5f9f84c374c80373f3c986dc65, type: 3}
+  - name: ui/level/speed_up
+    texture: {fileID: 2800000, guid: 6be91ec42a553aa4489d5429b0576a27, type: 3}
+  - name: ui/level/speed_up_active
+    texture: {fileID: 2800000, guid: 1e784c0427ce232488fd2f10b6bee02f, type: 3}
+  - name: ui/level/starshard_point
+    texture: {fileID: 2800000, guid: b3fb8d61fec87704189d63aacaa3814c, type: 3}
+  - name: ui/level/starshard_slot
+    texture: {fileID: 2800000, guid: b626708772b5ae44699b01c650dcf73f, type: 3}
+  - name: ui/level/target
+    texture: {fileID: 2800000, guid: 86b752a5e2100d84ab9e7af262138b91, type: 3}
+  - name: ui/level/wallet
+    texture: {fileID: 2800000, guid: f1aefc59239478744b6bdc884a1fc842, type: 3}
+  - name: ui/map/map_back_button
+    texture: {fileID: 2800000, guid: b47d03bd743710345b665a5cac672aee, type: 3}
+  - name: ui/map/map_back_button_highlighted
+    texture: {fileID: 2800000, guid: 76002873be7e1314c8853b5a35e273ec, type: 3}
+  - name: ui/map/map_drag_arrow
+    texture: {fileID: 2800000, guid: 7bb8171db9a35d847a0d278960512921, type: 3}
+  - name: ui/map/map_drag_mark
+    texture: {fileID: 2800000, guid: 4d1a02ea98fa8a440b49d3871b5d0dff, type: 3}
+  - name: ui/musicroom/bar
+    texture: {fileID: 2800000, guid: 3263647cc04cd5d45a3c765536cceb47, type: 3}
+  - name: ui/musicroom/bar_frame
+    texture: {fileID: 2800000, guid: 148c98d98027b904fbf234d5a5b60f7a, type: 3}
+  - name: ui/musicroom/bar_handler
+    texture: {fileID: 2800000, guid: 392d5a1a4322ba24193d5f42088e6c59, type: 3}
+  - name: ui/musicroom/frame
+    texture: {fileID: 2800000, guid: ddecb2750e06a86449911b2ad608969f, type: 3}
+  - name: ui/musicroom/pause_button
+    texture: {fileID: 2800000, guid: 2b4a63ffd329fbf43a452a8934978807, type: 3}
+  - name: ui/musicroom/play_button
+    texture: {fileID: 2800000, guid: c2b1b19c4c98a0e4390a8b7320626240, type: 3}
+  - name: ui/musicroom/track_button
+    texture: {fileID: 2800000, guid: 439af6a040ba009429682529df6aaa94, type: 3}
+  - name: ui/store/product_frame
+    texture: {fileID: 2800000, guid: 32bf431d8ac58764cb0070360418c14d, type: 3}
+  - name: map/gensokyo/pins/castle
+    texture: {fileID: 2800000, guid: 9696331d07114754fbccc29acd1b4846, type: 3}
+  - name: map/gensokyo/pins/dream
+    texture: {fileID: 2800000, guid: f118069775e649f44960158e67eb7339, type: 3}
+  - name: map/gensokyo/pins/halloween
+    texture: {fileID: 2800000, guid: eb819ad3a375c2248a3df6dcb7023435, type: 3}
+  - name: map/gensokyo/pins/kourindou
+    texture: {fileID: 2800000, guid: 982248cc3f9823f4a9f759db1e00184f, type: 3}
+  - name: map/gensokyo/pins/mausoleum
+    texture: {fileID: 2800000, guid: 9c2ffe9b1f0c11c4e8e821a591f6f10a, type: 3}
+  - name: map/gensokyo/pins/palace
+    texture: {fileID: 2800000, guid: c92acfbe0681ef246991163cfbf4eb72, type: 3}
+  - name: map/gensokyo/pins/ship
+    texture: {fileID: 2800000, guid: a530bd663cca7d34aa3b3fd92ffddc00, type: 3}
+  - name: ui/level/mobile/card_curtain
+    texture: {fileID: 2800000, guid: 47f64bb4f9829ae49a99df91e2c19d03, type: 3}
+  - name: ui/level/mobile/energy_slot
+    texture: {fileID: 2800000, guid: 23645a3b80625764cbb9c90ed96f0024, type: 3}
+  - name: ui/level/mobile/selected
+    texture: {fileID: 2800000, guid: 0784b30367a6d9641ada63bda6ec2336, type: 3}
+  - name: ui/level/mobile/trigger_gear
+    texture: {fileID: 2800000, guid: 45676c5928868ae4092cf6ecaeb3f4d6, type: 3}
+  - name: ui/level/mobile/trigger_gear_slot
+    texture: {fileID: 2800000, guid: b5ccd0b2064964141897d244b8b815bf, type: 3}
+  - name: ui/level/progress_bar/frankenstein
+    texture: {fileID: 2800000, guid: 6e512505562ed4c44ae29837d5cd4be7, type: 3}
+  - name: ui/level/progress_bar/frankenstein_background
+    texture: {fileID: 2800000, guid: 54522e226cf17e14bb45c04de8805928, type: 3}
+  - name: ui/level/progress_bar/level_progress_banner
+    texture: {fileID: 2800000, guid: 43d0c46d78f545946b9f8472fc64be72, type: 3}
+  - name: ui/level/progress_bar/level_progress_bar
+    texture: {fileID: 2800000, guid: e2156299c9ad6a149827e1ee60c23f79, type: 3}
+  - name: ui/level/progress_bar/level_progress_flag_pole
+    texture: {fileID: 2800000, guid: b34bc915055138f4b98fddeb34062934, type: 3}
+  - name: ui/level/progress_bar/level_progress_icon
+    texture: {fileID: 2800000, guid: 24d902c61d41892478d085a513cc421a, type: 3}
+  - name: ui/level/progress_bar/locked_chest_background
+    texture: {fileID: 2800000, guid: 2ced4536040c56f41a9f7f54ac377a36, type: 3}
+  - name: ui/level/progress_bar/locked_chest_bar
+    texture: {fileID: 2800000, guid: 389413e978891c948a7072bfef505563, type: 3}
+  - name: ui/level/progress_bar/nightmare
+    texture: {fileID: 2800000, guid: 476d29f782ced5045aee9c4a94e69cad, type: 3}
+  - name: ui/level/progress_bar/nightmare_background
+    texture: {fileID: 2800000, guid: b63bdd3991537ac4f9fd0e050c80fa41, type: 3}
+  - name: ui/level/progress_bar/nightmare_foreground
+    texture: {fileID: 2800000, guid: f8aa3c3a44b8f774e9b5441b1cb9f0e6, type: 3}
+  - name: ui/level/progress_bar/red_dragon_background
+    texture: {fileID: 2800000, guid: 9b6b62c26c46a2540b6df22f5c17fee6, type: 3}
+  - name: ui/level/progress_bar/red_dragon_fill
+    texture: {fileID: 2800000, guid: 10ab12937d2381c4a837d26087f00bbe, type: 3}
+  - name: ui/level/progress_bar/red_dragon_foreground
+    texture: {fileID: 2800000, guid: 7f0e9cb01345db444817411ea1b5b4c1, type: 3}
+  - name: ui/level/progress_bar/seija
+    texture: {fileID: 2800000, guid: 4ffd669e6a8191a468f39575216ef435, type: 3}
+  - name: ui/level/progress_bar/seija_background
+    texture: {fileID: 2800000, guid: f8e133db9e0078b42bbd5979c7143e76, type: 3}
+  - name: ui/level/progress_bar/the_giant_background
+    texture: {fileID: 2800000, guid: fb49bf03d7a39f74493d7f10e7512dfc, type: 3}
+  - name: ui/level/progress_bar/the_giant_bar
+    texture: {fileID: 2800000, guid: d45f50a6e09e447469497cf77a6d16b5, type: 3}
+  - name: ui/level/progress_bar/wither
+    texture: {fileID: 2800000, guid: e815fc79b6c003e4788c0027be0a82e6, type: 3}
+  - name: ui/level/progress_bar/wither_background
+    texture: {fileID: 2800000, guid: 8e5761afd86512d468f5326f1b03e7dd, type: 3}
+  - name: ui/level/progress_bar/wither_foreground
+    texture: {fileID: 2800000, guid: 529c022f5f623db4db8f49685b84b1a8, type: 3}
   spriteEntries:
   - name: map_button
     index: 0

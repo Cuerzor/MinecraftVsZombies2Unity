@@ -12,6 +12,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227f1415773a5194c8d41771c4329d23, type: 3}
   m_Name: init_manifest
   m_EditorClassIdentifier: 
+  textureEntries:
+  - name: init/button
+    texture: {fileID: 2800000, guid: 7f2f4e63d086c1c4d8d62d9d14a418d9, type: 3}
+  - name: init/button_disabled
+    texture: {fileID: 2800000, guid: 249bff1de5d47004baf9588eba3757a7, type: 3}
+  - name: init/button_highlighted
+    texture: {fileID: 2800000, guid: 54d15402f15189c42a0e0e0955892f6e, type: 3}
+  - name: init/button_pressed
+    texture: {fileID: 2800000, guid: 2482717936474de4ca1d7dd51bc05b2d, type: 3}
+  - name: init/button_pressed_highlighted
+    texture: {fileID: 2800000, guid: 1844fe67c5f19c04589197a7914a32a6, type: 3}
+  - name: init/form
+    texture: {fileID: 2800000, guid: ecdea1f2d39df2049be852b3107d40a4, type: 3}
+  - name: init/form_hollow
+    texture: {fileID: 2800000, guid: 878374b343a8047409456043eaeec225, type: 3}
+  - name: init/logo
+    texture: {fileID: 2800000, guid: a422491a28838f04aa763d050d8aa766, type: 3}
+  - name: init/slider_background
+    texture: {fileID: 2800000, guid: c8855d2f4d2a0854180f26fb269e15e0, type: 3}
+  - name: init/titlescreen
+    texture: {fileID: 2800000, guid: 36ceb837ec0bbd54e9f7ecac4e5ecc70, type: 3}
+  - name: init/toggle_background
+    texture: {fileID: 2800000, guid: 417b00269b7bf414c89a36a7cc6d5074, type: 3}
+  - name: init/toggle_background_disabled
+    texture: {fileID: 2800000, guid: bb0ee051a74cf2c44805bae0bf1ad07d, type: 3}
+  - name: init/toggle_background_selected
+    texture: {fileID: 2800000, guid: 5844294630a88944aa7be167dc3a46ce, type: 3}
+  - name: init/toggle_mark
+    texture: {fileID: 2800000, guid: a0a12d06a9d70534fb3923f783c11d63, type: 3}
+  - name: init/ui_arrow
+    texture: {fileID: 2800000, guid: 410f8ec80407d6e4ab481954c0ce2d49, type: 3}
   spriteEntries:
   - name: init/button
     index: 0

@@ -4,6 +4,7 @@ using System;
 using System.Globalization;
 using System.IO;
 using MVZ2.Managers;
+using MVZ2.Resources;
 using MVZ2.Sprites;
 using MVZ2Logic.Resources;
 using Newtonsoft.Json;
@@ -84,14 +85,19 @@ namespace MVZ2.Localization
             {
                 foreach (var localizedSprite in manifest.sprites)
                 {
+                    if (string.IsNullOrEmpty(localizedSprite.texture))
+                        continue;
+
                     var texturePath = Path.Combine(dir, "sprites", localizedSprite.texture).Replace("/", "\\");
 
                     if (!File.Exists(texturePath) || string.IsNullOrEmpty(localizedSprite.name))
                         continue;
-                    if (!pack.textures.TryGetValue(texturePath, out var texture))
+
+                    var textureID = new NamespaceID(nsp, localizedSprite.texture);
+                    if (!pack.TryGetTexture2D(textureID, out var texture))
                     {
                         texture = ReadTexture2DDirectory(texturePath);
-                        pack.textures.Add(texturePath, texture);
+                        pack.AddTexture2D(textureID, texture);
                     }
 
                     var resID = new NamespaceID(nsp, localizedSprite.name);
@@ -105,14 +111,19 @@ namespace MVZ2.Localization
             {
                 foreach (var localizedSpritesheet in manifest.spritesheets)
                 {
+                    if (string.IsNullOrEmpty(localizedSpritesheet.texture))
+                        continue;
+
                     var texturePath = Path.Combine(dir, "spritesheets", localizedSpritesheet.texture).Replace("/", "\\");
 
                     if (!File.Exists(texturePath) || string.IsNullOrEmpty(localizedSpritesheet.name))
                         continue;
-                    if (!pack.textures.TryGetValue(texturePath, out var texture))
+
+                    var textureID = new NamespaceID(nsp, localizedSpritesheet.texture);
+                    if (!pack.TryGetTexture2D(textureID, out var texture))
                     {
                         texture = ReadTexture2DDirectory(texturePath);
-                        pack.textures.Add(texturePath, texture);
+                        pack.AddTexture2D(textureID, texture);
                     }
 
                     var resID = new NamespaceID(nsp, localizedSpritesheet.name);

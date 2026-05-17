@@ -3,14 +3,15 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using MVZ2.Sprites;
+using MVZ2.Resources;
 using MVZ2Logic.Resources;
+using PVZEngine;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public class ResourcePack : ISpriteProvider
+    public class ResourcePack : ISpriteProvider, ITexture2DProvider
     {
         public ResourcePack(string key)
         {
@@ -105,11 +106,11 @@ namespace MVZ2.Localization
         #endregion
 
         #region Texture2D
-        public void AddTexture2D(string path, Texture2D texture2D)
+        public void AddTexture2D(NamespaceID path, Texture2D texture2D)
         {
             textures.Add(path, texture2D);
         }
-        public bool TryGetTexture2D(string path, Texture2D texture2D)
+        public bool TryGetTexture2D(NamespaceID path, out Texture2D texture2D)
         {
             return textures.TryGetValue(path, out texture2D);
         }
@@ -132,17 +133,21 @@ namespace MVZ2.Localization
             return catalogs.Keys.ToArray();
         }
         #endregion
-        bool ISpriteProvider.TryGet(SpriteLookupKey spriteReference, out Sprite? sprite)
+
+        bool IResourceProvider<SpriteLookupKey, Sprite>.TryGet(SpriteLookupKey spriteReference, out Sprite? sprite)
         {
             return TryGetSprite(spriteReference, out sprite);
+        }
+        bool IResourceProvider<NamespaceID, Texture2D>.TryGet(NamespaceID key, out Texture2D? texture)
+        {
+            return TryGetTexture2D(key, out texture);
         }
 
 
         private Dictionary<string, LanguageCatalogs> catalogs = new Dictionary<string, LanguageCatalogs>();
-        public Dictionary<string, Texture2D> textures = new Dictionary<string, Texture2D>();
+        public Dictionary<NamespaceID, Texture2D> textures = new Dictionary<NamespaceID, Texture2D>();
         public Dictionary<SpriteLookupKey, Sprite> sprites = new Dictionary<SpriteLookupKey, Sprite>();
         public string Key { get; private set; }
         public int Priority { get; set; }
-
     }
 }
