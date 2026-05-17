@@ -63,7 +63,6 @@ namespace MVZ2Logic.UI
                 return _renderer;
             }
         }
-        public virtual Sprite? spriteMark { get => Renderer.sprite; set => Renderer.sprite = value; }
         public virtual Color color { get => Renderer.color; set => Renderer.color = value; }
         public virtual int sortingOrder { get => Renderer.sortingOrder; set => Renderer.sortingOrder = value; }
         public virtual int sortingLayerID { get => Renderer.sortingLayerID; set => Renderer.sortingLayerID = value; }

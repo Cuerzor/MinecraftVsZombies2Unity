@@ -21,7 +21,7 @@ namespace MVZ2.Editor
             Debug.Log("Updating model elements...");
             var directory = Path.Combine(Application.dataPath, "GameContent", "Assets", "mvz2", "models");
             var filePaths = new List<string>();
-            SearchPrefabPaths(directory, filePaths);
+            PrefabHelper.SearchPrefabPaths(directory, filePaths);
 
             foreach (string path in filePaths)
             {
@@ -30,122 +30,20 @@ namespace MVZ2.Editor
 
             Debug.Log($"Update model elements completed.");
         }
-        public static void UpdateSpriteRendererAndImageResolvers()
-        {
-            Debug.Log("Updating sprite renderer resolvers...");
-            var prefabsDirectory = Path.Combine(Application.dataPath, "Prefabs");
-            var modelDirectory = Path.Combine(Application.dataPath, "GameContent", "Assets", "mvz2");
-            var filePaths = new List<string>();
-            SearchPrefabPaths(prefabsDirectory, filePaths);
-            SearchPrefabPaths(modelDirectory, filePaths);
-
-            var addedSpriteResolvers = 0;
-            var addedImageResolvers = 0;
-            foreach (string path in filePaths)
-            {
-                var fullPath = Path.Combine("Assets", Path.GetRelativePath(Application.dataPath, path));
-                addedSpriteResolvers += UpdateSpriteRendererResolver(fullPath);
-                addedImageResolvers += UpdateImageResolver(fullPath);
-            }
-            var removedSpriteResolvers = 0;
-            var removedImageResolvers = 0;
-            foreach (string path in filePaths)
-            {
-                var fullPath = Path.Combine("Assets", Path.GetRelativePath(Application.dataPath, path));
-                removedSpriteResolvers += CheckDuplicateSpriteRendererResolver(fullPath);
-                removedImageResolvers += CheckDuplicateImageResolver(fullPath);
-            }
-            var addedResolvers = addedSpriteResolvers + addedImageResolvers;
-            var removedResolvers = removedSpriteResolvers + removedImageResolvers;
-            Debug.Log($"Update sprite renderer resolvers completed: added {addedResolvers}, removed {removedResolvers} duplicated, totally {addedResolvers - removedResolvers}.");
-        }
-        private static void SearchPrefabPaths(string folder, List<string> pathList)
-        {
-            string[] files = Directory.GetFiles(folder, "*", SearchOption.AllDirectories);
-            foreach (var file in files)
-            {
-                string extension = Path.GetExtension(file);
-                if (extension != ".prefab")
-                    continue;
-                pathList.Add(file);
-            }
-        }
         private static void UpdateModelElement(string path)
         {
-            var obj = PrefabUtility.LoadPrefabContents(path);
+            var obj = PrefabHelper.ModifyPrefabStart(path);
             var model = obj.GetComponent<Model>();
             if (!model)
                 return;
             model.UpdateElements();
             model.GraphicGroup.UpdateElements();
-            PrefabUtility.SaveAsPrefabAsset(obj, path, out var successfully);
-            PrefabUtility.UnloadPrefabContents(obj);
+            var successfully = PrefabHelper.ModifyPrefabEnd(obj, path);
             Debug.Log($"{path}: {successfully}");
-        }
-        private static int UpdateSpriteRendererResolver(string path)
-        {
-            return UpdateResolverComponent<SpriteRenderer, SpriteRendererResolver>(path);
-        }
-        private static int UpdateImageResolver(string path)
-        {
-            return UpdateResolverComponent<Image, ImageResolver>(path);
-        }
-        private static int UpdateResolverComponent<TSource, TResolver>(string path) where TSource : Component where TResolver : Component
-        {
-            var obj = PrefabUtility.LoadPrefabContents(path);
-
-            var spriteRenderers = obj.GetComponentsInChildren<TSource>(true);
-            int addedComponents = 0;
-            foreach (var spriteRenderer in spriteRenderers)
-            {
-                if (spriteRenderer.gameObject.GetComponent<TResolver>().Exists())
-                    continue;
-                spriteRenderer.gameObject.AddComponent<TResolver>();
-                addedComponents++;
-            }
-
-            PrefabUtility.SaveAsPrefabAsset(obj, path, out var successfully);
-            PrefabUtility.UnloadPrefabContents(obj);
-            Debug.Log($"{path}: Added {addedComponents} components ({typeof(TResolver).Name})");
-            return addedComponents;
-        }
-        private static int CheckDuplicateSpriteRendererResolver(string path)
-        {
-            return CheckDuplicateComponents<SpriteRendererResolver>(path);
-        }
-        private static int CheckDuplicateImageResolver(string path)
-        {
-            return CheckDuplicateComponents<ImageResolver>(path);
-        }
-        private static int CheckDuplicateComponents<T>(string path) where T : Component
-        {
-            var obj = PrefabUtility.LoadPrefabContents(path);
-
-            var components = obj.GetComponentsInChildren<T>(true);
-            int removedComponents = 0;
-            foreach (var component in components)
-            {
-                if (!component)
-                    continue;
-                var resolvers = component.gameObject.GetComponents<T>();
-                if (resolvers.Length <= 1)
-                    continue;
-                for (int i = resolvers.Length - 1; i >= 1; i--)
-                {
-                    var resolver = resolvers[i];
-                    Object.DestroyImmediate(resolver, true);
-                    removedComponents++;
-                }
-            }
-
-            PrefabUtility.SaveAsPrefabAsset(obj, path, out var successfully);
-            PrefabUtility.UnloadPrefabContents(obj);
-            Debug.Log($"{path}: Removed {removedComponents} duplicate components ({typeof(T).Name})");
-            return removedComponents;
         }
         private static int RemoveComponents<T>(string path) where T : Component
         {
-            var obj = PrefabUtility.LoadPrefabContents(path);
+            var obj = PrefabHelper.ModifyPrefabStart(path);
 
             var components = obj.GetComponentsInChildren<T>(true);
             int removedComponents = 0;
@@ -164,17 +62,16 @@ namespace MVZ2.Editor
                 }
             }
 
-            PrefabUtility.SaveAsPrefabAsset(obj, path, out var successfully);
-            PrefabUtility.UnloadPrefabContents(obj);
+            var successfully = PrefabHelper.ModifyPrefabEnd(obj, path);
             Debug.Log($"{path}: Removed {removedComponents} components ({typeof(T).Name})");
             return removedComponents;
         }
 
         public static void MoveModelColliderToRoot(string path, GameObject colliderPrefab)
         {
-            var obj = PrefabUtility.LoadPrefabContents(path);
+            var obj = PrefabHelper.ModifyPrefabStart(path);
             MoveModelColliderToRoot(obj, path, colliderPrefab);
-            PrefabUtility.UnloadPrefabContents(obj);
+            var successfully = PrefabHelper.ModifyPrefabEnd(obj, path);
         }
         private static void MoveModelColliderToRoot(GameObject obj, string path, GameObject colliderPrefab)
         {

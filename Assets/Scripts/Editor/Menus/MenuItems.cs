@@ -56,11 +56,6 @@ namespace MVZ2.Editor
         {
             ModelMenu.UpdateModelElements();
         }
-        [MenuItem("MVZ2/Assets/Models/Update Sprite Renderer And Image Resolvers", priority = 4000, secondaryPriority = 1)]
-        public static void UpdateSpriteRendererAndImageResolvers()
-        {
-            ModelMenu.UpdateSpriteRendererAndImageResolvers();
-        }
         [MenuItem("MVZ2/Assets/Models/Convert Models to New", priority = 4100, secondaryPriority = 0)]
         public static void ConvertOldModel()
         {
@@ -75,6 +70,11 @@ namespace MVZ2.Editor
         public static void RenameSprites()
         {
             SpriteMenu.RenameSprites();
+        }
+        [MenuItem("MVZ2/Assets/Resource Packs/Update Resolver Components", priority = 6000, secondaryPriority = 0)]
+        public static void UpdateResolverComponents()
+        {
+            ResourcePackMenu.UpdateResolverComponents();
         }
         [MenuItem("MVZ2/Assets/Talk/Format Talk Datas", priority = 6000, secondaryPriority = 0)]
         public static void FormatTalkDatas()
