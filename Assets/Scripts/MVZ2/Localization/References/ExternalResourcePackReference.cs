@@ -3,6 +3,7 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 
 namespace MVZ2.Localization
 {
@@ -42,17 +43,17 @@ namespace MVZ2.Localization
         {
             return Path.GetFileName(path);
         }
-        public override Task<ResourcePackMetadata?> LoadMetadata(LanguageManager manager)
+        public override UniTask<ResourcePackMetadata?> LoadMetadata(LanguageManager manager)
         {
             ResourcePackMetadataReader reader = isDirectory ? new ResourcePackMetadataReaderDirectory(manager.Main) : new ResourcePackMetadataReaderZip(manager.Main);
-            return Task.FromResult(reader.ReadMetadata(GetKey(), path));
+            return reader.ReadMetadata(GetKey(), path);
         }
-        public override Task<ResourcePack?> LoadPack(LanguageManager manager, int dataVersion)
+        public override UniTask<ResourcePack?> LoadPack(LanguageManager manager, int dataVersion)
         {
             IResourcePackReader reader = isDirectory ? ResourcePackReaderFactory.CreateDirectory(manager.Main, dataVersion) : ResourcePackReaderFactory.CreateZip(manager.Main, dataVersion);
-            return Task.FromResult(reader.ReadPack(GetKey(), path));
+            return reader.ReadPack(GetKey(), path);
         }
-        public override Task<bool> Export(LanguageManager manager, string destPath)
+        public override UniTask<bool> Export(LanguageManager manager, string destPath)
         {
             var sourcePath = path;
             if (isDirectory)
@@ -63,7 +64,7 @@ namespace MVZ2.Localization
             {
                 File.Copy(sourcePath, destPath, true);
             }
-            return Task.FromResult(true);
+            return UniTask.FromResult(true);
         }
         public override bool Delete()
         {

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using MVZ2.IO;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -108,9 +109,9 @@ namespace MVZ2.Localization
         #endregion
 
         #region 导出
-        public async Task<bool> ExportLanguagePack(ResourcePackReference reference, string destPath)
+        public UniTask<bool> ExportLanguagePack(ResourcePackReference reference, string destPath)
         {
-            return await reference.Export(this, destPath);
+            return reference.Export(this, destPath);
         }
         #endregion
 
@@ -249,21 +250,21 @@ namespace MVZ2.Localization
         #endregion
 
         #region 加载语言包
-        public async Task LoadLanguagePacks()
+        public async UniTask LoadLanguagePacks()
         {
-            for (int i = 0; i < enabledLanguagePacks.Count; i++)
+            var loadTasks = enabledLanguagePacks.Select(async (reference, index) =>
             {
-                var reference = enabledLanguagePacks[i];
-                var priority = enabledLanguagePacks.Count - i;
+                var priority = enabledLanguagePacks.Count - index;
                 var metadata = GetLanguagePackMetadata(reference);
                 if (metadata == null)
-                    continue;
+                    return;
                 var pack = await reference.LoadPack(this, metadata.dataVersion);
                 if (pack == null)
-                    continue;
+                    return;
                 pack.Priority = priority;
                 LoadLanguagePack(pack);
-            }
+            });
+            await UniTask.WhenAll(loadTasks);
         }
         public void LoadLanguagePack(ResourcePack pack)
         {

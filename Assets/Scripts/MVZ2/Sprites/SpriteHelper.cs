@@ -120,6 +120,14 @@ namespace MVZ2.Sprites
         {
             return textureHeight - fromTopY - rectHeight;
         }
+        public static float FromBottomToFromTopY(float fromBottomY, float textureHeight, float rectHeight)
+        {
+            return textureHeight - fromBottomY - rectHeight;
+        }
+        public static float FromTopToFromBottomY(float fromTopY, float textureHeight, float rectHeight)
+        {
+            return textureHeight - fromTopY - rectHeight;
+        }
         public const string SPRITE_TAG_CENSORED = "censored";
     }
 }

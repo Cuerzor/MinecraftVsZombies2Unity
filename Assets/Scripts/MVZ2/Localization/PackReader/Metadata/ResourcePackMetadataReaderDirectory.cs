@@ -2,6 +2,7 @@
 
 using System;
 using System.IO;
+using Cysharp.Threading.Tasks;
 using MVZ2.Managers;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -14,7 +15,7 @@ namespace MVZ2.Localization
         {
         }
 
-        public override ResourcePackMetadata? ReadMetadata(string key, string path)
+        public override async UniTask<ResourcePackMetadata?> ReadMetadata(string key, string path)
         {
             var metadataPath = Path.Combine(path, METADATA_FILENAME);
             if (!File.Exists(metadataPath))
@@ -23,7 +24,7 @@ namespace MVZ2.Localization
             {
                 using var metadataStream = File.Open(metadataPath, FileMode.Open);
                 using var metadataReader = new StreamReader(metadataStream);
-                var json = metadataReader.ReadToEnd();
+                var json = await metadataReader.ReadToEndAsync();
                 var metadata = JsonConvert.DeserializeObject<ResourcePackMetadata>(json);
                 if (metadata != null)
                 {
@@ -32,7 +33,7 @@ namespace MVZ2.Localization
                     {
                         using var textureStream = File.Open(iconPath, FileMode.Open);
                         using var textureMemory = new MemoryStream();
-                        textureStream.CopyTo(textureMemory);
+                        await textureStream.CopyToAsync(textureMemory);
                         var bytes = textureMemory.ToArray();
 
                         var texture = Main.ResourceManager.GenerateTextureFromBytes(bytes, metadata.name ?? "pack");

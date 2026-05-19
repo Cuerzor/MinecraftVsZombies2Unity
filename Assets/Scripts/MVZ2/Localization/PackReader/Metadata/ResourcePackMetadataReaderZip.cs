@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
+using Cysharp.Threading.Tasks;
 using MVZ2.IO;
 using MVZ2.Managers;
 using Newtonsoft.Json;
@@ -17,17 +18,17 @@ namespace MVZ2.Localization
         {
         }
 
-        public override ResourcePackMetadata? ReadMetadata(string key, string path)
+        public override async UniTask<ResourcePackMetadata?> ReadMetadata(string key, string path)
         {
             using var stream = File.Open(path, FileMode.Open);
-            return ReadMetadata(key, stream);
+            return await ReadMetadata(key, stream);
         }
-        public ResourcePackMetadata? ReadMetadata(string key, byte[] bytes)
+        public async UniTask<ResourcePackMetadata?> ReadMetadata(string key, byte[] bytes)
         {
             using var memory = new MemoryStream(bytes);
-            return ReadMetadata(key, memory);
+            return await ReadMetadata(key, memory);
         }
-        public ResourcePackMetadata? ReadMetadata(string key, Stream stream)
+        public async UniTask<ResourcePackMetadata?> ReadMetadata(string key, Stream stream)
         {
             try
             {
@@ -37,14 +38,14 @@ namespace MVZ2.Localization
                 if (metadataEntry == null)
                     return null;
 
-                var json = metadataEntry.ReadString(Encoding.UTF8);
+                var json = await metadataEntry.ReadStringAsync(Encoding.UTF8);
                 var metadata = JsonConvert.DeserializeObject<ResourcePackMetadata>(json);
                 if (metadata != null)
                 {
                     var iconEntry = archive.GetEntry(ICON_FILENAME);
                     if (iconEntry != null)
                     {
-                        var bytes = iconEntry.ReadBytes();
+                        var bytes = await iconEntry.ReadBytesAsync();
                         var texture = Main.ResourceManager.GenerateTextureFromBytes(bytes, metadata.name ?? "pack");
                         var rect = new Rect(0, 0, texture.width, texture.height);
                         var pivot = new Vector2(0.5f, 0.5f);
