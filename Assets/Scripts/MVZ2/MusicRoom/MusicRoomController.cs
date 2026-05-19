@@ -118,7 +118,9 @@ namespace MVZ2.MusicRoom
             var unlockedMusic = musics.Where(t =>
             {
                 var meta = Main.ResourceManager.GetMusicMeta(t);
-                var unlockConditions = meta?.UnlockConditions;
+                if (meta == null)
+                    return false;
+                var unlockConditions = meta.UnlockConditions;
                 return unlockConditions.IsNullOrMeetsConditions(Main.SaveManager);
             });
             musicList.AddRange(unlockedMusic);
@@ -179,22 +181,22 @@ namespace MVZ2.MusicRoom
 
             var description = GetTranslatedStringParticular(LogicStrings.CONTEXT_MUSIC_DESCRIPTION, meta.Description);
 
-            var mainTrack = Main.ResourceManager.GetMusicClip(meta.MainTrack);
-            string totalTime;
-            if (mainTrack.Exists())
+            string totalTime = "??:??";
+            bool trackButtonVisible = false;
+            var assets = Main.ResourceManager.GetFinalMusicSource(musicID);
+            if (assets != null)
             {
-                var time = mainTrack.length;
-                totalTime = string.Format("{0:00}:{1:00}", (int)time / 60, (int)time % 60);
+                var mainTrack = Main.ResourceManager.GetFinalAudioClip(assets.GetMainTrack());
+                if (mainTrack.Exists())
+                {
+                    var time = mainTrack.length;
+                    totalTime = string.Format("{0:00}:{1:00}", (int)time / 60, (int)time % 60);
+                }
+                trackButtonVisible = NamespaceID.IsValid(assets.GetSubTrack());
             }
-            else
-            {
-                totalTime = "??:??";
-            }
-
-
             ui.UpdateInformation(name, infoBuilder.ToString(), description, totalTime);
             ui.SetSelectedItem(index);
-            ui.SetTrackButtonVisible(NamespaceID.IsValid(meta.SubTrack));
+            ui.SetTrackButtonVisible(trackButtonVisible);
             ui.SetTrackButtonStyle(currentMusicId == Main.MusicManager.GetCurrentMusicID() && playingSubTrack);
         }
         private string GetTranslatedString(string text, params object[] args)

@@ -69,6 +69,7 @@ namespace MVZ2.Localization
                 // 加载音效。
                 ReadPackAudioClipsFromManifest(loader, audios, packData);
                 ReadPackSoundsFromManifest(loader, audios, packData);
+                ReadPackMusicFromManifest(loader, audios, packData);
             }
 
             return packData;
@@ -244,7 +245,7 @@ namespace MVZ2.Localization
                     }
                     samples.Add(new ResourcePackSoundSample(sampleID, sampleV1.weight));
                 }
-                var meta = new ResourcePackSoundMeta(samples.ToArray())
+                var meta = new ResourcePackSoundSource(samples.ToArray())
                 {
                     maxCount = sound.maxCount,
                     priority = sound.priority,
@@ -255,6 +256,33 @@ namespace MVZ2.Localization
                     loopVolume = sound.loopVolume,
                 };
                 pack.sounds.Add(id, meta);
+            }
+        }
+        private void ReadPackMusicFromManifest(ResourceLoader loader, ResourcePackAudiosV1 audios, PackReadData pack)
+        {
+            if (audios.musictracks == null)
+                return;
+            foreach (var track in audios.musictracks)
+            {
+                if (track == null)
+                    continue;
+                if (string.IsNullOrEmpty(track.id) || !NamespaceID.TryParse(track.id, Main.BuiltinNamespace, out var id))
+                {
+                    Log.LogWarning($"Incorrect property \"id\" {track.id} of music track in resource pack {pack.Key}.");
+                    continue;
+                }
+                if (track.mainTrack == null || !NamespaceID.TryParse(track.mainTrack, Main.BuiltinNamespace, out var mainTrackID))
+                {
+                    Log.LogWarning($"Music {track.id} in resource pack {pack.Key} has invalid main track.");
+                    continue;
+                }
+                NamespaceID? subTrackID = null;
+                if (track.subTrack != null && NamespaceID.TryParse(track.subTrack, Main.BuiltinNamespace, out var subTrack))
+                {
+                    subTrackID = subTrack;
+                }
+                var meta = new ResourcePackMusicSource(mainTrackID, subTrackID);
+                pack.musictracks.Add(id, meta);
             }
         }
         protected Sprite CreateSprite(Texture2D texture2D, SliceData sliceData, string generatedCategory, string generatedName)
@@ -292,6 +320,7 @@ namespace MVZ2.Localization
             ApplyReadDataTextures(loader, pack, data);
             await ApplyReadDataAudioClips(loader, pack, data);
             ApplyReadDataSounds(loader, pack, data);
+            ApplyReadDataMusictracks(loader, pack, data);
         }
         private void ApplyReadDataCatalogs(ResourcePack pack, PackReadData data)
         {
@@ -356,6 +385,13 @@ namespace MVZ2.Localization
                 pack.AddResourcePackSound(pair.Key, pair.Value);
             }
         }
+        private void ApplyReadDataMusictracks(ResourceLoader loader, ResourcePack pack, PackReadData data)
+        {
+            foreach (var pair in data.musictracks)
+            {
+                pack.AddResourcePackMusicSource(pair.Key, pair.Value);
+            }
+        }
         public const string LOCALIZATION_MANIFEST_FILENAME = "localization.json";
         public const string TEXTURE_MANIFEST_FILENAME = "textures.json";
         public const string AUDIOS_MANIFEST_FILENAME = "audios.json";
@@ -365,7 +401,8 @@ namespace MVZ2.Localization
             public Dictionary<string, Dictionary<string, Catalog>> catalogs = new();
             public List<TextureEntry> textureEntries = new();
             public Dictionary<NamespaceID, AudioClipEntry> audioClips = new();
-            public Dictionary<NamespaceID, ResourcePackSoundMeta> sounds = new();
+            public Dictionary<NamespaceID, ResourcePackSoundSource> sounds = new();
+            public Dictionary<NamespaceID, ResourcePackMusicSource> musictracks = new();
 
             public PackReadData(string key)
             {

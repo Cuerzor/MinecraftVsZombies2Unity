@@ -5,7 +5,12 @@ using UnityEngine;
 
 namespace MVZ2.Audios
 {
-    public interface ISoundMeta
+    public interface IMusicSource
+    {
+        NamespaceID? GetMainTrack();
+        NamespaceID? GetSubTrack();
+    }
+    public interface ISoundSource
     {
         NamespaceID? GetRandomSamplePath();
         int GetMaxCount();

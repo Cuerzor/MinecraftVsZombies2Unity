@@ -17,11 +17,11 @@ namespace MVZ2.Audios
         #region 播放
         public void Play(NamespaceID id)
         {
-            var meta = main.ResourceManager.GetMusicMeta(id);
-            if (meta == null)
+            var assets = main.ResourceManager.GetFinalMusicSource(id);
+            if (assets == null)
                 return;
-            var mainTrack = main.ResourceManager.GetMusicClip(meta.MainTrack);
-            var subTrack = main.ResourceManager.GetMusicClip(meta.SubTrack);
+            var mainTrack = main.ResourceManager.GetFinalAudioClip(assets.GetMainTrack());
+            var subTrack = main.ResourceManager.GetFinalAudioClip(assets.GetSubTrack());
             musicID = id;
             SetSourceClip(mainTrackSource, mainTrack);
             SetSourceClip(subTrackSource, subTrack);
@@ -32,11 +32,11 @@ namespace MVZ2.Audios
         }
         public void SetPlayingMusic(NamespaceID id)
         {
-            var meta = main.ResourceManager.GetMusicMeta(id);
-            if (meta == null)
+            var assets = main.ResourceManager.GetFinalMusicSource(id);
+            if (assets == null)
                 return;
-            var mainTrack = main.ResourceManager.GetMusicClip(meta.MainTrack);
-            var subTrack = main.ResourceManager.GetMusicClip(meta.SubTrack);
+            var mainTrack = main.ResourceManager.GetFinalAudioClip(assets.GetMainTrack());
+            var subTrack = main.ResourceManager.GetFinalAudioClip(assets.GetSubTrack());
             musicID = id;
             SetSourceClip(mainTrackSource, mainTrack);
             SetSourceClip(subTrackSource, subTrack);

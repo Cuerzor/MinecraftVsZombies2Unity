@@ -47,12 +47,6 @@ namespace MVZ2.Managers
         }
         #endregion
 
-        #region 音频片段
-        public AudioClip? GetMusicClip(NamespaceID? path)
-        {
-            return FindInMods(path, mod => mod.Musics);
-        }
-        #endregion
         public string GetMusicName(NamespaceID? musicID)
         {
             if (NamespaceID.IsValid(musicID))
@@ -75,7 +69,7 @@ namespace MVZ2.Managers
             var resources = await LoadLabeledResources<AudioClip>(nsp, Addressables.MergeMode.Intersection, "Init", "Music");
             foreach (var (id, res) in resources)
             {
-                modResource.Musics.Add(id.Path, res);
+                RegisterAudioClip(id, res);
             }
         }
         private async Task LoadMainModMusicClips(string nsp, TaskProgress progress)
@@ -86,7 +80,7 @@ namespace MVZ2.Managers
             var resources = await LoadLabeledResources<AudioClip>(nsp, Addressables.MergeMode.Intersection, progress, "Main", "Music");
             foreach (var (id, res) in resources)
             {
-                modResource.Musics.Add(id.Path, res);
+                RegisterAudioClip(id, res);
             }
         }
         private void LoadUnlocks_Music(ModResource resource)

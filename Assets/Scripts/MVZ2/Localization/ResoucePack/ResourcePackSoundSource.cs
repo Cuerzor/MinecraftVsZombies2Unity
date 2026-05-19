@@ -8,9 +8,9 @@ using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public class ResourcePackSoundMeta : ISoundMeta
+    public class ResourcePackSoundSource : ISoundSource
     {
-        public ResourcePackSoundMeta(ResourcePackSoundSample[] samples)
+        public ResourcePackSoundSource(ResourcePackSoundSample[] samples)
         {
             this.samples = samples;
         }

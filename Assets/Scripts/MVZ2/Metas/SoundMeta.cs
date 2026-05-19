@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace MVZ2.Metas
 {
-    public class SoundMeta : ISoundMeta
+    public class SoundMeta : ISoundSource
     {
         public string name;
         public AudioSample[] samples;

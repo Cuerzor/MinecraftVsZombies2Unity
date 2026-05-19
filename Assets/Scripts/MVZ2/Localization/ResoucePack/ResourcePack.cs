@@ -15,7 +15,7 @@ using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public class ResourcePack : ISpriteProvider, ITexture2DProvider, IAudioClipProvider, ISoundMetaProvider
+    public class ResourcePack : ISpriteProvider, ITexture2DProvider, IAudioClipProvider, ISoundSourceProvider, IMusicSourceProvider
     {
         public ResourcePack(string key, string filename)
         {
@@ -148,13 +148,24 @@ namespace MVZ2.Localization
 
 
         #region 资源包音效
-        public void AddResourcePackSound(NamespaceID path, ResourcePackSoundMeta sound)
+        public void AddResourcePackSound(NamespaceID path, ResourcePackSoundSource sound)
         {
             sounds.Add(path, sound);
         }
-        public bool TryGetResourcePackSound(NamespaceID path, out ResourcePackSoundMeta sound)
+        public bool TryGetResourcePackSound(NamespaceID path, out ResourcePackSoundSource sound)
         {
             return sounds.TryGetValue(path, out sound);
+        }
+        #endregion
+
+        #region 资源包音乐
+        public void AddResourcePackMusicSource(NamespaceID path, ResourcePackMusicSource source)
+        {
+            musicSources.Add(path, source);
+        }
+        public bool TryGetResourcePackMusicSource(NamespaceID path, out ResourcePackMusicSource source)
+        {
+            return musicSources.TryGetValue(path, out source);
         }
         #endregion
 
@@ -188,9 +199,19 @@ namespace MVZ2.Localization
         {
             return TryGetAudioClip(key, out audio);
         }
-        bool IResourceProvider<NamespaceID, ISoundMeta>.TryGet(NamespaceID key, out ISoundMeta? soundMeta)
+        bool IResourceProvider<NamespaceID, ISoundSource>.TryGet(NamespaceID key, out ISoundSource? soundMeta)
         {
             if (TryGetResourcePackSound(key, out var sound))
+            {
+                soundMeta = sound;
+                return true;
+            }
+            soundMeta = null;
+            return false;
+        }
+        bool IResourceProvider<NamespaceID, IMusicSource>.TryGet(NamespaceID key, out IMusicSource? soundMeta)
+        {
+            if (TryGetResourcePackMusicSource(key, out var sound))
             {
                 soundMeta = sound;
                 return true;
@@ -206,7 +227,8 @@ namespace MVZ2.Localization
         public Dictionary<SpriteLookupKey, Sprite> sprites = new Dictionary<SpriteLookupKey, Sprite>();
 
         public Dictionary<NamespaceID, AudioClip> audioClips = new Dictionary<NamespaceID, AudioClip>();
-        public Dictionary<NamespaceID, ResourcePackSoundMeta> sounds = new Dictionary<NamespaceID, ResourcePackSoundMeta>();
+        public Dictionary<NamespaceID, ResourcePackSoundSource> sounds = new Dictionary<NamespaceID, ResourcePackSoundSource>();
+        public Dictionary<NamespaceID, ResourcePackMusicSource> musicSources = new Dictionary<NamespaceID, ResourcePackMusicSource>();
         public string Key { get; private set; }
         public int Priority { get; set; }
     }

@@ -13,6 +13,7 @@ namespace MVZ2.Sprites
         {
             textures.Clear();
             categories.Clear();
+            audioClips.Clear();
         }
         public void Clear()
         {

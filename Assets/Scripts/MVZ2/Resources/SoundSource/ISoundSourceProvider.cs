@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace MVZ2.Resources
 {
-    public interface ISoundMetaProvider : IResourceProvider<NamespaceID, ISoundMeta>
+    public interface ISoundSourceProvider : IResourceProvider<NamespaceID, ISoundSource>
     {
     }
 }

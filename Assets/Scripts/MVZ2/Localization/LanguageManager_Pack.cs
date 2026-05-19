@@ -284,7 +284,8 @@ namespace MVZ2.Localization
             Main.ResourceManager.AddSpriteProvider(pack);
             Main.ResourceManager.AddTextureProvider(pack);
             Main.ResourceManager.AddAudioClipProvider(pack);
-            Main.ResourceManager.AddSoundMetaProvider(pack);
+            Main.ResourceManager.AddSoundSourceProvider(pack);
+            Main.ResourceManager.AddMusicSourceProvider(pack);
         }
         #endregion
 
@@ -322,7 +323,8 @@ namespace MVZ2.Localization
             Main.ResourceManager.RemoveSpriteProvider(pack);
             Main.ResourceManager.RemoveTextureProvider(pack);
             Main.ResourceManager.RemoveAudioClipProvider(pack);
-            Main.ResourceManager.RemoveSoundMetaProvider(pack);
+            Main.ResourceManager.RemoveSoundSourceProvider(pack);
+            Main.ResourceManager.RemoveMusicSourceProvider(pack);
         }
         #endregion
 

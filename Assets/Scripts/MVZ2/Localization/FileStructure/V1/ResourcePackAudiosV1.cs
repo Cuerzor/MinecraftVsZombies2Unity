@@ -9,6 +9,7 @@ namespace MVZ2.Localization
     {
         public ResourcePackAudioClipSampleV1[]? samples;
         public ResourcePackSoundV1[]? sounds;
+        public ResourcePackMusicTrackV1[]? musictracks;
     }
     public class ResourcePackAudioClipSampleV1
     {
@@ -56,5 +57,12 @@ namespace MVZ2.Localization
         [DefaultValue(1f)]
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public float weight = 1;
+    }
+    public class ResourcePackMusicTrackV1
+    {
+        public string? id;
+        public string? mainTrack;
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? subTrack;
     }
 }

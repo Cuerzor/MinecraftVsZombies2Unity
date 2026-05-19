@@ -27,8 +27,10 @@ namespace MVZ2.Managers
         public void RemoveTextureProvider(ITexture2DProvider provider) => resourceLibrary.RemoveTextureProvider(provider);
         public void AddAudioClipProvider(IAudioClipProvider provider) => resourceLibrary.AddAudioClipProvider(provider);
         public void RemoveAudioClipProvider(IAudioClipProvider provider) => resourceLibrary.RemoveAudioClipProvider(provider);
-        public void AddSoundMetaProvider(ISoundMetaProvider provider) => resourceLibrary.AddSoundMetaProvider(provider);
-        public void RemoveSoundMetaProvider(ISoundMetaProvider provider) => resourceLibrary.RemoveSoundMetaProvider(provider);
+        public void AddSoundSourceProvider(ISoundSourceProvider provider) => resourceLibrary.AddSoundSourceProvider(provider);
+        public void RemoveSoundSourceProvider(ISoundSourceProvider provider) => resourceLibrary.RemoveSoundSourceProvider(provider);
+        public void AddMusicSourceProvider(IMusicSourceProvider provider) => resourceLibrary.AddMusicSourceProvider(provider);
+        public void RemoveMusicSourceProvider(IMusicSourceProvider provider) => resourceLibrary.RemoveMusicSourceProvider(provider);
         #endregion
 
         #region Register
@@ -66,10 +68,11 @@ namespace MVZ2.Managers
         public Texture2D? GetFinalTexture(NamespaceID? id) => resourceLibrary.GetFinalTexture(id, GetResourceContext());
 
 
-        public AudioClip? GetAudioClip(NamespaceID id) => resourceLibrary.GetAudioClip(id);
+        public AudioClip? GetAudioClip(NamespaceID? id) => resourceLibrary.GetAudioClip(id);
         public AudioClip? GetFinalAudioClip(NamespaceID? id) => resourceLibrary.GetFinalAudioClip(id, GetResourceContext());
 
-        public ISoundMeta? GetFinalSoundMeta(NamespaceID? id) => resourceLibrary.GetFinalSoundMeta(id, GetResourceContext());
+        public ISoundSource? GetFinalSoundMeta(NamespaceID? id) => resourceLibrary.GetFinalSoundMeta(id, GetResourceContext());
+        public IMusicSource? GetFinalMusicSource(NamespaceID? id) => resourceLibrary.GetFinalMusicSource(id, GetResourceContext());
         #endregion
 
         #region Resource ID
@@ -82,7 +85,8 @@ namespace MVZ2.Managers
         private void Init_Resolving()
         {
             resourceLibrary.Init();
-            resourceLibrary.AddSoundMetaProvider(new SoundMetaProvider(this));
+            resourceLibrary.AddSoundSourceProvider(new BaseGameSoundSourceProvider(this));
+            resourceLibrary.AddMusicSourceProvider(new BaseGameMusicSourceProvider(this));
         }
         private void ClearResources_Resolving()
         {

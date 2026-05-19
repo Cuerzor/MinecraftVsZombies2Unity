@@ -30,8 +30,10 @@ namespace MVZ2.Managers
         public void RemoveTextureProvider(ITexture2DProvider provider) => textureResolver.RemoveProvider(provider);
         public void AddAudioClipProvider(IAudioClipProvider provider) => audioClipResolver.AddProvider(provider);
         public void RemoveAudioClipProvider(IAudioClipProvider provider) => audioClipResolver.RemoveProvider(provider);
-        public void AddSoundMetaProvider(ISoundMetaProvider provider) => soundMetaResolver.AddProvider(provider);
-        public void RemoveSoundMetaProvider(ISoundMetaProvider provider) => soundMetaResolver.RemoveProvider(provider);
+        public void AddSoundSourceProvider(ISoundSourceProvider provider) => soundSourceResolver.AddProvider(provider);
+        public void RemoveSoundSourceProvider(ISoundSourceProvider provider) => soundSourceResolver.RemoveProvider(provider);
+        public void AddMusicSourceProvider(IMusicSourceProvider provider) => musicSourceResolver.AddProvider(provider);
+        public void RemoveMusicSourceProvider(IMusicSourceProvider provider) => musicSourceResolver.RemoveProvider(provider);
         #endregion
 
         #region register
@@ -110,11 +112,17 @@ namespace MVZ2.Managers
                 return null;
             return audioClipResolver.Resolve(id, context);
         }
-        public ISoundMeta? GetFinalSoundMeta(NamespaceID? id, ResourceContext context)
+        public ISoundSource? GetFinalSoundMeta(NamespaceID? id, ResourceContext context)
         {
             if (!NamespaceID.IsValid(id))
                 return null;
-            return soundMetaResolver.Resolve(id, context);
+            return soundSourceResolver.Resolve(id, context);
+        }
+        public IMusicSource? GetFinalMusicSource(NamespaceID? id, ResourceContext context)
+        {
+            if (!NamespaceID.IsValid(id))
+                return null;
+            return musicSourceResolver.Resolve(id, context);
         }
         #endregion
 
@@ -139,6 +147,7 @@ namespace MVZ2.Managers
         private SpriteResourceResolver spriteResolver = new SpriteResourceResolver();
         private ResourceResolver<NamespaceID, Texture2D> textureResolver = new ResourceResolver<NamespaceID, Texture2D>();
         private ResourceResolver<NamespaceID, AudioClip> audioClipResolver = new ResourceResolver<NamespaceID, AudioClip>();
-        private ResourceResolver<NamespaceID, ISoundMeta> soundMetaResolver = new ResourceResolver<NamespaceID, ISoundMeta>();
+        private ResourceResolver<NamespaceID, ISoundSource> soundSourceResolver = new ResourceResolver<NamespaceID, ISoundSource>();
+        private ResourceResolver<NamespaceID, IMusicSource> musicSourceResolver = new ResourceResolver<NamespaceID, IMusicSource>();
     }
 }
