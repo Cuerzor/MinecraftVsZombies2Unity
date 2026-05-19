@@ -30,17 +30,16 @@ namespace MVZ2.Audios
         {
             if (id == null)
                 return null;
-            var soundsMeta = main.ResourceManager.GetSoundMetaList(id.SpaceName);
-            var meta = main.ResourceManager.GetSoundMeta(id);
-            if (soundsMeta == null || meta == null)
+            var meta = main.ResourceManager.GetFinalSoundMeta(id);
+            if (meta == null)
                 return null;
-            var sample = meta.GetRandomSample();
+            var sample = meta.GetRandomSamplePath();
             if (sample == null)
                 return null;
-            var clip = main.ResourceManager.GetSoundClip(sample.path);
+            var clip = main.ResourceManager.GetFinalAudioClip(sample);
             if (!clip)
                 return null;
-            var maxCount = meta.maxCount;
+            var maxCount = meta.GetMaxCount();
             var sameSoundSources = soundSources.Where(s => s.SoundID == id);
             if (maxCount > 0 && sameSoundSources.Count() >= maxCount)
             {
@@ -55,7 +54,7 @@ namespace MVZ2.Audios
             audioSource.clip = clip;
             audioSource.pitch = pitch;
             audioSource.spatialBlend = spatialBlend;
-            audioSource.priority = meta.priority;
+            audioSource.priority = meta.GetPriority();
             soundSources.Add(source);
             audioSource.gameObject.SetActive(true);
             return audioSource;
@@ -67,14 +66,13 @@ namespace MVZ2.Audios
                 return false;
             if (IsPlayingLoopSound(id))
                 return false;
-            var soundsMeta = main.ResourceManager.GetSoundMetaList(id.SpaceName);
-            var meta = main.ResourceManager.GetSoundMeta(id);
-            if (soundsMeta == null || meta == null)
+            var meta = main.ResourceManager.GetFinalSoundMeta(id);
+            if (meta == null)
                 return false;
-            var sample = meta.GetRandomSample();
+            var sample = meta.GetRandomSamplePath();
             if (sample == null)
                 return false;
-            var clip = main.ResourceManager.GetSoundClip(sample.path);
+            var clip = main.ResourceManager.GetFinalAudioClip(sample);
             if (!clip)
                 return false;
             var source = Instantiate(loopSoundTemplate, Vector3.zero, Quaternion.identity, loopSoundSourceRoot);
@@ -83,7 +81,7 @@ namespace MVZ2.Audios
 
             var audioSource = source.AudioSource;
             audioSource.clip = clip;
-            audioSource.priority = meta.priority;
+            audioSource.priority = meta.GetPriority();
             loopSoundSources.Add(id, source);
             audioSource.gameObject.SetActive(true);
             return true;
@@ -162,7 +160,7 @@ namespace MVZ2.Audios
         }
         private void UpdateLoopSound(NamespaceID id, SoundSource source, float intensity)
         {
-            var meta = Main.ResourceManager.GetSoundMeta(id);
+            var meta = Main.ResourceManager.GetFinalSoundMeta(id);
             if (meta == null)
             {
                 source.Volume = intensity;
@@ -170,10 +168,10 @@ namespace MVZ2.Audios
                 return;
             }
 
-            var pitchStart = meta.loopPitchStart;
-            var pitchEnd = meta.loopPitchEnd;
+            var pitchStart = meta.GetLoopPitchStart();
+            var pitchEnd = meta.GetLoopPitchEnd();
             var pitch = (pitchEnd - pitchStart) * intensity + pitchStart;
-            source.Volume = intensity * meta.loopVolume;
+            source.Volume = intensity * meta.GetLoopVolume();
             source.Pitch = pitch;
         }
         private void RemoveSoundSource(SoundSource source)

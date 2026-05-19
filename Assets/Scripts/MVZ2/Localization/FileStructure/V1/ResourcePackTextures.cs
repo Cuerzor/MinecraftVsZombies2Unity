@@ -2,10 +2,9 @@
 
 namespace MVZ2.Localization
 {
-    public class ResourcePackManifest
+    public class ResourcePackTextures
     {
         public ResourcePackTexture[]? textures;
-        public ResourcePackLocalization? localization;
     }
     public class ResourcePackLocalization
     {

@@ -2,7 +2,9 @@
 
 using System.Linq;
 using System.Threading.Tasks;
+using MVZ2.Audios;
 using MVZ2.Metas;
+using MVZ2.Resources;
 using PVZEngine;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -11,7 +13,15 @@ namespace MVZ2.Managers
 {
     public partial class ResourceManager : MonoBehaviour
     {
-        #region 元数据列表
+        #region 元数据
+        public void AddSoundMetaProvider(ISoundMetaProvider provider)
+        {
+            soundMetaResolver.AddProvider(provider);
+        }
+        public void RemoveSoundMetaProvider(ISoundMetaProvider provider)
+        {
+            soundMetaResolver.RemoveProvider(provider);
+        }
         public SoundMetaList? GetSoundMetaList(string nsp)
         {
             var modResource = GetModResource(nsp);
@@ -19,9 +29,6 @@ namespace MVZ2.Managers
                 return null;
             return modResource.SoundMetaList;
         }
-        #endregion
-
-        #region 元数据
         public SoundMeta? GetSoundMeta(NamespaceID id)
         {
             var soundMeta = GetSoundMetaList(id.SpaceName);
@@ -29,16 +36,67 @@ namespace MVZ2.Managers
                 return null;
             return soundMeta.metas.FirstOrDefault(m => m.name == id.Path);
         }
+        public ISoundMeta? GetFinalSoundMeta(NamespaceID? id)
+        {
+            if (!NamespaceID.IsValid(id))
+                return null;
+            return soundMetaResolver.Resolve(id, GetResourceContext());
+        }
         #endregion
 
         #region 音频片段
-        public AudioClip? GetSoundClip(NamespaceID id)
+        public void AddAudioClipProvider(IAudioClipProvider provider)
         {
-            return FindInMods(id, mod => mod.Sounds);
+            audioClipResolver.AddProvider(provider);
+        }
+        public void RemoveAudioClipProvider(IAudioClipProvider provider)
+        {
+            audioClipResolver.RemoveProvider(provider);
+        }
+        public AudioClip? GetAudioClip(NamespaceID id)
+        {
+            return baseGameAudioClips.TryGet(id, out var clip) ? clip : null;
+        }
+        public AudioClip? GetFinalAudioClip(NamespaceID? id)
+        {
+            if (!NamespaceID.IsValid(id))
+                return null;
+            return audioClipResolver.Resolve(id, GetResourceContext());
+        }
+        #endregion
+
+        #region 生成音频
+        public void AddGeneratedAudioClip(AudioClip audioClip)
+        {
+            RegisterGeneratedAudioClip(audioClip);
+        }
+        public void RemoveGeneratedAudioClip(AudioClip audioClip)
+        {
+            UnregisterGeneratedAudioClip(audioClip);
+            Destroy(audioClip);
+        }
+        private void RegisterGeneratedAudioClip(AudioClip audioClip)
+        {
+            if (generatedResourceManifest)
+            {
+                generatedResourceManifest.AddAudioClip(audioClip);
+            }
+        }
+        private void UnregisterGeneratedAudioClip(AudioClip audioClip)
+        {
+            if (generatedResourceManifest)
+            {
+                generatedResourceManifest.RemoveAudioClip(audioClip);
+            }
         }
         #endregion
 
         #region 私有方法
+        private void Init_Sounds()
+        {
+            audioClipResolver.AddProvider(baseGameAudioClips);
+            soundMetaResolver.AddProvider(new SoundMetaProvider(this));
+        }
         private async Task LoadInitModSoundClips(string nsp)
         {
             var modResource = GetModResource(nsp);
@@ -47,7 +105,7 @@ namespace MVZ2.Managers
             var resources = await LoadLabeledResources<AudioClip>(nsp, Addressables.MergeMode.Intersection, "Init", "Sound");
             foreach (var (id, res) in resources)
             {
-                modResource.Sounds.Add(id.Path, res);
+                baseGameAudioClips.Register(id, res);
             }
         }
         private async Task LoadMainModSoundClips(string nsp, TaskProgress progress)
@@ -59,10 +117,14 @@ namespace MVZ2.Managers
             for (int i = 0; i < resources.Length; i++)
             {
                 var (id, res) = resources[i];
-                modResource.Sounds.Add(id.Path, res);
+                baseGameAudioClips.Register(id, res);
                 progress?.SetCurrentTaskName($"Added {id.Path}");
             }
         }
         #endregion
+
+        private AudioClipDatabase baseGameAudioClips = new AudioClipDatabase();
+        private AudioClipResolver audioClipResolver = new AudioClipResolver();
+        private SoundMetaResolver soundMetaResolver = new SoundMetaResolver();
     }
 }

@@ -31,7 +31,7 @@ namespace MVZ2.Localization
             var bytes = await manager.LoadBuiltinBytes();
             var reader = new ResourcePackMetadataReader(manager.Main);
             using var memoryStream = new MemoryStream(bytes);
-            var loader = new ResourceLoaderZip(memoryStream, "builtin");
+            var loader = new ResourceLoaderZip(memoryStream, GetFileName());
             return await reader.ReadMetadata(loader, GetKey());
         }
         public override async UniTask<ResourcePack?> LoadPack(LanguageManager manager, int dataVersion)
@@ -39,7 +39,7 @@ namespace MVZ2.Localization
             var bytes = await manager.LoadBuiltinBytes();
             var reader = ResourcePackReaderFactory.Create(manager.Main, dataVersion);
             using var memoryStream = new MemoryStream(bytes);
-            var loader = new ResourceLoaderZip(memoryStream, "builtin");
+            var loader = new ResourceLoaderZip(memoryStream, GetFileName());
             return await reader.ReadPack(loader, GetKey());
         }
         public override async UniTask<bool> Export(LanguageManager manager, string destPath)

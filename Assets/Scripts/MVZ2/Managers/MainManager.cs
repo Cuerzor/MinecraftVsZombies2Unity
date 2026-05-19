@@ -122,7 +122,7 @@ namespace MVZ2.Managers
         #region 贴图
         public Sprite? GetSprite(SpriteReference? spriteRef) => ResourceManager.GetSprite(spriteRef);
         public Sprite GetFinalSprite(Sprite sprite, ResourceContext args) => ResourceManager.GetFinalSprite(sprite, args);
-        public ResourceContext GetSpriteVariantContenxt() => ResourceManager.GetSpriteVariantContext();
+        public ResourceContext GetSpriteVariantContenxt() => ResourceManager.GetResourceContext();
         #endregion
 
 

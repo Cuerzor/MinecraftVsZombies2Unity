@@ -9,11 +9,4 @@ namespace MVZ2.Localization
     {
         UniTask<ResourcePack?> ReadPack(ResourceLoader loader, string key);
     }
-    public interface IResourcePackReaderZip : IResourcePackReader
-    {
-    }
-    public interface IResourcePackReaderDirectory : IResourcePackReader
-    {
-
-    }
 }

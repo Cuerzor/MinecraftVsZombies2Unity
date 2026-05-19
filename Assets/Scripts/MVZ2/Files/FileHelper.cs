@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using SFB;
+using UnityEngine;
 #if UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_STANDALONE_LINUX || UNITY_EDITOR
 #elif UNITY_IOS || UNITY_ANDROID
 using UnityEngine;
@@ -95,6 +96,21 @@ namespace MVZ2.IO
             await Task.CompletedTask;
             return null;
 #endif
+        }
+        public static string GetFilePathURL(string filePath)
+        {
+            // 1. 根据不同平台，对文件路径进行格式化
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                // Android平台下，路径不需要 "file://" 前缀
+                // 音频文件需要放在StreamingAssets文件夹下
+                return Path.Combine(Application.streamingAssetsPath, filePath);
+            }
+            else
+            {
+                // 其他平台（如Windows, iOS），需要添加 "file://" 前缀
+                return "file://" + filePath;
+            }
         }
     }
 }

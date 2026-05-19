@@ -157,12 +157,12 @@ namespace MVZ2.Level.Components
             {
                 var soundID = playingLoopSounds[i];
                 var intensity = GetLoopSoundIntensity(soundID);
-                var meta = Main.ResourceManager.GetSoundMeta(soundID);
+                var meta = Main.ResourceManager.GetFinalSoundMeta(soundID);
                 bool active = HasLoopSoundEntities(soundID) && Controller.IsGameRunning();
                 float speed = active ? 1 : -1;
                 if (meta != null)
                 {
-                    speed = active ? meta.loopFadeInSpeed : -meta.loopFadeOutSpeed;
+                    speed = active ? meta.GetLoopFadeInSpeed() : -meta.GetLoopFadeOutSpeed();
                 }
                 speed *= deltaTime;
                 intensity = Mathf.Clamp01(intensity + speed);

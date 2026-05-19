@@ -46,7 +46,7 @@ namespace MVZ2.Managers
         }
         public Texture2D? GetFinalTexture(NamespaceID? id)
         {
-            return GetFinalTexture(id, GetSpriteVariantContext());
+            return GetFinalTexture(id, GetResourceContext());
         }
         public Texture2D? GetFinalTexture(NamespaceID? id, ResourceContext context)
         {

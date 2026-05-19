@@ -40,6 +40,7 @@ namespace MVZ2.Managers
         {
             Init_Sprites();
             Init_Textures();
+            Init_Sounds();
             ClearResources();
             foreach (var mod in main.ModManager.GetAllModInfos())
             {

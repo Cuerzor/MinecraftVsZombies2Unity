@@ -7,7 +7,7 @@ using UnityEngine;
 namespace MVZ2.Sprites
 {
     [CreateAssetMenu(fileName = "NewGeneratedSpriteManifest", menuName = "MVZ2/Generated Sprite Manifest")]
-    public class GeneratedSpriteManifest : ScriptableObject
+    public class GeneratedResourceManifest : ScriptableObject
     {
         public void Reset()
         {
@@ -28,6 +28,10 @@ namespace MVZ2.Sprites
             {
                 Destroy(texture.texture);
             }
+            foreach (var audioClip in audioClips)
+            {
+                Destroy(audioClip);
+            }
             Reset();
         }
         public void AddTexture2D(Texture2D texture2D)
@@ -41,6 +45,14 @@ namespace MVZ2.Sprites
                 return false;
             textures.RemoveAt(generated);
             return true;
+        }
+        public void AddAudioClip(AudioClip audioClip)
+        {
+            audioClips.Add(audioClip);
+        }
+        public bool RemoveAudioClip(AudioClip audioClip)
+        {
+            return audioClips.Remove(audioClip);
         }
         public void AddSprite(string category, Sprite sprite, Sprite background)
         {
@@ -65,5 +77,6 @@ namespace MVZ2.Sprites
         }
         public List<GeneratedTexture2D> textures = new List<GeneratedTexture2D>();
         public List<GeneratedSpriteCategory> categories = new List<GeneratedSpriteCategory>();
+        public List<AudioClip> audioClips = new List<AudioClip>();
     }
 }

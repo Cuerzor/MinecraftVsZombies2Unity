@@ -44,7 +44,6 @@ namespace MVZ2.Modding
         public BuffMetaList? BuffMetaList { get; set; }
         public UnlockMetaList? UnlockMetaList { get; set; }
         public OptionMetaList? OptionMetaList { get; set; }
-        public Dictionary<string, AudioClip> Sounds = new();
         public Dictionary<string, AudioClip> Musics = new();
         public Dictionary<string, CharacterVariantSprite[]> CharacterVariantSprites = new();
         public Dictionary<string, TalkMeta> TalkMetas = new();

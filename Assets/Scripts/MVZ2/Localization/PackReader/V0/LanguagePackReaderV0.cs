@@ -27,7 +27,7 @@ namespace MVZ2.Localization
                 var packReadData = await UniTask.RunOnThreadPool(() => ReadPackData(loader, key));
                 if (packReadData == null)
                     return null;
-                var pack = new ResourcePack(key);
+                var pack = new ResourcePack(key, loader.FileName);
 
                 await UniTask.SwitchToMainThread();
 
@@ -37,7 +37,7 @@ namespace MVZ2.Localization
             }
             catch (Exception e)
             {
-                Debug.LogError($"读取语言包{loader.Name}失败：{e}");
+                Debug.LogError($"读取语言包{key}失败：{e}");
                 return null;
             }
         }

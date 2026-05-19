@@ -1,0 +1,12 @@
+{
+  "languages": [
+    {
+      "code": "en-US",
+      "catalogs": [
+        "mvz2/catalogs/en-US/almanac.mo",
+        "mvz2/catalogs/en-US/general.mo",
+        "mvz2/catalogs/en-US/talk.mo"
+      ]
+    }
+  ]
+}

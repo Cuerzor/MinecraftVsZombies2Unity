@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 8461513829554171411}
-  generatedSpriteManifest: {fileID: 11400000, guid: cd706561546c5454c978c77fd4f32daa, type: 2}
+  generatedResourceManifest: {fileID: 11400000, guid: cd706561546c5454c978c77fd4f32daa, type: 2}
   defaultSprite: {fileID: 21300000, guid: ada34604e282038429a0cd4310662aa1, type: 3}
 --- !u!1 &1307615763681535639
 GameObject:

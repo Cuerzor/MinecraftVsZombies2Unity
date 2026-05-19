@@ -204,7 +204,6 @@ namespace MVZ2.Editor
             var path = LocalizationMenu.GetLanguagePackDirectory();
 
             var packDir = Path.Combine(Application.dataPath, "Localization", "pack");
-            var manifestPath = Path.Combine(packDir, ResourcePackReaderV1.MANIFEST_FILENAME);
 
             var packAssetsDir = Path.Combine(packDir, "assets");
             var databaseDir = Path.Combine("Assets", "GameContent", "Assets");
@@ -317,19 +316,26 @@ namespace MVZ2.Editor
                 languages = resourcePackLanguages.ToArray()
             };
 
-            ResourcePackManifest manifest = new ResourcePackManifest()
+            ResourcePackTextures textures = new ResourcePackTextures()
             {
-                textures = resoucePackTextures.ToArray(),
-                localization = resoucePackLocalization
+                textures = resoucePackTextures.ToArray()
             };
-            var manifestJson = JsonConvert.SerializeObject(manifest, Newtonsoft.Json.Formatting.Indented);
+            var texturesJson = JsonConvert.SerializeObject(textures, Newtonsoft.Json.Formatting.Indented);
+            var manifestPath = Path.Combine(packDir, ResourcePackReaderV1.TEXTURE_MANIFEST_FILENAME);
+            WriteResourcePackManifest(manifestPath, texturesJson);
 
-            FileHelper.ValidateDirectory(manifestPath);
-            using var stream = File.Open(manifestPath, FileMode.Create);
-            using var writer = new StreamWriter(stream);
-            writer.Write(manifestJson);
+            var localizationJson = JsonConvert.SerializeObject(resoucePackLocalization, Newtonsoft.Json.Formatting.Indented);
+            var localizationPath = Path.Combine(packDir, ResourcePackReaderV1.LOCALIZATION_MANIFEST_FILENAME);
+            WriteResourcePackManifest(localizationPath, localizationJson);
 
             Debug.Log($"语言包清单已更新：{manifestPath}");
+        }
+        private static void WriteResourcePackManifest(string path, string json)
+        {
+            FileHelper.ValidateDirectory(path);
+            using var stream = File.Open(path, FileMode.Create);
+            using var writer = new StreamWriter(stream);
+            writer.Write(json);
         }
         public static void UpdateResourcePackDemo()
         {
@@ -338,11 +344,11 @@ namespace MVZ2.Editor
 
             // 将spriteManifest.json复制到LanguagePack\templates中。
             Debug.Log("更新语言包贴图清单……");
-            var sourceManifestPath = Path.Combine(Application.dataPath, "Localization", "pack", ResourcePackReaderV1.MANIFEST_FILENAME);
+            var sourceManifestPath = Path.Combine(Application.dataPath, "Localization", "pack", ResourcePackReaderV1.TEXTURE_MANIFEST_FILENAME);
             var templatesDir = Path.Combine(Application.dataPath, "LanguagePack", "templates");
             if (File.Exists(sourceManifestPath))
             {
-                var destPath = Path.Combine(templatesDir, ResourcePackReaderV1.MANIFEST_FILENAME);
+                var destPath = Path.Combine(templatesDir, ResourcePackReaderV1.TEXTURE_MANIFEST_FILENAME);
                 FileHelper.ValidateDirectory(destPath);
                 File.Copy(sourceManifestPath, destPath, true);
             }

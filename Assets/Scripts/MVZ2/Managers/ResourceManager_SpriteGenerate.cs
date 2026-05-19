@@ -31,16 +31,16 @@ namespace MVZ2.Managers
         }
         private void RegisterGeneratedTexture2D(Texture2D texture2D)
         {
-            if (generatedSpriteManifest)
+            if (generatedResourceManifest)
             {
-                generatedSpriteManifest.AddTexture2D(texture2D);
+                generatedResourceManifest.AddTexture2D(texture2D);
             }
         }
         private void UnregisterGeneratedTexture2D(Texture2D texture2D)
         {
-            if (generatedSpriteManifest)
+            if (generatedResourceManifest)
             {
-                generatedSpriteManifest.RemoveTexture2D(texture2D);
+                generatedResourceManifest.RemoveTexture2D(texture2D);
             }
         }
         #endregion
@@ -65,18 +65,18 @@ namespace MVZ2.Managers
         }
         private void RegisterGeneratedSprite(Sprite sprite, string category)
         {
-            if (generatedSpriteManifest)
+            if (generatedResourceManifest)
             {
                 var background = Sprite.Create(backgroundTex, sprite.rect, sprite.pivot);
                 background.name = sprite.name;
-                generatedSpriteManifest.AddSprite(category, sprite, background);
+                generatedResourceManifest.AddSprite(category, sprite, background);
             }
         }
         private void UnregisterGeneratedSprite(string name, string category)
         {
-            if (generatedSpriteManifest)
+            if (generatedResourceManifest)
             {
-                generatedSpriteManifest.RemoveSprite(category, name);
+                generatedResourceManifest.RemoveSprite(category, name);
             }
         }
         #endregion
@@ -84,9 +84,9 @@ namespace MVZ2.Managers
         #region 清除生成的贴图
         private void ClearGeneratedSpriteManifest()
         {
-            if (generatedSpriteManifest)
+            if (generatedResourceManifest)
             {
-                generatedSpriteManifest.Clear();
+                generatedResourceManifest.Clear();
             }
         }
         #endregion
@@ -130,7 +130,7 @@ namespace MVZ2.Managers
 
         [Header("Sprite Generate")]
         [SerializeField]
-        private GeneratedSpriteManifest generatedSpriteManifest = null!;
+        private GeneratedResourceManifest generatedResourceManifest = null!;
         private Color32[] spriteColorBuffer = new Color32[COLOR_BUFFER_WIDTH * COLOR_BUFFER_HEIGHT];
     }
 }

@@ -29,17 +29,17 @@ namespace MVZ2.Localization
                 var packReadData = await UniTask.RunOnThreadPool(() => ReadPackData(loader, key));
                 if (packReadData == null)
                     return null;
-                var pack = new ResourcePack(key);
+                var pack = new ResourcePack(key, loader.FileName);
 
                 await UniTask.SwitchToMainThread();
 
-                ApplyReadData(loader, pack, packReadData);
+                await ApplyReadData(loader, pack, packReadData);
 
                 return pack;
             }
             catch (Exception e)
             {
-                Debug.LogError($"读取语言包{loader.Name}失败：{e}");
+                Debug.LogError($"读取语言包{key}失败：{e}");
                 return null;
             }
         }
@@ -49,89 +49,91 @@ namespace MVZ2.Localization
             var packData = new PackReadData(key);
 
             // 将manifest读取到内存。
-            var manifest = await LoadManifest(loader, MANIFEST_FILENAME);
-            if (manifest == null)
+            var localization = await LoadManifest<ResourcePackLocalization>(loader, LOCALIZATION_MANIFEST_FILENAME);
+            if (localization != null)
             {
-                throw new FileNotFoundException($"The file {MANIFEST_FILENAME} in resource pack {loader.Name} is missing!");
+                // 加载翻译文件。
+                await ReadPackCatalogsFromManifest(loader, localization, packData);
             }
 
-            // 从manifest中读取资源包内容。
-            await ReadPackFromManifest(loader, manifest, packData, key);
+            var textures = await LoadManifest<ResourcePackTextures>(loader, TEXTURE_MANIFEST_FILENAME);
+            if (textures != null)
+            {
+                // 加载贴图。
+                ReadPackSpritesFromManifest(loader, textures, packData);
+            }
+
+            var audios = await LoadManifest<ResourcePackAudiosV1>(loader, AUDIOS_MANIFEST_FILENAME);
+            if (audios != null)
+            {
+                // 加载音效。
+                ReadPackAudioClipsFromManifest(loader, audios, packData);
+                ReadPackSoundsFromManifest(loader, audios, packData);
+            }
+
             return packData;
         }
-        private async UniTask<ResourcePackManifest?> LoadManifest(ResourceLoader loader, string path)
+        private async UniTask<T?> LoadManifest<T>(ResourceLoader loader, string path)
         {
             // 加载Sprite Manifest文件。
             var manifestJson = await loader.LoadStringAsync(path);
             if (string.IsNullOrEmpty(manifestJson))
-                return null;
+                return default;
 
-            return JsonConvert.DeserializeObject<ResourcePackManifest>(manifestJson);
+            return JsonConvert.DeserializeObject<T>(manifestJson);
         }
-        private async UniTask ReadPackFromManifest(ResourceLoader loader, ResourcePackManifest manifest, PackReadData packData, string key)
+        private async UniTask ReadPackCatalogsFromManifest(ResourceLoader loader, ResourcePackLocalization manifest, PackReadData packData)
         {
-            // 加载翻译文件。
-            await ReadPackCatalogsFromManifest(loader, manifest, packData);
-
-            // 加载贴图。
-            ReadPackSpritesFromManifest(loader, manifest, packData, key);
-        }
-        private async UniTask ReadPackCatalogsFromManifest(ResourceLoader loader, ResourcePackManifest manifest, PackReadData packData)
-        {
-            if (manifest.localization == null)
+            if (manifest.languages == null)
                 return;
-
-            if (manifest.localization.languages != null)
+            foreach (var language in manifest.languages)
             {
-                foreach (var language in manifest.localization.languages)
+                // 语言代码。
+                var code = language.code;
+                if (string.IsNullOrEmpty(code))
+                    continue;
+
+                var catalogDictionary = new Dictionary<string, Catalog>();
+                if (language.catalogs != null)
                 {
-                    // 语言代码。
-                    var code = language.code;
-                    if (string.IsNullOrEmpty(code))
-                        continue;
-
-                    var catalogDictionary = new Dictionary<string, Catalog>();
-                    if (language.catalogs != null)
+                    foreach (var relativePath in language.catalogs)
                     {
-                        foreach (var relativePath in language.catalogs)
+                        // 获取catalog的路径，并加载。
+                        var catalogPath = Path.Combine("assets", relativePath);
+                        var catalog = await loader.LoadCatalogAsync(catalogPath, code);
+                        if (catalog == null)
                         {
-                            // 获取catalog的路径，并加载。
-                            var catalogPath = Path.Combine("assets", relativePath);
-                            var catalog = await loader.LoadCatalogAsync(catalogPath, code);
-                            if (catalog == null)
-                            {
-                                Log.LogWarning($"Missing catalog {relativePath} in resource pack {loader.Name}.");
-                                continue;
-                            }
-
-                            // 将加载后的catalog注册。
-                            var filenameWithoutExt = Path.GetFileNameWithoutExtension(catalogPath);
-                            catalogDictionary.Add(filenameWithoutExt, catalog);
+                            Log.LogWarning($"Missing catalog {relativePath} in resource pack {packData.Key}.");
+                            continue;
                         }
+
+                        // 将加载后的catalog注册。
+                        var filenameWithoutExt = Path.GetFileNameWithoutExtension(catalogPath);
+                        catalogDictionary.Add(filenameWithoutExt, catalog);
                     }
-                    packData.catalogs.Add(code, catalogDictionary);
                 }
+                packData.catalogs.Add(code, catalogDictionary);
             }
         }
-        private void ReadPackSpritesFromManifest(ResourceLoader loader, ResourcePackManifest manifest, PackReadData pack, string key)
+        private void ReadPackSpritesFromManifest(ResourceLoader loader, ResourcePackTextures manifest, PackReadData pack)
         {
             // 加载贴图
             if (manifest.textures == null)
                 return;
 
-            var generatedCategory = GetLanguagePackSpriteCategory(key);
+            var generatedCategory = GetLanguagePackSpriteCategory(pack.Key);
 
             foreach (var packTexture in manifest.textures)
             {
                 if (string.IsNullOrEmpty(packTexture.texture))
                 {
-                    Log.LogWarning($"Missing texture path in resource pack {loader.Name}.");
+                    Log.LogWarning($"Missing texture path in resource pack {pack.Key}.");
                     continue;
                 }
 
                 if (string.IsNullOrEmpty(packTexture.key))
                 {
-                    Log.LogWarning($"Missing texture key of path {packTexture.texture} in resource pack {loader.Name}.");
+                    Log.LogWarning($"Missing texture key of path {packTexture.texture} in resource pack {pack.Key}.");
                     continue;
                 }
 
@@ -192,6 +194,69 @@ namespace MVZ2.Localization
                 pack.textureEntries.Add(textureEntry);
             }
         }
+        private void ReadPackAudioClipsFromManifest(ResourceLoader loader, ResourcePackAudiosV1 audios, PackReadData pack)
+        {
+            if (audios.samples == null)
+                return;
+            foreach (var sample in audios.samples)
+            {
+                if (string.IsNullOrEmpty(sample.id) || !NamespaceID.TryParse(sample.id, Main.BuiltinNamespace, out var id))
+                {
+                    Log.LogWarning($"Incorrect property \"id\" {sample.id} of audio clip in resource pack {pack.Key}.");
+                    continue;
+                }
+                var path = Path.Combine("assets", sample.path);
+                if (string.IsNullOrEmpty(path) || !loader.Exists(path))
+                {
+                    Log.LogWarning($"Missing audio clip {path} in resource pack {pack.Key}.");
+                    continue;
+                }
+
+                pack.audioClips.Add(id, new AudioClipEntry(path, sample.streaming));
+            }
+        }
+        private void ReadPackSoundsFromManifest(ResourceLoader loader, ResourcePackAudiosV1 audios, PackReadData pack)
+        {
+            if (audios.sounds == null)
+                return;
+            foreach (var sound in audios.sounds)
+            {
+                if (sound == null)
+                    continue;
+                if (string.IsNullOrEmpty(sound.id) || !NamespaceID.TryParse(sound.id, Main.BuiltinNamespace, out var id))
+                {
+                    Log.LogWarning($"Incorrect property \"id\" {sound.id} of sound in resource pack {pack.Key}.");
+                    continue;
+                }
+                if (sound.samples == null || sound.samples.Length <= 0)
+                {
+                    Log.LogWarning($"Sound {sound.id} in resource pack {pack.Key} has no samples.");
+                    continue;
+                }
+                var samples = new List<ResourcePackSoundSample>();
+                for (int i = 0; i < sound.samples.Length; i++)
+                {
+                    var sampleV1 = sound.samples[i];
+                    if (string.IsNullOrEmpty(sampleV1.id) || !NamespaceID.TryParse(sampleV1.id, Main.BuiltinNamespace, out var sampleID))
+                    {
+                        Log.LogWarning($"Incorrect property \"id\" {sampleV1.id} of sound sample in resource pack {pack.Key}.");
+                        continue;
+                    }
+                    samples.Add(new ResourcePackSoundSample(sampleID, sampleV1.weight));
+                }
+                var meta = new ResourcePackSoundMeta(samples.ToArray())
+                {
+                    maxCount = sound.maxCount,
+                    priority = sound.priority,
+                    loopFadeInSpeed = sound.loopFadeInSpeed,
+                    loopFadeOutSpeed = sound.loopFadeOutSpeed,
+                    loopPitchEnd = sound.loopPitchEnd,
+                    loopPitchStart = sound.loopPitchStart,
+                    loopVolume = sound.loopVolume,
+                };
+                pack.sounds.Add(id, meta);
+            }
+        }
         protected Sprite CreateSprite(Texture2D texture2D, SliceData sliceData, string generatedCategory, string generatedName)
         {
             try
@@ -221,10 +286,12 @@ namespace MVZ2.Localization
                 return Main.ResourceManager.GetDefaultSpriteClone();
             }
         }
-        protected void ApplyReadData(ResourceLoader loader, ResourcePack pack, PackReadData data)
+        protected async UniTask ApplyReadData(ResourceLoader loader, ResourcePack pack, PackReadData data)
         {
             ApplyReadDataCatalogs(pack, data);
             ApplyReadDataTextures(loader, pack, data);
+            await ApplyReadDataAudioClips(loader, pack, data);
+            ApplyReadDataSounds(loader, pack, data);
         }
         private void ApplyReadDataCatalogs(ResourcePack pack, PackReadData data)
         {
@@ -264,12 +331,41 @@ namespace MVZ2.Localization
                 }
             }
         }
-        public const string MANIFEST_FILENAME = "manifest.json";
+        private async UniTask ApplyReadDataAudioClips(ResourceLoader loader, ResourcePack pack, PackReadData data)
+        {
+            foreach (var pair in data.audioClips)
+            {
+                var entry = pair.Value;
+                var path = entry.path;
+                var streaming = entry.streaming;
+                // 加载AudioClip。
+                var audioClip = await loader.LoadAudioClipAsync(path, streaming);
+                if (audioClip == null)
+                {
+                    Log.LogWarning($"Failed to load audio clip {path} from resource pack {pack.Key}.");
+                    continue;
+                }
+                Main.ResourceManager.AddGeneratedAudioClip(audioClip);
+                pack.AddAudioClip(pair.Key, audioClip);
+            }
+        }
+        private void ApplyReadDataSounds(ResourceLoader loader, ResourcePack pack, PackReadData data)
+        {
+            foreach (var pair in data.sounds)
+            {
+                pack.AddResourcePackSound(pair.Key, pair.Value);
+            }
+        }
+        public const string LOCALIZATION_MANIFEST_FILENAME = "localization.json";
+        public const string TEXTURE_MANIFEST_FILENAME = "textures.json";
+        public const string AUDIOS_MANIFEST_FILENAME = "audios.json";
         protected class PackReadData
         {
             public string Key;
             public Dictionary<string, Dictionary<string, Catalog>> catalogs = new();
             public List<TextureEntry> textureEntries = new();
+            public Dictionary<NamespaceID, AudioClipEntry> audioClips = new();
+            public Dictionary<NamespaceID, ResourcePackSoundMeta> sounds = new();
 
             public PackReadData(string key)
             {
@@ -287,6 +383,17 @@ namespace MVZ2.Localization
             {
                 this.textureID = textureID;
                 this.texturePath = texturePath;
+            }
+        }
+        protected class AudioClipEntry
+        {
+            public string path;
+            public bool streaming;
+
+            public AudioClipEntry(string path, bool streaming)
+            {
+                this.path = path;
+                this.streaming = streaming;
             }
         }
         protected class SliceData

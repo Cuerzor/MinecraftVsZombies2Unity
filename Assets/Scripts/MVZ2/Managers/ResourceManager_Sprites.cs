@@ -18,7 +18,7 @@ namespace MVZ2.Managers
 {
     public partial class ResourceManager : MonoBehaviour
     {
-        public ResourceContext GetSpriteVariantContext()
+        public ResourceContext GetResourceContext()
         {
             return new ResourceContext()
             {
@@ -72,7 +72,7 @@ namespace MVZ2.Managers
         }
         public Sprite? GetFinalSprite(SpriteReference? spriteRef)
         {
-            return GetFinalSprite(spriteRef, GetSpriteVariantContext());
+            return GetFinalSprite(spriteRef, GetResourceContext());
         }
         public Sprite? GetFinalSprite(SpriteReference? spriteRef, ResourceContext context)
         {

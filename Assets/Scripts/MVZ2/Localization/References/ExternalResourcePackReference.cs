@@ -46,32 +46,36 @@ namespace MVZ2.Localization
         }
         public override async UniTask<ResourcePackMetadata?> LoadMetadata(LanguageManager manager)
         {
+            var filename = GetFileName();
+            var key = GetKey();
             ResourcePackMetadataReader reader = new ResourcePackMetadataReader(manager.Main);
             if (isDirectory) 
             {
-                var loader = new ResourceLoaderDirectory(path, path);
-                return await reader.ReadMetadata(loader, GetKey());
+                var loader = new ResourceLoaderDirectory(path, filename);
+                return await reader.ReadMetadata(loader, key);
             }
             else
             {
                 using var stream = File.Open(path, FileMode.Open);
-                var loader = new ResourceLoaderZip(stream, path);
-                return await reader.ReadMetadata(loader, GetKey());
+                var loader = new ResourceLoaderZip(stream, filename);
+                return await reader.ReadMetadata(loader, key);
             }
         }
         public override async UniTask<ResourcePack?> LoadPack(LanguageManager manager, int dataVersion)
         {
+            var filename = GetFileName();
+            var key = GetKey();
             IResourcePackReader reader = ResourcePackReaderFactory.Create(manager.Main, dataVersion);
             if (isDirectory)
             {
-                var loader = new ResourceLoaderDirectory(path, path);
-                return await reader.ReadPack(loader, GetKey());
+                var loader = new ResourceLoaderDirectory(path, filename);
+                return await reader.ReadPack(loader, key);
             }
             else
             {
                 using var stream = File.Open(path, FileMode.Open);
-                var loader = new ResourceLoaderZip(stream, path);
-                return await reader.ReadPack(loader, GetKey());
+                var loader = new ResourceLoaderZip(stream, filename);
+                return await reader.ReadPack(loader, key);
             }
         }
         public override UniTask<bool> Export(LanguageManager manager, string destPath)

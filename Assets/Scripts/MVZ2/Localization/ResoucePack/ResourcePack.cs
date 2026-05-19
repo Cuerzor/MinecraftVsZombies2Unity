@@ -2,20 +2,25 @@
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Linq;
+using MVZ2.Audios;
+using MVZ2.Metas;
 using MVZ2.Resources;
 using MVZ2Logic.Resources;
 using PVZEngine;
 using Unity.IO.LowLevel.Unsafe;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public class ResourcePack : ISpriteProvider, ITexture2DProvider
+    public class ResourcePack : ISpriteProvider, ITexture2DProvider, IAudioClipProvider, ISoundMetaProvider
     {
-        public ResourcePack(string key)
+        public ResourcePack(string key, string filename)
         {
             Key = key;
+            tempDirectory = ResourcePackHelper.GetTempDirectroy(filename);
         }
         #region 语言资源
         public LanguageCatalogs GetOrCreateLanguageCatalogs(string lang)
@@ -105,6 +110,19 @@ namespace MVZ2.Localization
         }
         #endregion
 
+        #region 临时目录
+        public string GetTempDirectory()
+        {
+            return tempDirectory;
+        }
+        public void DeleteTempDirectory()
+        {
+            if (!Directory.Exists(tempDirectory))
+                return;
+            Directory.Delete(tempDirectory, true);
+        }
+        #endregion
+
         #region Texture2D
         public void AddTexture2D(NamespaceID path, Texture2D texture2D)
         {
@@ -113,6 +131,30 @@ namespace MVZ2.Localization
         public bool TryGetTexture2D(NamespaceID path, out Texture2D texture2D)
         {
             return textures.TryGetValue(path, out texture2D);
+        }
+        #endregion
+
+
+        #region 音频片段
+        public void AddAudioClip(NamespaceID path, AudioClip clip)
+        {
+            audioClips.Add(path, clip);
+        }
+        public bool TryGetAudioClip(NamespaceID path, out AudioClip clip)
+        {
+            return audioClips.TryGetValue(path, out clip);
+        }
+        #endregion
+
+
+        #region 资源包音效
+        public void AddResourcePackSound(NamespaceID path, ResourcePackSoundMeta sound)
+        {
+            sounds.Add(path, sound);
+        }
+        public bool TryGetResourcePackSound(NamespaceID path, out ResourcePackSoundMeta sound)
+        {
+            return sounds.TryGetValue(path, out sound);
         }
         #endregion
 
@@ -142,11 +184,29 @@ namespace MVZ2.Localization
         {
             return TryGetTexture2D(key, out texture);
         }
+        bool IResourceProvider<NamespaceID, AudioClip>.TryGet(NamespaceID key, out AudioClip? audio)
+        {
+            return TryGetAudioClip(key, out audio);
+        }
+        bool IResourceProvider<NamespaceID, ISoundMeta>.TryGet(NamespaceID key, out ISoundMeta? soundMeta)
+        {
+            if (TryGetResourcePackSound(key, out var sound))
+            {
+                soundMeta = sound;
+                return true;
+            }
+            soundMeta = null;
+            return false;
+        }
 
 
+        private string tempDirectory;
         private Dictionary<string, LanguageCatalogs> catalogs = new Dictionary<string, LanguageCatalogs>();
         public Dictionary<NamespaceID, Texture2D> textures = new Dictionary<NamespaceID, Texture2D>();
         public Dictionary<SpriteLookupKey, Sprite> sprites = new Dictionary<SpriteLookupKey, Sprite>();
+
+        public Dictionary<NamespaceID, AudioClip> audioClips = new Dictionary<NamespaceID, AudioClip>();
+        public Dictionary<NamespaceID, ResourcePackSoundMeta> sounds = new Dictionary<NamespaceID, ResourcePackSoundMeta>();
         public string Key { get; private set; }
         public int Priority { get; set; }
     }

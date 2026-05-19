@@ -277,12 +277,14 @@ namespace MVZ2.Localization
                 }
             }
             // 添加Sprite覆盖。
-            AddSpriteProvider(pack);
+            AddProviders(pack);
         }
-        private void AddSpriteProvider(ResourcePack pack)
+        private void AddProviders(ResourcePack pack)
         {
             Main.ResourceManager.AddSpriteProvider(pack);
             Main.ResourceManager.AddTextureProvider(pack);
+            Main.ResourceManager.AddAudioClipProvider(pack);
+            Main.ResourceManager.AddSoundMetaProvider(pack);
         }
         #endregion
 
@@ -308,12 +310,19 @@ namespace MVZ2.Localization
             {
                 main.ResourceManager.RemoveGeneratedTexture(pair.Value);
             }
-            RemoveSpriteProvider(pack);
+            foreach (var pair in pack.audioClips)
+            {
+                main.ResourceManager.RemoveGeneratedAudioClip(pair.Value);
+            }
+            RemoveProviders(pack);
+            pack.DeleteTempDirectory();
         }
-        private void RemoveSpriteProvider(ResourcePack pack)
+        private void RemoveProviders(ResourcePack pack)
         {
             Main.ResourceManager.RemoveSpriteProvider(pack);
             Main.ResourceManager.RemoveTextureProvider(pack);
+            Main.ResourceManager.RemoveAudioClipProvider(pack);
+            Main.ResourceManager.RemoveSoundMetaProvider(pack);
         }
         #endregion
 
