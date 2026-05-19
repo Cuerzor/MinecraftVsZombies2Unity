@@ -1435,6 +1435,19 @@ MonoBehaviour:
   baseUrl: https://afdian.com/api
   sponsorQueryPath: /open/query-sponsor
   responseTimeout: 10
+  planEntries:
+  - hash: 25afa204d56311ef9a3552540025c377
+    type: 2
+    rank: 10
+  - hash: 3d36f9e0d56311efa99a52540025c377
+    type: 1
+    rank: 15
+  - hash: 6f26d290d56311efa5aa52540025c377
+    type: 1
+    rank: 30
+  - hash: b3a2d76cd56211efb2f852540025c377
+    type: 1
+    rank: 50
 --- !u!1 &5777728438848778097
 GameObject:
   m_ObjectHideFlags: 0

@@ -285,14 +285,7 @@ namespace MVZ2.Supporters
             0x11, 0x45, 0x14, 0x19, 0x19, 0x81, 0x08, 0x10,
             0x11, 0x45, 0x14, 0x19, 0x19, 0x81, 0x08, 0x10
         };
-
-        private static readonly Dictionary<string, (int type, int rank)> planMap = new Dictionary<string, (int type, int rank)>()
-        {
-            { "25afa204d56311ef9a3552540025c377", (Sensor.TYPE, Sensor.MOONLIGHT_SENSOR) },
-            { "3d36f9e0d56311efa99a52540025c377", (Furnace.TYPE, Furnace.FURNACE) },
-            { "6f26d290d56311efa5aa52540025c377", (Furnace.TYPE, Furnace.GUNPOWDER_BARREL) },
-            { "b3a2d76cd56211efb2f852540025c377", (Furnace.TYPE, Furnace.BLAST_FURNACE) },
-        };
+        [Serializable]
         public struct PlanEntry
         {
             public string hash;
