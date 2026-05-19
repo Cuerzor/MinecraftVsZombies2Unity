@@ -6,7 +6,7 @@ using PVZEngine;
 
 namespace MVZ2.Resources
 {
-    public class SoundMetaProvider : IResourceProvider<NamespaceID, ISoundMeta>
+    public class SoundMetaProvider : ISoundMetaProvider
     {
         public SoundMetaProvider(ResourceManager resources, int priority = 0)
         {

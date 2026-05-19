@@ -123,6 +123,16 @@ namespace MVZ2.Managers
         }
         #endregion
 
+        #region 初始化
+        private void Init_SpriteGeneration()
+        {
+            if (Application.isEditor)
+            {
+                backgroundTex = GenerateSpriteBackgroundTexture(MAX_BACKGROUND_TEX_WIDTH, MAX_BACKGROUND_TEX_HEIGHT);
+            }
+        }
+        #endregion
+
         private const int COLOR_BUFFER_WIDTH = 128;
         private const int COLOR_BUFFER_HEIGHT = 128;
         private const int MAX_BACKGROUND_TEX_WIDTH = 2560;
@@ -131,6 +141,7 @@ namespace MVZ2.Managers
         [Header("Sprite Generate")]
         [SerializeField]
         private GeneratedResourceManifest generatedResourceManifest = null!;
+        private Texture2D backgroundTex = null!;
         private Color32[] spriteColorBuffer = new Color32[COLOR_BUFFER_WIDTH * COLOR_BUFFER_HEIGHT];
     }
 }

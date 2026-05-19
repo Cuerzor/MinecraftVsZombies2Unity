@@ -2,10 +2,11 @@
 
 using System.Collections.Generic;
 using PVZEngine.Tools.Unity;
+using PVZEngine;
 
 namespace MVZ2.Resources
 {
-    public abstract class ResourceResolver<TKey, TResource>
+    public class ResourceResolver<TKey, TResource>
     {
         public void AddProvider(IResourceProvider<TKey, TResource> db)
         {
@@ -46,7 +47,12 @@ namespace MVZ2.Resources
             return default;
         }
 
-        protected abstract List<TKey> BuildCandidateKeys(TKey key, ResourceContext context);
+        protected virtual List<TKey> BuildCandidateKeys(TKey key, ResourceContext context)
+        {
+            var list = new List<TKey>();
+            list.Add(key);
+            return list;
+        }
 
         private readonly List<IResourceProvider<TKey, TResource>> providers = new();
         private readonly Comparer comparer = new();

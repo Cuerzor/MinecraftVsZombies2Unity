@@ -18,78 +18,6 @@ namespace MVZ2.Managers
 {
     public partial class ResourceManager : MonoBehaviour
     {
-        public ResourceContext GetResourceContext()
-        {
-            return new ResourceContext()
-            {
-                censored = !Main.OptionsManager.HasBloodAndGore(),
-                languageCode = Main.LanguageManager.GetCurrentLanguage(),
-            };
-        }
-
-        #region Provider
-        public void AddSpriteProvider(ISpriteProvider provider)
-        {
-            spriteResolver.AddProvider(provider);
-        }
-        public void RemoveSpriteProvider(ISpriteProvider provider)
-        {
-            spriteResolver.RemoveProvider(provider);
-        }
-        #endregion
-
-        public void RegisterSprite(SpriteReference spriteReference, Sprite sprite)
-        {
-            var key = new SpriteLookupKey(spriteReference);
-            RegisterSprite(key, sprite);
-        }
-
-        public void RegisterSprite(SpriteLookupKey key, Sprite sprite)
-        {
-            baseGameSprites.Register(key, sprite);
-        }
-
-        #region 获取Sprite
-        public Sprite? GetSprite(SpriteReference? spriteRef)
-        {
-            if (!SpriteReference.IsValid(spriteRef))
-                return null;
-            var spriteLookupKey = new SpriteLookupKey(spriteRef);
-            return baseGameSprites.TryGet(spriteLookupKey, out var spr) ? spr : null;
-        }
-        #endregion
-
-        #region 获取最终贴图
-        public Sprite GetFinalSprite(Sprite sprite)
-        {
-            var spriteRef = GetSpriteReference(sprite);
-            return GetFinalSprite(spriteRef) ?? sprite;
-        }
-        public Sprite GetFinalSprite(Sprite sprite, ResourceContext args)
-        {
-            var spriteRef = GetSpriteReference(sprite);
-            return GetFinalSprite(spriteRef, args) ?? sprite;
-        }
-        public Sprite? GetFinalSprite(SpriteReference? spriteRef)
-        {
-            return GetFinalSprite(spriteRef, GetResourceContext());
-        }
-        public Sprite? GetFinalSprite(SpriteReference? spriteRef, ResourceContext context)
-        {
-            if (!SpriteReference.IsValid(spriteRef))
-                return null;
-            var key = new SpriteLookupKey(spriteRef);
-            return spriteResolver.Resolve(key, context);
-        }
-        #endregion
-
-        #region SpriteReference
-        public SpriteReference? GetSpriteReference(Sprite sprite)
-        {
-            return baseGameSprites.GetKey(sprite)?.reference;
-        }
-        #endregion
-
         #region 获取默认贴图
         public Sprite GetDefaultSprite()
         {
@@ -98,17 +26,6 @@ namespace MVZ2.Managers
         public Sprite GetDefaultSpriteClone()
         {
             return Instantiate(defaultSprite);
-        }
-        #endregion
-
-        #region 初始化
-        private void Init_Sprites()
-        {
-            spriteResolver.AddProvider(baseGameSprites);
-        }
-        private void ClearResources_Sprites()
-        {
-            baseGameSprites.Clear();
         }
         #endregion
 
@@ -168,7 +85,5 @@ namespace MVZ2.Managers
         [Header("Sprites")]
         [SerializeField]
         private Sprite defaultSprite = null!;
-        private SpriteResourceResolver spriteResolver = new SpriteResourceResolver();
-        private SpriteDatabase baseGameSprites = new SpriteDatabase();
     }
 }
