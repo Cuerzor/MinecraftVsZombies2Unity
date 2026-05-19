@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
+using MVZ2.Resources;
 
 namespace MVZ2.Localization
 {
@@ -43,15 +44,35 @@ namespace MVZ2.Localization
         {
             return Path.GetFileName(path);
         }
-        public override UniTask<ResourcePackMetadata?> LoadMetadata(LanguageManager manager)
+        public override async UniTask<ResourcePackMetadata?> LoadMetadata(LanguageManager manager)
         {
-            ResourcePackMetadataReader reader = isDirectory ? new ResourcePackMetadataReaderDirectory(manager.Main) : new ResourcePackMetadataReaderZip(manager.Main);
-            return reader.ReadMetadata(GetKey(), path);
+            ResourcePackMetadataReader reader = new ResourcePackMetadataReader(manager.Main);
+            if (isDirectory) 
+            {
+                var loader = new ResourceLoaderDirectory(path, path);
+                return await reader.ReadMetadata(loader, GetKey());
+            }
+            else
+            {
+                using var stream = File.Open(path, FileMode.Open);
+                var loader = new ResourceLoaderZip(stream, path);
+                return await reader.ReadMetadata(loader, GetKey());
+            }
         }
-        public override UniTask<ResourcePack?> LoadPack(LanguageManager manager, int dataVersion)
+        public override async UniTask<ResourcePack?> LoadPack(LanguageManager manager, int dataVersion)
         {
-            IResourcePackReader reader = isDirectory ? ResourcePackReaderFactory.CreateDirectory(manager.Main, dataVersion) : ResourcePackReaderFactory.CreateZip(manager.Main, dataVersion);
-            return reader.ReadPack(GetKey(), path);
+            IResourcePackReader reader = ResourcePackReaderFactory.Create(manager.Main, dataVersion);
+            if (isDirectory)
+            {
+                var loader = new ResourceLoaderDirectory(path, path);
+                return await reader.ReadPack(loader, GetKey());
+            }
+            else
+            {
+                using var stream = File.Open(path, FileMode.Open);
+                var loader = new ResourceLoaderZip(stream, path);
+                return await reader.ReadPack(loader, GetKey());
+            }
         }
         public override UniTask<bool> Export(LanguageManager manager, string destPath)
         {

@@ -2,19 +2,195 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Cysharp.Threading.Tasks;
 using MVZ2.Managers;
 using MVZ2.Resources;
 using MVZ2.Sprites;
+using MVZ2Logic.Resources;
+using Newtonsoft.Json;
 using NGettext;
 using PVZEngine;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public abstract class ResourcePackReaderV1 : ResourcePackReader
+    public class ResourcePackReaderV1 : ResourcePackReader
     {
-        protected ResourcePackReaderV1(MainManager main) : base(main)
+        public ResourcePackReaderV1(MainManager main) : base(main)
         {
+        }
+        public override async UniTask<ResourcePack?> ReadPack(ResourceLoader loader, string key)
+        {
+            try
+            {
+                var packReadData = await UniTask.RunOnThreadPool(() => ReadPackData(loader, key));
+                if (packReadData == null)
+                    return null;
+                var pack = new ResourcePack(key);
+
+                await UniTask.SwitchToMainThread();
+
+                ApplyReadData(loader, pack, packReadData);
+
+                return pack;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"读取语言包{loader.Name}失败：{e}");
+                return null;
+            }
+        }
+        private async UniTask<PackReadData> ReadPackData(ResourceLoader loader, string key)
+        {
+            // 新建一个资源包实例。
+            var packData = new PackReadData(key);
+
+            // 将manifest读取到内存。
+            var manifest = await LoadManifest(loader, MANIFEST_FILENAME);
+            if (manifest == null)
+            {
+                throw new FileNotFoundException($"The file {MANIFEST_FILENAME} in resource pack {loader.Name} is missing!");
+            }
+
+            // 从manifest中读取资源包内容。
+            await ReadPackFromManifest(loader, manifest, packData, key);
+            return packData;
+        }
+        private async UniTask<ResourcePackManifest?> LoadManifest(ResourceLoader loader, string path)
+        {
+            // 加载Sprite Manifest文件。
+            var manifestJson = await loader.LoadStringAsync(path);
+            if (string.IsNullOrEmpty(manifestJson))
+                return null;
+
+            return JsonConvert.DeserializeObject<ResourcePackManifest>(manifestJson);
+        }
+        private async UniTask ReadPackFromManifest(ResourceLoader loader, ResourcePackManifest manifest, PackReadData packData, string key)
+        {
+            // 加载翻译文件。
+            await ReadPackCatalogsFromManifest(loader, manifest, packData);
+
+            // 加载贴图。
+            ReadPackSpritesFromManifest(loader, manifest, packData, key);
+        }
+        private async UniTask ReadPackCatalogsFromManifest(ResourceLoader loader, ResourcePackManifest manifest, PackReadData packData)
+        {
+            if (manifest.localization == null)
+                return;
+
+            if (manifest.localization.languages != null)
+            {
+                foreach (var language in manifest.localization.languages)
+                {
+                    // 语言代码。
+                    var code = language.code;
+                    if (string.IsNullOrEmpty(code))
+                        continue;
+
+                    var catalogDictionary = new Dictionary<string, Catalog>();
+                    if (language.catalogs != null)
+                    {
+                        foreach (var relativePath in language.catalogs)
+                        {
+                            // 获取catalog的路径，并加载。
+                            var catalogPath = Path.Combine("assets", relativePath);
+                            var catalog = await loader.LoadCatalogAsync(catalogPath, code);
+                            if (catalog == null)
+                            {
+                                Log.LogWarning($"Missing catalog {relativePath} in resource pack {loader.Name}.");
+                                continue;
+                            }
+
+                            // 将加载后的catalog注册。
+                            var filenameWithoutExt = Path.GetFileNameWithoutExtension(catalogPath);
+                            catalogDictionary.Add(filenameWithoutExt, catalog);
+                        }
+                    }
+                    packData.catalogs.Add(code, catalogDictionary);
+                }
+            }
+        }
+        private void ReadPackSpritesFromManifest(ResourceLoader loader, ResourcePackManifest manifest, PackReadData pack, string key)
+        {
+            // 加载贴图
+            if (manifest.textures == null)
+                return;
+
+            var generatedCategory = GetLanguagePackSpriteCategory(key);
+
+            foreach (var packTexture in manifest.textures)
+            {
+                if (string.IsNullOrEmpty(packTexture.texture))
+                {
+                    Log.LogWarning($"Missing texture path in resource pack {loader.Name}.");
+                    continue;
+                }
+
+                if (string.IsNullOrEmpty(packTexture.key))
+                {
+                    Log.LogWarning($"Missing texture key of path {packTexture.texture} in resource pack {loader.Name}.");
+                    continue;
+                }
+
+                // 获取贴图路径。
+                var textureID = NamespaceID.Parse(packTexture.key, Main.BuiltinNamespace);
+
+                // 获取ID和图片标签。
+                var splitTexturePaths = Path.ChangeExtension(packTexture.texture, string.Empty).TrimEnd('.').Split('/', '\\');
+                string nsp, textureId;
+                if (splitTexturePaths.Length > 1)
+                {
+                    nsp = splitTexturePaths[0];
+                    textureId = string.Join("/", splitTexturePaths.Skip(1));
+                }
+                else
+                {
+                    nsp = string.Empty;
+                    textureId = string.Join("/", splitTexturePaths);
+                }
+                SpriteHelper.ParseIDAndTags(textureId, out textureId, out var tags);
+
+                // 加载贴图。
+                var textureEntry = new TextureEntry(textureID, Path.Combine("assets", packTexture.texture))
+                {
+                    filterMode = (FilterMode)packTexture.filter
+                };
+                var slices = packTexture.slices;
+                if (slices != null)
+                {
+                    for (int i = 0; i < slices.Length; i++)
+                    {
+                        var slice = slices[i];
+                        var sliceKey = slice.key;
+                        SpriteReference? spriteRef = null;
+                        if (sliceKey != null && SpriteReference.TryParse(sliceKey, Main.BuiltinNamespace, out var sprRef))
+                        {
+                            spriteRef = sprRef;
+                        }
+                        if (spriteRef == null)
+                        {
+                            spriteRef = new SpriteReference(textureID, i);
+                        }
+                        var spriteKey = new SpriteLookupKey(spriteRef, slice.tags ?? tags);
+                        var sliceData = new SliceData(spriteKey)
+                        {
+                            border = new Vector4(slice.borderLeft, slice.borderBottom, slice.borderRight, slice.borderTop),
+                            extrude = 0,
+                            meshType = slice.fullRect ? SpriteMeshType.FullRect : SpriteMeshType.Tight,
+                            pivot = new Vector2(slice.pivotX, slice.pivotY),
+                            pixelsPerUnit = 100,
+                            rect = new Rect(slice.x, slice.y, slice.width, slice.height),
+                            single = slice.single,
+                            spriteKey = spriteKey,
+                        };
+                        textureEntry.slices.Add(sliceData);
+                    }
+                }
+                pack.textureEntries.Add(textureEntry);
+            }
         }
         protected Sprite CreateSprite(Texture2D texture2D, SliceData sliceData, string generatedCategory, string generatedName)
         {
@@ -45,10 +221,10 @@ namespace MVZ2.Localization
                 return Main.ResourceManager.GetDefaultSpriteClone();
             }
         }
-        protected void ApplyReadData(ResourcePack pack, PackReadData data, ReadTexture2DMethod textureReader)
+        protected void ApplyReadData(ResourceLoader loader, ResourcePack pack, PackReadData data)
         {
             ApplyReadDataCatalogs(pack, data);
-            ApplyReadDataTextures(pack, data, textureReader);
+            ApplyReadDataTextures(loader, pack, data);
         }
         private void ApplyReadDataCatalogs(ResourcePack pack, PackReadData data)
         {
@@ -62,7 +238,7 @@ namespace MVZ2.Localization
                 }
             }
         }
-        private void ApplyReadDataTextures(ResourcePack pack, PackReadData data, ReadTexture2DMethod textureReader)
+        private void ApplyReadDataTextures(ResourceLoader loader, ResourcePack pack, PackReadData data)
         {
             foreach (var textureData in data.textureEntries)
             {
@@ -72,7 +248,7 @@ namespace MVZ2.Localization
                 // 如果没有获取到，新建一个。
                 if (!pack.TryGetTexture2D(textureID, out var texture))
                 {
-                    texture = textureReader(texturePath, textureID.ToString());
+                    texture = ReadTexture2D(loader, texturePath, textureID.ToString());
                     if (texture == null)
                         continue;
                     texture.filterMode = textureData.filterMode;
@@ -88,7 +264,6 @@ namespace MVZ2.Localization
                 }
             }
         }
-        protected delegate Texture2D? ReadTexture2DMethod(string texturePath, string name);
         public const string MANIFEST_FILENAME = "manifest.json";
         protected class PackReadData
         {

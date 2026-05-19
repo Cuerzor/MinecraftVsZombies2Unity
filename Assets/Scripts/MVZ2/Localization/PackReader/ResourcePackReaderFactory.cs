@@ -6,24 +6,14 @@ namespace MVZ2.Localization
 {
     public static class ResourcePackReaderFactory
     {
-        public static IResourcePackReaderZip CreateZip(MainManager mainManager, int dataVersion)
+        public static ResourcePackReader Create(MainManager mainManager, int dataVersion)
         {
             switch (dataVersion)
             {
                 case 0:
-                    return new LanguagePackReaderZipV0(mainManager);
+                    return new LanguagePackReaderV0(mainManager);
                 default:
-                    return new ResourcePackReaderZipV1(mainManager);
-            }
-        }
-        public static IResourcePackReaderDirectory CreateDirectory(MainManager mainManager, int dataVersion)
-        {
-            switch (dataVersion)
-            {
-                case 0:
-                    return new LanguagePackReaderDirectoryV0(mainManager);
-                default:
-                    return new ResourcePackReaderDirectoryV1(mainManager);
+                    return new ResourcePackReaderV1(mainManager);
             }
         }
     }

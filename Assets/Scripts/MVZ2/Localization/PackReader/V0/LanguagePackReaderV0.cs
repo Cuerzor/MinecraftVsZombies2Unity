@@ -2,18 +2,172 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using Cysharp.Threading.Tasks;
 using MVZ2.Managers;
 using MVZ2.Resources;
+using MVZ2.Sprites;
+using MVZ2Logic.Resources;
+using Newtonsoft.Json;
 using NGettext;
 using PVZEngine;
 using UnityEngine;
 
 namespace MVZ2.Localization
 {
-    public abstract class LanguagePackReaderV0 : ResourcePackReader
+    public class LanguagePackReaderV0 : ResourcePackReader
     {
-        protected LanguagePackReaderV0(MainManager main) : base(main)
+        public LanguagePackReaderV0(MainManager main) : base(main)
         {
+        }
+        public override async UniTask<ResourcePack?> ReadPack(ResourceLoader loader, string key)
+        {
+            try
+            {
+                var packReadData = await UniTask.RunOnThreadPool(() => ReadPackData(loader, key));
+                if (packReadData == null)
+                    return null;
+                var pack = new ResourcePack(key);
+
+                await UniTask.SwitchToMainThread();
+
+                ApplyReadData(loader, pack, packReadData);
+
+                return pack;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"读取语言包{loader.Name}失败：{e}");
+                return null;
+            }
+        }
+        private async UniTask<PackReadData> ReadPackData(ResourceLoader loader, string key)
+        {
+            var packData = new PackReadData(key);
+            foreach (var file in loader.EnumerateAllFiles())
+            {
+                await ReadPackForFile(loader, file, packData);
+            }
+            return packData;
+        }
+        private async UniTask ReadPackForFile(ResourceLoader loader, string relativePath, PackReadData pack)
+        {
+            var splitedPaths = relativePath.Split(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+            if (splitedPaths.Length < 3 || splitedPaths[0] != "assets")
+                return;
+            var nsp = splitedPaths[1];
+            var lang = splitedPaths[2].Replace('_', '-');
+            if (splitedPaths.Length == 4)
+            {
+                var filename = splitedPaths[3];
+                var dir = Path.Combine(splitedPaths[0], splitedPaths[1], splitedPaths[2]);
+                if (Path.GetExtension(filename) == ".mo")
+                {
+                    // 加载MO翻译文件。
+                    await ReadPackCatalog(loader, relativePath, lang, pack);
+                }
+                else if (filename == SPRITE_MANIFEST_FILENAME)
+                {
+                    await ReadPackSprites(loader, relativePath, nsp, lang, dir, pack);
+                }
+            }
+
+        }
+        private async UniTask ReadPackCatalog(ResourceLoader loader, string relativePath, string lang, PackReadData pack)
+        {
+            var filenameWithoutExt = Path.GetFileNameWithoutExtension(relativePath);
+            var catalog = await loader.LoadCatalogAsync(relativePath, lang);
+            if (catalog == null)
+                return;
+
+            if (!pack.catalogs.TryGetValue(lang, out var catalogs))
+            {
+                catalogs = new Dictionary<string, Catalog>();
+                pack.catalogs.Add(lang, catalogs);
+            }
+            catalogs.Add(filenameWithoutExt, catalog);
+        }
+        private async UniTask ReadPackSprites(ResourceLoader loader, string relativePath, string nsp, string lang, string dir, PackReadData pack)
+        {
+            // 加载Sprite Manifest文件。
+            var manifestJson = await loader.LoadStringAsync(relativePath);
+            if (string.IsNullOrEmpty(manifestJson))
+                return;
+            var manifest = JsonConvert.DeserializeObject<LocalizedSpriteManifest>(manifestJson);
+            if (manifest != null)
+            {
+                ReadPackSpriteManifest(manifest, nsp, lang, dir, pack);
+            }
+        }
+        private void ReadPackSpriteManifest(LocalizedSpriteManifest manifest, string nsp, string lang, string dir, PackReadData packData)
+        {
+            // 加载Sprite。
+            if (manifest.sprites != null)
+            {
+                foreach (var localizedSprite in manifest.sprites)
+                {
+                    if (string.IsNullOrEmpty(localizedSprite.texture))
+                        continue;
+                    if (string.IsNullOrEmpty(localizedSprite.name))
+                        continue;
+
+                    var texturePath = Path.Combine(dir, "sprites", localizedSprite.texture).Replace("\\", "/");
+                    var textureID = new NamespaceID(nsp, localizedSprite.texture);
+                    var resID = new NamespaceID(nsp, localizedSprite.name);
+                    var spriteRef = new SpriteReference(resID);
+                    var spriteKey = new SpriteLookupKey(spriteRef, SpriteHelper.GetLanguageSpriteTag(lang));
+
+                    var sliceData = new SliceData(spriteKey)
+                    {
+                        border = Vector4.zero,
+                        extrude = 0,
+                        meshType = SpriteMeshType.Tight,
+                        pivot = new Vector2(localizedSprite.pivotX, localizedSprite.pivotY),
+                        pixelsPerUnit = 100,
+                        single = true,
+                        spriteKey = spriteKey
+                    };
+                    var spriteEntry = new SpriteEntry(textureID, texturePath, sliceData);
+                    packData.spriteEntries.Add(spriteEntry);
+                }
+            }
+            // 加载Spritesheet。
+            if (manifest.spritesheets != null)
+            {
+                foreach (var localizedSpritesheet in manifest.spritesheets)
+                {
+                    if (string.IsNullOrEmpty(localizedSpritesheet.texture))
+                        continue;
+                    if (string.IsNullOrEmpty(localizedSpritesheet.name))
+                        continue;
+
+                    var texturePath = Path.Combine(dir, "spritesheets", localizedSpritesheet.texture).Replace("\\", "/");
+                    var textureID = new NamespaceID(nsp, localizedSpritesheet.texture);
+                    var resID = new NamespaceID(nsp, localizedSpritesheet.name);
+                    var spritesheetEntry = new SpritesheetEntry(textureID, texturePath);
+                    if (localizedSpritesheet.slices != null)
+                    {
+                        for (int i = 0; i < localizedSpritesheet.slices.Length; i++)
+                        {
+                            var slice = localizedSpritesheet.slices[i];
+                            var spriteRef = new SpriteReference(resID, i);
+                            var spriteKey = new SpriteLookupKey(spriteRef, SpriteHelper.GetLanguageSpriteTag(lang));
+                            var sliceData = new SliceData(spriteKey)
+                            {
+                                border = Vector4.zero,
+                                extrude = 0,
+                                meshType = SpriteMeshType.Tight,
+                                pivot = new Vector2(slice.pivotX, slice.pivotY),
+                                pixelsPerUnit = 100,
+                                rect = new Rect(slice.x, slice.y, slice.width, slice.height),
+                                spriteKey = spriteKey
+                            };
+                            spritesheetEntry.slices.Add(sliceData);
+                        }
+                    }
+                    packData.spritesheetEntries.Add(spritesheetEntry);
+                }
+            }
         }
         protected Sprite CreateSprite(Texture2D texture2D, SliceData slice, string category)
         {
@@ -31,10 +185,10 @@ namespace MVZ2.Localization
                 return Main.ResourceManager.GetDefaultSpriteClone();
             }
         }
-        protected void ApplyReadData(ResourcePack pack, PackReadData data, ReadTexture2DMethod textureReader)
+        protected void ApplyReadData(ResourceLoader loader, ResourcePack pack, PackReadData data)
         {
             ApplyReadDataCatalogs(pack, data);
-            ApplyReadDataTextures(pack, data, textureReader);
+            ApplyReadDataTextures(loader, pack, data);
         }
         private void ApplyReadDataCatalogs(ResourcePack pack, PackReadData data)
         {
@@ -48,7 +202,7 @@ namespace MVZ2.Localization
                 }
             }
         }
-        private void ApplyReadDataTextures(ResourcePack pack, PackReadData data, ReadTexture2DMethod textureReader)
+        private void ApplyReadDataTextures(ResourceLoader loader, ResourcePack pack, PackReadData data)
         {
             foreach (var spriteEntry in data.spriteEntries)
             {
@@ -56,7 +210,7 @@ namespace MVZ2.Localization
                 var textureID = spriteEntry.textureID;
                 if (!pack.TryGetTexture2D(textureID, out var texture))
                 {
-                    texture = textureReader(texturePath, textureID.ToString());
+                    texture = ReadTexture2D(loader, texturePath, textureID.ToString());
                     if (texture == null)
                         continue;
                     pack.AddTexture2D(textureID, texture);
@@ -72,7 +226,7 @@ namespace MVZ2.Localization
                 var textureID = spritesheetEntry.textureID;
                 if (!pack.TryGetTexture2D(textureID, out var texture))
                 {
-                    texture = textureReader(texturePath, textureID.ToString());
+                    texture = ReadTexture2D(loader, texturePath, textureID.ToString());
                     if (texture == null)
                         continue;
                     pack.AddTexture2D(textureID, texture);
@@ -87,7 +241,6 @@ namespace MVZ2.Localization
                 }
             }
         }
-        protected delegate Texture2D? ReadTexture2DMethod(string texturePath, string name);
         public const string SPRITE_MANIFEST_FILENAME = "sprite_manifest.json";
         protected class PackReadData
         {

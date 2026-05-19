@@ -3,6 +3,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
+using MVZ2.Resources;
 
 namespace MVZ2.Localization
 {
@@ -28,14 +29,18 @@ namespace MVZ2.Localization
         public override async UniTask<ResourcePackMetadata?> LoadMetadata(LanguageManager manager)
         {
             var bytes = await manager.LoadBuiltinBytes();
-            var reader = new ResourcePackMetadataReaderZip(manager.Main);
-            return await reader.ReadMetadata(GetKey(), bytes);
+            var reader = new ResourcePackMetadataReader(manager.Main);
+            using var memoryStream = new MemoryStream(bytes);
+            var loader = new ResourceLoaderZip(memoryStream, "builtin");
+            return await reader.ReadMetadata(loader, GetKey());
         }
         public override async UniTask<ResourcePack?> LoadPack(LanguageManager manager, int dataVersion)
         {
             var bytes = await manager.LoadBuiltinBytes();
-            var reader = ResourcePackReaderFactory.CreateZip(manager.Main, dataVersion);
-            return await reader.ReadPack(GetKey(), bytes);
+            var reader = ResourcePackReaderFactory.Create(manager.Main, dataVersion);
+            using var memoryStream = new MemoryStream(bytes);
+            var loader = new ResourceLoaderZip(memoryStream, "builtin");
+            return await reader.ReadPack(loader, GetKey());
         }
         public override async UniTask<bool> Export(LanguageManager manager, string destPath)
         {

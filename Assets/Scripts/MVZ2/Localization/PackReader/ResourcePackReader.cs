@@ -2,6 +2,8 @@
 
 using Cysharp.Threading.Tasks;
 using MVZ2.Managers;
+using MVZ2.Resources;
+using UnityEngine;
 
 namespace MVZ2.Localization
 {
@@ -15,7 +17,14 @@ namespace MVZ2.Localization
         {
             return Main.LanguageManager.GetLanguagePackSpriteCategory(key);
         }
-        public abstract UniTask<ResourcePack?> ReadPack(string key, string path);
+        protected Texture2D? ReadTexture2D(ResourceLoader loader, string path, string name)
+        {
+            var bytes = loader.LoadBytes(path);
+            if (bytes == null)
+                return null;
+            return Main.ResourceManager.GenerateTextureFromBytes(bytes, name);
+        }
+        public abstract UniTask<ResourcePack?> ReadPack(ResourceLoader loader, string key);
         public MainManager Main { get; private set; }
     }
 }
