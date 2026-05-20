@@ -84,10 +84,10 @@ namespace MVZ2.Managers
         #endregion
 
         #region 生成模型图标
-        public async UniTask RegenerateModelIconSprites()
+        public async UniTask RegenerateModelIconSprites(TaskProgress? progress = null)
         {
             ClearModelIconSprites();
-            await ShotModelIcons();
+            await ShotModelIcons(progress);
         }
         private void RegisterModelIcon(NamespaceID metaID, ModelIcon icon)
         {
@@ -138,12 +138,12 @@ namespace MVZ2.Managers
         {
             return MODEL_ICON_CATEGORY;
         }
-        private async UniTask ShotModelIcons(int maxYieldCount = 8)
+        private async UniTask ShotModelIcons(TaskProgress? progress = null, int maxYieldCount = 8)
         {
             foreach (var modResource in modResources)
             {
-                var progress = new TaskProgress();
-                await ShotModModelIcons(modResource.Namespace, progress, maxYieldCount);
+                var child = progress?.AddChild();
+                await ShotModModelIcons(modResource.Namespace, child, maxYieldCount);
             }
         }
         private async UniTask ShotModModelIcons(string modNamespace, TaskProgress? progress, int maxYieldCount = 8)

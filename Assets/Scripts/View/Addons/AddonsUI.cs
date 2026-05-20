@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,11 @@ namespace MVZ2.UI.Addons
         public void SetLoadingVisible(bool visible)
         {
             loadingScreen.SetActive(visible);
+        }
+        public void SetLoadingProgress(float progress, string text)
+        {
+            loadingProgress.SetValueWithoutNotify(progress);
+            loadingProgressText.text = text;
         }
         private void Awake()
         {
@@ -36,6 +42,10 @@ namespace MVZ2.UI.Addons
         private GameObject indexUI = null!;
         [SerializeField]
         private GameObject loadingScreen = null!;
+        [SerializeField]
+        private Slider loadingProgress = null!;
+        [SerializeField]
+        private TextMeshProUGUI loadingProgressText = null!;
         private Dictionary<Buttons, Button> buttonDict = new Dictionary<Buttons, Button>();
 
         public enum Buttons

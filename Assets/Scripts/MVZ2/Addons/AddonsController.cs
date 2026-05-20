@@ -22,6 +22,10 @@ namespace MVZ2.Addons
         {
             ui.SetLoadingVisible(visible);
         }
+        public void SetLoadingProgress(float progress, string text)
+        {
+            ui.SetLoadingProgress(progress, text);
+        }
         private void Awake()
         {
             ui.OnButtonClick += OnButtonClickCallback;

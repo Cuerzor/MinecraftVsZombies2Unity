@@ -51,6 +51,17 @@ namespace MVZ2.Addons
             {
                 await RefreshLanguagePacks();
             }
+
+            if (reloadPipeline != null)
+            {
+                var progress = reloadPipeline.GetProgress();
+                var progressPercentage = Mathf.FloorToInt(progress * 100);
+                addons.SetLoadingProgress(progress, $"{progressPercentage}%");
+            }
+            else
+            {
+                addons.SetLoadingProgress(0, string.Empty);
+            }
         }
         #endregion
 
@@ -275,8 +286,9 @@ namespace MVZ2.Addons
         private async Task ReloadLanguagePacks()
         {
             overridedFile = false;
+            reloadPipeline = new TaskPipeline();
             addons.SetLoadingVisible(true);
-            await Main.ResourcePackManager.ReloadLanguagePacks(enabledReferences.ToArray());
+            await Main.ResourcePackManager.ReloadLanguagePacks(enabledReferences.ToArray(), reloadPipeline);
             addons.SetLoadingVisible(false);
         }
         private void Return()
@@ -394,6 +406,7 @@ namespace MVZ2.Addons
         private ResourcePacksUI ui = null!;
         [SerializeField]
         private float maxRefreshInterval = 1;
+        private TaskPipeline? reloadPipeline;
         private bool overridedFile;
         private ResourcePackReference? selectedLanguagePack;
         private List<ResourcePackReference> enabledReferences = new List<ResourcePackReference>();

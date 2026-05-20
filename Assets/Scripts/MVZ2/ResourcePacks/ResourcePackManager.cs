@@ -64,15 +64,21 @@ namespace MVZ2.ResourcePacks
             }
             return changed;
         }
-        public async Task ReloadLanguagePacks(ResourcePackReference[] enabled)
+        public async Task ReloadLanguagePacks(ResourcePackReference[] enabled, TaskPipeline pipeline)
         {
             enabledResourcePacks.Clear();
             enabledResourcePacks.AddRange(enabled.Where(r => resourcePackMetadatas.Keys.Contains(r)));
             SaveEnabledResourcePackList();
             UnloadLanguagePacks();
-            await LoadResourcePacks();
-
-            await Main.ResourceManager.RegenerateModelIconSprites();
+            pipeline.AddTask(new PipelineTask("Load Resource Packs", async (p) =>
+            {
+                await LoadResourcePacks(p);
+            }));
+            pipeline.AddTask(new PipelineTask("Regenerate Model Icon Sprites", async (p) =>
+            {
+                await Main.ResourceManager.RegenerateModelIconSprites(p);
+            }));
+            await pipeline.Run();
         }
         public string GetResourcePackSpriteCategory(string key)
         {
@@ -283,19 +289,25 @@ namespace MVZ2.ResourcePacks
         #endregion
 
         #region 加载语言包
-        public async UniTask LoadResourcePacks()
+        public async UniTask LoadResourcePacks(TaskProgress? progress = null)
         {
+            int count = enabledResourcePacks.Count;
+            int completedCount = 0;
             var loadTasks = enabledResourcePacks.Select(async (reference, index) =>
             {
                 var priority = enabledResourcePacks.Count - index;
                 var metadata = GetResourcePackMetadata(reference);
-                if (metadata == null)
-                    return;
-                var pack = await reference.LoadPack(Main, metadata.dataVersion);
-                if (pack == null)
-                    return;
-                pack.Priority = priority;
-                LoadLanguagePack(pack);
+                if (metadata != null)
+                {
+                    var pack = await reference.LoadPack(Main, metadata.dataVersion);
+                    if (pack != null)
+                    {
+                        pack.Priority = priority;
+                        LoadLanguagePack(pack);
+                    }
+                }
+                completedCount++;
+                progress?.SetProgress(completedCount / (float)count);
             });
             await UniTask.WhenAll(loadTasks);
 

@@ -2,6 +2,7 @@
 
 using MVZ2Logic.Resources;
 using PVZEngine;
+using PVZEngine.Models;
 
 namespace MVZ2.GameContent.Sprites
 {
