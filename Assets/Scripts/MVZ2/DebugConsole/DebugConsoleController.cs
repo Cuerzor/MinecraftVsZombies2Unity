@@ -69,6 +69,8 @@ namespace MVZ2.DebugConsole
                 UpdateInputFieldSuggestions();
             }
             historyNavigated = false;
+
+            FlushLogs();
         }
         private void OnCloseCallback()
         {
@@ -116,16 +118,21 @@ namespace MVZ2.DebugConsole
         }
         private void OnLogReceivedCallback(string logString, string stackTrace, LogType type)
         {
-            switch (type)
+            lock (logLock)
             {
-                case LogType.Log:
-                case LogType.Warning:
-                    return;
-                case LogType.Error:
-                case LogType.Exception:
-                case LogType.Assert:
-                    Print($"<color=red>{logString}</color>\n");
-                    break;
+                switch (type)
+                {
+                    case LogType.Log:
+                        return;
+                    case LogType.Warning:
+                        pendingLogs.Add($"<color=yellow>{logString}</color>\n");
+                        return;
+                    case LogType.Error:
+                    case LogType.Exception:
+                    case LogType.Assert:
+                        pendingLogs.Add($"<color=red>{logString}</color>\n");
+                        break;
+                }
             }
         }
 
@@ -200,6 +207,23 @@ namespace MVZ2.DebugConsole
             {
                 NavigateHistory(-1);
             }
+        }
+
+        private void FlushLogs()
+        {
+            lock (logLock)
+            {
+                if (pendingLogs.Count != 0)
+                {
+                    logWriteBuffer.AddRange(pendingLogs);
+                    pendingLogs.Clear();
+                }
+            }
+            foreach (var log in logWriteBuffer)
+            {
+                Print(log);
+            }
+            logWriteBuffer.Clear();
         }
 
         #region 自动补全
@@ -318,7 +342,6 @@ namespace MVZ2.DebugConsole
         }
         #endregion
 
-
         #region 历史
 
         void SaveCommandHistory()
@@ -430,6 +453,9 @@ namespace MVZ2.DebugConsole
         private string? lastInput;
         private int lastCaret = -1;
         private bool historyNavigated;
+        private readonly List<string> pendingLogs = new List<string>();
+        private readonly List<string> logWriteBuffer = new List<string>();
+        private object logLock = new object();
         [SerializeField]
         private float debugKeyboardHeight = 0f;
         [SerializeField]
