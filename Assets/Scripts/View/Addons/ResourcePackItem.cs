@@ -10,12 +10,13 @@ namespace MVZ2.UI.Addons
 {
     public class ResourcePackItem : MonoBehaviour
     {
-        public void UpdateItem(LanguagePackViewData viewData)
+        public void UpdateItem(ResourcePackViewData viewData)
         {
             nameText.text = viewData.name;
             descriptionText.text = viewData.description;
             icon.SetSprite(viewData.icon);
             outdatedObject.SetActive(viewData.outdated);
+            SetToggled(viewData.selected);
         }
         public void SetToggled(bool value)
         {
@@ -37,11 +38,12 @@ namespace MVZ2.UI.Addons
         [SerializeField]
         private ImageResolver icon = null!;
     }
-    public struct LanguagePackViewData
+    public struct ResourcePackViewData
     {
         public string name;
         public string description;
         public Sprite icon;
         public bool outdated;
+        public bool selected;
     }
 }

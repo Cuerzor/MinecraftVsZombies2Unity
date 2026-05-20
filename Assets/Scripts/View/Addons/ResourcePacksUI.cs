@@ -28,7 +28,7 @@ namespace MVZ2.UI.Addons
             if (item.Exists())
                 item.SetToggled(true);
         }
-        public void SetDisabledLanguagePacks(LanguagePackViewData[] viewDatas)
+        public void SetDisabledLanguagePacks(ResourcePackViewData[] viewDatas)
         {
             disabledLanguagePacks.updateList(viewDatas.Length, (i, obj) =>
             {
@@ -46,7 +46,7 @@ namespace MVZ2.UI.Addons
                 packItem.OnToggled -= OnDisabledPackItemToggledCallback;
             });
         }
-        public void SetEnabledLanguagePacks(LanguagePackViewData[] viewDatas)
+        public void SetEnabledLanguagePacks(ResourcePackViewData[] viewDatas)
         {
             enabledLanguagePacks.updateList(viewDatas.Length, (i, obj) =>
             {

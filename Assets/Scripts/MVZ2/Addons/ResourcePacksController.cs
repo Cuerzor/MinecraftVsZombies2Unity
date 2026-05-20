@@ -7,11 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using MukioI18n;
 using MVZ2.IO;
-using MVZ2.Localization;
 using MVZ2.Managers;
 using MVZ2.ResourcePacks;
 using MVZ2.UI.Addons;
 using MVZ2Logic.Localization;
+using PVZEngine;
 using UnityEngine;
 
 namespace MVZ2.Addons
@@ -182,19 +182,37 @@ namespace MVZ2.Addons
                 case ResourcePacksUI.Buttons.Disable:
                     if (selectedLanguagePack != null)
                     {
+                        var index = enabledReferences.IndexOf(selectedLanguagePack);
+
                         enabledReferences.Remove(selectedLanguagePack);
+
+                        if (enabledReferences.Count > 0)
+                        {
+                            var needSelectIndex = Mathf.Clamp(index, 0, enabledReferences.Count - 1);
+                            selectedLanguagePack = enabledReferences[needSelectIndex];
+                        }
+
                         UpdateLanguagePacks();
                         UpdateButtonInteractions();
-                        ui.SelectItemUI(false, GetItemUIIndex(false, selectedLanguagePack));
                     }
                     break;
                 case ResourcePacksUI.Buttons.Enable:
                     if (selectedLanguagePack != null && !enabledReferences.Contains(selectedLanguagePack))
                     {
+                        var disabled = GetDisabledReferences().ToArray();
+                        var index = Array.IndexOf(disabled, selectedLanguagePack);
+
                         enabledReferences.Insert(0, selectedLanguagePack);
+
+                        var newDisabled = GetDisabledReferences().ToArray();
+                        if (newDisabled.Length > 0)
+                        {
+                            var needSelectIndex = Mathf.Clamp(index, 0, newDisabled.Length - 1);
+                            selectedLanguagePack = newDisabled[needSelectIndex];
+                        }
+
                         UpdateLanguagePacks();
                         UpdateButtonInteractions();
-                        ui.SelectItemUI(true, GetItemUIIndex(true, selectedLanguagePack));
                     }
                     break;
                 case ResourcePacksUI.Buttons.MoveUp:
@@ -207,7 +225,6 @@ namespace MVZ2.Addons
                             enabledReferences.Insert(index - 1, selectedLanguagePack);
                             UpdateLanguagePacks();
                             UpdateButtonInteractions();
-                            ui.SelectItemUI(true, GetItemUIIndex(true, selectedLanguagePack));
                         }
                     }
                     break;
@@ -221,7 +238,6 @@ namespace MVZ2.Addons
                             enabledReferences.Insert(index + 1, selectedLanguagePack);
                             UpdateLanguagePacks();
                             UpdateButtonInteractions();
-                            ui.SelectItemUI(true, GetItemUIIndex(true, selectedLanguagePack));
                         }
                     }
                     break;
@@ -267,6 +283,12 @@ namespace MVZ2.Addons
         {
             Hide();
             addons.DisplayIndex();
+
+            var musicID = Main.MusicManager.GetCurrentMusicID();
+            if (NamespaceID.IsValid(musicID))
+            {
+                Main.MusicManager.Play(musicID);
+            }
         }
         private void CancelSelection()
         {
@@ -277,18 +299,24 @@ namespace MVZ2.Addons
         private void UpdateLanguagePacks()
         {
             var disabled = GetDisabledReferences();
-            var disabledViewDatas = disabled
-                .Select(r => Main.ResourcePackManager.GetResourcePackMetadata(r))
-                .OfType<ResourcePackMetadata>()
-                .Select(p => GetLanguagePackViewData(p))
-                .ToArray();
-            var enabledViewDatas = enabledReferences
-                .Select(r => Main.ResourcePackManager.GetResourcePackMetadata(r))
-                .OfType<ResourcePackMetadata>()
-                .Select(p => GetLanguagePackViewData(p))
-                .ToArray();
-            ui.SetDisabledLanguagePacks(disabledViewDatas);
-            ui.SetEnabledLanguagePacks(enabledViewDatas);
+            var disabledViewDatas = new List<ResourcePackViewData>();
+            var enabledViewDatas = new List<ResourcePackViewData>();
+            foreach (var reference in disabled)
+            {
+                var metadata = Main.ResourcePackManager.GetResourcePackMetadata(reference);
+                if (metadata == null)
+                    continue;
+                disabledViewDatas.Add(GetResourcePackViewData(metadata, reference));
+            }
+            foreach (var reference in enabledReferences)
+            {
+                var metadata = Main.ResourcePackManager.GetResourcePackMetadata(reference);
+                if (metadata == null)
+                    continue;
+                enabledViewDatas.Add(GetResourcePackViewData(metadata, reference));
+            }
+            ui.SetDisabledLanguagePacks(disabledViewDatas.ToArray());
+            ui.SetEnabledLanguagePacks(enabledViewDatas.ToArray());
         }
         private void UpdateButtonInteractions()
         {
@@ -335,14 +363,15 @@ namespace MVZ2.Addons
                 return Array.IndexOf(disabled, reference);
             }
         }
-        private LanguagePackViewData GetLanguagePackViewData(ResourcePackMetadata metadata)
+        private ResourcePackViewData GetResourcePackViewData(ResourcePackMetadata metadata, ResourcePackReference reference)
         {
-            return new LanguagePackViewData()
+            return new ResourcePackViewData()
             {
                 name = metadata.name ?? string.Empty,
                 description = metadata.description ?? string.Empty,
                 icon = metadata.icon,
-                outdated = Main.ResourcePackManager.IsOutdated(metadata.dataVersion)
+                outdated = Main.ResourcePackManager.IsOutdated(metadata.dataVersion),
+                selected = reference == selectedLanguagePack,
             };
         }
         [TranslateMsg("覆盖语言包的警告，{0}为语言包名称")]
