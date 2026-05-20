@@ -211,8 +211,7 @@ namespace MVZ2.Managers
                 await LoadModModels(modNamespace, loadProgress);
                 loadProgress.SetProgress(1, "Finished");
 
-                var enumerator = ShotModelIcons(modNamespace, shotProgress, 8);
-                await Main.CoroutineManager.ToTask(enumerator);
+                await ShotModModelIcons(modNamespace, shotProgress);
                 shotProgress.SetProgress(1, "Finished");
             }
             Task LoadMapModels(TaskProgress progress)

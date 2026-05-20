@@ -71,6 +71,8 @@ namespace MVZ2.ResourcePacks
             SaveEnabledResourcePackList();
             UnloadLanguagePacks();
             await LoadResourcePacks();
+
+            await Main.ResourceManager.RegenerateModelIconSprites();
         }
         public string GetResourcePackSpriteCategory(string key)
         {

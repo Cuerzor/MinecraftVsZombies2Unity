@@ -3,11 +3,13 @@
 using System.Collections.Generic;
 using MVZ2.GameContent.Buffs;
 using MVZ2.GameContent.Detections;
+using MVZ2.GameContent.Sprites;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
+using MVZ2Logic.Models;
 using MVZ2Logic.Resources;
 using PVZEngine;
 using PVZEngine.Auras;
@@ -39,9 +41,7 @@ namespace MVZ2.GameContent.Effects
             var id = GetRequiredEntityID(entity);
             if (id == null)
                 return null;
-            var spriteID = new NamespaceID(id.SpaceName, $"model_icon/entity.{id.Path}");
-            var spriteRef = new SpriteReference(spriteID);
-            return spriteRef;
+            return LogicSprites.GetModelIconReference(id, EngineModelID.TYPE_ENTITY);
         }
         private void UpdateUnlock(Entity entity)
         {

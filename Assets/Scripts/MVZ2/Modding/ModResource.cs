@@ -49,7 +49,6 @@ namespace MVZ2.Modding
         public Dictionary<string, MapModel> MapModels = new();
         public Dictionary<string, AreaModel> AreaModels = new();
         public Dictionary<string, Model> Models = new();
-        public Dictionary<string, Sprite> ModelIcons = new();
         public ModResource(string spaceName)
         {
             Namespace = spaceName;

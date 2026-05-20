@@ -4,7 +4,11 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
+using MVZ2.GameContent.Sprites;
 using MVZ2.Metas;
+using MVZ2.Models;
+using MVZ2.Resources;
 using MVZ2Logic.Models;
 using MVZ2Logic.Resources;
 using PVZEngine;
@@ -45,8 +49,7 @@ namespace MVZ2.Managers
         }
         #endregion
 
-
-        #region 元数据
+        #region 护甲配置元数据
         public ModelArmorConfigMeta? GetModelArmorConfigMeta(NamespaceID id)
         {
             if (!NamespaceID.IsValid(id))
@@ -72,11 +75,48 @@ namespace MVZ2.Managers
         #region 模型图标
         public Sprite? GetModelIcon(NamespaceID id)
         {
-            return FindInMods(id, mod => mod.ModelIcons);
+            if (resourceLibrary.TryGetModelIcon(id, out var modelIcon))
+            {
+                return GetFinalSprite(modelIcon.sprite);
+            }
+            return null;
         }
         #endregion
 
-        #region 私有方法
+        #region 生成模型图标
+        public async UniTask RegenerateModelIconSprites()
+        {
+            ClearModelIconSprites();
+            await ShotModelIcons();
+        }
+        private void RegisterModelIcon(NamespaceID metaID, ModelIcon icon)
+        {
+            resourceLibrary.RegisterModelIcon(metaID, icon);
+            RegisterSprite(icon.spriteReference, icon.sprite);
+        }
+        private void ClearModelIconSprites()
+        {
+            foreach (NamespaceID id in resourceLibrary.GetAllModelIcons())
+            {
+                if (resourceLibrary.TryGetModelIcon(id, out var modelIcon))
+                {
+                    var spriteRef = modelIcon.spriteReference;
+                    var sprite = modelIcon.sprite;
+                    var texture = modelIcon.texture;
+                    if (sprite.Exists())
+                    {
+                        RemoveGeneratedSprite(sprite, GetModelIconSpriteName(spriteRef), GetModelIconSpriteCategory());
+                    }
+                    if (texture.Exists())
+                    {
+                        RemoveGeneratedTexture(texture);
+                    }
+                    var spriteLookupKey = new SpriteLookupKey(spriteRef);
+                    resourceLibrary.UnregisterSprite(spriteLookupKey);
+                }
+            }
+            resourceLibrary.ClearModelIconSprites();
+        }
         private async Task LoadModModels(string nsp, TaskProgress progress)
         {
             var modResource = GetModResource(nsp);
@@ -90,14 +130,30 @@ namespace MVZ2.Managers
                 modResource.Models.Add(id.Path, model);
             }
         }
-        private IEnumerator ShotModelIcons(string modNamespace, TaskProgress progress, int maxYieldCount = 4)
+        private string GetModelIconSpriteName(SpriteReference spriteRef)
+        {
+            return spriteRef.ToString();
+        }
+        private string GetModelIconSpriteCategory()
+        {
+            return MODEL_ICON_CATEGORY;
+        }
+        private async UniTask ShotModelIcons(int maxYieldCount = 8)
+        {
+            foreach (var modResource in modResources)
+            {
+                var progress = new TaskProgress();
+                await ShotModModelIcons(modResource.Namespace, progress, maxYieldCount);
+            }
+        }
+        private async UniTask ShotModModelIcons(string modNamespace, TaskProgress? progress, int maxYieldCount = 8)
         {
             var modResource = GetModResource(modNamespace);
             if (modResource == null)
-                yield break;
+                return;
             var metaList = modResource.ModelMetaList;
             if (metaList == null)
-                yield break;
+                return;
 
             var metas = metaList.metas;
             var count = metas.Length;
@@ -106,43 +162,59 @@ namespace MVZ2.Managers
             {
                 var meta = metas[i];
 
-                var modelID = meta.Path;
-                var metaPath = EngineModelID.ConcatName(meta.Type, meta.Name);
-                var metaID = new NamespaceID(modNamespace, metaPath);
-                var spritePath = $"model_icon/{metaPath}";
+                var metaID = new NamespaceID(modNamespace, meta.Name);
+                var modelMetaID = new NamespaceID(modNamespace, meta.Name).ToModelID(meta.Type);
+                var spriteRef = LogicSprites.GetModelIconReference(metaID, meta.Type);
+                var spriteName = GetModelIconSpriteName(spriteRef);
+                var spriteCategory = GetModelIconSpriteCategory();
+
                 Sprite modelSprite;
-                if (NamespaceID.IsValid(modelID))
+                Texture2D? modelTexture = null;
+                if (NamespaceID.IsValid(modelMetaID))
                 {
                     Sprite? sprite = null;
+                    Texture2D? texture = null;
                     if (meta.Shot)
                     {
-                        sprite = main.ModelManager.ShotIcon(metaID, meta.Width, meta.Height, new Vector2(meta.XOffset, meta.YOffset), metaID.ToString());
+                        texture = main.ModelManager.ShotIconTexture(modelMetaID, meta.Width, meta.Height, new Vector2(meta.XOffset, meta.YOffset));
+                    }
+                    if (texture.Exists())
+                    {
+                        // 创建Sprite。
+                        texture.name = spriteName;
+                        sprite = main.ResourceManager.CreateSprite(texture, new Rect(0, 0, meta.Width, meta.Height), Vector2.one * 0.5f, spriteName, category: spriteCategory);
                     }
                     if (!sprite.Exists())
                     {
                         sprite = GetDefaultSpriteClone();
                     }
                     modelSprite = sprite;
+                    modelTexture = texture;
                 }
                 else
                 {
                     modelSprite = GetDefaultSpriteClone();
-                    Debug.LogWarning($"Model prefab {metaID} is missing.");
+                    Debug.LogWarning($"Model prefab {modelMetaID} is missing.");
                 }
-                modResource.ModelIcons.Add(metaPath, modelSprite);
-                var spriteRef = new SpriteReference(new NamespaceID(modNamespace, spritePath));
-                RegisterSprite(spriteRef, modelSprite);
+                var modelIcon = new ModelIcon()
+                {
+                    spriteReference = spriteRef,
+                    sprite = modelSprite,
+                    texture = modelTexture,
+                };
+                RegisterModelIcon(modelMetaID, modelIcon);
 
-                progress.SetProgress(1 / (float)count, metaID.ToString());
+                progress?.SetProgress((i + 1f) / (float)count, spriteRef.ToString());
                 yieldCounter++;
                 if (yieldCounter >= maxYieldCount)
                 {
                     yieldCounter = 0;
-                    yield return null;
+                    await UniTask.Yield();
                 }
             }
-            progress.SetProgress(1, "Finished");
+            progress?.SetProgress(1, "Finished");
         }
         #endregion
+        public const string MODEL_ICON_CATEGORY = "modelIcon";
     }
 }
