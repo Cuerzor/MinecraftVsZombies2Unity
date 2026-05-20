@@ -44,6 +44,6 @@ namespace MVZ2.Addons
         [SerializeField]
         private AddonsUI ui = null!;
         [SerializeField]
-        private LanguagePacksController languagePacks = null!;
+        private ResourcePacksController languagePacks = null!;
     }
 }

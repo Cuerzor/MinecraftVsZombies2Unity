@@ -4,6 +4,7 @@ using MukioI18n;
 using MVZ2.IO;
 using MVZ2.Localization;
 using MVZ2.Metas;
+using MVZ2.ResourcePacks;
 using MVZ2.TalkData;
 using MVZ2.Vanilla;
 using MVZ2Logic.Localization;
@@ -23,10 +24,10 @@ namespace MVZ2.Editor
             ResourcePackMenu.UpdateResourcePackManifest();
             MoveMOFiles();
 
-            var path = GetLanguagePackDirectory();
+            var path = GetResourcePackDirectory();
             var dirPath = Path.Combine(Application.dataPath, "Localization", "pack");
             var destPath = Path.Combine(path, "builtin.bytes");
-            LanguageManager.CompressLanguagePack(dirPath, destPath);
+            ResourcePackManager.CompressLanguagePack(dirPath, destPath);
             AssetDatabase.Refresh();
             Debug.Log("Langauge Pack Compressed.");
         }
@@ -358,9 +359,9 @@ namespace MVZ2.Editor
                 File.Copy(file, destFile, true);
             }
         }
-        public static string GetLanguagePackDirectory()
+        public static string GetResourcePackDirectory()
         {
-            return Path.Combine(Application.dataPath, "GameContent", "LanguagePacks");
+            return Path.Combine(Application.dataPath, "GameContent", "ResourcePacks");
         }
         static void SearchObject(Transform tr, MukioPotGenerator pot)
         {

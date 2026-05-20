@@ -21,7 +21,7 @@ MonoBehaviour:
     m_Address: builtin
     m_ReadOnly: 0
     m_SerializedLabels:
-    - LanguagePack
+    - ResourcePack
     FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a46faf0c3a4988d45b208f5a8e98bb12, type: 2}

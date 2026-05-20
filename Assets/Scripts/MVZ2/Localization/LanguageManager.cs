@@ -12,7 +12,6 @@ using MVZ2Logic;
 using MVZ2Logic.Games;
 using MVZ2Logic.Localization;
 using MVZ2Logic.Options;
-using MVZ2Logic.Resources;
 using PVZEngine;
 using UnityEngine;
 
@@ -54,11 +53,9 @@ namespace MVZ2.Localization
         }
         public bool TryGetLocalizedString(string text, string language, [NotNullWhen(true)] out string? translated, params object?[] args)
         {
-            foreach (var languagePack in loadedResourcePacks)
+            foreach (var provider in catalogProviders)
             {
-                if (languagePack == null)
-                    continue;
-                if (languagePack.TryGetString(language, text, out var result, args))
+                if (provider.TryGetString(language, text, out var result, args))
                 {
                     translated = result;
                     return true;
@@ -77,11 +74,9 @@ namespace MVZ2.Localization
         }
         public bool TryGetLocalizedStringParticular(string context, string text, string language, [NotNullWhen(true)] out string? translated, params object?[] args)
         {
-            foreach (var languagePack in loadedResourcePacks)
+            foreach (var provider in catalogProviders)
             {
-                if (languagePack == null)
-                    continue;
-                if (languagePack.TryGetStringParticular(language, context, text, out var result, args))
+                if (provider.TryGetStringParticular(language, context, text, out var result, args))
                 {
                     translated = result;
                     return true;
@@ -100,11 +95,9 @@ namespace MVZ2.Localization
         }
         public bool TryGetLocalizedStringPlural(string text, string textPlural, long n, string language, [NotNullWhen(true)] out string? translated, params object?[] args)
         {
-            foreach (var languagePack in loadedResourcePacks)
+            foreach (var provider in catalogProviders)
             {
-                if (languagePack == null)
-                    continue;
-                if (languagePack.TryGetStringPlural(language, text, textPlural, n, out var result, args))
+                if (provider.TryGetStringPlural(language, text, textPlural, n, out var result, args))
                 {
                     translated = result;
                     return true;
@@ -123,11 +116,9 @@ namespace MVZ2.Localization
         }
         public bool TryGetLocalizedStringParticularPlural(string context, string text, string textPlural, long n, string language, [NotNullWhen(true)] out string? translated, params object?[] args)
         {
-            foreach (var languagePack in loadedResourcePacks)
+            foreach (var provider in catalogProviders)
             {
-                if (languagePack == null)
-                    continue;
-                if (languagePack.TryGetStringParticularPlural(language, context, text, textPlural, n, out var result, args))
+                if (provider.TryGetStringParticularPlural(language, context, text, textPlural, n, out var result, args))
                 {
                     translated = result;
                     return true;
@@ -136,6 +127,24 @@ namespace MVZ2.Localization
             translated = null;
             return false;
         }
+
+        public void CallLanguageChanged(string lang)
+        {
+            OnLanguageChanged?.Invoke(lang);
+        }
+
+        #region Provider
+        public void AddCatalogProvider(ICatalogProvider provider)
+        {
+            catalogProviders.Add(provider);
+        }
+        public bool RemoveCatalogProvider(ICatalogProvider provider)
+        {
+            return catalogProviders.Remove(provider);
+        }
+        #endregion
+
+        #region 语言代码
         public string GetLanguageName(string language)
         {
             try
@@ -156,20 +165,31 @@ namespace MVZ2.Localization
         {
             return currentLanguage;
         }
-        public void CallLanguageChanged(string lang)
-        {
-            OnLanguageChanged?.Invoke(lang);
-        }
         public string[] GetAllLanguageCodes()
         {
             return allLanguages.ToArray();
         }
-        public void ValidateCurrentLanguage()
+        public void ReevaluateLanguages()
         {
-            if (allLanguages.Contains(GetCurrentLanguage()))
-                return;
-            Main.OptionsManager.SetLanguage(allLanguages.FirstOrDefault());
+            allLanguages.Clear();
+            allLanguages.Add(SOURCE_LANGUAGE);
+            foreach (var provider in catalogProviders)
+            {
+                var codes = provider.GetAllLanguageCodes();
+                foreach (var code in codes)
+                {
+                    if (!allLanguages.Contains(code))
+                    {
+                        allLanguages.Add(code);
+                    }
+                }
+            }
+            if (!allLanguages.Contains(GetCurrentLanguage()))
+            {
+                Main.OptionsManager.SetLanguage(allLanguages.FirstOrDefault());
+            }
         }
+        #endregion
         private void Awake()
         {
             OptionsManager.OnOptionChangedString += OnOptionChangedStringCallback;
@@ -225,7 +245,8 @@ namespace MVZ2.Localization
         [TranslateMsg("当前语言名称", LogicStrings.CONTEXT_LANGUAGE_NAME)]
         public const string CURRENT_LANGUAGE_NAME = "中文";
 
-        private List<string> allLanguages = new List<string>() { SOURCE_LANGUAGE };
+        private readonly List<string> allLanguages = new List<string>() { SOURCE_LANGUAGE };
+        private readonly List<ICatalogProvider> catalogProviders = new List<ICatalogProvider>();
         private string currentLanguage = CN;
         [SerializeField]
         private MainManager main = null!;

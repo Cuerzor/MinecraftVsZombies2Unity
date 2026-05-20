@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using MVZ2.IO;
 using MVZ2.Localization;
+using MVZ2.ResourcePacks;
 using MVZ2.Sprites;
 using MVZ2Logic.Models;
 using MVZ2Logic.UI;
@@ -201,7 +202,7 @@ namespace MVZ2.Editor
         public static void UpdateResourcePackManifest()
         {
             // 根据语言包内的已有贴图和项目内的已有贴图生成spriteManifest.json，并将其保存到Localization\pack\assets\mvz2\en-US中。
-            var path = LocalizationMenu.GetLanguagePackDirectory();
+            var path = LocalizationMenu.GetResourcePackDirectory();
 
             var packDir = Path.Combine(Application.dataPath, "Localization", "pack");
 
@@ -345,7 +346,7 @@ namespace MVZ2.Editor
             // 将spriteManifest.json复制到LanguagePack\templates中。
             Debug.Log("更新语言包贴图清单……");
             var sourceManifestPath = Path.Combine(Application.dataPath, "Localization", "pack", ResourcePackReaderV1.TEXTURE_MANIFEST_FILENAME);
-            var templatesDir = Path.Combine(Application.dataPath, "LanguagePack", "templates");
+            var templatesDir = Path.Combine(Application.dataPath, "ResourcePack", "templates");
             if (File.Exists(sourceManifestPath))
             {
                 var destPath = Path.Combine(templatesDir, ResourcePackReaderV1.TEXTURE_MANIFEST_FILENAME);

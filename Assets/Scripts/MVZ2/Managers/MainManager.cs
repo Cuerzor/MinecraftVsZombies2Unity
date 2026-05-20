@@ -21,6 +21,7 @@ using MVZ2.Localization;
 using MVZ2.Modding;
 using MVZ2.Models;
 using MVZ2.Options;
+using MVZ2.ResourcePacks;
 using MVZ2.Resources;
 using MVZ2.Saves;
 using MVZ2.Scenes;
@@ -251,7 +252,7 @@ namespace MVZ2.Managers
 
             // 在MOD信息加载之后
             await ResourceManager.Init();
-            await LanguageManager.InitLanguagePacks();
+            await ResourcePackManager.InitResourcePacks();
 
             // 在MOD资源加载之后
             ModManager.LoadMods(Game);
@@ -319,6 +320,7 @@ namespace MVZ2.Managers
         public MainSceneController Scene => scene;
         public PerformanceManager PerformanceManager => performanceManager;
         public TalkManager TalkManager => talkManager;
+        public ResourcePackManager ResourcePackManager => resourcePackManager;
         public GameSettings Settings => settings;
 
         private Task? initTask;
@@ -381,6 +383,8 @@ namespace MVZ2.Managers
         private PerformanceManager performanceManager = null!;
         [SerializeField]
         private TalkManager talkManager = null!;
+        [SerializeField]
+        private ResourcePackManager resourcePackManager = null!;
         [SerializeField]
         private MainSceneController scene = null!;
         [SerializeField]

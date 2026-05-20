@@ -32,7 +32,7 @@ namespace MVZ2.Editor
             var sceneMarker = new SceneMarker();
             UpdateAddressableGroup(mainGroup, sceneDirectory, sceneMarker, dependencies);
 
-            var languagePackDirectory = LocalizationMenu.GetLanguagePackDirectory();
+            var languagePackDirectory = LocalizationMenu.GetResourcePackDirectory();
             var languagePackMarker = new LanguagePackMarker();
             UpdateAddressableGroup(languagePackGroup, languagePackDirectory, languagePackMarker, dependencies);
 
@@ -205,7 +205,7 @@ namespace MVZ2.Editor
         {
             var idPath = Path.GetFileNameWithoutExtension(relativePath);
             entry.SetAddress(idPath, postEvent: false);
-            entry.SetLabel("LanguagePack", true, postEvent: false);
+            entry.SetLabel("ResourcePack", true, postEvent: false);
         }
     }
     public class SceneMarker : AssetMarker
