@@ -31,6 +31,8 @@ namespace MVZ2.Managers
         public void RemoveSoundSourceProvider(ISoundSourceProvider provider) => resourceLibrary.RemoveSoundSourceProvider(provider);
         public void AddMusicSourceProvider(IMusicSourceProvider provider) => resourceLibrary.AddMusicSourceProvider(provider);
         public void RemoveMusicSourceProvider(IMusicSourceProvider provider) => resourceLibrary.RemoveMusicSourceProvider(provider);
+        public void AddFragmentSourceProvider(IFragmentSourceProvider provider) => resourceLibrary.AddFragmentSourceProvider(provider);
+        public void RemoveFragmentSourceProvider(IFragmentSourceProvider provider) => resourceLibrary.RemoveFragmentSourceProvider(provider);
         #endregion
 
         #region Register
@@ -73,6 +75,7 @@ namespace MVZ2.Managers
 
         public ISoundSource? GetFinalSoundMeta(NamespaceID? id) => resourceLibrary.GetFinalSoundMeta(id, GetResourceContext());
         public IMusicSource? GetFinalMusicSource(NamespaceID? id) => resourceLibrary.GetFinalMusicSource(id, GetResourceContext());
+        public IFragmentSource? GetFinalFragmentSource(NamespaceID? id) => resourceLibrary.GetFinalFragmentSource(id, GetResourceContext());
         #endregion
 
         #region Resource ID
@@ -87,6 +90,7 @@ namespace MVZ2.Managers
             resourceLibrary.Init();
             resourceLibrary.AddSoundSourceProvider(new BaseGameSoundSourceProvider(this));
             resourceLibrary.AddMusicSourceProvider(new BaseGameMusicSourceProvider(this));
+            resourceLibrary.AddFragmentSourceProvider(new BaseGameFragmentSourceProvider(this));
         }
         private void ClearResources_Resolving()
         {

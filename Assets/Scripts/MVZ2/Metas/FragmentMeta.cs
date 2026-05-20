@@ -3,11 +3,12 @@
 using System.Xml;
 using MVZ2.IO;
 using PVZEngine.Tools.Unity;
+using MVZ2.Resources;
 using UnityEngine;
 
 namespace MVZ2.Metas
 {
-    public class FragmentMeta
+    public class FragmentMeta : IFragmentSource
     {
         public FragmentMeta(string iD, Gradient? gradient)
         {
@@ -26,6 +27,11 @@ namespace MVZ2.Metas
                 return null;
             }
             return new FragmentMeta(name, node.ToGradient());
+        }
+
+        public Gradient? GetGradient()
+        {
+            return Gradient;
         }
     }
 }

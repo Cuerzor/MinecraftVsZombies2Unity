@@ -2,6 +2,7 @@
 
 using System.Linq;
 using MVZ2.Metas;
+using MVZ2.Resources;
 using PVZEngine;
 using UnityEngine;
 
@@ -20,12 +21,19 @@ namespace MVZ2.Managers
         #endregion
 
         #region 碎片渐变
-        public Gradient? GetFragmentGradient(NamespaceID id)
+        public FragmentMeta? GetFragmentMeta(NamespaceID id)
         {
             var meta = GetFragmentMetaList(id.SpaceName);
             if (meta == null)
                 return null;
-            return meta.metas.FirstOrDefault(m => m.ID == id.Path)?.Gradient;
+            return meta.metas.FirstOrDefault(m => m.ID == id.Path);
+        }
+        public Gradient? GetFragmentGradient(NamespaceID id)
+        {
+            var meta = GetFinalFragmentSource(id);
+            if (meta == null)
+                return null;
+            return meta.GetGradient();
         }
         #endregion
     }

@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace MVZ2.ResourcePacks
 {
-    public class ResourcePack : ICatalogProvider, ISpriteProvider, ITexture2DProvider, IAudioClipProvider, ISoundSourceProvider, IMusicSourceProvider
+    public class ResourcePack : ICatalogProvider, ISpriteProvider, ITexture2DProvider, IAudioClipProvider, ISoundSourceProvider, IMusicSourceProvider, IFragmentSourceProvider
     {
         public ResourcePack(string key, string filename)
         {
@@ -170,6 +170,17 @@ namespace MVZ2.ResourcePacks
         }
         #endregion
 
+        #region 资源包碎片
+        public void AddResourcePackFragmentSource(NamespaceID path, ResourcePackFragmentSource source)
+        {
+            fragmentSources.Add(path, source);
+        }
+        public bool TryGetResourcePackFragmentSource(NamespaceID path, out ResourcePackFragmentSource source)
+        {
+            return fragmentSources.TryGetValue(path, out source);
+        }
+        #endregion
+
         #region Sprite
         public void AddSprite(SpriteLookupKey id, Sprite spr)
         {
@@ -220,6 +231,16 @@ namespace MVZ2.ResourcePacks
             soundMeta = null;
             return false;
         }
+        bool IResourceProvider<NamespaceID, IFragmentSource>.TryGet(NamespaceID key, out IFragmentSource? source)
+        {
+            if (TryGetResourcePackFragmentSource(key, out var src))
+            {
+                source = src;
+                return true;
+            }
+            source = null;
+            return false;
+        }
 
 
         private string tempDirectory;
@@ -230,6 +251,7 @@ namespace MVZ2.ResourcePacks
         public Dictionary<NamespaceID, AudioClip> audioClips = new Dictionary<NamespaceID, AudioClip>();
         public Dictionary<NamespaceID, ResourcePackSoundSource> sounds = new Dictionary<NamespaceID, ResourcePackSoundSource>();
         public Dictionary<NamespaceID, ResourcePackMusicSource> musicSources = new Dictionary<NamespaceID, ResourcePackMusicSource>();
+        public Dictionary<NamespaceID, ResourcePackFragmentSource> fragmentSources = new Dictionary<NamespaceID, ResourcePackFragmentSource>();
         public string Key { get; private set; }
         public int Priority { get; set; }
     }

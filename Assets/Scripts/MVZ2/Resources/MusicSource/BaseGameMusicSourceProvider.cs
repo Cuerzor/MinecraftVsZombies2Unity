@@ -6,21 +6,15 @@ using PVZEngine;
 
 namespace MVZ2.Resources
 {
-    public class BaseGameMusicSourceProvider : IMusicSourceProvider
+    public class BaseGameMusicSourceProvider : BaseGameResourceProvider, IMusicSourceProvider
     {
-        public BaseGameMusicSourceProvider(ResourceManager resources, int priority = 0)
+        public BaseGameMusicSourceProvider(ResourceManager resources, int priority = 0) : base(resources, priority)
         {
-            Resources = resources;
-            Priority = priority;
         }
-
         public bool TryGet(NamespaceID id, out IMusicSource? resource)
         {
             resource = Resources.GetMusicMeta(id);
             return resource != null;
         }
-
-        public ResourceManager Resources { get; private set; }
-        public int Priority { get; private set; }
     }
 }

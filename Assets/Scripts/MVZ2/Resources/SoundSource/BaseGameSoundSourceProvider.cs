@@ -6,21 +6,15 @@ using PVZEngine;
 
 namespace MVZ2.Resources
 {
-    public class BaseGameSoundSourceProvider : ISoundSourceProvider
+    public class BaseGameSoundSourceProvider : BaseGameResourceProvider, ISoundSourceProvider
     {
-        public BaseGameSoundSourceProvider(ResourceManager resources, int priority = 0)
+        public BaseGameSoundSourceProvider(ResourceManager resources, int priority = 0) : base(resources, priority)
         {
-            Resources = resources;
-            Priority = priority;
         }
-
         public bool TryGet(NamespaceID id, out ISoundSource? resource)
         {
             resource = Resources.GetSoundMeta(id);
             return resource != null;
         }
-
-        public ResourceManager Resources { get; private set; }
-        public int Priority { get; private set; }
     }
 }

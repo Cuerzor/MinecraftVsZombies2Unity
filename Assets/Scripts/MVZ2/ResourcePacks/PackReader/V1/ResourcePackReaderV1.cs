@@ -72,6 +72,12 @@ namespace MVZ2.ResourcePacks
                 ReadPackMusicFromManifest(loader, audios, packData);
             }
 
+            var fragments = await LoadManifest<ResourcePackFragmentsV1>(loader, FRAGMENT_MANIFEST_FILENAME);
+            if (fragments != null)
+            {
+                // 加载音效。
+                ReadPackFragmentFromManifest(loader, fragments, packData);
+            }
             return packData;
         }
         private async UniTask<T?> LoadManifest<T>(ResourceLoader loader, string path)
@@ -285,6 +291,80 @@ namespace MVZ2.ResourcePacks
                 pack.musictracks.Add(id, meta);
             }
         }
+        private void ReadPackFragmentFromManifest(ResourceLoader loader, ResourcePackFragmentsV1 fragments, PackReadData pack)
+        {
+            if (fragments.fragments == null)
+                return;
+            foreach (var fragment in fragments.fragments)
+            {
+                if (fragment == null)
+                    continue;
+                if (string.IsNullOrEmpty(fragment.id) || !NamespaceID.TryParse(fragment.id, Main.BuiltinNamespace, out var id))
+                {
+                    Log.LogWarning($"Incorrect property \"id\" {fragment.id} of fragment in resource pack {pack.Key}.");
+                    continue;
+                }
+
+                bool blend = fragment.blend;
+
+                GradientColorKey[] colorKeys;
+                var colorKeysNode = fragment.colorKeys;
+                if (colorKeysNode == null || colorKeysNode.Length <= 0)
+                {
+                    colorKeys = new GradientColorKey[]
+                    {
+                        new GradientColorKey(Color.magenta, 0),
+                        new GradientColorKey(Color.black, 0.5f),
+                    };
+                }
+                else
+                {
+                    colorKeys = new GradientColorKey[colorKeysNode.Length];
+                    for (int i = 0; i < colorKeys.Length; i++)
+                    {
+                        var colorKeyNode = colorKeysNode[i];
+                        if (colorKeyNode == null)
+                            continue;
+                        var col = ColorUtility.TryParseHtmlString(colorKeyNode.code, out var color) ? color : Color.magenta;
+                        var time = colorKeyNode.time;
+                        colorKeys[i] = new GradientColorKey(col, time);
+                    }
+                }
+
+                GradientAlphaKey[] alphaKeys;
+                var alphaKeysNode = fragment.alphaKeys;
+                if (alphaKeysNode == null || alphaKeysNode.Length <= 0)
+                {
+                    alphaKeys = new GradientAlphaKey[]
+                    {
+                        new GradientAlphaKey(1, 0)
+                    };
+                }
+                else
+                {
+                    alphaKeys = new GradientAlphaKey[alphaKeysNode.Length];
+                    for (int i = 0; i < alphaKeys.Length; i++)
+                    {
+                        var alphaKeyNode = alphaKeysNode[i];
+                        if (alphaKeyNode == null)
+                            continue;
+                        var alpha = alphaKeyNode.alpha;
+                        var time = alphaKeyNode.time;
+                        alphaKeys[i] = new GradientAlphaKey(alpha, time);
+                    }
+                }
+
+                var gradient = new Gradient()
+                {
+                    mode = blend ? GradientMode.Blend : GradientMode.Fixed,
+                    colorKeys = colorKeys,
+                    alphaKeys = alphaKeys
+                };
+
+                var meta = new ResourcePackFragmentSource(gradient);
+                pack.fragments.Add(id, meta);
+            }
+        }
         protected Sprite CreateSprite(Texture2D texture2D, SliceData sliceData, string generatedCategory, string generatedName)
         {
             try
@@ -321,6 +401,7 @@ namespace MVZ2.ResourcePacks
             await ApplyReadDataAudioClips(loader, pack, data);
             ApplyReadDataSounds(loader, pack, data);
             ApplyReadDataMusictracks(loader, pack, data);
+            ApplyReadDataFragments(loader, pack, data);
         }
         private void ApplyReadDataCatalogs(ResourcePack pack, PackReadData data)
         {
@@ -392,9 +473,17 @@ namespace MVZ2.ResourcePacks
                 pack.AddResourcePackMusicSource(pair.Key, pair.Value);
             }
         }
+        private void ApplyReadDataFragments(ResourceLoader loader, ResourcePack pack, PackReadData data)
+        {
+            foreach (var pair in data.fragments)
+            {
+                pack.AddResourcePackFragmentSource(pair.Key, pair.Value);
+            }
+        }
         public const string LOCALIZATION_MANIFEST_FILENAME = "localization.json";
         public const string TEXTURE_MANIFEST_FILENAME = "textures.json";
         public const string AUDIOS_MANIFEST_FILENAME = "audios.json";
+        public const string FRAGMENT_MANIFEST_FILENAME = "fragments.json";
         protected class PackReadData
         {
             public string Key;
@@ -403,6 +492,7 @@ namespace MVZ2.ResourcePacks
             public Dictionary<NamespaceID, AudioClipEntry> audioClips = new();
             public Dictionary<NamespaceID, ResourcePackSoundSource> sounds = new();
             public Dictionary<NamespaceID, ResourcePackMusicSource> musictracks = new();
+            public Dictionary<NamespaceID, ResourcePackFragmentSource> fragments = new();
 
             public PackReadData(string key)
             {

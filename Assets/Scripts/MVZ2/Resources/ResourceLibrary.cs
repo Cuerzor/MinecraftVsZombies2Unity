@@ -36,6 +36,8 @@ namespace MVZ2.Managers
         public void RemoveSoundSourceProvider(ISoundSourceProvider provider) => soundSourceResolver.RemoveProvider(provider);
         public void AddMusicSourceProvider(IMusicSourceProvider provider) => musicSourceResolver.AddProvider(provider);
         public void RemoveMusicSourceProvider(IMusicSourceProvider provider) => musicSourceResolver.RemoveProvider(provider);
+        public void AddFragmentSourceProvider(IFragmentSourceProvider provider) => fragmentSourceResolver.AddProvider(provider);
+        public void RemoveFragmentSourceProvider(IFragmentSourceProvider provider) => fragmentSourceResolver.RemoveProvider(provider);
         #endregion
 
         #region register
@@ -130,6 +132,12 @@ namespace MVZ2.Managers
                 return null;
             return musicSourceResolver.Resolve(id, context);
         }
+        public IFragmentSource? GetFinalFragmentSource(NamespaceID? id, ResourceContext context)
+        {
+            if (!NamespaceID.IsValid(id))
+                return null;
+            return fragmentSourceResolver.Resolve(id, context);
+        }
         #endregion
 
         #region ID
@@ -176,6 +184,7 @@ namespace MVZ2.Managers
         private ResourceResolver<NamespaceID, AudioClip> audioClipResolver = new ResourceResolver<NamespaceID, AudioClip>();
         private ResourceResolver<NamespaceID, ISoundSource> soundSourceResolver = new ResourceResolver<NamespaceID, ISoundSource>();
         private ResourceResolver<NamespaceID, IMusicSource> musicSourceResolver = new ResourceResolver<NamespaceID, IMusicSource>();
+        private ResourceResolver<NamespaceID, IFragmentSource> fragmentSourceResolver = new ResourceResolver<NamespaceID, IFragmentSource>();
     }
     public struct ModelIcon
     {
