@@ -1,4 +1,6 @@
 <fragments>
+
+    <!-- Prologue Contraptions -->
     <fragment name="dispenser">
         <colorKeys>
             <key hex="#4F4F4F" time="0.35" />
@@ -31,6 +33,14 @@
             <key hex="#000000" time="1" />
         </colorKeys>
     </fragment>
+
+    <!-- Halloween Contraption -->
+    <fragment name="small_dispenser">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="moonlight_sensor">
         <colorKeys>
             <key hex="#56452B" time="0.45" />
@@ -45,6 +55,20 @@
             <key hex="#CE8452" time="0.30" />
             <key hex="#FFDE73" time="0.50" />
             <key hex="#6B4221" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="punchton">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.35" />
+            <key hex="#ABABAB" time="0.7" />
+            <key hex="#C3A26D" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="tnt">
+        <colorKeys>
+            <key hex="#FF0000" time="0.6" />
+            <key hex="#FFFFFF" time="0.9" />
+            <key hex="#000000" time="1" />
         </colorKeys>
     </fragment>
     <fragment name="soul_furnace">
@@ -67,10 +91,18 @@
             <key hex="#FFFFFF" time="1" />
         </colorKeys>
     </fragment>
+
+    <!-- Dream Contraptions -->
     <fragment name="lily_pad">
         <colorKeys>
             <key hex="#104018" time="0.75" />
             <key hex="#0B2B10" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="drivenser">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
         </colorKeys>
     </fragment>
     <fragment name="gravity_pad">
@@ -83,6 +115,19 @@
         <colorKeys>
             <key hex="#262626" time="0.5" />
             <key hex="#383838" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="vortex_hopper">
+        <colorKeys>
+            <key hex="#262626" time="0.5" />
+            <key hex="#383838" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="pistenser">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.35" />
+            <key hex="#ABABAB" time="0.7" />
+            <key hex="#C3A26D" time="1" />
         </colorKeys>
     </fragment>
     <fragment name="totenser">
@@ -103,6 +148,19 @@
             <key alpha="0.5" time="1" />
         </alphaKeys>
     </fragment>
+    <fragment name="dream_silk">
+        <colorKeys>
+            <key hex="#FE95FF" time="0.5" />
+            <key hex="#F3A4FF" time="0.8" />
+            <key hex="#F471FF" time="1" />
+        </colorKeys>
+        <alphaKeys>
+            <key alpha="0.5" time="0" />
+            <key alpha="0.5" time="1" />
+        </alphaKeys>
+    </fragment>
+
+    <!-- Castle Contraptions -->
     <fragment name="wooden_dropper">
         <colorKeys>
             <key hex="#C6A570" time="0.5" />
@@ -113,6 +171,24 @@
         <colorKeys>
             <key hex="#9D9D9D" time="0.5" />
             <key hex="#7A7A7A" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="stone_dropper">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="stone_shield">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="golden_apple">
+        <colorKeys>
+            <key hex="#FFD400" time="0.5" />
+            <key hex="#FFA900" time="1" />
         </colorKeys>
     </fragment>
     <fragment name="thunder_drum">
@@ -134,6 +210,8 @@
             <key hex="#FFFF00" time="1" />
         </colorKeys>
     </fragment>
+
+    <!-- Mausoleum Contraptions -->
     <fragment name="note_block">
         <colorKeys>
             <key hex="#764A34" time="0.4" />
@@ -148,6 +226,19 @@
             <key hex="#D49819" time="0.333" />
             <key hex="#AE6F00" time="0.667" />
             <key hex="#000000" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="splitenser">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.35" />
+            <key hex="#ABABAB" time="0.7" />
+            <key hex="#C3A26D" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="devourer">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
         </colorKeys>
     </fragment>
     <fragment name="hellfire" blend="true">
@@ -166,6 +257,12 @@
             <key hex="#0C110C" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="necrotombstone">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="black_hole_bomb">
         <colorKeys>
             <key hex="#760CE0" time="0.6" />
@@ -178,6 +275,8 @@
             <key hex="#69976C" time="1" />
         </colorKeys>
     </fragment>
+
+    <!-- Ship Contraptions -->
     <fragment name="gunpowder_barrel">
         <colorKeys>
             <key hex="#C6A570" time="0.5" />
@@ -191,13 +290,6 @@
             <key hex="#7D5A32" time="1" />
         </colorKeys>
     </fragment>
-    <fragment name="beacon">
-        <colorKeys>
-            <key hex="#39305A" time="0.2" />
-            <key hex="#A8D0D9" time="0.6" />
-            <key hex="#54D9D0" time="1" />
-        </colorKeys>
-    </fragment>
     <fragment name="firework_dispenser">
         <colorKeys>
             <key hex="#4F4F4F" time="0.35" />
@@ -206,11 +298,33 @@
             <key hex="#FFFFFF" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="triplenser">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.35" />
+            <key hex="#ABABAB" time="0.7" />
+            <key hex="#C3A26D" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="beacon">
+        <colorKeys>
+            <key hex="#39305A" time="0.2" />
+            <key hex="#A8D0D9" time="0.6" />
+            <key hex="#54D9D0" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="wooden_fan">
+        <colorKeys>
+            <key hex="#C6A570" time="0.5" />
+            <key hex="#805E36" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="elastic_cloud">
         <colorKeys>
             <key hex="#C881C9" time="1" />
         </colorKeys>
     </fragment>
+
+    <!-- Palace Contraptions -->
     <fragment name="transfenser">
         <colorKeys>
             <key hex="#FFD400" time="0.2" />
@@ -238,6 +352,12 @@
             <key hex="#4b5143" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="cooling_cell">
+        <colorKeys>
+            <key hex="#0012FE" time="0.4" />
+            <key hex="#FFFFFF" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="amethyst_pylon">
         <colorKeys>
             <key hex="#9d4fa9" time="0.3" />
@@ -259,6 +379,8 @@
             <key hex="#6b6b6b" time="1" />
         </colorKeys>
     </fragment>
+    
+    <!-- Mountain Contraptions -->
     <fragment name="freezenser">
         <colorKeys>
             <key hex="#ffffff" time="0.25" />
@@ -298,6 +420,8 @@
             <key hex="#62545d" time="1" />
         </colorKeys>
     </fragment>
+    
+    <!-- Upgrade Contraptions 1 -->
     <fragment name="infectenser">
         <colorKeys>
             <key hex="#FF0000" time="0.2" />
@@ -331,6 +455,8 @@
             <key hex="#12294c" time="1" />
         </colorKeys>
     </fragment>
+
+    <!-- Upgrade Contraptions 2 -->
     <fragment name="high_frequency_pulse_dispenser">
         <colorKeys>
             <key hex="#940000" time="0.333" />
@@ -357,6 +483,8 @@
             <key hex="#B3B0B9" time="1" />
         </colorKeys>
     </fragment>
+
+    <!-- Special Contraptions -->
     <fragment name="random_china">
         <colorKeys>
             <key hex="#FFFFFF" time="0.66" />
@@ -378,6 +506,16 @@
             <key hex="#C3A26D" time="1" />
         </colorKeys>
     </fragment>
+
+    <!-- Halloween Enemies -->
+    <fragment name="gargoyle">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
+        </colorKeys>
+    </fragment>
+
+    <!-- Castle Enemies -->
     <fragment name="hell_chariot">
         <colorKeys>
             <key hex="#24232B" time="0.25" />
@@ -386,11 +524,13 @@
             <key hex="#381A1F" time="1" />
         </colorKeys>
     </fragment>
-    <fragment name="soul_sand">
+    <fragment name="soulsand">
         <colorKeys>
             <key hex="#463529" time="1" />
         </colorKeys>
     </fragment>
+
+    <!-- Mausoleum Enemies -->
     <fragment name="reflective_barrier">
         <colorKeys>
             <key hex="#869C2E" time="1" />
@@ -413,12 +553,16 @@
             <key alpha="0.5" time="1" />
         </alphaKeys>
     </fragment>
+
+    <!-- Ship Enemies -->
     <fragment name="cannon">
         <colorKeys>
             <key hex="#313131" time="0.7" />
             <key hex="#FFFFFF" time="1" />
         </colorKeys>
     </fragment>
+
+    <!-- Palace Enemies -->
     <fragment name="skeleton_statue">
         <colorKeys>
             <key hex="#eeeae6" time="0.5" />
@@ -442,11 +586,65 @@
             <key hex="#3c3331" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="rolling_wood">
+        <colorKeys>
+            <key hex="#C6A570" time="0.5" />
+            <key hex="#805E36" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="rolling_stone">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
+        </colorKeys>
+    </fragment>
 
+    <!-- Obstacles -->
+    <fragment name="gargoyle_statue">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
+        </colorKeys>
+    </fragment>
+
+    <!-- Carts -->
+    <fragment name="cart">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="pumpkin_carriage">
+        <colorKeys>
+            <key hex="#9F5A10" time="0.35" />
+            <key hex="#733808" time="0.70" />
+            <key hex="#4E1D00" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="bowl_chariot">
+        <colorKeys>
+            <key hex="#C87878" time="0.45" />
+            <key hex="#000000" time="0.9" />
+            <key hex="#FFFF00" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="ballista">
+        <colorKeys>
+            <key hex="#C6A570" time="0.5" />
+            <key hex="#805E36" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="corpse_cart">
         <colorKeys>
             <key hex="#cdcdcd" time="0.5" />
             <key hex="#604f37" time="1" />
+        </colorKeys>
+    </fragment>
+
+    <!-- Effects -->
+    <fragment name="wither_summoning_blocks">
+        <colorKeys>
+            <key hex="#463529" time="1" />
         </colorKeys>
     </fragment>
     

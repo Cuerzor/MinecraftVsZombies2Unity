@@ -152,7 +152,7 @@
             </behaviours>
             <properties>
                 <vector3 name="mvz2:size" x="56" y="32" z="56" />
-                <id name="mvz2:fragmentId" value="mvz2:furnace" />
+                <id name="mvz2:fragmentId" value="mvz2:cart" />
                 <id name="mvz2:cartTriggerSound" value="mvz2:minecart" />
                 <float name="mvz2:gravity" value="1" />
                 <int name="mvz2:waterInteraction" value="1" />
@@ -402,7 +402,6 @@
                 <float name="mvz2:range" value="255" />
                 <id name="mvz2:projectileId" value="mvz2:snowball" />
                 <id name="mvz2:shootSound" value="mvz2:bow" />
-                <id name="mvz2:fragmentId" value="mvz2:furnace" />
                 <vector3 name="mvz2:shotOffset" x="25" y="15" z="0" />
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
                 <idArray name="mvz2:counter_for" value="mvz2:low_enemy" />
@@ -453,7 +452,6 @@
                 <float name="mvz2:damage" value="100" />
                 <float name="mvz2:range" value="120" />
                 <vector3 name="mvz2:size" x="32" y="48" z="32" />
-                <id name="mvz2:fragmentId" value="mvz2:dispenser" />
 
                 <int name="mvz2:cost" value="75" />
                 <id name="mvz2:rechargeId" value="mvz2:short" />
@@ -475,7 +473,6 @@
                 <float name="mvz2:damage" value="1800" />
                 <float name="mvz2:range" value="120" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
-                <id name="mvz2:fragmentId" value="mvz2:mine_tnt" />
                 <id name="mvz2:placeSound" value="mvz2:grass" />
                 <id name="mvz2:shell" value="mvz2:grass" />
                 <id name="mvz2:deathSound" value="mvz2:grass" />
@@ -574,7 +571,6 @@
                 <condition requiredGroups="mvz2:contraption.drivenser" />
             </unlock>
             <properties>
-                <id name="mvz2:fragmentId" value="mvz2:furnace" />
                 <id name="mvz2:placement" value="mvz2:drivenser" />
 
                 <int name="mvz2:cost" value="125" />
@@ -618,7 +614,6 @@
                 <id name="mvz2:placement" value="mvz2:aquatic" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
                 <int name="mvz2:waterInteraction" value="3" />
-                <id name="mvz2:fragmentId" value="mvz2:anvil" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
                 <int name="mvz2:collision_mask_hostile" value="2" />
 
@@ -631,7 +626,6 @@
                 <condition requiredGroups="mvz2:contraption.pistenser" />
             </unlock>
             <properties>
-                <id name="mvz2:fragmentId" value="mvz2:dispenser" />
                 <id name="mvz2:projectileId" value="mvz2:spike" />
                 <idArray name="mvz2:counter_for" value="mvz2:flying_enemy" />
 
@@ -697,7 +691,6 @@
                 <vector3 name="mvz2:size" x="0" y="0" z="0" />
                 <id name="mvz2:shell" value="mvz2:grass" />
                 <id name="mvz2:placement" value="mvz2:dream_silk" />
-                <id name="mvz2:fragmentId" value="mvz2:dream_crystal" />
                 <id name="mvz2:placeSound" null="true" />
                 <id name="mvz2:deathSound" null="true" />
                 <id name="mvz2:hitSound" null="true" />
@@ -755,7 +748,6 @@
                 <condition requiredGroups="mvz2:contraption.stone_dropper" />
             </unlock>
             <properties>
-                <id name="mvz2:fragmentId" value="mvz2:furnace" />
                 <id name="mvz2:projectileId" value="mvz2:cobble" />
                 <id name="mvz2:shootSound" value="mvz2:click" />
                 <float name="mvz2:damage" value="10" />
@@ -779,7 +771,6 @@
                 <bool name="mvz2:canDeactive" value="false" />
                 <float name="mvz2:maxHealth" value="4000" />
                 <bool name="mvz2:defensive" value="true" />
-                <id name="mvz2:fragmentId" value="mvz2:furnace" />
                 <vector3 name="mvz2:size" x="80" y="40" z="64" />
                 <idArray name="mvz2:gridLayers" value="mvz2:protector" />
 
@@ -797,7 +788,6 @@
                 <bool name="mvz2:loyal" value="true" />
                 <id name="mvz2:shell" value="mvz2:metal" />
                 <id name="mvz2:placeSound" value="mvz2:metal_break" />
-                <id name="mvz2:fragmentId" value="mvz2:golden_dropper" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
 
                 <int name="mvz2:cost" value="75" />
@@ -917,7 +907,6 @@
                 <condition requiredGroups="mvz2:contraption.splitenser" />
             </unlock>
             <properties>
-                <id name="mvz2:fragmentId" value="mvz2:dispenser" />
                 <int name="mvz2:cost" value="125" />
             </properties>
         </entity>
@@ -926,7 +915,6 @@
                 <condition requiredGroups="mvz2:contraption.devourer" />
             </unlock>
             <properties>
-                <id name="mvz2:fragmentId" value="mvz2:furnace" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:loyal" value="true" />
                 <float name="mvz2:gravity" value="0" />
@@ -970,7 +958,6 @@
             </behaviours>
             <properties>
                 <bool name="mvz2:nocturnal" value="true" />
-                <id name="mvz2:fragmentId" value="mvz2:furnace" />
                 <id name="mvz2:placement" value="mvz2:buried" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
@@ -1044,7 +1031,6 @@
                 <condition requiredGroups="mvz2:contraption.triplenser" />
             </unlock>
             <properties>
-                <id name="mvz2:fragmentId" value="mvz2:dispenser" />
                 <int name="mvz2:cost" value="300" />
             </properties>
         </entity>
@@ -1109,7 +1095,6 @@
                 <id name="mvz2:deathSound" value="mvz2:wood" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
                 <idArray name="mvz2:counter_for" value="mvz2:flying_enemy" />
-                <id name="mvz2:fragmentId" value="mvz2:wooden_dropper" />
                 <bool name="mvz2:triggerActive" value="true" />
                 <bool name="mvz2:instantTrigger" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
@@ -1289,7 +1274,6 @@
                 <vector3 name="mvz2:size" x="0" y="0" z="0" />
                 <id name="mvz2:shell" value="mvz2:metal" />
                 <id name="mvz2:placement" value="mvz2:cooling_cell" />
-                <id name="mvz2:fragmentId" value="mvz2:silvenser" />
                 <id name="mvz2:placeSound" null="true" />
                 <id name="mvz2:deathSound" null="true" />
                 <id name="mvz2:hitSound" null="true" />
@@ -1861,7 +1845,6 @@
                 <id name="mvz2:shell" value="mvz2:stone" />
                 <id name="mvz2:crySound" value="mvz2:gargoyle_cry" />
                 <id name="mvz2:deathSound" value="mvz2:gargoyle_death" />
-                <id name="mvz2:fragmentId" value="mvz2:furnace" />
 
                 <int name="mvz2:cost" value="100" />
             </properties>
@@ -2118,7 +2101,6 @@
             <properties>
                 <float name="mvz2:mass" value="2" />
                 <float name="mvz2:maxHealth" value="1350" />
-                <id name="mvz2:fragmentId" value="mvz2:hell_chariot" />
                 <id name="mvz2:shell" value="mvz2:stone" />
                 <id name="mvz2:shape" value="mvz2:hell_chariot" />
                 <id name="mvz2:crySound" value="mvz2:wither_skeleton_cry" />
@@ -2610,7 +2592,6 @@
                 <id name="mvz2:crySound" null="true" />
                 <id name="mvz2:hitSound" value="mvz2:soul_sand" />
                 <id name="mvz2:deathSound" value="mvz2:soul_sand_break" />
-                <id name="mvz2:fragmentId" value="mvz2:soul_sand" />
                 <float name="mvz2:maxHealth" value="300" />
                 <int name="mvz2:maxTimeout" value="1800" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
@@ -2722,7 +2703,6 @@
                 <id name="mvz2:crySound" null="true" />
                 <id name="mvz2:hitSound" value="mvz2:wood" />
                 <id name="mvz2:deathSound" value="mvz2:wood" />
-                <id name="mvz2:fragmentId" value="mvz2:shikaisen_staff" />
                 <float name="mvz2:maxHealth" value="1200" />
                 <int name="mvz2:maxTimeout" value="1800" />
                 <vector3 name="mvz2:size" x="10" y="56" z="10" />
@@ -2868,7 +2848,6 @@
                 <float name="mvz2:fallResistance" value="10000" />
                 <id name="mvz2:shell" value="mvz2:wood" />
                 <id name="mvz2:shape" value="mvz2:block" />
-                <id name="mvz2:fragmentId" value="mvz2:wooden_dropper" />
                 <id name="mvz2:crySound" null="true" />
                 <id name="mvz2:deathSound" value="mvz2:wood" />
                 <float name="mvz2:maxHealth" value="3000" />
@@ -2903,7 +2882,6 @@
                 <float name="mvz2:fallResistance" value="10000" />
                 <id name="mvz2:shell" value="mvz2:stone" />
                 <id name="mvz2:shape" value="mvz2:block" />
-                <id name="mvz2:fragmentId" value="mvz2:furnace" />
                 <id name="mvz2:crySound" null="true" />
                 <id name="mvz2:deathSound" value="mvz2:stone" />
                 <float name="mvz2:maxHealth" value="3000" />
@@ -2954,7 +2932,6 @@
             <properties>
                 <float name="mvz2:maxHealth" value="1800" />
                 <vector3 name="mvz2:size" x="48" y="96" z="48" />
-                <id name="mvz2:fragmentId" value="mvz2:furnace" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
             </properties>
         </entity>
@@ -3124,7 +3101,6 @@
         <entity template="cart" id="minecart" name="矿车" />
         <entity template="cart" id="pumpkin_carriage" name="南瓜马车">
             <properties>
-                <id name="mvz2:fragmentId" value="mvz2:soul_furnace" />
                 <id name="mvz2:cartTriggerSound" value="mvz2:horse_angry" />
                 <bool name="mvz2:isLightSource" value="true" />
                 <vector3 name="mvz2:lightRange" x="256" y="256" z="256" />
@@ -3139,11 +3115,7 @@
                 <int name="mvz2:airInteraction" value="0" />
             </properties>
         </entity>
-        <entity template="cart" id="bowl_chariot" name="碗车">
-            <properties>
-                <id name="mvz2:fragmentId" value="mvz2:giant_bowl" />
-            </properties>
-        </entity>
+        <entity template="cart" id="bowl_chariot" name="碗车"/>
         <entity template="cart" id="ballista" name="小型弩车">
             <properties>
                 <float name="mvz2:damage" value="58115310" />
@@ -3152,7 +3124,6 @@
                 <vector3 name="mvz2:shotOffset" x="25" y="30" z="0" />
                 <id name="mvz2:shootSound" value="mvz2:fling" />
                 <id name="mvz2:projectileId" value="mvz2:crossbow_bolt" />
-                <id name="mvz2:fragmentId" value="mvz2:wooden_dropper" />
             </properties>
         </entity>
         <entity template="cart" id="unzan_fist" name="云山之拳">
@@ -3163,11 +3134,7 @@
                 <int name="mvz2:airInteraction" value="0" />
             </properties>
         </entity>
-        <entity template="cart" id="corpse_cart" name="尸体推车">
-            <properties>
-                <id name="mvz2:fragmentId" value="mvz2:corpse_cart" />
-            </properties>
-        </entity>
+        <entity template="cart" id="corpse_cart" name="尸体推车"/>
         <entity template="cart" id="pool_cleaner" name="泳池清洁器">
             <behaviours includeSelf="false" />
             <properties>
@@ -4797,7 +4764,6 @@
             </behaviours>
             <properties>
                 <int name="mvz2:maxTimeout" value="300" />
-                <id name="mvz2:fragmentId" value="mvz2:soul_sand" />
                 <id name="mvz2:deathSound" value="mvz2:soul_sand_break" />
                 <bool name="mvz2:shadowHidden" value="false" />
             </properties>
