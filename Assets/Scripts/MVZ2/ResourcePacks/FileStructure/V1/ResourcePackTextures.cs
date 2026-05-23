@@ -16,6 +16,9 @@ namespace MVZ2.ResourcePacks
         [DefaultValue(1)]
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public int filter = 1;
+        [DefaultValue(1)]
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public int wrap = 1;
         public ResourcePackSprite[]? slices;
     }
     public class ResourcePackSprite

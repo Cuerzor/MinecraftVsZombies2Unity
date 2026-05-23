@@ -8,6 +8,10 @@ namespace MVZ2.Resources
 {
     public class ResourceResolver<TKey, TResource>
     {
+        public ResourceResolver(bool silent = false)
+        {
+            Silent = silent;
+        }
         public void AddProvider(IResourceProvider<TKey, TResource> db)
         {
             var index = providers.BinarySearch(db, comparer);
@@ -43,7 +47,10 @@ namespace MVZ2.Resources
                 }
             }
 
-            Log.LogWarning($"Resource not found: {key}");
+            if (!Silent)
+            {
+                Log.LogWarning($"Resource not found: {key}");
+            }
             return default;
         }
 
@@ -54,6 +61,7 @@ namespace MVZ2.Resources
             return list;
         }
 
+        public bool Silent { get; }
         private readonly List<IResourceProvider<TKey, TResource>> providers = new();
         private readonly Comparer comparer = new();
 

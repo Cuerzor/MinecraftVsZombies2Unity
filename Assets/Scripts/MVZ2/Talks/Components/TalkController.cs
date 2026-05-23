@@ -876,10 +876,10 @@ namespace MVZ2.Talk
             chr.gameObject.SetActive(true);
 
             bool faceRight = false;
-            var characterMeta = Main.ResourceManager.GetCharacterMeta(characterId);
+            var characterMeta = Main.ResourceManager.GetFinalTalkCharacterSource(characterId);
             if (characterMeta != null)
             {
-                faceRight = characterMeta.faceRight;
+                faceRight = characterMeta.FaceRight;
             }
 
             chr.SetVariant(characterId, variant);

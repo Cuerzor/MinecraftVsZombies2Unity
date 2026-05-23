@@ -33,6 +33,8 @@ namespace MVZ2.Managers
         public void RemoveMusicSourceProvider(IMusicSourceProvider provider) => resourceLibrary.RemoveMusicSourceProvider(provider);
         public void AddFragmentSourceProvider(IFragmentSourceProvider provider) => resourceLibrary.AddFragmentSourceProvider(provider);
         public void RemoveFragmentSourceProvider(IFragmentSourceProvider provider) => resourceLibrary.RemoveFragmentSourceProvider(provider);
+        public void AddTalkCharacterSourceProvider(ITalkCharacterModificationProvider provider) => resourceLibrary.AddTalkCharacterModificationProvider(provider);
+        public void RemoveTalkCharacterSourceProvider(ITalkCharacterModificationProvider provider) => resourceLibrary.RemoveTalkCharacterModificationProvider(provider);
         #endregion
 
         #region Register
@@ -76,6 +78,17 @@ namespace MVZ2.Managers
         public ISoundSource? GetFinalSoundMeta(NamespaceID? id) => resourceLibrary.GetFinalSoundMeta(id, GetResourceContext());
         public IMusicSource? GetFinalMusicSource(NamespaceID? id) => resourceLibrary.GetFinalMusicSource(id, GetResourceContext());
         public IFragmentSource? GetFinalFragmentSource(NamespaceID? id) => resourceLibrary.GetFinalFragmentSource(id, GetResourceContext());
+        public ITalkCharacterModification? GetFinalTalkCharacterModification(NamespaceID? id) => resourceLibrary.GetFinalTalkCharacterModification(id, GetResourceContext());
+        public ITalkCharacterSource? GetFinalTalkCharacterSource(NamespaceID? characterID)
+        {
+            ITalkCharacterSource? characterSource = GetCharacterMeta(characterID);
+            var modification = GetFinalTalkCharacterModification(characterID);
+            if (characterSource != null && modification != null)
+            {
+                characterSource = modification.Modify(characterSource);
+            }
+            return characterSource;
+        }
         #endregion
 
         #region Resource ID

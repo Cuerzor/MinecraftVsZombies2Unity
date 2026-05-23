@@ -86,10 +86,10 @@ namespace MVZ2.Store
                 characterId = characterID;
 
                 var faceRight = false;
-                var characterMeta = Main.ResourceManager.GetCharacterMeta(characterID);
+                var characterMeta = Main.ResourceManager.GetFinalTalkCharacterSource(characterID);
                 if (characterMeta != null)
                 {
-                    faceRight = characterMeta.faceRight;
+                    faceRight = characterMeta.FaceRight;
                 }
 
                 character.SetVariant(characterID, null);

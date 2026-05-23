@@ -38,6 +38,8 @@ namespace MVZ2.Managers
         public void RemoveMusicSourceProvider(IMusicSourceProvider provider) => musicSourceResolver.RemoveProvider(provider);
         public void AddFragmentSourceProvider(IFragmentSourceProvider provider) => fragmentSourceResolver.AddProvider(provider);
         public void RemoveFragmentSourceProvider(IFragmentSourceProvider provider) => fragmentSourceResolver.RemoveProvider(provider);
+        public void AddTalkCharacterModificationProvider(ITalkCharacterModificationProvider provider) => talkCharacterModificationResolver.AddProvider(provider);
+        public void RemoveTalkCharacterModificationProvider(ITalkCharacterModificationProvider provider) => talkCharacterModificationResolver.RemoveProvider(provider);
         #endregion
 
         #region register
@@ -138,6 +140,12 @@ namespace MVZ2.Managers
                 return null;
             return fragmentSourceResolver.Resolve(id, context);
         }
+        public ITalkCharacterModification? GetFinalTalkCharacterModification(NamespaceID? id, ResourceContext context)
+        {
+            if (!NamespaceID.IsValid(id))
+                return null;
+            return talkCharacterModificationResolver.Resolve(id, context);
+        }
         #endregion
 
         #region ID
@@ -185,6 +193,7 @@ namespace MVZ2.Managers
         private ResourceResolver<NamespaceID, ISoundSource> soundSourceResolver = new ResourceResolver<NamespaceID, ISoundSource>();
         private ResourceResolver<NamespaceID, IMusicSource> musicSourceResolver = new ResourceResolver<NamespaceID, IMusicSource>();
         private ResourceResolver<NamespaceID, IFragmentSource> fragmentSourceResolver = new ResourceResolver<NamespaceID, IFragmentSource>();
+        private ResourceResolver<NamespaceID, ITalkCharacterModification> talkCharacterModificationResolver = new ResourceResolver<NamespaceID, ITalkCharacterModification>(true);
     }
     public struct ModelIcon
     {

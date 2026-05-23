@@ -328,6 +328,7 @@ namespace MVZ2.ResourcePacks
             Main.ResourceManager.AddSoundSourceProvider(pack);
             Main.ResourceManager.AddMusicSourceProvider(pack);
             Main.ResourceManager.AddFragmentSourceProvider(pack);
+            Main.ResourceManager.AddTalkCharacterSourceProvider(pack);
         }
         #endregion
 
@@ -366,6 +367,7 @@ namespace MVZ2.ResourcePacks
             Main.ResourceManager.RemoveSoundSourceProvider(pack);
             Main.ResourceManager.RemoveMusicSourceProvider(pack);
             Main.ResourceManager.RemoveFragmentSourceProvider(pack);
+            Main.ResourceManager.RemoveTalkCharacterSourceProvider(pack);
         }
         #endregion
 

@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace MVZ2.ResourcePacks
 {
-    public class ResourcePack : ICatalogProvider, ISpriteProvider, ITexture2DProvider, IAudioClipProvider, ISoundSourceProvider, IMusicSourceProvider, IFragmentSourceProvider
+    public class ResourcePack : ICatalogProvider, ISpriteProvider, ITexture2DProvider, IAudioClipProvider, ISoundSourceProvider, IMusicSourceProvider, IFragmentSourceProvider, ITalkCharacterModificationProvider
     {
         public ResourcePack(string key, string filename)
         {
@@ -181,6 +181,17 @@ namespace MVZ2.ResourcePacks
         }
         #endregion
 
+        #region 资源包人物修改
+        public void AddResourcePackCharacterModification(NamespaceID path, ResourcePackCharacterModification source)
+        {
+            characterModifications.Add(path, source);
+        }
+        public bool TryGetResourcePackCharacterModification(NamespaceID path, out ResourcePackCharacterModification source)
+        {
+            return characterModifications.TryGetValue(path, out source);
+        }
+        #endregion
+
         #region Sprite
         public void AddSprite(SpriteLookupKey id, Sprite spr)
         {
@@ -231,11 +242,21 @@ namespace MVZ2.ResourcePacks
             soundMeta = null;
             return false;
         }
-        bool IResourceProvider<NamespaceID, IFragmentSource>.TryGet(NamespaceID key, out IFragmentSource? source)
+        bool IResourceProvider<NamespaceID, IFragmentSource>.TryGet(NamespaceID key, out IFragmentSource? result)
         {
-            if (TryGetResourcePackFragmentSource(key, out var src))
+            if (TryGetResourcePackFragmentSource(key, out var value))
             {
-                source = src;
+                result = value;
+                return true;
+            }
+            result = null;
+            return false;
+        }
+        bool IResourceProvider<NamespaceID, ITalkCharacterModification>.TryGet(NamespaceID key, out ITalkCharacterModification? source)
+        {
+            if (TryGetResourcePackCharacterModification(key, out var v))
+            {
+                source = v;
                 return true;
             }
             source = null;
@@ -252,6 +273,7 @@ namespace MVZ2.ResourcePacks
         public Dictionary<NamespaceID, ResourcePackSoundSource> sounds = new Dictionary<NamespaceID, ResourcePackSoundSource>();
         public Dictionary<NamespaceID, ResourcePackMusicSource> musicSources = new Dictionary<NamespaceID, ResourcePackMusicSource>();
         public Dictionary<NamespaceID, ResourcePackFragmentSource> fragmentSources = new Dictionary<NamespaceID, ResourcePackFragmentSource>();
+        public Dictionary<NamespaceID, ResourcePackCharacterModification> characterModifications = new Dictionary<NamespaceID, ResourcePackCharacterModification>();
         public string Key { get; private set; }
         public int Priority { get; set; }
     }

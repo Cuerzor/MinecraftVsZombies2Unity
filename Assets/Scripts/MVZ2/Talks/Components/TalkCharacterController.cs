@@ -2,6 +2,7 @@
 
 using MVZ2.Managers;
 using MVZ2.Metas;
+using MVZ2.Resources;
 using MVZ2.UI.Talk;
 using PVZEngine;
 using UnityEngine;
@@ -37,7 +38,7 @@ namespace MVZ2.Talk
         }
         public void SetVariant(NamespaceID characterID, NamespaceID? variantID)
         {
-            var characterMeta = Main.ResourceManager.GetCharacterMeta(characterID);
+            var characterMeta = Main.ResourceManager.GetFinalTalkCharacterSource(characterID);
             if (characterMeta == null)
                 return;
             var variantMeta = variantID == null ? characterMeta.GetFirstVariant() : characterMeta.GetVariant(variantID);
@@ -45,10 +46,10 @@ namespace MVZ2.Talk
                 return;
             SetVariant(variantMeta);
         }
-        public void SetVariant(TalkCharacterVariant variant)
+        public void SetVariant(ITalkCharacterVariant variant)
         {
-            var pivot = new Vector2(variant.pivotX, variant.pivotY);
-            var widthExtend = variant.widthExtend;
+            var pivot = new Vector2(variant.PivotX, variant.PivotY);
+            var widthExtend = variant.WidthExtend;
             var viewData = Main.TalkManager.GetPortraitViewData(variant);
             var portrait = GetOrCreatePortrait();
             portrait.ChangeVariant(viewData);

@@ -39,6 +39,10 @@ namespace MVZ2Logic.UI
             SetSprite(sprite);
             Image.enabled = sprite;
         }
+        public virtual Sprite? GetSprite()
+        {
+            return Image.sprite;
+        }
         public Sprite? BaseSprite { get; private set; }
         public Image Image
         {

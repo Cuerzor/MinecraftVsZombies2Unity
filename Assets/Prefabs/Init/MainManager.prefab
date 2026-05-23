@@ -1595,7 +1595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 8819878089267443883}
-  image: {fileID: 6769331067049993810}
+  image: {fileID: 8713942821958786089}
 --- !u!222 &713503496033808913
 CanvasRenderer:
   m_ObjectHideFlags: 0

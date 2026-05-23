@@ -198,19 +198,19 @@ namespace MVZ2.Almanacs
             if (picture == null)
                 return;
             var characterID = picture.character;
-            var characterMeta = Main.ResourceManager.GetCharacterMeta(characterID);
+            var characterSource = Main.ResourceManager.GetFinalTalkCharacterSource(characterID);
             var offset = next ? 1 : -1;
-            if (characterMeta != null)
+            if (characterSource != null)
             {
-                var variants = characterMeta.variants;
-                if (variants.Count <= 0)
+                var variants = characterSource.GetVariants();
+                if (variants.Length <= 0)
                     return;
                 int cycleCount = 0;
                 do
                 {
-                    zoomIndex = MathTool.CycleOffset(zoomIndex, offset, variants.Count);
+                    zoomIndex = MathTool.CycleOffset(zoomIndex, offset, variants.Length);
                     var variant = variants[zoomIndex];
-                    if (variant.unlock.IsNullOrMeetsConditions(Main.SaveManager))
+                    if (variant.Unlock.IsNullOrMeetsConditions(Main.SaveManager))
                     {
                         var viewData = Main.TalkManager.GetPortraitViewData(variant);
                         zoomPortrait.ChangeVariant(viewData);
@@ -219,7 +219,7 @@ namespace MVZ2.Almanacs
                     }
                     cycleCount++;
                 }
-                while (cycleCount < variants.Count);
+                while (cycleCount < variants.Length);
             }
         }
         #endregion
@@ -932,10 +932,10 @@ namespace MVZ2.Almanacs
         private void ShowCharacterZoom(NamespaceID characterID)
         {
             bool canSwitchPage = false;
-            var characterMeta = Main.ResourceManager.GetCharacterMeta(characterID);
+            var characterMeta = Main.ResourceManager.GetFinalTalkCharacterSource(characterID);
             if (characterMeta == null)
                 return;
-            var unlockedVariants = characterMeta.variants.Where(v => v.unlock.IsNullOrMeetsConditions(Main.SaveManager));
+            var unlockedVariants = characterMeta.GetVariants().Where(v => v.Unlock.IsNullOrMeetsConditions(Main.SaveManager));
             int variantCount = unlockedVariants.Count();
             if (variantCount <= 0)
                 return;

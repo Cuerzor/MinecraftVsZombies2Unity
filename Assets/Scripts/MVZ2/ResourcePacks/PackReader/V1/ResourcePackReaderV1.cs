@@ -75,8 +75,15 @@ namespace MVZ2.ResourcePacks
             var fragments = await LoadManifest<ResourcePackFragmentsV1>(loader, FRAGMENT_MANIFEST_FILENAME);
             if (fragments != null)
             {
-                // 加载音效。
+                // 加载碎片。
                 ReadPackFragmentFromManifest(loader, fragments, packData);
+            }
+
+            var characters = await LoadManifest<ResourcePackCharactersV1>(loader, CHARACTERS_MANIFEST_FILENAME);
+            if (characters != null)
+            {
+                // 加载人物。
+                ReadPackCharacterModificationsFromManifest(loader, characters, packData);
             }
             return packData;
         }
@@ -165,7 +172,8 @@ namespace MVZ2.ResourcePacks
                 // 加载贴图。
                 var textureEntry = new TextureEntry(textureID, Path.Combine("assets", packTexture.texture))
                 {
-                    filterMode = (FilterMode)packTexture.filter
+                    filterMode = (FilterMode)packTexture.filter,
+                    wrapMode = (TextureWrapMode)packTexture.wrap
                 };
                 var slices = packTexture.slices;
                 if (slices != null)
@@ -365,6 +373,83 @@ namespace MVZ2.ResourcePacks
                 pack.fragments.Add(id, meta);
             }
         }
+        private void ReadPackCharacterModificationsFromManifest(ResourceLoader loader, ResourcePackCharactersV1 characters, PackReadData pack)
+        {
+            if (characters.characters == null)
+                return;
+            foreach (var character in characters.characters)
+            {
+                if (character == null)
+                    continue;
+                if (string.IsNullOrEmpty(character.id) || !NamespaceID.TryParse(character.id, Main.BuiltinNamespace, out var charID))
+                {
+                    Log.LogWarning($"Incorrect property \"id\" {character.id} of character in resource pack {pack.Key}.");
+                    continue;
+                }
+
+                var variants = ReadPackCharacterModificationVariantsFromManifest(character, pack);
+                var modification = new ResourcePackCharacterModification(variants)
+                {
+                    FaceRight = character.faceRight
+                };
+                pack.characterModifications.Add(charID, modification);
+            }
+        }
+        private ResourcePackCharacterModificationVariant[] ReadPackCharacterModificationVariantsFromManifest(ResourcePackCharacterV1 character, PackReadData pack)
+        {
+            var variants = new List<ResourcePackCharacterModificationVariant>();
+            if (character.variants != null)
+            {
+                foreach (var packVariant in character.variants)
+                {
+                    if (packVariant == null)
+                        continue;
+                    if (string.IsNullOrEmpty(packVariant.id) || !NamespaceID.TryParse(packVariant.id, Main.BuiltinNamespace, out var variantID))
+                    {
+                        Log.LogWarning($"Incorrect property \"id\" {packVariant.id} of character variant in resource pack {pack.Key}.");
+                        continue;
+                    }
+
+                    ResourcePackCharacterModificationLayer[]? layers = ReadPackCharacterModificationLayersFromManifest(packVariant, pack);
+
+                    var variant = new ResourcePackCharacterModificationVariant(variantID)
+                    {
+                        Width = packVariant.width,
+                        Height = packVariant.height,
+                        PivotX = packVariant.pivotX,
+                        PivotY = packVariant.pivotY,
+                        ExtendLeft = packVariant.extendLeft,
+                        ExtendRight = packVariant.extendRight,
+                        Layers = layers,
+                    };
+                    variants.Add(variant);
+                }
+            }
+            return variants.ToArray();
+        }
+        private ResourcePackCharacterModificationLayer[]? ReadPackCharacterModificationLayersFromManifest(ResourcePackCharacterVariantV1 packVariant, PackReadData pack)
+        {
+            if (packVariant.layers == null)
+                return null;
+            var layerList = new List<ResourcePackCharacterModificationLayer>();
+            foreach (var packLayer in packVariant.layers)
+            {
+                if (packLayer == null)
+                    continue;
+                if (string.IsNullOrEmpty(packLayer.sprite) || !SpriteReference.TryParse(packLayer.sprite, Main.BuiltinNamespace, out var layerSprite))
+                {
+                    Log.LogWarning($"Incorrect property \"sprite\" {packLayer.sprite} of character variant layer in resource pack {pack.Key}.");
+                    continue;
+                }
+                var layer = new ResourcePackCharacterModificationLayer(layerSprite)
+                {
+                    PositionX = packLayer.x,
+                    PositionY = packLayer.y,
+                };
+                layerList.Add(layer);
+            }
+            return layerList.ToArray();
+        }
         protected Sprite CreateSprite(Texture2D texture2D, SliceData sliceData, string generatedCategory, string generatedName)
         {
             try
@@ -402,6 +487,7 @@ namespace MVZ2.ResourcePacks
             ApplyReadDataSounds(loader, pack, data);
             ApplyReadDataMusictracks(loader, pack, data);
             ApplyReadDataFragments(loader, pack, data);
+            ApplyReadDataCharacterModifications(loader, pack, data);
         }
         private void ApplyReadDataCatalogs(ResourcePack pack, PackReadData data)
         {
@@ -429,6 +515,7 @@ namespace MVZ2.ResourcePacks
                     if (texture == null)
                         continue;
                     texture.filterMode = textureData.filterMode;
+                    texture.wrapMode = textureData.wrapMode;
                     pack.AddTexture2D(textureID, texture);
                 }
 
@@ -480,10 +567,18 @@ namespace MVZ2.ResourcePacks
                 pack.AddResourcePackFragmentSource(pair.Key, pair.Value);
             }
         }
+        private void ApplyReadDataCharacterModifications(ResourceLoader loader, ResourcePack pack, PackReadData data)
+        {
+            foreach (var pair in data.characterModifications)
+            {
+                pack.AddResourcePackCharacterModification(pair.Key, pair.Value);
+            }
+        }
         public const string LOCALIZATION_MANIFEST_FILENAME = "localization.json";
         public const string TEXTURE_MANIFEST_FILENAME = "textures.json";
         public const string AUDIOS_MANIFEST_FILENAME = "audios.json";
         public const string FRAGMENT_MANIFEST_FILENAME = "fragments.json";
+        public const string CHARACTERS_MANIFEST_FILENAME = "characters.json";
         protected class PackReadData
         {
             public string Key;
@@ -493,6 +588,7 @@ namespace MVZ2.ResourcePacks
             public Dictionary<NamespaceID, ResourcePackSoundSource> sounds = new();
             public Dictionary<NamespaceID, ResourcePackMusicSource> musictracks = new();
             public Dictionary<NamespaceID, ResourcePackFragmentSource> fragments = new();
+            public Dictionary<NamespaceID, ResourcePackCharacterModification> characterModifications = new();
 
             public PackReadData(string key)
             {
@@ -504,6 +600,7 @@ namespace MVZ2.ResourcePacks
             public NamespaceID textureID;
             public string texturePath;
             public FilterMode filterMode;
+            public TextureWrapMode wrapMode;
             public List<SliceData> slices = new List<SliceData>();
 
             public TextureEntry(NamespaceID textureID, string texturePath)

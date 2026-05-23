@@ -11,6 +11,7 @@ namespace MVZ2.Talk
         public CharacterPortrait(CharacterPortraitComponent component)
         {
             texture2d = new Texture2D(1, 1);
+            texture2d.wrapMode = TextureWrapMode.Clamp;
             this.component = component;
             component.gameObject.SetActive(false);
         }

@@ -5,82 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using MVZ2.IO;
-using MVZ2Logic.Resources;
 using PVZEngine;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 
 namespace MVZ2.Metas
 {
-    public class TalkCharacterMetaList
-    {
-        public List<TalkCharacterMeta> metas = new List<TalkCharacterMeta>();
-        public static TalkCharacterMetaList FromXmlNode(XmlNode node, string defaultNsp)
-        {
-            var list = new TalkCharacterMetaList();
-            var metaChildNodes = node.ChildNodes;
-            for (int i = 0; i < metaChildNodes.Count; i++)
-            {
-                var child = metaChildNodes[i];
-                var meta = TalkCharacterMeta.FromXmlNode(child, defaultNsp);
-                if (meta != null)
-                    list.metas.Add(meta);
-            }
-            return list;
-        }
-    }
-
-    public class TalkCharacterMeta
-    {
-        public string id;
-        public string name = string.Empty;
-        public bool faceRight = false;
-        [Obsolete]
-        public NamespaceID? unlockCondition;
-        public List<TalkCharacterVariant> variants = new List<TalkCharacterVariant>();
-
-        public TalkCharacterMeta(string id)
-        {
-            this.id = id;
-        }
-
-        public TalkCharacterVariant GetFirstVariant()
-        {
-            return variants.FirstOrDefault();
-        }
-        public TalkCharacterVariant GetVariant(NamespaceID id)
-        {
-            return variants.FirstOrDefault(v => v.id == id);
-        }
-        public static TalkCharacterMeta? FromXmlNode(XmlNode node, string defaultNsp)
-        {
-            var id = node.GetAttribute("id");
-            if (string.IsNullOrEmpty(id))
-            {
-                Log.LogError($"The {nameof(id)} of a {nameof(TalkCharacterMeta)} is invalid.");
-                return null;
-            }
-            var meta = new TalkCharacterMeta(id);
-            meta.name = node.GetAttribute("name") ?? string.Empty;
-            meta.faceRight = node.GetAttributeBool("faceRight") ?? false;
-
-            var variantTemplates = new List<TalkCharacterVariantTemplate>();
-            var variantChildNodes = node.ChildNodes;
-            for (int i = 0; i < variantChildNodes.Count; i++)
-            {
-                var child = variantChildNodes[i];
-                if (child.Name == "variant")
-                {
-                    var template = TalkCharacterVariantTemplate.FromXmlNode(child, defaultNsp);
-                    if (template != null)
-                        variantTemplates.Add(template);
-                }
-            }
-            meta.variants.AddRange(variantTemplates.Select(t => t.ToVariant(variantTemplates)));
-            return meta;
-        }
-    }
-
     public class TalkCharacterVariantTemplate
     {
         public NamespaceID id;
@@ -159,37 +89,6 @@ namespace MVZ2.Metas
             result.height = height ?? result.height;
             result.widthExtend = new Vector2(extendLeft ?? result.widthExtend.x, extendRight ?? result.widthExtend.y);
             result.layers.AddRange(layers);
-        }
-    }
-    public class TalkCharacterVariant
-    {
-        public NamespaceID id;
-        public XMLConditionList? unlock;
-        public int width;
-        public int height;
-        public float pivotX = 0.5f;
-        public float pivotY = 0.5f;
-        public Vector2 widthExtend;
-        public List<TalkCharacterLayer> layers = new List<TalkCharacterLayer>();
-
-        public TalkCharacterVariant(NamespaceID id)
-        {
-            this.id = id;
-        }
-    }
-
-    public class TalkCharacterLayer
-    {
-        public SpriteReference? sprite;
-        public int positionX;
-        public int positionY;
-        public static TalkCharacterLayer FromXmlNode(XmlNode node, string defaultNsp)
-        {
-            var layer = new TalkCharacterLayer();
-            layer.sprite = node.GetAttributeSpriteReference("sprite", defaultNsp);
-            layer.positionX = node.GetAttributeInt("positionX") ?? 0;
-            layer.positionY = node.GetAttributeInt("positionY") ?? 0;
-            return layer;
         }
     }
 }
