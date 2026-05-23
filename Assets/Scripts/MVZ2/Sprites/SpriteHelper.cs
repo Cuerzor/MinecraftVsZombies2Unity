@@ -34,34 +34,38 @@ namespace MVZ2.Sprites
             {
                 for (int x = 0; x < w; x++)
                 {
-                    int idx = y * w + x;
-                    Color32 pixel = pixels[idx];
-                    if (pixel.a == 0)
-                    {
-                        bool done = false;
-                        if (!done && x > 0)
-                            done = TryAdjacent(ref pixel, pixels[idx - 1]);        // Left pixel
-                        if (!done && x > 0 && y < h - 1)
-                            done = TryAdjacent(ref pixel, pixels[idx + w - 1]);    // Bottom Left pixel
-                        if (!done && y < h - 1)
-                            done = TryAdjacent(ref pixel, pixels[idx + w]);        // Bottom pixel
-                        if (!done && x < w - 1 && y < h - 1)
-                            done = TryAdjacent(ref pixel, pixels[idx + w + 1]);    // Bottom Right pixel
-                        if (!done && x < w - 1)
-                            done = TryAdjacent(ref pixel, pixels[idx + 1]);        // Right pixel
-                        if (!done && x < w - 1 && y > 0)
-                            done = TryAdjacent(ref pixel, pixels[idx - w + 1]);    // Top Right pixel
-                        if (!done && y > 0)
-                            done = TryAdjacent(ref pixel, pixels[idx - w]);        // Top pixel
-                        if (!done && x > 0 && y > 0)
-                            done = TryAdjacent(ref pixel, pixels[idx - w - 1]);    // Top Left pixel
-                        pixels[idx] = pixel;
-                    }
+                    FixTransparencyPixel(pixels, x, y, w, h);
                 }
             }
 
             texture.SetPixels32(pixels);
             texture.Apply();
+        }
+        private static void FixTransparencyPixel(Color32[] pixels, int x, int y, int w, int h)
+        {
+            int idx = y * w + x;
+            Color32 pixel = pixels[idx];
+            if (pixel.a != 0)
+                return;
+            for (int i = 0; i < 8; i++)
+            {
+                var offset = surroundingOffsets[i];
+                var adjX = x + offset.x;
+                var adjY = y + offset.y;
+                if (adjX >= 0 && adjX < w && adjY >= 0 && adjY < h)
+                {
+                    var adjIndex = adjY * w + adjX;
+                    var adjacent = pixels[adjIndex];
+                    if (adjacent.a != 0)
+                    {
+                        pixel.r = adjacent.r;
+                        pixel.g = adjacent.g;
+                        pixel.b = adjacent.b;
+                        break;
+                    }
+                }
+            }
+            pixels[idx] = pixel;
         }
         public static void GetPixels32(this Color32[] allPixels, int texWidth, int x, int y, int width, int height, Color32[] buffer)
         {
@@ -92,16 +96,6 @@ namespace MVZ2.Sprites
 
             texture.SetPixels32(colors);
         }
-        private static bool TryAdjacent(ref Color32 pixel, Color32 adjacent)
-        {
-            if (adjacent.a == 0)
-                return false;
-
-            pixel.r = adjacent.r;
-            pixel.g = adjacent.g;
-            pixel.b = adjacent.b;
-            return true;
-        }
         public static string GetLanguageSpriteTag(string languageCode)
         {
             return languageCode;
@@ -129,5 +123,16 @@ namespace MVZ2.Sprites
             return textureHeight - fromTopY - rectHeight;
         }
         public const string SPRITE_TAG_CENSORED = "censored";
+        public static readonly Vector2Int[] surroundingOffsets = new Vector2Int[]
+        {
+            new Vector2Int(1, 0),           // Right
+            new Vector2Int(1, -1),          // Bottom Right
+            new Vector2Int(0, -1),          // Bottom
+            new Vector2Int(-1, -1),         // Bottom Left
+            new Vector2Int(-1, 0),          // Left
+            new Vector2Int(-1, 1),          // Top Left
+            new Vector2Int(0, 1),           // Top
+            new Vector2Int(1, 1),           // Top Right
+        };
     }
 }
