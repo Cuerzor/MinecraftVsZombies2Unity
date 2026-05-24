@@ -66,15 +66,15 @@ namespace MVZ2.Editor
         {
             ResourcePackMenu.UpdateAllResolverComponents();
         }
-        [MenuItem("MVZ2/Assets/Resource Packs/Update Resource Pack Sprite Manifest", priority = 6000, secondaryPriority = 1)]
-        public static void UpdateLocalizedSpriteManifest()
+        [MenuItem("MVZ2/Assets/Resource Packs/Update Resource Pack Manifests", priority = 6000, secondaryPriority = 1)]
+        public static void UpdateLocalizedManifests()
         {
             ResourcePackMenu.UpdateResourcePackManifest();
         }
-        [MenuItem("MVZ2/Assets/Resource Packs/Update Resource Pack Demo", priority = 6000, secondaryPriority = 2)]
-        public static void UpdateResourcePackDemo()
+        [MenuItem("MVZ2/Assets/Resource Packs/Update Resource Pack Tutorial Resources", priority = 6000, secondaryPriority = 2)]
+        public static void UpdateResourcePackTutorialResources()
         {
-            ResourcePackMenu.UpdateResourcePackDemo();
+            ResourcePackMenu.UpdateResourcePackTutorialResources();
         }
         [MenuItem("MVZ2/Assets/Talk/Format Talk Datas", priority = 6000, secondaryPriority = 0)]
         public static void FormatTalkDatas()

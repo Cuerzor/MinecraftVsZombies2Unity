@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using MVZ2.IO;
 using PVZEngine;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
@@ -32,7 +33,7 @@ namespace MVZ2.Editor
             var sceneMarker = new SceneMarker();
             UpdateAddressableGroup(mainGroup, sceneDirectory, sceneMarker, dependencies);
 
-            var languagePackDirectory = LocalizationMenu.GetResourcePackDirectory();
+            var languagePackDirectory = LocalizationMenu.GetGameContentResourcePacksDirectory();
             var languagePackMarker = new LanguagePackMarker();
             UpdateAddressableGroup(languagePackGroup, languagePackDirectory, languagePackMarker, dependencies);
 
@@ -195,7 +196,7 @@ namespace MVZ2.Editor
                 }
             }
             var keyPath = Path.GetRelativePath(keyRoot, relativePath).Replace("\\", "/");
-            var idPath = Path.ChangeExtension(keyPath, "").TrimEnd('.');
+            var idPath = FileHelper.RemoveExtension(keyPath);
             entry.SetAddress(new NamespaceID(nsp, idPath).ToString(), postEvent: false);
         }
     }

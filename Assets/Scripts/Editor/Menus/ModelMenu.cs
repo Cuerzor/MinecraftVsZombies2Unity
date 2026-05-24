@@ -581,16 +581,7 @@ namespace MVZ2.Editor
                 return string.Empty;
             }
 
-            var targetPaths = new List<string>();
-            while (transform.parent != null)
-            {
-                if (relativeTo == transform)
-                    break;
-                targetPaths.Add(transform.gameObject.name);
-                transform = transform.parent;
-            }
-            targetPaths.Reverse();
-            return string.Join("/", targetPaths);
+            return transform.GetPath();
         }
         private static Object GetObjectByPath(GameObject root, string path, Type type)
         {

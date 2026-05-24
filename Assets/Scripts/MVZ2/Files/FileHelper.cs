@@ -112,5 +112,9 @@ namespace MVZ2.IO
                 return "file://" + filePath;
             }
         }
+        public static string RemoveExtension(string filePath)
+        {
+            return Path.ChangeExtension(filePath, string.Empty).TrimEnd('.');
+        }
     }
 }

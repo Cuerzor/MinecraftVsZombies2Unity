@@ -28,5 +28,16 @@ namespace MVZ2.Editor
             PrefabUtility.UnloadPrefabContents(obj);
             return successfully;
         }
+        public static string GetPath(this Transform transform)
+        {
+            var pathList = new List<string>();
+            var trans = transform;
+            while (trans)
+            {
+                pathList.Insert(0, trans.gameObject.name);
+                trans = trans.parent;
+            }
+            return string.Join("/", pathList);
+        }
     }
 }

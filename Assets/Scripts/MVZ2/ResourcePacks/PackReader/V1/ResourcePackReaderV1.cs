@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Cysharp.Threading.Tasks;
+using MVZ2.IO;
 using MVZ2.Managers;
 using MVZ2.Resources;
 using MVZ2.Sprites;
@@ -155,7 +156,7 @@ namespace MVZ2.ResourcePacks
                 var textureID = NamespaceID.Parse(packTexture.key, Main.BuiltinNamespace);
 
                 // 获取ID和图片标签。
-                var splitTexturePaths = Path.ChangeExtension(packTexture.texture, string.Empty).TrimEnd('.').Split('/', '\\');
+                var splitTexturePaths = FileHelper.RemoveExtension(packTexture.texture).Split('/', '\\');
                 string nsp, textureId;
                 if (splitTexturePaths.Length > 1)
                 {

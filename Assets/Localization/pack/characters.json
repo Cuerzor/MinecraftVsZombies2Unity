@@ -1,0 +1,2221 @@
+{
+  "characters": [
+    {
+      "id": "mvz2:史蒂夫",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 1,
+          "height": 1,
+          "pivotX": 0.5,
+          "pivotY": 0.5,
+          "extendLeft": 0.0,
+          "extendRight": 0.0
+        }
+      ]
+    },
+    {
+      "id": "mvz2:村民",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 488,
+          "height": 1000,
+          "pivotX": 0.5,
+          "pivotY": 0.5,
+          "extendLeft": 0.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/crazy_villager"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:欧兰特",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 418,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 0.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/orant"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:close_eye",
+          "width": 418,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 0.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/orant"
+            },
+            {
+              "sprite": "mvz2:characters/orant[1]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:warning",
+          "width": 418,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 0.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/orant"
+            },
+            {
+              "sprite": "mvz2:characters/orant[2]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:哆来咪",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:open_mouth",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            },
+            {
+              "sprite": "mvz2:characters/doremy[11]",
+              "x": 347.0,
+              "y": 223.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:sad",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            },
+            {
+              "sprite": "mvz2:characters/doremy[8]",
+              "x": 277.0,
+              "y": 98.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[11]",
+              "x": 347.0,
+              "y": 223.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:taunt",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            },
+            {
+              "sprite": "mvz2:characters/doremy[8]",
+              "x": 277.0,
+              "y": 98.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[12]",
+              "x": 339.0,
+              "y": 218.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:confused",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            },
+            {
+              "sprite": "mvz2:characters/doremy[8]",
+              "x": 277.0,
+              "y": 98.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[11]",
+              "x": 347.0,
+              "y": 223.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[5]",
+              "x": 127.0,
+              "y": 6.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:open_book",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            },
+            {
+              "sprite": "mvz2:characters/doremy[1]",
+              "x": 117.0,
+              "y": 234.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:read_smile",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            },
+            {
+              "sprite": "mvz2:characters/doremy[1]",
+              "x": 117.0,
+              "y": 234.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[10]",
+              "x": 277.0,
+              "y": 98.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:read",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            },
+            {
+              "sprite": "mvz2:characters/doremy[1]",
+              "x": 117.0,
+              "y": 234.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[10]",
+              "x": 277.0,
+              "y": 98.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[11]",
+              "x": 347.0,
+              "y": 223.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:nervous",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            },
+            {
+              "sprite": "mvz2:characters/doremy[7]",
+              "x": 277.0,
+              "y": 98.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[13]",
+              "x": 341.0,
+              "y": 220.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[2]",
+              "x": 117.0,
+              "y": 234.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:suffering",
+          "width": 860,
+          "height": 1367,
+          "pivotX": 0.5,
+          "pivotY": 0.5,
+          "extendLeft": 0.0,
+          "extendRight": 200.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy_suffering",
+              "y": 259.0
+            },
+            {
+              "sprite": "mvz2:characters/dim_vision"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:cursed",
+          "width": 641,
+          "height": 1513,
+          "pivotX": 0.5,
+          "pivotY": 0.5,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy",
+              "y": 233.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[3]",
+              "x": 117.0,
+              "y": 467.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[4]",
+              "x": 277.0,
+              "y": 331.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[11]",
+              "x": 347.0,
+              "y": 456.0
+            },
+            {
+              "sprite": "mvz2:characters/dim_vision",
+              "x": 233.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:cursed_close_eyes",
+          "width": 641,
+          "height": 1513,
+          "pivotX": 0.5,
+          "pivotY": 0.5,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy",
+              "y": 233.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[3]",
+              "x": 117.0,
+              "y": 467.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[4]",
+              "x": 277.0,
+              "y": 331.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[11]",
+              "x": 347.0,
+              "y": 456.0
+            },
+            {
+              "sprite": "mvz2:characters/dim_vision",
+              "x": 233.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[9]",
+              "x": 277.0,
+              "y": 331.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:cured",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            },
+            {
+              "sprite": "mvz2:characters/doremy[11]",
+              "x": 347.0,
+              "y": 223.0
+            },
+            {
+              "sprite": "mvz2:characters/doremy[3]",
+              "x": 117.0,
+              "y": 234.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:slightly_close_eyes",
+          "width": 641,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/doremy"
+            },
+            {
+              "sprite": "mvz2:characters/doremy[8]",
+              "x": 277.0,
+              "y": 98.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:朱鹭子",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 738,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/tokiko"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:surprised",
+          "width": 738,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/tokiko"
+            },
+            {
+              "sprite": "mvz2:characters/tokiko[1]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:worried",
+          "width": 738,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/tokiko"
+            },
+            {
+              "sprite": "mvz2:characters/tokiko[2]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:happy",
+          "width": 738,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/tokiko"
+            },
+            {
+              "sprite": "mvz2:characters/tokiko[3]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:afraid",
+          "width": 738,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/tokiko"
+            },
+            {
+              "sprite": "mvz2:characters/tokiko[4]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:frightened",
+          "width": 738,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/tokiko"
+            },
+            {
+              "sprite": "mvz2:characters/tokiko[5]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:angry",
+          "width": 738,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/tokiko"
+            },
+            {
+              "sprite": "mvz2:characters/tokiko[6]",
+              "x": 208.0,
+              "y": 80.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:worried_wounded",
+          "width": 738,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/tokiko"
+            },
+            {
+              "sprite": "mvz2:characters/tokiko[2]"
+            },
+            {
+              "sprite": "mvz2:characters/tokiko[7]",
+              "x": 224.0,
+              "y": 48.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:正邪",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 560,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seija"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:pride",
+          "width": 560,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seija"
+            },
+            {
+              "sprite": "mvz2:characters/seija[1]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:laugh",
+          "width": 560,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seija"
+            },
+            {
+              "sprite": "mvz2:characters/seija[2]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:mind_controlled",
+          "width": 560,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seija"
+            },
+            {
+              "sprite": "mvz2:characters/seija[3]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:stunned",
+          "width": 560,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seija"
+            },
+            {
+              "sprite": "mvz2:characters/seija[4]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:surprised",
+          "width": 560,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seija"
+            },
+            {
+              "sprite": "mvz2:characters/seija[5]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:close_eye_silence",
+          "width": 560,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seija"
+            },
+            {
+              "sprite": "mvz2:characters/seija[6]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:silence",
+          "width": 560,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seija"
+            },
+            {
+              "sprite": "mvz2:characters/seija[7]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:angry",
+          "width": 560,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seija"
+            },
+            {
+              "sprite": "mvz2:characters/seija[8]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:针妙丸",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:cringe",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[1]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:happy",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[2]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:surprised",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[4]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:think",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[8]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:worried",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[9]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:fear",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[10]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:hide_eyes",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[11]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:hold_mallet_cry",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[12]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:hold_mallet_weep_close_eyes",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[12]"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[7]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:weep",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[9]"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[5]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:weep_close_eyes",
+          "width": 160,
+          "height": 448,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -80.0,
+          "extendRight": -80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[9]"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru[6]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:big",
+          "width": 387,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -20.0,
+          "extendRight": -20.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru_big[1]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:gift_mallet",
+          "width": 387,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": -20.0,
+          "extendRight": -20.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru_big"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:bottle_normal",
+          "width": 432,
+          "height": 716,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 0.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru_bottle"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:bottle_relax",
+          "width": 432,
+          "height": 716,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 0.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru_bottle"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru_bottle[1]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:bottle_worried",
+          "width": 432,
+          "height": 716,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 0.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shinmyoumaru_bottle"
+            },
+            {
+              "sprite": "mvz2:characters/shinmyoumaru_bottle[2]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:布都",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 587,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/futo"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:daze",
+          "width": 587,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/futo"
+            },
+            {
+              "sprite": "mvz2:characters/futo[1]",
+              "x": 112.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:question",
+          "width": 587,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/futo"
+            },
+            {
+              "sprite": "mvz2:characters/futo[2]",
+              "x": 80.0,
+              "y": 176.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:scared",
+          "width": 587,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/futo"
+            },
+            {
+              "sprite": "mvz2:characters/futo[5]",
+              "x": 192.0,
+              "y": 208.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:worried",
+          "width": 587,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/futo"
+            },
+            {
+              "sprite": "mvz2:characters/futo[3]",
+              "x": 192.0,
+              "y": 192.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:cringe",
+          "width": 587,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 75.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/futo"
+            },
+            {
+              "sprite": "mvz2:characters/futo[4]",
+              "x": 240.0,
+              "y": 192.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:魔理沙",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 636,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/marisa"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:happy",
+          "width": 636,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/marisa"
+            },
+            {
+              "sprite": "mvz2:characters/marisa[3]",
+              "x": 288.0,
+              "y": 192.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:sad",
+          "width": 636,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/marisa[1]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:angry",
+          "width": 636,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/marisa"
+            },
+            {
+              "sprite": "mvz2:characters/marisa[4]",
+              "x": 288.0,
+              "y": 192.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:scared",
+          "width": 636,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 100.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/marisa"
+            },
+            {
+              "sprite": "mvz2:characters/marisa[5]",
+              "x": 288.0,
+              "y": 192.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:青娥",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 818,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seiga"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:happy",
+          "width": 818,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seiga"
+            },
+            {
+              "sprite": "mvz2:characters/seiga[1]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:evil",
+          "width": 818,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seiga"
+            },
+            {
+              "sprite": "mvz2:characters/seiga[2]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:cringe",
+          "width": 818,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seiga"
+            },
+            {
+              "sprite": "mvz2:characters/seiga[3]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:vigilant",
+          "width": 818,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/seiga"
+            },
+            {
+              "sprite": "mvz2:characters/seiga[4]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:神子",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 817,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/miko"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:close_eyes",
+          "width": 817,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/miko"
+            },
+            {
+              "sprite": "mvz2:characters/miko[1]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:surprised",
+          "width": 817,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/miko"
+            },
+            {
+              "sprite": "mvz2:characters/miko[2]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:worried",
+          "width": 817,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/miko"
+            },
+            {
+              "sprite": "mvz2:characters/miko[3]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:calm",
+          "width": 817,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/miko"
+            },
+            {
+              "sprite": "mvz2:characters/miko[4]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:angry",
+          "width": 817,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/miko"
+            },
+            {
+              "sprite": "mvz2:characters/miko[5]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:calm_close_eyes",
+          "width": 817,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/miko"
+            },
+            {
+              "sprite": "mvz2:characters/miko[6]"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:angry_close_eyes",
+          "width": 817,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/miko"
+            },
+            {
+              "sprite": "mvz2:characters/miko[7]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:影像",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 600,
+          "height": 600,
+          "pivotX": 0.5,
+          "pivotY": 0.0,
+          "extendLeft": 0.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/hologram"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:星",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 632,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 50.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shou"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:unhappy",
+          "width": 632,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 50.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shou"
+            },
+            {
+              "sprite": "mvz2:characters/shou[1]",
+              "x": 304.0,
+              "y": 176.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:angry",
+          "width": 632,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 50.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shou"
+            },
+            {
+              "sprite": "mvz2:characters/shou[4]",
+              "x": 304.0,
+              "y": 128.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:worried",
+          "width": 632,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 50.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shou"
+            },
+            {
+              "sprite": "mvz2:characters/shou[2]",
+              "x": 304.0,
+              "y": 176.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:surprised",
+          "width": 632,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 50.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shou"
+            },
+            {
+              "sprite": "mvz2:characters/shou[6]",
+              "x": 304.0,
+              "y": 128.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:sad",
+          "width": 632,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 50.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shou"
+            },
+            {
+              "sprite": "mvz2:characters/shou[3]",
+              "x": 304.0,
+              "y": 176.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:question",
+          "width": 632,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 50.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/shou"
+            },
+            {
+              "sprite": "mvz2:characters/shou[5]",
+              "x": 304.0,
+              "y": 128.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:鵺",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 761,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/nue"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:close_eyes",
+          "width": 761,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 100.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/nue"
+            },
+            {
+              "sprite": "mvz2:characters/nue[1]",
+              "x": 368.0,
+              "y": 112.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:赤蛮奇",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 598,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 80.0,
+          "extendRight": 80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/sekibanki"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:angry",
+          "width": 598,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 80.0,
+          "extendRight": 80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/sekibanki"
+            },
+            {
+              "sprite": "mvz2:characters/sekibanki[1]",
+              "x": 176.0,
+              "y": 128.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:angry_close_eyes",
+          "width": 598,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 80.0,
+          "extendRight": 80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/sekibanki"
+            },
+            {
+              "sprite": "mvz2:characters/sekibanki[2]",
+              "x": 176.0,
+              "y": 128.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:白莲",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 573,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 80.0,
+          "extendRight": 80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/byakuren"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:close_eyes",
+          "width": 573,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 80.0,
+          "extendRight": 80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/byakuren"
+            },
+            {
+              "sprite": "mvz2:characters/byakuren[1]",
+              "x": 176.0,
+              "y": 208.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:serious",
+          "width": 573,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 80.0,
+          "extendRight": 80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/byakuren"
+            },
+            {
+              "sprite": "mvz2:characters/byakuren[2]",
+              "x": 176.0,
+              "y": 208.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:serious_close_eyes",
+          "width": 573,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 80.0,
+          "extendRight": 80.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/byakuren"
+            },
+            {
+              "sprite": "mvz2:characters/byakuren[3]",
+              "x": 176.0,
+              "y": 208.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:永琳",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 522,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 50.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/eirin"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:close_eyes",
+          "width": 522,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 50.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/eirin"
+            },
+            {
+              "sprite": "mvz2:characters/eirin[1]",
+              "x": 208.0,
+              "y": 112.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:smile",
+          "width": 522,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 50.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/eirin"
+            },
+            {
+              "sprite": "mvz2:characters/eirin[2]",
+              "x": 256.0,
+              "y": 192.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:觉",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 530,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 50.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/satori"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:surprised",
+          "width": 530,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 50.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/satori"
+            },
+            {
+              "sprite": "mvz2:characters/satori[2]",
+              "x": 208.0,
+              "y": 96.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:close_eyes",
+          "width": 530,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 50.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/satori"
+            },
+            {
+              "sprite": "mvz2:characters/satori[1]",
+              "x": 224.0,
+              "y": 112.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:smile",
+          "width": 530,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 50.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/satori"
+            },
+            {
+              "sprite": "mvz2:characters/satori[3]",
+              "x": 272.0,
+              "y": 176.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:恋",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 596,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 50.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/koishi"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:happy",
+          "width": 596,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 50.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/koishi"
+            },
+            {
+              "sprite": "mvz2:characters/koishi[2]",
+              "x": 240.0,
+              "y": 112.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:question",
+          "width": 596,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.65,
+          "extendLeft": 50.0,
+          "extendRight": 0.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/koishi"
+            },
+            {
+              "sprite": "mvz2:characters/koishi[1]",
+              "x": 64.0,
+              "y": 176.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:燐",
+      "faceRight": false,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 653,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 25.0,
+          "extendRight": 75.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/rin"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:scared",
+          "width": 653,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 25.0,
+          "extendRight": 75.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/rin"
+            },
+            {
+              "sprite": "mvz2:characters/rin[4]",
+              "x": 176.0,
+              "y": 48.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:worried",
+          "width": 653,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 25.0,
+          "extendRight": 75.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/rin"
+            },
+            {
+              "sprite": "mvz2:characters/rin[6]",
+              "x": 176.0,
+              "y": 192.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:nervous",
+          "width": 653,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 25.0,
+          "extendRight": 75.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/rin"
+            },
+            {
+              "sprite": "mvz2:characters/rin[3]",
+              "x": 176.0,
+              "y": 160.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:relieved",
+          "width": 653,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 25.0,
+          "extendRight": 75.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/rin"
+            },
+            {
+              "sprite": "mvz2:characters/rin[2]",
+              "x": 176.0,
+              "y": 192.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:question",
+          "width": 653,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 25.0,
+          "extendRight": 75.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/rin"
+            },
+            {
+              "sprite": "mvz2:characters/rin[1]",
+              "x": 176.0,
+              "y": 112.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:happy",
+          "width": 653,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 25.0,
+          "extendRight": 75.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/rin"
+            },
+            {
+              "sprite": "mvz2:characters/rin[5]",
+              "x": 176.0,
+              "y": 192.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mvz2:空",
+      "faceRight": true,
+      "variants": [
+        {
+          "id": "mvz2:normal",
+          "width": 1094,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 200.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/utsuho"
+            }
+          ]
+        },
+        {
+          "id": "mvz2:happy",
+          "width": 1094,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 200.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/utsuho"
+            },
+            {
+              "sprite": "mvz2:characters/utsuho[1]",
+              "x": 576.0,
+              "y": 128.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:surprised",
+          "width": 1094,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 200.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/utsuho"
+            },
+            {
+              "sprite": "mvz2:characters/utsuho[4]",
+              "x": 592.0,
+              "y": 144.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:question",
+          "width": 1094,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 200.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/utsuho"
+            },
+            {
+              "sprite": "mvz2:characters/utsuho[2]",
+              "x": 592.0,
+              "y": 96.0
+            }
+          ]
+        },
+        {
+          "id": "mvz2:sad",
+          "width": 1094,
+          "height": 1280,
+          "pivotX": 0.5,
+          "pivotY": 0.6,
+          "extendLeft": 100.0,
+          "extendRight": 200.0,
+          "layers": [
+            {
+              "sprite": "mvz2:characters/utsuho"
+            },
+            {
+              "sprite": "mvz2:characters/utsuho[3]",
+              "x": 592.0,
+              "y": 128.0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -24,9 +24,8 @@ namespace MVZ2.Editor
             ResourcePackMenu.UpdateResourcePackManifest();
             MoveMOFiles();
 
-            var path = GetResourcePackDirectory();
-            var dirPath = Path.Combine(Application.dataPath, "Localization", "pack");
-            var destPath = Path.Combine(path, "builtin.bytes");
+            var dirPath = GetBuiltinLanguagePackDirectory();
+            var destPath = Path.Combine(GetGameContentResourcePacksDirectory(), "builtin.bytes");
             ResourcePackManager.CompressLanguagePack(dirPath, destPath);
             AssetDatabase.Refresh();
             Debug.Log("Langauge Pack Compressed.");
@@ -359,10 +358,6 @@ namespace MVZ2.Editor
                 File.Copy(file, destFile, true);
             }
         }
-        public static string GetResourcePackDirectory()
-        {
-            return Path.Combine(Application.dataPath, "GameContent", "ResourcePacks");
-        }
         static void SearchObject(Transform tr, MukioPotGenerator pot)
         {
             var cp = tr.GetComponent<ITranslateComponent>();
@@ -391,6 +386,10 @@ namespace MVZ2.Editor
                 }
             }
         }
+        public static string GetBuiltinLanguagePackDirectory()
+        {
+            return Path.Combine(Application.dataPath, "Localization", "pack");
+        }
         public static string GetPoTemplateDirectory()
         {
             return Path.Combine(Application.dataPath, "Localization", "source");
@@ -403,11 +402,15 @@ namespace MVZ2.Editor
         {
             return Path.Combine(GetPoTemplateDirectory(), fileName);
         }
+        public static string GetGameContentResourcePacksDirectory()
+        {
+            return Path.Combine(Application.dataPath, "GameContent", "ResourcePacks");
+        }
         public static string GetMetaDirectory(string nsp)
         {
             return Path.Combine(Application.dataPath, "GameContent", "Assets", nsp, "metas");
         }
-        private static XmlDocument LoadMetaXmlDocument(string nsp, string path)
+        public static XmlDocument LoadMetaXmlDocument(string nsp, string path)
         {
             var metaDirectory = GetMetaDirectory(nsp);
             var absPath = Path.Combine(metaDirectory, path);
