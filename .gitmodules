@@ -7,9 +7,9 @@
 [submodule "Assets/Plugins/tidalwav"]
 	path = Assets/Plugins/tidalwav
 	url = https://github.com/Cuerzor/tidalwav.git
-[submodule "Assets/LanguagePack"]
-	path = Assets/LanguagePack
-	url = https://github.com/Cuerzor/MVZ2LanguagePack.git
 [submodule "Assets/Scripts/Engine"]
 	path = Assets/Scripts/Engine
 	url = https://github.com/Cuerzor/PVZEngineUnity.git
+[submodule "ResourcePack"]
+	path = ResourcePack
+	url = https://github.com/MVZ2-Team/MVZ2ResourcePack.git
