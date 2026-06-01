@@ -95,7 +95,7 @@ namespace MVZ2.GameContent.Contraptions
             base.UpdateLogic(entity);
             entity.SetAnimationBool("Attacking", entity.State == STATE_ATTACK);
             entity.SetAnimationBool("ShowArc", entity.State != STATE_ATTACK && !entity.IsAIFrozen());
-            entity.SetAnimationFloat("AttackSpeed", entity.GetAttackSpeed());
+            entity.SetAnimationFloat("AttackSpeed", entity.IsAIFrozen() ? 0 : entity.GetAttackSpeed());
         }
         private float GetTargetPriority(Entity self, Entity target)
         {
