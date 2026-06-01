@@ -49,14 +49,13 @@ namespace MVZ2.GameContent.Projectiles
                     var zspeed = rng.Next(-1.5f, 1.5f);
                     var yspeed = rng.Next(10f);
 
-                    var shootParams = new ShootParams()
+                    var shootParams = new ProjectileShootArgs(projectile.GetSpawnParams())
                     {
                         damage = projectile.GetDamage() / StoneDropper.BOULDER_DAMAGE_MULTIPLIER,
                         faction = projectile.GetFaction(),
                         position = pos,
                         projectileID = VanillaProjectileID.cobble,
                         velocity = new Vector3(xspeed, yspeed, zspeed),
-                        spawnParam = projectile.GetSpawnParams(),
                     };
                     projectile.ShootProjectile(shootParams);
                 }

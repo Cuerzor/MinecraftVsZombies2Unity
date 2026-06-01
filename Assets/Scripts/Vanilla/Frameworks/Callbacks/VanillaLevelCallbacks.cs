@@ -193,6 +193,31 @@ namespace MVZ2.Vanilla.Callbacks
             public ProjectileHitOutput hit;
             public DamageOutput? damage;
         }
+        public struct PreProjectileShotParams
+        {
+            public Entity source;
+            public ProjectileShootArgs projectileArgs;
+
+            public PreProjectileShotParams(Entity source, ProjectileShootArgs shootParams)
+            {
+                this.source = source;
+                this.projectileArgs = shootParams;
+            }
+        }
+        public struct PostProjectileShotParams
+        {
+            public Entity source;
+            public Entity projectile;
+            public ProjectileShootArgs projectileArgs;
+
+            public PostProjectileShotParams(Entity source, Entity projectile, ProjectileShootArgs shootParams)
+            {
+                this.source = source;
+                this.projectile = projectile;
+                this.projectileArgs = shootParams;
+            }
+        }
+        
 
 
         public struct PostEjectedEntityLandParams
@@ -279,7 +304,8 @@ namespace MVZ2.Vanilla.Callbacks
         public readonly static CallbackType<EntityCallbackParams> CAN_PICKUP_COLLECT = new();
         public readonly static CallbackType<EntityCallbackParams> POST_PICKUP_COLLECT = new();
 
-        public readonly static CallbackType<EntityCallbackParams> POST_PROJECTILE_SHOT = new();
+        public readonly static CallbackType<PreProjectileShotParams> PRE_PROJECTILE_SHOT = new();
+        public readonly static CallbackType<PostProjectileShotParams> POST_PROJECTILE_SHOT = new();
         public readonly static CallbackType<PreProjectileHitParams> PRE_PROJECTILE_HIT = new();
         public readonly static CallbackType<PostProjectileHitParams> POST_PROJECTILE_HIT = new();
 

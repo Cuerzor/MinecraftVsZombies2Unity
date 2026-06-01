@@ -69,7 +69,7 @@ namespace MVZ2.GameContent.Buffs.Entities
             if (target != null)
             {
                 Vector3 otherCenter = target.GetCenter();
-                var shootParams = new ShootParams()
+                var shootParams = new ProjectileShootArgs(entity.GetSpawnParams())
                 {
                     damage = 20,
                     faction = GetFaction(buff),
@@ -77,7 +77,6 @@ namespace MVZ2.GameContent.Buffs.Entities
                     projectileID = VanillaProjectileID.parabot,
                     soundID = VanillaSoundID.bow,
                     velocity = (otherCenter - centerPos).normalized * 10,
-                    spawnParam = entity.GetSpawnParams(),
                 };
                 var projectile = entity.ShootProjectile(shootParams);
                 if (projectile != null)

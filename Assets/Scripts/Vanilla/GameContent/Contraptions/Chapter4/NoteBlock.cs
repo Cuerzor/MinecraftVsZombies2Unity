@@ -5,8 +5,10 @@ using MVZ2.GameContent.Bosses;
 using MVZ2.GameContent.Buffs.Contraptions;
 using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Effects;
+using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
@@ -42,6 +44,7 @@ namespace MVZ2.GameContent.Contraptions
         }
         public override void OnShootTick(Entity entity)
         {
+            entity.TriggerAnimation("Shoot");
             var children = GetNoteChildren(entity);
             if (children != null)
             {
@@ -55,7 +58,9 @@ namespace MVZ2.GameContent.Contraptions
         }
         public override Entity? Shoot(Entity entity)
         {
-            var projectile = base.Shoot(entity);
+            var shootArgs = entity.GetShootParams();
+            shootArgs.spawnParam.SetProperty(Note.PROP_NOTE_CHARGED, true);
+            var projectile = entity.ShootProjectile(shootArgs);
             if (projectile != null)
             {
                 projectile.SetParent(entity);

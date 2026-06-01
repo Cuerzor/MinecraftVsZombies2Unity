@@ -140,9 +140,9 @@ namespace MVZ2.GameContent.Projectiles
         public const float MAX_GROWTH = 1;
         public const float GROWTH_LERP_T = 0.25f;
 
-        private static readonly VanillaEntityPropertyMeta<Vector3> PROP_DISPLAY_SCALE_MULTIPLIER = new VanillaEntityPropertyMeta<Vector3>("DisplayScaleMultiplier");
-        private static readonly VanillaEntityPropertyMeta<bool> PROP_HIT_PROTECTED = new VanillaEntityPropertyMeta<bool>("HitProtected");
-        private static readonly VanillaEntityPropertyMeta<bool> PROP_NOTE_CHARGED = new VanillaEntityPropertyMeta<bool>("NoteCharged");
-        private static readonly VanillaEntityPropertyMeta<float> PROP_DAMAGE_GROWTH = new VanillaEntityPropertyMeta<float>("DamageGrowth");
+        public static readonly VanillaEntityPropertyMeta<Vector3> PROP_DISPLAY_SCALE_MULTIPLIER = new VanillaEntityPropertyMeta<Vector3>("DisplayScaleMultiplier");
+        public static readonly VanillaEntityPropertyMeta<bool> PROP_HIT_PROTECTED = new VanillaEntityPropertyMeta<bool>("HitProtected");
+        public static readonly VanillaEntityPropertyMeta<bool> PROP_NOTE_CHARGED = new VanillaEntityPropertyMeta<bool>("NoteCharged");
+        public static readonly VanillaEntityPropertyMeta<float> PROP_DAMAGE_GROWTH = new VanillaEntityPropertyMeta<float>("DamageGrowth");
     }
 }

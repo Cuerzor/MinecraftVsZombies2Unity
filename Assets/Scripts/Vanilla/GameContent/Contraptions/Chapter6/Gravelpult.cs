@@ -31,9 +31,9 @@ namespace MVZ2.GameContent.Contraptions
             base.OnThrownTimeout(entity);
             SetThrowsGravel(entity, entity.RNG.Next(100) < GRAVEL_CHANCE_PERCENTAGE);
         }
-        protected override void PreModifyShootParameters(Entity entity, ref ShootParams param)
+        protected override void PreModifyShootParameters(Entity entity, ProjectileShootArgs param)
         {
-            base.PreModifyShootParameters(entity, ref param);
+            base.PreModifyShootParameters(entity, param);
             if (ThrowsGravel(entity))
             {
                 param.damage *= 2;

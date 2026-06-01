@@ -210,6 +210,7 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public const string thrownByEjector = "thrown_by_ejector";
             public const string extendingArm = "extending_arm";
+            public const string krakensTentacleAttackSpeed = "krakens_tentacle_attack_speed";
         }
         public static class Enemy
         {
@@ -556,6 +557,7 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public static readonly NamespaceID extendingArm = Get(VanillaBuffNames.Contraption.extendingArm);
+            public static readonly NamespaceID krakensTentacleAttackSpeed = Get(VanillaBuffNames.Contraption.krakensTentacleAttackSpeed);
         }
         public static class Enemy
         {

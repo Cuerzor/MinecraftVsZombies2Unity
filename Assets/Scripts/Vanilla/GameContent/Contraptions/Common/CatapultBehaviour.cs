@@ -109,7 +109,7 @@ namespace MVZ2.GameContent.Contraptions
         public virtual Entity? ThrowProjectile(Entity entity)
         {
             var param = entity.GetShootParams();
-            PreModifyShootParameters(entity, ref param);
+            PreModifyShootParameters(entity, param);
             var throwTargetID = GetThrowTarget(entity);
             var throwTarget = throwTargetID?.GetEntity(entity.Level);
             var flyTime = Ticks.FromSeconds(PROJECTILE_FLY_TIME_SECONDS);
@@ -139,7 +139,7 @@ namespace MVZ2.GameContent.Contraptions
             var projectileDefinition = entity.Level.Content.GetEntityDefinition(projectileId);
             var gravity = projectileDefinition?.GetGravity() ?? 1;
             param.velocity = VanillaProjectileExt.GetLobVelocityByTime(param.position, targetPosition, flyTime, gravity);
-            PostModifyShootParameters(entity, ref param);
+            PostModifyShootParameters(entity, param);
             return entity.ShootProjectile(param);
         }
         public virtual float GetTargetPriority(Entity target, Entity entity)
@@ -169,11 +169,11 @@ namespace MVZ2.GameContent.Contraptions
             min = entity.Position.z - 20;
             max = entity.Position.z + 20;
         }
-        protected virtual void PreModifyShootParameters(Entity entity, ref ShootParams param)
+        protected virtual void PreModifyShootParameters(Entity entity, ProjectileShootArgs param)
         {
 
         }
-        protected virtual void PostModifyShootParameters(Entity entity, ref ShootParams param)
+        protected virtual void PostModifyShootParameters(Entity entity, ProjectileShootArgs param)
         {
 
         }

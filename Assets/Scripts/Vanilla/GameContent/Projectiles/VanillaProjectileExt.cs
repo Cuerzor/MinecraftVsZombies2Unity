@@ -33,8 +33,11 @@ namespace MVZ2.Vanilla.Projectiles
             shootParams.velocity = velocity;
             return entity.ShootProjectile(shootParams);
         }
-        public static Entity? ShootProjectile(this Entity entity, ShootParams parameters)
+        public static Entity? ShootProjectile(this Entity entity, ProjectileShootArgs parameters)
         {
+            if (!entity.PreShootProjectile(parameters))
+                return null;
+
             if (parameters.soundID != null)
                 entity.PlaySound(parameters.soundID);
             var projectileID = parameters.projectileID;
@@ -56,15 +59,23 @@ namespace MVZ2.Vanilla.Projectiles
             param.EntityVelocity = velocity;
             return entity.Spawn(projectileDefinition, position, param)?.Let(e =>
             {
-                entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_PROJECTILE_SHOT, new EntityCallbackParams(e), e.GetDefinitionID());
+                var args = new VanillaLevelCallbacks.PostProjectileShotParams(entity, e, parameters);
+                entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_PROJECTILE_SHOT, args, e.GetDefinitionID());
             });
 
         }
-        public static ShootParams GetShootParams(this Entity entity)
+        private static bool PreShootProjectile(this Entity entity, ProjectileShootArgs parameters)
+        {
+            var result = new CallbackResult(true);
+            var args = new VanillaLevelCallbacks.PreProjectileShotParams(entity, parameters);
+            entity.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.PRE_PROJECTILE_SHOT, args, result);
+            return result.GetValue<bool>();
+        }
+        public static ProjectileShootArgs GetShootParams(this Entity entity)
         {
             var velocity = entity.GetShotVelocity();
             velocity.x *= entity.GetFacingX();
-            return new ShootParams()
+            return new ProjectileShootArgs(entity.GetSpawnParams())
             {
                 projectileID = entity.GetProjectileID(),
                 position = entity.GetShootPoint(),
@@ -73,7 +84,6 @@ namespace MVZ2.Vanilla.Projectiles
                 damage = entity.GetDamage(),
                 soundID = entity.GetShootSound(),
                 velocity = velocity,
-                spawnParam = entity.GetSpawnParams(),
             };
         }
         public static Vector3 ModifyShotOffset(this Entity entity, Vector3 offset)
@@ -213,7 +223,7 @@ namespace MVZ2.Vanilla.Projectiles
         }
         #endregion
     }
-    public struct ShootParams
+    public class ProjectileShootArgs
     {
         public NamespaceID? projectileID;
         public Vector3 position;
@@ -223,5 +233,10 @@ namespace MVZ2.Vanilla.Projectiles
         public float damage;
         public int faction;
         public SpawnParams spawnParam;
+
+        public ProjectileShootArgs(SpawnParams spawnParam)
+        {
+            this.spawnParam = spawnParam;
+        }
     }
 }
