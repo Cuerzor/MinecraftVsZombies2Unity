@@ -209,6 +209,7 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public const string thrownByEjector = "thrown_by_ejector";
+            public const string extendingArm = "extending_arm";
         }
         public static class Enemy
         {
@@ -552,6 +553,9 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 6
             public static readonly NamespaceID psychicShackled = Get(VanillaBuffNames.Contraption.psychicShackled);
+
+            // Chapter 7
+            public static readonly NamespaceID extendingArm = Get(VanillaBuffNames.Contraption.extendingArm);
         }
         public static class Enemy
         {

@@ -22,6 +22,8 @@ namespace MVZ2.GameContent.Effects
         public FireBreath(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new Vector3Modifier(LogicEntityProps.LIGHT_RANGE, NumberOperator.Multiply, PROP_LIGHT_RANGE_MULTIPLIER));
+            AddModifier(new Vector3Modifier(EngineEntityProps.SIZE, NumberOperator.Multiply, PROP_SIZE_MULTIPLIER));
+            AddModifier(new Vector3Modifier(EngineEntityProps.DISPLAY_SCALE, NumberOperator.Multiply, PROP_SIZE_MULTIPLIER));
         }
         public override void Init(Entity entity)
         {
@@ -51,16 +53,28 @@ namespace MVZ2.GameContent.Effects
                 SetDamageCooldown(entity, cooldown);
             }
             entity.SetAnimationBool("Burning", existing);
+
+            Vector3 sizeMultiplier = Vector3.one;
+            sizeMultiplier.x *= entity.GetRange() / entity.Definition.GetSize().x;
+            SetSizeMultiplier(entity, sizeMultiplier);
+
             var lightPercentage = Mathf.Max(0, (entity.Timeout / (float)MAX_TIMEOUT) * 3 - 2);
-            entity.SetProperty(PROP_LIGHT_RANGE_MULTIPLIER, Vector3.one * lightPercentage);
+            Vector3 lightRangeMultiplier = sizeMultiplier;
+            lightRangeMultiplier *= lightPercentage;
+            SetLightRangeMultiplier(entity, lightRangeMultiplier);
         }
         public static int GetDamageCooldown(Entity entity) => entity.GetBehaviourField<int>(PROP_DAMAGE_COOLDOWN);
         public static void SetDamageCooldown(Entity entity, int value) => entity.SetBehaviourField(PROP_DAMAGE_COOLDOWN, value);
+        public static Vector3 GetLightRangeMultiplier(Entity entity) => entity.GetBehaviourField<Vector3>(PROP_LIGHT_RANGE_MULTIPLIER);
+        public static void SetLightRangeMultiplier(Entity entity, Vector3 value) => entity.SetBehaviourField(PROP_LIGHT_RANGE_MULTIPLIER, value);
+        public static Vector3 GetSizeMultiplier(Entity entity) => entity.GetBehaviourField<Vector3>(PROP_SIZE_MULTIPLIER);
+        public static void SetSizeMultiplier(Entity entity, Vector3 value) => entity.SetBehaviourField(PROP_SIZE_MULTIPLIER, value);
         #endregion
         public const int DAMAGE_COOLDOWN = 15;
         public const int MAX_TIMEOUT = 30;
-        public static readonly VanillaEntityPropertyMeta<Vector3> PROP_LIGHT_RANGE_MULTIPLIER = new VanillaEntityPropertyMeta<Vector3>("LightRangeMultiplier");
         private static readonly VanillaEntityPropertyMeta<int> PROP_DAMAGE_COOLDOWN = new VanillaEntityPropertyMeta<int>("DamageCooldown");
+        public static readonly VanillaEntityPropertyMeta<Vector3> PROP_LIGHT_RANGE_MULTIPLIER = new VanillaEntityPropertyMeta<Vector3>("LightRangeMultiplier");
+        public static readonly VanillaEntityPropertyMeta<Vector3> PROP_SIZE_MULTIPLIER = new VanillaEntityPropertyMeta<Vector3>("size_multiplier");
         private List<EntityCollision> collisionBuffer = new List<EntityCollision>();
     }
 }

@@ -206,6 +206,7 @@ namespace MVZ2.GameContent.Contraptions
             {
                 var danger = IsDanger(entity);
                 var param = entity.GetShootParams();
+                param.spawnParam.SetProperty(VanillaEntityProps.RANGE, entity.GetRange());
                 param.spawnParam.SetProperty(CannonMissile.PROP_TARGET_POSITION, GetTargetPosition(entity));
                 param.spawnParam.SetProperty(LogicEntityProps.VARIANT, danger ? CannonMissile.VARIANT_DANGER : CannonMissile.VARIANT_NORMAL);
                 return entity.ShootProjectile(param);

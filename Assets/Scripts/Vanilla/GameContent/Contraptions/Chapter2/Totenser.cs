@@ -84,6 +84,7 @@ namespace MVZ2.GameContent.Contraptions
                 fireBreath?.Let(e =>
                 {
                     e.SetDamage(entity.GetDamage() * 2 / 3);
+                    e.SetRange(entity.GetRange2());
                     e.SetFlipX(entity.IsFlipX());
                     e.Position = position;
                     e.SetFaction(entity.GetFaction());

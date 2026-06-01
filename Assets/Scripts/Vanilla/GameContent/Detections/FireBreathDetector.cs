@@ -23,6 +23,7 @@ namespace MVZ2.GameContent.Detections
             var fireSize = fireBreathDef.GetSize();
             var fireBoundsPivot = fireBreathDef.GetBoundsPivot();
 
+            fireSize.x = self.GetRange2();
             var positionOffset = Vector3.Scale(Vector3.one * 0.5f - fireBoundsPivot, fireSize);
             positionOffset.x *= self.GetFacingX();
             return new Bounds(self.Position + positionOffset, fireSize);

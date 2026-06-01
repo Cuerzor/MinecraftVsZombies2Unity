@@ -57,6 +57,7 @@ namespace MVZ2.Vanilla.Entities
         public static readonly Vector3 SHOT_PIVOT_DEFAULT = new Vector3(0.5f, 0.5f, 0.5f);
         public static readonly Vector3 SHOT_PIVOT_BOTTOM = new Vector3(0.5f, 0, 0.5f);
         public static readonly PropertyMeta<float> RANGE = Get<float>("range");
+        public static readonly PropertyMeta<float> RANGE_2 = Get<float>("range_2");
         public static readonly PropertyMeta<Vector3> SHOT_VELOCITY = Get<Vector3>("shotVelocity");
         public static readonly PropertyMeta<Vector3> SHOT_OFFSET = Get<Vector3>("shotOffset");
         public static readonly PropertyMeta<Vector3> SHOT_PIVOT = Get<Vector3>("shot_pivot", SHOT_PIVOT_DEFAULT);
@@ -69,6 +70,14 @@ namespace MVZ2.Vanilla.Entities
         public static float GetRange(this Entity entity)
         {
             return entity.GetProperty<float>(RANGE);
+        }
+        public static void SetRange2(this Entity entity, float value)
+        {
+            entity.SetProperty(RANGE_2, value);
+        }
+        public static float GetRange2(this Entity entity)
+        {
+            return entity.GetProperty<float>(RANGE_2);
         }
         public static Vector3 GetShotVelocity(this Entity entity)
         {

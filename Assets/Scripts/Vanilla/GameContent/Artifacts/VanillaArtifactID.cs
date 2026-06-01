@@ -42,6 +42,7 @@ namespace MVZ2.GameContent.Artifacts
         
         public const string bunbunmaruNewspaper = "bunbunmaru_newspaper";
         public const string lilyPlatform = "lily_platform";
+        public const string extendingArm = "extending_arm";
     }
     public static class VanillaArtifactID
     {
@@ -80,6 +81,7 @@ namespace MVZ2.GameContent.Artifacts
 
         public static readonly NamespaceID bunbunmaruNewspaper = Get(VanillaArtifactNames.bunbunmaruNewspaper);
         public static readonly NamespaceID lilyPlatform = Get(VanillaArtifactNames.lilyPlatform);
+        public static readonly NamespaceID extendingArm = Get(VanillaArtifactNames.extendingArm);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

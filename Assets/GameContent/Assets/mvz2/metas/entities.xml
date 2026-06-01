@@ -196,7 +196,7 @@
         <dispenser type="1" parent="contraption">
             <properties>
                 <float name="mvz2:damage" value="20" />
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:shotVelocity" x="10" y="0" z="0" />
                 <vector3 name="mvz2:shotOffset" x="25" y="30" z="0" />
                 <vector3 name="mvz2:size" x="32" y="48" z="32" />
@@ -457,7 +457,7 @@
             </unlock>
             <properties>
                 <float name="mvz2:damage" value="80" />
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <bool name="mvz2:immune_fire" value="true" />
                 <id name="mvz2:shell" value="mvz2:wood" />
                 <id name="mvz2:hitSound" value="mvz2:wood" />
@@ -610,6 +610,7 @@
             </unlock>
             <properties>
                 <float name="mvz2:damage" value="15" />
+                <float name="mvz2:range_2" value="200" />
                 <id name="mvz2:projectileId" value="mvz2:dart" />
                 <idArray name="mvz2:counter_for" value="mvz2:low_enemy" />
 
@@ -1047,7 +1048,7 @@
             </unlock>
             <properties>
                 <float name="mvz2:damage" value="20" />
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:shotVelocity" x="10" y="0" z="0" />
                 <vector3 name="mvz2:shotOffset" x="0" y="30" z="0" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
@@ -1165,7 +1166,7 @@
             </behaviours>
             <properties>
                 <float name="mvz2:damage" value="20" />
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:shotVelocity" x="10" y="0" z="0" />
                 <vector3 name="mvz2:shotOffset" x="-10" y="35" z="0" />
                 <vector3 name="mvz2:size" x="64" y="32" z="32" />
@@ -1271,7 +1272,7 @@
                 <behaviour operator="add" id="mvz2:amethyst_pylon/evoke" />
             </behaviours>
             <properties>
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <float name="mvz2:damage" value="10" />
                 <bool name="mvz2:blocksJump" value="true" />
                 <id name="mvz2:shell" value="mvz2:stone" />
@@ -1548,6 +1549,7 @@
             </behaviours>
             <properties>
                 <float name="mvz2:damage" value="1800" />
+                <float name="mvz2:range" value="120" />
                 <vector3 name="mvz2:shadowScale" x="3" y="1" z="1" />
                 <vector3 name="mvz2:size" x="126" y="66" z="66" />
                 <vector3 name="mvz2:grid_pivot_offset" x="-40" y="0" z="0"  />
@@ -1712,7 +1714,7 @@
                 <behaviour operator="remove" id="mvz2:enemy_melee" />
             </behaviours>
             <properties>
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:shotOffset" x="10" y="40" z="0" />
                 <vector3 name="mvz2:shotVelocity" x="15" y="0" z="0" />
                 <id name="mvz2:shell" value="mvz2:bone" />
@@ -1857,7 +1859,7 @@
                 <bool name="mvz2:immune_fire" value="true" />
                 <float name="mvz2:maxHealth" value="100" />
                 <float name="mvz2:damage" value="150" />
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:size" x="64" y="64" z="64" />
                 <vector3 name="mvz2:shotOffset" x="10" y="10" z="0" />
                 <vector3 name="mvz2:shotVelocity" x="10" y="0" z="0" />
@@ -1930,7 +1932,7 @@
             </unlock>
             <properties>
                 <id name="mvz2:starting_armor" value="mvz2:mesmerizer_crown" />
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:shotOffset" x="30" y="96" z="0" />
                 <vector3 name="mvz2:shotVelocity" x="0" y="0" z="0" />
                 <vector3 name="mvz2:size" x="38" y="103" z="38" />
@@ -2255,7 +2257,7 @@
             </behaviours>
             <properties>
                 <float name="mvz2:maxHealth" value="512" />
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:size" x="38" y="103" z="38" />
                 <id name="mvz2:shell" value="mvz2:wither_bone" />
                 <id name="mvz2:crySound" value="mvz2:wither_skeleton_cry" />
@@ -2562,7 +2564,7 @@
                 <behaviour operator="add" id="mvz2:set_animation_variant" />
             </behaviours>
             <properties>
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:shotOffset" x="10" y="54" z="0" />
                 <vector3 name="mvz2:shotVelocity" x="15" y="0" z="0" />
                 <id name="mvz2:projectileId" value="mvz2:arrow" />
@@ -2617,7 +2619,7 @@
                 </properties>
             </behaviours>
             <properties>
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:shotOffset" x="10" y="50" z="0" />
                 <vector3 name="mvz2:shotVelocity" x="15" y="0" z="0" />
                 <id name="mvz2:shell" value="mvz2:wither_bone" />
@@ -2641,7 +2643,7 @@
                 <behaviour operator="add" id="mvz2:skeleton_mage" />
             </behaviours>
             <properties>
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:shotOffset" x="10" y="54" z="0" />
                 <vector3 name="mvz2:shotVelocity" x="15" y="0" z="0" />
                 <id name="mvz2:crySound" value="mvz2:wither_skeleton_cry" />
@@ -2995,7 +2997,7 @@
         <entity template="cart" id="ballista" name="小型弩车">
             <properties>
                 <float name="mvz2:damage" value="58115310" />
-                <float name="mvz2:range" value="800" />
+                <float name="mvz2:range" value="80000" />
                 <vector3 name="mvz2:shotVelocity" x="20" y="0" z="0" />
                 <vector3 name="mvz2:shotOffset" x="25" y="30" z="0" />
                 <id name="mvz2:shootSound" value="mvz2:fling" />
