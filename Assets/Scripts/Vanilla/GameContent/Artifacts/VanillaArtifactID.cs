@@ -44,6 +44,7 @@ namespace MVZ2.GameContent.Artifacts
         public const string lilyPlatform = "lily_platform";
         public const string extendingArm = "extending_arm";
         public const string krakensTentacle = "krakens_tentacle";
+        public const string galeLeaf = "gale_leaf";
     }
     public static class VanillaArtifactID
     {
@@ -84,6 +85,7 @@ namespace MVZ2.GameContent.Artifacts
         public static readonly NamespaceID lilyPlatform = Get(VanillaArtifactNames.lilyPlatform);
         public static readonly NamespaceID extendingArm = Get(VanillaArtifactNames.extendingArm);
         public static readonly NamespaceID krakensTentacle = Get(VanillaArtifactNames.krakensTentacle);
+        public static readonly NamespaceID galeLeaf = Get(VanillaArtifactNames.galeLeaf);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);
