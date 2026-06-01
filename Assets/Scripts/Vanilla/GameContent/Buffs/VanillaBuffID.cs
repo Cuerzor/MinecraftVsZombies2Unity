@@ -363,6 +363,7 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public const string bunbunmaruNewspaper = "bunbunmaru_newspaper";
+            public const string lilyPlatform = "lily_platform";
         }
     }
     public static class VanillaBuffID
@@ -696,6 +697,7 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public static readonly NamespaceID bunbunmaruNewspaper = Get(VanillaBuffNames.SeedPack.bunbunmaruNewspaper);
+            public static readonly NamespaceID lilyPlatform = Get(VanillaBuffNames.SeedPack.lilyPlatform);
         }
     }
 }

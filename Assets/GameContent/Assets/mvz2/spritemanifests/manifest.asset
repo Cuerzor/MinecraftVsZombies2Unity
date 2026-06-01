@@ -125,7 +125,7 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: f97cb6aea9cf76f4da9e38c15f3d7647, type: 3}
   - name: artifacts/lightbomb
     sprite: {fileID: 21300000, guid: 36eda47ce4c8f0e40ab52622c040d37d, type: 3}
-  - name: artifacts/lily_carrier
+  - name: artifacts/lily_platform
     sprite: {fileID: 21300000, guid: dc26b901fcd7d3b4b9260e080c77f695, type: 3}
   - name: artifacts/magma_stone
     sprite: {fileID: 21300000, guid: 58e9f34d21943544ebeddf8f336f0379, type: 3}

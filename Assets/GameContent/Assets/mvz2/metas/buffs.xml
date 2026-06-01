@@ -218,6 +218,7 @@
     <buff id="chill_projectile" polarity="positive" level="1000" target="projectile" />
     <buff id="thrown_by_ejector" polarity="none" level="5000" target="contraption" />
     <buff id="bunbunmaru_newspaper" polarity="mixed" level="0" target="blueprint" />
+    <buff id="lily_platform" polarity="positive" level="0" target="blueprint" />
 
     <!-- Random China -->
     <buff id="super_recharge" polarity="positive" level="0" target="blueprint" />

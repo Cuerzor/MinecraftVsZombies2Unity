@@ -41,6 +41,7 @@ namespace MVZ2.GameContent.Artifacts
         public const string magmaStone = "magma_stone";
         
         public const string bunbunmaruNewspaper = "bunbunmaru_newspaper";
+        public const string lilyPlatform = "lily_platform";
     }
     public static class VanillaArtifactID
     {
@@ -78,6 +79,7 @@ namespace MVZ2.GameContent.Artifacts
         public static readonly NamespaceID magmaStone = Get(VanillaArtifactNames.magmaStone);
 
         public static readonly NamespaceID bunbunmaruNewspaper = Get(VanillaArtifactNames.bunbunmaruNewspaper);
+        public static readonly NamespaceID lilyPlatform = Get(VanillaArtifactNames.lilyPlatform);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);
