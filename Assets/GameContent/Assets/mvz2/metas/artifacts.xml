@@ -172,7 +172,7 @@
             <condition requiredGroups="mvz2:artifact.krakens_tentacle" />
         </unlock>
     </artifact>
-    <artifact id="gale_leaf" name="强风叶" tooltip="所有怪物持续向右缓慢移动" sprite="mvz2:artifacts/gale_leaf">
+    <artifact id="gale_leaf" name="强风叶" tooltip="所有敌怪持续向右缓慢移动" sprite="mvz2:artifacts/gale_leaf">
         <unlock>
             <condition requiredGroups="mvz2:artifact.gale_leaf" />
         </unlock>

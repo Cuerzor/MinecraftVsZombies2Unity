@@ -195,6 +195,7 @@
     <buff id="red_dragon_transition" polarity="none" level="5000" target="level" />
     <buff id="red_dragon_cleared" polarity="none" level="5000" target="level" />
     <buff id="ship_broken_grid" polarity="none" level="5000" target="grid" />
+    <buff id="cow_horn" polarity="positive" level="2000" target="blueprint" />
 
     <!-- Chapter 6 -->
     <buff id="blueprint_lock" polarity="negative" level="0" target="blueprint" />

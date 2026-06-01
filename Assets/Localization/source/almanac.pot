@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-06-08 01:03+0800\n"
+"POT-Creation-Date: 2026-06-08 03:02+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -401,6 +401,18 @@ msgctxt "almanac_tag.description"
 msgid "不是亡灵生物"
 msgstr ""
 
+#. Name for almanac tag fire_immunity
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "火焰免疫"
+msgstr ""
+
+#. Description for almanac tag fire_immunity
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "免疫火焰伤害"
+msgstr ""
+
 #. Name for almanac tag enum value -2 of enum mass
 #: Almanac meta file
 msgctxt "almanac_tag_enum.name"
@@ -539,13 +551,13 @@ msgctxt "almanac_tag_enum.description"
 msgid "受到2x火焰伤害"
 msgstr ""
 
-#. Name for almanac tag enum value mvz2:nether of enum shell
+#. Name for almanac tag enum value mvz2:wither_bone of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.name"
-msgid "下界"
+msgid "凋灵骨"
 msgstr ""
 
-#. Description for almanac tag enum value mvz2:nether of enum shell
+#. Description for almanac tag enum value mvz2:wither_bone of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
 msgid "免疫火焰伤害"
@@ -627,6 +639,12 @@ msgstr ""
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
 msgid "阻挡锐利物体，但受到20x冲击伤害和2x火焰伤害"
+msgstr ""
+
+#. Name for almanac tag enum value mvz2:apparition of enum shell
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "灵体"
 msgstr ""
 
 #. Header for contraptions mvz2:dispenser
@@ -1874,6 +1892,47 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid "寒冰发射器最大的愿望是退伍——不是因为它当兵（冰）太久了，而是因为这里的器械都听不懂它讲的冷笑话。"
+msgstr ""
+
+#. Header for contraptions mvz2:ejector
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "弹射器内部可以放置其他器械。点击弹射器可以将内部的器械抛投至任意位置并砸伤敌人。被投出的器械也会因此受到摔落伤害。"
+msgstr ""
+
+#. Properties for contraptions mvz2:ejector
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"伤害：<color=red>根据被投掷的器械的材质和体积而定</color>\n"
+"冷却时间：<color=red><var local=\"cooldown\"/>秒</color>\n"
+"特殊：<color=red>部分材质和器械被投出时会有特殊效果</color>\n"
+"技能：<color=red>刷新冷却时间，并在内部没有器械时，装填一个<ref=[contraptions]mvz2:tnt>TNT</ref></color>"
+msgstr ""
+
+#. Flavor for contraptions mvz2:ejector
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"“你实在是太暴力了！你就不能和其他器械们和平共处吗？”\n"
+"“你离我近一点，我来告诉你我能不能。”\n"
+"\n"
+"<b>附录：</b>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:metal\" />：<color=red><var local=\"metal_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:diamond\" />：<color=red><var local=\"diamond_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:stone\" />：<color=red><var local=\"stone_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:netherrack\" />：<color=red><var local=\"netherrack_density\"/>%（在周围产生火焰）</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:wither_bone\" />：<color=red><var local=\"wither_bone_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:bone\" />：<color=red><var local=\"bone_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:sand\" />：<color=red><var local=\"sand_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />：<color=red><var local=\"flesh_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:leather\" />：<color=red><var local=\"leather_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:grass\" />：<color=red><var local=\"grass_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:wood\" />：<color=red><var local=\"wood_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:shadow\" />：<color=red><var local=\"shadow_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:cloud\" />：<color=red><var local=\"cloud_density\"/>%（震飞周围敌怪）</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:lightning\" />：<color=red><var local=\"lightning_density\"/>%（电击周围敌怪）</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"lightning_density\"/>%</color>"
 msgstr ""
 
 #. Header for contraptions mvz2:nesting_tnt
@@ -5869,6 +5928,18 @@ msgctxt "entity.tooltip"
 msgid "在特殊阵型中持续提供星之碎片"
 msgstr ""
 
+#. Name for entity mvz2:ejector
+#: Entity meta file
+msgctxt "entity.name"
+msgid "弹射器"
+msgstr ""
+
+#. Tooltip for entity mvz2:ejector
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "点击投掷内部的器械"
+msgstr ""
+
 #. Name for entity mvz2:freezenser
 #: Entity meta file
 msgctxt "entity.name"
@@ -7231,6 +7302,18 @@ msgctxt "artifact.tooltip"
 msgid "生命值为50%或以下的敌人受到的伤害x200%"
 msgstr ""
 
+#. Name for artifact mvz2:cow_horn
+#: Artifact meta file
+msgctxt "artifact.name"
+msgid "牛角"
+msgstr ""
+
+#. Tooltip for artifact mvz2:cow_horn
+#: Artifact meta file
+msgctxt "artifact.tooltip"
+msgid "一大波敌人来临后，所有蓝图暂时免费10秒"
+msgstr ""
+
 #. Name for artifact mvz2:control_rod
 #: Artifact meta file
 msgctxt "artifact.name"
@@ -7289,6 +7372,66 @@ msgstr ""
 #: Artifact meta file
 msgctxt "artifact.tooltip"
 msgid "敌人受到的火焰伤害+50%"
+msgstr ""
+
+#. Name for artifact mvz2:bunbunmaru_newspaper
+#: Artifact meta file
+msgctxt "artifact.name"
+msgid "文文。新闻"
+msgstr ""
+
+#. Tooltip for artifact mvz2:bunbunmaru_newspaper
+#: Artifact meta file
+msgctxt "artifact.tooltip"
+msgid "每30秒，将所有蓝图的消耗在0-300之间随机"
+msgstr ""
+
+#. Name for artifact mvz2:lily_platform
+#: Artifact meta file
+msgctxt "artifact.name"
+msgid "睡莲平台"
+msgstr ""
+
+#. Tooltip for artifact mvz2:lily_platform
+#: Artifact meta file
+msgctxt "artifact.tooltip"
+msgid "占据承载位的器械耗能-25"
+msgstr ""
+
+#. Name for artifact mvz2:extending_arm
+#: Artifact meta file
+msgctxt "artifact.name"
+msgid "延展手臂"
+msgstr ""
+
+#. Tooltip for artifact mvz2:extending_arm
+#: Artifact meta file
+msgctxt "artifact.tooltip"
+msgid "友方器械伤害x75%，射程+50%"
+msgstr ""
+
+#. Name for artifact mvz2:krakens_tentacle
+#: Artifact meta file
+msgctxt "artifact.name"
+msgid "克拉肯的触手"
+msgstr ""
+
+#. Tooltip for artifact mvz2:krakens_tentacle
+#: Artifact meta file
+msgctxt "artifact.tooltip"
+msgid "友方器械攻击速度x200%，但会向随机方向发射子弹"
+msgstr ""
+
+#. Name for artifact mvz2:gale_leaf
+#: Artifact meta file
+msgctxt "artifact.name"
+msgid "强风叶"
+msgstr ""
+
+#. Tooltip for artifact mvz2:gale_leaf
+#: Artifact meta file
+msgctxt "artifact.tooltip"
+msgid "所有敌怪持续向右缓慢移动"
 msgstr ""
 
 #. Message for blueprint error recharging

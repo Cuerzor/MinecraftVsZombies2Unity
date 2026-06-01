@@ -359,6 +359,9 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 2
             public const string slendermanMindSwap = "slenderman_mind_swap";
 
+            // Chapter 5
+            public const string cowHorn = "cow_horn";
+
             // Chapter 6
             public const string blueprintLock = "blueprint_lock";
             public const string controlRodRecharge = "control_rod_recharge";
@@ -697,6 +700,9 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 2
             public static readonly NamespaceID slendermanMindSwap = Get(VanillaBuffNames.SeedPack.slendermanMindSwap);
+
+            // Chapter 5
+            public static readonly NamespaceID cowHorn = Get(VanillaBuffNames.SeedPack.cowHorn);
 
             // Chapter 6
             public static readonly NamespaceID controlRodRecharge = Get(VanillaBuffNames.SeedPack.controlRodRecharge);

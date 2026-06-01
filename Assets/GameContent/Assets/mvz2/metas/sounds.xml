@@ -725,6 +725,9 @@
         <sample path="mvz2:punch1" weight="1" />
         <sample path="mvz2:punch2" weight="1" />
     </sound>
+    <sound name="raidhorn">
+        <sample path="mvz2:raidhorn" weight="1" />
+    </sound>
     <sound name="rain">
         <sample path="mvz2:rain" weight="1" />
     </sound>
