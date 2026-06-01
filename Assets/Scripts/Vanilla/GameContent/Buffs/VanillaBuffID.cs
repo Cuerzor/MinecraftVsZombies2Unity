@@ -360,6 +360,9 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 6
             public const string blueprintLock = "blueprint_lock";
             public const string controlRodRecharge = "control_rod_recharge";
+
+            // Chapter 7
+            public const string bunbunmaruNewspaper = "bunbunmaru_newspaper";
         }
     }
     public static class VanillaBuffID
@@ -690,6 +693,9 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 6
             public static readonly NamespaceID controlRodRecharge = Get(VanillaBuffNames.SeedPack.controlRodRecharge);
+
+            // Chapter 7
+            public static readonly NamespaceID bunbunmaruNewspaper = Get(VanillaBuffNames.SeedPack.bunbunmaruNewspaper);
         }
     }
 }

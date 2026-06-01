@@ -144,4 +144,14 @@
     <group id="contraption.diamond_spikes"><conditions><condition required="mvz2:level.castle_5" /></conditions></group>
     <group id="contraption.brick_cannon"><conditions><condition required="mvz2:level.palace_5" /></conditions></group>
     <group id="contraption.command_block"><conditions><condition required="mvz2:level.mausoleum_5" /></conditions></group>
+
+    <!-- Ship Artifacts -->
+    <group id="artifact.cow_horn"><conditions><condition required="mvz2:artifact.cow_horn" /></conditions></group>
+
+    <!-- Mountain Artifacts -->
+    <group id="artifact.bunbunmaru_newspaper"><conditions><condition required="mvz2:level.mountain_3" /></conditions></group>
+    <group id="artifact.lily_platform"><conditions><condition required="mvz2:artifact.lily_platform" /></conditions></group>
+    <group id="artifact.extending_arm"><conditions><condition required="mvz2:level.mountain_11" /></conditions></group>
+    <group id="artifact.krakens_tentacle"><conditions><condition required="mvz2:artifact.krakens_tentacle" /></conditions></group>
+    <group id="artifact.gale_leaf"><conditions><condition required="mvz2:artifact.gale_leaf" /></conditions></group>
 </unlocks>

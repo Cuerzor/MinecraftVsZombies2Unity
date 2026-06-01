@@ -127,6 +127,9 @@
     <sound name="confuse">
         <sample path="mvz2:confuse" weight="1" />
     </sound>
+    <sound name="confusion_shimmer">
+        <sample path="mvz2:confusion_shimmer" weight="1" />
+    </sound>
     <sound name="coin" maxCount="1" priority="64">
         <sample path="mvz2:coin" weight="1" />
     </sound>

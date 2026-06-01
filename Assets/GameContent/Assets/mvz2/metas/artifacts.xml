@@ -118,6 +118,11 @@
             <condition required="mvz2:artifact.dragon_tooth" />
         </unlock>
     </artifact>
+    <artifact id="cow_horn" name="牛角" tooltip="一大波敌人来临后，所有蓝图暂时免费10秒" sprite="mvz2:artifacts/cow_horn">
+        <unlock>
+            <condition requiredGroups="mvz2:artifact.cow_horn" />
+        </unlock>
+    </artifact>
 
     <!-- Palace -->
     <artifact id="control_rod" name="控制棒" tooltip="蓝图充能速度x150%，但怪物死亡后爆炸" sprite="mvz2:artifacts/control_rod">
@@ -143,6 +148,33 @@
     <artifact id="magma_stone" name="岩浆石" tooltip="敌人受到的火焰伤害+50%" sprite="mvz2:artifacts/magma_stone">
         <unlock>
             <condition required="mvz2:artifact.magma_stone" />
+        </unlock>
+    </artifact>
+
+    <!-- Mountain -->
+    <artifact id="bunbunmaru_newspaper" name="文文。新闻" tooltip="每30秒，将所有蓝图的消耗在0-300之间随机" sprite="mvz2:artifacts/bunbunmaru_newspaper">
+        <unlock>
+            <condition requiredGroups="mvz2:artifact.bunbunmaru_newspaper" />
+        </unlock>
+    </artifact>
+    <artifact id="lily_platform" name="睡莲平台" tooltip="占据承载位的器械耗能-25" sprite="mvz2:artifacts/lily_platform">
+        <unlock>
+            <condition requiredGroups="mvz2:artifact.lily_platform" />
+        </unlock>
+    </artifact>
+    <artifact id="extending_arm" name="延展手臂" tooltip="友方器械伤害x75%，射程+50%" sprite="mvz2:artifacts/extending_arm">
+        <unlock>
+            <condition requiredGroups="mvz2:artifact.extending_arm" />
+        </unlock>
+    </artifact>
+    <artifact id="krakens_tentacle" name="克拉肯的触手" tooltip="友方器械攻击速度x200%，但会向随机方向发射子弹" sprite="mvz2:artifacts/krakens_tentacle">
+        <unlock>
+            <condition requiredGroups="mvz2:artifact.krakens_tentacle" />
+        </unlock>
+    </artifact>
+    <artifact id="gale_leaf" name="强风叶" tooltip="所有怪物持续向右缓慢移动" sprite="mvz2:artifacts/gale_leaf">
+        <unlock>
+            <condition requiredGroups="mvz2:artifact.gale_leaf" />
         </unlock>
     </artifact>
 

@@ -1823,6 +1823,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 221fff593f49dfb45b3a9dd2eda47162
+    m_Address: mvz2:confusion_shimmer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2223b622235c77b41858ab56433232a5
     m_Address: mvz2:entity/enemy/wither_skeleton
     m_ReadOnly: 0
@@ -2745,6 +2752,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 338b4044f8a30e44ab261e64a189cf64
+    m_Address: mvz2:artifacts/cow_horn
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 33be9ddfa854a7f4bb06b09b59441cf1
     m_Address: mvz2:talk/villager/villager_crazy
@@ -7964,6 +7978,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 91938c425563a744faf4e12546946d27
+    m_Address: mvz2:artifacts/gale_leaf
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 91a213214c945d84a864047eff5a7532
     m_Address: mvz2:entity/contraptions/snipenser_pillar
     m_ReadOnly: 0
@@ -11610,6 +11631,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d78d9022ea6d2f9439a7e3aa0b525246
+    m_Address: mvz2:artifacts/extending_arm
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d7ad17d08589c04459d3a3030abbf9f5
     m_Address: mvz2:ui/gear_banned
     m_ReadOnly: 0
@@ -11822,6 +11850,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dc224faa8e569ed409210f50b54a311f
     m_Address: mvz2:ui/level/conveyor_belt_part
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc26b901fcd7d3b4b9260e080c77f695
+    m_Address: mvz2:artifacts/lily_carrier
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -13387,6 +13422,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f97cb6aea9cf76f4da9e38c15f3d7647
+    m_Address: mvz2:artifacts/krakens_tentacle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f997f16a236d16f44a380a07a0235df6
     m_Address: mvz2:talk/dialog_flashback
     m_ReadOnly: 0
@@ -13605,6 +13647,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fdc7423050cadcd4ea47886ef15e78fc
     m_Address: mvz2:mobile_blueprint/nether_mage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fdca40f54f10e8e4683300b561e7df25
+    m_Address: mvz2:artifacts/bunbunmaru_newspaper
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

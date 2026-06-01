@@ -89,10 +89,14 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 2e2acf8f4e91cab468eae2cf860e025a, type: 3}
   - name: artifacts/broken_lock
     sprite: {fileID: 21300000, guid: 610273fe8572b5d4abc29354cc157783, type: 3}
+  - name: artifacts/bunbunmaru_newspaper
+    sprite: {fileID: 21300000, guid: fdca40f54f10e8e4683300b561e7df25, type: 3}
   - name: artifacts/censer_of_forgotten
     sprite: {fileID: 21300000, guid: 319433371d6e7c945a25348c8bd53839, type: 3}
   - name: artifacts/control_rod
     sprite: {fileID: 21300000, guid: 7661d066eb4c9de4989300fb69c48e31, type: 3}
+  - name: artifacts/cow_horn
+    sprite: {fileID: 21300000, guid: 338b4044f8a30e44ab261e64a189cf64, type: 3}
   - name: artifacts/dark_matter
     sprite: {fileID: 21300000, guid: 1a62ec6260923674096be59047f89949, type: 3}
   - name: artifacts/dowsing_rods
@@ -103,8 +107,12 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 5d23376e7a066774ab671e71271015fc, type: 3}
   - name: artifacts/dream_key
     sprite: {fileID: 21300000, guid: 34e619cc0502d6c499f470950cf5acec, type: 3}
+  - name: artifacts/extending_arm
+    sprite: {fileID: 21300000, guid: d78d9022ea6d2f9439a7e3aa0b525246, type: 3}
   - name: artifacts/eye_of_the_giant
     sprite: {fileID: 21300000, guid: 8e09eb5034d8901409cccb88e3f86633, type: 3}
+  - name: artifacts/gale_leaf
+    sprite: {fileID: 21300000, guid: 91938c425563a744faf4e12546946d27, type: 3}
   - name: artifacts/ghostly_cart
     sprite: {fileID: 21300000, guid: 6bd825bd837f3f443b9f6ca347065e61, type: 3}
   - name: artifacts/greedy_vacuum
@@ -113,8 +121,12 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 3099084e873c11d4084a10707cd96120, type: 3}
   - name: artifacts/inverted_mirror
     sprite: {fileID: 21300000, guid: d12e7157df0411749ab53333da0a507d, type: 3}
+  - name: artifacts/krakens_tentacle
+    sprite: {fileID: 21300000, guid: f97cb6aea9cf76f4da9e38c15f3d7647, type: 3}
   - name: artifacts/lightbomb
     sprite: {fileID: 21300000, guid: 36eda47ce4c8f0e40ab52622c040d37d, type: 3}
+  - name: artifacts/lily_carrier
+    sprite: {fileID: 21300000, guid: dc26b901fcd7d3b4b9260e080c77f695, type: 3}
   - name: artifacts/magma_stone
     sprite: {fileID: 21300000, guid: 58e9f34d21943544ebeddf8f336f0379, type: 3}
   - name: artifacts/manipulative_talismans
