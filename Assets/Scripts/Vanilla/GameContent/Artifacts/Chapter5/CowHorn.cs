@@ -13,6 +13,7 @@ using PVZEngine.Auras;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Level;
+using static UnityEngine.Networking.UnityWebRequest;
 
 namespace MVZ2.GameContent.Artifacts
 {
@@ -61,14 +62,21 @@ namespace MVZ2.GameContent.Artifacts
                 artifact.SetNumber(GetMaxCooldownSeconds(artifact));
                 artifact.Highlight();
 
-                artifact.Level.PlaySound(VanillaSoundID.raidhorn);
+                level.PlaySound(VanillaSoundID.raidhorn);
+
+                foreach (var seed in level.GetAllSeedPacks())
+                {
+                    if (seed == null)
+                        continue;
+                    seed.FullRecharge();
+                }
                 var aura = artifact.GetAuraEffect<Aura>();
                 aura?.UpdateAura();
             }
         }
         public static int GetMaxCooldownSeconds(Artifact artifact) => artifact.GetProperty<int>(PROP_MAX_COOLDOWN_SECONDS);
         public static void SetMaxCooldownSeconds(Artifact artifact, int value) => artifact.SetProperty(PROP_MAX_COOLDOWN_SECONDS, value);
-        public static readonly VanillaArtifactPropertyMeta<int> PROP_MAX_COOLDOWN_SECONDS = new VanillaArtifactPropertyMeta<int>("max_cooldown_seconds", 10);
+        public static readonly VanillaArtifactPropertyMeta<int> PROP_MAX_COOLDOWN_SECONDS = new VanillaArtifactPropertyMeta<int>("max_cooldown_seconds", 15);
         public class Aura : AuraEffectDefinition
         {
             public Aura() : base(VanillaBuffID.SeedPack.cowHorn, 7)

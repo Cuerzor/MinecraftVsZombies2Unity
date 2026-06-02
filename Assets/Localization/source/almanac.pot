@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-06-08 03:02+0800\n"
+"POT-Creation-Date: 2026-06-08 03:06+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -7311,7 +7311,7 @@ msgstr ""
 #. Tooltip for artifact mvz2:cow_horn
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "一大波敌人来临后，所有蓝图暂时免费10秒"
+msgid "一大波敌人来临后，充能所有蓝图，并使其免费15秒"
 msgstr ""
 
 #. Name for artifact mvz2:control_rod

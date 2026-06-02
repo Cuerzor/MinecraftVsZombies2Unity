@@ -118,7 +118,7 @@
             <condition required="mvz2:artifact.dragon_tooth" />
         </unlock>
     </artifact>
-    <artifact id="cow_horn" name="牛角" tooltip="一大波敌人来临后，所有蓝图暂时免费10秒" sprite="mvz2:artifacts/cow_horn">
+    <artifact id="cow_horn" name="牛角" tooltip="一大波敌人来临后，充能所有蓝图，并使其免费15秒" sprite="mvz2:artifacts/cow_horn">
         <unlock>
             <condition requiredGroups="mvz2:artifact.cow_horn" />
         </unlock>
