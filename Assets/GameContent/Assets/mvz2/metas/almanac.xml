@@ -2183,7 +2183,17 @@
                 <p>此仇，永世无法平息。</p>
             </flavor>
         </entry>
-        <entry/>
+        <entry id="mvz2:cow_horn">
+            <header>
+                <p><![CDATA[<ref=[misc]mvz2:zombie_cow>僵尸牛</ref>]]>的牛角。</p>
+            </header>
+            <properties>
+                <p>效果：<![CDATA[<color=red>一大波敌人来临后，充能所有蓝图，并使其免费15秒</color>]]></p>
+            </properties>
+            <flavor>
+                <p>====施工中====</p>
+            </flavor>
+        </entry>
 
         <!-- Palace Artifacts -->
         <entry id="mvz2:control_rod">
@@ -2249,6 +2259,66 @@
             </properties>
             <flavor>
                 <p>都说了不要在地下引发地震！！！</p>
+            </flavor>
+        </entry>
+        
+        <!-- Mountain Artifacts -->
+        <entry id="mvz2:bunbunmaru_newspaper">
+            <header>
+                <p><![CDATA[<ref=[misc]mvz2:aya>射命丸 文</ref>]]>赠送的一叠报纸。</p>
+            </header>
+            <properties>
+                <p>效果：<![CDATA[<color=red>每30秒，将所有蓝图的消耗在0-300之间随机</color>]]></p>
+            </properties>
+            <flavor>
+                <p>====施工中====</p>
+            </flavor>
+        </entry>
+        <entry id="mvz2:lily_platform">
+            <header>
+                <p>河童们制造的一种水中作业用的地基平台。</p>
+            </header>
+            <properties>
+                <p>效果：<![CDATA[<color=red>占据承载位的器械耗能-25</color>]]></p>
+            </properties>
+            <flavor>
+                <p>====施工中====</p>
+            </flavor>
+        </entry>
+        <entry id="mvz2:extending_arm">
+            <header>
+                <p><![CDATA[<ref=[misc]mvz2:nitori>河城 荷取</ref>]]>赠予的河童常用的工具。</p>
+            </header>
+            <properties>
+                <p>效果：<![CDATA[<color=red>友方器械伤害x75%，射程+50%</color>]]></p>
+            </properties>
+            <flavor>
+                <p>====施工中====</p>
+            </flavor>
+        </entry>
+        <entry id="mvz2:krakens_tentacle">
+            <header>
+                <p>从<![CDATA[<ref=[misc]mvz2:kraken>克拉肯</ref>]]>身上切断的机械触手。</p>
+            </header>
+            <properties>
+                <p>效果：<![CDATA[<color=red>友方器械攻击速度x200%，但会向随机方向发射子弹</color>]]></p>
+            </properties>
+            <flavor>
+                <p>====施工中====</p>
+            </flavor>
+        </entry>
+        <entry id="mvz2:gale_leaf">
+            <silhouette>
+                <condition required="mvz2:level.mountain_11" />
+            </silhouette>
+            <header>
+                <p>妖怪之山上的一片寄宿了风之力的树叶。</p>
+            </header>
+            <properties>
+                <p>效果：<![CDATA[<color=red>所有敌怪持续向右缓慢移动</color>]]></p>
+            </properties>
+            <flavor>
+                <p>====施工中====</p>
             </flavor>
         </entry>
     </artifacts>
