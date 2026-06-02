@@ -20,12 +20,14 @@ MonoBehaviour:
   - m_GUID: 1844fe67c5f19c04589197a7914a32a6
     m_Address: mvz2:init/button_pressed_highlighted
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Init
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2482717936474de4ca1d7dd51bc05b2d
     m_Address: mvz2:init/button_pressed
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Init
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 249bff1de5d47004baf9588eba3757a7
     m_Address: mvz2:init/button_disabled
@@ -41,6 +43,12 @@ MonoBehaviour:
     - Init
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3d8ed40a222ec8a4181186d4126b3881
+    m_Address: GameSettings
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Init
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 410f8ec80407d6e4ab481954c0ce2d49
     m_Address: mvz2:init/ui_arrow
     m_ReadOnly: 0
@@ -51,7 +59,8 @@ MonoBehaviour:
   - m_GUID: 417b00269b7bf414c89a36a7cc6d5074
     m_Address: mvz2:init/toggle_background
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Init
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4df3315370b3ba445855264afd0238ac
     m_Address: mvz2:click
@@ -83,7 +92,8 @@ MonoBehaviour:
   - m_GUID: 5844294630a88944aa7be167dc3a46ce
     m_Address: mvz2:init/toggle_background_selected
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Init
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 58f0336839418eb4c96fc1c90d5bf596
     m_Address: mvz2:mainmenu
@@ -127,7 +137,8 @@ MonoBehaviour:
   - m_GUID: a0a12d06a9d70534fb3923f783c11d63
     m_Address: mvz2:init/toggle_mark
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Init
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a422491a28838f04aa763d050d8aa766
     m_Address: mvz2:init/logo
@@ -139,7 +150,8 @@ MonoBehaviour:
   - m_GUID: bb0ee051a74cf2c44805bae0bf1ad07d
     m_Address: mvz2:init/toggle_background_disabled
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Init
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c16699a876a1dea4994b47e673315a32
     m_Address: Assets/Textures/Init
@@ -150,7 +162,8 @@ MonoBehaviour:
   - m_GUID: c8855d2f4d2a0854180f26fb269e15e0
     m_Address: mvz2:init/slider_background
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Init
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ecdea1f2d39df2049be852b3107d40a4
     m_Address: mvz2:init/form
