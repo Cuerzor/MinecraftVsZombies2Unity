@@ -49,7 +49,7 @@ namespace MVZ2.GameContent.Contraptions
                     makeupCount++;
                     bullet.Velocity *= 1 + (MAKE_UP_VELOCITY_MULTIPLIER_INCREAMENT * makeupCount);
                 }
-                else if (i != lane)
+                else if (i != lane && !bullet.DirectionChangedByKrakensTentacle())
                 {
                     bullet.StartChangingLane(i);
                 }

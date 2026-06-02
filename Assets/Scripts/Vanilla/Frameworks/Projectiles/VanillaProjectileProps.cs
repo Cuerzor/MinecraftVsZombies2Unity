@@ -98,5 +98,11 @@ namespace MVZ2.Vanilla.Projectiles
             }
             colliders.Clear();
         }
+
+        public static readonly PropertyMeta<bool> DIRECTION_CHANGED_BY_KRAKENS_TENTACLE = new PropertyMeta<bool>("direction_changed_by_krakens_tentacle");
+        public static bool DirectionChangedByKrakensTentacle(this Entity projectile)
+        {
+            return projectile.GetProperty<bool>(DIRECTION_CHANGED_BY_KRAKENS_TENTACLE);
+        }
     }
 }
