@@ -6,12 +6,15 @@ using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.Projectiles;
+using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
+using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
+using Tools;
 
 namespace MVZ2.GameContent.Contraptions
 {
@@ -21,7 +24,43 @@ namespace MVZ2.GameContent.Contraptions
         public Ejector(string nsp, string name) : base(nsp, name)
         {
         }
-        public static void ThrowTo(Entity ejector, LawnGrid targetGrid)
+        protected override void UpdateAI(Entity entity)
+        {
+            base.UpdateAI(entity);
+            var timer = GetCooldownTimer(entity);
+            var cooldownFinishedBefore = IsCooldownFinished(entity);
+            timer?.Run();
+            var cooldownFinishedAfter = IsCooldownFinished(entity);
+            if (cooldownFinishedAfter && !cooldownFinishedBefore)
+            {
+                entity.PlaySound(VanillaSoundID.hydraulic);
+            }
+        }
+        protected override void UpdateLogic(Entity entity)
+        {
+            base.UpdateLogic(entity);
+
+            int light = LIGHT_GREEN;
+            var timer = GetCooldownTimer(entity);
+            if (timer != null)
+            {
+                if (timer.Expired)
+                {
+                    light = LIGHT_GREEN;
+                }
+                else if (timer.Frame <= Ticks.FromSeconds(3))
+                {
+                    light = LIGHT_YELLOW;
+                }
+                else
+                {
+                    light = LIGHT_RED;
+                }
+            }
+            entity.SetModelProperty("Light", light);
+            entity.SetAnimationBool("Cooldown", light != LIGHT_GREEN);
+        }
+        public static bool ThrowTo(Entity ejector, LawnGrid targetGrid)
         {
             var grid = ejector.GetGrid();
             if (grid != null)
@@ -30,10 +69,11 @@ namespace MVZ2.GameContent.Contraptions
                 if (thrown != null)
                 {
                     Throw(ejector, thrown, targetGrid);
-                    return;
+                    return true;
                 }
             }
             ejector.PlaySound(VanillaSoundID.buzzer);
+            return false;
         }
         public static void Throw(Entity ejector, Entity thrown, LawnGrid targetGrid)
         {
@@ -44,7 +84,45 @@ namespace MVZ2.GameContent.Contraptions
             thrown.Velocity = VanillaProjectileExt.GetLobVelocity(thrown.Position, targetGrid.GetEntityPosition(), maxY, thrown.GetGravity());
             ejector.PlaySound(VanillaSoundID.launch);
         }
+        public static bool IsCooldownFinished(Entity entity)
+        {
+            var timer = GetCooldownTimer(entity);
+            return timer == null || timer.Expired;
+        }
+        public static void StopCooldown(Entity entity)
+        {
+            var timer = GetCooldownTimer(entity);
+            if (timer != null)
+            {
+                timer.Stop();
+            }
+        }
+        public static void StartCooldown(Entity entity)
+        {
+            var timer = GetCooldownTimer(entity);
+            var seconds = GetMaxCooldownSeconds(entity);
+            if (timer == null)
+            {
+                timer = TimerHelper.NewSecondTimer(seconds);
+                SetCooldownTimer(entity, timer);
+            }
+            else
+            {
+                timer.ResetSeconds(seconds);
+            }
+        }
+        public static FrameTimer? GetCooldownTimer(Entity entity) => entity.GetBehaviourField<FrameTimer>(PROP_COOLDOWN_TIMER);
+        public static void SetCooldownTimer(Entity entity, FrameTimer? value) => entity.SetBehaviourField(PROP_COOLDOWN_TIMER, value);
+        public static float GetMaxCooldownSeconds(Entity entity) => entity.GetBehaviourField<float>(PROP_MAX_COOLDOWN_SECONDS);
+        public static void SetMaxCooldownSeconds(Entity entity, float value) => entity.SetBehaviourField(PROP_MAX_COOLDOWN_SECONDS, value);
+
+
         public const float MAX_HEIGHT = 280f;
         public const float DAMAGE_MULTIPLIER_VALUE = 100;
+        public const int LIGHT_GREEN = 0;
+        public const int LIGHT_YELLOW = 1;
+        public const int LIGHT_RED = 2;
+        private static readonly VanillaEntityPropertyMeta<float> PROP_MAX_COOLDOWN_SECONDS = new VanillaEntityPropertyMeta<float>("max_cooldown_seconds", 30f);
+        private static readonly VanillaEntityPropertyMeta<FrameTimer> PROP_COOLDOWN_TIMER = new VanillaEntityPropertyMeta<FrameTimer>("cooldown_timer");
     }
 }

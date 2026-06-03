@@ -12785,6 +12785,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efb3dc25887544f42a9609b9307fcfe5
+    m_Address: mvz2:hydraulic
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: efbb503450c16564b96f353482b7d802
     m_Address: mvz2:contraption/castle/golden_apple
     m_ReadOnly: 0

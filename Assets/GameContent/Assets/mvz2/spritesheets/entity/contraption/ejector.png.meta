@@ -131,7 +131,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +173,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,6 +181,27 @@ TextureImporter:
       bones: []
       spriteID: 7529316a8a56024428d7de22f96a27c5
       internalID: -133694658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ejector_3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 77
+        width: 3
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f45cb42d04ad63469ef67579b3f3805
+      internalID: -1941180225
       vertices: []
       indices: 
       edges: []
@@ -199,6 +220,7 @@ TextureImporter:
       ejector_0: -546047925
       ejector_1: -506522540
       ejector_2: -133694658
+      ejector_3: -1941180225
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

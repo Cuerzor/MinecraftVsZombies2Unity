@@ -476,6 +476,9 @@
     <sound name="hum">
         <sample path="mvz2:hum" weight="1" />
     </sound>
+    <sound name="hydraulic">
+        <sample path="mvz2:hydraulic" weight="1" />
+    </sound>
     <sound name="imp_laugh">
         <sample path="mvz2:entity/imp/imp_laugh1" weight="1" />
         <sample path="mvz2:entity/imp/imp_laugh2" weight="1" />

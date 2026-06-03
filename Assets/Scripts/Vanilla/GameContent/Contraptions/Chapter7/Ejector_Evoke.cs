@@ -19,16 +19,14 @@ namespace MVZ2.GameContent.Contraptions
         public override bool CanEvoke(Entity entity)
         {
             var grid = entity.GetGrid();
-            if (grid == null)
-                return false;
-            if (grid.GetMainEntity() != null)
+            if ((grid == null || grid.GetMainEntity() != null) && Ejector.IsCooldownFinished(entity))
                 return false;
             return base.CanEvoke(entity);
         }
         public override void Evoke(Entity entity)
         {
             base.Evoke(entity);
-
+            Ejector.StopCooldown(entity);
             entity.SpawnWithParams(VanillaContraptionID.tnt, entity.Position);
             entity.PlaySound(VanillaSoundID.gunReload);
         }

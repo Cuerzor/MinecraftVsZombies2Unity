@@ -1061,6 +1061,7 @@
         <entry />
         <entry id="mvz2:ejector">
             <variables>
+                <variable name="cooldown">property("mvz2:entity_behaviour/ejector/max_cooldown_seconds")</variable>
                 <variable name="metal_density">property("mvz2:shell/density", "mvz2:metal", "shell") * 100</variable>
                 <variable name="diamond_density">property("mvz2:shell/density", "mvz2:diamond", "shell") * 100</variable>
                 <variable name="stone_density">property("mvz2:shell/density", "mvz2:stone", "shell") * 100</variable>
@@ -1082,8 +1083,9 @@
             </header>
             <properties>
                 <p>伤害：<![CDATA[<color=red>根据被投掷的器械的材质和体积而定</color>]]></p>
+                <p>冷却时间：<![CDATA[<color=red><var local="cooldown"/>秒</color>]]></p>
                 <p>特殊：<![CDATA[<color=red>部分材质和器械被投出时会有特殊效果</color>]]></p>
-                <p>技能：<![CDATA[<color=red>在内部没有器械时，装填一个<ref=[contraptions]mvz2:tnt>TNT</ref></color>]]></p>
+                <p>技能：<![CDATA[<color=red>刷新冷却时间，并在内部没有器械时，装填一个<ref=[contraptions]mvz2:tnt>TNT</ref></color>]]></p>
             </properties>
             <flavor>
                 <p>“你实在是太暴力了！你就不能和其他器械们和平共处吗？”</p>

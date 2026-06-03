@@ -24,7 +24,10 @@ namespace MVZ2.GameContent.HeldItems
             var entity = GetEntity(level, data);
             if (entity == null)
                 return;
-            Ejector.ThrowTo(entity, targetGrid.Target);
+            if (Ejector.ThrowTo(entity, targetGrid.Target))
+            {
+                Ejector.StartCooldown(entity);
+            }
         }
     }
 }

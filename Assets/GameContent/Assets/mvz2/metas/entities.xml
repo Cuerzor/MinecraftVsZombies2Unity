@@ -1367,8 +1367,8 @@
                 <bool name="mvz2:loyal" value="true" />
 
                 <id name="mvz2:placeSound" value="mvz2:metal_break" />
-                <int name="mvz2:cost" value="75" />
-                <id name="mvz2:rechargeId" value="mvz2:short" />
+                <int name="mvz2:cost" value="25" />
+                <id name="mvz2:rechargeId" value="mvz2:long" />
             </properties>
         </entity>
         <entity template="contraption" id="nesting_tnt" name="套娃TNT" tooltip="触发后爆炸，可以爆炸三次">

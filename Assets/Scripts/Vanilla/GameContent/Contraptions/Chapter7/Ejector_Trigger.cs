@@ -30,6 +30,12 @@ namespace MVZ2.GameContent.Contraptions
         {
             return interaction.IsPointerDownOrDrag();
         }
+        public override bool CanEmptyHandClick(Entity entity)
+        {
+            if (!Ejector.IsCooldownFinished(entity))
+                return false;
+            return base.CanEmptyHandClick(entity);
+        }
         public override void EmptyHandClick(Entity entity)
         {
             var builder = new HeldItemBuilder(VanillaHeldTypes.ejector, 100);
