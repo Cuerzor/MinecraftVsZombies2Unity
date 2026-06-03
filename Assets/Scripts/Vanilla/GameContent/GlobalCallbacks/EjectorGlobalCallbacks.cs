@@ -56,7 +56,10 @@ namespace MVZ2.GameContent.GlobalCallbacks
             if (!entity.IsAIFrozen())
             {
                 // 炸药落地后如果死亡，就引爆
-                entity.BehaviourExplode(entity.GetRange(), entity.GetDamage());
+                if (entity.TryBehaviourExplode(entity.GetRange(), entity.GetDamage()))
+                {
+                    entity.Remove();
+                }
             }
         }
         private void PostCommandBlockTransformCallback(VanillaLevelCallbacks.PostCommandBlockTransformParams args, CallbackResult result)

@@ -43,7 +43,6 @@ namespace MVZ2.GameContent.Contraptions
         {
             if (IsDumb(entity))
             {
-                entity.Remove();
                 entity.PlaySound(VanillaSoundID.pop);
             }
             else

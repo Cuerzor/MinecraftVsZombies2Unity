@@ -49,8 +49,10 @@ namespace MVZ2.GameContent.Contraptions
             {
                 var range = entity.GetRange();
                 var damage = entity.GetDamage();
-                entity.BehaviourExplode(range, damage);
-                entity.Remove();
+                if (entity.TryBehaviourExplode(range, damage))
+                {
+                    entity.Remove();
+                }
             }
         }
         public static void Ignite(Entity entity)

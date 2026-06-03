@@ -1254,12 +1254,15 @@ namespace MVZ2.Vanilla.Entities
         #endregion
 
         #region 爆炸
-        public static void BehaviourExplode(this Entity entity, float range, float damage)
+        public static bool TryBehaviourExplode(this Entity entity, float range, float damage)
         {
+            bool exploded = false;
             foreach (var behaviour in entity.Definition.GetBehaviours<IExplodeContraptionBehaviour>())
             {
                 behaviour.Explode(entity, range, damage);
+                exploded = true;
             }
+            return exploded;
         }
         #endregion
 
