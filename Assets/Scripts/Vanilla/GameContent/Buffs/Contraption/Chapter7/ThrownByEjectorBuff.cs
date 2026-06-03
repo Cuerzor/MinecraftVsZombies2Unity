@@ -76,6 +76,10 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             }
             entity.Velocity = vel;
             entity.DestroyConflictGridEntities();
+            if (entity.GetGrid() == null)
+            {
+                entity.Die(entity);
+            }
             var callbackArgs = new VanillaLevelCallbacks.PostEjectedEntityLandParams(entity, faction, multiplier);
             entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_EJECTED_ENTITY_LAND, callbackArgs, entity.GetDefinitionID());
             entity.RemoveBuffs<ThrownByEjectorBuff>();
