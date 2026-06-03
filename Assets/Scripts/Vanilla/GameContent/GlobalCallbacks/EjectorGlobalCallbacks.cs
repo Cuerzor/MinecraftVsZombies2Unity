@@ -39,7 +39,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             if (shell == VanillaShellID.cloud)
             {
                 // 云落地时触发弹性云大招
-                ElasticCloudEvocationBuff.Explode(entity);
+                ElasticCloudEvocationBuff.Explode(entity, 120f);
             }
             else if (shell == VanillaShellID.lightning)
             {
