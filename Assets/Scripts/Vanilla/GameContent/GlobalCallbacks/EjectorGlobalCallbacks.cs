@@ -52,7 +52,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 NetherrackLand(entity, damageMultiplier);
             }
 
-            if (entity.IsDead && !entity.IsAIFrozen())
+            if (!entity.IsAIFrozen())
             {
                 // 炸药落地后如果死亡，就引爆
                 entity.BehaviourExplode(entity.GetRange(), entity.GetDamage());
