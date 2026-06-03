@@ -27,8 +27,12 @@ namespace MVZ2.GameContent.Contraptions
         {
             base.Evoke(entity);
             Ejector.StopCooldown(entity);
-            entity.SpawnWithParams(VanillaContraptionID.tnt, entity.Position);
-            entity.PlaySound(VanillaSoundID.gunReload);
+            var grid = entity.GetGrid();
+            if (grid != null && grid.GetMainEntity() == null)
+            {
+                entity.SpawnWithParams(VanillaContraptionID.tnt, entity.Position);
+                entity.PlaySound(VanillaSoundID.gunReload);
+            }
         }
     }
 }
