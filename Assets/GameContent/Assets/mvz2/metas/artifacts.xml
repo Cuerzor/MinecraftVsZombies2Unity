@@ -135,7 +135,7 @@
             <condition required="mvz2:level.palace_11" />
         </unlock>
     </artifact>
-    <artifact id="broken_lock" name="损坏的挂锁" tooltip="器械每受到1%伤害，其蓝图冷却时间便减少1%" sprite="mvz2:artifacts/broken_lock">
+    <artifact id="broken_lock" name="损坏的挂锁" tooltip="器械每受到2%伤害，其蓝图冷却时间便减少1%" sprite="mvz2:artifacts/broken_lock">
         <unlock>
             <condition required="mvz2:artifact.broken_lock" />
         </unlock>

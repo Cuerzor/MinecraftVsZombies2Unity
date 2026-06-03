@@ -2136,7 +2136,7 @@
                 <p>从<![CDATA[<ref=[misc]mvz2:locked_chest>上锁的箱子</ref>]]>上掉落的损坏挂锁。</p>
             </header>
             <properties>
-                <p>效果：<![CDATA[<color=red>器械每受到1%伤害，其蓝图冷却时间便减少1%</color>]]></p>
+                <p>效果：<![CDATA[<color=red>器械每受到2%伤害，其蓝图冷却时间便减少1%</color>]]></p>
             </properties>
             <flavor>
                 <p><![CDATA[<b>项目编号：</b>]]>MCP-988</p>

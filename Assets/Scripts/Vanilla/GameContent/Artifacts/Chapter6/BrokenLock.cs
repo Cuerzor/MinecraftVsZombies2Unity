@@ -74,6 +74,6 @@ namespace MVZ2.GameContent.Artifacts
 
         public static float GetRechargeMultiplier(Artifact artifact) => artifact.GetProperty<float>(PROP_RECHARGE_MULTIPLIER);
         public static void SetRechargeMultiplier(Artifact artifact, float value) => artifact.SetProperty(PROP_RECHARGE_MULTIPLIER, value);
-        public static readonly VanillaArtifactPropertyMeta<float> PROP_RECHARGE_MULTIPLIER = new VanillaArtifactPropertyMeta<float>("recharge_multiplier", 1f);
+        public static readonly VanillaArtifactPropertyMeta<float> PROP_RECHARGE_MULTIPLIER = new VanillaArtifactPropertyMeta<float>("recharge_multiplier", 0.5f);
     }
 }
