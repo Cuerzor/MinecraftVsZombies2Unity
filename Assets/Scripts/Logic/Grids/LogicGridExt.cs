@@ -228,7 +228,32 @@ namespace MVZ2Logic.Grids
             var y = level.GetGroundY(x, z) + offset.y;
 
             var position = new Vector3(x, y, z);
+
+            return level.Spawn(entityDef, position, null, param)?.Let(e =>
+            {
+                e.PlaySoundIfNotNull(grid.GetPlaceSound(e));
+                grid.PostPlaceEntity(e);
+            });
+        }
+        public static Entity? SpawnPlacedEntity(this LawnGrid grid, NamespaceID entityID, Vector3 position, SpawnParams? param = null)
+        {
+            if (!grid.PrePlaceEntity(entityID))
+                return null;
+
+            var level = grid.Level;
             return level.Spawn(entityID, position, null, param)?.Let(e =>
+            {
+                e.PlaySoundIfNotNull(grid.GetPlaceSound(e));
+                grid.PostPlaceEntity(e);
+            });
+        }
+        public static Entity? SpawnPlacedEntity(this LawnGrid grid, EntityDefinition entityDef, Vector3 position, SpawnParams? param = null)
+        {
+            if (!grid.PrePlaceEntity(entityDef.GetID()))
+                return null;
+
+            var level = grid.Level;
+            return level.Spawn(entityDef, position, null, param)?.Let(e =>
             {
                 e.PlaySoundIfNotNull(grid.GetPlaceSound(e));
                 grid.PostPlaceEntity(e);

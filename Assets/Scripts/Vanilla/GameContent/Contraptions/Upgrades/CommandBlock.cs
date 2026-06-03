@@ -96,36 +96,71 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static void TransformBlock(Entity entity)
         {
-            var targetID = GetEntityDefinitionToTransform(entity);
-            if (targetID == null)
+            var targetID = GetTargetEntity(entity);
+            var targetDef = entity.Level.Content.GetEntityDefinition(targetID);
+            if (targetDef != null)
             {
-                entity.Spawn(VanillaContraptionID.errorBlock, entity.Position);
-                entity.PlaySound(VanillaSoundID.errorXP);
-                entity.Remove();
+                TransformSuccess(entity, targetDef);
+            }
+            else
+            {
+                TransformFailure(entity);
+            }
+            entity.Remove();
+        }
+        private static void TransformSuccess(Entity entity, EntityDefinition targetDef)
+        {
+            if (!PreTransform(entity, targetDef.GetID(), false))
                 return;
-            }
-            var grid = entity.GetGrid();
-            if (grid != null)
-            {
-                var spawnParams = entity.GetSpawnParams();
-                spawnParams.SetProperty(LogicEntityProps.VARIANT, entity.GetVariant());
-                var spawned = grid.SpawnPlacedEntity(targetID.GetID(), spawnParams);
-                if (spawned != null)
-                {
-                    spawned.AddBuff<ImitatedBuff>();
-                    if (IsTriggered(entity) && spawned.CanTrigger())
-                    {
-                        spawned.Trigger();
-                    }
-                    if (entity.IsEvoked() && spawned.CanEvoke())
-                    {
-                        spawned.Evoke();
-                    }
-                }
-            }
+
             entity.Spawn(VanillaEffectID.binaryParticles, entity.GetCenter());
 
-            entity.Remove();
+            var spawnParams = entity.GetSpawnParams();
+            spawnParams.SetProperty(LogicEntityProps.VARIANT, entity.GetVariant());
+            spawnParams.EntityVelocity = entity.Velocity;
+            var spawned = entity.Spawn(targetDef, entity.Position, spawnParams)?.Let(e =>
+            {
+                e.AddBuff<ImitatedBuff>();
+                if (IsTriggered(entity) && e.CanTrigger())
+                {
+                    e.Trigger();
+                }
+                if (entity.IsEvoked() && e.CanEvoke())
+                {
+                    e.Evoke();
+                }
+                var grid = e.GetGrid();
+                if (grid != null)
+                {
+                    e.PlaySoundIfNotNull(grid.GetPlaceSound(e));
+                }
+            });
+            PostTransform(entity, spawned, targetDef.GetID(), false);
+        }
+        private static void TransformFailure(Entity entity)
+        {
+            var id = VanillaContraptionID.errorBlock;
+            if (!PreTransform(entity, id, true))
+                return;
+
+            var spawned = entity.Spawn(id, entity.Position)?.Let(e =>
+            {
+                e.Velocity = entity.Velocity;
+            });
+            PostTransform(entity, spawned, id, true);
+            entity.PlaySound(VanillaSoundID.errorXP);
+        }
+        private static bool PreTransform(Entity entity, NamespaceID id, bool error)
+        {
+            var result = new CallbackResult(true);
+            var preArgs = new VanillaLevelCallbacks.PreCommandBlockTransformParams(entity, id, error);
+            entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_COMMAND_BLOCK_TRANSFORM, preArgs, result, id);
+            return result.GetValue<bool>();
+        }
+        private static void PostTransform(Entity entity, Entity? spawned, NamespaceID id, bool error)
+        {
+            var postArgs = new VanillaLevelCallbacks.PostCommandBlockTransformParams(entity, spawned, id, true);
+            entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_COMMAND_BLOCK_TRANSFORM, postArgs, id);
         }
         private static EntityDefinition? GetEntityDefinitionToTransform(Entity entity)
         {

@@ -15,7 +15,7 @@ using MVZ2.Vanilla.Entities;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using MVZ2Logic.Modding;
-using PVZEngine.Base;
+using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Collisions;
 using PVZEngine.Damages;
@@ -30,6 +30,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         public override void Apply(Mod mod)
         {
             mod.AddTrigger(VanillaLevelCallbacks.POST_EJECTED_ENTITY_LAND, PostEjectedEntityLandCallback);
+            mod.AddTrigger(VanillaLevelCallbacks.POST_COMMAND_BLOCK_TRANSFORM, PostCommandBlockTransformCallback);
         }
         private void PostEjectedEntityLandCallback(VanillaLevelCallbacks.PostEjectedEntityLandParams param, CallbackResult result)
         {
@@ -38,24 +39,35 @@ namespace MVZ2.GameContent.GlobalCallbacks
             var shell = entity.GetShellID();
             if (shell == VanillaShellID.cloud)
             {
-                // ÔÆÂäµØÊ±´¥·¢µ¯ĞÔÔÆ´óÕĞ
+                // äº‘è½åœ°æ—¶è§¦å‘å¼¹æ€§äº‘å¤§æ‹›
                 ElasticCloudEvocationBuff.Explode(entity, 120f);
             }
             else if (shell == VanillaShellID.lightning)
             {
-                // ÉÁµçÂäµØÊ±¶Ô°ë¾¶2.5¸ñÄÚµÄµĞÈËÔì³É200ÉËº¦
+                // é—ªç”µè½åœ°æ—¶å¯¹åŠå¾„2.5æ ¼å†…çš„æ•Œäººé€ æˆ200ä¼¤å®³
                 LightningLand(entity, damageMultiplier);
             }
             else if (shell == VanillaShellID.netherrack)
             {
-                // ÏÂ½çÑÒÂäµØÊ±±¬³ö»ğÑæ
+                // ä¸‹ç•Œå²©è½åœ°æ—¶çˆ†å‡ºç«ç„°
                 NetherrackLand(entity, damageMultiplier);
             }
 
             if (!entity.IsAIFrozen())
             {
-                // Õ¨Ò©ÂäµØºóÈç¹ûËÀÍö£¬¾ÍÒı±¬
+                // ç‚¸è¯è½åœ°åå¦‚æœæ­»äº¡ï¼Œå°±å¼•çˆ†
                 entity.BehaviourExplode(entity.GetRange(), entity.GetDamage());
+            }
+        }
+        private void PostCommandBlockTransformCallback(VanillaLevelCallbacks.PostCommandBlockTransformParams args, CallbackResult result)
+        {
+            var commandBlock = args.commandBlock;
+            var transformed = args.transformed;
+            if (transformed == null || commandBlock == null)
+                return;
+            if (commandBlock.HasBuff<ThrownByEjectorBuff>())
+            {
+                transformed.AddBuff<ThrownByEjectorBuff>();
             }
         }
         private void LightningLand(Entity entity, float damageMultiplier)
@@ -76,7 +88,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         private void NetherrackLand(Entity entity, float damageMultiplier)
         {
             var level = entity.Level;
-            // ÁôÏÂ»ğÑæ
+            // ç•™ä¸‹ç«ç„°
             var column = entity.GetColumn();
             var lane = entity.GetLane();
             var param = entity.GetSpawnParams();
@@ -91,7 +103,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                     GridFire.Spawn(grid, entity, param);
                 }
             }
-            // ´´½¨ÌØĞ§
+            // åˆ›å»ºç‰¹æ•ˆ
             Explosion.Spawn(entity, entity.GetCenter(), 120)?.Let(e =>
             {
                 e.SetTint(new Color(1, 0.2f, 0, 1));
