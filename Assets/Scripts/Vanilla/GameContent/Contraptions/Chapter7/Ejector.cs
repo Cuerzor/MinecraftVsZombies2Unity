@@ -29,7 +29,7 @@ namespace MVZ2.GameContent.Contraptions
             base.UpdateAI(entity);
             var timer = GetCooldownTimer(entity);
             var cooldownFinishedBefore = IsCooldownFinished(entity);
-            timer?.Run();
+            timer?.Run(entity.GetAttackSpeed());
             var cooldownFinishedAfter = IsCooldownFinished(entity);
             if (cooldownFinishedAfter && !cooldownFinishedBefore)
             {
