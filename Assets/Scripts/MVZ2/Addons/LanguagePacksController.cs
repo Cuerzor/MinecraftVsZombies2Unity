@@ -59,15 +59,26 @@ namespace MVZ2.Addons
             switch (button)
             {
                 case LanguagePacksUI.Buttons.Return:
-                    if (IsDirty())
+                    if (!IsDirty())
                     {
-                        overridedFile = false;
-                        addons.SetLoadingVisible(true);
-                        await Main.LanguageManager.ReloadLanguagePacks(enabledReferences.ToArray());
-                        addons.SetLoadingVisible(false);
+                        Return();
+                        break;
                     }
-                    Hide();
-                    addons.DisplayIndex();
+                    if (Main.LanguageManager.HasOutdatedEnabledPacks(enabledReferences))
+                    {
+                        var title = Main.LanguageManager._(LogicStrings.WARNING);
+                        var desc = Main.LanguageManager._(WARNING_OUTDATED_LANGAUGE_PACK);
+                        if (await Main.Scene.ShowDialogSelectAsync(title, desc))
+                        {
+                            await ReloadLanguagePacks();
+                            Return();
+                        }
+                    }
+                    else
+                    {
+                        await ReloadLanguagePacks();
+                        Return();
+                    }
                     break;
                 case LanguagePacksUI.Buttons.Import:
                     {
@@ -244,6 +255,18 @@ namespace MVZ2.Addons
                 CancelSelection();
             }
         }
+        private async Task ReloadLanguagePacks()
+        {
+            overridedFile = false;
+            addons.SetLoadingVisible(true);
+            await Main.LanguageManager.ReloadLanguagePacks(enabledReferences.ToArray());
+            addons.SetLoadingVisible(false);
+        }
+        private void Return()
+        {
+            Hide();
+            addons.DisplayIndex();
+        }
         private void CancelSelection()
         {
             selectedLanguagePack = null;
@@ -318,12 +341,15 @@ namespace MVZ2.Addons
                 name = metadata.name ?? string.Empty,
                 description = metadata.description ?? string.Empty,
                 icon = metadata.icon,
+                outdated = Main.LanguageManager.IsOutdated(metadata.dataVersion)
             };
         }
         [TranslateMsg("覆盖语言包的警告，{0}为语言包名称")]
         public const string WARNING_OVERRIDE_LANGUAGE_PACK = "已经存在同名语言包“{0}”，是否覆盖？";
         [TranslateMsg("删除语言包的警告，{0}为语言包名称")]
         public const string WARNING_DELETE_LANGUAGE_PACK = "是否删除语言包“{0}”？";
+        [TranslateMsg("语言包中含有过时语言包的警告")]
+        public const string WARNING_OUTDATED_LANGAUGE_PACK = "您启用了一些过时的语言包，这些语言包可能无法正常运行，仍然要继续吗？";
         [TranslateMsg("语言包导出失败的警告")]
         public const string ERROR_NOT_SAVED = "导出语言包失败。";
         [TranslateMsg("语言包导入失败的警告")]

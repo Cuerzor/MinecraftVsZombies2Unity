@@ -1873,7 +1873,7 @@ MonoBehaviour:
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 227ed731d72488f4aa762e37f9d60767
-    m_Address: mvz2:level/dream/nightmare_sky_censored
+    m_Address: mvz2:level/dream/nightmare_sky@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -2146,7 +2146,7 @@ MonoBehaviour:
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 26dc0bfdc50bd814f9f2c3f60f62e366
-    m_Address: mvz2:ui/effect/crushing_wall_right_censored
+    m_Address: mvz2:ui/effect/crushing_wall_right@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -3586,7 +3586,7 @@ MonoBehaviour:
     - Meta
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 40db1b532555e104184c1eca82025505
-    m_Address: mvz2:shading/nightmare_boss_sky_censored
+    m_Address: mvz2:shading/nightmare_boss_sky@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -3684,7 +3684,7 @@ MonoBehaviour:
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 42226c15cb218274b8576006d9f58dc6
-    m_Address: mvz2:ui/effect/crushing_wall_left_censored
+    m_Address: mvz2:ui/effect/crushing_wall_left@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -3873,7 +3873,7 @@ MonoBehaviour:
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 457b5a24e00ab4e4dbfda04a0d313e49
-    m_Address: mvz2:entity/effects/nightmare_portal_background_censored
+    m_Address: mvz2:entity/effects/nightmare_portal_background@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -6720,7 +6720,7 @@ MonoBehaviour:
     - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7a8db72eb32f2374786990b1c3e9de7a
-    m_Address: mvz2:misc/nightmare_censored
+    m_Address: mvz2:misc/nightmare@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -7595,7 +7595,7 @@ MonoBehaviour:
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8a2e7dea253a9e84c910acffe8c3e79e
-    m_Address: mvz2:mainmenu/view/nightmare_censored
+    m_Address: mvz2:mainmenu/view/nightmare@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -8609,7 +8609,7 @@ MonoBehaviour:
     - Meta
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9b9a2f9380fc526438941269f2b944e5
-    m_Address: mvz2:misc/murder_censored
+    m_Address: mvz2:misc/murder@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -10554,7 +10554,7 @@ MonoBehaviour:
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c1f7123b5f8de1640b46858b3fc6914e
-    m_Address: mvz2:entity/effect/flesh_part_censored
+    m_Address: mvz2:entity/effect/flesh_part@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -11114,7 +11114,7 @@ MonoBehaviour:
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cbe2117cde68d914493afb8f0aaa9bb0
-    m_Address: mvz2:map/dream/nightmare_censored
+    m_Address: mvz2:map/dream/nightmare@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -12479,7 +12479,7 @@ MonoBehaviour:
     - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e65c8602a6db8284fa1069847600d372
-    m_Address: mvz2:level/dream/nightmare_ground_censored
+    m_Address: mvz2:level/dream/nightmare_ground@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -13954,7 +13954,7 @@ MonoBehaviour:
     - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ffe7678ba632c984daedf8d9223f6c42
-    m_Address: mvz2:entity/effects/nightmare_portal_frame_censored
+    m_Address: mvz2:entity/effects/nightmare_portal_frame@censored
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

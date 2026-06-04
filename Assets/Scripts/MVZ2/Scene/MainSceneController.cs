@@ -48,6 +48,12 @@ namespace MVZ2.Scenes
         {
             ui.ShowDialogTask(title, desc, options, onSelect);
         }
+        public Task<int> ShowDialogAsync(string title, string desc, string[] options)
+        {
+            var tcs = new TaskCompletionSource<int>();
+            ShowDialog(title, desc, options ,(result) => tcs.SetResult(result));
+            return tcs.Task;
+        }
         public void ShowDialogMessage(string title, string desc, Action? onSelect = null)
         {
             ShowDialog(title, desc, new string[]

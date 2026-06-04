@@ -339,7 +339,31 @@ namespace MVZ2.Localization
             }
             pack.Provider = null;
         }
-        #endregion        [SerializeField]
+        #endregion
+
+        #region 过时
+        public bool IsOutdated(int dataVersion)
+        {
+            return dataVersion < LATEST_DATA_VERSION;
+        }
+        public bool HasOutdatedEnabledPacks(IEnumerable<LanguagePackReference> references)
+        {
+            foreach (var reference in references)
+            {
+                if (languagePackMetadatas.TryGetValue(reference, out var metadata))
+                {
+                    if (IsOutdated(metadata.dataVersion))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        #endregion
+
+        public const int LATEST_DATA_VERSION = 0;
+        [SerializeField]
         private string externalLangaugePackDir = "language_packs";
         [SerializeField]
         private string enabledPackListFileName = "language_packs.json";
