@@ -42,7 +42,8 @@ namespace MVZ2.Level
         }
         public virtual void UpdateFrame(float deltaTime)
         {
-            UpdateView();
+            ui.SetCost(SeedPack.GetCost().ToString());
+            ui.SetTriggerActive(SeedPack.IsTriggerActive());
             var model = GetModel();
             if (model)
             {
@@ -140,7 +141,7 @@ namespace MVZ2.Level
         #region 事件回调
         private void OnDefinitionChangedCallback(SeedDefinition seedDef)
         {
-            ui.UpdateView(Main.ResourceManager.GetBlueprintViewData(SeedPack));
+            UpdateView();
         }
         private void OnModelInsertionAddedCallback(ModelInsertion insertion)
         {

@@ -17,11 +17,12 @@ namespace MVZ2.UI
     {
         public void UpdateView(BlueprintViewData viewData)
         {
-            SetEmpty(viewData.empty);
             SetCost(viewData.cost);
             SetTriggerActive(viewData.triggerActive);
 
             // Styles.
+            SetEmpty(viewData.empty);
+
             if (standaloneBackground) standaloneBackground.SetSprite(viewData.standaloneBackground);
             if (mobileBackground) mobileBackground.SetSprite(viewData.mobileBackground);
             if (mobileFrameTop) mobileFrameTop.SetSprite(viewData.mobileFrameTop);
