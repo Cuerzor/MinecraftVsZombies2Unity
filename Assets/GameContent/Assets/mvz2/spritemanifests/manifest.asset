@@ -653,6 +653,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: ead2b534e897e48469cac6037a937e50, type: 3}
   - name: starshards/mausoleum
     sprite: {fileID: 21300000, guid: b405364c48af1734683363a805c66044, type: 3}
+  - name: starshards/mountain
+    sprite: {fileID: 21300000, guid: 2f323def3212a0b42b94148483971c52, type: 3}
   - name: starshards/palace
     sprite: {fileID: 21300000, guid: c84189a7e82909d42ac73e1210b21918, type: 3}
   - name: starshards/ship
@@ -667,6 +669,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: b71a3502ba3935b49a514559f8734478, type: 3}
   - name: starshard_rings/mausoleum
     sprite: {fileID: 21300000, guid: f74aabbf5c6403f4b908c053d7ecc630, type: 3}
+  - name: starshard_rings/mountain
+    sprite: {fileID: 21300000, guid: 262b03a328c716845b99a6b3e5be91a9, type: 3}
   - name: starshard_rings/palace
     sprite: {fileID: 21300000, guid: 21ed16a8b3b89414b857ea8a81b8d80a, type: 3}
   - name: starshard_rings/ship

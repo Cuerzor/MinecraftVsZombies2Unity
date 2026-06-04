@@ -3309,6 +3309,32 @@
                     <p>（这张纸条上什么也没有写，并且被暴力地扯烂了。）</p>
                 </flavor>
             </entry>
+            <entry id="mvz2:starshard.power_cell" name="星之碎片：动力电池" >
+                <unlock>
+                    <condition required="mvz2:level.mountain_1"/>
+                </unlock>
+                <picture model="mvz2:entity.starshard.mountain"/>
+                <header>
+                    <p><![CDATA[星之碎片会<b>激发</b>你的器械，触发它们的技能，爆发出器械真正的潜力。]]></p>
+                </header>
+                <flavor>
+                    <p>未知人士留下了一些记录。</p>
+                    <p/>
+                    <p>星之记录 其七：</p>
+                    <p>我还是不敢相信那个家伙居然也来到了这里。</p>
+                    <p>那个把我坑害到如此地步的家伙！</p>
+                    <p>……冷静。</p>
+                    <p><![CDATA[<s>他是我的朋友。</s>]]></p>
+                    <p><![CDATA[<s>他是我的朋友。</s>]]></p>
+                    <p><![CDATA[<s>他是我的朋友。</s>]]></p>
+                    <p><![CDATA[<s>他是我的朋友。</s>]]></p>
+                    <p><![CDATA[<s>他是我的朋友。</s>]]></p>
+                    <p><![CDATA[<s>他是我的朋友。</s>]]></p>
+
+                    <p>他凭什么是！</p>
+                    <p>我在这里受罪的时候，他在哪里！</p>
+                </flavor>
+            </entry>
         </group>
         <!-- Important Items -->
         <group id="mvz2:important" name="重要物品" order="600">

@@ -380,6 +380,7 @@
     <model name="starshard.mausoleum" type="entity" path="mvz2:pickup/starshards/mausoleum" width="64" height="64" xOffset="0" yOffset="-16" />
     <model name="starshard.ship" type="entity" path="mvz2:pickup/starshards/ship" width="64" height="64" xOffset="0" yOffset="-16" />
     <model name="starshard.palace" type="entity" path="mvz2:pickup/starshards/palace" width="64" height="64" xOffset="0" yOffset="-16" />
+    <model name="starshard.mountain" type="entity" path="mvz2:pickup/starshards/mountain" width="64" height="64" xOffset="0" yOffset="-16" />
 
     <!-- Effects -->
     <model name="miner" type="entity" path="mvz2:effect/miner" width="32" height="32" xOffset="0" yOffset="-16" />
@@ -584,6 +585,7 @@
     <model name="starshard.mausoleum" type="held" path="mvz2:held/starshards/mausoleum" shot="false" width="32" height="32" xOffset="0" yOffset="-28" />
     <model name="starshard.ship" type="held" path="mvz2:held/starshards/ship" shot="false" width="32" height="32" xOffset="0" yOffset="-28" />
     <model name="starshard.palace" type="held" path="mvz2:held/starshards/palace" shot="false" width="32" height="32" xOffset="0" yOffset="-28" />
+    <model name="starshard.mountain" type="held" path="mvz2:held/starshards/mountain" shot="false" width="32" height="32" xOffset="0" yOffset="-28" />
     <model name="pickaxe" type="held" path="mvz2:held/pickaxe" shot="false" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="trigger" type="held" path="mvz2:held/trigger" shot="false" width="32" height="32" xOffset="0" yOffset="-28" />
     <model name="sword" type="held" path="mvz2:held/sword" shot="false" width="64" height="64" xOffset="0" yOffset="-28" />

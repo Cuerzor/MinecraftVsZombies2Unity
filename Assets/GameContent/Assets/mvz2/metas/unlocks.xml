@@ -58,6 +58,7 @@
     <group id="chapter.mausoleum"><conditions><condition required="mvz2:entered_mausoleum" /></conditions></group>
     <group id="chapter.ship"><conditions><condition required="mvz2:entered_ship" /></conditions></group>
     <group id="chapter.palace"><conditions><condition required="mvz2:entered_palace" /></conditions></group>
+    <group id="chapter.mountain"><conditions><condition required="mvz2:entered_mountain" /></conditions></group>
 
     <group id="chapter_finished.halloween"><conditions><condition required="mvz2:level.halloween_11" /></conditions></group>
     <group id="chapter_finished.dream"><conditions><condition required="mvz2:level.dream_11" /></conditions></group>
@@ -65,6 +66,7 @@
     <group id="chapter_finished.mausoleum"><conditions><condition required="mvz2:level.mausoleum_11" /></conditions></group>
     <group id="chapter_finished.ship"><conditions><condition required="mvz2:level.ship_11" /></conditions></group>
     <group id="chapter_finished.palace"><conditions><condition required="mvz2:level.palace_11" /></conditions></group>
+    <group id="chapter_finished.mountain"><conditions><condition required="mvz2:level.mountain_11" /></conditions></group>
 
     <!-- Halloween Contraptions -->
     <group id="contraption.small_dispenser"><conditions><condition required="mvz2:level.halloween_1" /></conditions></group>

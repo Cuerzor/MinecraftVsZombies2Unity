@@ -2082,6 +2082,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 262b03a328c716845b99a6b3e5be91a9
+    m_Address: mvz2:starshard_rings/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 266bda436ee7214449de23afc046ffe4
     m_Address: mvz2:fatigue
     m_ReadOnly: 0
@@ -2500,6 +2507,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Music
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2f323def3212a0b42b94148483971c52
+    m_Address: mvz2:starshards/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2f37ee72c04034a4d930b31185d1e90e
     m_Address: mvz2:level/halloween/halloween_cloudy
@@ -10161,6 +10175,13 @@ MonoBehaviour:
     - Main
     - Spritesheet
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdc3f924b67004e408cdc0a416a5c786
+    m_Address: mvz2:held/starshards/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bded572031703084ca75d3a1a2cc8785
     m_Address: mvz2:bones/head
     m_ReadOnly: 0
@@ -11077,6 +11098,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf5b6c4d9b2f72044be7bef083dec0dc
+    m_Address: mvz2:pickup/starshards/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf6a97ee53da2884fbd9af4fe15d1488
     m_Address: mvz2:cart/corpse_cart

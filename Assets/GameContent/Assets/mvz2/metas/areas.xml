@@ -454,7 +454,7 @@
             <grid id="mvz2:stone" />
         </grids>
     </area>
-    <area id="mountain" model="mvz2:mountain" music="mvz2:mountain_level" cart="mvz2:pool_cleaner" starshard="mvz2:starshards/dream" tags="mvz2:day mvz2:water">
+    <area id="mountain" model="mvz2:mountain" music="mvz2:mountain_level" cart="mvz2:pool_cleaner" starshard="mvz2:starshards/mountain" tags="mvz2:day mvz2:water">
         <positions enemySpawnX="1080" doorZMin="40" doorZMax="520" />
         <grids width="80" height="80" leftX="260" bottomZ="40" lanes="6" columns="9">
             <!-- Lane 1 -->
