@@ -222,8 +222,7 @@ namespace MVZ2.Editor
         /// </summary>
         public static void UpdateResourcePackTutorialTemplates()
         {
-            var packDir = Path.Combine(Application.dataPath, "Localization", "pack");
-            var templatesDir = Path.Combine(Application.dataPath, "ResourcePack", "template");
+            var templatesDir = GetResourcePackTemplatesDirectory();
 
             // 将*.pot文件复制到LanguagePack\templates\text_templates中。
             Debug.Log("更新资源包文本模板……");
@@ -635,6 +634,10 @@ namespace MVZ2.Editor
         private static string GetResourcePackResourcesDirectory()
         {
             return Path.Combine(GetResourcePackSubmoduleDirectory(), "resources");
+        }
+        private static string GetResourcePackTemplatesDirectory()
+        {
+            return Path.Combine(GetResourcePackSubmoduleDirectory(), "templates");
         }
         private static void CopyDirectory(string source, string dest, string pattern, bool delete = true, params string[] extensions)
         {

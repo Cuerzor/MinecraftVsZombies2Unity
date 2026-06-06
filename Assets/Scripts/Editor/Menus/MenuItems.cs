@@ -76,6 +76,11 @@ namespace MVZ2.Editor
         {
             ResourcePackMenu.UpdateResourcePackTutorialResources();
         }
+        [MenuItem("MVZ2/Assets/Resource Packs/Update Resource Pack Tutorial Templates", priority = 6000, secondaryPriority = 3)]
+        public static void UpdateResourcePackTutorialTemplates()
+        {
+            ResourcePackMenu.UpdateResourcePackTutorialTemplates();
+        }
         [MenuItem("MVZ2/Assets/Talk/Format Talk Datas", priority = 6000, secondaryPriority = 0)]
         public static void FormatTalkDatas()
         {
