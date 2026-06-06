@@ -2760,6 +2760,13 @@ MonoBehaviour:
     - Main
     - Meta
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33d060e9c0d135041bb7f3e724e6779b
+    m_Address: mvz2:frozen_orb2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 33d140b9942701745a921a9fc102ca79
     m_Address: mvz2:damage/fall/fall_small
     m_ReadOnly: 0
@@ -4341,6 +4348,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4f43e3648d6e7254bb4a0b08780078bd
+    m_Address: mvz2:contraption/mountain/freezenser
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4f49e7cb5332bb2429602c3e7c3b7c46
     m_Address: mvz2:mountain
     m_ReadOnly: 0
@@ -4606,6 +4620,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54180b1a8b8c0fe4a98292d2423c7c15
+    m_Address: mvz2:entity/contraption/freezenser
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Spritesheet
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 542969b534462a84393dbe4e1b39a87a
     m_Address: mvz2:random/netherrack/break1
@@ -5354,6 +5375,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60aa4d1de1c792f4bbc332dba482a22d
+    m_Address: mvz2:mobile_blueprint/freezenser
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 60dc5506a0c15d74d86a0c2fce225f25
     m_Address: mvz2:entity/terror/terror_cry2
@@ -6236,6 +6264,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7420a0e519f9de74bbc93f6999564e33
+    m_Address: mvz2:frozen_orb1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 744d21f4b3d72674e9d855641bebf711
     m_Address: mvz2:characters/eirin
@@ -9434,6 +9469,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af5a4b37abe3a944694f7fc123eaf9a1
+    m_Address: mvz2:projectile/frozen_orb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af8ae476c30921a47b13d90441b45f33
     m_Address: mvz2:credits
     m_ReadOnly: 0
@@ -9860,6 +9902,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b72a8096d6cb1674ba3509031c6b70b9
+    m_Address: mvz2:coldcast
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b75237ff7ac07d84ca23add635c58097
     m_Address: mvz2:map/dream/nightmare_box_open
@@ -11302,6 +11351,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2d29a7aef195af49a660fb86ac82172
+    m_Address: mvz2:frozen_orb3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d2e26713f91070d419b5930613a248fb
     m_Address: mvz2:effect/floating_text
     m_ReadOnly: 0
@@ -12037,6 +12093,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e32e3f96a4cdd51438ef015798792893
+    m_Address: mvz2:entity/projectiles/frozen_orb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e331ed1f540bbb04db318b073f0720ac
     m_Address: mvz2:talk/dialog_faint
     m_ReadOnly: 0
@@ -12570,6 +12633,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ed576f37fbc44b44d9396b8ea59f7911
     m_Address: mvz2:mobile_blueprint/totenser
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ed7855e4711606d4b9aca969e26f70a1
+    m_Address: mvz2:entity/projectiles/chill_arrow
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

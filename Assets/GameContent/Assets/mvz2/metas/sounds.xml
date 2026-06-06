@@ -121,6 +121,9 @@
     <sound name="click" maxCount="4" priority="64">
         <sample path="mvz2:click" weight="1" />
     </sound>
+    <sound name="coldcast">
+        <sample path="mvz2:coldcast" weight="1" />
+    </sound>
     <sound name="confuse">
         <sample path="mvz2:confuse" weight="1" />
     </sound>
@@ -333,6 +336,11 @@
     </sound>
     <sound name="freeze">
         <sample path="mvz2:freeze" weight="1" />
+    </sound>
+    <sound name="frozen_orb">
+        <sample path="mvz2:frozen_orb1" weight="1" />
+        <sample path="mvz2:frozen_orb2" weight="1" />
+        <sample path="mvz2:frozen_orb3" weight="1" />
     </sound>
     <sound name="fuse">
         <sample path="mvz2:fuse" weight="1" />

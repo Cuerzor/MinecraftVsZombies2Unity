@@ -57,6 +57,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID chime = Get("chime");
         public readonly static NamespaceID cloth = Get("cloth");
         public readonly static NamespaceID coin = Get("coin");
+        public readonly static NamespaceID coldcast = Get("coldcast");
         public readonly static NamespaceID confuse = Get("confuse");
         public readonly static NamespaceID crystal = Get("crystal");
         public readonly static NamespaceID crystalBreak = Get("crystal_break");
@@ -107,6 +108,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID frankensteinLaugh = Get("frankenstein_laugh");
         public readonly static NamespaceID frankensteinSteelLaugh = Get("frankenstein_steel_laugh");
         public readonly static NamespaceID freeze = Get("freeze");
+        public readonly static NamespaceID frozenOrb = Get("frozen_orb");
         public readonly static NamespaceID fuse = Get("fuse");
         public readonly static NamespaceID gem = Get("gem");
         public readonly static NamespaceID giantSpike = Get("giant_spike");

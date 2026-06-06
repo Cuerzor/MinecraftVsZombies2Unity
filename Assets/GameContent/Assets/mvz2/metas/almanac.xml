@@ -1045,7 +1045,7 @@
             <properties>
                 <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
-                <p>技能：<![CDATA[<color=red>？</color>]]></p>
+                <p>技能：<![CDATA[<color=red>发射一枚致命的冰封球</color>]]></p>
             </properties>
             <flavor>
                 <p>====施工中====</p>
