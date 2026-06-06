@@ -23,17 +23,17 @@ namespace MVZ2Logic.Spawns
         public int GetRandomSpawnLane(SpawnDefinition definition, LevelEngine level)
         {
             var allLanes = level.GetAllLanes();
-            var resultLanes = allLanes;
+            var resultLanes = level.GetAllLanes();
 
             bool isStartWaves = level.CurrentFlag <= 0 && level.CurrentWave <= 3;
             if (isStartWaves || !definition.SpawnInWater())
             {
-                var waterLanes = level.GetWaterLanes();
+                var waterLanes = level.GetEnemySpawnWaterLanes();
                 resultLanes = resultLanes.Except(waterLanes);
             }
             if (isStartWaves || !definition.SpawnInAir())
             {
-                var airLanes = level.GetAirLanes();
+                var airLanes = level.GetEnemySpawnAirLanes();
                 resultLanes = resultLanes.Except(airLanes);
             }
 

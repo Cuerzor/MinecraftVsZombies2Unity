@@ -503,12 +503,20 @@ namespace MVZ2Logic.Level
         {
             return Enumerable.Range(0, level.GetMaxLaneCount());
         }
+        public static bool IsLandAt(this LevelEngine level, float x, float z)
+        {
+            return !level.IsWaterAt(x, z) && !level.IsAirAt(x, z);
+        }
         #endregion
 
         #region 水路
         public static IEnumerable<int> GetWaterLanes(this LevelEngine level)
         {
             return level.GetAllLanes().Where(l => level.IsWaterLane(l));
+        }
+        public static IEnumerable<int> GetEnemySpawnWaterLanes(this LevelEngine level)
+        {
+            return level.GetAllLanes().Where(l => level.IsEnemySpawnWaterLane(l));
         }
         public static bool IsWaterLane(this LevelEngine level, int lane)
         {
@@ -518,6 +526,21 @@ namespace MVZ2Logic.Level
                 if (grid == null)
                     continue;
                 if (grid.IsWater())
+                    return true;
+            }
+            return false;
+        }
+        public static bool IsEnemySpawnWaterLane(this LevelEngine level, int lane)
+        {
+            if (level.IsWaterLane(lane))
+                return true;
+            var laneZ = level.GetEntityLaneZ(lane);
+            var columnStart = level.GetMaxColumnCount();
+            var columnEnd = level.GetColumn(level.GetEnemySpawnX());
+            for (int i = columnStart; i < columnEnd; i++)
+            {
+                var x = level.GetEntityColumnX(i);
+                if (level.IsWaterAt(x, laneZ))
                     return true;
             }
             return false;
@@ -543,6 +566,10 @@ namespace MVZ2Logic.Level
         {
             return level.GetAllLanes().Where(l => level.IsAirLane(l));
         }
+        public static IEnumerable<int> GetEnemySpawnAirLanes(this LevelEngine level)
+        {
+            return level.GetAllLanes().Where(l => level.IsEnemySpawnAirLane(l));
+        }
         public static bool IsAirLane(this LevelEngine level, int lane)
         {
             for (int column = 0; column < level.GetMaxColumnCount(); column++)
@@ -551,6 +578,21 @@ namespace MVZ2Logic.Level
                 if (grid == null)
                     continue;
                 if (grid.IsCloud())
+                    return true;
+            }
+            return false;
+        }
+        public static bool IsEnemySpawnAirLane(this LevelEngine level, int lane)
+        {
+            if (level.IsAirLane(lane))
+                return true;
+            var laneZ = level.GetEntityLaneZ(lane);
+            var columnStart = level.GetMaxColumnCount();
+            var columnEnd = level.GetColumn(level.GetEnemySpawnX());
+            for (int i = columnStart; i < columnEnd; i++)
+            {
+                var x = level.GetEntityColumnX(i);
+                if (level.IsAirAt(x, laneZ))
                     return true;
             }
             return false;

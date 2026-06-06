@@ -60,6 +60,10 @@ namespace MVZ2.GameContent.Areas
                 return;
             var column = level.GetColumn(args.x);
             var lane = level.GetLane(args.z);
+
+            if (column >= 0 && column < level.GetMaxColumnCount()) // 不决定场内地块的地形
+                return;
+
             if (lane >= 1 && lane <= 4 && (column <= 9 || column >= 13))
             {
                 result.SetValue(true);
