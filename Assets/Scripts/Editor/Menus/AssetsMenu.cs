@@ -8,11 +8,17 @@ namespace MVZ2.Editor
         public static void UpdateAllAssets()
         {
             LocalizationMenu.CompressLanguagePack();
+
+            ResourcePackMenu.UpdateAllResolverComponents();
+            ResourcePackMenu.UpdateResourcePackManifest();
             ResourcePackMenu.UpdateResourcePackTutorialResources();
             ResourcePackMenu.UpdateResourcePackTutorialTemplates();
+
             SpriteMenu.RenameSprites();
             SpriteMenu.UpdateSpriteManifestAtGameContent();
+
             ModelMenu.UpdateModelElements();
+
             AddressablesMenu.UpdateAddressables();
         }
         public static string FileToAssetPath(string filePath)

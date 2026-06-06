@@ -386,7 +386,7 @@ namespace MVZ2.Editor
             var sprites = SpriteMenu.GetOrderedSpriteSheet(assetRelativePath, factories);
             if (sprites != null)
             {
-                FillResourcePackSpritesFromSpriteAsset(sprites, tags, resoucePackSprites);
+                FillResourcePackSpritesFromSpriteAsset(sprites, originTexture, tags, resoucePackSprites);
             }
 
             return new ResourcePackTexture()
@@ -397,7 +397,7 @@ namespace MVZ2.Editor
                 slices = resoucePackSprites.Count > 0 ? resoucePackSprites.ToArray() : null
             };
         }
-        private static void FillResourcePackSpritesFromSpriteAsset(Sprite[] sprites, string[] tags, List<ResourcePackSprite> resoucePackSprites)
+        private static void FillResourcePackSpritesFromSpriteAsset(Sprite[] sprites, Texture2D texture, string[] tags, List<ResourcePackSprite> resoucePackSprites)
         {
             for (int i = 0; i < sprites.Length; i++)
             {
@@ -415,7 +415,7 @@ namespace MVZ2.Editor
                 }
                 else
                 {
-                    var y = SpriteHelper.FromBottomToFromTopY((int)sprite.rect.y, sprite.texture.height, (int)sprite.rect.height);
+                    var y = SpriteHelper.FromBottomToFromTopY((int)sprite.rect.y, texture.height, (int)sprite.rect.height);
                     packSprite = new ResourcePackSprite()
                     {
                         tags = tags,

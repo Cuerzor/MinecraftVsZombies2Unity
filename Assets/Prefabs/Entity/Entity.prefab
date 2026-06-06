@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aba17c9cb2acbde4b88d1847f6bba2a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxRenderAccumulator: 1
   shadow: {fileID: 3305333340143397579}
   heightIndicator: {fileID: 2302565896158391514}
   tooltipAnchor: {fileID: 332291674241791040}
