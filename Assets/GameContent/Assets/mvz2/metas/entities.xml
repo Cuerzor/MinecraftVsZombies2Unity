@@ -4555,6 +4555,11 @@
                 <bool name="mvz2:decorative" value="true" />
             </properties>
         </entity>
-        <entity template="effect" id="waterfall"/>
+        <entity template="effect" id="waterfall">
+            <properties>
+                <bool name="mvz2:updateBeforeGame" value="true" />
+                <bool name="mvz2:updateAfterGameOver" value="true" />
+            </properties>
+        </entity>
     </entries>
 </entities>
