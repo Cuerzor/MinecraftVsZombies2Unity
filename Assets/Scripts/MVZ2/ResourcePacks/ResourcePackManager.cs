@@ -376,6 +376,10 @@ namespace MVZ2.ResourcePacks
         {
             return dataVersion < LATEST_DATA_VERSION;
         }
+        public bool IsFuture(int dataVersion)
+        {
+            return dataVersion > LATEST_DATA_VERSION;
+        }
         public bool HasOutdatedEnabledPacks(IEnumerable<ResourcePackReference> references)
         {
             foreach (var reference in references)
@@ -384,6 +388,21 @@ namespace MVZ2.ResourcePacks
                 if (metadata != null)
                 {
                     if (IsOutdated(metadata.dataVersion))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        public bool HasFutureEnabledPacks(IEnumerable<ResourcePackReference> references)
+        {
+            foreach (var reference in references)
+            {
+                var metadata = GetResourcePackMetadata(reference);
+                if (metadata != null)
+                {
+                    if (IsFuture(metadata.dataVersion))
                     {
                         return true;
                     }

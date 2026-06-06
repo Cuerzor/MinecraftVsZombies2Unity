@@ -80,17 +80,24 @@ namespace MVZ2.Addons
                     {
                         var title = Main.LanguageManager._(LogicStrings.WARNING);
                         var desc = Main.LanguageManager._(WARNING_OUTDATED_LANGAUGE_PACK);
-                        if (await Main.Scene.ShowDialogSelectAsync(title, desc))
+                        var confirmed = await Main.Scene.ShowDialogSelectAsync(title, desc);
+                        if (!confirmed)
                         {
-                            await ReloadLanguagePacks();
-                            Return();
+                            break;
                         }
                     }
-                    else
+                    if (Main.ResourcePackManager.HasFutureEnabledPacks(enabledReferences))
                     {
-                        await ReloadLanguagePacks();
-                        Return();
+                        var title = Main.LanguageManager._(LogicStrings.WARNING);
+                        var desc = Main.LanguageManager._(WARNING_FUTURE_LANGAUGE_PACK);
+                        var confirmed = await Main.Scene.ShowDialogSelectAsync(title, desc);
+                        if (!confirmed)
+                        {
+                            break;
+                        }
                     }
+                    await ReloadLanguagePacks();
+                    Return();
                     break;
                 case ResourcePacksUI.Buttons.Import:
                     {
@@ -382,7 +389,7 @@ namespace MVZ2.Addons
                 name = metadata.name ?? string.Empty,
                 description = metadata.description ?? string.Empty,
                 icon = metadata.icon,
-                outdated = Main.ResourcePackManager.IsOutdated(metadata.dataVersion),
+                error = Main.ResourcePackManager.IsOutdated(metadata.dataVersion) || Main.ResourcePackManager.IsFuture(metadata.dataVersion),
                 selected = reference == selectedLanguagePack,
             };
         }
@@ -392,6 +399,8 @@ namespace MVZ2.Addons
         public const string WARNING_DELETE_LANGUAGE_PACK = "是否删除语言包“{0}”？";
         [TranslateMsg("语言包中含有过时语言包的警告")]
         public const string WARNING_OUTDATED_LANGAUGE_PACK = "您启用了一些过时的语言包，这些语言包可能无法正常运行，仍然要继续吗？";
+        [TranslateMsg("语言包中含有未来语言包的警告")]
+        public const string WARNING_FUTURE_LANGAUGE_PACK = "您启用了一些版本高于目前游戏版本的语言包，这些语言包无法正常运行，仍然要继续吗？";
         [TranslateMsg("语言包导出失败的警告")]
         public const string ERROR_NOT_SAVED = "导出语言包失败。";
         [TranslateMsg("语言包导入失败的警告")]

@@ -64,6 +64,8 @@ namespace MVZ2.ResourcePacks
         }
         public override async UniTask<ResourcePack?> LoadPack(MainManager main, int dataVersion)
         {
+            if (main.ResourcePackManager.IsFuture(dataVersion))
+                return null;
             var filename = GetFileName();
             var key = GetKey();
             IResourcePackReader reader = ResourcePackReaderFactory.Create(main, dataVersion);

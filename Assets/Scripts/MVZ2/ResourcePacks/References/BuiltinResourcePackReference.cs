@@ -37,6 +37,8 @@ namespace MVZ2.ResourcePacks
         }
         public override async UniTask<ResourcePack?> LoadPack(MainManager main, int dataVersion)
         {
+            if (main.ResourcePackManager.IsFuture(dataVersion))
+                return null;
             var bytes = await main.ResourcePackManager.LoadBuiltinBytes();
             var reader = ResourcePackReaderFactory.Create(main, dataVersion);
             using var memoryStream = new MemoryStream(bytes);

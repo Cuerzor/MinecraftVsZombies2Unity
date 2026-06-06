@@ -15,7 +15,7 @@ namespace MVZ2.UI.Addons
             nameText.text = viewData.name;
             descriptionText.text = viewData.description;
             icon.SetSprite(viewData.icon);
-            outdatedObject.SetActive(viewData.outdated);
+            outdatedObject.SetActive(viewData.error);
             SetToggled(viewData.selected);
         }
         public void SetToggled(bool value)
@@ -43,7 +43,7 @@ namespace MVZ2.UI.Addons
         public string name;
         public string description;
         public Sprite icon;
-        public bool outdated;
+        public bool error;
         public bool selected;
     }
 }
