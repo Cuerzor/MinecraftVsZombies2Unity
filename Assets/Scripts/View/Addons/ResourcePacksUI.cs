@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using PVZEngine.Tools.Unity;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -71,6 +72,10 @@ namespace MVZ2.UI.Addons
                 btn.interactable = value;
             }
         }
+        public void SetTutorialLinkText(string text)
+        {
+            tutorialLinkText.text = text;
+        }
         private void Awake()
         {
             buttonDict.Add(Buttons.Disable, disableButton);
@@ -86,6 +91,8 @@ namespace MVZ2.UI.Addons
             {
                 pair.Value.onClick.AddListener(() => OnButtonClick?.Invoke(pair.Key));
             }
+
+            tutorialLinkButton.onClick.AddListener(() => OnTutorialLinkClick?.Invoke());
         }
         private void OnDisabledPackItemToggledCallback(ResourcePackItem item, bool value)
         {
@@ -97,6 +104,7 @@ namespace MVZ2.UI.Addons
         }
         public event Action<bool, int, bool>? OnPackItemToggled;
         public event Action<Buttons>? OnButtonClick;
+        public event Action? OnTutorialLinkClick;
         [SerializeField]
         private ToggleGroup toggleGroup = null!;
         [SerializeField]
@@ -111,6 +119,10 @@ namespace MVZ2.UI.Addons
         private Button moveUpButton = null!;
         [SerializeField]
         private Button moveDownButton = null!;
+        [SerializeField]
+        private TextMeshProUGUI tutorialLinkText = null!;
+        [SerializeField]
+        private Button tutorialLinkButton = null!;
         [SerializeField]
         private Button importButton = null!;
         [SerializeField]

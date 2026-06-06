@@ -31,6 +31,7 @@ namespace MVZ2.Addons
             gameObject.SetActive(true);
 
             // 更新UI。
+            UpdateTutorialLink();
             CancelSelection();
             UpdateLanguagePacks();
         }
@@ -43,6 +44,7 @@ namespace MVZ2.Addons
         {
             ui.OnButtonClick += OnButtonClickCallback;
             ui.OnPackItemToggled += OnPackItemToggledCallback;
+            ui.OnTutorialLinkClick += OnTutorialLinkClickCallback;
         }
         private async void Update()
         {
@@ -275,6 +277,10 @@ namespace MVZ2.Addons
                 UpdateButtonInteractions();
             }
         }
+        private void OnTutorialLinkClickCallback()
+        {
+            Application.OpenURL(tutorialURL);
+        }
         #endregion
 
         private async Task RefreshLanguagePacks()
@@ -350,6 +356,11 @@ namespace MVZ2.Addons
             ui.SetButtonInteractable(ResourcePacksUI.Buttons.MoveUp, enabled && selected && index > 0);
             ui.SetButtonInteractable(ResourcePacksUI.Buttons.MoveDown, enabled && selected && index < enabledReferences.Count - 1);
         }
+        private void UpdateTutorialLink()
+        {
+            var text = Main.LanguageManager._(TUTORIAL_LINK_TEXT, tutorialURL);
+            ui.SetTutorialLinkText(text);
+        }
         private IEnumerable<ResourcePackReference> GetDisabledReferences()
         {
             return references.Except(enabledReferences);
@@ -407,6 +418,8 @@ namespace MVZ2.Addons
         public const string ERROR_FAILED_TO_IMPORT = "导入语言包失败。";
         [TranslateMsg("语言包导出成功的提示，{0}为路径")]
         public const string HINT_SAVED = "语言包已导出至{0}。";
+        [TranslateMsg("教程链接文本，{0}为地址")]
+        public const string TUTORIAL_LINK_TEXT = "点击查看教程：{0}";
 
         public MainManager Main => MainManager.Instance;
         [SerializeField]
@@ -415,6 +428,8 @@ namespace MVZ2.Addons
         private ResourcePacksUI ui = null!;
         [SerializeField]
         private float maxRefreshInterval = 1;
+        [SerializeField]
+        private string tutorialURL;
         private TaskPipeline? reloadPipeline;
         private bool overridedFile;
         private ResourcePackReference? selectedLanguagePack;
