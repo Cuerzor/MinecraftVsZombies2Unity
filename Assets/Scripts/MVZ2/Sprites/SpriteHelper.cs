@@ -122,6 +122,14 @@ namespace MVZ2.Sprites
         {
             return textureHeight - fromTopY - rectHeight;
         }
+        public static float FromBottomToFromTopPivotY(float pivotY)
+        {
+            return 1 - pivotY;
+        }
+        public static float FromTopToFromBottomPivotY(float pivotY)
+        {
+            return 1 - pivotY;
+        }
         public const string SPRITE_TAG_CENSORED = "censored";
         public static readonly Vector2Int[] surroundingOffsets = new Vector2Int[]
         {

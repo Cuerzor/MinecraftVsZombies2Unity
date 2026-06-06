@@ -469,6 +469,7 @@ namespace MVZ2.ResourcePacks
                 rect.height = Math.Min(rect.height, texture2D.height);
 
                 var pivot = sliceData.pivot;
+                pivot.y = SpriteHelper.FromTopToFromBottomPivotY(pivot.y);
                 var meshType = sliceData.meshType;
                 var border = sliceData.border;
                 var spr = Main.ResourceManager.CreateSprite(texture2D, rect, pivot, generatedName, border, meshType, category: generatedCategory);

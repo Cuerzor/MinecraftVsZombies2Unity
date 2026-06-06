@@ -3,6 +3,7 @@
 using MVZ2.Managers;
 using MVZ2.Metas;
 using MVZ2.Resources;
+using MVZ2.Sprites;
 using MVZ2.UI.Talk;
 using PVZEngine;
 using UnityEngine;
@@ -48,7 +49,7 @@ namespace MVZ2.Talk
         }
         public void SetVariant(ITalkCharacterVariant variant)
         {
-            var pivot = new Vector2(variant.PivotX, variant.PivotY);
+            var pivot = new Vector2(variant.PivotX, SpriteHelper.FromTopToFromBottomPivotY(variant.PivotY));
             var widthExtend = variant.WidthExtend;
             var viewData = Main.TalkManager.GetPortraitViewData(variant);
             var portrait = GetOrCreatePortrait();

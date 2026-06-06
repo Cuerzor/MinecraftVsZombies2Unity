@@ -8,7 +8,7 @@
         </variant>
     </character>
     <character id="orant" name="欧兰特">
-        <variant id="mvz2:normal" width="418" height="1280" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="418" height="1280" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/orant[0]" />
         </variant>
         <variant id="mvz2:close_eye" parent="mvz2:normal">
@@ -22,7 +22,7 @@
         </variant>
     </character>
     <character id="doremy" name="哆来咪">
-        <variant id="mvz2:normal" width="641" height="1280" extendLeft="100" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="641" height="1280" extendLeft="100" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/doremy[0]" />
         </variant>
         <variant id="mvz2:open_mouth" parent="mvz2:normal">
@@ -108,7 +108,7 @@
         </variant>
     </character>
     <character id="tokiko" name="朱鹭子">
-        <variant id="mvz2:normal" width="738" height="1280" extendLeft="100" extendRight="100" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="738" height="1280" extendLeft="100" extendRight="100" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/tokiko[0]" />
         </variant>
         <variant id="mvz2:surprised" parent="mvz2:normal">
@@ -146,7 +146,7 @@
         </variant>
     </character>
     <character id="seija" name="正邪">
-        <variant id="mvz2:normal" width="560" height="1280" extendLeft="75" extendRight="0" pivotX="0.5" pivotY="0.65">
+        <variant id="mvz2:normal" width="560" height="1280" extendLeft="75" extendRight="0" pivotX="0.5" pivotY="0.35">
             <layer sprite="mvz2:characters/seija[0]" />
         </variant>
         <variant id="mvz2:pride" parent="mvz2:normal">
@@ -193,7 +193,7 @@
         </variant>
     </character>
     <character id="shinmyoumaru" name="针妙丸">
-        <variant id="mvz2:normal" width="160" height="448" extendLeft="-80" extendRight="-80" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="160" height="448" extendLeft="-80" extendRight="-80" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/shinmyoumaru[0]" />
         </variant>
         <variant id="mvz2:cringe" parent="mvz2:normal">
@@ -262,19 +262,19 @@
             </unlock>
             <layer sprite="mvz2:characters/shinmyoumaru[6]" positionX="0" positionY="0" />
         </variant>
-        <variant id="mvz2:big" width="387" height="1280" pivotX="0.5" extendLeft="-20" extendRight="-20" pivotY="0.6">
+        <variant id="mvz2:big" width="387" height="1280" pivotX="0.5" extendLeft="-20" extendRight="-20" pivotY="0.4">
             <unlock>
                 <condition required="mvz2:level.castle_11" />
             </unlock>
             <layer sprite="mvz2:characters/shinmyoumaru_big[1]" positionX="0" positionY="0" />
         </variant>
-        <variant id="mvz2:gift_mallet" width="387" height="1280" extendLeft="-20" extendRight="-20"  pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:gift_mallet" width="387" height="1280" extendLeft="-20" extendRight="-20"  pivotX="0.5" pivotY="0.4">
             <unlock>
                 <condition required="mvz2:level.castle_11" />
             </unlock>
             <layer sprite="mvz2:characters/shinmyoumaru_big[0]" positionX="0" positionY="0" />
         </variant>
-        <variant id="mvz2:bottle_normal" width="432" height="716" extendLeft="0" extendRight="0" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:bottle_normal" width="432" height="716" extendLeft="0" extendRight="0" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/shinmyoumaru_bottle[0]" positionX="0" positionY="0" />
         </variant>
         <variant id="mvz2:bottle_relax" parent="mvz2:bottle_normal">
@@ -285,7 +285,7 @@
         </variant>
     </character>
     <character id="futo" name="布都">
-        <variant id="mvz2:normal" width="587" height="1280" extendLeft="75" extendRight="0" pivotX="0.5" pivotY="0.65">
+        <variant id="mvz2:normal" width="587" height="1280" extendLeft="75" extendRight="0" pivotX="0.5" pivotY="0.35">
             <layer sprite="mvz2:characters/futo[0]" />
         </variant>
         <variant id="mvz2:daze" parent="mvz2:normal">
@@ -320,13 +320,13 @@
         </variant>
     </character>
     <character id="marisa" name="魔理沙">
-        <variant id="mvz2:normal" width="636" height="1280" extendLeft="100" pivotX="0.5" pivotY="0.65">
+        <variant id="mvz2:normal" width="636" height="1280" extendLeft="100" pivotX="0.5" pivotY="0.35">
             <layer sprite="mvz2:characters/marisa[0]" />
         </variant>
         <variant id="mvz2:happy" parent="mvz2:normal">
             <layer sprite="mvz2:characters/marisa[3]" positionX="288" positionY="192" />
         </variant>
-        <variant id="mvz2:sad" width="636" height="1280" extendLeft="100" pivotX="0.5" pivotY="0.65">
+        <variant id="mvz2:sad" width="636" height="1280" extendLeft="100" pivotX="0.5" pivotY="0.35">
             <layer sprite="mvz2:characters/marisa[1]" />
         </variant>
         <variant id="mvz2:angry" parent="mvz2:normal">
@@ -339,13 +339,13 @@
             <layer sprite="mvz2:characters/marisa[5]" positionX="288" positionY="192" />
         </variant>
         <!-- 
-        <variant id="mvz2:unwilling" width="636" height="1280" extendRight="0" pivotX="0.5" pivotY="0.65">
+        <variant id="mvz2:unwilling" width="636" height="1280" extendRight="0" pivotX="0.5" pivotY="0.35">
             <layer sprite="mvz2:characters/marisa[2]" />
         </variant>
         -->
     </character>
     <character id="seiga" name="青娥">
-        <variant id="mvz2:normal" width="818" height="1280"  extendLeft="100" extendRight="100" pivotX="0.5" pivotY="0.65">
+        <variant id="mvz2:normal" width="818" height="1280"  extendLeft="100" extendRight="100" pivotX="0.5" pivotY="0.35">
             <layer sprite="mvz2:characters/seiga[0]" />
         </variant>
         <variant id="mvz2:happy" parent="mvz2:normal">
@@ -371,7 +371,7 @@
         </variant>
     </character>
     <character id="miko" name="神子">
-        <variant id="mvz2:normal" width="817" height="1280" extendLeft="100" extendRight="100" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="817" height="1280" extendLeft="100" extendRight="100" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/miko[0]" />
         </variant>
         <variant id="mvz2:close_eyes" parent="mvz2:normal">
@@ -418,12 +418,12 @@
         </variant>
     </character>
     <character id="hologram" name="影像">
-        <variant id="mvz2:normal" width="600" height="600" extendRight="0" pivotX="0.5" pivotY="0">
+        <variant id="mvz2:normal" width="600" height="600" extendRight="0" pivotX="0.5" pivotY="1">
             <layer sprite="mvz2:characters/hologram" />
         </variant>
     </character>
     <character id="shou" name="星">
-        <variant id="mvz2:normal" width="632" height="1280"  extendLeft="100" extendRight="50" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="632" height="1280"  extendLeft="100" extendRight="50" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/shou[0]" />
         </variant>
         <variant id="mvz2:unhappy" parent="mvz2:normal">
@@ -464,7 +464,7 @@
         </variant>
     </character>
     <character id="nue" name="鵺">
-        <variant id="mvz2:normal" width="761" height="1280"  extendLeft="100" extendRight="100" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="761" height="1280"  extendLeft="100" extendRight="100" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/nue[0]" />
         </variant>
         <variant id="mvz2:close_eyes" parent="mvz2:normal" >
@@ -472,7 +472,7 @@
         </variant>
     </character>
     <character id="sekibanki" name="赤蛮奇">
-        <variant id="mvz2:normal" width="598" height="1280" extendLeft="80" extendRight="80" pivotX="0.5" pivotY="0.65">
+        <variant id="mvz2:normal" width="598" height="1280" extendLeft="80" extendRight="80" pivotX="0.5" pivotY="0.35">
             <layer sprite="mvz2:characters/sekibanki[0]" />
         </variant>
         <variant id="mvz2:angry" parent="mvz2:normal" >
@@ -483,7 +483,7 @@
         </variant>
     </character>
     <character id="byakuren" name="白莲">
-        <variant id="mvz2:normal" width="573" height="1280" extendLeft="80" extendRight="80"  pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="573" height="1280" extendLeft="80" extendRight="80"  pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/byakuren[0]" />
         </variant>
         <variant id="mvz2:close_eyes" parent="mvz2:normal" >
@@ -497,7 +497,7 @@
         </variant>
     </character>
     <character id="eirin" name="永琳">
-        <variant id="mvz2:normal" width="522" height="1280" extendLeft="50" extendRight="0" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="522" height="1280" extendLeft="50" extendRight="0" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/eirin[0]" />
         </variant>
         <variant id="mvz2:close_eyes" parent="mvz2:normal">
@@ -514,7 +514,7 @@
         </variant>
     </character>
     <character id="satori" name="觉">
-        <variant id="mvz2:normal" width="530" height="1280" extendLeft="50" extendRight="0" pivotX="0.5" pivotY="0.65">
+        <variant id="mvz2:normal" width="530" height="1280" extendLeft="50" extendRight="0" pivotX="0.5" pivotY="0.35">
             <layer sprite="mvz2:characters/satori[0]" />
         </variant>
         <variant id="mvz2:surprised" parent="mvz2:normal">
@@ -537,7 +537,7 @@
         </variant>
     </character>
     <character id="koishi" name="恋">
-        <variant id="mvz2:normal" width="596" height="1280" extendLeft="50" extendRight="0" pivotX="0.5" pivotY="0.65">
+        <variant id="mvz2:normal" width="596" height="1280" extendLeft="50" extendRight="0" pivotX="0.5" pivotY="0.35">
             <layer sprite="mvz2:characters/koishi[0]" />
         </variant>
         <variant id="mvz2:happy" parent="mvz2:normal">
@@ -551,7 +551,7 @@
         </variant>
     </character>
     <character id="rin" name="燐">
-        <variant id="mvz2:normal" width="653" height="1280" extendLeft="25" extendRight="75" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="653" height="1280" extendLeft="25" extendRight="75" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/rin[0]" />
         </variant>
         <variant id="mvz2:scared" parent="mvz2:normal">
@@ -592,7 +592,7 @@
         </variant>
     </character>
     <character id="utsuho" name="空" faceRight="true">
-        <variant id="mvz2:normal" width="1094" height="1280" extendLeft="100" extendRight="200" pivotX="0.5" pivotY="0.6">
+        <variant id="mvz2:normal" width="1094" height="1280" extendLeft="100" extendRight="200" pivotX="0.5" pivotY="0.4">
             <layer sprite="mvz2:characters/utsuho[0]" />
         </variant>
         <variant id="mvz2:happy" parent="mvz2:normal">

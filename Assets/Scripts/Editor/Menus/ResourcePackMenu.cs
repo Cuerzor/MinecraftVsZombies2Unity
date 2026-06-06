@@ -404,17 +404,19 @@ namespace MVZ2.Editor
                 ResourcePackSprite packSprite;
                 if (sprites.Length <= 1)
                 {
+                    var pivotY = SpriteHelper.FromBottomToFromTopPivotY(sprite.pivot.y / sprite.rect.height);
                     packSprite = new ResourcePackSprite()
                     {
                         tags = tags,
                         single = true,
                         pivotX = sprite.pivot.x / sprite.rect.width,
-                        pivotY = sprite.pivot.y / sprite.rect.height,
+                        pivotY = pivotY,
                     };
                 }
                 else
                 {
                     var y = SpriteHelper.FromBottomToFromTopY((int)sprite.rect.y, texture.height, (int)sprite.rect.height);
+                    var pivotY = SpriteHelper.FromBottomToFromTopPivotY(sprite.pivot.y / sprite.rect.height);
                     packSprite = new ResourcePackSprite()
                     {
                         tags = tags,
@@ -424,7 +426,7 @@ namespace MVZ2.Editor
                         width = (int)sprite.rect.width,
                         height = (int)sprite.rect.height,
                         pivotX = sprite.pivot.x / sprite.rect.width,
-                        pivotY = sprite.pivot.y / sprite.rect.height,
+                        pivotY = pivotY,
                     };
                 }
                 resoucePackSprites.Add(packSprite);
