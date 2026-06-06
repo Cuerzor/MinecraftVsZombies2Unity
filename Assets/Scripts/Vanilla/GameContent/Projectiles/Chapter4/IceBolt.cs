@@ -16,7 +16,7 @@ namespace MVZ2.GameContent.Projectiles
         public IceBolt(string nsp, string name) : base(nsp, name)
         {
         }
-        public void Ignite(Entity entity, Entity hellfire, bool cursed)
+        public void Ignite(Entity entity, Entity hellfire, bool cursed, bool enter)
         {
             var param = entity.GetSpawnParams();
             param.SetProperty(EngineEntityProps.SIZE, entity.GetScaledSize());

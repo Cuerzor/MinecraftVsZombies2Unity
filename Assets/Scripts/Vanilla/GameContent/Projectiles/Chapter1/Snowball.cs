@@ -12,8 +12,10 @@ namespace MVZ2.GameContent.Projectiles
         public Snowball(string nsp, string name) : base(nsp, name)
         {
         }
-        public void Ignite(Entity entity, Entity hellfire, bool cursed)
+        public void Ignite(Entity entity, Entity hellfire, bool cursed, bool enter)
         {
+            if (!enter)
+                return;
             entity.SetModelProperty("Melted", true);
         }
     }

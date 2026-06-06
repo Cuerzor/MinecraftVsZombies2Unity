@@ -52,8 +52,15 @@ namespace MVZ2.GameContent.Projectiles
             }
             projectile.SetAnimationInt("Ignited", ignited);
         }
-        public void Ignite(Entity entity, Entity hellfire, bool cursed)
+        public void Ignite(Entity entity, Entity hellfire, bool cursed, bool enter)
         {
+            if (!enter)
+                return;
+            if (entity.HasBuff<ChillProjectileBuff>())
+            {
+                entity.RemoveBuffs<ChillProjectileBuff>();
+                return;
+            }
             var igniteBuff = entity.GetFirstBuff<HellfireIgnitedBuff>();
             if (igniteBuff == null)
             {

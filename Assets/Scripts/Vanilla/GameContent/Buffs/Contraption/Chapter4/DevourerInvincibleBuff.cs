@@ -16,7 +16,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
         public DevourerInvincibleBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new BooleanModifier(EngineEntityProps.INVINCIBLE, true));
-            AddModifier(new NamespaceIDArrayModifier(LogicEntityProps.GRID_LAYERS, SetOperator.Set, Array.Empty<NamespaceID>()));
+            AddModifier(new NamespaceIDArrayModifier(LogicEntityProps.GRID_LAYERS, ArrayOperator.Replace, Array.Empty<NamespaceID>()));
         }
     }
 }

@@ -22,8 +22,10 @@ namespace MVZ2.GameContent.Projectiles
             base.Update(projectile);
             UpdateIgnited(projectile);
         }
-        public void Ignite(Entity entity, Entity hellfire, bool cursed)
+        public void Ignite(Entity entity, Entity hellfire, bool cursed, bool enter)
         {
+            if (!enter)
+                return;
             var igniteBuff = entity.GetFirstBuff<HellfireIgnitedBuff>();
             if (igniteBuff == null)
             {

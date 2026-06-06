@@ -92,6 +92,8 @@
     <model name="nuke" type="entity" path="mvz2:contraption/palace/nuke" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="nether_reactor_core" type="entity" path="mvz2:contraption/palace/nether_reactor_core" width="64" height="64" xOffset="0" yOffset="-28" />
 
+    <model name="freezenser" type="entity" path="mvz2:contraption/mountain/freezenser" width="64" height="64" xOffset="0" yOffset="-28" />
+
     <model name="infectenser" type="entity" path="mvz2:contraption/upgrade/infectenser" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="force_pad" type="entity" path="mvz2:contraption/upgrade/force_pad" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="golden_dropper" type="entity" path="mvz2:contraption/upgrade/golden_dropper" width="64" height="64" xOffset="0" yOffset="-28" />

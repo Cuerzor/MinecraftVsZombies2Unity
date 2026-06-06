@@ -155,6 +155,7 @@ namespace MVZ2.Vanilla.Entities
         public const string projectileExplodeCannonMissile = "projectile_explode_cannon_missile";
         public const string projectileRotating = "projectile_rotating";
         public const string projectilePointToDirection = "projectile_point_to_direction";
+        public const string projectileChill = "projectile_chill";
         #endregion
 
         #region Effects

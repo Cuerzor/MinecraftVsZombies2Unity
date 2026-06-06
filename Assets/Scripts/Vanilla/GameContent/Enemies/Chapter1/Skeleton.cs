@@ -112,7 +112,7 @@ namespace MVZ2.GameContent.Enemies
             {
                 if (IsArrowFlame(entity))
                 {
-                    e.HellfireIgnite(entity, false);
+                    e.HellfireIgnite(entity, false, true);
                 }
             });
         }

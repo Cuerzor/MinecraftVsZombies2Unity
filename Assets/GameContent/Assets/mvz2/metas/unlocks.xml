@@ -128,6 +128,9 @@
     <group id="contraption.nuke"><conditions><condition required="mvz2:level.palace_8" /></conditions></group>
     <group id="contraption.nether_reactor_core"><conditions><condition required="mvz2:level.palace_9" /></conditions></group>
     
+    <!-- Mountain Contraptions -->
+    <group id="contraption.freezenser"><conditions><condition required="mvz2:level.mountain_1" /></conditions></group>
+
     <!-- Upgrade Contraptions -->
     <group id="contraption.infectenser"><conditions><condition required="mvz2:contraption.infectenser" /></conditions></group>
     <group id="contraption.force_pad"><conditions><condition required="mvz2:contraption.force_pad" /></conditions></group>

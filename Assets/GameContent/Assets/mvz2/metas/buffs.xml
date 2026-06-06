@@ -45,6 +45,7 @@
     <buff id="armor_damage_color" polarity="none" level="5000" target="armor" />
     <buff id="random_enemy_speed" polarity="none" level="2000" target="enemy" />
     <buff id="destroy_conflict_grid_entities_on_land" polarity="none" level="5000" target="entity" />
+    <buff id="collision_checker" polarity="none" level="5000" target="entity" />
 
     <!-- Prologue -->
     <buff id="mine_tnt_invincible" polarity="positive" level="4000" target="contraption" />
@@ -214,6 +215,7 @@
     
     <!-- Chapter 7 -->
     <buff id="decorative_wind_speed" polarity="none" level="5000" target="level" />
+    <buff id="chill_projectile" polarity="positive" level="1000" target="projectile" />
 
     <!-- Random China -->
     <buff id="super_recharge" polarity="positive" level="0" target="blueprint" />

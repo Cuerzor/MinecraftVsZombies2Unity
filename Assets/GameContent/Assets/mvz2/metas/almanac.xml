@@ -178,6 +178,7 @@
             <value value="mvz2:lightning" name="闪电" description="吸收闪电伤害" sprite="mvz2:ui/almanac/shell_tags[12]" backgroundColor="#b38f47" />
             <value value="mvz2:shadow" name="暗影" description="受到1.5x火焰、闪电和光明伤害" sprite="mvz2:ui/almanac/shell_tags[13]" backgroundColor="#3f3f3f" />
             <value value="mvz2:normal" name="普通" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[14]" backgroundColor="#6b6b6b" />
+            <value value="mvz2:ice" name="冰" description="阻挡锐利物体，但受到20x冲击伤害和2x火焰伤害" sprite="mvz2:ui/almanac/shell_tags[15]" backgroundColor="#1b67a3" />
         </enum>
     </tags>
     <globalVariables>
@@ -1037,7 +1038,19 @@
         </entry>
 
         <!-- Chapter 7 -->
-        <entry />
+        <entry id="mvz2:freezenser">
+            <header>
+                <p>寒冰发射器发射可以使敌人减速的冰箭。</p>
+            </header>
+            <properties>
+                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
+                <p>技能：<![CDATA[<color=red>？</color>]]></p>
+            </properties>
+            <flavor>
+                <p>====施工中====</p>
+            </flavor>
+        </entry>
         <entry />
         <entry />
         <entry />

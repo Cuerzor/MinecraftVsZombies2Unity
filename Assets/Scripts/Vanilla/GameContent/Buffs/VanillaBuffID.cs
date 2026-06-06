@@ -92,6 +92,7 @@ namespace MVZ2.GameContent.Buffs
             public const string changeGrid = "change_grid";
             public const string temporaryUpdateBeforeGame = "temporary_update_before_game";
             public const string destroyConflictGridEntitiesOnLand = "destroy_conflict_grid_entities_on_land";
+            public const string collisionChecker = "collision_checker";
 
             // Chapter 1
             public const string lightFadeout = "light_fadeout";
@@ -325,6 +326,9 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 5
             public const string beaconMeteorNoDestroy = "beacon_meteor_no_destroy";
+
+            // Chapter 7
+            public const string chillProjectile = "chill_projectile";
         }
         public static class Effect
         {

@@ -1326,6 +1326,19 @@
             </properties>
         </entity>
 
+        <!-- Mountain Contraptions -->
+        <entity template="dispenser" id="freezenser" name="寒冰发射器" tooltip="发射减速的冰箭">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.freezenser" />
+            </unlock>
+            <properties>
+                <id name="mvz2:shell" value="mvz2:ice" />
+                <id name="mvz2:deathSound" value="mvz2:glass_break" />
+
+                <int name="mvz2:cost" value="175" />
+            </properties>
+        </entity>
+
         <!-- Upgrade Contraptions -->
         <entity template="dispenser" id="infectenser" name="传染发射器" tooltip="（需要小型发射器）\n发射在敌人之间传播的寄生机器人">
             <unlock>
@@ -3091,6 +3104,7 @@
             <behaviours includeSelf="false">
                 <behaviour operator="add" id="mvz2:hellfire_ignited_arrow" />
                 <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
+                <behaviour operator="add" id="mvz2:projectile_chill" />
             </behaviours>
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />

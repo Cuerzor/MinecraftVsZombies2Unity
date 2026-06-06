@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using MVZ2.GameContent.Buffs.Contraptions;
+using MVZ2.GameContent.Buffs.Entities;
 using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Detections;
 using MVZ2.GameContent.Effects;
@@ -95,7 +96,8 @@ namespace MVZ2.GameContent.Contraptions
             detector.DetectEntities(hellfire, igniteBuffer);
             foreach (Entity target in igniteBuffer)
             {
-                target.HellfireIgnite(hellfire, cursed);
+                var enter = CollisionCheckerBuff.IsEnter(target, hellfire);
+                target.HellfireIgnite(hellfire, cursed, enter);
             }
         }
         private void UpdateExtinguished(Entity hellfire)
@@ -145,6 +147,6 @@ namespace MVZ2.GameContent.Contraptions
     }
     public interface IHellfireIgniteBehaviour
     {
-        void Ignite(Entity entity, Entity hellfire, bool cursed);
+        void Ignite(Entity entity, Entity hellfire, bool cursed, bool enter);
     }
 }

@@ -63,7 +63,7 @@ namespace MVZ2.GameContent.Projectiles
         }
         public static float GetSnowballScale(Entity entity) => entity.GetBehaviourField<float>(ID, PROP_SNOWBALL_SCALE);
         public static void SetSnowballScale(Entity entity, float scale) => entity.SetBehaviourField(ID, PROP_SNOWBALL_SCALE, scale);
-        public void Ignite(Entity entity, Entity hellfire, bool cursed)
+        public void Ignite(Entity entity, Entity hellfire, bool cursed, bool enter)
         {
             var scale = GetSnowballScale(entity);
 

@@ -1252,12 +1252,12 @@ namespace MVZ2.Vanilla.Entities
         #endregion
 
         #region 地狱火
-        public static void HellfireIgnite(this Entity target, Entity hellfire, bool cursed)
+        public static void HellfireIgnite(this Entity target, Entity hellfire, bool cursed, bool enter)
         {
             var behaviour = target.Definition?.GetBehaviour<IHellfireIgniteBehaviour>();
             if (behaviour == null)
                 return;
-            behaviour.Ignite(target, hellfire, cursed);
+            behaviour.Ignite(target, hellfire, cursed, enter);
         }
         #endregion
 

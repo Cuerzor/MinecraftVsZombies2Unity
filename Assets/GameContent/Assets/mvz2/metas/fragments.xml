@@ -259,6 +259,14 @@
             <key hex="#6b6b6b" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="freezenser">
+        <colorKeys>
+            <key hex="#ffffff" time="0.25" />
+            <key hex="#89c1ed" time="0.5" />
+            <key hex="#4d96cf" time="0.75" />
+            <key hex="#1b67a3" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="infectenser">
         <colorKeys>
             <key hex="#FF0000" time="0.2" />
