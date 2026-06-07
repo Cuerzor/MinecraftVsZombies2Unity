@@ -447,6 +447,7 @@ namespace MVZ2.Editor
                         borderBottom = Mathf.RoundToInt(sprite.border.y),
                         borderRight = Mathf.RoundToInt(sprite.border.z),
                         borderTop = Mathf.RoundToInt(sprite.border.w),
+                        fullRect = sprite.packingMode == SpritePackingMode.Rectangle,
                     };
                 }
                 else
@@ -466,6 +467,7 @@ namespace MVZ2.Editor
                         borderBottom = Mathf.RoundToInt(sprite.border.y),
                         borderRight = Mathf.RoundToInt(sprite.border.z),
                         borderTop = Mathf.RoundToInt(sprite.border.w),
+                        fullRect = sprite.packingMode == SpritePackingMode.Rectangle,
                     };
                 }
                 resoucePackSprites.Add(packSprite);
