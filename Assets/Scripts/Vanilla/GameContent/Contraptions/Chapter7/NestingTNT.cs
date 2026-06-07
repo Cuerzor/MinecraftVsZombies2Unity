@@ -22,7 +22,7 @@ using UnityEngine;
 namespace MVZ2.GameContent.Contraptions
 {
     [AutoEntityBehaviourDefinition(VanillaContraptionNames.nestingTNT)]
-    public class NestingTNT : ContraptionBehaviour, IExplodeContraptionBehaviour
+    public class NestingTNT : EntityBehaviourDefinition, IExplodeContraptionBehaviour
     {
         public NestingTNT(string nsp, string name) : base(nsp, name)
         {

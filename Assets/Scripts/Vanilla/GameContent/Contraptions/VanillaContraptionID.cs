@@ -151,6 +151,7 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly NamespaceID netherReactorCore = Get(VanillaContraptionNames.netherReactorCore);
 
         public static readonly NamespaceID freezenser = Get(VanillaContraptionNames.freezenser);
+        public static readonly NamespaceID nestingTNT = Get(VanillaContraptionNames.nestingTNT);
 
         public static readonly NamespaceID infectenser = Get(VanillaContraptionNames.infectenser);
         public static readonly NamespaceID forcePad = Get(VanillaContraptionNames.forcePad);

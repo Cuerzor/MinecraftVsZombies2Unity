@@ -1345,9 +1345,9 @@
             <behaviours>
                 <behaviour operator="add" id="mvz2:ignitable" />
                 <behaviour operator="add" id="mvz2:ignitable/trigger" />
-                <behaviour operator="add" id="mvz2:ignitable/evoke" />
                 <behaviour operator="add" id="mvz2:explode_on_fire_death" />
                 <behaviour operator="add" id="mvz2:set_model_property_variant" />
+                <behaviour operator="add" id="mvz2:nesting_tnt/evoke" />
             </behaviours>
             <properties>
                 <bool name="mvz2:canDeactive" value="false" />
