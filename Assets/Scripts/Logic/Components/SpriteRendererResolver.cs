@@ -26,9 +26,11 @@ namespace MVZ2Logic.UI
             {
                 final = Global.Resources.GetFinalSprite(final);
             }
+            var beforeSize = Renderer.size;
             spriteChanged = true;
             BaseSprite = sprite;
             Renderer.sprite = final;
+            Renderer.size = beforeSize;
         }
         public virtual Sprite? GetSprite()
         {
