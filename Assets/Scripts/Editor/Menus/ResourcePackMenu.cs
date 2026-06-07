@@ -388,18 +388,18 @@ namespace MVZ2.Editor
             var sprites = SpriteMenu.GetOrderedSpriteSheet(assetRelativePath, factories);
             if (sprites != null)
             {
-                FillResourcePackSpritesFromSpriteAsset(sprites, originTexture, tags, resoucePackSprites);
+                FillResourcePackSpritesFromSpriteAsset(sprites, originTexture, resoucePackSprites);
             }
 
             return new ResourcePackTexture()
             {
                 texture = texturePath,
-                key = id.ToString(),
+                key = SpriteHelper.CombineTags(id.ToString(), tags),
                 filter = filterMode,
                 slices = resoucePackSprites.Count > 0 ? resoucePackSprites.ToArray() : null
             };
         }
-        private static void FillResourcePackSpritesFromSpriteAsset(Sprite[] sprites, Texture2D texture, string[] tags, List<ResourcePackSprite> resoucePackSprites)
+        private static void FillResourcePackSpritesFromSpriteAsset(Sprite[] sprites, Texture2D texture, List<ResourcePackSprite> resoucePackSprites)
         {
             for (int i = 0; i < sprites.Length; i++)
             {
@@ -410,7 +410,6 @@ namespace MVZ2.Editor
                     var pivotY = SpriteHelper.FromBottomToFromTopPivotY(sprite.pivot.y / sprite.rect.height);
                     packSprite = new ResourcePackSprite()
                     {
-                        tags = tags,
                         single = true,
                         pivotX = sprite.pivot.x / sprite.rect.width,
                         pivotY = pivotY,
@@ -426,7 +425,6 @@ namespace MVZ2.Editor
                     var pivotY = SpriteHelper.FromBottomToFromTopPivotY(sprite.pivot.y / sprite.rect.height);
                     packSprite = new ResourcePackSprite()
                     {
-                        tags = tags,
                         single = false,
                         x = (int)sprite.rect.x,
                         y = y,

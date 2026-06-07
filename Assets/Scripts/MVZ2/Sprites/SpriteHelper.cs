@@ -3,6 +3,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 
 namespace MVZ2.Sprites
@@ -99,6 +100,16 @@ namespace MVZ2.Sprites
         public static string GetLanguageSpriteTag(string languageCode)
         {
             return languageCode;
+        }
+        public static string CombineTags(string id, string[] tags)
+        {
+            var sb = new StringBuilder();
+            sb.Append(id);
+            foreach (var tag in tags)
+            {
+                sb.Append($"@{tag}");
+            }
+            return sb.ToString();
         }
         public static void ParseIDAndTags(string path, out string id, out string[] tags)
         {

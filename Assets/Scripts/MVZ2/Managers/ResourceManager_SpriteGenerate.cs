@@ -68,7 +68,10 @@ namespace MVZ2.Managers
         {
             if (generatedResourceManifest)
             {
-                var background = Sprite.Create(backgroundTex, sprite.rect, sprite.pivot);
+                var width = Mathf.Min(backgroundTex.width, sprite.rect.width);
+                var height = Mathf.Min(backgroundTex.height, sprite.rect.height);
+                var rect = new Rect(0, 0, width, height);
+                var background = Sprite.Create(backgroundTex, rect, sprite.pivot);
                 background.name = sprite.name;
                 generatedResourceManifest.AddSprite(category, sprite, background);
             }

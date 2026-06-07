@@ -152,26 +152,12 @@ namespace MVZ2.ResourcePacks
                     continue;
                 }
 
-                // 获取贴图路径。
-                var textureID = NamespaceID.Parse(packTexture.key, Main.BuiltinNamespace);
-
-                // 获取ID和图片标签。
-                var splitTexturePaths = FileHelper.RemoveExtension(packTexture.texture).Split('/', '\\');
-                string nsp, textureId;
-                if (splitTexturePaths.Length > 1)
-                {
-                    nsp = splitTexturePaths[0];
-                    textureId = string.Join("/", splitTexturePaths.Skip(1));
-                }
-                else
-                {
-                    nsp = string.Empty;
-                    textureId = string.Join("/", splitTexturePaths);
-                }
-                SpriteHelper.ParseIDAndTags(textureId, out textureId, out var tags);
-
                 // 加载贴图。
-                var textureEntry = new TextureEntry(textureID, Path.Combine("assets", packTexture.texture))
+                SpriteHelper.ParseIDAndTags(packTexture.key, out var textureKeyString, out var textureKeyTags);
+                var textureKeyID = NamespaceID.Parse(textureKeyString, Main.BuiltinNamespace);
+                var textureKey = new ResourceLookupKey(textureKeyID, textureKeyTags);
+
+                var textureEntry = new TextureEntry(textureKey, Path.Combine("assets", packTexture.texture))
                 {
                     filterMode = (FilterMode)packTexture.filter,
                     wrapMode = (TextureWrapMode)packTexture.wrap
@@ -184,15 +170,28 @@ namespace MVZ2.ResourcePacks
                         var slice = slices[i];
                         var sliceKey = slice.key;
                         SpriteReference? spriteRef = null;
-                        if (sliceKey != null && SpriteReference.TryParse(sliceKey, Main.BuiltinNamespace, out var sprRef))
+                        string[] sliceKeyTags;
+                        if (!string.IsNullOrEmpty(sliceKey))
                         {
-                            spriteRef = sprRef;
+                            SpriteHelper.ParseIDAndTags(sliceKey, out var sliceKeyString, out sliceKeyTags);
+
+                            if (SpriteReference.TryParse(sliceKeyString, Main.BuiltinNamespace, out var sprRef))
+                            {
+                                spriteRef = sprRef;
+                            }
                         }
-                        if (spriteRef == null)
+                        else
                         {
-                            spriteRef = new SpriteReference(textureID, i);
+                            spriteRef = new SpriteReference(textureKeyID, i);
+                            sliceKeyTags = textureKeyTags;
                         }
-                        var spriteKey = new SpriteLookupKey(spriteRef, slice.tags ?? tags);
+                        if (!SpriteReference.IsValid(spriteRef))
+                        {
+                            Log.LogWarning($"Invalid sprite reference {sliceKey} from resource pack.");
+                            continue;
+                        }
+
+                        var spriteKey = new SpriteLookupKey(spriteRef, sliceKeyTags);
                         var sliceData = new SliceData(spriteKey)
                         {
                             border = new Vector4(slice.borderLeft, slice.borderBottom, slice.borderRight, slice.borderTop),
@@ -539,11 +538,12 @@ namespace MVZ2.ResourcePacks
                 var streaming = entry.streaming;
                 // 加载AudioClip。
                 var audioClip = await loader.LoadAudioClipAsync(path, streaming);
-                if (audioClip == null)
+                if (audioClip == null || audioClip.samples == 0)
                 {
                     Log.LogWarning($"Failed to load audio clip {path} from resource pack {pack.Key}.");
                     continue;
                 }
+                audioClip.name = pair.Key.ToString();
                 Main.ResourceManager.AddGeneratedAudioClip(audioClip);
                 pack.AddAudioClip(pair.Key, audioClip);
             }
@@ -599,13 +599,13 @@ namespace MVZ2.ResourcePacks
         }
         protected class TextureEntry
         {
-            public NamespaceID textureID;
+            public ResourceLookupKey textureID;
             public string texturePath;
             public FilterMode filterMode;
             public TextureWrapMode wrapMode;
             public List<SliceData> slices = new List<SliceData>();
 
-            public TextureEntry(NamespaceID textureID, string texturePath)
+            public TextureEntry(ResourceLookupKey textureID, string texturePath)
             {
                 this.textureID = textureID;
                 this.texturePath = texturePath;

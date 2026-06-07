@@ -64,7 +64,8 @@ namespace MVZ2.Managers
                     if (!texture.Exists())
                         continue;
                     var id = new NamespaceID(modNamespace, entry.name);
-                    RegisterTexture2D(id, texture);
+                    var key = new ResourceLookupKey(id, entry.tags.ToArray());
+                    RegisterTexture2D(key, texture);
                 }
                 foreach (var entry in manifest.spriteEntries)
                 {

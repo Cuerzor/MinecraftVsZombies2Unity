@@ -102,6 +102,7 @@ namespace MVZ2.ResourcePacks
         private void ReadPackSpriteManifest(LocalizedSpriteManifest manifest, string nsp, string lang, string dir, PackReadData packData)
         {
             // 加载Sprite。
+            var tags = SpriteHelper.GetLanguageSpriteTag(lang);
             if (manifest.sprites != null)
             {
                 foreach (var localizedSprite in manifest.sprites)
@@ -113,9 +114,10 @@ namespace MVZ2.ResourcePacks
 
                     var texturePath = Path.Combine(dir, "sprites", localizedSprite.texture).Replace("\\", "/");
                     var textureID = new NamespaceID(nsp, localizedSprite.texture);
+                    var textureKey = new ResourceLookupKey(textureID, tags);
                     var resID = new NamespaceID(nsp, localizedSprite.name);
                     var spriteRef = new SpriteReference(resID);
-                    var spriteKey = new SpriteLookupKey(spriteRef, SpriteHelper.GetLanguageSpriteTag(lang));
+                    var spriteKey = new SpriteLookupKey(spriteRef, tags);
 
                     var sliceData = new SliceData(spriteKey)
                     {
@@ -127,7 +129,7 @@ namespace MVZ2.ResourcePacks
                         single = true,
                         spriteKey = spriteKey
                     };
-                    var spriteEntry = new SpriteEntry(textureID, texturePath, sliceData);
+                    var spriteEntry = new SpriteEntry(textureKey, texturePath, sliceData);
                     packData.spriteEntries.Add(spriteEntry);
                 }
             }
@@ -143,15 +145,16 @@ namespace MVZ2.ResourcePacks
 
                     var texturePath = Path.Combine(dir, "spritesheets", localizedSpritesheet.texture).Replace("\\", "/");
                     var textureID = new NamespaceID(nsp, localizedSpritesheet.texture);
+                    var textureKey = new ResourceLookupKey(textureID, tags);
                     var resID = new NamespaceID(nsp, localizedSpritesheet.name);
-                    var spritesheetEntry = new SpritesheetEntry(textureID, texturePath);
+                    var spritesheetEntry = new SpritesheetEntry(textureKey, texturePath);
                     if (localizedSpritesheet.slices != null)
                     {
                         for (int i = 0; i < localizedSpritesheet.slices.Length; i++)
                         {
                             var slice = localizedSpritesheet.slices[i];
                             var spriteRef = new SpriteReference(resID, i);
-                            var spriteKey = new SpriteLookupKey(spriteRef, SpriteHelper.GetLanguageSpriteTag(lang));
+                            var spriteKey = new SpriteLookupKey(spriteRef, tags);
                             var sliceData = new SliceData(spriteKey)
                             {
                                 border = Vector4.zero,
@@ -256,11 +259,11 @@ namespace MVZ2.ResourcePacks
         }
         protected class SpriteEntry
         {
-            public NamespaceID textureID;
+            public ResourceLookupKey textureID;
             public string texturePath;
             public SliceData slice;
 
-            public SpriteEntry(NamespaceID textureID, string texturePath, SliceData slice)
+            public SpriteEntry(ResourceLookupKey textureID, string texturePath, SliceData slice)
             {
                 this.textureID = textureID;
                 this.texturePath = texturePath;
@@ -269,11 +272,11 @@ namespace MVZ2.ResourcePacks
         }
         protected class SpritesheetEntry
         {
-            public NamespaceID textureID;
+            public ResourceLookupKey textureID;
             public string texturePath;
             public List<SliceData> slices = new();
 
-            public SpritesheetEntry(NamespaceID textureID, string texturePath)
+            public SpritesheetEntry(ResourceLookupKey textureID, string texturePath)
             {
                 this.textureID = textureID;
                 this.texturePath = texturePath;

@@ -51,7 +51,7 @@ namespace MVZ2.Managers
         {
             baseGameSprites.Unregister(key);
         }
-        public void RegisterTexture2D(NamespaceID key, Texture2D value)
+        public void RegisterTexture2D(ResourceLookupKey key, Texture2D value)
         {
             baseGameTextures.Register(key, value);
         }
@@ -69,9 +69,9 @@ namespace MVZ2.Managers
             var spriteLookupKey = new SpriteLookupKey(spriteRef);
             return baseGameSprites.TryGet(spriteLookupKey, out var value) ? value : null;
         }
-        public Texture2D? GetTexture2D(NamespaceID? id)
+        public Texture2D? GetTexture2D(ResourceLookupKey? id)
         {
-            if (!NamespaceID.IsValid(id))
+            if (id == null)
                 return null;
             return baseGameTextures.TryGet(id, out var value) ? value : null;
         }
@@ -102,12 +102,12 @@ namespace MVZ2.Managers
         }
         public Texture2D GetFinalTexture(Texture2D texture2D, ResourceContext args)
         {
-            var id = GetTexture2DID(texture2D);
+            var id = GetTexture2DKey(texture2D);
             return GetFinalTexture(id, args) ?? texture2D;
         }
-        public Texture2D? GetFinalTexture(NamespaceID? id, ResourceContext context)
+        public Texture2D? GetFinalTexture(ResourceLookupKey? id, ResourceContext context)
         {
-            if (!NamespaceID.IsValid(id))
+            if (id == null)
                 return null;
             return textureResolver.Resolve(id, context);
         }
@@ -151,9 +151,9 @@ namespace MVZ2.Managers
         #region ID
         public SpriteReference? GetSpriteReference(Sprite sprite)
         {
-            return baseGameSprites.GetKey(sprite)?.reference;
+            return baseGameSprites.GetKey(sprite)?.id;
         }
-        public NamespaceID? GetTexture2DID(Texture2D texture2D)
+        public ResourceLookupKey? GetTexture2DKey(Texture2D texture2D)
         {
             return baseGameTextures.GetKey(texture2D);
         }
@@ -183,12 +183,12 @@ namespace MVZ2.Managers
         #endregion
 
         private ResourceDatabase<SpriteLookupKey, Sprite> baseGameSprites = new ResourceDatabase<SpriteLookupKey, Sprite>();
-        private ResourceDatabase<NamespaceID, Texture2D> baseGameTextures = new ResourceDatabase<NamespaceID, Texture2D>();
+        private ResourceDatabase<ResourceLookupKey, Texture2D> baseGameTextures = new ResourceDatabase<ResourceLookupKey, Texture2D>();
         private ResourceDatabase<NamespaceID, AudioClip> baseGameAudioClips = new ResourceDatabase<NamespaceID, AudioClip>();
         private Dictionary<NamespaceID, ModelIcon> modelIcons = new Dictionary<NamespaceID, ModelIcon>();
 
         private SpriteResourceResolver spriteResolver = new SpriteResourceResolver();
-        private ResourceResolver<NamespaceID, Texture2D> textureResolver = new ResourceResolver<NamespaceID, Texture2D>();
+        private LookupResourceResolver<Texture2D> textureResolver = new LookupResourceResolver<Texture2D>();
         private ResourceResolver<NamespaceID, AudioClip> audioClipResolver = new ResourceResolver<NamespaceID, AudioClip>();
         private ResourceResolver<NamespaceID, ISoundSource> soundSourceResolver = new ResourceResolver<NamespaceID, ISoundSource>();
         private ResourceResolver<NamespaceID, IMusicSource> musicSourceResolver = new ResourceResolver<NamespaceID, IMusicSource>();

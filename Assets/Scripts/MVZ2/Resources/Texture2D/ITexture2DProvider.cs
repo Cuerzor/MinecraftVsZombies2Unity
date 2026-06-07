@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace MVZ2.Resources
 {
-    public interface ITexture2DProvider : IResourceProvider<NamespaceID, Texture2D>
+    public interface ITexture2DProvider : IResourceProvider<ResourceLookupKey, Texture2D>
     {
     }
 }

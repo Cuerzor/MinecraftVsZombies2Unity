@@ -9,9 +9,17 @@ namespace MVZ2.ResourcePacks
     {
         public ResourcePackTexture[]? textures;
     }
+    public class ResourceKeyV1
+    {
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? id;
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string[]? tags;
+    }
     public class ResourcePackTexture
     {
         public string? texture;
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? key;
         [DefaultValue(1)]
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
@@ -25,8 +33,6 @@ namespace MVZ2.ResourcePacks
     {
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public string? key;
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-        public string[]? tags;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool single;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]

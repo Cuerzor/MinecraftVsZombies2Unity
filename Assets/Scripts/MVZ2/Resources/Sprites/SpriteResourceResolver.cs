@@ -2,32 +2,21 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using MVZ2.Sprites;
 using UnityEngine;
 
 namespace MVZ2.Resources
 {
-    public class SpriteResourceResolver : ResourceResolver<SpriteLookupKey, Sprite> 
+    public class SpriteResourceResolver : ResourceResolverTags<SpriteLookupKey, Sprite>
     {
         protected override List<SpriteLookupKey> BuildCandidateKeys(SpriteLookupKey key, ResourceContext context)
         {
-            var reference = key.reference;
+            var reference = key.id;
+            var tagCandidates = GetTagCandidates(context);
             var list = new List<SpriteLookupKey>();
-            if (!string.IsNullOrEmpty(context.languageCode) && context.censored)
+            foreach (var candidate in tagCandidates)
             {
-                list.Add(new SpriteLookupKey(reference, SpriteHelper.SPRITE_TAG_CENSORED, SpriteHelper.GetLanguageSpriteTag(context.languageCode)));
+                list.Add(new SpriteLookupKey(reference, candidate));
             }
-            if (!string.IsNullOrEmpty(context.languageCode))
-            {
-                list.Add(new SpriteLookupKey(reference, SpriteHelper.GetLanguageSpriteTag(context.languageCode)));
-            }
-            if (context.censored)
-            {
-                list.Add(new SpriteLookupKey(reference, SpriteHelper.SPRITE_TAG_CENSORED));
-            }
-
-            list.Add(new SpriteLookupKey(reference));
-
             return list;
         }
     }

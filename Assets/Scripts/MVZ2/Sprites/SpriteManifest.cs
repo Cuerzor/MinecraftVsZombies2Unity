@@ -19,6 +19,7 @@ namespace MVZ2.Sprites
     {
         public string? name;
         public Texture2D? texture;
+        public List<string> tags = new List<string>();
     }
     [Serializable]
     public class SpriteEntry

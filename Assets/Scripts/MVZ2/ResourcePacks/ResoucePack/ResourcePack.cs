@@ -125,11 +125,11 @@ namespace MVZ2.ResourcePacks
         #endregion
 
         #region Texture2D
-        public void AddTexture2D(NamespaceID path, Texture2D texture2D)
+        public void AddTexture2D(ResourceLookupKey path, Texture2D texture2D)
         {
             textures.Add(path, texture2D);
         }
-        public bool TryGetTexture2D(NamespaceID path, out Texture2D texture2D)
+        public bool TryGetTexture2D(ResourceLookupKey path, out Texture2D texture2D)
         {
             return textures.TryGetValue(path, out texture2D);
         }
@@ -214,7 +214,7 @@ namespace MVZ2.ResourcePacks
         {
             return TryGetSprite(spriteReference, out sprite);
         }
-        bool IResourceProvider<NamespaceID, Texture2D>.TryGet(NamespaceID key, out Texture2D? texture)
+        bool IResourceProvider<ResourceLookupKey, Texture2D>.TryGet(ResourceLookupKey key, out Texture2D? texture)
         {
             return TryGetTexture2D(key, out texture);
         }
@@ -266,7 +266,7 @@ namespace MVZ2.ResourcePacks
 
         private string tempDirectory;
         private Dictionary<string, LanguageCatalogs> catalogs = new Dictionary<string, LanguageCatalogs>();
-        public Dictionary<NamespaceID, Texture2D> textures = new Dictionary<NamespaceID, Texture2D>();
+        public Dictionary<ResourceLookupKey, Texture2D> textures = new Dictionary<ResourceLookupKey, Texture2D>();
         public Dictionary<SpriteLookupKey, Sprite> sprites = new Dictionary<SpriteLookupKey, Sprite>();
 
         public Dictionary<NamespaceID, AudioClip> audioClips = new Dictionary<NamespaceID, AudioClip>();

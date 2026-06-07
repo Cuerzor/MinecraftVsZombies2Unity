@@ -8,7 +8,6 @@ using PVZEngine.Tools.Unity;
 using UnityEditor;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
 
 namespace MVZ2.Editor
 {
@@ -74,11 +73,13 @@ namespace MVZ2.Editor
                 var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(assetPath);
                 if (texture != null)
                 {
-                    spriteManifest.textureEntries.Add(new TextureEntry()
+                    var entry = new TextureEntry()
                     {
                         name = resourceName,
                         texture = texture,
-                    });
+                    };
+                    entry.tags.AddRange(tags);
+                    spriteManifest.textureEntries.Add(entry);
                 }
 
                 var sprites = GetOrderedSpriteSheet(assetPath, factories);

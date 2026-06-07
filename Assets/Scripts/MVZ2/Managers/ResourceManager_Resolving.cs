@@ -44,7 +44,7 @@ namespace MVZ2.Managers
             RegisterSprite(key, sprite);
         }
         public void RegisterSprite(SpriteLookupKey key, Sprite value) => resourceLibrary.RegisterSprite(key, value);
-        public void RegisterTexture2D(NamespaceID key, Texture2D value) => resourceLibrary.RegisterTexture2D(key, value);
+        public void RegisterTexture2D(ResourceLookupKey key, Texture2D value) => resourceLibrary.RegisterTexture2D(key, value);
         public void RegisterAudioClip(NamespaceID key, AudioClip value) => resourceLibrary.RegisterAudioClip(key, value);
         #endregion
 
@@ -63,13 +63,13 @@ namespace MVZ2.Managers
         public Sprite? GetFinalSprite(SpriteReference? spriteRef, ResourceContext context) => resourceLibrary.GetFinalSprite(spriteRef, context);
 
 
-        public Texture2D? GetTexture(NamespaceID id) => resourceLibrary.GetTexture2D(id);
+        public Texture2D? GetTexture(ResourceLookupKey id) => resourceLibrary.GetTexture2D(id);
         public Texture2D GetFinalTexture(Texture2D texture2D)
         {
-            var id = GetTexture2DID(texture2D);
+            var id = GetTexture2DKey(texture2D);
             return GetFinalTexture(id) ?? texture2D;
         }
-        public Texture2D? GetFinalTexture(NamespaceID? id) => resourceLibrary.GetFinalTexture(id, GetResourceContext());
+        public Texture2D? GetFinalTexture(ResourceLookupKey? id) => resourceLibrary.GetFinalTexture(id, GetResourceContext());
 
 
         public AudioClip? GetAudioClip(NamespaceID? id) => resourceLibrary.GetAudioClip(id);
@@ -93,7 +93,7 @@ namespace MVZ2.Managers
 
         #region Resource ID
         public SpriteReference? GetSpriteReference(Sprite resouce) => resourceLibrary.GetSpriteReference(resouce);
-        public NamespaceID? GetTexture2DID(Texture2D resource) => resourceLibrary.GetTexture2DID(resource);
+        public ResourceLookupKey? GetTexture2DKey(Texture2D resource) => resourceLibrary.GetTexture2DKey(resource);
         public NamespaceID? GetAudioClipID(AudioClip resource) => resourceLibrary.GetAudioClipID(resource);
         #endregion
 
