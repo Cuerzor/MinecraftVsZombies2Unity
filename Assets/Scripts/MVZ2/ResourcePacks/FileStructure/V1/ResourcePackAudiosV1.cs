@@ -15,6 +15,7 @@ namespace MVZ2.ResourcePacks
     {
         public string? id;
         public string? path;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool streaming;
     }
     public class ResourcePackSoundV1
