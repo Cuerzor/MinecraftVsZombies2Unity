@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using MVZ2.GlobalGames;
 using MVZ2.Managers;
 using MVZ2.Metas;
 using MVZ2Logic.Armors;
@@ -30,6 +31,7 @@ using PVZEngine;
 using PVZEngine.Base;
 using PVZEngine.Buffs;
 using PVZEngine.Difficulties;
+using PVZEngine.Entities;
 using PVZEngine.Grids;
 using PVZEngine.Level;
 using PVZEngine.SeedPacks;
@@ -46,19 +48,35 @@ namespace MVZ2.Modding
         }
         public void RegisterMod(Mod mod, Assembly[] assemblies)
         {
-            mod.Register(this);
             pendingMods.Add(new PendingMod(mod, assemblies));
         }
-        public void LoadAll(IGlobalGame game)
+        public void LoadAll(GlobalGame game)
         {
+            preloadedCustomEntityBlueprints.Clear();
+            foreach (var modInfo in pendingMods)
+            {
+                Preload(modInfo.mod);
+                modInfo.mod.PreInit(this);
+            }
             stageProviders = stageProviders.OrderBy(p => p.Priority).ToList();
             seedProviders = seedProviders.OrderBy(p => p.Priority).ToList();
             foreach (var modInfo in pendingMods)
             {
                 Load(modInfo.mod, modInfo.assemblies);
-                modInfo.mod.Init(game);
+                modInfo.mod.OnInit(game);
+                game.AddMod(modInfo.mod);
+            }
+            foreach (var modInfo in pendingMods)
+            {
+                modInfo.mod.PostInit(game);
             }
             pendingMods.Clear();
+            preloadedCustomEntityBlueprints.Clear();
+        }
+
+        private void Preload(Mod mod)
+        {
+            PreloadDefinitions(mod);
         }
         private void Load(Mod mod, Assembly[] assemblies)
         {
@@ -115,6 +133,27 @@ namespace MVZ2.Modding
         }
         #endregion
 
+        #region 预加载
+        private void PreloadDefinitions(Mod mod)
+        {
+            PreloadCustomEntityBlueprints(mod);
+        }
+        private void PreloadCustomEntityBlueprints(Mod mod)
+        {
+            var nsp = mod.Namespace;
+            foreach (BlueprintEntityMeta meta in res.GetModEntityBlueprintMetas(nsp))
+            {
+                var entityID = meta.EntityID;
+                if (!preloadedCustomEntityBlueprints.TryGetValue(entityID, out var metaList))
+                {
+                    metaList = new List<BlueprintEntityMeta>();
+                    preloadedCustomEntityBlueprints.Add(entityID, metaList);
+                }
+                metaList.Add(meta);
+            }
+        }
+        #endregion
+
         #region 加载Definitions
         private void LoadDefinitions(Mod mod)
         {
@@ -143,7 +182,6 @@ namespace MVZ2.Modding
             // 加载所有关卡Meta。
             LoadStages(mod);
 
-            LoadCustomEntityBlueprints(mod);
             // 加载所有蓝图错误信息。
             LoadBlueprintErrorMetas(mod);
             // 加载所有增益信息。
@@ -177,25 +215,67 @@ namespace MVZ2.Modding
                 }
                 mod.AddDefinition(def);
 
+                LoadEntityBlueprint(mod, def);
+                LoadCustomEntityBlueprints(mod, def);
+            }
+        }
+        private void LoadEntityBlueprint(Mod mod, EntityDefinition def)
+        {
+            var entityID = def.GetID();
+            // 将实体作为蓝图添加到游戏中。
+            var mobileID = new NamespaceID(entityID.SpaceName, $"mobile_blueprint/{entityID.Path}");
+            var blueprintID = LogicBlueprintID.FromEntity(entityID);
+            var parameters = new SeedParameters()
+            {
+                entityID = entityID,
+                cost = def.GetCost(),
+                rechargeID = def.GetRechargeID(),
+                triggerActive = def.IsTriggerActive(),
+                canInstantTrigger = def.CanInstantTrigger(),
+                upgrade = def.IsUpgradeBlueprint(),
+                canInstantEvoke = def.CanInstantEvoke(),
+                model = def.GetModelID(),
+                mobileIcon = new SpriteReference(mobileID)
+            };
+            SeedDefinition? seedDef = null;
+            foreach (var provider in seedProviders)
+            {
+                if (provider.TryHandle(blueprintID.SpaceName, blueprintID.Path, parameters, out seedDef))
+                    break;
+            }
+            if (seedDef != null)
+            {
+                mod.AddDefinition(seedDef);
+            }
+
+        }
+        private void LoadCustomEntityBlueprints(Mod mod, EntityDefinition def)
+        {
+            var entityID = def.GetID();
+            if (!preloadedCustomEntityBlueprints.TryGetValue(entityID, out var blueprintMetas))
+                return;
+
+            foreach (var blueprintMeta in blueprintMetas)
+            {
                 // 将实体作为蓝图添加到游戏中。
-                var mobileID = new NamespaceID(entityID.SpaceName, $"mobile_blueprint/{entityID.Path}");
-                var blueprintID = LogicBlueprintID.FromEntity(entityID);
                 var parameters = new SeedParameters()
                 {
                     entityID = entityID,
-                    cost = def.GetCost(),
-                    rechargeID = def.GetRechargeID(),
+                    cost = blueprintMeta.Cost,
+                    rechargeID = blueprintMeta.RechargeID,
+                    variant = blueprintMeta.Variant,
+                    icon = blueprintMeta.GetIcon(),
+                    mobileIcon = blueprintMeta.GetMobileIcon(),
+                    model = blueprintMeta.GetModelID(),
+                    upgrade = def.IsUpgradeBlueprint(),
                     triggerActive = def.IsTriggerActive(),
                     canInstantTrigger = def.CanInstantTrigger(),
-                    upgrade = def.IsUpgradeBlueprint(),
-                    canInstantEvoke = def.CanInstantEvoke(),
-                    model = def.GetModelID(),
-                    mobileIcon = new SpriteReference(mobileID)
+                    canInstantEvoke = def.CanInstantEvoke()
                 };
                 SeedDefinition? seedDef = null;
                 foreach (var provider in seedProviders)
                 {
-                    if (provider.TryHandle(blueprintID.SpaceName, blueprintID.Path, parameters, out seedDef))
+                    if (provider.TryHandle(mod.Namespace, blueprintMeta.ID, parameters, out seedDef))
                         break;
                 }
                 if (seedDef != null)
@@ -382,47 +462,6 @@ namespace MVZ2.Modding
                 var name = meta.ID;
                 var def = new ErrorMessageDefinition(nsp, name, LogicDefinitionTypes.SEED_ERROR, meta.Message);
                 mod.AddDefinition(def);
-            }
-        }
-        private void LoadCustomEntityBlueprints(Mod mod)
-        {
-            var nsp = mod.Namespace;
-            foreach (var meta in res.GetModEntityBlueprintMetas(nsp))
-            {
-                if (meta == null)
-                    continue;
-                var entityID = meta.EntityID;
-                if (!NamespaceID.IsValid(entityID))
-                    continue;
-
-                var def = new EntitySeedDefinition(nsp, meta.ID, meta.Name, meta.Tooltip);
-                mod.AddDefinition(def);
-
-                // 将实体作为蓝图添加到游戏中。
-                var parameters = new SeedParameters()
-                {
-                    entityID = entityID,
-                    cost = meta.Cost,
-                    rechargeID = meta.RechargeID,
-                    triggerActive = meta.IsTriggerActive(),
-                    canInstantTrigger = meta.CanInstantTrigger(),
-                    upgrade = meta.IsUpgradeBlueprint(),
-                    canInstantEvoke = meta.CanInstantEvoke(),
-                    variant = meta.Variant,
-                    icon = meta.GetIcon(),
-                    mobileIcon = meta.GetMobileIcon(),
-                    model = meta.GetModelID()
-                };
-                SeedDefinition? seedDef = null;
-                foreach (var provider in seedProviders)
-                {
-                    if (provider.TryHandle(nsp, meta.ID, parameters, out seedDef))
-                        break;
-                }
-                if (seedDef != null)
-                {
-                    mod.AddDefinition(seedDef);
-                }
             }
         }
         private void LoadBuffMetas(Mod mod)
@@ -735,6 +774,8 @@ namespace MVZ2.Modding
             seedProviders.Add(provider);
         }
         #endregion
+
+        private Dictionary<NamespaceID, List<BlueprintEntityMeta>> preloadedCustomEntityBlueprints = new Dictionary<NamespaceID, List<BlueprintEntityMeta>>();
         private List<PendingMod> pendingMods = new List<PendingMod>();
         private List<IStageDefinitionProvider> stageProviders = new List<IStageDefinitionProvider>();
         private List<ISeedDefinitionProvider> seedProviders = new List<ISeedDefinitionProvider>();

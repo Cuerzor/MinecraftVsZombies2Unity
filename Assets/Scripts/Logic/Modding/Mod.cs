@@ -19,16 +19,15 @@ namespace MVZ2Logic.Modding
         }
 
         #region 初始化
-        public virtual void Register(IModLoader modLoader)
+        public virtual void PreInit(IModLoader modLoader)
         {
 
         }
-        public virtual void Init(IGlobalGame game)
+        public virtual void OnInit(IGlobalGame game)
         {
         }
-        public virtual void LateInit(IGlobalGame game)
+        public virtual void PostInit(IGlobalGame game)
         {
-
         }
         public virtual void PostGameInit() { }
         public virtual void PostReloadMods(IGlobalGame game)

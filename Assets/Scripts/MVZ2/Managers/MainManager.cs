@@ -47,7 +47,6 @@ namespace MVZ2.Managers
             InitSerializable();
             LogInformations();
             await LoadManagersInit();
-            ModManager.PostGameInit();
             initialized = true;
             Scene.Init();
         }
@@ -248,21 +247,22 @@ namespace MVZ2.Managers
             InputManager.InitKeys();
             OptionsManager.InitOptions();
 
-            await ModManager.LoadModInfos(Game);
+            await ModManager.RegisterModInfos(Game);
 
             // 在MOD信息加载之后
             await ResourceManager.Init();
             await LanguageManager.InitLanguagePacks();
 
             // 在MOD资源加载之后
-            ModManager.InitModLogics(Game);
-            ModManager.LoadModLogics(Game);
+            ModManager.LoadMods(Game);
             ModManager.PostReloadMods(Game);
             OptionsManager.LoadOptions();
 
             // 在MOD逻辑加载之后
             SaveManager.Load();
             DebugManager.LoadCommandParameterSuggestions();
+
+            ModManager.PostGameInit();
         }
         private void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
         {

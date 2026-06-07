@@ -10,8 +10,7 @@ namespace MVZ2Logic.Modding
     public interface IModLogic
     {
         string Namespace { get; }
-        void Init(IGlobalGame game);
-        void LateInit(IGlobalGame game);
+        void OnInit(IGlobalGame game);
         void PostReloadMods(IGlobalGame game);
         void PostGameInit();
         ITrigger[] GetTriggers();

@@ -5,65 +5,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MVZ2.GlobalGames;
-using MVZ2.Level;
 using MVZ2.Managers;
-using MVZ2Logic.Modding;
+using MVZ2Logic.Games;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace MVZ2.Modding
 {
     public class ModManager : MonoBehaviour, IModManager
     {
-        public async Task LoadModInfos(GlobalGame game)
+        public async Task RegisterModInfos(GlobalGame game)
         {
-            var locator = await Addressables.InitializeAsync().Task;
-            modInfos.Add(new ModInfo(main.BuiltinNamespace, locator)
+            if (OnRegisterModInfos != null)
             {
-                LevelDataVersion = LevelManager.CURRENT_DATA_VERSION,
-                DisplayName = "Vanilla",
-                CatalogPath = null,
-                IsBuiltin = true,
-            });
+                await OnRegisterModInfos.Invoke(game, modInfos);
+            }
         }
-        public void InitModLogics(GlobalGame game)
+        public void LoadMods(GlobalGame game)
         {
-            OnRegisterMods?.Invoke(this);
+            var modLoader = new ModLoader(main);
 
             foreach (var modInfo in modInfos)
             {
-                modInfo.Logic?.LateInit(game);
-            }
-        }
-        public void LoadModLogics(GlobalGame game)
-        {
-            foreach (var modInfo in modInfos)
-            {
-                if (modInfo.Logic == null)
+                if (modInfo.Logic == null || modInfo.Assemblies == null)
                     continue;
-                game.AddMod(modInfo.Logic);
+                modLoader.RegisterMod(modInfo.Logic, modInfo.Assemblies);
             }
+            modLoader.LoadAll(game);
         }
         public void PostReloadMods(GlobalGame game)
         {
             foreach (var modInfo in GetAllModInfos())
             {
-                modInfo.Logic?.PostReloadMods(game);
+                if (modInfo.Logic == null)
+                    continue;
+                modInfo.Logic.PostReloadMods(game);
             }
         }
         public void PostGameInit()
         {
             foreach (var modInfo in GetAllModInfos())
             {
-                modInfo.Logic?.PostGameInit();
+                if (modInfo.Logic == null)
+                    continue;
+                modInfo.Logic.PostGameInit();
             }
-        }
-        void IModManager.RegisterMod(IModLogic logic)
-        {
-            var modInfo = GetModInfo(logic.Namespace);
-            if (modInfo == null)
-                return;
-            modInfo.Logic = logic;
         }
         public ModInfo GetModInfo(string nsp)
         {
@@ -73,7 +58,7 @@ namespace MVZ2.Modding
         {
             return modInfos.ToArray();
         }
-        public static event Action<IModManager>? OnRegisterMods;
+        public static event Func<IGlobalGame, List<ModInfo>, Task>? OnRegisterModInfos;
         public MainManager Main => main;
         [SerializeField]
         private MainManager main = null!;
@@ -82,6 +67,5 @@ namespace MVZ2.Modding
     }
     public interface IModManager
     {
-        void RegisterMod(IModLogic logic);
     }
 }

@@ -21,15 +21,15 @@ namespace MVZ2.Vanilla
         public VanillaMod() : base(spaceName)
         {
         }
-        public override void Register(IModLoader modLoader)
+        public override void PreInit(IModLoader modLoader)
         {
-            base.Register(modLoader);
+            base.PreInit(modLoader);
             modLoader.AddSeedDefinitionProvider(new EntitySeedProvider());
             modLoader.AddStageDefinitionProvider(new StageDefinitionProvider());
         }
-        public override void Init(IGlobalGame game)
+        public override void OnInit(IGlobalGame game)
         {
-            base.Init(game);
+            base.OnInit(game);
             Global.SetVanillaInterface(this);
             RegisterSerializableType<SerializableLogicSaveData>();
         }

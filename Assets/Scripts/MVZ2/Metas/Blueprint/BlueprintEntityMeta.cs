@@ -74,10 +74,5 @@ namespace MVZ2.Metas
         {
             return Icon?.ModelID;
         }
-
-        public bool IsTriggerActive() => false;
-        public bool CanInstantTrigger() => false;
-        public bool CanInstantEvoke() => false;
-        public bool IsUpgradeBlueprint() => false;
     }
 }

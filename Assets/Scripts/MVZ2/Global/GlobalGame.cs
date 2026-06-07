@@ -34,13 +34,6 @@ namespace MVZ2.GlobalGames
             return main.ResourceManager.GetAllUnlockConditions();
         }
 
-        #region 属性
-        public void SetProperty<T>(PropertyKey<T> name, T? value) => propertyDict.SetProperty<T>(name, value);
-        public T? GetProperty<T>(PropertyKey<T> name) => propertyDict.GetProperty<T>(name);
-        public bool TryGetProperty<T>(PropertyKey<T> name, out T? value) => propertyDict.TryGetProperty<T>(name, out value);
-        public IPropertyKey[] GetPropertyNames() => propertyDict.GetPropertyNames();
-        #endregion
-
         #region 定义
         public T? GetDefinition<T>(string type, NamespaceID? id) where T : Definition
         {
@@ -54,7 +47,7 @@ namespace MVZ2.GlobalGames
         {
             return definitionGroup.GetDefinitions();
         }
-        public void AddMod(IModLogic mod)
+        public void AddMod(Mod mod)
         {
             foreach (var def in mod.GetDefinitions())
             {
@@ -98,7 +91,6 @@ namespace MVZ2.GlobalGames
 
         public string DefaultNamespace => main.BuiltinNamespace;
         private MainManager main;
-        private PropertyDictionary propertyDict = new PropertyDictionary();
         private DefinitionGroup definitionGroup = new DefinitionGroup();
         private CallbackSystem callbacks = new CallbackSystem();
     }

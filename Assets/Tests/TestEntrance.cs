@@ -1,11 +1,14 @@
-﻿using System.Reflection;
+﻿using System.Collections.Generic;
+using System.Reflection;
 using System.Threading.Tasks;
+using MVZ2.Level;
 using MVZ2.Managers;
 using MVZ2.Modding;
 using MVZ2.Vanilla;
 using MVZ2Logic;
 using MVZ2Logic.Games;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace MVZ2.Tests
 {
@@ -13,7 +16,7 @@ namespace MVZ2.Tests
     {
         public async Task Init()
         {
-            ModManager.OnRegisterMods += RegisterMod;
+            ModManager.OnRegisterModInfos += OnRegisterModInfos;
 
             mainGame.SetActive(true);
             await main.Initialize();
@@ -24,24 +27,20 @@ namespace MVZ2.Tests
                 await initTask;
             }
         }
-        private void RegisterMod(IModManager manager)
+        private async Task OnRegisterModInfos(IGlobalGame game, List<ModInfo> results)
         {
-            var main = MainManager.Instance;
-            var modLoader = new ModLoader(main);
-            RegisterMods(modLoader, main.Game, manager);
-            LoadMods(modLoader, main.Game);
-        }
-        private void RegisterMods(ModLoader modLoader, IGlobalGame game, IModManager manager)
-        {
-            var mod = new VanillaMod();
+            var logic = new VanillaMod();
             var assemblies = new Assembly[] { Assembly.GetAssembly(typeof(VanillaMod)), Assembly.GetAssembly(typeof(LogicMain)) };
-            var main = MainManager.Instance;
-            modLoader.RegisterMod(mod, assemblies);
-            manager.RegisterMod(mod);
-        }
-        private void LoadMods(ModLoader modLoader, IGlobalGame game)
-        {
-            modLoader.LoadAll(game);
+            var locator = await Addressables.InitializeAsync().Task;
+            results.Add(new ModInfo(logic.Namespace, locator)
+            {
+                LevelDataVersion = LevelManager.CURRENT_DATA_VERSION,
+                DisplayName = "Vanilla",
+                CatalogPath = null,
+                IsBuiltin = true,
+                Logic = logic,
+                Assemblies = assemblies
+            });
         }
         [SerializeField]
         private GameObject mainGame;
