@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-06-07 01:02+0800\n"
-"PO-Revision-Date: 2026-06-07 13:03+0800\n"
+"POT-Creation-Date: 2026-06-07 12:41+0800\n"
+"PO-Revision-Date: 2026-06-07 21:45+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -622,6 +622,18 @@ msgstr "Takes 1.5x fire, lightning or light damage"
 msgctxt "almanac_tag_enum.name"
 msgid "普通"
 msgstr "Normal"
+
+#. Name for almanac tag enum value mvz2:ice of enum shell
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "冰"
+msgstr "Ice"
+
+#. Description for almanac tag enum value mvz2:ice of enum shell
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "阻挡锐利物体，但受到20x冲击伤害和2x火焰伤害"
+msgstr "Stops sharp objects, but takes 20x impact damage and 2x fire damage"
 
 #. Header for contraptions mvz2:dispenser
 #: Almanac meta file
@@ -2268,6 +2280,30 @@ msgstr ""
 "In ancient times, someone used a blue object as the core to create a spire.\n"
 "The spire contained various treasures, and within it lived four mobs.\n"
 "One day, the spire was slain, and it never appeared again."
+
+#. Header for contraptions mvz2:freezenser
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "寒冰发射器发射可以使敌人减速的冰箭。"
+msgstr "Freezensers fire ice arrows that can slow down enemies."
+
+#. Properties for contraptions mvz2:freezenser
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"发射速度：<color=red>1.5秒</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"技能：<color=red>发射一枚致命的冰封球</color>"
+msgstr ""
+"Fire Interval: <color=red>1.5 seconds</color>\n"
+"Damage: <color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"Evocation: <color=red>Shoots a deadly frozen orb</color>"
+
+#. Flavor for contraptions mvz2:freezenser
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "寒冰发射器最大的愿望是退伍——不是因为它当兵（冰）太久了，而是因为这里的器械都听不懂它讲的冷笑话。"
+msgstr "This is what happens if you tell a Dispenser with a weird mask to \"freeze.\""
 
 #. Header for contraptions mvz2:infectenser
 #: Almanac meta file
@@ -4128,8 +4164,8 @@ msgstr "A broken padlock that fell off the <ref=[misc]mvz2:locked_chest>Locked C
 #. Properties for artifacts mvz2:broken_lock
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>器械每受到1%伤害，其蓝图冷却时间便减少1%</color>"
-msgstr "Effect: <color=red>For every 1% damage a contraption has taken, its blueprint recharge time will be decreased by 1%</color>"
+msgid "效果：<color=red>器械每受到2%伤害，其蓝图冷却时间便减少1%</color>"
+msgstr "Effect: <color=red>For every 2% damage a contraption has taken, its blueprint recharge time will be decreased by 1%</color>"
 
 #. Flavor for artifacts mvz2:broken_lock
 #: Almanac meta file
@@ -6129,6 +6165,46 @@ msgstr ""
 "Star Record 6:\n"
 "(This note has nothing written on it and has been violently torn.)"
 
+#. Name for misc mvz2:starshard.power_cell
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "星之碎片：动力电池"
+msgstr "Starshard: Power Cell"
+
+#. Flavor for misc mvz2:starshard.power_cell
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"未知人士留下了一些记录。\n"
+"\n"
+"星之记录 其七：\n"
+"我还是不敢相信那个家伙居然也来到了这里。\n"
+"那个把我坑害到如此地步的家伙！\n"
+"……冷静。\n"
+"<s>他是我的朋友。</s>\n"
+"<s>他是我的朋友。</s>\n"
+"<s>他是我的朋友。</s>\n"
+"<s>他是我的朋友。</s>\n"
+"<s>他是我的朋友。</s>\n"
+"<s>他是我的朋友。</s>\n"
+"他凭什么是！\n"
+"我在这里受罪的时候，他在哪里！"
+msgstr ""
+"Records left by an anonymous person.\n"
+"\n"
+"Star Record 7:\n"
+"I still can't believe that guy actually showed up here too.\n"
+"The guy who screwed me over this badly!\n"
+"...Calm down.\n"
+"<s>He is my friend.</s>\n"
+"<s>He is my friend.</s>\n"
+"<s>He is my friend.</s>\n"
+"<s>He is my friend.</s>\n"
+"<s>He is my friend.</s>\n"
+"<s>He is my friend.</s>\n"
+"Why the hell should he be?!\n"
+"Where was he when I was suffering here?!"
+
 #. Name for almanac group mvz2:important
 #: Almanac meta file
 msgctxt "almanac.group_name"
@@ -7116,6 +7192,18 @@ msgctxt "entity.tooltip"
 msgid "在特殊阵型中持续提供星之碎片"
 msgstr "Produces starshards in a special formation"
 
+#. Name for entity mvz2:freezenser
+#: Entity meta file
+msgctxt "entity.name"
+msgid "寒冰发射器"
+msgstr "Freezenser"
+
+#. Tooltip for entity mvz2:freezenser
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "发射减速的冰箭"
+msgstr "Shoots slowing ice arrows"
+
 #. Name for entity mvz2:infectenser
 #: Entity meta file
 msgctxt "entity.name"
@@ -7996,6 +8084,12 @@ msgctxt "entity.name"
 msgid "尸体推车"
 msgstr "Corpse Cart"
 
+#. Name for entity mvz2:pool_cleaner
+#: Entity meta file
+msgctxt "entity.name"
+msgid "泳池清洁器"
+msgstr "Pool Cleaner"
+
 #. Name for entity mvz2:redstone
 #: Entity meta file
 msgctxt "entity.name"
@@ -8509,8 +8603,8 @@ msgstr "Broken Lock"
 #. Tooltip for artifact mvz2:broken_lock
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "器械每受到1%伤害，其蓝图冷却时间便减少1%"
-msgstr "For every 1% damage a contraption has taken, its blueprint recharge time will be decreased by 1%"
+msgid "器械每受到2%伤害，其蓝图冷却时间便减少1%"
+msgstr "For every 2% damage a contraption has taken, its blueprint recharge time will be decreased by 1%"
 
 #. Name for artifact mvz2:magma_stone
 #: Artifact meta file

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-06-07 01:02+0800\n"
+"POT-Creation-Date: 2026-06-07 12:41+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -615,6 +615,18 @@ msgstr ""
 #: Almanac meta file
 msgctxt "almanac_tag_enum.name"
 msgid "普通"
+msgstr ""
+
+#. Name for almanac tag enum value mvz2:ice of enum shell
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "冰"
+msgstr ""
+
+#. Description for almanac tag enum value mvz2:ice of enum shell
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "阻挡锐利物体，但受到20x冲击伤害和2x火焰伤害"
 msgstr ""
 
 #. Header for contraptions mvz2:dispenser
@@ -1841,6 +1853,27 @@ msgid ""
 "传说在先古时期，有人用一种蓝色的东西作为核心，创造了一座尖塔。\n"
 "尖塔中存在着各式各样的宝物，也有着四个生物。\n"
 "有一天，这座尖塔就被杀戮了，它在之后再也没有出现过。"
+msgstr ""
+
+#. Header for contraptions mvz2:freezenser
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "寒冰发射器发射可以使敌人减速的冰箭。"
+msgstr ""
+
+#. Properties for contraptions mvz2:freezenser
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"发射速度：<color=red>1.5秒</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"技能：<color=red>发射一枚致命的冰封球</color>"
+msgstr ""
+
+#. Flavor for contraptions mvz2:freezenser
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "寒冰发射器最大的愿望是退伍——不是因为它当兵（冰）太久了，而是因为这里的器械都听不懂它讲的冷笑话。"
 msgstr ""
 
 #. Header for contraptions mvz2:infectenser
@@ -3301,7 +3334,7 @@ msgstr ""
 #. Properties for artifacts mvz2:broken_lock
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>器械每受到1%伤害，其蓝图冷却时间便减少1%</color>"
+msgid "效果：<color=red>器械每受到2%伤害，其蓝图冷却时间便减少1%</color>"
 msgstr ""
 
 #. Flavor for artifacts mvz2:broken_lock
@@ -4845,6 +4878,32 @@ msgid ""
 "（这张纸条上什么也没有写，并且被暴力地扯烂了。）"
 msgstr ""
 
+#. Name for misc mvz2:starshard.power_cell
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "星之碎片：动力电池"
+msgstr ""
+
+#. Flavor for misc mvz2:starshard.power_cell
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"未知人士留下了一些记录。\n"
+"\n"
+"星之记录 其七：\n"
+"我还是不敢相信那个家伙居然也来到了这里。\n"
+"那个把我坑害到如此地步的家伙！\n"
+"……冷静。\n"
+"<s>他是我的朋友。</s>\n"
+"<s>他是我的朋友。</s>\n"
+"<s>他是我的朋友。</s>\n"
+"<s>他是我的朋友。</s>\n"
+"<s>他是我的朋友。</s>\n"
+"<s>他是我的朋友。</s>\n"
+"他凭什么是！\n"
+"我在这里受罪的时候，他在哪里！"
+msgstr ""
+
 #. Name for almanac group mvz2:important
 #: Almanac meta file
 msgctxt "almanac.group_name"
@@ -5782,6 +5841,18 @@ msgctxt "entity.tooltip"
 msgid "在特殊阵型中持续提供星之碎片"
 msgstr ""
 
+#. Name for entity mvz2:freezenser
+#: Entity meta file
+msgctxt "entity.name"
+msgid "寒冰发射器"
+msgstr ""
+
+#. Tooltip for entity mvz2:freezenser
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "发射减速的冰箭"
+msgstr ""
+
 #. Name for entity mvz2:infectenser
 #: Entity meta file
 msgctxt "entity.name"
@@ -6646,6 +6717,12 @@ msgctxt "entity.name"
 msgid "尸体推车"
 msgstr ""
 
+#. Name for entity mvz2:pool_cleaner
+#: Entity meta file
+msgctxt "entity.name"
+msgid "泳池清洁器"
+msgstr ""
+
 #. Name for entity mvz2:redstone
 #: Entity meta file
 msgctxt "entity.name"
@@ -7159,7 +7236,7 @@ msgstr ""
 #. Tooltip for artifact mvz2:broken_lock
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "器械每受到1%伤害，其蓝图冷却时间便减少1%"
+msgid "器械每受到2%伤害，其蓝图冷却时间便减少1%"
 msgstr ""
 
 #. Name for artifact mvz2:magma_stone
