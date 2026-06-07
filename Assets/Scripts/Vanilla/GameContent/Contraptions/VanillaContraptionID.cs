@@ -70,6 +70,7 @@ namespace MVZ2.GameContent.Contraptions
         public const string netherReactorCore = "nether_reactor_core";
 
         public const string freezenser = "freezenser";
+        public const string nestingTNT = "nesting_tnt";
 
         public const string infectenser = "infectenser";
         public const string forcePad = "force_pad";

@@ -1338,6 +1338,33 @@
                 <int name="mvz2:cost" value="175" />
             </properties>
         </entity>
+        <entity template="contraption" id="nesting_tnt" name="套娃TNT" tooltip="触发后爆炸，可以爆炸3次">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.nesting_tnt" />
+            </unlock>
+            <behaviours>
+                <behaviour operator="add" id="mvz2:ignitable" />
+                <behaviour operator="add" id="mvz2:ignitable/trigger" />
+                <behaviour operator="add" id="mvz2:ignitable/evoke" />
+                <behaviour operator="add" id="mvz2:explode_on_fire_death" />
+                <behaviour operator="add" id="mvz2:set_model_property_variant" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:dynamite" value="true" />
+                <float name="mvz2:damage" value="600" />
+                <float name="mvz2:range" value="120" />
+                <vector3 name="mvz2:size" x="48" y="48" z="48" />
+                <id name="mvz2:placeSound" value="mvz2:grass" />
+                <id name="mvz2:shell" value="mvz2:grass" />
+                <id name="mvz2:deathSound" value="mvz2:grass" />
+                <bool name="mvz2:triggerActive" value="true" />
+                <bool name="mvz2:instantTrigger" value="true" />
+
+                <int name="mvz2:cost" value="150" />
+                <id name="mvz2:rechargeId" value="mvz2:very_long" />
+            </properties>
+        </entity>
 
         <!-- Upgrade Contraptions -->
         <entity template="dispenser" id="infectenser" name="传染发射器" tooltip="（需要小型发射器）\n发射在敌人之间传播的寄生机器人">

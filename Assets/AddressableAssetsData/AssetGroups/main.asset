@@ -1340,6 +1340,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 181895e546b9b1d40a124c14ee675993
+    m_Address: mvz2:mobile_blueprint/nesting_tnt_small
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 181f1c682b3b5cd4ab6e7a554b9c9d75
     m_Address: mvz2:effect/zombie_cloud_snowflake
     m_ReadOnly: 0
@@ -4508,6 +4515,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Meta
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5249e7563b531d845a67a9cc6110f609
+    m_Address: mvz2:contraption/mountain/nesting_tnt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 526368002f78f9f478a85a021909125c
     m_Address: mvz2:effect/cursed_meteor
@@ -8174,6 +8188,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9549e735ae45d8746a9baa9325f2901a
+    m_Address: mvz2:mobile_blueprint/nesting_tnt_medium
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 954f4a9aadd5d0141a70086f5aaedcc5
     m_Address: mvz2:arcade/i_zombie
     m_ReadOnly: 0
@@ -8474,6 +8495,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9be9d26b93e841c4c88b0d8cb9b7cacf
+    m_Address: mvz2:mobile_blueprint/nesting_tnt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9c16c77d1a4d7f341abd1f576115be5b
     m_Address: mvz2:icon/terror_parasitized
@@ -10951,6 +10979,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc2ee2b04b996a746a26ff1160de365a
+    m_Address: mvz2:entity/contraption/nesting_tnt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Spritesheet
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cc6b3e7a91e2c864fb023c7055695568
     m_Address: mvz2:level/grids/broken_tile_slope

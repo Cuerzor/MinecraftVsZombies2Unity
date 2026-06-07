@@ -27,6 +27,9 @@ namespace MVZ2.GameContent.Seeds
         public const string ufoGreen = undeadFlyingObjectGreen;
         public const string ufoBlue = undeadFlyingObjectBlue;
         public const string ufoRainbow = undeadFlyingObjectRainbow;
+
+        public const string nestingTNTMedium = "nesting_tnt_medium";
+        public const string nestingTNTSmall = "nesting_tnt_small";
     }
     public static class VanillaBlueprintID
     {
@@ -50,6 +53,9 @@ namespace MVZ2.GameContent.Seeds
         public static readonly NamespaceID ufoGreen = Get(VanillaBlueprintNames.ufoGreen);
         public static readonly NamespaceID ufoBlue = Get(VanillaBlueprintNames.ufoBlue);
         public static readonly NamespaceID ufoRainbow = Get(VanillaBlueprintNames.ufoRainbow);
+
+        public static readonly NamespaceID nestingTNTMedium = Get(VanillaBlueprintNames.nestingTNTMedium);
+        public static readonly NamespaceID nestingTNTSmall = Get(VanillaBlueprintNames.nestingTNTSmall);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

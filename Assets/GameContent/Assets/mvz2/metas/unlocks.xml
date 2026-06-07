@@ -130,6 +130,7 @@
     
     <!-- Mountain Contraptions -->
     <group id="contraption.freezenser"><conditions><condition required="mvz2:level.mountain_1" /></conditions></group>
+    <group id="contraption.nesting_tnt"><conditions><condition required="mvz2:level.mountain_8" /></conditions></group>
 
     <!-- Upgrade Contraptions -->
     <group id="contraption.infectenser"><conditions><condition required="mvz2:contraption.infectenser" /></conditions></group>

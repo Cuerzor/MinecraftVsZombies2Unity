@@ -93,6 +93,17 @@
     <model name="nether_reactor_core" type="entity" path="mvz2:contraption/palace/nether_reactor_core" width="64" height="64" xOffset="0" yOffset="-28" />
 
     <model name="freezenser" type="entity" path="mvz2:contraption/mountain/freezenser" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="nesting_tnt" type="entity" path="mvz2:contraption/mountain/nesting_tnt" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="nesting_tnt_medium" type="entity" path="mvz2:contraption/mountain/nesting_tnt" width="64" height="64" xOffset="0" yOffset="-28">
+        <properties>
+            <int name="Variant" value="1" />
+        </properties>
+    </model>
+    <model name="nesting_tnt_small" type="entity" path="mvz2:contraption/mountain/nesting_tnt" width="64" height="64" xOffset="0" yOffset="-28">
+        <properties>
+            <int name="Variant" value="2" />
+        </properties>
+    </model>
 
     <model name="infectenser" type="entity" path="mvz2:contraption/upgrade/infectenser" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="force_pad" type="entity" path="mvz2:contraption/upgrade/force_pad" width="64" height="64" xOffset="0" yOffset="-28" />
