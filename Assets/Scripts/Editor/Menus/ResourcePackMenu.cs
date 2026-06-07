@@ -414,6 +414,10 @@ namespace MVZ2.Editor
                         single = true,
                         pivotX = sprite.pivot.x / sprite.rect.width,
                         pivotY = pivotY,
+                        borderLeft = Mathf.RoundToInt(sprite.border.x),
+                        borderBottom = Mathf.RoundToInt(sprite.border.y),
+                        borderRight = Mathf.RoundToInt(sprite.border.z),
+                        borderTop = Mathf.RoundToInt(sprite.border.w),
                     };
                 }
                 else
@@ -430,6 +434,10 @@ namespace MVZ2.Editor
                         height = (int)sprite.rect.height,
                         pivotX = sprite.pivot.x / sprite.rect.width,
                         pivotY = pivotY,
+                        borderLeft = Mathf.RoundToInt(sprite.border.x),
+                        borderBottom = Mathf.RoundToInt(sprite.border.y),
+                        borderRight = Mathf.RoundToInt(sprite.border.z),
+                        borderTop = Mathf.RoundToInt(sprite.border.w),
                     };
                 }
                 resoucePackSprites.Add(packSprite);
