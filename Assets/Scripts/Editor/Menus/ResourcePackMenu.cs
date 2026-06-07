@@ -167,7 +167,7 @@ namespace MVZ2.Editor
         /// </summary>
         public static void UpdateResourcePackManifest()
         {
-            var packDir = Path.Combine(Application.dataPath, "Localization", "pack");
+            var packDir = LocalizationMenu.GetBuiltinLanguagePackDirectory();
 
             var factories = new SpriteDataProviderFactories();
             factories.Init();
@@ -201,6 +201,7 @@ namespace MVZ2.Editor
             // 将语言贴图复制到ResourcePack/resources/sprites文件夹中。
             var languagePackDirectory = Path.Combine(LocalizationMenu.GetBuiltinLanguagePackDirectory(), "assets");
             CopyDirectory(languagePackDirectory, resourcesDestDirectory, "*.*" ,false, ".png", ".jpg");
+            CopyDirectory(languagePackDirectory, resourcesDestDirectory, "*.*", false, ".mo");
 
             Debug.Log($"资源包资源已复制：{packDir}");
 
@@ -208,8 +209,9 @@ namespace MVZ2.Editor
             // 更新资源包清单。
             var resourcePackManifests = new ResourcePackManifests();
 
-            UpdateResourcePackManifestsFromLanguagePack(packDir, factories, resourcePackManifests);
-            UpdateResourcePackManifestsFromGameContent(packDir, factories, resourcePackManifests);
+            var builtinPackDir = LocalizationMenu.GetBuiltinLanguagePackDirectory();
+            UpdateResourcePackManifestsFromLanguagePack(builtinPackDir, factories, resourcePackManifests);
+            UpdateResourcePackManifestsFromGameContent(factories, resourcePackManifests);
 
             resourcePackManifests.Write(packDir);
 
@@ -313,7 +315,7 @@ namespace MVZ2.Editor
             }
         }
 
-        private static void UpdateResourcePackManifestsFromGameContent(string packDir, SpriteDataProviderFactories factories, ResourcePackManifests resourcePackManifests)
+        private static void UpdateResourcePackManifestsFromGameContent(SpriteDataProviderFactories factories, ResourcePackManifests resourcePackManifests)
         {
             var gameContentDir = GetGameContentAssetsDirectory();
             if (!Directory.Exists(gameContentDir))
@@ -373,7 +375,8 @@ namespace MVZ2.Editor
                 resourcePackManifests.textures.Add(packTexture);
             }
         }
-        
+
+
         private static ResourcePackTexture GetResourcePackSpritesFromSpriteAsset(string texturePath, string assetPath, string[] tags, NamespaceID id, SpriteDataProviderFactories factories)
         {
             var assetRelativePath = AssetsMenu.FileToAssetPath(assetPath);
