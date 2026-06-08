@@ -46,9 +46,13 @@ namespace MVZ2.GameContent.Projectiles
             if (output.BodyResult.Amount <= 0)
                 return;
             var source = output.BodyResult.Source;
-            if (source != null && source.DefinitionID == GetID())
+            if (source is EntitySourceReference entitySource)
             {
-                entity.InflictWither(WITHER_TIME, source);
+                var sourceEnt = entitySource.GetEntity(entity.Level);
+                if (sourceEnt != null && sourceEnt.HasBehaviour(this))
+                {
+                    entity.InflictWither(WITHER_TIME, source);
+                }
             }
         }
         public const int WITHER_TIME = 900;

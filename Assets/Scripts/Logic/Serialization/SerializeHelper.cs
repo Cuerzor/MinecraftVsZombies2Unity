@@ -59,6 +59,8 @@ namespace MVZ2Logic.Serialization
             // PVZEngine.Level
             RegisterClass<EntitySourceReference>();
             RegisterClass<ArtifactSourceReference>();
+            RegisterClass<GridSourceReference>();
+            RegisterClass<BuffSourceReference>();
             RegisterClass<EntityID>();
             RegisterClass<SerializableEntityCollider>();
             RegisterClass<SerializableBuiltinCollisionSystem>();
@@ -91,9 +93,6 @@ namespace MVZ2Logic.Serialization
             RegisterClass<SerializableDamageResult>();
             RegisterClass<SerializableArmorDamageResult>();
             RegisterClass<SerializableBodyDamageResult>();
-            RegisterClass<SerializableEntitySourceReference>();
-            RegisterClass<SerializableArtifactSourceReference>();
-            RegisterClass<SerializableGridSourceReference>();
 
 
             // MVZ2.Logic

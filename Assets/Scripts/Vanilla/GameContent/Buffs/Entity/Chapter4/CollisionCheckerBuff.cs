@@ -6,6 +6,7 @@ using MVZ2.Vanilla.Properties;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Level;
 
 namespace MVZ2.GameContent.Buffs.Entities
 {
@@ -29,16 +30,35 @@ namespace MVZ2.GameContent.Buffs.Entities
         }
         public static Buff Add(Entity target, Entity source)
         {
+            return Add(target, new EntitySourceReference(source));
+        }
+        public static Buff Add(Entity target, ILevelSourceReference source)
+        {
             var buff = target.NewBuff<CollisionCheckerBuff>();
-            SetSource(buff, new EntityID(source));
+            SetSource(buff, source);
             target.AddBuff(buff);
             return buff;
         }
         public static bool IsEnter(Entity target, Entity source)
         {
+            return IsEnter(target, new EntitySourceReference(source));
+        }
+        public static bool IsEnter(Entity target, ILevelSourceReference source)
+        {
             collisionBuffBuffer.Clear();
             target.GetBuffs<CollisionCheckerBuff>(collisionBuffBuffer);
-            var buff = collisionBuffBuffer.FirstOrDefault(b => GetSource(b)?.IsEntity(source) ?? false);
+            Buff? buff = null;
+            foreach (var collisionBuff in collisionBuffBuffer)
+            {
+                var src = GetSource(collisionBuff);
+                if (src == null)
+                    continue;
+                if (src.Equals(source))
+                {
+                    buff = collisionBuff;
+                    break;
+                }
+            }
             if (buff != null)
             {
                 SetRemoving(buff, false);
@@ -52,9 +72,9 @@ namespace MVZ2.GameContent.Buffs.Entities
         }
         public static void SetRemoving(Buff buff, bool value) => buff.SetProperty(PROP_REMOVING, value);
         public static bool GetRemoving(Buff buff) => buff.GetProperty<bool>(PROP_REMOVING);
-        public static void SetSource(Buff buff, EntityID? value) => buff.SetProperty(PROP_SOURCE, value);
-        public static EntityID? GetSource(Buff buff) => buff.GetProperty<EntityID>(PROP_SOURCE);
-        public static readonly VanillaBuffPropertyMeta<EntityID> PROP_SOURCE = new VanillaBuffPropertyMeta<EntityID>("source");
+        public static void SetSource(Buff buff, ILevelSourceReference? value) => buff.SetProperty(PROP_SOURCE, value);
+        public static ILevelSourceReference? GetSource(Buff buff) => buff.GetProperty<ILevelSourceReference>(PROP_SOURCE);
+        public static readonly VanillaBuffPropertyMeta<ILevelSourceReference> PROP_SOURCE = new VanillaBuffPropertyMeta<ILevelSourceReference>("source");
         public static readonly VanillaBuffPropertyMeta<bool> PROP_REMOVING = new VanillaBuffPropertyMeta<bool>("removing");
         private static List<Buff> collisionBuffBuffer = new List<Buff>();
     }
