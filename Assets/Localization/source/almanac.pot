@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-06-07 12:41+0800\n"
+"POT-Creation-Date: 2026-06-08 01:03+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1874,6 +1874,34 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid "寒冰发射器最大的愿望是退伍——不是因为它当兵（冰）太久了，而是因为这里的器械都听不懂它讲的冷笑话。"
+msgstr ""
+
+#. Header for contraptions mvz2:nesting_tnt
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "套娃TNT在触发后会爆炸，并生成一个更小的套娃TNT的蓝图掉落物，使得它可以连续爆炸三次。"
+msgstr ""
+
+#. Properties for contraptions mvz2:nesting_tnt
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"半径：<color=red><var local=\"radius\" />格</color>\n"
+"技能：<color=red>生成两个最大的套娃TNT的蓝图掉落物</color>"
+msgstr ""
+
+#. Flavor for contraptions mvz2:nesting_tnt
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说……"
 msgstr ""
 
 #. Header for contraptions mvz2:infectenser
@@ -5853,6 +5881,18 @@ msgctxt "entity.tooltip"
 msgid "发射减速的冰箭"
 msgstr ""
 
+#. Name for entity mvz2:nesting_tnt
+#: Entity meta file
+msgctxt "entity.name"
+msgid "套娃TNT"
+msgstr ""
+
+#. Tooltip for entity mvz2:nesting_tnt
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "触发后爆炸，可以爆炸三次"
+msgstr ""
+
 #. Name for entity mvz2:infectenser
 #: Entity meta file
 msgctxt "entity.name"
@@ -7393,5 +7433,17 @@ msgstr ""
 #: Blueprints meta file
 msgctxt "entity.name"
 msgid "下界法师（电）"
+msgstr ""
+
+#. Name for entity blueprint nesting_tnt_medium
+#: Blueprints meta file
+msgctxt "entity.name"
+msgid "套娃TNT（中）"
+msgstr ""
+
+#. Name for entity blueprint nesting_tnt_small
+#: Blueprints meta file
+msgctxt "entity.name"
+msgid "套娃TNT（小）"
 msgstr ""
 

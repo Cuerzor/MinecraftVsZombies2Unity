@@ -1338,7 +1338,7 @@
                 <int name="mvz2:cost" value="175" />
             </properties>
         </entity>
-        <entity template="contraption" id="nesting_tnt" name="套娃TNT" tooltip="触发后爆炸，可以爆炸3次">
+        <entity template="contraption" id="nesting_tnt" name="套娃TNT" tooltip="触发后爆炸，可以爆炸三次">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.nesting_tnt" />
             </unlock>

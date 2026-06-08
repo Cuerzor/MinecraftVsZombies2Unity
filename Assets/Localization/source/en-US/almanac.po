@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-06-07 12:41+0800\n"
-"PO-Revision-Date: 2026-06-07 21:45+0800\n"
+"POT-Creation-Date: 2026-06-08 01:03+0800\n"
+"PO-Revision-Date: 2026-06-08 14:47+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -2304,6 +2304,46 @@ msgstr ""
 msgctxt "contraptions.description"
 msgid "寒冰发射器最大的愿望是退伍——不是因为它当兵（冰）太久了，而是因为这里的器械都听不懂它讲的冷笑话。"
 msgstr "This is what happens if you tell a Dispenser with a weird mask to \"freeze.\""
+
+#. Header for contraptions mvz2:nesting_tnt
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "套娃TNT在触发后会爆炸，并生成一个更小的套娃TNT的蓝图掉落物，使得它可以连续爆炸三次。"
+msgstr ""
+"Nesting TNTs explode and spawn blueprint pickups of smaller Nesting TNTs after being triggered, allowing it to explode three times in "
+"succession."
+
+#. Properties for contraptions mvz2:nesting_tnt
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"半径：<color=red><var local=\"radius\" />格</color>\n"
+"技能：<color=red>生成两个最大的套娃TNT的蓝图掉落物</color>"
+msgstr ""
+"Damage: <color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"Radius: <color=red><var local=\"radius\" /> tiles</color>\n"
+"Evocation: <color=red>Spawns two blueprint pickups of the largest Nesting TNT</color>"
+
+#. Flavor for contraptions mvz2:nesting_tnt
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
+"从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说……"
+msgstr ""
+"It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
+"It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
+"It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
+"It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
+"It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
+"It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
+"It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began...b"
 
 #. Header for contraptions mvz2:infectenser
 #: Almanac meta file
@@ -7204,6 +7244,18 @@ msgctxt "entity.tooltip"
 msgid "发射减速的冰箭"
 msgstr "Shoots slowing ice arrows"
 
+#. Name for entity mvz2:nesting_tnt
+#: Entity meta file
+msgctxt "entity.name"
+msgid "套娃TNT"
+msgstr "Nesting TNT"
+
+#. Tooltip for entity mvz2:nesting_tnt
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "触发后爆炸，可以爆炸三次"
+msgstr "Up to 3 times, explodes when triggered"
+
 #. Name for entity mvz2:infectenser
 #: Entity meta file
 msgctxt "entity.name"
@@ -8761,6 +8813,18 @@ msgstr "Nether Mage (Frost)"
 msgctxt "entity.name"
 msgid "下界法师（电）"
 msgstr "Nether Mage (Lightning)"
+
+#. Name for entity blueprint nesting_tnt_medium
+#: Blueprints meta file
+msgctxt "entity.name"
+msgid "套娃TNT（中）"
+msgstr "Nesting TNT (Medium)"
+
+#. Name for entity blueprint nesting_tnt_small
+#: Blueprints meta file
+msgctxt "entity.name"
+msgid "套娃TNT（小）"
+msgstr "Nesting TNT (Small)"
 
 #~ msgctxt "enemies.description"
 #~ msgid "恐怖之母会向血肉之躯寄生虫卵。"

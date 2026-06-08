@@ -1056,7 +1056,28 @@
         <entry />
         <entry />
         <entry />
-        <entry />
+        <entry id="mvz2:nesting_tnt">
+            <variables>
+                <variable name="radius">property("mvz2:entity/range") / 80</variable>
+            </variables>
+            <header>
+                <p>套娃TNT在触发后会爆炸，并生成一个更小的套娃TNT的蓝图掉落物，使得它可以连续爆炸三次。</p>
+            </header>
+            <properties>
+                <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
+                <p>半径：<![CDATA[<color=red><var local="radius" />格</color>]]></p>
+                <p>技能：<![CDATA[<color=red>生成两个最大的套娃TNT的蓝图掉落物</color>]]></p>
+            </properties>
+            <flavor>
+                <p>从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：</p>
+                <p>从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：</p>
+                <p>从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：</p>
+                <p>从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：</p>
+                <p>从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：</p>
+                <p>从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：</p>
+                <p>从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说……</p>
+            </flavor>
+        </entry>
         <entry />
 
         <!-- Chapter 8 -->
