@@ -267,6 +267,13 @@
             <key hex="#1b67a3" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="nesting_tnt">
+        <colorKeys>
+            <key hex="#00FFFF" time="0.6" />
+            <key hex="#FFFFFF" time="0.9" />
+            <key hex="#000000" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="infectenser">
         <colorKeys>
             <key hex="#FF0000" time="0.2" />
