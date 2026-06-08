@@ -129,17 +129,19 @@ namespace MVZ2.GameContent.Enemies
             private void Hammer(Entity self)
             {
                 var level = self.Level;
-                if (self.Position.y <= self.GetRealGroundLimitY() + 5)
+                if (self.Position.y <= self.GetGroundY() + 5)
                 {
                     var x = self.Position.x + self.GetFacingX() * self.GetRange() * 0.5f;
                     var z = self.Position.z;
-                    var soundID = VanillaSoundID.thump;
                     if (level.IsWaterAt(x, z))
                     {
-                        soundID = VanillaSoundID.splashBig;
+                        self.PlaySound(VanillaSoundID.splashBig);
                     }
-                    self.PlaySound(soundID);
-                    level.ShakeScreen(10, 0, 15);
+                    else
+                    {
+                        self.PlaySound(VanillaSoundID.thump);
+                        level.ShakeScreen(10, 0, 15);
+                    }
                 }
 
                 detectBuffer.Clear();
