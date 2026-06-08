@@ -1405,6 +1405,35 @@
                 <id name="mvz2:rechargeId" value="mvz2:long" />
             </properties>
         </entity>
+        <entity template="contraption" id="onbashira" name="御柱" tooltip="从天而降的坚实壁垒">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.onbashira" />
+            </unlock>
+            <behaviours>
+                <behaviour operator="add" id="mvz2:model_damage_percent" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:defensive" value="true" />
+                <bool name="mvz2:blocksJump" value="true" />
+                <float name="mvz2:maxHealth" value="2000" />
+                <float name="mvz2:fallResistance" value="10000" />
+                <float name="mvz2:groundLimitOffset" value="-16" />
+                <float name="mvz2:water_ground_limit_offset" value="-24" />
+                <vector3 name="mvz2:size" x="48" y="120" z="48" />
+                <int name="mvz2:collision_mask_hostile" value="15" />
+                <int name="mvz2:collision_mask_friendly" value="15" />
+                <int name="mvz2:waterInteraction" value="3" />
+                <id name="mvz2:shell" value="mvz2:wood" />
+                <id name="mvz2:placeSound" value="mvz2:wood" />
+                <id name="mvz2:deathSound" value="mvz2:wood" />
+                <id name="mvz2:placement" value="mvz2:onbashira" />
+                <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
+
+                <int name="mvz2:cost" value="75" />
+                <id name="mvz2:rechargeId" value="mvz2:long" />
+            </properties>
+        </entity>
         <entity template="contraption" id="autotrap" name="自动兽夹" tooltip="夹住怪物并撕扯">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.autotrap" />

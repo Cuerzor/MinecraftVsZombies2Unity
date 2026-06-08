@@ -273,6 +273,12 @@
             <key hex="#a2a2b1" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="onbashira">
+        <colorKeys>
+            <key hex="#826038" time="0.5" />
+            <key hex="#61512d" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="autotrap">
         <colorKeys>
             <key hex="#dde8ea" time="0.5" />

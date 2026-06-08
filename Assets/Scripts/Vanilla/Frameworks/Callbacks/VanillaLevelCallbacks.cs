@@ -7,6 +7,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
+using PVZEngine.Grids;
 using PVZEngine.Level;
 
 namespace MVZ2.Vanilla.Callbacks
@@ -217,9 +218,21 @@ namespace MVZ2.Vanilla.Callbacks
                 this.projectileArgs = shootParams;
             }
         }
-        
 
 
+
+        public struct PostEntityEjectParams
+        {
+            public Entity entity;
+            public Entity ejector;
+            public LawnGrid targetGrid;
+            public PostEntityEjectParams(Entity entity, Entity ejector, LawnGrid targetGrid)
+            {
+                this.entity = entity;
+                this.ejector = ejector;
+                this.targetGrid = targetGrid;
+            }
+        }
         public struct PostEjectedEntityLandParams
         {
             public Entity entity;
@@ -310,6 +323,7 @@ namespace MVZ2.Vanilla.Callbacks
         public readonly static CallbackType<PostProjectileHitParams> POST_PROJECTILE_HIT = new();
 
         public readonly static CallbackType<EntityCallbackParams> POST_USE_STARSHARD = new();
+        public readonly static CallbackType<PostEntityEjectParams> POST_ENTITY_EJECT = new();
         public readonly static CallbackType<PostEjectedEntityLandParams> POST_EJECTED_ENTITY_LAND = new();
     }
 }

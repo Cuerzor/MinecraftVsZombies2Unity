@@ -211,6 +211,7 @@ namespace MVZ2.GameContent.Buffs
             public const string thrownByEjector = "thrown_by_ejector";
             public const string extendingArm = "extending_arm";
             public const string krakensTentacleAttackSpeed = "krakens_tentacle_attack_speed";
+            public const string onbashiraFall = "onbashira_fall";
         }
         public static class Enemy
         {

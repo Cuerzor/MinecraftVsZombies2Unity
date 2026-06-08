@@ -240,6 +240,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: placement_tags_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54b90c8629c1c541b508e979747db25
+      internalID: -498605245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -256,6 +277,7 @@ TextureImporter:
       placement_tags_2: 875420487
       placement_tags_3: -782307434
       placement_tags_4: -1511003530
+      placement_tags_5: -498605245
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

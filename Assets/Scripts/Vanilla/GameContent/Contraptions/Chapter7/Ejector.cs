@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Buffs.Contraptions;
 using MVZ2.GameContent.Entities;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.Projectiles;
@@ -84,6 +85,9 @@ namespace MVZ2.GameContent.Contraptions
             ThrownByEjectorBuff.SetDamageMultiplier(buff, ejector.GetDamage() / DAMAGE_MULTIPLIER_VALUE);
             thrown.Velocity = VanillaProjectileExt.GetLobVelocity(thrown.Position, targetGrid.GetEntityPosition(), maxY, thrown.GetGravity());
             ejector.PlaySound(VanillaSoundID.launch);
+
+            var args = new VanillaLevelCallbacks.PostEntityEjectParams(thrown, ejector, targetGrid);
+            ejector.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_ENTITY_EJECT, args, thrown.GetDefinitionID());
         }
         public static bool IsCooldownFinished(Entity entity)
         {

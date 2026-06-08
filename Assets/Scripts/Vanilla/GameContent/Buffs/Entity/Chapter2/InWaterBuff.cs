@@ -20,8 +20,16 @@ namespace MVZ2.GameContent.Buffs.Entities
         {
             AddModifier(new FloatModifier(EngineEntityProps.GRAVITY, NumberOperator.AddMultiple, PROP_GRAVITY_ADDITION, VanillaModifierPriorities.WATER_GRAVITY));
             AddModifier(new FloatModifier(EngineEntityProps.FRICTION, NumberOperator.Add, 0.15f));
-            AddModifier(new FloatModifier(EngineEntityProps.GROUND_LIMIT_OFFSET, NumberOperator.Add, -100f));
+            AddModifier(new FloatModifier(EngineEntityProps.GROUND_LIMIT_OFFSET, NumberOperator.Add, PROP_GROUND_LIMIT_OFFSET));
             AddModifier(new FloatModifier(VanillaEntityProps.BLOW_MASS_OFFSET, NumberOperator.Add, 1));
+        }
+        public override void PostAdd(Buff buff)
+        {
+            base.PostAdd(buff);
+            var entity = buff.GetEntity();
+            if (entity == null)
+                return;
+            buff.SetProperty(PROP_GROUND_LIMIT_OFFSET, entity.GetWaterGroundLimitOffset());
         }
         public override void PostUpdate(Buff buff)
         {
@@ -29,6 +37,9 @@ namespace MVZ2.GameContent.Buffs.Entities
             var entity = buff.GetEntity();
             if (entity == null)
                 return;
+
+            buff.SetProperty(PROP_GROUND_LIMIT_OFFSET, entity.GetWaterGroundLimitOffset());
+
             var groundY = entity.GetGroundY();
             float gravityAddition = 0;
             if (entity.Position.y < groundY)
@@ -60,5 +71,6 @@ namespace MVZ2.GameContent.Buffs.Entities
             buff.SetProperty(PROP_GRAVITY_ADDITION, gravityAddition);
         }
         public static readonly VanillaBuffPropertyMeta<float> PROP_GRAVITY_ADDITION = new VanillaBuffPropertyMeta<float>("GravityAddition");
+        public static readonly VanillaBuffPropertyMeta<float> PROP_GROUND_LIMIT_OFFSET = new VanillaBuffPropertyMeta<float>("ground_limit_offset", -100f);
     }
 }

@@ -152,6 +152,22 @@ namespace MVZ2.Vanilla.Entities
         }
         #endregion
 
+        #region 沉没地面偏移
+        public static readonly PropertyMeta<float> WATER_GROUND_LIMIT_OFFSET = Get<float>("water_ground_limit_offset", -100);
+        public static float GetWaterGroundLimitOffset(this EntityDefinition entityDef)
+        {
+            return entityDef.GetProperty<float>(WATER_GROUND_LIMIT_OFFSET);
+        }
+        public static float GetWaterGroundLimitOffset(this Entity entity)
+        {
+            return entity.GetProperty<float>(WATER_GROUND_LIMIT_OFFSET);
+        }
+        public static void SetWaterGroundLimitOffset(this Entity entity, float value)
+        {
+            entity.SetProperty(WATER_GROUND_LIMIT_OFFSET, value);
+        }
+        #endregion
+
         #region 沉没（空中）
         public static readonly PropertyMeta<int> AIR_INTERACTION = Get<int>("airInteraction");
         public static int GetAirInteraction(this EntityDefinition entityDef)
