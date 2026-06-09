@@ -575,7 +575,7 @@ namespace MVZ2.Editor
                             var gradientColorKey = gradient.colorKeys[i];
                             colorKeys[i] = new ResourcePackColorKeyV1()
                             {
-                                code = ColorUtility.ToHtmlStringRGB(gradientColorKey.color),
+                                code = $"#{ColorUtility.ToHtmlStringRGB(gradientColorKey.color)}",
                                 time = gradientColorKey.time
                             };
                         }
