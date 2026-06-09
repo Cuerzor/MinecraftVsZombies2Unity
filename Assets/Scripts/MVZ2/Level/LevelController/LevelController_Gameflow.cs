@@ -59,18 +59,18 @@ namespace MVZ2.Level
         }
         private void ApplyComponents(LevelEngine level)
         {
-            level.AddComponent(new AdviceComponent(level, this));
-            level.AddComponent(new HeldItemComponent(level, this));
-            level.AddComponent(new AreaComponent(level, this));
-            level.AddComponent(new UIComponent(level, this));
-            level.AddComponent(new LogicComponent(level, this));
-            level.AddComponent(new SoundComponent(level, this));
-            level.AddComponent(new TalkComponent(level, this));
-            level.AddComponent(new MusicComponent(level, this));
-            level.AddComponent(new MoneyComponent(level, this));
-            level.AddComponent(new LightComponent(level, this));
-            level.AddComponent(new ArtifactComponent(level, this));
-            level.AddComponent(new BlueprintComponent(level, this));
+            level.AddLevelComponent(new AdviceComponent(level, this));
+            level.AddLevelComponent(new HeldItemComponent(level, this));
+            level.AddLevelComponent(new AreaComponent(level, this));
+            level.AddLevelComponent(new UIComponent(level, this));
+            level.AddLevelComponent(new LogicComponent(level, this));
+            level.AddLevelComponent(new SoundComponent(level, this));
+            level.AddLevelComponent(new TalkComponent(level, this));
+            level.AddLevelComponent(new MusicComponent(level, this));
+            level.AddLevelComponent(new MoneyComponent(level, this));
+            level.AddLevelComponent(new LightComponent(level, this));
+            level.AddLevelComponent(new ArtifactComponent(level, this));
+            level.AddLevelComponent(new BlueprintComponent(level, this));
         }
         private void AddLevelCallbacks(LevelEngine level)
         {

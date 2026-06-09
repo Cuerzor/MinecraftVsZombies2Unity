@@ -11,7 +11,7 @@ namespace MVZ2Logic.Level
     {
         public static ITalkComponent? GetTalkComponent(this LevelEngine level)
         {
-            return level.GetComponent<ITalkComponent>();
+            return level.GetLevelComponent<ITalkComponent>();
         }
         public static void StartTalk(this LevelEngine level, NamespaceID groupId, int section, float delay = 0, Action? onEnd = null)
         {

@@ -103,7 +103,7 @@ namespace MVZ2.Level
             SetGameStarted(true);
 
 
-            foreach (var component in level.GetComponents())
+            foreach (var component in level.GetLevelComponents())
             {
                 if (component is IMVZ2LevelComponent comp)
                 {

@@ -18,7 +18,7 @@ namespace MVZ2Logic.Level
         #region 手持物品
         public static IHeldItemComponent? GetHeldItemComponent(this LevelEngine level)
         {
-            return level.GetComponent<IHeldItemComponent>();
+            return level.GetLevelComponent<IHeldItemComponent>();
         }
         public static void SetHeldItem(this LevelEngine level, IHeldItemBuilder builder)
         {

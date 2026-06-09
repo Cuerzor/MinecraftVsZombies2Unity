@@ -9,7 +9,7 @@ namespace MVZ2Logic.Level
     {
         public static IAdviceComponent? GetAdviceComponent(this LevelEngine level)
         {
-            return level.GetComponent<IAdviceComponent>();
+            return level.GetLevelComponent<IAdviceComponent>();
         }
         public static void ShowAdvice(this LevelEngine level, string context, string textKey, int priority, int timeout, params string[] args)
         {

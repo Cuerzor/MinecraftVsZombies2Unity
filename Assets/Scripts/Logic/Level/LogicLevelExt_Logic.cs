@@ -10,7 +10,7 @@ namespace MVZ2Logic.Level
     {
         public static ILogicComponent? GetLogicComponent(this LevelEngine level)
         {
-            return level.GetComponent<ILogicComponent>();
+            return level.GetLevelComponent<ILogicComponent>();
         }
         public static void BeginLevel(this LevelEngine level)
         {

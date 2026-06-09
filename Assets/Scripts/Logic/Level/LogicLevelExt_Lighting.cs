@@ -12,7 +12,7 @@ namespace MVZ2Logic.Level
     {
         public static ILightComponent? GetLightComponent(this LevelEngine level)
         {
-            return level.GetComponent<ILightComponent>();
+            return level.GetLevelComponent<ILightComponent>();
         }
         public static bool IsIlluminated(this LevelEngine level, Entity entity)
         {

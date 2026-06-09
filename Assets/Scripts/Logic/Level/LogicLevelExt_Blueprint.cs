@@ -9,7 +9,7 @@ namespace MVZ2Logic.Level
     {
         public static IBlueprintComponent? GetBlueprintComponent(this LevelEngine level)
         {
-            return level.GetComponent<IBlueprintComponent>();
+            return level.GetLevelComponent<IBlueprintComponent>();
         }
         public static void SetConveyorMode(this LevelEngine level, bool value)
         {

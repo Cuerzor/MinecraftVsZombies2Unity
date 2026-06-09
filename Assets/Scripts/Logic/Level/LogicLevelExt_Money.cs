@@ -10,7 +10,7 @@ namespace MVZ2Logic.Level
     {
         public static IMoneyComponent? GetMoneyComponent(this LevelEngine level)
         {
-            return level.GetComponent<IMoneyComponent>();
+            return level.GetLevelComponent<IMoneyComponent>();
         }
         public static void AddMoney(this LevelEngine level, int value)
         {

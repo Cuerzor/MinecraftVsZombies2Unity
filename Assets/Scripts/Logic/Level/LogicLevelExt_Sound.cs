@@ -12,7 +12,7 @@ namespace MVZ2Logic.Level
     {
         public static ISoundComponent? GetSoundComponent(this LevelEngine level)
         {
-            return level.GetComponent<ISoundComponent>();
+            return level.GetLevelComponent<ISoundComponent>();
         }
         public static void PlaySound(this LevelEngine level, NamespaceID id, Vector3 position, float pitch = 1, float volume = 1)
         {

@@ -10,7 +10,7 @@ namespace MVZ2Logic.Level
     {
         public static IAreaComponent? GetAreaComponent(this LevelEngine level)
         {
-            return level.GetComponent<IAreaComponent>();
+            return level.GetLevelComponent<IAreaComponent>();
         }
         public static IModelInterface? GetAreaModelInterface(this LevelEngine level)
         {
