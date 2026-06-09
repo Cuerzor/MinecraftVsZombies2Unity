@@ -592,7 +592,11 @@ namespace MVZ2.Entities
         private void UpdateModelInsertions()
         {
             if (Model.Exists())
-                Model.UpdateModelInsertions(Entity.GetModelInsertions());
+            {
+                modelInsertionBuffer.Clear();
+                Entity.GetModelInsertions(modelInsertionBuffer);
+                Model.UpdateModelInsertions(modelInsertionBuffer);
+            }
         }
         #endregion
 
@@ -824,6 +828,7 @@ namespace MVZ2.Entities
         private IHPBarSource hpBarSource = null!;
         private EntityPropertyCache modelPropertyCache = new EntityPropertyCache();
         private List<Animator> animatorBuffer = new List<Animator>();
+        private List<ModelInsertion> modelInsertionBuffer = new List<ModelInsertion>();
         [SerializeField]
         private float maxRenderAccumulator = 1f;
         [SerializeField]

@@ -115,7 +115,11 @@ namespace MVZ2.Grids
         private void UpdateModelInsertions()
         {
             if (grid != null)
-                view.UpdateModelInsertions(grid.GetModelInsertions());
+            {
+                modelInsertionBuffer.Clear();
+                grid.GetModelInsertions(modelInsertionBuffer);
+                view.UpdateModelInsertions(modelInsertionBuffer);
+            }
         }
         private void OnModelInsertionAddedCallback(ModelInsertion insertion)
         {
@@ -187,6 +191,7 @@ namespace MVZ2.Grids
         public float BevelHeight { get; private set; }
         private LawnGrid? grid;
         private IHPBarSource hpBarSource = null!;
+        private List<ModelInsertion> modelInsertionBuffer = new List<ModelInsertion>();
         [SerializeField]
         private GridView view = null!;
         [SerializeField]
