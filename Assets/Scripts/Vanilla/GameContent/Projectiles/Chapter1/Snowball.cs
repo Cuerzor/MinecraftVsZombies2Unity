@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Contraptions;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 
 namespace MVZ2.GameContent.Projectiles
 {

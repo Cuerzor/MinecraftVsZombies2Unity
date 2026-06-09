@@ -9,6 +9,7 @@ using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using Tools;
 using UnityEngine;
 

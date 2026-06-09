@@ -38,6 +38,7 @@ using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
 using PVZEngine.Level;
+using PVZEngine.Models;
 using PVZEngine.Shells;
 using Tools;
 using UnityEditor;

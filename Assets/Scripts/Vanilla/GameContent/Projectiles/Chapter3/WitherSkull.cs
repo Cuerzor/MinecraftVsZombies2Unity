@@ -6,6 +6,7 @@ using MVZ2.Vanilla.Entities;
 using PVZEngine.Callbacks;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 
 namespace MVZ2.GameContent.Projectiles
 {

@@ -10,6 +10,7 @@ using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using Tools;
 
 namespace MVZ2.GameContent.Effects

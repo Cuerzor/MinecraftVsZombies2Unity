@@ -13,6 +13,8 @@ using MVZ2Logic.Entities;
 using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
+using Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions

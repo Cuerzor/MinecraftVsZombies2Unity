@@ -11,6 +11,8 @@ using MVZ2Logic.Level;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
+using Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions

@@ -3,6 +3,7 @@
 using MVZ2.Vanilla.Entities;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Effects

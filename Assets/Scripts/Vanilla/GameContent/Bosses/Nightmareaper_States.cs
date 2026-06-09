@@ -22,6 +22,7 @@ using PVZEngine.Collisions;
 using PVZEngine.Collisions.Level;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using Tools;
 using UnityEngine;
 

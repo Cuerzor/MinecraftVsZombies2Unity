@@ -9,6 +9,7 @@ using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
+using Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Level

@@ -3,6 +3,7 @@
 using MVZ2.Vanilla.Properties;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using Tools;
 using UnityEngine;
 

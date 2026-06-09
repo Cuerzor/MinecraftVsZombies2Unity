@@ -10,6 +10,7 @@ using MVZ2Logic.Level;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using UnityEngine;
 

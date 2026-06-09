@@ -11,6 +11,7 @@ using MVZ2Logic.Localization;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Modifiers;
+using Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Level

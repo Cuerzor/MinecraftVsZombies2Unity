@@ -10,6 +10,7 @@ using PVZEngine.Callbacks;
 using PVZEngine.Collisions;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using UnityEngine;
 

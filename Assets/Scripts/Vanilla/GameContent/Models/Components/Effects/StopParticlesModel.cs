@@ -2,6 +2,7 @@
 
 using MVZ2Logic.Models;
 using MVZ2Logic.Models.Elements;
+using Tools.Unity;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Models

@@ -11,6 +11,7 @@ using MVZ2Logic.Entities;
 using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using Tools;
 
 namespace MVZ2.GameContent.Contraptions

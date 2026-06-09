@@ -16,6 +16,8 @@ using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
+using Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Effects

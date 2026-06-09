@@ -13,6 +13,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using PVZEngine.Modifiers;
 
 namespace MVZ2.GameContent.Enemies

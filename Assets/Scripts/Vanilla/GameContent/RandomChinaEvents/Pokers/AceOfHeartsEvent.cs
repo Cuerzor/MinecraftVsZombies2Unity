@@ -5,6 +5,7 @@ using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Definitions;
 using MVZ2.Vanilla.Localization;
 using PVZEngine.Entities;
+using Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.RandomChinaEvents

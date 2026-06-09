@@ -4,6 +4,7 @@ using MVZ2.Vanilla.Properties;
 using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using Tools;
 
 namespace MVZ2.GameContent.Projectiles

@@ -9,6 +9,7 @@ using MVZ2Logic.Level;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using Tools;
 
 namespace MVZ2.GameContent.Effects
 {

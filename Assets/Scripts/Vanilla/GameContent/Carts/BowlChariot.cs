@@ -6,6 +6,8 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Projectiles;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
+using Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Carts

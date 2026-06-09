@@ -15,6 +15,7 @@ using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
 using PVZEngine.Level;
+using PVZEngine.Models;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Obstacles

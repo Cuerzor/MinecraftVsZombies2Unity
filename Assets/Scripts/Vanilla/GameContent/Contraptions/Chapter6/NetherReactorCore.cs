@@ -13,6 +13,7 @@ using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using Tools;
 using UnityEngine;

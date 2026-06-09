@@ -14,6 +14,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
+using PVZEngine.Models;
 using Tools;
 
 namespace MVZ2.GameContent.Contraptions

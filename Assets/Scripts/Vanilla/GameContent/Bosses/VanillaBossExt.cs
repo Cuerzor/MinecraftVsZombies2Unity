@@ -10,6 +10,7 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
+using Tools;
 
 namespace MVZ2.Vanilla.Bosses
 {

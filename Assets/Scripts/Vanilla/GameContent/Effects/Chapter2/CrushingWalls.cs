@@ -14,6 +14,7 @@ using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using Tools.Mathematics;
 using UnityEngine;
 

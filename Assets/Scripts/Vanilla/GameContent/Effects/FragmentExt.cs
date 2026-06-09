@@ -5,6 +5,7 @@ using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Properties;
 using PVZEngine;
 using PVZEngine.Entities;
+using Tools;
 using UnityEngine;
 
 namespace MVZ2.Vanilla.Effects

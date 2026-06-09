@@ -8,6 +8,7 @@ using MVZ2.Vanilla.Properties;
 using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using Tools;
 
 namespace MVZ2.GameContent.Pickups
 {

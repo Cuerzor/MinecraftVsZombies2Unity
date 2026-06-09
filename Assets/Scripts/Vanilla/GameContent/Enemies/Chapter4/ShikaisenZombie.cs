@@ -7,6 +7,8 @@ using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
+using Tools;
 
 namespace MVZ2.GameContent.Enemies
 {

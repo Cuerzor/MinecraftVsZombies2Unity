@@ -4,6 +4,7 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Pickups;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 
 namespace MVZ2.GameContent.Pickups
 {

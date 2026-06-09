@@ -17,6 +17,7 @@ using PVZEngine.Collisions.Level;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using UnityEngine;
 
