@@ -35,7 +35,7 @@ namespace MVZ2.GameContent.Artifacts
                 {
                     enemy.Revive();
                     enemy.Health = enemy.GetMaxHealth();
-                    enemy.CharmPermanent(level.Option.LeftFaction, new ArtifactSourceReference(artifact));
+                    enemy.CharmPermanent(level.GetLeftFaction(), new ArtifactSourceReference(artifact));
                     result.SetFinalValue(false);
                     artifact.Highlight();
                     enemy.PlaySound(VanillaSoundID.revived);

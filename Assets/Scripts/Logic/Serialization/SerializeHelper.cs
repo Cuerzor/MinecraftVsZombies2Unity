@@ -78,7 +78,6 @@ namespace MVZ2Logic.Serialization
             RegisterClass<SerializableGrid>();
             RegisterClass<SerializableLevel>();
             RegisterClass<SerializableDelayedEnergy>();
-            RegisterClass<SerializableLevelOption>();
             RegisterClass<SerializableClassicSeedPack>();
             RegisterClass<SerializableConveyorSeedPack>();
             RegisterClass<SerializableConveyorSeedSpendRecords>();

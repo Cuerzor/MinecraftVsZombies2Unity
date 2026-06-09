@@ -6,6 +6,7 @@ using MVZ2.GameContent.Enemies;
 using MVZ2.Vanilla.Definitions;
 using MVZ2.Vanilla.Localization;
 using MVZ2.Vanilla.RandomChina;
+using MVZ2Logic.Level;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
 using Tools;
@@ -26,7 +27,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
 
             HashSet<LawnGrid> possibleGrids = new HashSet<LawnGrid>();
             possibleGrids.Clear();
-            UndeadFlyingObject.FillUFOPossibleSpawnGrids(level, variant, level.Option.RightFaction, possibleGrids);
+            UndeadFlyingObject.FillUFOPossibleSpawnGrids(level, variant, level.GetRightFaction(), possibleGrids);
 
             var filteredGrids = UndeadFlyingObject.FilterConflictSpawnGrids(level, possibleGrids);
 

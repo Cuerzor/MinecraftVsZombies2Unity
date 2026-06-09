@@ -61,7 +61,7 @@ namespace MVZ2.GameContent.Stages
                 var z = level.GetEntityLaneZ(lane);
                 var y = level.GetGroundY(x, z);
                 var spawnParam = new SpawnParams();
-                spawnParam.SetProperty(EngineEntityProps.FACTION, level.Option.LeftFaction);
+                spawnParam.SetProperty(EngineEntityProps.FACTION, level.GetLeftFaction());
                 level.Spawn(VanillaEnemyID.napstablook, new Vector3(x, y, z), null, spawnParam)?.Let(e =>
                 {
                     MinigameEnemySpeedBuff.AddSpeedBuff(e, 3, 5);

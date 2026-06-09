@@ -33,16 +33,7 @@ namespace MVZ2.Level
             level = new LevelEngine(game, game, collisionSystem);
             InitLevelEngine(level, game, areaID, stageID);
 
-            var option = new LevelOption()
-            {
-                CardSlotCount = 10,
-                StarshardSlotCount = 10,
-                LeftFaction = SelfFaction,
-                RightFaction = EnemyFaction,
-                MaxEnergy = 9990,
-                TPS = 30
-            };
-            level.Init(areaID, stageID, option, seed);
+            level.Init(areaID, stageID, seed);
 
             level.SetArtifactRNG(level.CreateRNG());
             CreateGridControllers();

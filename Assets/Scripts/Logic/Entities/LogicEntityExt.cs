@@ -109,7 +109,7 @@ namespace MVZ2Logic.Entities
         }
         public static bool IsFriendlyFaction(this LevelEngine level, int faction)
         {
-            return EngineEntityExt.IsFriendly(faction, level.Option.LeftFaction);
+            return EngineEntityExt.IsFriendly(faction, level.GetLeftFaction());
         }
         public static bool IsHostileFaction(this LevelEngine level, int faction)
         {
@@ -133,7 +133,7 @@ namespace MVZ2Logic.Entities
                 return false;
             if (entity.IsNotActiveEnemy())
                 return false;
-            if (!entity.IsHostile(entity.Level.Option.LeftFaction))
+            if (!entity.IsHostileEntity())
                 return false;
             return true;
         }

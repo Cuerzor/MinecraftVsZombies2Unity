@@ -488,7 +488,7 @@ namespace MVZ2.Vanilla.Entities
         #endregion
         public static bool CanEntityEnterHouse(this Entity entity)
         {
-            return entity.Type == EntityTypes.ENEMY && !entity.IsDead && !entity.IsHarmless() && entity.IsHostile(entity.Level.Option.LeftFaction);
+            return entity.Type == EntityTypes.ENEMY && !entity.IsDead && !entity.IsHarmless() && entity.IsHostileEntity();
         }
         public static EntitySeed? GetEntitySeedDefinition(this Entity entity)
         {

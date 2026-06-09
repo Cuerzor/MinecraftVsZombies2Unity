@@ -29,7 +29,7 @@ namespace MVZ2.Level.Components
         }
         public void ShakeScreen(float startAmplitude, float endAmplitude, int time)
         {
-            Main.ShakeManager.AddShake(startAmplitude * Controller.LawnToTransScale, endAmplitude * Controller.LawnToTransScale, time / (float)Level.TPS);
+            Main.ShakeManager.AddShake(startAmplitude * Controller.LawnToTransScale, endAmplitude * Controller.LawnToTransScale, time / (float)Ticks.GetTPS());
         }
         public void ShowMoney()
         {

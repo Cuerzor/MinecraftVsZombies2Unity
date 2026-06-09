@@ -39,8 +39,8 @@ namespace MVZ2.GameContent.Pickups
             if (pickup.IsCollected())
             {
                 var collectedTime = pickup.GetCollectedTime();
-                var moveTime = level.GetSecondTicks(1);
-                var vanishTime = level.GetSecondTicks(1.5f);
+                var moveTime = Ticks.FromSeconds(1);
+                var vanishTime = Ticks.FromSeconds(1.5f);
                 if (collectedTime < moveTime)
                 {
                     var targetPos = GetMoveTargetPosition(pickup);

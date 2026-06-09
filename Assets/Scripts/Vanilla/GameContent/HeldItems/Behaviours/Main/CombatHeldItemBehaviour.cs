@@ -244,7 +244,7 @@ namespace MVZ2.GameContent.HeldItems
             var y = level.GetGroundY(x, z);
             var pos = new Vector3(x, y, z);
             var param = new SpawnParams();
-            param.SetProperty(EngineEntityProps.FACTION, level.Option.LeftFaction);
+            param.SetProperty(EngineEntityProps.FACTION, level.GetLeftFaction());
             param.SetProperty(VanillaEntityProps.DAMAGE, 1800f);
             param.SetProperty(VanillaEntityProps.RANGE, 120f);
             level.Spawn(VanillaEffectID.combatSmash, pos, null, param);
@@ -258,7 +258,7 @@ namespace MVZ2.GameContent.HeldItems
             var y = level.GetGroundY(x, z);
             var pos = new Vector3(x, y, z);
             var param = new SpawnParams();
-            param.SetProperty(EngineEntityProps.FACTION, level.Option.LeftFaction);
+            param.SetProperty(EngineEntityProps.FACTION, level.GetLeftFaction());
             param.SetProperty(VanillaEntityProps.DAMAGE, 400f);
             param.SetProperty(VanillaEntityProps.RANGE, 200f);
             level.Spawn(VanillaEffectID.combatUppercut, pos, null, param);
@@ -271,7 +271,7 @@ namespace MVZ2.GameContent.HeldItems
             var y = level.GetGroundY(x, z);
             var pos = new Vector3(x, y, z);
             var param = new SpawnParams();
-            param.SetProperty(EngineEntityProps.FACTION, level.Option.LeftFaction);
+            param.SetProperty(EngineEntityProps.FACTION, level.GetLeftFaction());
             param.SetProperty(VanillaEntityProps.DAMAGE, 1200f);
             level.Spawn(VanillaEffectID.combatPunch, pos, null, param);
         }

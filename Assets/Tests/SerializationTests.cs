@@ -537,7 +537,7 @@ namespace MVZ2.Tests
             Assert.AreEqual(engineJsonBeforeSave, engineJsonAfterLoad);
 
             // 更新五秒
-            for (int i = 0; i < seconds * level.Option.TPS; i++)
+            for (int i = 0; i < Ticks.FromSeconds(seconds); i++)
             {
                 levelController.UpdateLogic();
             }
@@ -548,7 +548,7 @@ namespace MVZ2.Tests
             var levelAfterLoad = GetLevelController();
             LoadLevel(levelAfterLoad, serializableAfterLoad, areaId, stageId);
             // 更新五秒
-            for (int i = 0; i < seconds * level.Option.TPS; i++)
+            for (int i = 0; i < Ticks.FromSeconds(seconds); i++)
             {
                 levelAfterLoad.UpdateLogic();
             }

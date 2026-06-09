@@ -61,7 +61,7 @@ namespace MVZ2.GameContent.Spawns
             int startIndex = 0;
             if (random)
             {
-                UndeadFlyingObject.FillUFOVariantRandomPool(level, level.Option.RightFaction, variantPool);
+                UndeadFlyingObject.FillUFOVariantRandomPool(level, level.GetRightFaction(), variantPool);
 
                 if (variantPool.Count <= 0)
                 {

@@ -93,7 +93,7 @@ namespace MVZ2.GameContent.Pickups
         {
             var level = pickup.Level;
             var collectedTime = pickup.GetCollectedTime();
-            var moveTime = level.GetSecondTicks(3);
+            var moveTime = Ticks.FromSeconds(3);
             float timePercent = collectedTime / (float)moveTime;
             var targetPos = GetMoveTargetPosition(pickup);
             pickup.Velocity = (targetPos - pickup.Position) * 0.05f;

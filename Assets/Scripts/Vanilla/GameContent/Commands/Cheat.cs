@@ -52,18 +52,21 @@ namespace MVZ2.GameContent.Commands
                     throw new ArgumentException(Global.Localization.GetTextParticular(VanillaStrings.COMMAND_CHEAT_NOT_FOUND, LogicStrings.CONTEXT_COMMAND_OUTPUT, cheatCode));
             }
 
-            if (level.HasBuff(buffDefinition))
+            if (buffDefinition != null)
             {
-                level.RemoveBuffs(buffDefinition);
-                msg = VanillaStrings.COMMAND_CHEAT_DISABLED;
+                if (level.HasBuff(buffDefinition))
+                {
+                    level.RemoveBuffs(buffDefinition);
+                    msg = VanillaStrings.COMMAND_CHEAT_DISABLED;
+                }
+                else
+                {
+                    level.AddBuff(buffDefinition);
+                    msg = VanillaStrings.COMMAND_CHEAT_ENABLED;
+                }
+                var cheatName = Global.Localization.GetTextParticular(cheatNameKey, VanillaStrings.CONTEXT_COMMAND_CHEAT_NAME);
+                PrintLine(Global.Localization.GetTextParticular(msg, LogicStrings.CONTEXT_COMMAND_OUTPUT, cheatName));
             }
-            else
-            {
-                level.AddBuff(buffDefinition);
-                msg = VanillaStrings.COMMAND_CHEAT_ENABLED;
-            }
-            var cheatName = Global.Localization.GetTextParticular(cheatNameKey, VanillaStrings.CONTEXT_COMMAND_CHEAT_NAME);
-            PrintLine(Global.Localization.GetTextParticular(msg, LogicStrings.CONTEXT_COMMAND_OUTPUT, cheatName));
         }
     }
 }

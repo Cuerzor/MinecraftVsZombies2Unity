@@ -6,6 +6,7 @@ using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using MVZ2Logic.Models;
+using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Modifiers;
@@ -30,8 +31,8 @@ namespace MVZ2.GameContent.Pickups
             if (pickup.IsCollected())
             {
                 var collectedTime = pickup.GetCollectedTime();
-                var moveTime = level.GetSecondTicks(1);
-                var vanishTime = level.GetSecondTicks(1.5f);
+                var moveTime = Ticks.FromSeconds(1);
+                var vanishTime = Ticks.FromSeconds(1.5f);
                 if (collectedTime < moveTime)
                 {
                     float timePercent = collectedTime / (float)moveTime;

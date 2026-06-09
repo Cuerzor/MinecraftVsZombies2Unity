@@ -6,7 +6,9 @@ using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Entities;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Definitions;
+using MVZ2Logic.Entities;
 using MVZ2Logic.HeldItems;
+using MVZ2Logic.Level;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
@@ -27,7 +29,7 @@ namespace MVZ2.GameContent.HeldItems
                 return false;
             if (entity.NoHeldTarget())
                 return false;
-            return entity.GetFaction() == entity.Level.Option.LeftFaction && entity.CanTrigger();
+            return entity.IsFriendlyEntity() && entity.CanTrigger();
         }
         protected override void UseOnEntity(Entity entity)
         {

@@ -352,5 +352,29 @@ namespace MVZ2Logic.Level
             level.SetProperty(GODMODE, value);
         }
         #endregion
+
+        #region 左阵营
+        public static readonly PropertyMeta<int> LEFT_FACTION = Get<int>("left_faction");
+        public static int GetLeftFaction(this LevelEngine level)
+        {
+            return level.GetProperty<int>(LEFT_FACTION);
+        }
+        public static void SetLeftFaction(this LevelEngine level, int value)
+        {
+            level.SetProperty(LEFT_FACTION, value);
+        }
+        #endregion
+
+        #region 右阵营
+        public static readonly PropertyMeta<int> RIGHT_FACTION = Get<int>("right_faction");
+        public static int GetRightFaction(this LevelEngine level)
+        {
+            return level.GetProperty<int>(RIGHT_FACTION);
+        }
+        public static void SetRightFaction(this LevelEngine level, int value)
+        {
+            level.SetProperty(RIGHT_FACTION, value);
+        }
+        #endregion
     }
 }

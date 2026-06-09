@@ -34,7 +34,7 @@ namespace MVZ2.GameContent.Buffs.Level
                 var type = GetVariant(buff);
                 var spawnLevel = GetSpawnLevel(buff);
                 possibleGrids.Clear();
-                UndeadFlyingObject.FillUFOPossibleSpawnGrids(level, type, level.Option.RightFaction, possibleGrids);
+                UndeadFlyingObject.FillUFOPossibleSpawnGrids(level, type, level.GetRightFaction(), possibleGrids);
 
                 var filteredGrids = UndeadFlyingObject.FilterConflictSpawnGrids(level, possibleGrids);
 

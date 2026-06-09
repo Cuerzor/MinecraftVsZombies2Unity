@@ -2,6 +2,7 @@
 
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic.Entities;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Modifiers;
@@ -28,7 +29,7 @@ namespace MVZ2.GameContent.Entities
         private void UpdateFlipX(Entity entity)
         {
             int targetFaction = entity.GetFaction();
-            var faceRight = targetFaction == entity.Level.Option.LeftFaction;
+            var faceRight = entity.Level.IsFriendlyFaction(targetFaction);
             entity.SetProperty(PROP_FLIP_X, entity.FaceLeftAtDefault() == faceRight);
         }
 
