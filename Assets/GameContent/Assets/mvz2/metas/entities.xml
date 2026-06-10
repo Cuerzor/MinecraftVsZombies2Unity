@@ -3266,7 +3266,7 @@
             </properties>
         </entity>
         <entity template="projectile" id="knife">
-            <behaviours includeSelf="false">
+            <behaviours>
                 <behaviour operator="add" id="mvz2:projectile_point_to_direction" />
             </behaviours>
             <properties>
