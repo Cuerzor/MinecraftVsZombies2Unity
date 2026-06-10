@@ -92,12 +92,5 @@
         <entity id="nether_mage_lightning" cost="75" name="下界法师（电）" entity="mvz2:nether_mage" variant="3">
             <icon model="mvz2:entity.nether_mage_lightning" mobile="mvz2:mobile_blueprint/nether_mage_lightning" />
         </entity>
-
-        <entity id="nesting_tnt_medium" cost="100" name="套娃TNT（中）" entity="mvz2:nesting_tnt" variant="1">
-            <icon model="mvz2:entity.nesting_tnt_medium" mobile="mvz2:mobile_blueprint/nesting_tnt_medium" />
-        </entity>
-        <entity id="nesting_tnt_small" cost="50" name="套娃TNT（小）" entity="mvz2:nesting_tnt" variant="2">
-            <icon model="mvz2:entity.nesting_tnt_small" mobile="mvz2:mobile_blueprint/nesting_tnt_small" />
-        </entity>
     </entities>
 </blueprints>

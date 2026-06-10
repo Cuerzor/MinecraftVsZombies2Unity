@@ -207,6 +207,31 @@
                 <id name="mvz2:rechargeId" value="mvz2:short" />
             </properties>
         </dispenser>
+        <nestingTNT type="1" parent="contraption">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:ignitable" />
+                <behaviour operator="add" id="mvz2:ignitable/trigger" />
+                <behaviour operator="add" id="mvz2:explode_on_fire_death" />
+                <behaviour operator="add" id="mvz2:nesting_tnt/evoke" />
+                <behaviour operator="add" id="mvz2:nesting_tnt" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:dynamite" value="true" />
+                <float name="mvz2:damage" value="600" />
+                <float name="mvz2:range" value="120" />
+                <vector3 name="mvz2:size" x="48" y="48" z="48" />
+                <id name="mvz2:placeSound" value="mvz2:grass" />
+                <id name="mvz2:shell" value="mvz2:grass" />
+                <id name="mvz2:deathSound" value="mvz2:grass" />
+                <id name="mvz2:fragmentId" value="mvz2:nesting_tnt" />
+                <bool name="mvz2:triggerActive" value="true" />
+                <bool name="mvz2:instantTrigger" value="true" />
+
+                <int name="mvz2:cost" value="150" />
+                <id name="mvz2:rechargeId" value="mvz2:very_long" />
+            </properties>
+        </nestingTNT>
 
         <specialEnemy type="2" parent="enemy">
             <behaviours>
@@ -1372,30 +1397,43 @@
                 <id name="mvz2:rechargeId" value="mvz2:long" />
             </properties>
         </entity>
-        <entity template="contraption" id="nesting_tnt" name="套娃TNT" tooltip="触发后爆炸，可以爆炸三次">
+        <entity template="nestingTNT" id="nesting_tnt" name="套娃TNT" tooltip="触发后爆炸，可以触发三次">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.nesting_tnt" />
             </unlock>
-            <behaviours>
-                <behaviour operator="add" id="mvz2:ignitable" />
-                <behaviour operator="add" id="mvz2:ignitable/trigger" />
-                <behaviour operator="add" id="mvz2:explode_on_fire_death" />
-                <behaviour operator="add" id="mvz2:set_model_property_variant" />
-                <behaviour operator="add" id="mvz2:nesting_tnt/evoke" />
+            <behaviours includeSelf="false">
+                <properties behaviour="mvz2:nesting_tnt" >
+                    <id name="blueprint_id_to_spawn" value="mvz2:nesting_tnt_medium"/>
+                </properties>
+            </behaviours>
+        </entity>
+        <entity template="nestingTNT" id="nesting_tnt_medium" name="套娃TNT（中）" tooltip="触发后爆炸，可以触发两次">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.nesting_tnt" />
+            </unlock>
+            <behaviours includeSelf="false">
+                <properties behaviour="mvz2:nesting_tnt" >
+                    <id name="blueprint_id_to_spawn" value="mvz2:nesting_tnt_small"/>
+                </properties>
             </behaviours>
             <properties>
-                <bool name="mvz2:canDeactive" value="false" />
-                <bool name="mvz2:dynamite" value="true" />
-                <float name="mvz2:damage" value="600" />
-                <float name="mvz2:range" value="120" />
-                <vector3 name="mvz2:size" x="48" y="48" z="48" />
-                <id name="mvz2:placeSound" value="mvz2:grass" />
-                <id name="mvz2:shell" value="mvz2:grass" />
-                <id name="mvz2:deathSound" value="mvz2:grass" />
-                <bool name="mvz2:triggerActive" value="true" />
-                <bool name="mvz2:instantTrigger" value="true" />
+                <vector3 name="mvz2:size" x="36" y="36" z="36" />
+                <vector3 name="mvz2:shadowScale" x="0.75" y="0.75" z="0.75" />
 
-                <int name="mvz2:cost" value="150" />
+                <int name="mvz2:cost" value="100" />
+                <id name="mvz2:rechargeId" value="mvz2:very_long" />
+            </properties>
+        </entity>
+        <entity template="nestingTNT" id="nesting_tnt_small" name="套娃TNT（小）" tooltip="触发后爆炸">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.nesting_tnt" />
+            </unlock>
+            <behaviours includeSelf="false"/>
+            <properties>
+                <vector3 name="mvz2:size" x="24" y="24" z="24" />
+                <vector3 name="mvz2:shadowScale" x="0.5" y="0.5" z="0.5" />
+
+                <int name="mvz2:cost" value="50" />
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </entity>

@@ -97,12 +97,12 @@
     <model name="nesting_tnt" type="entity" path="mvz2:contraption/mountain/nesting_tnt" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="nesting_tnt_medium" type="entity" path="mvz2:contraption/mountain/nesting_tnt" width="64" height="64" xOffset="0" yOffset="-28">
         <properties>
-            <int name="Variant" value="1" />
+            <int name="Size" value="1" />
         </properties>
     </model>
     <model name="nesting_tnt_small" type="entity" path="mvz2:contraption/mountain/nesting_tnt" width="64" height="64" xOffset="0" yOffset="-28">
         <properties>
-            <int name="Variant" value="2" />
+            <int name="Size" value="2" />
         </properties>
     </model>
 

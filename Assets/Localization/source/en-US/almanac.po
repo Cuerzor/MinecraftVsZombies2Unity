@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-06-08 03:06+0800\n"
-"PO-Revision-Date: 2026-06-08 15:06+0800\n"
+"POT-Creation-Date: 2026-06-10 11:23+0800\n"
+"PO-Revision-Date: 2026-06-10 11:25+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -2357,11 +2357,12 @@ msgid ""
 "<tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />：<color=red><var local=\"flesh_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:leather\" />：<color=red><var local=\"leather_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:grass\" />：<color=red><var local=\"grass_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:ice\" />：<color=red><var local=\"ice_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:wood\" />：<color=red><var local=\"wood_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:shadow\" />：<color=red><var local=\"shadow_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:cloud\" />：<color=red><var local=\"cloud_density\"/>%（震飞周围敌怪）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:lightning\" />：<color=red><var local=\"lightning_density\"/>%（电击周围敌怪）</color>\n"
-"<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"lightning_density\"/>%</color>"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>"
 msgstr ""
 
 #. Header for contraptions mvz2:nesting_tnt
@@ -2402,7 +2403,7 @@ msgstr ""
 "It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
 "It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
 "It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
-"It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began...b"
+"It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began..."
 
 #. Header for contraptions mvz2:infectenser
 #: Almanac meta file
@@ -4197,6 +4198,24 @@ msgstr ""
 "mouth, showing no mercy at all to the weak.\n"
 "This eternal vengeance will never find its end."
 
+#. Header for artifacts mvz2:cow_horn
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "<ref=[misc]mvz2:zombie_cow>僵尸牛</ref>的牛角。"
+msgstr ""
+
+#. Properties for artifacts mvz2:cow_horn
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "效果：<color=red>一大波敌人来临后，充能所有蓝图，并使其免费15秒</color>"
+msgstr ""
+
+#. Flavor for artifacts mvz2:cow_horn
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "====施工中===="
+msgstr ""
+
 #. Header for artifacts mvz2:control_rod
 #: Almanac meta file
 msgctxt "artifacts.description"
@@ -4323,6 +4342,66 @@ msgstr "Effect: <color=red>Enemies take +50% fire damage</color>"
 msgctxt "artifacts.description"
 msgid "都说了不要在地下引发地震！！！"
 msgstr "I told you not to cause earthquakes underground!!!"
+
+#. Header for artifacts mvz2:bunbunmaru_newspaper
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "<ref=[misc]mvz2:aya>射命丸 文</ref>赠送的一叠报纸。"
+msgstr ""
+
+#. Properties for artifacts mvz2:bunbunmaru_newspaper
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "效果：<color=red>每30秒，将所有蓝图的消耗在0-300之间随机</color>"
+msgstr ""
+
+#. Header for artifacts mvz2:lily_platform
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "河童们制造的一种水中作业用的地基平台。"
+msgstr ""
+
+#. Properties for artifacts mvz2:lily_platform
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "效果：<color=red>占据承载位的器械耗能-25</color>"
+msgstr ""
+
+#. Header for artifacts mvz2:extending_arm
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "<ref=[misc]mvz2:nitori>河城 荷取</ref>赠予的河童常用的工具。"
+msgstr ""
+
+#. Properties for artifacts mvz2:extending_arm
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "效果：<color=red>友方器械伤害x75%，射程+50%</color>"
+msgstr ""
+
+#. Header for artifacts mvz2:krakens_tentacle
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "从<ref=[misc]mvz2:kraken>克拉肯</ref>身上切断的机械触手。"
+msgstr ""
+
+#. Properties for artifacts mvz2:krakens_tentacle
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "效果：<color=red>友方器械攻击速度x200%，但会向随机方向发射子弹</color>"
+msgstr ""
+
+#. Header for artifacts mvz2:gale_leaf
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "妖怪之山上的一片寄宿了风之力的树叶。"
+msgstr ""
+
+#. Properties for artifacts mvz2:gale_leaf
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "效果：<color=red>所有敌怪持续向右缓慢移动</color>"
+msgstr ""
 
 #. Name for almanac group mvz2:bosses
 #: Almanac meta file
@@ -7291,18 +7370,6 @@ msgctxt "entity.tooltip"
 msgid "在特殊阵型中持续提供星之碎片"
 msgstr "Produces starshards in a special formation"
 
-#. Name for entity mvz2:ejector
-#: Entity meta file
-msgctxt "entity.name"
-msgid "弹射器"
-msgstr "Dispenser"
-
-#. Tooltip for entity mvz2:ejector
-#: Entity meta file
-msgctxt "entity.tooltip"
-msgid "点击投掷内部的器械"
-msgstr "Click to eject the contraption inside"
-
 #. Name for entity mvz2:freezenser
 #: Entity meta file
 msgctxt "entity.name"
@@ -7315,6 +7382,18 @@ msgctxt "entity.tooltip"
 msgid "发射减速的冰箭"
 msgstr "Shoots slowing ice arrows"
 
+#. Name for entity mvz2:ejector
+#: Entity meta file
+msgctxt "entity.name"
+msgid "弹射器"
+msgstr "Dispenser"
+
+#. Tooltip for entity mvz2:ejector
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "点击投掷内部的器械"
+msgstr "Click to eject the contraption inside"
+
 #. Name for entity mvz2:nesting_tnt
 #: Entity meta file
 msgctxt "entity.name"
@@ -7324,8 +7403,32 @@ msgstr "Nesting TNT"
 #. Tooltip for entity mvz2:nesting_tnt
 #: Entity meta file
 msgctxt "entity.tooltip"
-msgid "触发后爆炸，可以爆炸三次"
+msgid "触发后爆炸，可以触发三次"
 msgstr "Up to 3 times, explodes when triggered"
+
+#. Name for entity mvz2:nesting_tnt_medium
+#: Entity meta file
+msgctxt "entity.name"
+msgid "套娃TNT（中）"
+msgstr "Nesting TNT (Medium)"
+
+#. Tooltip for entity mvz2:nesting_tnt_medium
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "触发后爆炸，可以触发两次"
+msgstr "Up to 2 times, explodes when triggered"
+
+#. Name for entity mvz2:nesting_tnt_small
+#: Entity meta file
+msgctxt "entity.name"
+msgid "套娃TNT（小）"
+msgstr "Nesting TNT (Small)"
+
+#. Tooltip for entity mvz2:nesting_tnt_small
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "触发后爆炸"
+msgstr "Explodes when triggered"
 
 #. Name for entity mvz2:infectenser
 #: Entity meta file
@@ -8956,18 +9059,6 @@ msgstr "Nether Mage (Frost)"
 msgctxt "entity.name"
 msgid "下界法师（电）"
 msgstr "Nether Mage (Lightning)"
-
-#. Name for entity blueprint nesting_tnt_medium
-#: Blueprints meta file
-msgctxt "entity.name"
-msgid "套娃TNT（中）"
-msgstr "Nesting TNT (Medium)"
-
-#. Name for entity blueprint nesting_tnt_small
-#: Blueprints meta file
-msgctxt "entity.name"
-msgid "套娃TNT（小）"
-msgstr "Nesting TNT (Small)"
 
 #~ msgctxt "almanac_tag_enum.name"
 #~ msgid "下界"

@@ -72,6 +72,8 @@ namespace MVZ2.GameContent.Contraptions
         public const string freezenser = "freezenser";
         public const string ejector = "ejector";
         public const string nestingTNT = "nesting_tnt";
+        public const string nestingTNTMedium = "nesting_tnt_medium";
+        public const string nestingTNTSmall = "nesting_tnt_small";
 
         public const string infectenser = "infectenser";
         public const string forcePad = "force_pad";
@@ -153,6 +155,8 @@ namespace MVZ2.GameContent.Contraptions
 
         public static readonly NamespaceID freezenser = Get(VanillaContraptionNames.freezenser);
         public static readonly NamespaceID nestingTNT = Get(VanillaContraptionNames.nestingTNT);
+        public static readonly NamespaceID nestingTNTMedium = Get(VanillaContraptionNames.nestingTNTMedium);
+        public static readonly NamespaceID nestingTNTSmall = Get(VanillaContraptionNames.nestingTNTSmall);
 
         public static readonly NamespaceID infectenser = Get(VanillaContraptionNames.infectenser);
         public static readonly NamespaceID forcePad = Get(VanillaContraptionNames.forcePad);

@@ -192,7 +192,7 @@ MonoBehaviour:
   - {fileID: -781218095, guid: cc2ee2b04b996a746a26ff1160de365a, type: 3}
   - {fileID: -1411029523, guid: cc2ee2b04b996a746a26ff1160de365a, type: 3}
   - {fileID: -1575667641, guid: cc2ee2b04b996a746a26ff1160de365a, type: 3}
-  propertyName: Variant
+  propertyName: Size
 --- !u!1001 &6105149552338166783
 PrefabInstance:
   m_ObjectHideFlags: 0

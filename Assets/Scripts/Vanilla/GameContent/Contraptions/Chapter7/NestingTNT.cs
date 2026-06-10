@@ -10,6 +10,7 @@ using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Pickups;
+using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine;
@@ -17,6 +18,7 @@ using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions
@@ -50,7 +52,7 @@ namespace MVZ2.GameContent.Contraptions
             entity.PlaySound(VanillaSoundID.explosion);
             entity.Level.ShakeScreen(10, 0, 15);
 
-            var blueprintID = GetProduceBlueprintID(entity.GetVariant());
+            var blueprintID = GetBlueprintIDToSpawn(entity);
             if (NamespaceID.IsValid(blueprintID))
             {
                 SpawnBlueprintPickup(entity, entity.GetCenter(), blueprintID);
@@ -67,16 +69,8 @@ namespace MVZ2.GameContent.Contraptions
             spawnParams.SetProperty(BlueprintPickup.PROP_COMMAND_BLOCK, entity.IsImitated());
             return entity.Produce(VanillaPickupID.blueprintPickup, spawnParams);
         }
-        public static NamespaceID? GetProduceBlueprintID(int variant)
-        {
-            if (variant < 0 || variant >= variantProduceBlueprints.Length)
-                return null;
-            return variantProduceBlueprints[variant];
-        }
-        public static NamespaceID[] variantProduceBlueprints = new NamespaceID[]
-        {
-            VanillaBlueprintID.nestingTNTMedium,
-            VanillaBlueprintID.nestingTNTSmall,
-        };
+        public static NamespaceID? GetBlueprintIDToSpawn(Entity entity) => entity.GetProperty<NamespaceID>(PROP_BLUEPRINT_ID_TO_SPAWN);
+        public static void SetBlueprintIDToSpawn(Entity entity, NamespaceID? value) => entity.SetProperty<NamespaceID>(PROP_BLUEPRINT_ID_TO_SPAWN, value);
+        private static readonly VanillaEntityPropertyMeta<NamespaceID> PROP_BLUEPRINT_ID_TO_SPAWN = new VanillaEntityPropertyMeta<NamespaceID>("blueprint_id_to_spawn");
     }
 }
