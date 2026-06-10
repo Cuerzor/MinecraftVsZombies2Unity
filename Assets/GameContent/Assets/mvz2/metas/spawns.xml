@@ -41,7 +41,7 @@
     <entry id="ghost">
         <entity id="mvz2:ghost" />
         <spawn level="2" minWave="5" />
-        <terrain excludedTags="mvz2:day" water="true" />
+        <terrain excludedTags="mvz2:day" water="true" air="true" />
         <weight base="2000" />
     </entry>
     <entry id="mummy">
