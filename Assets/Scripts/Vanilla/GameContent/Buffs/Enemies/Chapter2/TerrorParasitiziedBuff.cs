@@ -57,7 +57,6 @@ namespace MVZ2.GameContent.Buffs.Enemies
         public static void SpawnParasites(Entity host, float health)
         {
             var level = host.Level;
-            host.TakeDamage(DAMAGE, new DamageEffectList(VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.SELF_DAMAGE, VanillaDamageEffects.MUTE), host);
             int count = level.GetParasitizedTerrorCount();
             for (int i = 0; i < count; i++)
             {
@@ -66,6 +65,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
                     e.Health = health;
                 });
             }
+            host.TakeDamage(DAMAGE, new DamageEffectList(VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.SELF_DAMAGE, VanillaDamageEffects.MUTE), host);
             host.PlaySound(VanillaSoundID.bloody);
             host.EmitBlood();
         }
