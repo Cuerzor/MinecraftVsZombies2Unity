@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-06-10 11:23+0800\n"
-"PO-Revision-Date: 2026-06-10 11:25+0800\n"
+"POT-Creation-Date: 2026-06-10 06:27+0800\n"
+"PO-Revision-Date: 2026-06-10 18:31+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -4202,19 +4202,19 @@ msgstr ""
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "<ref=[misc]mvz2:zombie_cow>僵尸牛</ref>的牛角。"
-msgstr ""
+msgstr "The horn of a <ref=[misc]mvz2:zombie_cow>zombie cow</ref>."
 
 #. Properties for artifacts mvz2:cow_horn
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "效果：<color=red>一大波敌人来临后，充能所有蓝图，并使其免费15秒</color>"
-msgstr ""
+msgstr "Effect: <color=red>After a huge wave of monsters arrives, recharges all blueprints and makes them free for 15 seconds</color>"
 
 #. Flavor for artifacts mvz2:cow_horn
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "====施工中===="
-msgstr ""
+msgid "我去，它们真的偷牛！"
+msgstr "Oh my, they actually steal cows!"
 
 #. Header for artifacts mvz2:control_rod
 #: Almanac meta file
@@ -4347,37 +4347,71 @@ msgstr "I told you not to cause earthquakes underground!!!"
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "<ref=[misc]mvz2:aya>射命丸 文</ref>赠送的一叠报纸。"
-msgstr ""
+msgstr "A stack of newspapers gifted by <ref=[misc]mvz2:aya>Aya Shameimaru</ref>."
 
 #. Properties for artifacts mvz2:bunbunmaru_newspaper
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "效果：<color=red>每30秒，将所有蓝图的消耗在0-300之间随机</color>"
-msgstr ""
+msgstr "Effect: <color=red>Every 30 seconds, Randomizes the cost of all blueprints within 0-300</color>"
+
+#. Flavor for artifacts mvz2:bunbunmaru_newspaper
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "添油加醋，胡言乱语，山呼海啸，狗血淋头，如同往常一样。"
+msgstr "Exaggerated, misinformation, nonsensical, and sensationalism, just like always."
 
 #. Header for artifacts mvz2:lily_platform
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "河童们制造的一种水中作业用的地基平台。"
-msgstr ""
+msgstr "A platform built by the kappa for aquatic operations."
 
 #. Properties for artifacts mvz2:lily_platform
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "效果：<color=red>占据承载位的器械耗能-25</color>"
+msgstr "Effect: <color=red>Contraptions that occupy the carrier layer of tiles cost 25 less</color>"
+
+#. Flavor for artifacts mvz2:lily_platform
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid ""
+"<align=\"center\"><b>简易河童水下基地建设指南</b></align>\n"
+"1. 制造一把建造枪，并准备足够的建筑材料。\n"
+"2. 使用建造枪建造一个I型走廊，并在走廊上建造一个舱门。\n"
+"3. 在走廊房间上方建造一个太阳能板。\n"
+"4. 进入基地内部，建造基地内部组件。\n"
+"\n"
+"<align=\"center\"><b>简易Minecraft水下基地建设指南</b></align>\n"
+"1. 在海底放个门。"
 msgstr ""
+"<align=\"center\"><b>Kappa Seabase Construction Guide for Dummies</b></align>\n"
+"1. Craft a Habitat Builder and prepare sufficient building materials.\n"
+"2. Use the Habitat Builder to construct an I Compartment and install a hatch on it.\n"
+"3. Construct a Solar Panel on top of the I Compartment.\n"
+"4. Enter the seabase and construct its internal components.\n"
+"\n"
+"<align=\"center\"><b>Minecraft Seabase Construction Guide for Dummies</b></align>\n"
+"1. Place a door under the sea."
 
 #. Header for artifacts mvz2:extending_arm
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "<ref=[misc]mvz2:nitori>河城 荷取</ref>赠予的河童常用的工具。"
-msgstr ""
+msgstr "A tool commonly used by the kappa, given by <ref=[misc]mvz2:nitori>Nitori Kawashiro</ref>. "
 
 #. Properties for artifacts mvz2:extending_arm
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "效果：<color=red>友方器械伤害x75%，射程+50%</color>"
-msgstr ""
+msgstr "Effect: <color=red>+50% range but x75% damage for friendly contraptions</color>"
+
+#. Flavor for artifacts mvz2:extending_arm
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "非常适合用于把远方物体拉过来，但是不适合用来射击靶子来把你自己拉过去。"
+msgstr "It's perfect for pulling distant objects closer, but not ideal for shooting targets to pull yourself closer."
 
 #. Header for artifacts mvz2:krakens_tentacle
 #: Almanac meta file
@@ -4391,17 +4425,29 @@ msgctxt "artifacts.description"
 msgid "效果：<color=red>友方器械攻击速度x200%，但会向随机方向发射子弹</color>"
 msgstr ""
 
+#. Flavor for artifacts mvz2:krakens_tentacle
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "====施工中===="
+msgstr ""
+
 #. Header for artifacts mvz2:gale_leaf
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "妖怪之山上的一片寄宿了风之力的树叶。"
-msgstr ""
+msgstr "A leaf on the Youkai Mountain that harbors the power of the wind."
 
 #. Properties for artifacts mvz2:gale_leaf
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "效果：<color=red>所有敌怪持续向右缓慢移动</color>"
-msgstr ""
+msgstr "Effect: <color=red>Moves all enemy monsters slowly to the right</color>"
+
+#. Flavor for artifacts mvz2:gale_leaf
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "狂风，听我号令！"
+msgstr "WIND, OBEY MY COMMAND!"
 
 #. Name for almanac group mvz2:bosses
 #: Almanac meta file
@@ -8794,7 +8840,7 @@ msgstr "Cow Horn"
 #: Artifact meta file
 msgctxt "artifact.tooltip"
 msgid "一大波敌人来临后，充能所有蓝图，并使其免费15秒"
-msgstr "After a huge wave of monsters arrives, recharges all blueprints and make them free for 15 seconds"
+msgstr "After a huge wave of monsters arrives, recharges all blueprints and makes them free for 15 seconds"
 
 #. Name for artifact mvz2:control_rod
 #: Artifact meta file
@@ -8866,7 +8912,7 @@ msgstr "Bunbunmaru Newspaper"
 #: Artifact meta file
 msgctxt "artifact.tooltip"
 msgid "每30秒，将所有蓝图的消耗在0-300之间随机"
-msgstr "Every 30 seconds, Randomize the cost of all blueprints within 0-300"
+msgstr "Every 30 seconds, Randomizes the cost of all blueprints within 0-300"
 
 #. Name for artifact mvz2:lily_platform
 #: Artifact meta file
@@ -8878,7 +8924,7 @@ msgstr "Lily Platform"
 #: Artifact meta file
 msgctxt "artifact.tooltip"
 msgid "占据承载位的器械耗能-25"
-msgstr "Contraptions that occupy the carrier layer of tiles cost -25 energy"
+msgstr "Contraptions that occupy the carrier layer of tiles cost 25 less"
 
 #. Name for artifact mvz2:extending_arm
 #: Artifact meta file
@@ -8914,7 +8960,7 @@ msgstr "Gale Leaf"
 #: Artifact meta file
 msgctxt "artifact.tooltip"
 msgid "所有敌怪持续向右缓慢移动"
-msgstr "All enemy monsters move slowly to the right"
+msgstr "Moves all enemy monsters slowly to the right"
 
 #. Message for blueprint error recharging
 #: Blueprints meta file

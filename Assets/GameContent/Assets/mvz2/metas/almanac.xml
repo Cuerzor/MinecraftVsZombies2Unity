@@ -2193,7 +2193,7 @@
                 <p>效果：<![CDATA[<color=red>一大波敌人来临后，充能所有蓝图，并使其免费15秒</color>]]></p>
             </properties>
             <flavor>
-                <p>====施工中====</p>
+                <p>我去，它们真的偷牛！</p>
             </flavor>
         </entry>
 
@@ -2273,7 +2273,7 @@
                 <p>效果：<![CDATA[<color=red>每30秒，将所有蓝图的消耗在0-300之间随机</color>]]></p>
             </properties>
             <flavor>
-                <p>====施工中====</p>
+                <p>添油加醋，胡言乱语，山呼海啸，狗血淋头，如同往常一样。</p>
             </flavor>
         </entry>
         <entry id="mvz2:lily_platform">
@@ -2284,7 +2284,14 @@
                 <p>效果：<![CDATA[<color=red>占据承载位的器械耗能-25</color>]]></p>
             </properties>
             <flavor>
-                <p>====施工中====</p>
+                <p><![CDATA[<align="center"><b>简易河童水下基地建设指南</b></align>]]></p>
+                <p>1. 制造一把建造枪，并准备足够的建筑材料。</p>
+                <p>2. 使用建造枪建造一个I型走廊，并在走廊上建造一个舱门。</p>
+                <p>3. 在走廊房间上方建造一个太阳能板。</p>
+                <p>4. 进入基地内部，建造基地内部组件。</p>
+                <p/>
+                <p><![CDATA[<align="center"><b>简易Minecraft水下基地建设指南</b></align>]]></p>
+                <p>1. 在海底放个门。</p>
             </flavor>
         </entry>
         <entry id="mvz2:extending_arm">
@@ -2295,7 +2302,7 @@
                 <p>效果：<![CDATA[<color=red>友方器械伤害x75%，射程+50%</color>]]></p>
             </properties>
             <flavor>
-                <p>====施工中====</p>
+                <p>非常适合用于把远方物体拉过来，但是不适合用来射击靶子来把你自己拉过去。</p>
             </flavor>
         </entry>
         <entry id="mvz2:krakens_tentacle">
@@ -2320,7 +2327,7 @@
                 <p>效果：<![CDATA[<color=red>所有敌怪持续向右缓慢移动</color>]]></p>
             </properties>
             <flavor>
-                <p>====施工中====</p>
+                <p>狂风，听我号令！</p>
             </flavor>
         </entry>
     </artifacts>

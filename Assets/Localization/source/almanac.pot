@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-06-10 11:23+0800\n"
+"POT-Creation-Date: 2026-06-10 06:27+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3374,7 +3374,7 @@ msgstr ""
 #. Flavor for artifacts mvz2:cow_horn
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "====施工中===="
+msgid "我去，它们真的偷牛！"
 msgstr ""
 
 #. Header for artifacts mvz2:control_rod
@@ -3487,6 +3487,12 @@ msgctxt "artifacts.description"
 msgid "效果：<color=red>每30秒，将所有蓝图的消耗在0-300之间随机</color>"
 msgstr ""
 
+#. Flavor for artifacts mvz2:bunbunmaru_newspaper
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "添油加醋，胡言乱语，山呼海啸，狗血淋头，如同往常一样。"
+msgstr ""
+
 #. Header for artifacts mvz2:lily_platform
 #: Almanac meta file
 msgctxt "artifacts.description"
@@ -3497,6 +3503,20 @@ msgstr ""
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "效果：<color=red>占据承载位的器械耗能-25</color>"
+msgstr ""
+
+#. Flavor for artifacts mvz2:lily_platform
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid ""
+"<align=\"center\"><b>简易河童水下基地建设指南</b></align>\n"
+"1. 制造一把建造枪，并准备足够的建筑材料。\n"
+"2. 使用建造枪建造一个I型走廊，并在走廊上建造一个舱门。\n"
+"3. 在走廊房间上方建造一个太阳能板。\n"
+"4. 进入基地内部，建造基地内部组件。\n"
+"\n"
+"<align=\"center\"><b>简易Minecraft水下基地建设指南</b></align>\n"
+"1. 在海底放个门。"
 msgstr ""
 
 #. Header for artifacts mvz2:extending_arm
@@ -3511,6 +3531,12 @@ msgctxt "artifacts.description"
 msgid "效果：<color=red>友方器械伤害x75%，射程+50%</color>"
 msgstr ""
 
+#. Flavor for artifacts mvz2:extending_arm
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "非常适合用于把远方物体拉过来，但是不适合用来射击靶子来把你自己拉过去。"
+msgstr ""
+
 #. Header for artifacts mvz2:krakens_tentacle
 #: Almanac meta file
 msgctxt "artifacts.description"
@@ -3523,6 +3549,12 @@ msgctxt "artifacts.description"
 msgid "效果：<color=red>友方器械攻击速度x200%，但会向随机方向发射子弹</color>"
 msgstr ""
 
+#. Flavor for artifacts mvz2:krakens_tentacle
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "====施工中===="
+msgstr ""
+
 #. Header for artifacts mvz2:gale_leaf
 #: Almanac meta file
 msgctxt "artifacts.description"
@@ -3533,6 +3565,12 @@ msgstr ""
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "效果：<color=red>所有敌怪持续向右缓慢移动</color>"
+msgstr ""
+
+#. Flavor for artifacts mvz2:gale_leaf
+#: Almanac meta file
+msgctxt "artifacts.description"
+msgid "狂风，听我号令！"
 msgstr ""
 
 #. Name for almanac group mvz2:bosses
