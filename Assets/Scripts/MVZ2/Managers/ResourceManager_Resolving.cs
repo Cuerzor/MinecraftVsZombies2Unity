@@ -35,6 +35,10 @@ namespace MVZ2.Managers
         public void RemoveFragmentSourceProvider(IFragmentSourceProvider provider) => resourceLibrary.RemoveFragmentSourceProvider(provider);
         public void AddTalkCharacterSourceProvider(ITalkCharacterModificationProvider provider) => resourceLibrary.AddTalkCharacterModificationProvider(provider);
         public void RemoveTalkCharacterSourceProvider(ITalkCharacterModificationProvider provider) => resourceLibrary.RemoveTalkCharacterModificationProvider(provider);
+        public void SortResourceProviders()
+        {
+            resourceLibrary.SortProviders();
+        }
         #endregion
 
         #region Register

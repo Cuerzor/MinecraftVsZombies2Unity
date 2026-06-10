@@ -27,8 +27,10 @@ using MVZ2Logic.Games;
 using MVZ2Logic.Localization;
 using MVZ2Logic.Saves;
 using MVZ2Logic.Scenes;
+using MVZ2Logic.UI;
 using PVZEngine;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace MVZ2.Scenes
 {
@@ -405,6 +407,18 @@ namespace MVZ2.Scenes
             else
             {
                 DisplayMainmenu();
+            }
+        }
+        public void UpdateAllSpriteResolvers()
+        {
+            var scene = SceneManager.GetActiveScene();
+            foreach (var root in scene.GetRootGameObjects())
+            {
+                var resolvers = root.GetComponentsInChildren<ISpriteResolver>(false);
+                foreach (var resolver in resolvers)
+                {
+                    resolver.UpdateResolver();
+                }
             }
         }
 

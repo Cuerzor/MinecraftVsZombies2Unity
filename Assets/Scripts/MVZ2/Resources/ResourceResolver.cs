@@ -2,7 +2,6 @@
 
 using System.Collections.Generic;
 using PVZEngine.Tools.Unity;
-using PVZEngine;
 
 namespace MVZ2.Resources
 {
@@ -14,15 +13,15 @@ namespace MVZ2.Resources
         }
         public void AddProvider(IResourceProvider<TKey, TResource> db)
         {
-            var index = providers.BinarySearch(db, comparer);
-            if (index < 0)
-            {
-                providers.Insert(~index, db);
-            }
+            providers.Add(db);
         }
         public bool RemoveProvider(IResourceProvider<TKey, TResource> db)
         {
             return providers.Remove(db);
+        }
+        public void SortProviders()
+        {
+            providers.Sort(comparer);
         }
         public void ClearProviders()
         {

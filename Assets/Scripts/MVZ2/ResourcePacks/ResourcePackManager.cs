@@ -33,6 +33,7 @@ namespace MVZ2.ResourcePacks
 
             // 加载启用的语言包内容。
             await LoadResourcePacks();
+            ReorderResourcePacks();
         }
         /// <summary>
         /// 刷新语言包引用列表。
@@ -66,17 +67,29 @@ namespace MVZ2.ResourcePacks
         }
         public async Task ReloadLanguagePacks(ResourcePackReference[] enabled, TaskPipeline pipeline)
         {
+            var currentEnabledResourcePacks = enabled.Where(r => resourcePackMetadatas.Keys.Contains(r));
+            var removedResourcePacks = enabledResourcePacks.Except(currentEnabledResourcePacks).ToArray();
+            var addedResourcePacks = currentEnabledResourcePacks.Except(enabledResourcePacks).ToArray();
+
             enabledResourcePacks.Clear();
-            enabledResourcePacks.AddRange(enabled.Where(r => resourcePackMetadatas.Keys.Contains(r)));
+            enabledResourcePacks.AddRange(currentEnabledResourcePacks);
             SaveEnabledResourcePackList();
-            UnloadLanguagePacks();
+
             pipeline.AddTask(new PipelineTask("Load Resource Packs", async (p) =>
             {
-                await LoadResourcePacks(p);
+                UnloadLanguagePacks(removedResourcePacks);
+                Main.Scene.UpdateAllSpriteResolvers();
+                await LoadResourcePacks(addedResourcePacks, p);
+                ReorderResourcePacks();
             }));
             pipeline.AddTask(new PipelineTask("Regenerate Model Icon Sprites", async (p) =>
             {
                 await Main.ResourceManager.RegenerateModelIconSprites(p);
+            }));
+            pipeline.AddTask(new PipelineTask("Update all sprite resolvers", (p) =>
+            {
+                Main.Scene.UpdateAllSpriteResolvers();
+                return Task.CompletedTask;
             }));
             await pipeline.Run();
         }
@@ -295,15 +308,13 @@ namespace MVZ2.ResourcePacks
             int completedCount = 0;
             var loadTasks = enabledResourcePacks.Select(async (reference, index) =>
             {
-                var priority = enabledResourcePacks.Count - index;
                 var metadata = GetResourcePackMetadata(reference);
                 if (metadata != null)
                 {
                     var pack = await reference.LoadPack(Main, metadata.dataVersion);
                     if (pack != null)
                     {
-                        pack.Priority = priority;
-                        LoadLanguagePack(pack);
+                        LoadResourcePack(pack);
                     }
                 }
                 completedCount++;
@@ -313,7 +324,47 @@ namespace MVZ2.ResourcePacks
 
             Main.LanguageManager.ReevaluateLanguages();
         }
-        public void LoadLanguagePack(ResourcePack pack)
+        public async UniTask LoadResourcePacks(ResourcePackReference[] references, TaskProgress? progress = null)
+        {
+            int count = references.Length;
+            int completedCount = 0;
+            var loadTasks = references.Select(async (reference, index) =>
+            {
+                var metadata = GetResourcePackMetadata(reference);
+                if (metadata != null)
+                {
+                    var pack = await reference.LoadPack(Main, metadata.dataVersion);
+                    if (pack != null)
+                    {
+                        LoadResourcePack(pack);
+                    }
+                }
+                completedCount++;
+                progress?.SetProgress(completedCount / (float)count);
+            });
+            await UniTask.WhenAll(loadTasks);
+
+            Main.LanguageManager.ReevaluateLanguages();
+        }
+        public void ReorderResourcePacks()
+        {
+            int count = enabledResourcePacks.Count;
+            for (int i = 0; i < count; i++)
+            {
+                var reference = enabledResourcePacks[i];
+                var index = loadedResourcePacks.FindIndex(p => p.Key == reference.GetKey());
+                if (index < 0)
+                {
+                    Log.LogWarning($"Cannot find the resource pack {reference.GetKey()} to reorder.");
+                    continue;
+                }
+                var resourcePack = loadedResourcePacks[index];
+                var priority = count - i;
+                resourcePack.Priority = priority;
+            }
+            Main.ResourceManager.SortResourceProviders();
+        }
+        public void LoadResourcePack(ResourcePack pack)
         {
             loadedResourcePacks.Add(pack);
             // 添加Sprite覆盖。
@@ -335,11 +386,26 @@ namespace MVZ2.ResourcePacks
         #region 卸载语言包
         public void UnloadLanguagePacks()
         {
-            foreach (var enabledLanguagePack in loadedResourcePacks)
+            foreach (var resourcePack in loadedResourcePacks)
             {
-                UnloadLanguagePack(enabledLanguagePack);
+                UnloadLanguagePack(resourcePack);
             }
             loadedResourcePacks.Clear();
+        }
+        public void UnloadLanguagePacks(ResourcePackReference[] references)
+        {
+            foreach (var reference in references)
+            {
+                var index = loadedResourcePacks.FindIndex(p => p.Key == reference.GetKey());
+                if (index < 0)
+                {
+                    Log.LogWarning($"Cannot find the resource pack {reference.GetKey()} to unload.");
+                    continue;
+                }
+                var resourcePack = loadedResourcePacks[index];
+                UnloadLanguagePack(resourcePack);
+                loadedResourcePacks.RemoveAt(index);
+            }
         }
         public void UnloadLanguagePack(ResourcePack pack)
         {

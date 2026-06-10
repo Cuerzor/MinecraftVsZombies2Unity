@@ -6,5 +6,6 @@ namespace MVZ2Logic.UI
 {
     public interface ISpriteResolver
     {
+        void UpdateResolver();
     }
 }

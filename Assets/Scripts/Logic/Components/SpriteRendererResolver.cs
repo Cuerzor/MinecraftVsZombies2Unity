@@ -12,6 +12,10 @@ namespace MVZ2Logic.UI
     {
         private void OnEnable()
         {
+            UpdateResolver();
+        }
+        public void UpdateResolver()
+        {
             if (!spriteChanged)
             {
                 spriteChanged = true;
