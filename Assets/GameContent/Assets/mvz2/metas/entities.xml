@@ -2880,6 +2880,7 @@
             <properties>
                 <int name="mvz2:waterInteraction" value="0" />
                 <float name="mvz2:maxHealth" value="2500" />
+                <id name="mvz2:shell" value="mvz2:normal" />
                 <vector3 name="mvz2:size" x="50" y="120" z="50" />
                 <color name="mvz2:bloodColor" value="#7F0000FF" />
                 <color name="mvz2:bloodColorCensored" value="#00007FFF" />
