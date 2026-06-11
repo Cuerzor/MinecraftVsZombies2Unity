@@ -7,6 +7,21 @@
 
 ---
 
+# 0.6.3
+## Modified
+- Swapped the order of Parasite Terror spawning and damage infliction when a monster is parasitized by Mother Terror, to prevent the Cursed Candle from failing to kill the spawned Parasite Terrors.
+
+## Fixes
+- Fixed an issue where saves could not be properly saved on some Android devices.
+- Fixed an issue where the Soul Furnace could not ignite explosives.
+- Fixed an issue where Nightmare’s hit material was "Flesh" instead of "Normal".
+- Fixed an issue where Nightmare Crushing Walls displayed incorrectly when the view was inverted.
+- Fixed an issue where Ghosts would not spawn on empty paths.
+- Fixed an issue where Napstablook would not float.
+- Text and localization fixes.
+
+---
+
 # 0.6.2
 ## Modified
 - Updated music "The Exacerbated Castle Keep".
