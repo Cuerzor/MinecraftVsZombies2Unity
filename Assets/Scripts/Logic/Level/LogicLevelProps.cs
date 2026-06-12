@@ -366,7 +366,7 @@ namespace MVZ2Logic.Level
         #endregion
 
         #region 右阵营
-        public static readonly PropertyMeta<int> RIGHT_FACTION = Get<int>("right_faction");
+        public static readonly PropertyMeta<int> RIGHT_FACTION = Get<int>("right_faction", 1);
         public static int GetRightFaction(this LevelEngine level)
         {
             return level.GetProperty<int>(RIGHT_FACTION);
