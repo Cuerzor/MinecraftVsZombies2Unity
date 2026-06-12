@@ -1205,7 +1205,10 @@ namespace MVZ2.Vanilla.Entities
 
                 // 存在保护中的目标。
                 var canUseOnProtector = predicate(protector);
-                var firstValidMainTarget = protectTargets.FirstOrDefault(t => t.GetColumn() == column && t.GetLane() == lane && predicate(t));
+                var firstValidMainTarget = protectTargets
+                    .OrderBy(t => Mathf.Abs(t.GetColumn() - column))
+                    .ThenBy(t => Mathf.Abs(t.GetLane() - lane))
+                    .FirstOrDefault(t => predicate(t));
 
                 // 主要层器械可以使用。
                 // 保护层器械不能使用，或者指向保护层器械上方。

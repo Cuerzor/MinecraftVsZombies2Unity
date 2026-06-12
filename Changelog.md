@@ -14,6 +14,7 @@
 ## Fixes
 - Fixed an issue where saves could not be properly saved on some Android devices.
 - Fixed an issue where the Soul Furnace could not ignite explosives.
+- Fixed an issue where using a pickaxe or Starshard on a contraption inside a Stone Shield would incorrectly target the Stone Shield when the mouse pointer is at a certain upper position.
 - Fixed an issue where Nightmare’s hit material was "Flesh" instead of "Normal".
 - Fixed an issue where Nightmare Crushing Walls displayed incorrectly when the view was inverted.
 - Fixed an issue where Ghosts would not spawn on empty paths.
