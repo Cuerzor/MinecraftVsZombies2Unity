@@ -6,6 +6,7 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using UnityEngine.UIElements;
 
 namespace MVZ2.GameContent.Contraptions
 {
@@ -18,8 +19,19 @@ namespace MVZ2.GameContent.Contraptions
         public override void Evoke(Entity entity)
         {
             base.Evoke(entity);
-            entity.SetEvoked(true);
-            entity.PlaySound(VanillaSoundID.teslaAttack);
+            if (entity.State == Autotrap.STATE_CLOSED)
+            {
+                if (entity.Target != null && entity.Target.Exists())
+                {
+                    Autotrap.Instakill(entity, entity.Target);
+                }
+                Autotrap.ChargedExplode(entity);
+            }
+            else
+            {
+                entity.SetEvoked(true);
+                entity.PlaySound(VanillaSoundID.teslaAttack);
+            }
         }
     }
 }

@@ -16,6 +16,8 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
+using PVZEngine.Collisions;
+using PVZEngine.Collisions.Level;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
@@ -76,7 +78,9 @@ namespace MVZ2.GameContent.Contraptions
             }
             if (IsCharged(entity))
             {
-                ChargedExplode(entity);
+                ExplodeArcs(entity, entity.Position);
+                ChargedExplode(entity, entity.GetDamage());
+                entity.PlaySound(VanillaSoundID.thunder);
             }
             entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_CONTRAPTION_DETONATE, new EntityCallbackParams(entity), entity.GetDefinitionID());
 
@@ -129,19 +133,18 @@ namespace MVZ2.GameContent.Contraptions
                 });
             }
         }
-        private static void ChargedExplode(Entity entity)
+        public static void ChargedExplode(Entity entity, float damage, float radius = 1000)
         {
-            ExplodeArcs(entity, entity.Position);
-            var level = entity.Level;
-            foreach (Entity unit in level.FindEntities(e => entity.IsHostile(e)))
+            var effects = new DamageEffectList(VanillaDamageEffects.LIGHTNING, VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.STUNS_FRANKENSTEIN);
+            ChargedExplode(entity, damage, radius, effects);
+        }
+        public static void ChargedExplode(Entity entity, float damage, float radius, DamageEffectList effects)
+        {
+            var args = OverlapParams.Hostile(entity.GetFaction(), EntityCollisionHelper.MASK_VULNERABLE);
+            foreach (IEntityCollider collider in entity.Level.OverlapSphere(entity.GetCenter(), radius, args))
             {
-                unit.TakeDamage(entity.GetDamage(), new DamageEffectList(VanillaDamageEffects.LIGHTNING, VanillaDamageEffects.IGNORE_ARMOR), entity);
-                if (unit.IsEntityOf(VanillaBossID.frankenstein))
-                {
-                    Frankenstein.Paralyze(unit, entity);
-                }
+                collider.TakeDamage(damage, effects, entity);
             }
-            entity.PlaySound(VanillaSoundID.thunder);
         }
         public static bool IsDumb(Entity entity) => entity.GetProperty<bool>(PROP_DUMB);
         public static void SetDumb(Entity entity, bool value) => entity.SetProperty(PROP_DUMB, value);

@@ -10,7 +10,6 @@ using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
-using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
@@ -18,11 +17,11 @@ using PVZEngine;
 using PVZEngine.Auras;
 using PVZEngine.Buffs;
 using PVZEngine.Collisions;
-using PVZEngine.Collisions.Level;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
+using PVZEngine.Models;
 using Tools;
 using UnityEngine;
 
@@ -131,8 +130,17 @@ namespace MVZ2.GameContent.Contraptions
             trap.Target = FindTrapTarget(trap);
             if (trap.Target.ExistsAndAlive())
             {
-                var damage = trap.GetDamage() * GetTrappedDamageMultiplier(trap);
-                TrapDamage(trap, trap.Target, damage);
+                if (trap.IsEvoked())
+                {
+                    Instakill(trap, trap.Target);
+                    ChargedExplode(trap);
+                    trap.SetEvoked(false);
+                }
+                else
+                {
+                    var damage = trap.GetDamage() * GetTrappedDamageMultiplier(trap);
+                    TrapDamage(trap, trap.Target, damage);
+                }
             }
             trap.State = STATE_CLOSED;
 
@@ -178,42 +186,23 @@ namespace MVZ2.GameContent.Contraptions
         public static void TrapDamage(Entity trap, Entity target, float damage)
         {
             target.TakeDamage(damage, new DamageEffectList(VanillaDamageEffects.SLICE), trap);
-            if (trap.IsEvoked())
-            {
-                var lightningEffects = new DamageEffectList(VanillaDamageEffects.LIGHTNING, VanillaDamageEffects.MUTE);
-
-                var level = trap.Level;
-                gridDetectBuffer.Clear();
-                detectBuffer.Clear();
-
-                var thisGrid = trap.GetGrid();
-                if (thisGrid != null)
-                {
-                    gridDetectBuffer.Add(thisGrid);
-                }
-
-                var targetPosition = trap.Position;
-                if (trap.IsOnGround && level.IsConductiveAt(targetPosition.x, targetPosition.z))
-                {
-                    level.GetConnectedConductiveGrids(targetPosition, 1, 1, gridDetectBuffer);
-                }
-                var overlapParam = OverlapParams.Hostile(trap.GetFaction(), EntityCollisionHelper.MASK_VULNERABLE);
-                foreach (var grid in gridDetectBuffer)
-                {
-                    var column = grid.Column;
-                    var lane = grid.Lane;
-                    Detection.OverlapGridGroundNonAlloc(level, column, lane, overlapParam, detectBuffer);
-                    var x = level.GetColumnCenterX(column);
-                    var z = level.GetLaneCenterZ(lane);
-                    var y = level.GetGroundY(x, z);
-                    trap.Spawn(VanillaEffectID.waterLightningParticles, new Vector3(x, y, z));
-                }
-                foreach (var collider in detectBuffer)
-                {
-                    collider.TakeDamage(damage * GetEvokedDamageMultiplier(trap), lightningEffects, trap);
-                }
-                trap.PlaySound(VanillaSoundID.zap);
-            }
+        }
+        public static void Instakill(Entity trap, Entity target)
+        {
+            var effects = new DamageEffectList(VanillaDamageEffects.INSTA_KILL, VanillaDamageEffects.REMOVE_ON_DEATH, VanillaDamageEffects.NO_DEATH_EFFECTS);
+            target.Die(effects, trap);
+            trap.Level.ShakeScreen(10, 0, 15);
+            Explosion.Spawn(trap, trap.GetCenter(), 40);
+            trap.PlaySound(VanillaSoundID.explosion);
+        }
+        public static void ChargedExplode(Entity trap)
+        {
+            var radius = trap.GetRange();
+            var damage = trap.GetDamage() * GetEvokedDamageMultiplier(trap);
+            var effects = new DamageEffectList(VanillaDamageEffects.LIGHTNING, VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN, VanillaDamageEffects.STUNS_FRANKENSTEIN);
+            TNT.ExplodeArcs(trap, trap.GetCenter(), radius);
+            TNT.ChargedExplode(trap, damage, radius);
+            trap.PlaySound(VanillaSoundID.thunder);
         }
         public static void ShakeTrap(Entity trap)
         {
@@ -244,7 +233,7 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly VanillaEntityPropertyMeta<FrameTimer> PROP_STATE_TIMER = new VanillaEntityPropertyMeta<FrameTimer>("state_timer");
         public static readonly VanillaEntityPropertyMeta<float> PROP_CONTINUOUS_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("continuous_damage_multiplier", 0.2f);
         public static readonly VanillaEntityPropertyMeta<float> PROP_TRAPPED_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("trapped_damage_multiplier", 0.8f);
-        public static readonly VanillaEntityPropertyMeta<float> PROP_EVOKED_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("evoked_damage_multiplier", 2f);
+        public static readonly VanillaEntityPropertyMeta<float> PROP_EVOKED_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("evoked_damage_multiplier", 18f);
 
         public static Detector trapDetector = new AutotrapDetector(true);
         public const int CLOSING_FRAMES = 2;

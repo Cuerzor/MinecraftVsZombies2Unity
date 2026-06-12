@@ -20,6 +20,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Level;
 using PVZEngine.Models;
 using Tools;
 using UnityEngine;
@@ -72,6 +73,14 @@ namespace MVZ2.GameContent.Bosses
             stateMachine.UpdateLogic(entity);
             entity.SetAnimationBool("MissileVisible", entity.State == STATE_MISSILE && stateMachine.GetSubState(entity) == SUBSTATE_MISSILE_AIM);
             entity.SetAnimationFloat("ActionSpeed", GetFrankensteinActionSpeed(entity));
+        }
+        public override void PostTakeDamage(DamageOutput result)
+        {
+            base.PostTakeDamage(result);
+            if (result.BodyResult != null && result.BodyResult.HasEffect(VanillaDamageEffects.STUNS_FRANKENSTEIN))
+            {
+                Paralyze(result.Entity, result.BodyResult.Source);
+            }
         }
         public override void PostDeath(Entity boss, DeathInfo damageInfo)
         {
@@ -184,9 +193,9 @@ namespace MVZ2.GameContent.Bosses
 
             level.ShakeScreen(20, 0, 15);
         }
-        public static void Paralyze(Entity boss, Entity source)
+        public static void Paralyze(Entity boss, ILevelSourceReference? source)
         {
-            boss.TakeDamage(1200, new DamageEffectList(VanillaDamageEffects.LIGHTNING, VanillaDamageEffects.MUTE), source);
+            boss.TakeDamageSourced(1200, new DamageEffectList(VanillaDamageEffects.LIGHTNING, VanillaDamageEffects.MUTE), source);
             if (!boss.IsDead)
             {
                 SetParalyzed(boss, true);
