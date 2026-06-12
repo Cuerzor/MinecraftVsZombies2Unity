@@ -4,6 +4,14 @@
 
 ## Modified
 - When a projectile entity undergoes angular rotation due to directional deflection, its hitbox will now rotate correctly.
+- Necrotombstone and Mine TNT now destroy themselves if they're on a slab tile.
+- Adjusted the smashing sfx of Mutant Zombie in water.
+
+### Balance
+- The reduction ratio of the recharge time for Broken Lock has been lowered from 1:1 to 2:1.
+
+## Fixed
+- Fixed the issue where the charging animation of Tesla Coil would continue to play even when it was disabled.
 
 ---
 
