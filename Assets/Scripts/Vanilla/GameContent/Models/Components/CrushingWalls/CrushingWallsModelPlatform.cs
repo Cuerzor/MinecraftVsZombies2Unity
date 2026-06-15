@@ -20,7 +20,7 @@ namespace MVZ2.GameContent.Models
             var localPosition = wall.parent.InverseTransformPoint(worldPosition) + shake;
             localPosition.z = 0;
             wall.localPosition = localPosition;
-            wall.rotation = camera.transform.rotation;
+            wall.localRotation = camera.transform.rotation;
         }
         [SerializeField]
         private Vector3 leftStart = new Vector3(0f, 0.5f, 0);
