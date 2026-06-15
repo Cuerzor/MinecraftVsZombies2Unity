@@ -30,7 +30,7 @@ namespace MVZ2.GameContent.Detections
             {
                 projectileSize = projectileDefinition.GetSize();
                 var projectileBoundsPivot = projectileDefinition.GetBoundsPivot();
-                source += Vector3.Scale(projectileBoundsPivot - self.GetShotPivot(), projectileSize);
+                source += Vector3.Scale(VanillaEntityProps.SHOT_PIVOT_DEFAULT - self.GetShotPivot(), projectileSize);
             }
             var range = self.GetRange();
 
