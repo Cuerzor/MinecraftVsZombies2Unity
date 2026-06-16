@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-06-10 06:27+0800\n"
+"POT-Creation-Date: 2026-06-16 09:31+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -57,6 +57,18 @@ msgstr ""
 #: Almanac meta file
 msgctxt "almanac_tag.description"
 msgid "不依赖于承载者便可放置在特殊格子上"
+msgstr ""
+
+#. Name for almanac tag placement_amphibious
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "两栖器械"
+msgstr ""
+
+#. Description for almanac tag placement_amphibious
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "可以放置在水中或者陆地上"
 msgstr ""
 
 #. Name for almanac tag placement_infectenser
@@ -1934,6 +1946,26 @@ msgid ""
 "<tag id=\"mvz2:shell\" enum=\"mvz2:cloud\" />：<color=red><var local=\"cloud_density\"/>%（震飞周围敌怪）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:lightning\" />：<color=red><var local=\"lightning_density\"/>%（电击周围敌怪）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>"
+msgstr ""
+
+#. Header for contraptions mvz2:autotrap
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "自动兽夹会夹住踩到它的第一个敌人，将其困住并持续造成伤害直到其死亡。之后自动兽夹便可以再次被使用。"
+msgstr ""
+
+#. Properties for contraptions mvz2:autotrap
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"伤害：<color=red><var local=\"trapped_damage\"/>锐利伤害（夹取），<var local=\"continuous_dps\"/>锐利伤害/秒（持续）</color>\n"
+"技能：<color=red>下一次夹取会直接击杀被困住的目标，并对半径<var local=\"evoked_range\"/>格内的敌人造成<var local=\"evoked_damage\"/>点闪电伤害</color>"
+msgstr ""
+
+#. Flavor for contraptions mvz2:autotrap
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "别看自动兽夹对付怪物时如此凶猛，它其实很会和人辩论，出口成章。很多被它驳倒过的器械都自叹不如，夸它“铁齿铜牙”。然而它自己并不认同这是种夸赞——因为它是用高强度合金钢做的。"
 msgstr ""
 
 #. Header for contraptions mvz2:nesting_tnt
@@ -6067,6 +6099,18 @@ msgstr ""
 #: Entity meta file
 msgctxt "entity.tooltip"
 msgid "点击投掷内部的器械"
+msgstr ""
+
+#. Name for entity mvz2:autotrap
+#: Entity meta file
+msgctxt "entity.name"
+msgid "自动兽夹"
+msgstr ""
+
+#. Tooltip for entity mvz2:autotrap
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "夹住怪物并撕扯"
 msgstr ""
 
 #. Name for entity mvz2:nesting_tnt

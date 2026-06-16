@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-06-10 06:27+0800\n"
-"PO-Revision-Date: 2026-06-10 18:31+0800\n"
+"POT-Creation-Date: 2026-06-16 09:31+0800\n"
+"PO-Revision-Date: 2026-06-16 21:36+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -64,6 +64,18 @@ msgstr "Levitating Contraption"
 msgctxt "almanac_tag.description"
 msgid "不依赖于承载者便可放置在特殊格子上"
 msgstr "Can be placed on special tiles without a carrier present"
+
+#. Name for almanac tag placement_amphibious
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "两栖器械"
+msgstr "Amphibious Contraption"
+
+#. Description for almanac tag placement_amphibious
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "可以放置在水中或者陆地上"
+msgstr "Can be placed on land or water"
 
 #. Name for almanac tag placement_infectenser
 #: Almanac meta file
@@ -2364,6 +2376,36 @@ msgid ""
 "<tag id=\"mvz2:shell\" enum=\"mvz2:lightning\" />：<color=red><var local=\"lightning_density\"/>%（电击周围敌怪）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>"
 msgstr ""
+
+#. Header for contraptions mvz2:autotrap
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "自动兽夹会夹住踩到它的第一个敌人，将其困住并持续造成伤害直到其死亡。之后自动兽夹便可以再次被使用。"
+msgstr "Autotraps clamp an enemy to hold it in place and continuously damage it, until the enemy is defeated, after which they reset."
+
+#. Properties for contraptions mvz2:autotrap
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"伤害：<color=red><var local=\"trapped_damage\"/>锐利伤害（夹取），<var local=\"continuous_dps\"/>锐利伤害/秒（持续）</color>\n"
+"技能：<color=red>下一次夹取会直接击杀被困住的目标，并对半径<var local=\"evoked_range\"/>格内的敌人造成<var local=\"evoked_damage\"/>点"
+"闪电伤害</color>"
+msgstr ""
+"Damage: <color=red><var local=\"trapped_damage\"/> sharp damage (clamping), <var local=\"continuous_dps\"/> sharp damage/second "
+"(continuous)</color>\n"
+"Evocation: <color=red>Destroys the next clamped target, then deals <var local=\"evoked_damage\"/> lightning damage to all enemies "
+"within a radius of <var local=\"evoked_range\"/> tiles</color>"
+
+#. Flavor for contraptions mvz2:autotrap
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"别看自动兽夹对付怪物时如此凶猛，它其实很会和人辩论，出口成章。很多被它驳倒过的器械都自叹不如，夸它“铁齿铜牙”。然而它自己并不认同这是种"
+"夸赞——因为它是用高强度合金钢做的。"
+msgstr ""
+"Not only does the Autotrap have sharp teeth to gnaw monsters, but it also has a sharp mind for debating. Many contraptions are humbled "
+"by its eloquent speeches, describing it as silver-tongued. Though, it doesn't think of that as a compliment, as it is made of high-"
+"strength alloy steel."
 
 #. Header for contraptions mvz2:nesting_tnt
 #: Almanac meta file
@@ -7432,13 +7474,25 @@ msgstr "Shoots slowing ice arrows"
 #: Entity meta file
 msgctxt "entity.name"
 msgid "弹射器"
-msgstr "Dispenser"
+msgstr "Ejector"
 
 #. Tooltip for entity mvz2:ejector
 #: Entity meta file
 msgctxt "entity.tooltip"
 msgid "点击投掷内部的器械"
 msgstr "Click to eject the contraption inside"
+
+#. Name for entity mvz2:autotrap
+#: Entity meta file
+msgctxt "entity.name"
+msgid "自动兽夹"
+msgstr "Autotrap"
+
+#. Tooltip for entity mvz2:autotrap
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "夹住怪物并撕扯"
+msgstr "Trap a monster and tear it apart"
 
 #. Name for entity mvz2:nesting_tnt
 #: Entity meta file

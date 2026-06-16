@@ -365,6 +365,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 4756509eba10d744bb3323a794303f92, type: 3}
   - name: mobile_blueprint/force_pad
     sprite: {fileID: 21300000, guid: f25d2b94a621a1e4d8cd823493b4a29f, type: 3}
+  - name: mobile_blueprint/freezenser
+    sprite: {fileID: 21300000, guid: 60aa4d1de1c792f4bbc332dba482a22d, type: 3}
   - name: mobile_blueprint/furnace
     sprite: {fileID: 21300000, guid: acc2e6159831cab4bb25141293768c3c, type: 3}
   - name: mobile_blueprint/gargoyle
@@ -443,6 +445,12 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 8a0fa8e6a83d14c4581f8cee8ce07eed, type: 3}
   - name: mobile_blueprint/necrotombstone
     sprite: {fileID: 21300000, guid: d1bf852fe2722b54e9735417e907a23c, type: 3}
+  - name: mobile_blueprint/nesting_tnt
+    sprite: {fileID: 21300000, guid: 9be9d26b93e841c4c88b0d8cb9b7cacf, type: 3}
+  - name: mobile_blueprint/nesting_tnt_medium
+    sprite: {fileID: 21300000, guid: 9549e735ae45d8746a9baa9325f2901a, type: 3}
+  - name: mobile_blueprint/nesting_tnt_small
+    sprite: {fileID: 21300000, guid: 181895e546b9b1d40a124c14ee675993, type: 3}
   - name: mobile_blueprint/nether_hunter
     sprite: {fileID: 21300000, guid: 457f7a981eb5b634788558bb96099823, type: 3}
   - name: mobile_blueprint/nether_mage
@@ -1067,6 +1075,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: c33a8ddc48fc1234fac0f86c973b8e49, type: 3}
   - name: entity/projectiles/cannon_missile_danger
     sprite: {fileID: 21300000, guid: 1d0d45bb8eb65ba41952a96406398809, type: 3}
+  - name: entity/projectiles/chill_arrow
+    sprite: {fileID: 21300000, guid: ed7855e4711606d4b9aca969e26f70a1, type: 3}
   - name: entity/projectiles/cobble
     sprite: {fileID: 21300000, guid: b619b60be7108ed4fafb8ba9257d68ce, type: 3}
   - name: entity/projectiles/compelling_orb
@@ -1091,6 +1101,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 8b54263a7ca06cd478193e70b407f293, type: 3}
   - name: entity/projectiles/flint
     sprite: {fileID: 21300000, guid: 66e4a79edf2ff7a48883eeec0da4f528, type: 3}
+  - name: entity/projectiles/frozen_orb
+    sprite: {fileID: 21300000, guid: e32e3f96a4cdd51438ef015798792893, type: 3}
   - name: entity/projectiles/gas
     sprite: {fileID: 21300000, guid: 985fbd93414b34845b4a0a7ee830eb1a, type: 3}
   - name: entity/projectiles/giant_spike
@@ -2101,6 +2113,7 @@ MonoBehaviour:
     - {fileID: -546047925, guid: 43ab9df27e6a88f499c8292ce16c7f47, type: 3}
     - {fileID: -506522540, guid: 43ab9df27e6a88f499c8292ce16c7f47, type: 3}
     - {fileID: -133694658, guid: 43ab9df27e6a88f499c8292ce16c7f47, type: 3}
+    - {fileID: -1941180225, guid: 43ab9df27e6a88f499c8292ce16c7f47, type: 3}
   - name: entity/contraption/elastic_cloud
     spritesheet:
     - {fileID: -551871915, guid: 52dd30b9122fbb9419354452c8af0a1f, type: 3}
@@ -2120,6 +2133,10 @@ MonoBehaviour:
     spritesheet:
     - {fileID: 29141504, guid: bafd8d60319920d40a5881b8a2776d56, type: 3}
     - {fileID: -2067564325, guid: bafd8d60319920d40a5881b8a2776d56, type: 3}
+  - name: entity/contraption/freezenser
+    spritesheet:
+    - {fileID: 1071475406, guid: 54180b1a8b8c0fe4a98292d2423c7c15, type: 3}
+    - {fileID: 1872578529, guid: 54180b1a8b8c0fe4a98292d2423c7c15, type: 3}
   - name: entity/contraption/furnace
     spritesheet:
     - {fileID: -2038677847, guid: 516d74eccaaf1e24fb1a0ab53d0f2657, type: 3}
@@ -2188,6 +2205,11 @@ MonoBehaviour:
     - {fileID: -1376072912, guid: 6b600f1f5110d7644843e4595de25748, type: 3}
     - {fileID: 662959243, guid: 6b600f1f5110d7644843e4595de25748, type: 3}
     - {fileID: 2073939680, guid: 6b600f1f5110d7644843e4595de25748, type: 3}
+  - name: entity/contraption/nesting_tnt
+    spritesheet:
+    - {fileID: -781218095, guid: cc2ee2b04b996a746a26ff1160de365a, type: 3}
+    - {fileID: -1411029523, guid: cc2ee2b04b996a746a26ff1160de365a, type: 3}
+    - {fileID: -1575667641, guid: cc2ee2b04b996a746a26ff1160de365a, type: 3}
   - name: entity/contraption/nether_reactor_core_bar
     spritesheet:
     - {fileID: -1253497344, guid: 8dfc059bdbbc9174bb6b803e2051e4b4, type: 3}

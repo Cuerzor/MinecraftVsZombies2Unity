@@ -194,7 +194,8 @@
         <variable name="entity_health">property("mvz2:entity/maxHealth")</variable>
         <variable name="entity_damage">property("mvz2:entity/damage")</variable>
         <variable name="entity_speed">property("mvz2:entity/speed")</variable>
-        
+        <variable name="entity_range">property("mvz2:entity/range")</variable>
+
         <variable name="redstone_value">property("mvz2:entity/energyValue", "mvz2:redstone", "entity")</variable>
 
         <variable name="armor_hp">property("mvz2:armor/maxHealth", property("mvz2:entity/starting_armor"), "armor")</variable>
@@ -1062,7 +1063,6 @@
         </entry>
         <entry />
         <entry />
-        <entry />
         <entry id="mvz2:ejector">
             <variables>
                 <variable name="cooldown">property("mvz2:entity_behaviour/ejector/max_cooldown_seconds")</variable>
@@ -1116,9 +1116,28 @@
             </flavor>
         </entry>
         <entry />
+        <entry id="mvz2:autotrap">
+            <variables>
+                <variable name="trapped_damage">property("mvz2:entity_behaviour/autotrap/trapped_damage_multiplier") * global("mvz2:entity_damage")</variable>
+                <variable name="continuous_damage">property("mvz2:entity_behaviour/autotrap/continuous_damage_multiplier") * global("mvz2:entity_damage")</variable>
+                <variable name="continuous_dps">local("continuous_damage") / property("mvz2:entity_behaviour/autotrap/trapped_damage_interval")</variable>
+                <variable name="evoked_damage">property("mvz2:entity_behaviour/autotrap/evoked_damage_multiplier") * global("mvz2:entity_damage")</variable>
+                <variable name="evoked_range">global("mvz2:entity_range") / 80</variable>
+            </variables>
+            <header>
+                <p>自动兽夹会夹住踩到它的第一个敌人，将其困住并持续造成伤害直到其死亡。之后自动兽夹便可以再次被使用。</p>
+            </header>
+            <properties>
+                <p>伤害：<![CDATA[<color=red><var local="trapped_damage"/>锐利伤害（夹取），<var local="continuous_dps"/>锐利伤害/秒（持续）</color>]]></p>
+                <p>技能：<![CDATA[<color=red>下一次夹取会直接击杀被困住的目标，并对半径<var local="evoked_range"/>格内的敌人造成<var local="evoked_damage"/>点闪电伤害</color>]]></p>
+            </properties>
+            <flavor>
+                <p>别看自动兽夹对付怪物时如此凶猛，它其实很会和人辩论，出口成章。很多被它驳倒过的器械都自叹不如，夸它“铁齿铜牙”。然而它自己并不认同这是种夸赞——因为它是用高强度合金钢做的。</p>
+            </flavor>
+        </entry>
         <entry id="mvz2:nesting_tnt">
             <variables>
-                <variable name="radius">property("mvz2:entity/range") / 80</variable>
+                <variable name="radius">global("mvz2:entity_range") / 80</variable>
             </variables>
             <header>
                 <p>套娃TNT在触发后会爆炸，并生成一个更小的套娃TNT的蓝图掉落物，使得它可以连续爆炸三次。</p>

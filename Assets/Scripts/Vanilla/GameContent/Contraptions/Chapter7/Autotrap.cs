@@ -145,7 +145,7 @@ namespace MVZ2.GameContent.Contraptions
             trap.State = STATE_CLOSED;
 
             var stateTimer = GetOrCreateStateTimer(trap);
-            stateTimer.ResetTime(CLOSED_TIME_INTERVAL);
+            stateTimer.ResetSeconds(GetTrappedDamageInterval(trap));
         }
         public static void StartOpening(Entity trap)
         {
@@ -228,17 +228,19 @@ namespace MVZ2.GameContent.Contraptions
         public static void SetContinuousDamageMultiplier(Entity entity, float value) => entity.SetBehaviourField(PROP_CONTINUOUS_DAMAGE_MULTIPLIER, value);
         public static float GetTrappedDamageMultiplier(Entity entity) => entity.GetBehaviourField<float>(PROP_TRAPPED_DAMAGE_MULTIPLIER);
         public static void SetTrappedDamageMultiplier(Entity entity, float value) => entity.SetBehaviourField(PROP_TRAPPED_DAMAGE_MULTIPLIER, value);
+        public static float GetTrappedDamageInterval(Entity entity) => entity.GetBehaviourField<float>(PROP_TRAPPED_DAMAGE_INTERVAL);
+        public static void SetTrappedDamageInterval(Entity entity, float value) => entity.SetBehaviourField(PROP_TRAPPED_DAMAGE_INTERVAL, value);
         public static float GetEvokedDamageMultiplier(Entity entity) => entity.GetBehaviourField<float>(PROP_EVOKED_DAMAGE_MULTIPLIER);
         public static void SetEvokedDamageMultiplier(Entity entity, float value) => entity.SetBehaviourField(PROP_EVOKED_DAMAGE_MULTIPLIER, value);
         public static readonly VanillaEntityPropertyMeta<FrameTimer> PROP_STATE_TIMER = new VanillaEntityPropertyMeta<FrameTimer>("state_timer");
         public static readonly VanillaEntityPropertyMeta<float> PROP_CONTINUOUS_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("continuous_damage_multiplier", 0.2f);
         public static readonly VanillaEntityPropertyMeta<float> PROP_TRAPPED_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("trapped_damage_multiplier", 0.8f);
+        public static readonly VanillaEntityPropertyMeta<float> PROP_TRAPPED_DAMAGE_INTERVAL = new VanillaEntityPropertyMeta<float>("trapped_damage_interval", 0.5f);
         public static readonly VanillaEntityPropertyMeta<float> PROP_EVOKED_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("evoked_damage_multiplier", 18f);
 
         public static Detector trapDetector = new AutotrapDetector(true);
         public const int CLOSING_FRAMES = 2;
         public const int OPENING_FRAMES = 2;
-        public const int CLOSED_TIME_INTERVAL = 15;
         public const int STATE_OPEN = VanillaContraptionStates.AUTOTRAP_OPEN;
         public const int STATE_CLOSING = VanillaContraptionStates.AUTOTRAP_CLOSING;
         public const int STATE_CLOSED = VanillaContraptionStates.AUTOTRAP_CLOSED;
