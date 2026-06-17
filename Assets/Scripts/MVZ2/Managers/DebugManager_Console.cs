@@ -13,6 +13,7 @@ using MVZ2Logic.Commands;
 using MVZ2Logic.Games;
 using MVZ2Logic.Localization;
 using PVZEngine;
+using PVZEngine.Level;
 using UnityEngine;
 
 namespace MVZ2.Debugs

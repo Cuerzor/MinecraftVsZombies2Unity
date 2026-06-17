@@ -21,6 +21,7 @@ using MVZ2Logic.Stats;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Properties;
 using PVZEngine.SeedPacks;
 using PVZEngine.Tools.Random;
 using PVZEngine.Tools.Timing;

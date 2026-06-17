@@ -3,6 +3,7 @@
 using MVZ2Logic;
 using MVZ2Logic.Models;
 using PVZEngine;
+using PVZEngine.Level;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Models

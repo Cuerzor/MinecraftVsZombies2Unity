@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using MVZ2Logic.Games;
 using PVZEngine;
+using PVZEngine.Level;
 
 namespace MVZ2Logic.Options
 {

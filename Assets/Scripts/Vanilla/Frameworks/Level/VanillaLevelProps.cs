@@ -2,6 +2,7 @@
 
 using PVZEngine;
 using PVZEngine.Level;
+using PVZEngine.Properties;
 
 namespace MVZ2.Vanilla.Level
 {

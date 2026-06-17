@@ -3,6 +3,7 @@
 using MVZ2Logic.Resources;
 using PVZEngine;
 using PVZEngine.Difficulties;
+using PVZEngine.Properties;
 
 namespace MVZ2Logic.Difficulties
 {

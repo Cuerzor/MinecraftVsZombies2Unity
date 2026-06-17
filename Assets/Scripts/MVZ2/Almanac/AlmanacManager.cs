@@ -15,6 +15,7 @@ using MVZ2Logic.Games;
 using MVZ2Logic.Localization;
 using MVZ2Logic.Resources;
 using PVZEngine;
+using PVZEngine.Level;
 using UnityEngine;
 
 namespace MVZ2.Almanacs

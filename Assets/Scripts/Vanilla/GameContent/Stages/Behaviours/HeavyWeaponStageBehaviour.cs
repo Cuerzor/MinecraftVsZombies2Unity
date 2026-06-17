@@ -27,6 +27,8 @@ using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Modifiers;
+using PVZEngine.Properties;
+using PVZEngine.SeedPacks;
 using PVZEngine.Tools;
 using UnityEngine;
 

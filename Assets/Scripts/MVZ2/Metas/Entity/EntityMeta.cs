@@ -7,6 +7,7 @@ using MVZ2.IO;
 using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Properties;
 using UnityEngine;
 
 namespace MVZ2.Metas

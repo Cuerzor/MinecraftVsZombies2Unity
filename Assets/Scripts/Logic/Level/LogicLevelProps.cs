@@ -3,6 +3,7 @@
 using MVZ2Logic.HeldItems;
 using PVZEngine;
 using PVZEngine.Level;
+using PVZEngine.Properties;
 using PVZEngine.Tools.Random;
 using UnityEngine;
 

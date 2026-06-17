@@ -4,6 +4,7 @@ using MVZ2Logic.Models;
 using MVZ2Logic.Resources;
 using PVZEngine;
 using PVZEngine.Grids;
+using PVZEngine.Properties;
 
 namespace MVZ2Logic.Grids
 {

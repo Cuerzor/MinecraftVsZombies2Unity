@@ -2,6 +2,7 @@
 
 using MVZ2.Vanilla;
 using PVZEngine;
+using PVZEngine.Models;
 
 namespace MVZ2.GameContent.Models
 {

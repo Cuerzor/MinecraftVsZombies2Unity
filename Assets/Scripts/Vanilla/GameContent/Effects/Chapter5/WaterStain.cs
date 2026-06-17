@@ -9,7 +9,6 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic;
 using MVZ2Logic.Entities;
-using PVZEngine;
 using PVZEngine.Auras;
 using PVZEngine.Buffs;
 using PVZEngine.Collisions;
@@ -19,6 +18,7 @@ using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.Modifiers;
+using PVZEngine.Timing;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Effects

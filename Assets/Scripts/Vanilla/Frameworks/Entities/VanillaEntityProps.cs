@@ -5,6 +5,7 @@ using MVZ2Logic;
 using MVZ2Logic.Options;
 using PVZEngine;
 using PVZEngine.Entities;
+using PVZEngine.Properties;
 using UnityEngine;
 
 namespace MVZ2.Vanilla.Entities

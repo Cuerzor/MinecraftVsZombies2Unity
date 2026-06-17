@@ -5,10 +5,10 @@ using MVZ2Logic.Callbacks;
 using MVZ2Logic.Difficulties;
 using MVZ2Logic.Level;
 using MVZ2Logic.Modding;
-using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Level;
+using PVZEngine.Properties;
 
 namespace MVZ2.GameContent.GlobalCallbacks
 {

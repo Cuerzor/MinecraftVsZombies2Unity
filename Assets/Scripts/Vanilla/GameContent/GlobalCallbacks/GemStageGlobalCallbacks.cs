@@ -10,11 +10,11 @@ using MVZ2.Vanilla.Unlocks;
 using MVZ2Logic;
 using MVZ2Logic.Level;
 using MVZ2Logic.Modding;
-using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Properties;
 
 namespace MVZ2.GameContent.GlobalCallbacks
 {

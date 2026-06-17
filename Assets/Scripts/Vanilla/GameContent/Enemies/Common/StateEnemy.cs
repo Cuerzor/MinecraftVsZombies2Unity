@@ -4,10 +4,10 @@ using System;
 using MVZ2.GameContent.Enemies;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
-using PVZEngine;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Models;
+using PVZEngine.Properties;
 using PVZEngine.Tools.Timing;
 
 namespace MVZ2.Vanilla.Enemies

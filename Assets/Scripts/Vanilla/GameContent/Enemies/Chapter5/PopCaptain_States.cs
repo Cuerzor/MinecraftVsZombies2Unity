@@ -8,10 +8,10 @@ using MVZ2.Vanilla.Shells;
 using MVZ2.Vanilla.StateMachine;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
-using PVZEngine;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Models;
+using PVZEngine.Timing;
 
 namespace MVZ2.GameContent.Enemies
 {

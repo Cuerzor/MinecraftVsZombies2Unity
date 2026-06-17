@@ -2,6 +2,7 @@
 
 using PVZEngine;
 using PVZEngine.Armors;
+using PVZEngine.Properties;
 
 namespace MVZ2.Vanilla.Armors
 {

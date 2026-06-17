@@ -2,6 +2,7 @@
 
 using PVZEngine;
 using PVZEngine.Entities;
+using PVZEngine.Properties;
 using PVZEngine.Tools.Timing;
 
 namespace MVZ2.Vanilla.Carts

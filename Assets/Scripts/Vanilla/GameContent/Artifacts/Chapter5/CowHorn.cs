@@ -13,6 +13,7 @@ using PVZEngine.Auras;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Level;
+using PVZEngine.SeedPacks;
 using static UnityEngine.Networking.UnityWebRequest;
 
 namespace MVZ2.GameContent.Artifacts

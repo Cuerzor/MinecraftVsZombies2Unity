@@ -3,8 +3,8 @@
 using System.Collections.Generic;
 using System.Xml;
 using MVZ2.IO;
-using PVZEngine;
 using PVZEngine.Definitions;
+using PVZEngine.Properties;
 
 namespace MVZ2.Metas
 {

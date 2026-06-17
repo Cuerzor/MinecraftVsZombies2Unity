@@ -2,8 +2,8 @@
 
 using MVZ2.Vanilla.Level;
 using MVZ2Logic.Modding;
-using PVZEngine;
 using PVZEngine.Callbacks;
+using PVZEngine.Timing;
 
 namespace MVZ2.GameContent.GlobalCallbacks
 {

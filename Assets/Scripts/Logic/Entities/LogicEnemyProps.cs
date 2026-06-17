@@ -2,6 +2,7 @@
 
 using PVZEngine;
 using PVZEngine.Entities;
+using PVZEngine.Properties;
 using UnityEngine;
 
 namespace MVZ2Logic.Entities

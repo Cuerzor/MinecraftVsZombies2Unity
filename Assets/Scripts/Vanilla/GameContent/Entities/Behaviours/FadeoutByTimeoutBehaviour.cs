@@ -2,10 +2,10 @@
 
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
-using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Modifiers;
+using PVZEngine.Timing;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Entities

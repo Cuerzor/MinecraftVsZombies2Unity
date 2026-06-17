@@ -10,6 +10,7 @@ using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using PVZEngine;
 using PVZEngine.Buffs;
+using PVZEngine.Collisions;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using UnityEngine;

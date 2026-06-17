@@ -39,6 +39,7 @@ using PVZEngine.Entities;
 using PVZEngine.Grids;
 using PVZEngine.Level;
 using PVZEngine.Models;
+using PVZEngine.Properties;
 using PVZEngine.Shells;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Random;

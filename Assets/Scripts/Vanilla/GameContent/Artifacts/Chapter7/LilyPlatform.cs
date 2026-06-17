@@ -8,9 +8,9 @@ using MVZ2Logic.Artifacts;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.Entities;
-using PVZEngine;
 using PVZEngine.Auras;
 using PVZEngine.Buffs;
+using PVZEngine.Level;
 
 namespace MVZ2.GameContent.Artifacts
 {

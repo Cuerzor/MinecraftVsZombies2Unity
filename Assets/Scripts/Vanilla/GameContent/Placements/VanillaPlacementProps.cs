@@ -2,6 +2,7 @@
 
 using PVZEngine;
 using PVZEngine.Placements;
+using PVZEngine.Properties;
 
 namespace MVZ2.GameContent.Placements
 {

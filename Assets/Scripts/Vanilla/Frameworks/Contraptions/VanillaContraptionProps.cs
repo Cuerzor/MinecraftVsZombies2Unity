@@ -3,6 +3,7 @@
 using MVZ2.Vanilla.Properties;
 using PVZEngine;
 using PVZEngine.Entities;
+using PVZEngine.Properties;
 
 namespace MVZ2.Vanilla.Contraptions
 {

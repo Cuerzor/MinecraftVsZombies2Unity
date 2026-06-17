@@ -9,6 +9,7 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.Localization;
 using PVZEngine;
 using PVZEngine.Callbacks;
+using PVZEngine.Level;
 
 namespace MVZ2Logic.Games
 {

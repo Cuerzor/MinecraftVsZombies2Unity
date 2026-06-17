@@ -4,10 +4,10 @@ using MVZ2.GameContent.Buffs.Enemies;
 using MVZ2.GameContent.Difficulties;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Properties;
-using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Properties;
 using PVZEngine.Tools.Random;
 using UnityEngine;
 

@@ -9,6 +9,7 @@ using PVZEngine;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Models;
+using PVZEngine.Properties;
 
 namespace MVZ2.GameContent.Enemies
 {

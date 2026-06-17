@@ -4,11 +4,11 @@ using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Entities;
 using MVZ2Logic.Entities;
-using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Timing;
 
 namespace MVZ2.GameContent.Enemies
 {

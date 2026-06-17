@@ -5,6 +5,7 @@ using System.Xml;
 using MVZ2.IO;
 using PVZEngine;
 using PVZEngine.Collisions;
+using PVZEngine.Properties;
 using PVZEngine.Tools.Unity;
 
 namespace MVZ2.Metas

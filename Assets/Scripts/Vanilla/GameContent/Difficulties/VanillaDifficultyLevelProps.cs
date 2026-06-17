@@ -5,6 +5,7 @@ using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Blueprints;
 using PVZEngine;
 using PVZEngine.Level;
+using PVZEngine.Properties;
 
 namespace MVZ2.GameContent.Difficulties
 {

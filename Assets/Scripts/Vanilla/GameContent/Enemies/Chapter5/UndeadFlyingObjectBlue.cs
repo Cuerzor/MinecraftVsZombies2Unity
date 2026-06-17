@@ -11,6 +11,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Timing;
 
 namespace MVZ2.GameContent.Enemies
 {

@@ -6,10 +6,10 @@ using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic;
 using MVZ2Logic.Saves;
-using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Properties;
 
 namespace MVZ2.GameContent.Stages
 {

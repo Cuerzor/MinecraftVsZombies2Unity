@@ -6,6 +6,7 @@ using MVZ2.IO;
 using MVZ2Logic;
 using MVZ2Logic.Armors;
 using PVZEngine;
+using PVZEngine.Level;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 

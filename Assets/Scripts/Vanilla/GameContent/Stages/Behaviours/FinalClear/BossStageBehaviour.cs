@@ -13,6 +13,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Properties;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Stages

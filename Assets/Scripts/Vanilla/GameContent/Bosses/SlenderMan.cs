@@ -26,6 +26,7 @@ using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Models;
+using PVZEngine.Timing;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Mathematics;
 using PVZEngine.Tools.Random;

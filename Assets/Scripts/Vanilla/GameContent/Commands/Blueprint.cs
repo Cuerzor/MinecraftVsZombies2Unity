@@ -8,7 +8,7 @@ using MVZ2Logic.Definitions;
 using MVZ2Logic.Level;
 using MVZ2Logic.Localization;
 using PVZEngine;
-using PVZEngine.Level;
+using PVZEngine.SeedPacks;
 
 namespace MVZ2.GameContent.Commands
 {

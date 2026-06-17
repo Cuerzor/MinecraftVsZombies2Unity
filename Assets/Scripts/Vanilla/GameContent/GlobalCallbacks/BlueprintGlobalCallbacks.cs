@@ -10,7 +10,7 @@ using MVZ2Logic.Modding;
 using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
-using PVZEngine.Level;
+using PVZEngine.SeedPacks;
 
 namespace MVZ2.GameContent.GlobalCallbacks
 {

@@ -5,11 +5,11 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
-using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Models;
 using PVZEngine.Modifiers;
+using PVZEngine.Timing;
 using PVZEngine.Tools.Timing;
 using UnityEngine;
 

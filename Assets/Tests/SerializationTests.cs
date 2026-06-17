@@ -16,6 +16,8 @@ using MVZ2Logic.Serialization;
 using NUnit.Framework;
 using PVZEngine;
 using PVZEngine.Entities;
+using PVZEngine.Level;
+using PVZEngine.Timing;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;

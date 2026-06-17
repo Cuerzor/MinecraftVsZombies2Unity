@@ -4,10 +4,10 @@ using MVZ2.GameContent.Detections;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
-using PVZEngine;
 using PVZEngine.Collisions;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Timing;
 
 namespace MVZ2.GameContent.Contraptions
 {

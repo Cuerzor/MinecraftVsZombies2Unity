@@ -3,6 +3,7 @@
 using MVZ2Logic.Conditions;
 using MVZ2Logic.Resources;
 using PVZEngine;
+using PVZEngine.Properties;
 using PVZEngine.Tools.Timing;
 
 namespace MVZ2Logic.Artifacts

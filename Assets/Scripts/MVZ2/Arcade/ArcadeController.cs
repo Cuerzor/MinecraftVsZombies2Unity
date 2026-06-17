@@ -15,6 +15,7 @@ using MVZ2Logic.Localization;
 using MVZ2Logic.Saves;
 using MVZ2Logic.Stats;
 using PVZEngine;
+using PVZEngine.Level;
 using UnityEngine;
 
 namespace MVZ2.Arcade

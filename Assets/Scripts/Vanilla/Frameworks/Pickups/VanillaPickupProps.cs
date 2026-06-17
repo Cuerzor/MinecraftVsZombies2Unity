@@ -2,6 +2,7 @@
 
 using PVZEngine;
 using PVZEngine.Entities;
+using PVZEngine.Properties;
 
 namespace MVZ2.Vanilla.Pickups
 {
