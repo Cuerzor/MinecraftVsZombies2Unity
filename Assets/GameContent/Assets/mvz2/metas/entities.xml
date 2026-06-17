@@ -887,6 +887,7 @@
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:defensive" value="true" />
                 <bool name="mvz2:noClimb" value="true" />
+                <bool name="mvz2:suspending_contraption" value="true" />
                 <bool name="mvz2:fragments/noDamageFragments" value="true" />
                 <float name="mvz2:maxHealth" value="3000" />
                 <float name="mvz2:fallResistance" value="10000" />
@@ -1131,6 +1132,7 @@
                 <id name="mvz2:placement" value="mvz2:suspension" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:defensive" value="true" />
+                <bool name="mvz2:suspending_contraption" value="true" />
                 <float name="mvz2:maxHealth" value="3000" />
                 <float name="mvz2:fallResistance" value="10000" />
                 <int name="mvz2:waterInteraction" value="0" />
@@ -1416,6 +1418,7 @@
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:defensive" value="true" />
                 <bool name="mvz2:blocksJump" value="true" />
+                <bool name="mvz2:stable_contraption" value="true" />
                 <float name="mvz2:maxHealth" value="2000" />
                 <float name="mvz2:fallResistance" value="10000" />
                 <float name="mvz2:groundLimitOffset" value="-16" />

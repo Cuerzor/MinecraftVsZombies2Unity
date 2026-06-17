@@ -104,6 +104,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID finalItem = Get("final_item");
         public readonly static NamespaceID fizz = Get("fizz");
         public readonly static NamespaceID fling = Get("fling");
+        public readonly static NamespaceID flood = Get("flood");
         public readonly static NamespaceID floop = Get("floop");
         public readonly static NamespaceID flySwarm = Get("fly_swarm");
         public readonly static NamespaceID frankensteinLaugh = Get("frankenstein_laugh");

@@ -24,6 +24,11 @@ namespace MVZ2.Vanilla.Grids
             main,
             carrier
         };
+        public static NamespaceID[] carriedLayers = new NamespaceID[]
+        {
+            main,
+            protector
+        };
         public static NamespaceID[] sacrificeLayers = new NamespaceID[]
         {
             protector,

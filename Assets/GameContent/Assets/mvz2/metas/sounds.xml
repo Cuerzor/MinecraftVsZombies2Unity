@@ -325,6 +325,9 @@
     <sound name="fling">
         <sample path="mvz2:entity/totenser/fling" weight="1" />
     </sound>
+    <sound name="flood">
+        <sample path="mvz2:flood" weight="1" />
+    </sound>
     <sound name="floop">
         <sample path="mvz2:floop" weight="1" />
     </sound>

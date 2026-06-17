@@ -459,7 +459,7 @@ namespace MVZ2.Vanilla.Entities
         #endregion
 
         #region 换格
-        public static void StartChangingGrid(this Entity entity, int column, int lane, bool destroyConflict = true)
+        public static void StartChangingGrid(this Entity entity, int column, int lane, bool destroyConflict = true, float speedFactor = 0.5f)
         {
             var buff = entity.GetFirstBuff<ChangeGridBuff>();
             if (buff == null)
@@ -469,7 +469,7 @@ namespace MVZ2.Vanilla.Entities
             var level = entity.Level;
             column = Math.Clamp(column, 0, level.GetMaxColumnCount() - 1);
             lane = Math.Clamp(lane, 0, level.GetMaxLaneCount() - 1);
-            ChangeGridBuff.Start(buff, column, lane);
+            ChangeGridBuff.Start(buff, column, lane, speedFactor);
 
             if (destroyConflict)
             {

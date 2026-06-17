@@ -63,6 +63,33 @@ namespace MVZ2.Vanilla.Contraptions
             }
             return false;
         }
+        public static Entity[] GetCarryingTargets(this Entity contraption)
+        {
+            if (contraption == null)
+                return Array.Empty<Entity>();
+
+            List<Entity> targets = new List<Entity>();
+            var grids = contraption.GetGridsToTake();
+            foreach (var grid in grids)
+            {
+                if (grid == null)
+                    continue;
+                if (grid.GetCarrierEntity() == contraption)
+                {
+                    var carriedLayers = VanillaGridLayers.carriedLayers;
+
+                    foreach (var layer in carriedLayers)
+                    {
+                        var target = grid.GetLayerEntity(layer);
+                        if (target != null && target.Exists() && target != contraption)
+                        {
+                            targets.Add(target);
+                        }
+                    }
+                }
+            }
+            return targets.ToArray();
+        }
         public static Entity? GetFirstProtectingTarget(this Entity contraption)
         {
             if (contraption == null)

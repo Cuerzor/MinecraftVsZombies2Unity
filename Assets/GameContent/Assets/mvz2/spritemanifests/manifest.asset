@@ -471,6 +471,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: f285042715f1c8647a115c7920592f44, type: 3}
   - name: mobile_blueprint/obsidian
     sprite: {fileID: 21300000, guid: 4d49d253e83fc104d9eb629a8a238ee3, type: 3}
+  - name: mobile_blueprint/onbashira
+    sprite: {fileID: 21300000, guid: 227a7c6a425635a408385255799915c6, type: 3}
   - name: mobile_blueprint/parasite_terror
     sprite: {fileID: 21300000, guid: 333296bf7a142dd43a413222f3881bcb, type: 3}
   - name: mobile_blueprint/pistenser
@@ -2226,6 +2228,11 @@ MonoBehaviour:
     - {fileID: 751217537, guid: 86a0b0aabb4ceca42a409ee8c656695a, type: 3}
     - {fileID: 1641298299, guid: 86a0b0aabb4ceca42a409ee8c656695a, type: 3}
     - {fileID: -790591850, guid: 86a0b0aabb4ceca42a409ee8c656695a, type: 3}
+  - name: entity/contraption/onbashira
+    spritesheet:
+    - {fileID: 1198336802, guid: 566962d72728f4a4594b36d42a0639a9, type: 3}
+    - {fileID: -1120700401, guid: 566962d72728f4a4594b36d42a0639a9, type: 3}
+    - {fileID: -55959917, guid: 566962d72728f4a4594b36d42a0639a9, type: 3}
   - name: entity/contraption/pistenser
     spritesheet:
     - {fileID: -31590259, guid: ba5959cbb21e70e46930dced2270fecb, type: 3}
@@ -3008,6 +3015,7 @@ MonoBehaviour:
     - {fileID: 875420487, guid: 5d2c28a61405a06409579f821db2bf10, type: 3}
     - {fileID: -782307434, guid: 5d2c28a61405a06409579f821db2bf10, type: 3}
     - {fileID: -1511003530, guid: 5d2c28a61405a06409579f821db2bf10, type: 3}
+    - {fileID: -498605245, guid: 5d2c28a61405a06409579f821db2bf10, type: 3}
   - name: ui/almanac/placement_tags_upgrade_new
     spritesheet:
     - {fileID: -1064595, guid: c88dad8213774ad48b823b141be673dc, type: 3}
