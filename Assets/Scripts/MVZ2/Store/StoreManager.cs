@@ -10,7 +10,8 @@ using MVZ2.Saves;
 using MVZ2.UI.Store;
 using MVZ2Logic.Saves;
 using PVZEngine;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2.Store

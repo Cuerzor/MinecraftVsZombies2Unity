@@ -15,7 +15,7 @@ using PVZEngine.Callbacks;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Models;
-using Tools.Mathematics;
+using PVZEngine.Tools.Mathematics;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Effects

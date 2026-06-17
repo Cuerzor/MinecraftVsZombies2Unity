@@ -8,7 +8,7 @@ using PVZEngine;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Models;
-using Tools;
+using PVZEngine.Tools.Timing;
 
 namespace MVZ2.Vanilla.Enemies
 {

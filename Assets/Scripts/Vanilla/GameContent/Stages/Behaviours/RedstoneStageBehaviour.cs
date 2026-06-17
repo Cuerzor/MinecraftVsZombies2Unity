@@ -8,7 +8,7 @@ using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
 using PVZEngine.Level;
-using Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Stages

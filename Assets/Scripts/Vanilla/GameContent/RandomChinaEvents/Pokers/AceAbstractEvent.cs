@@ -3,7 +3,7 @@
 using MVZ2.Vanilla.Pickups;
 using MVZ2.Vanilla.RandomChina;
 using PVZEngine.Entities;
-using Tools;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2.GameContent.RandomChinaEvents
 {

@@ -7,7 +7,7 @@ using MVZ2.Vanilla.Localization;
 using MVZ2.Vanilla.RandomChina;
 using PVZEngine.Entities;
 using PVZEngine.Level;
-using Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2.GameContent.RandomChinaEvents

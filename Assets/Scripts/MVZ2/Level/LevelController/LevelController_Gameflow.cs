@@ -15,7 +15,8 @@ using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 using static MVZ2.UI.Level.LevelUIPreset;
 

@@ -17,7 +17,7 @@ using MVZ2Logic.Localization;
 using MVZ2Logic.Saves;
 using MVZ2Logic.Talk;
 using PVZEngine;
-using Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2.Store

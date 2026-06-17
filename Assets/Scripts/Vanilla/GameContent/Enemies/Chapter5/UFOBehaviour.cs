@@ -5,7 +5,7 @@ using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
 using PVZEngine.Level;
-using Tools;
+using PVZEngine.Tools.Timing;
 
 namespace MVZ2.GameContent.Enemies
 {

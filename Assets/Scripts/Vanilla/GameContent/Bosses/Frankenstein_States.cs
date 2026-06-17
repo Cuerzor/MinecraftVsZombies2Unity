@@ -18,7 +18,7 @@ using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
 using PVZEngine.Models;
-using Tools;
+using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Bosses

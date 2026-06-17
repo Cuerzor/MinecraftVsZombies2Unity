@@ -16,7 +16,7 @@ using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
-using Tools;
+using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Buffs.Enemies
 {

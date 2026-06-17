@@ -13,7 +13,7 @@ using MVZ2Logic.Entities;
 using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
-using Tools;
+using PVZEngine.Tools.Timing;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Enemies

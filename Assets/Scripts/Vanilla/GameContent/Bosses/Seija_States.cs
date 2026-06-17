@@ -16,7 +16,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Collisions;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
-using Tools;
+using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Bosses

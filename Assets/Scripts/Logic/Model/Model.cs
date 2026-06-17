@@ -7,8 +7,8 @@ using MVZ2Logic.Models.Elements;
 using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Models;
-using Tools;
-using Tools.Unity;
+using PVZEngine.Tools.Random;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.Events;
 

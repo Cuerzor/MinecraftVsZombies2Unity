@@ -11,7 +11,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Grids;
 using PVZEngine.Modifiers;
-using Tools;
+using PVZEngine.Tools.Timing;
 
 namespace MVZ2.GameContent.Buffs.Grids
 {

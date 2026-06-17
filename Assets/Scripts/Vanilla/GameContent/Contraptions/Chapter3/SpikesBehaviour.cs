@@ -14,7 +14,8 @@ using PVZEngine.Collisions;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Models;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Timing;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions

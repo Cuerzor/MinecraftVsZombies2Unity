@@ -5,7 +5,7 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
-using Tools.Mathematics;
+using PVZEngine.Tools.Mathematics;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Effects

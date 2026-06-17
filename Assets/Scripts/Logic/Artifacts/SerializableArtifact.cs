@@ -3,7 +3,7 @@
 using System;
 using PVZEngine;
 using PVZEngine.Auras;
-using Tools;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2Logic.Artifacts
 {

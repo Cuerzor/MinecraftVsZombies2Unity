@@ -5,7 +5,7 @@ using MVZ2Logic.Entities;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Modifiers;
-using Tools;
+using PVZEngine.Tools.Timing;
 
 namespace MVZ2.GameContent.Buffs.Entities
 {

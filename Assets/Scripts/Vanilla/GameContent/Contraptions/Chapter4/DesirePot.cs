@@ -24,7 +24,8 @@ using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.SeedPacks;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Timing;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions

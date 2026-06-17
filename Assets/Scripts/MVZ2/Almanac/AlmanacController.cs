@@ -31,8 +31,8 @@ using MVZ2Logic.Saves;
 using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Level;
-using Tools.Mathematics;
-using Tools.Unity;
+using PVZEngine.Tools.Mathematics;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 

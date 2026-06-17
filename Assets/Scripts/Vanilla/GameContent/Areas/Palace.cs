@@ -10,7 +10,8 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Level;
 using PVZEngine.SeedPacks;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2.GameContent.Areas
 {

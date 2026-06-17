@@ -8,7 +8,7 @@ using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Models;
 using PVZEngine.Modifiers;
-using Tools;
+using PVZEngine.Tools.Timing;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Enemies

@@ -17,7 +17,7 @@ using PVZEngine.Callbacks;
 using PVZEngine.Collisions;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
-using Tools;
+using PVZEngine.Tools.Timing;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Contraptions

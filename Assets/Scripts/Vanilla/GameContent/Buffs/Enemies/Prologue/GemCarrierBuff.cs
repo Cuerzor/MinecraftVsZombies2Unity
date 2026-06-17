@@ -9,7 +9,8 @@ using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Definitions;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2.GameContent.Buffs.Enemies
 {

@@ -16,7 +16,8 @@ using PVZEngine.Grids;
 using PVZEngine.Level;
 using PVZEngine.SeedPacks;
 using PVZEngine.Spawns;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

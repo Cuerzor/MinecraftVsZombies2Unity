@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using MVZ2Logic.Entities;
 using PVZEngine.Entities;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Timing;
 using UnityEngine;
 
 namespace MVZ2.Level

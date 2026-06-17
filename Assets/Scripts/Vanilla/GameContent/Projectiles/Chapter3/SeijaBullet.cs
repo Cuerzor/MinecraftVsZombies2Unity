@@ -5,7 +5,7 @@ using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Models;
-using Tools;
+using PVZEngine.Tools.Timing;
 
 namespace MVZ2.GameContent.Projectiles
 {

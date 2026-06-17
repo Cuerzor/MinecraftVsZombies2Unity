@@ -2,9 +2,9 @@
 
 using System;
 using TMPro;
-using Tools;
 using UnityEngine;
 using UnityEngine.UI;
+using PVZEngine.Tools.Unity;
 
 namespace MVZ2.UI.Almanac
 {

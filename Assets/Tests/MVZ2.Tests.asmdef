@@ -4,12 +4,12 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
+        "PVZEngine.Tools",
         "PVZEngine.Base",
         "PVZEngine.Level",
         "MVZ2.Logic",
         "MVZ2.Vanilla",
         "MVZ2",
-        "Tools",
         "Unity.Addressables",
         "Unity.ResourceManager"
     ],

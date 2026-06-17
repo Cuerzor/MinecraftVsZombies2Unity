@@ -11,7 +11,7 @@ using MVZ2Logic.Entities;
 using PVZEngine.Armors;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
-using Tools;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2.GameContent.RandomChinaEvents
 {

@@ -25,7 +25,9 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Level;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
+using PVZEngine.Tools.Timing;
 
 namespace MVZ2.GameContent.Stages
 {

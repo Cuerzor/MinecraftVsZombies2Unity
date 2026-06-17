@@ -7,7 +7,7 @@ using MVZ2Logic.Level;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Modifiers;
-using Tools.Mathematics;
+using PVZEngine.Tools.Mathematics;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Level

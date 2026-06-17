@@ -8,7 +8,7 @@ using MVZ2Logic.Level;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
-using Tools;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2.GameContent.Projectiles
 {

@@ -4,7 +4,7 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Tools",
+        "PVZEngine.Tools",
         "PVZEngine.Base",
         "PVZEngine.Level",
         "MVZ2.Logic",

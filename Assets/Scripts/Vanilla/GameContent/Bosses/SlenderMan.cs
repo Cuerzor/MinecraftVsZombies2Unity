@@ -26,8 +26,10 @@ using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Models;
-using Tools;
-using Tools.Mathematics;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Mathematics;
+using PVZEngine.Tools.Random;
+using PVZEngine.Tools.Timing;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Bosses

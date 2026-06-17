@@ -5,7 +5,7 @@ using MVZ2.Vanilla.Properties;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Models;
-using Tools;
+using PVZEngine.Tools.Timing;
 
 namespace MVZ2.Vanilla.StateMachine
 {

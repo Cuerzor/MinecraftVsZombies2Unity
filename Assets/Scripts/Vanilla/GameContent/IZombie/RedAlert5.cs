@@ -6,7 +6,7 @@ using MVZ2.GameContent.Stages;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.IZombie;
 using PVZEngine;
-using Tools;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2.GameContent.IZombie
 {

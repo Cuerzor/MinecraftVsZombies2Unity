@@ -8,7 +8,7 @@ using MVZ2Logic.Level;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
-using Tools;
+using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Contraptions
 {

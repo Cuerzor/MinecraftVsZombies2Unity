@@ -8,7 +8,7 @@ using PVZEngine.Auras;
 using PVZEngine.Base;
 using PVZEngine.Entities;
 using PVZEngine.Level;
-using Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2Logic.Artifacts

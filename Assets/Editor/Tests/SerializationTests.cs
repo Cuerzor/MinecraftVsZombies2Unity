@@ -5,7 +5,7 @@ using NUnit.Framework;
 using PVZEngine;
 using PVZEngine.Level;
 using PVZEngine.Modifiers;
-using Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2.EditorTests

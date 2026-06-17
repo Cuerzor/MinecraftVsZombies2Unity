@@ -23,7 +23,8 @@ using PVZEngine.Collisions.Level;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Models;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Bosses

@@ -4,7 +4,8 @@ using System.Linq;
 using MVZ2Logic.Definitions;
 using PVZEngine;
 using PVZEngine.Base;
-using Tools;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2Logic.IZombie

@@ -2,7 +2,7 @@
 
 using MVZ2.GameContent.Contraptions;
 using MVZ2Logic.IZombie;
-using Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2.GameContent.IZombie

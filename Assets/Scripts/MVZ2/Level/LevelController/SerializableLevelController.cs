@@ -9,7 +9,8 @@ using MVZ2.UI.Level;
 using MVZ2Logic.Models;
 using PVZEngine;
 using PVZEngine.Level;
-using Tools;
+using PVZEngine.Tools.Random;
+using PVZEngine.Tools.Timing;
 
 namespace MVZ2.Level
 {

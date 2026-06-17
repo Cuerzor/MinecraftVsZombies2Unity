@@ -3,7 +3,7 @@
 using MVZ2.Vanilla.Definitions;
 using PVZEngine.Base;
 using PVZEngine.Entities;
-using Tools;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2.Vanilla.RandomChina
 {
