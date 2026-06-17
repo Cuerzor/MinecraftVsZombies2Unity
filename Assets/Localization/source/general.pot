@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-05-30 03:04+0800\n"
+"POT-Creation-Date: 2026-06-17 08:49+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -590,7 +590,7 @@ msgstr ""
 # 随机瓷器事件名称
 #: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheChariotEvent.cs:38
 msgctxt "random_china.event_name"
-msgid "XII-战车"
+msgid "VII-战车"
 msgstr ""
 
 # 随机瓷器事件描述
@@ -2624,17 +2624,17 @@ msgid "中文"
 msgstr ""
 
 # 血条的文字
-#: Scripts\MVZ2\Entities\EntityController.cs:787
+#: Scripts\MVZ2\Entities\EntityController.cs:804
 msgid "死亡"
 msgstr ""
 
 # 血条的文字
-#: Scripts\MVZ2\Entities\EntityController.cs:789
+#: Scripts\MVZ2\Entities\EntityController.cs:806
 msgid "摧毁"
 msgstr ""
 
 # 血条的文字模板
-#: Scripts\MVZ2\Entities\EntityController.cs:791
+#: Scripts\MVZ2\Entities\EntityController.cs:808
 msgid "{0}"
 msgstr ""
 

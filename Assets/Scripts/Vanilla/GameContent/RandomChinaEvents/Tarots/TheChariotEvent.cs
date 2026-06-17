@@ -36,7 +36,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
             contraption.PlaySound(VanillaSoundID.missile);
         }
         [TranslateMsg("随机瓷器事件名称", VanillaStrings.CONTEXT_RANDOM_CHINA_EVENT_NAME)]
-        public const string NAME = "XII-战车";
+        public const string NAME = "VII-战车";
         [TranslateMsg("随机瓷器事件描述", VanillaStrings.CONTEXT_RANDOM_CHINA_EVENT_DESCRIPTION)]
         public const string DESCRIPTION = "向每个敌怪发射一枚导弹";
     }
