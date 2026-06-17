@@ -1425,7 +1425,6 @@
                 <id name="mvz2:placeSound" value="mvz2:trap_open" />
                 <int name="mvz2:cost" value="75" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
-                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-5"/>
             </properties>
         </entity>
         <entity template="nestingTNT" id="nesting_tnt" name="套娃TNT" tooltip="触发后爆炸，可以触发三次">

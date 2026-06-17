@@ -3,7 +3,9 @@
 using MVZ2.Vanilla.Enemies;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
+using PVZEngine.Entities;
 using PVZEngine.Modifiers;
+using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Enemies
 {
@@ -14,6 +16,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
         public TrappedBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new FloatModifier(VanillaEnemyProps.SPEED, NumberOperator.Set, 0));
+            AddModifier(new Vector3Modifier(EngineEntityProps.MODEL_POSITION_OFFSET, NumberOperator.Set, new Vector3(0, 0, 0.1f)));
         }
     }
 }
