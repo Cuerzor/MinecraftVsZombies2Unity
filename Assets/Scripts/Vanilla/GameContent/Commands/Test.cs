@@ -94,6 +94,16 @@ namespace MVZ2.GameContent.Commands
                         }
                     }
                     break;
+                case "hugewaveevent":
+                    {
+                        level.RunHugeWaveEvent();
+                    }
+                    break;
+                case "finalwaveevent":
+                    {
+                        level.RunFinalWaveEvent();
+                    }
+                    break;
             }
         }
         private void SpawnEnemies(LevelEngine level, int page)

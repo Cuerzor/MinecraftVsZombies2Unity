@@ -19,6 +19,8 @@ namespace MVZ2.GameContent.Stages
     {
         public DebugStage(string nsp, string name) : base(nsp, name)
         {
+            AddBehaviour(new HugeWaveEventBehaviour(this));
+            AddBehaviour(new FinalWaveEventBehaviour(this));
             //AddBehaviour(new ConveyorStageBehaviour(this));
         }
         public override void OnStart(LevelEngine level)

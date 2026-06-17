@@ -278,6 +278,12 @@
         <variant subname="commandblock">
             <description>生成一群会变形为其他器械的命令方块。</description>
         </variant>
+        <variant subname="hugewaveevent">
+            <description>触发当前场景的一大波怪物事件。</description>
+        </variant>
+        <variant subname="finalwaveevent">
+            <description>触发当前场景的最后一波波怪物事件。</description>
+        </variant>
     </command>
     <command id="izombie" inLevel="true">
         <description>针对“我是僵尸”关卡进行操作。</description>
