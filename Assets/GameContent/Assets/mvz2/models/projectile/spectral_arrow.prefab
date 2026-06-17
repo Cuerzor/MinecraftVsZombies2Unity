@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 768d5bd8b12081f43af6e415553299a5, type: 3}
+    - target: {fileID: 1705875129185329169, guid: c7fa1769461cf9846acddffa3a044fd7, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 768d5bd8b12081f43af6e415553299a5, type: 3}
     - target: {fileID: 1768577806303318272, guid: c7fa1769461cf9846acddffa3a044fd7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52,6 +56,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1809867046921418998, guid: c7fa1769461cf9846acddffa3a044fd7, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 768d5bd8b12081f43af6e415553299a5, type: 3}
     - target: {fileID: 2511105304949660224, guid: c7fa1769461cf9846acddffa3a044fd7, type: 3}
       propertyPath: m_Sprite
       value: 
