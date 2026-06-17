@@ -6,7 +6,6 @@ using MVZ2Logic.Games;
 using MVZ2Logic.Saves;
 using MVZ2Logic.Serialization;
 using PVZEngine;
-using PVZEngine.Base;
 using PVZEngine.Callbacks;
 
 namespace MVZ2Logic.Modding

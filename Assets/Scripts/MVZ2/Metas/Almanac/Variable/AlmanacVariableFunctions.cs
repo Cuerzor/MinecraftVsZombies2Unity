@@ -2,7 +2,6 @@
 
 using System;
 using PVZEngine;
-using PVZEngine.Base;
 
 namespace MVZ2.Metas
 {

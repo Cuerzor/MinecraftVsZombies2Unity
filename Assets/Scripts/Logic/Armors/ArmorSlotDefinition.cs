@@ -2,7 +2,7 @@
 
 using MVZ2Logic.Definitions;
 using MVZ2Logic.Resources;
-using PVZEngine.Base;
+using PVZEngine;
 using UnityEngine;
 
 namespace MVZ2Logic.Armors

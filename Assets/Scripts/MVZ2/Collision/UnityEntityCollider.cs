@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using PVZEngine;
-using PVZEngine.Base;
 using PVZEngine.Collisions;
 using PVZEngine.Entities;
 using PVZEngine.Level;

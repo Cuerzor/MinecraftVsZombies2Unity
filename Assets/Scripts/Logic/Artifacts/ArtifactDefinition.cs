@@ -2,8 +2,8 @@
 
 using System.Collections.Generic;
 using MVZ2Logic.Definitions;
+using PVZEngine;
 using PVZEngine.Auras;
-using PVZEngine.Base;
 
 namespace MVZ2Logic.Artifacts
 {
