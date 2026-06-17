@@ -2,51 +2,46 @@
 
 using System.Linq;
 using PVZEngine.Auras;
+using PVZEngine.Entities;
+using PVZEngine.Tools;
 
 namespace MVZ2Logic.Artifacts
 {
-    public partial class Artifact
+    public partial class Artifact : IAuraSource
     {
-        public void CreateAuraEffects()
+        private void InitAuras()
         {
-            var auraDefs = Definition.GetAuras();
-            for (int i = 0; i < auraDefs.Length; i++)
-            {
-                var auraDef = auraDefs[i];
-                auras.Add(Level, new AuraEffect(auraDef, i, this));
-            }
+            auraComponent.Init(this, Definition.GetAuras());
         }
         private void UpdateAuras()
         {
-            auras.Update();
+            auraComponent.Update();
         }
 
         #region 获取
         public AuraEffect GetAuraEffect<T>() where T : AuraEffectDefinition
         {
-            return auras.Get<T>();
+            return auraComponent.List.Get<T>();
         }
         public AuraEffect[] GetAuraEffects()
         {
-            return auras.GetAll();
+            return auraComponent.List.GetAll();
         }
         #endregion
 
         #region 序列化
         private void WriteAurasToSerializable(SerializableArtifact seri)
         {
-            seri.auras = auras.GetAll().Select(a => a.ToSerializable()).ToArray();
+            auraComponent.WriteToSerializable(seri);
         }
         private void LoadAurasFromSerializable(SerializableArtifact seri)
         {
-            if (seri.auras == null)
-                return;
-            auras.LoadFromSerializable(Level, seri.auras);
+            auraComponent.LoadFromSerializable(seri, Level);
         }
         #endregion
 
         #region 属性字段
-        private AuraEffectList auras = new AuraEffectList();
+        private AuraComponent auraComponent;
         #endregion
     }
 }

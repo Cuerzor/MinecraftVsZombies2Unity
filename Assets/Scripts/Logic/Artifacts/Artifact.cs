@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace MVZ2Logic.Artifacts
 {
-    public partial class Artifact : IAuraSource
+    public partial class Artifact
     {
         #region 构造器
         public Artifact(LevelEngine level, ArtifactDefinition definition) : this(level, definition, CreateRNG(level))
@@ -25,7 +25,7 @@ namespace MVZ2Logic.Artifacts
             Definition = definition;
             RNG = rng;
 
-            CreateAuraEffects();
+            InitAuras();
         }
         #endregion
 
@@ -111,18 +111,11 @@ namespace MVZ2Logic.Artifacts
         Entity? ILevelObject.GetEntity() => null;
         LevelEngine ILevelObject.GetLevel() => Level;
         bool ILevelObject.Exists() => Level.HasArtifact(Definition.GetID());
-        void ILevelObject.OnAddToLevel(LevelEngine level)
-        {
-            auras.PostAdd();
-        }
-        void ILevelObject.OnRemoveFromLevel(LevelEngine level)
-        {
-            auras.PostRemove();
-        }
         IEnumerable<ILevelObject> ILevelObject.GetChildrenObjects()
         {
             yield break;
         }
+        AuraEffectList IAuraSource.AuraEffects => auraComponent.List;
         #endregion
 
         #region 事件

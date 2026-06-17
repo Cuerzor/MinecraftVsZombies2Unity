@@ -8,11 +8,20 @@ using PVZEngine.Tools.Random;
 namespace MVZ2Logic.Artifacts
 {
     [Serializable]
-    public class SerializableArtifact
+    public class SerializableArtifact : IHasSerializableAuras
     {
         public NamespaceID? definitionID;
         public SerializableRNG? rng;
         public SerializablePropertyDictionary? propertyDict;
         public SerializableAuraEffect?[]? auras;
+        public SerializableAuraEffect?[]? GetSerializableAuras()
+        {
+            return auras;
+        }
+
+        public void SetSerializableAuras(SerializableAuraEffect?[]? auras)
+        {
+            this.auras = auras;
+        }
     }
 }
