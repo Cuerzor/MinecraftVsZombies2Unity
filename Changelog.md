@@ -15,6 +15,15 @@
 
 ---
 
+# 0.6.4
+## Fixes
+- Fixed the issue where Nightmare Crushing Walls' direction being incorrect on the mobile devices.
+- Fixed the issue of incorrect detection height for the Skeleton Mage when it is on a high slope.
+- Fixed the issue where the Hellfire in the Mausoleum map does not animate.
+- Text and localization fixes.
+
+---
+
 # 0.6.3
 ## Modified
 - Swapped the order of Parasite Terror spawning and damage infliction when a monster is parasitized by Mother Terror, to prevent the Cursed Candle from failing to kill the spawned Parasite Terrors.
