@@ -1434,7 +1434,7 @@
                 <id name="mvz2:placement" value="mvz2:onbashira" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
 
-                <int name="mvz2:cost" value="75" />
+                <int name="mvz2:cost" value="100" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
             </properties>
         </entity>
