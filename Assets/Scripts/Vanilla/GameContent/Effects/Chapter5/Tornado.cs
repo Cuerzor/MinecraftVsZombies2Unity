@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Buffs.Entities;
 using MVZ2.GameContent.Contraptions;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
@@ -58,10 +59,13 @@ namespace MVZ2.GameContent.Effects
             var self = collision.Entity;
             if (other.IsVulnerableEntity())
             {
-                other.Velocity += Vector3.up * 1.5f;
-                if (!other.HasBuff<ClearGridOnLandBuff>())
+                if (!other.IsStableContraption())
                 {
-                    other.AddBuff<ClearGridOnLandBuff>();
+                    other.Velocity += Vector3.up * 1.5f;
+                    if (!other.HasBuff<ClearGridOnLandBuff>())
+                    {
+                        other.AddBuff<ClearGridOnLandBuff>();
+                    }
                 }
             }
             else if (self.GetVariant() == VARIANT_NORMAL && other.IsEntityOf(VanillaEffectID.dragonFireBreath))

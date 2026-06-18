@@ -1858,6 +1858,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 227a7c6a425635a408385255799915c6
+    m_Address: mvz2:mobile_blueprint/onbashira
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 227ed731d72488f4aa762e37f9d60767
     m_Address: mvz2:level/dream/nightmare_sky_censored
     m_ReadOnly: 0
@@ -4781,6 +4788,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 566962d72728f4a4594b36d42a0639a9
+    m_Address: mvz2:entity/contraption/onbashira
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Spritesheet
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 567b59c501d5f7c4faded153d166a3f1
     m_Address: mvz2:obstacle/gargoyle_statue
@@ -10322,6 +10336,13 @@ MonoBehaviour:
     - Main
     - Spritesheet
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdbca158bd003d1408b40ad633b8986b
+    m_Address: mvz2:flood
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bdc3f924b67004e408cdc0a416a5c786
     m_Address: mvz2:held/starshards/mountain
     m_ReadOnly: 0
@@ -10457,6 +10478,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c15c0ad358a95a2418ff64fa1c67a224
     m_Address: mvz2:soul_sand_break5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c1e8fe2f66c01c24f9a9d7effbaeac21
+    m_Address: mvz2:raidhorn
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -11891,7 +11919,7 @@ MonoBehaviour:
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dc26b901fcd7d3b4b9260e080c77f695
-    m_Address: mvz2:artifacts/lily_carrier
+    m_Address: mvz2:artifacts/lily_platform
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -12365,6 +12393,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e677951b2d25e7942be6ffb70ae7c81e
+    m_Address: mvz2:contraption/mountain/onbashira
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e689d40c111a5a947896c19800f0978e
     m_Address: mvz2:random/stone2

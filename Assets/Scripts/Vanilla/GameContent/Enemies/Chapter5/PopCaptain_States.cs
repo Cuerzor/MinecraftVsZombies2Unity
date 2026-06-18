@@ -2,6 +2,7 @@
 
 using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Shells;
@@ -167,8 +168,11 @@ namespace MVZ2.GameContent.Enemies
                 }
                 else
                 {
-                    // 移动器械到目标地格。
-                    target.StartChangingGrid(column, thisLane + rowOffset);
+                    if (!target.IsStableContraption())
+                    {
+                        // 移动器械到目标地格。
+                        target.StartChangingGrid(column, thisLane + rowOffset);
+                    }
                 }
             }
             // 将目标眩晕。

@@ -13,6 +13,7 @@ using MVZ2.GameContent.Projectiles;
 using MVZ2.GameContent.Shells;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Bosses;
+using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Projectiles;
@@ -1956,17 +1957,28 @@ namespace MVZ2.GameContent.Bosses
                 var column2 = column + columnDirection * TAIL_SWIPE_COLUMN_RANGE;
                 var minColumn = Mathf.Min(column, column2);
                 var maxColumn = Mathf.Max(column, column2);
+
                 for (int x = minColumn; x < maxColumn; x++)
                 {
-                    for (int z = lane + TAIL_SWIPE_LANE_RANGE_START; z <= lane + TAIL_SWIPE_LANE_RANGE_END; z++)
+                    for (int i = TAIL_SWIPE_LANE_RANGE_START; i <= TAIL_SWIPE_LANE_RANGE_END; i++)
                     {
+                        var z = lane + i * -laneDirection;
                         var grid = level.GetGrid(x, z);
                         if (grid == null)
                             continue;
+
+                        bool stopped = false;
                         foreach (var gridEntity in grid.GetEntities())
                         {
                             if (gridEntity.Type != EntityTypes.PLANT || !entity.IsHostile(gridEntity))
                                 continue;
+
+                            // 遇到稳固器械就不移动。
+                            if (gridEntity.IsStableContraption())
+                            {
+                                stopped = true;
+                                break;
+                            }
                             var targetLane = z + laneDirection;
                             var targetGrid = level.GetGrid(x, targetLane);
                             if (targetGrid == null)
@@ -1978,6 +1990,10 @@ namespace MVZ2.GameContent.Bosses
                                 gridEntity.StartChangingGrid(x, targetLane, false);
                             }
                             gridEntity.PlaySound(VanillaSoundID.punch, 0.75f);
+                        }
+                        if (stopped)
+                        {
+                            break;
                         }
                     }
                 }

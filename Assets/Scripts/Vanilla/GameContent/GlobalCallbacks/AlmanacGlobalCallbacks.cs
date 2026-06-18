@@ -92,6 +92,11 @@ namespace MVZ2.GameContent.GlobalCallbacks
             {
                 tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.loyal));
             }
+            // 忠诚
+            if (entityDef.IsStableContraption())
+            {
+                tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.stable));
+            }
         }
         private void GetShellAttributeTags(EntityDefinition entityDef, List<AlmanacEntryTagInfo> tags)
         {

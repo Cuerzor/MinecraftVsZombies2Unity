@@ -92,6 +92,10 @@ namespace MVZ2.Vanilla.Contraptions
 
         #region 稳固器械
         public static readonly PropertyMeta<bool> STABLE_CONTRAPTION = Get<bool>("stable_contraption");
+        public static bool IsStableContraption(this EntityDefinition definition)
+        {
+            return definition.GetProperty<bool>(STABLE_CONTRAPTION);
+        }
         public static bool IsStableContraption(this Entity contraption)
         {
             return contraption.GetProperty<bool>(STABLE_CONTRAPTION);

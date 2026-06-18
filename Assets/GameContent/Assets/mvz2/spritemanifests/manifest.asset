@@ -2995,6 +2995,7 @@ MonoBehaviour:
     - {fileID: -884453189, guid: c419009eb7b0cae44aca6be02f48b0d4, type: 3}
     - {fileID: -1616654256, guid: c419009eb7b0cae44aca6be02f48b0d4, type: 3}
     - {fileID: -1976426717, guid: c419009eb7b0cae44aca6be02f48b0d4, type: 3}
+    - {fileID: 143512459, guid: c419009eb7b0cae44aca6be02f48b0d4, type: 3}
   - name: ui/almanac/grid_layer_tags
     spritesheet:
     - {fileID: 1321867714, guid: f4743b7a556142b4db02b61d15e9da06, type: 3}

@@ -1413,6 +1413,7 @@
             </unlock>
             <behaviours>
                 <behaviour operator="add" id="mvz2:model_damage_percent" />
+                <behaviour operator="add" id="mvz2:onbashira/evoke" />
             </behaviours>
             <properties>
                 <bool name="mvz2:canDeactive" value="false" />

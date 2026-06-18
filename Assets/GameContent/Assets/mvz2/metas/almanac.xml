@@ -165,6 +165,10 @@
             <icon sprite="mvz2:ui/almanac/attribute_tags[14]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[2]" color="#96503a" />
         </tag>
+        <tag id="stable" name="稳固" description="免疫位移" priority="4000">
+            <icon sprite="mvz2:ui/almanac/attribute_tags[15]" />
+            <background sprite="mvz2:ui/almanac/tag_backgrounds[2]" color="#b3d4db" />
+        </tag>
 
 
         <enum id="mass" type="int">
@@ -1129,10 +1133,10 @@
             <properties>
                 <p>耐久：<![CDATA[<color=red><var id="mvz2:entity_health" /></color>]]></p>
                 <p>坠落伤害：<![CDATA[<color=red><var local="fall_damage" /></color>]]></p>
-                <p>技能：<![CDATA[<color=red>？</color>]]></p>
+                <p>技能：<![CDATA[<color=red>召唤御柱填满本列（注意：会砸坏器械！）</color>]]></p>
             </properties>
             <flavor>
-                <p>====施工中====</p>
+                <p>你看，它们就是柱子。</p>
             </flavor>
         </entry>
         <entry id="mvz2:autotrap">
