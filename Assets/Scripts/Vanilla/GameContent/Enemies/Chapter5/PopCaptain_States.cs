@@ -158,17 +158,17 @@ namespace MVZ2.GameContent.Enemies
             }
             else if (target.Type == EntityTypes.PLANT)
             {
-                // 如果目标是器械：
-                var column = target.GetColumn();
-                var targetGrid = entity.Level.GetGrid(column, thisLane + rowOffset);
-                if (targetGrid == null)
+                // 如果目标是器械，并且不是稳固器械：
+                if (!target.IsStableContraption())
                 {
-                    // 如果目标地格不存在，直接秒杀器械。
-                    target.Die(outOfBoundDamageEffects, entity, damageOutput.BodyResult?.GetValues());
-                }
-                else
-                {
-                    if (!target.IsStableContraption())
+                    var column = target.GetColumn();
+                    var targetGrid = entity.Level.GetGrid(column, thisLane + rowOffset);
+                    if (targetGrid == null)
+                    {
+                        // 如果目标地格不存在，直接秒杀器械。
+                        target.Die(outOfBoundDamageEffects, entity, damageOutput.BodyResult?.GetValues());
+                    }
+                    else
                     {
                         // 移动器械到目标地格。
                         target.StartChangingGrid(column, thisLane + rowOffset);
