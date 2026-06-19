@@ -64,7 +64,7 @@ namespace MVZ2.GameContent.Contraptions
             base.PostCollision(collision, state);
             if (state == EntityCollisionHelper.STATE_EXIT)
                 return;
-            if (!collision.Collider.IsForMain())
+            if (!collision.OtherCollider.IsForMain() || !collision.Collider.IsForMain())
                 return;
             var trap = collision.Entity;
             if (!CanClose(trap))
