@@ -292,6 +292,12 @@
             <key hex="#000000" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="loan_sign">
+        <colorKeys>
+            <key hex="#9c9299" time="0.5" />
+            <key hex="#62545d" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="infectenser">
         <colorKeys>
             <key hex="#FF0000" time="0.2" />

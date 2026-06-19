@@ -1180,7 +1180,29 @@
                 <p>从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说……</p>
             </flavor>
         </entry>
-        <entry />
+        <entry id="mvz2:loan_sign">
+            <variables>
+                <variable name="lend_count">property("mvz2:entity_behaviour/loan_sign/lend_count")</variable>
+                <variable name="repay_count">property("mvz2:entity_behaviour/loan_sign/max_repay_count")</variable>
+                <variable name="disable_seconds_1">property("mvz2:entity_behaviour/loan_sign/disable_seconds_1")</variable>
+                <variable name="disable_seconds_2">property("mvz2:entity_behaviour/loan_sign/disable_seconds_2")</variable>
+                <variable name="disable_seconds_3">property("mvz2:entity_behaviour/loan_sign/disable_seconds_3")</variable>
+            </variables>
+            <header>
+                <p>借贷告示牌在被放置时会立即借给你星之碎片并要求你交还。如果它在你没有还完的情况下被摧毁，它就会禁用你的星之碎片。</p>
+            </header>
+            <properties>
+                <p>借出星之碎片：<![CDATA[<color=red><var local="lend_count"/></color>]]></p>
+                <p>偿还星之碎片：<![CDATA[<color=red><var local="repay_count"/></color>]]></p>
+                <p>禁用星之碎片时长：<![CDATA[<color=red><var local="disable_seconds_1"/>秒（1未偿还），<var local="disable_seconds_2"/>秒（2未偿还），<var local="disable_seconds_3"/>秒（3未偿还）</color>]]></p>
+                <p>技能：<![CDATA[<color=red>偿还一个星之碎片。交还完毕后告示牌自动消失。</color>]]></p>
+            </properties>
+            <flavor>
+                <p>朋友，不要碰贷。</p>
+                <p>有问题我们可以好好<![CDATA[<color=red>交涉</color>]]>。</p>
+                <p><![CDATA[<b>但是绝对不要碰高利贷。</b>]]></p>
+            </flavor>
+        </entry>
 
         <!-- Chapter 8 -->
         <entry />

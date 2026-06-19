@@ -134,6 +134,7 @@
     <group id="contraption.onbashira"><conditions><condition required="mvz2:level.mountain_6" /></conditions></group>
     <group id="contraption.autotrap"><conditions><condition required="mvz2:level.mountain_7" /></conditions></group>
     <group id="contraption.nesting_tnt"><conditions><condition required="mvz2:level.mountain_8" /></conditions></group>
+    <group id="contraption.loan_sign"><conditions><condition required="mvz2:level.mountain_9" /></conditions></group>
 
     <!-- Upgrade Contraptions -->
     <group id="contraption.infectenser"><conditions><condition required="mvz2:contraption.infectenser" /></conditions></group>

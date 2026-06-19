@@ -421,6 +421,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: a5efa495de93d644a90de2fa44e1cf16, type: 3}
   - name: mobile_blueprint/lily_pad
     sprite: {fileID: 21300000, guid: d502efd9e6fce1543ae6919e926b244c, type: 3}
+  - name: mobile_blueprint/loan_sign
+    sprite: {fileID: 21300000, guid: b9438931dd810bf4190f53b1d80d5319, type: 3}
   - name: mobile_blueprint/locked_chest
     sprite: {fileID: 21300000, guid: bc5a3188e1dc04a46a66afd4a30e671b, type: 3}
   - name: mobile_blueprint/magichest
@@ -2170,6 +2172,12 @@ MonoBehaviour:
     - {fileID: 2008690076, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
     - {fileID: -1699391314, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
     - {fileID: 2132736026, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
+  - name: entity/contraption/loan_sign
+    spritesheet:
+    - {fileID: 378460578, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
+    - {fileID: 1165752730, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
+    - {fileID: -882613934, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
+    - {fileID: -977068680, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
   - name: entity/contraption/loms
     spritesheet:
     - {fileID: -650657220, guid: 5005bdd978e5a304a871e9d6929ee180, type: 3}

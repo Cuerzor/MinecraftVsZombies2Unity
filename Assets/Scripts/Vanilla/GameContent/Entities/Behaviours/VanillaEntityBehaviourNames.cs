@@ -59,6 +59,7 @@ namespace MVZ2.Vanilla.Entities
         public const string autotrap_Evoke = "autotrap/evoke";
         public const string nestingTNT_Evoke = "nesting_tnt/evoke";
         public const string onbashira_Evoke = "onbashira/evoke";
+        public const string loanSign_Evoke = "loan_sign/evoke";
 
         #endregion
 

@@ -7797,6 +7797,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e3716795882a7d4da43bd8e3168b001
+    m_Address: mvz2:contraption/mountain/loan_sign
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e4506b73a85267499be23c6916344ef
     m_Address: mvz2:ui/achievements/frame
     m_ReadOnly: 0
@@ -10078,6 +10085,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b9438931dd810bf4190f53b1d80d5319
+    m_Address: mvz2:mobile_blueprint/loan_sign
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b944e3154656ac74f8054ed14cb53335
     m_Address: mvz2:products/starshard_slot
     m_ReadOnly: 0
@@ -10776,6 +10790,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7f31ee522fe1fc408db56ea45808c07
+    m_Address: mvz2:entity/contraption/loan_sign
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Spritesheet
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c7f50d8658623a44886293ea828537fd
     m_Address: mvz2:store/background_village
