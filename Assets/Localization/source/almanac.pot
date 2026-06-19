@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-06-16 09:31+0800\n"
+"POT-Creation-Date: 2026-06-18 05:09+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,6 +69,18 @@ msgstr ""
 #: Almanac meta file
 msgctxt "almanac_tag.description"
 msgid "可以放置在水中或者陆地上"
+msgstr ""
+
+#. Name for almanac tag placement_onbashira
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "从天而降"
+msgstr ""
+
+#. Description for almanac tag placement_onbashira
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "可以放置在任意格子上，从天而降！"
 msgstr ""
 
 #. Name for almanac tag placement_infectenser
@@ -423,6 +435,18 @@ msgstr ""
 #: Almanac meta file
 msgctxt "almanac_tag.description"
 msgid "免疫火焰伤害"
+msgstr ""
+
+#. Name for almanac tag stable
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "稳固"
+msgstr ""
+
+#. Description for almanac tag stable
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "免疫位移"
 msgstr ""
 
 #. Name for almanac tag enum value -2 of enum mass
@@ -1946,6 +1970,27 @@ msgid ""
 "<tag id=\"mvz2:shell\" enum=\"mvz2:cloud\" />：<color=red><var local=\"cloud_density\"/>%（震飞周围敌怪）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:lightning\" />：<color=red><var local=\"lightning_density\"/>%（电击周围敌怪）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>"
+msgstr ""
+
+#. Header for contraptions mvz2:onbashira
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "御柱从天而降，砸碎落点的任何器械和怪物，然后变为难以移动的高墙。"
+msgstr ""
+
+#. Properties for contraptions mvz2:onbashira
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"耐久：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
+"坠落伤害：<color=red><var local=\"fall_damage\" /></color>\n"
+"技能：<color=red>召唤御柱填满本列（注意：会砸坏器械！）</color>"
+msgstr ""
+
+#. Flavor for contraptions mvz2:onbashira
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "你看，它们就是柱子。"
 msgstr ""
 
 #. Header for contraptions mvz2:autotrap
@@ -6099,6 +6144,18 @@ msgstr ""
 #: Entity meta file
 msgctxt "entity.tooltip"
 msgid "点击投掷内部的器械"
+msgstr ""
+
+#. Name for entity mvz2:onbashira
+#: Entity meta file
+msgctxt "entity.name"
+msgid "御柱"
+msgstr ""
+
+#. Tooltip for entity mvz2:onbashira
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "从天而降的坚实壁垒"
 msgstr ""
 
 #. Name for entity mvz2:autotrap

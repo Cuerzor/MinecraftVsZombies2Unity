@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-06-16 09:31+0800\n"
-"PO-Revision-Date: 2026-06-16 21:36+0800\n"
+"POT-Creation-Date: 2026-06-18 05:09+0800\n"
+"PO-Revision-Date: 2026-06-18 17:16+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -76,6 +76,18 @@ msgstr "Amphibious Contraption"
 msgctxt "almanac_tag.description"
 msgid "可以放置在水中或者陆地上"
 msgstr "Can be placed on land or water"
+
+#. Name for almanac tag placement_onbashira
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "从天而降"
+msgstr "Falls from Above"
+
+#. Description for almanac tag placement_onbashira
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "可以放置在任意格子上，从天而降！"
+msgstr "Can be placed on any tile, and fall from above!"
 
 #. Name for almanac tag placement_infectenser
 #: Almanac meta file
@@ -430,6 +442,18 @@ msgstr "Fire Immunity"
 msgctxt "almanac_tag.description"
 msgid "免疫火焰伤害"
 msgstr "Immune to fire damage"
+
+#. Name for almanac tag stable
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "稳固"
+msgstr "Anchored"
+
+#. Description for almanac tag stable
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "免疫位移"
+msgstr "Cannot be moved"
 
 #. Name for almanac tag enum value -2 of enum mass
 #: Almanac meta file
@@ -2376,6 +2400,30 @@ msgid ""
 "<tag id=\"mvz2:shell\" enum=\"mvz2:lightning\" />：<color=red><var local=\"lightning_density\"/>%（电击周围敌怪）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>"
 msgstr ""
+
+#. Header for contraptions mvz2:onbashira
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "御柱从天而降，砸碎落点的任何器械和怪物，然后变为难以移动的高墙。"
+msgstr "Onbashiras fall from the sky, smashing any contraptions and mobs on which they land, then act as tall, anchored walls."
+
+#. Properties for contraptions mvz2:onbashira
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"耐久：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
+"坠落伤害：<color=red><var local=\"fall_damage\" /></color>\n"
+"技能：<color=red>召唤御柱填满本列（注意：会砸坏器械！）</color>"
+msgstr ""
+"Toughness: <color=red><var id=\"mvz2:entity_health\" /></color>\n"
+"Fall Damage: <color=red><var local=\"fall_damage\" /></color>\n"
+"Evocation: <color=red>Summons Onbashiras on all the tiles of the column (They smash contraptions!)</color>"
+
+#. Flavor for contraptions mvz2:onbashira
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "你看，它们就是柱子。"
+msgstr "Columns like you see 'em."
 
 #. Header for contraptions mvz2:autotrap
 #: Almanac meta file
@@ -7482,6 +7530,18 @@ msgctxt "entity.tooltip"
 msgid "点击投掷内部的器械"
 msgstr "Click to eject the contraption inside"
 
+#. Name for entity mvz2:onbashira
+#: Entity meta file
+msgctxt "entity.name"
+msgid "御柱"
+msgstr "Onbashira"
+
+#. Tooltip for entity mvz2:onbashira
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "从天而降的坚实壁垒"
+msgstr "Stable barrier that falls from the sky"
+
 #. Name for entity mvz2:autotrap
 #: Entity meta file
 msgctxt "entity.name"
@@ -7492,7 +7552,7 @@ msgstr "Autotrap"
 #: Entity meta file
 msgctxt "entity.tooltip"
 msgid "夹住怪物并撕扯"
-msgstr "Trap a monster and tear it apart"
+msgstr "Traps a monster and tears it apart"
 
 #. Name for entity mvz2:nesting_tnt
 #: Entity meta file
