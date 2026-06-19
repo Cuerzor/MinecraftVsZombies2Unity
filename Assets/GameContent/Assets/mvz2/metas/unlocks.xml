@@ -131,7 +131,7 @@
     <!-- Mountain Contraptions -->
     <group id="contraption.freezenser"><conditions><condition required="mvz2:level.mountain_1" /></conditions></group>
     <group id="contraption.ejector"><conditions><condition required="mvz2:level.mountain_4" /></conditions></group>
-    <group id="contraption.onbashira"><conditions><condition required="mvz2:level.mountain_7" /></conditions></group>
+    <group id="contraption.onbashira"><conditions><condition required="mvz2:level.mountain_6" /></conditions></group>
     <group id="contraption.autotrap"><conditions><condition required="mvz2:level.mountain_7" /></conditions></group>
     <group id="contraption.nesting_tnt"><conditions><condition required="mvz2:level.mountain_8" /></conditions></group>
 
