@@ -233,8 +233,8 @@ namespace MVZ2.GameContent.Contraptions
         public static float GetEvokedDamageMultiplier(Entity entity) => entity.GetBehaviourField<float>(PROP_EVOKED_DAMAGE_MULTIPLIER);
         public static void SetEvokedDamageMultiplier(Entity entity, float value) => entity.SetBehaviourField(PROP_EVOKED_DAMAGE_MULTIPLIER, value);
         public static readonly VanillaEntityPropertyMeta<FrameTimer> PROP_STATE_TIMER = new VanillaEntityPropertyMeta<FrameTimer>("state_timer");
-        public static readonly VanillaEntityPropertyMeta<float> PROP_CONTINUOUS_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("continuous_damage_multiplier", 0.2f);
-        public static readonly VanillaEntityPropertyMeta<float> PROP_TRAPPED_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("trapped_damage_multiplier", 0.8f);
+        public static readonly VanillaEntityPropertyMeta<float> PROP_CONTINUOUS_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("continuous_damage_multiplier", 0.1f);
+        public static readonly VanillaEntityPropertyMeta<float> PROP_TRAPPED_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("trapped_damage_multiplier", 0.4f);
         public static readonly VanillaEntityPropertyMeta<float> PROP_TRAPPED_DAMAGE_INTERVAL = new VanillaEntityPropertyMeta<float>("trapped_damage_interval", 0.5f);
         public static readonly VanillaEntityPropertyMeta<float> PROP_EVOKED_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("evoked_damage_multiplier", 18f);
 
