@@ -96,6 +96,7 @@ namespace MVZ2.GameContent.Contraptions
                 UpdateNotEvoked(devourer);
             }
             devourer.SetModelProperty("Mill", !IsPacmanGhost(devourer));
+            devourer.SetModelProperty("BelowGround", devourer.GetRelativeY() <= 0);
         }
         private void UpdateEvoked(Entity devourer)
         {
