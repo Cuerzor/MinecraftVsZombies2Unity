@@ -133,6 +133,17 @@
     <sound name="coin" maxCount="1" priority="64">
         <sample path="mvz2:coin" weight="1" />
     </sound>
+    <sound name="creaking_idle">
+        <sample path="mvz2:entity/creaking/idle1" weight="1" />
+        <sample path="mvz2:entity/creaking/idle2" weight="1" />
+        <sample path="mvz2:entity/creaking/idle3" weight="1" />
+        <sample path="mvz2:entity/creaking/idle4" weight="1" />
+        <sample path="mvz2:entity/creaking/idle5" weight="1" />
+        <sample path="mvz2:entity/creaking/idle6" weight="1" />
+    </sound>
+    <sound name="creaking_death">
+        <sample path="mvz2:entity/creaking/death" weight="1" />
+    </sound>
     <sound name="crystal_break">
         <sample path="mvz2:random/crystal/crystal_break1" weight="1" />
         <sample path="mvz2:random/crystal/crystal_break2" weight="1" />

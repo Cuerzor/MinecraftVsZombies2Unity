@@ -286,4 +286,14 @@
             </armor>
         </armors>
     </shape>
+    <shape id="creaking">
+        <armors>
+            <armor slot="mvz2:main">
+                <position x="-10" y="130" z="0" />
+            </armor>
+            <armor slot="mvz2:shield">
+                <position x="-50" y="59" z="0" />
+            </armor>
+        </armors>
+    </shape>
 </shapes>

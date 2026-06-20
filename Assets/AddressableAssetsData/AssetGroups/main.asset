@@ -1704,6 +1704,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1fdd1aee6ca886c41b183fc28073dae0
+    m_Address: mvz2:entity/creaking/death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 204fe2216f90dcb4a9e3e45c0373628b
     m_Address: mvz2:effect/mind_control_lines
     m_ReadOnly: 0
@@ -4040,6 +4047,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47f24c0ff92746549a92b30073f64aa8
+    m_Address: mvz2:entity/enemy/creaking
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Spritesheet
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 47f64bb4f9829ae49a99df91e2c19d03
     m_Address: mvz2:ui/level/mobile/card_curtain
     m_ReadOnly: 0
@@ -4144,6 +4158,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 49b842f566b50514fa11bc04a359ebb6
+    m_Address: mvz2:entity/creaking/idle6
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 49ce9f6fb80015c47ae81c9411d9d103
     m_Address: mvz2:entity/contraptions/golden_dropper
@@ -7237,6 +7258,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82753ae698beff0478a167f8a4e3bb08
+    m_Address: mvz2:entity/creaking/idle5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 82a10341e3b6a454d9c21086c64d5367
     m_Address: mvz2:halloween
     m_ReadOnly: 0
@@ -8404,6 +8432,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9837050df276de74eae242a0b71970ed
+    m_Address: mvz2:mobile_blueprint/creaking
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 983c95778175afa4899ce4ca543a5a13
     m_Address: mvz2:units/colliders/wither_skeleton
@@ -11722,6 +11757,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d79a5e8c8bfc32f4cbbe87f93c408231
+    m_Address: mvz2:entity/creaking/idle4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d7ad17d08589c04459d3a3030abbf9f5
     m_Address: mvz2:ui/gear_banned
     m_ReadOnly: 0
@@ -12114,6 +12156,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df87689a0b97fe849a8b0f22bce6ba0b
+    m_Address: mvz2:entity/creaking/idle2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df8b1133d31b7b94da945857e4484f4d
     m_Address: mvz2:enemy/castle/bedserker
     m_ReadOnly: 0
@@ -12141,6 +12190,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0050823c1b3c8843a994c89b50f5b98
+    m_Address: mvz2:enemy/mountain/creaking
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e0957be7d04f36d4588796e5d2440ccc
     m_Address: mvz2:entity/locked_chest/cough
@@ -12449,6 +12505,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6f7e59b392fbfe4086b2525d4e476d8
+    m_Address: mvz2:entity/creaking/idle3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e72a8259d18676c429d722b1ae177448
     m_Address: mvz2:icon/candle_cursed
@@ -13686,6 +13749,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Spritesheet
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd0fd107c5fd03746b1821dfd4a01ab8
+    m_Address: mvz2:entity/creaking/idle1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fd2838bb0318cb74e8bd8b76e7e86ead
     m_Address: mvz2:units/red_dragon_fire_group

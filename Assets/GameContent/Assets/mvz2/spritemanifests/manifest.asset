@@ -329,6 +329,8 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: c5e0b87d540b275409a8860725de7933, type: 3}
   - name: mobile_blueprint/cooling_cell
     sprite: {fileID: 21300000, guid: e3e1596d953b94b41ae3901ea2d4e8af, type: 3}
+  - name: mobile_blueprint/creaking
+    sprite: {fileID: 21300000, guid: 9837050df276de74eae242a0b71970ed, type: 3}
   - name: mobile_blueprint/cursed_candle
     sprite: {fileID: 21300000, guid: ca9c1b4e6437f494c925cd74e28e6346, type: 3}
   - name: mobile_blueprint/desire_pot
@@ -2552,6 +2554,14 @@ MonoBehaviour:
     - {fileID: -1477107463, guid: d59a40ebc8e2cc64392de05f2870d045, type: 3}
     - {fileID: 1435127597, guid: d59a40ebc8e2cc64392de05f2870d045, type: 3}
     - {fileID: 556428364, guid: d59a40ebc8e2cc64392de05f2870d045, type: 3}
+  - name: entity/enemy/creaking
+    spritesheet:
+    - {fileID: 1537302166, guid: 47f24c0ff92746549a92b30073f64aa8, type: 3}
+    - {fileID: -1340359245, guid: 47f24c0ff92746549a92b30073f64aa8, type: 3}
+    - {fileID: -356526929, guid: 47f24c0ff92746549a92b30073f64aa8, type: 3}
+    - {fileID: 1834858498, guid: 47f24c0ff92746549a92b30073f64aa8, type: 3}
+    - {fileID: 1164883490, guid: 47f24c0ff92746549a92b30073f64aa8, type: 3}
+    - {fileID: 1505890732, guid: 47f24c0ff92746549a92b30073f64aa8, type: 3}
   - name: entity/enemy/emperor_zombie
     spritesheet:
     - {fileID: -1928287117, guid: a9654ff76c5f31a4d87e757c55e35a6d, type: 3}

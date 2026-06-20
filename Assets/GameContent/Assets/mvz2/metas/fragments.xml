@@ -436,6 +436,12 @@
             <key hex="#bfab31" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="creaking">
+        <colorKeys>
+            <key hex="#48403d" time="0.5" />
+            <key hex="#3c3331" time="1" />
+        </colorKeys>
+    </fragment>
 
     <fragment name="corpse_cart">
         <colorKeys>
