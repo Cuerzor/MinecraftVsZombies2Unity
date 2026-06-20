@@ -1194,7 +1194,7 @@
                 <p>借出星之碎片：<![CDATA[<color=red><var local="lend_count"/></color>]]></p>
                 <p>偿还星之碎片：<![CDATA[<color=red><var local="repay_count"/></color>]]></p>
                 <p>特殊：<![CDATA[<color=red>如果在<var local="max_seconds"/>秒内未偿还星之碎片，会生成一个<ref=[misc]mvz2:creaking>嘎枝</ref>，并且下次生成嘎枝的时间减半（最低<var local="min_seconds"/>秒）。被摧毁则会生成一列嘎枝。</color>]]></p>
-                <p>技能：<![CDATA[<color=red>偿还一个星之碎片，重置嘎枝生成时间并使所有嘎枝消失。偿还完毕后告示牌自动消失。</color>]]></p>
+                <p>技能：<![CDATA[<color=red>偿还一个星之碎片，重置嘎枝生成时间并使生成的嘎枝消失。偿还完毕后告示牌自动消失。</color>]]></p>
             </properties>
             <flavor>
                 <p>朋友，不要碰贷。</p>

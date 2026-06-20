@@ -19,10 +19,20 @@ namespace MVZ2.GameContent.Contraptions
             LoanSign.Repay(entity, 1);
             LoanSign.ResetCreakingTime(entity);
 
-            foreach (var creaking in entity.Level.FindEntities(VanillaEnemyID.creaking))
+            foreach (var creaking in entity.Level.FindEntities(e => CanRemove(e, entity)))
             {
                 Creaking.Disappear(creaking);
             }
+        }
+        private static bool CanRemove(Entity entity, Entity source)
+        {
+            if (!entity.IsEntityOf(VanillaEnemyID.creaking))
+                return false;
+            if (entity.SpawnerReference is not EntitySourceReference entitySource)
+                return false;
+            if (entitySource.GetEntity(entity.Level) != source)
+                return false;
+            return true;
         }
     }
 }
