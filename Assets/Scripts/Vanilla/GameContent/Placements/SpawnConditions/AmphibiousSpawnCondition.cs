@@ -19,10 +19,6 @@ namespace MVZ2.GameContent.Placements
             var error = base.GetSpawnErrorOfGrid(placement, grid, entity);
             if (error != null)
                 return error;
-
-            var carrier = grid.GetLayerEntity(VanillaGridLayers.carrier);
-            if (carrier != null)
-                return VanillaGridStatus.alreadyTaken;
             return null;
         }
     }
