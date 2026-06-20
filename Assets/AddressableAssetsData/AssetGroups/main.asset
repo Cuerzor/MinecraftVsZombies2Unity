@@ -2271,6 +2271,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2abd0e6083747c641b2db357af995132
+    m_Address: mvz2:entity/creaking/spawn
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2af1142db136d094e82dc92ab10358f3
     m_Address: mvz2:nightmare_map
     m_ReadOnly: 0
@@ -4599,6 +4606,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 52c799b13e952eb469abc953ec8fd11d
+    m_Address: mvz2:entity/creaking/activate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 52ceb446c2cda534b811b64884781054
     m_Address: mvz2:entity/zombie/hurt2
@@ -11437,6 +11451,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d09577e2d8466434da1b489c8a2aee1d
     m_Address: mvz2:effect/soul_effect
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0cbb60ae6130634dbe7c21d48e6535c
+    m_Address: mvz2:effect/creaking_particles
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

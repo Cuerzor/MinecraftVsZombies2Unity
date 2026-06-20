@@ -9,6 +9,7 @@ namespace MVZ2.GameContent.Enemies
     {
         public const string undeadFlyingObject = "undead_flying_object";
         public const string undeadFlyingObjectBlitz = "undead_flying_object_blitz";
+        public const string creaking = "creaking";
     }
     public static class VanillaSpawnID
     {
@@ -42,6 +43,7 @@ namespace MVZ2.GameContent.Enemies
         public static readonly NamespaceID megaMutantZombie = GetFromEntity(VanillaEnemyID.megaMutantZombie);
 
         public static readonly NamespaceID undeadFlyingObjectBlitz = Get(VanillaSpawnNames.undeadFlyingObjectBlitz);
+        public static readonly NamespaceID creaking = Get(VanillaSpawnNames.creaking);
         public static NamespaceID GetFromEntity(NamespaceID entityID)
         {
             return entityID;

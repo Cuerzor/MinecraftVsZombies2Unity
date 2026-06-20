@@ -125,6 +125,7 @@ namespace MVZ2.GameContent.Effects
         public const string soulStorm = "soul_storm";
 
         public const string waterfall = "waterfall";
+        public const string creakingParticles = "creaking_particles";
     }
     public static class VanillaEffectID
     {
@@ -246,6 +247,7 @@ namespace MVZ2.GameContent.Effects
         public static readonly NamespaceID soulStorm = Get(VanillaEffectNames.soulStorm);
 
         public static readonly NamespaceID waterfall = Get(VanillaEffectNames.waterfall);
+        public static readonly NamespaceID creakingParticles = Get(VanillaEffectNames.creakingParticles);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

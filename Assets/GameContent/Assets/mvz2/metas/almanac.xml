@@ -1184,18 +1184,17 @@
             <variables>
                 <variable name="lend_count">property("mvz2:entity_behaviour/loan_sign/lend_count")</variable>
                 <variable name="repay_count">property("mvz2:entity_behaviour/loan_sign/max_repay_count")</variable>
-                <variable name="disable_seconds_1">property("mvz2:entity_behaviour/loan_sign/disable_seconds_1")</variable>
-                <variable name="disable_seconds_2">property("mvz2:entity_behaviour/loan_sign/disable_seconds_2")</variable>
-                <variable name="disable_seconds_3">property("mvz2:entity_behaviour/loan_sign/disable_seconds_3")</variable>
+                <variable name="max_seconds">property("mvz2:entity_behaviour/loan_sign/max_creaking_seconds")</variable>
+                <variable name="min_seconds">property("mvz2:entity_behaviour/loan_sign/min_creaking_seconds")</variable>
             </variables>
             <header>
-                <p>借贷告示牌在被放置时会立即借给你星之碎片并要求你交还。如果它在你没有还完的情况下被摧毁，它就会禁用你的星之碎片。</p>
+                <p>借贷告示牌在被放置时会立即借给你星之碎片并要求你偿还，逾期偿还可能有不好的后果。</p>
             </header>
             <properties>
                 <p>借出星之碎片：<![CDATA[<color=red><var local="lend_count"/></color>]]></p>
                 <p>偿还星之碎片：<![CDATA[<color=red><var local="repay_count"/></color>]]></p>
-                <p>禁用星之碎片时长：<![CDATA[<color=red><var local="disable_seconds_1"/>秒（1未偿还），<var local="disable_seconds_2"/>秒（2未偿还），<var local="disable_seconds_3"/>秒（3未偿还）</color>]]></p>
-                <p>技能：<![CDATA[<color=red>偿还一个星之碎片。交还完毕后告示牌自动消失。</color>]]></p>
+                <p>特殊：<![CDATA[<color=red>如果在<var local="max_seconds"/>秒内未偿还星之碎片，会生成一个<ref=[misc]mvz2:creaking>嘎枝</ref>，并且下次生成嘎枝的时间减半（最低<var local="min_seconds"/>秒）。被摧毁则会生成一列嘎枝。</color>]]></p>
+                <p>技能：<![CDATA[<color=red>偿还一个星之碎片，重置嘎枝生成时间并使所有嘎枝消失。偿还完毕后告示牌自动消失。</color>]]></p>
             </properties>
             <flavor>
                 <p>朋友，不要碰贷。</p>
@@ -2914,6 +2913,28 @@
                 </properties>
                 <flavor>
                     <p>他没有消失。他只是累了，想休息了。</p>
+                </flavor>
+            </entry>
+            <entry id="mvz2:creaking" name="嘎枝" >
+                <unlock>
+                    <condition requiredGroups="mvz2:contraption.loan_sign"/>
+                </unlock>
+                <picture model="mvz2:entity.creaking"/>
+                <tags sourceEntity="mvz2:creaking" />
+                <variables>
+                    <variable name="hp">property("mvz2:entity/maxHealth", "mvz2:creaking", "entity")</variable>
+                    <variable name="speed">property("mvz2:entity/speed", "mvz2:creaking", "entity")</variable>
+                </variables>
+                <header>
+                    <p>嘎枝由<![CDATA[<ref=[contraption]mvz2:loan_sign>借贷告示牌</ref>]]>生成，用来向你催债。</p>
+                </header>
+                <properties>
+                    <p>生命：<![CDATA[<color=red><var local="hp"/></color>]]></p>
+                    <p>速度：<![CDATA[<color=red><var local="speed"/></color>]]></p>
+                    <p>特殊：<![CDATA[<color=red>无视所有敌人</color>]]></p>
+                </properties>
+                <flavor>
+                    <p>藤蔓根须遮蔽了它们的眼睛，即使是视线也无法阻止它们。</p>
                 </flavor>
             </entry>
         </group>

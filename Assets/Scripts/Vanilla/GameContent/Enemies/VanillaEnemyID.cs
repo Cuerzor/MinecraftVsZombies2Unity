@@ -71,6 +71,7 @@ namespace MVZ2.GameContent.Enemies
         public const string rollingWood = "rolling_wood";
         public const string rollingStone = "rolling_stone";
         public const string lockedChestBalloon = "locked_chest_balloon";
+        public const string creaking = "creaking";
     }
     public static class VanillaEnemyID
     {
@@ -138,6 +139,7 @@ namespace MVZ2.GameContent.Enemies
         public static readonly NamespaceID rollingWood = Get(VanillaEnemyNames.rollingWood);
         public static readonly NamespaceID rollingStone = Get(VanillaEnemyNames.rollingStone);
         public static readonly NamespaceID lockedChestBalloon = Get(VanillaEnemyNames.lockedChestBalloon);
+        public static readonly NamespaceID creaking = Get(VanillaEnemyNames.creaking);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

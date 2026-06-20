@@ -2914,7 +2914,7 @@
             </properties>
         </entity>
         <entity template="enemy" id="creaking" name="嘎枝" deathMessage="负债累累">
-            <behaviours includeSelf="false">
+            <behaviours>
                 <behaviour operator="remove" id="mvz2:enemy_melee" />
                 <behaviour operator="add" id="mvz2:fragmented" />
                 <behaviour operator="add" id="mvz2:remove_on_death" />
@@ -2926,7 +2926,7 @@
                 <id name="mvz2:shell" value="mvz2:wood" />
                 <id name="mvz2:crySound" value="mvz2:creaking_idle" />
                 <id name="mvz2:deathSound" value="mvz2:creaking_death" />
-                <float name="mvz2:maxHealth" value="4000" />
+                <float name="mvz2:maxHealth" value="3000" />
                 <float name="mvz2:mass" value="1" />
                 <float name="mvz2:speed" value="2" />
                 <int name="mvz2:waterInteraction" value="3" />
@@ -4820,6 +4820,11 @@
             <properties>
                 <bool name="mvz2:updateBeforeGame" value="true" />
                 <bool name="mvz2:updateAfterGameOver" value="true" />
+            </properties>
+        </entity>
+        <entity template="effect" id="creaking_particles">
+            <properties>
+                <int name="mvz2:maxTimeout" value="45" />
             </properties>
         </entity>
     </entries>

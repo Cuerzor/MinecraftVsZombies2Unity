@@ -199,4 +199,11 @@
         <terrain water="true" />
         <weight base="1000" />
     </entry>
+
+    <entry id="creaking" noEndless="true">
+        <entity id="mvz2:creaking" />
+        <spawn level="0" />
+        <terrain water="true" air="false" />
+        <weight base="0" />
+    </entry>
 </spawns>
