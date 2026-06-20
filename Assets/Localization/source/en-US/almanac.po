@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-06-18 05:09+0800\n"
-"PO-Revision-Date: 2026-06-18 17:16+0800\n"
+"POT-Creation-Date: 2026-06-20 03:49+0800\n"
+"PO-Revision-Date: 2026-06-20 18:25+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -2364,6 +2364,8 @@ msgstr "This is what happens if you tell a Dispenser with a weird mask to \"free
 msgctxt "contraptions.description"
 msgid "弹射器内部可以放置其他器械。点击弹射器可以将内部的器械抛投至任意位置并砸伤敌人。被投出的器械也会因此受到摔落伤害。"
 msgstr ""
+"Contraptions can be placed within Ejectors. Selecting an Ejector, and then a target location, will eject the contraption within it "
+"towards said location. Said contraption will smash enemies, and take fall damage."
 
 #. Properties for contraptions mvz2:ejector
 #: Almanac meta file
@@ -2374,6 +2376,10 @@ msgid ""
 "特殊：<color=red>部分材质和器械被投出时会有特殊效果</color>\n"
 "技能：<color=red>刷新冷却时间，并在内部没有器械时，装填一个<ref=[contraptions]mvz2:tnt>TNT</ref></color>"
 msgstr ""
+"Damage: <color=red>Depends on the material and volume of the ejected contraption</color>\n"
+"Cooldown time: <color=red><var local=\"cooldown\"/> seconds</color>\n"
+"Special: <color=red>Specific materials and contraptions have special effects when ejected</color>\n"
+"Evocation: <color=red>Resets cooldown, and if empty, loads a <ref=[contraptions]mvz2:tnt>TNT</ref></color>"
 
 #. Flavor for contraptions mvz2:ejector
 #: Almanac meta file
@@ -2400,6 +2406,29 @@ msgid ""
 "<tag id=\"mvz2:shell\" enum=\"mvz2:lightning\" />：<color=red><var local=\"lightning_density\"/>%（电击周围敌怪）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>"
 msgstr ""
+"\"You're too violent! You should be nice, to E for Everyone!\"\n"
+"\"You come over here and I'll let you know what E really stands for.\"\n"
+"\n"
+"<b>Appendix:</b>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:metal\" />：<color=red><var local=\"metal_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:diamond\" />：<color=red><var local=\"diamond_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:stone\" />：<color=red><var local=\"stone_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:netherrack\" />：<color=red><var local=\"netherrack_density\"/>% (creates fire on nearby tiles)</"
+"color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:wither_bone\" />：<color=red><var local=\"wither_bone_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:bone\" />：<color=red><var local=\"bone_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:sand\" />：<color=red><var local=\"sand_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />：<color=red><var local=\"flesh_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:leather\" />：<color=red><var local=\"leather_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:grass\" />：<color=red><var local=\"grass_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:ice\" />：<color=red><var local=\"ice_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:wood\" />：<color=red><var local=\"wood_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:shadow\" />：<color=red><var local=\"shadow_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:cloud\" />：<color=red><var local=\"cloud_density\"/>% (knocks nearby hostile mobs into the air)</"
+"color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:lightning\" />：<color=red><var local=\"lightning_density\"/>% (electrocutes nearby hostile mobs)</"
+"color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>"
 
 #. Header for contraptions mvz2:onbashira
 #: Almanac meta file
@@ -2494,6 +2523,39 @@ msgstr ""
 "It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
 "It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began:\n"
 "It was a dark and stormy night. A TNT said to its friend, “Tell us a story.” And its friend began..."
+
+#. Header for contraptions mvz2:loan_sign
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "借贷告示牌在被放置时会立即借给你星之碎片并要求你偿还，逾期偿还可能有不好的后果。"
+msgstr "When placed, Loan Signs lend you starshards, which you must pay off. Overdue debts are not tolerated."
+
+#. Properties for contraptions mvz2:loan_sign
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"借出星之碎片：<color=red><var local=\"lend_count\"/></color>\n"
+"偿还星之碎片：<color=red><var local=\"repay_count\"/></color>\n"
+"特殊：<color=red>如果在<var local=\"max_seconds\"/>秒内未偿还星之碎片，会生成一个<ref=[misc]mvz2:creaking>嘎枝</ref>，并且下次生成嘎枝"
+"的时间减半（最低<var local=\"min_seconds\"/>秒）。被摧毁则会生成一列嘎枝。</color>\n"
+"技能：<color=red>偿还一个星之碎片，重置嘎枝生成时间并使所有嘎枝消失。偿还完毕后告示牌自动消失。</color>"
+msgstr ""
+"Starshards on loan: <color=red><var local=\"lend_count\"/></color>\n"
+"Starshards to pay off: <color=red><var local=\"repay_count\"/></color>\n"
+"Special: <color=red>If the starshards are not paid off within <var local=\"max_seconds\"/> seconds, spawns a <ref=[misc]mvz2:"
+"creaking>Creaking</ref> and halves the spawning time (lowest being <var local=\"min_seconds\"/> seconds). Spawns a Creaking on every "
+"row if destroyed.</color>\n"
+"Evocation: <color=red>Pays a starshard, resets the Creaking spawning time, and removes all spawned Creakings. Disappears if the loan "
+"is paid off.</color>"
+
+#. Flavor for contraptions mvz2:loan_sign
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"朋友，不要碰贷。\n"
+"有问题我们可以好好<color=red>交涉</color>。\n"
+"<b>但是绝对不要碰高利贷。</b>"
+msgstr ""
 
 #. Header for contraptions mvz2:infectenser
 #: Almanac meta file
@@ -4507,13 +4569,13 @@ msgstr "It's perfect for pulling distant objects closer, but not ideal for shoot
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "从<ref=[misc]mvz2:kraken>克拉肯</ref>身上切断的机械触手。"
-msgstr ""
+msgstr "A mechanical tentacle severed from the <ref=[misc]mvz2:kraken>Kraken</ref>."
 
 #. Properties for artifacts mvz2:krakens_tentacle
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid "效果：<color=red>友方器械攻击速度x200%，但会向随机方向发射子弹</color>"
-msgstr ""
+msgstr "Effect: <color=red>x200% attack speed for friendly contraptions, but their projectiles will be shot in random directions</color>"
 
 #. Flavor for artifacts mvz2:krakens_tentacle
 #: Almanac meta file
@@ -5397,6 +5459,36 @@ msgstr ""
 msgctxt "misc.description"
 msgid "他没有消失。他只是累了，想休息了。"
 msgstr "He never disappeared. He was simply tired, and wanted rest."
+
+#. Name for misc mvz2:creaking
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "嘎枝"
+msgstr "Creaking"
+
+#. Header for misc mvz2:creaking
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "嘎枝由<ref=[contraption]mvz2:loan_sign>借贷告示牌</ref>生成，用来向你催债。"
+msgstr "Creakings are spawned by <ref=[contraption]mvz2:loan_sign>Loan Signs</ref> to collect your debts."
+
+#. Properties for misc mvz2:creaking
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"生命：<color=red><var local=\"hp\"/></color>\n"
+"速度：<color=red><var local=\"speed\"/></color>\n"
+"特殊：<color=red>无视所有敌人</color>"
+msgstr ""
+"Toughness: <color=red><var local=\"hp\"/></color>\n"
+"Speed: <color=red><var local=\"speed\"/></color>\n"
+"Special: <color=red>Ignores enemies</color>"
+
+#. Flavor for misc mvz2:creaking
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "藤蔓根须遮蔽了它们的眼睛，即使是视线也无法阻止它们。"
+msgstr "The overgrown vines have blinded them, so they can only march blindly towards their only goal."
 
 #. Name for almanac group mvz2:characters
 #: Almanac meta file
@@ -7590,6 +7682,18 @@ msgctxt "entity.tooltip"
 msgid "触发后爆炸"
 msgstr "Explodes when triggered"
 
+#. Name for entity mvz2:loan_sign
+#: Entity meta file
+msgctxt "entity.name"
+msgid "借贷告示牌"
+msgstr "Loan Sign"
+
+#. Tooltip for entity mvz2:loan_sign
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "立即借出星之碎片，但需要偿还"
+msgstr "Immediately lends starshards which must be paid off"
+
 #. Name for entity mvz2:infectenser
 #: Entity meta file
 msgctxt "entity.name"
@@ -8355,6 +8459,18 @@ msgstr "Rolling Wood"
 msgctxt "entity.name"
 msgid "滚石"
 msgstr "Rolling Stone"
+
+#. Name for entity mvz2:creaking
+#: Entity meta file
+msgctxt "entity.name"
+msgid "嘎枝"
+msgstr "Creaking"
+
+#. Death message for entity mvz2:creaking
+#: Entity meta file
+msgctxt "death_message"
+msgid "负债累累"
+msgstr "Deep in debt"
 
 #. Name for entity mvz2:gargoyle_statue
 #: Entity meta file

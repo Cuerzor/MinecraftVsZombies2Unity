@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-06-18 05:09+0800\n"
+"POT-Creation-Date: 2026-06-20 03:49+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2039,6 +2039,31 @@ msgid ""
 "从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
 "从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说：\n"
 "从前有座山，山里有座神社，神社里有个TNT，TNT对小TNT说……"
+msgstr ""
+
+#. Header for contraptions mvz2:loan_sign
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "借贷告示牌在被放置时会立即借给你星之碎片并要求你偿还，逾期偿还可能有不好的后果。"
+msgstr ""
+
+#. Properties for contraptions mvz2:loan_sign
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"借出星之碎片：<color=red><var local=\"lend_count\"/></color>\n"
+"偿还星之碎片：<color=red><var local=\"repay_count\"/></color>\n"
+"特殊：<color=red>如果在<var local=\"max_seconds\"/>秒内未偿还星之碎片，会生成一个<ref=[misc]mvz2:creaking>嘎枝</ref>，并且下次生成嘎枝的时间减半（最低<var local=\"min_seconds\"/>秒）。被摧毁则会生成一列嘎枝。</color>\n"
+"技能：<color=red>偿还一个星之碎片，重置嘎枝生成时间并使所有嘎枝消失。偿还完毕后告示牌自动消失。</color>"
+msgstr ""
+
+#. Flavor for contraptions mvz2:loan_sign
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"朋友，不要碰贷。\n"
+"有问题我们可以好好<color=red>交涉</color>。\n"
+"<b>但是绝对不要碰高利贷。</b>"
 msgstr ""
 
 #. Header for contraptions mvz2:infectenser
@@ -4331,6 +4356,33 @@ msgctxt "misc.description"
 msgid "他没有消失。他只是累了，想休息了。"
 msgstr ""
 
+#. Name for misc mvz2:creaking
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "嘎枝"
+msgstr ""
+
+#. Header for misc mvz2:creaking
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "嘎枝由<ref=[contraption]mvz2:loan_sign>借贷告示牌</ref>生成，用来向你催债。"
+msgstr ""
+
+#. Properties for misc mvz2:creaking
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"生命：<color=red><var local=\"hp\"/></color>\n"
+"速度：<color=red><var local=\"speed\"/></color>\n"
+"特殊：<color=red>无视所有敌人</color>"
+msgstr ""
+
+#. Flavor for misc mvz2:creaking
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "藤蔓根须遮蔽了它们的眼睛，即使是视线也无法阻止它们。"
+msgstr ""
+
 #. Name for almanac group mvz2:characters
 #: Almanac meta file
 msgctxt "almanac.group_name"
@@ -6206,6 +6258,18 @@ msgctxt "entity.tooltip"
 msgid "触发后爆炸"
 msgstr ""
 
+#. Name for entity mvz2:loan_sign
+#: Entity meta file
+msgctxt "entity.name"
+msgid "借贷告示牌"
+msgstr ""
+
+#. Tooltip for entity mvz2:loan_sign
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "立即借出星之碎片，但需要偿还"
+msgstr ""
+
 #. Name for entity mvz2:infectenser
 #: Entity meta file
 msgctxt "entity.name"
@@ -6954,6 +7018,18 @@ msgstr ""
 #: Entity meta file
 msgctxt "entity.name"
 msgid "滚石"
+msgstr ""
+
+#. Name for entity mvz2:creaking
+#: Entity meta file
+msgctxt "entity.name"
+msgid "嘎枝"
+msgstr ""
+
+#. Death message for entity mvz2:creaking
+#: Entity meta file
+msgctxt "death_message"
+msgid "负债累累"
 msgstr ""
 
 #. Name for entity mvz2:gargoyle_statue
