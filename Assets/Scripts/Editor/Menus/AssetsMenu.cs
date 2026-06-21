@@ -9,6 +9,7 @@ namespace MVZ2.Editor
         {
             LocalizationMenu.CompressLanguagePack();
 
+            ResourcePackMenu.FixWavToOggFiles();
             ResourcePackMenu.UpdateAllResolverComponents();
             ResourcePackMenu.UpdateResourcePackManifest();
             ResourcePackMenu.UpdateResourcePackTutorialResources();

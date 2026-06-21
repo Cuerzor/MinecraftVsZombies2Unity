@@ -46,10 +46,7 @@ namespace MVZ2.Audios
                     Log.LogError($"音频加载失败: {request.error}");
                     return null;
                 }
-                else
-                {
-                    return DownloadHandlerAudioClip.GetContent(request);
-                }
+                return DownloadHandlerAudioClip.GetContent(request);
             }
         }
     }

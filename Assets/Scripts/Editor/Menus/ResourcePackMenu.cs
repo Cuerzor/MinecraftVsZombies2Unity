@@ -30,6 +30,36 @@ namespace MVZ2.Editor
 {
     public static class ResourcePackMenu
     {
+        #region Audios
+        public static void FixWavToOggFiles()
+        {
+            var gameContentDir = GetGameContentAssetsDirectory();
+            foreach (var wavFile in Directory.EnumerateFiles(gameContentDir, "*.wav", SearchOption.AllDirectories))
+            {
+                using var stream = File.Open(wavFile, FileMode.Open);
+                var byte1 = stream.ReadByte();
+                var byte2 = stream.ReadByte();
+                var byte3 = stream.ReadByte();
+                var byte4 = stream.ReadByte();
+                stream.Close();
+                if (byte1 != 'O' || byte2 != 'g' || byte3 != 'g' || byte4 != 'S')
+                    continue;
+                var destOgg = Path.ChangeExtension(wavFile, ".ogg");
+                File.Move(wavFile, destOgg);
+                Log.LogMessage($"Moved file {wavFile} to {destOgg}.");
+
+                var metaFile = $"{wavFile}.meta";
+                if (File.Exists(metaFile))
+                {
+                    var destMetaFile = $"{destOgg}.meta";
+                    File.Move(metaFile, destMetaFile);
+                    Log.LogMessage($"Moved file {metaFile} to {destMetaFile}.");
+                }
+            }
+            Log.LogMessage($"All Wav files fixed.");
+        }
+        #endregion
+
         #region Resolver Components
         /// <summary>
         /// 更新所有Prefab中的Resolver组件。

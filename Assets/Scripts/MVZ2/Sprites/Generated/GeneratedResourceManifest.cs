@@ -31,7 +31,7 @@ namespace MVZ2.Sprites
             }
             foreach (var audioClip in audioClips)
             {
-                Destroy(audioClip);
+                Destroy(audioClip.clip);
             }
             Reset();
         }
@@ -49,11 +49,15 @@ namespace MVZ2.Sprites
         }
         public void AddAudioClip(AudioClip audioClip)
         {
-            audioClips.Add(audioClip);
+            audioClips.Add(new GeneratedAudioClip(audioClip));
         }
         public bool RemoveAudioClip(AudioClip audioClip)
         {
-            return audioClips.Remove(audioClip);
+            var generated = audioClips.FindIndex(g => g.clip == audioClip);
+            if (generated < 0)
+                return false;
+            audioClips.RemoveAt(generated);
+            return true;
         }
         public void AddSprite(string category, Sprite sprite, Sprite background)
         {
@@ -78,6 +82,6 @@ namespace MVZ2.Sprites
         }
         public List<GeneratedTexture2D> textures = new List<GeneratedTexture2D>();
         public List<GeneratedSpriteCategory> categories = new List<GeneratedSpriteCategory>();
-        public List<AudioClip> audioClips = new List<AudioClip>();
+        public List<GeneratedAudioClip> audioClips = new List<GeneratedAudioClip>();
     }
 }

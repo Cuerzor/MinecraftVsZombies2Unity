@@ -81,6 +81,11 @@ namespace MVZ2.Editor
         {
             ResourcePackMenu.UpdateResourcePackTutorialTemplates();
         }
+        [MenuItem("MVZ2/Assets/Resource Packs/Fix Wav files to Ogg", priority = 6000, secondaryPriority = 4)]
+        public static void FixWavFilesToOgg()
+        {
+            ResourcePackMenu.FixWavToOggFiles();
+        }
         [MenuItem("MVZ2/Assets/Talk/Format Talk Datas", priority = 6000, secondaryPriority = 0)]
         public static void FormatTalkDatas()
         {
