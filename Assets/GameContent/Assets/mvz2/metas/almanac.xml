@@ -2926,7 +2926,7 @@
                     <variable name="speed">property("mvz2:entity/speed", "mvz2:creaking", "entity")</variable>
                 </variables>
                 <header>
-                    <p>嘎枝由<![CDATA[<ref=[contraption]mvz2:loan_sign>借贷告示牌</ref>]]>生成，用来向你催债。</p>
+                    <p>嘎枝由<![CDATA[<ref=[contraptions]mvz2:loan_sign>借贷告示牌</ref>]]>生成，用来向你催债。</p>
                 </header>
                 <properties>
                     <p>生命：<![CDATA[<color=red><var local="hp"/></color>]]></p>
