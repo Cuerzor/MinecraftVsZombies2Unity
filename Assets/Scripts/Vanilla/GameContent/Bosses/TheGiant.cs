@@ -72,6 +72,8 @@ namespace MVZ2.GameContent.Bosses
         public override void PostCollision(EntityCollision collision, int state)
         {
             base.PostCollision(collision, state);
+            if (state == EntityCollisionHelper.STATE_EXIT)
+                return;
             var other = collision.Other;
             var self = collision.Entity;
             if (self.IsDead)

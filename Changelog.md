@@ -15,6 +15,7 @@
 
 ## Fixed
 - Fixed the issue where the charging animation of Tesla Coil would continue to play even when it was disabled.
+- Fix the issue where, after the Giant comes into contact with invincible contraptions, even if it manifests after leaving these contraptions, these contraptions will still be destroyed when not in an invincible state.
 
 ---
 
