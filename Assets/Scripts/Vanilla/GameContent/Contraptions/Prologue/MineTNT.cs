@@ -125,7 +125,7 @@ namespace MVZ2.GameContent.Contraptions
             if (!other.IsVulnerableEntity() || !other.ExistsAndAlive())
                 return;
             var self = collision.Entity;
-            if (!self.IsHostile(other))
+            if (!self.ExistsAndAlive() || !self.IsHostile(other))
                 return;
             var otherCollider = collision.OtherCollider;
             if (!otherCollider.IsForMain())
