@@ -2179,7 +2179,11 @@ MonoBehaviour:
     - {fileID: 378460578, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
     - {fileID: 1165752730, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
     - {fileID: -882613934, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
-    - {fileID: -977068680, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
+    - {fileID: 2008266260, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
+    - {fileID: 1290310954, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
+    - {fileID: -1433001535, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
+    - {fileID: 1096835330, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
+    - {fileID: 1490512274, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
   - name: entity/contraption/loms
     spritesheet:
     - {fileID: -650657220, guid: 5005bdd978e5a304a871e9d6929ee180, type: 3}

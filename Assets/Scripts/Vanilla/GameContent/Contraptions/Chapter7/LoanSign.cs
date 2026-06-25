@@ -152,7 +152,7 @@ namespace MVZ2.GameContent.Contraptions
         public static FrameTimer? GetCreakingTimer(Entity entity) => entity.GetBehaviourField<FrameTimer>(PROP_CREAKING_TIMER);
         public static void SetCreakingTimer(Entity entity, FrameTimer? value) => entity.SetBehaviourField(PROP_CREAKING_TIMER, value);
         public static readonly VanillaEntityPropertyMeta<int> PROP_LEND_COUNT = new VanillaEntityPropertyMeta<int>("lend_count", 2);
-        public static readonly VanillaEntityPropertyMeta<int> PROP_MAX_REPAY_COUNT = new VanillaEntityPropertyMeta<int>("max_repay_count", 3);
+        public static readonly VanillaEntityPropertyMeta<int> PROP_MAX_REPAY_COUNT = new VanillaEntityPropertyMeta<int>("max_repay_count", 2);
         public static readonly VanillaEntityPropertyMeta<int> PROP_REPAID_COUNT = new VanillaEntityPropertyMeta<int>("repaied_count");
         public static readonly VanillaEntityPropertyMeta<FrameTimer> PROP_CREAKING_TIMER = new VanillaEntityPropertyMeta<FrameTimer>("creaking_timer");
         public static readonly VanillaEntityPropertyMeta<float> PROP_MAX_CREAKING_SECONDS = new VanillaEntityPropertyMeta<float>("max_creaking_seconds", 120f);
