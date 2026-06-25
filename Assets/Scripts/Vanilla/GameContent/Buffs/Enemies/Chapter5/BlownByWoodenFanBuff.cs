@@ -43,7 +43,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
                 }
                 entity.Velocity = velocity;
 
-                if (mass <= VanillaMass.VERY_LIGHT)
+                if (!entity.ImmuneInstakill() && mass <= VanillaMass.VERY_LIGHT)
                 {
                     if (toLeft && entity.IsEnemyOutsideLeft(BLOW_AWAY_SPEED) || !toLeft && entity.IsEnemyOutsideRight(BLOW_AWAY_SPEED))
                     {
@@ -68,8 +68,8 @@ namespace MVZ2.GameContent.Buffs.Enemies
         public static float GetBlowMass(Entity entity)
         {
             var mass = entity.GetMass() + entity.GetBlowMassOffset();
-            // ÓÐÖØÁ¦£¬²¢ÇÒÀëµØ¹ý½ü£¬²»±»ÅÐ¶¨ÎªÖÍ¿Õ
-            // ·ÀÖ¹»ÔÕë³Ç×îÓÒ²àµÄ¹ÖÎïÏÂÆÂÊ±±»Ö±½Ó´µ·É
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½Îªï¿½Í¿ï¿½
+            // ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ö±ï¿½Ó´ï¿½ï¿½ï¿½
             bool onGround = entity.IsOnGround || (entity.GetGravity() >= 0.001f && entity.GetRelativeY() <= 3);
             if (!onGround || entity.IsInCloud())
             {

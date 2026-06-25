@@ -2931,7 +2931,7 @@
                 <properties>
                     <p>生命：<![CDATA[<color=red><var local="hp"/></color>]]></p>
                     <p>速度：<![CDATA[<color=red><var local="speed"/></color>]]></p>
-                    <p>特殊：<![CDATA[<color=red>无视所有敌人</color>]]></p>
+                    <p>特殊：<![CDATA[<color=red>无视所有敌人，免疫秒杀</color>]]></p>
                 </properties>
                 <flavor>
                     <p>藤蔓根须遮蔽了它们的眼睛，即使是视线也无法阻止它们。</p>

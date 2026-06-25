@@ -424,6 +424,14 @@ namespace MVZ2.Vanilla.Entities
             return entity.GetProperty<bool>(NO_EXPLOSION);
         }
         #endregion
+
+        #region 禁止爆炸
+        public static readonly PropertyMeta<bool> IMMUNE_INSTAKILL = Get<bool>("immune_instakill");
+        public static bool ImmuneInstakill(this Entity entity)
+        {
+            return entity.GetProperty<bool>(IMMUNE_INSTAKILL);
+        }
+        #endregion
     }
 }
 

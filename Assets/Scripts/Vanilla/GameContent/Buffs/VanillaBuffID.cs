@@ -69,7 +69,6 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public const string decorativeWindSpeed = "decorative_wind_speed";
-            public const string loanSignStarshardDisable = "loan_sign_starshard_disable";
 
             // Random China
             public const string greedyVacuum = "greedy_vacuum";
@@ -438,7 +437,6 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public static readonly NamespaceID decorativeWindSpeed = Get(VanillaBuffNames.Level.decorativeWindSpeed);
-            public static readonly NamespaceID loanSignStarshardDisable = Get(VanillaBuffNames.Level.loanSignStarshardDisable);
 
             // Random China
             public static readonly NamespaceID superRecharge = Get(VanillaBuffNames.Level.superRecharge);

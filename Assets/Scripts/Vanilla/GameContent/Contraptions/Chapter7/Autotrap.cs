@@ -189,8 +189,11 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static void Instakill(Entity trap, Entity target)
         {
-            var effects = new DamageEffectList(VanillaDamageEffects.INSTA_KILL, VanillaDamageEffects.REMOVE_ON_DEATH, VanillaDamageEffects.NO_DEATH_EFFECTS);
-            target.Die(effects, trap);
+            if (!target.ImmuneInstakill())
+            {
+                var effects = new DamageEffectList(VanillaDamageEffects.INSTA_KILL, VanillaDamageEffects.REMOVE_ON_DEATH, VanillaDamageEffects.NO_DEATH_EFFECTS);
+                target.Die(effects, trap);
+            }
             trap.Level.ShakeScreen(10, 0, 15);
             Explosion.Spawn(trap, trap.GetCenter(), 40);
             trap.PlaySound(VanillaSoundID.explosion);

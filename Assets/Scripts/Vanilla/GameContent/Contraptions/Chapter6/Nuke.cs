@@ -59,7 +59,7 @@ namespace MVZ2.GameContent.Contraptions
             var deathEffects = new DamageEffectList(VanillaDamageEffects.INSTA_KILL, VanillaDamageEffects.MUTE, VanillaDamageEffects.NO_DEATH_EFFECTS, VanillaDamageEffects.REMOVE_ON_DEATH);
             foreach (var ent in entity.Level.FindEntities(e => entity.IsHostile(e) && e.IsVulnerableEntity() && !e.IsInvincible()))
             {
-                if (ent.Type == EntityTypes.BOSS)
+                if (ent.ImmuneInstakill())
                 {
                     ent.TakeDamage(damage, damageEffects, entity);
                 }

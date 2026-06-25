@@ -26,6 +26,12 @@ namespace MVZ2.GameContent.Detections
             var centerZ = source.z;
             return new Bounds(new Vector3(centerX, centerY, centerZ), new Vector3(sizeX, sizeY, sizeZ));
         }
+        public override bool ValidateTarget(DetectionParams self, Entity target)
+        {
+            if (target.ImmuneInstakill())
+                return false;
+            return base.ValidateTarget(self, target);
+        }
         protected override bool ValidateCollider(DetectionParams self, IEntityCollider collider)
         {
             if (!base.ValidateCollider(self, collider))
