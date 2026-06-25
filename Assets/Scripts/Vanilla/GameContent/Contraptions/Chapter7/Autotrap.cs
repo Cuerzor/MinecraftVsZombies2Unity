@@ -90,7 +90,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             var target = trap.Target;
             var stateTimer = GetOrCreateStateTimer(trap);
-            if (stateTimer.RunToExpired())
+            if (stateTimer.RunToExpired(trap.GetAttackSpeed()))
             {
                 if (!target.ExistsAndAlive() || !IsValidTarget(trap, target))
                 {
