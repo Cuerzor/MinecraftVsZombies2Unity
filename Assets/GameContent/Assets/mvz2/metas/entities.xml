@@ -1454,6 +1454,7 @@
                 <int name="mvz2:collision_mask_hostile" value="2" />
                 <float name="mvz2:range" value="200" />
                 <bool name="mvz2:isFloor" value="true" />
+                <idArray name="mvz2:counter_for" value="mvz2:low_enemy" />
 
                 <id name="mvz2:placeSound" value="mvz2:trap_open" />
                 <int name="mvz2:cost" value="75" />
