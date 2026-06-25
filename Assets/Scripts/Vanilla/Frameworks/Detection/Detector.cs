@@ -17,7 +17,7 @@ namespace MVZ2.Vanilla.Detections
 {
     public abstract class Detector
     {
-        #region ¼ì²â
+        #region æ£€æµ‹
         public bool DetectExists(EntityDetectionParams self)
         {
             var collider = Detect(self);
@@ -157,7 +157,7 @@ namespace MVZ2.Vanilla.Detections
         }
         #endregion
 
-        #region ÑéÖ¤
+        #region éªŒè¯
         public bool ValidateTarget(EntityDetectionParams self, Entity target)
         {
             var detectionParams = GetDetectionParams(self);
@@ -188,11 +188,11 @@ namespace MVZ2.Vanilla.Detections
         }
         #endregion
 
-        #region ¼ì²â¿ò
+        #region æ£€æµ‹æ¡†
         protected abstract Bounds GetDetectionBounds(Entity self);
         #endregion
 
-        #region ¹¤¾ß
+        #region å·¥å…·
         protected bool TargetInLawn(Entity target)
         {
             return TargetInLawn(target.Position.x);
@@ -228,7 +228,7 @@ namespace MVZ2.Vanilla.Detections
         }
         #endregion
 
-        #region ÊôĞÔ×Ö¶Î
+        #region å±æ€§å­—æ®µ
         public int mask = EntityCollisionHelper.MASK_VULNERABLE;
         public FactionTarget factionTarget = FactionTarget.Hostile;
         public bool canDetectInvisible;

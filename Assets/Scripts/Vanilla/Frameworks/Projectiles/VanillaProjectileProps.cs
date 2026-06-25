@@ -35,7 +35,7 @@ namespace MVZ2.Vanilla.Projectiles
         {
             projectile.SetProperty(PIERCING, value);
         }
-        #region ÎÞÊÓ»¤¶Ü
+        #region æ— è§†æŠ¤ç›¾
         public static readonly PropertyMeta<bool> IGNORE_SHIELDS = new PropertyMeta<bool>("ignore_shields");
         public static bool IgnoreShields(this Entity projectile)
         {
