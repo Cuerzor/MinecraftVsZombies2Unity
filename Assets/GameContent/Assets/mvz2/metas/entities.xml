@@ -2926,6 +2926,7 @@
                 <bool name="mvz2:notActiveEnemy" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:immune_instakill" value="true" />
+                <bool name="mvz2:immuneVortex" value="true" />
                 <id name="mvz2:shape" value="mvz2:creaking" />
                 <id name="mvz2:shell" value="mvz2:wood" />
                 <id name="mvz2:crySound" value="mvz2:creaking_idle" />
