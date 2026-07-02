@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-06-17 08:49+0800\n"
-"PO-Revision-Date: 2026-06-17 20:53+0800\n"
+"POT-Creation-Date: 2026-07-02 12:29+0800\n"
+"PO-Revision-Date: 2026-07-02 12:29+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -282,8 +282,8 @@ msgstr "Music Room"
 #. 插件按钮
 #: /MainGame/MainScene/Addons/Canvas/Index/Center/List/Scroll
 #: View/Viewport/Content/LanguagePacksButton/Text
-msgid "语言包"
-msgstr "Language Packs"
+msgid "资源包"
+msgstr "Resource Packs"
 
 #: /MainGame/MainScene/Addons/Canvas/LanguagePack/Center/Disabled/Text
 msgid "禁用"
@@ -295,9 +295,9 @@ msgstr "Enabled"
 
 #: /MainGame/MainScene/Addons/Canvas/LanguagePack/Center/Enabled/Scroll
 #: View/Viewport/Content/Text
-msgid "更上方的语言包的内容会更优先被加载。"
+msgid "更上方的资源包的内容会更优先被加载。"
 msgstr ""
-"The content of language packs positioned higher up will be loaded with "
+"The content of resource packs positioned higher up will be loaded with "
 "priority."
 
 #: /MainGame/MainScene/Addons/Canvas/Loading/Text
@@ -483,13 +483,13 @@ msgid "所有怪物装备铁盔"
 msgstr "All monsters equip iron helmets"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\IndependenceDayEvent.cs:39
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\IndependenceDayEvent.cs:41
 msgctxt "random_china.event_name"
 msgid "独立日"
 msgstr "Independence Day"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\IndependenceDayEvent.cs:41
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\IndependenceDayEvent.cs:43
 msgctxt "random_china.event_description"
 msgid "生成10个红色不死飞行物"
 msgstr "Summon 10 red UFOs"
@@ -507,36 +507,36 @@ msgid "用黑曜石困住所有敌怪"
 msgstr "Prison every enemy monsters with Obsidians"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfClubsEvent.cs:31
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfClubsEvent.cs:32
 msgctxt "random_china.event_name"
 msgid "梅花A"
 msgstr "Ace of Clubs"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfClubsEvent.cs:33
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfClubsEvent.cs:34
 msgctxt "random_china.event_description"
 msgid "将所有怪物和掉落物变为TNT蓝图"
 msgstr "Transform all monsters and pickups into TNT blueprints"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfDiamondsEvent.cs:25
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfDiamondsEvent.cs:26
 msgctxt "random_china.event_name"
 msgid "方片A"
 msgstr "Ace of Diamonds"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfDiamondsEvent.cs:27
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfDiamondsEvent.cs:28
 msgctxt "random_china.event_description"
 msgid "将所有怪物和掉落物变为绿宝石"
 msgstr "Transform all monsters and pickups into emeralds"
 
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfHeartsEvent.cs:25
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfHeartsEvent.cs:26
 msgctxt "random_china.event_name"
 msgid "红桃A"
 msgstr "Ace of Hearts"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfHeartsEvent.cs:27
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfHeartsEvent.cs:28
 msgctxt "random_china.event_description"
 msgid "将所有怪物和掉落物变为红石"
 msgstr "Transform all monsters and pickups into redstones"
@@ -554,25 +554,25 @@ msgid "将所有怪物和掉落物变为星之碎片"
 msgstr "Transform all monsters and pickups into starshards"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\RaceCarsEvent.cs:36
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\RaceCarsEvent.cs:37
 msgctxt "random_china.event_name"
 msgid "赛车"
 msgstr "Race Cars"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\RaceCarsEvent.cs:38
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\RaceCarsEvent.cs:39
 msgctxt "random_china.event_description"
 msgid "每行生成一个启动的小推车"
 msgstr "Summon a triggered cart at each lane"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\RedstoneReadyEvent.cs:41
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\RedstoneReadyEvent.cs:42
 msgctxt "random_china.event_name"
 msgid "红石俱备"
 msgstr "Redstone Ready"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\RedstoneReadyEvent.cs:43
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\RedstoneReadyEvent.cs:44
 msgctxt "random_china.event_description"
 msgid "生成20个红石"
 msgstr "Spawn 20 redstones"
@@ -626,13 +626,13 @@ msgid "所有器械获得圣盾"
 msgstr "All contraptions gain divine shield"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheEmpressEvent.cs:36
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheEmpressEvent.cs:37
 msgctxt "random_china.event_name"
 msgid "III-女皇"
 msgstr "III - The Empress"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheEmpressEvent.cs:38
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheEmpressEvent.cs:39
 msgctxt "random_china.event_description"
 msgid "生成一个全天工作的矿场，持续3分钟"
 msgstr "Spawn a miner that works all day, which lasts for 3 minutes"
@@ -686,25 +686,25 @@ msgid "每行召唤一个友方的催眠者"
 msgstr "Summon a friendly mesmerizer at each lane"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:45
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:46
 msgctxt "random_china.event_name"
 msgid "VI-恋人"
 msgstr "VI - The Lovers"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:47
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:48
 msgctxt "random_china.event_description"
 msgid "随机将一对器械和怪物变为中立阵营"
 msgstr "Turns a random pair of contraption and monster into neutral faction"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheStarEvent.cs:32
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheStarEvent.cs:33
 msgctxt "random_china.event_name"
 msgid "XVII-星星"
 msgstr "XVII - The Star"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheStarEvent.cs:34
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheStarEvent.cs:35
 msgctxt "random_china.event_description"
 msgid "召唤10枚陨石"
 msgstr "Summon 10 meteors"
@@ -747,188 +747,188 @@ msgstr ""
 "Double speed, attack speed and produce speed of ALL units for 30 seconds"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\WrathOfTheSmallEvent.cs:37
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\WrathOfTheSmallEvent.cs:38
 msgctxt "random_china.event_name"
 msgid "小型之怒"
 msgstr "Wrath of the Small"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\WrathOfTheSmallEvent.cs:39
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\WrathOfTheSmallEvent.cs:40
 msgctxt "random_china.event_description"
 msgid "在随机一行的最左侧生成一个大雪球"
 msgstr "Spawn a large snowball at the leftmost of a random lane"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:207
+#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:209
 msgctxt "advice.starshard_tutorial.0"
 msgid "点击星之碎片槽选中星之碎片！"
 msgstr "Click the Starshard to select it!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:209
+#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:211
 msgctxt "advice.starshard_tutorial.1"
 msgid "点击发射器！"
 msgstr "Click the Dispenser!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:211
+#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:213
 msgctxt "advice.starshard_tutorial.2"
 msgid "干得漂亮！"
 msgstr "Excellent job!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:213
+#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:215
 msgctxt "advice.starshard_tutorial.3"
 msgid "绿色的怪物会携带星之碎片！"
 msgstr "Green enemies carry Starshards!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:215
+#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:217
 msgctxt "advice.starshard_tutorial.4"
 msgid "点击收集星之碎片！"
 msgstr "Click to collect Starshards!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:217
+#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:219
 msgctxt "advice.starshard_tutorial.5"
 msgid "现在干掉铁盔僵尸！"
 msgstr "Now defeat the Iron Helmet Zombie!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:311
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:313
 msgctxt "advice.trigger_tutorial.0"
 msgid "放置TNT！"
 msgstr "Click and place TNT!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:313
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:315
 msgctxt "advice.trigger_tutorial.1"
 msgid "点击选中触发器！"
 msgstr "Select the Trigger!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:315
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:317
 msgctxt "advice.trigger_tutorial.2"
 msgid "点击以触发TNT！"
 msgstr "Click to trigger the TNT!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:317
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:319
 msgctxt "advice.trigger_tutorial.3"
 msgid "干得漂亮！"
 msgstr "Excellent job!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:319
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:321
 msgctxt "advice.trigger_tutorial.4"
 msgid "选中触发器！"
 msgstr "Select the Trigger!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:321
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:323
 msgctxt "advice.trigger_tutorial.5"
 msgid "点击TNT蓝图！"
 msgstr "Click the TNT blueprint!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:323
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:325
 msgctxt "advice.trigger_tutorial.6"
 msgid "放置TNT，它会立即被触发！"
 msgstr "Place TNT, then it will be instantly triggered!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:325
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:327
 msgctxt "advice.trigger_tutorial.7"
 msgid "干得好！"
 msgstr "Good job!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:327
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:329
 msgctxt "advice.trigger_tutorial.8"
 msgid "立即触发只限于一次性消耗类型的器械。"
 msgstr "Instant triggering can only be used on single-use contraptions."
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:329
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:331
 msgctxt "advice.trigger_tutorial.9"
 msgid "如果你想交换这两个动作的效果，你可以在设置中更改。"
 msgstr "You can swap these two actions in Settings."
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:331
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:333
 msgctxt "advice.trigger_tutorial.10"
 msgid "祝你好运！"
 msgstr "Good luck!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:454
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:457
 msgctxt "advice.tutorial.0"
 msgid "点击器械卡牌选中器械！"
 msgstr "Click a blueprint to choose a contraption!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:456
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:459
 msgctxt "advice.tutorial.1"
 msgid "点击草坪放置器械！"
 msgstr "Click the lawn to place a contraption!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:458
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:461
 msgctxt "advice.tutorial.2"
 msgid "干得漂亮！"
 msgstr "Excellent job!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:460
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:463
 msgctxt "advice.tutorial.3"
 msgid "点击红石收集能量！"
 msgstr "Click redstone to collect energy!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:462
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:465
 msgctxt "advice.tutorial.4"
 msgid "收集足够的能量来放置器械！"
 msgstr "Collect enough energy to place contraptions!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:464
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:467
 msgctxt "advice.tutorial.5"
 msgid "用发射器干掉僵尸！"
 msgstr "Defeat the zombie with your Dispenser!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:466
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:469
 msgctxt "advice.tutorial.6"
 msgid "干得漂亮！"
 msgstr "Excellent job!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:468
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:471
 msgctxt "advice.tutorial.7"
 msgid "选择熔炉并放置！"
 msgstr "Select Furnace and place it!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:470
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:473
 msgctxt "advice.tutorial.8"
 msgid "熔炉能为你提供额外的红石！"
 msgstr "Furnaces can provide you additional redstone!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:472
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:475
 msgctxt "advice.tutorial.9"
 msgid "熔炉越多，你放器械的速度就越快！"
 msgstr "The more Furnaces you have, the faster you can build!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:474
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:477
 msgctxt "advice.tutorial.10"
 msgid "请至少放下三个熔炉！"
 msgstr "Place at least three Furnaces!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:476
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:479
 msgctxt "advice.tutorial.11"
 msgid "用黑曜石来挡住僵尸的进攻！"
 msgstr "Block the zombie with Obsidian!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:478
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:481
 msgctxt "advice.tutorial.12"
 msgid "干得漂亮！"
 msgstr "Excellent job!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:480
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:483
 msgctxt "advice.tutorial.13"
 msgid "地雷TNT在一段时间的填装后能炸飞敌人！"
 msgstr "Mine TNTs can blow up enemies after arming itself!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:482
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:485
 msgctxt "advice.tutorial.14"
 msgid "用地雷TNT炸死铁盔僵尸！"
 msgstr "Blow up the Iron Helmet Zombie with Mine TNT!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:484
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:487
 msgctxt "advice.tutorial.15"
 msgid "干得漂亮！"
 msgstr "Excellent job!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:486
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:489
 msgctxt "advice.tutorial.16"
 msgid "最后，镐子能够挖掉你所放下的器械！"
 msgstr "Finally, the pickaxe can dig out placed contraptions!"
 
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:488
+#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:491
 msgctxt "advice.tutorial.17"
 msgid "试着挖掉所有器械！"
 msgstr "Try to dig out all contraptions!"
@@ -963,39 +963,39 @@ msgctxt "advice.collect_money"
 msgid "收集宝石来获得更酷的道具吧！"
 msgstr "Collect gems to purchase COOL stuff!"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:498
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:502
 msgid "选择你的命运"
 msgstr "Choose your fate"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:500
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:504
 msgid "选吧。"
 msgstr "Choose."
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:502
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:506
 msgid "潘多拉的魔盒"
 msgstr "Pandora's Box"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:504
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:508
 msgid "尸潮"
 msgstr "Biohazard"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:506
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:510
 msgid "衰老"
 msgstr "Decrepify"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:508
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:512
 msgid "疯狂"
 msgstr "Insanity"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:510
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:514
 msgid "成真"
 msgstr "Come True"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:512
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:516
 msgid "深潜者"
 msgstr "The Deep Ones"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:514
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:518
 msgid "黑太阳"
 msgstr "The Black Sun"
 
@@ -1399,7 +1399,7 @@ msgstr "Version {0}"
 msgid "点击以开始！"
 msgstr "Click to start!"
 
-#: Scripts\MVZ2\Talks\Components\TalkController.cs:1061
+#: Scripts\MVZ2\Talks\Components\TalkController.cs:1068
 msgid ""
 "<color=blue>[{0}]</color>\n"
 "{1}"
@@ -1407,7 +1407,7 @@ msgstr ""
 "<color=blue>[{0}]</color>\n"
 "{1}"
 
-#: Scripts\MVZ2\Talks\Components\TalkController.cs:1063
+#: Scripts\MVZ2\Talks\Components\TalkController.cs:1070
 msgid "已跳过对话\"{0}\""
 msgstr "Dialogue skipped: {0}"
 
@@ -1434,7 +1434,7 @@ msgstr ""
 msgid "{0}/{1}"
 msgstr "{0}/{1}"
 
-#: Scripts\MVZ2\Store\StoreManager.cs:115
+#: Scripts\MVZ2\Store\StoreManager.cs:116
 msgid "<color=red>售罄</color>"
 msgstr "<color=red>Sold Out</color>"
 
@@ -1493,12 +1493,12 @@ msgstr ""
 "You have to delete a user and create a new one to continue."
 
 # 设置按键提醒
-#: Scripts\MVZ2\Scene\KeybindingController.cs:162
+#: Scripts\MVZ2\Scene\KeybindingController.cs:163
 msgid "请按键"
 msgstr "Press a key"
 
 # 重置所有按键绑定的警告
-#: Scripts\MVZ2\Scene\KeybindingController.cs:164
+#: Scripts\MVZ2\Scene\KeybindingController.cs:165
 msgid "确认要重置所有按键绑定吗？"
 msgstr "Are you sure to reset all key bindings?"
 
@@ -1644,19 +1644,19 @@ msgctxt "hotkey.name"
 msgid "蓝图10"
 msgstr "Blueprint 10"
 
-#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:212
+#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:215
 msgid "来源：{0}"
 msgstr "Source: {0}"
 
-#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:214
+#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:217
 msgid "原曲：{0}"
 msgstr "Origin: {0}"
 
-#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:216
+#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:219
 msgid "作者：{0}"
 msgstr "Composer: {0}"
 
-#: Scripts\MVZ2\Map\MapController.cs:708
+#: Scripts\MVZ2\Map\MapController.cs:704
 msgid ""
 "按住右键拖动以移动视图\n"
 "滚轮以缩放视图"
@@ -1664,7 +1664,7 @@ msgstr ""
 "Hold right mouse and drag to move the view\n"
 "Scroll to scale the view"
 
-#: Scripts\MVZ2\Map\MapController.cs:710
+#: Scripts\MVZ2\Map\MapController.cs:706
 msgid ""
 "单指拖动以移动视图\n"
 "双指触摸以缩放视图"
@@ -1672,11 +1672,11 @@ msgstr ""
 "Drag with one finger to move the view\n"
 "Touch with two fingers to scale the view"
 
-#: Scripts\MVZ2\Map\MapController.cs:712
+#: Scripts\MVZ2\Map\MapController.cs:708
 msgid "正在进入关卡……"
 msgstr "Entering Level…"
 
-#: Scripts\MVZ2\Map\MapController.cs:714
+#: Scripts\MVZ2\Map\MapController.cs:710
 msgid ""
 "轮数\n"
 "{0}/{1}"
@@ -1685,12 +1685,12 @@ msgstr ""
 "{0}/{1}"
 
 # 进入关卡的错误信息，{0}为地点ID
-#: Scripts\MVZ2\Map\MapController.cs:716
+#: Scripts\MVZ2\Map\MapController.cs:712
 msgid "目标地点{0}不存在。"
 msgstr "Target area {0} does not exist."
 
 # 进入关卡的错误信息，{0}为关卡ID
-#: Scripts\MVZ2\Map\MapController.cs:718
+#: Scripts\MVZ2\Map\MapController.cs:714
 msgid "目标关卡{0}不存在。"
 msgstr "Target stage {0} does not exist."
 
@@ -2502,7 +2502,7 @@ msgctxt "key.name"
 msgid "Menu"
 msgstr "Menu"
 
-#: Scripts\MVZ2\Managers\MainManager.cs:341
+#: Scripts\MVZ2\Managers\MainManager.cs:293
 msgid "获取赞助者列表……"
 msgstr "Getting Sponsors..."
 
@@ -2511,66 +2511,66 @@ msgstr "Getting Sponsors..."
 msgid "FPS: {0}"
 msgstr "FPS: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:846
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:838
 msgid "无法删除用户：{0}"
 msgstr "Cannot delete user: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:848
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:840
 msgid "无法切换至用户：{0}"
 msgstr "Cannot switch to user: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:850
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:842
 msgid "没有其他有效的用户可供切换。"
 msgstr "There are no other available users to switch."
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:852
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:844
 msgid "确认要退出吗？"
 msgstr "Quit?"
 
 # 语言包导出失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:854
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:846
 msgid "导出存档失败。"
 msgstr "Failed to export the user."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:856
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:848
 msgid "导入存档失败。"
 msgstr "Failed to import the user."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:858
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:850
 msgid "导入存档失败，文件可能已损坏。"
 msgstr "Failed to import the user. The file may corrupt."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:860
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:852
 msgid "导入存档失败，游戏中存在同名用户，但正在导入的存档不可重命名。"
 msgstr ""
 "Failed to import the user. A user with identical name exists, but the user "
 "to be imported cannot be renamed."
 
 # 语言包导出成功的提示，{0}为路径
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:862
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:854
 msgid "存档已导出至{0}。"
 msgstr "The user has been successfully exported to {0}."
 
 # 当前语言名称
-#: Scripts\MVZ2\Localization\LanguageManager.cs:273
+#: Scripts\MVZ2\Localization\LanguageManager.cs:245
 msgctxt "language_name"
 msgid "中文"
 msgstr "English (United States)"
 
 # 血条的文字
-#: Scripts\MVZ2\Entities\EntityController.cs:804
+#: Scripts\MVZ2\Entities\EntityController.cs:783
 msgid "死亡"
 msgstr "Dead"
 
 # 血条的文字
-#: Scripts\MVZ2\Entities\EntityController.cs:806
+#: Scripts\MVZ2\Entities\EntityController.cs:785
 msgid "摧毁"
 msgstr "Destroyed"
 
-#: Scripts\MVZ2\Entities\EntityController.cs:808
+#: Scripts\MVZ2\Entities\EntityController.cs:787
 msgid "{0}"
 msgstr "{0}"
 
@@ -2584,37 +2584,37 @@ msgstr "Failed to export logs."
 msgid "日志已导出至{0}。"
 msgstr "The log files have been successfully exported to {0}."
 
-#: Scripts\MVZ2\Managers\DebugManager_Console.cs:519
+#: Scripts\MVZ2\Managers\DebugManager_Console.cs:520
 msgctxt "command.output"
 msgid "<color=red>命令不存在：{0}</color>"
 msgstr "<color=red>Command not found: {0}</color>"
 
-#: Scripts\MVZ2\Managers\DebugManager_Console.cs:521
+#: Scripts\MVZ2\Managers\DebugManager_Console.cs:522
 msgctxt "command.output"
 msgid "<color=red>错误：{0}</color>"
 msgstr "<color=red>Error: {0}</color>"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1309
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1312
 msgid "你没有携带满蓝图，确认要继续吗？"
 msgstr "Are you sure to continue without filling up the contraption slots?"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1313
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1316
 msgid "上一次选择的蓝图中包含多个相同的器械。"
 msgstr ""
 "The blueprints selected last time contained multiple identical contraptions."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1315
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1318
 msgid "上一次选择的蓝图中包含未解锁的器械。"
 msgstr ""
 "The blueprints selected last time contained contraptions that are not "
 "unlocked yet."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1317
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1320
 msgid "上一次选择的制品中包含多个相同的制品。"
 msgstr ""
 "The artifacts selected last time contained multiple identical artifacts."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1319
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1322
 msgid "上一次选择的制品中包含未解锁的制品。"
 msgstr ""
 "The artifacts selected last time contained artifacts that are not unlocked "
@@ -2683,7 +2683,7 @@ msgstr ""
 "Excess mods:\n"
 "{0}"
 
-#: Scripts\MVZ2\Level\LevelController\LevelController_Entities.cs:217
+#: Scripts\MVZ2\Level\LevelController\LevelController_Entities.cs:218
 msgctxt "entity.tooltip"
 msgid "在图鉴中查看"
 msgstr "View in Almanac"
@@ -2714,148 +2714,83 @@ msgstr ""
 "Best Streak:\n"
 "{0}"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:994
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:996
 msgctxt "almanac"
 msgid "花费：<color=red>{0}</color>"
 msgstr "Cost: <color=red>{0}</color>"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:996
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:998
 msgctxt "almanac"
 msgid "充能时间：<color=red>{0}</color>"
 msgstr "Recharge: <color=red>{0}</color>"
 
 # 图鉴放大选项，{0}为缩放等级
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:998
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1000
 msgctxt "almanac"
 msgid "缩放：{0}"
 msgstr "Scale: {0}"
 
 # 图鉴标签枚举值的名称模板，{0}为标签名，{1}为值名
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:1000
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1002
 msgctxt "almanac"
 msgid "{0}：{1}"
 msgstr "{0}: {1}"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:1002
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1004
 msgctxt "almanac"
 msgid "左键拖拽以移动视图；滚轮以缩放视图"
 msgstr "Hold left mouse and drag to move; Scroll to scale"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:1004
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1006
 msgctxt "almanac"
 msgid "单指拖拽以移动视图；双指拖拽以缩放视图"
 msgstr "Drag with one finger to move; Touch with two fingers to scale"
 
 # 覆盖语言包的警告，{0}为语言包名称
-#: Scripts\MVZ2\Addons\LanguagePacksController.cs:323
-msgid "已经存在同名语言包“{0}”，是否覆盖？"
-msgstr "Language pack \"{0}\" already exists, override it?"
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:407
+msgid "已经存在同名资源包“{0}”，是否覆盖？"
+msgstr "Resource pack \"{0}\" already exists, override it?"
 
 # 删除语言包的警告，{0}为语言包名称
-#: Scripts\MVZ2\Addons\LanguagePacksController.cs:325
-msgid "是否删除语言包“{0}”？"
-msgstr "Are you sure to delete language pack \"{0}\"?"
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:409
+msgid "是否删除资源包“{0}”？"
+msgstr "Are you sure to delete resource pack \"{0}\"?"
+
+# 语言包中含有过时语言包的警告
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:411
+msgid "您启用了一些过时的资源包，这些资源包可能无法正常运行，仍然要继续吗？"
+msgstr ""
+"You have enabled some outdated resource packs, which may not function "
+"properly. Continue?"
+
+# 语言包中含有未来语言包的警告
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:413
+msgid ""
+"您启用了一些版本高于目前游戏版本的资源包，这些资源包无法正常运行，仍然要继续"
+"吗？"
+msgstr ""
+"You have enabled some resource packs with versions higher than the current "
+"game version. These cannot run properly. Continue?"
 
 # 语言包导出失败的警告
-#: Scripts\MVZ2\Addons\LanguagePacksController.cs:327
-msgid "导出语言包失败。"
-msgstr "Failed to export the language pack."
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:415
+msgid "导出资源包失败。"
+msgstr "Failed to export the resource pack."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Addons\LanguagePacksController.cs:329
-msgid "导入语言包失败。"
-msgstr "Failed to import the language pack."
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:417
+msgid "导入资源包失败。"
+msgstr "Failed to import the resource pack."
 
 # 语言包导出成功的提示，{0}为路径
-#: Scripts\MVZ2\Addons\LanguagePacksController.cs:331
-msgid "语言包已导出至{0}。"
-msgstr "The language pack has been successfully exported to {0}."
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:419
+msgid "资源包已导出至{0}。"
+msgstr "The resource pack has been successfully exported to {0}."
 
-# 命令方块模式
-#: Scripts\Logic\Options\Definitions\CommandBlockModeOptionDropdown.cs:38
-msgctxt "option.command_block_mode"
-msgid "手选"
-msgstr "Manual"
-
-# 命令方块模式
-#: Scripts\Logic\Options\Definitions\CommandBlockModeOptionDropdown.cs:40
-msgctxt "option.command_block_mode"
-msgid "前位"
-msgstr "Previous"
-
-# 血条数值模式
-#: Scripts\Logic\Options\Definitions\HPBarsAmountModeOptionDropdown.cs:39
-msgctxt "options.hp_bars_amount_mode"
-msgid "隐藏"
-msgstr "Hidden"
-
-# 血条数值模式
-#: Scripts\Logic\Options\Definitions\HPBarsAmountModeOptionDropdown.cs:41
-msgctxt "options.hp_bars_amount_mode"
-msgid "当前血量"
-msgstr "Current"
-
-# 血条数值模式
-#: Scripts\Logic\Options\Definitions\HPBarsAmountModeOptionDropdown.cs:43
-msgctxt "options.hp_bars_amount_mode"
-msgid "全部"
-msgstr "All"
-
-#: Scripts\Logic\Options\Definitions\ResolutionOptionDropdown.cs:89
-msgid "{0}x{1} @{2:0.##}Hz"
-msgstr "{0}x{1} @{2:0.##}Hz"
-
-#: Scripts\Logic\Options\Definitions\ScreenLayoutOptionDropdown.cs:52
-msgctxt "option.screen_layout"
-msgid "自动"
-msgstr "Auto"
-
-# 屏幕布局
-#: Scripts\Logic\Options\Definitions\ScreenLayoutOptionDropdown.cs:54
-msgctxt "option.screen_layout"
-msgid "桌面"
-msgstr "Desktop"
-
-# 屏幕布局
-#: Scripts\Logic\Options\Definitions\ScreenLayoutOptionDropdown.cs:56
-msgctxt "option.screen_layout"
-msgid "移动"
-msgstr "Mobile"
-
-#: Scripts\Logic\Options\Definitions\ShowFPSOptionDropdown.cs:36
-msgctxt "option.fps_mode"
-msgid "关闭"
-msgstr "Disabled"
-
-# FPS模式
-#: Scripts\Logic\Options\Definitions\ShowFPSOptionDropdown.cs:38
-msgctxt "option.fps_mode"
-msgid "左上"
-msgstr "Top Left"
-
-# FPS模式
-#: Scripts\Logic\Options\Definitions\ShowFPSOptionDropdown.cs:40
-msgctxt "option.fps_mode"
-msgid "右上"
-msgstr "Top Right"
-
-# FPS模式
-#: Scripts\Logic\Options\Definitions\ShowFPSOptionDropdown.cs:42
-msgctxt "option.fps_mode"
-msgid "左下"
-msgstr "Bottom Left"
-
-# FPS模式
-#: Scripts\Logic\Options\Definitions\ShowFPSOptionDropdown.cs:44
-msgctxt "option.fps_mode"
-msgid "右下"
-msgstr "Bottom Right"
-
-# FPS模式
-#: Scripts\Logic\Options\Definitions\TargetFramerateOptionDropdown.cs:50
-msgctxt "option.target_framerate"
-msgid "默认"
-msgstr "Default"
+# 教程链接文本，{0}为地址
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:421
+msgid "点击查看教程：{0}"
+msgstr "Click for tutorial: {0}"
 
 #: Scripts\Logic\LogicMain.cs:14
 msgid "{0}%"
@@ -3148,6 +3083,92 @@ msgstr "Cannot rename this user"
 msgctxt "advice"
 msgid "点击以继续"
 msgstr "Click to continue"
+
+# 命令方块模式
+#: Scripts\Logic\Options\Definitions\CommandBlockModeOptionDropdown.cs:37
+msgctxt "option.command_block_mode"
+msgid "手选"
+msgstr "Manual"
+
+# 命令方块模式
+#: Scripts\Logic\Options\Definitions\CommandBlockModeOptionDropdown.cs:39
+msgctxt "option.command_block_mode"
+msgid "前位"
+msgstr "Previous"
+
+# 血条数值模式
+#: Scripts\Logic\Options\Definitions\HPBarsAmountModeOptionDropdown.cs:38
+msgctxt "options.hp_bars_amount_mode"
+msgid "隐藏"
+msgstr "Hidden"
+
+# 血条数值模式
+#: Scripts\Logic\Options\Definitions\HPBarsAmountModeOptionDropdown.cs:40
+msgctxt "options.hp_bars_amount_mode"
+msgid "当前血量"
+msgstr "Current"
+
+# 血条数值模式
+#: Scripts\Logic\Options\Definitions\HPBarsAmountModeOptionDropdown.cs:42
+msgctxt "options.hp_bars_amount_mode"
+msgid "全部"
+msgstr "All"
+
+#: Scripts\Logic\Options\Definitions\ResolutionOptionDropdown.cs:88
+msgid "{0}x{1} @{2:0.##}Hz"
+msgstr "{0}x{1} @{2:0.##}Hz"
+
+#: Scripts\Logic\Options\Definitions\ScreenLayoutOptionDropdown.cs:51
+msgctxt "option.screen_layout"
+msgid "自动"
+msgstr "Auto"
+
+# 屏幕布局
+#: Scripts\Logic\Options\Definitions\ScreenLayoutOptionDropdown.cs:53
+msgctxt "option.screen_layout"
+msgid "桌面"
+msgstr "Desktop"
+
+# 屏幕布局
+#: Scripts\Logic\Options\Definitions\ScreenLayoutOptionDropdown.cs:55
+msgctxt "option.screen_layout"
+msgid "移动"
+msgstr "Mobile"
+
+#: Scripts\Logic\Options\Definitions\ShowFPSOptionDropdown.cs:35
+msgctxt "option.fps_mode"
+msgid "关闭"
+msgstr "Disabled"
+
+# FPS模式
+#: Scripts\Logic\Options\Definitions\ShowFPSOptionDropdown.cs:37
+msgctxt "option.fps_mode"
+msgid "左上"
+msgstr "Top Left"
+
+# FPS模式
+#: Scripts\Logic\Options\Definitions\ShowFPSOptionDropdown.cs:39
+msgctxt "option.fps_mode"
+msgid "右上"
+msgstr "Top Right"
+
+# FPS模式
+#: Scripts\Logic\Options\Definitions\ShowFPSOptionDropdown.cs:41
+msgctxt "option.fps_mode"
+msgid "左下"
+msgstr "Bottom Left"
+
+# FPS模式
+#: Scripts\Logic\Options\Definitions\ShowFPSOptionDropdown.cs:43
+msgctxt "option.fps_mode"
+msgid "右下"
+msgstr "Bottom Right"
+
+# FPS模式
+#: Scripts\Logic\Options\Definitions\TargetFramerateOptionDropdown.cs:49
+msgctxt "option.target_framerate"
+msgid "默认"
+msgstr "Default"
 
 #. Name for stage mvz2:i_zombie_debug
 #: Stage meta file
@@ -4675,6 +4696,33 @@ msgstr ""
 "!!!FEAR!!!\n"
 "An indescribable, gigantic wall of flesh is charging toward you!!!!!"
 
+#. Name for music mvz2:mountain_level
+#: Music meta file
+msgctxt "music.name"
+msgid "秋意阑珊之瀑"
+msgstr "Fallen Fall of Fall"
+
+#. Source for music mvz2:mountain_level
+#: Music meta file
+msgctxt "music.source"
+msgid "东方风神录"
+msgstr "Mountain of Faith"
+
+#. Origin for music mvz2:mountain_level
+#: Music meta file
+msgctxt "music.origin"
+msgid "Fall of Fall　～ 秋意渐浓之瀑"
+msgstr "Fall of Fall ~ Autumnal Waterfall"
+
+#. Description for music mvz2:mountain_level
+#: Music meta file
+msgctxt "music.description"
+msgid ""
+"妖怪之山关卡的音乐。\n"
+"原曲是《东方风神录》中第四关的音乐《Fall of Fall　～ 秋意渐浓之瀑》。\n"
+"===乐评施工中==="
+msgstr ""
+
 #. Name for archive tag mvz2:prologue
 #: Archive meta file
 msgctxt "archive.tagname"
@@ -6022,6 +6070,31 @@ msgctxt "command_parameter.description"
 msgid "要设置的轮数。"
 msgstr "Flags to set."
 
+#. Description for command variant "mvz2:test horde"
+#: Commands meta file
+msgctxt "command_variant.description"
+msgid "生成一群僵尸。"
+msgstr "Spawns a horde of zombies."
+
+#. Description for command variant "mvz2:test commandblock"
+#: Commands meta file
+msgctxt "command_variant.description"
+msgid "生成一群会变形为其他器械的命令方块。"
+msgstr ""
+"Spawns a group of command blocks that transforming into other contraptions."
+
+#. Description for command variant "mvz2:test hugewaveevent"
+#: Commands meta file
+msgctxt "command_variant.description"
+msgid "触发当前场景的一大波怪物事件。"
+msgstr "Triggers the huge wave event of the current area."
+
+#. Description for command variant "mvz2:test finalwaveevent"
+#: Commands meta file
+msgctxt "command_variant.description"
+msgid "触发当前场景的最后一波波怪物事件。"
+msgstr "Triggers the final wave event of the current area."
+
 #. Description for command "mvz2:izombie"
 #: Commands meta file
 msgctxt "command.description"
@@ -6486,6 +6559,9 @@ msgstr "Credits"
 msgctxt "option.name"
 msgid "导出日志文件"
 msgstr "Export Log Files"
+
+#~ msgid "语言包"
+#~ msgstr "Language Packs"
 
 #~ msgctxt "store_talk"
 #~ msgid ""

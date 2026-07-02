@@ -3760,13 +3760,6 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 43ab9df27e6a88f499c8292ce16c7f47
-    m_Address: mvz2:entity/contraption/ejector
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Main
-    - Spritesheet
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 43d0c46d78f545946b9f8472fc64be72
     m_Address: mvz2:ui/level/progress_bar/level_progress_banner
     m_ReadOnly: 0
@@ -4704,13 +4697,6 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 54180b1a8b8c0fe4a98292d2423c7c15
-    m_Address: mvz2:entity/contraption/freezenser
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Main
-    - Spritesheet
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 542969b534462a84393dbe4e1b39a87a
     m_Address: mvz2:random/netherrack/break1
@@ -11148,13 +11134,6 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cc2ee2b04b996a746a26ff1160de365a
-    m_Address: mvz2:entity/contraption/nesting_tnt
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Main
-    - Spritesheet
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cc6b3e7a91e2c864fb023c7055695568
     m_Address: mvz2:level/grids/broken_tile_slope
     m_ReadOnly: 0
@@ -12340,13 +12319,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e2fcfb282a3d6aa4eb0b3512fce5fc79
     m_Address: mvz2:mobile_blueprint/heavy_weapon_spread
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Main
-    - Sprite
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e32e3f96a4cdd51438ef015798792893
-    m_Address: mvz2:entity/projectiles/frozen_orb
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

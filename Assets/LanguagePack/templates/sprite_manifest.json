@@ -1,0 +1,462 @@
+{
+  "sprites": [
+    {
+      "name": "archive/castle_note",
+      "texture": "archive/castle_note.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "archive/dream_note",
+      "texture": "archive/dream_note.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "archive/halloween_note",
+      "texture": "archive/halloween_note.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "archive/palace_note",
+      "texture": "archive/palace_note.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "chapter_transition/chapter_title_end",
+      "texture": "chapter_transition/chapter_title_end.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "chapter_transition/title_castle",
+      "texture": "chapter_transition/title_castle.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "chapter_transition/title_dream",
+      "texture": "chapter_transition/title_dream.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "chapter_transition/title_halloween",
+      "texture": "chapter_transition/title_halloween.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "chapter_transition/title_mausoleum",
+      "texture": "chapter_transition/title_mausoleum.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "chapter_transition/title_palace",
+      "texture": "chapter_transition/title_palace.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "chapter_transition/title_ship",
+      "texture": "chapter_transition/title_ship.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "init/logo",
+      "texture": "init/logo.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "misc/letter_for_help",
+      "texture": "misc/letter_for_help.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "note/castle",
+      "texture": "note/castle.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "note/dream",
+      "texture": "note/dream.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "note/halloween",
+      "texture": "note/halloween.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "note/help_back",
+      "texture": "note/help_back.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "note/help_front",
+      "texture": "note/help_front.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "note/palace",
+      "texture": "note/palace.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "entity/effects/boom",
+      "texture": "entity/effects/boom.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "entity/effects/pow",
+      "texture": "entity/effects/pow.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "ui/level/final_wave",
+      "texture": "ui/level/final_wave.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "ui/level/huge_wave",
+      "texture": "ui/level/huge_wave.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "ui/level/level_progress_back",
+      "texture": "ui/level/level_progress_back.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    },
+    {
+      "name": "ui/level/lose",
+      "texture": "ui/level/lose.png",
+      "pivotX": 0.5,
+      "pivotY": 0.5
+    }
+  ],
+  "spritesheets": [
+    {
+      "name": "ready_set_build",
+      "texture": "ready_set_build.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 148.0,
+          "width": 165.0,
+          "height": 74.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 0.0,
+          "y": 74.0,
+          "width": 165.0,
+          "height": 74.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 165.0,
+          "height": 74.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "name": "mainmenu/almanac",
+      "texture": "mainmenu/almanac.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 318.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 359.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 318.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 718.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 318.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "name": "mainmenu/arcade",
+      "texture": "mainmenu/arcade.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 281.0,
+          "height": 164.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 282.0,
+          "y": 0.0,
+          "width": 281.0,
+          "height": 164.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 564.0,
+          "y": 0.0,
+          "width": 281.0,
+          "height": 164.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "name": "mainmenu/back_to_mainmenu",
+      "texture": "mainmenu/back_to_mainmenu.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 37.0,
+          "width": 79.0,
+          "height": 36.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 79.0,
+          "height": 36.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "name": "mainmenu/help",
+      "texture": "mainmenu/help.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 90.0,
+          "y": 0.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 180.0,
+          "y": 0.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "name": "mainmenu/more_menus",
+      "texture": "mainmenu/more_menus.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 37.0,
+          "width": 73.0,
+          "height": 36.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 0.0,
+          "y": 0.5,
+          "width": 73.0,
+          "height": 36.5,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "name": "mainmenu/music_room",
+      "texture": "mainmenu/music_room.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 390.0,
+          "width": 311.0,
+          "height": 194.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 0.0,
+          "y": 195.0,
+          "width": 311.0,
+          "height": 194.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 311.0,
+          "height": 194.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "name": "mainmenu/options",
+      "texture": "mainmenu/options.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 1.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 90.0,
+          "y": 1.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 180.0,
+          "y": 1.0,
+          "width": 89.0,
+          "height": 125.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "name": "mainmenu/quit",
+      "texture": "mainmenu/quit.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 340.0,
+          "width": 262.0,
+          "height": 169.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 0.0,
+          "y": 170.0,
+          "width": 262.0,
+          "height": 169.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 0.0,
+          "y": 1.0,
+          "width": 262.0,
+          "height": 168.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "name": "mainmenu/store",
+      "texture": "mainmenu/store.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 277.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 359.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 277.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 718.0,
+          "y": 0.0,
+          "width": 358.0,
+          "height": 277.0,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    },
+    {
+      "name": "mainmenu/user_manage",
+      "texture": "mainmenu/user_manage.png",
+      "slices": [
+        {
+          "x": 0.0,
+          "y": 41.5,
+          "width": 109.0,
+          "height": 41.5,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        },
+        {
+          "x": 0.0,
+          "y": 0.5,
+          "width": 109.0,
+          "height": 41.5,
+          "pivotX": 0.5,
+          "pivotY": 0.5
+        }
+      ]
+    }
+  ]
+}

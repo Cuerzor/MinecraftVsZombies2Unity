@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-06-20 03:49+0800\n"
-"PO-Revision-Date: 2026-06-20 18:25+0800\n"
+"POT-Creation-Date: 2026-07-02 11:51+0800\n"
+"PO-Revision-Date: 2026-07-02 11:54+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -2538,7 +2538,7 @@ msgid ""
 "偿还星之碎片：<color=red><var local=\"repay_count\"/></color>\n"
 "特殊：<color=red>如果在<var local=\"max_seconds\"/>秒内未偿还星之碎片，会生成一个<ref=[misc]mvz2:creaking>嘎枝</ref>，并且下次生成嘎枝"
 "的时间减半（最低<var local=\"min_seconds\"/>秒）。被摧毁则会生成一列嘎枝。</color>\n"
-"技能：<color=red>偿还一个星之碎片，重置嘎枝生成时间并使所有嘎枝消失。偿还完毕后告示牌自动消失。</color>"
+"技能：<color=red>偿还一个星之碎片，重置嘎枝生成时间并使生成的嘎枝消失。偿还完毕后告示牌自动消失。</color>"
 msgstr ""
 "Starshards on loan: <color=red><var local=\"lend_count\"/></color>\n"
 "Starshards to pay off: <color=red><var local=\"repay_count\"/></color>\n"
@@ -2556,6 +2556,9 @@ msgid ""
 "有问题我们可以好好<color=red>交涉</color>。\n"
 "<b>但是绝对不要碰高利贷。</b>"
 msgstr ""
+"My friend, prices are meant to be paid.\n"
+"<color=red>Bargaining</color> is always an option.\n"
+"<b>So don't even get close to loan sharks.</b>"
 
 #. Header for contraptions mvz2:infectenser
 #: Almanac meta file
@@ -5469,8 +5472,8 @@ msgstr "Creaking"
 #. Header for misc mvz2:creaking
 #: Almanac meta file
 msgctxt "misc.description"
-msgid "嘎枝由<ref=[contraption]mvz2:loan_sign>借贷告示牌</ref>生成，用来向你催债。"
-msgstr "Creakings are spawned by <ref=[contraption]mvz2:loan_sign>Loan Signs</ref> to collect your debts."
+msgid "嘎枝由<ref=[contraptions]mvz2:loan_sign>借贷告示牌</ref>生成，用来向你催债。"
+msgstr "Creakings are spawned by <ref=[contraptions]mvz2:loan_sign>Loan Signs</ref> to collect your debts."
 
 #. Properties for misc mvz2:creaking
 #: Almanac meta file
@@ -5478,11 +5481,11 @@ msgctxt "misc.description"
 msgid ""
 "生命：<color=red><var local=\"hp\"/></color>\n"
 "速度：<color=red><var local=\"speed\"/></color>\n"
-"特殊：<color=red>无视所有敌人</color>"
+"特殊：<color=red>无视所有敌人，免疫秒杀</color>"
 msgstr ""
 "Toughness: <color=red><var local=\"hp\"/></color>\n"
 "Speed: <color=red><var local=\"speed\"/></color>\n"
-"Special: <color=red>Ignores enemies</color>"
+"Special: <color=red>Ignores enemies, Immunes to insta-kills</color>"
 
 #. Flavor for misc mvz2:creaking
 #: Almanac meta file
