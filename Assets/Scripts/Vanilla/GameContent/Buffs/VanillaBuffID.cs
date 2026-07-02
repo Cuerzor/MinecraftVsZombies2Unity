@@ -124,6 +124,10 @@ namespace MVZ2.GameContent.Buffs
             public const string releasedfromLockedChest = "released_from_locked_chest";
             public const string burning = "burning";
 
+            // Chapter 7
+            public const string teleporterTeleportUp = "teleporter_teleport_up";
+            public const string teleporterTeleportDown = "teleporter_teleport_down";
+
             // Random China
             public const string worldwideCelebration = "worldwide_celebration";
         }
@@ -208,6 +212,7 @@ namespace MVZ2.GameContent.Buffs
             public const string stoneEyeCharged = "stone_eye_charged";
 
             // Chapter 7
+            public const string teleporterTriggered = "teleporter_triggered";
             public const string thrownByEjector = "thrown_by_ejector";
             public const string extendingArm = "extending_arm";
             public const string krakensTentacleAttackSpeed = "krakens_tentacle_attack_speed";

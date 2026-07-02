@@ -14,6 +14,7 @@ namespace MVZ2.GameContent.HeldItems
         public const string breakoutBoard = "breakout_board";
         public const string blueprintPickup = "blueprint_pickup";
         public const string combat = "combat";
+        public const string teleporter = "teleporter";
     }
     public static class VanillaHeldTypes
     {
@@ -21,6 +22,7 @@ namespace MVZ2.GameContent.HeldItems
         public static readonly NamespaceID skywardBeacon = Get(VanillaHeldItemNames.skywardBeacon);
         public static readonly NamespaceID brickCannon = Get(VanillaHeldItemNames.brickCannon);
         public static readonly NamespaceID ejector = Get(VanillaHeldItemNames.ejector);
+        public static readonly NamespaceID teleporter = Get(VanillaHeldItemNames.teleporter);
         public static readonly NamespaceID breakoutBoard = Get(VanillaHeldItemNames.breakoutBoard);
         public static readonly NamespaceID blueprintPickup = Get(VanillaHeldItemNames.blueprintPickup);
         public static readonly NamespaceID combat = Get(VanillaHeldItemNames.combat);

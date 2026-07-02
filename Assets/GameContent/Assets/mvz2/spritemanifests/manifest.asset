@@ -951,6 +951,9 @@ MonoBehaviour:
   - name: mobile_blueprint/talisman_zombie
     texture: {fileID: 2800000, guid: 70bd3779c2eea2b4fb4e071481e6acb1, type: 3}
     tags: []
+  - name: mobile_blueprint/teleporter
+    texture: {fileID: 2800000, guid: c92314054c0942a4fadd56d16c3e94bb, type: 3}
+    tags: []
   - name: mobile_blueprint/tesla_coil
     texture: {fileID: 2800000, guid: d8b4a6fef193f41428666f3177af2af7, type: 3}
     tags: []
@@ -1629,6 +1632,9 @@ MonoBehaviour:
     tags: []
   - name: entity/contraption/stone_shield
     texture: {fileID: 2800000, guid: 966a0e1617ca8a143ac09df2e9c328ff, type: 3}
+    tags: []
+  - name: entity/contraption/teleporter
+    texture: {fileID: 2800000, guid: 7ceae054855a6a2448398d890150f3a2, type: 3}
     tags: []
   - name: entity/contraption/tesla_coil
     texture: {fileID: 2800000, guid: 073caa400cee98e4f9adafc78fdd521a, type: 3}
@@ -4809,6 +4815,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 70bd3779c2eea2b4fb4e071481e6acb1, type: 3}
     tags: []
+  - name: mobile_blueprint/teleporter
+    index: 0
+    sprite: {fileID: 21300000, guid: c92314054c0942a4fadd56d16c3e94bb, type: 3}
+    tags: []
   - name: mobile_blueprint/tesla_coil
     index: 0
     sprite: {fileID: 21300000, guid: d8b4a6fef193f41428666f3177af2af7, type: 3}
@@ -7117,6 +7127,10 @@ MonoBehaviour:
   - name: entity/contraption/stone_shield
     index: 3
     sprite: {fileID: -273153786, guid: 966a0e1617ca8a143ac09df2e9c328ff, type: 3}
+    tags: []
+  - name: entity/contraption/teleporter
+    index: 0
+    sprite: {fileID: 21300000, guid: 7ceae054855a6a2448398d890150f3a2, type: 3}
     tags: []
   - name: entity/contraption/tesla_coil
     index: 0

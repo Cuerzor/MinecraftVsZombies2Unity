@@ -82,6 +82,11 @@ namespace MVZ2.Vanilla.Contraptions
         public static bool IsNoDevourer(this Entity entity) => entity.GetProperty<bool>(NO_DEVOURER);
         #endregion
 
+        #region 不能使用传送器
+        public static readonly PropertyMeta<bool> NO_TELEPORTER = Get<bool>("no_teleporter");
+        public static bool NoTeleporter(this Entity entity) => entity.GetProperty<bool>(NO_TELEPORTER);
+        #endregion
+
         #region 悬浮器械
         public static readonly PropertyMeta<bool> SUSPENDING_CONTRAPTION = Get<bool>("suspending_contraption");
         public static bool IsSuspendingContraption(this Entity contraption)

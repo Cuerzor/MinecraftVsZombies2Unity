@@ -955,6 +955,12 @@
     <sound name="tap" priority="64">
         <sample path="mvz2:tap" weight="1" />
     </sound>
+    <sound name="teleport_up">
+        <sample path="mvz2:teleport_up" weight="1" />
+    </sound>
+    <sound name="teleport_down">
+        <sample path="mvz2:teleport_down" weight="1" />
+    </sound>
     <sound name="terror_cry">
         <sample path="mvz2:entity/terror/terror_cry1" weight="1" />
         <sample path="mvz2:entity/terror/terror_cry2" weight="1" />

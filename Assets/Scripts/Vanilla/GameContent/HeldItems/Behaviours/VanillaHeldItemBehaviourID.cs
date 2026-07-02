@@ -14,6 +14,7 @@ namespace MVZ2.GameContent.HeldItems
         public const string forcePad = "force_pad";
         public const string brickCannon = "brick_cannon";
         public const string skywardBeacon = "skyward_beacon";
+        public const string teleporter = "teleporter";
         public const string ejector = "ejector";
         public const string breakoutBoard = "breakout_board";
         public const string blueprintPickup = "blueprint_pickup";
@@ -38,6 +39,7 @@ namespace MVZ2.GameContent.HeldItems
         public static readonly NamespaceID forcePad = Get(VanillaHeldItemBehaviourNames.forcePad);
         public static readonly NamespaceID skywardBeacon = Get(VanillaHeldItemBehaviourNames.skywardBeacon);
         public static readonly NamespaceID brickCannon = Get(VanillaHeldItemBehaviourNames.brickCannon);
+        public static readonly NamespaceID teleporter = Get(VanillaHeldItemBehaviourNames.teleporter);
         public static readonly NamespaceID ejector = Get(VanillaHeldItemBehaviourNames.ejector);
         public static readonly NamespaceID breakoutBoard = Get(VanillaHeldItemBehaviourNames.breakoutBoard);
         public static readonly NamespaceID blueprintPickup = Get(VanillaHeldItemBehaviourNames.blueprintPickup);
