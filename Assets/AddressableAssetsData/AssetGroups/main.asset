@@ -2459,6 +2459,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2dcd6eb578cb6f14483df69c5845fc54
+    m_Address: mvz2:teleport_down
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2dcf2a5a02a900846ab9ca6458a25522
     m_Address: mvz2:entity/projectile/tnt_model
     m_ReadOnly: 0
@@ -6209,6 +6216,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7065a0e0aafa6fb45bf651c552b07c56
+    m_Address: mvz2:mainmenu/customize
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 70875885371f09444af751a1676e6f71
     m_Address: mvz2:artifacts/miracle_mallet_replica
     m_ReadOnly: 0
@@ -6896,6 +6910,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7cd67e193c23b1f46ae2e123c4a0bd3a
     m_Address: mvz2:entity/contraption/pressure_plate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ceae054855a6a2448398d890150f3a2
+    m_Address: mvz2:entity/contraption/teleporter
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -8148,6 +8169,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 929188726a89307428375033add05e0d
     m_Address: mvz2:random/grass1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92b5bd77d4212534e8a40864c0969512
+    m_Address: mvz2:teleporter_signal
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -10819,6 +10847,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7223f5db91ec864badb58d5384fa62c
+    m_Address: mvz2:entity/contraption/teleporter_signal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c722a1dec874bb34e9a87bb1dd009e63
     m_Address: mvz2:entity/enemy/mesmerizer_rod
     m_ReadOnly: 0
@@ -10961,6 +10996,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c91919e3f10e9004f85638cba2384e3e
     m_Address: mvz2:entity/contraption/force_wave
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c92314054c0942a4fadd56d16c3e94bb
+    m_Address: mvz2:mobile_blueprint/teleporter
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -11829,6 +11871,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d91984897dc86e944bbd58ed0228ba7c
     m_Address: mvz2:data_stream
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d9b55fc3b6b2926499d65dcf78652e42
+    m_Address: mvz2:teleport_up
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -13864,6 +13913,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe5c3b6b658b05c478ffb6c1397dcd0f
     m_Address: mvz2:effect/breakout_board
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe6913d3412e73740ad2ce7d1cea2624
+    m_Address: mvz2:contraption/mountain/teleporter
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

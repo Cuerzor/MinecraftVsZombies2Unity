@@ -18,6 +18,11 @@ namespace MVZ2.GameContent.Contraptions
         public Teleporter(string nsp, string name) : base(nsp, name)
         {
         }
+        public override void Update(Entity entity)
+        {
+            base.Update(entity);
+            entity.SetAnimationBool("Signal", entity.IsEvoked());
+        }
         public static void Teleport(Entity entity, LawnGrid lawnGrid)
         {
             foreach (var gridEntity in lawnGrid.GetEntities())

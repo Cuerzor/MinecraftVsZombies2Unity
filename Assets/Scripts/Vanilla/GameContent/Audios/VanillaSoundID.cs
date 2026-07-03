@@ -55,6 +55,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID chestOpen = Get("chest_open");
         public readonly static NamespaceID chestClose = Get("chest_close");
         public readonly static NamespaceID chime = Get("chime");
+        public readonly static NamespaceID chronoSphere = Get("chrono_sphere");
         public readonly static NamespaceID cloth = Get("cloth");
         public readonly static NamespaceID coin = Get("coin");
         public readonly static NamespaceID coldcast = Get("coldcast");
@@ -242,6 +243,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID swing = Get("swing");
         public readonly static NamespaceID teleportUp = Get("teleport_up");
         public readonly static NamespaceID teleportDown = Get("teleport_down");
+        public readonly static NamespaceID teleporterSignal = Get("teleporter_signal");
         public readonly static NamespaceID teslaAttack = Get("tesla_attack");
         public readonly static NamespaceID teslaConstruction = Get("tesla_construction");
         public readonly static NamespaceID teslaPower = Get("tesla_power");

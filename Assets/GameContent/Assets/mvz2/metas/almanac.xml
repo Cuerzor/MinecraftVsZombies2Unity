@@ -1070,7 +1070,20 @@
             </flavor>
         </entry>
         <entry />
-        <entry />
+        <entry id="mvz2:teleporter">
+            <variables>
+                <variable name="total_energy">250</variable>
+            </variables>
+            <header>
+                <p>传送器被触发后，可以将任意地块的所有器械传送到自身的位置，然后自己消失。</p>
+            </header>
+            <properties>
+                <p>技能：<![CDATA[<color=red>选择一处3x3的区域，将你的自定义战队凭空传送到该区域！（可在主界面自定义）</color>]]></p>
+            </properties>
+            <flavor>
+                <p>它最喜欢在队友就快击杀敌人的时候把队友传送回基地。</p>
+            </flavor>
+        </entry>
         <entry id="mvz2:ejector">
             <variables>
                 <variable name="cooldown">property("mvz2:entity_behaviour/ejector/max_cooldown_seconds")</variable>

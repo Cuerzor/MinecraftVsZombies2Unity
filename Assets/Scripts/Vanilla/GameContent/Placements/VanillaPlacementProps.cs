@@ -12,5 +12,9 @@ namespace MVZ2.GameContent.Placements
         public static readonly PropertyMeta<NamespaceID> ALMANAC_TAG = new PropertyMeta<NamespaceID>("almanacTag");
         public static NamespaceID? GetAlmanacTag(this PlacementDefinition definition) => definition.GetProperty<NamespaceID>(ALMANAC_TAG);
         public static void SetAlmanacTag(this PlacementDefinition definition, NamespaceID? value) => definition.SetProperty(ALMANAC_TAG, value);
+
+        public static readonly PropertyMeta<bool> CAN_ON_WATER = new PropertyMeta<bool>("can_on_water");
+        public static bool CanOnWater(this PlacementDefinition definition) => definition.GetProperty<bool>(CAN_ON_WATER);
+        public static void SetCanOnWater(this PlacementDefinition definition, bool value) => definition.SetProperty(CAN_ON_WATER, value);
     }
 }
