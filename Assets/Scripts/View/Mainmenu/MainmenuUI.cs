@@ -67,6 +67,13 @@ namespace MVZ2.UI.Mainmenu
                 button.gameObject.SetActive(active);
             }
         }
+        public void SetLabelActive(MainmenuLabelType type, bool active)
+        {
+            if (mainmenuLabelDict.TryGetValue(type, out var label))
+            {
+                label.gameObject.SetActive(active);
+            }
+        }
         public void SetRayblockerActive(bool active)
         {
             rayblocker.SetActive(active);
@@ -98,8 +105,15 @@ namespace MVZ2.UI.Mainmenu
             mainmenuButtonDict.Add(MainmenuButtonType.Addons, addonsButton);
             mainmenuButtonDict.Add(MainmenuButtonType.Stats, statsButton);
             mainmenuButtonDict.Add(MainmenuButtonType.Achievement, achievementButton);
+            mainmenuButtonDict.Add(MainmenuButtonType.Customize, customizeButton);
             mainmenuButtonDict.Add(MainmenuButtonType.MusicRoom, musicRoomButton);
             mainmenuButtonDict.Add(MainmenuButtonType.Arcade, arcadeButton);
+
+            mainmenuLabelDict.Add(MainmenuLabelType.Archive, archiveLabel);
+            mainmenuLabelDict.Add(MainmenuLabelType.Addons, addonsLabel);
+            mainmenuLabelDict.Add(MainmenuLabelType.Customize, customizeLabel);
+            mainmenuLabelDict.Add(MainmenuLabelType.Stats, statsLabel);
+            mainmenuLabelDict.Add(MainmenuLabelType.Achievement, achievementLabel);
 
             foreach (var pair in mainmenuButtonDict)
             {
@@ -126,6 +140,7 @@ namespace MVZ2.UI.Mainmenu
 
         public OptionsDialog OptionsDialog => optionsDialog;
         private Dictionary<MainmenuButtonType, MainmenuButton> mainmenuButtonDict = new Dictionary<MainmenuButtonType, MainmenuButton>();
+        private Dictionary<MainmenuLabelType, TextMeshPro> mainmenuLabelDict = new Dictionary<MainmenuLabelType, TextMeshPro>();
 
         [SerializeField]
         private GameObject rayblocker = null!;
@@ -153,6 +168,18 @@ namespace MVZ2.UI.Mainmenu
         private OptionsDialog optionsDialog = null!;
         [SerializeField]
         private UserManageDialog userManageDialog = null!;
+
+        [Header("Labels")]
+        [SerializeField]
+        private TextMeshPro archiveLabel = null!;
+        [SerializeField]
+        private TextMeshPro addonsLabel = null!;
+        [SerializeField]
+        private TextMeshPro statsLabel = null!;
+        [SerializeField]
+        private TextMeshPro achievementLabel = null!;
+        [SerializeField]
+        private TextMeshPro customizeLabel = null!;
 
         [Header("Buttons")]
         [SerializeField]
@@ -182,9 +209,19 @@ namespace MVZ2.UI.Mainmenu
         [SerializeField]
         private MainmenuButton achievementButton = null!;
         [SerializeField]
+        private MainmenuButton customizeButton = null!;
+        [SerializeField]
         private MainmenuButton musicRoomButton = null!;
         [SerializeField]
         private MainmenuButton arcadeButton = null!;
+    }
+    public enum MainmenuLabelType
+    {
+        Archive,
+        Stats,
+        Achievement,
+        Addons,
+        Customize,
     }
     public enum MainmenuButtonType
     {
@@ -201,6 +238,7 @@ namespace MVZ2.UI.Mainmenu
         Stats,
         Achievement,
         Addons,
+        Customize,
         MusicRoom,
         Arcade
     }

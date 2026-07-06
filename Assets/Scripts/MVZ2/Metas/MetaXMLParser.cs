@@ -107,6 +107,9 @@ namespace MVZ2.Metas
                 case "options":
                     resource.OptionMetaList = OptionMetaList.FromXmlNode(document["options"], defaultNsp);
                     break;
+                case "customize":
+                    resource.CustomizeMetaList = CustomizeMetaList.FromXmlNode(document["customize"], defaultNsp);
+                    break;
             }
         }
         public static ColliderConstructor LoadColliderConstructor(this XmlNode node)

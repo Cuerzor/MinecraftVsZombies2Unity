@@ -172,6 +172,7 @@ namespace MVZ2.Managers
             tasks.Add(new PipelineTask("Models", LoadModels, progress.AddChild()));
             tasks.Add(new PipelineTask("Map Models", LoadMapModels, progress.AddChild()));
             tasks.Add(new PipelineTask("Area Models", LoadAreaModels, progress.AddChild()));
+            tasks.Add(new PipelineTask("Customize Pages", LoadCustomizePages, progress.AddChild()));
 
             for (int i = 0; i < tasks.Count; i++)
             {
@@ -223,6 +224,13 @@ namespace MVZ2.Managers
             {
                 progress.SetCurrentTaskName("Waiting");
                 return LoadModAreaModels(modNamespace, progress);
+            }
+            Task LoadCustomizePages(TaskProgress progress)
+            {
+                var loadProgress = progress.AddChild();
+                loadProgress.SetCurrentTaskName("Waiting");
+
+                return LoadModCustomizePages(modNamespace, loadProgress);
             }
         }
         private void LoadSingleMetaList(ModResource modResource, NamespaceID resID, TextAsset resource)

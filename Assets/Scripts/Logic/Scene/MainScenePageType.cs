@@ -14,6 +14,7 @@ namespace MVZ2Logic.Scenes
         Store,
         Archive,
         Addons,
+        Customize,
         MusicRoom,
         Arcade
     }

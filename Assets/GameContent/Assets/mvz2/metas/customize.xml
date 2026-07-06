@@ -1,0 +1,9 @@
+<customize>
+    <pages>
+        <page id="teleporter_team" buttonText="传送器战队" prefabPath="mvz2:teleporter_team">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.teleporter" />
+            </unlock>
+        </page>
+    </pages>
+</customize>

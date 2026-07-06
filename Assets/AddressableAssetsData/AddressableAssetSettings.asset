@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: 7a738a0d559ecdc4184b556a8290e169
   m_currentHash:
     serializedVersion: 2
-    Hash: 38cd32802a419ba205890942ab59c78d
+    Hash: 498f54007cdfb54ffa726e4a3ae42358
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 0
@@ -102,6 +102,7 @@ MonoBehaviour:
     - AreaModel
     - Init
     - Main
+    - CustomizePage
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: fb40291d9b81e0644b9d330887b30a0e, type: 2}

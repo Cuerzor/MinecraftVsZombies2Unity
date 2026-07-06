@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace MVZ2.Models
 {
-    public class ModelUpdater : MonoBehaviour
+    public class ModelUpdater : ModelContainer
     {
         private void Awake()
         {
@@ -31,7 +31,5 @@ namespace MVZ2.Models
                 model.UpdateFixed();
             }
         }
-
-        public Model? model;
     }
 }

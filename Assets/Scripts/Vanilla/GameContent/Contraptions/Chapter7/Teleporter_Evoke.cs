@@ -12,6 +12,7 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.Grids;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Level;
+using MVZ2Logic.Saves;
 using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
@@ -90,15 +91,24 @@ namespace MVZ2.GameContent.Contraptions
                         continue;
                     var index = x + y * width;
                     var team = GetTeleporterTeam();
-                    var teamMember = team[index];
-                    if (!NamespaceID.IsValid(teamMember))
+                    var tile = team.GetTile(index);
+                    if (tile == null)
                         continue;
-                    TeleportTeamMember(teleporter, teamMember, g);
+                    TeleportTeamTile(teleporter, tile, g);
                 }
             }
             teleporter.AddBuff<TeleporterTriggeredBuff>();
             teleporter.PlaySound(VanillaSoundID.teleportUp);
             teleporter.PlaySound(VanillaSoundID.chronoSphere);
+        }
+        public static void TeleportTeamTile(Entity teleporter, TeleporterTeamTile tile, LawnGrid grid)
+        {
+            foreach (var entity in tile.GetEntities())
+            {
+                if (!NamespaceID.IsValid(entity))
+                    continue;
+                TeleportTeamMember(teleporter, entity, grid);
+            }
         }
         public static Entity? TeleportTeamMember(Entity teleporter, NamespaceID memberID, LawnGrid grid)
         {
@@ -112,9 +122,9 @@ namespace MVZ2.GameContent.Contraptions
                 e.AddBuff<TeleporterTeleportDownBuff>();
             });
         }
-        public static NamespaceID?[] GetTeleporterTeam()
+        public static TeleporterTeam GetTeleporterTeam()
         {
-            return defaultTeam;
+            return DefaultTeam;
         }
         public static void CheckAquatic(Entity teleporter, EntityDefinition memberDefinition, LawnGrid grid)
         {
@@ -135,6 +145,15 @@ namespace MVZ2.GameContent.Contraptions
                 e.PlaySound(VanillaSoundID.teleportDown);
             }); ;
         }
+        public static TeleporterTeam CreateDefaultTeleporterTeam()
+        {
+            var team = new TeleporterTeam();
+            team.AddTileEntity(1, VanillaContraptionID.furnace);
+            team.AddTileEntity(3, VanillaContraptionID.furnace);
+            team.AddTileEntity(5, VanillaContraptionID.furnace);
+            team.AddTileEntity(7, VanillaContraptionID.furnace);
+            return team;
+        }
         public static FrameTimer? GetEvocationTimer(Entity pad) => pad.GetProperty<FrameTimer>(PROP_EVOCATION_TIMER);
         public static void SetEvocationTimer(Entity pad, FrameTimer? value) => pad.SetProperty(PROP_EVOCATION_TIMER, value);
         public const float EVOCATION_DURATION_SECONDS = 5;
@@ -145,17 +164,6 @@ namespace MVZ2.GameContent.Contraptions
 
 
         public static readonly VanillaEntityPropertyMeta<FrameTimer> PROP_EVOCATION_TIMER = new VanillaEntityPropertyMeta<FrameTimer>("evocation_timer");
-        public static readonly NamespaceID?[] defaultTeam = new NamespaceID?[]
-        {
-            null,
-            VanillaContraptionID.furnace,
-            null,
-            VanillaContraptionID.furnace,
-            null,
-            VanillaContraptionID.furnace,
-            null,
-            VanillaContraptionID.furnace,
-            null,
-        };
+        public static readonly TeleporterTeam DefaultTeam = CreateDefaultTeleporterTeam();
     }
 }

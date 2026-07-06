@@ -429,7 +429,7 @@ namespace MVZ2.Addons
         [SerializeField]
         private float maxRefreshInterval = 1;
         [SerializeField]
-        private string tutorialURL;
+        private string tutorialURL = string.Empty;
         private TaskPipeline? reloadPipeline;
         private bool overridedFile;
         private ResourcePackReference? selectedLanguagePack;

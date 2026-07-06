@@ -11,10 +11,9 @@ namespace MVZ2.Models
         public ModelFactory()
         {
         }
-        public Model? CreateModel(NamespaceID? id, Camera camera, Transform parent, int seed = 0)
+        public IModelBuilder? GetModelBuilder(NamespaceID? id, Camera camera, int seed = 0)
         {
-            var builder = new ModelBuilder(id, camera, seed);
-            return builder.Build(parent);
+            return new ModelBuilder(id, camera, seed);
         }
     }
 }

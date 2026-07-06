@@ -9,6 +9,7 @@ using MVZ2.Almanacs;
 using MVZ2.Arcade;
 using MVZ2.Archives;
 using MVZ2.ChapterTransition;
+using MVZ2.Customize;
 using MVZ2.DebugConsole;
 using MVZ2.Level;
 using MVZ2.Mainmenu;
@@ -257,6 +258,16 @@ namespace MVZ2.Scenes
                 addons.OnReturnClick -= OnReturn;
             }
         }
+        public void DisplayCustomize(Action onReturn)
+        {
+            DisplayPage(MainScenePageType.Customize);
+            customize.OnReturnClick += OnReturn;
+            void OnReturn()
+            {
+                onReturn?.Invoke();
+                customize.OnReturnClick -= OnReturn;
+            }
+        }
         public void DisplayMusicRoom(Action onReturn)
         {
             DisplayPage(MainScenePageType.MusicRoom);
@@ -474,6 +485,7 @@ namespace MVZ2.Scenes
             pages.Add(MainScenePageType.Store, store);
             pages.Add(MainScenePageType.Archive, archive);
             pages.Add(MainScenePageType.Addons, addons);
+            pages.Add(MainScenePageType.Customize, customize);
             pages.Add(MainScenePageType.MusicRoom, musicRoom);
             pages.Add(MainScenePageType.Arcade, arcade);
 
@@ -542,6 +554,8 @@ namespace MVZ2.Scenes
         private ArchiveController archive = null!;
         [SerializeField]
         private AddonsController addons = null!;
+        [SerializeField]
+        private CustomizeController customize = null!;
         [SerializeField]
         private MusicRoomController musicRoom = null!;
         [SerializeField]

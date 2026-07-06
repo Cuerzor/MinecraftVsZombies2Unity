@@ -166,6 +166,9 @@ namespace MVZ2.Editor
                 case "areamodels":
                     labels.Add("AreaModel");
                     break;
+                case "customize_pages":
+                    labels.Add("CustomizePage");
+                    break;
             }
             return labels.ToArray();
         }

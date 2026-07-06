@@ -2501,6 +2501,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e48453c7c8a82149a6f02ac874f5d38
+    m_Address: mvz2:customize
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Meta
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2e64b12488b10c340838892bf9f9db3e
     m_Address: mvz2:ui/combat
     m_ReadOnly: 0
@@ -3052,6 +3059,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37dcdf20ca6c1e24aa4e424ff1edc1ba
+    m_Address: mvz2:teleporter_team_tile
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CustomizePage
+    - Main
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 37f86b3303d939c448ba79cca9b2ab60
     m_Address: mvz2:icon/vulnerable
@@ -4102,6 +4116,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 48d63245659c91845b1fc3157d72b5c5
+    m_Address: mvz2:teleporter_team
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CustomizePage
+    - Main
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 48edce81d4a541b44932e7b68f4ee414
     m_Address: mvz2:soul_sand_break4
@@ -9560,6 +9581,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: add292f127ce9a24b8eb960e57af1ace
+    m_Address: mvz2:chrono_sphere
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: adecf731c88b78646a29bb745f5ada9b
     m_Address: mvz2:mobile_blueprint/dream_crystal
     m_ReadOnly: 0
@@ -13973,6 +14001,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff5598c42a3a11849ba0c8ef1097a362
+    m_Address: mvz2:ui/customize/teleporter_team_tile
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ff57a0ead1bc10f4fb8737e77bd61164
     m_Address: mvz2:chime

@@ -14,14 +14,30 @@ namespace MVZ2Logic.Saves
         }
         protected override SerializableModSaveData CreateSerializable()
         {
-            return new SerializableLogicSaveData()
-            {
-                version = 0,
-                lastMapID = LastMapID,
-                mapTalkID = MapTalkID,
-                money = money,
-                lastSelection = LastSelection,
-            };
+            return new SerializableLogicSaveData();
+        }
+        protected override void WriteToSerializable(SerializableModSaveData serializable)
+        {
+            base.WriteToSerializable(serializable);
+            if (serializable is not SerializableLogicSaveData logicSeri)
+                return;
+            logicSeri.version = 0;
+            logicSeri.lastMapID = LastMapID;
+            logicSeri.mapTalkID = MapTalkID;
+            logicSeri.money = money;
+            logicSeri.lastSelection = LastSelection;
+            logicSeri.teleporterTeam = TeleporterTeam?.ToSerializable();
+        }
+        protected override void LoadFromSerializable(SerializableModSaveData serializable)
+        {
+            base.LoadFromSerializable(serializable);
+            if (serializable is not SerializableLogicSaveData logicSeri)
+                return;
+            LastMapID = logicSeri.lastMapID;
+            MapTalkID = logicSeri.mapTalkID;
+            money = logicSeri.money;
+            LastSelection = logicSeri.lastSelection;
+            TeleporterTeam = logicSeri.teleporterTeam != null ? Saves.TeleporterTeam.FromSerializable(logicSeri.teleporterTeam) : null;
         }
         public static LogicSaveData DeserializeFrom(SerializableLogicSaveData seri)
         {
@@ -31,10 +47,6 @@ namespace MVZ2Logic.Saves
             }
             var saveData = new LogicSaveData(seri.spaceName);
             saveData.LoadFromSerializable(seri);
-            saveData.LastMapID = seri.lastMapID;
-            saveData.MapTalkID = seri.mapTalkID;
-            saveData.money = seri.money;
-            saveData.LastSelection = seri.lastSelection;
             return saveData;
         }
         public int GetMoney()
@@ -63,6 +75,7 @@ namespace MVZ2Logic.Saves
         public NamespaceID? LastMapID { get; set; }
         public NamespaceID? MapTalkID { get; set; }
         public BlueprintSelection? LastSelection { get; set; }
+        public TeleporterTeam? TeleporterTeam { get; set; }
         private static string[] blueprintSlotUnlocks = new string[]
         {
             LogicUnlockNames.blueprintSlot1,
@@ -80,7 +93,7 @@ namespace MVZ2Logic.Saves
             LogicUnlockNames.starshardSlot1,
             LogicUnlockNames.starshardSlot2,
         };
-        private int money;
+        protected int money;
     }
     [Serializable]
     public class SerializableLogicSaveData : SerializableModSaveData
@@ -89,6 +102,7 @@ namespace MVZ2Logic.Saves
         public NamespaceID? mapTalkID;
         public int money;
         public BlueprintSelection? lastSelection;
+        public SerializableTeleporterTeam? teleporterTeam;
         [Obsolete]
         public int artifactSlots;
         [Obsolete]

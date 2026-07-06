@@ -130,15 +130,19 @@ namespace MVZ2Logic.Saves
         public SerializableModSaveData ToSerializable()
         {
             var serializable = CreateSerializable();
+            WriteToSerializable(serializable);
+            return serializable;
+        }
+        protected abstract SerializableModSaveData CreateSerializable();
+        protected virtual void WriteToSerializable(SerializableModSaveData serializable)
+        {
             serializable.spaceName = Namespace;
             serializable.stats = stats.ToSerializable();
             serializable.endlessRecords = endlessRecords.Select(r => r.ToSerializable()).ToArray();
             serializable.levelDifficultyRecords = levelDifficultyRecords.Select(r => r.ToSerializable()).ToArray();
             serializable.unlocks = unlocks.ToArray();
-            return serializable;
         }
-        protected abstract SerializableModSaveData CreateSerializable();
-        protected void LoadFromSerializable(SerializableModSaveData serializable)
+        protected virtual void LoadFromSerializable(SerializableModSaveData serializable)
         {
             stats = serializable.stats != null ? UserStats.FromSerializable(serializable.stats) : stats;
             endlessRecords.Clear();

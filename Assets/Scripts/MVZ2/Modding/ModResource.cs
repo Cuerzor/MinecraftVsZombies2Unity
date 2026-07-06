@@ -5,6 +5,7 @@ using MVZ2.Map;
 using MVZ2.Metas;
 using MVZ2.Models;
 using MVZ2.TalkData;
+using MVZ2Logic.Customize;
 using MVZ2Logic.Models;
 using UnityEngine;
 
@@ -44,11 +45,13 @@ namespace MVZ2.Modding
         public BuffMetaList? BuffMetaList { get; set; }
         public UnlockMetaList? UnlockMetaList { get; set; }
         public OptionMetaList? OptionMetaList { get; set; }
+        public CustomizeMetaList? CustomizeMetaList { get; set; }
         public Dictionary<string, CharacterVariantSprite[]> CharacterVariantSprites = new();
         public Dictionary<string, TalkMeta> TalkMetas = new();
         public Dictionary<string, MapModel> MapModels = new();
         public Dictionary<string, AreaModel> AreaModels = new();
         public Dictionary<string, Model> Models = new();
+        public Dictionary<string, CustomizePageController> CustomizePages = new();
         public ModResource(string spaceName)
         {
             Namespace = spaceName;

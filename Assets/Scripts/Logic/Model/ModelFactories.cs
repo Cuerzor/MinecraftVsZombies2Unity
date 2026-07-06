@@ -9,11 +9,20 @@ namespace MVZ2Logic.Models
     {
         public static Model? Create(NamespaceID? id, Camera camera, Transform parentTransform, int seed = 0)
         {
+            var builder = GetModelBuilder(id, camera, seed);
+            if (builder == null)
+            {
+                return null;
+            }
+            return builder.Build(parentTransform);
+        }
+        public static IModelBuilder? GetModelBuilder(NamespaceID? id, Camera camera, int seed = 0)
+        {
             if (factory == null)
             {
                 return null;
             }
-            return factory.CreateModel(id, camera, parentTransform, seed);
+            return factory.GetModelBuilder(id, camera, seed);
         }
         public static void SetFactory(IModelFactory value)
         {
@@ -23,6 +32,6 @@ namespace MVZ2Logic.Models
     }
     public interface IModelFactory
     {
-        public Model? CreateModel(NamespaceID? id, Camera camera, Transform parentTransform, int seed = 0);
+        public IModelBuilder? GetModelBuilder(NamespaceID? id, Camera camera, int seed = 0);
     }
 }

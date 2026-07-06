@@ -36,10 +36,13 @@ namespace MVZ2.Mainmenu
             {
                 button.Interactable = true;
             }
+            bool customizeUnlocked = IsCustomizeUnlocked();
             ui.SetButtonActive(MainmenuButtonType.Almanac, main.SaveManager.IsAlmanacUnlocked());
             ui.SetButtonActive(MainmenuButtonType.Store, main.SaveManager.IsStoreUnlocked());
             ui.SetButtonActive(MainmenuButtonType.MusicRoom, main.SaveManager.IsMusicRoomUnlocked());
             ui.SetButtonActive(MainmenuButtonType.Arcade, main.SaveManager.IsArcadeUnlocked());
+            ui.SetButtonActive(MainmenuButtonType.Customize, customizeUnlocked);
+            ui.SetLabelActive(MainmenuLabelType.Customize, customizeUnlocked);
 
             isDark = false;
             ui.SetBackgroundDark(false);
@@ -105,6 +108,7 @@ namespace MVZ2.Mainmenu
             mainmenuActionDict.Add(MainmenuButtonType.Achievement, OnAchievementButtonClickCallback);
             mainmenuActionDict.Add(MainmenuButtonType.MusicRoom, OnMusicRoomButtonClickCallback);
             mainmenuActionDict.Add(MainmenuButtonType.Arcade, OnArcadeButtonClickCallback);
+            mainmenuActionDict.Add(MainmenuButtonType.Customize, OnCustomizeButtonClickCallback);
             ui.OnMainmenuButtonUpdateSprite += OnMainmenuButtonUpdateSpriteCallback;
             ui.OnMainmenuButtonClick += OnMainmenuButtonClickCallback;
 
@@ -228,6 +232,10 @@ namespace MVZ2.Mainmenu
         private void OnAddonsButtonClickCallback()
         {
             main.Scene.DisplayAddons(() => main.Scene.DisplayMainmenuToBasement());
+        }
+        private void OnCustomizeButtonClickCallback()
+        {
+            main.Scene.DisplayCustomize(() => main.Scene.DisplayMainmenuToBasement());
         }
         private void OnStatsButtonClickCallback()
         {
@@ -831,6 +839,21 @@ namespace MVZ2.Mainmenu
                 viewDatas = Array.Empty<AchievementEntryViewData>();
             }
             ui.UpdateAchievements(viewDatas);
+        }
+        #endregion
+
+        #region 自定义
+        private bool IsCustomizeUnlocked()
+        {
+            foreach (var id in main.ResourceManager.GetAllCustomizePageMetasID())
+            {
+                var meta = main.ResourceManager.GetCustomizePageMeta(id);
+                if (meta == null)
+                    continue;
+                if (meta.Unlock.IsNullOrMeetsConditions(main.SaveManager))
+                    return true;
+            }
+            return false;
         }
         #endregion
 
