@@ -2,8 +2,10 @@
 
 using System;
 using MVZ2.UI;
+using MVZ2Logic.Inputs;
 using MVZ2Logic.Models;
 using PVZEngine;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -12,19 +14,34 @@ namespace MVZ2.Customize
 {
     public class TeleporterTeamBlueprintDisplayerUI : MonoBehaviour
     {
+        public void DisableScrollRectDragging()
+        {
+            if (blueprintDisplayer is BlueprintDisplayerMobile mobile)
+            {
+                mobile.DisableScrollRectDragging();
+            }
+        }
         public void SetBlueprintEntries(ChoosingBlueprintViewData[] entries)
         {
             blueprintDisplayer.UpdateItems(entries);
         }
+        public void SetBlueprintSelected(int index, bool selected)
+        {
+            var blueprint = blueprintDisplayer.GetItem(index);
+            if (blueprint.Exists())
+            {
+                blueprint.SetSelected(selected);
+            }
+        }
         private void Awake()
         {
-            blueprintDisplayer.OnBlueprintSelect += OnBlueprintClickCallback;
+            blueprintDisplayer.OnBlueprintPointerInteraction += OnBlueprintPointerInteractionCallback;
             confirmButton.onClick.AddListener(OnConfirmClickCallback);
             cancelButton.onClick.AddListener(OnCancelClickCallback);
         }
-        private void OnBlueprintClickCallback(int index, PointerEventData eventData)
+        private void OnBlueprintPointerInteractionCallback(int index, PointerEventData eventData, PointerInteraction interaction)
         {
-            OnBlueprintClick?.Invoke(index, eventData);
+            OnBlueprintPointerInteraction?.Invoke(index, eventData, interaction);
         }
         private void OnConfirmClickCallback()
         {
@@ -34,7 +51,7 @@ namespace MVZ2.Customize
         {
             OnCancelClick?.Invoke();
         }
-        public event Action<int, PointerEventData>? OnBlueprintClick;
+        public event Action<int, PointerEventData, PointerInteraction>? OnBlueprintPointerInteraction;
         public event Action? OnConfirmClick;
         public event Action? OnCancelClick;
         [SerializeField]

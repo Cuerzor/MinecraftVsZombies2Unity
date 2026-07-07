@@ -21,7 +21,6 @@ namespace MVZ2.Level
         {
             if (IsInputDisabled())
                 return;
-            UpdatePointerRelease();
 #if UNITY_EDITOR
             UpdateKeysDebug();
 #endif
@@ -31,45 +30,6 @@ namespace MVZ2.Level
         {
             return level == null || level.IsCleared || isOpeningAlmanac || isOpeningStore || inputAndUIDisabled || IsConsoleActive();
         }
-
-        #region 指针输入
-        private void UpdatePointerRelease()
-        {
-            if (Input.touchCount > 0)
-            {
-                foreach (var position in InputHelper.GetTouchUps())
-                {
-                    OnPointerRelease(position);
-                }
-            }
-            else
-            {
-                foreach (var position in InputHelper.GetMouseUps(MouseButtons.LEFT))
-                {
-                    OnPointerRelease(position);
-                }
-            }
-        }
-        private void OnPointerRelease(PointerPositionParams pointer)
-        {
-            var eventSystem = EventSystem.current;
-            var results = new List<RaycastResult>();
-            var pointerId = InputHelper.GetPointerIdByButtonAndType(pointer.button, pointer.type);
-            var eventData = new PointerEventData(eventSystem)
-            {
-                position = pointer.position,
-                button = (PointerEventData.InputButton)pointer.button,
-                pointerId = pointerId,
-            };
-            eventSystem.RaycastAll(eventData, results);
-            var first = results.FirstOrDefault(r => r.gameObject);
-            if (first.isValid)
-            {
-                eventData.pointerCurrentRaycast = first;
-                ExecuteEvents.ExecuteHierarchy<IPointerReleaseHandler>(first.gameObject, eventData, (x, y) => x.OnPointerRelease(ExecuteEvents.ValidateEventData<PointerEventData>(y)));
-            }
-        }
-        #endregion
 
         #region 键盘
         private void UpdateKeys()

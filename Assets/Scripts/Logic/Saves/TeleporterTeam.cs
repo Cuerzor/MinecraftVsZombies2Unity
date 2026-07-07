@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using PVZEngine;
+using static UnityEngine.ParticleSystem;
 
 namespace MVZ2Logic.Saves
 {
@@ -11,6 +12,16 @@ namespace MVZ2Logic.Saves
     {
         public TeleporterTeam() : base()
         {
+        }
+        public TeleporterTeam Clone()
+        {
+            var newTeam = new TeleporterTeam();
+            foreach (var pair in tiles)
+            {
+                var tile = pair.Value;
+                newTeam.tiles.Add(pair.Key, tile.Clone());
+            }
+            return newTeam;
         }
         public int[] GetTileIndexes()
         {
@@ -72,6 +83,15 @@ namespace MVZ2Logic.Saves
     {
         public TeleporterTeamTile() : base()
         {
+        }
+        public TeleporterTeamTile Clone()
+        {
+            var newTile = new TeleporterTeamTile();
+            foreach (var ent in entities)
+            {
+                newTile.entities.Add(ent);
+            }
+            return newTile;
         }
         public void AddEntity(NamespaceID id)
         {

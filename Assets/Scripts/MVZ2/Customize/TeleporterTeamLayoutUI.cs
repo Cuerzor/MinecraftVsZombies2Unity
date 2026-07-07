@@ -27,6 +27,14 @@ namespace MVZ2.Customize
                 tile.OnPointerInteraction -= OnTilePointerInteractionCallback;
             });
         }
+        public void SetTileHighlight(int index, Color color)
+        {
+            var tile = tilesList.getElement<TeleporterTeamLayoutTileUI>(index);
+            if (tile.Exists())
+            {
+                tile.SetHighlightColor(color);
+            }
+        }
         public void ClearTiles()
         {
             foreach (var tile in tilesList.getElements<TeleporterTeamLayoutTileUI>()) 

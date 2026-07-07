@@ -33,12 +33,33 @@ namespace MVZ2.UI
                 page.OnSelect -= OnSelectCallback;
             });
         }
+        public void DisableScrollRectDragging()
+        {
+            isScrollRectDragDisabled = true;
+        }
         public override Blueprint? GetItem(int index)
         {
             return blueprintList.getElement<Blueprint>(index);
         }
         private void OnPointerInteractionCallback(Blueprint blueprint, PointerEventData eventData, PointerInteraction interaction)
         {
+            var index = blueprintList.indexOf(blueprint);
+            CallBlueprintPointerInteraction(index, eventData, interaction);
+
+            if (isScrollRectDragDisabled)
+            {
+                if (interaction == PointerInteraction.EndDrag)
+                {
+                    isScrollRectDragDisabled = false;
+                    scrollRect.OnEndDrag(eventData);
+                }
+                else if (interaction == PointerInteraction.BeginDrag)
+                {
+                    scrollRect.OnBeginDrag(eventData);
+                }
+                return;
+            }
+
             switch (interaction)
             {
                 case PointerInteraction.BeginDrag:
@@ -51,8 +72,6 @@ namespace MVZ2.UI
                     scrollRect.OnEndDrag(eventData);
                     return;
             }
-            var index = blueprintList.indexOf(blueprint);
-            CallBlueprintPointerInteraction(index, eventData, interaction);
         }
         private void OnSelectCallback(Blueprint blueprint, PointerEventData eventData)
         {
@@ -64,5 +83,6 @@ namespace MVZ2.UI
         ScrollRect scrollRect = null!;
         [SerializeField]
         ElementListUI blueprintList = null!;
+        private bool isScrollRectDragDisabled;
     }
 }

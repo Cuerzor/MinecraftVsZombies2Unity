@@ -18,6 +18,14 @@ namespace MVZ2.Models
             }
             model = builder.Build(parent);
         }
+        public void RemoveModel()
+        {
+            if (model.Exists())
+            {
+                Destroy(model.gameObject);
+                model = null;
+            }
+        }
         public Model? model;
         public Transform? modelRoot;
     }
