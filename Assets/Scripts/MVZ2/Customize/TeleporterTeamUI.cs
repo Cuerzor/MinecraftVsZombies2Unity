@@ -4,6 +4,7 @@ using System;
 using MVZ2.UI;
 using MVZ2Logic.Models;
 using PVZEngine;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -21,6 +22,10 @@ namespace MVZ2.Customize
         {
             var displayer = mobile ? mobileBlueprintDisplayer : standaloneBlueprintDisplayer;
             displayer.SetBlueprintEntries(entries);
+        }
+        public void SetEnergy(string energy)
+        {
+            energyLabel.text = energy;
         }
         public void SetLayoutTileCount(int count)
         {
@@ -62,6 +67,8 @@ namespace MVZ2.Customize
         public event Action<int, PointerEventData>? OnBlueprintClick;
         public event Action? OnConfirmClick;
         public event Action? OnCancelClick;
+        [SerializeField]
+        private TextMeshProUGUI energyLabel = null!;
         [SerializeField]
         private TeleporterTeamBlueprintDisplayerUI standaloneBlueprintDisplayer = null!;
         [SerializeField]

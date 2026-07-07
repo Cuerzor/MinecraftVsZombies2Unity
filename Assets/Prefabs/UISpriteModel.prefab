@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 0}
+  modelRoot: {fileID: 2150314999777588485}
 --- !u!1 &8537045240247738516
 GameObject:
   m_ObjectHideFlags: 0

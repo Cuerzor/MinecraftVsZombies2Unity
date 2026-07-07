@@ -33,6 +33,7 @@ namespace MVZ2.Customize
             if (models.ContainsKey(layer))
                 return;
             var model = Instantiate(modelContainerTemplate, modelsRoot);
+            model.gameObject.SetActive(true);
             model.SetModel(modelBuilder);
             models.Add(layer, model);
         }
@@ -46,6 +47,7 @@ namespace MVZ2.Customize
         }
         private void Awake()
         {
+            modelContainerTemplate.gameObject.SetActive(false);
             handler.OnPointerInteraction += OnPointerInteractionCallback;
         }
         private void OnPointerInteractionCallback(LevelPointerInteractionHandler handler, PointerEventData eventData, PointerInteraction interaction)

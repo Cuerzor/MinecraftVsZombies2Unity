@@ -106,6 +106,15 @@ namespace MVZ2.Vanilla.Contraptions
             return contraption.GetProperty<bool>(STABLE_CONTRAPTION);
         }
         #endregion
+
+        #region 稳固器械
+        public static readonly PropertyMeta<bool> BANNED_IN_TELEPORTER_TEAM = Get<bool>("banned_in_teleporter_team");
+        public static bool BannedInTeleporterTeam(this EntityDefinition definition)
+        {
+            return definition.GetProperty<bool>(BANNED_IN_TELEPORTER_TEAM);
+        }
+        #endregion
+        
     }
 }
 

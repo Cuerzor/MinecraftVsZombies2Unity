@@ -11,8 +11,14 @@ namespace MVZ2.Models
     {
         public void SetModel(IModelBuilder builder)
         {
-            model = builder.Build(transform);
+            var parent = modelRoot;
+            if (!parent.Exists())
+            {
+                parent = transform;
+            }
+            model = builder.Build(parent);
         }
         public Model? model;
+        public Transform? modelRoot;
     }
 }
