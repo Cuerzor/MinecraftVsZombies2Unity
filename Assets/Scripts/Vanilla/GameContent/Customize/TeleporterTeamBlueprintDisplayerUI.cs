@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MVZ2.Customize
+namespace MVZ2.GameContent.Customize
 {
     public class TeleporterTeamBlueprintDisplayerUI : MonoBehaviour
     {

@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using MVZ2.IO;
 using MVZ2.Modding;
-using MVZ2.OldSave;
-using MVZ2.OldSaves;
 using MVZ2Logic.Games;
 using MVZ2Logic.Saves;
 using MVZ2Logic.Serialization;
@@ -268,104 +266,6 @@ namespace MVZ2.Saves
             var json = entry.ReadString(Encoding.UTF8);
             var seri = SerializeHelper.FromBson<SerializableUserDataPackMetadata>(json);
             return UserDataPackMetadata.FromSerializable(seri);
-        }
-        #endregion
-
-        #region 导入旧存档
-        private void ImportOldSaveData(OldGlobalSave saveData)
-        {
-            if (saveData == null)
-                return;
-
-            // 用户列表
-            var newUserDataList = ImportOldUserList(saveData.userList);
-            if (newUserDataList == null)
-                return;
-
-            var saveDataMetaPath = GetUserListPath();
-            FileHelper.ValidateDirectory(saveDataMetaPath);
-            var seriUserList = newUserDataList.ToSerializable();
-            var userListJson = seriUserList.ToBson();
-            Main.FileManager.WriteStringFile(saveDataMetaPath, userListJson);
-
-            // 存档。
-            var saveDatas = ImportOldUserData(newUserDataList, saveData.saveDatas);
-            if (saveDatas == null)
-                return;
-
-            var spaceName = Main.BuiltinNamespace;
-            for (int i = 0; i < saveDatas.Length; i++)
-            {
-                var modSaveData = saveDatas[i];
-                if (modSaveData == null)
-                    continue;
-                WriteSaveData(i, spaceName, modSaveData);
-            }
-        }
-        private UserDataList? ImportOldUserList(OldUserList userList)
-        {
-            if (userList?.usernames == null)
-                return null;
-
-            // 用户列表
-            var newUserDataList = new UserDataList(MAX_USER_COUNT);
-            newUserDataList.CurrentUserIndex = -1;
-            for (int i = 0; i < userList.usernames.Length; i++)
-            {
-                var name = userList.usernames[i];
-                if (string.IsNullOrEmpty(name))
-                    continue;
-                var userItem = newUserDataList.Create(i);
-                if (userItem != null)
-                {
-                    userItem.Username = name;
-                    if (newUserDataList.CurrentUserIndex < 0)
-                    {
-                        newUserDataList.CurrentUserIndex = i;
-                    }
-                }
-            }
-            if (newUserDataList.CurrentUserIndex < 0)
-            {
-                newUserDataList.CurrentUserIndex = 0;
-            }
-            return newUserDataList;
-        }
-        private LogicSaveData[]? ImportOldUserData(UserDataList userList, OldSaveData[] userDatas)
-        {
-            if (userDatas == null)
-                return null;
-
-            ModInfo? vanillaMod = null;
-            foreach (var mod in Main.ModManager.GetAllModInfos())
-            {
-                if (mod == null || mod.Logic == null)
-                    continue;
-                if (mod.Namespace != Main.BuiltinNamespace)
-                    continue;
-                vanillaMod = mod;
-                break;
-            }
-            if (vanillaMod == null)
-                return null;
-
-            var allUsers = userList.GetAllUsers();
-            LogicSaveData[] results = new LogicSaveData[allUsers.Length];
-            for (int i = 0; i < allUsers.Length; i++)
-            {
-                var user = allUsers[i];
-                if (user == null)
-                    continue;
-                var oldData = userDatas[i];
-                if (oldData == null)
-                    continue;
-                var data = vanillaMod.Logic?.CreateSaveData();
-                if (data is not LogicSaveData vanilla)
-                    continue;
-                OldSaveDataConvertor.ImportUserDataFromOld(vanilla, oldData);
-                results[i] = vanilla;
-            }
-            return results;
         }
         #endregion
 

@@ -4,6 +4,7 @@ using MVZ2Logic.Models;
 using PVZEngine;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace MVZ2.Models
 {
@@ -28,7 +29,22 @@ namespace MVZ2.Models
                 model = null;
             }
         }
+        public void SetSortingLayerName(string layer)
+        {
+            if (sortingGroup.Exists())
+            {
+                sortingGroup.sortingLayerName = layer;
+            }
+        }
+        public void SetSortingOrder(int order)
+        {
+            if (sortingGroup.Exists())
+            {
+                sortingGroup.sortingOrder = order;
+            }
+        }
         public Model? model;
+        public SortingGroup? sortingGroup;
         public Transform? modelRoot;
     }
 }

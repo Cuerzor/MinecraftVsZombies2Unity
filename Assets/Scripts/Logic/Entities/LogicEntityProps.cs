@@ -170,6 +170,10 @@ namespace MVZ2Logic.Entities
 
         #region 死亡音效
         public static readonly PropertyMeta<NamespaceID> DEATH_SOUND = Get<NamespaceID>("deathSound");
+        public static NamespaceID? GetDeathSound(this EntityDefinition definition)
+        {
+            return definition.GetProperty<NamespaceID>(DEATH_SOUND);
+        }
         public static NamespaceID? GetDeathSound(this Entity entity)
         {
             return entity.GetProperty<NamespaceID>(DEATH_SOUND);
@@ -282,6 +286,10 @@ namespace MVZ2Logic.Entities
         #region 排序
         public static readonly PropertyMeta<string> SORTING_LAYER = Get<string>("sortingLayer");
         public static readonly PropertyMeta<int> SORTING_ORDER = Get<int>("sortingOrder");
+        public static string? GetSortingLayer(this EntityDefinition definition)
+        {
+            return definition.GetProperty<string>(SORTING_LAYER);
+        }
         public static string? GetSortingLayer(this Entity entity)
         {
             return entity.GetProperty<string>(SORTING_LAYER);
@@ -289,6 +297,10 @@ namespace MVZ2Logic.Entities
         public static void SetSortingLayer(this Entity entity, string layer)
         {
             entity.SetProperty(SORTING_LAYER, layer);
+        }
+        public static int GetSortingOrder(this EntityDefinition definition)
+        {
+            return definition.GetProperty<int>(SORTING_ORDER);
         }
         public static int GetSortingOrder(this Entity entity)
         {

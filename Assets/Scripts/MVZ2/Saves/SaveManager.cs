@@ -7,7 +7,6 @@ using System.Linq;
 using MVZ2.IO;
 using MVZ2.Managers;
 using MVZ2.Modding;
-using MVZ2.OldSave;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Callbacks;
 using MVZ2Logic.Difficulties;
@@ -50,7 +49,7 @@ namespace MVZ2.Saves
 
             WriteSaveData(userIndex, spaceName, modSaveData);
         }
-        private void WriteSaveData(int userIndex, string spaceName, ModSaveData modSaveData)
+        public void WriteSaveData(int userIndex, string spaceName, ModSaveData modSaveData)
         {
             var modInfo = Main.ModManager.GetModInfo(spaceName);
             if (modInfo == null || modInfo.Logic == null)
@@ -132,8 +131,7 @@ namespace MVZ2.Saves
             {
                 try
                 {
-                    var oldSaveData = OldSaveDataImporter.Import();
-                    ImportOldSaveData(oldSaveData);
+                    OldSaveDataManager.Import(this);
                 }
                 catch (Exception e)
                 {

@@ -16,7 +16,7 @@ using MVZ2.Mainmenu;
 using MVZ2.Managers;
 using MVZ2.Map;
 using MVZ2.MusicRoom;
-using MVZ2.Note;
+using MVZ2.NotePaper;
 using MVZ2.Options;
 using MVZ2.Saves;
 using MVZ2.Store;

@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 0}
+  sortingGroup: {fileID: 5712275235247107635}
   modelRoot: {fileID: 2150314999777588485}
 --- !u!1 &8537045240247738516
 GameObject:

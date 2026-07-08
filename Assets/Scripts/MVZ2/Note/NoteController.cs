@@ -13,7 +13,7 @@ using MVZ2Logic.Talk;
 using PVZEngine;
 using UnityEngine;
 
-namespace MVZ2.Note
+namespace MVZ2.NotePaper
 {
     public class NoteController : MainScenePage, INote
     {

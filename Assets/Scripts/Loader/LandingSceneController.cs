@@ -3,6 +3,8 @@ using System.Reflection;
 using System.Threading.Tasks;
 using MVZ2.Level;
 using MVZ2.Modding;
+using MVZ2.OldSave;
+using MVZ2.Saves;
 using MVZ2.Vanilla;
 using MVZ2Logic;
 using MVZ2Logic.Games;
@@ -16,6 +18,7 @@ namespace MVZ2
     {
         void Start()
         {
+            OldSaveDataManager.SetSaveDataImporter(new OldSaveDataImporter());
             ModManager.OnRegisterModInfos += OnRegisterModInfos;
             Addressables.LoadSceneAsync("Main", LoadSceneMode.Single);
         }

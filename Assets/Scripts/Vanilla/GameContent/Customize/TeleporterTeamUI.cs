@@ -12,7 +12,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MVZ2.Customize
+namespace MVZ2.GameContent.Customize
 {
     public class TeleporterTeamUI : MonoBehaviour
     {
@@ -58,9 +58,9 @@ namespace MVZ2.Customize
         {
             layout.ClearTiles();
         }
-        public void AddTileEntity(int index, NamespaceID entityID, IModelBuilder modelBuilder)
+        public void AddTileEntity(int index, NamespaceID entityID, IModelBuilder modelBuilder, string? sortingLayer, int sortingOrder)
         {
-            layout.AddTileEntity(index, entityID, modelBuilder);
+            layout.AddTileEntity(index, entityID, modelBuilder, sortingLayer, sortingOrder);
         }
         public void RemoveTileEntity(int index, NamespaceID entityID)
         {

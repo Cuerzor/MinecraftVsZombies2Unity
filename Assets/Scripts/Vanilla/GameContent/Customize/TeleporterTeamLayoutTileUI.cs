@@ -8,11 +8,12 @@ using MVZ2.View.Level;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Models;
 using PVZEngine;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MVZ2.Customize
+namespace MVZ2.GameContent.Customize
 {
     public class TeleporterTeamLayoutTileUI : MonoBehaviour
     {
@@ -28,14 +29,24 @@ namespace MVZ2.Customize
             }
             models.Clear();
         }
-        public void AddEntityModel(NamespaceID layer, IModelBuilder modelBuilder)
+        public void AddEntityModel(NamespaceID layer, IModelBuilder modelBuilder, string? sortingLayer, int sortingOrder)
         {
             if (models.ContainsKey(layer))
                 return;
-            var model = Instantiate(modelContainerTemplate, modelsRoot);
-            model.gameObject.SetActive(true);
-            model.SetModel(modelBuilder);
-            models.Add(layer, model);
+            var container = Instantiate(modelContainerTemplate, modelsRoot);
+            container.gameObject.SetActive(true);
+            container.SetModel(modelBuilder);
+
+            if (container.model.Exists() && container.model.GraphicGroup is ModelGroupEntity rendererGroup)
+            {
+                if (!string.IsNullOrEmpty(sortingLayer))
+                {
+                    container.SetSortingLayerName(sortingLayer);
+                }
+                container.SetSortingOrder(sortingOrder);
+            }
+
+            models.Add(layer, container);
         }
         public void RemoveEntityModel(NamespaceID layer)
         {

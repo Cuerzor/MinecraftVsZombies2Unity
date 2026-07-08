@@ -5,7 +5,7 @@ using MVZ2Logic.Archive;
 using MVZ2Logic.Maps;
 using PVZEngine.Level;
 
-namespace MVZ2.Note
+namespace MVZ2.NotePaper
 {
     public class NoteTalkSystem : MVZ2TalkSystem
     {

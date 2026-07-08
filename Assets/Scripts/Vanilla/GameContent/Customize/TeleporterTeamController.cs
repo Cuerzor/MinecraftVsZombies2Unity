@@ -3,30 +3,29 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using MVZ2.GameContent.Contraptions;
+using MVZ2.GameContent.Models;
 using MVZ2.Managers;
 using MVZ2.UI;
-using MVZ2.View.Level;
+using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Contraptions;
+using MVZ2.Vanilla.Grids;
 using MVZ2Logic;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Customize;
 using MVZ2Logic.Entities;
-using MVZ2Logic.Games;
-using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Models;
 using MVZ2Logic.Saves;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Level;
-using PVZEngine.Tools;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-namespace MVZ2.Customize
+namespace MVZ2.GameContent.Customize
 {
     public class TeleporterTeamController : CustomizePageController
     {
@@ -183,7 +182,7 @@ namespace MVZ2.Customize
         #region 队伍
         private void LoadTeam()
         {
-            var team = Global.Saves.GetTeleporterTeam() ?? DefaultTeam;
+            var team = Global.Saves.GetTeleporterTeam() ?? Teleporter_Evoke.DefaultTeam;
             currentTeleporterTeam = team.Clone();
             SetTeam(team);
         }
@@ -206,7 +205,7 @@ namespace MVZ2.Customize
                     var modelBuilder = GetEntityModelBuilder(entDefinition);
                     if (modelBuilder == null)
                         continue;
-                    ui.AddTileEntity(index, ent, modelBuilder);
+                    ui.AddTileEntity(index, ent, modelBuilder, entDefinition.GetSortingLayer(), entDefinition.GetSortingOrder());
                     AddEnergyCost(entDefinition.GetCost());
                 }
             }
@@ -250,9 +249,8 @@ namespace MVZ2.Customize
                 return true;
             if (definition.IsUpgradeBlueprint())
                 return true;
-            // TODO: 加入实现。
-            //if (definition.BannedInTeleporterTeam())
-            //    return true;
+            if (definition.BannedInTeleporterTeam())
+                return true;
             return false;
         }
         private bool CannotSelectContraption(NamespaceID contraptionID)
@@ -294,8 +292,7 @@ namespace MVZ2.Customize
                 }
                 else
                 {
-                    // TODO 实现这个
-                    //Global.Sounds.Play2D(VanillaSoundID.select);
+                    Global.Sounds.Play2D(VanillaSoundID.pick);
                     HoldBlueprint(index);
                 }
             }
@@ -328,8 +325,7 @@ namespace MVZ2.Customize
             }
             else
             {
-                // TODO 实现这个
-                //Global.Sounds.Play2D(VanillaSoundID.pickaxe);
+                Global.Sounds.Play2D(VanillaSoundID.pickaxe);
                 HoldPickaxe();
             }
         }
@@ -337,8 +333,7 @@ namespace MVZ2.Customize
         {
             holdingBlueprintIndex = -1;
             holdingPickaxe = true;
-            // TODO 改为Vanilla。
-            var modelBuilder = ModelFactories.GetModelBuilder(new NamespaceID("mvz2", "held.pickaxe"), GetCamera());
+            var modelBuilder = ModelFactories.GetModelBuilder(VanillaModelID.pickaxeHeldItem, GetCamera());
             if (modelBuilder != null)
             {
                 ui.SetHoldingModel(modelBuilder);
@@ -480,7 +475,7 @@ namespace MVZ2.Customize
             var modelBuilder = GetEntityModelBuilder(definition);
             if (modelBuilder != null)
             {
-                ui.AddTileEntity(index, entityID, modelBuilder);
+                ui.AddTileEntity(index, entityID, modelBuilder, definition.GetSortingLayer(), definition.GetSortingOrder());
             }
             CancelHolding();
 
@@ -511,7 +506,7 @@ namespace MVZ2.Customize
                 return;
             var tileEntities = tile.GetEntities();
             var tileEntityDefinitions = tileEntities.Select(e => Global.Game.GetEntityDefinition(e)).OfType<EntityDefinition>();
-            var entityDefinition = tileEntityDefinitions.OrderByDescending(e => GetDigUpPriority(e)).FirstOrDefault();
+            var entityDefinition = tileEntityDefinitions.OrderBy(e => GetDigUpPriority(e)).FirstOrDefault();
             if (entityDefinition == null)
                 return;
             var entityID = entityDefinition.GetID();
@@ -521,21 +516,19 @@ namespace MVZ2.Customize
             ui.RemoveTileEntity(index, entityID);
             CancelHolding();
 
-            // TODO 实现这个
-            //var deathSound = entityDefinition.GetDeathSound();
-            //if (NamespaceID.IsValid(deathSound))
-            //{
-            //    Global.Sounds.Play2D(deathSound);
-            //}
+            var deathSound = entityDefinition.GetDeathSound();
+            if (NamespaceID.IsValid(deathSound))
+            {
+                Global.Sounds.Play2D(deathSound);
+            }
         }
         private int GetDigUpPriority(EntityDefinition entityDefinition)
         {
-            // TODO 实现这个
-            //var layersToTake = entityDefinition.GetGridLayersToTake();
-            //if (layersToTake == null)
-            //    return -1;
-            //var maxLayerIndex = 
-            return 0;
+            var layersToTake = entityDefinition.GetGridLayersToTake();
+            if (layersToTake == null || !layersToTake.Any())
+                return 100;
+            var layers = VanillaGridLayers.teleporterTeamPickaxeLayers;
+            return layersToTake.Max(l => Array.IndexOf(layers, l));
         }
         #endregion
 
@@ -564,21 +557,9 @@ namespace MVZ2.Customize
             var modelID = definition.GetModelID();
             return ModelFactories.GetModelBuilder(modelID, GetCamera());
         }
-        public static TeleporterTeam CreateDefaultTeleporterTeam()
-        {
-            // TODO: 改为Teleporter_Evoke。
-            var team = new TeleporterTeam();
-            team.AddTileEntity(1, new NamespaceID("mvz2", "furnace"));
-            team.AddTileEntity(3, new NamespaceID("mvz2", "furnace"));
-            team.AddTileEntity(5, new NamespaceID("mvz2", "furnace"));
-            team.AddTileEntity(7, new NamespaceID("mvz2", "furnace"));
-            return team;
-        }
-
         public static MainManager Main => MainManager.Instance;
         public const int MAX_TILE_COUNT = 9;
         public const int MAX_ENERGY = 250;
-        public static readonly TeleporterTeam DefaultTeam = CreateDefaultTeleporterTeam(); // TODO: 改为Teleporter_Evoke。
         [SerializeField]
         private TeleporterTeamUI ui = null!;
         private Camera? uiCamera;

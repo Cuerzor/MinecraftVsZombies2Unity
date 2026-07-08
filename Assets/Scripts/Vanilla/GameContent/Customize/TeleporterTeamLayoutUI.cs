@@ -10,7 +10,7 @@ using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace MVZ2.Customize
+namespace MVZ2.GameContent.Customize
 {
     public class TeleporterTeamLayoutUI : MonoBehaviour
     {
@@ -42,12 +42,12 @@ namespace MVZ2.Customize
                 tile.ClearLayerModels();
             }
         }
-        public void AddTileEntity(int index, NamespaceID entityID, IModelBuilder modelBuilder)
+        public void AddTileEntity(int index, NamespaceID entityID, IModelBuilder modelBuilder, string? sortingLayer, int sortingOrder)
         {
             var tile = tilesList.getElement<TeleporterTeamLayoutTileUI>(index);
             if (tile == null)
                 return;
-            tile.AddEntityModel(entityID, modelBuilder);
+            tile.AddEntityModel(entityID, modelBuilder, sortingLayer, sortingOrder);
         }
         public void RemoveTileEntity(int index, NamespaceID entityID)
         {

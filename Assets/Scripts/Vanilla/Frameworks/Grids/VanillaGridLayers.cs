@@ -62,6 +62,14 @@ namespace MVZ2.Vanilla.Grids
             carrier
         };
 
+        public static NamespaceID[] teleporterTeamPickaxeLayers = new NamespaceID[]
+        {
+            tool,
+            protector,
+            main,
+            carrier
+        };
+
 
         private static NamespaceID Get(string name)
         {
