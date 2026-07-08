@@ -11,6 +11,8 @@ namespace MVZ2.Models
     {
         public void SetModel(IModelBuilder builder)
         {
+            RemoveModel();
+
             var parent = modelRoot;
             if (!parent.Exists())
             {

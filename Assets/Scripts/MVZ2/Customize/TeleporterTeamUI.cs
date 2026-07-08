@@ -3,6 +3,7 @@
 using System;
 using MVZ2.Models;
 using MVZ2.UI;
+using MVZ2.UI.Level;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Models;
 using PVZEngine;
@@ -81,6 +82,13 @@ namespace MVZ2.Customize
             holdingModelContainer.RemoveModel();
         }
         #endregion
+
+        #region 铁镐
+        public void SetPickaxeSelected(bool selected)
+        {
+            pickaxe.SetSelected(selected);
+        }
+        #endregion
         private void Awake()
         {
             standaloneBlueprintDisplayer.OnBlueprintPointerInteraction += OnBlueprintPointerInteractionCallback;
@@ -90,6 +98,9 @@ namespace MVZ2.Customize
             mobileBlueprintDisplayer.OnConfirmClick += OnConfirmClickCallback;
             mobileBlueprintDisplayer.OnCancelClick += OnCancelClickCallback;
 
+            pickaxe.OnPointerEnter += OnPickaxePointerEnterCallback;
+            pickaxe.OnPointerExit += OnPickaxePointerExitCallback;
+            pickaxe.OnPointerDown += OnPickaxePointerDownCallback;
             layout.OnPointerInteraction += OnLayoutTilePointerInteractionCallback;
         }
         private void OnBlueprintPointerInteractionCallback(int index, PointerEventData eventData, PointerInteraction interaction)
@@ -99,6 +110,18 @@ namespace MVZ2.Customize
         private void OnLayoutTilePointerInteractionCallback(int index, PointerEventData eventData, PointerInteraction interaction)
         {
             OnLayoutTilePointerInteraction?.Invoke(index, eventData, interaction);
+        }
+        private void OnPickaxePointerEnterCallback(PointerEventData eventData)
+        {
+            OnPickaxePointerEnter?.Invoke(eventData);
+        }
+        private void OnPickaxePointerExitCallback(PointerEventData eventData)
+        {
+            OnPickaxePointerExit?.Invoke(eventData);
+        }
+        private void OnPickaxePointerDownCallback(PointerEventData eventData)
+        {
+            OnPickaxePointerDown?.Invoke(eventData);
         }
         private void OnConfirmClickCallback()
         {
@@ -110,6 +133,9 @@ namespace MVZ2.Customize
         }
         public event Action<int, PointerEventData, PointerInteraction>? OnBlueprintPointerInteraction;
         public event Action<int, PointerEventData, PointerInteraction>? OnLayoutTilePointerInteraction;
+        public event Action<PointerEventData>? OnPickaxePointerEnter;
+        public event Action<PointerEventData>? OnPickaxePointerExit;
+        public event Action<PointerEventData>? OnPickaxePointerDown;
         public event Action? OnConfirmClick;
         public event Action? OnCancelClick;
         [SerializeField]
@@ -120,6 +146,8 @@ namespace MVZ2.Customize
         private TeleporterTeamBlueprintDisplayerUI standaloneBlueprintDisplayer = null!;
         [SerializeField]
         private TeleporterTeamBlueprintDisplayerUI mobileBlueprintDisplayer = null!;
+        [SerializeField]
+        private PickaxeSlot pickaxe = null!;
         [SerializeField]
         private TeleporterTeamLayoutUI layout = null!;
     }

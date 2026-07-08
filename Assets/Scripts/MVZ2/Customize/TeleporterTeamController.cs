@@ -11,12 +11,15 @@ using MVZ2Logic;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Customize;
 using MVZ2Logic.Entities;
+using MVZ2Logic.Games;
+using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Models;
 using MVZ2Logic.Saves;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Tools;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -43,6 +46,9 @@ namespace MVZ2.Customize
         private void Awake()
         {
             ui.OnBlueprintPointerInteraction += OnBlueprintPointerInteractionCallback;
+            ui.OnPickaxePointerEnter += OnPickaxePointerEnterCallback;
+            ui.OnPickaxePointerExit += OnPickaxePointerExitCallback;
+            ui.OnPickaxePointerDown += OnPickaxePointerDownCallback;
             ui.OnLayoutTilePointerInteraction += OnLayoutTilePointerInteractionCallback;
             ui.OnConfirmClick += OnConfirmClickCallback;
             ui.OnCancelClick += OnCancelClickCallback;
@@ -75,6 +81,8 @@ namespace MVZ2.Customize
             switch (interaction)
             {
                 case PointerInteraction.Down:
+                    if (pointerData.IsMouseButNotLeft())
+                        break;
                     SelectBlueprintAction(index);
                     break;
             }
@@ -104,6 +112,18 @@ namespace MVZ2.Customize
                     break;
             }
         }
+        private void OnPickaxePointerEnterCallback(PointerEventData eventData)
+        {
+        }
+        private void OnPickaxePointerExitCallback(PointerEventData eventData)
+        {
+        }
+        private void OnPickaxePointerDownCallback(PointerEventData eventData)
+        {
+            if (eventData.IsMouseButNotLeft())
+                return;
+            SelectPickaxeAction();
+        }
         private void OnLayoutTilePointerInteractionCallback(int index, PointerEventData pointerData, PointerInteraction interaction)
         {
             var pointerType = InputHelper.GetPointerType(pointerData.pointerId);
@@ -128,6 +148,8 @@ namespace MVZ2.Customize
                     SetFocusedLayoutTileIndex(-1);
                     break;
                 case PointerInteraction.Down:
+                    if (pointerData.IsMouseButNotLeft())
+                        break;
                     ConfirmOnLayoutTileAction(index);
                     break;
             }
@@ -244,9 +266,21 @@ namespace MVZ2.Customize
                 return true;
             return false;
         }
+        #endregion
+
+        #region 手持
+        private bool IsHoldingAnything()
+        {
+            return IsHoldingAnyBlueprint() || IsHoldingPickaxe();
+        }
+        private bool IsHoldingAnyBlueprint()
+        {
+            return holdingBlueprintIndex >= 0;
+        }
+        private bool IsHoldingPickaxe() => holdingPickaxe;
         private void SelectBlueprintAction(int index)
         {
-            if (IsHoldingAnyBlueprint())
+            if (IsHoldingAnything())
             {
                 Global.Sounds.Play2D(LogicSoundID.tap);
                 CancelHolding();
@@ -266,16 +300,10 @@ namespace MVZ2.Customize
                 }
             }
         }
-        #endregion
-
-        #region 手持
-        private bool IsHoldingAnyBlueprint()
-        {
-            return holdingBlueprintIndex >= 0;
-        }
         private void HoldBlueprint(int index)
         {
             holdingBlueprintIndex = index;
+            holdingPickaxe = false;
             var entityID = contraptionEntries[index];
             if (!NamespaceID.IsValid(entityID))
                 return;
@@ -288,6 +316,34 @@ namespace MVZ2.Customize
                 ui.SetHoldingModel(modelBuilder);
             }
             ui.SetBlueprintSelected(isMobileLayout, index, true);
+            ui.SetPickaxeSelected(false);
+            RefreshLayoutTileHighlight();
+        }
+        private void SelectPickaxeAction()
+        {
+            if (IsHoldingAnything())
+            {
+                Global.Sounds.Play2D(LogicSoundID.tap);
+                CancelHolding();
+            }
+            else
+            {
+                // TODO 实现这个
+                //Global.Sounds.Play2D(VanillaSoundID.pickaxe);
+                HoldPickaxe();
+            }
+        }
+        private void HoldPickaxe()
+        {
+            holdingBlueprintIndex = -1;
+            holdingPickaxe = true;
+            // TODO 改为Vanilla。
+            var modelBuilder = ModelFactories.GetModelBuilder(new NamespaceID("mvz2", "held.pickaxe"), GetCamera());
+            if (modelBuilder != null)
+            {
+                ui.SetHoldingModel(modelBuilder);
+            }
+            ui.SetPickaxeSelected(true);
             RefreshLayoutTileHighlight();
         }
         private void CancelHolding()
@@ -296,7 +352,12 @@ namespace MVZ2.Customize
             {
                 ui.SetBlueprintSelected(isMobileLayout, holdingBlueprintIndex, false);
             }
+            if (holdingPickaxe)
+            {
+                ui.SetPickaxeSelected(false);
+            }
             holdingBlueprintIndex = -1;
+            holdingPickaxe = false;
             ui.ClearHoldingModel();
             RefreshLayoutTileHighlight();
         }
@@ -331,6 +392,19 @@ namespace MVZ2.Customize
                         return;
                     }
                 }
+                else if (holdingPickaxe && currentTeleporterTeam != null)
+                {
+                    var tile = currentTeleporterTeam.GetTile(index);
+                    if (tile != null && CanDigUpContraptionAt(index))
+                    {
+                        ui.SetLayoutTileHighlight(index, Color.green);
+                    }
+                    else
+                    {
+                        ui.SetLayoutTileHighlight(index, Color.red);
+                    }
+                    return;
+                }
             }
             ui.SetLayoutTileHighlight(index, Color.clear);
         }
@@ -342,7 +416,7 @@ namespace MVZ2.Customize
         }
         #endregion
 
-        #region 放置器械
+        #region 地块操作
         private void ConfirmOnLayoutTileAction(int index)
         {
             if (IsHoldingAnyBlueprint())
@@ -356,7 +430,17 @@ namespace MVZ2.Customize
                     PlaceContraption(entityDefinition, index);
                 }
             }
+            else if (IsHoldingPickaxe())
+            {
+                if (CanDigUpContraptionAt(index))
+                {
+                    DigUpContraption(index);
+                }
+            }
         }
+        #endregion
+
+        #region 放置器械
         private bool CanPlaceContraptionAt(EntityDefinition definition, int index)
         {
             if (currentTeleporterTeam == null)
@@ -408,6 +492,53 @@ namespace MVZ2.Customize
         }
         #endregion
 
+        #region 挖掘器械
+        private bool CanDigUpContraptionAt(int index)
+        {
+            if (currentTeleporterTeam == null)
+                return false;
+            var tile = currentTeleporterTeam.GetTile(index);
+            if (tile == null)
+                return false;
+            return tile.GetEntities().Length > 0;
+        }
+        private void DigUpContraption(int index)
+        {
+            if (currentTeleporterTeam == null)
+                return;
+            var tile = currentTeleporterTeam.GetTile(index);
+            if (tile == null)
+                return;
+            var tileEntities = tile.GetEntities();
+            var tileEntityDefinitions = tileEntities.Select(e => Global.Game.GetEntityDefinition(e)).OfType<EntityDefinition>();
+            var entityDefinition = tileEntityDefinitions.OrderByDescending(e => GetDigUpPriority(e)).FirstOrDefault();
+            if (entityDefinition == null)
+                return;
+            var entityID = entityDefinition.GetID();
+            currentTeleporterTeam.RemoveTileEntity(index, entityID);
+            AddEnergyCost(-entityDefinition.GetCost());
+
+            ui.RemoveTileEntity(index, entityID);
+            CancelHolding();
+
+            // TODO 实现这个
+            //var deathSound = entityDefinition.GetDeathSound();
+            //if (NamespaceID.IsValid(deathSound))
+            //{
+            //    Global.Sounds.Play2D(deathSound);
+            //}
+        }
+        private int GetDigUpPriority(EntityDefinition entityDefinition)
+        {
+            // TODO 实现这个
+            //var layersToTake = entityDefinition.GetGridLayersToTake();
+            //if (layersToTake == null)
+            //    return -1;
+            //var maxLayerIndex = 
+            return 0;
+        }
+        #endregion
+
         private void SetEnergyCost(int energy)
         {
             energyCost = energy;
@@ -454,6 +585,7 @@ namespace MVZ2.Customize
         private TeleporterTeam? currentTeleporterTeam;
         private int energyCost = 0;
         private int holdingBlueprintIndex = -1;
+        private bool holdingPickaxe;
         private int focusedLayoutTileIndex = -1;
         private bool dragBlueprintStarted;
         private int draggingTargetBlueprintIndex = -1;
