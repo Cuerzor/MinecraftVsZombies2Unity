@@ -3,19 +3,23 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using MukioI18n;
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Models;
 using MVZ2.Managers;
 using MVZ2.Options;
 using MVZ2.UI;
+using MVZ2.UI.Level;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Grids;
 using MVZ2Logic;
 using MVZ2Logic.Audios;
+using MVZ2Logic.Blueprints;
 using MVZ2Logic.Customize;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Inputs;
+using MVZ2Logic.Localization;
 using MVZ2Logic.Models;
 using MVZ2Logic.Saves;
 using PVZEngine;
@@ -24,7 +28,6 @@ using PVZEngine.Level;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
 namespace MVZ2.GameContent.Customize
 {
@@ -45,6 +48,7 @@ namespace MVZ2.GameContent.Customize
         #region 生命周期
         private void Awake()
         {
+            pickaxeTooltipSource = new PickaxeTooltipSource(this);
             ui.OnBlueprintPointerInteraction += OnBlueprintPointerInteractionCallback;
             ui.OnPickaxePointerEnter += OnPickaxePointerEnterCallback;
             ui.OnPickaxePointerExit += OnPickaxePointerExitCallback;
@@ -93,6 +97,21 @@ namespace MVZ2.GameContent.Customize
         {
             switch (interaction)
             {
+                case PointerInteraction.Enter:
+                    {
+                        var entityID = contraptionEntries[index];
+                        if (!NamespaceID.IsValid(entityID))
+                            break;
+                        var blueprint = GetBlueprintUI(index);
+                        if (!blueprint.Exists())
+                            break;
+                        var blueprintID = LogicBlueprintID.FromEntity(entityID);
+                        ShowTooltip(new BlueprintTooltipSource(this, index, blueprint, blueprintID));
+                    }
+                    break;
+                case PointerInteraction.Exit:
+                    HideTooltip();
+                    break;
                 case PointerInteraction.Down:
                     if (pointerData.IsMouseButNotLeft())
                         break;
@@ -104,6 +123,21 @@ namespace MVZ2.GameContent.Customize
         {
             switch (interaction)
             {
+                case PointerInteraction.Enter:
+                    {
+                        var entityID = contraptionEntries[index];
+                        if (!NamespaceID.IsValid(entityID))
+                            break;
+                        var blueprint = GetBlueprintUI(index);
+                        if (!blueprint.Exists())
+                            break;
+                        var blueprintID = LogicBlueprintID.FromEntity(entityID);
+                        ShowTooltip(new BlueprintTooltipSource(this, index, blueprint, blueprintID));
+                    }
+                    break;
+                case PointerInteraction.Exit:
+                    HideTooltip();
+                    break;
                 case PointerInteraction.BeginDrag:
                     dragBlueprintStarted = false;
                     draggingTargetBlueprintIndex = index;
@@ -127,9 +161,12 @@ namespace MVZ2.GameContent.Customize
         }
         private void OnPickaxePointerEnterCallback(PointerEventData eventData)
         {
+            if (pickaxeTooltipSource != null)
+                ShowTooltip(pickaxeTooltipSource);
         }
         private void OnPickaxePointerExitCallback(PointerEventData eventData)
         {
+            HideTooltip();
         }
         private void OnPickaxePointerDownCallback(PointerEventData eventData)
         {
@@ -267,16 +304,32 @@ namespace MVZ2.GameContent.Customize
                 return true;
             return false;
         }
-        private bool CannotSelectContraption(NamespaceID contraptionID)
+        private ContraptionError GetSelectContraptionError(NamespaceID contraptionID)
         {
             var definition = Global.Game.GetEntityDefinition(contraptionID);
             if (definition == null)
-                return true;
+                return ContraptionError.NotExists;
             if (IsContraptionBanned(definition))
-                return true;
+                return ContraptionError.Banned;
             if (definition.GetCost() > GetRemainingEnergy())
-                return true;
-            return false;
+                return ContraptionError.NotEnoughEnergy;
+            return ContraptionError.None;
+        }
+        private bool CannotSelectContraption(NamespaceID contraptionID)
+        {
+            return GetSelectContraptionError(contraptionID) != ContraptionError.None;
+        }
+        private string? GetBlueprintTooltipError(NamespaceID contraptionID)
+        {
+            var error = GetSelectContraptionError(contraptionID);
+            switch (error)
+            {
+                case ContraptionError.Banned:
+                    return Global.Localization.GetText(ERROR_BANNED);
+                case ContraptionError.NotEnoughEnergy:
+                    return Global.Localization.GetText(ERROR_NOT_ENOUGH_ENERGY);
+            }
+            return null;
         }
         #endregion
 
@@ -546,6 +599,28 @@ namespace MVZ2.GameContent.Customize
         }
         #endregion
 
+        #region 工具提示
+        private void ShowTooltip(ITooltipSource source)
+        {
+            Main.Scene.ShowTooltip(source);
+        }
+        private void HideTooltip()
+        {
+            Main.Scene.HideTooltip();
+        }
+        #endregion
+
+        #region UI
+        private Blueprint? GetBlueprintUI(int index)
+        {
+            return ui.GetBlueprintUI(isMobileLayout, index);
+        }
+        private PickaxeSlot GetPickaxeSlot()
+        {
+            return ui.GetPickaxeSlot();
+        }
+        #endregion
+
         private void SetEnergyCost(int energy)
         {
             energyCost = energy;
@@ -572,12 +647,17 @@ namespace MVZ2.GameContent.Customize
             return ModelFactories.GetModelBuilder(modelID, GetCamera());
         }
         public static MainManager Main => MainManager.Instance;
+        [TranslateMsg("传送器战队的错误提示")]
+        public const string ERROR_BANNED = "禁用";
+        [TranslateMsg("传送器战队的错误提示")]
+        public const string ERROR_NOT_ENOUGH_ENERGY = "能量不足";
         public const int MAX_TILE_COUNT = 9;
         public const int MAX_ENERGY = 250;
         [SerializeField]
         private TeleporterTeamUI ui = null!;
         private Camera? uiCamera;
         private TeleporterTeam? currentTeleporterTeam;
+        private PickaxeTooltipSource? pickaxeTooltipSource;
         private int energyCost = 0;
         private int holdingBlueprintIndex = -1;
         private bool holdingPickaxe;
@@ -586,5 +666,72 @@ namespace MVZ2.GameContent.Customize
         private int draggingTargetBlueprintIndex = -1;
         private bool isMobileLayout;
         private readonly List<NamespaceID?> contraptionEntries = new List<NamespaceID?>();
+
+        #region 内嵌类
+        private enum ContraptionError
+        {
+            None,
+            NotExists,
+            Banned,
+            NotEnoughEnergy
+        }
+        private class BlueprintTooltipSource : ITooltipSource
+        {
+            private TeleporterTeamController teamController;
+            private int index;
+            private NamespaceID blueprintID;
+            private ITooltipTarget target;
+            public BlueprintTooltipSource(TeleporterTeamController controller, int index, ITooltipTarget target, NamespaceID blueprintID)
+            {
+                this.teamController = controller;
+                this.blueprintID = blueprintID;
+                this.index = index;
+                this.target = target;
+            }
+            public Camera GetCamera()
+            {
+                return teamController.GetCamera();
+            }
+            public ITooltipTarget GetTarget()
+            {
+                return target;
+            }
+            public TooltipContent GetContent()
+            {
+                var name = Main.ResourceManager.GetBlueprintName(blueprintID, false);
+                var tooltip = Main.ResourceManager.GetBlueprintTooltip(blueprintID);
+                var error = teamController.GetBlueprintTooltipError(blueprintID);
+                return new TooltipContent()
+                {
+                    name = name,
+                    error = error,
+                    description = tooltip
+                };
+            }
+        }
+        private class PickaxeTooltipSource : ITooltipSource
+        {
+            private TeleporterTeamController teamController;
+            public PickaxeTooltipSource(TeleporterTeamController controller)
+            {
+                this.teamController = controller;
+            }
+            public Camera GetCamera()
+            {
+                return teamController.GetCamera();
+            }
+            public ITooltipTarget GetTarget()
+            {
+                return teamController.GetPickaxeSlot();
+            }
+            public TooltipContent GetContent()
+            {
+                return new TooltipContent()
+                {
+                    name = Global.Localization.GetText(LogicStrings.TOOLTIP_DIG_CONTRAPTION),
+                };
+            }
+        }
+        #endregion
     }
 }

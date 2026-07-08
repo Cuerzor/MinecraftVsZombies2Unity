@@ -36,6 +36,11 @@ namespace MVZ2.GameContent.Customize
             var displayer = mobile ? mobileBlueprintDisplayer : standaloneBlueprintDisplayer;
             displayer.SetBlueprintSelected(index, selected);
         }
+        public Blueprint? GetBlueprintUI(bool mobile, int index)
+        {
+            var displayer = mobile ? mobileBlueprintDisplayer : standaloneBlueprintDisplayer;
+            return displayer.GetBlueprint(index);
+        }
         #endregion
 
         #region 能量
@@ -84,6 +89,10 @@ namespace MVZ2.GameContent.Customize
         #endregion
 
         #region 铁镐
+        public PickaxeSlot GetPickaxeSlot()
+        {
+            return pickaxe;
+        }
         public void SetPickaxeSelected(bool selected)
         {
             pickaxe.SetSelected(selected);

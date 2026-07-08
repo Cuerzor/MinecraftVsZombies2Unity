@@ -33,6 +33,10 @@ namespace MVZ2.GameContent.Customize
                 blueprint.SetSelected(selected);
             }
         }
+        public Blueprint? GetBlueprint(int index)
+        {
+            return blueprintDisplayer.GetItem(index);
+        }
         private void Awake()
         {
             blueprintDisplayer.OnBlueprintPointerInteraction += OnBlueprintPointerInteractionCallback;
