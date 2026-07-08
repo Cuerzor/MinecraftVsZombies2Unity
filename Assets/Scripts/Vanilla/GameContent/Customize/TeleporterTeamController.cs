@@ -6,6 +6,7 @@ using System.Linq;
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Models;
 using MVZ2.Managers;
+using MVZ2.Options;
 using MVZ2.UI;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Contraptions;
@@ -58,6 +59,19 @@ namespace MVZ2.GameContent.Customize
             var worldPosition = GetCamera().ScreenToWorldPoint(pointerPosition);
             worldPosition.z = transform.position.z;
             ui.SetHoldingModelPosition(worldPosition);
+
+            if (Input.GetMouseButtonDown(MouseButtons.RIGHT))
+            {
+                if (IsHoldingAnything())
+                {
+                    CancelHolding();
+                    Global.Sounds.Play2D(LogicSoundID.tap);
+                }
+            }
+            if (Input.GetKeyDown(Main.OptionsManager.GetKeyBinding(HotKeys.pickaxe)))
+            {
+                SelectPickaxeAction();
+            }
         }
         #endregion
 
