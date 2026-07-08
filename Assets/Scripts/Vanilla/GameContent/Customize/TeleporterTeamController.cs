@@ -233,7 +233,12 @@ namespace MVZ2.GameContent.Customize
         #region 队伍
         private void LoadTeam()
         {
-            var team = Global.Saves.GetTeleporterTeam() ?? Teleporter_Evoke.DefaultTeam;
+            var team = Global.Saves.GetTeleporterTeam();
+            if (team == null)
+            {
+                DefaultTeam ??= CreateDefaultTeleporterTeam();
+                team = DefaultTeam;
+            }
             currentTeleporterTeam = team.Clone();
             SetTeam(team);
         }
@@ -646,7 +651,17 @@ namespace MVZ2.GameContent.Customize
             var modelID = definition.GetModelID();
             return ModelFactories.GetModelBuilder(modelID, GetCamera());
         }
+        private static TeleporterTeam CreateDefaultTeleporterTeam()
+        {
+            var team = new TeleporterTeam();
+            team.AddTileEntity(1, VanillaContraptionID.furnace);
+            team.AddTileEntity(3, VanillaContraptionID.furnace);
+            team.AddTileEntity(5, VanillaContraptionID.furnace);
+            team.AddTileEntity(7, VanillaContraptionID.furnace);
+            return team;
+        }
         public static MainManager Main => MainManager.Instance;
+        public static TeleporterTeam? DefaultTeam;
         [TranslateMsg("传送器战队的错误提示")]
         public const string ERROR_BANNED = "禁用";
         [TranslateMsg("传送器战队的错误提示")]

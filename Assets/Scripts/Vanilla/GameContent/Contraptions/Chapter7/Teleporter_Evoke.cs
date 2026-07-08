@@ -2,11 +2,13 @@
 
 using System.Linq;
 using MVZ2.GameContent.Buffs.Entities;
+using MVZ2.GameContent.Customize;
 using MVZ2.GameContent.HeldItems;
 using MVZ2.GameContent.Placements;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
+using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Grids;
@@ -90,8 +92,10 @@ namespace MVZ2.GameContent.Contraptions
                     if (g == null)
                         continue;
                     var index = x + y * width;
-                    var team = GetTeleporterTeam();
-                    var tile = team.GetTile(index);
+                    var team = GetTeleporterTeam(teleporter);
+                    if (index < 0 || index >= team.tiles.Length)
+                        continue;
+                    var tile = team.tiles[index];
                     if (tile == null)
                         continue;
                     TeleportTeamTile(teleporter, tile, g);
@@ -101,9 +105,9 @@ namespace MVZ2.GameContent.Contraptions
             teleporter.PlaySound(VanillaSoundID.teleportUp);
             teleporter.PlaySound(VanillaSoundID.chronoSphere);
         }
-        public static void TeleportTeamTile(Entity teleporter, TeleporterTeamTile tile, LawnGrid grid)
+        public static void TeleportTeamTile(Entity teleporter, TeleporterTeamTileLevelData tile, LawnGrid grid)
         {
-            foreach (var entity in tile.GetEntities())
+            foreach (var entity in tile.entities)
             {
                 if (!NamespaceID.IsValid(entity))
                     continue;
@@ -122,9 +126,18 @@ namespace MVZ2.GameContent.Contraptions
                 e.AddBuff<TeleporterTeleportDownBuff>();
             });
         }
-        public static TeleporterTeam GetTeleporterTeam()
+        public static TeleporterTeamLevelData GetTeleporterTeam(Entity teleporter)
         {
-            return DefaultTeam;
+            var team = teleporter.Level.GetCurrentTeleporterTeam();
+            if (team == null)
+            {
+                if (DefaultTeam == null)
+                {
+                    DefaultTeam = CreateDefaultTeleporterTeam();
+                }
+                team = DefaultTeam;
+            }
+            return team;
         }
         public static void CheckAquatic(Entity teleporter, EntityDefinition memberDefinition, LawnGrid grid)
         {
@@ -143,16 +156,19 @@ namespace MVZ2.GameContent.Contraptions
             {
                 e.AddBuff<TeleporterTeleportDownBuff>();
                 e.PlaySound(VanillaSoundID.teleportDown);
-            }); ;
+            });
         }
-        public static TeleporterTeam CreateDefaultTeleporterTeam()
+        public static TeleporterTeamLevelData CreateDefaultTeleporterTeam()
         {
-            var team = new TeleporterTeam();
-            team.AddTileEntity(1, VanillaContraptionID.furnace);
-            team.AddTileEntity(3, VanillaContraptionID.furnace);
-            team.AddTileEntity(5, VanillaContraptionID.furnace);
-            team.AddTileEntity(7, VanillaContraptionID.furnace);
-            return team;
+            var tiles = new TeleporterTeamTileLevelData[WIDTH * HEIGHT];
+            for (int i = 0; i < tiles.Length; i++)
+            {
+                if (i % 2 == 0)
+                    continue;
+                var entities = new NamespaceID[] { VanillaContraptionID.furnace };
+                tiles[i] = new TeleporterTeamTileLevelData(entities);
+            }
+            return new TeleporterTeamLevelData(tiles);
         }
         public static FrameTimer? GetEvocationTimer(Entity pad) => pad.GetProperty<FrameTimer>(PROP_EVOCATION_TIMER);
         public static void SetEvocationTimer(Entity pad, FrameTimer? value) => pad.SetProperty(PROP_EVOCATION_TIMER, value);
@@ -164,6 +180,6 @@ namespace MVZ2.GameContent.Contraptions
 
 
         public static readonly VanillaEntityPropertyMeta<FrameTimer> PROP_EVOCATION_TIMER = new VanillaEntityPropertyMeta<FrameTimer>("evocation_timer");
-        public static readonly TeleporterTeam DefaultTeam = CreateDefaultTeleporterTeam();
+        public static TeleporterTeamLevelData? DefaultTeam;
     }
 }
