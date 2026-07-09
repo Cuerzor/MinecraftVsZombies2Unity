@@ -2846,6 +2846,8 @@
                 <vector3 name="mvz2:size" x="100" y="100" z="40" />
                 <vector3 name="mvz2:shadowScale" x="4" y="4" z="4" />
                 <int name="mvz2:hp_bar_visibility" value="-1" />
+                <color name="mvz2:bloodColor" value="#00000000" />
+                <color name="mvz2:bloodColorCensored" value="#00000000" />
 
                 <int name="mvz2:cost" value="300" />
             </properties>
