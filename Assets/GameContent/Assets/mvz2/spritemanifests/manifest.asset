@@ -403,6 +403,9 @@ MonoBehaviour:
   - name: mainmenu/birch_planks
     texture: {fileID: 2800000, guid: c833ac401af4ce44c872c8fe55574646, type: 3}
     tags: []
+  - name: mainmenu/customize
+    texture: {fileID: 2800000, guid: 7065a0e0aafa6fb45bf651c552b07c56, type: 3}
+    tags: []
   - name: mainmenu/gold_name_shine
     texture: {fileID: 2800000, guid: bd020c04ecf41f542b2e72b0e73bf3d7, type: 3}
     tags: []
@@ -1636,6 +1639,9 @@ MonoBehaviour:
   - name: entity/contraption/teleporter
     texture: {fileID: 2800000, guid: 7ceae054855a6a2448398d890150f3a2, type: 3}
     tags: []
+  - name: entity/contraption/teleporter_signal
+    texture: {fileID: 2800000, guid: c7223f5db91ec864badb58d5384fa62c, type: 3}
+    tags: []
   - name: entity/contraption/tesla_coil
     texture: {fileID: 2800000, guid: 073caa400cee98e4f9adafc78fdd521a, type: 3}
     tags: []
@@ -2614,6 +2620,9 @@ MonoBehaviour:
     tags: []
   - name: ui/arcade/clear_trophy
     texture: {fileID: 2800000, guid: 84d24c865b8c9b341a85b8104370a001, type: 3}
+    tags: []
+  - name: ui/customize/teleporter_team_tile
+    texture: {fileID: 2800000, guid: ff5598c42a3a11849ba0c8ef1097a362, type: 3}
     tags: []
   - name: ui/effect/crushing_wall_left
     texture: {fileID: 2800000, guid: 2574e617cf0030645966d0a257f50050, type: 3}
@@ -3996,6 +4005,14 @@ MonoBehaviour:
   - name: mainmenu/birch_planks
     index: 0
     sprite: {fileID: 21300000, guid: c833ac401af4ce44c872c8fe55574646, type: 3}
+    tags: []
+  - name: mainmenu/customize
+    index: 0
+    sprite: {fileID: 1643233742, guid: 7065a0e0aafa6fb45bf651c552b07c56, type: 3}
+    tags: []
+  - name: mainmenu/customize
+    index: 1
+    sprite: {fileID: 878387737, guid: 7065a0e0aafa6fb45bf651c552b07c56, type: 3}
     tags: []
   - name: mainmenu/gold_name_shine
     index: 0
@@ -7131,6 +7148,18 @@ MonoBehaviour:
   - name: entity/contraption/teleporter
     index: 0
     sprite: {fileID: 21300000, guid: 7ceae054855a6a2448398d890150f3a2, type: 3}
+    tags: []
+  - name: entity/contraption/teleporter_signal
+    index: 0
+    sprite: {fileID: 699352087, guid: c7223f5db91ec864badb58d5384fa62c, type: 3}
+    tags: []
+  - name: entity/contraption/teleporter_signal
+    index: 1
+    sprite: {fileID: 633846572, guid: c7223f5db91ec864badb58d5384fa62c, type: 3}
+    tags: []
+  - name: entity/contraption/teleporter_signal
+    index: 2
+    sprite: {fileID: 587684187, guid: c7223f5db91ec864badb58d5384fa62c, type: 3}
     tags: []
   - name: entity/contraption/tesla_coil
     index: 0
@@ -10290,6 +10319,10 @@ MonoBehaviour:
   - name: ui/arcade/clear_trophy
     index: 2
     sprite: {fileID: -1275393187, guid: 84d24c865b8c9b341a85b8104370a001, type: 3}
+    tags: []
+  - name: ui/customize/teleporter_team_tile
+    index: 0
+    sprite: {fileID: 21300000, guid: ff5598c42a3a11849ba0c8ef1097a362, type: 3}
     tags: []
   - name: ui/effect/crushing_wall_left
     index: 0

@@ -86,6 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 0}
+  sortingGroup: {fileID: 0}
+  modelRoot: {fileID: 0}
 --- !u!4 &5461804978657357290 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8450122154962902690, guid: 34ed1cdc8a174114e8899f0abb6e93fc, type: 3}

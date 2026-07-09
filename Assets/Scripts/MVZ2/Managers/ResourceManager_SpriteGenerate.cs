@@ -15,7 +15,6 @@ namespace MVZ2.Managers
             Texture2D texture = new Texture2D(width, height);
             texture.name = name;
             texture.hideFlags = HideFlags.HideAndDontSave;
-            texture.alphaIsTransparency = true;
             RegisterGeneratedTexture2D(texture);
             return texture;
         }

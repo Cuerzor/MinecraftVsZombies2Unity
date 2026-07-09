@@ -6,10 +6,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using SFB;
 using UnityEngine;
-#if UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_STANDALONE_LINUX || UNITY_EDITOR
-#elif UNITY_IOS || UNITY_ANDROID
-using UnityEngine;
-#endif
 
 
 namespace MVZ2.IO

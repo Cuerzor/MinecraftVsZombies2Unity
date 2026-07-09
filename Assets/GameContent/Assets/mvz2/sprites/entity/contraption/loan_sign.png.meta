@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: loan_sign_4
+      name: loan_sign_3
       rect:
         serializedVersion: 2
         x: 0
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: loan_sign_5
+      name: loan_sign_4
       rect:
         serializedVersion: 2
         x: 16
@@ -228,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: loan_sign_6
+      name: loan_sign_5
       rect:
         serializedVersion: 2
         x: 32
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: loan_sign_7
+      name: loan_sign_6
       rect:
         serializedVersion: 2
         x: 48
@@ -270,7 +270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: loan_sign_8
+      name: loan_sign_7
       rect:
         serializedVersion: 2
         x: 64
