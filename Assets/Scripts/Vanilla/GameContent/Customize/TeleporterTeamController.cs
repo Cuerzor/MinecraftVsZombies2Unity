@@ -660,11 +660,11 @@ namespace MVZ2.GameContent.Customize
         {
             energyCost = energy;
             ui.SetEnergy(GetRemainingEnergy().ToString());
+            UpdateBlueprints();
         }
         private void AddEnergyCost(int value)
         {
             SetEnergyCost(energyCost + value);
-            UpdateBlueprints();
         }
         private int GetRemainingEnergy()
         {

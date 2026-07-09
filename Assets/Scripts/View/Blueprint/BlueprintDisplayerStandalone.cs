@@ -53,7 +53,7 @@ namespace MVZ2.UI
                 page.OnBlueprintSelect -= OnBlueprintSelectCallback;
             });
             maxPages = pageCount;
-            SetCurrentPage(0);
+            SetCurrentPage(Mathf.Clamp(currentPage, 0, maxPages));
             pageRoot.SetActive(pageCount > 1);
         }
         public override Blueprint? GetItem(int index)
