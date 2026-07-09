@@ -37,12 +37,21 @@ namespace MVZ2.GameContent.Customize
         {
             isMobileLayout = Global.Game.UseMobileLayout();
             uiCamera = camera;
+
+
             LoadTeam();
             LoadBlueprints();
             gameObject.SetActive(true);
         }
         public override void Hide()
         {
+            if (IsHoldingAnything())
+            {
+                CancelHolding();
+            }
+            SetFocusedLayoutTileIndex(-1);
+            dragBlueprintStarted = false;
+            draggingTargetBlueprintIndex = -1;
             gameObject.SetActive(false);
         }
         #region 生命周期
