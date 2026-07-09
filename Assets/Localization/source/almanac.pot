@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-07-02 11:51+0800\n"
+"POT-Creation-Date: 2026-07-09 01:17+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1928,6 +1928,24 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid "寒冰发射器最大的愿望是退伍——不是因为它当兵（冰）太久了，而是因为这里的器械都听不懂它讲的冷笑话。"
+msgstr ""
+
+#. Header for contraptions mvz2:teleporter
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "传送器被触发后，可以将任意地块的所有器械传送到自身的位置，然后自己消失。"
+msgstr ""
+
+#. Properties for contraptions mvz2:teleporter
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "技能：<color=red>选择一处3x3的区域，将你的自定义战队凭空传送到该区域！（可在主界面自定义）</color>"
+msgstr ""
+
+#. Flavor for contraptions mvz2:teleporter
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "它最喜欢在队友就快击杀敌人的时候把队友传送回基地。"
 msgstr ""
 
 #. Header for contraptions mvz2:ejector
@@ -6184,6 +6202,18 @@ msgstr ""
 #: Entity meta file
 msgctxt "entity.tooltip"
 msgid "发射减速的冰箭"
+msgstr ""
+
+#. Name for entity mvz2:teleporter
+#: Entity meta file
+msgctxt "entity.name"
+msgid "传送器"
+msgstr ""
+
+#. Tooltip for entity mvz2:teleporter
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "触发后传送器械"
 msgstr ""
 
 #. Name for entity mvz2:ejector

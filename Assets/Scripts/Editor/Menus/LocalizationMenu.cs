@@ -306,6 +306,16 @@ namespace MVZ2.Editor
                     AddTranslation(potGenerator, meta.Tooltip, reference, $"Tooltip for option widget {meta.Tooltip}", LogicStrings.CONTEXT_OPTION_TOOLTIP);
                 }
             }
+            // 自定义
+            {
+                var document = LoadMetaXmlDocument(spaceName, "customize.xml");
+                var list = CustomizeMetaList.FromXmlNode(document["customize"], spaceName);
+                var reference = "Customize meta file";
+                foreach (var meta in list.pages)
+                {
+                    AddTranslation(potGenerator, meta.ButtonText, reference, $"Button Text for customize page {meta.ButtonText}");
+                }
+            }
 
             potGenerator.WriteOut(GetPoTemplatePath("general.pot"));
             Debug.Log("Script Translations Updated.");

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-07-02 12:29+0800\n"
+"POT-Creation-Date: 2026-07-09 01:36+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,6 +54,11 @@ msgstr ""
 #. 主界面文字
 #: /MainGame/MainScene/Mainmenu/Elements/Labels/Achievement
 msgid "成就"
+msgstr ""
+
+#. 主界面文字
+#: /MainGame/MainScene/Mainmenu/Elements/Labels/Customize
+msgid "自定义"
 msgstr ""
 
 #. 游玩时长统计
@@ -985,6 +990,11 @@ msgctxt "advice.collect_money"
 msgid "收集宝石来获得更酷的道具吧！"
 msgstr ""
 
+# 传送器战队的错误提示
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:667
+msgid "能量不足"
+msgstr ""
+
 # 梦魇对话框标题
 #: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:502
 msgid "选择你的命运"
@@ -1750,6 +1760,67 @@ msgstr ""
 # 进入关卡的错误信息，{0}为关卡ID
 #: Scripts\MVZ2\Map\MapController.cs:714
 msgid "目标关卡{0}不存在。"
+msgstr ""
+
+# 初始化任务名称
+#: Scripts\MVZ2\Managers\MainManager.cs:293
+msgid "获取赞助者列表……"
+msgstr ""
+
+# 帧率显示
+#: Scripts\MVZ2\Managers\PerformanceManager.cs:81
+msgid "FPS: {0}"
+msgstr ""
+
+# 删除用户时的错误信息，{0}为错误信息
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:861
+msgid "无法删除用户：{0}"
+msgstr ""
+
+# 切换用户时的错误信息，{0}为错误信息
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:863
+msgid "无法切换至用户：{0}"
+msgstr ""
+
+# 删除用户时的错误信息
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:865
+msgid "没有其他有效的用户可供切换。"
+msgstr ""
+
+# 退出对话框的描述
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:867
+msgid "确认要退出吗？"
+msgstr ""
+
+# 存档导出失败的警告
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:869
+msgid "导出存档失败。"
+msgstr ""
+
+# 存档导入失败的警告
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:871
+msgid "导入存档失败。"
+msgstr ""
+
+# 存档导入失败的警告
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:873
+msgid "导入存档失败，文件可能已损坏。"
+msgstr ""
+
+# 存档导入失败的警告
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:875
+msgid "导入存档失败，游戏中存在同名用户，但正在导入的存档不可重命名。"
+msgstr ""
+
+# 存档导出成功的提示，{0}为路径
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:877
+msgid "存档已导出至{0}。"
+msgstr ""
+
+# 当前语言名称
+#: Scripts\MVZ2\Localization\LanguageManager.cs:245
+msgctxt "language_name"
+msgid "中文"
 msgstr ""
 
 # 按键名
@@ -2560,67 +2631,6 @@ msgstr ""
 #: Scripts\MVZ2\Managers\InputManager_Keys.cs:365
 msgctxt "key.name"
 msgid "Menu"
-msgstr ""
-
-# 初始化任务名称
-#: Scripts\MVZ2\Managers\MainManager.cs:293
-msgid "获取赞助者列表……"
-msgstr ""
-
-# 帧率显示
-#: Scripts\MVZ2\Managers\PerformanceManager.cs:81
-msgid "FPS: {0}"
-msgstr ""
-
-# 删除用户时的错误信息，{0}为错误信息
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:838
-msgid "无法删除用户：{0}"
-msgstr ""
-
-# 切换用户时的错误信息，{0}为错误信息
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:840
-msgid "无法切换至用户：{0}"
-msgstr ""
-
-# 删除用户时的错误信息
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:842
-msgid "没有其他有效的用户可供切换。"
-msgstr ""
-
-# 退出对话框的描述
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:844
-msgid "确认要退出吗？"
-msgstr ""
-
-# 存档导出失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:846
-msgid "导出存档失败。"
-msgstr ""
-
-# 存档导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:848
-msgid "导入存档失败。"
-msgstr ""
-
-# 存档导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:850
-msgid "导入存档失败，文件可能已损坏。"
-msgstr ""
-
-# 存档导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:852
-msgid "导入存档失败，游戏中存在同名用户，但正在导入的存档不可重命名。"
-msgstr ""
-
-# 存档导出成功的提示，{0}为路径
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:854
-msgid "存档已导出至{0}。"
-msgstr ""
-
-# 当前语言名称
-#: Scripts\MVZ2\Localization\LanguageManager.cs:245
-msgctxt "language_name"
-msgid "中文"
 msgstr ""
 
 # 血条的文字
@@ -6218,5 +6228,10 @@ msgstr ""
 #: Option meta file
 msgctxt "option.name"
 msgid "导出日志文件"
+msgstr ""
+
+#. Button Text for customize page 传送器战队
+#: Customize meta file
+msgid "传送器战队"
 msgstr ""
 
