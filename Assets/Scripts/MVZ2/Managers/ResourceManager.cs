@@ -37,8 +37,8 @@ namespace MVZ2.Managers
         }
         public async Task Init()
         {
-            Init_Resolving();
             Init_SpriteGeneration();
+            Init_Resolving();
             ClearResources();
             foreach (var mod in main.ModManager.GetAllModInfos())
             {
