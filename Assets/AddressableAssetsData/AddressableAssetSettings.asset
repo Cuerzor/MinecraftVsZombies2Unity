@@ -95,12 +95,10 @@ MonoBehaviour:
     - SpriteManifest
     - Sound
     - Music
-    - Language
-    - LanguagePack
+    - ResourcePack
     - Scene
     - MapModel
     - Sprite
-    - Spritesheet
     - AreaModel
     - Init
     - Main
