@@ -169,7 +169,3 @@ namespace MVZ2Logic.HeldItems
         private List<HeldItemBehaviourDefinition> behavioursCache = new List<HeldItemBehaviourDefinition>();
     }
 }
-
-namespace MVZ2Logic.Level
-{
-}

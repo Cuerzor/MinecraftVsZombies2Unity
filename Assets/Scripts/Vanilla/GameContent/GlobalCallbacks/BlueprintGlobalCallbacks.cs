@@ -31,11 +31,14 @@ namespace MVZ2.GameContent.GlobalCallbacks
             var heldData = param.heldData;
             if (entity == null)
                 return;
-            if (heldData.IsInstantTrigger() && entity.CanTrigger())
+            // »º´æ×´Ì¬£¬·ÀÖ¹TriggerºóHeldItemData¸Ä±äµ¼ÖÂ×´Ì¬¶ªÊ§¡£
+            bool instantTrigger = heldData.IsInstantTrigger();
+            bool instantEvoke = heldData.IsInstantEvoke();
+            if (instantTrigger && entity.CanTrigger())
             {
                 entity.Trigger();
             }
-            if (heldData.IsInstantEvoke() && entity.CanEvoke() && entity.Level.GetStarshardCount() > 0 && !entity.Level.IsStarshardDisabled())
+            if (instantEvoke && entity.CanEvoke() && entity.Level.GetStarshardCount() > 0 && !entity.Level.IsStarshardDisabled())
             {
                 entity.Level.AddStarshardCount(-1);
                 entity.Evoke();
