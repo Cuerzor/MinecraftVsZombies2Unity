@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1457964195489677628}
   - component: {fileID: 6663491622497414093}
   - component: {fileID: 4294183509579012104}
+  - component: {fileID: 6375165740643937832}
   m_Layer: 0
   m_Name: Bulb
   m_TagString: Untagged
@@ -116,6 +117,18 @@ MonoBehaviour:
   - {fileID: 1290310954, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
   - {fileID: -1433001535, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
   propertyName: Flower3
+--- !u!114 &6375165740643937832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655890890922520434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1835665964566395573
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,6 +399,7 @@ GameObject:
   - component: {fileID: 2822070386701946215}
   - component: {fileID: 3520271363130847628}
   - component: {fileID: 2821860388586544485}
+  - component: {fileID: 7350805823377899053}
   m_Layer: 0
   m_Name: Bulb
   m_TagString: Untagged
@@ -490,6 +504,18 @@ MonoBehaviour:
   - {fileID: 1290310954, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
   - {fileID: -1433001535, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
   propertyName: Flower1
+--- !u!114 &7350805823377899053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534399247937290306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7504293069863012753
 GameObject:
   m_ObjectHideFlags: 0
@@ -780,6 +806,7 @@ GameObject:
   - component: {fileID: 1980597606105063235}
   - component: {fileID: 4743027637193452938}
   - component: {fileID: 6501643782304300305}
+  - component: {fileID: 2678671190713070021}
   m_Layer: 0
   m_Name: Bulb
   m_TagString: Untagged
@@ -884,6 +911,18 @@ MonoBehaviour:
   - {fileID: 1290310954, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
   - {fileID: -1433001535, guid: c7f31ee522fe1fc408db56ea45808c07, type: 3}
   propertyName: Flower2
+--- !u!114 &2678671190713070021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8773032563901589420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542a3a604eb16834987915159430bc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9044414293873568296
 GameObject:
   m_ObjectHideFlags: 0

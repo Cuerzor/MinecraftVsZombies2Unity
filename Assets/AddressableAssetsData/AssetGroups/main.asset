@@ -4052,7 +4052,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
-    - Spritesheet
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 47f64bb4f9829ae49a99df91e2c19d03
     m_Address: mvz2:ui/level/mobile/card_curtain
@@ -4815,7 +4815,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
-    - Spritesheet
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 567b59c501d5f7c4faded153d166a3f1
     m_Address: mvz2:obstacle/gargoyle_statue
@@ -5431,6 +5431,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 603e7d4fec7ead74f8e434567def8d93
+    m_Address: mvz2:entity/contraption/nesting_tnt
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 604ec57123d82f544bede82e78c969fe
     m_Address: mvz2:pickup/locked_chest_pickup
@@ -7272,6 +7279,13 @@ MonoBehaviour:
     - Main
     - Music
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82ca6d08081ef804899c8e96a1492992
+    m_Address: mvz2:entity/contraption/freezenser
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 831f7ad8d2311d448970951982d07ad8
     m_Address: mvz2:misc/explosion_before_3_years
     m_ReadOnly: 0
@@ -7445,7 +7459,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
-    - Spritesheet
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 86b752a5e2100d84ab9e7af262138b91
     m_Address: mvz2:ui/level/target
@@ -7512,6 +7526,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8826f776dff1c6a4d8d72030535a150e
     m_Address: mvz2:misc/dream
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 885194c4b4409e54f9b6f0954c744ad2
+    m_Address: mvz2:entity/contraption/ejector
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -10831,7 +10852,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
-    - Spritesheet
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c7f50d8658623a44886293ea828537fd
     m_Address: mvz2:store/background_village
@@ -12240,6 +12261,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e1697721bd6b1594e9b4f4573eb482a3
+    m_Address: mvz2:entity/projectile/frozen_orb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e1fb23c573bc08a4bbdc50771db3851b
     m_Address: mvz2:entity/pot/pot_break1
     m_ReadOnly: 0
@@ -12877,7 +12905,7 @@ MonoBehaviour:
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ed7855e4711606d4b9aca969e26f70a1
-    m_Address: mvz2:entity/projectiles/chill_arrow
+    m_Address: mvz2:entity/projectile/chill_arrow
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
