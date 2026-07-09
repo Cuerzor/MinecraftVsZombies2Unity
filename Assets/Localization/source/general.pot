@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-07-09 01:36+0800\n"
+"POT-Creation-Date: 2026-07-09 04:40+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -991,8 +991,15 @@ msgid "收集宝石来获得更酷的道具吧！"
 msgstr ""
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:667
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:697
 msgid "能量不足"
+msgstr ""
+
+# 传送器战队的警告提示
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:699
+msgid ""
+"您有未保存的更改。\n"
+"确认要丢弃所有更改并退出吗？"
 msgstr ""
 
 # 梦魇对话框标题

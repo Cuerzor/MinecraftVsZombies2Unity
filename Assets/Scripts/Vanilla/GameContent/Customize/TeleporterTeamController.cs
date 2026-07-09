@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using MukioI18n;
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Models;
@@ -13,6 +14,7 @@ using MVZ2.UI.Level;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Grids;
+using MVZ2.Vanilla.Localization;
 using MVZ2Logic;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Blueprints;
@@ -235,7 +237,23 @@ namespace MVZ2.GameContent.Customize
         }
         private void OnCancelClickCallback()
         {
-            Return();
+            if (hasUnsavedChanges)
+            {
+                var title = Global.Localization.GetText(LogicStrings.WARNING);
+                var desc = Global.Localization.GetText(WARNING_NOT_SAVED);
+                var options = new string[] { Global.Localization.GetText(LogicStrings.YES), Global.Localization.GetText(LogicStrings.NO) };
+                Global.GUI.ShowDialog(title, desc, options, index =>
+                {
+                    if (index == 0)
+                    {
+                        Return();
+                    }
+                });
+            }
+            else
+            {
+                Return();
+            }
         }
         #endregion
 
@@ -250,6 +268,7 @@ namespace MVZ2.GameContent.Customize
             }
             currentTeleporterTeam = team.Clone();
             SetTeam(team);
+            hasUnsavedChanges = false;
         }
         private void SetTeam(TeleporterTeam team)
         {
@@ -558,6 +577,7 @@ namespace MVZ2.GameContent.Customize
             {
                 ui.AddTileEntity(index, entityID, modelBuilder, definition.GetSortingLayer(), definition.GetSortingOrder());
             }
+            hasUnsavedChanges = true;
             CancelHolding();
 
             var placeSound = definition.GetPlaceSound();
@@ -596,6 +616,7 @@ namespace MVZ2.GameContent.Customize
 
             ui.RemoveTileEntity(index, entityID);
             CancelHolding();
+            hasUnsavedChanges = true;
 
             var deathSound = entityDefinition.GetDeathSound();
             if (NamespaceID.IsValid(deathSound))
@@ -675,6 +696,8 @@ namespace MVZ2.GameContent.Customize
         public const string ERROR_BANNED = "禁用";
         [TranslateMsg("传送器战队的错误提示")]
         public const string ERROR_NOT_ENOUGH_ENERGY = "能量不足";
+        [TranslateMsg("传送器战队的警告提示")]
+        public const string WARNING_NOT_SAVED = "您有未保存的更改。\n确认要丢弃所有更改并退出吗？"; 
         public const int MAX_TILE_COUNT = 9;
         public const int MAX_ENERGY = 250;
         [SerializeField]
@@ -688,6 +711,7 @@ namespace MVZ2.GameContent.Customize
         private int focusedLayoutTileIndex = -1;
         private bool dragBlueprintStarted;
         private int draggingTargetBlueprintIndex = -1;
+        private bool hasUnsavedChanges;
         private bool isMobileLayout;
         private readonly List<NamespaceID?> contraptionEntries = new List<NamespaceID?>();
 

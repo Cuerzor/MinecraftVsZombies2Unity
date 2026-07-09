@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-07-09 01:36+0800\n"
-"PO-Revision-Date: 2026-07-09 13:37+0800\n"
+"POT-Creation-Date: 2026-07-09 04:40+0800\n"
+"PO-Revision-Date: 2026-07-09 16:42+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -968,9 +968,18 @@ msgctxt "advice.collect_money"
 msgid "收集宝石来获得更酷的道具吧！"
 msgstr "Collect gems to purchase COOL stuff!"
 
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:667
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:697
 msgid "能量不足"
 msgstr "Not enough energy"
+
+# 传送器战队的警告提示
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:699
+msgid ""
+"您有未保存的更改。\n"
+"确认要丢弃所有更改并退出吗？"
+msgstr ""
+"You have unsaved changes.\n"
+"Are you sure you want to discard all changes and exit?"
 
 #: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:502
 msgid "选择你的命运"
