@@ -6,6 +6,7 @@ using MVZ2.GameContent.Customize;
 using MVZ2.GameContent.HeldItems;
 using MVZ2.GameContent.Placements;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.Level;
@@ -157,9 +158,7 @@ namespace MVZ2.GameContent.Contraptions
             var gridLayers = memberDefinition.GetGridLayersToTake();
             if (gridLayers != null && gridLayers.Contains(VanillaGridLayers.carrier))
                 return;
-            var placementId = memberDefinition.GetPlacementID();
-            var placementDefinition = teleporter.Level.Content.GetPlacementDefinition(placementId);
-            if (placementDefinition == null || placementDefinition.CanOnWater())
+            if (!memberDefinition.CanContraptionOnWater())
                 return;
             if (grid.GetEntities().Any(e => e.IsEntityOf(VanillaContraptionID.lilyPad)))
                 return;

@@ -166,12 +166,11 @@ namespace MVZ2.GameContent.GlobalCallbacks
             var areaTags = level.AreaDefinition.GetAreaTags();
             if (areaTags != null && areaTags.Contains(LogicAreaTags.water))
             {
-                if (!chosenBlueprintEntityDefs.Any(e => e.GetPlacementID() == VanillaPlacementID.aquatic) && entityDefsForChoose.Any(e => e.GetPlacementID() == VanillaPlacementID.aquatic))
+                if (!chosenBlueprintEntityDefs.Any(e => e.CanContraptionOnWater()) && entityDefsForChoose.Any(e => e.CanContraptionOnWater()))
                 {
                     results.Add(Global.Localization.GetText(WARNING_MISSING_AQUATIC));
                 }
             }
-
         }
         [TranslateMsg("选卡警告，{0}为原器械，{1}为升级器械")]
         public const string WARNING_MISSING_UPGRADE_BASE = "你确定想要在没有{0}的情况下使用{1}？";
