@@ -74,7 +74,18 @@ namespace MVZ2.GameContent.Contraptions
             builder.SetCannotCancel(true);
             entity.Level.SetHeldItem(builder);
 
-            entity.PlaySound(VanillaSoundID.teleporterSignal);
+            var timer = GetEvocationTimer(entity);
+            if (timer == null)
+            {
+                timer = TimerHelper.NewSecondTimer(EVOCATION_DURATION_SECONDS);
+                SetEvocationTimer(entity, timer);
+            }
+            else
+            {
+                timer.ResetSeconds(EVOCATION_DURATION_SECONDS);
+            }
+
+                entity.PlaySound(VanillaSoundID.teleporterSignal);
         }
         public static void TeleportTeam(Entity teleporter, LawnGrid grid)
         {
