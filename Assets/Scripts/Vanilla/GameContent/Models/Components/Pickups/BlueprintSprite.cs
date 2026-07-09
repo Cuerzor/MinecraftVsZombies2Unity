@@ -22,9 +22,9 @@ namespace MVZ2.GameContent.Models
             if (mobileFrameBottom) mobileFrameBottom.SetSprite(viewData.mobileFrameBottom);
 
             var icon = viewData.icon;
-            iconRenderer.enabled = icon && !viewData.iconGrayscale;
+            iconRenderer.SetEnabled(icon && !viewData.iconGrayscale);
             iconRenderer.SetSprite(icon);
-            iconCommandBlockRenderer.enabled = icon && viewData.iconGrayscale;
+            iconCommandBlockRenderer.SetEnabled(icon && viewData.iconGrayscale);
             iconCommandBlockRenderer.SetSprite(icon);
             UpdateIcon();
         }
