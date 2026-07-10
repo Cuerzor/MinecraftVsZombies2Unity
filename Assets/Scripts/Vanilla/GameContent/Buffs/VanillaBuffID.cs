@@ -69,6 +69,7 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public const string decorativeWindSpeed = "decorative_wind_speed";
+            public const string raining = "raining";
 
             // Random China
             public const string greedyVacuum = "greedy_vacuum";
@@ -442,6 +443,7 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public static readonly NamespaceID decorativeWindSpeed = Get(VanillaBuffNames.Level.decorativeWindSpeed);
+            public static readonly NamespaceID raining = Get(VanillaBuffNames.Level.raining);
 
             // Random China
             public static readonly NamespaceID superRecharge = Get(VanillaBuffNames.Level.superRecharge);

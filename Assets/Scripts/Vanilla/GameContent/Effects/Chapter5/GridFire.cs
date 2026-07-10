@@ -45,6 +45,10 @@ namespace MVZ2.GameContent.Contraptions
         {
             base.Update(entity);
             UpdateIgnite(entity);
+            if (entity.Level.IsRaining())
+            {
+                entity.Timeout = Mathf.Min(entity.Timeout, 15);
+            }
         }
         private void UpdateIgnite(Entity hellfire)
         {

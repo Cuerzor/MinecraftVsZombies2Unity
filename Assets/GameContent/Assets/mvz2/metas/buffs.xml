@@ -227,6 +227,7 @@
     <buff id="lily_platform" polarity="positive" level="2000" target="blueprint" />
     <buff id="extending_arm" polarity="mixed" level="2000" target="contraption" />
     <buff id="krakens_tentacle_attack_speed" polarity="positive" level="2000" target="contraption" />
+    <buff id="raining" polarity="mixed" level="5000" target="level" />
 
     <!-- Random China -->
     <buff id="super_recharge" polarity="positive" level="0" target="blueprint" />
