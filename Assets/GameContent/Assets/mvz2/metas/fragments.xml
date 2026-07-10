@@ -323,6 +323,13 @@
             <key hex="#C881C9" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="jeweled_pagoda">
+        <colorKeys>
+            <key hex="#3e1700" time="0.4" />
+            <key hex="#fff2b1" time="0.4" />
+            <key hex="#a3755a" time="1" />
+        </colorKeys>
+    </fragment>
 
     <!-- Palace Contraptions -->
     <fragment name="transfenser">
