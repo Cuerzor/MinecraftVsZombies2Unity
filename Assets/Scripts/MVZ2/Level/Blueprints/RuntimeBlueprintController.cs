@@ -42,7 +42,6 @@ namespace MVZ2.Level
         }
         public virtual void UpdateFrame(float deltaTime)
         {
-            ui.SetCost(SeedPack.GetCost().ToString());
             ui.SetTriggerActive(SeedPack.IsTriggerActive());
             var model = GetModel();
             if (model)

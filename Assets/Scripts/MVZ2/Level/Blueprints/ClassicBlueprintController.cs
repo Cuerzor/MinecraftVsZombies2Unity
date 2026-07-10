@@ -34,6 +34,7 @@ namespace MVZ2.Level
             ui.SetDisabled(!CanPick());
             ui.SetTwinkleAlpha(ShouldBlueprintTwinkle(SeedPack) ? Controller.GetTwinkleAlpha() : 0);
             ui.SetSelected(Level.IsHoldingClassicBlueprint(Index));
+            ui.SetCost(SeedPack.GetCost().ToString());
             ui.UpdateAnimation(deltaTime);
         }
         protected override void OnDeactive()
