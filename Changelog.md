@@ -9,6 +9,7 @@
 - When a projectile entity undergoes angular rotation due to directional deflection, its hitbox will now rotate correctly.
 - Necrotombstone and Mine TNT now destroy themselves if they're on a slab tile.
 - Adjusted the smashing sfx of Mutant Zombie in water.
+- The base movement speed of Flag Zombies has been increased to 2, and the random movement speed factor for them is no longer fixed at 200%.
 
 ### Balance
 - The reduction ratio of the recharge time for Broken Lock has been lowered from 1:1 to 2:1.

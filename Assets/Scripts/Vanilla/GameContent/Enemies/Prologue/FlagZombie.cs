@@ -21,11 +21,6 @@ namespace MVZ2.GameContent.Enemies
         {
             base.Init(entity);
             entity.SetModelProperty("HasFlag", true);
-            var speedBuff = entity.GetFirstBuff<RandomEnemySpeedBuff>();
-            if (speedBuff != null)
-            {
-                RandomEnemySpeedBuff.SetSpeed(speedBuff, 2);
-            }
             var level = entity.Level;
             if (level.IsIZombie())
             {

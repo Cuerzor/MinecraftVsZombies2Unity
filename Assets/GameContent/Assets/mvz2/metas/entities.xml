@@ -1799,6 +1799,7 @@
                 <behaviour operator="add" id="mvz2:rickroll_drown_achievement" />
             </behaviours>
             <properties>
+                <float name="mvz2:speed" value="2" />
                 <int name="mvz2:cost" value="300" />
             </properties>
         </entity>
