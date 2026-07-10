@@ -1651,7 +1651,7 @@
         <entry id="mvz2:dullahan">
             <variables>
                 <variable name="horse_hp">property("mvz2:entity/maxHealth", "mvz2:skeleton_horse", "entity")</variable>
-                <variable name="horse_speed">property("mvz2:entity/speed", "mvz2:skeleton_horse", "entity")</variable>
+                <variable name="horse_speed">property("mvz2:entity/speed", "mvz2:skeleton_horse", "entity") * 2</variable>
                 <variable name="horse_speed_jumped">local("horse_speed") * 0.5</variable>
                 <variable name="head_hp">property("mvz2:entity/maxHealth", "mvz2:dullahan_head", "entity")</variable>
                 <variable name="head_speed">property("mvz2:entity/speed", "mvz2:dullahan_head", "entity")</variable>

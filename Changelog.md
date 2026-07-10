@@ -19,6 +19,7 @@
 - Fixed the issue where the charging animation of Tesla Coil would continue to play even when it was disabled.
 - Fixed the issue where, after the Giant comes into contact with invincible contraptions, even if it manifests after leaving these contraptions, these contraptions will still be destroyed when not in an invincible state.
 - Fixed the issue where Mine TNT will explode multiple times when it contacts with multiple enemies.
+- Fixed the issue where the movement speed description of Skeleton Horses in Almanac is incorrect.
 
 ---
 
