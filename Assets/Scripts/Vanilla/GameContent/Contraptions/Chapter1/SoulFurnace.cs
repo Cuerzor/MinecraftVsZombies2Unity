@@ -92,7 +92,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             base.OnEvoke(entity);
             var fuel = GetFuel(entity);
-            fuel = Mathf.Max(REFUEL_THRESOLD, fuel);
+            fuel = Mathf.Max(MAX_FUEL, fuel);
             SetFuel(entity, fuel);
             entity.SetEvoked(true);
         }
@@ -166,6 +166,8 @@ namespace MVZ2.GameContent.Contraptions
             if (furnace.IsDead)
                 return;
             if (furnace.IsAboveLeaveGridHeight())
+                return;
+            if (furnace.IsEvoked())
                 return;
             var column = furnace.GetColumn();
             var lane = furnace.GetLane();

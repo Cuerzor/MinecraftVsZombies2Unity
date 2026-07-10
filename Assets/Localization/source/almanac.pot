@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-07-09 01:17+0800\n"
+"POT-Creation-Date: 2026-07-10 12:43+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -914,7 +914,7 @@ msgid ""
 "溅射伤害：<color=red><var local=\"splash_damage\" />（不伤害直接目标）</color>\n"
 "特点：<color=red>需要烧毁器械补充燃料</color>\n"
 "燃料上限：<color=red>120</color>\n"
-"技能：<color=red>消耗所有燃料，每有一发燃料被消耗，便随机对一个敌人发射爆炸灵魂火球</color>"
+"技能：<color=red>充满并消耗所有燃料，每有一发燃料被消耗，便随机对一个敌人发射爆炸灵魂火球</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:soul_furnace
