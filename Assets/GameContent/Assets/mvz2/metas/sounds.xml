@@ -823,9 +823,9 @@
         <sample path="mvz2:entity/skeleton/skeleton_death" weight="1" />
     </sound>
     <sound name="skeleton_horse_cry">
-        <sample path="mvz2:entity/skeleton_horse/skeleton_horse_cry1" weight="1" />
-        <sample path="mvz2:entity/skeleton_horse/skeleton_horse_cry2" weight="1" />
-        <sample path="mvz2:entity/skeleton_horse/skeleton_horse_cry3" weight="1" />
+        <sample path="mvz2:entity/skeleton_horse/skeleton_horse1" weight="1" />
+        <sample path="mvz2:entity/skeleton_horse/skeleton_horse2" weight="1" />
+        <sample path="mvz2:entity/skeleton_horse/skeleton_horse3" weight="1" />
     </sound>
     <sound name="skeleton_horse_death">
         <sample path="mvz2:entity/skeleton_horse/skeleton_horse_death" weight="1" />
