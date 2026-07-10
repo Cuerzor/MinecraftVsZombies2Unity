@@ -91,10 +91,10 @@ namespace MVZ2.GameContent.Contraptions
         public static void TeleportTeam(Entity teleporter, LawnGrid grid)
         {
             var level = teleporter.Level;
-            var width = Teleporter_Evoke.WIDTH;
-            var height = Teleporter_Evoke.HEIGHT;
-            var xOffset = Teleporter_Evoke.X_OFFSET;
-            var yOffset = Teleporter_Evoke.Y_OFFSET;
+            var width = WIDTH;
+            var height = HEIGHT;
+            var xOffset = X_OFFSET;
+            var yOffset = Y_OFFSET;
 
             for (int x = 0; x < width; x++)
             {
@@ -158,7 +158,7 @@ namespace MVZ2.GameContent.Contraptions
             var gridLayers = memberDefinition.GetGridLayersToTake();
             if (gridLayers != null && gridLayers.Contains(VanillaGridLayers.carrier))
                 return;
-            if (!memberDefinition.CanContraptionOnWater())
+            if (memberDefinition.CanContraptionOnWater())
                 return;
             if (grid.GetEntities().Any(e => e.IsEntityOf(VanillaContraptionID.lilyPad)))
                 return;
