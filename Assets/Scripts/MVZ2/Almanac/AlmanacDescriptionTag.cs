@@ -4,7 +4,7 @@ using System;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 
-namespace MVZ2.UI.Almanac
+namespace MVZ2.Almanacs
 {
     public class AlmanacDescriptionTag : MonoBehaviour
     {

@@ -2,7 +2,6 @@
 
 using Cysharp.Threading.Tasks;
 using MVZ2.Managers;
-using MVZ2.Resources;
 using UnityEngine;
 
 namespace MVZ2.ResourcePacks

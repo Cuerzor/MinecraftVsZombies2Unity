@@ -2,7 +2,7 @@
 
 using System.Xml;
 using MVZ2.IO;
-using MVZ2.UI.Level;
+using MVZ2.Level.UI;
 using MVZ2Logic.Resources;
 using PVZEngine.Tools.Unity;
 using UnityEngine;

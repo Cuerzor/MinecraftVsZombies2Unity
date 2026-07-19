@@ -12,7 +12,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.DebugConsole
+namespace MVZ2.DebugConsole
 {
     /// <summary>
     /// Editable text input field.
@@ -266,7 +266,7 @@ namespace MVZ2.UI.DebugConsole
         private Color m_SelectionColor = new Color(168f / 255f, 206f / 255f, 255f / 255f, 192f / 255f);
 
         /// <summary>
-        /// Input field's value.
+        /// Inputing field's value.
         /// </summary>
 
         [SerializeField]
@@ -499,7 +499,7 @@ namespace MVZ2.UI.DebugConsole
         }
 
         /// <summary>
-        /// Input field's current text value. This is not necessarily the same as what is visible on screen.
+        /// Inputing field's current text value. This is not necessarily the same as what is visible on screen.
         /// </summary>
         /// <remarks>
         /// Note that null is invalid value  for InputField.text.
@@ -534,7 +534,7 @@ namespace MVZ2.UI.DebugConsole
         }
 
         /// <summary>
-        /// Set Input field's current text value without invoke onValueChanged. This is not necessarily the same as what is visible on screen.
+        /// Set Inputing field's current text value without invoke onValueChanged. This is not necessarily the same as what is visible on screen.
         /// </summary>
         public void SetTextWithoutNotify(string input)
         {
@@ -702,7 +702,7 @@ namespace MVZ2.UI.DebugConsole
         //public bool isInteractableControl { set { if ( } }
 
         /// <summary>
-        /// Set the point size on both Placeholder and Input text object.
+        /// Set the point size on both Placeholder and Inputing text object.
         /// </summary>
         public float pointSize
         {
@@ -718,7 +718,7 @@ namespace MVZ2.UI.DebugConsole
         }
 
         /// <summary>
-        /// Sets the Font Asset on both Placeholder and Input child objects.
+        /// Sets the Font Asset on both Placeholder and Inputing child objects.
         /// </summary>
         public TMP_FontAsset fontAsset
         {
@@ -802,7 +802,7 @@ namespace MVZ2.UI.DebugConsole
         }
 
         /// <summary>
-        /// Limits the number of lines of text in the Input Field.
+        /// Limits the number of lines of text in the Inputing Field.
         /// </summary>
         public int lineLimit
         {
@@ -822,7 +822,7 @@ namespace MVZ2.UI.DebugConsole
         public InputType inputType { get { return m_InputType; } set { if (SetPropertyUtility.SetStruct(ref m_InputType, value)) SetToCustom(); } }
 
         /// <summary>
-        /// The TouchScreenKeyboard being used to edit the Input Field.
+        /// The TouchScreenKeyboard being used to edit the Inputing Field.
         /// </summary>
         public TouchScreenKeyboard touchScreenKeyboard { get { return m_SoftKeyboard; } }
 
@@ -839,7 +839,7 @@ namespace MVZ2.UI.DebugConsole
         public CharacterValidation characterValidation { get { return m_CharacterValidation; } set { if (SetPropertyUtility.SetStruct(ref m_CharacterValidation, value)) SetToCustom(); } }
 
         /// <summary>
-        /// Sets the Input Validation to use a Custom Input Validation script.
+        /// Sets the Inputing Validation to use a Custom Inputing Validation script.
         /// </summary>
         public TMP_InputValidator inputValidator
         {
@@ -1028,7 +1028,7 @@ namespace MVZ2.UI.DebugConsole
             if (m_Text == null)
                 m_Text = string.Empty;
 
-            // Check if Input Field is driven by any layout components
+            // Check if Inputing Field is driven by any layout components
             ILayoutController layoutController = GetComponent<ILayoutController>();
 
             if (layoutController != null)
@@ -1451,7 +1451,7 @@ namespace MVZ2.UI.DebugConsole
                 m_ShouldActivateNextUpdate = false;
             }
 
-            // Handle double click to reset / deselect Input Field when ResetOnActivation is false.
+            // Handle double click to reset / deselect Inputing Field when ResetOnActivation is false.
             if (!isFocused && m_SelectionStillActive)
             {
                 GameObject selectedObject = EventSystem.current != null ? EventSystem.current.currentSelectedGameObject : null;
@@ -1483,7 +1483,7 @@ namespace MVZ2.UI.DebugConsole
                         return;
                     }
 
-                    // Release current selection of selected object is another Input Field
+                    // Release current selection of selected object is another Inputing Field
                     if (selectedObject.GetComponent<DebugConsoleInputField>() != null)
                         ReleaseSelection();
 
@@ -3229,7 +3229,7 @@ namespace MVZ2.UI.DebugConsole
                 string fullText;
                 if (compositionLength > 0 && m_ReadOnly == false)
                 {
-                    //Input.imeCompositionMode = IMECompositionMode.On;
+                    //Inputing.imeCompositionMode = IMECompositionMode.On;
 
                     // Handle selections
                     Delete();
@@ -3241,7 +3241,7 @@ namespace MVZ2.UI.DebugConsole
 
                     m_IsCompositionActive = true;
 
-                    //Debug.Log("[" + Time.frameCount + "] Handling IME Input");
+                    //Debug.Log("[" + Time.frameCount + "] Handling IME Inputing");
                 }
                 else
                 {
@@ -3251,7 +3251,7 @@ namespace MVZ2.UI.DebugConsole
 
                 }
 
-                //Debug.Log("Handling IME Input... [" + compositionString + "] of length [" + compositionLength + "] at StringPosition [" + m_StringPosition + "]  IsActive [" + m_IsCompositionActive + "]");
+                //Debug.Log("Handling IME Inputing... [" + compositionString + "] of length [" + compositionLength + "] at StringPosition [" + m_StringPosition + "]  IsActive [" + m_IsCompositionActive + "]");
 
                 string processed;
                 if (inputType == InputType.Password)
@@ -3275,7 +3275,7 @@ namespace MVZ2.UI.DebugConsole
                 if (m_IsDrivenByLayoutComponents)
                     LayoutRebuilder.MarkLayoutForRebuild(m_RectTransform);
 
-                // Special handling to limit the number of lines of text in the Input Field.
+                // Special handling to limit the number of lines of text in the Inputing Field.
                 if (m_LineLimit > 0)
                 {
                     m_TextComponent.ForceMeshUpdate();
@@ -3766,7 +3766,7 @@ namespace MVZ2.UI.DebugConsole
             }
 
             // TODO: Don't adjust the position of the RectTransform if Reset On Deactivation is disabled
-            // and we just selected the Input Field again.
+            // and we just selected the Inputing Field again.
             AdjustRectTransformRelativeToViewport(caretPosition, height, true);
 
             int startChar = Mathf.Max(0, m_CaretPosition);
@@ -4103,7 +4103,7 @@ namespace MVZ2.UI.DebugConsole
                     OnFocus();
 
                     // Opening the soft keyboard sets its selection to the end of the text.
-                    // As such, we set the selection to match the Input Field's internal selection.
+                    // As such, we set the selection to match the Inputing Field's internal selection.
                     if (m_SoftKeyboard != null)
                     {
                         int length = stringPositionInternal < stringSelectPositionInternal ? stringSelectPositionInternal - stringPositionInternal : stringPositionInternal - stringSelectPositionInternal;
@@ -4155,7 +4155,7 @@ namespace MVZ2.UI.DebugConsole
 
         public void OnControlClick()
         {
-            //Debug.Log("Input Field control click...");
+            //Debug.Log("Inputing Field control click...");
         }
 
         public void ReleaseSelection()
@@ -4172,7 +4172,7 @@ namespace MVZ2.UI.DebugConsole
 
         public void DeactivateInputField(bool clearSelection = false)
         {
-            //Debug.Log("Deactivate Input Field...");
+            //Debug.Log("Deactivate Inputing Field...");
 
             // Not activated do nothing.
             if (!m_AllowInput)
@@ -4474,7 +4474,7 @@ namespace MVZ2.UI.DebugConsole
 
 
         /// <summary>
-        /// Function to conveniently set the point size of both Placeholder and Input Field text object.
+        /// Function to conveniently set the point size of both Placeholder and Inputing Field text object.
         /// </summary>
         /// <param name="pointSize"></param>
         public void SetGlobalPointSize(float pointSize)
@@ -4486,7 +4486,7 @@ namespace MVZ2.UI.DebugConsole
         }
 
         /// <summary>
-        /// Function to conveniently set the Font Asset of both Placeholder and Input Field text object.
+        /// Function to conveniently set the Font Asset of both Placeholder and Inputing Field text object.
         /// </summary>
         /// <param name="fontAsset"></param>
         public void SetGlobalFontAsset(TMP_FontAsset fontAsset)

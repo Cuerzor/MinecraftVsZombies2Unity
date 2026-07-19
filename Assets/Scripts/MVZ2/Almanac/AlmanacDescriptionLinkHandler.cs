@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace MVZ2.UI.Almanac
+namespace MVZ2.Almanacs
 {
     public class AlmanacDescriptionLinkHandler : MonoBehaviour, IPointerClickHandler
     {

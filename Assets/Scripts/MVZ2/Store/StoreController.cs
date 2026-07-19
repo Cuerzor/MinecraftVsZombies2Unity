@@ -9,7 +9,6 @@ using MVZ2.Metas;
 using MVZ2.Saves;
 using MVZ2.Scenes;
 using MVZ2.Talk;
-using MVZ2.UI.Store;
 using MVZ2Logic;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Callbacks;

@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Archive
+namespace MVZ2.Archives
 {
     public class ArchiveTalkItem : MonoBehaviour
     {

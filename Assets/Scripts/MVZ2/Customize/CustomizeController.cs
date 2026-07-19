@@ -5,7 +5,6 @@ using System.Linq;
 using MVZ2.Managers;
 using MVZ2.Saves;
 using MVZ2.Scenes;
-using MVZ2.UI.Customize;
 using MVZ2Logic.Customize;
 using PVZEngine;
 using UnityEngine;

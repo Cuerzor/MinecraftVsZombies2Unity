@@ -2,12 +2,12 @@
 
 using System;
 using MVZ2Logic.UI;
+using PVZEngine.Tools.Unity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using PVZEngine.Tools.Unity;
 
-namespace MVZ2.UI.Archive
+namespace MVZ2.Archives
 {
     public class DetailsArchivePage : ArchivePage
     {

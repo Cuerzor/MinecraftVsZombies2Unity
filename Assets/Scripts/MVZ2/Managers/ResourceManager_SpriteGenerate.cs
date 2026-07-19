@@ -2,7 +2,6 @@
 
 using MVZ2.Sprites;
 using PVZEngine.Tools.Unity;
-using UnityEditor;
 using UnityEngine;
 
 namespace MVZ2.Managers

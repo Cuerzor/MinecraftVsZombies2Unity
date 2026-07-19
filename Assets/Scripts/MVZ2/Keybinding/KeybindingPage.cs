@@ -5,7 +5,7 @@ using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Keybinding
+namespace MVZ2.Keybinding
 {
     public class KeybindingPage : MonoBehaviour
     {

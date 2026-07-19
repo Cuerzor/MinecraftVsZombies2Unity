@@ -2,8 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using MVZ2Logic.Resources;
-using PVZEngine.Base;
 using UnityEngine;
 
 namespace MVZ2.Sprites

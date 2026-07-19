@@ -3,9 +3,8 @@
 using MVZ2Logic.UI;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace MVZ2.UI.Mainmenu
+namespace MVZ2.Mainmenu
 {
     public class AchievementEntryUI : MonoBehaviour
     {

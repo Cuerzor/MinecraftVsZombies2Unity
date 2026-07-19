@@ -2,7 +2,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using MVZ2.View.Level;
+using MVZ2.Level.Inputing;
 using MVZ2Logic.Inputs;
 using UnityEngine;
 using UnityEngine.EventSystems;

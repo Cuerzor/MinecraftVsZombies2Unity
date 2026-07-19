@@ -2,7 +2,7 @@
 
 using System.Collections;
 using System.Linq;
-using MVZ2.UI.Level;
+using MVZ2.Level.UI;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Callbacks;

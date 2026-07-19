@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.DebugConsole
+namespace MVZ2.DebugConsole
 {
     public class DebugConsoleAutoCompleteItem : MonoBehaviour
     {

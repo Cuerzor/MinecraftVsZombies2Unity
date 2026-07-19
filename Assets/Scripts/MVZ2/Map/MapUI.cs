@@ -2,11 +2,12 @@
 
 using System;
 using System.Collections.Generic;
+using MVZ2.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Map
+namespace MVZ2.Map
 {
     public class MapUI : MonoBehaviour
     {

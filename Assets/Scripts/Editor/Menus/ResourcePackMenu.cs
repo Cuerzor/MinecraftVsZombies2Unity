@@ -9,7 +9,7 @@ using MVZ2.Localization;
 using MVZ2.Metas;
 using MVZ2.ResourcePacks;
 using MVZ2.Sprites;
-using MVZ2.UI.MusicRoom;
+using MVZ2.MusicRoom;
 using MVZ2.Vanilla;
 using MVZ2Logic.Models;
 using MVZ2Logic.Resources;

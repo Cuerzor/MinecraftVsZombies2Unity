@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Scene
+namespace MVZ2.Scenes
 {
     public class AchievementHint : MonoBehaviour
     {

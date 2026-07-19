@@ -5,7 +5,7 @@ using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Level
+namespace MVZ2.Level.Artifacts
 {
     public class ArtifactChoosingDialog : MonoBehaviour
     {

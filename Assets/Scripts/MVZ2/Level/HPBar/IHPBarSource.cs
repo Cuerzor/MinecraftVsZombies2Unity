@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace MVZ2.UI.Level
+namespace MVZ2.Level.HPBar
 {
     public interface IHPBarSource
     {

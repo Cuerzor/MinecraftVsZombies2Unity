@@ -2,7 +2,6 @@
 
 using System.Linq;
 using MVZ2.Metas;
-using MVZ2.Resources;
 using PVZEngine;
 using UnityEngine;
 

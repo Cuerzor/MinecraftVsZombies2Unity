@@ -7,7 +7,6 @@ using MukioI18n;
 using MVZ2.Managers;
 using MVZ2.Metas;
 using MVZ2.Saves;
-using MVZ2.UI.Store;
 using MVZ2Logic.Saves;
 using PVZEngine;
 using PVZEngine.Tools;

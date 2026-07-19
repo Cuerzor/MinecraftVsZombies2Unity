@@ -7,7 +7,6 @@ using MVZ2.Models;
 using MVZ2.TalkData;
 using MVZ2Logic.Customize;
 using MVZ2Logic.Models;
-using UnityEngine;
 
 namespace MVZ2.Modding
 {

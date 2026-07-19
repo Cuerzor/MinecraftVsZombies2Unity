@@ -2,10 +2,8 @@
 
 using System;
 using System.IO;
-using System.Threading.Tasks;
 using Cysharp.Threading.Tasks;
 using MVZ2.Managers;
-using MVZ2.Resources;
 
 namespace MVZ2.ResourcePacks
 {
@@ -50,7 +48,7 @@ namespace MVZ2.ResourcePacks
             var filename = GetFileName();
             var key = GetKey();
             ResourcePackMetadataReader reader = new ResourcePackMetadataReader(main);
-            if (isDirectory) 
+            if (isDirectory)
             {
                 var loader = new ResourceLoaderDirectory(path, filename);
                 return await reader.ReadMetadata(loader, key);

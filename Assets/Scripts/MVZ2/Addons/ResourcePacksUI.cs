@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Addons
+namespace MVZ2.Addons
 {
     public class ResourcePacksUI : MonoBehaviour
     {

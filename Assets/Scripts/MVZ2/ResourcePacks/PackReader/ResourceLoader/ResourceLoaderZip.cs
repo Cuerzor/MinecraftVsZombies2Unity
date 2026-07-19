@@ -9,7 +9,6 @@ using System.Text;
 using Cysharp.Threading.Tasks;
 using MVZ2.Audios;
 using MVZ2.IO;
-using MVZ2.Resources;
 using NGettext;
 using UnityEngine;
 

@@ -1,4 +1,4 @@
-﻿using MVZ2.UI.DebugConsole;
+﻿using MVZ2.DebugConsole;
 using UnityEditor;
 using UnityEditor.AnimatedValues;
 using UnityEditor.UI;

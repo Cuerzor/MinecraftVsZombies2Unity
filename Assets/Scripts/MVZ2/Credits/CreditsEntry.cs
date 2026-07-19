@@ -3,7 +3,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace MVZ2.UI.Credits
+namespace MVZ2.Credits
 {
     public class CreditsEntry : MonoBehaviour
     {

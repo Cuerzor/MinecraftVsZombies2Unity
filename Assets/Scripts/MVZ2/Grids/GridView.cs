@@ -2,8 +2,8 @@
 
 using System;
 using System.Collections.Generic;
+using MVZ2.Level.Inputing;
 using MVZ2.Models;
-using MVZ2.View.Level;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Models;
 using MVZ2Logic.UI;

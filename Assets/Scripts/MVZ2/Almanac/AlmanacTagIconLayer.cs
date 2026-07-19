@@ -2,9 +2,8 @@
 
 using MVZ2Logic.UI;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace MVZ2.UI.Almanac
+namespace MVZ2.Almanacs
 {
     public class AlmanacTagIconLayer : MonoBehaviour
     {

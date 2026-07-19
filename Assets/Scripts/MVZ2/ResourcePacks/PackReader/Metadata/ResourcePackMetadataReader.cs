@@ -3,7 +3,6 @@
 using System;
 using Cysharp.Threading.Tasks;
 using MVZ2.Managers;
-using MVZ2.Resources;
 using Newtonsoft.Json;
 using UnityEngine;
 

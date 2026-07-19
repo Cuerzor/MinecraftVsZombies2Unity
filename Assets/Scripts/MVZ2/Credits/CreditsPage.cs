@@ -5,7 +5,7 @@ using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Credits
+namespace MVZ2.Credits
 {
     public class CreditsPage : MonoBehaviour
     {

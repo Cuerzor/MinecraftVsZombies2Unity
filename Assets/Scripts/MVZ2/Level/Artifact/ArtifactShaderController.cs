@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Level
+namespace MVZ2.Level.Artifacts
 {
     [ExecuteAlways]
     [RequireComponent(typeof(RectTransform))]

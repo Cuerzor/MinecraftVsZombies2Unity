@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using MukioI18n;
-using MVZ2.Entities;
+using MVZ2.Level.Entities;
 using MVZ2.UI;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Entities;

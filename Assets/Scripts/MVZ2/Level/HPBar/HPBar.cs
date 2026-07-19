@@ -3,9 +3,8 @@
 using MVZ2Logic.UI;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace MVZ2.UI.Level
+namespace MVZ2.Level.HPBar
 {
     public class HPBar : MonoBehaviour
     {

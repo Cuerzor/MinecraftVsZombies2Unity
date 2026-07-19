@@ -4,9 +4,8 @@ using System.Collections.Concurrent;
 using System.IO;
 using System.IO.Compression;
 using Cysharp.Threading.Tasks;
-using MVZ2.IO;
 
-namespace MVZ2.Resources
+namespace MVZ2.IO
 {
     public class FileCopier
     {

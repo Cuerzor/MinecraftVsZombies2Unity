@@ -6,7 +6,7 @@ using MVZ2.Metas;
 using PVZEngine;
 using UnityEngine;
 
-namespace MVZ2.ChapterTransition
+namespace MVZ2.ChapterTransitions
 {
     public class ChapterTransitionController : MonoBehaviour
     {

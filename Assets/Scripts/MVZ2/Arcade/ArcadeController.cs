@@ -7,7 +7,6 @@ using MukioI18n;
 using MVZ2.Managers;
 using MVZ2.Saves;
 using MVZ2.Scenes;
-using MVZ2.UI.Arcade;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Difficulties;
 using MVZ2Logic.Level;

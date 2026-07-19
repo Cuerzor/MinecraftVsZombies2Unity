@@ -2,11 +2,11 @@
 
 using System;
 using System.Threading.Tasks;
+using MVZ2.UI;
 using MVZ2Logic.UI;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace MVZ2.UI.Scene
+namespace MVZ2.Scenes
 {
     public class MainSceneUI : MonoBehaviour
     {

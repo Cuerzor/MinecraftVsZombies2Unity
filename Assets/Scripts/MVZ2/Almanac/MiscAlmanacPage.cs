@@ -7,7 +7,7 @@ using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Almanac
+namespace MVZ2.Almanacs
 {
     public class MiscAlmanacPage : BookAlmanacPage
     {

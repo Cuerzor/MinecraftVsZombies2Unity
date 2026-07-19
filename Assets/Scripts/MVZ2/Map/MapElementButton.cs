@@ -4,7 +4,7 @@ using System;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Map
+namespace MVZ2.Map
 {
     public class MapElementButton : Selectable, IPointerClickHandler
     {

@@ -2,11 +2,12 @@
 
 using System;
 using System.Collections.Generic;
+using MVZ2.UI;
 using MVZ2Logic.UI;
 using TMPro;
 using UnityEngine;
 
-namespace MVZ2.UI.Mainmenu
+namespace MVZ2.Mainmenu
 {
     public class MainmenuUI : MonoBehaviour
     {

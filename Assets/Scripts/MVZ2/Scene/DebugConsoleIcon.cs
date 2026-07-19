@@ -4,7 +4,7 @@ using System;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Scene
+namespace MVZ2.Scenes
 {
     public class DebugConsoleIcon : Selectable, IPointerClickHandler
     {

@@ -8,21 +8,20 @@ using MVZ2.Addons;
 using MVZ2.Almanacs;
 using MVZ2.Arcade;
 using MVZ2.Archives;
-using MVZ2.ChapterTransition;
+using MVZ2.ChapterTransitions;
 using MVZ2.Customize;
 using MVZ2.DebugConsole;
-using MVZ2.Level;
 using MVZ2.Mainmenu;
 using MVZ2.Managers;
 using MVZ2.Map;
 using MVZ2.MusicRoom;
 using MVZ2.NotePaper;
 using MVZ2.Options;
+using MVZ2.Rendering;
 using MVZ2.Saves;
 using MVZ2.Store;
 using MVZ2.Titlescreen;
 using MVZ2.UI;
-using MVZ2.UI.Scene;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Games;
 using MVZ2Logic.Localization;
@@ -54,7 +53,7 @@ namespace MVZ2.Scenes
         public Task<int> ShowDialogAsync(string title, string desc, string[] options)
         {
             var tcs = new TaskCompletionSource<int>();
-            ShowDialog(title, desc, options ,(result) => tcs.SetResult(result));
+            ShowDialog(title, desc, options, (result) => tcs.SetResult(result));
             return tcs.Task;
         }
         public void ShowDialogMessage(string title, string desc, Action? onSelect = null)

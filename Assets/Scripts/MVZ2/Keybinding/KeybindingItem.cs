@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.Keybinding
+namespace MVZ2.Keybinding
 {
     public class KeybindingItem : MonoBehaviour
     {

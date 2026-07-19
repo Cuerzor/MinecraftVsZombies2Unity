@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVZ2.UI.MusicRoom
+namespace MVZ2.MusicRoom
 {
     public class MusicRoomListItem : MonoBehaviour
     {

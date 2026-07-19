@@ -15,7 +15,6 @@ using MVZ2.Managers;
 using MVZ2Logic.Games;
 using UnityEngine;
 using UnityEngine.Networking;
-using static MVZ2Logic.Sponsors.SponsorPlans;
 
 namespace MVZ2.Supporters
 {
