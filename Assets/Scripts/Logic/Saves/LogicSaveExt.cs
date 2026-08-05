@@ -45,20 +45,6 @@ namespace MVZ2Logic.Saves
                 return;
             saveData.LastSelection = value;
         }
-        public static TeleporterTeam? GetTeleporterTeam(this IGlobalSaveData save)
-        {
-            var saveData = save.GetLogicSaveData();
-            if (saveData == null)
-                return null;
-            return saveData.TeleporterTeam;
-        }
-        public static void SetTeleporterTeam(this IGlobalSaveData save, TeleporterTeam? value)
-        {
-            var saveData = save.GetLogicSaveData();
-            if (saveData == null)
-                return;
-            saveData.TeleporterTeam = value;
-        }
         public static void SetMoney(this IGlobalSaveData save, int money)
         {
             var saveData = save.GetLogicSaveData();

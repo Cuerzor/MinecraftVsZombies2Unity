@@ -35,7 +35,7 @@ namespace MVZ2.Vanilla
         {
             base.OnInit(game);
             Global.SetVanillaInterface(this);
-            RegisterSerializableType<SerializableLogicSaveData>();
+            RegisterSerializableType<SerializableVanillaSaveData>();
             RegisterSerializableType<TeleporterTeamLevelData>();
             RegisterSerializableType<TeleporterTeamTileLevelData>();
         }
@@ -43,12 +43,12 @@ namespace MVZ2.Vanilla
         #region 存档
         public override ModSaveData CreateSaveData()
         {
-            return new LogicSaveData(spaceName);
+            return new VanillaSaveData(spaceName);
         }
         public override ModSaveData LoadSaveData(string json)
         {
-            var serializableLogic = Deserialize<SerializableLogicSaveData>(json);
-            return LogicSaveData.DeserializeFrom(serializableLogic);
+            var serializableLogic = Deserialize<SerializableVanillaSaveData>(json);
+            return VanillaSaveData.DeserializeFrom(serializableLogic);
         }
         public override void PostAllSaveDataLoaded()
         {

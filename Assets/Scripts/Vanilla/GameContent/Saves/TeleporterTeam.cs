@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using PVZEngine;
 
-namespace MVZ2Logic.Saves
+namespace MVZ2.Vanilla.Saves
 {
     public class TeleporterTeam
     {

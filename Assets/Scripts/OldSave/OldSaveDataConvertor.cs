@@ -2,6 +2,7 @@
 using MVZ2.GameContent.Maps;
 using MVZ2.GameContent.Stages;
 using MVZ2.OldSaves;
+using MVZ2.Vanilla.Saves;
 using MVZ2.Vanilla.Stats;
 using MVZ2.Vanilla.Unlocks;
 using MVZ2Logic;
@@ -14,7 +15,7 @@ namespace MVZ2.OldSave
 {
     public static class OldSaveDataConvertor
     {
-        public static void ImportUserDataFromOld(LogicSaveData saveData, OldSaveData oldData)
+        public static void ImportUserDataFromOld(VanillaSaveData saveData, OldSaveData oldData)
         {
             if (oldData == null)
                 return;
@@ -22,7 +23,7 @@ namespace MVZ2.OldSave
             ImportAchievementsUserDataFromOld(saveData, oldData.achievements);
             ImportEndlessUserDataFromOld(saveData, oldData.endless);
         }
-        private static void ImportMainUserDataFromOld(LogicSaveData saveData, OldSaveDataMain oldData)
+        private static void ImportMainUserDataFromOld(VanillaSaveData saveData, OldSaveDataMain oldData)
         {
             if (oldData == null)
                 return;
@@ -113,7 +114,7 @@ namespace MVZ2.OldSave
                 saveData.Unlock(VanillaUnlockNames.trigger);
             }
         }
-        private static void ImportAchievementsUserDataFromOld(LogicSaveData saveData, OldSaveDataAchievements oldData)
+        private static void ImportAchievementsUserDataFromOld(VanillaSaveData saveData, OldSaveDataAchievements oldData)
         {
             if (oldData == null)
                 return;
@@ -128,7 +129,7 @@ namespace MVZ2.OldSave
                 }
             }
         }
-        private static void ImportEndlessUserDataFromOld(LogicSaveData saveData, OldSaveDataEndless oldData)
+        private static void ImportEndlessUserDataFromOld(VanillaSaveData saveData, OldSaveDataEndless oldData)
         {
             if (oldData == null || oldData.flags == null)
                 return;

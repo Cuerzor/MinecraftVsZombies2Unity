@@ -10,6 +10,10 @@ namespace MVZ2.Vanilla.Saves
 {
     public static class VanillaSaveExt
     {
+        public static VanillaSaveData? GetVanillaSaveData(this IGlobalSaveData save)
+        {
+            return save.GetModSaveData<VanillaSaveData>(Global.BuiltinNamespace);
+        }
         /// <summary>
         /// 梦境世界是否是梦魇状态。
         /// </summary>
@@ -29,6 +33,20 @@ namespace MVZ2.Vanilla.Saves
             {
                 save.Relock(VanillaUnlockID.dreamIsNightmare);
             }
+        }
+        public static TeleporterTeam? GetTeleporterTeam(this IGlobalSaveData save)
+        {
+            var saveData = save.GetVanillaSaveData();
+            if (saveData == null)
+                return null;
+            return saveData.TeleporterTeam;
+        }
+        public static void SetTeleporterTeam(this IGlobalSaveData save, TeleporterTeam? value)
+        {
+            var saveData = save.GetVanillaSaveData();
+            if (saveData == null)
+                return;
+            saveData.TeleporterTeam = value;
         }
     }
 }

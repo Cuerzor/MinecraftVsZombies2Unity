@@ -3,6 +3,7 @@
 using System.Linq;
 using MVZ2.GameContent.Customize;
 using MVZ2.Vanilla.Level;
+using MVZ2.Vanilla.Saves;
 using MVZ2Logic;
 using MVZ2Logic.Modding;
 using MVZ2Logic.Saves;

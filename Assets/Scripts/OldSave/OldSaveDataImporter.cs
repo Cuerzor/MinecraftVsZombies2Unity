@@ -9,6 +9,7 @@ using MVZ2.Managers;
 using MVZ2.Modding;
 using MVZ2.OldSaves;
 using MVZ2.Saves;
+using MVZ2.Vanilla.Saves;
 using MVZ2Logic.Saves;
 using MVZ2Logic.Serialization;
 using NBTUtility;
@@ -141,7 +142,7 @@ namespace MVZ2.OldSave
             }
             return newUserDataList;
         }
-        private LogicSaveData[]? ImportOldUserData(UserDataList userList, OldSaveData[] userDatas)
+        private VanillaSaveData[]? ImportOldUserData(UserDataList userList, OldSaveData[] userDatas)
         {
             if (userDatas == null)
                 return null;
@@ -160,7 +161,7 @@ namespace MVZ2.OldSave
                 return null;
 
             var allUsers = userList.GetAllUsers();
-            LogicSaveData[] results = new LogicSaveData[allUsers.Length];
+            VanillaSaveData[] results = new VanillaSaveData[allUsers.Length];
             for (int i = 0; i < allUsers.Length; i++)
             {
                 var user = allUsers[i];
@@ -170,7 +171,7 @@ namespace MVZ2.OldSave
                 if (oldData == null)
                     continue;
                 var data = vanillaMod.Logic?.CreateSaveData();
-                if (data is not LogicSaveData vanilla)
+                if (data is not VanillaSaveData vanilla)
                     continue;
                 OldSaveDataConvertor.ImportUserDataFromOld(vanilla, oldData);
                 results[i] = vanilla;
