@@ -786,6 +786,9 @@
     <sound name="scream">
         <sample path="mvz2:scream" weight="1" />
     </sound>
+    <sound name="screenshot">
+        <sample path="mvz2:shutter" weight="1" />
+    </sound>
     <sound name="screw">
         <sample path="mvz2:screw" weight="1" />
     </sound>

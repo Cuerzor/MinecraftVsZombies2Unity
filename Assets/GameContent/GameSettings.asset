@@ -61,3 +61,6 @@ MonoBehaviour:
     path: palace
   - spacename: mvz2
     path: mountain
+  screenshotSound:
+    spacename: mvz2
+    path: screenshot

@@ -2,8 +2,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using MukioI18n;
 using MVZ2.Addons;
 using MVZ2.Almanacs;
 using MVZ2.Arcade;
@@ -11,6 +13,7 @@ using MVZ2.Archives;
 using MVZ2.ChapterTransitions;
 using MVZ2.Customize;
 using MVZ2.DebugConsole;
+using MVZ2.IO;
 using MVZ2.Mainmenu;
 using MVZ2.Managers;
 using MVZ2.Map;
@@ -500,6 +503,10 @@ namespace MVZ2.Scenes
             {
                 DisplayConsole();
             }
+            if (!main.IsMobile() && Input.GetKeyDown(main.OptionsManager.GetKeyBinding(HotKeys.screenshot)))
+            {
+                CaptureScreenshot();
+            }
             ui.SetDebugIconActive(canUse && consoleOpen);
         }
         #endregion
@@ -519,11 +526,29 @@ namespace MVZ2.Scenes
                 currentPage != MainScenePageType.Titlescreen;
         }
 
+        #region 截图
+
+        private void CaptureScreenshot()
+        {
+            string fileName = $"screenshot_{System.DateTime.Now:yyyyMMdd_HHmmss_fff}.png";
+            string path = Path.Combine(Application.persistentDataPath, "screenshots", fileName).Replace("\\", "/");
+            FileHelper.ValidateDirectoryExists(path);
+            ScreenCapture.CaptureScreenshot(path);
+            main.SoundManager.Play2D(main.Settings.ScreenshotSound);
+
+            var popupText = main.LanguageManager._(SCREENSHOT_SAVED, path);
+            ShowPopup(popupText);
+        }
+        #endregion
+
         #region 属性字段
         private MainManager main => MainManager.Instance;
         private Dictionary<MainScenePageType, ScenePage> pages = new Dictionary<MainScenePageType, ScenePage>();
         private MainScenePageType currentPage = MainScenePageType.None;
         private ITooltipSource? tooltipSource;
+
+        [TranslateMsg("截图保存的提示")]
+        public const string SCREENSHOT_SAVED = "截图已保存：{0}";
 
         [SerializeField]
         private Camera uiCamera = null!;

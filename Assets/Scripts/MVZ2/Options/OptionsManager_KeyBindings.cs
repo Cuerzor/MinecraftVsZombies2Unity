@@ -72,6 +72,7 @@ namespace MVZ2.Options
             AddKeyBindingMeta(HotKeys.fastForward, KeyCode.F, HOTKEY_NAME_FASTFORWARD);
             AddKeyBindingMeta(HotKeys.hpBars, KeyCode.H, HOTKEY_NAME_HP_BARS);
             AddKeyBindingMeta(HotKeys.console, KeyCode.Slash, HOTKEY_NAME_CONSOLE);
+            AddKeyBindingMeta(HotKeys.screenshot, KeyCode.F12, HOTKEY_NAME_SCREENSHOT);
             AddKeyBindingMeta(HotKeys.blueprint1, KeyCode.Alpha1, HOTKEY_NAME_BLUEPRINT1);
             AddKeyBindingMeta(HotKeys.blueprint2, KeyCode.Alpha2, HOTKEY_NAME_BLUEPRINT2);
             AddKeyBindingMeta(HotKeys.blueprint3, KeyCode.Alpha3, HOTKEY_NAME_BLUEPRINT3);
@@ -113,6 +114,8 @@ namespace MVZ2.Options
         public const string HOTKEY_NAME_HP_BARS = "血条";
         [TranslateMsg("按键名", LogicStrings.CONTEXT_HOTKEY_NAME)]
         public const string HOTKEY_NAME_CONSOLE = "控制台";
+        [TranslateMsg("按键名", LogicStrings.CONTEXT_HOTKEY_NAME)]
+        public const string HOTKEY_NAME_SCREENSHOT = "截图";
         [TranslateMsg("按键名", LogicStrings.CONTEXT_HOTKEY_NAME)]
         public const string HOTKEY_NAME_BLUEPRINT1 = "蓝图1";
         [TranslateMsg("按键名", LogicStrings.CONTEXT_HOTKEY_NAME)]

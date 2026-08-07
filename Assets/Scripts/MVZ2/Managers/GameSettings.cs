@@ -26,6 +26,7 @@ namespace MVZ2.Managers
         public NamespaceID MainMapID => mainMapID.Get();
         public NamespaceID GridPlaceHolderModelID => gridPlaceHolderModelID.Get();
         public NamespaceID DebugLevelStageID => debugLevelStageID.Get();
+        public NamespaceID ScreenshotSound => screenshotSound.Get();
         public int DebugStageAreaCount => debugLevelAreas.Length;
         [SerializeField]
         private NamespaceIDReference defaultDifficultyID = null!;
@@ -49,5 +50,7 @@ namespace MVZ2.Managers
         private NamespaceIDReference debugLevelStageID = null!;
         [SerializeField]
         private NamespaceIDReference[] debugLevelAreas = null!;
+        [SerializeField]
+        private NamespaceIDReference screenshotSound = null!;
     }
 }

@@ -12,6 +12,7 @@ namespace MVZ2.Options
         public static readonly NamespaceID trigger = Get("trigger");
         public static readonly NamespaceID fastForward = Get("fast_forward");
         public static readonly NamespaceID console = Get("console");
+        public static readonly NamespaceID screenshot = Get("screenshot");
         public static readonly NamespaceID hpBars = Get("hp_bars");
         public static readonly NamespaceID blueprint1 = Get("blueprint_1");
         public static readonly NamespaceID blueprint2 = Get("blueprint_2");
