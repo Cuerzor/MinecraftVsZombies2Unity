@@ -76,6 +76,12 @@
                 <param name="slot" type="int">蓝图槽位，0代表第一个槽位，1代表第二个槽位，依此类推。</param>
             </params>
         </variant>
+        <variant subname="slots">
+            <description>设置蓝图槽位数量。</description>
+            <params>
+                <param name="count" type="int">蓝图槽位数量。</param>
+            </params>
+        </variant>
     </command>
     <command id="energy" inLevel="true">
         <description>调整当前能量。</description>
@@ -203,6 +209,12 @@
             <description>移除指定槽位的制品。</description>
             <params>
                 <param name="slot" type="int">制品槽位，0代表第一个槽位，1代表第二个槽位，依此类推。</param>
+            </params>
+        </variant>
+        <variant subname="slots">
+            <description>设置制品槽位数量。</description>
+            <params>
+                <param name="count" type="int">制品槽位数量。</param>
             </params>
         </variant>
     </command>

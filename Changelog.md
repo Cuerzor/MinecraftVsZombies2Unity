@@ -2,6 +2,8 @@
 - Added commands:
   - /test hugewaveevent: Triggers the huge wave event.
   - /test finalwaveevent：Triggers the final wave event.
+  - /blueprint slots：Sets the slot count for blueprints.
+  - /artifact slots：Sets the slot count for artifacts.
 - Added entity material "Apparition" and "Wither Bone", removed entity material "Nether".
 - Added entity attribute "Fire Immunity".
 - Added screenshot function.

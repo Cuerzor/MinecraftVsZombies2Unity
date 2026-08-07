@@ -26,14 +26,15 @@ namespace MVZ2.GameContent.Commands
                 return;
 
             var mode = parameters[0];
-            var slot = ParseHelper.ParseInt(parameters[1]);
-            if (slot < 0 || slot >= level.GetSeedSlotCount())
-            {
-                var msg = Global.Localization.GetTextParticular(VanillaStrings.COMMAND_BLUEPRINT_SLOT_OUT_OF_RANGE, LogicStrings.CONTEXT_COMMAND_OUTPUT, slot.ToString());
-                throw new ArgumentException(msg);
-            }
             if (mode == "set")
             {
+                var slot = ParseHelper.ParseInt(parameters[1]);
+                if (slot < 0 || slot >= level.GetArtifactSlotCount())
+                {
+                    var msg = Global.Localization.GetTextParticular(VanillaStrings.COMMAND_BLUEPRINT_SLOT_OUT_OF_RANGE, LogicStrings.CONTEXT_COMMAND_OUTPUT, slot.ToString());
+                    throw new ArgumentException(msg);
+                }
+
                 var idParam = parameters[2];
                 var id = NamespaceID.Parse(idParam, Global.BuiltinNamespace);
                 var definition = game.GetArtifactDefinition(id);
@@ -41,7 +42,19 @@ namespace MVZ2.GameContent.Commands
             }
             else if (mode == "remove")
             {
+                var slot = ParseHelper.ParseInt(parameters[1]);
+                if (slot < 0 || slot >= level.GetArtifactSlotCount())
+                {
+                    var msg = Global.Localization.GetTextParticular(VanillaStrings.COMMAND_BLUEPRINT_SLOT_OUT_OF_RANGE, LogicStrings.CONTEXT_COMMAND_OUTPUT, slot.ToString());
+                    throw new ArgumentException(msg);
+                }
+
                 level.SetArtifact(slot, null);
+            }
+            else if (mode == "slots")
+            {
+                var countParam = parameters[1];
+                level.SetArtifactSlotCount(ParseHelper.ParseInt(countParam));
             }
         }
     }

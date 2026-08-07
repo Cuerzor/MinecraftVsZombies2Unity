@@ -2,6 +2,8 @@
 - 加入命令：
   - /test hugewaveevent：触发一大波怪物事件。
   - /test finalwaveevent：触发最后一波怪物事件。
+  - /blueprint slots：设置蓝图最大栏位。
+  - /artifact slots：设置制品最大栏位。
 - 加入实体材质“灵体”、“凋灵骨”，移除实体材质“下界”。
 - 加入实体属性“火焰免疫”。
 - 加入截图功能。
