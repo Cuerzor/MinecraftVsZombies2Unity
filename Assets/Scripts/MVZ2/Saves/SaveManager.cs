@@ -7,6 +7,7 @@ using System.Linq;
 using MVZ2.IO;
 using MVZ2.Managers;
 using MVZ2.Modding;
+using MVZ2.UI;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Callbacks;
 using MVZ2Logic.Difficulties;
@@ -60,7 +61,7 @@ namespace MVZ2.Saves
                 // 1. 将存档写入临时文件。
                 var guid = Guid.NewGuid().ToString("N");
                 var tempSavePath = GetUserModSaveDataTempPath(userIndex, spaceName, guid);
-                FileHelper.ValidateDirectory(tempSavePath);
+                FileHelper.ValidateDirectoryExists(tempSavePath);
                 var serializable = modSaveData.ToSerializable();
                 var metaJson = serializable.ToBson();
                 Main.FileManager.WriteStringFile(tempSavePath, metaJson);
@@ -84,7 +85,7 @@ namespace MVZ2.Saves
                 // 4. 用临时文件替换之前的存档文件。
                 var destPath = GetUserModSaveDataPath(userIndex, spaceName, 0);
                 var backupPath = GetUserModSaveDataPath(userIndex, spaceName, 1);
-                FileHelper.ValidateDirectory(destPath);
+                FileHelper.ValidateDirectoryExists(destPath);
                 try
                 {
                     File.Replace(tempSavePath, destPath, backupPath);
@@ -426,6 +427,7 @@ namespace MVZ2.Saves
         }
         public string GetUserModSaveDataDirectory(int userIndex, string spaceName)
         {
+            NamespaceIDHelper.ThrowIfNamespaceInvalid(spaceName);
             return Path.Combine(GetUserSaveDataDirectory(userIndex), spaceName);
         }
         public string GetUserModSaveDataPath(int userIndex, string spaceName, int backupIndex = 0)
@@ -443,6 +445,10 @@ namespace MVZ2.Saves
         }
         public string GetUserModSaveDataTempPath(int userIndex, string spaceName, string guid)
         {
+            if (!Guid.TryParse(guid, out _))
+            {
+                throw new ArgumentException($"Invalid GUID format: {guid}");
+            }
             return Path.Combine(GetUserModSaveDataDirectory(userIndex, spaceName), $"user.dat.temp{guid}");
         }
         #endregion

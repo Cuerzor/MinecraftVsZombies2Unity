@@ -113,8 +113,8 @@ namespace MVZ2.ResourcePacks
                 return;
             var fileName = Path.GetFileName(sourcePath);
             fileName = Path.ChangeExtension(fileName, $".zip");
-            var destPath = Path.Combine(GetExternalResourcePackDirectory(), fileName);
-            FileHelper.ValidateDirectory(destPath);
+            var destPath = FileHelper.CombineFullPathSecure(GetExternalResourcePackDirectory(), fileName);
+            FileHelper.ValidateDirectoryExists(destPath);
             File.Copy(sourcePath, destPath);
         }
         public async Task<bool> ValidateLanguagePack(string sourcePath)
@@ -190,19 +190,19 @@ namespace MVZ2.ResourcePacks
         }
         private string GetExternalResourcePackDirectory()
         {
-            return Path.Combine(Application.persistentDataPath, externalLangaugePackDir);
+            return FileHelper.CombineFullPathSecure(Application.persistentDataPath, externalLangaugePackDir);
         }
         private string GetExternalResourcePackDirectoryVer0()
         {
-            return Path.Combine(Application.persistentDataPath, EXTERNAL_LANGAUGE_PACK_DIR_VER_0);
+            return FileHelper.CombineFullPathSecure(Application.persistentDataPath, EXTERNAL_LANGAUGE_PACK_DIR_VER_0);
         }
         private string GetEnabledResourcePackListPath()
         {
-            return Path.Combine(Application.persistentDataPath, enabledPackListFileName);
+            return FileHelper.CombineFullPathSecure(Application.persistentDataPath, enabledPackListFileName);
         }
         private string GetEnabledResourcePackListPathVer0()
         {
-            return Path.Combine(Application.persistentDataPath, ENABLED_PACK_LIST_FILE_NAME_VER_0);
+            return FileHelper.CombineFullPathSecure(Application.persistentDataPath, ENABLED_PACK_LIST_FILE_NAME_VER_0);
         }
         private async Task LoadResourcePackMetadata(ResourcePackReference reference)
         {
@@ -490,7 +490,7 @@ namespace MVZ2.ResourcePacks
         #region 压缩ZIP
         public static void CompressLanguagePack(string sourceDirectory, string destPath)
         {
-            FileHelper.ValidateDirectory(destPath);
+            FileHelper.ValidateDirectoryExists(destPath);
             var sourceDirInfo = new DirectoryInfo(sourceDirectory);
             var files = Directory.GetFiles(sourceDirectory, "*", SearchOption.AllDirectories);
             using var stream = File.Open(destPath, FileMode.Create);

@@ -188,7 +188,7 @@ namespace MVZ2.Supporters
         private void SaveSponsorsCache(SponsorInfos saveInfo)
         {
             var path = GetSponsorCacheFilePath();
-            FileHelper.ValidateDirectory(path);
+            FileHelper.ValidateDirectoryExists(path);
             var json = saveInfo.ToJson();
             Main.FileManager.WriteStringFile(path, json);
         }

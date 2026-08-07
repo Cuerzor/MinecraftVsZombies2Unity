@@ -10,6 +10,7 @@ using MVZ2.IO;
 using MVZ2.Metas;
 using MVZ2.Modding;
 using MVZ2.TalkData;
+using MVZ2.UI;
 using MVZ2Logic.Games;
 using PVZEngine;
 using UnityEngine;
@@ -80,6 +81,7 @@ namespace MVZ2.Managers
             {
                 return Path.Combine(Application.dataPath, "GameContent");
             }
+            NamespaceIDHelper.ThrowIfNamespaceInvalid(nsp);
             return Path.Combine(Application.streamingAssetsPath, "Mods", nsp);
         }
         public string GetContentDirectory(string nsp)
@@ -89,10 +91,6 @@ namespace MVZ2.Managers
         public string GetResourcesDirectory(string nsp)
         {
             return Path.Combine(GetNamespaceDirectory(nsp), "Res");
-        }
-        public static string CombinePath(params string[] paths)
-        {
-            return Path.Combine(paths).Replace("\\", "/");
         }
         #endregion
 

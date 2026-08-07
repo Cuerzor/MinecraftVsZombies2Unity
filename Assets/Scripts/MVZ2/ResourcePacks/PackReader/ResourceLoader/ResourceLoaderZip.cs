@@ -89,9 +89,7 @@ namespace MVZ2.ResourcePacks
             if (entry == null)
                 return null;
             var basePath = ResourcePackHelper.GetTempDirectroy(FileName);
-            var fullPath = Path.Combine(basePath, relativePath);
-            if (!fullPath.StartsWith(basePath))
-                throw new UnauthorizedAccessException("·Ç·¨Â·¾¶");
+            var fullPath = FileHelper.CombineFullPathSecure(basePath, relativePath);
             await copier.CopyZipEntryTo(entry, fullPath);
             return fullPath;
         }

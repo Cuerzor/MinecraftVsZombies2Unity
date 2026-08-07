@@ -136,7 +136,7 @@ namespace MVZ2.Saves
             if (userDataList == null)
                 return;
             var saveDataMetaPath = GetUserListPath();
-            FileHelper.ValidateDirectory(saveDataMetaPath);
+            FileHelper.ValidateDirectoryExists(saveDataMetaPath);
             var serializable = userDataList.ToSerializable();
             var metaJson = serializable.ToBson();
             Main.FileManager.WriteStringFile(saveDataMetaPath, metaJson);
@@ -184,7 +184,7 @@ namespace MVZ2.Saves
             if (!Directory.Exists(userDir))
                 return false;
 
-            FileHelper.ValidateDirectory(destPath);
+            FileHelper.ValidateDirectoryExists(destPath);
             var sourceDirInfo = new DirectoryInfo(userDir);
             var files = Directory.GetFiles(userDir, "*", SearchOption.AllDirectories);
             using var stream = File.Open(destPath, FileMode.Create);
@@ -237,8 +237,8 @@ namespace MVZ2.Saves
                 if (splitedPaths.Length > 1 && splitedPaths[0] == "userdata")
                 {
                     var relativePath = Path.Combine(splitedPaths.Skip(1).ToArray());
-                    var destPath = Path.Combine(userDir, relativePath);
-                    FileHelper.ValidateDirectory(destPath);
+                    var destPath = FileHelper.CombineFullPathSecure(userDir, relativePath);
+                    FileHelper.ValidateDirectoryExists(destPath);
 
                     var bytes = entry.ReadBytes();
                     using (var entryStream = File.Open(destPath, FileMode.CreateNew))

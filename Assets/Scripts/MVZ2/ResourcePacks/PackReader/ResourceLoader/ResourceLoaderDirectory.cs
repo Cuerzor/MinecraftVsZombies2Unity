@@ -19,23 +19,34 @@ namespace MVZ2.ResourcePacks
         }
         public override bool Exists(string relativePath)
         {
-            return File.Exists(GetFullPath(relativePath));
+            var path = GetFullPath(relativePath);
+            return ValidateResourcePath(path);
+        }
+        public bool ValidateResourcePath(string path)
+        {
+            var fullPath = Path.GetFullPath(path);
+            var fullDirectory = Path.GetFullPath(directory);
+            if (FileHelper.CheckZipSlip(path, fullDirectory))
+            {
+                return false;
+            }
+            return File.Exists(path);
         }
         public override string? LoadString(string relativePath)
         {
-            if (!Exists(relativePath))
-                return null;
             var path = GetFullPath(relativePath);
+            if (!ValidateResourcePath(path))
+                return null;
             using var stream = File.Open(path, FileMode.Open);
             using var reader = new StreamReader(stream);
             return reader.ReadToEnd();
         }
         public override byte[]? LoadBytes(string relativePath)
         {
-            if (!Exists(relativePath))
+            var path = GetFullPath(relativePath);
+            if (!ValidateResourcePath(path))
                 return null;
-            var fullPath = GetFullPath(relativePath);
-            using var stream = File.Open(fullPath, FileMode.Open);
+            using var stream = File.Open(path, FileMode.Open);
             using var memory = new MemoryStream();
             stream.CopyTo(memory);
 
@@ -43,19 +54,19 @@ namespace MVZ2.ResourcePacks
         }
         public override async UniTask<string?> LoadStringAsync(string relativePath)
         {
-            if (!Exists(relativePath))
-                return null;
             var path = GetFullPath(relativePath);
+            if (!ValidateResourcePath(path))
+                return null;
             using var stream = File.Open(path, FileMode.Open);
             using var reader = new StreamReader(stream);
             return await reader.ReadToEndAsync();
         }
         public override async UniTask<byte[]?> LoadBytesAsync(string relativePath)
         {
-            if (!Exists(relativePath))
+            var path = GetFullPath(relativePath);
+            if (!ValidateResourcePath(path))
                 return null;
-            var fullPath = GetFullPath(relativePath);
-            using var stream = File.Open(fullPath, FileMode.Open);
+            using var stream = File.Open(path, FileMode.Open);
             using var memory = new MemoryStream();
             await stream.CopyToAsync(memory);
 
@@ -63,9 +74,9 @@ namespace MVZ2.ResourcePacks
         }
         public override async UniTask<Catalog?> LoadCatalogAsync(string relativePath, string lang)
         {
-            if (!Exists(relativePath))
-                return null;
             var path = GetFullPath(relativePath);
+            if (!ValidateResourcePath(path))
+                return null;
             using (var stream = File.Open(path, FileMode.Open))
             {
                 using (MemoryStream memory = new MemoryStream())
@@ -78,11 +89,11 @@ namespace MVZ2.ResourcePacks
         }
         public override async UniTask<AudioClip?> LoadAudioClipAsync(string relativePath, bool streaming)
         {
-            if (!Exists(relativePath))
+            var path = GetFullPath(relativePath);
+            if (!ValidateResourcePath(path))
                 return null;
-            var fullPath = GetFullPath(relativePath);
-            var url = FileHelper.GetFilePathURL(fullPath);
-            var audioType = AudioHelper.GetAudioTypeFromPath(fullPath);
+            var url = FileHelper.GetFilePathURL(path);
+            var audioType = AudioHelper.GetAudioTypeFromPath(path);
             return await AudioHelper.LoadAudioClip(url, audioType, streaming);
         }
         public override IEnumerable<string> EnumerateAllFiles()
@@ -94,7 +105,7 @@ namespace MVZ2.ResourcePacks
         }
         public string GetFullPath(string relativePath)
         {
-            return Path.Combine(directory, relativePath);
+            return FileHelper.CombineFullPath(directory, relativePath);
         }
         public string directory;
     }

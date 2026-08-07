@@ -158,29 +158,43 @@ namespace MVZ2.Debugs
         #region 历史
         public void SaveCommandHistory(IEnumerable<string> history)
         {
-            var path = GetCommandHistoryPath();
-            FileHelper.ValidateDirectory(path);
-            using var stream = File.Open(path, FileMode.Create);
-            using var textWriter = new StreamWriter(stream);
-            textWriter.Write(string.Join('\n', history));
+            try
+            {
+                var path = GetCommandHistoryPath();
+                FileHelper.ValidateDirectoryExists(path);
+                using var stream = File.Open(path, FileMode.Create);
+                using var textWriter = new StreamWriter(stream);
+                textWriter.Write(string.Join('\n', history));
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Failed to save command history: {ex}");
+            }
         }
         public void LoadCommandHistory(List<string> history)
         {
-            var path = GetCommandHistoryPath();
-            if (!File.Exists(path))
+            try
             {
-                return;
+                var path = GetCommandHistoryPath();
+                if (!File.Exists(path))
+                {
+                    return;
+                }
+                using var stream = File.Open(path, FileMode.Open);
+                using var textReader = new StreamReader(stream);
+                while (!textReader.EndOfStream)
+                {
+                    history.Add(textReader.ReadLine());
+                }
             }
-            using var stream = File.Open(path, FileMode.Open);
-            using var textReader = new StreamReader(stream);
-            while (!textReader.EndOfStream)
+            catch (Exception ex)
             {
-                history.Add(textReader.ReadLine());
+                Debug.LogError($"Failed to load command history: {ex}");
             }
         }
         private string GetCommandHistoryPath()
         {
-            return Path.Combine(Application.persistentDataPath, commandHistoryFileName);
+            return FileHelper.CombineFullPathSecure(Application.persistentDataPath, commandHistoryFileName);
         }
         #endregion
 

@@ -21,7 +21,7 @@ namespace MVZ2.Debugs
 
             try
             {
-                FileHelper.ValidateDirectory(destPath);
+                FileHelper.ValidateDirectoryExists(destPath);
                 var sourceDirInfo = new DirectoryInfo(dir);
                 var files = new string[]
                 {
@@ -67,18 +67,7 @@ namespace MVZ2.Debugs
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            string path = GetLogPath();
-            // 开启游戏时将上一次的日志前缀加上-prev。
-            if (File.Exists(path))
-            {
-                string prevPath = GetPrevLogPath();
-                if (File.Exists(prevPath))
-                {
-                    File.Delete(prevPath);
-                }
-                File.Move(path, prevPath);
-            }
-            StartLogWriter(path);
+            InitLogWriter();
         }
         private void Update()
         {
@@ -97,7 +86,7 @@ namespace MVZ2.Debugs
             {
                 if (logWriter == null)
                 {
-                    StartLogWriter(GetLogPath());
+                    StartLogWriter();
                 }
 
                 if (logWriter == null)
@@ -122,7 +111,7 @@ namespace MVZ2.Debugs
             }
             else
             {
-                StartLogWriter(GetLogPath());
+                StartLogWriter();
             }
         }
 #endif
@@ -147,19 +136,53 @@ namespace MVZ2.Debugs
         #region 输出日志内容
         private string GetLogPath()
         {
-            return Path.Combine(Application.persistentDataPath, $"{fileName}{extension}");
+            return FileHelper.CombineFullPathSecure(Application.persistentDataPath, $"{fileName}{extension}");
         }
         private string GetPrevLogPath()
         {
-            return Path.Combine(Application.persistentDataPath, $"{fileName}{prevSuffix}{extension}");
+            return FileHelper.CombineFullPathSecure(Application.persistentDataPath, $"{fileName}{prevSuffix}{extension}");
         }
         private string GetLogClonePath()
         {
-            return Path.Combine(Application.persistentDataPath, $"{fileName}{cloneSuffix}{extension}");
+            return FileHelper.CombineFullPathSecure(Application.persistentDataPath, $"{fileName}{cloneSuffix}{extension}");
         }
         #endregion
 
         #region LogWriter
+        private void InitLogWriter()
+        {
+            try
+            {
+                string path = GetLogPath();
+                // 开启游戏时将上一次的日志前缀加上-prev。
+                if (File.Exists(path))
+                {
+                    string prevPath = GetPrevLogPath();
+                    if (File.Exists(prevPath))
+                    {
+                        File.Delete(prevPath);
+                    }
+                    File.Move(path, prevPath);
+                }
+                StartLogWriter(path);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to start in-game logger: {e}");
+            }
+        }
+        private void StartLogWriter()
+        {
+            try
+            {
+                var path = GetLogPath();
+                StartLogWriter(path);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Failed to start in-game logger: {ex}");
+            }
+        }
         private void StartLogWriter(string path)
         {
             lock (logExportLock)
@@ -188,24 +211,38 @@ namespace MVZ2.Debugs
         {
             lock (logExportLock)
             {
-                CloseLogWriter();
-
-                DeleteLogClone();
-                var currentLogPath = GetLogPath();
-                if (File.Exists(currentLogPath))
+                try
                 {
-                    var cloneLogPath = GetLogClonePath();
-                    File.Copy(currentLogPath, cloneLogPath);
+                    CloseLogWriter();
+
+                    DeleteLogClone();
+                    var currentLogPath = GetLogPath();
+                    if (File.Exists(currentLogPath))
+                    {
+                        var cloneLogPath = GetLogClonePath();
+                        File.Copy(currentLogPath, cloneLogPath);
+                    }
+                    StartLogWriter(currentLogPath);
                 }
-                StartLogWriter(currentLogPath);
+                catch (Exception ex)
+                {
+                    Debug.LogError($"Failed to clone game log: {ex}");
+                }
             }
         }
         private void DeleteLogClone()
         {
-            var cloneLogPath = GetLogClonePath();
-            if (!File.Exists(cloneLogPath))
-                return;
-            File.Delete(cloneLogPath);
+            try
+            {
+                var cloneLogPath = GetLogClonePath();
+                if (!File.Exists(cloneLogPath))
+                    return;
+                File.Delete(cloneLogPath);
+            }
+            catch (Exception ex)
+            {
+                Debug.LogError($"Failed to delete game log clone: {ex}");
+            }
         }
         #endregion
 

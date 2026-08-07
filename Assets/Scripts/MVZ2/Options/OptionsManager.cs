@@ -73,7 +73,7 @@ namespace MVZ2.Options
             var path = GetOptionsFilePath();
             try
             {
-                FileHelper.ValidateDirectory(path);
+                FileHelper.ValidateDirectoryExists(path);
 
                 // 打开文件流
                 using var stream = Main.FileManager.OpenFileWrite(path);

@@ -698,7 +698,7 @@ namespace MVZ2.Editor
                     continue;
                 var relativePath = Path.GetRelativePath(source, sourcePath);
                 var destPath = Path.Combine(dest, relativePath);
-                FileHelper.ValidateDirectory(destPath);
+                FileHelper.ValidateDirectoryExists(destPath);
                 File.Copy(sourcePath, destPath, true);
             }
         }
@@ -718,7 +718,7 @@ namespace MVZ2.Editor
                     continue;
                 var relativePath = Path.GetRelativePath(source, sourcePath);
                 var destPath = Path.Combine(dest, relativePath);
-                FileHelper.ValidateDirectory(destPath);
+                FileHelper.ValidateDirectoryExists(destPath);
                 File.Copy(sourcePath, destPath, true);
             }
         }
@@ -801,7 +801,7 @@ namespace MVZ2.Editor
             }
             private void WriteResourcePackManifestJson(string path, string json)
             {
-                FileHelper.ValidateDirectory(path);
+                FileHelper.ValidateDirectoryExists(path);
                 using var stream = File.Open(path, FileMode.Create);
                 using var writer = new StreamWriter(stream);
                 writer.Write(json);

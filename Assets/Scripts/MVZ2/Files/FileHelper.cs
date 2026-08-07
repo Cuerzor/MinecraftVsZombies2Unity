@@ -12,13 +12,61 @@ namespace MVZ2.IO
 {
     public static class FileHelper
     {
-        public static void ValidateDirectory(string filePath)
+        public static void ValidateDirectoryExists(string filePath)
         {
             var dir = Path.GetDirectoryName(filePath);
+
             if (!Directory.Exists(dir))
             {
                 Directory.CreateDirectory(dir);
             }
+        }
+        public static string CombineFullPath(string rootPath, params string[] filePaths)
+        {
+            // 1. 获取 rootPath 的标准绝对路径，并确保以分隔符结尾
+            var fullRootPath = GuaranteeDirectoryEndsWithSeparator(Path.GetFullPath(rootPath));
+
+            if (filePaths == null || filePaths.Length == 0)
+            {
+                return fullRootPath;
+            }
+
+            // 2. 将所有子路径拼接在一起（Path.Combine 原生支持传入数组或多参数）
+            var relativePath = Path.Combine(filePaths);
+
+            // 3. 计算最终的唯一绝对路径（展开所有的 .. 和 .）
+            return Path.GetFullPath(Path.Combine(fullRootPath, relativePath));
+        }
+        public static string CombineFullPathSecure(string rootPath, params string[] filePaths)
+        {
+            var fullRootPath = GuaranteeDirectoryEndsWithSeparator(Path.GetFullPath(rootPath));
+
+            var fullTargetPath = CombineFullPath(rootPath, filePaths);
+
+            ThrowIfZipSlip(fullTargetPath, fullRootPath);
+
+            return fullTargetPath;
+        }
+        public static string GuaranteeDirectoryEndsWithSeparator(string directory)
+        {
+            if (!directory.EndsWith(Path.DirectorySeparatorChar.ToString()) &&
+                !directory.EndsWith(Path.AltDirectorySeparatorChar.ToString()))
+            {
+                directory += Path.DirectorySeparatorChar;
+            }
+            return directory;
+        }
+        public static void ThrowIfZipSlip(string fullPath, string fullRootPath)
+        {
+            if (CheckZipSlip(fullPath, fullRootPath))
+            {
+                throw new InvalidDataException("Zip entry escapes extraction root.");
+            }
+        }
+        public static bool CheckZipSlip(string fullPath, string fullRootPath)
+        {
+            // 确保最终解压目标路径依然严格位于 fullRootPath 目录下
+            return !fullPath.StartsWith(fullRootPath, StringComparison.OrdinalIgnoreCase);
         }
         public static void Move(string src, string dest, bool overwrite = false)
         {

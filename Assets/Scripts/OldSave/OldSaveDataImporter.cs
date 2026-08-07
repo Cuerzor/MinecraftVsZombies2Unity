@@ -94,7 +94,7 @@ namespace MVZ2.OldSave
                 return;
 
             var saveDataMetaPath = Main.SaveManager.GetUserListPath();
-            FileHelper.ValidateDirectory(saveDataMetaPath);
+            FileHelper.ValidateDirectoryExists(saveDataMetaPath);
             var seriUserList = newUserDataList.ToSerializable();
             var userListJson = seriUserList.ToBson();
             Main.FileManager.WriteStringFile(saveDataMetaPath, userListJson);

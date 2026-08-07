@@ -32,7 +32,7 @@ namespace MVZ2.IO
         }
         private async UniTask CopyZipEntryToInternal(ZipArchiveEntry entry, string path)
         {
-            FileHelper.ValidateDirectory(path);
+            FileHelper.ValidateDirectoryExists(path);
 
             // 原子性优化：先写到临时文件，成功后再重命名
             var tempWritePath = path + ".tmp";

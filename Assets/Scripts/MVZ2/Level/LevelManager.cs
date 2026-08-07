@@ -66,7 +66,7 @@ namespace MVZ2.Level
                 return;
             var stageID = controller.GetStartStageID();
             var path = GetLevelStatePath(stageID);
-            FileHelper.ValidateDirectory(path);
+            FileHelper.ValidateDirectoryExists(path);
 
 
             // 打开文件流
