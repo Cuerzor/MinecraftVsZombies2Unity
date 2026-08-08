@@ -755,7 +755,7 @@
                 <p><![CDATA[欲望壶会从怪物身上复制其携带的<ref=[misc]mvz2:starshard.shinrei>星之碎片</ref>，每个欲望壶最多复制三个。]]></p>
             </header>
             <properties>
-                <p>技能：<![CDATA[<color=red>将最后方的两张充能完毕的的蓝图复制为掉落物，然后重置它们的充能</color>]]></p>
+                <p>技能：<![CDATA[<color=red>将最后方的两张充能完毕的蓝图复制为掉落物，然后重置它们的充能</color>]]></p>
             </properties>
             <flavor>
                 <p>我是壶中的神灵，我能实现你的愿望，让我听听你内心中的欲望吧……</p>

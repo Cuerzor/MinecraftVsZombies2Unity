@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-07-09 04:40+0800\n"
-"PO-Revision-Date: 2026-07-09 16:42+0800\n"
+"POT-Creation-Date: 2026-08-08 07:46+0800\n"
+"PO-Revision-Date: 2026-08-08 19:48+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -938,23 +938,23 @@ msgctxt "advice.tutorial.17"
 msgid "试着挖掉所有器械！"
 msgstr "Try to dig out all contraptions!"
 
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:176
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:175
 msgid "你确定想要在没有{0}的情况下使用{1}？"
 msgstr "Are you sure you want to use the {1} without the {0}?"
 
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:178
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:177
 msgid "你没有选能干掉{0}的器械，确定要继续吗？"
 msgstr ""
 "You haven't chosen any contraptions that fight off {0}, are you sure you "
 "want to continue?"
 
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:180
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:179
 msgid "你没有选能生产能量的器械，确定要继续吗？"
 msgstr ""
 "You haven't chosen any energy-producing contraptions, are you sure you want "
 "to continue?"
 
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:182
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:181
 msgid "你确定这关不使用任何水生器械吗？"
 msgstr "Are you sure want to play this level without any aquatic contraptions?"
 
@@ -968,12 +968,12 @@ msgctxt "advice.collect_money"
 msgid "收集宝石来获得更酷的道具吧！"
 msgstr "Collect gems to purchase COOL stuff!"
 
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:697
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:699
 msgid "能量不足"
 msgstr "Not enough energy"
 
 # 传送器战队的警告提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:699
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:701
 msgid ""
 "您有未保存的更改。\n"
 "确认要丢弃所有更改并退出吗？"
@@ -1409,11 +1409,11 @@ msgctxt "locked_chest_text"
 msgid "你有完没完？"
 msgstr "Will you just stop already?"
 
-#: Scripts\MVZ2\Titlescreen\TitlescreenController.cs:82
+#: Scripts\MVZ2\Titlescreen\TitlescreenController.cs:81
 msgid "版本{0}"
 msgstr "Version {0}"
 
-#: Scripts\MVZ2\Titlescreen\TitlescreenController.cs:84
+#: Scripts\MVZ2\Titlescreen\TitlescreenController.cs:83
 msgid "点击以开始！"
 msgstr "Click to start!"
 
@@ -1429,34 +1429,34 @@ msgstr ""
 msgid "已跳过对话\"{0}\""
 msgstr "Dialogue skipped: {0}"
 
-#: Scripts\MVZ2\Store\StoreController.cs:304
+#: Scripts\MVZ2\Store\StoreController.cs:303
 msgid "购买物品"
 msgstr "Purchase"
 
-#: Scripts\MVZ2\Store\StoreController.cs:306
+#: Scripts\MVZ2\Store\StoreController.cs:305
 msgid "确定以{0:N0}的价格买下这个物品？"
 msgid_plural "确定以{0:N0}的价格买下这个物品？"
 msgstr[0] "Are you sure you want to purchase this for {0:N0}?"
 msgstr[1] "Are you sure you want to purchase this for {0:N0}?"
 
-#: Scripts\MVZ2\Store\StoreController.cs:308
+#: Scripts\MVZ2\Store\StoreController.cs:307
 msgid "金钱不足"
 msgstr "Not Enough Money"
 
-#: Scripts\MVZ2\Store\StoreController.cs:310
+#: Scripts\MVZ2\Store\StoreController.cs:309
 msgid "你没有足够的金钱！"
 msgstr ""
 "You don't have enough money! Come back when you're a little mmmm... richer!"
 
-#: Scripts\MVZ2\Store\StoreController.cs:312
+#: Scripts\MVZ2\Store\StoreController.cs:311
 msgid "{0}/{1}"
 msgstr "{0}/{1}"
 
-#: Scripts\MVZ2\Store\StoreManager.cs:116
+#: Scripts\MVZ2\Store\StoreManager.cs:115
 msgid "<color=red>售罄</color>"
 msgstr "<color=red>Sold Out</color>"
 
-#: Scripts\MVZ2\Scene\GameEntrance.cs:169
+#: Scripts\MVZ2\Scene\GameEntrance.cs:168
 msgid ""
 "游戏加载失败：\n"
 "{0}"
@@ -1464,27 +1464,27 @@ msgstr ""
 "Failed to initialize:\n"
 "{0}"
 
-#: Scripts\MVZ2\Scene\GameEntrance.cs:171
+#: Scripts\MVZ2\Scene\GameEntrance.cs:170
 msgid "文件目录丢失"
 msgstr "Directory not found"
 
-#: Scripts\MVZ2\Scene\GameEntrance.cs:173
+#: Scripts\MVZ2\Scene\GameEntrance.cs:172
 msgid "文件丢失"
 msgstr "File not found"
 
-#: Scripts\MVZ2\Scene\GameEntrance.cs:175
+#: Scripts\MVZ2\Scene\GameEntrance.cs:174
 msgid "文件被占用"
 msgstr "A file is occupied by other program"
 
-#: Scripts\MVZ2\Scene\GameEntrance.cs:177
+#: Scripts\MVZ2\Scene\GameEntrance.cs:176
 msgid "文件读取失败"
 msgstr "Failed to load a file"
 
-#: Scripts\MVZ2\Scene\GameEntrance.cs:179
+#: Scripts\MVZ2\Scene\GameEntrance.cs:178
 msgid "文件格式错误"
 msgstr "Wrong file format"
 
-#: Scripts\MVZ2\Scene\GameEntrance.cs:181
+#: Scripts\MVZ2\Scene\GameEntrance.cs:180
 msgid ""
 "部分存档无法读取，将使用存档{0}开始游戏。\n"
 "无法读取的存档：\n"
@@ -1494,7 +1494,7 @@ msgstr ""
 "Users that cannot be loaded:\n"
 "{1}"
 
-#: Scripts\MVZ2\Scene\GameEntrance.cs:183
+#: Scripts\MVZ2\Scene\GameEntrance.cs:182
 msgid ""
 "所有存档均无法读取，文件可能已损坏。\n"
 "必须新建存档以继续游戏。"
@@ -1502,7 +1502,7 @@ msgstr ""
 "All users cannot be loaded, the files may be corrupted.\n"
 "You have to create a new user to continue."
 
-#: Scripts\MVZ2\Scene\GameEntrance.cs:185
+#: Scripts\MVZ2\Scene\GameEntrance.cs:184
 msgid ""
 "所有存档均无法读取，文件可能已损坏。\n"
 "必须删除一个存档，并新建存档以继续游戏。"
@@ -1519,6 +1519,11 @@ msgstr "Press a key"
 #: Scripts\MVZ2\Scene\KeybindingController.cs:165
 msgid "确认要重置所有按键绑定吗？"
 msgstr "Are you sure to reset all key bindings?"
+
+# 截图保存的提示
+#: Scripts\MVZ2\Scene\MainSceneController.cs:550
+msgid "截图已保存：{0}"
+msgstr "Screenshot saved: {0}"
 
 #: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:586
 msgid "交换触发"
@@ -1564,117 +1569,123 @@ msgstr ""
 "Are you sure to quit?\n"
 "Your progress will be saved."
 
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:102
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:103
 msgctxt "hotkey.name"
 msgid "？？？"
 msgstr "???"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:104
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:105
 msgctxt "hotkey.name"
 msgid "铁镐"
 msgstr "Pickaxe"
 
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:106
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:107
 msgctxt "hotkey.name"
 msgid "星之碎片"
 msgstr "Starshard"
 
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:108
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:109
 msgctxt "hotkey.name"
 msgid "触发器"
 msgstr "Trigger"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:110
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:111
 msgctxt "hotkey.name"
 msgid "快进"
 msgstr "Fast-forward"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:112
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:113
 msgctxt "hotkey.name"
 msgid "血条"
 msgstr "HP Bar"
 
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:114
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:115
 msgctxt "hotkey.name"
 msgid "控制台"
 msgstr "Console"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:116
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:117
+msgctxt "hotkey.name"
+msgid "截图"
+msgstr "Screenshot"
+
+# 按键名
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:119
 msgctxt "hotkey.name"
 msgid "蓝图1"
 msgstr "Blueprint 1"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:118
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:121
 msgctxt "hotkey.name"
 msgid "蓝图2"
 msgstr "Blueprint 2"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:120
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:123
 msgctxt "hotkey.name"
 msgid "蓝图3"
 msgstr "Blueprint 3"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:122
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:125
 msgctxt "hotkey.name"
 msgid "蓝图4"
 msgstr "Blueprint 4"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:124
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:127
 msgctxt "hotkey.name"
 msgid "蓝图5"
 msgstr "Blueprint 5"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:126
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:129
 msgctxt "hotkey.name"
 msgid "蓝图6"
 msgstr "Blueprint 6"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:128
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:131
 msgctxt "hotkey.name"
 msgid "蓝图7"
 msgstr "Blueprint 7"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:130
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:133
 msgctxt "hotkey.name"
 msgid "蓝图8"
 msgstr "Blueprint 8"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:132
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:135
 msgctxt "hotkey.name"
 msgid "蓝图9"
 msgstr "Blueprint 9"
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:134
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:137
 msgctxt "hotkey.name"
 msgid "蓝图10"
 msgstr "Blueprint 10"
 
-#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:215
+#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:214
 msgid "来源：{0}"
 msgstr "Source: {0}"
 
-#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:217
+#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:216
 msgid "原曲：{0}"
 msgstr "Origin: {0}"
 
-#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:219
+#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:218
 msgid "作者：{0}"
 msgstr "Composer: {0}"
 
-#: Scripts\MVZ2\Map\MapController.cs:704
+#: Scripts\MVZ2\Map\MapController.cs:703
 msgid ""
 "按住右键拖动以移动视图\n"
 "滚轮以缩放视图"
@@ -1682,7 +1693,7 @@ msgstr ""
 "Hold right mouse and drag to move the view\n"
 "Scroll to scale the view"
 
-#: Scripts\MVZ2\Map\MapController.cs:706
+#: Scripts\MVZ2\Map\MapController.cs:705
 msgid ""
 "单指拖动以移动视图\n"
 "双指触摸以缩放视图"
@@ -1690,11 +1701,11 @@ msgstr ""
 "Drag with one finger to move the view\n"
 "Touch with two fingers to scale the view"
 
-#: Scripts\MVZ2\Map\MapController.cs:708
+#: Scripts\MVZ2\Map\MapController.cs:707
 msgid "正在进入关卡……"
 msgstr "Entering Level…"
 
-#: Scripts\MVZ2\Map\MapController.cs:710
+#: Scripts\MVZ2\Map\MapController.cs:709
 msgid ""
 "轮数\n"
 "{0}/{1}"
@@ -1703,16 +1714,16 @@ msgstr ""
 "{0}/{1}"
 
 # 进入关卡的错误信息，{0}为地点ID
-#: Scripts\MVZ2\Map\MapController.cs:712
+#: Scripts\MVZ2\Map\MapController.cs:711
 msgid "目标地点{0}不存在。"
 msgstr "Target area {0} does not exist."
 
 # 进入关卡的错误信息，{0}为关卡ID
-#: Scripts\MVZ2\Map\MapController.cs:714
+#: Scripts\MVZ2\Map\MapController.cs:713
 msgid "目标关卡{0}不存在。"
 msgstr "Target stage {0} does not exist."
 
-#: Scripts\MVZ2\Managers\MainManager.cs:293
+#: Scripts\MVZ2\Managers\MainManager.cs:296
 msgid "获取赞助者列表……"
 msgstr "Getting Sponsors..."
 
@@ -1721,46 +1732,46 @@ msgstr "Getting Sponsors..."
 msgid "FPS: {0}"
 msgstr "FPS: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:861
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:860
 msgid "无法删除用户：{0}"
 msgstr "Cannot delete user: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:863
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:862
 msgid "无法切换至用户：{0}"
 msgstr "Cannot switch to user: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:865
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:864
 msgid "没有其他有效的用户可供切换。"
 msgstr "There are no other available users to switch."
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:867
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:866
 msgid "确认要退出吗？"
 msgstr "Quit?"
 
 # 语言包导出失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:869
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:868
 msgid "导出存档失败。"
 msgstr "Failed to export the user."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:871
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:870
 msgid "导入存档失败。"
 msgstr "Failed to import the user."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:873
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:872
 msgid "导入存档失败，文件可能已损坏。"
 msgstr "Failed to import the user. The file may corrupt."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:875
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:874
 msgid "导入存档失败，游戏中存在同名用户，但正在导入的存档不可重命名。"
 msgstr ""
 "Failed to import the user. A user with identical name exists, but the user "
 "to be imported cannot be renamed."
 
 # 语言包导出成功的提示，{0}为路径
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:877
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:876
 msgid "存档已导出至{0}。"
 msgstr "The user has been successfully exported to {0}."
 
@@ -1769,6 +1780,114 @@ msgstr "The user has been successfully exported to {0}."
 msgctxt "language_name"
 msgid "中文"
 msgstr "English (United States)"
+
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1314
+msgid "你没有携带满蓝图，确认要继续吗？"
+msgstr "Are you sure to continue without filling up the contraption slots?"
+
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1318
+msgid "上一次选择的蓝图中包含多个相同的器械。"
+msgstr ""
+"The blueprints selected last time contained multiple identical contraptions."
+
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1320
+msgid "上一次选择的蓝图中包含未解锁的器械。"
+msgstr ""
+"The blueprints selected last time contained contraptions that are not "
+"unlocked yet."
+
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1322
+msgid "上一次选择的制品中包含多个相同的制品。"
+msgstr ""
+"The artifacts selected last time contained multiple identical artifacts."
+
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1324
+msgid "上一次选择的制品中包含未解锁的制品。"
+msgstr ""
+"The artifacts selected last time contained artifacts that are not unlocked "
+"yet."
+
+#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:195
+msgid ""
+"确认要重新开始关卡吗？\n"
+"本关的进度都将丢失。"
+msgstr ""
+"Restart level?\n"
+"The progress of this level will be lost."
+
+# 语言包导入失败的警告
+#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:197
+msgid "读取关卡失败，文件可能已损坏。"
+msgstr "Failed to load level. The file may corrupt."
+
+#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:199
+msgid "加载关卡失败，出现错误：{0}"
+msgstr "Failed to load stage. An error occurred: {0}"
+
+#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:201
+msgid ""
+"加载关卡失败，存档状态和当前游戏状态不匹配：\n"
+"{0}"
+msgstr ""
+"Failed to load stage. The state of the stage is not match with the current "
+"game state: \n"
+"{0}"
+
+# 关卡标识符名称，{0}为命名空间名，{1}为数据版本号
+#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:203
+msgid "{0}（版本{1}）"
+msgstr "{0} (version {1})"
+
+# 关卡标识符名称，{0}为命名空间名，{1}为数据版本号，{2}为当前数据版本号
+#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:205
+msgid "{0}（版本{1}，当前状态为{2}）"
+msgstr "{0} (version {1}, current {2})"
+
+# 对话框内容，{0}为不匹配的关卡标识符列表
+#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:207
+msgid ""
+"版本号不匹配：\n"
+"{0}"
+msgstr ""
+"Mismatched version:\n"
+"{0}"
+
+# 对话框内容，{0}为丢失的关卡标识符列表
+#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:209
+msgid ""
+"丢失的模组：\n"
+"{0}"
+msgstr ""
+"Missing mods:\n"
+"{0}"
+
+# 对话框内容，{0}为多出的关卡标识符列表
+#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:211
+msgid ""
+"多出的模组：\n"
+"{0}"
+msgstr ""
+"Excess mods:\n"
+"{0}"
+
+#: Scripts\MVZ2\Level\LevelController\LevelController_Entities.cs:218
+msgctxt "entity.tooltip"
+msgid "在图鉴中查看"
+msgstr "View in Almanac"
+
+# 血条的文字
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:782
+msgid "死亡"
+msgstr "Dead"
+
+# 血条的文字
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:784
+msgid "摧毁"
+msgstr "Destroyed"
+
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:786
+msgid "{0}"
+msgstr "{0}"
 
 #: Scripts\MVZ2\Managers\InputManager_Keys.cs:221
 msgctxt "key.name"
@@ -2578,20 +2697,6 @@ msgctxt "key.name"
 msgid "Menu"
 msgstr "Menu"
 
-# 血条的文字
-#: Scripts\MVZ2\Entities\EntityController.cs:783
-msgid "死亡"
-msgstr "Dead"
-
-# 血条的文字
-#: Scripts\MVZ2\Entities\EntityController.cs:785
-msgid "摧毁"
-msgstr "Destroyed"
-
-#: Scripts\MVZ2\Entities\EntityController.cs:787
-msgid "{0}"
-msgstr "{0}"
-
 # 日志导出失败的警告
 #: Scripts\MVZ2\Managers\DebugManager.cs:58
 msgid "导出日志失败。"
@@ -2602,115 +2707,21 @@ msgstr "Failed to export logs."
 msgid "日志已导出至{0}。"
 msgstr "The log files have been successfully exported to {0}."
 
-#: Scripts\MVZ2\Managers\DebugManager_Console.cs:520
+#: Scripts\MVZ2\Managers\DebugManager_Console.cs:534
 msgctxt "command.output"
 msgid "<color=red>命令不存在：{0}</color>"
 msgstr "<color=red>Command not found: {0}</color>"
 
-#: Scripts\MVZ2\Managers\DebugManager_Console.cs:522
+#: Scripts\MVZ2\Managers\DebugManager_Console.cs:536
 msgctxt "command.output"
 msgid "<color=red>错误：{0}</color>"
 msgstr "<color=red>Error: {0}</color>"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1312
-msgid "你没有携带满蓝图，确认要继续吗？"
-msgstr "Are you sure to continue without filling up the contraption slots?"
-
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1316
-msgid "上一次选择的蓝图中包含多个相同的器械。"
-msgstr ""
-"The blueprints selected last time contained multiple identical contraptions."
-
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1318
-msgid "上一次选择的蓝图中包含未解锁的器械。"
-msgstr ""
-"The blueprints selected last time contained contraptions that are not "
-"unlocked yet."
-
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1320
-msgid "上一次选择的制品中包含多个相同的制品。"
-msgstr ""
-"The artifacts selected last time contained multiple identical artifacts."
-
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1322
-msgid "上一次选择的制品中包含未解锁的制品。"
-msgstr ""
-"The artifacts selected last time contained artifacts that are not unlocked "
-"yet."
-
-#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:195
-msgid ""
-"确认要重新开始关卡吗？\n"
-"本关的进度都将丢失。"
-msgstr ""
-"Restart level?\n"
-"The progress of this level will be lost."
-
-# 语言包导入失败的警告
-#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:197
-msgid "读取关卡失败，文件可能已损坏。"
-msgstr "Failed to load level. The file may corrupt."
-
-#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:199
-msgid "加载关卡失败，出现错误：{0}"
-msgstr "Failed to load stage. An error occurred: {0}"
-
-#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:201
-msgid ""
-"加载关卡失败，存档状态和当前游戏状态不匹配：\n"
-"{0}"
-msgstr ""
-"Failed to load stage. The state of the stage is not match with the current "
-"game state: \n"
-"{0}"
-
-# 关卡标识符名称，{0}为命名空间名，{1}为数据版本号
-#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:203
-msgid "{0}（版本{1}）"
-msgstr "{0} (version {1})"
-
-# 关卡标识符名称，{0}为命名空间名，{1}为数据版本号，{2}为当前数据版本号
-#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:205
-msgid "{0}（版本{1}，当前状态为{2}）"
-msgstr "{0} (version {1}, current {2})"
-
-# 对话框内容，{0}为不匹配的关卡标识符列表
-#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:207
-msgid ""
-"版本号不匹配：\n"
-"{0}"
-msgstr ""
-"Mismatched version:\n"
-"{0}"
-
-# 对话框内容，{0}为丢失的关卡标识符列表
-#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:209
-msgid ""
-"丢失的模组：\n"
-"{0}"
-msgstr ""
-"Missing mods:\n"
-"{0}"
-
-# 对话框内容，{0}为多出的关卡标识符列表
-#: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:211
-msgid ""
-"多出的模组：\n"
-"{0}"
-msgstr ""
-"Excess mods:\n"
-"{0}"
-
-#: Scripts\MVZ2\Level\LevelController\LevelController_Entities.cs:218
-msgctxt "entity.tooltip"
-msgid "在图鉴中查看"
-msgstr "View in Almanac"
-
-#: Scripts\MVZ2\Archive\ArchiveController.cs:260
+#: Scripts\MVZ2\Archive\ArchiveController.cs:259
 msgid "<b>[{0}]</b> {1}"
 msgstr "<b>[{0}]</b> {1}"
 
-#: Scripts\MVZ2\Archive\ArchiveController.cs:262
+#: Scripts\MVZ2\Archive\ArchiveController.cs:261
 msgid ""
 "<color=blue>{0}</color>\n"
 "<b>[{1}]</b> {2}"
@@ -2719,12 +2730,12 @@ msgstr ""
 "<b>[{1}]</b> {2}"
 
 # 未解锁的小游戏关卡名
-#: Scripts\MVZ2\Arcade\ArcadeController.cs:211
+#: Scripts\MVZ2\Arcade\ArcadeController.cs:210
 msgid "未解锁"
 msgstr "Locked"
 
 # 无尽模式的小游戏的连胜显示，{0}为最高连胜
-#: Scripts\MVZ2\Arcade\ArcadeController.cs:213
+#: Scripts\MVZ2\Arcade\ArcadeController.cs:212
 msgid ""
 "最高连胜：\n"
 "{0}"
@@ -2732,57 +2743,57 @@ msgstr ""
 "Best Streak:\n"
 "{0}"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:996
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:995
 msgctxt "almanac"
 msgid "花费：<color=red>{0}</color>"
 msgstr "Cost: <color=red>{0}</color>"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:998
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:997
 msgctxt "almanac"
 msgid "充能时间：<color=red>{0}</color>"
 msgstr "Recharge: <color=red>{0}</color>"
 
 # 图鉴放大选项，{0}为缩放等级
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:1000
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:999
 msgctxt "almanac"
 msgid "缩放：{0}"
 msgstr "Scale: {0}"
 
 # 图鉴标签枚举值的名称模板，{0}为标签名，{1}为值名
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:1002
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1001
 msgctxt "almanac"
 msgid "{0}：{1}"
 msgstr "{0}: {1}"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:1004
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1003
 msgctxt "almanac"
 msgid "左键拖拽以移动视图；滚轮以缩放视图"
 msgstr "Hold left mouse and drag to move; Scroll to scale"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:1006
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1005
 msgctxt "almanac"
 msgid "单指拖拽以移动视图；双指拖拽以缩放视图"
 msgstr "Drag with one finger to move; Touch with two fingers to scale"
 
 # 覆盖语言包的警告，{0}为语言包名称
-#: Scripts\MVZ2\Addons\ResourcePacksController.cs:407
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:406
 msgid "已经存在同名资源包“{0}”，是否覆盖？"
 msgstr "Resource pack \"{0}\" already exists, override it?"
 
 # 删除语言包的警告，{0}为语言包名称
-#: Scripts\MVZ2\Addons\ResourcePacksController.cs:409
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:408
 msgid "是否删除资源包“{0}”？"
 msgstr "Are you sure to delete resource pack \"{0}\"?"
 
 # 语言包中含有过时语言包的警告
-#: Scripts\MVZ2\Addons\ResourcePacksController.cs:411
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:410
 msgid "您启用了一些过时的资源包，这些资源包可能无法正常运行，仍然要继续吗？"
 msgstr ""
 "You have enabled some outdated resource packs, which may not function "
 "properly. Continue?"
 
 # 语言包中含有未来语言包的警告
-#: Scripts\MVZ2\Addons\ResourcePacksController.cs:413
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:412
 msgid ""
 "您启用了一些版本高于目前游戏版本的资源包，这些资源包无法正常运行，仍然要继续"
 "吗？"
@@ -2791,22 +2802,22 @@ msgstr ""
 "game version. These cannot run properly. Continue?"
 
 # 语言包导出失败的警告
-#: Scripts\MVZ2\Addons\ResourcePacksController.cs:415
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:414
 msgid "导出资源包失败。"
 msgstr "Failed to export the resource pack."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Addons\ResourcePacksController.cs:417
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:416
 msgid "导入资源包失败。"
 msgstr "Failed to import the resource pack."
 
 # 语言包导出成功的提示，{0}为路径
-#: Scripts\MVZ2\Addons\ResourcePacksController.cs:419
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:418
 msgid "资源包已导出至{0}。"
 msgstr "The resource pack has been successfully exported to {0}."
 
 # 教程链接文本，{0}为地址
-#: Scripts\MVZ2\Addons\ResourcePacksController.cs:421
+#: Scripts\MVZ2\Addons\ResourcePacksController.cs:420
 msgid "点击查看教程：{0}"
 msgstr "Click for tutorial: {0}"
 
@@ -5723,6 +5734,18 @@ msgctxt "command_variant.description"
 msgid "移除指定槽位的蓝图。"
 msgstr "Removes the blueprint of a certain slot."
 
+#. Description for command variant "mvz2:blueprint slots"
+#: Commands meta file
+msgctxt "command_variant.description"
+msgid "设置蓝图槽位数量。"
+msgstr "Sets the count of blueprint slots."
+
+#. Description for parameter count of command "mvz2:blueprint slots"
+#: Commands meta file
+msgctxt "command_parameter.description"
+msgid "蓝图槽位数量。"
+msgstr "The count of blueprint slots."
+
 #. Description for command "mvz2:energy"
 #: Commands meta file
 msgctxt "command.description"
@@ -5973,6 +5996,18 @@ msgstr "The ID of the artifact."
 msgctxt "command_variant.description"
 msgid "移除指定槽位的制品。"
 msgstr "Removes the artifact of a certain slot."
+
+#. Description for command variant "mvz2:artifact slots"
+#: Commands meta file
+msgctxt "command_variant.description"
+msgid "设置制品槽位数量。"
+msgstr "Sets the count of artifact slots."
+
+#. Description for parameter count of command "mvz2:artifact slots"
+#: Commands meta file
+msgctxt "command_parameter.description"
+msgid "制品槽位数量。"
+msgstr "The count of artifact slots."
 
 #. Description for command "mvz2:unlock"
 #: Commands meta file

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-05-31 11:39+0800\n"
+"POT-Creation-Date: 2026-08-08 07:46+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2978,7 +2978,7 @@ msgstr ""
 #. Text for talk sentence 11 in talk group dream_4_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:dream_4_map"
-msgid "就是在那棵树旁边的的坟墓。你的梦中似乎一直出现它呢。"
+msgid "就是在那棵树旁边的坟墓。你的梦中似乎一直出现它呢。"
 msgstr ""
 
 #. Text for talk sentence 12 in talk group dream_4_map's section 0
@@ -6254,7 +6254,7 @@ msgstr ""
 #. Text for talk sentence 2 in talk group kourindou_visit_mausoleum_1's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:kourindou_visit_mausoleum_1"
-msgid "她看到了我在辉针城的的那些功绩，还夸奖了我，昨晚因此还睡得格外舒服。"
+msgid "她看到了我在辉针城的那些功绩，还夸奖了我，昨晚因此还睡得格外舒服。"
 msgstr ""
 
 #. Text for talk sentence 3 in talk group kourindou_visit_mausoleum_1's section 0

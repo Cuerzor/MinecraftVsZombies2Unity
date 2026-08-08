@@ -171,7 +171,7 @@ namespace MVZ2.GameContent.Projectiles
                     hitOutput.Pierce = ethereal || hitOutput.Pierce;
                 }
             }
-            // 将碰撞箱加入到已被碰撞的的列表。
+            // 将碰撞箱加入到已被碰撞的列表。
             projectile.AddIgnoredProjectileCollider(otherCollider);
 
             // 触发击中后回调。

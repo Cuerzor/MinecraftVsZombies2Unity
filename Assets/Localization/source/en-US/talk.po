@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-05-31 11:39+0800\n"
-"PO-Revision-Date: 2026-06-04 10:50+0800\n"
+"POT-Creation-Date: 2026-08-08 07:46+0800\n"
+"PO-Revision-Date: 2026-08-08 19:48+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -3224,7 +3224,7 @@ msgstr "Grave?"
 #. Text for talk sentence 11 in talk group dream_4_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:dream_4_map"
-msgid "就是在那棵树旁边的的坟墓。你的梦中似乎一直出现它呢。"
+msgid "就是在那棵树旁边的坟墓。你的梦中似乎一直出现它呢。"
 msgstr ""
 "The grave next to that tree. It seems to keep appearing in your dreams."
 
@@ -6705,7 +6705,7 @@ msgstr "Oh, how was it? What did she tell you?"
 #. Text for talk sentence 2 in talk group kourindou_visit_mausoleum_1's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:kourindou_visit_mausoleum_1"
-msgid "她看到了我在辉针城的的那些功绩，还夸奖了我，昨晚因此还睡得格外舒服。"
+msgid "她看到了我在辉针城的那些功绩，还夸奖了我，昨晚因此还睡得格外舒服。"
 msgstr ""
 "She saw all the things I accomplished at Shining Needle Castle. She praised "
 "me, too. I slept exceptionally well last night because of it."
