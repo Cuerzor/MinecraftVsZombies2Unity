@@ -432,6 +432,19 @@ namespace MVZ2.Vanilla.Entities
             return entity.GetProperty<bool>(IMMUNE_INSTAKILL);
         }
         #endregion
+
+        #region 传送器能量消耗
+        public static readonly PropertyMeta<bool> OVERRIDE_TELEPORTER_COST = Get<bool>("override_teleporter_cost");
+        public static readonly PropertyMeta<int> TELEPORTER_COST = Get<int>("teleporter_cost");
+        public static int GetTeleporterCost(this EntityDefinition definition)
+        {
+            return definition.GetProperty<int>(TELEPORTER_COST);
+        }
+        public static bool OverrideTeleporterCost(this EntityDefinition definition)
+        {
+            return definition.GetProperty<bool>(OVERRIDE_TELEPORTER_COST);
+        }
+        #endregion
     }
 }
 

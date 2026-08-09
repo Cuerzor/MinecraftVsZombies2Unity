@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using MukioI18n;
 using MVZ2.Blueprints;
 using MVZ2.GameContent.Contraptions;
+using MVZ2.GameContent.Enemies;
 using MVZ2.GameContent.Models;
 using MVZ2.Level.UI;
 using MVZ2.Managers;
@@ -14,6 +15,7 @@ using MVZ2.Options;
 using MVZ2.UI;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Contraptions;
+using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.Localization;
 using MVZ2.Vanilla.Saves;
@@ -32,6 +34,7 @@ using PVZEngine.Level;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 namespace MVZ2.GameContent.Customize
 {
@@ -234,6 +237,14 @@ namespace MVZ2.GameContent.Customize
         }
         private void OnConfirmClickCallback()
         {
+            if (GetRemainingEnergy() < 0)
+            {
+                var title = Global.Localization.GetText(LogicStrings.ERROR);
+                var desc = Global.Localization.GetText(ERROR_COST_OVERFLOW);
+                var options = new string[] { Global.Localization.GetText(LogicStrings.CONFIRM) };
+                Global.GUI.ShowDialog(title, desc, options);
+                return;
+            }
             SaveTeam();
             Return();
         }
@@ -292,7 +303,7 @@ namespace MVZ2.GameContent.Customize
                     if (modelBuilder == null)
                         continue;
                     ui.AddTileEntity(index, ent, modelBuilder, entDefinition.GetSortingLayer(), entDefinition.GetSortingOrder());
-                    AddEnergyCost(entDefinition.GetCost());
+                    AddEnergyCost(GetCost(entDefinition));
                 }
             }
         }
@@ -312,6 +323,11 @@ namespace MVZ2.GameContent.Customize
             contraptionEntries.Clear();
             Main.AlmanacManager.GetContraptionPageEntries(contraptionEntries);
 
+            foreach (var id in blueprintEnemiesID)
+            {
+                contraptionEntries.Add(id);
+            }
+
             UpdateBlueprints();
         }
         private void UpdateBlueprints()
@@ -324,6 +340,11 @@ namespace MVZ2.GameContent.Customize
                 if (NamespaceID.IsValid(entry))
                 {
                     viewData.disabled = CannotSelectContraption(entry);
+                    var entityDefinition = Main.Game.GetEntityDefinition(entry);
+                    if (entityDefinition != null)
+                    {
+                        viewData.blueprint.cost = GetCost(entityDefinition).ToString();
+                    }
                 }
                 contraptionViewDatas[i] = viewData;
             }
@@ -331,8 +352,6 @@ namespace MVZ2.GameContent.Customize
         }
         private bool IsContraptionBanned(EntityDefinition definition)
         {
-            if (definition.GetCost() <= 0)
-                return true;
             if (definition.IsUpgradeBlueprint())
                 return true;
             if (definition.BannedInTeleporterTeam())
@@ -346,7 +365,8 @@ namespace MVZ2.GameContent.Customize
                 return ContraptionError.NotExists;
             if (IsContraptionBanned(definition))
                 return ContraptionError.Banned;
-            if (definition.GetCost() > GetRemainingEnergy())
+            var cost = GetCost(definition);
+            if (cost > GetRemainingEnergy() && cost > 0)
                 return ContraptionError.NotEnoughEnergy;
             return ContraptionError.None;
         }
@@ -572,7 +592,7 @@ namespace MVZ2.GameContent.Customize
                 return;
             var entityID = definition.GetID();
             currentTeleporterTeam.AddTileEntity(index, entityID);
-            AddEnergyCost(definition.GetCost());
+            AddEnergyCost(GetCost(definition));
 
             var modelBuilder = GetEntityModelBuilder(definition);
             if (modelBuilder != null)
@@ -614,7 +634,7 @@ namespace MVZ2.GameContent.Customize
                 return;
             var entityID = entityDefinition.GetID();
             currentTeleporterTeam.RemoveTileEntity(index, entityID);
-            AddEnergyCost(-entityDefinition.GetCost());
+            AddEnergyCost(-GetCost(entityDefinition));
 
             ui.RemoveTileEntity(index, entityID);
             CancelHolding();
@@ -668,6 +688,10 @@ namespace MVZ2.GameContent.Customize
         {
             SetEnergyCost(energyCost + value);
         }
+        private int GetCost(EntityDefinition entityDefinition)
+        {
+            return entityDefinition.OverrideTeleporterCost() ? entityDefinition.GetTeleporterCost() : entityDefinition.GetCost();
+        }
         private int GetRemainingEnergy()
         {
             return MAX_ENERGY - energyCost;
@@ -698,6 +722,8 @@ namespace MVZ2.GameContent.Customize
         public const string ERROR_BANNED = "禁用";
         [TranslateMsg("传送器战队的错误提示")]
         public const string ERROR_NOT_ENOUGH_ENERGY = "能量不足";
+        [TranslateMsg("传送器战队的错误提示")]
+        public const string ERROR_COST_OVERFLOW = "战队的能量不足，请修改阵容之后再保存战队。";
         [TranslateMsg("传送器战队的警告提示")]
         public const string WARNING_NOT_SAVED = "您有未保存的更改。\n确认要丢弃所有更改并退出吗？"; 
         public const int MAX_TILE_COUNT = 9;
@@ -716,6 +742,28 @@ namespace MVZ2.GameContent.Customize
         private bool hasUnsavedChanges;
         private bool isMobileLayout;
         private readonly List<NamespaceID?> contraptionEntries = new List<NamespaceID?>();
+        private static NamespaceID[] blueprintEnemiesID = new NamespaceID[]
+        {
+            VanillaEnemyID.zombie,
+            VanillaEnemyID.leatherCappedZombie,
+            VanillaEnemyID.ironHelmettedZombie,
+            VanillaEnemyID.diamondHelmettedZombie,
+
+            VanillaEnemyID.mummy,
+            VanillaEnemyID.necromancer,
+            VanillaEnemyID.berserker,
+            VanillaEnemyID.dullahan,
+
+            VanillaEnemyID.reflectiveBarrierZombie,
+            VanillaEnemyID.shikaisenZombie,
+            VanillaEnemyID.cannoneerZombie,
+            VanillaEnemyID.popCaptain,
+
+            VanillaEnemyID.skeletonStatue,
+            VanillaEnemyID.zombieCat,
+            VanillaEnemyID.mutantZombie,
+            VanillaEnemyID.megaMutantZombie,
+        };
 
         #region 内嵌类
         private enum ContraptionError

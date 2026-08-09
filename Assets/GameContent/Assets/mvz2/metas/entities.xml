@@ -96,6 +96,7 @@
                 <int name="mvz2:waterInteraction" value="1" />
                 <int name="mvz2:airInteraction" value="2" />
                 <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-3"/>
+                <bool name="mvz2:override_teleporter_cost" value="true" />
             </properties>
         </enemy>
         <obstacle type="3" parent="entity">
@@ -302,6 +303,7 @@
 
                 <int name="mvz2:cost" value="300" />
                 <int name="mvz2:waterInteraction" value="3" />
+                <int name="mvz2:teleporter_cost" value="-200" />
             </properties>
         </mutantZombie>
         <energyPickup type="6" parent="pickup">
@@ -405,6 +407,7 @@
                 <vector3 name="mvz2:shotOffset" x="25" y="15" z="0" />
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
                 <idArray name="mvz2:counter_for" value="mvz2:low_enemy" />
+                <bool name="mvz2:banned_in_teleporter_team" value="true" />
 
                 <int name="mvz2:cost" value="0" />
                 <id name="mvz2:rechargeId" value="mvz2:short" />
@@ -527,6 +530,7 @@
             <properties>
                 <float name="mvz2:range" value="120" />
                 <bool name="mvz2:loyal" value="true" />
+                <bool name="mvz2:banned_in_teleporter_team" value="true" />
                 <id name="mvz2:shell" value="mvz2:wood" />
                 <id name="mvz2:placeSound" value="mvz2:wood" />
                 <id name="mvz2:deathSound" value="mvz2:wood" />
@@ -787,6 +791,7 @@
                 <bool name="mvz2:nocturnal" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:loyal" value="true" />
+                <bool name="mvz2:banned_in_teleporter_team" value="true" />
                 <id name="mvz2:shell" value="mvz2:metal" />
                 <id name="mvz2:placeSound" value="mvz2:metal_break" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
@@ -1522,6 +1527,7 @@
                 <bool name="mvz2:canDeactive" value="false" />
                 <vector3 name="mvz2:size" x="48" y="44" z="4" />
                 <id name="mvz2:shell" value="mvz2:wood" />
+                <bool name="mvz2:banned_in_teleporter_team" value="true" />
 
                 <id name="mvz2:placeSound" value="mvz2:wood" />
                 <id name="mvz2:deathSound" value="mvz2:wood" />
@@ -1791,6 +1797,7 @@
             </behaviours>
             <properties>
                 <int name="mvz2:cost" value="50" />
+                <int name="mvz2:teleporter_cost" value="-25" />
             </properties>
         </entity>
         <entity template="zombie" id="flag_zombie" name="旗帜僵尸" deathMessage="脑子是好的，但不是每个人都有">
@@ -1811,6 +1818,7 @@
             <properties>
                 <id name="mvz2:starting_armor" value="mvz2:leather_cap" />
                 <int name="mvz2:cost" value="75" />
+                <int name="mvz2:teleporter_cost" value="-50" />
             </properties>
         </entity>
         <entity template="zombie" id="iron_helmetted_zombie" name="铁盔僵尸" deathMessage="脑子是好的，但不是每个人都有">
@@ -1821,6 +1829,7 @@
             <properties>
                 <id name="mvz2:starting_armor" value="mvz2:iron_helmet" />
                 <int name="mvz2:cost" value="125" />
+                <int name="mvz2:teleporter_cost" value="-75" />
             </properties>
         </entity>
         <entity template="zombie" id="diamond_helmetted_zombie" name="钻石盔僵尸" deathMessage="脑子是好的，但不是每个人都有">
@@ -1834,6 +1843,7 @@
             <properties>
                 <id name="mvz2:starting_armor" value="mvz2:diamond_helmet" />
                 <int name="mvz2:cost" value="200" />
+                <int name="mvz2:teleporter_cost" value="-100" />
             </properties>
         </entity>
 
@@ -1906,6 +1916,7 @@
                 <color name="mvz2:bloodColorCensored" value="#00007F00" />
 
                 <int name="mvz2:cost" value="75" />
+                <int name="mvz2:teleporter_cost" value="-50" />
             </properties>
         </entity>
         <entity template="humanoid" id="necromancer" name="死灵法师" deathMessage="你挂了\n死亡带走了12450金币和经验值">
@@ -1918,6 +1929,7 @@
                 <id name="mvz2:deathSound" value="mvz2:skeleton_death" />
 
                 <int name="mvz2:cost" value="125" />
+                <int name="mvz2:teleporter_cost" value="-50" />
             </properties>
         </entity>
 
@@ -2093,6 +2105,7 @@
                 <id name="mvz2:deathSound" value="mvz2:wither_skeleton_death" />
 
                 <int name="mvz2:cost" value="150" />
+                <int name="mvz2:teleporter_cost" value="-150" />
             </properties>
         </entity>
         <entity template="witherSkeleton" id="dullahan" name="无头骑士" deathMessage="真让人摸不着头脑。">
@@ -2113,6 +2126,7 @@
 
                 <int name="mvz2:cost" value="175" />
                 <id name="mvz2:shape" value="mvz2:dullahan" />
+                <int name="mvz2:teleporter_cost" value="-200" />
             </properties>
         </entity>
         <entity template="enemy" id="hell_chariot" name="地狱战车" deathMessage="我们所做的一切，就是为了跟着那该死的火车，史蒂夫！">
@@ -2176,6 +2190,7 @@
             <properties>
                 <id name="mvz2:starting_shield" value="mvz2:reflective_barrier" />
                 <int name="mvz2:cost" value="100" />
+                <int name="mvz2:teleporter_cost" value="-50" />
             </properties>
         </entity>
         <entity template="humanoid" id="talisman_zombie" name="灵符僵尸" deathMessage="好吃">
@@ -2208,6 +2223,7 @@
             </unlock>
             <properties>
                 <int name="mvz2:cost" value="125" />
+                <int name="mvz2:teleporter_cost" value="-75" />
             </properties>
         </entity>
         <entity template="humanoid" id="emperor_zombie" name="皇帝僵尸" deathMessage="中道崩殂">
@@ -2289,6 +2305,7 @@
             <properties>
                 <id name="mvz2:starting_shield" value="mvz2:cannon" />
                 <int name="mvz2:cost" value="125" />
+                <int name="mvz2:teleporter_cost" value="-75" />
             </properties>
         </entity>
         <entity template="enemy" id="cannonball_zombie" name="炮弹僵尸" deathMessage="-1up">
@@ -2332,6 +2349,7 @@
                 <vector3 name="mvz2:shadowScale" x="1.25" y="1.25" z="1.25" />
 
                 <int name="mvz2:cost" value="150" />
+                <int name="mvz2:teleporter_cost" value="-100" />
             </properties>
         </entity>
 
@@ -2376,6 +2394,7 @@
                 <bool name="mvz2:undead" value="false" />
 
                 <int name="mvz2:cost" value="100" />
+                <int name="mvz2:teleporter_cost" value="-100" />
             </properties>
         </entity>
         <entity template="witherSkeleton" id="hacker" name="黑客" deathMessage="G4M3 0V3R">
@@ -2421,6 +2440,7 @@
                 <id name="mvz2:shape" value="mvz2:cat" />
 
                 <int name="mvz2:cost" value="150" />
+                <int name="mvz2:teleporter_cost" value="-125" />
             </properties>
         </entity>
         <entity template="enemy" id="wisp_fly" name="鬼火苍蝇" deathMessage="嗡嗡嗡嗡嗡嗡嗡嗡嗡嗡">
@@ -2457,6 +2477,7 @@
             <properties>
                 <float name="mvz2:maxHealth" value="6000" />
                 <int name="mvz2:cost" value="500" />
+                <int name="mvz2:teleporter_cost" value="-300" />
             </properties>
         </entity>
         <entity template="enemy" id="imp" name="小鬼僵尸" deathMessage="被偷家了">
