@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-08 07:46+0800\n"
+"POT-Creation-Date: 2026-08-10 07:37+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -991,12 +991,17 @@ msgid "收集宝石来获得更酷的道具吧！"
 msgstr ""
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:699
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:723
 msgid "能量不足"
 msgstr ""
 
+# 传送器战队的错误提示
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:725
+msgid "战队的能量不足，请修改阵容之后再保存战队。"
+msgstr ""
+
 # 传送器战队的警告提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:701
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:727
 msgid ""
 "您有未保存的更改。\n"
 "确认要丢弃所有更改并退出吗？"

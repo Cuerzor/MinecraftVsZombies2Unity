@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-08-08 07:46+0800\n"
-"PO-Revision-Date: 2026-08-08 19:48+0800\n"
+"POT-Creation-Date: 2026-08-10 07:37+0800\n"
+"PO-Revision-Date: 2026-08-10 19:38+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -968,12 +968,17 @@ msgctxt "advice.collect_money"
 msgid "收集宝石来获得更酷的道具吧！"
 msgstr "Collect gems to purchase COOL stuff!"
 
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:699
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:723
 msgid "能量不足"
 msgstr "Not enough energy"
 
+# 传送器战队的错误提示
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:725
+msgid "战队的能量不足，请修改阵容之后再保存战队。"
+msgstr "The energy is insufficient. Please modify the team before saving it."
+
 # 传送器战队的警告提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:701
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:727
 msgid ""
 "您有未保存的更改。\n"
 "确认要丢弃所有更改并退出吗？"
