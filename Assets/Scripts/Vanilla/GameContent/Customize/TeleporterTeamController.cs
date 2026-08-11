@@ -562,10 +562,15 @@ namespace MVZ2.GameContent.Customize
         {
             if (currentTeleporterTeam == null)
                 return false;
+            bool placingEnemy = definition.Type == EntityTypes.ENEMY;
             var tile = currentTeleporterTeam.GetTile(index);
             if (tile != null)
             {
                 var tileEntities = tile.GetEntities();
+                if ((placingEnemy && tileEntities.Any())) // 放置怪物时不能和任何其他实体重合
+                    return false;
+                if (tileEntities.Any(id => Main.Game.GetEntityDefinition(id)?.Type == EntityTypes.ENEMY)) // 有怪物则什么都不能放置。
+                    return false;
                 if (tileEntities.Contains(definition.GetID()))
                     return false;
                 var gridLayersToTake = definition.GetGridLayersToTake();
