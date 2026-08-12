@@ -25,6 +25,7 @@ using PVZEngine.Level;
 using PVZEngine.Timing;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Timing;
+using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions
 {
@@ -86,7 +87,7 @@ namespace MVZ2.GameContent.Contraptions
                 timer.ResetSeconds(EVOCATION_DURATION_SECONDS);
             }
 
-                entity.PlaySound(VanillaSoundID.teleporterSignal);
+            entity.PlaySound(VanillaSoundID.teleporterSignal);
         }
         public static void TeleportTeam(Entity teleporter, LawnGrid grid)
         {
@@ -100,9 +101,6 @@ namespace MVZ2.GameContent.Contraptions
             {
                 for (int y = 0; y < height; y++)
                 {
-                    var g = level.GetGrid(grid.Column + x + xOffset, grid.Lane + y + yOffset);
-                    if (g == null)
-                        continue;
                     var index = x + y * width;
                     var team = GetTeleporterTeam(teleporter);
                     if (index < 0 || index >= team.tiles.Length)
@@ -110,33 +108,54 @@ namespace MVZ2.GameContent.Contraptions
                     var tile = team.tiles[index];
                     if (tile == null)
                         continue;
-                    TeleportTeamTile(teleporter, tile, g);
+                    TeleportTeamTile(teleporter, tile, grid.Column + x + xOffset, grid.Lane + y + yOffset);
                 }
             }
             teleporter.AddBuff<TeleporterTriggeredBuff>();
             teleporter.PlaySound(VanillaSoundID.teleportUp);
             teleporter.PlaySound(VanillaSoundID.chronoSphere);
         }
-        public static void TeleportTeamTile(Entity teleporter, TeleporterTeamTileLevelData tile, LawnGrid grid)
+        public static void TeleportTeamTile(Entity teleporter, TeleporterTeamTileLevelData tile, int column, int lane)
         {
             foreach (var entity in tile.entities)
             {
                 if (!NamespaceID.IsValid(entity))
                     continue;
-                TeleportTeamMember(teleporter, entity, grid);
+                TeleportTeamMember(teleporter, entity, column, lane);
             }
         }
-        public static Entity? TeleportTeamMember(Entity teleporter, NamespaceID memberID, LawnGrid grid)
+        public static Entity? TeleportTeamMember(Entity teleporter, NamespaceID memberID, int column, int lane)
         {
             var memberDefinition = teleporter.Level.Content.GetEntityDefinition(memberID);
             if (memberDefinition == null)
                 return null;
-            CheckAquatic(teleporter, memberDefinition, grid);
-
-            return teleporter.Spawn(memberDefinition, grid.GetEntityPosition())?.Let(e =>
+            if (memberDefinition.Type == EntityTypes.ENEMY)
             {
-                e.AddBuff<TeleporterTeleportDownBuff>();
-            });
+                column = Mathf.Clamp(column, 0, teleporter.Level.GetMaxColumnCount() - 1);
+                lane = Mathf.Clamp(lane, 0, teleporter.Level.GetMaxLaneCount() - 1);
+                var grid = teleporter.Level.GetGrid(column, lane);
+                if (grid != null)
+                {
+                    return teleporter.Spawn(memberDefinition, grid.GetEntityPosition())?.Let(e =>
+                    {
+                        e.AddBuff<TeleporterTeleportDownBuff>();
+                    });
+                }
+            }
+            else
+            {
+                var grid = teleporter.Level.GetGrid(column, lane);
+                if (grid != null)
+                {
+                    CheckAquatic(teleporter, memberDefinition, grid);
+
+                    return teleporter.Spawn(memberDefinition, grid.GetEntityPosition())?.Let(e =>
+                    {
+                        e.AddBuff<TeleporterTeleportDownBuff>();
+                    });
+                }
+            }
+            return null;
         }
         public static TeleporterTeamLevelData GetTeleporterTeam(Entity teleporter)
         {
