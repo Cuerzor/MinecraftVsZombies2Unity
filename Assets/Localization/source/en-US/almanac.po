@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-08-08 07:46+0800\n"
-"PO-Revision-Date: 2026-08-08 19:47+0800\n"
+"POT-Creation-Date: 2026-08-13 07:22+0800\n"
+"PO-Revision-Date: 2026-08-13 19:26+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -2362,8 +2362,9 @@ msgstr "This is what happens if you tell a Dispenser with a weird mask to \"free
 #. Header for contraptions mvz2:teleporter
 #: Almanac meta file
 msgctxt "contraptions.description"
-msgid "传送器被触发后，可以将任意地块的所有器械传送到自身的位置，然后自己消失。"
-msgstr "When triggered, Teleporters teleport all contraptions from a selected tile to their tile, then disappear."
+msgid "传送器被触发后，可以将任意地块的<tag id=\"mvz2:grid_layer_main\" />器械和自身进行交换。"
+msgstr ""
+"When triggered, the Teleporter swaps positions with the contraption on the <tag id=\"mvz2:grid_layer_main\"/> layer of a selected tile."
 
 #. Properties for contraptions mvz2:teleporter
 #: Almanac meta file

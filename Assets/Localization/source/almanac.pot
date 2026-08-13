@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-10 07:37+0800\n"
+"POT-Creation-Date: 2026-08-13 07:22+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1933,7 +1933,7 @@ msgstr ""
 #. Header for contraptions mvz2:teleporter
 #: Almanac meta file
 msgctxt "contraptions.description"
-msgid "传送器被触发后，可以将任意地块的所有器械传送到自身的位置，然后自己消失。"
+msgid "传送器被触发后，可以将任意地块的<tag id=\"mvz2:grid_layer_main\" />器械和自身进行交换。"
 msgstr ""
 
 #. Properties for contraptions mvz2:teleporter

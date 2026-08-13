@@ -1075,7 +1075,7 @@
                 <variable name="total_energy">250</variable>
             </variables>
             <header>
-                <p>传送器被触发后，可以将任意地块的所有器械传送到自身的位置，然后自己消失。</p>
+                <p>传送器被触发后，可以将任意地块的<![CDATA[<tag id="mvz2:grid_layer_main" />]]>器械和自身进行交换。</p>
             </header>
             <properties>
                 <p>技能：<![CDATA[<color=red>选择一处3x3的区域，将你的自定义战队凭空传送到该区域！（可在主界面自定义）</color>]]></p>
