@@ -25,6 +25,7 @@
 - Fixed the issue where Mine TNT will explode multiple times when it contacts with multiple enemies.
 - Fixed the issue where the movement speed description of Skeleton Horses in Almanac is incorrect.
 - Fixed the issue where Skeleton Horses have no cry sounds.
+- Fixed the issue where the hyperlink for "Doremy" in the "Grave in Dream" entry in the Almanac led to Kourindou.
 
 ---
 
