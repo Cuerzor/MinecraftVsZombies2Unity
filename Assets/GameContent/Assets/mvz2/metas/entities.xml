@@ -2126,7 +2126,7 @@
 
                 <int name="mvz2:cost" value="175" />
                 <id name="mvz2:shape" value="mvz2:dullahan" />
-                <int name="mvz2:teleporter_cost" value="-200" />
+                <int name="mvz2:teleporter_cost" value="-125" />
             </properties>
         </entity>
         <entity template="enemy" id="hell_chariot" name="地狱战车" deathMessage="我们所做的一切，就是为了跟着那该死的火车，史蒂夫！">
@@ -2440,7 +2440,7 @@
                 <id name="mvz2:shape" value="mvz2:cat" />
 
                 <int name="mvz2:cost" value="150" />
-                <int name="mvz2:teleporter_cost" value="-125" />
+                <int name="mvz2:teleporter_cost" value="-100" />
             </properties>
         </entity>
         <entity template="enemy" id="wisp_fly" name="鬼火苍蝇" deathMessage="嗡嗡嗡嗡嗡嗡嗡嗡嗡嗡">
