@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-14 04:54+0800\n"
+"POT-Creation-Date: 2026-08-14 05:06+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1871,7 +1871,7 @@ msgid ""
 "伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
 "半径：<color=red>3.5格</color>\n"
 "特点：<color=red>不会触发死亡效果；引爆后破坏所在的地块，无法放置器械，持续3分钟</color>\n"
-"技能：<color=red>消灭所有敌怪</color>"
+"技能：<color=red>消灭所有敌怪，并破坏3x3范围内的地块</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:nuke

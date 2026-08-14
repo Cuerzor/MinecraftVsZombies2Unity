@@ -18,6 +18,7 @@
 ### Balance
 - The reduction ratio of the recharge time for Broken Lock has been lowered from 1:1 to 2:1.
 - The z-axis volume of knife projectiles has been increased from 2 to 6.
+- The evocation of Nukes now breaks all tiles within a 3x3 range.
 
 ## Fixed
 - Fixed the issue where the charging animation of Tesla Coil would continue to play even when it was disabled.

@@ -42,7 +42,14 @@ namespace MVZ2.GameContent.Contraptions
 
             if (!contraption.IsAboveLeaveGridHeight())
             {
-                BreakTile(contraption);
+                if (contraption.IsEvoked())
+                {
+                    BreakTilesEvoked(contraption);
+                }
+                else
+                {
+                    BreakTile(contraption);
+                }
             }
 
             contraption.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_CONTRAPTION_DETONATE, new EntityCallbackParams(contraption), contraption.GetDefinitionID());
@@ -98,8 +105,30 @@ namespace MVZ2.GameContent.Contraptions
             var grid = entity.GetGrid();
             if (grid == null)
                 return;
-            DestroyEntitiesInGrid(grid, entity);
-            BrokenTileBuff.Break(grid);
+            BreakTile(grid, entity);
+        }
+        public static void BreakTilesEvoked(Entity nuke)
+        {
+            var column = nuke.GetColumn();
+            var lane = nuke.GetLane();
+            for (int xOff = -1; xOff <= 1; xOff++)
+            {
+                var targetColumn = column + xOff;
+                for (int yOff = -1; yOff <= 1; yOff++)
+                {
+                    var targetLane = lane + yOff;
+                    var tile = nuke.Level.GetGrid(targetColumn, targetLane);
+                    if (tile != null)
+                    {
+                        BreakTile(tile, nuke);
+                    }
+                }
+            }
+        }
+        public static void BreakTile(LawnGrid tile, Entity source)
+        {
+            DestroyEntitiesInGrid(tile, source);
+            BrokenTileBuff.Break(tile);
         }
         public static void DestroyEntitiesInGrid(LawnGrid grid, Entity source)
         {

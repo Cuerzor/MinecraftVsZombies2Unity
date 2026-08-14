@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-08-14 04:54+0800\n"
-"PO-Revision-Date: 2026-08-14 16:55+0800\n"
+"POT-Creation-Date: 2026-08-14 05:06+0800\n"
+"PO-Revision-Date: 2026-08-14 17:08+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -2273,13 +2273,13 @@ msgid ""
 "伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
 "半径：<color=red>3.5格</color>\n"
 "特点：<color=red>不会触发死亡效果；引爆后破坏所在的地块，无法放置器械，持续3分钟</color>\n"
-"技能：<color=red>消灭所有敌怪</color>"
+"技能：<color=red>消灭所有敌怪，并破坏3x3范围内的地块</color>"
 msgstr ""
 "Damage: <color=red><var id=\"mvz2:entity_damage\" /></color>\n"
 "Radius: <color=red>3.5 tiles</color>\n"
 "Special: <color=red>Does not trigger the monsters' death effects; The tile will be broken and disabled for 3 minutes after detonation</"
 "color>\n"
-"Evocation: <color=red>Destroys all enemy monsters</color>"
+"Evocation: <color=red>Destroys all enemy monsters, breaks all tiles within a 3x3 range</color>"
 
 #. Flavor for contraptions mvz2:nuke
 #: Almanac meta file
@@ -6812,14 +6812,11 @@ msgstr "Grave in Dream"
 
 #. Header for misc mvz2:grave_in_dream
 #: Almanac meta file
-#, fuzzy
-#| msgctxt "misc.description"
-#| msgid "<ref=[misc]mvz2:kourindou>哆来咪</ref>提到史蒂夫曾在梦中看到过一座坟墓，而且是史蒂夫很小时候就已经见过的墓。"
 msgctxt "misc.description"
 msgid "<ref=[misc]mvz2:doremy>哆来咪</ref>提到史蒂夫曾在梦中看到过一座坟墓，而且是史蒂夫很小时候就已经见过的墓。"
 msgstr ""
-"<ref=[misc]mvz2:kourindou>Doremy</ref> mentioned that Steve had seen a grave in his dream, and it was the one Steve had seen when he "
-"was very young."
+"<ref=[misc]mvz2:doremy>Doremy</ref> mentioned that Steve had seen a grave in his dream, and it was the one Steve had seen when he was "
+"very young."
 
 #. Flavor for misc mvz2:grave_in_dream
 #: Almanac meta file
