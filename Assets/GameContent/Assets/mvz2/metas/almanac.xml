@@ -1078,7 +1078,7 @@
                 <p>传送器被触发后，可以将任意地块的<![CDATA[<tag id="mvz2:grid_layer_main" />]]>器械和自身进行交换。</p>
             </header>
             <properties>
-                <p>技能：<![CDATA[<color=red>选择一处3x3的区域，将你的自定义战队凭空传送到该区域！（可在主界面自定义）</color>]]></p>
+                <p>技能：<![CDATA[<color=red>选择一处3x3的区域，将你的自定义战队凭空传送到该区域，然后传送器消失。（可在主界面自定义）</color>]]></p>
             </properties>
             <flavor>
                 <p>它最喜欢在队友就快击杀敌人的时候把队友传送回基地。</p>

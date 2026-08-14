@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-13 07:22+0800\n"
+"POT-Creation-Date: 2026-08-14 04:54+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1939,7 +1939,7 @@ msgstr ""
 #. Properties for contraptions mvz2:teleporter
 #: Almanac meta file
 msgctxt "contraptions.description"
-msgid "技能：<color=red>选择一处3x3的区域，将你的自定义战队凭空传送到该区域！（可在主界面自定义）</color>"
+msgid "技能：<color=red>选择一处3x3的区域，将你的自定义战队凭空传送到该区域，然后传送器消失。（可在主界面自定义）</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:teleporter
@@ -5412,7 +5412,7 @@ msgstr ""
 #. Header for misc mvz2:grave_in_dream
 #: Almanac meta file
 msgctxt "misc.description"
-msgid "<ref=[misc]mvz2:kourindou>哆来咪</ref>提到史蒂夫曾在梦中看到过一座坟墓，而且是史蒂夫很小时候就已经见过的墓。"
+msgid "<ref=[misc]mvz2:doremy>哆来咪</ref>提到史蒂夫曾在梦中看到过一座坟墓，而且是史蒂夫很小时候就已经见过的墓。"
 msgstr ""
 
 #. Flavor for misc mvz2:grave_in_dream
