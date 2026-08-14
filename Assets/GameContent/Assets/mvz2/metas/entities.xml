@@ -2967,6 +2967,18 @@
                 <vector3 name="mvz2:shadowScale" x="1.5" y="1.5" z="1.5" />
             </properties>
         </entity>
+        <entity template="enemy" id="zombie_cow" name="僵尸牛" deathMessage="你牛大了">
+            <properties>
+                <float name="mvz2:maxHealth" value="100" />
+                <float name="mvz2:speed" value="1" />
+                <vector3 name="mvz2:size" x="64" y="60" z="48" />
+                <id name="mvz2:crySound" value="mvz2:zombie_cow_say" />
+                <id name="mvz2:deathSound" value="mvz2:zombie_cow_death" />
+                <id name="mvz2:shape" value="mvz2:cow" />
+
+                <int name="mvz2:cost" value="25" />
+            </properties>
+        </entity>
 
         <!-- Obstacles -->
         <entity template="obstacle" id="gargoyle_statue" name="石像鬼雕像">

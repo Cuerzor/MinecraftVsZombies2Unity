@@ -1299,7 +1299,7 @@ namespace MVZ2.Vanilla.Entities
         }
         public static Entity? SpawnUnlockArtifactPickup(this Entity entity, NamespaceID areaID, NamespaceID unlockID, NamespaceID artifactID, Vector3 position)
         {
-            return entity.Level.SpawnUnlockArtifactPickup(areaID, unlockID, artifactID, position, entity);
+            return entity.Level.SpawnUnlockArtifactPickupIfPossible(areaID, unlockID, artifactID, position, entity);
         }
 
         private const string PROP_REGION = "entities";

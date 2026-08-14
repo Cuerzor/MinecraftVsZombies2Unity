@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-08-14 05:06+0800\n"
-"PO-Revision-Date: 2026-08-14 17:08+0800\n"
+"POT-Creation-Date: 2026-08-14 07:42+0800\n"
+"PO-Revision-Date: 2026-08-14 19:43+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -8507,6 +8507,18 @@ msgstr "Creaking"
 msgctxt "death_message"
 msgid "负债累累"
 msgstr "Deep in debt"
+
+#. Name for entity mvz2:zombie_cow
+#: Entity meta file
+msgctxt "entity.name"
+msgid "僵尸牛"
+msgstr "Zombie Cow"
+
+#. Death message for entity mvz2:zombie_cow
+#: Entity meta file
+msgctxt "death_message"
+msgid "你牛大了"
+msgstr "This cow's got beef with you."
 
 #. Name for entity mvz2:gargoyle_statue
 #: Entity meta file

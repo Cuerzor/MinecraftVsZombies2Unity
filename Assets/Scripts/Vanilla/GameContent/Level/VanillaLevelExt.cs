@@ -291,19 +291,28 @@ namespace MVZ2.Vanilla.Level
         #endregion
 
         #region 制品解锁
-        public static Entity? SpawnUnlockArtifactPickup(this LevelEngine level, NamespaceID areaID, NamespaceID unlockID, NamespaceID artifactID, Vector3 position, Entity? spawner)
+        public static bool IsPossibleToSpawnUnlockArtifactPickup(this LevelEngine level, NamespaceID areaID, NamespaceID unlockID, NamespaceID artifactID)
         {
-            if (level.AreaID == areaID && !Global.Saves.IsUnlocked(unlockID))
+            return level.AreaID == areaID && !Global.Saves.IsUnlocked(unlockID) && !level.HasUnlockArtifactPickup(artifactID);
+        }
+        public static bool HasUnlockArtifactPickup(this LevelEngine level, NamespaceID artifactID)
+        {
+            return level.EntityExists(e => e.IsEntityOf(VanillaPickupID.artifactPickup) && e.GetPickupContentID() == artifactID);
+        }
+        public static Entity? SpawnUnlockArtifactPickupIfPossible(this LevelEngine level, NamespaceID areaID, NamespaceID unlockID, NamespaceID artifactID, Vector3 position, Entity? spawner)
+        {
+            if (level.IsPossibleToSpawnUnlockArtifactPickup(areaID, unlockID, artifactID))
             {
-                if (!level.EntityExists(e => e.IsEntityOf(VanillaPickupID.artifactPickup) && e.GetPickupContentID() == artifactID))
-                {
-                    return level.Spawn(VanillaPickupID.artifactPickup, position, spawner)?.Let(e =>
-                    {
-                        e.SetPickupContentID(artifactID);
-                    });
-                }
+                return level.SpawnUnlockArtifactPickup(artifactID, position, spawner);
             }
             return null;
+        }
+        public static Entity? SpawnUnlockArtifactPickup(this LevelEngine level, NamespaceID artifactID, Vector3 position, Entity? spawner)
+        {
+            return level.Spawn(VanillaPickupID.artifactPickup, position, spawner)?.Let(e =>
+            {
+                e.SetPickupContentID(artifactID);
+            });
         }
         #endregion
 

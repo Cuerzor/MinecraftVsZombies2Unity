@@ -37,6 +37,7 @@ namespace MVZ2.Vanilla.Unlocks
 
         public const string brokenLantern = "artifact.broken_lantern";
         public const string bottledBlackhole = "artifact.bottled_blackhole";
+        public const string cowHorn = "artifact.cow_horn";
         public const string magmaStone = "artifact.magma_stone";
     }
     public static class VanillaUnlockID
@@ -73,6 +74,7 @@ namespace MVZ2.Vanilla.Unlocks
 
         public static readonly NamespaceID brokenLantern = Get(VanillaUnlockNames.brokenLantern);
         public static readonly NamespaceID bottledBlackhole = Get(VanillaUnlockNames.bottledBlackhole);
+        public static readonly NamespaceID cowHorn = Get(VanillaUnlockNames.cowHorn);
         public static readonly NamespaceID magmaStone = Get(VanillaUnlockNames.magmaStone);
 
         public static readonly NamespaceID blueprintSlot1 = Get(LogicUnlockNames.blueprintSlot1);

@@ -163,7 +163,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             var center = level.GetLawnCenter();
             var artifactPos = center + Vector3.up * 600;
-            level.SpawnUnlockArtifactPickup(VanillaAreaID.palace, VanillaUnlockID.magmaStone, VanillaArtifactID.magmaStone, artifactPos, null);
+            level.SpawnUnlockArtifactPickupIfPossible(VanillaAreaID.palace, VanillaUnlockID.magmaStone, VanillaArtifactID.magmaStone, artifactPos, null);
 
             var rng = level.CreateRNG();
             var xSize = level.GetGridWidth() * level.GetMaxColumnCount();

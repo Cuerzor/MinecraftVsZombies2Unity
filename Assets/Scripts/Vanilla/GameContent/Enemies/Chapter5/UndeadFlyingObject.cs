@@ -219,6 +219,7 @@ namespace MVZ2.GameContent.Enemies
         public const int VARIANT_GREEN = 1;
         public const int VARIANT_BLUE = 2;
         public const int VARIANT_RAINBOW = 3;
+        public const int VARIANT_BLACK = 4;
 
         public const float EXPLOSION_RADIUS = 24;
         public const float FLY_HEIGHT = 80;
@@ -249,6 +250,7 @@ namespace MVZ2.GameContent.Enemies
             { VARIANT_GREEN, new UFOBehaviourGreen() },
             { VARIANT_BLUE, new UFOBehaviourBlue() },
             { VARIANT_RAINBOW, new UFOBehaviourRainbow() },
+            { VARIANT_BLACK, new UFOBehaviourBlack() },
         };
     }
 }

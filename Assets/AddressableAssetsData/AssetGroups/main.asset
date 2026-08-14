@@ -528,6 +528,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ac0d0aadfe8308469fcb082ff0052a3
+    m_Address: mvz2:entity/zombie_cow/say3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0ae5af202f9ad9c4cb362f05a0290a3b
     m_Address: mvz2:units/colliders/humanoid
     m_ReadOnly: 0
@@ -1396,6 +1403,13 @@ MonoBehaviour:
     - Main
     - Music
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 199c4447a5d48934f9d39e39afbb6750
+    m_Address: mvz2:entity/enemy/zombie_cow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 19c5d7995232173498a6f525c27f6544
     m_Address: mvz2:effect/mine_debris
     m_ReadOnly: 0
@@ -1591,6 +1605,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1d7caf2037842ad489786e30d5e1df91
+    m_Address: mvz2:entity/zombie_cow/hurt3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1d837605fa2501f4687ff04e54213ea3
     m_Address: mvz2:artifacts
@@ -3921,6 +3942,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45fb7b442cb23474f837d22074313bd3
+    m_Address: mvz2:entity/zombie_cow/hurt1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4604673f13e91a847a5781f0d106be31
     m_Address: mvz2:entity/armor/iron_helmet
     m_ReadOnly: 0
@@ -4774,6 +4802,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55226c193277f3d47bc499aefe7f5ceb
+    m_Address: mvz2:enemy/ship/zombie_cow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55737eb3a28fbe442b0e134036882f07
     m_Address: mvz2:held/sword
@@ -5656,6 +5691,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 647ab610e26067c45af5b4ea1f10033a
+    m_Address: mvz2:bones/cow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 64951a0026f5ef54bbb28092c064d4ea
     m_Address: mvz2:level/dream/dream_house_cover
     m_ReadOnly: 0
@@ -6288,6 +6330,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 713bbd59011cf674f8c72f330883df2f
     m_Address: mvz2:lightbeam1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71f48786f7f9b7842918c094e82252c9
+    m_Address: mvz2:entity/zombie_cow/say4
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -7426,6 +7475,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 852f0786ad3c7b44fb080bb6a352b82a
+    m_Address: mvz2:entity/zombie_cow/say2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 853a3f29cd6824b41ae2a9262b236539
     m_Address: mvz2:effect/diamond_spike_particles
     m_ReadOnly: 0
@@ -7537,6 +7593,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 875fed71c0cfead43bcab4c7a00371ef
+    m_Address: mvz2:entity/zombie_cow/hurt2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 87605de12ede6fe43818bbbae557666e
     m_Address: mvz2:entity/contraption/gravity_force
@@ -8768,6 +8831,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9d061b576426d6245b515c8908568d47
+    m_Address: mvz2:entity/zombie_cow/say1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9d154f9c691d05c42917f982f9de86ca
     m_Address: mvz2:entity/mutant_zombie/mutant_cry2

@@ -229,6 +229,13 @@
             </parameters>
         </animator>    
     </model>
+    <model name="undead_flying_object_black" type="entity" path="mvz2:enemy/ship/undead_flying_object" width="80" height="56" xOffset="0" yOffset="-24">
+        <animator updateOnShot="true">
+            <parameters>
+                <int name="Variant" value="4" />
+            </parameters>
+        </animator>    
+    </model>
     <model name="zombie_cloud" type="entity" path="mvz2:enemy/ship/zombie_cloud" width="86" height="44" xOffset="0" yOffset="-22" />
     <model name="zombie_cloud_thunder" type="entity" path="mvz2:enemy/ship/zombie_cloud" width="86" height="44" xOffset="0" yOffset="-22">
         <properties>
@@ -343,6 +350,7 @@
     <model name="rolling_stone" type="entity" path="mvz2:enemy/palace/rolling_stone" width="100" height="140" xOffset="0" yOffset="-48"/>
     <model name="locked_chest_balloon" type="entity" path="mvz2:enemy/palace/locked_chest_balloon" width="60" height="120" xOffset="0" yOffset="-60"/>
     <model name="creaking" type="entity" path="mvz2:enemy/mountain/creaking" width="62" height="152" xOffset="0" yOffset="-64"/>
+    <model name="zombie_cow" type="entity" path="mvz2:enemy/ship/zombie_cow" width="86" height="72" xOffset="11" yOffset="-32"/>
 
 
     <!-- Obstacles -->

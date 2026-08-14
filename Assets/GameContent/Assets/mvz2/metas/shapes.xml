@@ -296,4 +296,20 @@
             </armor>
         </armors>
     </shape>
+    <shape id="cow">
+        <armors>
+            <armor slot="mvz2:main">
+                <position x="-37" y="59.1" z="0" />
+                <scale x="0.8" y="0.8" z="0.8" />
+            </armor>
+            <armor slot="mvz2:shield">
+                <position x="-48" y="50" z="0" />
+                <scale x="1" y="1" z="1" />
+            </armor>
+            <armor slot="mvz2:shield" type="mvz2:handheld">
+                <position x="-39" y="45" z="0" />
+                <scale x="1" y="1" z="1" />
+            </armor>
+        </armors>
+    </shape>
 </shapes>
