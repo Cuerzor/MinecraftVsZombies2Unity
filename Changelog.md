@@ -28,6 +28,7 @@
 - Fixed the issue where Skeleton Horses have no cry sounds.
 - Fixed the issue where the hyperlink for "Doremy" in the "Grave in Dream" entry in the Almanac led to Kourindou.
 - Fixed the issue where the animation of Hell Chariots sinking in water was very strange.
+- Fixed the issue where the material of Anvils is not metal.
 
 ---
 

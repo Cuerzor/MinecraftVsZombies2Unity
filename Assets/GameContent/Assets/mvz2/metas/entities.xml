@@ -1742,6 +1742,7 @@
                 <float name="mvz2:maxHealth" value="2500" />
                 <float name="mvz2:fallResistance" value="10000" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
+                <id name="mvz2:shell" value="mvz2:metal" />
                 <int name="mvz2:collision_mask_hostile" value="15" />
                 <int name="mvz2:collision_mask_friendly" value="15" />
 
