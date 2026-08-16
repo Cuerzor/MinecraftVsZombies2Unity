@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using MVZ2.GameContent.Bosses;
+using MVZ2.GameContent.Buffs.Entities;
 using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Detections;
 using MVZ2.Vanilla.Audios;
@@ -80,9 +81,12 @@ namespace MVZ2.GameContent.Effects
                         if (hostile)
                         {
                             target.Velocity = Vector3.zero;
-                            var newCenter = target.GetCenter() * 0.7f + entity.GetCenter() * 0.3f;
-                            target.SetCenter(newCenter);
-                            target.StopChangingLane();
+                            var targetPosition = entity.GetCenter();
+                            var targetGroundY = entity.GetGroundY();
+                            targetPosition.y = Mathf.Max(targetPosition.y, targetGroundY + SUSPENSION_HEIGHT);
+                            var newPosition = target.Position * 0.7f + targetPosition * 0.3f;
+                            target.Position = newPosition;
+                            BlackholeDraggedBuff.Extend(target);
                         }
                     }
                     else if (target.Type == EntityTypes.PROJECTILE)
@@ -97,6 +101,7 @@ namespace MVZ2.GameContent.Effects
                 }
             }
         }
+        public const float SUSPENSION_HEIGHT = 10;
         private List<IEntityCollider> detectBuffer = new List<IEntityCollider>();
         private List<Entity> snakeBuffer = new List<Entity>();
         private Detector absorbDetector;

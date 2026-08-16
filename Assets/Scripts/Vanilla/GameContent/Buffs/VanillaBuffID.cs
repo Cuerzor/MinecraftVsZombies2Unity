@@ -268,6 +268,7 @@ namespace MVZ2.GameContent.Buffs
             public const string iZombieImp = "i_zombie_imp";
             public const string iZombieSkeletonWarrior = "i_zombie_skeleton_warrior";
             public const string shikaisenRevive = "shikaisen_revive";
+            public const string blackholeDragged = "blackhole_dragged";
 
             // Chapter 5
             public const string paratroop = "paratroop";
@@ -622,6 +623,7 @@ namespace MVZ2.GameContent.Buffs
             public static readonly NamespaceID iZombieImp = Get(VanillaBuffNames.Enemy.iZombieImp);
             public static readonly NamespaceID iZombieSkeletonWarrior = Get(VanillaBuffNames.Enemy.iZombieSkeletonWarrior);
             public static readonly NamespaceID shikaisenRevive = Get(VanillaBuffNames.Enemy.shikaisenRevive);
+            public static readonly NamespaceID blackholeDragged = Get(VanillaBuffNames.Enemy.blackholeDragged);
 
             // Chapter 5
             public static readonly NamespaceID paratroop = Get(VanillaBuffNames.Enemy.paratroop);

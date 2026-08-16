@@ -153,6 +153,7 @@
     <buff id="wicked_hermit_warp" polarity="none" level="4000" target="enemy" />
     <buff id="wicked_hermit_warpped" polarity="none" level="4000" target="enemy" />
     <buff id="shikaisen_revive" polarity="positive" level="3000" target="enemy" />
+    <buff id="blackhole_dragged" polarity="none" level="5000" target="enemy" />
     <buff id="slow" polarity="negative" level="0" target="enemy" />
     <buff id="divine_shield" polarity="positive" level="0" target="entity" />
     <buff id="divine_shield_cooldown" polarity="negative" level="1000" target="entity" />
