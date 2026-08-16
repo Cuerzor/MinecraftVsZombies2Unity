@@ -229,6 +229,8 @@
     <buff id="extending_arm" polarity="mixed" level="2000" target="contraption" />
     <buff id="krakens_tentacle_attack_speed" polarity="positive" level="2000" target="contraption" />
     <buff id="raining" polarity="mixed" level="5000" target="level" />
+    <buff id="gale_leaf_artifact_pickup" polarity="none" level="5000" target="entity" />
+    
 
     <!-- Random China -->
     <buff id="super_recharge" polarity="positive" level="0" target="blueprint" />

@@ -128,6 +128,7 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public const string teleporterTeleportUp = "teleporter_teleport_up";
             public const string teleporterTeleportDown = "teleporter_teleport_down";
+            public const string galeLeafArtifactPickup = "gale_leaf_artifact_pickup";
 
             // Random China
             public const string worldwideCelebration = "worldwide_celebration";
