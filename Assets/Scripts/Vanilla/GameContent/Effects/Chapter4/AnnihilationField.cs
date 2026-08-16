@@ -60,6 +60,8 @@ namespace MVZ2.GameContent.Effects
             entity.Level.FindEntitiesNonAlloc(e => e.IsEntityOf(VanillaObstacleID.monsterSpawner) && e.IsHostile(entity) && (e.GetCenter() - entity.GetCenter()).sqrMagnitude <= sqrRange, detectBuffer);
             foreach (var target in detectBuffer)
             {
+                if (target.ImmuneInstakill())
+                    continue;
                 target.RemoveDie();
             }
         }
