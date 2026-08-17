@@ -47,7 +47,7 @@
     </group>
     <group id="game_completed">
         <conditions>
-            <condition required="mvz2:level.palace_11" />
+            <condition requiredGroups="mvz2:chapter_finished.mountain" />
         </conditions>
     </group>
 
