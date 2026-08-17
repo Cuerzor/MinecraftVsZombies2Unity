@@ -2868,6 +2868,27 @@
                     <p>危险动作，<![CDATA[<ref=[enemies]mvz2:imp>小鬼僵尸</ref>]]>请勿轻易尝试。</p>
                 </flavor>
             </entry>
+            <entry id="mvz2:zombie_cow" name="僵尸牛">
+                <unlock>
+                    <condition required="mvz2:artifact.cow_horn" />
+                </unlock>
+                <picture model="mvz2:entity.zombie_cow" />
+                <tags sourceEntity="mvz2:zombie_cow"/>
+                <variables>
+                    <variable name="hp">property("mvz2:entity/maxHealth", "mvz2:zombie_cow", "entity")</variable>
+                    <variable name="speed">property("mvz2:entity/speed", "mvz2:zombie_cow", "entity")</variable>
+                </variables>
+                <header>
+                    <p>僵尸牛被黑色的<![CDATA[<ref=[enemies]mvz2:undead_flying_object>不死飞行物</ref>]]>召唤，并掉落<![CDATA[<ref=[artifacts]mvz2:cow_horn>牛角</ref>]]>。</p>
+                </header>
+                <properties>
+                    <p>生命：<![CDATA[<color=red><var local="hp"/></color>]]></p>
+                    <p>速度：<![CDATA[<color=red><var local="speed"/></color>]]></p>
+                </properties>
+                <flavor>
+                    <p>这里没有奶牛关！</p>
+                </flavor>
+            </entry>
             <entry id="mvz2:corpse_cart" name="尸体推车" >
                 <unlock>
                     <condition required="mvz2:level.palace_1"/>

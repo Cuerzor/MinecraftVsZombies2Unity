@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-08-14 07:42+0800\n"
-"PO-Revision-Date: 2026-08-14 19:43+0800\n"
+"POT-Creation-Date: 2026-08-16 04:04+0800\n"
+"PO-Revision-Date: 2026-08-16 16:05+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -5388,6 +5388,36 @@ msgstr ""
 msgctxt "misc.description"
 msgid "危险动作，<ref=[enemies]mvz2:imp>小鬼僵尸</ref>请勿轻易尝试。"
 msgstr "Dangerous action. <ref=[enemies]mvz2:imp>Imps</ref> should not attempt this."
+
+#. Name for misc mvz2:zombie_cow
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "僵尸牛"
+msgstr "Zombie Cow"
+
+#. Header for misc mvz2:zombie_cow
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "僵尸牛被黑色的<ref=[enemies]mvz2:undead_flying_object>不死飞行物</ref>召唤，并掉落<ref=[artifacts]mvz2:cow_horn>牛角</ref>。"
+msgstr ""
+"The Zombie Cow is summoned by a black <ref=[enemies]mvz2:undead_flying_object>UFO</ref> and drops a <ref=[artifacts]mvz2:cow_horn>Cow "
+"Horn</ref>."
+
+#. Properties for misc mvz2:zombie_cow
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"生命：<color=red><var local=\"hp\"/></color>\n"
+"速度：<color=red><var local=\"speed\"/></color>"
+msgstr ""
+"Toughness: <color=red><var local=\"hp\"/></color>\n"
+"Speed: <color=red><var local=\"speed\"/></color>"
+
+#. Flavor for misc mvz2:zombie_cow
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "这里没有奶牛关！"
+msgstr "There is no cow level!"
 
 #. Name for misc mvz2:corpse_cart
 #: Almanac meta file

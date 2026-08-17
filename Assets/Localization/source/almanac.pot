@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-14 07:42+0800\n"
+"POT-Creation-Date: 2026-08-16 04:04+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4294,6 +4294,32 @@ msgstr ""
 #: Almanac meta file
 msgctxt "misc.description"
 msgid "危险动作，<ref=[enemies]mvz2:imp>小鬼僵尸</ref>请勿轻易尝试。"
+msgstr ""
+
+#. Name for misc mvz2:zombie_cow
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "僵尸牛"
+msgstr ""
+
+#. Header for misc mvz2:zombie_cow
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "僵尸牛被黑色的<ref=[enemies]mvz2:undead_flying_object>不死飞行物</ref>召唤，并掉落<ref=[artifacts]mvz2:cow_horn>牛角</ref>。"
+msgstr ""
+
+#. Properties for misc mvz2:zombie_cow
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"生命：<color=red><var local=\"hp\"/></color>\n"
+"速度：<color=red><var local=\"speed\"/></color>"
+msgstr ""
+
+#. Flavor for misc mvz2:zombie_cow
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "这里没有奶牛关！"
 msgstr ""
 
 #. Name for misc mvz2:corpse_cart
