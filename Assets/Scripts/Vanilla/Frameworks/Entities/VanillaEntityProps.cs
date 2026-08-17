@@ -387,6 +387,19 @@ namespace MVZ2.Vanilla.Entities
             return entity.GetProperty<float>(TAKEN_CRUSH_DAMAGE);
         }
 
+        #region 无视重力板
+
+        public static readonly PropertyMeta<bool> IGNORE_GRAIVTY_PAD = Get<bool>("ignore_gravity_pad");
+        public static bool IgnoreGravityPad(this EntityDefinition definition)
+        {
+            return definition.GetProperty<bool>(IGNORE_GRAIVTY_PAD);
+        }
+        public static bool IgnoreGravityPad(this Entity entity)
+        {
+            return entity.GetProperty<bool>(IGNORE_GRAIVTY_PAD);
+        }
+        #endregion
+
         #region 无视传动力板
 
         public static readonly PropertyMeta<bool> IGNORE_FORCE_PAD = Get<bool>("ignore_force_pad");
