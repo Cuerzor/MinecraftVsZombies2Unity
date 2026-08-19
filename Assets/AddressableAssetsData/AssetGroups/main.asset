@@ -3851,6 +3851,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44c0b1d8bc987f8439f84053fedc33f4
+    m_Address: mvz2:ui/level/pause_image_gothic
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 44cdfd7f2b25992498a3440f8b99e6da
     m_Address: mvz2:contraption/prologue/dispenser
     m_ReadOnly: 0
