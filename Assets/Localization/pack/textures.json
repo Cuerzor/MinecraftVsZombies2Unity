@@ -459,6 +459,15 @@
           "single": true
         }
       ]
+    },
+    {
+      "texture": "mvz2/sprites/ui/level/pause_image_recursion@en-US.png",
+      "key": "mvz2:ui/level/pause_image_recursion@en-US",
+      "slices": [
+        {
+          "single": true
+        }
+      ]
     }
   ]
 }

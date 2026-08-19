@@ -1414,6 +1414,9 @@ MonoBehaviour:
   - name: entity/contraption/catapult_pole
     texture: {fileID: 2800000, guid: ced76b57ae0468641b35fc8ea48e8bfb, type: 3}
     tags: []
+  - name: entity/contraption/cat_tl_mk_ii
+    texture: {fileID: 2800000, guid: 2170649fa3b94804a9096de6008026a5, type: 3}
+    tags: []
   - name: entity/contraption/command_block
     texture: {fileID: 2800000, guid: 8efa2e79b292918498e73ab732763604, type: 3}
     tags: []
@@ -2149,6 +2152,9 @@ MonoBehaviour:
   - name: entity/enemy/zombie_cloud_particle
     texture: {fileID: 2800000, guid: 3fb9e3cc152d92149914e1b4e20ea5f1, type: 3}
     tags: []
+  - name: entity/enemy/zombie_cow
+    texture: {fileID: 2800000, guid: 199c4447a5d48934f9d39e39afbb6750, type: 3}
+    tags: []
   - name: entity/obstacle/gargoyle_statue
     texture: {fileID: 2800000, guid: 684ec7aa8b558924d9d579d222e0eac5, type: 3}
     tags: []
@@ -2719,8 +2725,14 @@ MonoBehaviour:
   - name: ui/level/pause_image_6
     texture: {fileID: 2800000, guid: 16ff246ec2a095242a62262d2ac32272, type: 3}
     tags: []
+  - name: ui/level/pause_image_gothic
+    texture: {fileID: 2800000, guid: 44c0b1d8bc987f8439f84053fedc33f4, type: 3}
+    tags: []
   - name: ui/level/pause_image_loss
     texture: {fileID: 2800000, guid: 53000fe10b2b2114a9d2a2a204f7c143, type: 3}
+    tags: []
+  - name: ui/level/pause_image_recursion
+    texture: {fileID: 2800000, guid: ebb799d7eb3c92d469f684ec4d3370e1, type: 3}
     tags: []
   - name: ui/level/pickaxe
     texture: {fileID: 2800000, guid: c98850842ba8ff14f919f63ce5114326, type: 3}
@@ -6321,6 +6333,10 @@ MonoBehaviour:
     index: 4
     sprite: {fileID: 779477669, guid: ced76b57ae0468641b35fc8ea48e8bfb, type: 3}
     tags: []
+  - name: entity/contraption/cat_tl_mk_ii
+    index: 0
+    sprite: {fileID: 21300000, guid: 2170649fa3b94804a9096de6008026a5, type: 3}
+    tags: []
   - name: entity/contraption/command_block
     index: 0
     sprite: {fileID: -1167386140, guid: 8efa2e79b292918498e73ab732763604, type: 3}
@@ -9175,6 +9191,26 @@ MonoBehaviour:
     index: 2
     sprite: {fileID: 1723291530, guid: 3fb9e3cc152d92149914e1b4e20ea5f1, type: 3}
     tags: []
+  - name: entity/enemy/zombie_cow
+    index: 0
+    sprite: {fileID: -1482724509, guid: 199c4447a5d48934f9d39e39afbb6750, type: 3}
+    tags: []
+  - name: entity/enemy/zombie_cow
+    index: 1
+    sprite: {fileID: 204722175, guid: 199c4447a5d48934f9d39e39afbb6750, type: 3}
+    tags: []
+  - name: entity/enemy/zombie_cow
+    index: 2
+    sprite: {fileID: -547372149, guid: 199c4447a5d48934f9d39e39afbb6750, type: 3}
+    tags: []
+  - name: entity/enemy/zombie_cow
+    index: 3
+    sprite: {fileID: 1413563108, guid: 199c4447a5d48934f9d39e39afbb6750, type: 3}
+    tags: []
+  - name: entity/enemy/zombie_cow
+    index: 4
+    sprite: {fileID: 602954751, guid: 199c4447a5d48934f9d39e39afbb6750, type: 3}
+    tags: []
   - name: entity/obstacle/gargoyle_statue
     index: 0
     sprite: {fileID: 1300053136, guid: 684ec7aa8b558924d9d579d222e0eac5, type: 3}
@@ -10582,9 +10618,17 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 16ff246ec2a095242a62262d2ac32272, type: 3}
     tags: []
+  - name: ui/level/pause_image_gothic
+    index: 0
+    sprite: {fileID: 21300000, guid: 44c0b1d8bc987f8439f84053fedc33f4, type: 3}
+    tags: []
   - name: ui/level/pause_image_loss
     index: 0
     sprite: {fileID: 21300000, guid: 53000fe10b2b2114a9d2a2a204f7c143, type: 3}
+    tags: []
+  - name: ui/level/pause_image_recursion
+    index: 0
+    sprite: {fileID: 21300000, guid: ebb799d7eb3c92d469f684ec4d3370e1, type: 3}
     tags: []
   - name: ui/level/pickaxe
     index: 0

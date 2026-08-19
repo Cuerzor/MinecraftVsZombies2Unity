@@ -193,6 +193,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 16ff246ec2a095242a62262d2ac32272, type: 3}
   - {fileID: 21300000, guid: 53000fe10b2b2114a9d2a2a204f7c143, type: 3}
   - {fileID: 21300000, guid: 44c0b1d8bc987f8439f84053fedc33f4, type: 3}
+  - {fileID: 21300000, guid: ebb799d7eb3c92d469f684ec4d3370e1, type: 3}
   optionsDialogController: {fileID: 1750471424063941642}
   entityTemplate: {fileID: -1708814885022385043, guid: 033dd59ce2dc153448fa75a2e0c608b3, type: 3}
   entitiesRoot: {fileID: 1458902122031359015}
