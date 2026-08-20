@@ -14,6 +14,7 @@
 - Adjusted the smashing sfx of Mutant Zombie in water.
 - The base movement speed of Flag Zombies has been increased to 2, and the random movement speed factor for them is no longer fixed at 200%.
 - Soul Furnaces' evocation will now refill their fuel first, but they can no longer continue to refill fuel during the evocation.
+- Adjusted the texture of the tiles destroyed by Nukes, to enhance their visibility against dark backgrounds.
 
 ### Balance
 - The reduction ratio of the recharge time for Broken Lock has been lowered from 1:1 to 2:1.
