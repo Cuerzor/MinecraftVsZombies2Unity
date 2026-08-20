@@ -1645,6 +1645,38 @@
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </entity>
+        <entity template="contraption" id="cat_tl_mk_ii" name="香蒲II型" tooltip="（需要睡莲）\n发射跟踪尖刺">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.cat_tl_mk_ii" />
+            </unlock>
+            <behaviours>
+                <behaviour operator="add" id="mvz2:lily_pad_carrier" />
+                <behaviour operator="add" id="mvz2:destroy_outside_water" />
+            </behaviours>
+            <properties>
+                <float name="mvz2:damage" value="20" />
+                <float name="mvz2:range" value="80000" />
+                <vector3 name="mvz2:shotVelocity" x="20" y="0" z="0" />
+                <vector3 name="mvz2:shotOffset" x="-20" y="30" z="0" />
+                <vector3 name="mvz2:size" x="40" y="40" z="40" />
+                <id name="mvz2:shootSound" value="mvz2:shot" />
+                <id name="mvz2:projectileId" value="mvz2:spike" />
+
+                <bool name="mvz2:upgradeBlueprint" value="true" />
+                <id name="mvz2:upgradeFrom" value="mvz2:lily_pad" />
+                <id name="mvz2:placement" value="mvz2:upgrade" />
+
+                <id name="mvz2:shell" value="mvz2:metal" />
+                <id name="mvz2:placeSound" value="mvz2:metal_break" />
+                <id name="mvz2:deathSound" value="mvz2:metal_break" />
+
+                <int name="mvz2:waterInteraction" value="0" />
+                <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
+
+                <int name="mvz2:cost" value="225" />
+                <id name="mvz2:rechargeId" value="mvz2:very_long" />
+            </properties>
+        </entity>
         <entity template="contraption" id="diamond_spikes" name="钻石尖刺" tooltip="（需要尖刺方块）\n更快扎伤上面的敌人，并具有更高耐久">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.diamond_spikes" />

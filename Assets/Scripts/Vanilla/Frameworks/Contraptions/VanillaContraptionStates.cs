@@ -45,6 +45,10 @@ namespace MVZ2.Vanilla.Contraptions
         public const int AUTOTRAP_CLOSED = PRIVATE_NUMBER + 1;
         public const int AUTOTRAP_OPENING = PRIVATE_NUMBER + 2;
 
+        public const int CATTAIL_IDLE = IDLE;
+        public const int CATTAIL_SHOOT_1 = PRIVATE_NUMBER + 0;
+        public const int CATTAIL_SHOOT_2 = PRIVATE_NUMBER + 1;
+
         private const int PRIVATE_NUMBER = 10000;
     }
 }

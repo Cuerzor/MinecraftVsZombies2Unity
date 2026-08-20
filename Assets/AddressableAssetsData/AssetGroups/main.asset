@@ -248,6 +248,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 055282c7bef1fc44b9c523c39b68caab
+    m_Address: mvz2:mobile_blueprint/cat_tl_mk_ii
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0560677ce3ebb444a8893193b27d43fc
     m_Address: mvz2:mainmenu/stats
     m_ReadOnly: 0
@@ -341,6 +348,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 06fba5c7c48e30e47aa0b8d970639027
     m_Address: mvz2:effect/magnetic_line
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 070c5cc13e22e1d4e9a927b55c0c59b7
+    m_Address: mvz2:contraption/upgrade/cat_tl_mk_ii
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -1801,6 +1815,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2170649fa3b94804a9096de6008026a5
+    m_Address: mvz2:entity/contraption/cat_tl_mk_ii
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2171d910922ad824c87a850943cb1986
     m_Address: mvz2:talk/dialog_explosive
@@ -12520,6 +12541,13 @@ MonoBehaviour:
     - Main
     - Music
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3d0bf369d5ed8e4cbffc7768e07ed35
+    m_Address: mvz2:entity/projectile/iwanna_spike
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e3db0a973aafd3c49b0bcb73e3353e59
     m_Address: mvz2:random/stone4
     m_ReadOnly: 0
@@ -12704,6 +12732,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e779343a9de67c347bd835c88e914d14
     m_Address: mvz2:level/ship/cloudy_noise
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e77dc77a7ebd8c54aa8708cbdc9ed0ac
+    m_Address: mvz2:level/grids/broken_tile_radiation
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

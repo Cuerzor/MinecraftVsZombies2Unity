@@ -477,6 +477,14 @@
             <key hex="#ABABAB" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="cat_tl_mk_ii">
+        <colorKeys>
+            <key hex="#262626" time="0.4" />
+            <key hex="#ababab" time="0.8" />
+            <key hex="#2f8926" time="0.95" />
+            <key hex="#00ffeb" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="diamond_spikes">
         <colorKeys>
             <key hex="#48FFFF" time="0.75" />

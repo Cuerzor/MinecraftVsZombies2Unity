@@ -145,6 +145,7 @@
 
     <!-- Old Upgrade Contraptions -->
     <group id="contraption.high_frequency_pulse_dispenser"><conditions><condition required="mvz2:level.ship_5" /></conditions></group>
+    <group id="contraption.cat_tl_mk_ii"><conditions><condition required="mvz2:level.mountain_5" /></conditions></group>
     <group id="contraption.diamond_spikes"><conditions><condition required="mvz2:level.castle_5" /></conditions></group>
     <group id="contraption.brick_cannon"><conditions><condition required="mvz2:level.palace_5" /></conditions></group>
     <group id="contraption.command_block"><conditions><condition required="mvz2:level.mausoleum_5" /></conditions></group>

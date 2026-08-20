@@ -612,6 +612,9 @@ MonoBehaviour:
   - name: mobile_blueprint/cannoneer_zombie
     texture: {fileID: 2800000, guid: 36644e32a58432140b6b7f7339f2bac1, type: 3}
     tags: []
+  - name: mobile_blueprint/cat_tl_mk_ii
+    texture: {fileID: 2800000, guid: 055282c7bef1fc44b9c523c39b68caab, type: 3}
+    tags: []
   - name: mobile_blueprint/cave_spider
     texture: {fileID: 2800000, guid: 2be33464724166c4fa3a121643edceb8, type: 3}
     tags: []
@@ -2293,6 +2296,9 @@ MonoBehaviour:
   - name: entity/projectile/ignited_wooden_ball_cursed
     texture: {fileID: 2800000, guid: b8edef59b9ae0284082846af29941760, type: 3}
     tags: []
+  - name: entity/projectile/iwanna_spike
+    texture: {fileID: 2800000, guid: e3d0bf369d5ed8e4cbffc7768e07ed35, type: 3}
+    tags: []
   - name: entity/projectile/javelin
     texture: {fileID: 2800000, guid: 8af07b31f932791429fddf24a251679f, type: 3}
     tags: []
@@ -2411,6 +2417,9 @@ MonoBehaviour:
     tags: []
   - name: level/grids/broken_tile
     texture: {fileID: 2800000, guid: 3bb835826f0becf4fbca23d9d96b230a, type: 3}
+    tags: []
+  - name: level/grids/broken_tile_radiation
+    texture: {fileID: 2800000, guid: e77dc77a7ebd8c54aa8708cbdc9ed0ac, type: 3}
     tags: []
   - name: level/grids/broken_tile_slope
     texture: {fileID: 2800000, guid: cc6b3e7a91e2c864fb023c7055695568, type: 3}
@@ -4388,6 +4397,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 36644e32a58432140b6b7f7339f2bac1, type: 3}
     tags: []
+  - name: mobile_blueprint/cat_tl_mk_ii
+    index: 0
+    sprite: {fileID: 21300000, guid: 055282c7bef1fc44b9c523c39b68caab, type: 3}
+    tags: []
   - name: mobile_blueprint/cave_spider
     index: 0
     sprite: {fileID: 21300000, guid: 2be33464724166c4fa3a121643edceb8, type: 3}
@@ -6335,7 +6348,31 @@ MonoBehaviour:
     tags: []
   - name: entity/contraption/cat_tl_mk_ii
     index: 0
-    sprite: {fileID: 21300000, guid: 2170649fa3b94804a9096de6008026a5, type: 3}
+    sprite: {fileID: 2141065763, guid: 2170649fa3b94804a9096de6008026a5, type: 3}
+    tags: []
+  - name: entity/contraption/cat_tl_mk_ii
+    index: 1
+    sprite: {fileID: 373444714, guid: 2170649fa3b94804a9096de6008026a5, type: 3}
+    tags: []
+  - name: entity/contraption/cat_tl_mk_ii
+    index: 2
+    sprite: {fileID: -318661803, guid: 2170649fa3b94804a9096de6008026a5, type: 3}
+    tags: []
+  - name: entity/contraption/cat_tl_mk_ii
+    index: 3
+    sprite: {fileID: 1313527963, guid: 2170649fa3b94804a9096de6008026a5, type: 3}
+    tags: []
+  - name: entity/contraption/cat_tl_mk_ii
+    index: 4
+    sprite: {fileID: -1634844705, guid: 2170649fa3b94804a9096de6008026a5, type: 3}
+    tags: []
+  - name: entity/contraption/cat_tl_mk_ii
+    index: 5
+    sprite: {fileID: -1821834049, guid: 2170649fa3b94804a9096de6008026a5, type: 3}
+    tags: []
+  - name: entity/contraption/cat_tl_mk_ii
+    index: 6
+    sprite: {fileID: 130839581, guid: 2170649fa3b94804a9096de6008026a5, type: 3}
     tags: []
   - name: entity/contraption/command_block
     index: 0
@@ -9519,6 +9556,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: b8edef59b9ae0284082846af29941760, type: 3}
     tags: []
+  - name: entity/projectile/iwanna_spike
+    index: 0
+    sprite: {fileID: 21300000, guid: e3d0bf369d5ed8e4cbffc7768e07ed35, type: 3}
+    tags: []
   - name: entity/projectile/javelin
     index: 0
     sprite: {fileID: 21300000, guid: 8af07b31f932791429fddf24a251679f, type: 3}
@@ -9756,6 +9797,14 @@ MonoBehaviour:
   - name: level/grids/broken_tile
     index: 1
     sprite: {fileID: 1389607526, guid: 3bb835826f0becf4fbca23d9d96b230a, type: 3}
+    tags: []
+  - name: level/grids/broken_tile_radiation
+    index: 0
+    sprite: {fileID: -2136877282, guid: e77dc77a7ebd8c54aa8708cbdc9ed0ac, type: 3}
+    tags: []
+  - name: level/grids/broken_tile_radiation
+    index: 1
+    sprite: {fileID: -559449691, guid: e77dc77a7ebd8c54aa8708cbdc9ed0ac, type: 3}
     tags: []
   - name: level/grids/broken_tile_slope
     index: 0

@@ -86,6 +86,7 @@ namespace MVZ2.GameContent.Contraptions
 
         public const string highFrequencyPulseDispenser = "high_frequency_pulse_dispenser";
         public const string hfpd = highFrequencyPulseDispenser;
+        public const string cattailMKII = "cat_tl_mk_ii";
         public const string diamondSpikes = "diamond_spikes";
         public const string brickCannon = "brick_cannon";
 
@@ -174,6 +175,7 @@ namespace MVZ2.GameContent.Contraptions
 
         public static readonly NamespaceID highFrequencyPulseDispenser = Get(VanillaContraptionNames.highFrequencyPulseDispenser);
         public static readonly NamespaceID hfpd = highFrequencyPulseDispenser;
+        public static readonly NamespaceID cattailMKII = Get(VanillaContraptionNames.cattailMKII);
         public static readonly NamespaceID diamondSpikes = Get(VanillaContraptionNames.diamondSpikes);
         public static readonly NamespaceID brickCannon = Get(VanillaContraptionNames.brickCannon);
 
