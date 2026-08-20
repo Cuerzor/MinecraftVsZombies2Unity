@@ -1347,9 +1347,8 @@
             <behaviours>
                 <behaviour operator="add" id="mvz2:nether_reactor_core/evoke" />
                 <properties behaviour="mvz2:nether_reactor_core" >
-                    <float name="min_produce_time" value="15"/>
+                    <float name="min_produce_time" value="6"/>
                     <float name="max_produce_time" value="90"/>
-                    <float name="quality_divisor" value="2000"/>
                 </properties>
             </behaviours>
             <properties>

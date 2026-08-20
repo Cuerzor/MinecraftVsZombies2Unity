@@ -124,11 +124,9 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static int GetSacrificeFuel(Entity entity, Entity soulFurnace)
         {
-            int fuel = 10;
-
             var game = Global.Game;
 
-            float fuelMultiplier = 1;
+            float rechargeQuality = 1;
 
             int cost = entity.GetCost();
             var rechargeID = entity.GetRechargeID();
@@ -137,11 +135,11 @@ namespace MVZ2.GameContent.Contraptions
                 var rechargeDef = game.GetRechargeDefinition(rechargeID);
                 if (rechargeDef != null)
                 {
-                    fuelMultiplier = rechargeDef.GetQuality();
+                    rechargeQuality = rechargeDef.GetQuality();
                 }
             }
 
-            fuel = Mathf.CeilToInt((fuel + cost / 3f) * fuelMultiplier);
+            int fuel = Mathf.CeilToInt((6 + Mathf.Pow(cost * 3 / 25f, 1.3f)) * (rechargeQuality + 1) / 2f);
             var result = new CallbackResult(fuel);
             entity.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.GET_CONTRAPTION_SACRIFICE_FUEL, new VanillaLevelCallbacks.ContraptionSacrificeValueParams(entity, soulFurnace), result);
             return result.GetValue<int>();

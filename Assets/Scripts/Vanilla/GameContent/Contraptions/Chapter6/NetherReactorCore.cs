@@ -140,10 +140,12 @@ namespace MVZ2.GameContent.Contraptions
                 return 1;
             var cost1 = def1.GetCost();
             var cost2 = def2.GetCost();
-            var t1 = cost1 * recharge1.GetQuality();
-            var t2 = cost2 * recharge2.GetQuality();
-            var divisor = entity.GetProperty<float>(PROP_QUALITY_DIVISOR);
-            var t = (t1 + t2) / divisor;
+            var rechargeQuality1 = recharge1.GetQuality();
+            var rechargeQuality2 = recharge2.GetQuality();
+            var quality1 = Mathf.Pow(cost1 / 25, 1.3f) * (rechargeQuality1 + 1) / 2f;
+            var quality2 = Mathf.Pow(cost2 / 25, 1.3f) * (rechargeQuality2 + 1) / 2f;
+            var qualityAccumulate = Mathf.CeilToInt(quality1 * quality2);
+            var t = Mathf.Clamp01((qualityAccumulate / 150f - 1) / 14f);
 
             var minSeconds = entity.GetProperty<float>(PROP_MIN_PRODUCE_TIME);
             var maxSeconds = entity.GetProperty<float>(PROP_MAX_PRODUCE_TIME);
@@ -169,7 +171,6 @@ namespace MVZ2.GameContent.Contraptions
         private static readonly VanillaEntityPropertyMeta<FrameTimer> PROP_PRODUCTION_TIMER = new VanillaEntityPropertyMeta<FrameTimer>("production_timer");
         public static readonly VanillaEntityPropertyMeta<float> PROP_MIN_PRODUCE_TIME = new VanillaEntityPropertyMeta<float>("min_produce_time", 15);
         public static readonly VanillaEntityPropertyMeta<float> PROP_MAX_PRODUCE_TIME = new VanillaEntityPropertyMeta<float>("max_produce_time", 90);
-        public static readonly VanillaEntityPropertyMeta<float> PROP_QUALITY_DIVISOR = new VanillaEntityPropertyMeta<float>("quality_divisor", 2000);
         public static readonly VanillaEntityPropertyMeta<float> PROP_PRODUCE_SPEED_MULTIPLIER = new VanillaEntityPropertyMeta<float>("production_speed_multiplier", 1);
         public static readonly VanillaEntityPropertyMeta<bool> PROP_WORKING = new VanillaEntityPropertyMeta<bool>("working");
 

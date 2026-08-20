@@ -13,7 +13,7 @@ namespace MVZ2.GameContent.Recharges
         {
             SetProperty(EngineRechargeProps.START_MAX_RECHARGE, 0);
             SetProperty(EngineRechargeProps.MAX_RECHARGE, 225);
-            SetProperty(EngineRechargeProps.QUALITY, 1);
+            SetProperty(EngineRechargeProps.QUALITY, 1f);
             SetProperty(EngineRechargeProps.NAME, VanillaStrings.RECHARGE_SHORT);
         }
     }
