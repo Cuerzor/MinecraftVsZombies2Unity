@@ -1802,13 +1802,6 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2170649fa3b94804a9096de6008026a5
-    m_Address: mvz2:entity/contraption/cat_tl_mk_ii
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Main
-    - Sprite
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2171d910922ad824c87a850943cb1986
     m_Address: mvz2:talk/dialog_explosive
     m_ReadOnly: 0
