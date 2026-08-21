@@ -143,6 +143,18 @@ msgctxt "almanac_tag.description"
 msgid "必须放置在连射发射器上"
 msgstr ""
 
+#. Name for almanac tag placement_lily_pad
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "升级器械：睡莲"
+msgstr ""
+
+#. Description for almanac tag placement_lily_pad
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "必须放置在睡莲上"
+msgstr ""
+
 #. Name for almanac tag placement_diamond_spikes
 #: Almanac meta file
 msgctxt "almanac_tag.name"
@@ -2196,6 +2208,33 @@ msgid ""
 "高频脉冲发射器的队伍是一支训练有素的队伍，它们的入队要求十分严格，包括——每句话都要说四遍。\n"
 "高频脉冲发射器的队伍是一支训练有素的队伍，它们的入队要求十分严格，包括——每句话都要说四遍。\n"
 "高——闭嘴吧。"
+msgstr ""
+
+#. Header for contraptions mvz2:cat_tl_mk_ii
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "香蒲II型会向任何敌人发射跟踪尖刺。"
+msgstr ""
+
+#. Properties for contraptions mvz2:cat_tl_mk_ii
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"发射速度：<color=red>2发/1.5秒</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"特殊：<color=red>尖刺会跟踪敌人</color>\n"
+"技能：<color=red>发射很多在战场上弹跳的彩虹猫！</color>"
+msgstr ""
+
+#. Flavor for contraptions mvz2:cat_tl_mk_ii
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"未来世界的一片垃圾场中，有一些拾荒者找到了一台外观尚算完好的旧电脑。这台机器显然历经沧桑，少说已有几十年历史。\n"
+"这台电脑几经辗转，最后被送到研究部门改造成了一款发射追踪尖刺的哨戒武器。创造者为了纪念自己亡故的爱猫，为它加装了一块显示屏，并将其命名为——露娜。\n"
+"露娜睁开眼，她看到了眼前的人类，调取着尘封的存储信息，以此构筑对这个世界的认知。不久，她成为了她的主人最忠诚的伙伴兼守护者。\n"
+"然而，有一个她无法识别的名字，始终深植于数据库底层，困扰着她：\n"
+"黛安娜。"
 msgstr ""
 
 #. Header for contraptions mvz2:diamond_spikes
@@ -6394,6 +6433,20 @@ msgctxt "entity.tooltip"
 msgid ""
 "（需要连射发射器）\n"
 "一次射出四支箭矢"
+msgstr ""
+
+#. Name for entity mvz2:cat_tl_mk_ii
+#: Entity meta file
+msgctxt "entity.name"
+msgid "香蒲II型"
+msgstr ""
+
+#. Tooltip for entity mvz2:cat_tl_mk_ii
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid ""
+"（需要睡莲）\n"
+"发射跟踪尖刺"
 msgstr ""
 
 #. Name for entity mvz2:diamond_spikes

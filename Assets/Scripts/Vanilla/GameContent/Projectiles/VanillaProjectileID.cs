@@ -63,6 +63,7 @@ namespace MVZ2.GameContent.Projectiles
         public const string explosiveSoul = "explosive_soul";
 
         public const string frozenOrb = "frozen_orb";
+        public const string meowmereProjectile = "meowmere_projectile";
     }
     public static class VanillaProjectileID
     {
@@ -121,6 +122,7 @@ namespace MVZ2.GameContent.Projectiles
         public static readonly NamespaceID explosiveSoul = Get(VanillaProjectileNames.explosiveSoul);
 
         public static readonly NamespaceID frozenOrb = Get(VanillaProjectileNames.frozenOrb);
+        public static readonly NamespaceID meowmereProjectile = Get(VanillaProjectileNames.meowmereProjectile);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

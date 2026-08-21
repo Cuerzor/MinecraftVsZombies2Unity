@@ -589,6 +589,7 @@
     <model name="explosive_soul" type="entity" path="mvz2:projectile/explosive_soul" width="32" height="32" xOffset="0" yOffset="-12" />
 
     <model name="frozen_orb" type="entity" path="mvz2:projectile/frozen_orb" width="64" height="64" xOffset="0" yOffset="0" />
+    <model name="meowmere_projectile" type="entity" path="mvz2:projectile/meowmere_projectile" width="32" height="32" xOffset="0" yOffset="-12" />
 
     <!-- Armors -->
     <model name="leather_cap" type="armor" path="mvz2:armor/leather_cap" width="33" height="14" xOffset="0" yOffset="0" />

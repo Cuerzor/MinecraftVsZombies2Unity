@@ -596,6 +596,9 @@
     <sound name="meow">
         <sample path="mvz2:meow" weight="1" />
     </sound>
+    <sound name="meowmere" maxCount="10">
+        <sample path="mvz2:meow" weight="1" />
+    </sound>
     <sound name="meteor_land">
         <sample path="mvz2:meteor_land" weight="1" />
     </sound>

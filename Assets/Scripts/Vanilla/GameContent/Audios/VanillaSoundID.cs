@@ -159,6 +159,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID mechSetup = Get("mech_setup");
         public readonly static NamespaceID mechanism = Get("mechanism");
         public readonly static NamespaceID meow = Get("meow");
+        public readonly static NamespaceID meowmere = Get("meowmere");
         public readonly static NamespaceID metalSaw = Get("metal_saw");
         public readonly static NamespaceID meteorLand = Get("meteor_land");
         public readonly static NamespaceID mindControl = Get("mind_control");

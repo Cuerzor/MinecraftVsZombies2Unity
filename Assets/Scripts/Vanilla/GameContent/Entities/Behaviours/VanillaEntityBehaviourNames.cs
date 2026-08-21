@@ -63,6 +63,7 @@ namespace MVZ2.Vanilla.Entities
         public const string onbashira_Evoke = "onbashira/evoke";
         public const string loanSign_Evoke = "loan_sign/evoke";
 
+        public const string cattailMKII_Evoke = "cat_tl_mk_ii/evoke";
         #endregion
 
         #region Enemies

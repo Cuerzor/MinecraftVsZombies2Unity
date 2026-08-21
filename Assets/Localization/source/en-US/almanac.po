@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
 "POT-Creation-Date: 2026-08-22 06:35+0800\n"
-"PO-Revision-Date: 2026-08-22 18:36+0800\n"
+"PO-Revision-Date: 2026-08-22 19:44+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -148,6 +148,18 @@ msgstr "Upgrade Contraption: Repeatenser"
 msgctxt "almanac_tag.description"
 msgid "必须放置在连射发射器上"
 msgstr "Must be placed on Repeatenser"
+
+#. Name for almanac tag placement_lily_pad
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "升级器械：睡莲"
+msgstr "Upgrade Contraption: Lily Pad"
+
+#. Description for almanac tag placement_lily_pad
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "必须放置在睡莲上"
+msgstr "Must be placed on Lily Pad"
 
 #. Name for almanac tag placement_diamond_spikes
 #: Almanac meta file
@@ -2740,6 +2752,46 @@ msgstr ""
 "The H.F.P.D unit is a highly disciplined force. Their entry requirements are extremely strict, including—repeating every sentence four "
 "times.\n"
 "The- Shut up already!"
+
+#. Header for contraptions mvz2:cat_tl_mk_ii
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "香蒲II型会向任何敌人发射跟踪尖刺。"
+msgstr "CAT-TL MK-II fires homing spikes at enemies."
+
+#. Properties for contraptions mvz2:cat_tl_mk_ii
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"发射速度：<color=red>2发/1.5秒</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"特殊：<color=red>尖刺会跟踪敌人</color>\n"
+"技能：<color=red>发射很多在战场上弹跳的彩虹猫！</color>"
+msgstr ""
+"Fire rate: <color=red>2 spikes/1.5 seconds</color>\n"
+"Damage: <color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"Special: <color=red>Spikes will lock onto enemies</color>\n"
+"Evocation: <color=red>Fires lots and lots of bouncing Nyan Cats onto the battlefield!</color>"
+
+#. Flavor for contraptions mvz2:cat_tl_mk_ii
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"未来世界的一片垃圾场中，有一些拾荒者找到了一台外观尚算完好的旧电脑。这台机器显然历经沧桑，少说已有几十年历史。\n"
+"这台电脑几经辗转，最后被送到研究部门改造成了一款发射追踪尖刺的哨戒武器。创造者为了纪念自己亡故的爱猫，为它加装了一块显示屏，并将其命名"
+"为——露娜。\n"
+"露娜睁开眼，她看到了眼前的人类，调取着尘封的存储信息，以此构筑对这个世界的认知。不久，她成为了她的主人最忠诚的伙伴兼守护者。\n"
+"然而，有一个她无法识别的名字，始终深植于数据库底层，困扰着她：\n"
+"黛安娜。"
+msgstr ""
+"In a scrap yard of a futuristic world, some scavengers found an old computer that appeared to be in a relatively good condition. It "
+"had clearly seen better days as it was at least several decades old.\n"
+"After being toyed around with, the computer was eventually sent to a research department and then refitted into a sentry weapon that "
+"fires homing spikes. To commemorate a beloved cat who had passed away, the creator added a display screen to it, and named it Luna. \n"
+"Luna opened her eyes and saw her creator standing before her. She began retrieving long-lost information to build her understanding of "
+"this world. Before long, she became her master's most loyal companion and protector.\n"
+"However, buried in the deepest layer of her database was a name that she couldn't recognize. The name that forever troubled her was:\n"
+"Diana."
 
 #. Header for contraptions mvz2:diamond_spikes
 #: Almanac meta file
@@ -7837,6 +7889,22 @@ msgid ""
 msgstr ""
 "(Requires Repeatenser)\n"
 "Shoots 4 arrows at once"
+
+#. Name for entity mvz2:cat_tl_mk_ii
+#: Entity meta file
+msgctxt "entity.name"
+msgid "香蒲II型"
+msgstr "CAT-TL MK-II"
+
+#. Tooltip for entity mvz2:cat_tl_mk_ii
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid ""
+"（需要睡莲）\n"
+"发射跟踪尖刺"
+msgstr ""
+"(Requires Lily Pad)\n"
+"Shoots homing spikes"
 
 #. Name for entity mvz2:diamond_spikes
 #: Entity meta file

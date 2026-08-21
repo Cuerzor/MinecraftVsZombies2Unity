@@ -45,6 +45,10 @@
             <icon sprite="mvz2:ui/almanac/placement_tags_upgrade_origin[0]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#ff00ff" />
         </tag>
+        <tag id="placement_lily_pad" name="升级器械：睡莲" description="必须放置在睡莲上" priority="0">
+            <icon sprite="mvz2:ui/almanac/placement_tags_upgrade_origin[3]" />
+            <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#ff00ff" />
+        </tag>
         <tag id="placement_diamond_spikes" name="升级器械：尖刺方块" description="必须放置在尖刺方块上" priority="0">
             <icon sprite="mvz2:ui/almanac/placement_tags_upgrade_origin[6]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#ff00ff" />
@@ -1362,7 +1366,27 @@
         </entry>
         <entry />
         <entry />
-        <entry />
+        <entry id="mvz2:cat_tl_mk_ii">
+            <tags>
+                <tag id="mvz2:placement_lily_pad" />
+            </tags>
+            <header>
+                <p>香蒲II型会向任何敌人发射跟踪尖刺。</p>
+            </header>
+            <properties>
+                <p>发射速度：<![CDATA[<color=red>2发/1.5秒</color>]]></p>
+                <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
+                <p>特殊：<![CDATA[<color=red>尖刺会跟踪敌人</color>]]></p>
+                <p>技能：<![CDATA[<color=red>发射很多在战场上弹跳的彩虹猫！</color>]]></p>
+            </properties>
+            <flavor>
+                <p>未来世界的一片垃圾场中，有一些拾荒者找到了一台外观尚算完好的旧电脑。这台机器显然历经沧桑，少说已有几十年历史。</p>
+                <p>这台电脑几经辗转，最后被送到研究部门改造成了一款发射追踪尖刺的哨戒武器。创造者为了纪念自己亡故的爱猫，为它加装了一块显示屏，并将其命名为——露娜。</p>
+                <p>露娜睁开眼，她看到了眼前的人类，调取着尘封的存储信息，以此构筑对这个世界的认知。不久，她成为了她的主人最忠诚的伙伴兼守护者。</p>
+                <p>然而，有一个她无法识别的名字，始终深植于数据库底层，困扰着她：</p>
+                <p>黛安娜。</p>
+            </flavor>
+        </entry>
         <entry />
         <entry />
         <entry id="mvz2:diamond_spikes">

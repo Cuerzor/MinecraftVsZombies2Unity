@@ -2089,6 +2089,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 257bc5c3433ee614282c88ea0ab9ae8d
+    m_Address: mvz2:entity/projectile/meowmere_trail
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 25949aa543c7a514aa1fd0c3261b5234
     m_Address: mvz2:gap_warp
     m_ReadOnly: 0
@@ -8000,6 +8007,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e6454431bfd21440b5fa9d9ca51c836
+    m_Address: mvz2:entity/projectile/meowmere
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e9c31adececf9d4ba3918d8941732d7
     m_Address: mvz2:random/stone1
     m_ReadOnly: 0
@@ -8670,6 +8684,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ab8f328390e02048946a62ab55427d0
+    m_Address: mvz2:projectile/meowmere_projectile
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9afaa405c51bd7047a789336435874e0
     m_Address: mvz2:entity/zombie_cat/death3
