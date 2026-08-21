@@ -31,6 +31,7 @@
 - Fixed the issue where the animation of Hell Chariots sinking in water was very strange.
 - Fixed the issue where the material of Anvils is not metal.
 - Fixed the issue where Black Hole Bombs cannot attract monsters from the upper row to the current row.
+- Fixed the issue where Anvils do not destroy invincible contraptions upon landing.
 
 ---
 
