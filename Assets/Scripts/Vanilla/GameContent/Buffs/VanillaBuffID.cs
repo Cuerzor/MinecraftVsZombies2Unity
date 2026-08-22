@@ -219,6 +219,7 @@ namespace MVZ2.GameContent.Buffs
             public const string extendingArm = "extending_arm";
             public const string krakensTentacleAttackSpeed = "krakens_tentacle_attack_speed";
             public const string onbashiraFall = "onbashira_fall";
+            public const string carryingOtherTargetable = "carrying_other_targetable";
         }
         public static class Enemy
         {
@@ -575,6 +576,7 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public static readonly NamespaceID extendingArm = Get(VanillaBuffNames.Contraption.extendingArm);
             public static readonly NamespaceID krakensTentacleAttackSpeed = Get(VanillaBuffNames.Contraption.krakensTentacleAttackSpeed);
+            public static readonly NamespaceID carryingOtherTargetable = Get(VanillaBuffNames.Contraption.carryingOtherTargetable);
         }
         public static class Enemy
         {

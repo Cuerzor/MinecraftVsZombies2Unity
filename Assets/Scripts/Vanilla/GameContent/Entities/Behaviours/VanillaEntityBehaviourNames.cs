@@ -36,6 +36,8 @@ namespace MVZ2.Vanilla.Entities
         public const string balloon = "balloon";
         public const string randomChangeVelocity = "random_change_velocity";
 
+        public const string leaveLilyPadWhenDestroyedWithProtector = "leave_lily_pad_when_destroyed_with_protector";
+
         #region Contraptions
         public const string contraptionCommon = "contraption_common";
         public const string contraptionShooterFireworkDispenser = "contraption_shooter_firework_dispenser";
@@ -64,6 +66,7 @@ namespace MVZ2.Vanilla.Entities
         public const string loanSign_Evoke = "loan_sign/evoke";
 
         public const string cattailMKII_Evoke = "cat_tl_mk_ii/evoke";
+        public const string cattailMKII_Carrier = "cat_tl_mk_ii/carrier";
         #endregion
 
         #region Enemies

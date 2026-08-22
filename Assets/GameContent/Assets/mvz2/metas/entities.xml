@@ -1650,9 +1650,10 @@
                 <condition requiredGroups="mvz2:contraption.cat_tl_mk_ii" />
             </unlock>
             <behaviours>
-                <behaviour operator="add" id="mvz2:lily_pad_carrier" />
                 <behaviour operator="add" id="mvz2:destroy_outside_water" />
+                <behaviour operator="add" id="mvz2:cat_tl_mk_ii/carrier" />
                 <behaviour operator="add" id="mvz2:cat_tl_mk_ii/evoke" />
+                <behaviour operator="add" id="mvz2:leave_lily_pad_when_destroyed_with_protector" />
             </behaviours>
             <properties>
                 <float name="mvz2:damage" value="20" />
