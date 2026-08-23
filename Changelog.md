@@ -18,10 +18,19 @@
 - Adjusted the textures of Stone Shield and Emperor Zombie.
 
 ### Balance
-- The reduction ratio of the recharge time for Broken Lock has been lowered from 1:1 to 2:1.
-- The z-axis volume of knife projectiles has been increased from 2 to 6.
-- The evocation of Nukes now breaks all tiles within a 3x3 range.
-- Adjusted the contraption quality algorithm for Soul Furnaces and Nether Reactor Cores.
+- Broken Lock
+  - Recharge time reduction ratio: 1:1 -> 2:1
+- Silvenser
+  - Z-axis volume of knife projectiles: 2 -> 6
+- Nuke
+  - Evocation: Breaks its own tile -> Breaks all tiles within a 3x3 range
+- Soul Furnace
+  - Adjusted the contraption quality algorithm to get fuel.
+- Nether Reactor Core
+  - Fastest production time: 15s -> 6s
+  - Adjusted the contraption quality algorithm to get production speed.
+- Pistenser:
+  - Evocation target count: 10 -> ∞
 
 ## Fixed
 - Fixed the issue where the charging animation of Tesla Coil would continue to play even when it was disabled.

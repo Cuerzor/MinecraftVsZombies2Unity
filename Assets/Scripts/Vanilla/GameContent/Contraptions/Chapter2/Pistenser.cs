@@ -177,7 +177,7 @@ namespace MVZ2.GameContent.Contraptions
             var projectileID = VanillaProjectileID.spikeBall;
             var projectileDefinition = entity.Level.Content.GetEntityDefinition(projectileID);
             var projectileGravity = projectileDefinition?.GetGravity() ?? 0;
-            var targets = entity.Level.FindEntities(e => IsEvocationTarget(entity, e)).OrderByDescending(e => e.GetRelativeY()).Take(MAX_EVOCATION_TARGET);
+            var targets = entity.Level.FindEntities(e => IsEvocationTarget(entity, e));
             foreach (var target in targets)
             {
                 if (!soundPlayed)
@@ -241,6 +241,5 @@ namespace MVZ2.GameContent.Contraptions
         public const float EXTEND_SPEED = 10;
         public const int EVOCATION_TIME = 30;
         public const int DETECT_INTERVAL = 8;
-        public const int MAX_EVOCATION_TARGET = 10;
     }
 }
