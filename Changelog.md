@@ -41,6 +41,10 @@
 - Nether Reactor Core
   - Fastest production time: 15s -> 6s
   - Adjusted the contraption quality algorithm to get production speed.
+- Infectenser
+  - Damage: 20 -> 30
+  - Range: 3.5 tiles -> 4.5 tiles
+  - Parabots fired by parabots will only hit the direct target they are aiming at, ignoring other enemies.
 - Flag Zombie
   - Base movement speed: 1 -> 2
   - The random movement speed factor for them is no longer fixed at 200%.

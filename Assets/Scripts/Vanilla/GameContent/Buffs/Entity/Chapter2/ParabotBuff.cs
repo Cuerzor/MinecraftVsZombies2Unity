@@ -71,13 +71,14 @@ namespace MVZ2.GameContent.Buffs.Entities
                 Vector3 otherCenter = target.GetCenter();
                 var shootParams = new ProjectileShootArgs(entity.GetSpawnParams())
                 {
-                    damage = 20,
+                    damage = BOT_DAMAGE,
                     faction = GetFaction(buff),
                     position = centerPos,
                     projectileID = VanillaProjectileID.parabot,
                     soundID = VanillaSoundID.bow,
                     velocity = (otherCenter - centerPos).normalized * 10,
                 };
+                shootParams.spawnParam.SetProperty(LogicProjectileProps.LOCKED_TARGET_ID, new EntityID(target));
                 var projectile = entity.ShootProjectile(shootParams);
                 if (projectile != null)
                 {
@@ -112,7 +113,7 @@ namespace MVZ2.GameContent.Buffs.Entities
             var level = entity.Level;
             var range = 50;
             Vector3 centerPos = entity.GetCenter();
-            entity.Explode(centerPos, range, GetFaction(buff), 500, new DamageEffectList(VanillaDamageEffects.EXPLOSION, VanillaDamageEffects.DAMAGE_BOTH_ARMOR_AND_BODY, VanillaDamageEffects.MUTE));
+            entity.Explode(centerPos, range, GetFaction(buff), EXPLODE_DAMAGE, new DamageEffectList(VanillaDamageEffects.EXPLOSION, VanillaDamageEffects.DAMAGE_BOTH_ARMOR_AND_BODY, VanillaDamageEffects.MUTE));
 
             Explosion.Spawn(entity, centerPos, range);
             entity.PlaySound(VanillaSoundID.explosion);
@@ -166,7 +167,9 @@ namespace MVZ2.GameContent.Buffs.Entities
         public static readonly VanillaBuffPropertyMeta<int> PROP_EXPLODE_TIME = new VanillaBuffPropertyMeta<int>("ExplodeTime");
         public const int MAX_COOLDOWN = 45;
         public const int MAX_EXPLODE_TIME = 24;
-        public const float RANGE = 280;
+        public const float BOT_DAMAGE = 30;
+        public const float EXPLODE_DAMAGE = 500;
+        public const float RANGE = 360;
         private ParabotDetector detector;
     }
 }

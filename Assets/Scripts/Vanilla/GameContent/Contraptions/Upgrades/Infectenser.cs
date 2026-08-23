@@ -38,7 +38,8 @@ namespace MVZ2.GameContent.Contraptions
             var projectile = base.Shoot(entity);
             if (projectile != null)
             {
-                projectile.Timeout = Mathf.CeilToInt(entity.GetRange() / entity.GetShotVelocity().magnitude);
+                var realRange = entity.GetRange() - entity.GetShotOffset().x;
+                projectile.Timeout = Mathf.CeilToInt(realRange / entity.GetShotVelocity().magnitude);
             }
             return projectile;
         }

@@ -207,6 +207,7 @@
         <variable name="entity_damage">property("mvz2:entity/damage")</variable>
         <variable name="entity_speed">property("mvz2:entity/speed")</variable>
         <variable name="entity_range">property("mvz2:entity/range")</variable>
+        <variable name="entity_range_in_tiles">property("mvz2:entity/range") / 80</variable>
 
         <variable name="redstone_value">property("mvz2:entity/energyValue", "mvz2:redstone", "entity")</variable>
 
@@ -1163,7 +1164,7 @@
                 <variable name="continuous_damage">property("mvz2:entity_behaviour/autotrap/continuous_damage_multiplier") * global("mvz2:entity_damage")</variable>
                 <variable name="continuous_dps">local("continuous_damage") / property("mvz2:entity_behaviour/autotrap/trapped_damage_interval")</variable>
                 <variable name="evoked_damage">property("mvz2:entity_behaviour/autotrap/evoked_damage_multiplier") * global("mvz2:entity_damage")</variable>
-                <variable name="evoked_range">global("mvz2:entity_range") / 80</variable>
+                <variable name="evoked_range">global("mvz2:entity_range_in_tiles")</variable>
             </variables>
             <header>
                 <p>自动兽夹会夹住踩到它的第一个敌人，将其困住并持续造成伤害直到其死亡。之后自动兽夹便可以再次被使用。</p>
@@ -1178,7 +1179,7 @@
         </entry>
         <entry id="mvz2:nesting_tnt">
             <variables>
-                <variable name="radius">global("mvz2:entity_range") / 80</variable>
+                <variable name="radius">global("mvz2:entity_range_in_tiles")</variable>
             </variables>
             <header>
                 <p>套娃TNT在触发后会爆炸，并生成一个更小的套娃TNT的蓝图掉落物，使得它可以连续爆炸三次。</p>
@@ -1273,6 +1274,9 @@
 
         <!-- Upgrades 1 -->
         <entry id="mvz2:infectenser">
+            <variables>
+                <variable name="evocation_damage">500</variable>
+            </variables>
             <tags>
                 <tag id="mvz2:placement_infectenser" />
             </tags>
@@ -1280,9 +1284,9 @@
                 <p>传染发射器发射既能造成伤害又能寄生敌人的寄生机器人。被寄生的敌人会朝周围敌人发射新的寄生机器人。</p>
             </header>
             <properties>
-                <p>射程：<![CDATA[<color=red>3.5格</color>]]></p>
+                <p>射程：<![CDATA[<color=red><var id="mvz2:entity_range_in_tiles" />格</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
-                <p>技能：<![CDATA[<color=red>使所有寄生中的机器人自爆</color>]]></p>
+                <p>技能：<![CDATA[<color=red>使所有寄生中的机器人自爆，造成<var local="evocation_damage" />点伤害</color>]]></p>
             </properties>
             <flavor>
                 <p>传染发射器曾荣获设备尔病毒学奖，但由于疫情原因，颁奖典礼未能举行。</p>

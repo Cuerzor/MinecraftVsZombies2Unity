@@ -1546,7 +1546,8 @@
                 <bool name="mvz2:upgradeBlueprint" value="true" />
                 <id name="mvz2:upgradeFrom" value="mvz2:small_dispenser" />
 
-                <float name="mvz2:range" value="255" />
+                <float name="mvz2:damage" value="30" />
+                <float name="mvz2:range" value="360" />
                 <id name="mvz2:projectileId" value="mvz2:parabot" />
                 <id name="mvz2:shootSound" value="mvz2:bow" />
                 <id name="mvz2:placement" value="mvz2:upgrade" />
