@@ -135,6 +135,14 @@ namespace MVZ2.Vanilla.Enemies
             enemy.SetProperty<bool>(IMMUNE_SLOWING, value);
         }
         #endregion
+
+        #region 近战攻击倍率
+        public static readonly PropertyMeta<float> MELEE_ATTACK_MULTIPLIER = Get<float>("melee_attack_multiplier");
+        public static float GetMeleeAttackMultiplier(this Entity enemy, bool ignoreBuffs = false)
+        {
+            return enemy.GetProperty<float>(MELEE_ATTACK_MULTIPLIER, ignoreBuffs: ignoreBuffs);
+        }
+        #endregion
     }
 }
 

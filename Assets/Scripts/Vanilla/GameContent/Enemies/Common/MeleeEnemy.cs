@@ -99,7 +99,7 @@ namespace MVZ2.Vanilla.Enemies
                 vel.x *= 0.8f;
             }
             enemy.Velocity = vel;
-            var damage = enemy.GetDamage() * enemy.GetAttackSpeed() / 30f;
+            var damage = enemy.GetDamage() * enemy.GetAttackSpeed() * enemy.GetMeleeAttackMultiplier() / 30f;
             target.TakeDamage(damage, new DamageEffectList(VanillaDamageEffects.MUTE, VanillaDamageEffects.ENEMY_MELEE), enemy);
             enemy.Level.Triggers.RunCallback(VanillaLevelCallbacks.POST_ENEMY_MELEE_ATTACK, new VanillaLevelCallbacks.EnemyMeleeAttackParams(enemy, target, damage));
         }

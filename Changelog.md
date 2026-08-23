@@ -24,6 +24,8 @@
   - Z-axis volume of knife projectiles: 2 -> 6
 - Pistenser
   - Evocation target count: 10 -> ∞
+- Totenser
+  - Effect of weakness: Damage lowered to 0 -> Melee attack damage lowered to 0
 - Dream Crystal
   - Toughness: 2000 -> 3000
 - Black Hole Bomb

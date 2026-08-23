@@ -477,7 +477,7 @@
             <properties>
                 <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red>15（飞镖），20/秒（火焰）</color>]]></p>
-                <p>特点：<![CDATA[<color=red>飞镖上的箭毒会让<tag id="mvz2:shell" enum="mvz2:flesh" />怪物肌肉松弛而无法造成伤害</color>]]></p>
+                <p>特点：<![CDATA[<color=red>飞镖上的箭毒会让<tag id="mvz2:shell" enum="mvz2:flesh" />怪物肌肉松弛而无法造成近战伤害</color>]]></p>
                 <p>技能：<![CDATA[<color=red>投出穿透敌人的长矛，并留下使敌人虚弱的毒雾轨迹</color>]]></p>
             </properties>
             <flavor>
