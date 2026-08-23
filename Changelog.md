@@ -18,21 +18,23 @@
 - Adjusted the textures of Stone Shield and Emperor Zombie.
 
 ### Balance
-- Broken Lock
-  - Recharge time reduction ratio: 1:1 -> 2:1
-- Silvenser
-  - Z-axis volume of knife projectiles: 2 -> 6
-- Nuke
-  - Evocation: Breaks its own tile -> Breaks all tiles within a 3x3 range
 - Soul Furnace
   - Adjusted the contraption quality algorithm to get fuel.
-- Nether Reactor Core
-  - Fastest production time: 15s -> 6s
-  - Adjusted the contraption quality algorithm to get production speed.
+- Silvenser
+  - Z-axis volume of knife projectiles: 2 -> 6
 - Pistenser
   - Evocation target count: 10 -> ∞
 - Dream Crystal
   - Toughness: 2000 -> 3000
+- Black Hole Bomb
+  - Recharge Time: Very Long -> Long
+- Nuke
+  - Evocation: Breaks its own tile -> Breaks all tiles within a 3x3 range
+- Nether Reactor Core
+  - Fastest production time: 15s -> 6s
+  - Adjusted the contraption quality algorithm to get production speed.
+- Broken Lock
+  - Recharge time reduction ratio: 1:1 -> 2:1
 
 ## Fixed
 - Fixed the issue where the charging animation of Tesla Coil would continue to play even when it was disabled.

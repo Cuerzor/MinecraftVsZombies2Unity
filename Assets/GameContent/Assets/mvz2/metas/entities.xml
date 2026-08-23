@@ -993,7 +993,7 @@
                 <bool name="mvz2:instantTrigger" value="true" />
 
                 <int name="mvz2:cost" value="125" />
-                <id name="mvz2:rechargeId" value="mvz2:very_long" />
+                <id name="mvz2:rechargeId" value="mvz2:long" />
             </properties>
         </entity>
         <entity template="contraption" id="desire_pot" name="欲望壶" tooltip="复制怪物身上的星之碎片，最多三次">
