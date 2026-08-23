@@ -662,7 +662,7 @@
             <properties>
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:defensive" value="true" />
-                <float name="mvz2:maxHealth" value="2000" />
+                <float name="mvz2:maxHealth" value="3000" />
                 <id name="mvz2:placeSound" value="mvz2:crystal_place" />
                 <id name="mvz2:deathSound" value="mvz2:crystal_break" />
                 <id name="mvz2:hitSound" value="mvz2:crystal" />

@@ -29,8 +29,10 @@
 - Nether Reactor Core
   - Fastest production time: 15s -> 6s
   - Adjusted the contraption quality algorithm to get production speed.
-- Pistenser:
+- Pistenser
   - Evocation target count: 10 -> ∞
+- Dream Crystal
+  - Toughness: 2000 -> 3000
 
 ## Fixed
 - Fixed the issue where the charging animation of Tesla Coil would continue to play even when it was disabled.
