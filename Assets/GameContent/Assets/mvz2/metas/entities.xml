@@ -2459,7 +2459,7 @@
                 <behaviour operator="add" id="mvz2:zombie_cat/model" />
                 <properties behaviour="mvz2:enemy_self_revival">
                     <int name="revive_times" value="8"/>
-                    <float name="revive_stun_seconds" value="1"/>
+                    <float name="revive_stun_seconds" value="0"/>
                 </properties>
             </behaviours>
             <properties>

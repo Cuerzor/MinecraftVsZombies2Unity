@@ -36,6 +36,8 @@
 - Nether Reactor Core
   - Fastest production time: 15s -> 6s
   - Adjusted the contraption quality algorithm to get production speed.
+- Zombie Cat
+  - Stun duration after revival: 1 second -> 0 second
 - Broken Lock
   - Recharge time reduction ratio: 1:1 -> 2:1
 
