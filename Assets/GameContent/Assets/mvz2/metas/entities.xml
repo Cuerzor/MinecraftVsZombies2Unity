@@ -2472,7 +2472,7 @@
                 <id name="mvz2:deathSound" value="mvz2:zombie_cat_death" />
                 <id name="mvz2:shape" value="mvz2:cat" />
 
-                <int name="mvz2:cost" value="150" />
+                <int name="mvz2:cost" value="125" />
                 <int name="mvz2:teleporter_cost" value="-100" />
             </properties>
         </entity>
