@@ -137,7 +137,7 @@ namespace MVZ2.Vanilla.Enemies
         #endregion
 
         #region 近战攻击倍率
-        public static readonly PropertyMeta<float> MELEE_ATTACK_MULTIPLIER = Get<float>("melee_attack_multiplier");
+        public static readonly PropertyMeta<float> MELEE_ATTACK_MULTIPLIER = Get<float>("melee_attack_multiplier", 1f);
         public static float GetMeleeAttackMultiplier(this Entity enemy, bool ignoreBuffs = false)
         {
             return enemy.GetProperty<float>(MELEE_ATTACK_MULTIPLIER, ignoreBuffs: ignoreBuffs);
