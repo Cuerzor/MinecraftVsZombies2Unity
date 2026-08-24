@@ -10,6 +10,7 @@ using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 
 namespace MVZ2.Vanilla.Projectiles
@@ -98,108 +99,59 @@ namespace MVZ2.Vanilla.Projectiles
             offset = entity.ModifyShotOffset(offset);
             return entity.Position + offset;
         }
+
         public static Vector3 GetLobVelocity(Vector3 source, Vector3 target, float maxY, float gravity, bool passesMaxY = true)
         {
-            //问题：已知y = a[(x - h)]^2 + k经过原点，求h。
+            Vector3 relative = target - source;
+            float horiLength = new Vector2(relative.x, relative.z).magnitude; // 水平距离
+            float vertLength = relative.y;                              // 垂直位移
+            float relativeMaxY = maxY - source.y;                    // 最高点相对高度
 
-            //其中，x为点的x值，y为点的y值，a为偏曲率，h为抛物线对称轴，k为最大高度。
-            //因为抛物线经过原点，故得：
-            //0 = a(-h) ^ 2 + k
-            //0 = ah ^ 2 + k
-            //a = -k / h ^ 2
-
-            //将a = -k / h ^ 2 代入y = a[(x - h)]^2 + k，得：
-            //y = (-k/h^2) * (x-h)^2 + k
-            //y = (-k/h^2) * (x^2 - 2xh + h^2) + k
-            //y = -k * (x^2 - 2xh + h^2) / h^2 + k
-            //y = (-kx^2 + 2kxh - kh^2) / h^2 + k
-            //y = -kx^2/h^2 + 2kx/h - k + k
-            //y = -kx^2/h^2 + 2kx/h
-            //y = (-kx^2 + 2kxh)/
-            //yh^2 = -kx^2 + 2kxh
-            //yh^2 - 2kxh + kx^2 = 0
-
-            //通过二次函数求根公式x = (-b±√(b^2 - 4ac))/ (2a)可得：
-            //h = (2kx±√(4k^2x^2 - 4kx^2y))/ 2y
-            //h = (kx±√(x^2 * (k^2 - k*y)))/ y
-
-            //当y = 0时，h = x / 2
-            //其中，如果点(x, y)在靠近Y轴一侧，则
-            //h = (kx+√(x^2 * (k^2 - k*y)))/ y
-            //如果点在(x, y)在远离Y轴一侧，则
-            //h = (kx-√(x^2 * (k^2 - k*y)))/ y
-
-            //当k > 0时，函数向下开口，y≤k
-            //当k < 0时，函数向上开口，y≥k
-            //当k = 0时，h不存在
-            //当x = 0时，函数在x = 0上有无数个值
-
-            var relativePosition = target - source;
-            var k = maxY - source.y;
-            if (k > 0)
+            // 边界检查（保留原逻辑）
+            if (relativeMaxY > 0)
             {
-                if (relativePosition.y > k)
-                    throw new ArgumentException("If maxY is positive, it must be greater than target.y.");
+                if (vertLength > relativeMaxY)
+                    throw new ArgumentException("目标高度不能超过最高点");
                 if (gravity < 0)
-                    throw new ArgumentException("If maxY is positive, the gravity must be positive.");
+                    throw new ArgumentException("重力方向需与最高点方向一致");
             }
-            else if (k < 0)
+            else if (relativeMaxY < 0)
             {
-                if (relativePosition.y > k)
-                    throw new ArgumentException("If maxY is negative, it must be less than target.y.");
-                if (gravity < 0)
-                    throw new ArgumentException("If maxY is negative, the gravity must be negative.");
+                if (vertLength < relativeMaxY)
+                    throw new ArgumentException("目标高度不能低于最低点");
+                if (gravity > 0)
+                    throw new ArgumentException("重力方向需与最低点方向一致");
+            }
+            else
+                throw new InvalidOperationException("最高点不能与起点高度相同");
+
+            // 垂直初速度（向上为正方向）
+            float vertInitialSpeed = Mathf.Sqrt(2 * gravity * relativeMaxY);
+
+            // 水平初速度
+            float horiInitialSpeed;
+            if (Mathf.Approximately(horiLength, 0f))
+            {
+                // 原地起跳，水平速度为 0
+                horiInitialSpeed = 0f;
+            }
+            else if (Mathf.Approximately(vertLength, 0f))
+            {
+                // 起点与目标同高，使用极限公式
+                horiInitialSpeed = horiLength * Mathf.Sqrt(gravity / (8 * relativeMaxY));
             }
             else
             {
-                throw new InvalidOperationException("MaxY cannot be equal to source.y.");
+                float sqrtTerm = horiLength * Mathf.Sqrt(2 * gravity * (relativeMaxY - vertLength));
+                if (passesMaxY) // 目标在下降段
+                    horiInitialSpeed = (vertInitialSpeed * horiLength - sqrtTerm) / (2 * vertLength);
+                else            // 目标在上升段
+                    horiInitialSpeed = (vertInitialSpeed * horiLength + sqrtTerm) / (2 * vertLength);
             }
 
-            var horiVector = new Vector2(relativePosition.x, relativePosition.z);
-            var horiDirection = horiVector.normalized;
-            var length = horiVector.magnitude;
-            // 到达最高点t帧过后的y速度y1 = -gt
-            // 到达最高点t帧过后的y位置 = k + y1 * (1 + t) / 2
-            // 按照目标的最终y位置求出到达最高点后的时间。
-            var sign = passesMaxY ? -1 : 1;
-            var a = -gravity / 2;
-            var b = 0;
-            var c = k - relativePosition.y;
-            var fallTime = (-b + sign * Mathf.Sqrt(b * b - 4 * a * c)) / (2 * a);
-            if (Mathf.Approximately(length, 0))
-            {
-                // 两点位置一致
-                return new Vector3(0, fallTime * gravity, 0);
-            }
-
-            // 两点位置不同
-            float highestLength;
-            if (Mathf.Approximately(relativePosition.y, 0))
-            {
-                highestLength = length * 0.5f;
-            }
-            else
-            {
-                var sqrMaxY = Mathf.Pow(k, 2);
-                var sqrLength = Mathf.Pow(length, 2);
-                var factor = Mathf.Sqrt(sqrLength * (sqrMaxY - k * relativePosition.y));
-                highestLength = (k * length + sign * factor) / relativePosition.y;
-            }
-            // 根据后半段时间求出总时间。
-            var fallPercent = (length - highestLength) / length;
-            var totalTime = fallTime / fallPercent;
-            var ascendTime = totalTime - fallTime;
-
-            // 根据总时间获取水平移速。
-            var velHori = length / totalTime;
-
-            // 到达最高点的y位置 k = y1 + g * (1 + t) / 2
-            // 所以 y1 = k - g * (1 + t) / 2
-            // 获取垂直移速y1。
-            var velVert = gravity * ascendTime;
-
-            var hori = horiDirection * velHori;
-            return new Vector3(hori.x, velVert, hori.y);
+            // 构建水平方向向量
+            Vector2 horDir = new Vector2(relative.x, relative.z).normalized;
+            return new Vector3(horDir.x * horiInitialSpeed, vertInitialSpeed, horDir.y * horiInitialSpeed);
         }
         public static Vector3 GetLobVelocityByTime(Vector3 source, Vector3 target, float maxTime, float gravity)
         {

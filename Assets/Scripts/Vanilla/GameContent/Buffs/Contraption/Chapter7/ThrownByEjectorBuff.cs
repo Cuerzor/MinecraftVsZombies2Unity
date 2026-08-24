@@ -4,6 +4,7 @@ using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Modifiers;
 using MVZ2.Vanilla.Properties;
 using MVZ2.Vanilla.Shells;
 using MVZ2Logic.Entities;
@@ -23,7 +24,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
         public ThrownByEjectorBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new FloatModifier(EngineEntityProps.FRICTION, NumberOperator.Set, 0));
-            AddModifier(new FloatModifier(EngineEntityProps.GRAVITY, NumberOperator.Set, 1));
+            AddModifier(new FloatModifier(EngineEntityProps.GRAVITY, NumberOperator.Set, 1, priority: VanillaModifierPriorities.FORCE));
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_HOSTILE, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_FRIENDLY, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
             AddTrigger(LevelCallbacks.POST_ENTITY_COLLISION, PostEntityCollisionCallback);
