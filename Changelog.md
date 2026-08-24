@@ -22,6 +22,7 @@
   - Adjusted the contraption quality algorithm to get fuel.
 - Silvenser
   - Z-axis volume of knife projectiles: 2 -> 6
+  - Damage: 15 -> 20。
 - Pistenser
   - Evocation target count: 10 -> ∞
 - Totenser
