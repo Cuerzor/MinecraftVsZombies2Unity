@@ -38,6 +38,7 @@
   - Adjusted the contraption quality algorithm to get production speed.
 - Zombie Cat
   - Stun duration after revival: 1 second -> 0 second
+  - Probability of Wisp Fly Spawn: 50% -> 100% (Hard), 50% (Other Difficulties)
 - Broken Lock
   - Recharge time reduction ratio: 1:1 -> 2:1
 

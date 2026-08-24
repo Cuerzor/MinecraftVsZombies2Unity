@@ -31,6 +31,7 @@ namespace MVZ2.GameContent.Difficulties
         public static readonly VanillaDifficultyPropertyMeta<int> SKELETON_HORSE_JUMP_TIMES = Get<int>("skeletonHorseJumpTimes", 1);
         public static readonly VanillaDifficultyPropertyMeta<int> WICKED_HERMIT_ZOMBIE_STUN_TIME = Get<int>("wickedHermitZombieStunTime", 150);
         public static readonly VanillaDifficultyPropertyMeta<float> WISP_FLY_DAMAGE_MULTIPLIER = Get<float>("wisp_fly_damage_multiplier", 1.5f);
+        public static readonly VanillaDifficultyPropertyMeta<float> ZOMBIE_CAT_SPAWN_WISP_FLY_CHANCE = Get<float>("zombie_cat_spawn_wisp_fly_chance", 50f);
         public static int GetNapstablookParalysisTime(this LevelEngine level) => level.GetProperty<int>(NAPSTABLOOK_PARALYSIS_TIME);
         public static float GetGhastDamageMultiplier(this LevelEngine level) => level.GetProperty<float>(GHAST_DAMAGE_MULTIPLIER);
         public static int GetMotherTerrorEggCount(this LevelEngine level) => level.GetProperty<int>(MOTHER_TERROR_EGG_COUNT);
@@ -39,6 +40,7 @@ namespace MVZ2.GameContent.Difficulties
         public static int GetSkeletonHorseJumpTimes(this LevelEngine level) => level.GetProperty<int>(SKELETON_HORSE_JUMP_TIMES);
         public static int GetWickedHermitZombieStunTime(this LevelEngine level) => level.GetProperty<int>(WICKED_HERMIT_ZOMBIE_STUN_TIME);
         public static float GetWispFlyDamageMultiplier(this LevelEngine level) => level.GetProperty<float>(WISP_FLY_DAMAGE_MULTIPLIER);
+        public static float GetZombieCatSpawnWispFlyChance(this LevelEngine level) => level.GetProperty<float>(ZOMBIE_CAT_SPAWN_WISP_FLY_CHANCE);
 
         // Bosses
         public static readonly VanillaDifficultyPropertyMeta<bool> FRANKENSTEIN_INSTANT_STEEL = Get<bool>("frankensteinInstantSteel");
