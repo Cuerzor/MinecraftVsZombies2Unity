@@ -23,6 +23,7 @@
 - Silvenser
   - Z-axis volume of knife projectiles: 2 -> 6
   - Damage: 15 -> 20。
+  - Reduced the amount in I, Zombie mode.
 - Pistenser
   - Evocation target count: 10 -> ∞
 - Totenser

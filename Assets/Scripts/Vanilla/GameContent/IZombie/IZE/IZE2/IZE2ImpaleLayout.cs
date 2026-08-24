@@ -18,8 +18,8 @@ namespace MVZ2.GameContent.IZombie
         {
             RandomFill(map, VanillaContraptionID.gravityPad, 5, rng);
 
-            RandomFill(map, VanillaContraptionID.silvenser, 10, rng);
-            RandomFill(map, VanillaContraptionID.pistenser, 3, rng);
+            RandomFill(map, VanillaContraptionID.silvenser, 8, rng);
+            RandomFill(map, VanillaContraptionID.pistenser, 5, rng);
             RandomFill(map, VanillaContraptionID.stoneEye, 2, rng);
             RandomFill(map, VanillaContraptionID.totenser, 2, rng);
         }
