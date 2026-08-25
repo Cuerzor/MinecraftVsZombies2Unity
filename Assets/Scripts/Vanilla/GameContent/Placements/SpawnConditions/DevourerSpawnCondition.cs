@@ -12,14 +12,14 @@ namespace MVZ2.GameContent.Placements
 {
     public class DevourerSpawnCondition : ContraptionSpawnCondition
     {
-        protected override NamespaceID? GetSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        public override NamespaceID? GetEntitySpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
             var entities = grid.GetEntities();
             if (entities.Count() <= 0 || !entities.Any(e => Devourer.CanMill(e)))
                 return VanillaGridStatus.onlyCanMill;
 
             // 被占用。
-            return base.GetSpawnErrorOfGrid(placement, grid, entity);
+            return base.GetEntitySpawnErrorOfGrid(placement, grid, entity);
         }
     }
 }

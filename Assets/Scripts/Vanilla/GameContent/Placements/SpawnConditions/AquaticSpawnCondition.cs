@@ -11,7 +11,7 @@ namespace MVZ2.GameContent.Placements
 {
     public class AquaticSpawnCondition : ContraptionSpawnCondition
     {
-        protected override NamespaceID? GetSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        public override NamespaceID? GetTerrainSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
             if (grid.IsCloud())
                 return VanillaGridStatus.notOnAir;
@@ -19,14 +19,14 @@ namespace MVZ2.GameContent.Placements
             if (!grid.IsWater())
                 return VanillaGridStatus.notOnLand;
 
-            var error = base.GetSpawnErrorOfGrid(placement, grid, entity);
-            if (error != null)
-                return error;
-
+            return base.GetTerrainSpawnErrorOfGrid(placement, grid, entity);
+        }
+        public override NamespaceID? GetEntitySpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        {
             var carrier = grid.GetLayerEntity(VanillaGridLayers.carrier);
             if (carrier != null)
                 return VanillaGridStatus.alreadyTaken;
-            return null;
+            return base.GetEntitySpawnErrorOfGrid(placement, grid, entity);
         }
     }
 }

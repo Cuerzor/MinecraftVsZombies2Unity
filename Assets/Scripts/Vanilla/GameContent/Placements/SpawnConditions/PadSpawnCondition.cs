@@ -11,13 +11,13 @@ namespace MVZ2.GameContent.Placements
 {
     public class PadSpawnCondition : ContraptionSpawnCondition
     {
-        protected override NamespaceID? GetSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        public override NamespaceID? GetTerrainSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
             if (grid.IsCloud())
                 return VanillaGridStatus.notOnAir;
             if (grid.IsWater())
                 return VanillaGridStatus.notOnWater;
-            return base.GetSpawnErrorOfGrid(placement, grid, entity);
+            return base.GetTerrainSpawnErrorOfGrid(placement, grid, entity);
         }
     }
 }

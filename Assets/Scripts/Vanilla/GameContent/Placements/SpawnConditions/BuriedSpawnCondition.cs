@@ -11,7 +11,7 @@ namespace MVZ2.GameContent.Placements
 {
     public class BuriedSpawnCondition : ContraptionSpawnCondition
     {
-        protected override NamespaceID? GetSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        public override NamespaceID? GetTerrainSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
             if (grid.IsCloud())
                 return VanillaGridStatus.notOnAir;
@@ -19,7 +19,7 @@ namespace MVZ2.GameContent.Placements
                 return VanillaGridStatus.notOnPlane;
             if (grid.IsWater())
                 return VanillaGridStatus.notOnWater;
-            return base.GetSpawnErrorOfGrid(placement, grid, entity);
+            return base.GetTerrainSpawnErrorOfGrid(placement, grid, entity);
         }
     }
 }

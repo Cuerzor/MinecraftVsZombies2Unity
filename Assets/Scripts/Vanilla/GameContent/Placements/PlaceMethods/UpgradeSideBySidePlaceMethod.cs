@@ -22,15 +22,16 @@ namespace MVZ2.GameContent.Placements
                 return false;
             if (!IsCellOfUpgrade(entity, toPlace))
                 return false;
-            return IsSideBySide(entity, toPlace);
+            return IsSideBySide(placement, entity, toPlace);
         }
         public override NamespaceID? GetPlaceError(PlacementDefinition placement, LawnGrid grid, EntityDefinition toPlace)
         {
-            var entity = GetTargetEntity(grid, toPlace);
+            var sideTile = grid.Level.GetGrid(grid.Column + 1, grid.Lane);
+            var entity = GetTargetEntity(placement, grid, toPlace);
             if (entity == null || !entity.Exists())
                 return VanillaGridStatus.onlyUpgrade;
 
-            var sideEntity = GetRightEntity(grid, toPlace);
+            var sideEntity = GetTargetEntity(placement, sideTile, toPlace);
             if (sideEntity == null || !sideEntity.Exists())
                 return VanillaGridStatus.onlyUpgrade;
 
@@ -38,11 +39,13 @@ namespace MVZ2.GameContent.Placements
         }
         public override PlaceOutput PlaceEntity(PlacementDefinition placement, LawnGrid grid, EntityDefinition toPlace, PlaceParams param)
         {
-            var entity = GetTargetEntity(grid, toPlace);
+            var sideTile = grid.Level.GetGrid(grid.Column + 1, grid.Lane);
+
+            var entity = GetTargetEntity(placement, grid, toPlace);
             if (entity == null || !entity.Exists())
                 return PlaceOutput.InvalidOutput;
 
-            var sideEntity = GetRightEntity(grid, toPlace);
+            var sideEntity = GetTargetEntity(placement, sideTile, toPlace);
             if (sideEntity == null || !sideEntity.Exists())
                 return PlaceOutput.InvalidOutput;
 
@@ -62,15 +65,15 @@ namespace MVZ2.GameContent.Placements
                 increaseTakenConveyorSeed = true,
             };
         }
-        private bool IsSideBySide(Entity entity, EntityDefinition toPlace)
+        private bool IsSideBySide(PlacementDefinition placement, Entity entity, EntityDefinition toPlace)
         {
             var column = entity.GetColumn();
             var lane = entity.GetLane();
             var gridRight = entity.Level.GetGrid(column + 1, lane);
-            if (GetTargetEntity(gridRight, toPlace) != null)
+            if (GetTargetEntity(placement, gridRight, toPlace) != null)
                 return true;
             var gridLeft = entity.Level.GetGrid(column - 1, lane);
-            if (GetTargetEntity(gridLeft, toPlace) != null)
+            if (GetTargetEntity(placement, gridLeft, toPlace) != null)
                 return true;
             return false;
         }
@@ -78,9 +81,11 @@ namespace MVZ2.GameContent.Placements
         {
             return entity.CanUpgradeToContraption(toPlace) && entity.GetProtector() == null && entity.IsFriendlyEntity();
         }
-        private Entity? GetTargetEntity(LawnGrid? grid, EntityDefinition toPlace)
+        private Entity? GetTargetEntity(PlacementDefinition placement, LawnGrid? grid, EntityDefinition toPlace)
         {
             if (grid == null)
+                return null;
+            if (NamespaceID.IsValid(placement.GetTerrainSpawnErrorOfGrid(grid, toPlace)))
                 return null;
             var entities = grid.GetEntities();
             foreach (var ent in entities)
@@ -89,13 +94,6 @@ namespace MVZ2.GameContent.Placements
                     return ent;
             }
             return null;
-        }
-        private Entity? GetRightEntity(LawnGrid grid, EntityDefinition toPlace)
-        {
-            var column = grid.Column;
-            var lane = grid.Lane;
-            var gridRight = grid.Level.GetGrid(column + 1, lane);
-            return GetTargetEntity(gridRight, toPlace);
         }
     }
 }

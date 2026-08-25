@@ -11,15 +11,12 @@ namespace MVZ2.GameContent.Placements
 {
     public class AmphibiousSpawnCondition : ContraptionSpawnCondition
     {
-        protected override NamespaceID? GetSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        public override NamespaceID? GetTerrainSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
             if (grid.IsCloud())
                 return VanillaGridStatus.notOnAir;
 
-            var error = base.GetSpawnErrorOfGrid(placement, grid, entity);
-            if (error != null)
-                return error;
-            return null;
+            return base.GetTerrainSpawnErrorOfGrid(placement, grid, entity);
         }
     }
 }

@@ -31,10 +31,28 @@ namespace MVZ2.GameContent.Placements
             }
             return null;
         }
-        protected virtual NamespaceID? GetSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        private NamespaceID? GetSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        {
+            var terrainSpawnError = GetTerrainSpawnErrorOfGrid(placement, grid, entity);
+            if (NamespaceID.IsValid(terrainSpawnError))
+            {
+                return terrainSpawnError;
+            }
+            var entitySpawnError = GetEntitySpawnErrorOfGrid(placement, grid, entity);
+            if (NamespaceID.IsValid(entitySpawnError))
+            {
+                return entitySpawnError;
+            }
+            return null;
+        }
+        public override NamespaceID? GetTerrainSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
             if (grid.IsDisabled())
                 return VanillaGridStatus.gridDisabled;
+            return null;
+        }
+        public override NamespaceID? GetEntitySpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        {
             var layersToTake = entity.GetGridLayersToTake();
             var conflictEntities = layersToTake.Select(l => grid.GetLayerEntity(l)).OfType<Entity>();
             if (conflictEntities.Count() > 0)

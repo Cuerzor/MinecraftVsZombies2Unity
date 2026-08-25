@@ -13,5 +13,13 @@ namespace MVZ2.GameContent.Placements
         {
             return null;
         }
+        public override NamespaceID? GetEntitySpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        {
+            return null;
+        }
+        public override NamespaceID? GetTerrainSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
+        {
+            return null;
+        }
     }
 }
