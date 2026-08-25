@@ -1673,6 +1673,7 @@
 
                 <int name="mvz2:waterInteraction" value="0" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
+                <idArray name="mvz2:counter_for" value="mvz2:low_enemy mvz2:flying_enemy" />
 
                 <int name="mvz2:cost" value="225" />
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
