@@ -1665,7 +1665,7 @@
 
                 <bool name="mvz2:upgradeBlueprint" value="true" />
                 <id name="mvz2:upgradeFrom" value="mvz2:lily_pad" />
-                <id name="mvz2:placement" value="mvz2:upgrade" />
+                <id name="mvz2:placement" value="mvz2:cattail" />
 
                 <id name="mvz2:shell" value="mvz2:metal" />
                 <id name="mvz2:placeSound" value="mvz2:metal_break" />
