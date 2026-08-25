@@ -12,14 +12,18 @@
 - When a projectile entity undergoes angular rotation due to directional deflection, its hitbox will now rotate correctly.
 - Necrotombstone and Mine TNT now destroy themselves if they're on a slab tile.
 - Adjusted the smashing sfx of Mutant Zombie in water.
-- The base movement speed of Flag Zombies has been increased to 2, and the random movement speed factor for them is no longer fixed at 200%.
-- Soul Furnaces' evocation will now refill their fuel first, but they can no longer continue to refill fuel during the evocation.
 - Adjusted the texture of the tiles destroyed by Nukes, to enhance their visibility against dark backgrounds.
 - Adjusted the textures of Stone Shield and Emperor Zombie.
 
 ### Balance
 - Soul Furnace
   - Adjusted the contraption quality algorithm to get fuel.
+    - The cost of a contraption required to fill an empty Soul Furnace:
+      - Short recharge time: 330 -> 319
+      - Long recharge time: 90 -> 180
+      - Very Long recharge time: 30 -> 126
+  - When evoked, if the fuel is less than 50%, it will now first replenish the fuel to 50%.
+  - Fuel can no longer be replenished during the evocation.
 - Silvenser
   - Z-axis volume of knife projectiles: 2 -> 6
   - Damage: 15 -> 20。
@@ -37,6 +41,9 @@
 - Nether Reactor Core
   - Fastest production time: 15s -> 6s
   - Adjusted the contraption quality algorithm to get production speed.
+- Flag Zombie
+  - Base movement speed: 1 -> 2
+  - The random movement speed factor for them is no longer fixed at 200%.
 - Zombie Cat
   - Stun duration after revival: 1 second -> 0 second
   - Probability of Wisp Fly Spawn: 50% -> 100% (Hard), 50% (Other Difficulties)

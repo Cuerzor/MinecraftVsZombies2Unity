@@ -92,7 +92,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             base.OnEvoke(entity);
             var fuel = GetFuel(entity);
-            fuel = Mathf.Max(MAX_FUEL, fuel);
+            fuel = Mathf.Max(EVOKED_REFUEL_TO_AMOUNT, fuel);
             SetFuel(entity, fuel);
             entity.SetEvoked(true);
         }
@@ -223,7 +223,8 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly VanillaEntityPropertyMeta<int> PROP_FUEL = new VanillaEntityPropertyMeta<int>("Fuel");
         public static readonly VanillaEntityPropertyMeta<float> PROP_DISPLAY_FUEL = new VanillaEntityPropertyMeta<float>("DisplayFuel");
         public const int MAX_FUEL = 120;
-        public const int REFUEL_THRESOLD = 20;
+        public const int EVOKED_REFUEL_TO_AMOUNT = MAX_FUEL / 2;
+        public const int REFUEL_THRESOLD = MAX_FUEL / 6;
         public const int I_ZOMBIE_FUEL = REFUEL_THRESOLD + 5;
         private Detector evocationDetector;
         private List<IEntityCollider> detectBuffer = new List<IEntityCollider>();

@@ -365,6 +365,7 @@
         <entry id="mvz2:soul_furnace">
             <variables>
                 <variable name="splash_damage">global("mvz2:entity_damage") * 0.25</variable>
+                <variable name="evocation_refuel_percentage">50</variable>
             </variables>
             <header>
                 <p><![CDATA[灵魂熔炉发射恐怖的<tag id="mvz2:fire" />灵魂火，但需要烧毁前方的器械来补充燃料。]]></p>
@@ -374,7 +375,7 @@
                 <p>溅射伤害：<![CDATA[<color=red><var local="splash_damage" />（不伤害直接目标）</color>]]></p>
                 <p>特点：<![CDATA[<color=red>需要烧毁器械补充燃料；有燃料时<tag id="mvz2:light_source" />发光</color>]]></p>
                 <p>燃料上限：<![CDATA[<color=red>120</color>]]></p>
-                <p>技能：<![CDATA[<color=red>充满并消耗所有燃料，每有一发燃料被消耗，便随机对一个敌人发射爆炸灵魂火球</color>]]></p>
+                <p>技能：<![CDATA[<color=red>将燃料补至<var local="evocation_refuel_percentage"/>%。然后消耗所有燃料，每有一发燃料被消耗，便随机对一个敌人发射爆炸灵魂火球</color>]]></p>
             </properties>
             <flavor>
                 <p>灵魂熔炉里面到底烧的什么？是罪人的灵魂吗？还是地狱的矿渣？别想太多，它只是个南瓜灯。</p>
