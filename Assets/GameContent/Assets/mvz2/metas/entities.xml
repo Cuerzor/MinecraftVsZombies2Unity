@@ -3935,7 +3935,7 @@
                 <float name="mvz2:damage" value="80" />
                 <vector3 name="mvz2:size" x="24" y="24" z="24" />
                 <bool name="mvz2:piercing" value="true" />
-                <int name="mvz2:maxTimeout" value="300" />
+                <int name="mvz2:maxTimeout" value="150" />
                 <float name="mvz2:gravity" value="1" />
                 <int name="mvz2:waterInteraction" value="0" />
                 <bool name="mvz2:killOnGround" value="false" />
