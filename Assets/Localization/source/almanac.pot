@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-22 06:35+0800\n"
+"POT-Creation-Date: 2026-08-28 10:01+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -926,7 +926,7 @@ msgid ""
 "溅射伤害：<color=red><var local=\"splash_damage\" />（不伤害直接目标）</color>\n"
 "特点：<color=red>需要烧毁器械补充燃料；有燃料时<tag id=\"mvz2:light_source\" />发光</color>\n"
 "燃料上限：<color=red>120</color>\n"
-"技能：<color=red>充满并消耗所有燃料，每有一发燃料被消耗，便随机对一个敌人发射爆炸灵魂火球</color>"
+"技能：<color=red>将燃料补至<var local=\"evocation_refuel_percentage\"/>%。然后消耗所有燃料，每有一发燃料被消耗，便随机对一个敌人发射爆炸灵魂火球</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:soul_furnace
@@ -1065,7 +1065,7 @@ msgid ""
 "发射速度：<color=red>1.5秒</color>\n"
 "伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
 "特点：<color=red>能够攻击高处的敌人</color>\n"
-"技能：<color=red>向至多10个敌人发射穿甲的巨型尖刺</color>"
+"技能：<color=red>向所有敌人发射巨型尖刺，造成180点穿甲伤害</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:pistenser
@@ -1088,7 +1088,7 @@ msgctxt "contraptions.description"
 msgid ""
 "发射速度：<color=red>1.5秒</color>\n"
 "伤害：<color=red>15（飞镖），20/秒（火焰）</color>\n"
-"特点：<color=red>飞镖上的箭毒会让<tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />怪物肌肉松弛而无法造成伤害</color>\n"
+"特点：<color=red>飞镖上的箭毒会让<tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />怪物肌肉松弛而无法造成近战伤害</color>\n"
 "技能：<color=red>投出穿透敌人的长矛，并留下使敌人虚弱的毒雾轨迹</color>"
 msgstr ""
 
@@ -2106,9 +2106,9 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"射程：<color=red>3.5格</color>\n"
+"射程：<color=red><var id=\"mvz2:entity_range_in_tiles\" />格</color>\n"
 "伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
-"技能：<color=red>使所有寄生中的机器人自爆</color>"
+"技能：<color=red>使所有寄生中的机器人自爆，造成<var local=\"evocation_damage\" />点伤害</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:infectenser
@@ -3705,7 +3705,7 @@ msgstr ""
 #. Properties for artifacts mvz2:krakens_tentacle
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>友方器械攻击速度x200%，但会向随机方向发射子弹</color>"
+msgid "效果：<color=red>友方器械攻击速度x150%，但会向随机方向发射子弹</color>"
 msgstr ""
 
 #. Flavor for artifacts mvz2:krakens_tentacle
@@ -7858,7 +7858,7 @@ msgstr ""
 #. Tooltip for artifact mvz2:krakens_tentacle
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "友方器械攻击速度x200%，但会向随机方向发射子弹"
+msgid "友方器械攻击速度x150%，但会向随机方向发射子弹"
 msgstr ""
 
 #. Name for artifact mvz2:gale_leaf
