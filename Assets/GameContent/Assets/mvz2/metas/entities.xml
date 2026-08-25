@@ -2978,7 +2978,7 @@
         </entity>
         <entity template="enemy" id="creaking" name="嘎枝" deathMessage="负债累累">
             <behaviours>
-                <behaviour operator="remove" id="mvz2:enemy_melee" />
+                <behaviour operator="add" id="mvz2:self_damage" />
                 <behaviour operator="add" id="mvz2:fragmented" />
                 <behaviour operator="add" id="mvz2:remove_on_death" />
             </behaviours>
@@ -2988,11 +2988,12 @@
                 <bool name="mvz2:immune_instakill" value="true" />
                 <bool name="mvz2:immuneVortex" value="true" />
                 <bool name="mvz2:undead" value="false" />
+                <bool name="mvz2:invisible" value="true" />
                 <id name="mvz2:shape" value="mvz2:creaking" />
                 <id name="mvz2:shell" value="mvz2:wood" />
                 <id name="mvz2:crySound" value="mvz2:creaking_idle" />
                 <id name="mvz2:deathSound" value="mvz2:creaking_death" />
-                <float name="mvz2:maxHealth" value="3000" />
+                <float name="mvz2:maxHealth" value="6000" />
                 <float name="mvz2:mass" value="1" />
                 <float name="mvz2:speed" value="2" />
                 <int name="mvz2:waterInteraction" value="3" />

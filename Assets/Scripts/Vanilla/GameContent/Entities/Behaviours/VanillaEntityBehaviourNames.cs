@@ -24,6 +24,7 @@ namespace MVZ2.Vanilla.Entities
         public const string destroyOutsideWater = "destroy_outside_water";
         public const string destroyOnSlab = "destroy_on_slab";
         public const string burnAtDay = "burn_at_day";
+        public const string selfDamage = "self_damage";
         public const string explodeOnFireDeath = "explode_on_fire_death";
         public const string ignitable = "ignitable";
         public const string ignitable_Trigger = "ignitable/trigger";
