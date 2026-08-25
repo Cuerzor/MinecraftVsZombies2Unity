@@ -29,6 +29,11 @@ namespace MVZ2.GameContent.Contraptions
             base.UpdateAI(entity);
             UpdateState(entity);
         }
+        protected override void UpdateLogic(Entity entity)
+        {
+            base.UpdateLogic(entity);
+            entity.SetAnimationFloat("AttackSpeed", entity.GetAttackSpeed());
+        }
 
         public void UpdateState(Entity entity)
         {
