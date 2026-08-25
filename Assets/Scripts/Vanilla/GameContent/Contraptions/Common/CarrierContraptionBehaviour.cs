@@ -23,7 +23,11 @@ namespace MVZ2.GameContent.Contraptions
         }
         public void UpdateCarrier(Entity carrier)
         {
-            foreach (var aura in carrier.GetAuraEffects())
+            foreach (var aura in carrier.GetAuraEffects<CarrierAura>())
+            {
+                aura.UpdateAura();
+            }
+            foreach (var aura in carrier.GetAuraEffects<PassengerAura>())
             {
                 aura.UpdateAura();
             }
@@ -38,7 +42,7 @@ namespace MVZ2.GameContent.Contraptions
             public override void GetAuraTargets(AuraEffect auraEffect, List<IBuffTarget> results)
             {
                 var sourceEnt = auraEffect.Source.GetEntity();
-                if (sourceEnt != null && sourceEnt.HasPassenger())
+                if (sourceEnt != null && sourceEnt.IsOnGround && sourceEnt.HasPassenger())
                 {
                     results.Add(sourceEnt);
                 }
@@ -52,7 +56,7 @@ namespace MVZ2.GameContent.Contraptions
             public override void GetAuraTargets(AuraEffect auraEffect, List<IBuffTarget> results)
             {
                 var sourceEnt = auraEffect.Source.GetEntity();
-                if (sourceEnt == null)
+                if (sourceEnt == null || !sourceEnt.IsOnGround)
                     return;
                 var grids = sourceEnt.GetGridsToTake();
                 foreach (var grid in grids)
