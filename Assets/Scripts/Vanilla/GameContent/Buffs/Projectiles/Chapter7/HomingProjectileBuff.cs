@@ -9,6 +9,8 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Modifiers;
+using UnityEditor.iOS;
+using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Projectiles
 {
@@ -43,10 +45,17 @@ namespace MVZ2.GameContent.Buffs.Projectiles
             if (target != null && (target.ExistsAndAlive() || target.AssumeAlive()))
             {
                 var speed = GetSpeed(buff);
-                var direction = projectile.Velocity.normalized;
-                var targetDirection = target.GetCenter() - projectile.GetCenter();
-                var newDirection = (targetDirection * 0.1f + direction * 0.9f).normalized;
-                projectile.Velocity = newDirection * speed;
+
+                var velocity = projectile.Velocity;
+                Vector3 targetDir = (target.GetCenter() - projectile.GetCenter()).normalized;
+
+                if (targetDir != Vector3.zero)
+                {
+                    Vector3 currentDir = velocity.normalized;
+                    float maxRadiansDelta = GetTurnRate(buff) * Mathf.Deg2Rad;
+                    Vector3 newDir = Vector3.RotateTowards(currentDir, targetDir, maxRadiansDelta, 0.0f);
+                    projectile.Velocity = newDir * speed;
+                }
             }
         }
         public static Entity? FindNextTarget(Entity projectile)
@@ -55,6 +64,8 @@ namespace MVZ2.GameContent.Buffs.Projectiles
         }
         public static float GetSpeed(Buff buff) => buff.GetProperty<float>(PROP_SPEED);
         public static void SetSpeed(Buff buff, float value) => buff.SetProperty(PROP_SPEED, value);
+        public static float GetTurnRate(Buff buff) => buff.GetProperty<float>(PROP_TURN_RATE);
+        public static void SetTurnRate(Buff buff, float value) => buff.SetProperty(PROP_TURN_RATE, value);
         public static EntityID? GetTarget(Buff buff) => buff.GetProperty<EntityID>(PROP_TARGET);
         public static void SetTarget(Buff buff, EntityID? value) => buff.SetProperty(PROP_TARGET, value);
 
@@ -64,6 +75,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
             factionTarget = FactionTarget.Hostile
         };
         public static readonly VanillaBuffPropertyMeta<float> PROP_SPEED = new VanillaBuffPropertyMeta<float>("speed");
+        public static readonly VanillaBuffPropertyMeta<float> PROP_TURN_RATE = new VanillaBuffPropertyMeta<float>("turn_rate", 30f);
         public static readonly VanillaBuffPropertyMeta<EntityID> PROP_TARGET = new VanillaBuffPropertyMeta<EntityID>("target");
     }
 }
