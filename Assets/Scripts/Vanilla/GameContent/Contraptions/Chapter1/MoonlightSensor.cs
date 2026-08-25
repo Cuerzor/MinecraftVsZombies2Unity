@@ -43,6 +43,7 @@ namespace MVZ2.GameContent.Contraptions
             base.UpdateLogic(entity);
             entity.UpdateShineRing();
             entity.SetAnimationBool("Upgraded", GetUpgraded(entity));
+            entity.SetModelProperty("Day", entity.Level.IsDay() && !entity.HasBuff<NocturnalBuff>());
         }
 
         public override bool CanEvoke(Entity entity)

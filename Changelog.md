@@ -7,6 +7,7 @@
 - Added entity material "Apparition" and "Wither Bone", removed entity material "Nether".
 - Added entity attribute "Fire Immunity".
 - Added screenshot function.
+- Added textures for Moonlight Sensors in their daytime form.
 
 ## Modified
 - When a projectile entity undergoes angular rotation due to directional deflection, its hitbox will now rotate correctly.
