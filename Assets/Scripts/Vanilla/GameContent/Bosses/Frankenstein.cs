@@ -9,6 +9,7 @@ using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Bosses;
+using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Level;
@@ -17,6 +18,7 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Buffs;
+using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
@@ -34,6 +36,7 @@ namespace MVZ2.GameContent.Bosses
     {
         public Frankenstein(string nsp, string name) : base(nsp, name)
         {
+            AddTrigger(VanillaLevelCallbacks.APPLY_DAMAGE_SPECIAL_EFFECTS, ApplyDamageSpecialEffectsCallback);
         }
 
         #region 回调
@@ -76,12 +79,15 @@ namespace MVZ2.GameContent.Bosses
             entity.SetAnimationBool("MissileVisible", entity.State == STATE_MISSILE && stateMachine.GetSubState(entity) == SUBSTATE_MISSILE_AIM);
             entity.SetAnimationFloat("ActionSpeed", GetFrankensteinActionSpeed(entity));
         }
-        public override void PostTakeDamage(DamageOutput result)
+        public void ApplyDamageSpecialEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams args, CallbackResult result)
         {
-            base.PostTakeDamage(result);
-            if (result.BodyResult != null && result.BodyResult.HasEffect(VanillaDamageEffects.STUNS_FRANKENSTEIN))
+            var output = args.output;
+            var entity = output.Entity;
+            if (!entity.HasBehaviour(this))
+                return;
+            if (output.BodyResult != null && output.BodyResult.HasEffect(VanillaDamageEffects.STUNS_FRANKENSTEIN))
             {
-                Paralyze(result.Entity, result.BodyResult.Source);
+                Paralyze(entity, output.BodyResult.Source);
             }
         }
         public override void PostDeath(Entity boss, DeathInfo damageInfo)
