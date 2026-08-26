@@ -348,6 +348,7 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public const string chillProjectile = "chill_projectile";
             public const string homingProjectile = "homing_projectile";
+            public const string airSlashDamageUp = "air_slash_damage_up"; 
         }
         public static class Effect
         {

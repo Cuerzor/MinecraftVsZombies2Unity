@@ -70,6 +70,7 @@ namespace MVZ2.GameContent.Contraptions
         public const string netherReactorCore = "nether_reactor_core";
 
         public const string freezenser = "freezenser";
+        public const string maplewheel = "maplewheel";
         public const string teleporter = "teleporter";
         public const string ejector = "ejector";
         public const string onbashira = "onbashira";
@@ -160,6 +161,7 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly NamespaceID netherReactorCore = Get(VanillaContraptionNames.netherReactorCore);
 
         public static readonly NamespaceID freezenser = Get(VanillaContraptionNames.freezenser);
+        public static readonly NamespaceID maplewheel = Get(VanillaContraptionNames.maplewheel);
         public static readonly NamespaceID teleporter = Get(VanillaContraptionNames.teleporter);
         public static readonly NamespaceID ejector = Get(VanillaContraptionNames.ejector);
         public static readonly NamespaceID onbashira = Get(VanillaContraptionNames.onbashira);

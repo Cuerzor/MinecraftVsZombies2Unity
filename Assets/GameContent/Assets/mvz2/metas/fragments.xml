@@ -396,6 +396,13 @@
             <key hex="#1b67a3" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="maplewheel">
+        <colorKeys>
+            <key hex="#e73612" time="0.45" />
+            <key hex="#e7e7e7" time="0.9" />
+            <key hex="#44331f" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="teleporter">
         <colorKeys>
             <key hex="#4a8cd6" time="0.5" />

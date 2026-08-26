@@ -232,6 +232,7 @@
     <buff id="raining" polarity="mixed" level="5000" target="level" />
     <buff id="gale_leaf_artifact_pickup" polarity="none" level="5000" target="entity" />
     <buff id="carrying_other_targetable" polarity="none" level="5000" target="contraption" />
+    <buff id="air_slash_damage_up" polarity="positive" level="1000" target="projectile" />
     
 
     <!-- Random China -->

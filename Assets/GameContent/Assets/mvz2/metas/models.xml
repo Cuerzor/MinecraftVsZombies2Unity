@@ -93,6 +93,7 @@
     <model name="nether_reactor_core" type="entity" path="mvz2:contraption/palace/nether_reactor_core" width="64" height="64" xOffset="0" yOffset="-28" />
 
     <model name="freezenser" type="entity" path="mvz2:contraption/mountain/freezenser" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="maplewheel" type="entity" path="mvz2:contraption/mountain/maplewheel" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="teleporter" type="entity" path="mvz2:contraption/mountain/teleporter" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="ejector" type="entity" path="mvz2:contraption/mountain/ejector" width="80" height="80" xOffset="0" yOffset="-28" />
     <model name="onbashira" type="entity" path="mvz2:contraption/mountain/onbashira" width="64" height="128" xOffset="0" yOffset="-60" />
@@ -596,6 +597,7 @@
 
     <model name="frozen_orb" type="entity" path="mvz2:projectile/frozen_orb" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="meowmere_projectile" type="entity" path="mvz2:projectile/meowmere_projectile" width="32" height="32" xOffset="0" yOffset="-12" />
+    <model name="air_slash" type="entity" path="mvz2:projectile/air_slash" width="32" height="10" xOffset="0" yOffset="-5" />
 
     <!-- Armors -->
     <model name="leather_cap" type="armor" path="mvz2:armor/leather_cap" width="33" height="14" xOffset="0" yOffset="0" />

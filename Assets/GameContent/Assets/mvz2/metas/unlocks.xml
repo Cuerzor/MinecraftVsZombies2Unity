@@ -130,6 +130,7 @@
     
     <!-- Mountain Contraptions -->
     <group id="contraption.freezenser"><conditions><condition required="mvz2:level.mountain_1" /></conditions></group>
+    <group id="contraption.maplewheel"><conditions><condition required="mvz2:level.mountain_2" /></conditions></group>
     <group id="contraption.teleporter"><conditions><condition required="mvz2:level.mountain_3" /></conditions></group>
     <group id="contraption.ejector"><conditions><condition required="mvz2:level.mountain_4" /></conditions></group>
     <group id="contraption.onbashira"><conditions><condition required="mvz2:level.mountain_6" /></conditions></group>

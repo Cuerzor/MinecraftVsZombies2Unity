@@ -2033,6 +2033,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23905935e49780f4887652109c79ba1f
+    m_Address: mvz2:contraption/mountain/maplewheel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 23c593eab5a6c084f8279e3507114199
     m_Address: mvz2:chapter_transition/title_palace
     m_ReadOnly: 0
@@ -3332,6 +3339,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a96b255d38cc7048a1424e25495a9cd
+    m_Address: mvz2:entity/contraption/maplewheel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3aac9f3148d3e9f468542c971e602070
     m_Address: mvz2:effect/petrified_shards
@@ -5810,6 +5824,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6395785da2b21484bbcee7985aa14917
+    m_Address: mvz2:mobile_blueprint/maplewheel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 63abeb6d055623e498bc8080744c6d37
     m_Address: mvz2:entity/effect/petrified_shard
     m_ReadOnly: 0
@@ -6099,6 +6120,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6a18698f112f8244db4b1e5de5873248
     m_Address: mvz2:ui/effect/crushing_wall_right
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a6763a0d343750499324e7697ca6b90
+    m_Address: mvz2:entity/projectile/air_slash
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -11329,6 +11357,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c8f8cee546c5cba49bc64a7eff0a6f45
+    m_Address: mvz2:projectile/air_slash
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c8fd47e22cd27394895621742e549446
     m_Address: mvz2:entity/projectile/fireball
