@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-28 10:01+0800\n"
+"POT-Creation-Date: 2026-08-28 10:04+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3042,6 +3042,53 @@ msgid ""
 "一：为了解决现实中青蛙吃萤火虫会中毒的问题，我们干脆不加入萤火虫。\n"
 "二：我们反悔了，这次我们加入了萤火虫，但是只是方块的视觉效果。\n"
 "三：现在我们真的加入“萤火虫”了。"
+msgstr ""
+
+#. Header for enemies mvz2:axolotl_suit
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid "美西螈号机甲碾压路上的一切器械。在被摧毁后，它的<ref=[enemies]mvz2:axolotl_suit_pilot>驾驶员</ref>会弹射逃生。"
+msgstr ""
+
+#. Flavor for enemies mvz2:axolotl_suit
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid ""
+"水下勘探全向步行观测与地形移动机甲(A.X.O.L.O.T.L. Suit)是一系列旨在保护驾驶员免受极端环境伤害的机械装置。Mk.II 是最新版本，到目前为止，只有亚特兰蒂斯（Atlantis）将其用于自身高价值的水下设施相关操作。\n"
+"\n"
+"· 该装甲与外界环境完全隔绝。\n"
+"· 强大的液压四肢允许操纵物体和在复杂环境中移动。\n"
+"· 后置推进器在水中环境中提供机动性。\n"
+"· 因型号所限，无法加装扩展内容。\n"
+"\n"
+"“美西螈号机甲：它让你重获新生。”\n"
+"\n"
+"“首次进入美西螈号动力机甲会觉得自己瞬间变得无所不能，所向披靡，这是很正常的现象。专业的机甲操作员往往要接受数周的培训来治疗这种心理现象。尽量不要自大得上头了。”"
+msgstr ""
+
+#. Header for enemies mvz2:axolotl_suit_pilot
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid "美西螈号驾驶员会在一定时间后重新召唤它的<ref=[enemies]mvz2:axolotl_suit>机甲</ref>。"
+msgstr ""
+
+#. Properties for enemies mvz2:axolotl_suit_pilot
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid ""
+"生命：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
+"速度：<color=red><var id=\"mvz2:entity_speed\" /></color>\n"
+"再召唤间隔：<color=red><var local=\"recall_seconds\"/>秒（受攻击速度影响）</color>"
+msgstr ""
+
+#. Flavor for enemies mvz2:axolotl_suit_pilot
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid ""
+"有个倒霉蛋遭遇了事故，他被迫困在恐怖的水世界，他尝试通过吃铅糖喝漂白剂水来维持生命体征。\n"
+"但他的运气很好，他在海底找到了一堆美西螈号机甲碎片，最终通过神奇的逆向科技和更高等级的工作台重新造了一台机甲出来，最终使用火箭逃出了那颗星球。\n"
+"\n"
+"你问他后来怎么变成溺尸的？呃——我刚才讲的是这个家伙的一名同事的故事。"
 msgstr ""
 
 #. Header for artifacts mvz2:almanac
@@ -6935,6 +6982,24 @@ msgstr ""
 #: Entity meta file
 msgctxt "death_message"
 msgid "嗡嗡嗡嗡嗡嗡嗡嗡嗡嗡"
+msgstr ""
+
+#. Name for entity mvz2:axolotl_suit
+#: Entity meta file
+msgctxt "entity.name"
+msgid "美西螈号机甲"
+msgstr ""
+
+#. Death message for entity mvz2:axolotl_suit
+#: Entity meta file
+msgctxt "death_message"
+msgid "沉入海底"
+msgstr ""
+
+#. Name for entity mvz2:axolotl_suit_pilot
+#: Entity meta file
+msgctxt "entity.name"
+msgid "美西螈号驾驶员"
 msgstr ""
 
 #. Name for entity mvz2:mutant_zombie

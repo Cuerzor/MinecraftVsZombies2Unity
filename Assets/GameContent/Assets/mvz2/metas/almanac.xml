@@ -1981,6 +1981,50 @@
                 <p>三：现在我们真的加入“萤火虫”了。</p>
             </flavor>
         </entry>
+
+        <entry />
+        <entry />
+        <entry />
+        <entry id="mvz2:axolotl_suit">
+            <header>
+                <p>美西螈号机甲碾压路上的一切器械。在被摧毁后，它的<![CDATA[<ref=[enemies]mvz2:axolotl_suit_pilot>驾驶员</ref>]]>会弹射逃生。</p>
+            </header>
+            <properties>
+                <p>生命：<![CDATA[<color=red><var id="mvz2:entity_health" /></color>]]></p>
+                <p>速度：<![CDATA[<color=red><var id="mvz2:entity_speed" /></color>]]></p>
+            </properties>
+            <flavor>
+                <p>水下勘探全向步行观测与地形移动机甲(A.X.O.L.O.T.L. Suit)是一系列旨在保护驾驶员免受极端环境伤害的机械装置。Mk.II 是最新版本，到目前为止，只有亚特兰蒂斯（Atlantis）将其用于自身高价值的水下设施相关操作。</p>
+                <p/>
+                <p>· 该装甲与外界环境完全隔绝。</p>
+                <p>· 强大的液压四肢允许操纵物体和在复杂环境中移动。</p>
+                <p>· 后置推进器在水中环境中提供机动性。</p>
+                <p>· 因型号所限，无法加装扩展内容。</p>
+                <p/>
+                <p>“美西螈号机甲：它让你重获新生。”</p>
+                <p/>
+                <p>“首次进入美西螈号动力机甲会觉得自己瞬间变得无所不能，所向披靡，这是很正常的现象。专业的机甲操作员往往要接受数周的培训来治疗这种心理现象。尽量不要自大得上头了。”</p>
+            </flavor>
+        </entry>
+        <entry id="mvz2:axolotl_suit_pilot">
+            <variables>
+                <variable name="recall_seconds">10</variable>
+            </variables>
+            <header>
+                <p>美西螈号驾驶员会在一定时间后重新召唤它的<![CDATA[<ref=[enemies]mvz2:axolotl_suit>机甲</ref>]]>。</p>
+            </header>
+            <properties>
+                <p>生命：<![CDATA[<color=red><var id="mvz2:entity_health" /></color>]]></p>
+                <p>速度：<![CDATA[<color=red><var id="mvz2:entity_speed" /></color>]]></p>
+                <p>再召唤间隔：<![CDATA[<color=red><var local="recall_seconds"/>秒（受攻击速度影响）</color>]]></p>
+            </properties>
+            <flavor>
+                <p>有个倒霉蛋遭遇了事故，他被迫困在恐怖的水世界，他尝试通过吃铅糖喝漂白剂水来维持生命体征。</p>
+                <p>但他的运气很好，他在海底找到了一堆美西螈号机甲碎片，最终通过神奇的逆向科技和更高等级的工作台重新造了一台机甲出来，最终使用火箭逃出了那颗星球。</p>
+                <p/>
+                <p>你问他后来怎么变成溺尸的？呃——我刚才讲的是这个家伙的一名同事的故事。</p>
+            </flavor>
+        </entry>
     </enemies>
     <artifacts>
         <entry id="mvz2:almanac">
