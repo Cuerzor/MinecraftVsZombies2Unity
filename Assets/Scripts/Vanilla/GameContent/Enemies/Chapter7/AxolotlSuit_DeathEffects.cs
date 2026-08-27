@@ -6,6 +6,7 @@ using MVZ2Logic.Entities;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Enemies
@@ -18,11 +19,17 @@ namespace MVZ2.GameContent.Enemies
         }
         public void DeathEffects(Entity entity, DeathInfo info)
         {
-            //var anubisandOffset = ANUBISAND_OFFSET;
-            //anubisandOffset.x *= entity.GetFacingX();
-            //var anubisand = entity.SpawnWithParams(VanillaEnemyID.anubisand, entity.Position + anubisandOffset);
-            //entity.Remove();
+            if (AxolotlSuit.IsEmpty(entity))
+                return;
+            var anubisandOffset = SUMMONED_OFFSET;
+            anubisandOffset.x *= entity.GetFacingX();
+            var spawnParams = entity.GetSpawnParams();
+            spawnParams.EntityVelocity = entity.GetFacingDirection() * -10f;
+            entity.Spawn(VanillaEnemyID.axolotlSuitPilot, entity.Position + anubisandOffset, spawnParams)?.Let(pilot =>
+            {
+                pilot.Health = pilot.GetMaxHealth() * AxolotlSuit.GetPilotHPPercent(entity);
+            });
         }
-        public static readonly Vector3 ANUBISAND_OFFSET = new Vector3(-48, 32, 0);
+        public static readonly Vector3 SUMMONED_OFFSET = new Vector3(0, 32, 0);
     }
 }

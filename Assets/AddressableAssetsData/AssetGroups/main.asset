@@ -178,6 +178,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 03e61dab277a4164baeedf4172fcdc20
+    m_Address: mvz2:mobile_blueprint/axolotl_suit_pilot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 03e6572f91fe33b41bbe79290e5ef125
     m_Address: mvz2:contraption/palace/nether_reactor_core
     m_ReadOnly: 0
@@ -3256,6 +3263,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a160010002fa0e4aa91a0996a004497
+    m_Address: mvz2:entity/enemy/axolotl_suit_pilot_remote
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3a2d8f0334da2b349b397a3ed1cf7b97
     m_Address: mvz2:mobile_blueprint/tnt
     m_ReadOnly: 0
@@ -3550,6 +3564,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e43018f0812da74b9146ffd187ef6c3
+    m_Address: mvz2:entity/axolotl_suit_pilot/summon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3e57f352886e4c34095d087c6410bcda
     m_Address: mvz2:mainmenu/view/mausoleum
     m_ReadOnly: 0
@@ -3619,6 +3640,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3fbed76d17a4efa4083ef7149ebf0576
+    m_Address: mvz2:entity/axolotl_suit/welcome_aboard
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3fc93636fa41c654283fbc1fd97477e5
     m_Address: mvz2:entity/drowned/idle3
@@ -6216,12 +6244,26 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d95e78e58b5b4a4593854813da1824d
+    m_Address: mvz2:robot_smash
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d95ea7001ed94144aa167e3460991f5
     m_Address: mvz2:arcane_intellect
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6da0800b28a9505408b5c44232ecd358
+    m_Address: mvz2:enemy/mountain/axolotl_suit_pilot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6da19dbf3b303ec4d9b46b8bb0e2a338
     m_Address: mvz2:effect/electric_arc
@@ -6614,6 +6656,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75b802266a6749949a7548e0fd5db6fe
+    m_Address: mvz2:mobile_blueprint/axolotl_suit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 75e0ba3997470f34ab558f8f2ea6c6d2
     m_Address: mvz2:effect/thunder_cloud

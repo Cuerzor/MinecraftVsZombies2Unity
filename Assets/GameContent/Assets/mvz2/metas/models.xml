@@ -267,6 +267,9 @@
     <model name="wisp_fly" type="entity" path="mvz2:enemy/palace/wisp_fly" width="24" height="38" xOffset="0" yOffset="-19"/>
 
     <model name="axolotl_suit" type="entity" path="mvz2:enemy/mountain/axolotl_suit" width="90" height="140" xOffset="-10" yOffset="-62" />
+    <model name="axolotl_suit_pilot" type="entity" path="mvz2:enemy/mountain/axolotl_suit_pilot" width="64" height="96" xOffset="10" yOffset="-44">
+        <armorconfig>mvz2:humanoid</armorconfig>
+    </model>
 
     <model name="mutant_zombie" type="entity" path="mvz2:enemy/shrine/mutant_zombie" width="200" height="180" xOffset="0" yOffset="-90" />
     <model name="mega_mutant_zombie" type="entity" path="mvz2:enemy/shrine/mega_mutant_zombie" width="200" height="180" xOffset="0" yOffset="-90" />

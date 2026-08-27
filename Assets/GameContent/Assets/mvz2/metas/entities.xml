@@ -262,6 +262,13 @@
             </properties>
         </humanoid>
         <zombie type="2" parent="humanoid" />
+        <drowned type="2" parent="humanoid" >
+            <properties>
+                <id name="mvz2:crySound" value="mvz2:drowned_cry" />
+                <id name="mvz2:deathSound" value="mvz2:drowned_death" />
+                <int name="mvz2:waterInteraction" value="3" />
+            </properties>
+        </drowned>
         <witherSkeleton type="2" parent="humanoid">
             <properties>
                 <id name="mvz2:shape" value="mvz2:wither_skeleton" />
@@ -2516,18 +2523,21 @@
             <behaviours>
                 <behaviour operator="add" id="mvz2:vehicle_crush" />
                 <behaviour operator="add" id="mvz2:axolotl_suit/death_effects" />
+                <behaviour operator="replace" source="mvz2:enemy_state" id="mvz2:axolotl_suit/state" />
                 <behaviour operator="remove" id="mvz2:enemy_melee" />
             </behaviours>
             <properties>
                 <float name="mvz2:mass" value="2" />
                 <float name="mvz2:speed" value="2" />
                 <float name="mvz2:maxHealth" value="900" />
+                <float name="mvz2:fallResistance" value="10000" />
                 <id name="mvz2:shell" value="mvz2:metal" />
                 <id name="mvz2:shape" value="mvz2:mecha" />
-                <id name="mvz2:crySound" value="mvz2:drowned_cry" />
+                <id name="mvz2:crySound" null="true" />
                 <id name="mvz2:deathSound" value="mvz2:large_explosion" />
                 <int name="mvz2:vehicleInteraction" value="2" />
                 <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:immuneVortex" value="true" />
                 <bool name="mvz2:immune_slowing" value="true" />
                 <bool name="mvz2:undead" value="false" />
                 <vector3 name="mvz2:size" x="64" y="120" z="40" />
@@ -2536,6 +2546,14 @@
                 <int name="mvz2:airInteraction" value="2" />
 
                 <int name="mvz2:cost" value="300" />
+            </properties>
+        </entity>
+        <entity template="drowned" id="axolotl_suit_pilot" name="美西螈号驾驶员" deathMessage="沉入海底">
+            <unlock>
+                <condition required="mvz2:level.mountain_9" />
+            </unlock>
+            <properties>
+                <int name="mvz2:cost" value="125" />
             </properties>
         </entity>
 

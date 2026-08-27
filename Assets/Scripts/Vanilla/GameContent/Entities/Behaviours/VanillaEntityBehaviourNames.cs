@@ -119,6 +119,7 @@ namespace MVZ2.Vanilla.Entities
         public const string crushCarts = "crush_carts";
         public const string rollingGiantBlock = "rolling_giant_block";
 
+        public const string axolotlSuit_State = "axolotl_suit/state";
         public const string axolotlSuit_DeathEffects = "axolotl_suit/death_effects";
         #endregion
 

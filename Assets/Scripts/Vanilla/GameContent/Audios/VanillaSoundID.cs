@@ -31,6 +31,9 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID anvil = Get("anvil");
         public readonly static NamespaceID arcaneIntellect = Get("arcane_intellect");
         public readonly static NamespaceID armorUp = Get("armor_up");
+        public readonly static NamespaceID axolotlSuitAppear = Get("axolotl_suit_appear");
+        public readonly static NamespaceID axolotlSuitEnter = Get("axolotl_suit_enter");
+        public readonly static NamespaceID axolotlSuitSmash = Get("axolotl_suit_smash");
         public readonly static NamespaceID awooga = Get("awooga");
         public readonly static NamespaceID balloonInflate = Get("balloon_inflate");
         public readonly static NamespaceID balloonPop = Get("balloon_pop");
@@ -240,6 +243,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID stone = Get("stone");
         public readonly static NamespaceID stoneHatch = Get("stone_hatch");
         public readonly static NamespaceID stunned = Get("stunned");
+        public readonly static NamespaceID summonAxolotlSuit = Get("summon_axolotl_suit");
         public readonly static NamespaceID sweepingBeam = Get("sweeping_beam");
         public readonly static NamespaceID swing = Get("swing");
         public readonly static NamespaceID teleportUp = Get("teleport_up");

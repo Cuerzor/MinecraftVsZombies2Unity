@@ -594,6 +594,9 @@ MonoBehaviour:
   - name: mobile_blueprint/axolotl_suit
     texture: {fileID: 2800000, guid: 75b802266a6749949a7548e0fd5db6fe, type: 3}
     tags: []
+  - name: mobile_blueprint/axolotl_suit_pilot
+    texture: {fileID: 2800000, guid: 03e61dab277a4164baeedf4172fcdc20, type: 3}
+    tags: []
   - name: mobile_blueprint/beacon
     texture: {fileID: 2800000, guid: af016291e3e050b418ac40e349963a65, type: 3}
     tags: []
@@ -1956,6 +1959,9 @@ MonoBehaviour:
     tags: []
   - name: entity/enemy/axolotl_suit_pilot
     texture: {fileID: 2800000, guid: 98af1675f6dfb284fb53c28ef2c744ed, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit_pilot_remote
+    texture: {fileID: 2800000, guid: 3a160010002fa0e4aa91a0996a004497, type: 3}
     tags: []
   - name: entity/enemy/balloon
     texture: {fileID: 2800000, guid: 92c38217e084470499178a44014b451c, type: 3}
@@ -4387,6 +4393,10 @@ MonoBehaviour:
   - name: mobile_blueprint/axolotl_suit
     index: 0
     sprite: {fileID: 21300000, guid: 75b802266a6749949a7548e0fd5db6fe, type: 3}
+    tags: []
+  - name: mobile_blueprint/axolotl_suit_pilot
+    index: 0
+    sprite: {fileID: 21300000, guid: 03e61dab277a4164baeedf4172fcdc20, type: 3}
     tags: []
   - name: mobile_blueprint/beacon
     index: 0
@@ -8210,6 +8220,10 @@ MonoBehaviour:
   - name: entity/enemy/axolotl_suit_pilot
     index: 4
     sprite: {fileID: -700263263, guid: 98af1675f6dfb284fb53c28ef2c744ed, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit_pilot_remote
+    index: 0
+    sprite: {fileID: 21300000, guid: 3a160010002fa0e4aa91a0996a004497, type: 3}
     tags: []
   - name: entity/enemy/balloon
     index: 0

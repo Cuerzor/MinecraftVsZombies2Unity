@@ -21,6 +21,15 @@
     <sound name="awooga">
         <sample path="mvz2:awooga" weight="1" />
     </sound>
+    <sound name="axolotl_suit_appear" maxCount="1">
+        <sample path="mvz2:entity/axolotl_suit/welcome_aboard" weight="1" />
+    </sound>
+    <sound name="axolotl_suit_enter">
+        <sample path="mvz2:mech_setup" weight="1" />
+    </sound>
+    <sound name="axolotl_suit_smash">
+        <sample path="mvz2:robot_smash" weight="1" />
+    </sound>
     <sound name="axolotl_suit_step">
         <sample path="mvz2:entity/axolotl_suit/step1" weight="1" />
         <sample path="mvz2:entity/axolotl_suit/step2" weight="1" />
@@ -966,6 +975,9 @@
     </sound>
     <sound name="stunned">
         <sample path="mvz2:stunned" weight="1" />
+    </sound>
+    <sound name="summon_axolotl_suit">
+        <sample path="mvz2:entity/axolotl_suit_pilot/summon" weight="1" />
     </sound>
     <sound name="sweeping_beam">
         <sample path="mvz2:sweeping_beam" weight="1" />

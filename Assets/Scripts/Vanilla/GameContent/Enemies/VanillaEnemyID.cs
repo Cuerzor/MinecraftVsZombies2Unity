@@ -51,6 +51,7 @@ namespace MVZ2.GameContent.Enemies
         public const string wispFly = "wisp_fly";
 
         public const string axolotlSuit = "axolotl_suit";
+        public const string axolotlSuitPilot = "axolotl_suit_pilot";
 
         public const string mutantZombie = "mutant_zombie";
         public const string megaMutantZombie = "mega_mutant_zombie";
@@ -120,6 +121,9 @@ namespace MVZ2.GameContent.Enemies
         public static readonly NamespaceID hacker = Get(VanillaEnemyNames.hacker);
         public static readonly NamespaceID zombieCat = Get(VanillaEnemyNames.zombieCat);
         public static readonly NamespaceID wispFly = Get(VanillaEnemyNames.wispFly);
+
+        public static readonly NamespaceID axolotlSuit = Get(VanillaEnemyNames.axolotlSuit);
+        public static readonly NamespaceID axolotlSuitPilot = Get(VanillaEnemyNames.axolotlSuitPilot);
 
         public static readonly NamespaceID mutantZombie = Get(VanillaEnemyNames.mutantZombie);
         public static readonly NamespaceID megaMutantZombie = Get(VanillaEnemyNames.megaMutantZombie);
