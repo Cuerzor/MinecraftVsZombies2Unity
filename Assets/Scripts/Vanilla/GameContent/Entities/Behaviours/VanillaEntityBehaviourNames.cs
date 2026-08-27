@@ -81,6 +81,7 @@ namespace MVZ2.Vanilla.Entities
 
         public const string boatedEnemy = "boated_enemy";
         public const string rickrollDrownAchievement = "rickroll_drown_achievement";
+        public const string vehicleCrush = "vehicle_crush";
 
         public const string humanoidAnimation = "humanoid_animation";
 
@@ -100,6 +101,7 @@ namespace MVZ2.Vanilla.Entities
         public const string skeletonHorse_Animation = "skeleton_horse/animation";
         public const string skeletonHorse_State = "skeleton_horse/state";
         public const string skeletonHorse_Melee = "skeleton_horse/melee";
+        public const string hellChariot_DeathEffects = "hell_chariot/death_effects";
 
         public const string skeletonMage_State = "skeleton_mage/state";
         public const string wickedHermitZombie_State = "wicked_hermit_zombie/state";
@@ -114,8 +116,10 @@ namespace MVZ2.Vanilla.Entities
         public const string hacker_State = "hacker/state";
         public const string zombieCat_Model = "zombie_cat/model";
         public const string wispFly_SelfDestruct = "wisp_fly/self_destruct";
-        public const string crusherBall = "crusher_ball";
+        public const string crushCarts = "crush_carts";
         public const string rollingGiantBlock = "rolling_giant_block";
+
+        public const string axolotlSuit_DeathEffects = "axolotl_suit/death_effects";
         #endregion
 
         #region Obstacles

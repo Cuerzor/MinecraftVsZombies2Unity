@@ -2,6 +2,7 @@
 
 using MVZ2.GameContent.Difficulties;
 using MVZ2.Vanilla.Entities;
+using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
@@ -11,16 +12,13 @@ using PVZEngine.Tools.Random;
 namespace MVZ2.GameContent.Enemies
 {
     [AutoEntityBehaviourDefinition(VanillaEnemyNames.zombieCat)]
-    public class ZombieCat : EntityBehaviourDefinition
+    public class ZombieCat : EntityBehaviourDefinition, IDeathEffectsBehaviour
     {
         public ZombieCat(string nsp, string name) : base(nsp, name)
         {
         }
-        public override void PostDeath(Entity entity, DeathInfo deathInfo)
+        public void DeathEffects(Entity entity, DeathInfo deathInfo)
         {
-            base.PostDeath(entity, deathInfo);
-            if (!entity.ShouldTriggerDeathEffects(deathInfo))
-                return;
             bool shouldSpawnFly = false;
             if (entity.Level.IsIZombie())
             {

@@ -50,6 +50,8 @@ namespace MVZ2.GameContent.Enemies
         public const string zombieCat = "zombie_cat";
         public const string wispFly = "wisp_fly";
 
+        public const string axolotlSuit = "axolotl_suit";
+
         public const string mutantZombie = "mutant_zombie";
         public const string megaMutantZombie = "mega_mutant_zombie";
         public const string imp = "imp";

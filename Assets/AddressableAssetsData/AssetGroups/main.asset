@@ -1018,6 +1018,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 12ef9cb76c400d549960ea3815f27a46
+    m_Address: mvz2:entity/enemy/axolotl_suit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 12fe029e17a381f4a9df06589a560d7c
     m_Address: mvz2:contraption/castle/thunder_drum
     m_ReadOnly: 0
@@ -1816,6 +1823,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2170649fa3b94804a9096de6008026a5
+    m_Address: mvz2:entity/contraption/cat_tl_mk_ii
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2171d910922ad824c87a850943cb1986
     m_Address: mvz2:talk/dialog_explosive
     m_ReadOnly: 0
@@ -2591,6 +2605,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2eda84769aa89c34b8e0291180a91896
+    m_Address: mvz2:entity/drowned/idle2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2ef60f7a077178f429877e76ff61731a
     m_Address: mvz2:mausoleum_boss
@@ -3599,6 +3620,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3fc93636fa41c654283fbc1fd97477e5
+    m_Address: mvz2:entity/drowned/idle3
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3fd63c7920860ce4f8bc0be1188ae567
     m_Address: mvz2:entity/contraption/gravity_pad
     m_ReadOnly: 0
@@ -4432,6 +4460,13 @@ MonoBehaviour:
     - Main
     - Music
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d6cf9da53c462349b71f9ada2ad86a0
+    m_Address: mvz2:entity/drowned/death1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4d88a598c5aab984891215c1f4414390
     m_Address: mvz2:entity/projectile/giant_spike
     m_ReadOnly: 0
@@ -4732,6 +4767,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 536e279bce921ab42bd87878a76e37b0
+    m_Address: mvz2:units/humanoid/axolotl_suit_pilot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 53824a27cae636544b1d80094c86f879
     m_Address: mvz2:misc/red_dragon_and_byakuren
@@ -5782,6 +5824,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 65b9101a195ec674886afd6b7630f724
+    m_Address: mvz2:entity/drowned/idle1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 65e19b84021afdd41b3219d341be4586
     m_Address: mvz2:icon/glowing_particles
     m_ReadOnly: 0
@@ -5984,6 +6033,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6a8f38176b9526c46a8ab63b2514b9f1
+    m_Address: mvz2:entity/drowned/idle4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6aeedebbc3d6f934c8d4f7afb3614d86
     m_Address: mvz2:artifacts/sweet_sleep_pillow
@@ -7489,6 +7545,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84b4807e2d5835f40b3ed274f6ecb11a
+    m_Address: mvz2:entity/axolotl_suit/step1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 84d24c865b8c9b341a85b8104370a001
     m_Address: mvz2:ui/arcade/clear_trophy
     m_ReadOnly: 0
@@ -8147,6 +8210,13 @@ MonoBehaviour:
     - Main
     - Music
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 90647c9e421f280498de21355c803313
+    m_Address: mvz2:entity/drowned/idle5
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 906ce113fd4d66149af2e0d8c40a4299
     m_Address: mvz2:anvil
     m_ReadOnly: 0
@@ -8636,6 +8706,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98af1675f6dfb284fb53c28ef2c744ed
+    m_Address: mvz2:entity/enemy/axolotl_suit_pilot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 98ceb6465d489164ab22b423d1a3d218
     m_Address: mvz2:mobile_blueprint/wooden_dropper
     m_ReadOnly: 0
@@ -8670,6 +8747,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99f86b6ae5622a442acb03d9a4d0079b
+    m_Address: mvz2:enemy/mountain/axolotl_suit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 99fdfba4aeff67c43b3124c97a3a0dd7
     m_Address: mvz2:entity/pickup/redstone
@@ -10154,6 +10238,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b5f161f070748784db54dbb9f8197299
+    m_Address: mvz2:entity/axolotl_suit/step2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b5fe632b2a79a0e41823bc43324571bf
     m_Address: mvz2:effect/combat_smash_trail
@@ -12114,6 +12205,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dad5c5b715d0ef643b5d0a8f9d9d5d9d
+    m_Address: mvz2:entity/drowned/death2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dadd7d630cd112f4e8151abc45659e12
     m_Address: mvz2:contraption/palace/amethyst_pylon
     m_ReadOnly: 0
@@ -12319,6 +12417,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dea58aae988949442b99a1421fddf4ac
     m_Address: mvz2:effect/zombie_block
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: deb74e74f1a1e1c47912a17f544cfcee
+    m_Address: mvz2:units/humanoid/humanoid
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

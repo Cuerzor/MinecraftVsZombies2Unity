@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: axolotl_suit_armors
+  m_Controller: {fileID: 9100000, guid: 6c2a484f1902d3b4b86b574194516de5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4710962f85bd6594ca6834339f17b888, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7bc711f15247bd14f8eebbb0b2457d3d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b8bb7a4db50e4dc4ca7e6f27cf7dbbe6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 851c1185ff4589740b0e68f8da8ccbbd, type: 2}

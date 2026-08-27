@@ -591,6 +591,9 @@ MonoBehaviour:
   - name: mobile_blueprint/autotrap
     texture: {fileID: 2800000, guid: 6dc64b2a1e31a4a4f852c619472d2ba1, type: 3}
     tags: []
+  - name: mobile_blueprint/axolotl_suit
+    texture: {fileID: 2800000, guid: 75b802266a6749949a7548e0fd5db6fe, type: 3}
+    tags: []
   - name: mobile_blueprint/beacon
     texture: {fileID: 2800000, guid: af016291e3e050b418ac40e349963a65, type: 3}
     tags: []
@@ -1948,6 +1951,12 @@ MonoBehaviour:
   - name: entity/enemy/anubisand
     texture: {fileID: 2800000, guid: bb9cb8c96cd65034d97163c167129eb9, type: 3}
     tags: []
+  - name: entity/enemy/axolotl_suit
+    texture: {fileID: 2800000, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit_pilot
+    texture: {fileID: 2800000, guid: 98af1675f6dfb284fb53c28ef2c744ed, type: 3}
+    tags: []
   - name: entity/enemy/balloon
     texture: {fileID: 2800000, guid: 92c38217e084470499178a44014b451c, type: 3}
     tags: []
@@ -2310,6 +2319,12 @@ MonoBehaviour:
     tags: []
   - name: entity/projectile/locked_chest_trashes
     texture: {fileID: 2800000, guid: 103c5d2ba5cab4749ab48c91a1fd44e6, type: 3}
+    tags: []
+  - name: entity/projectile/meowmere
+    texture: {fileID: 2800000, guid: 8e6454431bfd21440b5fa9d9ca51c836, type: 3}
+    tags: []
+  - name: entity/projectile/meowmere_trail
+    texture: {fileID: 2800000, guid: 257bc5c3433ee614282c88ea0ab9ae8d, type: 3}
     tags: []
   - name: entity/projectile/mine_tnt_seed
     texture: {fileID: 2800000, guid: b71c1daafbba0124f80126366dd3a4e6, type: 3}
@@ -4368,6 +4383,10 @@ MonoBehaviour:
   - name: mobile_blueprint/autotrap
     index: 0
     sprite: {fileID: 21300000, guid: 6dc64b2a1e31a4a4f852c619472d2ba1, type: 3}
+    tags: []
+  - name: mobile_blueprint/axolotl_suit
+    index: 0
+    sprite: {fileID: 21300000, guid: 75b802266a6749949a7548e0fd5db6fe, type: 3}
     tags: []
   - name: mobile_blueprint/beacon
     index: 0
@@ -8104,6 +8123,94 @@ MonoBehaviour:
     index: 8
     sprite: {fileID: 689961320, guid: bb9cb8c96cd65034d97163c167129eb9, type: 3}
     tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 0
+    sprite: {fileID: -1271653780, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 1
+    sprite: {fileID: -602966562, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 2
+    sprite: {fileID: 931770440, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 3
+    sprite: {fileID: -984975046, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 4
+    sprite: {fileID: 967760699, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 5
+    sprite: {fileID: -878973404, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 6
+    sprite: {fileID: -227885823, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 7
+    sprite: {fileID: -1549807540, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 8
+    sprite: {fileID: 408983923, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 9
+    sprite: {fileID: -559387818, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 10
+    sprite: {fileID: -1483406643, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 11
+    sprite: {fileID: -1499490042, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 12
+    sprite: {fileID: 1645508013, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 13
+    sprite: {fileID: -26710072, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 14
+    sprite: {fileID: -1312674606, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 15
+    sprite: {fileID: 1589245643, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit
+    index: 16
+    sprite: {fileID: -1115823168, guid: 12ef9cb76c400d549960ea3815f27a46, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit_pilot
+    index: 0
+    sprite: {fileID: 402075342, guid: 98af1675f6dfb284fb53c28ef2c744ed, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit_pilot
+    index: 1
+    sprite: {fileID: 900390771, guid: 98af1675f6dfb284fb53c28ef2c744ed, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit_pilot
+    index: 2
+    sprite: {fileID: 698525225, guid: 98af1675f6dfb284fb53c28ef2c744ed, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit_pilot
+    index: 3
+    sprite: {fileID: -774130456, guid: 98af1675f6dfb284fb53c28ef2c744ed, type: 3}
+    tags: []
+  - name: entity/enemy/axolotl_suit_pilot
+    index: 4
+    sprite: {fileID: -700263263, guid: 98af1675f6dfb284fb53c28ef2c744ed, type: 3}
+    tags: []
   - name: entity/enemy/balloon
     index: 0
     sprite: {fileID: 21300000, guid: 92c38217e084470499178a44014b451c, type: 3}
@@ -9651,6 +9758,14 @@ MonoBehaviour:
   - name: entity/projectile/locked_chest_trashes
     index: 19
     sprite: {fileID: -1022046964, guid: 103c5d2ba5cab4749ab48c91a1fd44e6, type: 3}
+    tags: []
+  - name: entity/projectile/meowmere
+    index: 0
+    sprite: {fileID: 21300000, guid: 8e6454431bfd21440b5fa9d9ca51c836, type: 3}
+    tags: []
+  - name: entity/projectile/meowmere_trail
+    index: 0
+    sprite: {fileID: 21300000, guid: 257bc5c3433ee614282c88ea0ab9ae8d, type: 3}
     tags: []
   - name: entity/projectile/mine_tnt_seed
     index: 0

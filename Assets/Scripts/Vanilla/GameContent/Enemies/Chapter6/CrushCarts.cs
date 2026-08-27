@@ -11,10 +11,10 @@ using PVZEngine.Modifiers;
 
 namespace MVZ2.GameContent.Enemies
 {
-    [AutoEntityBehaviourDefinition(VanillaEntityBehaviourNames.crusherBall)]
-    public class CrusherBall : EntityBehaviourDefinition
+    [AutoEntityBehaviourDefinition(VanillaEntityBehaviourNames.crushCarts)]
+    public class CrushCarts : EntityBehaviourDefinition
     {
-        public CrusherBall(string nsp, string name) : base(nsp, name)
+        public CrushCarts(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_HOSTILE, IntegerOperator.BitOr, EntityCollisionHelper.MASK_CART));
         }
@@ -26,19 +26,14 @@ namespace MVZ2.GameContent.Enemies
             if (!collision.Collider.IsForMain())
                 return;
             var other = collision.Other;
-            var bale = collision.Entity;
-            if (!bale.IsHostile(other))
+            if (other.Type != EntityTypes.CART)
+                return;
+            var entity = collision.Entity;
+            if (!entity.IsHostile(other))
                 return;
 
-            if (other.Type == EntityTypes.CART)
-            {
-                other.Die(bale);
-                other.PlaySound(VanillaSoundID.smash);
-            }
-            else if (other.IsVulnerableEntity())
-            {
-                HellChariot.Crush(bale, collision.OtherCollider);
-            }
+            other.Die(entity);
+            other.PlaySound(VanillaSoundID.smash);
         }
     }
 }

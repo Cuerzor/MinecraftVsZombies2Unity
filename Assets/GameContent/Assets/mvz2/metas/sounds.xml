@@ -21,6 +21,10 @@
     <sound name="awooga">
         <sample path="mvz2:awooga" weight="1" />
     </sound>
+    <sound name="axolotl_suit_step">
+        <sample path="mvz2:entity/axolotl_suit/step1" weight="1" />
+        <sample path="mvz2:entity/axolotl_suit/step2" weight="1" />
+    </sound>
     <sound name="balloon_inflate">
         <sample path="mvz2:balloon_inflate" weight="1" />
     </sound>
@@ -269,6 +273,17 @@
     </sound>
     <sound name="dream_alarm">
         <sample path="mvz2:entity/dream_alarm" weight="1" />
+    </sound>
+    <sound name="drowned_cry">
+        <sample path="mvz2:entity/drowned/idle1" weight="1" />
+        <sample path="mvz2:entity/drowned/idle2" weight="1" />
+        <sample path="mvz2:entity/drowned/idle3" weight="1" />
+        <sample path="mvz2:entity/drowned/idle4" weight="1" />
+        <sample path="mvz2:entity/drowned/idle5" weight="1" />
+    </sound>
+    <sound name="drowned_death">
+        <sample path="mvz2:entity/drowned/death1" weight="1" />
+        <sample path="mvz2:entity/drowned/death2" weight="1" />
     </sound>
     <sound name="earthquake">
         <sample path="mvz2:earthquake" weight="1" />

@@ -19,7 +19,7 @@ using UnityEngine;
 namespace MVZ2.GameContent.Projectiles
 {
     [AutoEntityBehaviourDefinition(VanillaProjectileNames.frozenOrb)]
-    public class FrozenOrb : EntityBehaviourDefinition, IHellfireIgniteBehaviour
+    public class FrozenOrb : EntityBehaviourDefinition, IHellfireIgniteBehaviour, IDeathEffectsBehaviour
     {
         public FrozenOrb(string nsp, string name) : base(nsp, name)
         {
@@ -35,6 +35,10 @@ namespace MVZ2.GameContent.Projectiles
                 entity.PlaySound(VanillaSoundID.frozenOrb);
             }
         }
+        public void DeathEffects(Entity entity, DeathInfo deathInfo)
+        {
+            IceBlast(entity);
+        }
         private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams args, CallbackResult result)
         {
             var info = args.hit;
@@ -42,14 +46,6 @@ namespace MVZ2.GameContent.Projectiles
             if (!projectile.HasBehaviour(this))
                 return;
             IceBlast(projectile);
-        }
-        public override void PostDeath(Entity entity, DeathInfo deathInfo)
-        {
-            base.PostDeath(entity, deathInfo);
-            if (entity.ShouldTriggerDeathEffects(deathInfo))
-            {
-                IceBlast(entity);
-            }
         }
         public void Ignite(Entity entity, Entity hellfire, bool cursed, bool enter)
         {

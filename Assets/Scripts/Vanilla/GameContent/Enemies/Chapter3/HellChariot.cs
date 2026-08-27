@@ -14,6 +14,7 @@ using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Models;
+using PVZEngine.Modifiers;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Timing;
 using UnityEngine;
@@ -21,13 +22,12 @@ using UnityEngine;
 namespace MVZ2.GameContent.Enemies
 {
     [AutoEntityBehaviourDefinition(VanillaEnemyNames.hellChariot)]
-    public class HellChariot : AIEntityBehaviour, IDestroyBySpikesEntityBehaviour, IDeathEffectsBehaviour
+    public class HellChariot : AIEntityBehaviour, IDestroyBySpikesEntityBehaviour
     {
         public HellChariot(string nsp, string name) : base(nsp, name)
         {
+            AddModifier(new BooleanModifier(VehicleCrushBehaviour.PROP_NO_CRUSH, BooleanOperator.Or, FIELD_PUNCTURED));
         }
-
-        #region 回调
         public override void Init(Entity entity)
         {
             base.Init(entity);
@@ -73,39 +73,15 @@ namespace MVZ2.GameContent.Enemies
             entity.SetModelDamagePercent(hp, entity.GetMaxHealth());
             entity.SetAnimationBool("Shaking", broken || punctured);
         }
-        public override void PostCollision(EntityCollision collision, int state)
-        {
-            base.PostCollision(collision, state);
-            if (state == EntityCollisionHelper.STATE_EXIT)
-                return;
-            if (!collision.Collider.IsForMain())
-                return;
-            var other = collision.Other;
-            if (!other.IsVulnerableEntity())
-                return;
-            var chariot = collision.Entity;
-            if (IsPunctured(chariot) || !chariot.IsHostile(other))
-                return;
-
-            Crush(chariot, collision.OtherCollider);
-        }
         public override void PostDeath(Entity entity, DeathInfo info)
         {
             base.PostDeath(entity, info);
             if (!entity.WillRemoveOnDeath(info))
             {
                 Explosion.Spawn(entity, entity.GetCenter(), entity.GetScaledSize());
+                entity.Remove();
             }
         }
-        public void DeathEffects(Entity entity, DeathInfo info)
-        {
-            var anubisandOffset = ANUBISAND_OFFSET;
-            anubisandOffset.x *= entity.GetFacingX();
-            var anubisand = entity.SpawnWithParams(VanillaEnemyID.anubisand, entity.Position + anubisandOffset);
-            entity.Remove();
-        }
-        #endregion
-
         public bool CanBeDestroyedBySpikes(Entity entity, Entity source)
         {
             return !IsPunctured(entity);
@@ -122,62 +98,17 @@ namespace MVZ2.GameContent.Enemies
             var timer = GetPunctureTimer(entity);
             timer?.Reset();
         }
-        public static void Crush(Entity chariot, IEntityCollider otherCollider)
-        {
-            var other = otherCollider.Entity;
-            float damage = other.GetTakenCrushDamage();
-            var vehicleInteraction = other.GetVehicleInteraction();
-            switch (vehicleInteraction)
-            {
-                case VehicleInteraction.BLOCK:
-                    damage = chariot.GetDamage() * 0.1f;
-                    break;
-                case VehicleInteraction.IGNORE:
-                    return;
-            }
-
-            if (!other.IsDead)
-            {
-                if (vehicleInteraction == VehicleInteraction.BLOCK || other.IsInvincible())
-                {
-                    var vel = chariot.Velocity;
-                    if (vel.x * chariot.GetFacingX() > 0)
-                    {
-                        vel.x = 0;
-                    }
-                    chariot.Velocity = vel;
-                }
-                DamageEffectList damageEffects = new DamageEffectList(VanillaDamageEffects.GRIND, VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN);
-                otherCollider.TakeDamage(damage, damageEffects, chariot)?.Let(o =>
-                {
-                    if (o.BodyResult != null && o.BodyResult.Fatal)
-                    {
-                        if (other.Type == EntityTypes.PLANT || other.Type == EntityTypes.OBSTACLE)
-                        {
-                            other.PlaySound(VanillaSoundID.smash);
-                        }
-                        else if (other.Type == EntityTypes.ENEMY)
-                        {
-                            other.PlaySound(VanillaSoundID.grind);
-                        }
-                    }
-                });
-            }
-        }
-
         #region 字段
-        public static bool IsPunctured(Entity entity) => entity.GetBehaviourField<bool>(ID, FIELD_PUNCTURED);
-        public static void SetPunctured(Entity entity, bool value) => entity.SetBehaviourField(ID, FIELD_PUNCTURED, value);
+        public static bool IsPunctured(Entity entity) => entity.GetBehaviourField<bool>(FIELD_PUNCTURED);
+        public static void SetPunctured(Entity entity, bool value) => entity.SetBehaviourField(FIELD_PUNCTURED, value);
 
-        public static FrameTimer? GetPunctureTimer(Entity entity) => entity.GetBehaviourField<FrameTimer>(ID, FIELD_PUNCTURE_TIMER);
-        public static void SetPunctureTimer(Entity entity, FrameTimer value) => entity.SetBehaviourField(ID, FIELD_PUNCTURE_TIMER, value);
+        public static FrameTimer? GetPunctureTimer(Entity entity) => entity.GetBehaviourField<FrameTimer>(FIELD_PUNCTURE_TIMER);
+        public static void SetPunctureTimer(Entity entity, FrameTimer value) => entity.SetBehaviourField(FIELD_PUNCTURE_TIMER, value);
         #endregion
 
         public const float BROKEN_THRESOLD = 200;
-        public static readonly Vector3 ANUBISAND_OFFSET = new Vector3(-48, 32, 0);
         public const int PUNCTURE_TIME = 40;
         private static readonly VanillaEntityPropertyMeta<bool> FIELD_PUNCTURED = new VanillaEntityPropertyMeta<bool>("Punctured");
         private static readonly VanillaEntityPropertyMeta<FrameTimer> FIELD_PUNCTURE_TIMER = new VanillaEntityPropertyMeta<FrameTimer>("PunctureTimer");
-        private static readonly NamespaceID ID = VanillaEnemyID.hellChariot;
     }
 }

@@ -312,4 +312,15 @@
             </armor>
         </armors>
     </shape>
+    <shape id="mecha">
+        <armors>
+            <armor slot="mvz2:main">
+                <position x="7.4" y="114.2" z="0" />
+                <scale x="1" y="1" z="1" />
+            </armor>
+            <armor slot="mvz2:shield">
+                <position x="-36" y="65" z="0" />
+            </armor>
+        </armors>
+    </shape>
 </shapes>
