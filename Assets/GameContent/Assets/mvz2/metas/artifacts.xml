@@ -167,7 +167,7 @@
             <condition requiredGroups="mvz2:artifact.extending_arm" />
         </unlock>
     </artifact>
-    <artifact id="krakens_tentacle" name="克拉肯的触手" tooltip="友方器械攻击速度x200%，但会向随机方向发射子弹" sprite="mvz2:artifacts/krakens_tentacle">
+    <artifact id="krakens_tentacle" name="克拉肯的触手" tooltip="友方器械攻击速度x150%，但会向随机方向发射子弹" sprite="mvz2:artifacts/krakens_tentacle">
         <unlock>
             <condition requiredGroups="mvz2:artifact.krakens_tentacle" />
         </unlock>

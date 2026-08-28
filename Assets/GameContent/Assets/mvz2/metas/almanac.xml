@@ -2419,7 +2419,7 @@
                 <p>从<![CDATA[<ref=[misc]mvz2:kraken>克拉肯</ref>]]>身上切断的机械触手。</p>
             </header>
             <properties>
-                <p>效果：<![CDATA[<color=red>友方器械攻击速度x200%，但会向随机方向发射子弹</color>]]></p>
+                <p>效果：<![CDATA[<color=red>友方器械攻击速度x150%，但会向随机方向发射子弹</color>]]></p>
             </properties>
             <flavor>
                 <p>====施工中====</p>

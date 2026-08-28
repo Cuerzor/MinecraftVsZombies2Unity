@@ -12,7 +12,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
     {
         public KrakensTentacleAttackSpeedBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new FloatModifier(VanillaEntityProps.ATTACK_SPEED, NumberOperator.Multiply, 2f));
+            AddModifier(new FloatModifier(VanillaEntityProps.ATTACK_SPEED, NumberOperator.Multiply, 1.5f));
         }
     }
 }
