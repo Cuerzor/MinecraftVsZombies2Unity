@@ -208,6 +208,9 @@ namespace MVZ2.GameContent.Contraptions
             {
                 // 不同方向，转移方向。
                 projectile.Velocity = velocityDir * projectile.Velocity.magnitude;
+                var pos = pad.Position;
+                pos.y = projectile.Position.y;
+                projectile.Position = pos;
                 projectile.StopChangingLane();
             }
 

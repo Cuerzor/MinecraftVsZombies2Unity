@@ -1385,25 +1385,25 @@
                 <int name="mvz2:cost" value="175" />
             </properties>
         </entity>
-        <entity template="contraption" id="maplewheel" name="枫车" tooltip="射弹穿过时发射风刃">
+        <entity template="contraption" id="maplewheel" name="枫车" tooltip="发射风刃，并强化穿过它的风刃">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.maplewheel" />
             </unlock>
             <properties>
-                <bool name="mvz2:canDeactive" value="false" />
                 <vector3 name="mvz2:size" x="32" y="60" z="4" />
                 <id name="mvz2:placeSound" value="mvz2:wood" />
                 <id name="mvz2:hitSound" value="mvz2:wood" />
                 <id name="mvz2:deathSound" value="mvz2:wood" />
                 <id name="mvz2:shell" value="mvz2:wood" />
 
+                <float name="mvz2:range" value="80000" />
                 <float name="mvz2:damage" value="20" />
                 <vector3 name="mvz2:shotVelocity" x="15" y="0" z="0" />
                 <vector3 name="mvz2:shotOffset" x="0" y="30" z="0" />
                 <id name="mvz2:shootSound" value="mvz2:shot" />
                 <id name="mvz2:projectileId" value="mvz2:air_slash" />
 
-                <int name="mvz2:cost" value="125" />
+                <int name="mvz2:cost" value="175" />
                 <id name="mvz2:rechargeId" value="mvz2:short" />
             </properties>
         </entity>

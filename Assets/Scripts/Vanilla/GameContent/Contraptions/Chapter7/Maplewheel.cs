@@ -5,7 +5,6 @@ using MVZ2.GameContent.Artifacts;
 using MVZ2.GameContent.Buffs.Projectiles;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Entities;
-using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
@@ -20,15 +19,25 @@ using UnityEngine;
 namespace MVZ2.GameContent.Contraptions
 {
     [AutoEntityBehaviourDefinition(VanillaContraptionNames.maplewheel)]
-    public class Maplewheel : EntityBehaviourDefinition, IBeBlownBehaviour
+    public class Maplewheel : DispenserFamily, IBeBlownBehaviour
     {
         public Maplewheel(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_FRIENDLY, IntegerOperator.BitOr, EntityCollisionHelper.MASK_PROJECTILE));
         }
-        public override void Update(Entity entity)
+        public override void Init(Entity entity)
         {
-            base.Update(entity);
+            base.Init(entity);
+            InitShootTimer(entity);
+        }
+        protected override void UpdateAI(Entity entity)
+        {
+            base.UpdateAI(entity);
+            ShootTick(entity);
+        }
+        protected override void UpdateLogic(Entity entity)
+        {
+            base.UpdateLogic(entity);
             entity.SetAnimationFloat("SpinSpeed", GetSpinSpeed(entity));
 
             var spinSpeed = GetSpinSpeed(entity);
@@ -47,22 +56,17 @@ namespace MVZ2.GameContent.Contraptions
                 return;
             if (!entity.IsFriendly(other))
                 return;
-            //if (other.SpawnerReference?.GetTarget(entity.Level) == entity)
-            //    return;
-            if (other.IsEntityOf(VanillaProjectileID.airSlash))
-            {
+            if (other.SpawnerReference?.GetTarget(entity.Level) == entity && ProjectileCommonBehaviour.GetStartHitSpawnerProtectTimeout(other) > 0)
                 return;
-                //BuffAirSlash(entity, other);
-            }
-            else
-            {
-                Shoot(entity);
-            }
-        }
-        public static Entity? Shoot(Entity entity)
-        {
+            if (!other.IsEntityOf(VanillaProjectileID.airSlash))
+                return;
+            BuffAirSlash(entity, other);
             SetSpinSpeed(entity, MAX_SPIN_SPEED);
-            return entity.ShootProjectile();
+        }
+        public override void OnShootTick(Entity entity)
+        {
+            base.OnShootTick(entity);
+            SetSpinSpeed(entity, MAX_SPIN_SPEED);
         }
         public static void BuffAirSlash(Entity entity, Entity airSlash)
         {
@@ -97,7 +101,7 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static float GetSpinSpeed(Entity entity) => entity.GetBehaviourField<float>(PROP_SPIN_SPEED);
         public static void SetSpinSpeed(Entity entity, float value) => entity.SetBehaviourField(PROP_SPIN_SPEED, value);
-        public const float MAX_DAMAGE_UP = 90;
+        public const float MAX_DAMAGE_UP = 190;
         public const float MAX_SPIN_SPEED = 5f;
         public const float SPIN_SPEED_FADE_SPEED = 1 / 6f;
         public const float BLOWN_SHOOT_INTERVAL = 0.5f;
