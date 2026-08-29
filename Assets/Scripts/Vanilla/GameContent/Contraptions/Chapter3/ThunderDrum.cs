@@ -5,6 +5,7 @@ using MVZ2.GameContent.Areas;
 using MVZ2.GameContent.Artifacts;
 using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Projectiles;
+using MVZ2.GameContent.Stages;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
@@ -22,6 +23,7 @@ using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.Timing;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using PVZEngine.Tools.Timing;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
@@ -114,6 +116,10 @@ namespace MVZ2.GameContent.Contraptions
             {
                 PalaceEarthQuake(entity.Level);
             }
+            else if (entity.Level.AreaID == VanillaAreaID.mountain)
+            {
+                MountainEarthQuake(entity.Level, entity.RNG);
+            }
         }
         private bool IsValidTarget(Entity self, Entity target)
         {
@@ -191,6 +197,13 @@ namespace MVZ2.GameContent.Contraptions
                     var speed2D = (Vector2.right * length).RotateClockwise(angle);
                     boulder.Velocity = new Vector3(speed2D.x, 0, speed2D.y);
                 });
+            }
+        }
+        public static void MountainEarthQuake(LevelEngine level, RandomGenerator rng)
+        {
+            for (int i = 0; i < 3; i++)
+            {
+                PrimalForceBehaviour.DropGiantStone(level, rng);
             }
         }
         public static bool IsBroken(Entity entity) => entity.GetBehaviourField<bool>(ID, FIELD_BROKEN);
