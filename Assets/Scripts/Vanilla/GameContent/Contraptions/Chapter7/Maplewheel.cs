@@ -13,12 +13,13 @@ using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Models;
 using PVZEngine.Modifiers;
+using PVZEngine.Timing;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions
 {
     [AutoEntityBehaviourDefinition(VanillaContraptionNames.maplewheel)]
-    public class Maplewheel : EntityBehaviourDefinition
+    public class Maplewheel : EntityBehaviourDefinition, IBeBlownBehaviour
     {
         public Maplewheel(string nsp, string name) : base(nsp, name)
         {
@@ -85,11 +86,20 @@ namespace MVZ2.GameContent.Contraptions
             }
             return 0;
         }
+        public void BeBlown(Entity entity, Entity source)
+        {
+            SetSpinSpeed(entity, MAX_SPIN_SPEED);
+            if (entity.IsSecondsInterval(BLOWN_SHOOT_INTERVAL))
+            {
+                Shoot(entity);
+            }
+        }
         public static float GetSpinSpeed(Entity entity) => entity.GetBehaviourField<float>(PROP_SPIN_SPEED);
         public static void SetSpinSpeed(Entity entity, float value) => entity.SetBehaviourField(PROP_SPIN_SPEED, value);
         public const float MAX_DAMAGE_UP = 90;
         public const float MAX_SPIN_SPEED = 5f;
         public const float SPIN_SPEED_FADE_SPEED = 1 / 6f;
+        public const float BLOWN_SHOOT_INTERVAL = 0.5f;
         public static readonly VanillaEntityPropertyMeta<float> PROP_SPIN_SPEED = new VanillaEntityPropertyMeta<float>("spin_speed");
     }
 }
