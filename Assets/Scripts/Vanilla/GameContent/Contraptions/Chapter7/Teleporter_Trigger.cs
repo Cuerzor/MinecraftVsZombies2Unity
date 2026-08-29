@@ -3,6 +3,7 @@
 using MVZ2.GameContent.HeldItems;
 using MVZ2.Vanilla.Entities;
 using MVZ2Logic.HeldItems;
+using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
@@ -10,14 +11,17 @@ using PVZEngine.Entities;
 namespace MVZ2.GameContent.Contraptions
 {
     [AutoEntityBehaviourDefinition(VanillaEntityBehaviourNames.teleporter_Trigger)]
-    public class Teleporter_Trigger : ContraptionTriggerBehaviour
+    public class Teleporter_Trigger : EntityEmptyHandClickBehaviour
     {
         public Teleporter_Trigger(string nsp, string name) : base(nsp, name)
         {
         }
-        public override void Trigger(Entity entity)
+        public override bool IsValidPointerInteraction(Entity entity, PointerInteractionData interaction)
         {
-            base.Trigger(entity);
+            return interaction.IsPointerDownOrDrag();
+        }
+        public override void EmptyHandClick(Entity entity)
+        {
             var builder = new HeldItemBuilder(VanillaHeldTypes.teleporter, 100);
             builder.SetEntityID(entity.ID);
             entity.Level.SetHeldItem(builder);

@@ -21,22 +21,18 @@ using PVZEngine.Entities;
 namespace MVZ2.GameContent.Contraptions
 {
     [AutoEntityBehaviourDefinition(VanillaEntityBehaviourNames.ejector_Trigger)]
-    public class Ejector_Trigger : EntityEmptyHandClickBehaviour
+    public class Ejector_Trigger : ContraptionTriggerBehaviour
     {
         public Ejector_Trigger(string nsp, string name) : base(nsp, name)
         {
         }
-        public override bool IsValidPointerInteraction(Entity entity, PointerInteractionData interaction)
-        {
-            return interaction.IsPointerDownOrDrag();
-        }
-        public override bool CanEmptyHandClick(Entity entity)
+        public override bool CanTrigger(Entity entity)
         {
             if (!Ejector.IsCooldownFinished(entity))
                 return false;
-            return base.CanEmptyHandClick(entity);
+            return base.CanTrigger(entity);
         }
-        public override void EmptyHandClick(Entity entity)
+        public override void Trigger(Entity entity)
         {
             var builder = new HeldItemBuilder(VanillaHeldTypes.ejector, 100);
             builder.SetEntityID(entity.ID);

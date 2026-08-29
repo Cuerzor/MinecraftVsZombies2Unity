@@ -1395,8 +1395,6 @@
             </behaviours>
             <properties>
                 <bool name="mvz2:canDeactive" value="false" />
-                <bool name="mvz2:triggerActive" value="true" />
-                <bool name="mvz2:instantTrigger" value="true" />
                 <bool name="mvz2:banned_in_teleporter_team" value="true" />
                 <vector3 name="mvz2:size" x="32" y="48" z="32" />
                 <id name="mvz2:shell" value="mvz2:metal" />
@@ -1421,6 +1419,7 @@
                 <idArray name="mvz2:gridLayers" value="mvz2:protector" />
                 <id name="mvz2:shell" value="mvz2:metal" />
                 <bool name="mvz2:loyal" value="true" />
+                <bool name="mvz2:triggerActive" value="true" />
 
                 <id name="mvz2:placeSound" value="mvz2:metal_break" />
                 <int name="mvz2:cost" value="25" />
