@@ -124,6 +124,7 @@
     <model name="random_china" type="entity" path="mvz2:contraption/prologue/random_china" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="error_block" type="entity" path="mvz2:contraption/upgrade/error_block" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="snipenser" type="entity" path="mvz2:contraption/palace/snipenser" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="giant_stone" type="entity" path="mvz2:contraption/mountain/giant_stone" width="80" height="80" xOffset="0" yOffset="-28" />
 
 
     <!-- Enemies -->

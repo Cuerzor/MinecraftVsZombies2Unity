@@ -439,6 +439,11 @@
     <sound name="giant_spike">
         <sample path="mvz2:giant_spike" weight="1" />
     </sound>
+    <sound name="giant_stone_land">
+        <sample path="mvz2:random/rock/crumble1" weight="1" />
+        <sample path="mvz2:random/rock/crumble2" weight="1" />
+        <sample path="mvz2:random/rock/crumble3" weight="1" />
+    </sound>
     <sound name="glass">
         <sample path="mvz2:random/glass1" weight="1" />
         <sample path="mvz2:random/glass2" weight="1" />

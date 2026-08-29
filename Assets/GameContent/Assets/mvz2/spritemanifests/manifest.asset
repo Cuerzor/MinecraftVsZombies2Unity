@@ -88,6 +88,9 @@ MonoBehaviour:
   - name: arcade/nightmares_revenge
     texture: {fileID: 2800000, guid: eb0eb64f7392deb41831563ed71fa81a, type: 3}
     tags: []
+  - name: arcade/primal_force
+    texture: {fileID: 2800000, guid: 204c6404d389d1945adf97acd7654531, type: 3}
+    tags: []
   - name: arcade/red_dragons_revenge
     texture: {fileID: 2800000, guid: d48244988b1911e418e1b2b636f88599, type: 3}
     tags: []
@@ -704,6 +707,9 @@ MonoBehaviour:
     tags: []
   - name: mobile_blueprint/giant_bowl
     texture: {fileID: 2800000, guid: 36b2d82a0eba62b4fa29a20e722ca6a3, type: 3}
+    tags: []
+  - name: mobile_blueprint/giant_stone
+    texture: {fileID: 2800000, guid: 8bd59a115078c7a41b7dae95bf8b431a, type: 3}
     tags: []
   - name: mobile_blueprint/glowstone
     texture: {fileID: 2800000, guid: eb5396e8d49b71b4b899a73dae8c9ce9, type: 3}
@@ -1503,6 +1509,9 @@ MonoBehaviour:
     tags: []
   - name: entity/contraption/giant_bowl_point
     texture: {fileID: 2800000, guid: 75127238d9b7c934395ce66830a82cf1, type: 3}
+    tags: []
+  - name: entity/contraption/giant_stone
+    texture: {fileID: 2800000, guid: 7b1334a62a5fff041937f24a0d490eaa, type: 3}
     tags: []
   - name: entity/contraption/glowstone
     texture: {fileID: 2800000, guid: 9b11711b1da870544827beb40076b98b, type: 3}
@@ -3192,6 +3201,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: eb0eb64f7392deb41831563ed71fa81a, type: 3}
     tags: []
+  - name: arcade/primal_force
+    index: 0
+    sprite: {fileID: 21300000, guid: 204c6404d389d1945adf97acd7654531, type: 3}
+    tags: []
   - name: arcade/red_dragons_revenge
     index: 0
     sprite: {fileID: 21300000, guid: d48244988b1911e418e1b2b636f88599, type: 3}
@@ -4541,6 +4554,10 @@ MonoBehaviour:
   - name: mobile_blueprint/giant_bowl
     index: 0
     sprite: {fileID: 21300000, guid: 36b2d82a0eba62b4fa29a20e722ca6a3, type: 3}
+    tags: []
+  - name: mobile_blueprint/giant_stone
+    index: 0
+    sprite: {fileID: 21300000, guid: 8bd59a115078c7a41b7dae95bf8b431a, type: 3}
     tags: []
   - name: mobile_blueprint/glowstone
     index: 0
@@ -6646,6 +6663,18 @@ MonoBehaviour:
   - name: entity/contraption/giant_bowl_point
     index: 0
     sprite: {fileID: 21300000, guid: 75127238d9b7c934395ce66830a82cf1, type: 3}
+    tags: []
+  - name: entity/contraption/giant_stone
+    index: 0
+    sprite: {fileID: -1604843374, guid: 7b1334a62a5fff041937f24a0d490eaa, type: 3}
+    tags: []
+  - name: entity/contraption/giant_stone
+    index: 1
+    sprite: {fileID: -754325678, guid: 7b1334a62a5fff041937f24a0d490eaa, type: 3}
+    tags: []
+  - name: entity/contraption/giant_stone
+    index: 2
+    sprite: {fileID: 1307232057, guid: 7b1334a62a5fff041937f24a0d490eaa, type: 3}
     tags: []
   - name: entity/contraption/glowstone
     index: 0

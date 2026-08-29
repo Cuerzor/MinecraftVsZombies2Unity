@@ -6985,6 +6985,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b1334a62a5fff041937f24a0d490eaa
+    m_Address: mvz2:entity/contraption/giant_stone
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7b5ab4ce3e848bf4f95807e6a0a2cc4d
     m_Address: mvz2:achievements/reforged
     m_ReadOnly: 0
@@ -7201,6 +7208,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e47a0aebf0546c4283a5bb0696ff178
+    m_Address: mvz2:contraption/mountain/giant_stone
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7e530d21185c00548b56d2627d93d61f
     m_Address: mvz2:iron_curtain
@@ -7946,6 +7960,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8b93445b685c42440938fc5154ea419c
     m_Address: mvz2:entity/effect/evocation_star
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8bd59a115078c7a41b7dae95bf8b431a
+    m_Address: mvz2:mobile_blueprint/giant_stone
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

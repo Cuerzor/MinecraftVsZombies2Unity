@@ -527,6 +527,12 @@
             <key hex="#C3A26D" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="giant_stone">
+        <colorKeys>
+            <key hex="#4F4F4F" time="0.5" />
+            <key hex="#ABABAB" time="1" />
+        </colorKeys>
+    </fragment>
 
     <!-- Halloween Enemies -->
     <fragment name="gargoyle">

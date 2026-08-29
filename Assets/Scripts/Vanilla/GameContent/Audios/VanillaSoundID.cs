@@ -122,6 +122,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID giantSpike = Get("giant_spike");
         public readonly static NamespaceID ghastCry = Get("ghast_cry");
         public readonly static NamespaceID ghastFire = Get("ghast_fire");
+        public readonly static NamespaceID giantStoneLand = Get("giant_stone_land");
         public readonly static NamespaceID glowstone = Get("glowstone");
         public readonly static NamespaceID glass = Get("glass");
         public readonly static NamespaceID glassBreak = Get("glass_break");

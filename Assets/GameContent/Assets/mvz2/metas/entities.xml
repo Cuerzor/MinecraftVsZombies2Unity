@@ -1831,6 +1831,27 @@
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </entity>
+        <entity template="contraption" id="giant_stone" name="巨型石块" tooltip="阻碍怪物的前进，并保护背后的其他器械">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:model_damage_percent" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:defensive" value="true" />
+                <float name="mvz2:maxHealth" value="8000" />
+                <vector3 name="mvz2:size" x="58" y="58" z="58" />
+                <bool name="mvz2:instantEvoke" value="false" />
+                <bool name="mvz2:no_evoke" value="true" />
+                <float name="mvz2:fallResistance" value="10000" />
+                <float name="mvz2:water_ground_limit_offset" value="-34" />
+                <int name="mvz2:waterInteraction" value="3" />
+                <id name="mvz2:placement" value="mvz2:amphibious" />
+                <vector3 name="mvz2:shadowScale" x="1.5" y="1.5" z="1.5" />
+
+                <int name="mvz2:cost" value="50" />
+                <id name="mvz2:rechargeId" value="mvz2:long" />
+            </properties>
+        </entity>
 
         <!-- Enemies -->
         <entity template="zombie" id="zombie" name="僵尸" deathMessage="脑子是好的，但不是每个人都有">

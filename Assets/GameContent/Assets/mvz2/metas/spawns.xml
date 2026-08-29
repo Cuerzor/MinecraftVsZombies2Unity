@@ -186,6 +186,20 @@
         <spawn level="4" minWave="5" />
         <weight base="2500" />
     </entry>
+
+    <!-- Mountain -->
+    <entry id="axolotl_suit">
+        <entity id="mvz2:axolotl_suit" />
+        <spawn level="6" minWave="10" />
+        <terrain water="true" />
+        <weight base="2000" />
+    </entry>
+    <entry id="axolotl_suit_pilot" noEndless="true">
+        <entity id="mvz2:axolotl_suit_pilot" />
+        <spawn level="3" minWave="10" />
+        <terrain water="true" />
+        <weight base="2000" />
+    </entry>
     
     <entry id="mutant_zombie">
         <entity id="mvz2:mutant_zombie" />
