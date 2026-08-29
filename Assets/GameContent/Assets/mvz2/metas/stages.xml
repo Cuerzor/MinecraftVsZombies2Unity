@@ -1530,6 +1530,29 @@
     </stage>
 
 
+    <!-- Mountain -->
+    <stage id="mountain_9" name="妖怪之山" dayNumber="9">
+        <unlock>
+            <condition required="mvz2:level.mountain_9" />
+        </unlock>
+        <talks>
+            <talk type="start" value="mvz2:mountain_9" />
+            <talk type="end" value="mvz2:mountain_9_over" />
+            <talk type="map" value="mvz2:mountain_9_map" />
+        </talks>
+        <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:loan_sign" />
+        <spawns flags="2">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
+            <spawn id="mvz2:iron_helmetted_zombie" />
+            <spawn id="mvz2:diamond_helmetted_zombie" />
+            <spawn id="mvz2:cannoneer_zombie" />
+            <spawn id="mvz2:shikaisen_zombie" />
+            <spawn id="mvz2:emperor_zombie" />
+            <spawn id="mvz2:axolotl_suit" />
+        </spawns>
+    </stage>
+
     
     <!-- Minigames -->
     <stage id="whack_a_ghost" name="锤幽灵" needBlueprints="false" type="minigame" startEnergy="0" music="mvz2:minigame">
