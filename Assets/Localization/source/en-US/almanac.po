@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-08-28 10:04+0800\n"
-"PO-Revision-Date: 2026-08-28 22:05+0800\n"
+"POT-Creation-Date: 2026-08-29 04:23+0800\n"
+"PO-Revision-Date: 2026-08-29 16:24+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -5642,6 +5642,30 @@ msgctxt "misc.description"
 msgid "他没有消失。他只是累了，想休息了。"
 msgstr "He never disappeared. He was simply tired, and wanted rest."
 
+#. Name for misc mvz2:giant_stone
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "巨型石块"
+msgstr "Giant Stone"
+
+#. Header for misc mvz2:giant_stone
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "巨型石块只有在<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>的某些意外事件发生时才会偶尔出现。"
+msgstr "Giant Stones only appear occasionally during certain accidents at <ref=[misc]mvz2:youkai_mountain>Youkai Mountain</ref>."
+
+#. Properties for misc mvz2:giant_stone
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "耐久：<color=red><var local=\"hp\"/></color>"
+msgstr "Toughness: <color=red><var local=\"hp\"/></color>"
+
+#. Flavor for misc mvz2:giant_stone
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "被它砸过的人都没喊疼，由此可见这东西其实并不重。"
+msgstr "None of the people who've been hit by one have ever cried out in pain, which goes to show that it's actually not that heavy."
+
 #. Name for misc mvz2:creaking
 #: Almanac meta file
 msgctxt "misc.name"
@@ -8077,6 +8101,12 @@ msgid ""
 msgstr ""
 "(Requires Dispenser)\n"
 "Shoots arrows to the pointer"
+
+#. Name for entity mvz2:giant_stone
+#: Entity meta file
+msgctxt "entity.name"
+msgid "巨型石块"
+msgstr "Giant Stone"
 
 #. Name for entity mvz2:zombie
 #: Entity meta file

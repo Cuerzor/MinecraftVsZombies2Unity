@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-28 10:04+0800\n"
+"POT-Creation-Date: 2026-08-29 04:23+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4486,6 +4486,30 @@ msgctxt "misc.description"
 msgid "他没有消失。他只是累了，想休息了。"
 msgstr ""
 
+#. Name for misc mvz2:giant_stone
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "巨型石块"
+msgstr ""
+
+#. Header for misc mvz2:giant_stone
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "巨型石块只有在<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>的某些意外事件发生时才会偶尔出现。"
+msgstr ""
+
+#. Properties for misc mvz2:giant_stone
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "耐久：<color=red><var local=\"hp\"/></color>"
+msgstr ""
+
+#. Flavor for misc mvz2:giant_stone
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "被它砸过的人都没喊疼，由此可见这东西其实并不重。"
+msgstr ""
+
 #. Name for misc mvz2:creaking
 #: Almanac meta file
 msgctxt "misc.name"
@@ -6584,6 +6608,12 @@ msgctxt "entity.tooltip"
 msgid ""
 "（需要发射器）\n"
 "朝指针位置发射箭矢"
+msgstr ""
+
+#. Name for entity mvz2:giant_stone
+#: Entity meta file
+msgctxt "entity.name"
+msgid "巨型石块"
 msgstr ""
 
 #. Name for entity mvz2:zombie

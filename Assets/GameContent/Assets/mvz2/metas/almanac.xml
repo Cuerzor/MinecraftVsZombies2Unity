@@ -3022,6 +3022,25 @@
                     <p>他没有消失。他只是累了，想休息了。</p>
                 </flavor>
             </entry>
+            <entry id="mvz2:giant_stone" name="巨型石块" >
+                <unlock>
+                    <condition required="mvz2:level.mountain_6"/>
+                </unlock>
+                <tags sourceEntity="mvz2:giant_stone" />
+                <variables>
+                    <variable name="hp">property("mvz2:entity/maxHealth", "mvz2:giant_stone", "entity")</variable>
+                </variables>
+                <picture model="mvz2:entity.giant_stone"/>
+                <header>
+                    <p>巨型石块只有在<![CDATA[<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>]]>的某些意外事件发生时才会偶尔出现。</p>
+                </header>
+                <properties>
+                    <p>耐久：<![CDATA[<color=red><var local="hp"/></color>]]></p>
+                </properties>
+                <flavor>
+                    <p>被它砸过的人都没喊疼，由此可见这东西其实并不重。</p>
+                </flavor>
+            </entry>
             <entry id="mvz2:creaking" name="嘎枝" >
                 <unlock>
                     <condition requiredGroups="mvz2:contraption.loan_sign"/>
