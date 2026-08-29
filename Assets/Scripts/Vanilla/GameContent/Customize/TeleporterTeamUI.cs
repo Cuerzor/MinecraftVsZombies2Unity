@@ -11,7 +11,6 @@ using PVZEngine;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace MVZ2.GameContent.Customize
 {

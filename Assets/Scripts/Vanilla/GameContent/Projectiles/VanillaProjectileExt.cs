@@ -10,7 +10,6 @@ using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Tools;
-using PVZEngine.Tools.Unity;
 using UnityEngine;
 
 namespace MVZ2.Vanilla.Projectiles

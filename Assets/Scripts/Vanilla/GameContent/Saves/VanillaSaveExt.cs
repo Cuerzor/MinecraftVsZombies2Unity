@@ -3,8 +3,6 @@
 using MVZ2.Vanilla.Unlocks;
 using MVZ2Logic;
 using MVZ2Logic.Games;
-using MVZ2Logic.Saves;
-using PVZEngine;
 
 namespace MVZ2.Vanilla.Saves
 {

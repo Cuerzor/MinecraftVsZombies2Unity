@@ -4,8 +4,6 @@ using System;
 using MVZ2.Blueprints;
 using MVZ2.UI;
 using MVZ2Logic.Inputs;
-using MVZ2Logic.Models;
-using PVZEngine;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;

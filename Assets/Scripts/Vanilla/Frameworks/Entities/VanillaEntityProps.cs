@@ -412,7 +412,7 @@ namespace MVZ2.Vanilla.Entities
             return entity.GetProperty<bool>(IGNORE_FORCE_PAD);
         }
         #endregion
-        
+
         #region 免疫火焰
         public static readonly VanillaEntityPropertyMeta<bool> IMMUNE_FIRE = new VanillaEntityPropertyMeta<bool>("immune_fire");
         public static bool ImmuneFire(this EntityDefinition definition)

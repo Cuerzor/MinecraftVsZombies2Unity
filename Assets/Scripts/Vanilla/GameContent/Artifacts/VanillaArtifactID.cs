@@ -40,7 +40,7 @@ namespace MVZ2.GameContent.Artifacts
         public const string censerOfForgotten = "censer_of_forgotten";
         public const string brokenLock = "broken_lock";
         public const string magmaStone = "magma_stone";
-        
+
         public const string bunbunmaruNewspaper = "bunbunmaru_newspaper";
         public const string lilyPlatform = "lily_platform";
         public const string extendingArm = "extending_arm";

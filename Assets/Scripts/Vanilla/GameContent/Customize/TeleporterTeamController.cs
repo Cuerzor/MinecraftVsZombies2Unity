@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using MukioI18n;
 using MVZ2.Blueprints;
 using MVZ2.GameContent.Contraptions;
@@ -17,7 +16,6 @@ using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
-using MVZ2.Vanilla.Localization;
 using MVZ2.Vanilla.Saves;
 using MVZ2Logic;
 using MVZ2Logic.Audios;
@@ -27,14 +25,12 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Localization;
 using MVZ2Logic.Models;
-using MVZ2Logic.Saves;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 
 namespace MVZ2.GameContent.Customize
 {
@@ -730,7 +726,7 @@ namespace MVZ2.GameContent.Customize
         [TranslateMsg("传送器战队的错误提示")]
         public const string ERROR_COST_OVERFLOW = "战队的能量不足，请修改阵容之后再保存战队。";
         [TranslateMsg("传送器战队的警告提示")]
-        public const string WARNING_NOT_SAVED = "您有未保存的更改。\n确认要丢弃所有更改并退出吗？"; 
+        public const string WARNING_NOT_SAVED = "您有未保存的更改。\n确认要丢弃所有更改并退出吗？";
         public const int MAX_TILE_COUNT = 9;
         public const int MAX_ENERGY = 250;
         [SerializeField]

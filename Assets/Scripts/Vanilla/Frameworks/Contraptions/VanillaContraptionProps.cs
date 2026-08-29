@@ -114,7 +114,7 @@ namespace MVZ2.Vanilla.Contraptions
             return definition.GetProperty<bool>(BANNED_IN_TELEPORTER_TEAM);
         }
         #endregion
-        
+
     }
 }
 
