@@ -146,7 +146,7 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static float GetIdleSpeed(Entity entity)
         {
-            if (entity.Level.AreaID == VanillaAreaID.ship)
+            if (entity.Level.AreaID == VanillaAreaID.ship || entity.Level.HasArtifact(VanillaArtifactID.galeLeaf))
             {
                 return 1;
             }
