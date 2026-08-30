@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-08-29 04:23+0800\n"
-"PO-Revision-Date: 2026-08-29 16:24+0800\n"
+"POT-Creation-Date: 2026-08-30 09:21+0800\n"
+"PO-Revision-Date: 2026-08-30 22:14+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1576,7 +1576,7 @@ msgid ""
 "“我发射更快，理应当哥哥！”\n"
 "“那大部分时候还是我把前面的敌人干掉的嘞！”\n"
 "……\n"
-"幸好他邻居是<ref=[contraptions]mvz2:lightning_orb>闪电之珠</ref>，不然就又有人要来投诉了。"
+"幸好它邻居是<ref=[contraptions]mvz2:lightning_orb>闪电之珠</ref>，不然就又有人要来投诉了。"
 msgstr ""
 "\"Stop firing! You're making me dizzy!\" complained the rear dispenser irritably.\n"
 "\"But you fire twice every time! If anyone should be dizzy, it's me!\" retorted the front dispenser.\n"
@@ -2373,12 +2373,49 @@ msgctxt "contraptions.description"
 msgid "寒冰发射器最大的愿望是退伍——不是因为它当兵（冰）太久了，而是因为这里的器械都听不懂它讲的冷笑话。"
 msgstr "This is what happens if you tell a Dispenser with a weird mask to \"freeze.\""
 
+#. Header for contraptions mvz2:maplewheel
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid "枫车会向前发射风刃。风刃如果经过其他枫车，其伤害会增加。"
+msgstr "Maplewheels shoot air slashes forward. If air slashes pass through another Maplewheel, their damage increase."
+
+#. Properties for contraptions mvz2:maplewheel
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"发射速度：<color=red>1发/<var local=\"fire_interval\" />秒</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" />锐利伤害</color>\n"
+"特殊：<color=red>经过枫车的风刃+<var id=\"mvz2:entity_damage\" />伤害</color>\n"
+"技能：<color=red>对所有敌人造成<var local=\"evocation_damage\" />点伤害X次。（X=场上枫车的数量）</color>"
+msgstr ""
+"Fire rate: <color=red>1 shot/<var local=\"fire_interval\" /> seconds</color>\n"
+"Damage: <color=red><var id=\"mvz2:entity_damage\" /> sharp damage</color>\n"
+"Special: <color=red>Air slashes that pass through a Maplewheel deal +<var id=\"mvz2:entity_damage\" /> damage</color>\n"
+"Evocation: <color=red>Deals <var local=\"evocation_damage\" /> damage to all enemies X times. (X = the number of Maplewheels on the "
+"field)</color>"
+
+#. Flavor for contraptions mvz2:maplewheel
+#: Almanac meta file
+msgctxt "contraptions.description"
+msgid ""
+"用红白枫叶做的小风车\n"
+"掉在<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>的瀑布下\n"
+"\n"
+"转啊转啊，红白色的风车\n"
+"大伙就在这里"
+msgstr ""
+"A small pinwheel made of red and white maple leaves.\n"
+"Fallen beneath a waterfall on <ref=[misc]mvz2:youkai_mountain>Youkai Mountain</ref>.\n"
+"\n"
+"The red and white pinwheels simply spin round and round.\n"
+"Everyone is right here."
+
 #. Header for contraptions mvz2:teleporter
 #: Almanac meta file
 msgctxt "contraptions.description"
-msgid "传送器被触发后，可以将任意地块的<tag id=\"mvz2:grid_layer_main\" />器械和自身进行交换。"
+msgid "点击传送器后，可以将任意地块的<tag id=\"mvz2:grid_layer_main\" />器械和自身进行交换。"
 msgstr ""
-"When triggered, the Teleporter swaps positions with the contraption on the <tag id=\"mvz2:grid_layer_main\"/> layer of a selected tile."
+"When clicked, the Teleporter swaps positions with the contraption on the <tag id=\"mvz2:grid_layer_main\"/> layer of a selected tile."
 
 #. Properties for contraptions mvz2:teleporter
 #: Almanac meta file
@@ -2397,9 +2434,9 @@ msgstr "It had once done nothing but teleport bread for three days."
 #. Header for contraptions mvz2:ejector
 #: Almanac meta file
 msgctxt "contraptions.description"
-msgid "弹射器内部可以放置其他器械。点击弹射器可以将内部的器械抛投至任意位置并砸伤敌人。被投出的器械也会因此受到摔落伤害。"
+msgid "弹射器内部可以放置其他器械。触发弹射器可以将内部的器械抛投至任意位置并砸伤敌人。被投出的器械也会因此受到摔落伤害。"
 msgstr ""
-"Contraptions can be placed within Ejectors. Selecting an Ejector, and then a target location, will eject the contraption within it "
+"Contraptions can be placed within Ejectors. Triggering an Ejector, and then a target location, will eject the contraption within it "
 "towards said location. Said contraption will smash enemies, and take fall damage."
 
 #. Properties for contraptions mvz2:ejector
@@ -2499,12 +2536,13 @@ msgstr "Autotraps clamp an enemy to hold it in place and continuously damage it,
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red><var local=\"trapped_damage\"/>锐利伤害（夹取），<var local=\"continuous_dps\"/>锐利伤害/秒（持续）</color>\n"
+"伤害：<color=red><var local=\"trapped_damage\"/>锐利伤害（夹取），<var local=\"continuous_damage\"/>锐利伤害/<var "
+"local=\"continuous_interval\"/>秒（持续）</color>\n"
 "技能：<color=red>下一次夹取会直接击杀被困住的目标，并对半径<var local=\"evoked_range\"/>格内的敌人造成<var local=\"evoked_damage\"/>点"
 "闪电伤害</color>"
 msgstr ""
-"Damage: <color=red><var local=\"trapped_damage\"/> sharp damage (clamping), <var local=\"continuous_dps\"/> sharp damage/second "
-"(continuous)</color>\n"
+"Damage: <color=red><var local=\"trapped_damage\"/> sharp damage (clamping), <var local=\"continuous_dps\"/> sharp damage/<var "
+"local=\"continuous_interval\"/>second (continuous)</color>\n"
 "Evocation: <color=red>Destroys the next clamped target, then deals <var local=\"evoked_damage\"/> lightning damage to all enemies "
 "within a radius of <var local=\"evoked_range\"/> tiles</color>"
 
@@ -3793,8 +3831,8 @@ msgstr ">rm -rf"
 #. Header for enemies mvz2:zombie_cat
 #: Almanac meta file
 msgctxt "enemies.description"
-msgid "僵尸猫拥有9条命，并且每次死亡时都有50%的概率召唤一只<ref=[enemies]mvz2:wisp_fly>鬼火苍蝇</ref>。"
-msgstr "Zombie Cat has 9 lives, and each time it dies, there is a 50% chance to spawn a <ref=[enemies]mvz2:wisp_fly>Wisp Fly</ref>."
+msgid "僵尸猫拥有9条命，并且每次死亡时都有一定概率召唤一只<ref=[enemies]mvz2:wisp_fly>鬼火苍蝇</ref>。"
+msgstr "Zombie Cat has 9 lives, and each time it dies, there is a chance to spawn a <ref=[enemies]mvz2:wisp_fly>Wisp Fly</ref>."
 
 #. Properties for enemies mvz2:zombie_cat
 #: Almanac meta file
@@ -3802,10 +3840,12 @@ msgctxt "enemies.description"
 msgid ""
 "生命：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
 "速度：<color=red><var id=\"mvz2:entity_speed\" /></color>\n"
+"召唤概率：<color=red><var local=\"summon_chance_normal\" />%，困难难度下<var local=\"summon_chance_hard\" />%</color>\n"
 "特点：<color=red>能复活8次</color>"
 msgstr ""
 "Toughness: <color=red><var id=\"mvz2:entity_health\" /></color>\n"
 "Speed: <color=red><var id=\"mvz2:entity_speed\" /></color>\n"
+"Summon Chance: <color=red><var local=\"summon_chance_normal\" />%, <var local=\"summon_chance_hard\" />% in HARD</color>\n"
 "Special: <color=red>Revives for 8 times</color>"
 
 #. Flavor for enemies mvz2:zombie_cat
@@ -4738,8 +4778,8 @@ msgstr ""
 #. Header for artifacts mvz2:gale_leaf
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "妖怪之山上的一片寄宿了风之力的树叶。"
-msgstr "A leaf on the Youkai Mountain that harbors the power of the wind."
+msgid "<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>上的一片寄宿了风之力的树叶。"
+msgstr "A leaf on the <ref=[misc]mvz2:youkai_mountain>Youkai Mountain</ref> that harbors the power of the wind."
 
 #. Properties for artifacts mvz2:gale_leaf
 #: Almanac meta file
@@ -7041,10 +7081,11 @@ msgstr ""
 #. Flavor for misc mvz2:explosion_before_3_years
 #: Almanac meta file
 msgctxt "misc.description"
-msgid "根据<ref=[misc]mvz2:satori>觉</ref>所说，三年前爆炸的位置位于妖怪之山上，大概是河童基地的位置。"
+msgid ""
+"根据<ref=[misc]mvz2:satori>觉</ref>所说，三年前爆炸的位置位于<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>上，大概是河童基地的位置。"
 msgstr ""
-"According to <ref=[misc]mvz2:satori>Satori</ref>, the location of the explosion three years ago was on the Youkai Mountain, presumably "
-"at the Kappa base."
+"According to <ref=[misc]mvz2:satori>Satori</ref>, the location of the explosion three years ago was on the <ref=[misc]mvz2:"
+"youkai_mountain>Youkai Mountain</ref>, presumably at the Kappa base."
 
 #. Name for misc mvz2:two_travelers
 #: Almanac meta file
@@ -7815,6 +7856,18 @@ msgstr "Freezenser"
 msgctxt "entity.tooltip"
 msgid "发射减速的冰箭"
 msgstr "Shoots slowing ice arrows"
+
+#. Name for entity mvz2:maplewheel
+#: Entity meta file
+msgctxt "entity.name"
+msgid "枫车"
+msgstr "Maplewheel"
+
+#. Tooltip for entity mvz2:maplewheel
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "发射风刃，并强化穿过它的风刃"
+msgstr "Shoots air slashes and enhances air slashes passing through"
 
 #. Name for entity mvz2:teleporter
 #: Entity meta file
