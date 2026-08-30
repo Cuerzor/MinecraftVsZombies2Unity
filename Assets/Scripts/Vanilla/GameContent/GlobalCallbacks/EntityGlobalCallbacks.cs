@@ -51,7 +51,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             if (fallDamage > 0)
             {
                 var effects = new DamageEffectList(VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.FALL_DAMAGE);
-                entity.TakeDamage(fallDamage, effects, entity);
+                entity.TakeDamageNoSource(fallDamage, effects);
             }
         }
         private void ApplyDamageEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResult callbackResult)
