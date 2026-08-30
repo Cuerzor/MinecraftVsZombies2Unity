@@ -17,6 +17,8 @@
 - Adjusted the textures of Stone Shield and Emperor Zombie.
 
 ### Balance
+- Adventure
+  - Reduced the enemy amount for Chapter 1.
 - Soul Furnace
   - Adjusted the contraption quality algorithm to get fuel.
     - The cost of a contraption required to fill an empty Soul Furnace:
