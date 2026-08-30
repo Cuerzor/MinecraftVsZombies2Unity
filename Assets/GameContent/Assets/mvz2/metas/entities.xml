@@ -3062,6 +3062,7 @@
             <properties>
                 <bool name="mvz2:notActiveEnemy" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:immune_slowing" value="true" />
                 <bool name="mvz2:immune_instakill" value="true" />
                 <bool name="mvz2:immuneVortex" value="true" />
                 <bool name="mvz2:undead" value="false" />
