@@ -1081,7 +1081,7 @@
                 <variable name="total_energy">250</variable>
             </variables>
             <header>
-                <p>传送器被触发后，可以将任意地块的<![CDATA[<tag id="mvz2:grid_layer_main" />]]>器械和自身进行交换。</p>
+                <p>点击传送器后，可以将任意地块的<![CDATA[<tag id="mvz2:grid_layer_main" />]]>器械和自身进行交换。</p>
             </header>
             <properties>
                 <p>技能：<![CDATA[<color=red>选择一处3x3的区域，将你的自定义战队凭空传送到该区域，然后传送器消失。（可在主界面自定义）</color>]]></p>
@@ -1111,7 +1111,7 @@
                 <variable name="ice_density">property("mvz2:shell/density", "mvz2:ice", "shell") * 100</variable>
             </variables>
             <header>
-                <p>弹射器内部可以放置其他器械。点击弹射器可以将内部的器械抛投至任意位置并砸伤敌人。被投出的器械也会因此受到摔落伤害。</p>
+                <p>弹射器内部可以放置其他器械。触发弹射器可以将内部的器械抛投至任意位置并砸伤敌人。被投出的器械也会因此受到摔落伤害。</p>
             </header>
             <properties>
                 <p>伤害：<![CDATA[<color=red>根据被投掷的器械的材质和体积而定</color>]]></p>
