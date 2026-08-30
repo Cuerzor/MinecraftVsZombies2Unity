@@ -16,6 +16,7 @@ using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Level;
 using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Buffs.Enemies
@@ -50,11 +51,11 @@ namespace MVZ2.GameContent.Buffs.Enemies
             }
             if (health >= MAX_PARASITE_HEALTH)
             {
-                SpawnParasites(entity, health);
+                SpawnParasites(entity, health, new BuffSourceReference(entity, buff));
                 buff.Remove();
             }
         }
-        public static void SpawnParasites(Entity host, float health)
+        public static void SpawnParasites(Entity host, float health, ILevelSourceReference? source)
         {
             var level = host.Level;
             int count = level.GetParasitizedTerrorCount();
@@ -65,7 +66,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
                     e.Health = health;
                 });
             }
-            host.TakeDamage(DAMAGE, new DamageEffectList(VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.SELF_DAMAGE, VanillaDamageEffects.MUTE), host);
+            host.TakeDamageSourced(DAMAGE, new DamageEffectList(VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.SELF_DAMAGE, VanillaDamageEffects.MUTE), source);
             host.PlaySound(VanillaSoundID.bloody);
             host.EmitBlood();
         }
@@ -78,7 +79,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
                 var health = buff.GetProperty<float>(PROP_PARASITE_HEALTH);
                 if (health > 0)
                 {
-                    SpawnParasites(entity, health);
+                    SpawnParasites(entity, health, new BuffSourceReference(entity, buff));
                 }
                 buff.Remove();
             }

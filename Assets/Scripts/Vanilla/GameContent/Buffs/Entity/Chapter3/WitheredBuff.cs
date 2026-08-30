@@ -9,6 +9,7 @@ using MVZ2Logic.Models;
 using PVZEngine.Buffs;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
+using PVZEngine.Entities;
 
 namespace MVZ2.GameContent.Buffs.Entities
 {
@@ -26,7 +27,7 @@ namespace MVZ2.GameContent.Buffs.Entities
             var entity = buff.GetEntity();
             if (entity != null)
             {
-                entity.TakeDamage(WITHER_DAMAGE, new DamageEffectList(VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.MUTE), entity);
+                entity.TakeDamageSourced(WITHER_DAMAGE, new DamageEffectList(VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.MUTE), new BuffSourceReference(entity, buff));
             }
 
             var timeout = buff.GetProperty<int>(PROP_TIMEOUT);

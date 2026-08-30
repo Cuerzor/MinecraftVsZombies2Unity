@@ -42,7 +42,7 @@ namespace MVZ2.GameContent.Buffs.Entities
                 if (intervalTimer.RunToExpiredAndNotNull())
                 {
                     var damageEffects = new DamageEffectList(VanillaDamageEffects.FIRE, VanillaDamageEffects.IGNORE_ARMOR);
-                    entity.TakeDamage(GetFireDamage(buff), damageEffects, entity);
+                    entity.TakeDamageSourced(GetFireDamage(buff), damageEffects, new BuffSourceReference(entity, buff));
                     entity.Spawn(VanillaEffectID.fireburn, entity.GetCenter());
                     intervalTimer.Reset();
                 }
