@@ -1406,7 +1406,7 @@
                 <id name="mvz2:shootSound" value="mvz2:shot" />
                 <id name="mvz2:projectileId" value="mvz2:air_slash" />
 
-                <int name="mvz2:cost" value="175" />
+                <int name="mvz2:cost" value="200" />
                 <id name="mvz2:rechargeId" value="mvz2:short" />
             </properties>
         </entity>
