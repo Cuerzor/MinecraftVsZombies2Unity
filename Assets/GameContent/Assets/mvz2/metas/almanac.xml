@@ -1949,12 +1949,17 @@
             </flavor>
         </entry>
         <entry id="mvz2:zombie_cat">
+            <variables>
+                <variable name="summon_chance_normal">50</variable>
+                <variable name="summon_chance_hard">100</variable>
+            </variables>
             <header>
-                <p>僵尸猫拥有9条命，并且每次死亡时都有50%的概率召唤一只<![CDATA[<ref=[enemies]mvz2:wisp_fly>鬼火苍蝇</ref>]]>。</p>
+                <p>僵尸猫拥有9条命，并且每次死亡时都有一定概率召唤一只<![CDATA[<ref=[enemies]mvz2:wisp_fly>鬼火苍蝇</ref>]]>。</p>
             </header>
             <properties>
                 <p>生命：<![CDATA[<color=red><var id="mvz2:entity_health" /></color>]]></p>
                 <p>速度：<![CDATA[<color=red><var id="mvz2:entity_speed" /></color>]]></p>
+                <p>召唤概率：<![CDATA[<color=red><var local="summon_chance_normal" />%，困难难度下<var local="summon_chance_hard" />%</color>]]></p>
                 <p>特点：<![CDATA[<color=red>能复活8次</color>]]></p>
             </properties>
             <flavor>
