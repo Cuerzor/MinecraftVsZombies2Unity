@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MVZ2.GameContent.Areas;
 using MVZ2.GameContent.Artifacts;
 using MVZ2.GameContent.Buffs;
+using MVZ2.GameContent.Buffs.Contraptions;
 using MVZ2.GameContent.Detections;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
@@ -14,6 +15,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Models;
+using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions
@@ -50,7 +52,10 @@ namespace MVZ2.GameContent.Contraptions
             base.OnEvoke(entity);
             var pos = entity.Position + Vector3.up * 600;
             entity.SpawnUnlockArtifactPickup(VanillaAreaID.castle, VanillaUnlockID.brokenLantern, VanillaArtifactID.brokenLantern, pos + Vector3.up * 100);
-            var anvil = entity.SpawnWithParams(VanillaContraptionID.anvil, pos);
+            entity.SpawnWithParams(VanillaContraptionID.anvil, pos)?.Let(anvil =>
+            {
+                anvil.AddBuff<ContraptionFallBuff>();
+            });
         }
         public const float AFFECT_HEIGHT = 64;
         public const float MIN_HEIGHT = 5;

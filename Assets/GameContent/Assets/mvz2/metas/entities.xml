@@ -1443,6 +1443,7 @@
                 <float name="mvz2:fallResistance" value="10000" />
                 <float name="mvz2:groundLimitOffset" value="-16" />
                 <float name="mvz2:water_ground_limit_offset" value="-24" />
+                <float name="mvz2:ejector_damage_override" value="1800" />
                 <vector3 name="mvz2:size" x="48" y="120" z="48" />
                 <int name="mvz2:collision_mask_hostile" value="15" />
                 <int name="mvz2:collision_mask_friendly" value="15" />

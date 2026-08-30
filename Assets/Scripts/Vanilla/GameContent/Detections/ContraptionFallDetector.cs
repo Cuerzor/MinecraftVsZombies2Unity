@@ -7,9 +7,9 @@ using UnityEngine;
 
 namespace MVZ2.GameContent.Detections
 {
-    public class OnbashiraFallDetector : Detector
+    public class ContraptionFallDetector : Detector
     {
-        public OnbashiraFallDetector()
+        public ContraptionFallDetector()
         {
             this.canDetectInvisible = true;
         }
@@ -30,7 +30,7 @@ namespace MVZ2.GameContent.Detections
         }
         public override bool ValidateTarget(DetectionParams self, Entity target)
         {
-            if (!OnbashiraFallBuff.CanSmash(self.entity, target))
+            if (!ContraptionFallBuff.CanSmash(self.entity, target))
                 return false;
             return base.ValidateTarget(self, target);
         }

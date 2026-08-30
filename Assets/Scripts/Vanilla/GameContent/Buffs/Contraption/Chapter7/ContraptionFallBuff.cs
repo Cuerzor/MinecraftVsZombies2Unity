@@ -16,10 +16,10 @@ using PVZEngine.Entities;
 
 namespace MVZ2.GameContent.Buffs.Contraptions
 {
-    [AutoBuffDefinition(VanillaBuffNames.Contraption.onbashiraFall)]
-    public class OnbashiraFallBuff : BuffDefinition
+    [AutoBuffDefinition(VanillaBuffNames.Contraption.contraptionFall)]
+    public class ContraptionFallBuff : BuffDefinition
     {
-        public OnbashiraFallBuff(string nsp, string name) : base(nsp, name)
+        public ContraptionFallBuff(string nsp, string name) : base(nsp, name)
         {
         }
         public override void PostUpdate(Buff buff)
@@ -59,6 +59,6 @@ namespace MVZ2.GameContent.Buffs.Contraptions
         public static void SetDamageMultiplier(Buff buff, float value) => buff.SetProperty(PROP_DAMAGE_MULTIPLIER, value);
         public static readonly VanillaBuffPropertyMeta<float> PROP_DAMAGE_MULTIPLIER = new VanillaBuffPropertyMeta<float>("damage_multiplier", 18);
         private List<IEntityCollider> smashBuffer = new List<IEntityCollider>();
-        private Detector smashDetector = new OnbashiraFallDetector();
+        private Detector smashDetector = new ContraptionFallDetector();
     }
 }

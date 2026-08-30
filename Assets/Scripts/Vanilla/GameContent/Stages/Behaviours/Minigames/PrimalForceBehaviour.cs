@@ -36,7 +36,7 @@ namespace MVZ2.GameContent.Stages
             pos.y += 600f;
             return level.Spawn(VanillaContraptionID.giantStone, pos, null)?.Let(stone =>
             {
-                stone.AddBuff<OnbashiraFallBuff>();
+                stone.AddBuff<ContraptionFallBuff>();
             });
         }
         public const int COLUMN_MIN = 3;

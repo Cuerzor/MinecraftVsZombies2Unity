@@ -20,14 +20,13 @@ namespace MVZ2.GameContent.Contraptions
     {
         public Onbashira(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(VanillaLevelCallbacks.POST_ENTITY_EJECT, PostEntityEjectedCallback);
         }
         public override void Init(Entity entity)
         {
             base.Init(entity);
             entity.Position += Vector3.up * STARTING_HEIGHT;
             entity.Velocity += Vector3.down * STARTING_FALLING_SPEED;
-            entity.AddBuff<OnbashiraFallBuff>();
+            entity.AddBuff<ContraptionFallBuff>();
         }
         public override void Update(Entity entity)
         {
@@ -42,13 +41,6 @@ namespace MVZ2.GameContent.Contraptions
                 entity.PlaySound(VanillaSoundID.smash);
                 entity.Level.ShakeScreen(10, 0, 15);
             }
-        }
-        private void PostEntityEjectedCallback(VanillaLevelCallbacks.PostEntityEjectParams args, CallbackResult result)
-        {
-            var entity = args.entity;
-            if (!entity.HasBehaviour(this))
-                return;
-            entity.AddBuff<OnbashiraFallBuff>();
         }
         public const float STARTING_HEIGHT = 800;
         public const float STARTING_FALLING_SPEED = 50;

@@ -18,70 +18,15 @@ using UnityEngine;
 namespace MVZ2.GameContent.Contraptions
 {
     [AutoEntityBehaviourDefinition(VanillaContraptionNames.anvil)]
-    public class Anvil : ContraptionBehaviour
+    public class Anvil : EntityBehaviourDefinition
     {
         public Anvil(string nsp, string name) : base(nsp, name)
         {
-            smashDetector = new CollisionDetector(true);
-        }
-        public override void PostCollision(EntityCollision collision, int state)
-        {
-            base.PostCollision(collision, state);
-            if (state != EntityCollisionHelper.STATE_ENTER)
-                return;
-            if (!collision.Collider.IsForMain())
-                return;
-            var anvil = collision.Entity;
-            if (anvil.Velocity == Vector3.zero)
-                return;
-            var other = collision.Other;
-            if (!CanSmash(anvil, other))
-                return;
-            float damageModifier = Mathf.Clamp(anvil.Velocity.magnitude, 0, 1);
-            collision.OtherCollider.TakeDamage(1800 * damageModifier, new DamageEffectList(VanillaDamageEffects.IMPACT, VanillaDamageEffects.MUTE, VanillaDamageEffects.DAMAGE_BOTH_ARMOR_AND_BODY), anvil);
-        }
-        public override bool CanEvoke(Entity entity)
-        {
-            return false;
         }
         public override void PostContactGround(Entity anvil, Vector3 velocity)
         {
             base.PostContactGround(anvil, velocity);
-
-            if (velocity != Vector3.zero)
-            {
-                smashBuffer.Clear();
-                smashDetector.DetectMultiple(anvil, smashBuffer);
-                foreach (var target in smashBuffer)
-                {
-                    var other = target.Entity;
-                    if (CanSmash(anvil, other))
-                    {
-                        float damageModifier = Mathf.Clamp(velocity.magnitude, 0, 1);
-                        target.TakeDamage(1800 * damageModifier, new DamageEffectList(VanillaDamageEffects.IMPACT, VanillaDamageEffects.MUTE, VanillaDamageEffects.DAMAGE_BOTH_ARMOR_AND_BODY), anvil);
-                    }
-                }
-            }
-
-
             anvil.PlaySound(VanillaSoundID.anvil);
-            anvil.DestroyConflictGridEntities();
         }
-        public static bool CanSmash(Entity anvil, Entity other)
-        {
-            if (other == anvil)
-                return false;
-            if (!other.IsVulnerableEntity())
-                return false;
-            if (anvil.IsHostile(other))
-                return true;
-            var selfGridLayers = anvil.GetGridLayersToTake();
-            var otherGridLayers = other.GetGridLayersToTake();
-            if (selfGridLayers == null || otherGridLayers == null)
-                return false;
-            return selfGridLayers.Any(l => otherGridLayers.Contains(l));
-        }
-        private List<IEntityCollider> smashBuffer = new List<IEntityCollider>();
-        private Detector smashDetector;
     }
 }
