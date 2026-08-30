@@ -1162,7 +1162,7 @@
             <variables>
                 <variable name="trapped_damage">property("mvz2:entity_behaviour/autotrap/trapped_damage_multiplier") * global("mvz2:entity_damage")</variable>
                 <variable name="continuous_damage">property("mvz2:entity_behaviour/autotrap/continuous_damage_multiplier") * global("mvz2:entity_damage")</variable>
-                <variable name="continuous_dps">local("continuous_damage") / property("mvz2:entity_behaviour/autotrap/trapped_damage_interval")</variable>
+                <variable name="continuous_interval">property("mvz2:entity_behaviour/autotrap/trapped_damage_interval")</variable>
                 <variable name="evoked_damage">property("mvz2:entity_behaviour/autotrap/evoked_damage_multiplier") * global("mvz2:entity_damage")</variable>
                 <variable name="evoked_range">global("mvz2:entity_range_in_tiles")</variable>
             </variables>
@@ -1170,7 +1170,7 @@
                 <p>自动兽夹会夹住踩到它的第一个敌人，将其困住并持续造成伤害直到其死亡。之后自动兽夹便可以再次被使用。</p>
             </header>
             <properties>
-                <p>伤害：<![CDATA[<color=red><var local="trapped_damage"/>锐利伤害（夹取），<var local="continuous_dps"/>锐利伤害/秒（持续）</color>]]></p>
+                <p>伤害：<![CDATA[<color=red><var local="trapped_damage"/>锐利伤害（夹取），<var local="continuous_damage"/>锐利伤害/<var local="continuous_interval"/>秒（持续）</color>]]></p>
                 <p>技能：<![CDATA[<color=red>下一次夹取会直接击杀被困住的目标，并对半径<var local="evoked_range"/>格内的敌人造成<var local="evoked_damage"/>点闪电伤害</color>]]></p>
             </properties>
             <flavor>
