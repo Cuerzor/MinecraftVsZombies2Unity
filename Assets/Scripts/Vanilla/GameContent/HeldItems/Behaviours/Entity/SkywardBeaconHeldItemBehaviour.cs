@@ -2,12 +2,15 @@
 
 using MVZ2.GameContent.Buffs.Entities;
 using MVZ2.GameContent.Contraptions;
+using MVZ2.GameContent.Models;
 using MVZ2.Vanilla.Audios;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.Entities;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
+using PVZEngine.Callbacks;
+using PVZEngine.Level;
 
 namespace MVZ2.GameContent.HeldItems
 {
@@ -18,6 +21,10 @@ namespace MVZ2.GameContent.HeldItems
         {
         }
 
+        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        {
+            result.SetFinalValue(VanillaModelID.targetSkywardBeacon);
+        }
         protected override void OnUseOnGrid(HeldItemTargetGrid targetGrid, IHeldItemData data, PointerInteractionData pointerParams)
         {
             var level = targetGrid.GetLevel();

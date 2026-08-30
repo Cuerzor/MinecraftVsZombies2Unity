@@ -36,6 +36,10 @@ namespace MVZ2.GameContent.Models
         public static readonly NamespaceID swordHeldItem = Get("sword", TYPE_HELD_ITEM);
         public static readonly NamespaceID defaultStartShardHeldItem = Get("starshard.default", TYPE_HELD_ITEM);
         public static readonly NamespaceID targetHeldItem = Get("target", TYPE_HELD_ITEM);
+        public static readonly NamespaceID targetEjector = Get("target_ejector", TYPE_HELD_ITEM);
+        public static readonly NamespaceID targetTeleporter = Get("target_teleporter", TYPE_HELD_ITEM);
+        public static readonly NamespaceID targetSkywardBeacon = Get("target_skyward_beacon", TYPE_HELD_ITEM);
+        public static readonly NamespaceID targetForcePad = Get("target_force_pad", TYPE_HELD_ITEM);
         public static readonly NamespaceID combat = Get("combat", TYPE_HELD_ITEM);
 
         public static readonly NamespaceID shortCircuit = Get("short_circuit", TYPE_ICON);

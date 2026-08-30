@@ -33,7 +33,7 @@ namespace MVZ2.GameContent.HeldItems
         }
         public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
         {
-            result.SetFinalValue(VanillaModelID.targetHeldItem);
+            result.SetFinalValue(VanillaModelID.targetForcePad);
         }
         public override void OnUpdate(LevelEngine level, IHeldItemData data)
         {

@@ -627,6 +627,10 @@
     <model name="trigger" type="held" path="mvz2:held/trigger" shot="false" width="32" height="32" xOffset="0" yOffset="-28" />
     <model name="sword" type="held" path="mvz2:held/sword" shot="false" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="target" type="held" path="mvz2:held/target" shot="false" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="target_ejector" type="held" path="mvz2:held/target_ejector" shot="false" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="target_teleporter" type="held" path="mvz2:held/target_teleporter" shot="false" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="target_skyward_beacon" type="held" path="mvz2:held/target_skyward_beacon" shot="false" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="target_force_pad" type="held" path="mvz2:held/target_force_pad" shot="false" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="combat" type="held" path="mvz2:held/combat" shot="false" width="64" height="64" xOffset="0" yOffset="-28" />
 
     <!-- Icons -->

@@ -423,6 +423,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 07b3d42676397854f9f00cb758253533
+    m_Address: mvz2:held/target_force_pad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 07f0858ead454ce4dae7b219cc8ba50e
     m_Address: mvz2:enemy/dream/mother_terror
     m_ReadOnly: 0
@@ -1193,6 +1200,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 156b8fa2f41fd9b4dbee0d0164950dda
+    m_Address: mvz2:entity/contraption/daylight_sensor
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1572d8be8ee0060479965033d1f67013
     m_Address: mvz2:entity/boss/wither_crack_light
     m_ReadOnly: 0
@@ -1759,6 +1773,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 204c6404d389d1945adf97acd7654531
+    m_Address: mvz2:arcade/primal_force
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 204fe2216f90dcb4a9e3e45c0373628b
     m_Address: mvz2:effect/mind_control_lines
@@ -2420,6 +2441,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2c42c8de90a7c30499eae9212c363c7d
     m_Address: mvz2:mainmenu/back_to_mainmenu
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2c4734fdd7489c647850cd14bd2e3bbd
+    m_Address: mvz2:ui/level/target_force_pad
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -4425,6 +4453,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b87f74f6f1e97f4386165be6bd910c9
+    m_Address: mvz2:ui/level/target_skyward_beacon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4bc6ce89adce4a6418ff0875e511fd9b
     m_Address: mvz2:mobile_blueprint/mutant_zombie
     m_ReadOnly: 0
@@ -4683,6 +4718,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5182829c5b3609643b4276f1b507674f
+    m_Address: mvz2:held/target_skyward_beacon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 51b5678df05eb434f9dc35d0069a9c08
     m_Address: mvz2:areas
@@ -5879,6 +5921,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 661dea79d5b5a56418286c4b73213051
+    m_Address: mvz2:held/target_teleporter
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6661be6b03238a2409e5b705222184e0
     m_Address: mvz2:misc/graveyard
@@ -11631,6 +11680,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce391ac4b098032478e4e8d00b4cd574
+    m_Address: mvz2:ui/level/target_teleporter
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ce430ba2024246f4dadf478ac8a0e8d5
     m_Address: mvz2:enemy/mausoleum/wicked_hermit_zombie
     m_ReadOnly: 0
@@ -13716,6 +13772,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f4c0c63da64a1904f981668525b7a5bf
+    m_Address: mvz2:ui/level/target_ejector
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f4f8e61b7c7d50243bb37fafee955fca
     m_Address: mvz2:projectile/wither_skull
     m_ReadOnly: 0
@@ -14081,6 +14144,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fb514258861e2e24092c86b45d94feb5
     m_Address: mvz2:effect/nightmare_glass
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb656bd1f9be747438fdd4c777004132
+    m_Address: mvz2:held/target_ejector
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

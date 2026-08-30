@@ -2,10 +2,13 @@
 
 using System.Collections.Generic;
 using MVZ2.GameContent.Contraptions;
+using MVZ2.GameContent.Models;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
+using PVZEngine.Callbacks;
 using PVZEngine.Grids;
+using PVZEngine.Level;
 
 namespace MVZ2.GameContent.HeldItems
 {
@@ -16,6 +19,10 @@ namespace MVZ2.GameContent.HeldItems
         {
         }
 
+        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        {
+            result.SetFinalValue(VanillaModelID.targetTeleporter);
+        }
         public override HeldHighlight GetHighlight(IHeldItemTarget target, IHeldItemData data, PointerInteractionData pointer)
         {
             if (target is not HeldItemTargetGrid targetGrid)
