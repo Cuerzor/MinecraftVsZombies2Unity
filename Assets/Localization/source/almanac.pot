@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-30 09:21+0800\n"
+"POT-Creation-Date: 2026-08-30 10:33+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4556,7 +4556,7 @@ msgctxt "misc.description"
 msgid ""
 "生命：<color=red><var local=\"hp\"/></color>\n"
 "速度：<color=red><var local=\"speed\"/></color>\n"
-"特殊：<color=red>无视所有敌人，免疫秒杀</color>"
+"特殊：<color=red>每秒受到<var local=\"self_dps\"/>点伤害；免疫其他所有伤害；免疫秒杀</color>"
 msgstr ""
 
 #. Flavor for misc mvz2:creaking
