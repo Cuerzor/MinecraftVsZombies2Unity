@@ -68,13 +68,10 @@ namespace MVZ2.GameContent.Buffs.Entities
                 return;
 
             var output = param.output;
-            var bodyResult = new BodyDamageResult(input, Global.Game.GetShellDefinition(VanillaShellID.stone))
-            {
-                Fatal = false,
-                Amount = 0,
-                SpendAmount = input.OriginalAmount,
-            };
-            output.BodyResult = bodyResult;
+            var bodyInput = new BodyDamageInputPart(input);
+            var bodyOutput = new BodyDamageOutputPart(bodyInput, Global.Game.GetShellDefinition(VanillaShellID.stone));
+            bodyOutput.SetDamageAmount(0, 0, 0);
+            output.BodyResult = bodyOutput;
             buff.Remove();
 
             result.SetFinalValue(false);

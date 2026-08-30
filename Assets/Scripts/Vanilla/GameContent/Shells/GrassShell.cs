@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Shells
             SetProperty(VanillaShellProps.SLICE_CRITICAL, true);
             SetProperty(VanillaShellProps.DENSITY, 0.35f);
         }
-        public override void EvaluateDamage(DamageInput damageInfo)
+        public override void EvaluateDamage(DamageInputPart damageInfo)
         {
             base.EvaluateDamage(damageInfo);
             if (damageInfo.Effects.HasEffect(VanillaDamageEffects.FIRE))

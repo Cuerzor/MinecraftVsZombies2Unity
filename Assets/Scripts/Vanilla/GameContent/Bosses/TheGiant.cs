@@ -107,7 +107,7 @@ namespace MVZ2.GameContent.Bosses
                     if (result != null)
                     {
                         var level = self.Level;
-                        self.HealEffects(result.GetTotalSpendAmount() * PACMAN_HEAL_MULTIPLIER, other);
+                        self.HealEffects(result.GetTotalEffectiveAmount() * PACMAN_HEAL_MULTIPLIER, other);
                         if (!level.IsPlayingSound(VanillaSoundID.pacmanAttack))
                         {
                             level.PlaySound(VanillaSoundID.pacmanAttack);

@@ -19,7 +19,7 @@ namespace MVZ2.GameContent.Shells
             SetProperty(VanillaShellProps.BLOCKS_FIRE, true);
             SetProperty(VanillaShellProps.DENSITY, 1f);
         }
-        public override void EvaluateDamage(DamageInput damageInfo)
+        public override void EvaluateDamage(DamageInputPart damageInfo)
         {
             base.EvaluateDamage(damageInfo);
             if (damageInfo.Effects.HasEffect(VanillaDamageEffects.IMPACT))

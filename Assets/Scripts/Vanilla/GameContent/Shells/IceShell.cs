@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Shells
             SetProperty(VanillaShellProps.BLOCKS_SLICE, true);
             SetProperty(VanillaShellProps.DENSITY, 0.3333333333333333f);
         }
-        public override void EvaluateDamage(DamageInput damageInfo)
+        public override void EvaluateDamage(DamageInputPart damageInfo)
         {
             base.EvaluateDamage(damageInfo);
             if (damageInfo.Effects.HasEffect(VanillaDamageEffects.FIRE))

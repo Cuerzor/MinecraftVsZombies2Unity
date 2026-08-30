@@ -36,11 +36,11 @@ namespace MVZ2.Vanilla.Callbacks
         }
         public struct PreArmorTakeDamageParams
         {
-            public DamageInput input;
+            public ArmorDamageInputPart input;
             public Armor armor;
-            public ArmorDamageResult result;
+            public ArmorDamageOutputPart result;
 
-            public PreArmorTakeDamageParams(DamageInput input, Armor armor, ArmorDamageResult result)
+            public PreArmorTakeDamageParams(ArmorDamageInputPart input, Armor armor, ArmorDamageOutputPart result)
             {
                 this.input = input;
                 this.armor = armor;
@@ -49,19 +49,19 @@ namespace MVZ2.Vanilla.Callbacks
         }
         public struct PostArmorTakeDamageParams
         {
-            public ArmorDamageResult result;
+            public ArmorDamageOutputPart result;
 
-            public PostArmorTakeDamageParams(ArmorDamageResult result)
+            public PostArmorTakeDamageParams(ArmorDamageOutputPart result)
             {
                 this.result = result;
             }
         }
         public struct PreBodyTakeDamageParams
         {
-            public DamageInput input;
-            public BodyDamageResult output;
+            public BodyDamageInputPart input;
+            public BodyDamageOutputPart output;
 
-            public PreBodyTakeDamageParams(DamageInput input, BodyDamageResult output)
+            public PreBodyTakeDamageParams(BodyDamageInputPart input, BodyDamageOutputPart output)
             {
                 this.input = input;
                 this.output = output;
@@ -69,9 +69,9 @@ namespace MVZ2.Vanilla.Callbacks
         }
         public struct PostBodyTakeDamageParams
         {
-            public BodyDamageResult output;
+            public BodyDamageOutputPart output;
 
-            public PostBodyTakeDamageParams(BodyDamageResult output)
+            public PostBodyTakeDamageParams(BodyDamageOutputPart output)
             {
                 this.output = output;
             }

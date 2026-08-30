@@ -87,10 +87,10 @@ namespace MVZ2Logic.Serialization
             RegisterClass<SerializableConveyorSeedSendRecordEntry>();
 
 
-            RegisterClass<DamageResultValues>();
+            RegisterClass<DamageOutputPartValues>();
 
             RegisterClass<SerializableDeathInfo>();
-            RegisterClass<SerializableDamageResult>();
+            RegisterClass<SerializableDamageOutputPart>();
             RegisterClass<SerializableArmorDamageResult>();
             RegisterClass<SerializableBodyDamageResult>();
 

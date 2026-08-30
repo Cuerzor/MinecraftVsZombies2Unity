@@ -35,7 +35,7 @@ namespace MVZ2.Vanilla.Armors
             armor.SetModelProperty("DamagePercent", percent);
         }
 
-        private static int PreArmorTakeDamage(this Armor armor, DamageInput input, ArmorDamageResult result)
+        private static int PreArmorTakeDamage(this Armor armor, ArmorDamageInputPart input, ArmorDamageOutputPart result)
         {
             var callbackResult = new CallbackResult(DamageStates.CONTINUE);
             if (!callbackResult.IsBreakRequested)
@@ -45,21 +45,21 @@ namespace MVZ2.Vanilla.Armors
             }
             return callbackResult.GetValue<int>();
         }
-        private static void PostArmorTakeDamage(this Armor armor, ArmorDamageResult result)
+        private static void PostArmorTakeDamage(this Armor armor, ArmorDamageOutputPart result)
         {
             var param = new VanillaLevelCallbacks.PostArmorTakeDamageParams(result);
             result.Entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_ARMOR_TAKE_DAMAGE, param, armor.Definition.GetID());
         }
-        public static ArmorDamageResult? TakeDamage(this Armor armor, DamageInput info)
+        public static ArmorDamageOutputPart? TakeDamage(this Armor armor, ArmorDamageInputPart input)
         {
             if (!Armor.Exists(armor))
                 return null;
 
-            var entity = info.Entity;
+            var entity = input.Entity;
             var shell = armor.GetShellDefinition();
-            var result = new ArmorDamageResult(info, armor, shell);
+            var result = new ArmorDamageOutputPart(input, shell);
 
-            var damageState = armor.PreArmorTakeDamage(info, result);
+            var damageState = armor.PreArmorTakeDamage(input, result);
             if (damageState == DamageStates.BREAK)
             {
                 return null;
@@ -71,29 +71,29 @@ namespace MVZ2.Vanilla.Armors
 
             if (shell != null)
             {
-                shell.EvaluateDamage(info);
+                shell.EvaluateDamage(input);
             }
 
             // Apply Damage
-            var amount = info.Amount;
-            if (amount > 0)
+            var actualAmount = input.Amount;
+            if (actualAmount > 0)
             {
                 float hpBefore = armor.Health;
-                armor.Health -= amount;
+                armor.Health -= actualAmount;
 
-                result.Amount = amount;
-                result.SpendAmount = Mathf.Min(hpBefore, amount);
+                var effectiveAmount = Mathf.Min(hpBefore, actualAmount);
+                var overflowAmount = input.GetOverflowAmount(hpBefore, actualAmount);
+                result.SetDamageAmount(actualAmount, effectiveAmount, overflowAmount);
                 result.Fatal = hpBefore > 0 && armor.Health <= 0;
                 if (result.Fatal)
                 {
-                    var destroyInfo = new ArmorDestroyInfo(entity, armor, armor.Slot, info.Effects, info.Source, result);
+                    var destroyInfo = new ArmorDestroyInfo(entity, armor, armor.Slot, input.Effects, input.Source, result);
                     armor.Destroy(destroyInfo);
                 }
             }
             else
             {
-                result.Amount = amount;
-                result.SpendAmount = amount;
+                result.SetDamageAmount(actualAmount, 0, 0);
             }
 
             if (result.HasDamageAmount())

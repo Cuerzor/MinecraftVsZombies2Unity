@@ -460,7 +460,7 @@ namespace MVZ2.GameContent.Bosses
                     PostSpinDamageByResult(entity, damage.BodyResult);
                 }
             }
-            private void PostSpinDamageByResult(Entity entity, DamageResult result)
+            private void PostSpinDamageByResult(Entity entity, DamageOutputPart result)
             {
                 var targetShell = result.ShellDefinition;
                 if (targetShell == null || !targetShell.BlocksSlice())

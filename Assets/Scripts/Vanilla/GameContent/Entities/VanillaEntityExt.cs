@@ -108,7 +108,8 @@ namespace MVZ2.Vanilla.Entities
                 }
                 else
                 {
-                    output.BodyResult = BodyTakeDamage(input);
+                    var bodyInput = new BodyDamageInputPart(input);
+                    output.BodyResult = BodyTakeDamage(bodyInput);
                 }
             }
             else
@@ -116,7 +117,8 @@ namespace MVZ2.Vanilla.Entities
                 var armor = input.Entity.GetArmorAtSlot(input.ShieldTarget);
                 if (Armor.Exists(armor) && !armor.IsIgnored())
                 {
-                    output.ShieldResult = armor.TakeDamage(input);
+                    var shieldInput = new ArmorDamageInputPart(input, armor);
+                    output.ShieldResult = armor.TakeDamage(shieldInput);
                     output.ShieldTarget = input.ShieldTarget;
                 }
             }
@@ -160,33 +162,34 @@ namespace MVZ2.Vanilla.Entities
             var param = new VanillaLevelCallbacks.PostTakeDamageParams(output);
             entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_ENTITY_TAKE_DAMAGE, param, entity.Type);
         }
-        private static void ArmoredTakeDamage(Armor armor, DamageInput info, DamageOutput result)
+        private static void ArmoredTakeDamage(Armor armor, DamageInput input, DamageOutput result)
         {
-            var entity = info.Entity;
-            var armorResult = armor.TakeDamage(info);
+            var armorInput = new ArmorDamageInputPart(input, armor);
+            var armorResult = armor.TakeDamage(armorInput);
             result.ArmorResult = armorResult;
 
-            if (info.HasEffect(VanillaDamageEffects.DAMAGE_BOTH_ARMOR_AND_BODY))
+            if (input.HasEffect(VanillaDamageEffects.DAMAGE_BOTH_ARMOR_AND_BODY))
             {
-                result.BodyResult = BodyTakeDamage(info);
+                var bodyInput = new BodyDamageInputPart(input);
+                result.BodyResult = BodyTakeDamage(bodyInput);
                 return;
             }
 
-            if (info.HasEffect(VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN) && !Armor.Exists(entity.GetMainArmor()))
+            var entity = input.Entity;
+            if (input.HasEffect(VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN) && !Armor.Exists(entity.GetMainArmor()))
             {
-                var armorSpendAmount = armorResult?.SpendAmount ?? 0;
-                float overkillDamage = info.Amount - armorSpendAmount;
-                if (overkillDamage > 0)
+                var overflowDamage = armorResult?.OverflowAmount ?? 0;
+                if (overflowDamage > 0)
                 {
-                    var overkillInfo = new DamageInput(overkillDamage, info.Effects, entity, info.Source);
-                    result.BodyResult = BodyTakeDamage(overkillInfo);
+                    var bodyInput = new BodyDamageInputPart(overflowDamage, input.Effects, entity, input.Source);
+                    result.BodyResult = BodyTakeDamage(bodyInput);
                 }
                 return;
             }
         }
 
 
-        private static int PreBodyTakeDamage(this Entity armor, DamageInput input, BodyDamageResult result)
+        private static int PreBodyTakeDamage(this Entity armor, BodyDamageInputPart input, BodyDamageOutputPart result)
         {
             var callbackResult = new CallbackResult(DamageStates.CONTINUE);
             if (!callbackResult.IsBreakRequested)
@@ -196,19 +199,19 @@ namespace MVZ2.Vanilla.Entities
             }
             return callbackResult.GetValue<int>();
         }
-        private static void PostBodyTakeDamage(this Entity entity, BodyDamageResult result)
+        private static void PostBodyTakeDamage(this Entity entity, BodyDamageOutputPart result)
         {
             var param = new VanillaLevelCallbacks.PostBodyTakeDamageParams(result);
             entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_BODY_TAKE_DAMAGE, param, entity.Definition.GetID());
         }
-        private static BodyDamageResult? BodyTakeDamage(DamageInput info)
+        private static BodyDamageOutputPart? BodyTakeDamage(BodyDamageInputPart input)
         {
-            var entity = info.Entity;
+            var entity = input.Entity;
             var shell = entity.GetShellDefinition();
 
-            var result = new BodyDamageResult(info, shell);
+            var result = new BodyDamageOutputPart(input, shell);
 
-            var damageState = entity.PreBodyTakeDamage(info, result);
+            var damageState = entity.PreBodyTakeDamage(input, result);
             if (damageState == DamageStates.BREAK)
             {
                 return null;
@@ -218,28 +221,28 @@ namespace MVZ2.Vanilla.Entities
                 return result;
             }
 
-            shell?.EvaluateDamage(info);
+            shell?.EvaluateDamage(input);
 
             // Apply Damage.
-            var amount = info.Amount;
-            if (amount > 0)
+            var actualAmount = input.Amount;
+            if (actualAmount > 0)
             {
                 float hpBefore = entity.Health;
-                entity.Health -= amount;
+                entity.Health -= actualAmount;
 
-                result.Amount = amount;
-                result.SpendAmount = Mathf.Min(hpBefore, amount);
+                var effectiveAmount = Mathf.Min(hpBefore, actualAmount);
+                var overflowAmount = input.GetOverflowAmount(hpBefore, actualAmount);
+                result.SetDamageAmount(actualAmount, effectiveAmount, overflowAmount);
                 result.Fatal = hpBefore > 0 && entity.Health <= 0;
             }
             else
             {
-                result.Amount = amount;
-                result.SpendAmount = amount;
+                result.SetDamageAmount(actualAmount, 0, 0);
             }
 
             if (entity.Health <= 0)
             {
-                entity.Die(info.Effects, info.Source, result.GetValues());
+                entity.Die(input.Effects, input.Source, result.GetValues());
             }
             if (result.HasDamageAmount())
             {
@@ -339,7 +342,7 @@ namespace MVZ2.Vanilla.Entities
                 }
             }
         }
-        public static void PlayArmorHitSound(this Entity entity, ArmorDamageResult result)
+        public static void PlayArmorHitSound(this Entity entity, ArmorDamageOutputPart result)
         {
             if (!result.Effects.HasEffect(VanillaDamageEffects.MUTE))
             {
@@ -364,7 +367,7 @@ namespace MVZ2.Vanilla.Entities
                 }
             }
         }
-        public static NamespaceID? GetSpecialShellHitSound(this ShellDefinition shell, DamageResult result, bool isArmor)
+        public static NamespaceID? GetSpecialShellHitSound(this ShellDefinition shell, DamageOutputPart result, bool isArmor)
         {
             var damageEffects = result.Effects;
             if (!isArmor)

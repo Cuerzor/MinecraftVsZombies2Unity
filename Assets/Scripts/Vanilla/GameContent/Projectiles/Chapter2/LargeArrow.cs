@@ -41,40 +41,18 @@ namespace MVZ2.GameContent.Projectiles
             var damage = param.damage;
             if (damage == null)
                 return;
-            bool fatal = true;
-            float spentDamage = 0;
-            CheckDamageResult(damage.ShieldResult);
-            CheckDamageResult(damage.ArmorResult);
-            CheckDamageResult(damage.BodyResult);
-
-            if (!fatal)
+            if (damage.HasAnyNotFatal())
             {
                 projectile.Remove();
+                return;
             }
-
-            var dmg = projectile.GetDamage();
-            dmg -= spentDamage;
-            projectile.SetDamage(dmg);
-
-            if (dmg <= 0)
+            float overflowDamage = damage.GetFinalOverflowAmount();
+            if (overflowDamage <= 0)
             {
                 projectile.Remove();
+                return;
             }
-
-            void CheckDamageResult(DamageResult? result)
-            {
-                if (result != null)
-                {
-                    if (result.Fatal)
-                    {
-                        spentDamage += result.SpendAmount;
-                    }
-                    else
-                    {
-                        fatal = false;
-                    }
-                }
-            }
+            projectile.SetDamage(overflowDamage);
         }
     }
 }
