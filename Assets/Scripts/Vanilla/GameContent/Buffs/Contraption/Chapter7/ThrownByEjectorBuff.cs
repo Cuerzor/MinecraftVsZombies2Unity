@@ -24,6 +24,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
         {
             AddModifier(new FloatModifier(EngineEntityProps.FRICTION, NumberOperator.Set, 0));
             AddModifier(new FloatModifier(EngineEntityProps.GRAVITY, NumberOperator.Set, 1, priority: VanillaModifierPriorities.FORCE));
+            AddModifier(new IntModifier(VanillaEntityProps.VEHICLE_INTERACTION, IntegerOperator.Set, VehicleInteraction.IGNORE));
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_HOSTILE, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_FRIENDLY, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
             AddTrigger(LevelCallbacks.POST_ENTITY_COLLISION, PostEntityCollisionCallback);
