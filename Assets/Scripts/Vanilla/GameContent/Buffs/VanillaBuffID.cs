@@ -349,7 +349,8 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public const string chillProjectile = "chill_projectile";
             public const string homingProjectile = "homing_projectile";
-            public const string airSlashDamageUp = "air_slash_damage_up"; 
+            public const string airSlashDamageUp = "air_slash_damage_up";
+            public const string prismPylonProjectileRed = "prism_pylon_projectile_red";
         }
         public static class Effect
         {
@@ -698,6 +699,9 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 5
             public static readonly NamespaceID beaconMeteorNoDestroy = Get(VanillaBuffNames.Projectile.beaconMeteorNoDestroy);
+
+            // Chapter 7
+            public static readonly NamespaceID prismPylonProjectileRed = Get(VanillaBuffNames.Projectile.prismPylonProjectileRed);
         }
         public static class Effect
         {

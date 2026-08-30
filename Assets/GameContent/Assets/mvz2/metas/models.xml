@@ -115,6 +115,7 @@
     <model name="force_pad" type="entity" path="mvz2:contraption/upgrade/force_pad" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="golden_dropper" type="entity" path="mvz2:contraption/upgrade/golden_dropper" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="skyward_beacon" type="entity" path="mvz2:contraption/upgrade/skyward_beacon" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="prism_pylon" type="entity" path="mvz2:contraption/upgrade/prism_pylon" width="64" height="128" xOffset="0" yOffset="-60" />
     <model name="high_frequency_pulse_dispenser" type="entity" path="mvz2:contraption/upgrade/high_frequency_pulse_dispenser" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="cat_tl_mk_ii" type="entity" path="mvz2:contraption/upgrade/cat_tl_mk_ii" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="diamond_spikes" type="entity" path="mvz2:contraption/upgrade/diamond_spikes" width="64" height="64" xOffset="0" yOffset="-28" />
@@ -599,6 +600,7 @@
     <model name="frozen_orb" type="entity" path="mvz2:projectile/frozen_orb" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="meowmere_projectile" type="entity" path="mvz2:projectile/meowmere_projectile" width="32" height="32" xOffset="0" yOffset="-12" />
     <model name="air_slash" type="entity" path="mvz2:projectile/air_slash" width="32" height="10" xOffset="0" yOffset="-5" />
+    <model name="light_bullet" type="entity" path="mvz2:projectile/light_bullet" width="32" height="32" xOffset="0" yOffset="0" />
 
     <!-- Armors -->
     <model name="leather_cap" type="armor" path="mvz2:armor/leather_cap" width="33" height="14" xOffset="0" yOffset="0" />

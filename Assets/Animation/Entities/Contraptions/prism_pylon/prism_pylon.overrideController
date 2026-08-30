@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: prism_pylon
+  m_Controller: {fileID: 9100000, guid: 7ad9138258cdcf34c83af10cbce385f6, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e2c6ca7c607523f418fd5fa0d3f2146f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e02cf28cc4ea3784f8cd5171f5c50ff1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9ed420296ee9d274ab947a3999e9bb16, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: eddf68a2e24da8c4d96a26f7e697da8e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 94e77c286e4689841b6e68e6b59c1eae, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3a099fb3b9d7c76419d086321f84b638, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 17b4cfd6512cf324aa04f49760d064e8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2c224f73476009d418a6e0f5e6b8acf4, type: 2}

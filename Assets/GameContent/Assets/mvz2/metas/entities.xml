@@ -1309,6 +1309,7 @@
                 <float name="mvz2:range" value="80000" />
                 <float name="mvz2:damage" value="10" />
                 <bool name="mvz2:blocksJump" value="true" />
+                <bool name="mvz2:has_pointy_head" value="true" />
                 <id name="mvz2:shell" value="mvz2:stone" />
                 <id name="mvz2:placeSound" value="mvz2:crystal_place" />
                 <id name="mvz2:deathSound" value="mvz2:crystal_break" />
@@ -1660,6 +1661,27 @@
                 <idArray name="mvz2:counter_for" value="mvz2:low_enemy mvz2:flying_enemy" />
 
                 <int name="mvz2:cost" value="225" />
+                <id name="mvz2:rechargeId" value="mvz2:very_long" />
+            </properties>
+        </entity>
+        <entity template="contraption" id="prism_pylon" name="棱晶塔" tooltip="（需要紫晶塔）\n将穿过的射弹变为随机光弹">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.prism_pylon" />
+            </unlock>
+            <properties>
+                <bool name="mvz2:canDeactive" value="false" />
+                <vector3 name="mvz2:size" x="36" y="100" z="36" />
+                <bool name="mvz2:has_pointy_head" value="true" />
+                <bool name="mvz2:blocksJump" value="true" />
+                <id name="mvz2:deathSound" value="mvz2:crystal_break" />
+                <id name="mvz2:hitSound" value="mvz2:crystal" />
+                <id name="mvz2:shell" value="mvz2:stone" />
+                <id name="mvz2:projectileId" value="mvz2:light_bullet" />
+                <bool name="mvz2:upgradeBlueprint" value="true" />
+                <id name="mvz2:upgradeFrom" value="mvz2:amethyst_pylon" />
+                <id name="mvz2:placement" value="mvz2:upgrade" />
+
+                <int name="mvz2:cost" value="0" />
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </entity>
@@ -4052,6 +4074,15 @@
                 <bool name="mvz2:pointToDirection" value="true" />
                 <vector3 name="mvz2:size" x="32" y="6" z="6" />
                 <idArray name="mvz2:damageEffects" value="mvz2:slice" />
+            </properties>
+        </entity>
+        <entity template="projectile" id="light_bullet">
+            <properties>
+                <vector3 name="mvz2:size" x="32" y="32" z="32" />
+                <idArray name="mvz2:damageEffects" value="mvz2:light" />
+                <bool name="mvz2:isLightSource" value="true" />
+                <vector3 name="mvz2:lightRange" x="80" y="80" z="80" />
+                <color name="mvz2:lightColor" value="#FF8080" />
             </properties>
         </entity>
 

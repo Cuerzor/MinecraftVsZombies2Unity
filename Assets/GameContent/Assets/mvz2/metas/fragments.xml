@@ -475,6 +475,17 @@
             <key hex="#12294c" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="prism_pylon">
+        <colorKeys>
+            <key hex="#ff0000" time="0" />
+            <key hex="#ffff00" time="0.16667" />
+            <key hex="#00ff00" time="0.33333" />
+            <key hex="#00ffff" time="0.5" />
+            <key hex="#0000ff" time="0.66667" />
+            <key hex="#ff00ff" time="0.83333" />
+            <key hex="#ff0000" time="1" />
+        </colorKeys>
+    </fragment>
 
     <!-- Upgrade Contraptions 2 -->
     <fragment name="high_frequency_pulse_dispenser">

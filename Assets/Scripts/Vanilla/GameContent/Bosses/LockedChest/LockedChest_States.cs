@@ -17,6 +17,7 @@ using MVZ2.GameContent.Pickups;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
@@ -510,7 +511,7 @@ namespace MVZ2.GameContent.Bosses
             if (!haveBeenPricked)
             {
                 entity.Level.FindEntitiesNonAlloc(e => IsValidAttackTarget(entity, e), highJumpSearchBuffer);
-                validEntities = highJumpSearchBuffer.Where(e => e.IsEntityOf(VanillaContraptionID.amethystPylon));
+                validEntities = highJumpSearchBuffer.Where(e => e.HasPointyHead());
                 if (validEntities.Count() <= 0)
                 {
                     validEntities = highJumpSearchBuffer;
@@ -518,7 +519,7 @@ namespace MVZ2.GameContent.Bosses
             }
             else
             {
-                entity.Level.FindEntitiesNonAlloc(e => IsValidAttackTarget(entity, e) && !e.IsEntityOf(VanillaContraptionID.amethystPylon), highJumpSearchBuffer);
+                entity.Level.FindEntitiesNonAlloc(e => IsValidAttackTarget(entity, e) && !e.HasPointyHead(), highJumpSearchBuffer);
                 validEntities = highJumpSearchBuffer;
             }
             if (validEntities.Count() <= 0)

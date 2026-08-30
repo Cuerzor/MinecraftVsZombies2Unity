@@ -114,8 +114,16 @@ namespace MVZ2.Vanilla.Contraptions
             return definition.GetProperty<bool>(BANNED_IN_TELEPORTER_TEAM);
         }
         #endregion
+        
+        #region 尖头
+        public static readonly PropertyMeta<bool> HAS_POINTY_HEAD = Get<bool>("has_pointy_head");
+        public static bool HasPointyHead(this Entity entity)
+        {
+            return entity.GetProperty<bool>(HAS_POINTY_HEAD);
+        }
+        #endregion
 
-        #region 传送器战队禁用
+        #region 传送器伤害覆盖
         public static readonly PropertyMeta<float> EJECTOR_DAMAGE_OVERRIDE = Get<float>("ejector_damage_override", -1);
         public static float GetEjectorDamageOverride(this Entity entity)
         {

@@ -14,7 +14,7 @@ namespace MVZ2Logic.Models.Components
             Element.SetVector(ShaderProperties.HSV_OFFSET, value);
             Element.ApplyShaderProperties();
         }
-        [Range(-180, 180)]
+        [Range(-360, 360)]
         public float hue;
         [Range(-100, 100)]
         public float saturation;

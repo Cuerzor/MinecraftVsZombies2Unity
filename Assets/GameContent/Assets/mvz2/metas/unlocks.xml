@@ -143,6 +143,7 @@
     <group id="contraption.force_pad"><conditions><condition required="mvz2:contraption.force_pad" /></conditions></group>
     <group id="contraption.golden_dropper"><conditions><condition required="mvz2:contraption.golden_dropper" /></conditions></group>
     <group id="contraption.skyward_beacon"><conditions><condition required="mvz2:contraption.skyward_beacon" /></conditions></group>
+    <group id="contraption.prism_pylon"><conditions><condition required="mvz2:contraption.prism_pylon" /></conditions></group>
 
     <!-- Old Upgrade Contraptions -->
     <group id="contraption.high_frequency_pulse_dispenser"><conditions><condition required="mvz2:level.ship_5" /></conditions></group>

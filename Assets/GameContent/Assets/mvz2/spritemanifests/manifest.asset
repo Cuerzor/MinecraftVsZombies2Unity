@@ -786,6 +786,9 @@ MonoBehaviour:
   - name: mobile_blueprint/magichest
     texture: {fileID: 2800000, guid: 2f3ddf82a6251b743b3e647d2f839e64, type: 3}
     tags: []
+  - name: mobile_blueprint/maplewheel
+    texture: {fileID: 2800000, guid: 6395785da2b21484bbcee7985aa14917, type: 3}
+    tags: []
   - name: mobile_blueprint/mega_mutant_zombie
     texture: {fileID: 2800000, guid: a06de87c0a73e074abeebac969e592ec, type: 3}
     tags: []
@@ -866,6 +869,9 @@ MonoBehaviour:
     tags: []
   - name: mobile_blueprint/pop_captain
     texture: {fileID: 2800000, guid: 9f4e32b5f413e874aa0d2661531c8b78, type: 3}
+    tags: []
+  - name: mobile_blueprint/prism_pylon
+    texture: {fileID: 2800000, guid: be911f0313736ff4eba466c25491c927, type: 3}
     tags: []
   - name: mobile_blueprint/punchton
     texture: {fileID: 2800000, guid: 1d8a7cdd4327da14ea5a749df090984d, type: 3}
@@ -1441,6 +1447,9 @@ MonoBehaviour:
   - name: entity/contraption/cursed_candle
     texture: {fileID: 2800000, guid: b64d127ba254f6f4b9e04521dd13e6fd, type: 3}
     tags: []
+  - name: entity/contraption/daylight_sensor
+    texture: {fileID: 2800000, guid: 156b8fa2f41fd9b4dbee0d0164950dda, type: 3}
+    tags: []
   - name: entity/contraption/desire_pot
     texture: {fileID: 2800000, guid: 5a0c08fed03edc745bbc7ea6e497cf14, type: 3}
     tags: []
@@ -1552,6 +1561,12 @@ MonoBehaviour:
   - name: entity/contraption/jeweled_pagoda
     texture: {fileID: 2800000, guid: 05a99924b9cf1f54087955dfe63848e1, type: 3}
     tags: []
+  - name: entity/contraption/kaleidoscope_mask
+    texture: {fileID: 2800000, guid: 7dfd35622a58c40488dfe0eac72922f3, type: 3}
+    tags: []
+  - name: entity/contraption/kaleidoscope_pattern
+    texture: {fileID: 2800000, guid: f495df507bc11bf42b1315857a26c934, type: 3}
+    tags: []
   - name: entity/contraption/lightning_orb
     texture: {fileID: 2800000, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
     tags: []
@@ -1569,6 +1584,9 @@ MonoBehaviour:
     tags: []
   - name: entity/contraption/magichest_flash
     texture: {fileID: 2800000, guid: ab1cac139d76a6f478c12842a619042d, type: 3}
+    tags: []
+  - name: entity/contraption/maplewheel
+    texture: {fileID: 2800000, guid: 3a96b255d38cc7048a1424e25495a9cd, type: 3}
     tags: []
   - name: entity/contraption/mine_dirt
     texture: {fileID: 2800000, guid: caad8c3049dedbb4796afa81b872ead5, type: 3}
@@ -1608,6 +1626,9 @@ MonoBehaviour:
     tags: []
   - name: entity/contraption/pressure_plate
     texture: {fileID: 2800000, guid: 7cd67e193c23b1f46ae2e123c4a0bd3a, type: 3}
+    tags: []
+  - name: entity/contraption/prism_pylon
+    texture: {fileID: 2800000, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
     tags: []
   - name: entity/contraption/punchton
     texture: {fileID: 2800000, guid: f821b6a9d26a8a643b60d869c28ce5fd, type: 3}
@@ -1728,6 +1749,9 @@ MonoBehaviour:
     tags: []
   - name: entity/effect/camera_frame
     texture: {fileID: 2800000, guid: 5005e9bfb3edbd84082f1c1dbc01250b, type: 3}
+    tags: []
+  - name: entity/effect/cleave_attack
+    texture: {fileID: 2800000, guid: a4f3339d8f191e24189834d9ec35e932, type: 3}
     tags: []
   - name: entity/effect/combat_trail_punch
     texture: {fileID: 2800000, guid: 56d9698bb3001c84ca50c3f36113cb5d, type: 3}
@@ -2229,6 +2253,9 @@ MonoBehaviour:
     tags: []
   - name: entity/pickup/zombie_scroll
     texture: {fileID: 2800000, guid: 4544057c662730c4797c8c0641b95ff3, type: 3}
+    tags: []
+  - name: entity/projectile/air_slash
+    texture: {fileID: 2800000, guid: 6a6763a0d343750499324e7697ca6b90, type: 3}
     tags: []
   - name: entity/projectile/arrow
     texture: {fileID: 2800000, guid: 01ea06eaff14a0746a137123701e46b3, type: 3}
@@ -2793,6 +2820,18 @@ MonoBehaviour:
     tags: []
   - name: ui/level/target
     texture: {fileID: 2800000, guid: 86b752a5e2100d84ab9e7af262138b91, type: 3}
+    tags: []
+  - name: ui/level/target_ejector
+    texture: {fileID: 2800000, guid: f4c0c63da64a1904f981668525b7a5bf, type: 3}
+    tags: []
+  - name: ui/level/target_force_pad
+    texture: {fileID: 2800000, guid: 2c4734fdd7489c647850cd14bd2e3bbd, type: 3}
+    tags: []
+  - name: ui/level/target_skyward_beacon
+    texture: {fileID: 2800000, guid: 4b87f74f6f1e97f4386165be6bd910c9, type: 3}
+    tags: []
+  - name: ui/level/target_teleporter
+    texture: {fileID: 2800000, guid: ce391ac4b098032478e4e8d00b4cd574, type: 3}
     tags: []
   - name: ui/level/wallet
     texture: {fileID: 2800000, guid: f1aefc59239478744b6bdc884a1fc842, type: 3}
@@ -4659,6 +4698,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 2f3ddf82a6251b743b3e647d2f839e64, type: 3}
     tags: []
+  - name: mobile_blueprint/maplewheel
+    index: 0
+    sprite: {fileID: 21300000, guid: 6395785da2b21484bbcee7985aa14917, type: 3}
+    tags: []
   - name: mobile_blueprint/mega_mutant_zombie
     index: 0
     sprite: {fileID: 21300000, guid: a06de87c0a73e074abeebac969e592ec, type: 3}
@@ -4766,6 +4809,10 @@ MonoBehaviour:
   - name: mobile_blueprint/pop_captain
     index: 0
     sprite: {fileID: 21300000, guid: 9f4e32b5f413e874aa0d2661531c8b78, type: 3}
+    tags: []
+  - name: mobile_blueprint/prism_pylon
+    index: 0
+    sprite: {fileID: 21300000, guid: be911f0313736ff4eba466c25491c927, type: 3}
     tags: []
   - name: mobile_blueprint/punchton
     index: 0
@@ -6448,6 +6495,26 @@ MonoBehaviour:
     index: 2
     sprite: {fileID: 1383820402, guid: b64d127ba254f6f4b9e04521dd13e6fd, type: 3}
     tags: []
+  - name: entity/contraption/daylight_sensor
+    index: 0
+    sprite: {fileID: 1045156631, guid: 156b8fa2f41fd9b4dbee0d0164950dda, type: 3}
+    tags: []
+  - name: entity/contraption/daylight_sensor
+    index: 1
+    sprite: {fileID: -647805090, guid: 156b8fa2f41fd9b4dbee0d0164950dda, type: 3}
+    tags: []
+  - name: entity/contraption/daylight_sensor
+    index: 2
+    sprite: {fileID: -1840937532, guid: 156b8fa2f41fd9b4dbee0d0164950dda, type: 3}
+    tags: []
+  - name: entity/contraption/daylight_sensor
+    index: 3
+    sprite: {fileID: -1903524935, guid: 156b8fa2f41fd9b4dbee0d0164950dda, type: 3}
+    tags: []
+  - name: entity/contraption/daylight_sensor
+    index: 4
+    sprite: {fileID: 1108687015, guid: 156b8fa2f41fd9b4dbee0d0164950dda, type: 3}
+    tags: []
   - name: entity/contraption/desire_pot
     index: 0
     sprite: {fileID: -55935898, guid: 5a0c08fed03edc745bbc7ea6e497cf14, type: 3}
@@ -6756,6 +6823,14 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 05a99924b9cf1f54087955dfe63848e1, type: 3}
     tags: []
+  - name: entity/contraption/kaleidoscope_mask
+    index: 0
+    sprite: {fileID: 21300000, guid: 7dfd35622a58c40488dfe0eac72922f3, type: 3}
+    tags: []
+  - name: entity/contraption/kaleidoscope_pattern
+    index: 0
+    sprite: {fileID: 21300000, guid: f495df507bc11bf42b1315857a26c934, type: 3}
+    tags: []
   - name: entity/contraption/lightning_orb
     index: 0
     sprite: {fileID: 1215340357, guid: 16d57d3a0e4ea894fa24ebb0c305c8e3, type: 3}
@@ -6883,6 +6958,14 @@ MonoBehaviour:
   - name: entity/contraption/magichest_flash
     index: 0
     sprite: {fileID: 21300000, guid: ab1cac139d76a6f478c12842a619042d, type: 3}
+    tags: []
+  - name: entity/contraption/maplewheel
+    index: 0
+    sprite: {fileID: 1741847744, guid: 3a96b255d38cc7048a1424e25495a9cd, type: 3}
+    tags: []
+  - name: entity/contraption/maplewheel
+    index: 1
+    sprite: {fileID: 489569013, guid: 3a96b255d38cc7048a1424e25495a9cd, type: 3}
     tags: []
   - name: entity/contraption/mine_dirt
     index: 0
@@ -7039,6 +7122,34 @@ MonoBehaviour:
   - name: entity/contraption/pressure_plate
     index: 0
     sprite: {fileID: 21300000, guid: 7cd67e193c23b1f46ae2e123c4a0bd3a, type: 3}
+    tags: []
+  - name: entity/contraption/prism_pylon
+    index: 0
+    sprite: {fileID: 1697407540, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
+    tags: []
+  - name: entity/contraption/prism_pylon
+    index: 1
+    sprite: {fileID: 2119635985, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
+    tags: []
+  - name: entity/contraption/prism_pylon
+    index: 2
+    sprite: {fileID: 116154464, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
+    tags: []
+  - name: entity/contraption/prism_pylon
+    index: 3
+    sprite: {fileID: -199484604, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
+    tags: []
+  - name: entity/contraption/prism_pylon
+    index: 4
+    sprite: {fileID: 1252768777, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
+    tags: []
+  - name: entity/contraption/prism_pylon
+    index: 5
+    sprite: {fileID: 100075453, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
+    tags: []
+  - name: entity/contraption/prism_pylon
+    index: 6
+    sprite: {fileID: 1054456800, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
     tags: []
   - name: entity/contraption/punchton
     index: 0
@@ -7511,6 +7622,10 @@ MonoBehaviour:
   - name: entity/effect/camera_frame
     index: 0
     sprite: {fileID: 21300000, guid: 5005e9bfb3edbd84082f1c1dbc01250b, type: 3}
+    tags: []
+  - name: entity/effect/cleave_attack
+    index: 0
+    sprite: {fileID: 21300000, guid: a4f3339d8f191e24189834d9ec35e932, type: 3}
     tags: []
   - name: entity/effect/combat_trail_punch
     index: 0
@@ -9566,6 +9681,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 4544057c662730c4797c8c0641b95ff3, type: 3}
     tags: []
+  - name: entity/projectile/air_slash
+    index: 0
+    sprite: {fileID: 21300000, guid: 6a6763a0d343750499324e7697ca6b90, type: 3}
+    tags: []
   - name: entity/projectile/arrow
     index: 0
     sprite: {fileID: 21300000, guid: 01ea06eaff14a0746a137123701e46b3, type: 3}
@@ -10395,6 +10514,10 @@ MonoBehaviour:
     index: 3
     sprite: {fileID: 971253235, guid: c88dad8213774ad48b823b141be673dc, type: 3}
     tags: []
+  - name: ui/almanac/placement_tags_upgrade_new
+    index: 4
+    sprite: {fileID: -1011260198, guid: c88dad8213774ad48b823b141be673dc, type: 3}
+    tags: []
   - name: ui/almanac/placement_tags_upgrade_origin
     index: 0
     sprite: {fileID: 690988992, guid: cab57ed8db44e444f856b2a84c122438, type: 3}
@@ -10868,6 +10991,22 @@ MonoBehaviour:
   - name: ui/level/target
     index: 0
     sprite: {fileID: 21300000, guid: 86b752a5e2100d84ab9e7af262138b91, type: 3}
+    tags: []
+  - name: ui/level/target_ejector
+    index: 0
+    sprite: {fileID: 21300000, guid: f4c0c63da64a1904f981668525b7a5bf, type: 3}
+    tags: []
+  - name: ui/level/target_force_pad
+    index: 0
+    sprite: {fileID: 21300000, guid: 2c4734fdd7489c647850cd14bd2e3bbd, type: 3}
+    tags: []
+  - name: ui/level/target_skyward_beacon
+    index: 0
+    sprite: {fileID: 21300000, guid: 4b87f74f6f1e97f4386165be6bd910c9, type: 3}
+    tags: []
+  - name: ui/level/target_teleporter
+    index: 0
+    sprite: {fileID: 21300000, guid: ce391ac4b098032478e4e8d00b4cd574, type: 3}
     tags: []
   - name: ui/level/wallet
     index: 0

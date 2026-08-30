@@ -1375,6 +1375,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17df0b2ed3d4e9d45b0680219448edb5
+    m_Address: mvz2:entity/projectile/light_bullet
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 17f5395d50f99fb4db1fd94d850e5eba
     m_Address: mvz2:damage/small_hit2
     m_ReadOnly: 0
@@ -3704,6 +3711,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3fe9d975a733f3944858ace98664f16a
+    m_Address: mvz2:projectile/light_bullet
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4020decd1a5c0cb49be19fd1c17e9698
     m_Address: mvz2:chapter_transition/title_dream
     m_ReadOnly: 0
@@ -4991,6 +5005,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 55828f6709e9e1c4f90a689087e7d87f
+    m_Address: mvz2:entity/contraption/prism_pylon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55aae3f35ee9e09489f0f9e961e07e0a
     m_Address: mvz2:firework_launch
@@ -7216,6 +7237,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7cecaaa5fb8c09845ad17ea662fb154c
+    m_Address: mvz2:contraption/upgrade/kaleidoscope
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d05bb1427e191f4b943273b5ac10d3e
     m_Address: mvz2:projectile/compelling_orb
     m_ReadOnly: 0
@@ -7264,6 +7292,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7dfd35622a58c40488dfe0eac72922f3
+    m_Address: mvz2:entity/contraption/kaleidoscope_mask
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7e0654a046a25aa49a4938aded15c81b
     m_Address: mvz2:mobile_blueprint/wither
@@ -7348,6 +7383,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ec2805894d355f44ada9c2895fdffb7
+    m_Address: mvz2:units/kaleidoscope_pattern
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7f0c49e8fa74f80448413c2a309bcd6f
     m_Address: mvz2:enemy/shrine/mega_mutant_zombie
@@ -10861,6 +10903,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: be911f0313736ff4eba466c25491c927
+    m_Address: mvz2:mobile_blueprint/prism_pylon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: be9b5f79551d77d45a54270ddcd700eb
     m_Address: mvz2:boss/red_dragon
     m_ReadOnly: 0
@@ -12219,6 +12268,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6fad0f0fd383a84bbdc5c3caf34ef7a
+    m_Address: mvz2:contraption/upgrade/prism_pylon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d7592bb973448e5439c9fa3c97cbce5b
     m_Address: mvz2:almanac
     m_ReadOnly: 0
@@ -13387,6 +13443,13 @@ MonoBehaviour:
     - AreaModel
     - Main
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ecd7a5d533411f0498b62304935ac57d
+    m_Address: mvz2:entity/projectile/light_bullet_trail
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ecf0ee3020934614c9673de172a435cd
     m_Address: mvz2:characters/futo
     m_ReadOnly: 0
@@ -13834,6 +13897,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f495df507bc11bf42b1315857a26c934
+    m_Address: mvz2:entity/contraption/kaleidoscope_pattern
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f4c0c63da64a1904f981668525b7a5bf
     m_Address: mvz2:ui/level/target_ejector

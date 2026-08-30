@@ -5,6 +5,7 @@ using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Fragments;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Bosses;
+using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Modifiers;
@@ -78,7 +79,7 @@ namespace MVZ2.GameContent.Bosses
             {
                 var entity = collision.Entity;
                 var other = collision.Other;
-                if (other.IsEntityOf(VanillaContraptionID.amethystPylon) && other.GetCenter().y < entity.Position.y)
+                if (other.HasPointyHead() && other.GetCenter().y < entity.Position.y)
                 {
                     if (stateMachine.GetStateNumber(entity) == STATE_SMASH && stateMachine.GetSubState(entity) == HighJumpState.SUBSTATE_FALL)
                     {
