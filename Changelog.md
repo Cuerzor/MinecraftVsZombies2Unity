@@ -35,6 +35,8 @@
   - Effect of weakness: Damage lowered to 0 -> Melee attack damage lowered to 0
 - Dream Crystal
   - Toughness: 2000 -> 3000
+- Transfenser
+  - Laser Damage: 5 -> 3
 - Black Hole Bomb
   - Recharge Time: Very Long -> Long
 - Nuke

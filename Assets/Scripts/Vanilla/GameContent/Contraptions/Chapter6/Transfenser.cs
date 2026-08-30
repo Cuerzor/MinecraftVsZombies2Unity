@@ -264,7 +264,7 @@ namespace MVZ2.GameContent.Contraptions
         public const int ATTACK_INTERVAL_MAX = 45;
         public const int MAX_LASER_RANGE = 2000;
         public const int LASER_EFFECT_INTERVAL = 3;
-        public const float LASER_DPS_MULTIPLIER = 0.25f;
+        public const float LASER_DPS_MULTIPLIER = 0.15f;
         public const float TRANSFORM_TIME_SECONDS = 1f;
         public const float EVOCATION_DURATION_SECONDS = 4f;
         public const float EVOCATION_LASER_DAMAGE_MULTIPLIER = 10f;

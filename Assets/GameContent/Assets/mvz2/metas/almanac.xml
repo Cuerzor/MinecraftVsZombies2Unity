@@ -896,7 +896,7 @@
         <!-- Chapter 6 -->
         <entry id="mvz2:transfenser">
             <variables>
-                <variable name="laser_dps">global("mvz2:entity_damage") * 0.25</variable>
+                <variable name="laser_dps">global("mvz2:entity_damage") * 0.15</variable>
                 <variable name="fire_interval">1.5</variable>
                 <variable name="glowing_duration">5</variable>
                 <variable name="glowing_damage_addition">50</variable>
