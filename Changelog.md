@@ -37,6 +37,8 @@
   - Toughness: 2000 -> 3000
 - Transfenser
   - Laser Damage: 5 -> 3
+- Amethyst Pylon
+  - Cost: 125 -> 175
 - Black Hole Bomb
   - Recharge Time: Very Long -> Long
 - Nuke
