@@ -1842,6 +1842,7 @@
                 <bool name="mvz2:instantEvoke" value="false" />
                 <bool name="mvz2:no_evoke" value="true" />
                 <float name="mvz2:fallResistance" value="10000" />
+                <float name="mvz2:ejector_damage_override" value="1200" />
                 <float name="mvz2:water_ground_limit_offset" value="-34" />
                 <int name="mvz2:waterInteraction" value="3" />
                 <id name="mvz2:placement" value="mvz2:amphibious" />

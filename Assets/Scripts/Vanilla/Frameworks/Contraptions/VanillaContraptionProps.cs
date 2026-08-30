@@ -107,7 +107,7 @@ namespace MVZ2.Vanilla.Contraptions
         }
         #endregion
 
-        #region 稳固器械
+        #region 传送器战队禁用
         public static readonly PropertyMeta<bool> BANNED_IN_TELEPORTER_TEAM = Get<bool>("banned_in_teleporter_team");
         public static bool BannedInTeleporterTeam(this EntityDefinition definition)
         {
@@ -115,6 +115,13 @@ namespace MVZ2.Vanilla.Contraptions
         }
         #endregion
 
+        #region 传送器战队禁用
+        public static readonly PropertyMeta<float> EJECTOR_DAMAGE_OVERRIDE = Get<float>("ejector_damage_override", -1);
+        public static float GetEjectorDamageOverride(this Entity entity)
+        {
+            return entity.GetProperty<float>(EJECTOR_DAMAGE_OVERRIDE);
+        }
+        #endregion
     }
 }
 

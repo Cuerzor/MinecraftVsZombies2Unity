@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Callbacks;
+using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Modifiers;
 using MVZ2.Vanilla.Properties;
@@ -50,7 +51,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             var other = collision.OtherCollider;
             if (!EngineEntityExt.IsHostile(faction, other.Entity.GetFaction()))
                 return;
-            var damage = CalculateSmashDamage(entity) * multiplier;
+            var damage = GetSmashDamage(entity) * multiplier;
             other.TakeDamage(damage, new DamageEffectList(VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN), entity);
             other.Entity.PlaySound(VanillaSoundID.punch);
         }
@@ -93,6 +94,15 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             var volume = size.x * size.y * size.z;
             var damage = volume * VOLUME_DAMAGE_MULTIPLIER * density;
             return damage;
+        }
+        public static float GetSmashDamage(Entity entity)
+        {
+            var damageOverride = entity.GetEjectorDamageOverride();
+            if (damageOverride >= 0)
+            {
+                return damageOverride;
+            }
+            return CalculateSmashDamage(entity);
         }
         public static int GetFaction(Buff buff) => buff.GetProperty<int>(PROP_FACTION);
         public static void SetFaction(Buff buff, int value) => buff.SetProperty(PROP_FACTION, value);
