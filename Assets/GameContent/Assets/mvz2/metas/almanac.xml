@@ -1075,7 +1075,28 @@
                 <p>寒冰发射器最大的愿望是退伍——不是因为它当兵（冰）太久了，而是因为这里的器械都听不懂它讲的冷笑话。</p>
             </flavor>
         </entry>
-        <entry />
+        <entry id="mvz2:maplewheel">
+            <variables>
+                <variable name="fire_interval">1.5</variable>
+                <variable name="evocation_damage">global("mvz2:entity_damage") * 2.5</variable>
+            </variables>
+            <header>
+                <p>枫车会向前发射风刃。风刃如果经过其他枫车，其伤害会增加。</p>
+            </header>
+            <properties>
+                <p>发射速度：<![CDATA[<color=red>1发/<var local="fire_interval" />秒</color>]]></p>
+                <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" />锐利伤害</color>]]></p>
+                <p>特殊：<![CDATA[<color=red>经过枫车的风刃+<var id="mvz2:entity_damage" />伤害</color>]]></p>
+                <p>技能：<![CDATA[<color=red>对所有敌人造成<var local="evocation_damage" />点伤害X次。（X=场上枫车的数量）</color>]]></p>
+            </properties>
+            <flavor>
+                <p>用红白枫叶做的小风车</p>
+                <p>掉在<![CDATA[<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>]]>的瀑布下</p>
+                <p/>
+                <p>转啊转啊，红白色的风车</p>
+                <p>大伙就在这里</p>
+            </flavor>
+        </entry>
         <entry id="mvz2:teleporter">
             <variables>
                 <variable name="total_energy">250</variable>
@@ -2479,7 +2500,7 @@
                 <condition required="mvz2:level.mountain_11" />
             </silhouette>
             <header>
-                <p>妖怪之山上的一片寄宿了风之力的树叶。</p>
+                <p><![CDATA[<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>]]>上的一片寄宿了风之力的树叶。</p>
             </header>
             <properties>
                 <p>效果：<![CDATA[<color=red>所有敌怪持续向右缓慢移动</color>]]></p>
@@ -3854,7 +3875,7 @@
                         <conditions>
                             <condition required="mvz2:level.palace_5"/>
                         </conditions>
-                        <p>根据<![CDATA[<ref=[misc]mvz2:satori>觉</ref>]]>所说，三年前爆炸的位置位于妖怪之山上，大概是河童基地的位置。</p>
+                        <p>根据<![CDATA[<ref=[misc]mvz2:satori>觉</ref>]]>所说，三年前爆炸的位置位于<![CDATA[<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>]]>上，大概是河童基地的位置。</p>
                     </flavor>
                 </flavors>
             </entry>
