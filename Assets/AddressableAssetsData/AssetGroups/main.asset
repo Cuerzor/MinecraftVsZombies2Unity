@@ -4502,6 +4502,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c5d94994c75b3a44b112477e8e61dae
+    m_Address: mvz2:sts_heavy_attack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4cb781f5e02742741b9c40355797df88
     m_Address: mvz2:petrified
     m_ReadOnly: 0
@@ -9175,6 +9182,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e7e13c5ed641a640b2d56e8df68ef7f
+    m_Address: mvz2:sts_whirlwind
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9e81cfb57a3605f489839ac61dd1d762
     m_Address: mvz2:icon/divine_shield
     m_ReadOnly: 0
@@ -9461,6 +9475,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4f3339d8f191e24189834d9ec35e932
+    m_Address: mvz2:entity/effect/cleave_attack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a4f84c97b0906344cb14c77ab661a61e
     m_Address: mvz2:mountain_level_sub
@@ -10821,6 +10842,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bdc3f924b67004e408cdc0a416a5c786
     m_Address: mvz2:held/starshards/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdd3b51fbb4361a4a809638a5951ef36
+    m_Address: mvz2:effect/cleave_attack
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

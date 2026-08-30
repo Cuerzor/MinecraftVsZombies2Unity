@@ -220,6 +220,7 @@ namespace MVZ2.GameContent.Buffs
             public const string krakensTentacleAttackSpeed = "krakens_tentacle_attack_speed";
             public const string contraptionFall = "contraption_fall";
             public const string carryingOtherTargetable = "carrying_other_targetable";
+            public const string whirlwindAttack = "whirlwind_attack";
         }
         public static class Enemy
         {

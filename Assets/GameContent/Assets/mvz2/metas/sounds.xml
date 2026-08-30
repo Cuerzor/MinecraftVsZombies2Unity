@@ -1135,6 +1135,12 @@
     <sound name="wheel_of_death_loop">
         <sample path="mvz2:entity/nightmareaper/wheel_of_death_loop" weight="1" />
     </sound>
+    <sound name="whirlwind_attack_start">
+        <sample path="mvz2:sts_whirlwind" weight="1" />
+    </sound>
+    <sound name="whirlwind_attack">
+        <sample path="mvz2:sts_heavy_attack" weight="1" />
+    </sound>
     <sound name="wind">
         <sample path="mvz2:wind" weight="1" />
     </sound>

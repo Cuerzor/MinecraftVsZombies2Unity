@@ -541,6 +541,7 @@
     
     <model name="waterfall" type="entity" path="mvz2:effect/waterfall" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="creaking_particles" type="entity" path="mvz2:effect/creaking_particles" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
+    <model name="cleave_attack" type="entity" path="mvz2:effect/cleave_attack" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     
     <!-- Projectiles -->
     <model name="arrow" type="entity" path="mvz2:projectile/arrow" width="32" height="10" xOffset="0" yOffset="-1" />

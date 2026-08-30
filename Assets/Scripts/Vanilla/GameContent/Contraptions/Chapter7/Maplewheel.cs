@@ -61,12 +61,12 @@ namespace MVZ2.GameContent.Contraptions
             if (!other.IsEntityOf(VanillaProjectileID.airSlash))
                 return;
             BuffAirSlash(entity, other);
-            SetSpinSpeed(entity, MAX_SPIN_SPEED);
+            SetMaxSpinSpeed(entity);
         }
         public override void OnShootTick(Entity entity)
         {
             base.OnShootTick(entity);
-            SetSpinSpeed(entity, MAX_SPIN_SPEED);
+            SetMaxSpinSpeed(entity);
         }
         public static void BuffAirSlash(Entity entity, Entity airSlash)
         {
@@ -93,12 +93,13 @@ namespace MVZ2.GameContent.Contraptions
         }
         public void BeBlown(Entity entity, Entity source)
         {
-            SetSpinSpeed(entity, MAX_SPIN_SPEED);
+            SetMaxSpinSpeed(entity);
             if (entity.IsSecondsInterval(BLOWN_SHOOT_INTERVAL))
             {
                 Shoot(entity);
             }
         }
+        public static void SetMaxSpinSpeed(Entity entity) => SetSpinSpeed(entity, MAX_SPIN_SPEED);
         public static float GetSpinSpeed(Entity entity) => entity.GetBehaviourField<float>(PROP_SPIN_SPEED);
         public static void SetSpinSpeed(Entity entity, float value) => entity.SetBehaviourField(PROP_SPIN_SPEED, value);
         public const float MAX_DAMAGE_UP = 190;

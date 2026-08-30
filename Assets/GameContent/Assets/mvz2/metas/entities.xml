@@ -1389,6 +1389,9 @@
             <unlock>
                 <condition requiredGroups="mvz2:contraption.maplewheel" />
             </unlock>
+            <behaviours>
+                <behaviour operator="add" id="mvz2:maplewheel/evoke" />
+            </behaviours>
             <properties>
                 <vector3 name="mvz2:size" x="32" y="60" z="4" />
                 <id name="mvz2:placeSound" value="mvz2:wood" />
@@ -5017,6 +5020,12 @@
         <entity template="effect" id="creaking_particles">
             <properties>
                 <int name="mvz2:maxTimeout" value="45" />
+            </properties>
+        </entity>
+        <entity template="effect" id="cleave_attack">
+            <behaviours includeSelf="false"/>
+            <properties>
+                <int name="mvz2:maxTimeout" value="15" />
             </properties>
         </entity>
     </entries>

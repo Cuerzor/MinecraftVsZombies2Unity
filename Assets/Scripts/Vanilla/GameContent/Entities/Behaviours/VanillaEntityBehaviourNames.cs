@@ -59,6 +59,7 @@ namespace MVZ2.Vanilla.Entities
 
         public const string teleporter_Trigger = "teleporter/trigger";
         public const string teleporter_Evoke = "teleporter/evoke";
+        public const string maplewheel_Evoke = "maplewheel/evoke";
         public const string ejector_Trigger = "ejector/trigger";
         public const string ejector_Evoke = "ejector/evoke";
         public const string autotrap_Evoke = "autotrap/evoke";
