@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-30 10:33+0800\n"
+"POT-Creation-Date: 2026-08-31 01:43+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3483,7 +3483,7 @@ msgstr ""
 #. Properties for artifacts mvz2:eye_of_the_giant
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>友方器械x250%伤害，但x50%攻击速度</color>"
+msgid "效果：<color=red>友方器械x200%伤害，但x60%攻击速度</color>"
 msgstr ""
 
 #. Flavor for artifacts mvz2:eye_of_the_giant
@@ -4512,6 +4512,26 @@ msgstr ""
 #: Almanac meta file
 msgctxt "misc.description"
 msgid "他没有消失。他只是累了，想休息了。"
+msgstr ""
+
+#. Name for misc mvz2:pool_cleaner
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "泳池清洁器"
+msgstr ""
+
+#. Header for misc mvz2:pool_cleaner
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "泳池清洁器在接触到敌人后会“清理”一整行的敌怪，并且可以在水中移动。"
+msgstr ""
+
+#. Flavor for misc mvz2:pool_cleaner
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"眼熟吗？眼熟就对了。\n"
+"游戏作者又在水小推车了。"
 msgstr ""
 
 #. Name for misc mvz2:giant_stone
@@ -7825,7 +7845,7 @@ msgstr ""
 #. Tooltip for artifact mvz2:eye_of_the_giant
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "友方器械x250%伤害，但x50%攻击速度"
+msgid "友方器械x200%伤害，但x60%攻击速度"
 msgstr ""
 
 #. Name for artifact mvz2:ufo_toy
