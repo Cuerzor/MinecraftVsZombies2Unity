@@ -1165,7 +1165,7 @@
         </entry>
         <entry id="mvz2:onbashira">
             <variables>
-                <variable name="fall_damage">global("mvz2:entity_damage") * property("mvz2:buff/onbashira_fall/damage_multiplier", "mvz2:onbashira_fall", "buff")</variable>
+                <variable name="fall_damage">global("mvz2:entity_damage") * property("mvz2:buff/contraption_fall/damage_multiplier", "mvz2:contraption_fall", "buff")</variable>
             </variables>
             <header>
                 <p>御柱从天而降，砸碎落点的任何器械和怪物，然后变为难以移动的高墙。</p>
