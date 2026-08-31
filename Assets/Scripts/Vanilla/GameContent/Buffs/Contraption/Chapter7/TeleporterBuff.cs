@@ -20,6 +20,7 @@ namespace MVZ2.GameContent.Buffs.Entities
             AddModifier(new IntModifier(VanillaEntityProps.AIR_INTERACTION, IntegerOperator.Set, WaterInteraction.NONE));
             AddModifier(new Vector3Modifier(EngineEntityProps.MODEL_POSITION_OFFSET, NumberOperator.Add, PROP_MODEL_POSITION_OFFSET));
             AddModifier(new Vector3Modifier(EngineEntityProps.DISPLAY_SCALE, NumberOperator.Multiply, PROP_DISPLAY_SCALE));
+            AddModifier(new BooleanModifier(EngineEntityProps.INVINCIBLE, true));
         }
         public override void OnCreate(Buff buff)
         {
