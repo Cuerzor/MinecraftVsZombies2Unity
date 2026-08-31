@@ -19,6 +19,7 @@
 ### Balance
 - Adventure
   - Reduced the enemy amount for Chapter 1.
+  - Reduced the enemy amount for the first half of Chapter 5.
 - Soul Furnace
   - Adjusted the contraption quality algorithm to get fuel.
     - The cost of a contraption required to fill an empty Soul Furnace:

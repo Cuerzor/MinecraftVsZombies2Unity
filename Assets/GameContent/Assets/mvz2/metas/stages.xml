@@ -1051,7 +1051,7 @@
             <talk type="map" value="mvz2:ship_1_map" />
         </talks>
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:gunpowder_barrel" />
-        <spawns flags="1">
+        <spawns flags="1" pointsPower="0.935">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
         </spawns>
@@ -1067,7 +1067,7 @@
             <talk type="map" value="mvz2:ship_2_map" />
         </talks>
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:triplenser" />
-        <spawns flags="2">
+        <spawns flags="2" pointsPower="0.935">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:undead_flying_object" />
@@ -1083,7 +1083,7 @@
             <talk type="map" value="mvz2:ship_3_map" />
         </talks>
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:firework_dispenser" />
-        <spawns flags="2">
+        <spawns flags="2" pointsPower="0.935">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
@@ -1101,7 +1101,7 @@
             <talk type="map" value="mvz2:ship_4_map" />
         </talks>
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:repeatenser" />
-        <spawns flags="2">
+        <spawns flags="2" pointsPower="0.935">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
@@ -1119,7 +1119,7 @@
             <talk type="map" value="mvz2:ship_5_map" />
         </talks>
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:high_frequency_pulse_dispenser" />
-        <spawns flags="3">
+        <spawns flags="3" pointsPower="0.935">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
