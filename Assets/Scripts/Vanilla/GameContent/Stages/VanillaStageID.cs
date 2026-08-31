@@ -94,6 +94,20 @@ namespace MVZ2.GameContent.Stages
         public const string palace11 = "palace_11";
         public const string palaceEndless = "palace_endless";
 
+
+        public const string mountain1 = "mountain_1";
+        public const string mountain2 = "mountain_2";
+        public const string mountain3 = "mountain_3";
+        public const string mountain4 = "mountain_4";
+        public const string mountain5 = "mountain_5";
+        public const string mountain6 = "mountain_6";
+        public const string mountain7 = "mountain_7";
+        public const string mountain8 = "mountain_8";
+        public const string mountain9 = "mountain_9";
+        public const string mountain10 = "mountain_10";
+        public const string mountain11 = "mountain_11";
+        public const string mountainEndless = "mountain_endless";
+
         // Minigames
         public const string whackAGhost = "whack_a_ghost";
         public const string breakout = "breakout";

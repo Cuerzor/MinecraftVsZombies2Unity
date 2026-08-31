@@ -1531,9 +1531,29 @@
 
 
     <!-- Mountain -->
+    <stage id="mountain_6" name="妖怪之山" dayNumber="6" needBlueprints="false" type="minigame" music="mvz2:minigame">
+        <unlock>
+            <condition required="mvz2:level.mountain_5" />
+        </unlock>
+        <conveyor>
+            <entry id="mvz2:lily_pad" count="4" />
+            <entry id="mvz2:ejector" count="6" />
+            <entry id="mvz2:teleporter" count="6" />
+        </conveyor>
+        <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:onbashira" />
+        <spawns flags="2">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:iron_helmetted_zombie" />
+            <spawn id="mvz2:diamond_helmetted_zombie" />
+        </spawns>
+        <time firstWave="1" />
+        <properties>
+            <bool name="noEnergy" value="true" />
+        </properties>
+    </stage>
     <stage id="mountain_9" name="妖怪之山" dayNumber="9">
         <unlock>
-            <condition required="mvz2:level.mountain_9" />
+            <condition required="mvz2:level.mountain_8" />
         </unlock>
         <talks>
             <talk type="start" value="mvz2:mountain_9" />
@@ -1543,7 +1563,6 @@
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:loan_sign" />
         <spawns flags="2" pointsPower="1.02">
             <spawn id="mvz2:zombie" />
-            <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
             <spawn id="mvz2:diamond_helmetted_zombie" />
             <spawn id="mvz2:cannoneer_zombie" />
