@@ -26,7 +26,7 @@ namespace MVZ2.GameContent.Placements
             {
                 return VanillaGridStatus.notOnAir;
             }
-            return null;
+            return base.GetTerrainSpawnErrorOfGrid(placement, grid, entity);
         }
     }
 }
