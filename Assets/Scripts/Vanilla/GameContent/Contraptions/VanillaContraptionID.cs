@@ -69,11 +69,11 @@ namespace MVZ2.GameContent.Contraptions
         public const string nuke = "nuke";
         public const string netherReactorCore = "nether_reactor_core";
 
-        public const string freezenser = "freezenser";
         public const string maplewheel = "maplewheel";
-        public const string teleporter = "teleporter";
         public const string ejector = "ejector";
+        public const string teleporter = "teleporter";
         public const string onbashira = "onbashira";
+        public const string freezenser = "freezenser";
         public const string autotrap = "autotrap";
         public const string nestingTNT = "nesting_tnt";
         public const string nestingTNTMedium = "nesting_tnt_medium";
@@ -160,11 +160,11 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly NamespaceID nuke = Get(VanillaContraptionNames.nuke);
         public static readonly NamespaceID netherReactorCore = Get(VanillaContraptionNames.netherReactorCore);
 
-        public static readonly NamespaceID freezenser = Get(VanillaContraptionNames.freezenser);
         public static readonly NamespaceID maplewheel = Get(VanillaContraptionNames.maplewheel);
-        public static readonly NamespaceID teleporter = Get(VanillaContraptionNames.teleporter);
         public static readonly NamespaceID ejector = Get(VanillaContraptionNames.ejector);
+        public static readonly NamespaceID teleporter = Get(VanillaContraptionNames.teleporter);
         public static readonly NamespaceID onbashira = Get(VanillaContraptionNames.onbashira);
+        public static readonly NamespaceID freezenser = Get(VanillaContraptionNames.freezenser);
         public static readonly NamespaceID autotrap = Get(VanillaContraptionNames.autotrap);
         public static readonly NamespaceID nestingTNT = Get(VanillaContraptionNames.nestingTNT);
         public static readonly NamespaceID nestingTNTMedium = Get(VanillaContraptionNames.nestingTNTMedium);

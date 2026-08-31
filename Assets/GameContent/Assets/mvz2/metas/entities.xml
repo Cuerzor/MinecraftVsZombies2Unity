@@ -1374,17 +1374,6 @@
         </entity>
         
         <!-- Mountain Contraptions -->
-        <entity template="dispenser" id="freezenser" name="寒冰发射器" tooltip="发射减速的冰箭">
-            <unlock>
-                <condition requiredGroups="mvz2:contraption.freezenser" />
-            </unlock>
-            <properties>
-                <id name="mvz2:shell" value="mvz2:ice" />
-                <id name="mvz2:deathSound" value="mvz2:glass_break" />
-
-                <int name="mvz2:cost" value="175" />
-            </properties>
-        </entity>
         <entity template="contraption" id="maplewheel" name="枫车" tooltip="发射风刃，并强化穿过它的风刃">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.maplewheel" />
@@ -1410,26 +1399,6 @@
                 <id name="mvz2:rechargeId" value="mvz2:short" />
             </properties>
         </entity>
-        <entity template="contraption" id="teleporter" name="传送器" tooltip="触发后传送器械">
-            <unlock>
-                <condition requiredGroups="mvz2:contraption.teleporter" />
-            </unlock>
-            <behaviours>
-                <behaviour operator="add" id="mvz2:teleporter/trigger" />
-                <behaviour operator="add" id="mvz2:teleporter/evoke" />
-            </behaviours>
-            <properties>
-                <bool name="mvz2:canDeactive" value="false" />
-                <bool name="mvz2:banned_in_teleporter_team" value="true" />
-                <vector3 name="mvz2:size" x="32" y="48" z="32" />
-                <id name="mvz2:shell" value="mvz2:metal" />
-                <bool name="mvz2:loyal" value="true" />
-
-                <id name="mvz2:placeSound" value="mvz2:metal_break" />
-                <int name="mvz2:cost" value="50" />
-                <id name="mvz2:rechargeId" value="mvz2:long" />
-            </properties>
-        </entity>
         <entity template="contraption" id="ejector" name="弹射器" tooltip="点击投掷内部的器械">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.ejector" />
@@ -1448,6 +1417,26 @@
 
                 <id name="mvz2:placeSound" value="mvz2:metal_break" />
                 <int name="mvz2:cost" value="25" />
+                <id name="mvz2:rechargeId" value="mvz2:long" />
+            </properties>
+        </entity>
+        <entity template="contraption" id="teleporter" name="传送器" tooltip="触发后传送器械">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.teleporter" />
+            </unlock>
+            <behaviours>
+                <behaviour operator="add" id="mvz2:teleporter/trigger" />
+                <behaviour operator="add" id="mvz2:teleporter/evoke" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:banned_in_teleporter_team" value="true" />
+                <vector3 name="mvz2:size" x="32" y="48" z="32" />
+                <id name="mvz2:shell" value="mvz2:metal" />
+                <bool name="mvz2:loyal" value="true" />
+
+                <id name="mvz2:placeSound" value="mvz2:metal_break" />
+                <int name="mvz2:cost" value="50" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
             </properties>
         </entity>
@@ -1481,6 +1470,17 @@
 
                 <int name="mvz2:cost" value="100" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
+            </properties>
+        </entity>
+        <entity template="dispenser" id="freezenser" name="寒冰发射器" tooltip="发射减速的冰箭">
+            <unlock>
+                <condition requiredGroups="mvz2:contraption.freezenser" />
+            </unlock>
+            <properties>
+                <id name="mvz2:shell" value="mvz2:ice" />
+                <id name="mvz2:deathSound" value="mvz2:glass_break" />
+
+                <int name="mvz2:cost" value="175" />
             </properties>
         </entity>
         <entity template="contraption" id="autotrap" name="自动兽夹" tooltip="夹住怪物并撕扯">

@@ -92,11 +92,11 @@
     <model name="nuke" type="entity" path="mvz2:contraption/palace/nuke" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="nether_reactor_core" type="entity" path="mvz2:contraption/palace/nether_reactor_core" width="64" height="64" xOffset="0" yOffset="-28" />
 
-    <model name="freezenser" type="entity" path="mvz2:contraption/mountain/freezenser" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="maplewheel" type="entity" path="mvz2:contraption/mountain/maplewheel" width="64" height="64" xOffset="0" yOffset="-28" />
-    <model name="teleporter" type="entity" path="mvz2:contraption/mountain/teleporter" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="ejector" type="entity" path="mvz2:contraption/mountain/ejector" width="80" height="80" xOffset="0" yOffset="-28" />
+    <model name="teleporter" type="entity" path="mvz2:contraption/mountain/teleporter" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="onbashira" type="entity" path="mvz2:contraption/mountain/onbashira" width="64" height="128" xOffset="0" yOffset="-60" />
+    <model name="freezenser" type="entity" path="mvz2:contraption/mountain/freezenser" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="autotrap" type="entity" path="mvz2:contraption/mountain/autotrap" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="nesting_tnt" type="entity" path="mvz2:contraption/mountain/nesting_tnt" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="nesting_tnt_medium" type="entity" path="mvz2:contraption/mountain/nesting_tnt" width="64" height="64" xOffset="0" yOffset="-28">

@@ -1531,6 +1531,22 @@
 
 
     <!-- Mountain -->
+    <stage id="mountain_1" name="妖怪之山" dayNumber="1">
+        <unlock>
+            <condition required="mvz2:level.palace_11" />
+        </unlock>
+        <talks>
+            <talk type="start" value="mvz2:mountain_1" />
+            <talk type="end" value="mvz2:mountain_1_over" />
+            <talk type="map" value="mvz2:mountain_1_map" />
+        </talks>
+        <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:maplewheel" />
+        <spawns flags="1">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
+            <spawn id="mvz2:iron_helmetted_zombie" />
+        </spawns>
+    </stage>
     <stage id="mountain_6" name="妖怪之山" dayNumber="6" needBlueprints="false" type="minigame" music="mvz2:minigame">
         <unlock>
             <condition required="mvz2:level.mountain_5" />
@@ -1540,7 +1556,7 @@
             <entry id="mvz2:ejector" count="6" />
             <entry id="mvz2:teleporter" count="6" />
         </conveyor>
-        <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:onbashira" />
+        <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:freezenser" />
         <spawns flags="2">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />

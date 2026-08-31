@@ -129,11 +129,11 @@
     <group id="contraption.nether_reactor_core"><conditions><condition required="mvz2:level.palace_9" /></conditions></group>
     
     <!-- Mountain Contraptions -->
-    <group id="contraption.freezenser"><conditions><condition required="mvz2:level.mountain_1" /></conditions></group>
-    <group id="contraption.maplewheel"><conditions><condition required="mvz2:level.mountain_2" /></conditions></group>
+    <group id="contraption.maplewheel"><conditions><condition required="mvz2:level.mountain_1" /></conditions></group>
+    <group id="contraption.ejector"><conditions><condition required="mvz2:level.mountain_2" /></conditions></group>
     <group id="contraption.teleporter"><conditions><condition required="mvz2:level.mountain_3" /></conditions></group>
-    <group id="contraption.ejector"><conditions><condition required="mvz2:level.mountain_4" /></conditions></group>
-    <group id="contraption.onbashira"><conditions><condition required="mvz2:level.mountain_6" /></conditions></group>
+    <group id="contraption.onbashira"><conditions><condition required="mvz2:level.mountain_4" /></conditions></group>
+    <group id="contraption.freezenser"><conditions><condition required="mvz2:level.mountain_6" /></conditions></group>
     <group id="contraption.autotrap"><conditions><condition required="mvz2:level.mountain_7" /></conditions></group>
     <group id="contraption.nesting_tnt"><conditions><condition required="mvz2:level.mountain_8" /></conditions></group>
     <group id="contraption.loan_sign"><conditions><condition required="mvz2:level.mountain_9" /></conditions></group>

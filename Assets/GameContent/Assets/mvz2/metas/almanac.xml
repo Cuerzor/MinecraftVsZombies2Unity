@@ -1062,19 +1062,6 @@
         </entry>
 
         <!-- Chapter 7 -->
-        <entry id="mvz2:freezenser">
-            <header>
-                <p>寒冰发射器发射可以使敌人减速的冰箭。</p>
-            </header>
-            <properties>
-                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
-                <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
-                <p>技能：<![CDATA[<color=red>发射一枚致命的冰封球</color>]]></p>
-            </properties>
-            <flavor>
-                <p>寒冰发射器最大的愿望是退伍——不是因为它当兵（冰）太久了，而是因为这里的器械都听不懂它讲的冷笑话。</p>
-            </flavor>
-        </entry>
         <entry id="mvz2:maplewheel">
             <variables>
                 <variable name="fire_interval">1.5</variable>
@@ -1095,20 +1082,6 @@
                 <p/>
                 <p>转啊转啊，红白色的风车</p>
                 <p>大伙就在这里</p>
-            </flavor>
-        </entry>
-        <entry id="mvz2:teleporter">
-            <variables>
-                <variable name="total_energy">250</variable>
-            </variables>
-            <header>
-                <p>点击传送器后，可以将任意地块的<![CDATA[<tag id="mvz2:grid_layer_main" />]]>器械和自身进行交换。</p>
-            </header>
-            <properties>
-                <p>技能：<![CDATA[<color=red>选择一处3x3的区域，将你的自定义战队凭空传送到该区域，然后传送器消失。（可在主界面自定义）</color>]]></p>
-            </properties>
-            <flavor>
-                <p>它最喜欢在队友就快击杀敌人的时候把队友传送回基地。</p>
             </flavor>
         </entry>
         <entry id="mvz2:ejector">
@@ -1163,6 +1136,20 @@
                 <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:apparition" />：<color=red><var local="apparition_density"/>%</color>]]></p>
             </flavor>
         </entry>
+        <entry id="mvz2:teleporter">
+            <variables>
+                <variable name="total_energy">250</variable>
+            </variables>
+            <header>
+                <p>点击传送器后，可以将任意地块的<![CDATA[<tag id="mvz2:grid_layer_main" />]]>器械和自身进行交换。</p>
+            </header>
+            <properties>
+                <p>技能：<![CDATA[<color=red>选择一处3x3的区域，将你的自定义战队凭空传送到该区域，然后传送器消失。（可在主界面自定义）</color>]]></p>
+            </properties>
+            <flavor>
+                <p>它最喜欢在队友就快击杀敌人的时候把队友传送回基地。</p>
+            </flavor>
+        </entry>
         <entry id="mvz2:onbashira">
             <variables>
                 <variable name="fall_damage">global("mvz2:entity_damage") * property("mvz2:buff/contraption_fall/damage_multiplier", "mvz2:contraption_fall", "buff")</variable>
@@ -1177,6 +1164,19 @@
             </properties>
             <flavor>
                 <p>你看，它们就是柱子。</p>
+            </flavor>
+        </entry>
+        <entry id="mvz2:freezenser">
+            <header>
+                <p>寒冰发射器发射可以使敌人减速的冰箭。</p>
+            </header>
+            <properties>
+                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
+                <p>技能：<![CDATA[<color=red>发射一枚致命的冰封球</color>]]></p>
+            </properties>
+            <flavor>
+                <p>寒冰发射器最大的愿望是退伍——不是因为它当兵（冰）太久了，而是因为这里的器械都听不懂它讲的冷笑话。</p>
             </flavor>
         </entry>
         <entry id="mvz2:autotrap">

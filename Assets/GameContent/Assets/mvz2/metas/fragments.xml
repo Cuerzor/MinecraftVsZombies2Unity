@@ -388,25 +388,11 @@
     </fragment>
     
     <!-- Mountain Contraptions -->
-    <fragment name="freezenser">
-        <colorKeys>
-            <key hex="#ffffff" time="0.25" />
-            <key hex="#89c1ed" time="0.5" />
-            <key hex="#4d96cf" time="0.75" />
-            <key hex="#1b67a3" time="1" />
-        </colorKeys>
-    </fragment>
     <fragment name="maplewheel">
         <colorKeys>
             <key hex="#e73612" time="0.45" />
             <key hex="#e7e7e7" time="0.9" />
             <key hex="#44331f" time="1" />
-        </colorKeys>
-    </fragment>
-    <fragment name="teleporter">
-        <colorKeys>
-            <key hex="#4a8cd6" time="0.5" />
-            <key hex="#009f17" time="1" />
         </colorKeys>
     </fragment>
     <fragment name="ejector">
@@ -415,10 +401,24 @@
             <key hex="#a2a2b1" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="teleporter">
+        <colorKeys>
+            <key hex="#4a8cd6" time="0.5" />
+            <key hex="#009f17" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="onbashira">
         <colorKeys>
             <key hex="#826038" time="0.5" />
             <key hex="#61512d" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="freezenser">
+        <colorKeys>
+            <key hex="#ffffff" time="0.25" />
+            <key hex="#89c1ed" time="0.5" />
+            <key hex="#4d96cf" time="0.75" />
+            <key hex="#1b67a3" time="1" />
         </colorKeys>
     </fragment>
     <fragment name="autotrap">
