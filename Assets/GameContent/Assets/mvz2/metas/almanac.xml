@@ -3048,6 +3048,20 @@
                     <p>他没有消失。他只是累了，想休息了。</p>
                 </flavor>
             </entry>
+            <entry id="mvz2:pool_cleaner" name="泳池清洁器" >
+                <unlock>
+                    <condition required="mvz2:level.mountain_1"/>
+                </unlock>
+                <picture model="mvz2:entity.pool_cleaner"/>
+                <tags sourceEntity="mvz2:pool_cleaner" />
+                <header>
+                    <p>泳池清洁器在接触到敌人后会“清理”一整行的敌怪，并且可以在水中移动。</p>
+                </header>
+                <flavor>
+                    <p>眼熟吗？眼熟就对了。</p>
+                    <p>游戏作者又在水小推车了。</p>
+                </flavor>
+            </entry>
             <entry id="mvz2:giant_stone" name="巨型石块" >
                 <unlock>
                     <condition required="mvz2:level.mountain_6"/>
