@@ -91,7 +91,7 @@
             <condition required="mvz2:level.mausoleum_11" />
         </unlock>
     </artifact>
-    <artifact id="eye_of_the_giant" name="巨人之眼" tooltip="友方器械x250%伤害，但x50%攻击速度" sprite="mvz2:artifacts/eye_of_the_giant">
+    <artifact id="eye_of_the_giant" name="巨人之眼" tooltip="友方器械x200%伤害，但x60%攻击速度" sprite="mvz2:artifacts/eye_of_the_giant">
         <unlock>
             <condition required="mvz2:artifact.eye_of_the_giant" />
         </unlock>

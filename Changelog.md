@@ -61,6 +61,9 @@
   - Stun duration after revival: 1 second -> 0 second
   - Probability of Wisp Fly Spawn: 50% -> 100% (Hard), 50% (Other Difficulties)
   - Cost in I, Zombie mode: 150 -> 125 
+- Eye of the Giant
+  - Damage multiplier: 250% -> 200%
+  - Attack speed multiplier: 50% -> 60%
 - Broken Lock
   - Recharge time reduction ratio: 1:1 -> 2:1
 
