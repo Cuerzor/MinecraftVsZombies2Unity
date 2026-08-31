@@ -15,6 +15,7 @@
 - Adjusted the smashing sfx of Mutant Zombie in water.
 - Adjusted the texture of the tiles destroyed by Nukes, to enhance their visibility against dark backgrounds.
 - Adjusted the textures of Stone Shield and Emperor Zombie.
+- The cursor for Force Pad's evocation and Skyward Beacon now has a unique sprite.
 
 ### Balance
 - Adventure
