@@ -20,6 +20,7 @@ namespace MVZ2.GameContent.Contraptions
             base.Evoke(entity);
             var sourcePosition = AmethystPylon.GetLaserPosition(entity);
             var param = entity.GetSpawnParams();
+            param.SetProperty(VanillaEntityProps.DAMAGE, entity.GetDamage());
             param.SetProperty(EngineEntityProps.FLIP_X, entity.IsFacingLeft());
 
             entity.Spawn(VanillaEffectID.masterSpark, sourcePosition, param)?.Let(l =>

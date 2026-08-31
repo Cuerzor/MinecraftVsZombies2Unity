@@ -42,6 +42,7 @@
   - Laser Damage: 5 -> 3
 - Amethyst Pylon
   - Cost: 125 -> 175
+  - Evocation will now be affected by damage bonuses as usual.
 - Black Hole Bomb
   - Recharge Time: Very Long -> Long
 - Nuke
