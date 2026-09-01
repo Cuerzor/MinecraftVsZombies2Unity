@@ -351,6 +351,12 @@ namespace MVZ2.GameContent.Buffs
             public const string homingProjectile = "homing_projectile";
             public const string airSlashDamageUp = "air_slash_damage_up";
             public const string prismPylonProjectileRed = "prism_pylon_projectile_red";
+            public const string prismPylonProjectileOrange = "prism_pylon_projectile_orange";
+            public const string prismPylonProjectileYellow = "prism_pylon_projectile_yellow";
+            public const string prismPylonProjectileGreen = "prism_pylon_projectile_green";
+            public const string prismPylonProjectileCyan = "prism_pylon_projectile_cyan";
+            public const string prismPylonProjectileBlue = "prism_pylon_projectile_blue";
+            public const string prismPylonProjectilePurple = "prism_pylon_projectile_purple";
         }
         public static class Effect
         {
@@ -702,6 +708,12 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public static readonly NamespaceID prismPylonProjectileRed = Get(VanillaBuffNames.Projectile.prismPylonProjectileRed);
+            public static readonly NamespaceID prismPylonProjectileOrange = Get(VanillaBuffNames.Projectile.prismPylonProjectileOrange);
+            public static readonly NamespaceID prismPylonProjectileYellow = Get(VanillaBuffNames.Projectile.prismPylonProjectileYellow);
+            public static readonly NamespaceID prismPylonProjectileGreen = Get(VanillaBuffNames.Projectile.prismPylonProjectileGreen);
+            public static readonly NamespaceID prismPylonProjectileCyan = Get(VanillaBuffNames.Projectile.prismPylonProjectileCyan);
+            public static readonly NamespaceID prismPylonProjectileBlue = Get(VanillaBuffNames.Projectile.prismPylonProjectileBlue);
+            public static readonly NamespaceID prismPylonProjectilePurple = Get(VanillaBuffNames.Projectile.prismPylonProjectilePurple);
         }
         public static class Effect
         {

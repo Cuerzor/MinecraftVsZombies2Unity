@@ -46,7 +46,11 @@ namespace MVZ2.GameContent.Buffs.Projectiles
                 var speed = GetSpeed(buff);
 
                 var velocity = projectile.Velocity;
-                Vector3 targetDir = (target.GetCenter() - projectile.GetCenter()).normalized;
+                var targetBounds = target.GetBounds();
+                var targetPosition = targetBounds.center;
+                var targetGroundY = buff.Level.GetGroundY(targetPosition.x, targetPosition.z);
+                targetPosition.y = (Mathf.Max(targetBounds.min.y, targetGroundY) + Mathf.Max(targetBounds.max.y, targetGroundY)) * 0.5f;
+                Vector3 targetDir = (targetPosition - projectile.GetCenter()).normalized;
 
                 if (targetDir != Vector3.zero)
                 {

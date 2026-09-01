@@ -10,16 +10,12 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using PVZEngine;
-using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
-using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Timing;
-using PVZEngine.Tools.Unity;
-using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions
 {
@@ -91,94 +87,17 @@ namespace MVZ2.GameContent.Contraptions
         private List<Entity> projectileBuffer = new List<Entity>();
         public static readonly List<PrismPylonProjectileMode> projectileModes = new List<PrismPylonProjectileMode>()
         {
-            new PrismPylonProjectileModeRed(),
+            //new PrismPylonProjectileModeRed(),
             //new PrismPylonProjectileModeOrange(),
             //new PrismPylonProjectileModeYellow(),
             //new PrismPylonProjectileModeGreen(),
             //new PrismPylonProjectileModeCyan(),
             //new PrismPylonProjectileModeBlue(),
-            //new PrismPylonProjectileModePurple(),
+            new PrismPylonProjectileModePurple(),
         };
         public static readonly List<NamespaceID> pylonProjectileBuffs = new List<NamespaceID>()
         {
             VanillaBuffID.Projectile.prismPylonProjectileRed
         };
-    }
-    public abstract class PrismPylonProjectileMode
-    {
-        public SpawnParams GetSpawnParams(Entity entity, Entity oldProjectile)
-        {
-            var spawnParams = new SpawnParams();
-            spawnParams.SetProperty(EngineEntityProps.FACTION, oldProjectile.GetFaction());
-            spawnParams.SetProperty(VanillaEntityProps.DAMAGE, oldProjectile.GetDamage());
-            spawnParams.SetProperty(LogicEntityProps.VARIANT, GetVariant(entity, oldProjectile));
-            spawnParams.EntityVelocity = oldProjectile.Velocity;
-            return spawnParams;
-        }
-        public Entity? SpawnProjectile(Entity entity, NamespaceID projectileID, Vector3 pos, Entity oldProjectile, SpawnParams spawnParams)
-        {
-            return entity.Level.SpawnSourced(projectileID, pos, oldProjectile.SpawnerReference, spawnParams);
-        }
-        public virtual int GetVariant(Entity entity, Entity oldProjectile) => 0;
-        public abstract bool CanUseOn(Entity projectile);
-        public abstract void Apply(Entity entity, NamespaceID projectileID, Entity oldProjectile);
-        public abstract void ApplyStack(Entity entity, NamespaceID projectileID, Entity oldProjectile);
-    }
-    public class PrismPylonProjectileModeRed : PrismPylonProjectileMode
-    {
-        public override bool CanUseOn(Entity projectile)
-        {
-            return !projectile.HasBuff<PrismPylonProjectileRedBuff>();
-        }
-        public override void Apply(Entity entity, NamespaceID projectileID, Entity oldProjectile)
-        {
-            for (int i = 0; i < 2; i++)
-            {
-                var offsetMultiplier = (i * 2 - 1);
-                var pos = GetSplitProjectilePosition(oldProjectile, offsetMultiplier);
-                var spawnParams = GetSpawnParams(entity, oldProjectile);
-                SpawnProjectile(entity, projectileID, pos, oldProjectile, spawnParams)?.Let(proj =>
-                {
-                    proj.AddBuff<PrismPylonProjectileRedBuff>();
-                });
-            }
-            oldProjectile.Remove();
-        }
-        public override void ApplyStack(Entity entity, NamespaceID projectileID, Entity oldProjectile)
-        {
-            var oldPos = GetSplitProjectilePosition(oldProjectile, -1);
-            oldProjectile.AddBuff<PrismPylonProjectileRedBuff>();
-            oldProjectile.Position = oldPos;
-
-            var newPos = GetSplitProjectilePosition(oldProjectile, 1);
-            var spawnParams = GetSpawnParams(entity, oldProjectile);
-            SpawnProjectile(entity, projectileID, newPos, oldProjectile, spawnParams)?.Let(proj =>
-            {
-                CopyPrismPylonBuffs(proj, oldProjectile);
-            });
-        }
-        public static Vector3 GetSplitProjectilePosition(Entity oldProjectile, float multiplier)
-        {
-            var vel = oldProjectile.Velocity;
-            var vel2D = new Vector2(vel.x, vel.z).normalized;
-            var offset2DNorm = vel2D.RotateClockwise(90);
-            var newHoriOffset = HORI_OFFSET * multiplier;
-            var newOffset2D = offset2DNorm * newHoriOffset;
-            var newPos = oldProjectile.Position;
-            newPos.x += newOffset2D.x;
-            newPos.z += newOffset2D.y;
-            return newPos;
-        }
-        public static void CopyPrismPylonBuffs(Entity to, Entity from)
-        {
-            foreach (var buffID in PrismPylon.pylonProjectileBuffs)
-            {
-                if (from.HasBuff(buffID) && !to.HasBuff(buffID))
-                {
-                    to.AddBuff(buffID);
-                }
-            }
-        }
-        public const float HORI_OFFSET = 10;
     }
 }

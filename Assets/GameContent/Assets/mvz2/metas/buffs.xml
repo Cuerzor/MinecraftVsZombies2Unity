@@ -235,6 +235,12 @@
     <buff id="air_slash_damage_up" polarity="positive" level="1000" target="projectile" />
     <buff id="whirlwind_attack" polarity="positive" level="1000" target="contraption" />
     <buff id="prism_pylon_projectile_red" polarity="positive" level="1000" target="projectile" />
+    <buff id="prism_pylon_projectile_orange" polarity="positive" level="1000" target="projectile" />
+    <buff id="prism_pylon_projectile_yellow" polarity="positive" level="1000" target="projectile" />
+    <buff id="prism_pylon_projectile_green" polarity="positive" level="1000" target="projectile" />
+    <buff id="prism_pylon_projectile_cyan" polarity="positive" level="1000" target="projectile" />
+    <buff id="prism_pylon_projectile_blue" polarity="positive" level="1000" target="projectile" />
+    <buff id="prism_pylon_projectile_purple" polarity="positive" level="1000" target="projectile" />
     
 
     <!-- Random China -->
