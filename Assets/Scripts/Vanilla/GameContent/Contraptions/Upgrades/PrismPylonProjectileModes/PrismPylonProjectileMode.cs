@@ -39,6 +39,7 @@ namespace MVZ2.GameContent.Contraptions
             var spawnParams = GetSpawnParams(entity, oldProjectile);
             spawnParams.SetProperty(LogicEntityProps.HSV_OFFSET, GetHSV(entity, oldProjectile));
             spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, GetLightColor(entity, oldProjectile));
+            spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(entity));
             SpawnProjectile(entity, projectileID, oldProjectile.Position, oldProjectile, spawnParams)?.Let(proj =>
             {
                 proj.AddBuff(GetModeBuffID())?.Let(b => ApplyToBuff(entity, oldProjectile, b));

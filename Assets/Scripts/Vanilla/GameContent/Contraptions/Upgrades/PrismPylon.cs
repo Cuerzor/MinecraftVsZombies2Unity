@@ -5,6 +5,7 @@ using System.Linq;
 using MVZ2.GameContent.Buffs;
 using MVZ2.GameContent.Buffs.Projectiles;
 using MVZ2.GameContent.Detections;
+using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
@@ -52,6 +53,14 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static void TransformProjectile(Entity entity, Entity projectile, bool evoked)
         {
+            if (ProjectileCommonBehaviour.GetStartHitSpawnerProtectTimeout(projectile) > 0)
+            {
+                var id = GetTransformerPrism(projectile);
+                if (id != null && id.IsEntity(entity))
+                {
+                    return;
+                }
+            }
             var mode = GetPossibleProjectileMode(entity, projectile);
             if (mode != null)
             {
@@ -82,22 +91,31 @@ namespace MVZ2.GameContent.Contraptions
         public static float GetCrystalAlpha(Entity entity) => 0;
         public static void SetKaleidoscopeTimer(Entity entity, FrameTimer? value) => entity.SetProperty(PROP_KALEIDOSCOPE_TIMER, value);
         public static FrameTimer? GetKaleidoscopeTimer(Entity entity) => entity.GetProperty<FrameTimer>(PROP_KALEIDOSCOPE_TIMER);
+        public static void SetTransformerPrism(Entity entity, EntityID? value) => entity.SetProperty(PROP_TRANSFORMER_PRISM, value);
+        public static EntityID? GetTransformerPrism(Entity entity) => entity.GetProperty<EntityID>(PROP_TRANSFORMER_PRISM);
         public static readonly VanillaBuffPropertyMeta<FrameTimer> PROP_KALEIDOSCOPE_TIMER = new VanillaBuffPropertyMeta<FrameTimer>("kaleidoscope_timer");
+        public static readonly VanillaBuffPropertyMeta<EntityID> PROP_TRANSFORMER_PRISM = new VanillaBuffPropertyMeta<EntityID>("transformer_prism");
         private Detector detector;
         private List<Entity> projectileBuffer = new List<Entity>();
         public static readonly List<PrismPylonProjectileMode> projectileModes = new List<PrismPylonProjectileMode>()
         {
-            //new PrismPylonProjectileModeRed(),
+            new PrismPylonProjectileModeRed(),
             //new PrismPylonProjectileModeOrange(),
-            //new PrismPylonProjectileModeYellow(),
+            new PrismPylonProjectileModeYellow(),
             //new PrismPylonProjectileModeGreen(),
             //new PrismPylonProjectileModeCyan(),
-            //new PrismPylonProjectileModeBlue(),
+            new PrismPylonProjectileModeBlue(),
             new PrismPylonProjectileModePurple(),
         };
         public static readonly List<NamespaceID> pylonProjectileBuffs = new List<NamespaceID>()
         {
-            VanillaBuffID.Projectile.prismPylonProjectileRed
+            VanillaBuffID.Projectile.prismPylonProjectileRed,
+            VanillaBuffID.Projectile.prismPylonProjectileOrange,
+            VanillaBuffID.Projectile.prismPylonProjectileYellow,
+            VanillaBuffID.Projectile.prismPylonProjectileGreen,
+            VanillaBuffID.Projectile.prismPylonProjectileCyan,
+            VanillaBuffID.Projectile.prismPylonProjectileBlue,
+            VanillaBuffID.Projectile.prismPylonProjectilePurple,
         };
     }
 }

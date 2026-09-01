@@ -28,9 +28,10 @@ namespace MVZ2.GameContent.Contraptions
                 var spawnParams = GetSpawnParams(entity, oldProjectile);
                 spawnParams.SetProperty(LogicEntityProps.HSV_OFFSET, GetHSV(entity, oldProjectile));
                 spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, GetLightColor(entity, oldProjectile));
+                spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(entity));
                 SpawnProjectile(entity, projectileID, pos, oldProjectile, spawnParams)?.Let(proj =>
                 {
-                    proj.AddBuff(GetModeBuffID());
+                    proj.AddBuff(GetModeBuffID())?.Let(b => ApplyToBuff(entity, oldProjectile, b));
                 });
             }
             oldProjectile.Remove();
@@ -45,6 +46,7 @@ namespace MVZ2.GameContent.Contraptions
             var spawnParams = GetSpawnParams(entity, oldProjectile);
             spawnParams.SetProperty(LogicEntityProps.HSV_OFFSET, oldProjectile.GetHSVOffset());
             spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, oldProjectile.GetLightColor());
+            spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(entity));
             SpawnProjectile(entity, projectileID, newPos, oldProjectile, spawnParams)?.Let(proj =>
             {
                 CopyPrismPylonBuffs(proj, oldProjectile);
