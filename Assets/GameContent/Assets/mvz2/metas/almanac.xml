@@ -25,15 +25,15 @@
             <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#4587a6" />
         </tag>
 
-        <tag id="placement_infectenser" name="升级器械：小型发射器" description="必须放置在小型发射器上" priority="0">
+        <tag id="placement_small_dispenser" name="升级器械：小型发射器" description="必须放置在小型发射器上" priority="0">
             <icon sprite="mvz2:ui/almanac/placement_tags_upgrade_new[0]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#ff00ff" />
         </tag>
-        <tag id="placement_force_pad" name="升级器械：重力板" description="必须放置在重力板上" priority="0">
+        <tag id="placement_gravity_pad" name="升级器械：重力板" description="必须放置在重力板上" priority="0">
             <icon sprite="mvz2:ui/almanac/placement_tags_upgrade_new[1]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#ff00ff" />
         </tag>
-        <tag id="placement_golden_dropper" name="升级器械：木制投掷器" description="必须放置在木制投掷器上" priority="0">
+        <tag id="placement_wooden_dropper" name="升级器械：木制投掷器" description="必须放置在木制投掷器上" priority="0">
             <icon sprite="mvz2:ui/almanac/placement_tags_upgrade_new[2]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#ff00ff" />
         </tag>
@@ -49,7 +49,7 @@
             <icon sprite="mvz2:ui/almanac/placement_tags_upgrade_origin[3]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#ff00ff" />
         </tag>
-        <tag id="placement_diamond_spikes" name="升级器械：尖刺方块" description="必须放置在尖刺方块上" priority="0">
+        <tag id="placement_spike_block" name="升级器械：尖刺方块" description="必须放置在尖刺方块上" priority="0">
             <icon sprite="mvz2:ui/almanac/placement_tags_upgrade_origin[6]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[0]" color="#ff00ff" />
         </tag>
@@ -1299,7 +1299,7 @@
                 <variable name="evocation_damage">500</variable>
             </variables>
             <tags>
-                <tag id="mvz2:placement_infectenser" />
+                <tag id="mvz2:placement_small_dispenser" />
             </tags>
             <header>
                 <p>传染发射器发射既能造成伤害又能寄生敌人的寄生机器人。被寄生的敌人会朝周围敌人发射新的寄生机器人。</p>
@@ -1315,7 +1315,7 @@
         </entry>
         <entry id="mvz2:force_pad">
             <tags>
-                <tag id="mvz2:placement_force_pad" />
+                <tag id="mvz2:placement_gravity_pad" />
             </tags>
             <header>
                 <p>传动力板可以通过触发更改力的方向，以此改变上方怪物的移动轨迹，并加强上方的子弹。</p>
@@ -1331,7 +1331,7 @@
         </entry>
         <entry id="mvz2:golden_dropper">
             <tags>
-                <tag id="mvz2:placement_golden_dropper" />
+                <tag id="mvz2:placement_wooden_dropper" />
             </tags>
             <header>
                 <p>金制投掷器向敌人发射金球，金球在击中敌人后有概率产生绿宝石，并在敌人间反弹。</p>
@@ -1417,7 +1417,7 @@
         <entry />
         <entry id="mvz2:diamond_spikes">
             <tags>
-                <tag id="mvz2:placement_diamond_spikes" />
+                <tag id="mvz2:placement_spike_block" />
             </tags>
             <header>
                 <p>钻石尖刺会对走在上面的敌人造成双重伤害，并具有更高的耐久。</p>
