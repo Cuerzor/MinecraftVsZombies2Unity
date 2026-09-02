@@ -89,7 +89,7 @@ namespace MVZ2.GameContent.Contraptions
             new PrismPylonProjectileModeRed(),
             new PrismPylonProjectileModeOrange(),
             new PrismPylonProjectileModeYellow(),
-            //new PrismPylonProjectileModeGreen(),
+            new PrismPylonProjectileModeGreen(),
             new PrismPylonProjectileModeCyan(),
             new PrismPylonProjectileModeBlue(),
             new PrismPylonProjectileModePurple(),

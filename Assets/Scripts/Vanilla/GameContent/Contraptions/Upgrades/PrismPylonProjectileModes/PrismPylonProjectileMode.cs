@@ -14,7 +14,7 @@ namespace MVZ2.GameContent.Contraptions
 {
     public abstract class PrismPylonProjectileMode
     {
-        public SpawnParams GetSpawnParams(Entity entity, Entity oldProjectile)
+        public static SpawnParams GetSpawnParams(Entity oldProjectile)
         {
             var spawnParams = new SpawnParams();
             spawnParams.SetProperty(EngineEntityProps.FACTION, oldProjectile.GetFaction());
@@ -22,9 +22,9 @@ namespace MVZ2.GameContent.Contraptions
             spawnParams.EntityVelocity = oldProjectile.Velocity;
             return spawnParams;
         }
-        public Entity? SpawnProjectile(Entity entity, NamespaceID projectileID, Vector3 pos, Entity oldProjectile, SpawnParams spawnParams)
+        public static Entity? SpawnProjectile(NamespaceID projectileID, Vector3 pos, Entity oldProjectile, SpawnParams spawnParams)
         {
-            return entity.Level.SpawnSourced(projectileID, pos, oldProjectile.SpawnerReference, spawnParams);
+            return oldProjectile.Level.SpawnSourced(projectileID, pos, oldProjectile.SpawnerReference, spawnParams);
         }
         public virtual Vector3 GetHSV(Entity entity, Entity oldProjectile) => Vector3.zero;
         public virtual Color GetLightColor(Entity entity, Entity oldProjectile) => Color.red;
@@ -47,11 +47,11 @@ namespace MVZ2.GameContent.Contraptions
         }
         protected Entity? ReplaceProjectile(Entity entity, NamespaceID projectileID, Entity oldProjectile, Vector3 position)
         {
-            var spawnParams = GetSpawnParams(entity, oldProjectile);
+            var spawnParams = GetSpawnParams(oldProjectile);
             spawnParams.SetProperty(LogicEntityProps.HSV_OFFSET, GetHSV(entity, oldProjectile));
             spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, GetLightColor(entity, oldProjectile));
             spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(entity));
-            var newProjectile = SpawnProjectile(entity, projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
+            var newProjectile = SpawnProjectile(projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
             {
                 proj.AddBuff(GetModeBuffID())?.Let(b => ApplyToBuff(entity, oldProjectile, b));
                 var collider = entity.GetCollider(EntityCollisionHelper.NAME_MAIN);
@@ -63,16 +63,19 @@ namespace MVZ2.GameContent.Contraptions
             oldProjectile.Remove();
             return newProjectile;
         }
-        protected Entity? CloneProjectile(Entity entity, NamespaceID projectileID, Entity oldProjectile, Vector3 position)
+        public static Entity? CloneProjectile(Entity? prism, NamespaceID projectileID, Entity oldProjectile, Vector3 position)
         {
-            var spawnParams = GetSpawnParams(entity, oldProjectile);
+            var spawnParams = GetSpawnParams(oldProjectile);
             spawnParams.SetProperty(LogicEntityProps.HSV_OFFSET, oldProjectile.GetHSVOffset());
             spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, oldProjectile.GetLightColor());
-            spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(entity));
-            var newProjectile = SpawnProjectile(entity, projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
+            if (prism != null)
+            {
+                spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(prism));
+            }
+            var newProjectile = SpawnProjectile(projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
             {
                 CopyPrismPylonBuffs(proj, oldProjectile);
-                var collider = entity.GetCollider(EntityCollisionHelper.NAME_MAIN);
+                var collider = prism?.GetCollider(EntityCollisionHelper.NAME_MAIN);
                 if (collider != null)
                 {
                     proj.AddIgnoredProjectileCollider(collider);
