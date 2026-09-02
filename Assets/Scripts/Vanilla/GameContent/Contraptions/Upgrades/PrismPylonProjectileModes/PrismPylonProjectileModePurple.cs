@@ -26,7 +26,7 @@ namespace MVZ2.GameContent.Contraptions
         public override void ApplyToBuff(Entity entity, Entity oldProjectile, Buff buff)
         {
             base.ApplyToBuff(entity, oldProjectile, buff);
-            HomingProjectileBuff.SetSpeed(buff, oldProjectile.Velocity.magnitude);
+            HomingProjectileBuff.SetSpeed(buff, Mathf.Max(10, oldProjectile.Velocity.magnitude));
         }
     }
 }

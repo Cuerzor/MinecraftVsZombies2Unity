@@ -413,6 +413,19 @@ namespace MVZ2.Vanilla.Entities
         }
         #endregion
 
+        #region 无视棱晶塔
+
+        public static readonly PropertyMeta<bool> IGNORE_PRISM_PYLON = Get<bool>("ignore_prism_pylon");
+        public static bool IgnorePrismPylon(this EntityDefinition definition)
+        {
+            return definition.GetProperty<bool>(IGNORE_PRISM_PYLON);
+        }
+        public static bool IgnorePrismPylon(this Entity entity)
+        {
+            return entity.GetProperty<bool>(IGNORE_PRISM_PYLON);
+        }
+        #endregion
+
         #region 免疫火焰
         public static readonly VanillaEntityPropertyMeta<bool> IMMUNE_FIRE = new VanillaEntityPropertyMeta<bool>("immune_fire");
         public static bool ImmuneFire(this EntityDefinition definition)

@@ -42,8 +42,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
                 for (int i = 0; i < 2; i++)
                 {
                     var angle = (i * 2 - 1) * 90;
-                    var rotatedVel2D = vel2D.RotateClockwise(angle);
-                    var newVel = new Vector3(rotatedVel2D.x, vel.y, rotatedVel2D.y);
+                    var newVel = vel.RotateClockwiseXZ(angle);
                     var spawnParams = PrismPylonProjectileMode.GetCloneProjectileSpawnParams(null, entity, newVel);
                     spawnParams.SetProperty(VanillaEntityProps.DAMAGE, entity.GetDamage(true) * DAMAGE_MULTIPLIER);
                     PrismPylonProjectileMode.CloneProjectile(null, entity.GetDefinitionID(), entity, entity.Position, spawnParams)?.Let(p =>

@@ -1668,6 +1668,9 @@
             <unlock>
                 <condition requiredGroups="mvz2:contraption.prism_pylon" />
             </unlock>
+            <behaviours>
+                <behaviour operator="add" id="prism_pylon/evoke" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:canDeactive" value="false" />
                 <vector3 name="mvz2:size" x="36" y="100" z="36" />
@@ -3526,6 +3529,7 @@
                 <bool name="mvz2:noHitEntities" value="true" />
                 <float name="mvz2:gravity" value="1" />
                 <vector3 name="mvz2:size" x="24" y="24" z="24" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="snowball">
@@ -3553,6 +3557,7 @@
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
                 <vector3 name="mvz2:shadowScale" x="1" y="1" z="1" />
                 <id name="mvz2:modelId" value="mvz2:entity.tnt" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="soulfire_ball">
@@ -3594,6 +3599,7 @@
                 <bool name="mvz2:pointToDirection" value="true" />
                 <float name="mvz2:range" value="40" />
                 <vector3 name="mvz2:size" x="64" y="8" z="8" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="fire_charge">
@@ -3608,6 +3614,7 @@
                 <bool name="mvz2:isLightSource" value="true" />
                 <vector3 name="mvz2:lightRange" x="40" y="40" z="40" />
                 <color name="mvz2:lightColor" value="#FF7F00" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="large_arrow">
@@ -3649,6 +3656,7 @@
                 <vector3 name="mvz2:shadowScale" x="0.25" y="0.25" z="0.25" />
                 <vector3 name="mvz2:size" x="16" y="16" z="16" />
                 <idArray name="mvz2:damageEffects" value="mvz2:ground_spikes" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="dart">
@@ -3670,6 +3678,7 @@
                 <bool name="mvz2:piercing" value="true" />
                 <vector3 name="mvz2:size" x="96" y="6" z="6" />
                 <idArray name="mvz2:damageEffects" value="mvz2:damage_both_armor_and_body" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="parabot">
@@ -3687,6 +3696,7 @@
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
                 <bool name="mvz2:piercing" value="true" />
                 <float name="mvz2:damage" value="800" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="wooden_ball">
@@ -3743,6 +3753,7 @@
                 <bool name="mvz2:isLightSource" value="true" />
                 <vector3 name="mvz2:lightRange" x="40" y="40" z="40" />
                 <color name="mvz2:lightColor" value="#FF00FF" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
 
                 <vector3 name="mvz2:size" x="24" y="24" z="24" />
             </properties>
@@ -3754,6 +3765,7 @@
                 <float name="mvz2:damage" value="100" />
                 <float name="mvz2:range" value="120" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="seija_bullet">
@@ -3772,6 +3784,7 @@
             <properties>
                 <float name="mvz2:range" value="40" />
                 <vector3 name="mvz2:size" x="24" y="24" z="24" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="crossbow_bolt">
@@ -3783,6 +3796,7 @@
                 <bool name="mvz2:piercing" value="true" />
                 <vector3 name="mvz2:size" x="32" y="5" z="5" />
                 <idArray name="mvz2:damageEffects" value="mvz2:damage_both_armor_and_body" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="reflection_bullet">
@@ -3846,6 +3860,7 @@
                 <bool name="mvz2:isLightSource" value="true" />
                 <vector3 name="mvz2:lightRange" x="104" y="104" z="104" />
                 <color name="mvz2:lightColor" value="#FF0000" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="hell_planet_earth">
@@ -3861,6 +3876,7 @@
                 <bool name="mvz2:isLightSource" value="true" />
                 <vector3 name="mvz2:lightRange" x="84" y="84" z="84" />
                 <color name="mvz2:lightColor" value="#0000FF" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="hell_planet_moon">
@@ -3876,6 +3892,7 @@
                 <bool name="mvz2:isLightSource" value="true" />
                 <vector3 name="mvz2:lightRange" x="44" y="44" z="44" />
                 <color name="mvz2:lightColor" value="#FFFFFF" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="shuriken">
@@ -3893,6 +3910,7 @@
                 <bool name="mvz2:isFire" value="true" />
                 <float name="mvz2:range" value="120" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
 
                 <bool name="mvz2:isLightSource" value="true" />
                 <vector3 name="mvz2:lightRange" x="128" y="128" z="128" />
@@ -3916,6 +3934,7 @@
                 <int name="mvz2:maxTimeout" value="10" />
                 <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="firework_big">
@@ -3935,6 +3954,7 @@
                 <int name="mvz2:maxTimeout" value="10" />
                 <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="falling_star">
@@ -3949,6 +3969,7 @@
                 <bool name="mvz2:piercing" value="true" />
                 <bool name="mvz2:pointToDirection" value="true" />
                 <vector3 name="mvz2:size" x="64" y="64" z="64" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="explosive_large_fireball">
@@ -3962,6 +3983,7 @@
                 <float name="mvz2:range" value="120" />
                 <vector3 name="mvz2:size" x="130" y="130" z="130" />
                 <vector3 name="mvz2:shadowScale" x="3" y="3" z="3" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="spectral_arrow">
@@ -3987,6 +4009,7 @@
                 <idArray name="mvz2:damageEffects" value="mvz2:tiny" />
                 <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
                 <float name="mvz2:gravity" value="1" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="gravel">
@@ -3998,6 +4021,7 @@
                 <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
                 <idArray name="mvz2:damageEffects" value="mvz2:mute" />
                 <float name="mvz2:gravity" value="1" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="cannon_missile">
@@ -4011,6 +4035,7 @@
                 <bool name="mvz2:pointToDirection" value="true" />
                 <bool name="mvz2:noHitEntities" value="true" />
                 <bool name="mvz2:ignore_force_pad" value="true" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
                 <float name="mvz2:range" value="120" />
                 <vector3 name="mvz2:size" x="100" y="24" z="24" />
                 <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
@@ -4035,6 +4060,7 @@
             <properties>
                 <float name="mvz2:range" value="200" />
                 <vector3 name="mvz2:size" x="24" y="24" z="24" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="frozen_orb">
@@ -4050,6 +4076,7 @@
                 <idArray name="mvz2:damageEffects" value="mvz2:ice mvz2:slow" />
                 <bool name="mvz2:piercing" value="true" />
                 <int name="mvz2:maxTimeout" value="60" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="meowmere_projectile">
@@ -4064,6 +4091,7 @@
                 <float name="mvz2:gravity" value="1" />
                 <int name="mvz2:waterInteraction" value="0" />
                 <bool name="mvz2:killOnGround" value="false" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="air_slash">
@@ -4088,6 +4116,7 @@
                 <vector3 name="mvz2:lightRange" x="80" y="80" z="80" />
                 <color name="mvz2:lightColor" value="#FF8080" />
                 <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
+                <bool name="mvz2:ignore_prism_pylon" value="true" />
             </properties>
         </entity>
 
