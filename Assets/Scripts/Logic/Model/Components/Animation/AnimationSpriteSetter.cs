@@ -19,7 +19,7 @@ namespace MVZ2Logic.Models.Components
         {
             if (sprites != null && sprites.Length > 0)
             {
-                if (index != beforeIndex || Application.isEditor)
+                if (index != beforeIndex || (Application.isEditor && !Application.isPlaying))
                 {
                     SetSpriteIndex(index);
                 }

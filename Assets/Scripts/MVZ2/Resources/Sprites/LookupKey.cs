@@ -8,7 +8,7 @@ namespace MVZ2.Resources
     public abstract class LookupKey<T> : IEquatable<LookupKey<T>>
     {
         public T id;
-        public HashSet<string> tags = new HashSet<string>();
+        private HashSet<string> tags = new HashSet<string>();
 
         public LookupKey(T id, params string[] tags)
         {
