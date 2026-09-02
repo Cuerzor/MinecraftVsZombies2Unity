@@ -97,6 +97,11 @@ namespace MVZ2.GameContent.GlobalCallbacks
             {
                 tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.stable));
             }
+            // 高
+            if (entityDef.BlocksJump())
+            {
+                tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.tall));
+            }
         }
         private void GetShellAttributeTags(EntityDefinition entityDef, List<AlmanacEntryTagInfo> tags)
         {
@@ -153,11 +158,6 @@ namespace MVZ2.GameContent.GlobalCallbacks
             if (entityDef.IsFloor())
             {
                 tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.floorContraption));
-            }
-            // 高
-            if (entityDef.BlocksJump())
-            {
-                tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.tall));
             }
             // 可触发
             if (entityDef.IsTriggerActive())

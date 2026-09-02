@@ -64,10 +64,14 @@
 - Flag Zombie
   - Base movement speed: 1 -> 2
   - The random movement speed factor for them is no longer fixed at 200%.
+- Pop Captain
+  - Now blocks Skeleton Horses from jumping.
 - Zombie Cat
   - Stun duration after revival: 1 second -> 0 second
   - Probability of Wisp Fly Spawn: 50% -> 100% (Hard), 50% (Other Difficulties)
   - Cost in I, Zombie mode: 150 -> 125 
+- Mutant Zombie
+  - Now blocks Skeleton Horses from jumping.
 - Eye of the Giant
   - Damage multiplier: 250% -> 200%
   - Attack speed multiplier: 50% -> 60%
