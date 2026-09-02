@@ -3,12 +3,13 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using PVZEngine;
+using PVZEngine.Tools.Cloning;
 using UnityEngine;
 
 namespace MVZ2Logic.Resources
 {
     [Serializable]
-    public class SpriteReference
+    public class SpriteReference : ICanClone
     {
         public SpriteReference(NamespaceID id, int index = 0)
         {
@@ -99,6 +100,14 @@ namespace MVZ2Logic.Resources
         public override string ToString()
         {
             return $"{id}{(Index >= 1 ? $"[{Index}]" : string.Empty)}";
+        }
+        public SpriteReference Clone()
+        {
+            return new SpriteReference(id, Index);
+        }
+        object ICanClone.Clone()
+        {
+            return Clone();
         }
         public static bool operator ==(SpriteReference? lhs, SpriteReference? rhs)
         {

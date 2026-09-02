@@ -36,15 +36,7 @@ namespace MVZ2.GameContent.Contraptions
         public abstract NamespaceID GetModeBuffID();
         public virtual void Apply(Entity entity, NamespaceID projectileID, Entity oldProjectile)
         {
-            var spawnParams = GetSpawnParams(entity, oldProjectile);
-            spawnParams.SetProperty(LogicEntityProps.HSV_OFFSET, GetHSV(entity, oldProjectile));
-            spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, GetLightColor(entity, oldProjectile));
-            spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(entity));
-            SpawnProjectile(entity, projectileID, oldProjectile.Position, oldProjectile, spawnParams)?.Let(proj =>
-            {
-                proj.AddBuff(GetModeBuffID())?.Let(b => ApplyToBuff(entity, oldProjectile, b));
-            });
-            oldProjectile.Remove();
+            ReplaceProjectile(entity, projectileID, oldProjectile, oldProjectile.Position);
         }
         public virtual void ApplyStack(Entity entity, NamespaceID projectileID, Entity oldProjectile)
         {
@@ -53,6 +45,46 @@ namespace MVZ2.GameContent.Contraptions
         public virtual void ApplyToBuff(Entity entity, Entity oldProjectile, Buff buff)
         {
 
+        }
+        protected Entity? ReplaceProjectile(Entity entity, NamespaceID projectileID, Entity oldProjectile, Vector3 position)
+        {
+            var spawnParams = GetSpawnParams(entity, oldProjectile);
+            spawnParams.SetProperty(LogicEntityProps.HSV_OFFSET, GetHSV(entity, oldProjectile));
+            spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, GetLightColor(entity, oldProjectile));
+            spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(entity));
+            var newProjectile = SpawnProjectile(entity, projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
+            {
+                proj.AddBuff(GetModeBuffID())?.Let(b => ApplyToBuff(entity, oldProjectile, b));
+            });
+            oldProjectile.Remove();
+            return newProjectile;
+        }
+        protected Entity? CloneProjectile(Entity entity, NamespaceID projectileID, Entity oldProjectile, Vector3 position)
+        {
+            var spawnParams = GetSpawnParams(entity, oldProjectile);
+            spawnParams.SetProperty(LogicEntityProps.HSV_OFFSET, oldProjectile.GetHSVOffset());
+            spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, oldProjectile.GetLightColor());
+            spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(entity));
+            var newProjectile = SpawnProjectile(entity, projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
+            {
+                CopyPrismPylonBuffs(proj, oldProjectile);
+            });
+            return newProjectile;
+        }
+        public static void CopyPrismPylonBuffs(Entity to, Entity from)
+        {
+            foreach (var buffID in PrismPylon.pylonProjectileBuffs)
+            {
+                if (!to.HasBuff(buffID))
+                {
+                    var buff = from.GetFirstBuff(buffID);
+                    if (buff != null)
+                    {
+                        var newBuff = buff.Clone(to);
+                        to.AddBuff(newBuff);
+                    }
+                }
+            }
         }
     }
 }

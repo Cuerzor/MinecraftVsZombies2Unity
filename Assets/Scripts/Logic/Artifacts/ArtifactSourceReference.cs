@@ -52,7 +52,7 @@ namespace MVZ2Logic.Artifacts
         {
             return !(lhs == rhs);
         }
-        ILevelSourceReference ILevelSourceReference.Clone()
+        ILevelSourceReference ILevelSourceReference.CloneReference()
         {
             return Clone();
         }
