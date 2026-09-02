@@ -3,10 +3,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using MVZ2.GameContent.Buffs;
-using MVZ2.GameContent.Buffs.Projectiles;
-using MVZ2.GameContent.Detections;
-using MVZ2.GameContent.Projectiles;
-using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
@@ -91,7 +87,7 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly List<PrismPylonProjectileMode> projectileModes = new List<PrismPylonProjectileMode>()
         {
             new PrismPylonProjectileModeRed(),
-            //new PrismPylonProjectileModeOrange(),
+            new PrismPylonProjectileModeOrange(),
             new PrismPylonProjectileModeYellow(),
             //new PrismPylonProjectileModeGreen(),
             //new PrismPylonProjectileModeCyan(),
