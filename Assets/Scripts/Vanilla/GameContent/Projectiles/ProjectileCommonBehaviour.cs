@@ -127,7 +127,7 @@ namespace MVZ2.GameContent.Projectiles
 
 
             // 击中敌人前
-            var hitInput = new ProjectileHitInput(projectile, other, projectile.IsPiercing());
+            var hitInput = new ProjectileHitInput(projectile, other, !projectile.CanPierce());
 
             var damageEffects = projectile.GetDamageEffects();
             DamageEffectList effects;
@@ -158,7 +158,8 @@ namespace MVZ2.GameContent.Projectiles
             DamageOutput damageOutput = VanillaEntityExt.TakeDamage(damageInput);
 
             // 击中敌人后
-            ProjectileHitOutput hitOutput = new ProjectileHitOutput(hitInput.Projectile, hitInput.Other, otherCollider, hitInput.Pierce);
+            ProjectileHitOutput hitOutput = new ProjectileHitOutput(hitInput.Projectile, hitInput.Other, otherCollider, hitInput.Remove);
+            bool ethereal = false;
             if (damageOutput != null)
             {
                 if (damageOutput.ShieldResult != null)
@@ -167,12 +168,24 @@ namespace MVZ2.GameContent.Projectiles
                 }
                 else
                 {
-                    bool ethereal = damageOutput.ArmorResult != null ? false : other.IsEthereal();
-                    hitOutput.Pierce = ethereal || hitOutput.Pierce;
+                    ethereal = damageOutput.ArmorResult != null ? false : other.IsEthereal();
+                    if (ethereal)
+                    {
+                        hitOutput.Remove = false;
+                    }
                 }
             }
             // 将碰撞箱加入到已被碰撞的列表。
             projectile.AddIgnoredProjectileCollider(otherCollider);
+
+            // 减去穿透次数
+            if (!hitOutput.Remove)
+            {
+                if (!ethereal)
+                {
+                    projectile.AddPiercedCount(1);
+                }
+            }
 
             // 触发击中后回调。
             var postParam = new VanillaLevelCallbacks.PostProjectileHitParams()
@@ -182,7 +195,7 @@ namespace MVZ2.GameContent.Projectiles
             };
             projectile.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_PROJECTILE_HIT, postParam, projectile.GetDefinitionID());
 
-            if (!hitOutput.Pierce)
+            if (hitOutput.Remove)
             {
                 projectile.Die();
                 return;

@@ -35,6 +35,24 @@ namespace MVZ2.Vanilla.Projectiles
         {
             projectile.SetProperty(PIERCING, value);
         }
+        public static readonly PropertyMeta<int> MAX_PIERCE_COUNT = new PropertyMeta<int>("max_pierce_count");
+        public static int GetMaxPierceCount(this Entity projectile)
+        {
+            return projectile.GetProperty<int>(MAX_PIERCE_COUNT);
+        }
+        public static readonly PropertyMeta<int> PIERCED_COUNT = new PropertyMeta<int>("pierced_count");
+        public static int GetPiercedCount(this Entity projectile)
+        {
+            return projectile.GetProperty<int>(PIERCED_COUNT);
+        }
+        public static void SetPiercedCount(this Entity projectile, int value)
+        {
+            projectile.SetProperty(PIERCED_COUNT, value);
+        }
+        public static void AddPiercedCount(this Entity projectile, int value)
+        {
+            projectile.SetPiercedCount(projectile.GetPiercedCount() + value);
+        }
         #region 无视护盾
         public static readonly PropertyMeta<bool> IGNORE_SHIELDS = new PropertyMeta<bool>("ignore_shields");
         public static bool IgnoreShields(this Entity projectile)

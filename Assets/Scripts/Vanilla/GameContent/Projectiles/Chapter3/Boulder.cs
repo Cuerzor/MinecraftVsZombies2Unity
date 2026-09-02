@@ -35,7 +35,7 @@ namespace MVZ2.GameContent.Projectiles
                 projectile.PlaySound(VanillaSoundID.bash);
             }
 
-            if (!hitResult.Pierce)
+            if (hitResult.Remove)
             {
                 var rng = projectile.RNG;
                 for (int i = 0; i < 3; i++)

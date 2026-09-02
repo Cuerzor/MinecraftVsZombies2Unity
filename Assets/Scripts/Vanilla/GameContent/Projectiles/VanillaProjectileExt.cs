@@ -174,6 +174,13 @@ namespace MVZ2.Vanilla.Projectiles
                 position.y < LevelPositions.PROJECTILE_BOTTOM_BORDER;
         }
         #endregion
+
+        #region 穿透
+        public static bool CanPierce(this Entity projectile)
+        {
+            return projectile.IsPiercing() || projectile.GetPiercedCount() < projectile.GetMaxPierceCount();
+        }
+        #endregion
     }
     public class ProjectileShootArgs
     {

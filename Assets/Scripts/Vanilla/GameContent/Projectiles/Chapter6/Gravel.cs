@@ -26,7 +26,7 @@ namespace MVZ2.GameContent.Projectiles
             var projectile = hitResult.Projectile;
             if (!projectile.Definition.HasBehaviour(this))
                 return;
-            if (hitResult.Pierce)
+            if (!hitResult.Remove)
                 return;
             var damage = param.damage;
             var enemy = hitResult.Other;

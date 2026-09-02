@@ -8,26 +8,26 @@ namespace MVZ2.Vanilla.Projectiles
 {
     public class ProjectileHitOutput
     {
-        public ProjectileHitOutput(Entity projectile, Entity other, IEntityCollider collider, bool pierce = false)
+        public ProjectileHitOutput(Entity projectile, Entity other, IEntityCollider collider, bool remove = true)
         {
             Projectile = projectile;
             Other = other;
             Collider = collider;
-            Pierce = pierce;
+            Remove = remove;
         }
-        public ProjectileHitOutput(Entity projectile, Entity other, Armor shield, IEntityCollider collider, bool pierce = false)
+        public ProjectileHitOutput(Entity projectile, Entity other, Armor shield, IEntityCollider collider, bool remove = true)
         {
             Projectile = projectile;
             Other = other;
             Shield = shield;
             Collider = collider;
-            Pierce = pierce;
+            Remove = remove;
         }
 
         public Entity Projectile { get; set; }
         public Entity Other { get; set; }
         public Armor? Shield { get; set; }
         public IEntityCollider Collider { get; set; }
-        public bool Pierce { get; set; }
+        public bool Remove { get; set; }
     }
 }

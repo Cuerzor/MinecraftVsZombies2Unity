@@ -28,7 +28,7 @@ namespace MVZ2.GameContent.Projectiles
             var blocksSlice = damageOutput.GetAllResults().Any(e => e?.ShellDefinition?.BlocksSlice() ?? false);
             if (!blocksSlice)
             {
-                hitResult.Pierce = true;
+                hitResult.Remove = false;
             }
         }
     }

@@ -6,15 +6,15 @@ namespace MVZ2.Vanilla.Projectiles
 {
     public class ProjectileHitInput
     {
-        public ProjectileHitInput(Entity projectile, Entity other, bool pierce = false)
+        public ProjectileHitInput(Entity projectile, Entity other, bool remove = false)
         {
             Projectile = projectile;
             Other = other;
-            Pierce = pierce;
+            Remove = remove;
         }
 
         public Entity Projectile { get; set; }
         public Entity Other { get; set; }
-        public bool Pierce { get; set; }
+        public bool Remove { get; set; }
     }
 }

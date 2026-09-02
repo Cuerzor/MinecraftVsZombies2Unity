@@ -8,9 +8,11 @@ using MVZ2.GameContent.Detections;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using PVZEngine;
+using PVZEngine.Collisions;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Models;
@@ -26,41 +28,32 @@ namespace MVZ2.GameContent.Contraptions
         public PrismPylon(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new BooleanModifier(LogicEntityProps.IS_LIGHT_SOURCE, BooleanOperator.Set, LogicContraptionProps.PROP_EVOKED));
-            detector = new CollisionDetector(true)
-            {
-                factionTarget = FactionTarget.Friendly,
-                mask = EntityCollisionHelper.MASK_PROJECTILE,
-            };
+            AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_FRIENDLY, IntegerOperator.BitOr, EntityCollisionHelper.MASK_PROJECTILE));
         }
         public override void Update(Entity entity)
         {
             base.Update(entity);
-
-            UpdatePrism(entity);
-
             entity.SetAnimationFloat("CrystalAlpha", GetCrystalAlpha(entity));
             entity.SetAnimationBool("Evoked", entity.IsEvoked());
         }
-        private void UpdatePrism(Entity entity)
+        public override void PostCollision(EntityCollision collision, int state)
         {
-            bool evoked = entity.IsEvoked();
-            projectileBuffer.Clear();
-            detector.DetectEntities(entity, projectileBuffer);
-            foreach (Entity target in projectileBuffer)
-            {
-                TransformProjectile(entity, target, evoked);
-            }
+            base.PostCollision(collision, state);
+            if (state != EntityCollisionHelper.STATE_ENTER)
+                return;
+            var entity = collision.Entity;
+            var target = collision.Other;
+            if (target.Type != EntityTypes.PROJECTILE)
+                return;
+            if (!entity.IsFriendly(target))
+                return;
+            if (target.IsProjectileColliderIgnored(collision.Collider))
+                return;
+            var evoked = entity.IsEvoked();
+            TransformProjectile(entity, target, evoked);
         }
         public static void TransformProjectile(Entity entity, Entity projectile, bool evoked)
         {
-            if (ProjectileCommonBehaviour.GetStartHitSpawnerProtectTimeout(projectile) > 0)
-            {
-                var id = GetTransformerPrism(projectile);
-                if (id != null && id.IsEntity(entity))
-                {
-                    return;
-                }
-            }
             var mode = GetPossibleProjectileMode(entity, projectile);
             if (mode != null)
             {
@@ -95,8 +88,6 @@ namespace MVZ2.GameContent.Contraptions
         public static EntityID? GetTransformerPrism(Entity entity) => entity.GetProperty<EntityID>(PROP_TRANSFORMER_PRISM);
         public static readonly VanillaBuffPropertyMeta<FrameTimer> PROP_KALEIDOSCOPE_TIMER = new VanillaBuffPropertyMeta<FrameTimer>("kaleidoscope_timer");
         public static readonly VanillaBuffPropertyMeta<EntityID> PROP_TRANSFORMER_PRISM = new VanillaBuffPropertyMeta<EntityID>("transformer_prism");
-        private Detector detector;
-        private List<Entity> projectileBuffer = new List<Entity>();
         public static readonly List<PrismPylonProjectileMode> projectileModes = new List<PrismPylonProjectileMode>()
         {
             new PrismPylonProjectileModeRed(),

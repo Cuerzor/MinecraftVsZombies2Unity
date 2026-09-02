@@ -39,7 +39,7 @@ namespace MVZ2.GameContent.Projectiles
             SetHitCount(projectile, hitCount);
             if (hitCount >= MAX_HIT_COUNT)
             {
-                hitResult.Pierce = false;
+                hitResult.Remove = true;
                 return;
             }
 

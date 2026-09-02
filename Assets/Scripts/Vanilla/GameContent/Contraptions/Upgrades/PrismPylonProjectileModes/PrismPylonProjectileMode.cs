@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Buffs.Projectiles;
 using MVZ2.Metas;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Projectiles;
 using MVZ2Logic.Entities;
 using PVZEngine;
 using PVZEngine.Buffs;
@@ -55,6 +56,11 @@ namespace MVZ2.GameContent.Contraptions
             var newProjectile = SpawnProjectile(entity, projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
             {
                 proj.AddBuff(GetModeBuffID())?.Let(b => ApplyToBuff(entity, oldProjectile, b));
+                var collider = entity.GetCollider(EntityCollisionHelper.NAME_MAIN);
+                if (collider != null)
+                {
+                    proj.AddIgnoredProjectileCollider(collider);
+                }
             });
             oldProjectile.Remove();
             return newProjectile;
@@ -68,6 +74,11 @@ namespace MVZ2.GameContent.Contraptions
             var newProjectile = SpawnProjectile(entity, projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
             {
                 CopyPrismPylonBuffs(proj, oldProjectile);
+                var collider = entity.GetCollider(EntityCollisionHelper.NAME_MAIN);
+                if (collider != null)
+                {
+                    proj.AddIgnoredProjectileCollider(collider);
+                }
             });
             return newProjectile;
         }

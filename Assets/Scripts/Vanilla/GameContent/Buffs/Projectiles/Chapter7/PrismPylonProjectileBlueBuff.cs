@@ -12,7 +12,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
     {
         public PrismPylonProjectileBlueBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new BooleanModifier(VanillaProjectileProps.PIERCING, true));
+            AddModifier(new IntModifier(VanillaProjectileProps.MAX_PIERCE_COUNT, IntegerOperator.Add, 3));
         }
     }
 }

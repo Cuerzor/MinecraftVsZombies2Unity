@@ -51,7 +51,7 @@ namespace MVZ2.GameContent.Armors
         {
             var hit = param.hit;
             var damage = param.damage;
-            if (hit.Pierce)
+            if (!hit.Remove)
                 return;
 
             var shield = hit.Shield;
