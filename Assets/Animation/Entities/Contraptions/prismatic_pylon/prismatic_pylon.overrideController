@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: prism_pylon
+  m_Name: prismatic_pylon
   m_Controller: {fileID: 9100000, guid: 7ad9138258cdcf34c83af10cbce385f6, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: e2c6ca7c607523f418fd5fa0d3f2146f, type: 2}

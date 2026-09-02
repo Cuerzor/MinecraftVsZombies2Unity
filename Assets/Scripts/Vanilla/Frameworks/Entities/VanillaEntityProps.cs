@@ -415,12 +415,12 @@ namespace MVZ2.Vanilla.Entities
 
         #region 无视棱晶塔
 
-        public static readonly PropertyMeta<bool> IGNORE_PRISM_PYLON = Get<bool>("ignore_prism_pylon");
-        public static bool IgnorePrismPylon(this EntityDefinition definition)
+        public static readonly PropertyMeta<bool> IGNORE_PRISM_PYLON = Get<bool>("ignore_prismatic_pylon");
+        public static bool IgnorePrismaticPylon(this EntityDefinition definition)
         {
             return definition.GetProperty<bool>(IGNORE_PRISM_PYLON);
         }
-        public static bool IgnorePrismPylon(this Entity entity)
+        public static bool IgnorePrismaticPylon(this Entity entity)
         {
             return entity.GetProperty<bool>(IGNORE_PRISM_PYLON);
         }

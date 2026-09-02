@@ -7,11 +7,11 @@ using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions
 {
-    public class PrismPylonProjectileModeGreen : PrismPylonProjectileMode
+    public class PrismaticPylonProjectileModeGreen : PrismaticPylonProjectileMode
     {
         public override NamespaceID GetModeBuffID()
         {
-            return VanillaBuffID.Projectile.prismPylonProjectileGreen;
+            return VanillaBuffID.Projectile.prismaticPylonProjectileGreen;
         }
         public override Vector3 GetHSV(Entity entity, Entity oldProjectile)
         {

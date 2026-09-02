@@ -870,7 +870,7 @@ MonoBehaviour:
   - name: mobile_blueprint/pop_captain
     texture: {fileID: 2800000, guid: 9f4e32b5f413e874aa0d2661531c8b78, type: 3}
     tags: []
-  - name: mobile_blueprint/prism_pylon
+  - name: mobile_blueprint/prismatic_pylon
     texture: {fileID: 2800000, guid: be911f0313736ff4eba466c25491c927, type: 3}
     tags: []
   - name: mobile_blueprint/punchton
@@ -1627,7 +1627,7 @@ MonoBehaviour:
   - name: entity/contraption/pressure_plate
     texture: {fileID: 2800000, guid: 7cd67e193c23b1f46ae2e123c4a0bd3a, type: 3}
     tags: []
-  - name: entity/contraption/prism_pylon
+  - name: entity/contraption/prismatic_pylon
     texture: {fileID: 2800000, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
     tags: []
   - name: entity/contraption/punchton
@@ -4810,7 +4810,7 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 9f4e32b5f413e874aa0d2661531c8b78, type: 3}
     tags: []
-  - name: mobile_blueprint/prism_pylon
+  - name: mobile_blueprint/prismatic_pylon
     index: 0
     sprite: {fileID: 21300000, guid: be911f0313736ff4eba466c25491c927, type: 3}
     tags: []
@@ -7123,31 +7123,31 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 7cd67e193c23b1f46ae2e123c4a0bd3a, type: 3}
     tags: []
-  - name: entity/contraption/prism_pylon
+  - name: entity/contraption/prismatic_pylon
     index: 0
     sprite: {fileID: 1697407540, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
     tags: []
-  - name: entity/contraption/prism_pylon
+  - name: entity/contraption/prismatic_pylon
     index: 1
     sprite: {fileID: 2119635985, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
     tags: []
-  - name: entity/contraption/prism_pylon
+  - name: entity/contraption/prismatic_pylon
     index: 2
     sprite: {fileID: 116154464, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
     tags: []
-  - name: entity/contraption/prism_pylon
+  - name: entity/contraption/prismatic_pylon
     index: 3
     sprite: {fileID: -199484604, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
     tags: []
-  - name: entity/contraption/prism_pylon
+  - name: entity/contraption/prismatic_pylon
     index: 4
     sprite: {fileID: 1252768777, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
     tags: []
-  - name: entity/contraption/prism_pylon
+  - name: entity/contraption/prismatic_pylon
     index: 5
     sprite: {fileID: 100075453, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
     tags: []
-  - name: entity/contraption/prism_pylon
+  - name: entity/contraption/prismatic_pylon
     index: 6
     sprite: {fileID: 1054456800, guid: 55828f6709e9e1c4f90a689087e7d87f, type: 3}
     tags: []

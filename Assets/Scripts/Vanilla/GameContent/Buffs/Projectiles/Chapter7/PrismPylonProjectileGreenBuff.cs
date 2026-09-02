@@ -17,10 +17,10 @@ using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Projectiles
 {
-    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismPylonProjectileGreen)]
-    public class PrismPylonProjectileGreenBuff : BuffDefinition
+    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismaticPylonProjectileGreen)]
+    public class PrismaticPylonProjectileGreenBuff : BuffDefinition
     {
-        public PrismPylonProjectileGreenBuff(string nsp, string name) : base(nsp, name)
+        public PrismaticPylonProjectileGreenBuff(string nsp, string name) : base(nsp, name)
         {
             AddTrigger(VanillaLevelCallbacks.POST_PROJECTILE_HIT, PostProjectileHitCallback);
         }
@@ -43,9 +43,9 @@ namespace MVZ2.GameContent.Buffs.Projectiles
                 {
                     var angle = (i * 2 - 1) * 90;
                     var newVel = vel.RotateClockwiseXZ(angle);
-                    var spawnParams = PrismPylonProjectileMode.GetCloneProjectileSpawnParams(null, entity, newVel);
+                    var spawnParams = PrismaticPylonProjectileMode.GetCloneProjectileSpawnParams(null, entity, newVel);
                     spawnParams.SetProperty(VanillaEntityProps.DAMAGE, entity.GetDamage(true) * DAMAGE_MULTIPLIER);
-                    PrismPylonProjectileMode.CloneProjectile(null, entity.GetDefinitionID(), entity, entity.Position, spawnParams)?.Let(p =>
+                    PrismaticPylonProjectileMode.CloneProjectile(null, entity.GetDefinitionID(), entity, entity.Position, spawnParams)?.Let(p =>
                     {
                         p.AddIgnoredProjectileCollider(args.hit.Collider);
                     });

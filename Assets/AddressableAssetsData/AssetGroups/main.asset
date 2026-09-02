@@ -5014,7 +5014,7 @@ MonoBehaviour:
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 55828f6709e9e1c4f90a689087e7d87f
-    m_Address: mvz2:entity/contraption/prism_pylon
+    m_Address: mvz2:entity/contraption/prismatic_pylon
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -10918,7 +10918,7 @@ MonoBehaviour:
     - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: be911f0313736ff4eba466c25491c927
-    m_Address: mvz2:mobile_blueprint/prism_pylon
+    m_Address: mvz2:mobile_blueprint/prismatic_pylon
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -12283,7 +12283,7 @@ MonoBehaviour:
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d6fad0f0fd383a84bbdc5c3caf34ef7a
-    m_Address: mvz2:contraption/upgrade/prism_pylon
+    m_Address: mvz2:contraption/upgrade/prismatic_pylon
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

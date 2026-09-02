@@ -475,15 +475,15 @@
             <key hex="#12294c" time="1" />
         </colorKeys>
     </fragment>
-    <fragment name="prism_pylon">
+    <fragment name="prismatic_pylon" blend="true">
         <colorKeys>
-            <key hex="#ff0000" time="0" />
-            <key hex="#ffff00" time="0.16667" />
-            <key hex="#00ff00" time="0.33333" />
-            <key hex="#00ffff" time="0.5" />
-            <key hex="#0000ff" time="0.66667" />
-            <key hex="#ff00ff" time="0.83333" />
-            <key hex="#ff0000" time="1" />
+            <key hex="#ffcccc" time="0" />
+            <key hex="#ffffcc" time="0.16667" />
+            <key hex="#ccffcc" time="0.33333" />
+            <key hex="#ccffff" time="0.5" />
+            <key hex="#ccccff" time="0.66667" />
+            <key hex="#ffccff" time="0.83333" />
+            <key hex="#ffcccc" time="1" />
         </colorKeys>
     </fragment>
 

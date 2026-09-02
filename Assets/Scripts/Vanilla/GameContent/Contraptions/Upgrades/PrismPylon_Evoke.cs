@@ -21,18 +21,18 @@ using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions
 {
-    [AutoEntityBehaviourDefinition(VanillaEntityBehaviourNames.prismPylon_Evoke)]
-    public class PrismPylon_Evoke : ContraptionEvokeBehaviour
+    [AutoEntityBehaviourDefinition(VanillaEntityBehaviourNames.prismaticPylon_Evoke)]
+    public class PrismaticPylon_Evoke : ContraptionEvokeBehaviour
     {
-        public PrismPylon_Evoke(string nsp, string name) : base(nsp, name)
+        public PrismaticPylon_Evoke(string nsp, string name) : base(nsp, name)
         {
         }
         public override void Evoke(Entity entity)
         {
             base.Evoke(entity);
             entity.PlaySound(VanillaSoundID.sparkle);
-            var count = PrismPylon.GetKaleidoscopeCount(entity);
-            PrismPylon.SetKaleidoscopeCount(entity, count + EVOCATION_COUNT);
+            var count = PrismaticPylon.GetKaleidoscopeCount(entity);
+            PrismaticPylon.SetKaleidoscopeCount(entity, count + EVOCATION_COUNT);
         }
         public const int EVOCATION_COUNT = 7;
     }

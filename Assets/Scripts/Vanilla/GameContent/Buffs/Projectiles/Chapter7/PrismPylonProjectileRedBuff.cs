@@ -7,10 +7,10 @@ using PVZEngine.Modifiers;
 
 namespace MVZ2.GameContent.Buffs.Projectiles
 {
-    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismPylonProjectileRed)]
-    public class PrismPylonProjectileRedBuff : BuffDefinition
+    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismaticPylonProjectileRed)]
+    public class PrismaticPylonProjectileRedBuff : BuffDefinition
     {
-        public PrismPylonProjectileRedBuff(string nsp, string name) : base(nsp, name)
+        public PrismaticPylonProjectileRedBuff(string nsp, string name) : base(nsp, name)
         {
         }
     }

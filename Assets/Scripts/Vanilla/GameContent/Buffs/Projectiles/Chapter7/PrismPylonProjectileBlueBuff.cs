@@ -8,10 +8,10 @@ using PVZEngine.Modifiers;
 
 namespace MVZ2.GameContent.Buffs.Projectiles
 {
-    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismPylonProjectileBlue)]
-    public class PrismPylonProjectileBlueBuff : BuffDefinition
+    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismaticPylonProjectileBlue)]
+    public class PrismaticPylonProjectileBlueBuff : BuffDefinition
     {
-        public PrismPylonProjectileBlueBuff(string nsp, string name) : base(nsp, name)
+        public PrismaticPylonProjectileBlueBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new IntModifier(VanillaProjectileProps.MAX_PIERCE_COUNT, IntegerOperator.Add, 2));
         }

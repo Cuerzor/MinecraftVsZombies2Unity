@@ -16,10 +16,10 @@ using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Buffs.Projectiles
 {
-    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismPylonProjectileCyan)]
-    public class PrismPylonProjectileCyanBuff : BuffDefinition
+    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismaticPylonProjectileCyan)]
+    public class PrismaticPylonProjectileCyanBuff : BuffDefinition
     {
-        public PrismPylonProjectileCyanBuff(string nsp, string name) : base(nsp, name)
+        public PrismaticPylonProjectileCyanBuff(string nsp, string name) : base(nsp, name)
         {
             AddModelInsertion(LogicModelHelper.ANCHOR_CENTER, VanillaModelKeys.dazzle, VanillaModelID.dazzle);
         }

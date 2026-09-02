@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: prism_pylon_0
+      name: prismatic_pylon_0
       rect:
         serializedVersion: 2
         x: 0
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prism_pylon_1
+      name: prismatic_pylon_1
       rect:
         serializedVersion: 2
         x: 45
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prism_pylon_2
+      name: prismatic_pylon_2
       rect:
         serializedVersion: 2
         x: 0
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prism_pylon_3
+      name: prismatic_pylon_3
       rect:
         serializedVersion: 2
         x: 47
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prism_pylon_5
+      name: prismatic_pylon_5
       rect:
         serializedVersion: 2
         x: 100
@@ -228,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prism_pylon_6
+      name: prismatic_pylon_6
       rect:
         serializedVersion: 2
         x: 109
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prism_pylon_7
+      name: prismatic_pylon_7
       rect:
         serializedVersion: 2
         x: 116
@@ -280,14 +280,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      prism_pylon_0: 1697407540
-      prism_pylon_1: 2119635985
-      prism_pylon_2: 116154464
-      prism_pylon_3: -199484604
-      prism_pylon_4: -385443552
-      prism_pylon_5: 1252768777
-      prism_pylon_6: 100075453
-      prism_pylon_7: 1054456800
+      prismatic_pylon_0: 1697407540
+      prismatic_pylon_1: 2119635985
+      prismatic_pylon_2: 116154464
+      prismatic_pylon_3: -199484604
+      prismatic_pylon_4: -385443552
+      prismatic_pylon_5: 1252768777
+      prismatic_pylon_6: 100075453
+      prismatic_pylon_7: 1054456800
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

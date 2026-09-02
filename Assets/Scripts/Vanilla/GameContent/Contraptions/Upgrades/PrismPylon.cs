@@ -22,10 +22,10 @@ using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions
 {
-    [AutoEntityBehaviourDefinition(VanillaContraptionNames.prismPylon)]
-    public class PrismPylon : AIEntityBehaviour
+    [AutoEntityBehaviourDefinition(VanillaContraptionNames.prismaticPylon)]
+    public class PrismaticPylon : AIEntityBehaviour
     {
-        public PrismPylon(string nsp, string name) : base(nsp, name)
+        public PrismaticPylon(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new BooleanModifier(LogicEntityProps.IS_LIGHT_SOURCE, BooleanOperator.Set, LogicContraptionProps.PROP_EVOKED));
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_FRIENDLY, IntegerOperator.BitOr, EntityCollisionHelper.MASK_PROJECTILE));
@@ -59,7 +59,7 @@ namespace MVZ2.GameContent.Contraptions
                 return;
             if (!entity.IsFriendly(target))
                 return;
-            if (target.IgnorePrismPylon())
+            if (target.IgnorePrismaticPylon())
                 return;
             if (target.IsProjectileColliderIgnored(collision.Collider))
                 return;
@@ -117,7 +117,7 @@ namespace MVZ2.GameContent.Contraptions
                     using var lightBulletsItem = ListPool<Entity>.Rent();
                     var lightBullets = lightBulletsItem.Value;
 
-                    var bullet = PrismPylonProjectileMode.CreateProjectile(entity, projectileID, projectile, position, velocity, hsv, lightColor);
+                    var bullet = PrismaticPylonProjectileMode.CreateProjectile(entity, projectileID, projectile, position, velocity, hsv, lightColor);
                     if (!bullet.ExistsAndAlive())
                         continue;
 
@@ -130,7 +130,7 @@ namespace MVZ2.GameContent.Contraptions
                 projectile.Remove();
             }
         }
-        public static PrismPylonProjectileMode[] GetPossibleProjectileModes(Entity entity, Entity projectile, int count)
+        public static PrismaticPylonProjectileMode[] GetPossibleProjectileModes(Entity entity, Entity projectile, int count)
         {
             var rng = entity.RNG;
             return projectileModes.RandomTake(count, rng).ToArray();
@@ -149,15 +149,15 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly VanillaBuffPropertyMeta<int> PROP_KALEIDOSCOPE_COUNT = new VanillaBuffPropertyMeta<int>("kaleidoscope_count");
         public static readonly VanillaBuffPropertyMeta<EntityID> PROP_TRANSFORMER_PRISM = new VanillaBuffPropertyMeta<EntityID>("transformer_prism");
         public static readonly VanillaBuffPropertyMeta<float> PROP_CRYSTAL_ALPHA = new VanillaBuffPropertyMeta<float>("crystal_alpha");
-        public static readonly List<PrismPylonProjectileMode> projectileModes = new List<PrismPylonProjectileMode>()
+        public static readonly List<PrismaticPylonProjectileMode> projectileModes = new List<PrismaticPylonProjectileMode>()
         {
-            new PrismPylonProjectileModeRed(),
-            new PrismPylonProjectileModeOrange(),
-            new PrismPylonProjectileModeYellow(),
-            new PrismPylonProjectileModeGreen(),
-            new PrismPylonProjectileModeCyan(),
-            new PrismPylonProjectileModeBlue(),
-            new PrismPylonProjectileModePurple(),
+            new PrismaticPylonProjectileModeRed(),
+            new PrismaticPylonProjectileModeOrange(),
+            new PrismaticPylonProjectileModeYellow(),
+            new PrismaticPylonProjectileModeGreen(),
+            new PrismaticPylonProjectileModeCyan(),
+            new PrismaticPylonProjectileModeBlue(),
+            new PrismaticPylonProjectileModePurple(),
         };
     }
 }

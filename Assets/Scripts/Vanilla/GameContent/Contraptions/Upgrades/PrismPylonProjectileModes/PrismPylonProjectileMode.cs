@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions
 {
-    public abstract class PrismPylonProjectileMode
+    public abstract class PrismaticPylonProjectileMode
     {
         public abstract NamespaceID GetModeBuffID();
         public virtual Vector3 GetHSV(Entity entity, Entity oldProjectile) => Vector3.zero;
@@ -33,7 +33,7 @@ namespace MVZ2.GameContent.Contraptions
         {
 
         }
-        #region Éú³É
+        #region ï¿½ï¿½ï¿½ï¿½
         public static SpawnParams GetSpawnParams(Entity? prism, Entity oldProjectile, Vector3 velocity, Vector3 hsv, Color lightColor)
         {
             var spawnParams = new SpawnParams();
@@ -43,7 +43,7 @@ namespace MVZ2.GameContent.Contraptions
             spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, lightColor);
             if (prism != null)
             {
-                spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(prism));
+                spawnParams.SetProperty(PrismaticPylon.PROP_TRANSFORMER_PRISM, new EntityID(prism));
             }
             spawnParams.EntityVelocity = velocity;
             return spawnParams;
@@ -54,7 +54,7 @@ namespace MVZ2.GameContent.Contraptions
         }
         #endregion
 
-        #region ´´½¨
+        #region ï¿½ï¿½ï¿½ï¿½
         public static SpawnParams GetCreateProjectileSpawnParams(Entity? prism, Entity oldProjectile, Vector3 velocity, Vector3 hsv, Color lightColor)
         {
             var spawnParams = GetSpawnParams(prism, oldProjectile, velocity, hsv, lightColor);
@@ -79,7 +79,7 @@ namespace MVZ2.GameContent.Contraptions
         }
         #endregion
 
-        #region Ìæ»»
+        #region ï¿½æ»»
         protected SpawnParams GetReplaceProjectileSpawnParams(Entity prism, Entity oldProjectile, Vector3 velocity)
         {
             return GetSpawnParams(prism, oldProjectile, velocity, GetHSV(prism, oldProjectile), GetLightColor(prism, oldProjectile));
@@ -113,13 +113,13 @@ namespace MVZ2.GameContent.Contraptions
         {
             var newProjectile = CreateProjectile(prism, projectileID, oldProjectile, position, spawnParams)?.Let(proj =>
             {
-                CopyPrismPylonBuffs(proj, oldProjectile);
+                CopyPrismaticPylonBuffs(proj, oldProjectile);
             });
             return newProjectile;
         }
-        public static void CopyPrismPylonBuffs(Entity to, Entity from)
+        public static void CopyPrismaticPylonBuffs(Entity to, Entity from)
         {
-            foreach (var mode in PrismPylon.projectileModes)
+            foreach (var mode in PrismaticPylon.projectileModes)
             {
                 var buffID = mode.GetModeBuffID();
                 if (!to.HasBuff(buffID))
@@ -133,6 +133,6 @@ namespace MVZ2.GameContent.Contraptions
                 }
             }
         }
-        #endregion ¸´ÖÆ
+        #endregion ï¿½ï¿½ï¿½ï¿½
     }
 }

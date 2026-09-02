@@ -17,10 +17,10 @@ using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Projectiles
 {
-    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismPylonProjectileYellow)]
-    public class PrismPylonProjectileYellowBuff : BuffDefinition
+    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismaticPylonProjectileYellow)]
+    public class PrismaticPylonProjectileYellowBuff : BuffDefinition
     {
-        public PrismPylonProjectileYellowBuff(string nsp, string name) : base(nsp, name)
+        public PrismaticPylonProjectileYellowBuff(string nsp, string name) : base(nsp, name)
         {
             AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback, filter: EntityTypes.PROJECTILE);
             AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostContactGroundCallback);

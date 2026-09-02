@@ -14,10 +14,10 @@ using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Buffs.Projectiles
 {
-    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismPylonProjectileOrange)]
-    public class PrismPylonProjectileOrangeBuff : BuffDefinition
+    [AutoBuffDefinition(VanillaBuffNames.Projectile.prismaticPylonProjectileOrange)]
+    public class PrismaticPylonProjectileOrangeBuff : BuffDefinition
     {
-        public PrismPylonProjectileOrangeBuff(string nsp, string name) : base(nsp, name)
+        public PrismaticPylonProjectileOrangeBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new IntModifier(VanillaProjectileProps.MAX_PIERCE_COUNT, IntegerOperator.Add, 1));
             AddTrigger(VanillaLevelCallbacks.POST_PROJECTILE_HIT, PostProjectileHitCallback);

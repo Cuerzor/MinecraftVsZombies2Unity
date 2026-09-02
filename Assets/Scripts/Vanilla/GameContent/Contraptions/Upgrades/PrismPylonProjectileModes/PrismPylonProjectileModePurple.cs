@@ -9,11 +9,11 @@ using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions
 {
-    public class PrismPylonProjectileModePurple : PrismPylonProjectileMode
+    public class PrismaticPylonProjectileModePurple : PrismaticPylonProjectileMode
     {
         public override NamespaceID GetModeBuffID()
         {
-            return VanillaBuffID.Projectile.prismPylonProjectilePurple;
+            return VanillaBuffID.Projectile.prismaticPylonProjectilePurple;
         }
         public override Vector3 GetHSV(Entity entity, Entity oldProjectile)
         {

@@ -2129,7 +2129,7 @@ PrefabInstance:
       objectReference: {fileID: 6970186882127692107}
     - target: {fileID: 5134337979047610562, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: m_Name
-      value: prism_pylon
+      value: prismatic_pylon
       objectReference: {fileID: 0}
     - target: {fileID: 6999929167464410214, guid: ac946405a2f0e214793398af6e8e9112, type: 3}
       propertyPath: m_LocalPosition.x
