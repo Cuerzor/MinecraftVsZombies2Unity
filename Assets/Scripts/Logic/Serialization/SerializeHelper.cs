@@ -66,7 +66,6 @@ namespace MVZ2Logic.Serialization
             RegisterClass<SerializableBuiltinCollisionSystem>();
             RegisterClass<SerializableBuiltinCollisionSystemEntity>();
 
-            RegisterClass<BuffReference>();
             RegisterClass<BuffReferenceEntity>();
             RegisterClass<BuffReferenceArmor>();
             RegisterClass<BuffReferenceLevel>();
