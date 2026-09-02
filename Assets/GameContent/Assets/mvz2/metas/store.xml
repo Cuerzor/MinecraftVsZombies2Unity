@@ -194,7 +194,18 @@
                 <stage price="14370" unlocks="mvz2:contraption.skyward_beacon" />
             </stages>
         </product>
-        <product />
+        <product id="prismatic_pylon" blueprintId="mvz2:prismatic_pylon">
+            <unlock>
+                <condition required="mvz2:level.mountain_5" />
+            </unlock>
+            <talks>
+                <talk character="mvz2:crazy_villager">把<![CDATA[<#f00>棱</color><#0f0>晶</color><#00f>塔</color>]]>放在紫晶塔上，让经过它的子弹变成具有随机附魔效果的光弹！</talk>
+                <talk character="mvz2:tokiko"><![CDATA[<#f00>棱</color><#0f0>晶</color><#00f>塔</color>]]>能升级紫晶塔，让经过它的子弹变得五彩斑斓并给它们附魔！</talk>
+            </talks>
+            <stages>
+                <stage price="15000" unlocks="mvz2:contraption.prismatic_pylon" />
+            </stages>
+        </product>
         <product />
         <product />
         <product />

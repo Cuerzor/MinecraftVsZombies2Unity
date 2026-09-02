@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-10 07:37+0800\n"
+"POT-Creation-Date: 2026-09-02 08:07+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -749,211 +749,211 @@ msgid "在随机一行的最左侧生成一个大雪球"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:209
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\StarshardTutorialStage.cs:209
 msgctxt "advice.starshard_tutorial.0"
 msgid "点击星之碎片槽选中星之碎片！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:211
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\StarshardTutorialStage.cs:211
 msgctxt "advice.starshard_tutorial.1"
 msgid "点击发射器！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:213
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\StarshardTutorialStage.cs:213
 msgctxt "advice.starshard_tutorial.2"
 msgid "干得漂亮！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:215
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\StarshardTutorialStage.cs:215
 msgctxt "advice.starshard_tutorial.3"
 msgid "绿色的怪物会携带星之碎片！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:217
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\StarshardTutorialStage.cs:217
 msgctxt "advice.starshard_tutorial.4"
 msgid "点击收集星之碎片！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\StarshardTutorialStage.cs:219
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\StarshardTutorialStage.cs:219
 msgctxt "advice.starshard_tutorial.5"
 msgid "现在干掉铁盔僵尸！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:313
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:313
 msgctxt "advice.trigger_tutorial.0"
 msgid "放置TNT！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:315
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:315
 msgctxt "advice.trigger_tutorial.1"
 msgid "点击选中触发器！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:317
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:317
 msgctxt "advice.trigger_tutorial.2"
 msgid "点击以触发TNT！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:319
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:319
 msgctxt "advice.trigger_tutorial.3"
 msgid "干得漂亮！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:321
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:321
 msgctxt "advice.trigger_tutorial.4"
 msgid "选中触发器！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:323
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:323
 msgctxt "advice.trigger_tutorial.5"
 msgid "点击TNT蓝图！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:325
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:325
 msgctxt "advice.trigger_tutorial.6"
 msgid "放置TNT，它会立即被触发！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:327
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:327
 msgctxt "advice.trigger_tutorial.7"
 msgid "干得好！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:329
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:329
 msgctxt "advice.trigger_tutorial.8"
 msgid "立即触发只限于一次性消耗类型的器械。"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:331
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:331
 msgctxt "advice.trigger_tutorial.9"
 msgid "如果你想交换这两个动作的效果，你可以在设置中更改。"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TriggerTutorialStage.cs:333
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TriggerTutorialStage.cs:333
 msgctxt "advice.trigger_tutorial.10"
 msgid "祝你好运！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:457
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:457
 msgctxt "advice.tutorial.0"
 msgid "点击器械卡牌选中器械！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:459
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:459
 msgctxt "advice.tutorial.1"
 msgid "点击草坪放置器械！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:461
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:461
 msgctxt "advice.tutorial.2"
 msgid "干得漂亮！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:463
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:463
 msgctxt "advice.tutorial.3"
 msgid "点击红石收集能量！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:465
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:465
 msgctxt "advice.tutorial.4"
 msgid "收集足够的能量来放置器械！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:467
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:467
 msgctxt "advice.tutorial.5"
 msgid "用发射器干掉僵尸！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:469
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:469
 msgctxt "advice.tutorial.6"
 msgid "干得漂亮！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:471
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:471
 msgctxt "advice.tutorial.7"
 msgid "选择熔炉并放置！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:473
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:473
 msgctxt "advice.tutorial.8"
 msgid "熔炉能为你提供额外的红石！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:475
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:475
 msgctxt "advice.tutorial.9"
 msgid "熔炉越多，你放器械的速度就越快！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:477
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:477
 msgctxt "advice.tutorial.10"
 msgid "请至少放下三个熔炉！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:479
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:479
 msgctxt "advice.tutorial.11"
 msgid "用黑曜石来挡住僵尸的进攻！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:481
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:481
 msgctxt "advice.tutorial.12"
 msgid "干得漂亮！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:483
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:483
 msgctxt "advice.tutorial.13"
 msgid "地雷TNT在一段时间的填装后能炸飞敌人！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:485
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:485
 msgctxt "advice.tutorial.14"
 msgid "用地雷TNT炸死铁盔僵尸！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:487
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:487
 msgctxt "advice.tutorial.15"
 msgid "干得漂亮！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:489
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:489
 msgctxt "advice.tutorial.16"
 msgid "最后，镐子能够挖掉你所放下的器械！"
 msgstr ""
 
 # 教程关指引
-#: Scripts\Vanilla\GameContent\Stages\Definitions\TutorialStage.cs:491
+#: Scripts\Vanilla\GameContent\Stages\Definitions\Adventure\TutorialStage.cs:491
 msgctxt "advice.tutorial.17"
 msgid "试着挖掉所有器械！"
 msgstr ""
@@ -991,17 +991,17 @@ msgid "收集宝石来获得更酷的道具吧！"
 msgstr ""
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:723
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:724
 msgid "能量不足"
 msgstr ""
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:725
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:726
 msgid "战队的能量不足，请修改阵容之后再保存战队。"
 msgstr ""
 
 # 传送器战队的警告提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:727
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:728
 msgid ""
 "您有未保存的更改。\n"
 "确认要丢弃所有更改并退出吗？"
@@ -3382,6 +3382,12 @@ msgctxt "levelname"
 msgid "地灵殿无尽"
 msgstr ""
 
+#. Name for stage mvz2:mountain_1
+#: Stage meta file
+msgctxt "levelname"
+msgid "妖怪之山"
+msgstr ""
+
 #. Name for stage mvz2:whack_a_ghost
 #: Stage meta file
 msgctxt "levelname"
@@ -3410,6 +3416,12 @@ msgstr ""
 #: Stage meta file
 msgctxt "levelname"
 msgid "重装兵器"
+msgstr ""
+
+#. Name for stage mvz2:primal_force
+#: Stage meta file
+msgctxt "levelname"
+msgid "原始力量"
 msgstr ""
 
 #. Name for stage mvz2:frankensteins_revenge
@@ -4968,6 +4980,18 @@ msgstr ""
 #: Store meta file
 msgctxt "store_talk"
 msgid "御天信标能升级信标，发射从天而降的光束，打击你想要的任意位置！"
+msgstr ""
+
+#. Store item description of mvz2:prismatic_pylon by character mvz2:crazy_villager
+#: Store meta file
+msgctxt "store_talk"
+msgid "把<#f00>棱</color><#0f0>晶</color><#00f>塔</color>放在紫晶塔上，让经过它的子弹变成具有随机附魔效果的光弹！"
+msgstr ""
+
+#. Store item description of mvz2:prismatic_pylon by character mvz2:tokiko
+#: Store meta file
+msgctxt "store_talk"
+msgid "<#f00>棱</color><#0f0>晶</color><#00f>塔</color>能升级紫晶塔，让经过它的子弹变得五彩斑斓并给它们附魔！"
 msgstr ""
 
 #. Store item description of mvz2:hoe by character mvz2:crazy_villager
