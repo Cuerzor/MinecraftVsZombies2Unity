@@ -15,6 +15,7 @@ namespace MVZ2.GameContent.Recharges
             SetProperty(EngineRechargeProps.MAX_RECHARGE, 900);
             SetProperty(EngineRechargeProps.QUALITY, 3f);
             SetProperty(EngineRechargeProps.NAME, VanillaStrings.RECHARGE_LONG);
+            SetProperty(VanillaRechargeProps.TELEPORTER_TEAM_MAX_COUNT, 3);
         }
     }
 }

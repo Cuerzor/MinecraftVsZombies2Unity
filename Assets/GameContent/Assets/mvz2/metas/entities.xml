@@ -1438,8 +1438,8 @@
                 <bool name="mvz2:loyal" value="true" />
 
                 <id name="mvz2:placeSound" value="mvz2:metal_break" />
-                <int name="mvz2:cost" value="50" />
-                <id name="mvz2:rechargeId" value="mvz2:long" />
+                <int name="mvz2:cost" value="125" />
+                <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </entity>
         <entity template="contraption" id="onbashira" name="御柱" tooltip="从天而降的坚实壁垒">

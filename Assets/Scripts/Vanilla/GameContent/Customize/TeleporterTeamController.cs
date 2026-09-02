@@ -8,6 +8,7 @@ using MVZ2.Blueprints;
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Enemies;
 using MVZ2.GameContent.Models;
+using MVZ2.GameContent.Recharges;
 using MVZ2.Level.UI;
 using MVZ2.Managers;
 using MVZ2.Options;
@@ -364,23 +365,50 @@ namespace MVZ2.GameContent.Customize
             var cost = GetCost(definition);
             if (cost > GetRemainingEnergy() && cost > 0)
                 return ContraptionError.NotEnoughEnergy;
+
+            var limit = GetMaxContraptionCountLimit(definition);
+            if (limit >= 0 && GetContraptionCountInTeam(contraptionID) >= limit)
+                return ContraptionError.ReachCountLimit;
             return ContraptionError.None;
         }
         private bool CannotSelectContraption(NamespaceID contraptionID)
         {
             return GetSelectContraptionError(contraptionID) != ContraptionError.None;
         }
-        private string? GetBlueprintTooltipError(NamespaceID contraptionID)
+        private string? GetBlueprintTooltipErrorText(NamespaceID contraptionID)
         {
             var error = GetSelectContraptionError(contraptionID);
+            string errorText = string.Empty;
             switch (error)
             {
                 case ContraptionError.Banned:
-                    return Global.Localization.GetText(ERROR_BANNED);
+                    errorText = Global.Localization.GetText(ERROR_BANNED);
+                    break;
                 case ContraptionError.NotEnoughEnergy:
-                    return Global.Localization.GetText(ERROR_NOT_ENOUGH_ENERGY);
+                    errorText = Global.Localization.GetText(ERROR_NOT_ENOUGH_ENERGY);
+                    break;
+                case ContraptionError.ReachCountLimit:
+                    errorText = Global.Localization.GetText(ERROR_REACH_COUNT_LIMIT);
+                    break;
             }
-            return null;
+            if (error != ContraptionError.Banned)
+            {
+                var maxCount = GetMaxContraptionCountLimit(contraptionID);
+                if (maxCount >= 0)
+                {
+                    var currentCount = GetContraptionCountInTeam(contraptionID);
+                    var limitText = Global.Localization.GetText(ERROR_COUNT_LIMIT, currentCount, maxCount);
+                    if (string.IsNullOrEmpty(errorText))
+                    {
+                        errorText = limitText;
+                    }
+                    else
+                    {
+                        errorText = Global.Localization.GetText(ERROR_COMBINE_TEMPLATE, errorText, limitText);
+                    }
+                }
+            }
+            return errorText;
         }
         #endregion
 
@@ -526,6 +554,39 @@ namespace MVZ2.GameContent.Customize
             SetLayoutTileHighlight(focusedLayoutTileIndex, false);
             focusedLayoutTileIndex = index;
             SetLayoutTileHighlight(focusedLayoutTileIndex, true);
+        }
+        #endregion
+
+        #region 数量
+        public int GetContraptionCountInTeam(NamespaceID id)
+        {
+            var count = 0;
+            if (currentTeleporterTeam != null)
+            {
+                foreach (var index in currentTeleporterTeam.GetTileIndexes())
+                {
+                    var tile = currentTeleporterTeam.GetTile(index);
+                    if (tile == null)
+                        continue;
+                    count += tile.GetEntities().Count(e => e == id);
+                }
+            }
+            return count;
+        }
+        public int GetMaxContraptionCountLimit(NamespaceID id)
+        {
+            var definition = Main.Game.GetEntityDefinition(id);
+            if (definition == null)
+                return -1;
+            return GetMaxContraptionCountLimit(definition);
+        }
+        public int GetMaxContraptionCountLimit(EntityDefinition definition)
+        {
+            var recharge = definition.GetRechargeID();
+            var rechargeDefinition = Main.Game.GetRechargeDefinition(recharge);
+            if (rechargeDefinition == null)
+                return -1;
+            return rechargeDefinition.GetTeleporterTeamMaxCount();
         }
         #endregion
 
@@ -682,7 +743,9 @@ namespace MVZ2.GameContent.Customize
         private void SetEnergyCost(int energy)
         {
             energyCost = energy;
-            ui.SetEnergy(GetRemainingEnergy().ToString());
+            var remainEnergy = GetRemainingEnergy();
+            ui.SetEnergy(remainEnergy.ToString());
+            ui.SetEnergyColor(remainEnergy < 0 ? Color.red : Color.black);
             UpdateBlueprints();
         }
         private void AddEnergyCost(int value)
@@ -723,6 +786,12 @@ namespace MVZ2.GameContent.Customize
         public const string ERROR_BANNED = "禁用";
         [TranslateMsg("传送器战队的错误提示")]
         public const string ERROR_NOT_ENOUGH_ENERGY = "能量不足";
+        [TranslateMsg("传送器战队的错误提示")]
+        public const string ERROR_REACH_COUNT_LIMIT = "数量达到上限";
+        [TranslateMsg("传送器战队的错误提示，{0}为目前存在数量，{1}为上限")]
+        public const string ERROR_COUNT_LIMIT = "（{0}/{1}）";
+        [TranslateMsg("传送器战队的错误提示拼接模板，{0}为第一句，{1}为第二句")]
+        public const string ERROR_COMBINE_TEMPLATE = "{0}\n{1}";
         [TranslateMsg("传送器战队的错误提示")]
         public const string ERROR_COST_OVERFLOW = "战队的能量不足，请修改阵容之后再保存战队。";
         [TranslateMsg("传送器战队的警告提示")]
@@ -772,7 +841,8 @@ namespace MVZ2.GameContent.Customize
             None,
             NotExists,
             Banned,
-            NotEnoughEnergy
+            NotEnoughEnergy,
+            ReachCountLimit
         }
         private class BlueprintTooltipSource : ITooltipSource
         {
@@ -799,7 +869,7 @@ namespace MVZ2.GameContent.Customize
             {
                 var name = Main.ResourceManager.GetBlueprintName(blueprintID, false);
                 var tooltip = Main.ResourceManager.GetBlueprintTooltip(blueprintID);
-                var error = teamController.GetBlueprintTooltipError(blueprintID);
+                var error = teamController.GetBlueprintTooltipErrorText(blueprintID);
                 return new TooltipContent()
                 {
                     name = name,

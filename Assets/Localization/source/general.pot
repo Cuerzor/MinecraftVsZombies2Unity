@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-02 08:07+0800\n"
+"POT-Creation-Date: 2026-09-02 09:35+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -991,17 +991,34 @@ msgid "收集宝石来获得更酷的道具吧！"
 msgstr ""
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:724
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:780
 msgid "能量不足"
 msgstr ""
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:726
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:782
+msgid "数量达到上限"
+msgstr ""
+
+# 传送器战队的错误提示，{0}为目前存在数量，{1}为上限
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:784
+msgid "（{0}/{1}）"
+msgstr ""
+
+# 传送器战队的错误提示拼接模板，{0}为第一句，{1}为第二句
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:786
+msgid ""
+"{0}\n"
+"{1}"
+msgstr ""
+
+# 传送器战队的错误提示
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:788
 msgid "战队的能量不足，请修改阵容之后再保存战队。"
 msgstr ""
 
 # 传送器战队的警告提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:728
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:790
 msgid ""
 "您有未保存的更改。\n"
 "确认要丢弃所有更改并退出吗？"

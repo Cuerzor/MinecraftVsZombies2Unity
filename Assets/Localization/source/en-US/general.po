@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-02 08:07+0800\n"
-"PO-Revision-Date: 2026-09-02 20:10+0800\n"
+"POT-Creation-Date: 2026-09-02 09:35+0800\n"
+"PO-Revision-Date: 2026-09-02 21:36+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -968,17 +968,35 @@ msgctxt "advice.collect_money"
 msgid "收集宝石来获得更酷的道具吧！"
 msgstr "Collect gems to purchase COOL stuff!"
 
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:724
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:780
 msgid "能量不足"
 msgstr "Not enough energy"
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:726
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:782
+msgid "数量达到上限"
+msgstr "Reached the count limit"
+
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:784
+msgid "（{0}/{1}）"
+msgstr "({0}/{1})"
+
+# 死亡信息-无尽模式模板，{0}为普通死亡信息，{1}为存活了多少轮
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:786
+msgid ""
+"{0}\n"
+"{1}"
+msgstr ""
+"{0}\n"
+"{1}"
+
+# 传送器战队的错误提示
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:788
 msgid "战队的能量不足，请修改阵容之后再保存战队。"
 msgstr "The energy is insufficient. Please modify the team before saving it."
 
 # 传送器战队的警告提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:728
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:790
 msgid ""
 "您有未保存的更改。\n"
 "确认要丢弃所有更改并退出吗？"

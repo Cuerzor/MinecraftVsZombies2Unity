@@ -48,6 +48,10 @@ namespace MVZ2.GameContent.Customize
         {
             energyLabel.text = energy;
         }
+        public void SetEnergyColor(Color color)
+        {
+            energyLabel.color = color;
+        }
         #endregion
 
         #region 地块
