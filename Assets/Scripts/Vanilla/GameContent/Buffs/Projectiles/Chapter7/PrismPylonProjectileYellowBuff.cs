@@ -12,6 +12,7 @@ using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Modifiers;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Projectiles
@@ -21,12 +22,12 @@ namespace MVZ2.GameContent.Buffs.Projectiles
     {
         public PrismPylonProjectileYellowBuff(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(VanillaLevelCallbacks.POST_PROJECTILE_HIT, PostProjectileHitCallback);
+            AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback, filter: EntityTypes.PROJECTILE);
             AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostContactGroundCallback);
         }
-        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams args, CallbackResult result)
+        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams args, CallbackResult result)
         {
-            var entity = args.hit.Projectile;
+            var entity = args.entity;
             foreach (var buff in entity.GetBuffs(this))
             {
                 Explode(buff, entity);
@@ -45,7 +46,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
             var position = entity.GetCenter();
             var radius = GetRadius(buff);
             var effects = new DamageEffectList(VanillaDamageEffects.EXPLOSION, VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN, VanillaDamageEffects.MUTE);
-            entity.Explode(position, radius, entity.GetFaction(), entity.GetDamage(), effects);
+            entity.Explode(position, radius, entity.GetFaction(), entity.GetDamage() * DAMAGE_MULTIPLIER, effects);
 
             var color = GetColor(buff);
             FireworkBlast.SpawnFireworkBlast(entity, position, radius, color);
@@ -55,6 +56,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
         public static void SetRadius(Buff buff, float value) => buff.SetProperty(PROP_RADIUS, value);
         public static Color GetColor(Buff buff) => buff.GetProperty<Color>(PROP_COLOR);
         public static void SetColor(Buff buff, Color value) => buff.SetProperty(PROP_COLOR, value);
+        public const float DAMAGE_MULTIPLIER = 0.5f;
         public static readonly VanillaBuffPropertyMeta<float> PROP_RADIUS = new VanillaBuffPropertyMeta<float>("radius", 40f);
         public static readonly VanillaBuffPropertyMeta<Color> PROP_COLOR = new VanillaBuffPropertyMeta<Color>("color", new Color(1, 1, 0, 1));
     }

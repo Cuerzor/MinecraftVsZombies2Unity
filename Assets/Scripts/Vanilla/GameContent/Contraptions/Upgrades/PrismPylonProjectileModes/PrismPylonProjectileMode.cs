@@ -14,43 +14,44 @@ namespace MVZ2.GameContent.Contraptions
 {
     public abstract class PrismPylonProjectileMode
     {
-        public static SpawnParams GetSpawnParams(Entity oldProjectile)
+        public abstract NamespaceID GetModeBuffID();
+        public virtual Vector3 GetHSV(Entity entity, Entity oldProjectile) => Vector3.zero;
+        public virtual Color GetLightColor(Entity entity, Entity oldProjectile) => Color.red;
+        public virtual void Apply(Entity entity, NamespaceID projectileID, Entity oldProjectile, Vector3 position, Vector3 velocity)
+        {
+            ReplaceProjectile(entity, projectileID, oldProjectile, position, velocity);
+        }
+        public virtual void ApplyToBuff(Entity entity, Entity oldProjectile, Buff buff)
+        {
+
+        }
+        public static SpawnParams GetSpawnParams(Entity oldProjectile, Vector3 velocity)
         {
             var spawnParams = new SpawnParams();
             spawnParams.SetProperty(EngineEntityProps.FACTION, oldProjectile.GetFaction());
             spawnParams.SetProperty(VanillaEntityProps.DAMAGE, oldProjectile.GetDamage());
-            spawnParams.EntityVelocity = oldProjectile.Velocity;
+            spawnParams.EntityVelocity = velocity;
             return spawnParams;
         }
         public static Entity? SpawnProjectile(NamespaceID projectileID, Vector3 pos, Entity oldProjectile, SpawnParams spawnParams)
         {
             return oldProjectile.Level.SpawnSourced(projectileID, pos, oldProjectile.SpawnerReference, spawnParams);
         }
-        public virtual Vector3 GetHSV(Entity entity, Entity oldProjectile) => Vector3.zero;
-        public virtual Color GetLightColor(Entity entity, Entity oldProjectile) => Color.red;
-        public virtual bool CanUseOn(Entity projectile)
+        protected SpawnParams GetReplaceProjectileSpawnParams(Entity entity, Entity oldProjectile, Vector3 velocity)
         {
-            return !projectile.HasBuff(GetModeBuffID());
-        }
-        public abstract NamespaceID GetModeBuffID();
-        public virtual void Apply(Entity entity, NamespaceID projectileID, Entity oldProjectile)
-        {
-            ReplaceProjectile(entity, projectileID, oldProjectile, oldProjectile.Position);
-        }
-        public virtual void ApplyStack(Entity entity, NamespaceID projectileID, Entity oldProjectile)
-        {
-            oldProjectile.AddBuff(GetModeBuffID())?.Let(b => ApplyToBuff(entity, oldProjectile, b)); ;
-        }
-        public virtual void ApplyToBuff(Entity entity, Entity oldProjectile, Buff buff)
-        {
-
-        }
-        protected Entity? ReplaceProjectile(Entity entity, NamespaceID projectileID, Entity oldProjectile, Vector3 position)
-        {
-            var spawnParams = GetSpawnParams(oldProjectile);
+            var spawnParams = GetSpawnParams(oldProjectile, velocity);
             spawnParams.SetProperty(LogicEntityProps.HSV_OFFSET, GetHSV(entity, oldProjectile));
             spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, GetLightColor(entity, oldProjectile));
             spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(entity));
+            return spawnParams;
+        }
+        protected Entity? ReplaceProjectile(Entity entity, NamespaceID projectileID, Entity oldProjectile, Vector3 position, Vector3 velocity)
+        {
+            var spawnParams = GetReplaceProjectileSpawnParams(entity, oldProjectile, velocity);
+            return ReplaceProjectile(entity, projectileID, oldProjectile, position, spawnParams);
+        }
+        protected Entity? ReplaceProjectile(Entity entity, NamespaceID projectileID, Entity oldProjectile, Vector3 position, SpawnParams spawnParams)
+        {
             var newProjectile = SpawnProjectile(projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
             {
                 proj.AddBuff(GetModeBuffID())?.Let(b => ApplyToBuff(entity, oldProjectile, b));
@@ -60,18 +61,26 @@ namespace MVZ2.GameContent.Contraptions
                     proj.AddIgnoredProjectileCollider(collider);
                 }
             });
-            oldProjectile.Remove();
             return newProjectile;
         }
-        public static Entity? CloneProjectile(Entity? prism, NamespaceID projectileID, Entity oldProjectile, Vector3 position)
+        public static SpawnParams GetCloneProjectileSpawnParams(Entity? prism, Entity oldProjectile, Vector3 velocity)
         {
-            var spawnParams = GetSpawnParams(oldProjectile);
+            var spawnParams = GetSpawnParams(oldProjectile, velocity);
             spawnParams.SetProperty(LogicEntityProps.HSV_OFFSET, oldProjectile.GetHSVOffset());
             spawnParams.SetProperty(LogicEntityProps.LIGHT_COLOR, oldProjectile.GetLightColor());
             if (prism != null)
             {
                 spawnParams.SetProperty(PrismPylon.PROP_TRANSFORMER_PRISM, new EntityID(prism));
             }
+            return spawnParams;
+        }
+        public static Entity? CloneProjectile(Entity? prism, NamespaceID projectileID, Entity oldProjectile, Vector3 position, Vector3 velocity)
+        {
+            var spawnParams = GetCloneProjectileSpawnParams(prism, oldProjectile, velocity);
+            return CloneProjectile(prism, projectileID, oldProjectile, position, spawnParams);
+        }
+        public static Entity? CloneProjectile(Entity? prism, NamespaceID projectileID, Entity oldProjectile, Vector3 position, SpawnParams spawnParams)
+        {
             var newProjectile = SpawnProjectile(projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
             {
                 CopyPrismPylonBuffs(proj, oldProjectile);
@@ -85,8 +94,9 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static void CopyPrismPylonBuffs(Entity to, Entity from)
         {
-            foreach (var buffID in PrismPylon.pylonProjectileBuffs)
+            foreach (var mode in PrismPylon.projectileModes)
             {
+                var buffID = mode.GetModeBuffID();
                 if (!to.HasBuff(buffID))
                 {
                     var buff = from.GetFirstBuff(buffID);

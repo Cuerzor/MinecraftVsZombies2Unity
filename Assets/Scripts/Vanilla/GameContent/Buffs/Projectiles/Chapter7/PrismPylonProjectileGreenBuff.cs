@@ -3,12 +3,14 @@
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Callbacks;
+using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Modifiers;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
@@ -42,9 +44,10 @@ namespace MVZ2.GameContent.Buffs.Projectiles
                     var angle = (i * 2 - 1) * 90;
                     var rotatedVel2D = vel2D.RotateClockwise(angle);
                     var newVel = new Vector3(rotatedVel2D.x, vel.y, rotatedVel2D.y);
-                    PrismPylonProjectileMode.CloneProjectile(null, entity.GetDefinitionID(), entity, entity.Position)?.Let(p =>
+                    var spawnParams = PrismPylonProjectileMode.GetCloneProjectileSpawnParams(null, entity, newVel);
+                    spawnParams.SetProperty(VanillaEntityProps.DAMAGE, entity.GetDamage(true) * DAMAGE_MULTIPLIER);
+                    PrismPylonProjectileMode.CloneProjectile(null, entity.GetDefinitionID(), entity, entity.Position, spawnParams)?.Let(p =>
                     {
-                        p.Velocity = newVel;
                         p.AddIgnoredProjectileCollider(args.hit.Collider);
                     });
                 }
@@ -52,6 +55,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
         }
         public static bool NoSplit(Buff buff) => buff.GetProperty<bool>(PROP_NO_SPLIT);
         public static void SetNoSplit(Buff buff, bool value) => buff.SetProperty(PROP_NO_SPLIT, value);
+        public const float DAMAGE_MULTIPLIER = 0.5f;
         public static readonly VanillaBuffPropertyMeta<bool> PROP_NO_SPLIT = new VanillaBuffPropertyMeta<bool>("no_split");
     }
 }

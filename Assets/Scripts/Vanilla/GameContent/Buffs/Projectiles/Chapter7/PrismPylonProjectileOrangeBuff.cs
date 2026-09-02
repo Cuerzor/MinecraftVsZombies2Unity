@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MVZ2.Vanilla.Callbacks;
+using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Projectiles;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
@@ -18,7 +19,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
     {
         public PrismPylonProjectileOrangeBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new IntModifier(VanillaProjectileProps.MAX_PIERCE_COUNT, IntegerOperator.Add, 2));
+            AddModifier(new IntModifier(VanillaProjectileProps.MAX_PIERCE_COUNT, IntegerOperator.Add, 1));
             AddTrigger(VanillaLevelCallbacks.POST_PROJECTILE_HIT, PostProjectileHitCallback);
         }
         private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams args, CallbackResult result)
