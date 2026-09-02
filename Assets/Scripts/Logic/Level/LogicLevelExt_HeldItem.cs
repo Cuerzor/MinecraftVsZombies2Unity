@@ -96,9 +96,9 @@ namespace MVZ2Logic.Level
             var heldItemData = level.GetHeldItemData();
             if (heldItemData == null || heldDef == null)
                 return false;
-            var behaviours = heldDef.GetBehaviours();
-            foreach (var behaviour in behaviours)
+            for (int i = 0; i < heldDef.GetBehaviourCount(); i++)
             {
+                var behaviour = heldDef.GetBehaviourAt(i);
                 if (behaviour is IHeldTwinkleEntityBehaviour twinkle && twinkle.ShouldMakeEntityTwinkle(entity, heldItemData))
                     return true;
             }

@@ -24,25 +24,25 @@ namespace MVZ2Logic.HeldItems
         }
         public bool HasBehaviour(LevelEngine level, IHeldItemData data, HeldItemBehaviourDefinition behaviour)
         {
-            return GetBehaviours()?.Contains(behaviour) ?? false;
+            return behavioursCache?.Contains(behaviour) ?? false;
         }
         public void Begin(LevelEngine level, IHeldItemData data)
         {
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 behaviour.OnBegin(level, data);
             }
         }
         public void End(LevelEngine level, IHeldItemData data)
         {
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 behaviour.OnEnd(level, data);
             }
         }
         public void Update(LevelEngine level, IHeldItemData data)
         {
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 behaviour.OnUpdate(level, data);
             }
@@ -66,7 +66,7 @@ namespace MVZ2Logic.HeldItems
         public HeldTargetFlag GetHeldTargetMask(LevelEngine level)
         {
             HeldTargetFlag mask = 0;
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 mask |= behaviour.GetHeldTargetMask(level);
             }
@@ -79,7 +79,7 @@ namespace MVZ2Logic.HeldItems
                 pointer = pointer,
                 interaction = PointerInteraction.Hover
             };
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 if (behaviour.IsValidFor(target, data, interactionData))
                     return true;
@@ -93,7 +93,7 @@ namespace MVZ2Logic.HeldItems
                 pointer = pointer,
                 interaction = PointerInteraction.Hover
             };
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 if (behaviour.IsValidFor(target, data, interactionData))
                 {
@@ -106,7 +106,7 @@ namespace MVZ2Logic.HeldItems
         }
         public void DoPointerEvent(IHeldItemTarget target, IHeldItemData data, PointerInteractionData pointerParams)
         {
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 if (behaviour.IsValidFor(target, data, pointerParams))
                 {
@@ -116,7 +116,7 @@ namespace MVZ2Logic.HeldItems
         }
         public void PostSetModel(LevelEngine level, IHeldItemData data, IModelInterface? model)
         {
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 behaviour.OnSetModel(level, data, model);
             }
@@ -124,7 +124,7 @@ namespace MVZ2Logic.HeldItems
         public NamespaceID? GetModelID(LevelEngine level, IHeldItemData data)
         {
             var callbackResult = new CallbackResult(null);
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 if (callbackResult.IsBreakRequested)
                     break;
@@ -135,7 +135,7 @@ namespace MVZ2Logic.HeldItems
         public Vector3 GetModelOffset(LevelEngine level, IHeldItemData data)
         {
             var callbackResult = new CallbackResult(null);
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 if (callbackResult.IsBreakRequested)
                     break;
@@ -146,7 +146,7 @@ namespace MVZ2Logic.HeldItems
         public float GetRadius(LevelEngine level, IHeldItemData data)
         {
             var callbackResult = new CallbackResult(0);
-            foreach (var behaviour in GetBehaviours())
+            foreach (var behaviour in behavioursCache)
             {
                 if (callbackResult.IsBreakRequested)
                     break;
@@ -158,9 +158,13 @@ namespace MVZ2Logic.HeldItems
         {
             return behavioursCache.OfType<T>().FirstOrDefault();
         }
-        public IEnumerable<HeldItemBehaviourDefinition> GetBehaviours()
+        public int GetBehaviourCount()
         {
-            return behavioursCache;
+            return behavioursCache.Count;
+        }
+        public HeldItemBehaviourDefinition GetBehaviourAt(int index)
+        {
+            return behavioursCache[index];
         }
         public sealed override string GetDefinitionType() => LogicDefinitionTypes.HELD_ITEM;
 
