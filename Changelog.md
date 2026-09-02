@@ -40,6 +40,7 @@
   - Reduced the amount in I, Zombie mode.
 - Pistenser
   - Evocation target count: 10 -> ∞
+  - Evocation will now predict the landing point based on the target's speed.
 - Totenser
   - Effect of weakness: Damage lowered to 0 -> Melee attack damage lowered to 0
 - Dream Crystal

@@ -154,10 +154,15 @@ namespace MVZ2.Vanilla.Projectiles
         }
         public static Vector3 GetLobVelocityByTime(Vector3 source, Vector3 target, float maxTime, float gravity)
         {
+            // 垂直移动时间+1会更准确一点。
+            return GetLobVelocityByTime(source, target, maxTime, maxTime + 1, gravity);
+        }
+        public static Vector3 GetLobVelocityByTime(Vector3 source, Vector3 target, float horizontalTime, float verticalTime, float gravity)
+        {
             float x, y, z;
-            x = (target.x - source.x) / maxTime;
-            y = (target.y - source.y) / maxTime + gravity * maxTime * 0.5f;
-            z = (target.z - source.z) / maxTime;
+            x = (target.x - source.x) / horizontalTime;
+            y = (target.y - source.y) / verticalTime + gravity * verticalTime * 0.5f;
+            z = (target.z - source.z) / horizontalTime;
             return new Vector3(x, y, z);
         }
 

@@ -177,6 +177,7 @@ namespace MVZ2.GameContent.Contraptions
             var projectileDefinition = entity.Level.Content.GetEntityDefinition(projectileID);
             var projectileGravity = projectileDefinition?.GetGravity() ?? 0;
             var targets = entity.Level.FindEntities(e => IsEvocationTarget(entity, e));
+            var flyTime = 24;
             foreach (var target in targets)
             {
                 if (!soundPlayed)
@@ -185,14 +186,14 @@ namespace MVZ2.GameContent.Contraptions
                     soundPlayed = true;
                 }
 
-                var targetPos = target.Position;
-                targetPos.y = target.GetGroundY();
+                var targetPos = target.Position + target.Velocity * flyTime;
+                targetPos.y = entity.Level.GetGroundY(targetPos.x, targetPos.z);
 
                 var shotParams = entity.GetShootParams();
                 shotParams.position = spikeBallPos;
                 shotParams.soundID = null;
                 shotParams.projectileID = projectileID;
-                shotParams.velocity = VanillaProjectileExt.GetLobVelocityByTime(spikeBallPos, targetPos, 24, projectileGravity);
+                shotParams.velocity = VanillaProjectileExt.GetLobVelocityByTime(spikeBallPos, targetPos, flyTime, projectileGravity);
                 shotParams.damage = entity.GetDamage() * 9;
                 entity.ShootProjectile(shotParams);
             }
