@@ -657,6 +657,7 @@
     <model name="petrified_feet" type="icon" path="mvz2:icon/petrified_feet" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="shackled" type="icon" path="mvz2:icon/shackled" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="burning" type="icon" path="mvz2:icon/burning" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
+    <model name="dazzle" type="icon" path="mvz2:icon/dazzle" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
 
     <model name="mind_swap" type="ui" path="mvz2:ui/mind_swap" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="blueprint_lock" type="ui" path="mvz2:ui/blueprint_lock" shot="false" width="64" height="64" xOffset="0" yOffset="0" />

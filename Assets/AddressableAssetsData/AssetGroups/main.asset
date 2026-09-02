@@ -2963,6 +2963,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34aeecb4a78c56546b703275fca527c1
+    m_Address: mvz2:icon/dazzle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 34e619cc0502d6c499f470950cf5acec
     m_Address: mvz2:artifacts/dream_key
     m_ReadOnly: 0
@@ -7894,6 +7901,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8792f02cf412b6249bb042653081c354
+    m_Address: mvz2:entity/projectile/dazzle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 87b336d7b20b7a145a9300914c7bf0e8
     m_Address: mvz2:characters/marisa
