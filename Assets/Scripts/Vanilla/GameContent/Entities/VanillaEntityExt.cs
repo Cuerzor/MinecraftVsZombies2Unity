@@ -136,14 +136,17 @@ namespace MVZ2.Vanilla.Entities
             Entity entity = damageInfo.Entity;
             if (entity == null)
                 return false;
-            var result = new CallbackResult(true);
+            using var resultItem = CallbackResult.Rent(true);
+            var result = resultItem.Value;
             entity.Definition.PreTakeDamage(damageInfo, result);
+            bool shouldContinue = result.GetValue<bool>();
+
             if (!result.IsBreakRequested)
             {
                 var param = new VanillaLevelCallbacks.PreTakeDamageParams(damageInfo, output);
-                damageInfo.Entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_ENTITY_TAKE_DAMAGE, param, result, entity.Type);
+                shouldContinue = damageInfo.Entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_ENTITY_TAKE_DAMAGE, param, shouldContinue, entity.Type);
             }
-            return result.GetValue<bool>();
+            return shouldContinue;
         }
         private static void ApplyDamageSpecialEffects(DamageOutput output)
         {
@@ -191,13 +194,8 @@ namespace MVZ2.Vanilla.Entities
 
         private static int PreBodyTakeDamage(this Entity armor, BodyDamageInputPart input, BodyDamageOutputPart result)
         {
-            var callbackResult = new CallbackResult(DamageStates.CONTINUE);
-            if (!callbackResult.IsBreakRequested)
-            {
-                var param = new VanillaLevelCallbacks.PreBodyTakeDamageParams(input, result);
-                input.Entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_BODY_TAKE_DAMAGE, param, callbackResult, armor.Definition.GetID());
-            }
-            return callbackResult.GetValue<int>();
+            var param = new VanillaLevelCallbacks.PreBodyTakeDamageParams(input, result);
+            return input.Entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_BODY_TAKE_DAMAGE, param, DamageStates.CONTINUE, armor.Definition.GetID());
         }
         private static void PostBodyTakeDamage(this Entity entity, BodyDamageOutputPart result)
         {
@@ -699,13 +697,11 @@ namespace MVZ2.Vanilla.Entities
             var entity = info.Entity;
             if (entity == null)
                 return false;
-            var result = new CallbackResult(true);
             var param = new VanillaLevelCallbacks.PreHealParams()
             {
                 input = info
             };
-            entity.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.PRE_ENTITY_HEAL, param, result);
-            return result.GetValue<bool>();
+            return entity.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.PRE_ENTITY_HEAL, param, true);
         }
         private static void PostHeal(HealOutput output)
         {
@@ -969,9 +965,7 @@ namespace MVZ2.Vanilla.Entities
         public static bool PreApplyStatusEffect(this Entity entity, BuffDefinition buff, ILevelSourceReference? source)
         {
             var param = new VanillaLevelCallbacks.PreApplyStatusEffectParams(entity, buff, source);
-            var result = new CallbackResult(true);
-            entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_APPLY_STATUS_EFFECT, param, result, buff.GetID());
-            return result.GetValue<bool>();
+            return entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_APPLY_STATUS_EFFECT, param, true, buff.GetID());
         }
         public static void PostApplyStatusEffect(this Entity entity, Buff buff, ILevelSourceReference? source)
         {
@@ -981,9 +975,7 @@ namespace MVZ2.Vanilla.Entities
         public static bool PreRemoveStatusEffect(this Entity entity, BuffDefinition definition, ILevelSourceReference? source)
         {
             var param = new VanillaLevelCallbacks.PreRemoveStatusEffectParams(entity, definition, source);
-            var result = new CallbackResult(true);
-            entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_REMOVE_STATUS_EFFECT, param, result, definition.GetID());
-            return result.GetValue<bool>();
+            return entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_REMOVE_STATUS_EFFECT, param, true, definition.GetID());
         }
         public static void PostRemoveStatusEffect(this Entity entity, BuffDefinition definition, ILevelSourceReference? source)
         {

@@ -118,9 +118,8 @@ namespace MVZ2.GameContent.Contraptions
         public bool CanSacrifice(Entity entity, Entity soulFurnace)
         {
             bool canSacrifice = entity.Type == EntityTypes.PLANT && !entity.IsDead && GetFuel(soulFurnace) <= REFUEL_THRESOLD;
-            var result = new CallbackResult(canSacrifice);
-            entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.CAN_CONTRAPTION_SACRIFICE, new VanillaLevelCallbacks.ContraptionSacrificeValueParams(entity, soulFurnace), result, entity.GetDefinitionID());
-            return result.GetValue<bool>();
+            var args = new VanillaLevelCallbacks.ContraptionSacrificeValueParams(entity, soulFurnace);
+            return entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.CAN_CONTRAPTION_SACRIFICE, args, canSacrifice, entity.GetDefinitionID());
         }
         public static int GetSacrificeFuel(Entity entity, Entity soulFurnace)
         {
@@ -140,15 +139,14 @@ namespace MVZ2.GameContent.Contraptions
             }
 
             int fuel = Mathf.CeilToInt((6 + Mathf.Pow(cost * 3 / 25f, 1.3f)) * (rechargeQuality + 1) / 2f);
-            var result = new CallbackResult(fuel);
-            entity.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.GET_CONTRAPTION_SACRIFICE_FUEL, new VanillaLevelCallbacks.ContraptionSacrificeValueParams(entity, soulFurnace), result);
-            return result.GetValue<int>();
+            var args = new VanillaLevelCallbacks.ContraptionSacrificeValueParams(entity, soulFurnace);
+            return entity.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.GET_CONTRAPTION_SACRIFICE_FUEL, args, fuel);
         }
         public void Sacrifice(Entity entity, Entity soulFurnace, int fuel)
         {
-            var result = new CallbackResult(true);
-            Global.Game.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_CONTRAPTION_SACRIFICE, new VanillaLevelCallbacks.ContraptionSacrificeParams(entity, soulFurnace, fuel), result, entity.GetDefinitionID());
-            if (!result.GetValue<bool>())
+            var args = new VanillaLevelCallbacks.ContraptionSacrificeParams(entity, soulFurnace, fuel);
+            var shouldContinue = Global.Game.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_CONTRAPTION_SACRIFICE, args, true, entity.GetDefinitionID());
+            if (!shouldContinue)
                 return;
 
             var effects = new DamageEffectList(VanillaDamageEffects.SACRIFICE);

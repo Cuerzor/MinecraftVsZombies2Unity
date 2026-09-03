@@ -19,9 +19,9 @@ namespace MVZ2.Vanilla.Enemies
             if (enemy.IsNeutralized())
                 return;
 
-            var result = new CallbackResult(true);
-            enemy.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.PRE_ENEMY_NEUTRALIZE, new EntityCallbackParams(enemy), result);
-            if (!result.GetValue<bool>())
+            var args = new EntityCallbackParams(enemy);
+            var shouldContinue = enemy.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.PRE_ENEMY_NEUTRALIZE, args, true);
+            if (!shouldContinue)
                 return;
             enemy.SetNeutralized(true);
             enemy.Level.Triggers.RunCallback(VanillaLevelCallbacks.POST_ENEMY_NEUTRALIZE, new EntityCallbackParams(enemy));
@@ -47,9 +47,8 @@ namespace MVZ2.Vanilla.Enemies
         public const float WALK_SPEED_FACTOR = 0.4f; // 怪物的移速乘算倍率，默认0.4倍
         public static void FaintRemove(this Entity enemy)
         {
-            var callbackResult = new CallbackResult(true);
-            enemy.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_ENEMY_FAINT, new EntityCallbackParams(enemy), callbackResult, enemy.GetDefinitionID());
-            if (callbackResult.GetValue<bool>())
+            bool shouldContinue = enemy.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_ENEMY_FAINT, new EntityCallbackParams(enemy), true, enemy.GetDefinitionID());
+            if (shouldContinue)
             {
                 var param = enemy.GetSpawnParams();
                 param.SetProperty(EngineEntityProps.SIZE, enemy.GetSize());

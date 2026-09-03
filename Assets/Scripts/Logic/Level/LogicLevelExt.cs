@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Callbacks;
 using MVZ2Logic.Entities;
@@ -51,14 +52,12 @@ namespace MVZ2Logic.Level
         #region 蓝图
         public static bool IsBlueprintNotRecommmended(this LevelEngine level, NamespaceID blueprint)
         {
-            var result = new CallbackResult(false);
             var param = new LogicLevelCallbacks.GetBlueprintNotRecommondedParams()
             {
                 level = level,
                 blueprintID = blueprint
             };
-            level.Triggers.RunCallbackWithResultFiltered(LogicLevelCallbacks.GET_BLUEPRINT_NOT_RECOMMONDED, param, result, blueprint);
-            return result.GetValue<bool>();
+            return level.Triggers.RunCallbackWithResultFiltered(LogicLevelCallbacks.GET_BLUEPRINT_NOT_RECOMMONDED, param, false, blueprint);
         }
         public static void SetupBattleBlueprints(this LevelEngine level, BlueprintChooseItem[] items)
         {
@@ -376,10 +375,8 @@ namespace MVZ2Logic.Level
             {
                 spawnDef.PreSpawnAtWave(level, wave, maxPoints, ref totalPoints);
             }
-            var preResult = new CallbackResult(totalPoints);
             var preArgs = new LogicLevelCallbacks.WaveEnemySpawnParams(level, wave, maxPoints);
-            level.Triggers.RunCallbackWithResult(LogicLevelCallbacks.PRE_WAVE_ENEMY_SPAWN, preArgs, preResult);
-            totalPoints = preResult.GetValue<float>();
+            totalPoints = level.Triggers.RunCallbackWithResult(LogicLevelCallbacks.PRE_WAVE_ENEMY_SPAWN, preArgs, totalPoints);
 
             var validSpawnDefs = spawnDefs.Where(def => def.CanSpawnInLevel(level));
 
@@ -430,9 +427,8 @@ namespace MVZ2Logic.Level
             {
                 spawnDef.PostSpawnAtWave(level, wave, maxPoints, ref totalPoints);
             }
-            var postResult = new CallbackResult(totalPoints);
             var postArgs = new LogicLevelCallbacks.WaveEnemySpawnParams(level, wave, maxPoints);
-            level.Triggers.RunCallbackWithResult(LogicLevelCallbacks.POST_WAVE_ENEMY_SPAWN, postArgs, postResult);
+            level.Triggers.RunCallback(LogicLevelCallbacks.POST_WAVE_ENEMY_SPAWN, postArgs);
         }
         public static bool WillEnemySpawn(this LevelEngine level, NamespaceID spawnID)
         {
@@ -512,10 +508,8 @@ namespace MVZ2Logic.Level
 
         public static bool IsTerrainAt(this LevelEngine level, float x, float z, NamespaceID terrainType, bool value)
         {
-            var callbackResult = new CallbackResult(value);
             var args = new LogicLevelCallbacks.IsTerrainCallbackParams(level, x, z, terrainType);
-            level.Triggers.RunCallbackWithResultFiltered(LogicLevelCallbacks.IS_TERRAIN, args, callbackResult, terrainType);
-            return callbackResult.GetValue<bool>();
+            return level.Triggers.RunCallbackWithResultFiltered(LogicLevelCallbacks.IS_TERRAIN, args, value, terrainType);
         }
 
         #region 水路

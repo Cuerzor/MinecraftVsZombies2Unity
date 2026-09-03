@@ -144,14 +144,13 @@ namespace MVZ2.GameContent.Projectiles
                 return;
 
             // 触发击中前回调。
-            var callbackResult = new CallbackResult(true);
             var preParam = new VanillaLevelCallbacks.PreProjectileHitParams()
             {
                 hit = hitInput,
                 damage = damageInput
             };
-            projectile.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_PROJECTILE_HIT, preParam, callbackResult, projectile.GetDefinitionID());
-            if (!callbackResult.GetValue<bool>())
+            bool shouldContinue = projectile.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_PROJECTILE_HIT, preParam, true, projectile.GetDefinitionID());
+            if (!shouldContinue)
                 return;
 
             // 对敌人造成伤害

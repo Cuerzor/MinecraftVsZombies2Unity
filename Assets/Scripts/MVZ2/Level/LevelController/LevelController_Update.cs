@@ -143,9 +143,10 @@ namespace MVZ2.Level
         }
         private void UpdateLogicOnce()
         {
-            var entitiesCache = entities.ToArray();
             level.Update();
-            foreach (var entity in entitiesCache)
+            entitiesControllerUpdateBuffer.Clear();
+            entitiesControllerUpdateBuffer.AddRange(entities);
+            foreach (var entity in entitiesControllerUpdateBuffer)
             {
                 entity.UpdateFixed();
             }

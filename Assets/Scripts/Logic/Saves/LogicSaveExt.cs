@@ -85,9 +85,7 @@ namespace MVZ2Logic.Saves
             {
                 count = saveData.GetBlueprintSlots();
             }
-            var result = new CallbackResult(count);
-            Global.Game.RunCallbackWithResult(LogicCallbacks.GET_BLUEPRINT_SLOT_COUNT, new EmptyCallbackParams(), result);
-            return result.GetValue<int>();
+            return Global.Game.RunCallbackWithResult(LogicCallbacks.GET_BLUEPRINT_SLOT_COUNT, new EmptyCallbackParams(), count);
         }
         public static int GetArtifactSlots(this IGlobalSaveData save)
         {

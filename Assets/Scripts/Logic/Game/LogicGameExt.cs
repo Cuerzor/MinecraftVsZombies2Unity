@@ -17,9 +17,7 @@ namespace MVZ2Logic.Games
     {
         public static bool IsSpecialUserName(this IGlobalGame game, string name)
         {
-            var result = new CallbackResult(false);
-            game.RunCallbackWithResult(LogicCallbacks.IS_SPECIAL_USER_NAME, new StringCallbackParams(name), result);
-            return result.GetValue<bool>();
+            return game.RunCallbackWithResult(LogicCallbacks.IS_SPECIAL_USER_NAME, new StringCallbackParams(name), false);
         }
         public static NamespaceID[] GetInnateBlueprints(this IGlobalGame game)
         {

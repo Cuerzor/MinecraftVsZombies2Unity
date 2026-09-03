@@ -263,9 +263,8 @@ namespace MVZ2Logic.Grids
         private static bool PrePlaceEntity(this LawnGrid grid, NamespaceID entityID)
         {
             var level = grid.Level;
-            var result = new CallbackResult(true);
-            level.Triggers.RunCallbackWithResultFiltered(LogicLevelCallbacks.PRE_PLACE_ENTITY, new LogicLevelCallbacks.PlaceEntityParams(grid, entityID), result, entityID);
-            return result.GetValue<bool>();
+            var args = new LogicLevelCallbacks.PlaceEntityParams(grid, entityID);
+            return level.Triggers.RunCallbackWithResultFiltered(LogicLevelCallbacks.PRE_PLACE_ENTITY, args, true, entityID);
         }
         private static void PostPlaceEntity(this LawnGrid grid, Entity entity)
         {

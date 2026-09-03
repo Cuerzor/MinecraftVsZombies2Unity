@@ -220,6 +220,7 @@ namespace MVZ2.Level
 
         private ObjectPool<EntityController> entityControllerPool = null!;
         private List<EntityController> entities = new List<EntityController>();
+        private List<EntityController> entitiesControllerUpdateBuffer = new List<EntityController>();
         private EntityController? hoveredEntity;
         private EntityController? highlightedEntity;
         private List<AnimatorUpdateData> entityAnimatorBuffer = new List<AnimatorUpdateData>();

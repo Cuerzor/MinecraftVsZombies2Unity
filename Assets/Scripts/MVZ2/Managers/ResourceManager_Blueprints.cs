@@ -182,12 +182,8 @@ namespace MVZ2.Managers
         private NamespaceID GetBlueprintStyleID(SeedDefinition seedDef, bool isCommandBlock)
         {
             var defaultValue = LogicBlueprintStyles.normal;
-            var result = new CallbackResult();
-            result.SetValue(defaultValue);
             var args = new LogicCallbacks.GetBlueprintStyleParams(seedDef, isCommandBlock);
-            Global.Game.RunCallbackWithResultFiltered(LogicCallbacks.GET_BLUEPRINT_STYLE, args, result, seedDef);
-
-            return result.GetValue<NamespaceID>() ?? defaultValue;
+            return Global.Game.RunCallbackWithResultFiltered(LogicCallbacks.GET_BLUEPRINT_STYLE, args, defaultValue, seedDef) ?? defaultValue;
         }
         private void SetBlueprintViewDataStyle(ref BlueprintViewData viewData, BlueprintStyleMeta? styleMeta)
         {

@@ -123,7 +123,9 @@ namespace MVZ2Logic.HeldItems
         }
         public NamespaceID? GetModelID(LevelEngine level, IHeldItemData data)
         {
-            var callbackResult = new CallbackResult(null);
+            using var callbackResultItem = CallbackResult.Rent(null);
+            var callbackResult = callbackResultItem.Value;
+
             foreach (var behaviour in behavioursCache)
             {
                 if (callbackResult.IsBreakRequested)
@@ -134,7 +136,8 @@ namespace MVZ2Logic.HeldItems
         }
         public Vector3 GetModelOffset(LevelEngine level, IHeldItemData data)
         {
-            var callbackResult = new CallbackResult(null);
+            using var callbackResultItem = CallbackResult.Rent(Vector3.zero);
+            var callbackResult = callbackResultItem.Value;
             foreach (var behaviour in behavioursCache)
             {
                 if (callbackResult.IsBreakRequested)
@@ -145,7 +148,8 @@ namespace MVZ2Logic.HeldItems
         }
         public float GetRadius(LevelEngine level, IHeldItemData data)
         {
-            var callbackResult = new CallbackResult(0);
+            using var callbackResultItem = CallbackResult.Rent(0);
+            var callbackResult = callbackResultItem.Value;
             foreach (var behaviour in behavioursCache)
             {
                 if (callbackResult.IsBreakRequested)

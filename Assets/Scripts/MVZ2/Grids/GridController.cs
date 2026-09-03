@@ -15,6 +15,7 @@ using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Models;
 using MVZ2Logic.Options;
+using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
@@ -261,7 +262,8 @@ namespace MVZ2.Grids
             var amountMode = Main.OptionsManager.GetHPBarAmountMode();
 
             bool shouldShow = level?.ShouldShowHPBars() ?? false;
-            var layers = grid.GetLayers().OrderBy(l => Main.Settings.GetHPBarLayerOrder(l));
+            var layers = grid.GetLayers();
+            Array.Sort(layers, comparer);
             foreach (var layer in layers)
             {
                 var layerDefinition = Main.Game.GetGridLayerDefinition(layer);
@@ -297,9 +299,22 @@ namespace MVZ2.Grids
                 }
             }
         }
-        public MainManager Main => MainManager.Instance;
+        public static MainManager Main => MainManager.Instance;
         public GridController Controller { get; }
         private HashSet<Entity> gridHPBarEntityBuffer = new HashSet<Entity>();
         private List<HPBarViewData> gridHPBarBuffer = new List<HPBarViewData>();
+        private static IComparer<NamespaceID> comparer = new GridLayerOrderComparer(Main);
+    }
+    public class GridLayerOrderComparer : IComparer<NamespaceID>
+    {
+        public GridLayerOrderComparer(MainManager main)
+        {
+            Main = main;
+        }
+        public int Compare(NamespaceID x, NamespaceID y)
+        {
+            return Main.Settings.GetHPBarLayerOrder(x).CompareTo(Main.Settings.GetHPBarLayerOrder(y));
+        }
+        public MainManager Main { get; }
     }
 }

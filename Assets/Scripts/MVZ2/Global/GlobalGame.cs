@@ -73,18 +73,18 @@ namespace MVZ2.GlobalGames
         {
             callbacks.RunCallback(callbackType, args);
         }
-        public void RunCallbackWithResult<TArgs>(CallbackType<TArgs> callbackType, TArgs args, CallbackResult result)
+        public TResult? RunCallbackWithResult<TArgs, TResult>(CallbackType<TArgs> callbackType, TArgs args, TResult? result)
         {
-            callbacks.RunCallbackWithResult(callbackType, args, result);
+            return callbacks.RunCallbackWithResult(callbackType, args, result);
         }
 
         public void RunCallbackFiltered<TArgs>(CallbackType<TArgs> callbackType, TArgs args, object? filter)
         {
             callbacks.RunCallbackFiltered(callbackType, args, filter);
         }
-        public void RunCallbackWithResultFiltered<TArgs>(CallbackType<TArgs> callbackType, TArgs args, CallbackResult result, object? filter)
+        public TResult? RunCallbackWithResultFiltered<TArgs, TResult>(CallbackType<TArgs> callbackType, TArgs args, TResult? result, object? filter)
         {
-            callbacks.RunCallbackWithResultFiltered(callbackType, args, result, filter);
+            return callbacks.RunCallbackWithResultFiltered(callbackType, args, result, filter);
         }
         #endregion
 

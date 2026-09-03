@@ -154,10 +154,8 @@ namespace MVZ2.GameContent.Contraptions
         }
         private static bool PreTransform(Entity entity, NamespaceID id, bool error)
         {
-            var result = new CallbackResult(true);
             var preArgs = new VanillaLevelCallbacks.PreCommandBlockTransformParams(entity, id, error);
-            entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_COMMAND_BLOCK_TRANSFORM, preArgs, result, id);
-            return result.GetValue<bool>();
+            return entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_COMMAND_BLOCK_TRANSFORM, preArgs, true, id);
         }
         private static void PostTransform(Entity entity, Entity? spawned, NamespaceID id, bool error)
         {

@@ -67,10 +67,9 @@ namespace MVZ2.Vanilla.Projectiles
         }
         private static bool PreShootProjectile(this Entity entity, ProjectileShootArgs parameters)
         {
-            var result = new CallbackResult(true);
             var args = new VanillaLevelCallbacks.PreProjectileShotParams(entity, parameters);
-            entity.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.PRE_PROJECTILE_SHOT, args, result);
-            return result.GetValue<bool>();
+            
+            return entity.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.PRE_PROJECTILE_SHOT, args, true);
         }
         public static ProjectileShootArgs GetShootParams(this Entity entity)
         {
