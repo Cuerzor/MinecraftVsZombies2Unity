@@ -28,7 +28,7 @@ namespace MVZ2.GameContent.Contraptions
             contraption.SetAnimationFloat("Damaged", 1 - contraption.Health / contraption.GetMaxHealth());
             contraption.SetAnimationBool("Absorbing", contraption.HasBuff<LightningOrbEvokedBuff>());
         }
-        private void PreProjectileHitCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult result)
+        private void PreProjectileHitCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult<bool> result)
         {
             var hit = param.hit;
             var damage = param.damage;

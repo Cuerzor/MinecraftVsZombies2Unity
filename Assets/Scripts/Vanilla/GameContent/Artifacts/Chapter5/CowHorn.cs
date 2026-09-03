@@ -50,7 +50,7 @@ namespace MVZ2.GameContent.Artifacts
                 artifact.SetGlowing(false);
             }
         }
-        private void PostWaveCallback(LevelCallbacks.PostWaveParams args, CallbackResult result)
+        private void PostWaveCallback(LevelCallbacks.PostWaveParams args, CallbackResultVoid result)
         {
             var level = args.level;
             var wave = args.wave;

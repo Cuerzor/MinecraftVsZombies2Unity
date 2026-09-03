@@ -16,7 +16,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback, filter: EntityTypes.PLANT);
         }
-        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var info = param.deathInfo;

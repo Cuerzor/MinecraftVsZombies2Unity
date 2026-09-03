@@ -23,7 +23,7 @@ namespace MVZ2.GameContent.Projectiles
         {
             AddTrigger(VanillaLevelCallbacks.PRE_PROJECTILE_HIT, PreHitEntityCallback, VanillaCallbackPriorities.LATE);
         }
-        private void PreHitEntityCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult result)
+        private void PreHitEntityCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult<bool> result)
         {
             var hit = param.hit;
             var projectile = hit.Projectile;

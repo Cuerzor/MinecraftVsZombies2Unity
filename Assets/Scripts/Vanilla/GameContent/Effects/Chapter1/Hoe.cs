@@ -92,7 +92,7 @@ namespace MVZ2.GameContent.Effects
             }
         }
         #endregion
-        private void PostLevelStopCallback(LevelCallbackParams param, CallbackResult result)
+        private void PostLevelStopCallback(LevelCallbackParams param, CallbackResultVoid result)
         {
             var level = param.level;
             foreach (var hoe in level.FindEntities(e => e.IsEntityOf(VanillaEffectID.hoe)))

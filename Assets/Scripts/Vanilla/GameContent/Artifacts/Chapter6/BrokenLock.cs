@@ -30,7 +30,7 @@ namespace MVZ2.GameContent.Artifacts
             base.PostUpdate(artifact);
             artifact.SetGlowing(false);
         }
-        private void PostContraptionTakeDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResult result)
+        private void PostContraptionTakeDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResultVoid result)
         {
             var output = param.output;
             var contraption = output.Entity;

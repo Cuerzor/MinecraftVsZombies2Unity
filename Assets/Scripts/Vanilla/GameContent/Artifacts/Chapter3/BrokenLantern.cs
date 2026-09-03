@@ -26,7 +26,7 @@ namespace MVZ2.GameContent.Artifacts
             base.PostUpdate(artifact);
             artifact.SetGlowing(true);
         }
-        private void PostContraptionInitCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostContraptionInitCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var contraption = param.entity;
             if (!contraption.IsLightSource())

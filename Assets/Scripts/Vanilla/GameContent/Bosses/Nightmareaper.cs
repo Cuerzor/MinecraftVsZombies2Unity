@@ -76,7 +76,7 @@ namespace MVZ2.GameContent.Bosses
         }
         #endregion
 
-        private void PostEnemyDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEnemyDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var info = param.deathInfo;

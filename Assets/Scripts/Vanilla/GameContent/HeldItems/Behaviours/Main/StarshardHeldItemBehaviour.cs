@@ -11,6 +11,7 @@ using MVZ2Logic.Definitions;
 using MVZ2Logic.Entities;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Level;
+using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
@@ -35,7 +36,7 @@ namespace MVZ2.GameContent.HeldItems
         {
             return level.GetStarshardCount() > 0 && level.CanUseStarshard() && level.GetStarshardHeldType() == data.Type;
         }
-        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
         {
             var modelID = VanillaModelID.GetStarshardHeldItem(level.AreaDefinition.GetID());
             var id = Global.Models.ModelExists(modelID) ? modelID : VanillaModelID.defaultStartShardHeldItem;

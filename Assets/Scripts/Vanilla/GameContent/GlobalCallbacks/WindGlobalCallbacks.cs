@@ -14,7 +14,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         {
             mod.AddTrigger(LevelCallbacks.POST_LEVEL_UPDATE, PostUpdateCallback);
         }
-        private void PostUpdateCallback(LevelCallbackParams param, CallbackResult result)
+        private void PostUpdateCallback(LevelCallbackParams param, CallbackResultVoid result)
         {
             var level = param.level;
             var targetWindSpeed = level.GetTargetDecorativeWindSpeed();

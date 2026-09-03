@@ -56,7 +56,7 @@ namespace MVZ2.GameContent.Armors
                 owner.PlaySound(VanillaSoundID.smallExplosion);
             }
         }
-        private void PostArmorDestroyCallback(LevelCallbacks.PostArmorDestroyParams param, CallbackResult result)
+        private void PostArmorDestroyCallback(LevelCallbacks.PostArmorDestroyParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var armor = param.armor;

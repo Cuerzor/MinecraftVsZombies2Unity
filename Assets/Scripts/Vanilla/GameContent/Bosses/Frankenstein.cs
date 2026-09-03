@@ -79,7 +79,7 @@ namespace MVZ2.GameContent.Bosses
             entity.SetAnimationBool("MissileVisible", entity.State == STATE_MISSILE && stateMachine.GetSubState(entity) == SUBSTATE_MISSILE_AIM);
             entity.SetAnimationFloat("ActionSpeed", GetFrankensteinActionSpeed(entity));
         }
-        public void ApplyDamageSpecialEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams args, CallbackResult result)
+        public void ApplyDamageSpecialEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams args, CallbackResultVoid result)
         {
             var output = args.output;
             var entity = output.Entity;

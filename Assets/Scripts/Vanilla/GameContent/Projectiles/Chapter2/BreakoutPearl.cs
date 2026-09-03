@@ -24,7 +24,7 @@ namespace MVZ2.GameContent.Projectiles
             entity.Timeout = 30;
         }
 
-        private void PreHitEntityCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult result)
+        private void PreHitEntityCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult<bool> result)
         {
             var hit = param.hit;
             var projectile = hit.Projectile;
@@ -36,7 +36,7 @@ namespace MVZ2.GameContent.Projectiles
                 return;
             }
         }
-        private void PostHitEntityCallback(VanillaLevelCallbacks.PostProjectileHitParams param, CallbackResult result)
+        private void PostHitEntityCallback(VanillaLevelCallbacks.PostProjectileHitParams param, CallbackResultVoid result)
         {
             var hitResult = param.hit;
 

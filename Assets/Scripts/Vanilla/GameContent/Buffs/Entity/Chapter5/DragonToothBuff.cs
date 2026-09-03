@@ -20,7 +20,7 @@ namespace MVZ2.GameContent.Buffs.Entities
             AddModelInsertion(LogicModelHelper.ANCHOR_CENTER, modelKey, VanillaModelID.vulnerable);
             AddTrigger(VanillaLevelCallbacks.PRE_ENTITY_TAKE_DAMAGE, PreEntityTakeDamageCallback, priority: VanillaCallbackPriorities.MULTIPLY);
         }
-        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult result)
+        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult<bool> result)
         {
             var input = param.input;
             var entity = input.Entity;

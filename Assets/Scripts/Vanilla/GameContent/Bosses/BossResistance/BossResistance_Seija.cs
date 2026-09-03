@@ -13,7 +13,7 @@ namespace MVZ2.GameContent.Bosses
         public BossResistance_Seija(string nsp, string name) : base(nsp, name)
         {
         }
-        public override void PreTakeDamage(DamageInput damageInfo, CallbackResult result)
+        public override void PreTakeDamage(DamageInput damageInfo, CallbackResult<bool> result)
         {
             var boss = damageInfo.Entity;
             if (damageInfo.Amount >= 600)

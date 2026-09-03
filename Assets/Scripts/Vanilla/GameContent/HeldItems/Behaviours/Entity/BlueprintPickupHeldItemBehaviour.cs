@@ -13,6 +13,7 @@ using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
 using MVZ2Logic.Localization;
 using MVZ2Logic.Models;
+using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
@@ -181,7 +182,7 @@ namespace MVZ2.GameContent.HeldItems
                 level.PlaySound(VanillaSoundID.tap);
             }
         }
-        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
         {
             var entity = GetEntity(level, data);
             if (entity == null)

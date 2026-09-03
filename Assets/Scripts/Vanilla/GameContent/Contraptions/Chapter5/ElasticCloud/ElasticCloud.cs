@@ -37,7 +37,7 @@ namespace MVZ2.GameContent.Contraptions
                 return;
             TryBounceEnemy(cloud, other);
         }
-        public override void PreTakeDamage(DamageInput input, CallbackResult result)
+        public override void PreTakeDamage(DamageInput input, CallbackResult<bool> result)
         {
             base.PreTakeDamage(input, result);
             bool punch = input.Effects.HasEffect(VanillaDamageEffects.IMPACT);

@@ -24,7 +24,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
             AddModifier(new BooleanModifier(LogicEnemyProps.ASSUME_ALIVE, true));
             AddTrigger(VanillaLevelCallbacks.PRE_ENEMY_FAINT, PreEnemyFaintCallback);
         }
-        private void PreEnemyFaintCallback(EntityCallbackParams param, CallbackResult result)
+        private void PreEnemyFaintCallback(EntityCallbackParams param, CallbackResult<bool> result)
         {
             var entity = param.entity;
             var fatalOutput = entity.GetLethalDeathInfo();

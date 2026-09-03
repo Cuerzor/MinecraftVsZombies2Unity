@@ -136,10 +136,10 @@ namespace MVZ2.Vanilla.Entities
             Entity entity = damageInfo.Entity;
             if (entity == null)
                 return false;
-            using var resultItem = CallbackResult.Rent(true);
+            using var resultItem = CallbackResult<bool>.Rent(true);
             var result = resultItem.Value;
             entity.Definition.PreTakeDamage(damageInfo, result);
-            bool shouldContinue = result.GetValue<bool>();
+            bool shouldContinue = result.GetValue();
 
             if (!result.IsBreakRequested)
             {

@@ -68,7 +68,7 @@ namespace MVZ2.GameContent.Enemies
                 }
             }
         }
-        public override void PreTakeDamage(DamageInput input, CallbackResult result)
+        public override void PreTakeDamage(DamageInput input, CallbackResult<bool> result)
         {
             base.PreTakeDamage(input, result);
             if (input.HasEffect(VanillaDamageEffects.LIGHTNING))
@@ -114,7 +114,7 @@ namespace MVZ2.GameContent.Enemies
             }
             return SMOKE_COLOR_NORMAL;
         }
-        private void PreEntitySlowCallback(VanillaLevelCallbacks.PreApplyStatusEffectParams param, CallbackResult result)
+        private void PreEntitySlowCallback(VanillaLevelCallbacks.PreApplyStatusEffectParams param, CallbackResult<bool> result)
         {
             var entity = param.entity;
             if (!entity.IsEntityOf(VanillaEnemyID.zombieCloud))

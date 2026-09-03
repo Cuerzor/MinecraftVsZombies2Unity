@@ -122,7 +122,7 @@ namespace MVZ2.GameContent.Stages
             param.SetProperty(LogicEntityProps.HP_BAR_VISIBILITY, HPBarVisibility.FORCE);
             return level.Spawn(VanillaContraptionID.snipenser, cart.Position, cart, param);
         }
-        private void PreContraptionTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult result)
+        private void PreContraptionTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult<bool> result)
         {
             var input = param.input;
             var entity = input.Entity;
@@ -136,7 +136,7 @@ namespace MVZ2.GameContent.Stages
                 }
             }
         }
-        private void PostContraptionDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostContraptionDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var level = entity.Level;

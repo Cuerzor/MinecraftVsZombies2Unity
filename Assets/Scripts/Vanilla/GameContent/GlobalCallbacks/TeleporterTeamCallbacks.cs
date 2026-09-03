@@ -17,7 +17,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         {
             mod.AddTrigger(LevelCallbacks.POST_LEVEL_START, PostLevelStartCallback);
         }
-        private void PostLevelStartCallback(LevelCallbackParams param, CallbackResult result)
+        private void PostLevelStartCallback(LevelCallbackParams param, CallbackResultVoid result)
         {
             var level = param.level;
             var team = Global.Saves.GetTeleporterTeam();

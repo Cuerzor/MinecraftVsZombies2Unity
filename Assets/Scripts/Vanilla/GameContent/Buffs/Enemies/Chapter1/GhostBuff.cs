@@ -52,7 +52,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
             base.PostUpdate(buff);
             UpdateIllumination(buff);
         }
-        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult callbackResult)
+        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult<bool> callbackResult)
         {
             var damageInfo = param.input;
             var entity = damageInfo.Entity;

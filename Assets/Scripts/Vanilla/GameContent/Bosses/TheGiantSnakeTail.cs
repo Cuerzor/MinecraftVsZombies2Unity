@@ -60,7 +60,7 @@ namespace MVZ2.GameContent.Bosses
                 collision.OtherCollider.TakeDamage(self.GetDamage(), damageEffects, self);
             }
         }
-        public override void PreTakeDamage(DamageInput damageInfo, CallbackResult result)
+        public override void PreTakeDamage(DamageInput damageInfo, CallbackResult<bool> result)
         {
             base.PreTakeDamage(damageInfo, result);
             var self = damageInfo.Entity;

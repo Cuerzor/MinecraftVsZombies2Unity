@@ -25,7 +25,7 @@ namespace MVZ2.GameContent.Bosses
             var decay = GetDecay(entity);
             SetCurrentDamageAmount(entity, Mathf.Max(0, current - decay));
         }
-        public override void PreTakeDamage(DamageInput damageInfo, CallbackResult result)
+        public override void PreTakeDamage(DamageInput damageInfo, CallbackResult<bool> result)
         {
             base.PreTakeDamage(damageInfo, result);
             bool bypassBossArmor = damageInfo.HasEffect(VanillaDamageEffects.BYPASS_BOSS_ARMOR);

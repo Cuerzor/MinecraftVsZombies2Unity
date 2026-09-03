@@ -24,7 +24,7 @@ namespace MVZ2.GameContent.Armors
             AddTrigger(LevelCallbacks.POST_DESTROY_ARMOR, PostArmorDestroyCallback);
             AddTrigger(VanillaLevelCallbacks.POST_PROJECTILE_HIT, PostProjectileHitCallback);
         }
-        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var info = param.deathInfo;
@@ -37,7 +37,7 @@ namespace MVZ2.GameContent.Armors
                 return;
             shield.Destroy();
         }
-        private void PostArmorDestroyCallback(LevelCallbacks.PostArmorDestroyParams param, CallbackResult result)
+        private void PostArmorDestroyCallback(LevelCallbacks.PostArmorDestroyParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var armor = param.armor;
@@ -47,7 +47,7 @@ namespace MVZ2.GameContent.Armors
             var pos = entity.Position + new Vector3(entity.GetFacingX() * 20, 40, 0);
             entity.CreateFragmentAndPlay(pos, VanillaFragmentID.reflectiveBarrier, emitSpeed: 500);
         }
-        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams param, CallbackResult result)
+        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams param, CallbackResultVoid result)
         {
             var hit = param.hit;
             var damage = param.damage;

@@ -140,7 +140,7 @@ namespace MVZ2.GameContent.Buffs.Entities
         {
             return buff.GetProperty<int>(PROP_EXPLODE_TIME);
         }
-        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var info = param.deathInfo;

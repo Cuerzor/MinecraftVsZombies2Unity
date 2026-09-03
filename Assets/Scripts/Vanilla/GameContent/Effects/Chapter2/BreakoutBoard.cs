@@ -97,7 +97,7 @@ namespace MVZ2.GameContent.Effects
             }
             entity.SetAnimationBool("Upgraded", IsUpgraded(entity));
         }
-        private void PostPointerActionCallback(LogicCallbacks.PostPointerActionParams param, CallbackResult result)
+        private void PostPointerActionCallback(LogicCallbacks.PostPointerActionParams param, CallbackResultVoid result)
         {
             var type = param.type;
             var phase = param.phase;

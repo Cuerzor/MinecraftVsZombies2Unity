@@ -14,6 +14,7 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
+using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Damages;
@@ -28,11 +29,11 @@ namespace MVZ2.GameContent.HeldItems
         public SwordHeldItemBehaviour(string nsp, string name) : base(nsp, name)
         {
         }
-        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
         {
             result.SetFinalValue(VanillaModelID.swordHeldItem);
         }
-        public override void GetRadius(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public override void GetRadius(LevelEngine level, IHeldItemData data, CallbackResult<float> result)
         {
             result.SetFinalValue(16);
         }

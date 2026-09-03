@@ -25,7 +25,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
             AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback, filter: EntityTypes.PROJECTILE);
             AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostContactGroundCallback);
         }
-        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams args, CallbackResult result)
+        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams args, CallbackResultVoid result)
         {
             var entity = args.entity;
             foreach (var buff in entity.GetBuffs(this))
@@ -33,7 +33,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
                 Explode(buff, entity);
             }
         }
-        private void PostContactGroundCallback(LevelCallbacks.PostEntityContactGroundParams args, CallbackResult result)
+        private void PostContactGroundCallback(LevelCallbacks.PostEntityContactGroundParams args, CallbackResultVoid result)
         {
             var entity = args.entity;
             foreach (var buff in entity.GetBuffs(this))

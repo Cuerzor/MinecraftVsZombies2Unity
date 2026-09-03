@@ -31,7 +31,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         {
             mod.AddTrigger(LogicCallbacks.TALK_ACTION, TalkAction);
         }
-        private void TalkAction(LogicCallbacks.TalkActionParams param, CallbackResult result)
+        private void TalkAction(LogicCallbacks.TalkActionParams param, CallbackResultVoid result)
         {
             var system = param.system;
             var cmd = param.action;

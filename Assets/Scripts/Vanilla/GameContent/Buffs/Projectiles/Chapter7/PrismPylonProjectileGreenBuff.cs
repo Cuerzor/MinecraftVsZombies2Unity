@@ -24,7 +24,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
         {
             AddTrigger(VanillaLevelCallbacks.POST_PROJECTILE_HIT, PostProjectileHitCallback);
         }
-        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams args, CallbackResult result)
+        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams args, CallbackResultVoid result)
         {
             var entity = args.hit.Projectile;
             var vel = entity.Velocity;

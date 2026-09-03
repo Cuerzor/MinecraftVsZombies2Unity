@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.HeldItems
         {
             AddTrigger(LogicCallbacks.POST_POINTER_ACTION, PostPointerActionCallback, filter: PointerPhase.Press);
         }
-        private void PostPointerActionCallback(LogicCallbacks.PostPointerActionParams param, CallbackResult result)
+        private void PostPointerActionCallback(LogicCallbacks.PostPointerActionParams param, CallbackResultVoid result)
         {
             var type = param.type;
             var button = param.button;

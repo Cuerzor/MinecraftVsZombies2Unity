@@ -26,7 +26,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             mod.AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEnemyDeathCallback, filter: EntityTypes.ENEMY);
             mod.AddTrigger(LevelCallbacks.POST_GAME_OVER, PostGameOverCallback);
         }
-        private void PostUseEntityBlueprintCallback(LogicLevelCallbacks.PostUseEntityBlueprintParams param, CallbackResult callbackResult)
+        private void PostUseEntityBlueprintCallback(LogicLevelCallbacks.PostUseEntityBlueprintParams param, CallbackResultVoid callbackResult)
         {
             var output = param.placeOutput;
             var entity = output.entity;
@@ -51,7 +51,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 }
             }
         }
-        private void PostContraptionDestroyCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostContraptionDestroyCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             if (entity.Level.IsIZombie())
@@ -63,12 +63,12 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 Global.Saves.AddStat(VanillaStats.CATEGORY_CONTRAPTION_DESTROY, entity.GetDefinitionID(), 1);
             }
         }
-        private void PostContraptionEvokeCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostContraptionEvokeCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             Global.Saves.AddStat(VanillaStats.CATEGORY_CONTRAPTION_EVOKE, entity.GetDefinitionID(), 1);
         }
-        private void PostEnemySpawnedCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostEnemySpawnedCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             if (!entity.Level.IsIZombie())
@@ -76,7 +76,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 Global.Saves.AddStat(VanillaStats.CATEGORY_ENEMY_SPAWN, entity.GetDefinitionID(), 1);
             }
         }
-        private void PostEnemyNeutralizeCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostEnemyNeutralizeCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             if (!entity.Level.IsIZombie())
@@ -86,7 +86,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 Global.Saves.AddStat(VanillaStats.CATEGORY_ENEMY_NEUTRALIZE, entity.GetDefinitionID(), 1);
             }
         }
-        private void PostEnemyDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEnemyDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             if (entity.Level.IsIZombie())
@@ -94,7 +94,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 Global.Saves.AddStat(VanillaStats.CATEGORY_IZ_ENEMY_DEATH, entity.GetDefinitionID(), 1);
             }
         }
-        private void PostGameOverCallback(LevelCallbacks.PostGameOverParams param, CallbackResult result)
+        private void PostGameOverCallback(LevelCallbacks.PostGameOverParams param, CallbackResultVoid result)
         {
             var killer = param.killer;
             var level = param.level;

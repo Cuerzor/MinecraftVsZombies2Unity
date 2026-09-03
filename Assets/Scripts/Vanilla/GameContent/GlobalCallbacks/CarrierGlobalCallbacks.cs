@@ -17,7 +17,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         {
             mod.AddTrigger(LevelCallbacks.POST_ENTITY_INIT, EntityInitCallback, filter: EntityTypes.PLANT);
         }
-        private void EntityInitCallback(EntityCallbackParams param, CallbackResult result)
+        private void EntityInitCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             gridBuffer.Clear();

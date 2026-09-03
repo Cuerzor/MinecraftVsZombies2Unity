@@ -17,7 +17,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         {
             mod.AddTrigger(LogicLevelCallbacks.CALCULATE_SPAWN_POINTS, CalculateSpawnPointsCallback);
         }
-        private void CalculateSpawnPointsCallback(LogicLevelCallbacks.CalculateSpawnPointParams param, CallbackResult result)
+        private void CalculateSpawnPointsCallback(LogicLevelCallbacks.CalculateSpawnPointParams param, CallbackResultVoid result)
         {
             var level = param.level;
             var wave = param.wave;

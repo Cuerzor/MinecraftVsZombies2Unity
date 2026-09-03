@@ -33,7 +33,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             mod.AddTrigger(VanillaLevelCallbacks.POST_EJECTED_ENTITY_LAND, PostEjectedEntityLandCallback);
             mod.AddTrigger(VanillaLevelCallbacks.POST_COMMAND_BLOCK_TRANSFORM, PostCommandBlockTransformCallback);
         }
-        private void PostEjectedEntityLandCallback(VanillaLevelCallbacks.PostEjectedEntityLandParams param, CallbackResult result)
+        private void PostEjectedEntityLandCallback(VanillaLevelCallbacks.PostEjectedEntityLandParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var damageMultiplier = param.damageMultiplier;
@@ -63,7 +63,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 }
             }
         }
-        private void PostCommandBlockTransformCallback(VanillaLevelCallbacks.PostCommandBlockTransformParams args, CallbackResult result)
+        private void PostCommandBlockTransformCallback(VanillaLevelCallbacks.PostCommandBlockTransformParams args, CallbackResultVoid result)
         {
             var commandBlock = args.commandBlock;
             var transformed = args.transformed;

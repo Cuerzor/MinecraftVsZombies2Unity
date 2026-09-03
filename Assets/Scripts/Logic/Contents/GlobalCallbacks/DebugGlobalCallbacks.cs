@@ -14,7 +14,7 @@ namespace MVZ2Logic.Contents.GlobalCallbacks
         {
             mod.AddTrigger(LogicCallbacks.IS_SPECIAL_USER_NAME, IsSpecialUserNameCallback);
         }
-        public void IsSpecialUserNameCallback(StringCallbackParams param, CallbackResult result)
+        public void IsSpecialUserNameCallback(StringCallbackParams param, CallbackResult<bool> result)
         {
             var name = param.text;
             if (Global.Saves.IsDebugUserName(name))

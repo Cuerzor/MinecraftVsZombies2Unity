@@ -41,7 +41,7 @@ namespace MVZ2.GameContent.Enemies
             entity.PlayDeathSound();
             entity.Remove();
         }
-        public override void PreTakeDamage(DamageInput input, CallbackResult result)
+        public override void PreTakeDamage(DamageInput input, CallbackResult<bool> result)
         {
             base.PreTakeDamage(input, result);
             var entity = input.Entity;

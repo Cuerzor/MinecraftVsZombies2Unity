@@ -7,6 +7,7 @@ using MVZ2Logic.Definitions;
 using MVZ2Logic.Entities;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Level;
+using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
@@ -41,7 +42,7 @@ namespace MVZ2.GameContent.HeldItems
                 entity.Level.AddPickaxeRemainCount(-1);
             }
         }
-        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
         {
             result.SetFinalValue(VanillaModelID.pickaxeHeldItem);
         }

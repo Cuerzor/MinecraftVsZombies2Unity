@@ -25,7 +25,7 @@ namespace MVZ2.GameContent.Artifacts
         {
             AddTrigger(VanillaLevelCallbacks.ENEMY_DROP_REWARDS, EnemyDropRewardsCallback);
         }
-        private void EnemyDropRewardsCallback(EntityCallbackParams param, CallbackResult result)
+        private void EnemyDropRewardsCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             if (entity.HasNoReward())

@@ -43,7 +43,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
             }
             SetAttackSpeedMultiplier(buff, speedMultiplier);
         }
-        private void PostEnemyTakeDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResult result)
+        private void PostEnemyTakeDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResultVoid result)
         {
             var output = param.output;
             if (output == null)

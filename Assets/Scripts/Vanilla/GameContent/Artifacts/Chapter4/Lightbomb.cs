@@ -22,7 +22,7 @@ namespace MVZ2.GameContent.Artifacts
         {
             AddTrigger(VanillaLevelCallbacks.POST_CONTRAPTION_DETONATE, PostContraptionDetonateCallback);
         }
-        public void PostContraptionDetonateCallback(EntityCallbackParams param, CallbackResult result)
+        public void PostContraptionDetonateCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var contraption = param.entity;
             var level = contraption.Level;

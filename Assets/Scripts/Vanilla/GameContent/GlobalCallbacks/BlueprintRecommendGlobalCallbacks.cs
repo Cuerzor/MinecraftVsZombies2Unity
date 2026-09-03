@@ -28,11 +28,11 @@ namespace MVZ2.GameContent.GlobalCallbacks
     {
         public override void Apply(Mod mod)
         {
-            mod.AddTrigger(LogicLevelCallbacks.GET_BLUEPRINT_NOT_RECOMMONDED, GetBlueprintNotRecommondedCallback);
+            mod.AddTrigger(LogicLevelCallbacks.GET_BLUEPRINT_NOT_RECOMMENDED, GetBlueprintNotRecommondedCallback);
             mod.AddTrigger(LogicLevelCallbacks.GET_BLUEPRINT_WARNINGS, GetBlueprintWarningsCallback);
         }
 
-        private void GetBlueprintNotRecommondedCallback(LogicLevelCallbacks.GetBlueprintNotRecommondedParams param, CallbackResult callbackResult)
+        private void GetBlueprintNotRecommondedCallback(LogicLevelCallbacks.GetBlueprintNotRecommondedParams param, CallbackResult<bool> callbackResult)
         {
             var level = param.level;
             var blueprint = param.blueprintID;
@@ -82,7 +82,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 }
             }
         }
-        private void GetBlueprintWarningsCallback(LogicLevelCallbacks.GetBlueprintWarningsParams param, CallbackResult callbackResult)
+        private void GetBlueprintWarningsCallback(LogicLevelCallbacks.GetBlueprintWarningsParams param, CallbackResultVoid callbackResult)
         {
             var level = param.level;
             var chosenBlueprints = param.chosenBlueprints;

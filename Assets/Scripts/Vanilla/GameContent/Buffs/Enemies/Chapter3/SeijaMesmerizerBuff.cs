@@ -14,7 +14,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
         {
             AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback);
         }
-        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var info = param.deathInfo;

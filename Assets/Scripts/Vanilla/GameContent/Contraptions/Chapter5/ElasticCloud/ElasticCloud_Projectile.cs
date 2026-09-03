@@ -16,7 +16,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             AddTrigger(VanillaLevelCallbacks.PRE_PROJECTILE_HIT, PreProjectileHitCallback);
         }
-        private void PreProjectileHitCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult result)
+        private void PreProjectileHitCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult<bool> result)
         {
             var hit = param.hit;
             var proj = hit.Projectile;

@@ -354,16 +354,16 @@ namespace MVZ2.Level
                 await ExitLevelToNote(exitTargetNoteID);
             }
         }
-        private void PostWaveFinishedCallback(LevelCallbacks.PostWaveParams param, CallbackResult result)
+        private void PostWaveFinishedCallback(LevelCallbacks.PostWaveParams param, CallbackResultVoid result)
         {
             UpdateLevelName();
         }
-        private void PostHugeWaveApproachCallback(LevelCallbackParams param, CallbackResult result)
+        private void PostHugeWaveApproachCallback(LevelCallbackParams param, CallbackResultVoid result)
         {
             var ui = GetUIPreset();
             ui.ShowHugeWaveText();
         }
-        private void PostFinalWaveCallback(LevelCallbackParams param, CallbackResult result)
+        private void PostFinalWaveCallback(LevelCallbackParams param, CallbackResultVoid result)
         {
             var ui = GetUIPreset();
             ui.ShowFinalWaveText();

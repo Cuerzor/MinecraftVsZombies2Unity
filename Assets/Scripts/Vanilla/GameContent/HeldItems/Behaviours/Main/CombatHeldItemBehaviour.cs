@@ -281,7 +281,7 @@ namespace MVZ2.GameContent.HeldItems
             var dragPosition = GetDragPosition(data);
             return Vector2.SqrMagnitude(dragPosition - dragStartPosition) > 1;
         }
-        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
         {
             base.GetModelID(level, data, result);
             result.SetFinalValue(VanillaModelID.combat);

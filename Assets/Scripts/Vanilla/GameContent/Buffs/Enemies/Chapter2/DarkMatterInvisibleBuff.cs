@@ -24,7 +24,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
             AddAura(new ArmorInvisibleAura());
             AddTrigger(LevelCallbacks.POST_GAME_OVER, PostGameOverCallback);
         }
-        private void PostGameOverCallback(LevelCallbacks.PostGameOverParams param, CallbackResult result)
+        private void PostGameOverCallback(LevelCallbacks.PostGameOverParams param, CallbackResultVoid result)
         {
             var level = param.level;
             foreach (var entity in level.FindEntities(e => e.HasBuff<DarkMatterInvisibleBuff>()))

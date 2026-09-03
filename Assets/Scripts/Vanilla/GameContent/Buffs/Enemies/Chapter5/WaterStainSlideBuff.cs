@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
             AddModifier(new FloatModifier(EngineEntityProps.FRICTION, NumberOperator.Multiply, 0.01f));
             AddModifier(new FloatModifier(VanillaEntityProps.BLOW_MASS_OFFSET, NumberOperator.Add, -1));
         }
-        private void PostUpdateCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostUpdateCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             if (entity.IsDead)

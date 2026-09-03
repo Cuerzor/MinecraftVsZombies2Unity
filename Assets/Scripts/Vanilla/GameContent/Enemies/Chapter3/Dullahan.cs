@@ -45,7 +45,7 @@ namespace MVZ2.GameContent.Enemies
             });
             entity.SetAnimationBool("HoldingHead", !IsHeadDropped(entity));
         }
-        private void PostEntityCharmCallback(VanillaLevelCallbacks.PostApplyStatusEffectParams param, CallbackResult result)
+        private void PostEntityCharmCallback(VanillaLevelCallbacks.PostApplyStatusEffectParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var buff = param.buff;

@@ -7,6 +7,7 @@ using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Level;
 using PVZEngine.Models;
+using UnityEngine;
 
 namespace MVZ2Logic.HeldItems
 {
@@ -42,13 +43,13 @@ namespace MVZ2Logic.HeldItems
         public virtual void OnSetModel(LevelEngine level, IHeldItemData data, IModelInterface? model)
         {
         }
-        public virtual void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public virtual void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
         {
         }
-        public virtual void GetModelOffset(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public virtual void GetModelOffset(LevelEngine level, IHeldItemData data, CallbackResult<Vector3> result)
         {
         }
-        public virtual void GetRadius(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public virtual void GetRadius(LevelEngine level, IHeldItemData data, CallbackResult<float> result)
         {
         }
         public void ResetHeldItemIfType(LevelEngine level, NamespaceID type)

@@ -22,7 +22,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
             AddModifier(new IntModifier(VanillaEntityProps.AIR_INTERACTION, IntegerOperator.Set, WaterInteraction.FLOAT));
             AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostDeathCallback);
         }
-        private void PostDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             if (!entity.HasBuff<BoatBuff>())

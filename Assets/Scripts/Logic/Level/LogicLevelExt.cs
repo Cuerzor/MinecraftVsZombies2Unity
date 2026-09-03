@@ -57,7 +57,7 @@ namespace MVZ2Logic.Level
                 level = level,
                 blueprintID = blueprint
             };
-            return level.Triggers.RunCallbackWithResultFiltered(LogicLevelCallbacks.GET_BLUEPRINT_NOT_RECOMMONDED, param, false, blueprint);
+            return level.Triggers.RunCallbackWithResultFiltered(LogicLevelCallbacks.GET_BLUEPRINT_NOT_RECOMMENDED, param, false, blueprint);
         }
         public static void SetupBattleBlueprints(this LevelEngine level, BlueprintChooseItem[] items)
         {

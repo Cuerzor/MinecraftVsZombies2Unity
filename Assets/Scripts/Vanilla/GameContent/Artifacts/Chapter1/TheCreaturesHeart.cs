@@ -32,7 +32,7 @@ namespace MVZ2.GameContent.Artifacts
             base.PostUpdate(artifact);
             artifact.SetGlowing(true);
         }
-        private void PostLevelStartCallback(LevelCallbackParams param, CallbackResult result)
+        private void PostLevelStartCallback(LevelCallbackParams param, CallbackResultVoid result)
         {
             var level = param.level;
             foreach (var artifact in level.GetArtifacts())
@@ -45,7 +45,7 @@ namespace MVZ2.GameContent.Artifacts
                 aura.UpdateAura();
             }
         }
-        private void PostEntityInitCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostEntityInitCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var contraption = param.entity;
             var level = contraption.Level;
@@ -59,7 +59,7 @@ namespace MVZ2.GameContent.Artifacts
                 aura.UpdateAura();
             }
         }
-        private void PostEntityRemoveCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostEntityRemoveCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var contraption = param.entity;
             var level = contraption.Level;

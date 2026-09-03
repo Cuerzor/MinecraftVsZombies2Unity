@@ -79,7 +79,7 @@ namespace MVZ2.GameContent.Contraptions
                 e.PlaySound(VanillaSoundID.bombFalling);
             });
         }
-        private void ApplyDamageSpecialEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResult result)
+        private void ApplyDamageSpecialEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResultVoid result)
         {
             var output = param.output;
             var hellfire = output.Entity;

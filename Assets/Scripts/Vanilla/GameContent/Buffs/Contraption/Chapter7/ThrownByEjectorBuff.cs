@@ -31,7 +31,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             AddTrigger(LevelCallbacks.POST_ENTITY_COLLISION, PostEntityCollisionCallback);
             AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostEntityContactGroundCallback, priority: 1);
         }
-        private void PostEntityCollisionCallback(LevelCallbacks.PostEntityCollisionParams args, CallbackResult result)
+        private void PostEntityCollisionCallback(LevelCallbacks.PostEntityCollisionParams args, CallbackResultVoid result)
         {
             var state = args.state;
             if (state != EntityCollisionHelper.STATE_ENTER)
@@ -55,7 +55,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             other.TakeDamage(damage, new DamageEffectList(VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN), entity);
             other.Entity.PlaySound(VanillaSoundID.punch);
         }
-        private void PostEntityContactGroundCallback(LevelCallbacks.PostEntityContactGroundParams args, CallbackResult result)
+        private void PostEntityContactGroundCallback(LevelCallbacks.PostEntityContactGroundParams args, CallbackResultVoid result)
         {
             var entity = args.entity;
             var buffs = entity.GetBuffs<ThrownByEjectorBuff>();

@@ -73,7 +73,7 @@ namespace MVZ2.GameContent.Buffs.Entities
                 return;
             }
         }
-        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             if (!entity.HasBuff(this))

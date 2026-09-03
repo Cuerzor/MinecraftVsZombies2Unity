@@ -23,7 +23,7 @@ namespace MVZ2.GameContent.Artifacts
             base.PostUpdate(artifact);
             artifact.SetGlowing(true);
         }
-        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult result)
+        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult<bool> result)
         {
             var input = param.input;
             if (!input.HasEffect(VanillaDamageEffects.FIRE))

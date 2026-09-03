@@ -39,7 +39,7 @@ namespace MVZ2.GameContent.Contraptions
                 entity.SpawnWithParams(VanillaContraptionID.lilyPad, tile.GetEntityPosition());
             }
         }
-        private void PostEntityEjectCallback(VanillaLevelCallbacks.PostEntityEjectParams args, CallbackResult result)
+        private void PostEntityEjectCallback(VanillaLevelCallbacks.PostEntityEjectParams args, CallbackResultVoid result)
         {
             var entity = args.entity;
             if (!entity.HasBehaviour(this))

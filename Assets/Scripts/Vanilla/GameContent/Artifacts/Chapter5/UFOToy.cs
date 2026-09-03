@@ -22,7 +22,7 @@ namespace MVZ2.GameContent.Artifacts
         {
             AddTrigger(VanillaLevelCallbacks.POST_PICKUP_COLLECT, PostPickupCollectCallback);
         }
-        private void PostPickupCollectCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostPickupCollectCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var pickup = param.entity;
             var level = pickup.Level;

@@ -147,7 +147,7 @@ namespace MVZ2.GameContent.Bosses
                 }
             }
         }
-        private void PreProjectileHitCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult result)
+        private void PreProjectileHitCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult<bool> result)
         {
             var hit = param.hit;
             var self = hit.Other;

@@ -107,7 +107,7 @@ namespace MVZ2.GameContent.Stages
                 e.AddBuff<SeijaMesmerizerBuff>();
             });
         }
-        private void PostGravityPadEvokeCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostGravityPadEvokeCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var contraption = param.entity;
             var level = contraption.Level;

@@ -25,7 +25,7 @@ namespace MVZ2.GameContent.Shells
             AddTrigger(VanillaLevelCallbacks.PRE_ARMOR_TAKE_DAMAGE, PreArmorTakeDamageCallback, VanillaCallbackPriorities.LATE);
             SetProperty(VanillaShellProps.DENSITY, 0f);
         }
-        private void PreBodyTakeDamageCallback(VanillaLevelCallbacks.PreBodyTakeDamageParams param, CallbackResult result)
+        private void PreBodyTakeDamageCallback(VanillaLevelCallbacks.PreBodyTakeDamageParams param, CallbackResult<int> result)
         {
             var input = param.input;
             var shell = input.Entity.GetShellDefinition();
@@ -34,7 +34,7 @@ namespace MVZ2.GameContent.Shells
             input.Entity.HealEffectsSourced(input.Amount, input.Source);
             result.SetFinalValue(DamageStates.BREAK);
         }
-        private void PreArmorTakeDamageCallback(VanillaLevelCallbacks.PreArmorTakeDamageParams param, CallbackResult result)
+        private void PreArmorTakeDamageCallback(VanillaLevelCallbacks.PreArmorTakeDamageParams param, CallbackResult<int> result)
         {
             var input = param.input;
             var armor = param.armor;

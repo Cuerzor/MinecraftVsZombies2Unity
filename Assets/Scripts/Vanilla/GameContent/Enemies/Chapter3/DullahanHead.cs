@@ -26,7 +26,7 @@ namespace MVZ2.GameContent.Enemies
             var buff = entity.AddBuff<FlyBuff>();
             buff.SetProperty(FlyBuff.PROP_TARGET_HEIGHT, 20f);
         }
-        private void PostEntityCharmCallback(VanillaLevelCallbacks.PostApplyStatusEffectParams param, CallbackResult result)
+        private void PostEntityCharmCallback(VanillaLevelCallbacks.PostApplyStatusEffectParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var buff = param.buff;

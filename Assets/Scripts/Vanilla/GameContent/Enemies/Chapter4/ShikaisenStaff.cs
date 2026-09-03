@@ -56,7 +56,7 @@ namespace MVZ2.GameContent.Enemies
             entity.SetModelProperty("InAir", !onGround);
             entity.SetAnimationFloat("Range", entity.GetRange());
         }
-        public override void PreTakeDamage(DamageInput input, CallbackResult result)
+        public override void PreTakeDamage(DamageInput input, CallbackResult<bool> result)
         {
             base.PreTakeDamage(input, result);
             var entity = input.Entity;
@@ -65,7 +65,7 @@ namespace MVZ2.GameContent.Enemies
                 input.SetAmount(entity.GetMaxHealth() * 10);
             }
         }
-        private void PostEnemyDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEnemyDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var info = param.deathInfo;

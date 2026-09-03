@@ -39,7 +39,7 @@ namespace MVZ2.GameContent.Projectiles
         {
             IceBlast(entity);
         }
-        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams args, CallbackResult result)
+        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams args, CallbackResultVoid result)
         {
             var info = args.hit;
             var projectile = info.Projectile;

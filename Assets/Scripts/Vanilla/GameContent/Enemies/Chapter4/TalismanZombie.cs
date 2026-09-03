@@ -50,7 +50,7 @@ namespace MVZ2.GameContent.Enemies
                 }
             }
         }
-        private void PostEntityTakeDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResult callbackResult)
+        private void PostEntityTakeDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResultVoid callbackResult)
         {
             var output = param.output;
             var level = output.Entity.Level;

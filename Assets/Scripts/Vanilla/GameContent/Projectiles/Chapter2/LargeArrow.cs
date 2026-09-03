@@ -32,7 +32,7 @@ namespace MVZ2.GameContent.Projectiles
             newRotation.z %= 360;
             projectile.RenderRotation = newRotation;
         }
-        private void PostHitEntityCallback(VanillaLevelCallbacks.PostProjectileHitParams param, CallbackResult result)
+        private void PostHitEntityCallback(VanillaLevelCallbacks.PostProjectileHitParams param, CallbackResultVoid result)
         {
             var hitResult = param.hit;
             var projectile = hitResult.Projectile;

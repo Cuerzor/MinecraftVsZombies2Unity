@@ -73,7 +73,7 @@ namespace MVZ2.GlobalGames
         {
             callbacks.RunCallback(callbackType, args);
         }
-        public TResult? RunCallbackWithResult<TArgs, TResult>(CallbackType<TArgs> callbackType, TArgs args, TResult? result)
+        public TResult? RunCallbackWithResult<TArgs, TResult>(CallbackType<TArgs, TResult> callbackType, TArgs args, TResult? result)
         {
             return callbacks.RunCallbackWithResult(callbackType, args, result);
         }
@@ -82,7 +82,7 @@ namespace MVZ2.GlobalGames
         {
             callbacks.RunCallbackFiltered(callbackType, args, filter);
         }
-        public TResult? RunCallbackWithResultFiltered<TArgs, TResult>(CallbackType<TArgs> callbackType, TArgs args, TResult? result, object? filter)
+        public TResult? RunCallbackWithResultFiltered<TArgs, TResult>(CallbackType<TArgs, TResult> callbackType, TArgs args, TResult? result, object? filter)
         {
             return callbacks.RunCallbackWithResultFiltered(callbackType, args, result, filter);
         }

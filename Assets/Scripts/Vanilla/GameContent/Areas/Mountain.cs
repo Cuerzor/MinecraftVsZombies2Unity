@@ -63,7 +63,7 @@ namespace MVZ2.GameContent.Areas
             }
             return base.GetGroundY(level, x, z);
         }
-        private void IsWaterCallback(LogicLevelCallbacks.IsTerrainCallbackParams args, CallbackResult result)
+        private void IsWaterCallback(LogicLevelCallbacks.IsTerrainCallbackParams args, CallbackResult<bool> result)
         {
             var level = args.level;
             if (level.AreaID != VanillaAreaID.mountain)

@@ -58,7 +58,7 @@ namespace MVZ2.GameContent.Obstacles
             }
             entity.SetAnimationFloat("SpinSpeed", spinSpeed);
         }
-        private void PostHugeWaveEventCallback(LevelCallbackParams param, CallbackResult result)
+        private void PostHugeWaveEventCallback(LevelCallbackParams param, CallbackResultVoid result)
         {
             var level = param.level;
             level.AddBuff<DelayedSpawnerTriggerBuff>();

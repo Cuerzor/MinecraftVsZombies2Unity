@@ -22,7 +22,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         {
             mod.AddTrigger(LogicLevelCallbacks.POST_USE_ENTITY_BLUEPRINT, EnginePostUseEntityBlueprintCallback);
         }
-        private void EnginePostUseEntityBlueprintCallback(LogicLevelCallbacks.PostUseEntityBlueprintParams param, CallbackResult callbackResult)
+        private void EnginePostUseEntityBlueprintCallback(LogicLevelCallbacks.PostUseEntityBlueprintParams param, CallbackResultVoid callbackResult)
         {
             if (!Global.Options.ShowSponsorNames())
                 return;

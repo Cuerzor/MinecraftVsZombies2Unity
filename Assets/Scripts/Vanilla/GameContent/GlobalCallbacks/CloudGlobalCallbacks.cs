@@ -16,7 +16,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         {
             mod.AddTrigger(LevelCallbacks.POST_ENTITY_UPDATE, EntityUpdateCallback);
         }
-        private void EntityUpdateCallback(EntityCallbackParams param, CallbackResult result)
+        private void EntityUpdateCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             UpdateCloud(entity);

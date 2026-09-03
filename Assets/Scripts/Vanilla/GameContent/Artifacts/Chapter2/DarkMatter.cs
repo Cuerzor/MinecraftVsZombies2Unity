@@ -26,7 +26,7 @@ namespace MVZ2.GameContent.Artifacts
             base.PostUpdate(artifact);
             artifact.SetGlowing(true);
         }
-        private void PostEnemyInitCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostEnemyInitCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             if (!entity.Level.HasArtifact(GetID()))

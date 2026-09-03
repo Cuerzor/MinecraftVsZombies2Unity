@@ -65,7 +65,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
             buff.SetProperty(PROP_COLOR_OFFSET, new Color(0, 1, 0, alpha));
             buff.SetProperty(PROP_TIME, time);
         }
-        private void PostEnemyDropRewardsCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostEnemyDropRewardsCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var enemy = param.entity;
             var buffs = enemy.GetBuffs<StarshardCarrierBuff>();

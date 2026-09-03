@@ -28,7 +28,7 @@ namespace MVZ2.GameContent.Artifacts
             }
             artifact.SetGlowing(number == MAX_NUMBER - 1);
         }
-        private void PostUseStarshardCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostUseStarshardCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var contraption = param.entity;
             var level = contraption.Level;

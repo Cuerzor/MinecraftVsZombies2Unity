@@ -55,7 +55,7 @@ namespace MVZ2.GameContent.Buffs.Entities
                 return;
             model.SetModelProperty("Size", entity.GetSize());
         }
-        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult result)
+        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult<bool> result)
         {
             var input = param.input;
             if (NamespaceID.IsValid(input.ShieldTarget))
@@ -77,7 +77,7 @@ namespace MVZ2.GameContent.Buffs.Entities
             result.SetFinalValue(false);
             PlayBreakEffect(entity);
         }
-        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var info = param.deathInfo;

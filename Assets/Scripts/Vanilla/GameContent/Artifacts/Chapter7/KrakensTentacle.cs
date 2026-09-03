@@ -30,7 +30,7 @@ namespace MVZ2.GameContent.Artifacts
             base.PostUpdate(artifact);
             artifact.SetGlowing(true);
         }
-        private void PreProjectileShotCallback(VanillaLevelCallbacks.PreProjectileShotParams args, CallbackResult result)
+        private void PreProjectileShotCallback(VanillaLevelCallbacks.PreProjectileShotParams args, CallbackResult<bool> result)
         {
             var source = args.source;
             var level = source.Level;

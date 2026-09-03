@@ -27,7 +27,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             mod.AddTrigger(LevelCallbacks.POST_ENTITY_INIT, Gem_PostEnemyInitCallback, filter: EntityTypes.ENEMY);
             mod.AddTrigger(LevelCallbacks.POST_LEVEL_UPDATE, Gem_PostUpdateCallback);
         }
-        private void Gem_PostUpdateCallback(LevelCallbackParams param, CallbackResult result)
+        private void Gem_PostUpdateCallback(LevelCallbackParams param, CallbackResultVoid result)
         {
             var level = param.level;
             var firstGem = level.GetProperty<EntityID>(FIRST_GEM);
@@ -43,7 +43,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 level.HideHintArrow();
             }
         }
-        private void Gem_PostPickupInitCallback(EntityCallbackParams param, CallbackResult result)
+        private void Gem_PostPickupInitCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var pickup = param.entity;
             if (pickup.GetMoneyValue() <= 0)
@@ -62,7 +62,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 level.ShowAdvice(adviceContext, adviceText, 1000, -1);
             }
         }
-        private void Gem_PostEnemyInitCallback(EntityCallbackParams param, CallbackResult result)
+        private void Gem_PostEnemyInitCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var enemy = param.entity;
             var level = enemy.Level;

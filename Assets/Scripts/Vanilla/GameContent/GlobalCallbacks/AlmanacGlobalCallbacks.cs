@@ -28,7 +28,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         {
             mod.AddTrigger(LogicCallbacks.GET_ALMANAC_ENTRY_TAGS, GetAlmanacEntryTagsCallback);
         }
-        private void GetAlmanacEntryTagsCallback(LogicCallbacks.GetAlmanacEntryTagsParams param, CallbackResult result)
+        private void GetAlmanacEntryTagsCallback(LogicCallbacks.GetAlmanacEntryTagsParams param, CallbackResultVoid result)
         {
             var category = param.category;
             var entryID = param.entryID;

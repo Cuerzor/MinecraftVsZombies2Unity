@@ -21,7 +21,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
         {
             AddTrigger(VanillaLevelCallbacks.ENEMY_DROP_REWARDS, PostEnemyDropRewardsCallback);
         }
-        private void PostEnemyDropRewardsCallback(EntityCallbackParams param, CallbackResult result)
+        private void PostEnemyDropRewardsCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var enemy = param.entity;
             var buffs = enemy.GetBuffs<GemCarrierBuff>();

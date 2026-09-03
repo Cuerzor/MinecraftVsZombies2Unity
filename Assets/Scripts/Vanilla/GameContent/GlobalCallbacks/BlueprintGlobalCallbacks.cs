@@ -22,7 +22,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             mod.AddTrigger(LogicLevelCallbacks.POST_USE_ENTITY_BLUEPRINT, PostUseEntityBlueprintCallback);
             mod.AddTrigger(LogicCallbacks.GET_BLUEPRINT_STYLE, GetBlueprintStyleCallback);
         }
-        private void PostUseEntityBlueprintCallback(LogicLevelCallbacks.PostUseEntityBlueprintParams param, CallbackResult callbackResult)
+        private void PostUseEntityBlueprintCallback(LogicLevelCallbacks.PostUseEntityBlueprintParams param, CallbackResultVoid callbackResult)
         {
             var output = param.placeOutput;
             var entity = output.entity;
@@ -61,7 +61,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 seed.SetDrawnConveyorSeed(null);
             }
         }
-        private void GetBlueprintStyleCallback(LogicCallbacks.GetBlueprintStyleParams param, CallbackResult result)
+        private void GetBlueprintStyleCallback(LogicCallbacks.GetBlueprintStyleParams param, CallbackResult<NamespaceID> result)
         {
             var definition = param.blueprintDefinition;
             var seedID = definition.GetID();

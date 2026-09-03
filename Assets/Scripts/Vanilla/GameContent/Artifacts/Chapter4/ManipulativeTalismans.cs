@@ -19,7 +19,7 @@ namespace MVZ2.GameContent.Artifacts
         {
             AddTrigger(VanillaLevelCallbacks.PRE_ENEMY_FAINT, PreEnemyFaintCallback, priority: -100);
         }
-        private void PreEnemyFaintCallback(EntityCallbackParams param, CallbackResult result)
+        private void PreEnemyFaintCallback(EntityCallbackParams param, CallbackResult<bool> result)
         {
             var enemy = param.entity;
             if (!enemy.IsHostileEntity())

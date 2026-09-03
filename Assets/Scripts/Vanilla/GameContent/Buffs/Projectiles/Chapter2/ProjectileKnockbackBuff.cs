@@ -21,7 +21,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
             AddModelInsertion(LogicModelHelper.ANCHOR_CENTER, VanillaModelKeys.knockbackWave, VanillaModelID.knockbackWave);
             AddTrigger(VanillaLevelCallbacks.POST_PROJECTILE_HIT, PostProjectileHitCallback);
         }
-        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams param, CallbackResult result)
+        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams param, CallbackResultVoid result)
         {
             var hit = param.hit;
             var projectile = hit.Projectile;

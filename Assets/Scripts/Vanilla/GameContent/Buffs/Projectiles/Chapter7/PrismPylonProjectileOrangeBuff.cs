@@ -22,7 +22,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
             AddModifier(new IntModifier(VanillaProjectileProps.MAX_PIERCE_COUNT, IntegerOperator.Add, 1));
             AddTrigger(VanillaLevelCallbacks.POST_PROJECTILE_HIT, PostProjectileHitCallback);
         }
-        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams args, CallbackResult result)
+        private void PostProjectileHitCallback(VanillaLevelCallbacks.PostProjectileHitParams args, CallbackResultVoid result)
         {
             var entity = args.hit.Projectile;
             if (!entity.HasBuff(this))

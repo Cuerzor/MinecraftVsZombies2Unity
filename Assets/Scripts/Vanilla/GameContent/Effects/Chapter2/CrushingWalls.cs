@@ -31,7 +31,7 @@ namespace MVZ2.GameContent.Effects
         }
         #endregion
 
-        public void PostPointerActionCallback(LogicCallbacks.PostPointerActionParams param, CallbackResult result)
+        public void PostPointerActionCallback(LogicCallbacks.PostPointerActionParams param, CallbackResultVoid result)
         {
             var type = param.type;
             var phase = param.phase;

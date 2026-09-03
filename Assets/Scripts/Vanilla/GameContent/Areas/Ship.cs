@@ -115,7 +115,7 @@ namespace MVZ2.GameContent.Areas
         {
             return paratroopsToSpawn.Random(rng);
         }
-        private void IsCloudCallback(LogicLevelCallbacks.IsTerrainCallbackParams args, CallbackResult result)
+        private void IsCloudCallback(LogicLevelCallbacks.IsTerrainCallbackParams args, CallbackResult<bool> result)
         {
             var level = args.level;
             if (level.AreaID != VanillaAreaID.ship)

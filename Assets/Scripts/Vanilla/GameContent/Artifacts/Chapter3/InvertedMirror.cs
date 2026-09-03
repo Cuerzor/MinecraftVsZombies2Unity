@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Artifacts
         {
             AddTrigger(VanillaLevelCallbacks.POST_PROJECTILE_SHOT, PostProjectileShotCallback);
         }
-        private void PostProjectileShotCallback(VanillaLevelCallbacks.PostProjectileShotParams args, CallbackResult result)
+        private void PostProjectileShotCallback(VanillaLevelCallbacks.PostProjectileShotParams args, CallbackResultVoid result)
         {
             var projectile = args.projectile;
             if (!projectile.IsHostileEntity())

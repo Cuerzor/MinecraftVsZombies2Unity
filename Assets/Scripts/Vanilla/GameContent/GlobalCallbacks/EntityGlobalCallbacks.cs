@@ -33,7 +33,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             mod.AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEnemyDeathCallback, filter: EntityTypes.ENEMY);
             mod.AddTrigger(LevelCallbacks.POST_DESTROY_ARMOR, PostArmorDestroyCallback);
         }
-        private void PostContactGroundCallback(LevelCallbacks.PostEntityContactGroundParams param, CallbackResult result)
+        private void PostContactGroundCallback(LevelCallbacks.PostEntityContactGroundParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var velocity = param.velocity;
@@ -54,7 +54,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 entity.TakeDamageNoSource(fallDamage, effects);
             }
         }
-        private void ApplyDamageEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResult callbackResult)
+        private void ApplyDamageEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResultVoid callbackResult)
         {
             var output = param.output;
             var entity = output.Entity;
@@ -101,7 +101,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 entity.InflictSlow(300, slowSource);
             }
         }
-        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams args, CallbackResult result)
+        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams args, CallbackResult<bool> result)
         {
             var damageInfo = args.input;
             var entity = damageInfo.Entity;
@@ -110,7 +110,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 damageInfo.Multiply(0);
             }
         }
-        private void PostDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResult callbackResult)
+        private void PostDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResultVoid callbackResult)
         {
             var output = param.output;
             var entity = output.Entity;
@@ -125,7 +125,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             }
             output.PlayHitSound();
         }
-        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var info = param.deathInfo;
@@ -138,7 +138,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 entity.Level.Triggers.RunCallbackFiltered(LogicLevelCallbacks.ENTITY_DEATH_EFFECTS, param, entity.Type);
             }
         }
-        private void PostEnemyDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void PostEnemyDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var info = param.deathInfo;
@@ -146,12 +146,12 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 return;
             entity.Neutralize();
         }
-        private void HealParticlesUpdateCallback(EntityCallbackParams param, CallbackResult result)
+        private void HealParticlesUpdateCallback(EntityCallbackParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             entity.UpdateHealParticles();
         }
-        private void PostArmorDestroyCallback(LevelCallbacks.PostArmorDestroyParams param, CallbackResult result)
+        private void PostArmorDestroyCallback(LevelCallbacks.PostArmorDestroyParams param, CallbackResultVoid result)
         {
             var armor = param.armor;
             var entity = param.entity;

@@ -7,6 +7,7 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
+using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
@@ -29,7 +30,7 @@ namespace MVZ2.GameContent.HeldItems
                 return HeldHighlight.None;
             return HeldHighlight.Green(targetGrid.Target);
         }
-        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
         {
             result.SetFinalValue(VanillaModelID.targetHeldItem);
         }

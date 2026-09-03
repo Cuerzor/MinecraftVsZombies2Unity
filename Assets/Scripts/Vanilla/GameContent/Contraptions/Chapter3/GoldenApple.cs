@@ -35,7 +35,7 @@ namespace MVZ2.GameContent.Contraptions
             entity.PlaySound(VanillaSoundID.sparkle);
         }
 
-        private void PostEnemyMeleeAttackCallback(VanillaLevelCallbacks.EnemyMeleeAttackParams param, CallbackResult result)
+        private void PostEnemyMeleeAttackCallback(VanillaLevelCallbacks.EnemyMeleeAttackParams param, CallbackResultVoid result)
         {
             var enemy = param.enemy;
             var target = param.target;

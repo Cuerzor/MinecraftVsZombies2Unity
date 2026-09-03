@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
         {
             AddTrigger(LogicLevelCallbacks.ENTITY_DEATH_EFFECTS, DeathEffectsCallback, filter: EntityTypes.ENEMY);
         }
-        private void DeathEffectsCallback(LevelCallbacks.EntityDeathParams param, CallbackResult result)
+        private void DeathEffectsCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {
             var entity = param.entity;
             var buffCount = entity.GetBuffCount<ControlRodUnstableBuff>();

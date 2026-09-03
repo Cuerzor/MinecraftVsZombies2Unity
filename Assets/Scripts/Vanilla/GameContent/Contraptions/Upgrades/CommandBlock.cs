@@ -185,7 +185,7 @@ namespace MVZ2.GameContent.Contraptions
             }
             return spawnParam;
         }
-        private void CanContraptionSacrificeCallback(VanillaLevelCallbacks.ContraptionSacrificeValueParams param, CallbackResult result)
+        private void CanContraptionSacrificeCallback(VanillaLevelCallbacks.ContraptionSacrificeValueParams param, CallbackResult<bool> result)
         {
             result.SetFinalValue(false);
         }

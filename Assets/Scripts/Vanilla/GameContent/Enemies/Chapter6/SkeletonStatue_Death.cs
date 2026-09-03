@@ -4,6 +4,7 @@ using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Entities;
 using MVZ2Logic.Entities;
+using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
@@ -18,7 +19,7 @@ namespace MVZ2.GameContent.Enemies
         public SkeletonStatue_Death(string nsp, string name) : base(nsp, name)
         {
         }
-        public override void PreDeath(Entity entity, DeathInfo deathInfo, CallbackResult result)
+        public override void PreDeath(Entity entity, DeathInfo deathInfo, CallbackResult<bool> result)
         {
             base.PreDeath(entity, deathInfo, result);
             if (deathInfo.HasEffect(VanillaDamageEffects.DROWN) || deathInfo.HasEffect(VanillaDamageEffects.FALL_OFF))

@@ -44,7 +44,7 @@ namespace MVZ2.GameContent.Projectiles
             growth = Mathf.Clamp(Mathf.Lerp(growth, MAX_GROWTH, GROWTH_LERP_T), MIN_GROWTH, MAX_GROWTH);
             SetDamageGrowth(projectile, growth);
         }
-        private void PreHitEntityCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult result)
+        private void PreHitEntityCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult<bool> result)
         {
             var hit = param.hit;
             var projectile = hit.Projectile;
@@ -56,7 +56,7 @@ namespace MVZ2.GameContent.Projectiles
                 result.SetFinalValue(false);
             }
         }
-        private void PostHitEntityCallback(VanillaLevelCallbacks.PostProjectileHitParams param, CallbackResult result)
+        private void PostHitEntityCallback(VanillaLevelCallbacks.PostProjectileHitParams param, CallbackResultVoid result)
         {
             var hitResult = param.hit;
             var projectile = hitResult.Projectile;

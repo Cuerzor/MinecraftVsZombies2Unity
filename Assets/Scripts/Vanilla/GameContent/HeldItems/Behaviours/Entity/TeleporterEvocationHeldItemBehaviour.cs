@@ -6,6 +6,7 @@ using MVZ2.GameContent.Models;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
+using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Grids;
 using PVZEngine.Level;
@@ -19,7 +20,7 @@ namespace MVZ2.GameContent.HeldItems
         {
         }
 
-        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
         {
             result.SetFinalValue(VanillaModelID.targetTeleporter);
         }

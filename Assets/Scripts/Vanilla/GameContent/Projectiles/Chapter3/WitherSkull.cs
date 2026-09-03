@@ -29,7 +29,7 @@ namespace MVZ2.GameContent.Projectiles
             projectile.SetModelProperty("Source", projectile.Position);
             projectile.SetModelProperty("Dest", projectile.Position + projectile.Velocity);
         }
-        private void ApplyDamageEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResult callbackResult)
+        private void ApplyDamageEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResultVoid callbackResult)
         {
             var output = param.output;
             if (output == null)

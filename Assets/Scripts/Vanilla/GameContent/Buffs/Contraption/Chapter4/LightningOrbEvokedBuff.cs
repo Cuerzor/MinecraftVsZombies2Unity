@@ -78,7 +78,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
                 }
             }
         }
-        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult result)
+        private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult<bool> result)
         {
             var damage = param.input;
             var entity = damage.Entity;

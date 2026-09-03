@@ -13,12 +13,14 @@ using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
 using MVZ2Logic.Localization;
 using MVZ2Logic.Models;
+using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
 using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.SeedPacks;
+using UnityEngine;
 
 namespace MVZ2.GameContent.HeldItems
 {
@@ -162,7 +164,7 @@ namespace MVZ2.GameContent.HeldItems
         }
         public abstract SeedPack? GetSeedPack(LevelEngine level, IHeldItemData data);
         public abstract SeedDefinition? GetSeedDefinition(LevelEngine level, IHeldItemData data);
-        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
         {
             var seed = GetSeedPack(level, data);
             var seedDef = seed?.Definition;
@@ -171,7 +173,7 @@ namespace MVZ2.GameContent.HeldItems
 
             result.SetFinalValue(seedDef.GetModelID());
         }
-        public override void GetModelOffset(LevelEngine level, IHeldItemData data, CallbackResult result)
+        public override void GetModelOffset(LevelEngine level, IHeldItemData data, CallbackResult<Vector3> result)
         {
             var seed = GetSeedPack(level, data);
             var seedDef = seed?.Definition;

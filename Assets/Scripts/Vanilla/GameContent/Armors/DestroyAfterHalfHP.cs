@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Armors
         {
             AddTrigger(VanillaLevelCallbacks.POST_ENTITY_TAKE_DAMAGE, PostEntityTakeDamageCallback);
         }
-        private void PostEntityTakeDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResult result)
+        private void PostEntityTakeDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResultVoid result)
         {
             var output = param.output;
             var entity = output.Entity;

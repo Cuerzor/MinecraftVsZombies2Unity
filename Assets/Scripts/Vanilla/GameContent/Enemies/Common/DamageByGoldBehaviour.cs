@@ -23,7 +23,7 @@ namespace MVZ2.GameContent.Enemies
             base.Update(entity);
             DamageByGoldenGrid(entity);
         }
-        public override void PreTakeDamage(DamageInput input, CallbackResult result)
+        public override void PreTakeDamage(DamageInput input, CallbackResult<bool> result)
         {
             base.PreTakeDamage(input, result);
             if (input.Effects.HasEffect(VanillaDamageEffects.GOLD))

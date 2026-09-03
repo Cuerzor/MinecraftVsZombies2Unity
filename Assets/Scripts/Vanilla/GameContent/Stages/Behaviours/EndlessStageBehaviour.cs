@@ -57,7 +57,7 @@ namespace MVZ2.GameContent.Stages
                 roundTimer.ResetTime(1800);
             }
         }
-        private void PostWaveFinishedCallback(LevelCallbacks.PostWaveParams param, CallbackResult result)
+        private void PostWaveFinishedCallback(LevelCallbacks.PostWaveParams param, CallbackResultVoid result)
         {
             var level = param.level;
             if (!level.IsEndless())

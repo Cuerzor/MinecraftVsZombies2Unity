@@ -276,19 +276,19 @@ namespace MVZ2.Vanilla.Callbacks
         }
 
 
-        public readonly static CallbackType<PreTakeDamageParams> PRE_ENTITY_TAKE_DAMAGE = new();
+        public readonly static CallbackType<PreTakeDamageParams, bool> PRE_ENTITY_TAKE_DAMAGE = new();
         public readonly static CallbackType<PostTakeDamageParams> POST_ENTITY_TAKE_DAMAGE = new();
-        public readonly static CallbackType<PreBodyTakeDamageParams> PRE_BODY_TAKE_DAMAGE = new();
+        public readonly static CallbackType<PreBodyTakeDamageParams, int> PRE_BODY_TAKE_DAMAGE = new();
         public readonly static CallbackType<PostBodyTakeDamageParams> POST_BODY_TAKE_DAMAGE = new();
-        public readonly static CallbackType<PreArmorTakeDamageParams> PRE_ARMOR_TAKE_DAMAGE = new();
+        public readonly static CallbackType<PreArmorTakeDamageParams, int> PRE_ARMOR_TAKE_DAMAGE = new();
         public readonly static CallbackType<PostArmorTakeDamageParams> POST_ARMOR_TAKE_DAMAGE = new();
         public readonly static CallbackType<PostTakeDamageParams> APPLY_DAMAGE_SPECIAL_EFFECTS = new();
-        public readonly static CallbackType<PreHealParams> PRE_ENTITY_HEAL = new();
+        public readonly static CallbackType<PreHealParams, bool> PRE_ENTITY_HEAL = new();
         public readonly static CallbackType<PostHealParams> POST_ENTITY_HEAL = new();
 
-        public readonly static CallbackType<PreApplyStatusEffectParams> PRE_APPLY_STATUS_EFFECT = new();
+        public readonly static CallbackType<PreApplyStatusEffectParams, bool> PRE_APPLY_STATUS_EFFECT = new();
         public readonly static CallbackType<PostApplyStatusEffectParams> POST_APPLY_STATUS_EFFECT = new();
-        public readonly static CallbackType<PreRemoveStatusEffectParams> PRE_REMOVE_STATUS_EFFECT = new();
+        public readonly static CallbackType<PreRemoveStatusEffectParams, bool> PRE_REMOVE_STATUS_EFFECT = new();
         public readonly static CallbackType<PostRemoveStatusEffectParams> POST_REMOVE_STATUS_EFFECT = new();
 
         public readonly static CallbackType<EntityCallbackParams> POST_CONTRAPTION_TRIGGER = new();
@@ -296,30 +296,30 @@ namespace MVZ2.Vanilla.Callbacks
         public readonly static CallbackType<EntityCallbackParams> POST_CONTRAPTION_EVOKE = new();
         public readonly static CallbackType<EntityCallbackParams> POST_CONTRAPTION_DESTROY = new();
         public readonly static CallbackType<EntityCallbackParams> POST_CONTRAPTION_DETONATE = new();
-        public readonly static CallbackType<ContraptionSacrificeValueParams> CAN_CONTRAPTION_SACRIFICE = new();
-        public readonly static CallbackType<ContraptionSacrificeValueParams> GET_CONTRAPTION_SACRIFICE_FUEL = new();
-        public readonly static CallbackType<ContraptionSacrificeParams> PRE_CONTRAPTION_SACRIFICE = new();
+        public readonly static CallbackType<ContraptionSacrificeValueParams, bool> CAN_CONTRAPTION_SACRIFICE = new();
+        public readonly static CallbackType<ContraptionSacrificeValueParams, int> GET_CONTRAPTION_SACRIFICE_FUEL = new();
+        public readonly static CallbackType<ContraptionSacrificeParams, bool> PRE_CONTRAPTION_SACRIFICE = new();
         public readonly static CallbackType<ContraptionSacrificeParams> POST_CONTRAPTION_SACRIFICE = new();
-        public readonly static CallbackType<PreCommandBlockTransformParams> PRE_COMMAND_BLOCK_TRANSFORM = new();
+        public readonly static CallbackType<PreCommandBlockTransformParams, bool> PRE_COMMAND_BLOCK_TRANSFORM = new();
         public readonly static CallbackType<PostCommandBlockTransformParams> POST_COMMAND_BLOCK_TRANSFORM = new();
 
         public readonly static CallbackType<WaterInteractionParams> POST_WATER_INTERACTION = new();
         public readonly static CallbackType<WaterInteractionParams> POST_AIR_INTERACTION = new();
 
         public readonly static CallbackType<EntityCallbackParams> ENEMY_DROP_REWARDS = new();
-        public readonly static CallbackType<EntityCallbackParams> PRE_ENEMY_NEUTRALIZE = new();
+        public readonly static CallbackType<EntityCallbackParams, bool> PRE_ENEMY_NEUTRALIZE = new();
         public readonly static CallbackType<EntityCallbackParams> POST_ENEMY_NEUTRALIZE = new();
-        public readonly static CallbackType<EntityCallbackParams> PRE_ENEMY_FAINT = new();
+        public readonly static CallbackType<EntityCallbackParams, bool> PRE_ENEMY_FAINT = new();
         public readonly static CallbackType<EntityCallbackParams> POST_ENEMY_FAINT = new();
         public readonly static CallbackType<EntityCallbackParams> POST_OBSIDIAN_FIRST_AID = new();
         public readonly static CallbackType<EnemyMeleeAttackParams> POST_ENEMY_MELEE_ATTACK = new();
 
-        public readonly static CallbackType<EntityCallbackParams> CAN_PICKUP_COLLECT = new();
+        public readonly static CallbackType<EntityCallbackParams, bool> CAN_PICKUP_COLLECT = new();
         public readonly static CallbackType<EntityCallbackParams> POST_PICKUP_COLLECT = new();
 
-        public readonly static CallbackType<PreProjectileShotParams> PRE_PROJECTILE_SHOT = new();
+        public readonly static CallbackType<PreProjectileShotParams, bool> PRE_PROJECTILE_SHOT = new();
         public readonly static CallbackType<PostProjectileShotParams> POST_PROJECTILE_SHOT = new();
-        public readonly static CallbackType<PreProjectileHitParams> PRE_PROJECTILE_HIT = new();
+        public readonly static CallbackType<PreProjectileHitParams, bool> PRE_PROJECTILE_HIT = new();
         public readonly static CallbackType<PostProjectileHitParams> POST_PROJECTILE_HIT = new();
 
         public readonly static CallbackType<EntityCallbackParams> POST_USE_STARSHARD = new();

@@ -20,7 +20,7 @@ namespace MVZ2.GameContent.Artifacts
             AddTrigger(LogicLevelCallbacks.POST_PLACE_ENTITY, PostEntityPlaceCallback);
             AddTrigger(VanillaLevelCallbacks.POST_COMMAND_BLOCK_TRANSFORM, PostCommandBlockTransformCallback);
         }
-        private void PostEntityPlaceCallback(LogicLevelCallbacks.PostPlaceEntityParams args, CallbackResult result)
+        private void PostEntityPlaceCallback(LogicLevelCallbacks.PostPlaceEntityParams args, CallbackResultVoid result)
         {
             var entity = args.entity;
             if (entity.Type != EntityTypes.PLANT)
@@ -32,7 +32,7 @@ namespace MVZ2.GameContent.Artifacts
             entity.AddBuff<DreamButterflyShieldBuff>();
             artifact.Highlight();
         }
-        private void PostCommandBlockTransformCallback(VanillaLevelCallbacks.PostCommandBlockTransformParams args, CallbackResult result)
+        private void PostCommandBlockTransformCallback(VanillaLevelCallbacks.PostCommandBlockTransformParams args, CallbackResultVoid result)
         {
             var entity = args.transformed;
             if (entity == null || entity.Type != EntityTypes.PLANT)
