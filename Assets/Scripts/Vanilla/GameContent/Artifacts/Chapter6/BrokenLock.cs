@@ -23,7 +23,7 @@ namespace MVZ2.GameContent.Artifacts
     {
         public BrokenLock(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(VanillaLevelCallbacks.POST_ENTITY_TAKE_DAMAGE, PostContraptionTakeDamageCallback, filter: EntityTypes.PLANT);
+            AddTriggerFiltered(VanillaLevelCallbacks.POST_ENTITY_TAKE_DAMAGE, PostContraptionTakeDamageCallback, filter: EntityTypes.PLANT);
         }
         public override void PostUpdate(Artifact artifact)
         {

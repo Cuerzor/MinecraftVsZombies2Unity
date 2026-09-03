@@ -19,7 +19,7 @@ namespace MVZ2.GameContent.Artifacts
         public ControlRod(string nsp, string name) : base(nsp, name)
         {
             AddAura(new BlueprintAura());
-            AddTrigger(LevelCallbacks.POST_ENTITY_INIT, PostEnemyInitCallback, filter: EntityTypes.ENEMY);
+            AddTriggerFiltered(LevelCallbacks.POST_ENTITY_INIT, PostEnemyInitCallback, filter: EntityTypes.ENEMY);
         }
         public override void PostUpdate(Artifact artifact)
         {

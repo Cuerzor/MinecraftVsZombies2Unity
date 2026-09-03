@@ -30,7 +30,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             mod.AddTrigger(VanillaLevelCallbacks.APPLY_DAMAGE_SPECIAL_EFFECTS, ApplyDamageEffectsCallback);
             mod.AddTrigger(LevelCallbacks.POST_ENTITY_UPDATE, HealParticlesUpdateCallback);
             mod.AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback);
-            mod.AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEnemyDeathCallback, filter: EntityTypes.ENEMY);
+            mod.AddTriggerFiltered(LevelCallbacks.POST_ENTITY_DEATH, PostEnemyDeathCallback, filter: EntityTypes.ENEMY);
             mod.AddTrigger(LevelCallbacks.POST_DESTROY_ARMOR, PostArmorDestroyCallback);
         }
         private void PostContactGroundCallback(LevelCallbacks.PostEntityContactGroundParams param, CallbackResultVoid result)

@@ -16,7 +16,7 @@ namespace MVZ2.GameContent.HeldItems
     {
         public RightMouseCancelHeldItemBehaviour(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(LogicCallbacks.POST_POINTER_ACTION, PostPointerActionCallback, filter: PointerPhase.Press);
+            AddTriggerFiltered(LogicCallbacks.POST_POINTER_ACTION, PostPointerActionCallback, filter: PointerPhase.Press);
         }
         private void PostPointerActionCallback(LogicCallbacks.PostPointerActionParams param, CallbackResultVoid result)
         {

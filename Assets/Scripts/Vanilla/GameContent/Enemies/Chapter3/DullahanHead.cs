@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Enemies
     {
         public DullahanHead(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(VanillaLevelCallbacks.POST_APPLY_STATUS_EFFECT, PostEntityCharmCallback, filter: VanillaBuffID.Entity.charm);
+            AddTriggerFiltered(VanillaLevelCallbacks.POST_APPLY_STATUS_EFFECT, PostEntityCharmCallback, filter: VanillaBuffID.Entity.charm);
         }
         public override void Init(Entity entity)
         {

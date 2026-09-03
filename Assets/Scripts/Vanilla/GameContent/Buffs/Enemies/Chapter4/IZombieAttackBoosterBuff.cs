@@ -19,7 +19,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
         public IZombieAttackBoosterBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new FloatModifier(VanillaEntityProps.ATTACK_SPEED, NumberOperator.Multiply, PROP_ATTACK_SPEED_MULTIPLIER));
-            AddTrigger(VanillaLevelCallbacks.POST_ENTITY_TAKE_DAMAGE, PostEnemyTakeDamageCallback, filter: EntityTypes.ENEMY);
+            AddTriggerFiltered(VanillaLevelCallbacks.POST_ENTITY_TAKE_DAMAGE, PostEnemyTakeDamageCallback, filter: EntityTypes.ENEMY);
         }
         public override void PostUpdate(Buff buff)
         {

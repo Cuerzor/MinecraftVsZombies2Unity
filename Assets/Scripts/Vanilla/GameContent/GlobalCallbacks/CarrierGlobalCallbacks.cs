@@ -15,7 +15,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
     {
         public override void Apply(Mod mod)
         {
-            mod.AddTrigger(LevelCallbacks.POST_ENTITY_INIT, EntityInitCallback, filter: EntityTypes.PLANT);
+            mod.AddTriggerFiltered(LevelCallbacks.POST_ENTITY_INIT, EntityInitCallback, filter: EntityTypes.PLANT);
         }
         private void EntityInitCallback(EntityCallbackParams param, CallbackResultVoid result)
         {

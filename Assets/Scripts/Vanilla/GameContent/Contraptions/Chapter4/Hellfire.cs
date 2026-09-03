@@ -31,7 +31,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             AddModifier(new BooleanModifier(VanillaEntityProps.IS_FIRE, BooleanOperator.SetNot, PROP_EXTINGUISHED));
             AddModifier(new BooleanModifier(LogicEntityProps.IS_LIGHT_SOURCE, BooleanOperator.SetNot, PROP_EXTINGUISHED));
-            AddTrigger(VanillaLevelCallbacks.APPLY_DAMAGE_SPECIAL_EFFECTS, ApplyDamageSpecialEffectsCallback, filter: EntityTypes.PLANT);
+            AddTriggerFiltered(VanillaLevelCallbacks.APPLY_DAMAGE_SPECIAL_EFFECTS, ApplyDamageSpecialEffectsCallback, filter: EntityTypes.PLANT);
             detector = new HellfireIgniteDetector(32)
             {
                 factionTarget = FactionTarget.Friendly,

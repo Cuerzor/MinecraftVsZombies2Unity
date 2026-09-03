@@ -27,7 +27,7 @@ namespace MVZ2.GameContent.Effects
         #region 公有方法
         public CrushingWalls(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(LogicCallbacks.POST_POINTER_ACTION, PostPointerActionCallback, filter: PointerPhase.Press);
+            AddTriggerFiltered(LogicCallbacks.POST_POINTER_ACTION, PostPointerActionCallback, filter: PointerPhase.Press);
         }
         #endregion
 

@@ -21,7 +21,7 @@ namespace MVZ2.GameContent.Buffs.Bosses
         public FrankensteinSteelBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new NamespaceIDModifier(EngineEntityProps.SHELL, SetOperator.Set, VanillaShellID.metal));
-            AddTrigger(VanillaLevelCallbacks.PRE_PROJECTILE_HIT, PreProjectileHitCallback, filter: VanillaProjectileID.knife);
+            AddTriggerFiltered(VanillaLevelCallbacks.PRE_PROJECTILE_HIT, PreProjectileHitCallback, filter: VanillaProjectileID.knife);
         }
         private void PreProjectileHitCallback(VanillaLevelCallbacks.PreProjectileHitParams param, CallbackResult<bool> result)
         {

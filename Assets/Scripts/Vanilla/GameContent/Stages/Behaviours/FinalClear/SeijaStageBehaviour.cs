@@ -28,7 +28,7 @@ namespace MVZ2.GameContent.Stages
     {
         public SeijaStageBehaviour(StageDefinition stageDef) : base(stageDef)
         {
-            stageDef.AddTrigger(VanillaLevelCallbacks.POST_CONTRAPTION_EVOKE, PostGravityPadEvokeCallback, filter: VanillaContraptionID.gravityPad);
+            stageDef.AddTriggerFiltered(VanillaLevelCallbacks.POST_CONTRAPTION_EVOKE, PostGravityPadEvokeCallback, filter: VanillaContraptionID.gravityPad);
         }
         protected override void StartAfterFinalWave(LevelEngine level)
         {

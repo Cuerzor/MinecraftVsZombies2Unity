@@ -146,7 +146,7 @@ namespace MVZ2.DebugConsole
         private ContentType m_ContentType = ContentType.Standard;
 
         /// <summary>
-        /// Type of data expected by the input field.
+        /// TypeGeneric of data expected by the input field.
         /// </summary>
         [SerializeField]
         private InputType m_InputType = InputType.Standard;
@@ -785,7 +785,7 @@ namespace MVZ2.DebugConsole
         protected bool m_isRichTextEditingAllowed = false;
 
 
-        // Content Type related
+        // Content TypeGeneric related
         public ContentType contentType { get { return m_ContentType; } set { if (SetPropertyUtility.SetStruct(ref m_ContentType, value)) EnforceContentType(); } }
 
         public LineType lineType

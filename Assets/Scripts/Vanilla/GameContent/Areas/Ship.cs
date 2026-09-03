@@ -29,7 +29,7 @@ namespace MVZ2.GameContent.Areas
     {
         public Ship(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(LogicLevelCallbacks.IS_TERRAIN, IsCloudCallback, filter: LogicTerrainTypes.air);
+            AddTriggerFiltered(LogicLevelCallbacks.IS_TERRAIN, IsCloudCallback, filter: LogicTerrainTypes.air);
         }
         public override void Setup(LevelEngine level)
         {

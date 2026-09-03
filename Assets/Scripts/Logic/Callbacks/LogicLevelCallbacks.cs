@@ -153,21 +153,21 @@ namespace MVZ2Logic.Callbacks
         }
         public readonly static CallbackType<LevelCallbackParams> POST_LEVEL_STOP = new();
         public readonly static CallbackType<LevelCallbackParams> PRE_BATTLE = new();
-        public readonly static CallbackType<GetBlueprintNotRecommondedParams, bool> GET_BLUEPRINT_NOT_RECOMMENDED = new();
+        public readonly static CallbackTypeFiltered<GetBlueprintNotRecommondedParams, bool, NamespaceID> GET_BLUEPRINT_NOT_RECOMMENDED = new();
         public readonly static CallbackType<GetBlueprintWarningsParams> GET_BLUEPRINT_WARNINGS = new();
         public readonly static CallbackType<PostBlueprintSelectionParams> POST_BLUEPRINT_SELECTION = new();
         public readonly static CallbackType<PostUseEntityBlueprintParams> POST_USE_ENTITY_BLUEPRINT = new();
-        public readonly static CallbackType<PlaceEntityParams, bool> PRE_PLACE_ENTITY = new();
-        public readonly static CallbackType<PostPlaceEntityParams> POST_PLACE_ENTITY = new();
+        public readonly static CallbackTypeFiltered<PlaceEntityParams, bool, NamespaceID> PRE_PLACE_ENTITY = new();
+        public readonly static CallbackTypeFiltered<PostPlaceEntityParams, NamespaceID> POST_PLACE_ENTITY = new();
         public readonly static CallbackType<WaveEnemySpawnParams, float> PRE_WAVE_ENEMY_SPAWN = new();
         public readonly static CallbackType<WaveEnemySpawnParams> POST_WAVE_ENEMY_SPAWN = new();
         public readonly static CallbackType<LevelCallbackParams> POST_HUGE_WAVE_APPROACH = new();
         public readonly static CallbackType<LevelCallbackParams> POST_FINAL_WAVE = new();
         public readonly static CallbackType<CalculateSpawnPointParams> CALCULATE_SPAWN_POINTS = new();
-        public readonly static CallbackType<EntityDeathParams> ENTITY_DEATH_EFFECTS = new();
-        public readonly static CallbackType<PostHeldItemEventParams> POST_HELD_ITEM_EVENT = new();
+        public readonly static CallbackTypeFiltered<EntityDeathParams, int> ENTITY_DEATH_EFFECTS = new();
+        public readonly static CallbackTypeFiltered<PostHeldItemEventParams, NamespaceID> POST_HELD_ITEM_EVENT = new();
         public readonly static CallbackType<LevelCallbackParams> POST_PAUSE = new();
         public readonly static CallbackType<LevelCallbackParams> POST_RESUME = new();
-        public readonly static CallbackType<IsTerrainCallbackParams, bool> IS_TERRAIN = new();
+        public readonly static CallbackTypeFiltered<IsTerrainCallbackParams, bool, NamespaceID> IS_TERRAIN = new();
     }
 }

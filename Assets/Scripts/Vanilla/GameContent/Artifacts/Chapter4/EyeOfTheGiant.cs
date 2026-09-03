@@ -19,7 +19,7 @@ namespace MVZ2.GameContent.Artifacts
         public EyeOfTheGiant(string nsp, string name) : base(nsp, name)
         {
             AddAura(new EyeOfTheGiantAura());
-            AddTrigger(LevelCallbacks.POST_ENTITY_INIT, PostEntityInitCallback, filter: EntityTypes.PLANT);
+            AddTriggerFiltered(LevelCallbacks.POST_ENTITY_INIT, PostEntityInitCallback, filter: EntityTypes.PLANT);
         }
         public override void PostUpdate(Artifact artifact)
         {

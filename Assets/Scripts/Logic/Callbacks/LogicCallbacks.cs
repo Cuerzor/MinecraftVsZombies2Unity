@@ -82,13 +82,13 @@ namespace MVZ2Logic.Callbacks
                 this.phase = phase;
             }
         }
-        public readonly static CallbackType<PostPointerActionParams> POST_POINTER_ACTION = new();
-        public readonly static CallbackType<TalkActionParams> TALK_ACTION = new();
-        public readonly static CallbackType<GetAlmanacEntryTagsParams> GET_ALMANAC_ENTRY_TAGS = new();
+        public readonly static CallbackTypeFiltered<PostPointerActionParams, PointerPhase> POST_POINTER_ACTION = new();
+        public readonly static CallbackTypeFiltered<TalkActionParams, string> TALK_ACTION = new();
+        public readonly static CallbackTypeFiltered<GetAlmanacEntryTagsParams, string> GET_ALMANAC_ENTRY_TAGS = new();
         public readonly static CallbackType<GetInnateBlueprintsParams> GET_INNATE_BLUEPRINTS = new();
         public readonly static CallbackType<GetInnateArtifactsParams> GET_INNATE_ARTIFACTS = new();
         public readonly static CallbackType<EmptyCallbackParams, int> GET_BLUEPRINT_SLOT_COUNT = new();
-        public readonly static CallbackType<GetBlueprintStyleParams, NamespaceID> GET_BLUEPRINT_STYLE = new();
+        public readonly static CallbackTypeFiltered<GetBlueprintStyleParams, NamespaceID, NamespaceID> GET_BLUEPRINT_STYLE = new();
 
         public readonly static CallbackType<StringCallbackParams, bool> IS_SPECIAL_USER_NAME = new();
         public readonly static CallbackType<PostUserLoadParams> POST_USER_LOAD = new();

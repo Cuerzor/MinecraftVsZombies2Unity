@@ -19,7 +19,7 @@ namespace MVZ2.GameContent.Artifacts
         public BrokenLantern(string nsp, string name) : base(nsp, name)
         {
             AddAura(new Aura());
-            AddTrigger(LevelCallbacks.POST_ENTITY_INIT, PostContraptionInitCallback, filter: EntityTypes.PLANT);
+            AddTriggerFiltered(LevelCallbacks.POST_ENTITY_INIT, PostContraptionInitCallback, filter: EntityTypes.PLANT);
         }
         public override void PostUpdate(Artifact artifact)
         {

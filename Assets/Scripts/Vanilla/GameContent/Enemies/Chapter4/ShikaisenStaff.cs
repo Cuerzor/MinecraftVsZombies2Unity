@@ -21,7 +21,7 @@ namespace MVZ2.GameContent.Enemies
     {
         public ShikaisenStaff(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEnemyDeathCallback, filter: EntityTypes.ENEMY);
+            AddTriggerFiltered(LevelCallbacks.POST_ENTITY_DEATH, PostEnemyDeathCallback, filter: EntityTypes.ENEMY);
             AddModifier(new Vector3Modifier(EngineEntityProps.VELOCITY_DAMPEN, NumberOperator.Set, PROP_VELOCITY_DAMPEN));
         }
         public override void Init(Entity entity)

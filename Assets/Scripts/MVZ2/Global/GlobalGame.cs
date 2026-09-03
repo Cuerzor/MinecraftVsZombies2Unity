@@ -78,11 +78,11 @@ namespace MVZ2.GlobalGames
             return callbacks.RunCallbackWithResult(callbackType, args, result);
         }
 
-        public void RunCallbackFiltered<TArgs>(CallbackType<TArgs> callbackType, TArgs args, object? filter)
+        public void RunCallbackFiltered<TArgs, TFilter>(CallbackTypeFiltered<TArgs, TFilter> callbackType, TArgs args, TFilter? filter)
         {
             callbacks.RunCallbackFiltered(callbackType, args, filter);
         }
-        public TResult? RunCallbackWithResultFiltered<TArgs, TResult>(CallbackType<TArgs, TResult> callbackType, TArgs args, TResult? result, object? filter)
+        public TResult? RunCallbackWithResultFiltered<TArgs, TResult, TFilter>(CallbackTypeFiltered<TArgs, TResult, TFilter> callbackType, TArgs args, TResult? result, TFilter? filter)
         {
             return callbacks.RunCallbackWithResultFiltered(callbackType, args, result, filter);
         }

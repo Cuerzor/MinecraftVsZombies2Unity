@@ -23,8 +23,8 @@ namespace MVZ2.GameContent.Artifacts
         public TheCreaturesHeart(string nsp, string name) : base(nsp, name)
         {
             AddTrigger(LevelCallbacks.POST_LEVEL_START, PostLevelStartCallback);
-            AddTrigger(LevelCallbacks.POST_ENTITY_INIT, PostEntityInitCallback, filter: EntityTypes.PLANT);
-            AddTrigger(LevelCallbacks.POST_ENTITY_REMOVE, PostEntityRemoveCallback, filter: EntityTypes.PLANT);
+            AddTriggerFiltered(LevelCallbacks.POST_ENTITY_INIT, PostEntityInitCallback, filter: EntityTypes.PLANT);
+            AddTriggerFiltered(LevelCallbacks.POST_ENTITY_REMOVE, PostEntityRemoveCallback, filter: EntityTypes.PLANT);
             AddAura(new ReduceCostAura());
         }
         public override void PostUpdate(Artifact artifact)

@@ -40,8 +40,8 @@ namespace MVZ2.GameContent.Stages
         {
             AddModifier(new NamespaceIDModifier(LogicLevelProps.STARSHARD_DISABLE_ID, SetOperator.Set, VanillaBlueprintErrors.locked));
             AddModifier(new SpriteReferenceModifier(LogicAreaProps.STARSHARD_ICON, SetOperator.Set, VanillaSprites.snipenserLife));
-            stageDef.AddTrigger(VanillaLevelCallbacks.PRE_ENTITY_TAKE_DAMAGE, PreContraptionTakeDamageCallback, filter: EntityTypes.PLANT);
-            stageDef.AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostContraptionDeathCallback, filter: EntityTypes.PLANT);
+            stageDef.AddTriggerFiltered(VanillaLevelCallbacks.PRE_ENTITY_TAKE_DAMAGE, PreContraptionTakeDamageCallback, filter: EntityTypes.PLANT);
+            stageDef.AddTriggerFiltered(LevelCallbacks.POST_ENTITY_DEATH, PostContraptionDeathCallback, filter: EntityTypes.PLANT);
         }
         public override void Start(LevelEngine level)
         {

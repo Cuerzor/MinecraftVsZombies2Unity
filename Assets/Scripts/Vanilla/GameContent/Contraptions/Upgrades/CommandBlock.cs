@@ -29,7 +29,7 @@ namespace MVZ2.GameContent.Contraptions
     {
         public CommandBlock(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(VanillaLevelCallbacks.CAN_CONTRAPTION_SACRIFICE, CanContraptionSacrificeCallback, filter: VanillaContraptionID.commandBlock);
+            AddTriggerFiltered(VanillaLevelCallbacks.CAN_CONTRAPTION_SACRIFICE, CanContraptionSacrificeCallback, filter: VanillaContraptionID.commandBlock);
         }
         public override void Init(Entity entity)
         {

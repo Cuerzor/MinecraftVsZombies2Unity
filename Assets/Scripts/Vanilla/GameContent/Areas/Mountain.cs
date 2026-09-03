@@ -30,7 +30,7 @@ namespace MVZ2.GameContent.Areas
         {
             SetProperty(VanillaAreaProps.WATER_COLOR, new Color(0, 0.48f, 0.89f, 1));
             SetProperty(VanillaAreaProps.WATER_COLOR_CENSORED, new Color(0, 0.48f, 0.89f, 1));
-            AddTrigger(LogicLevelCallbacks.IS_TERRAIN, IsWaterCallback, filter: LogicTerrainTypes.water);
+            AddTriggerFiltered(LogicLevelCallbacks.IS_TERRAIN, IsWaterCallback, filter: LogicTerrainTypes.water);
         }
         public override void Setup(LevelEngine level)
         {

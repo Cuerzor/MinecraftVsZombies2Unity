@@ -24,7 +24,7 @@ namespace MVZ2.GameContent.Stages
             AddBehaviour(new StarshardStageBehaviour(this));
             AddBehaviour(new ConveyorStageBehaviour(this));
 
-            AddTrigger(LevelCallbacks.POST_ENTITY_INIT, PostEnemyInitCallback, filter: EntityTypes.ENEMY);
+            AddTriggerFiltered(LevelCallbacks.POST_ENTITY_INIT, PostEnemyInitCallback, filter: EntityTypes.ENEMY);
         }
         public override void OnPostWave(LevelEngine level, int wave)
         {

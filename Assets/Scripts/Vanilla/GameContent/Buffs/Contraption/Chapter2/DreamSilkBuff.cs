@@ -29,7 +29,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             AddModelInsertion(LogicModelHelper.ANCHOR_CENTER, VanillaModelKeys.dreamAlarm, VanillaModelID.dreamAlarm);
             AddModifier(new BooleanModifier(VanillaEntityProps.AI_FROZEN, true));
             AddModifier(new Vector3Modifier(EngineEntityProps.DISPLAY_SCALE, NumberOperator.Multiply, PROP_DISPLAY_SCALE));
-            AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback, filter: EntityTypes.PLANT);
+            AddTriggerFiltered(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback, filter: EntityTypes.PLANT);
         }
         public override void OnCreate(Buff buff)
         {

@@ -140,7 +140,7 @@ namespace MVZ2.GameContent.Contraptions
 
             int fuel = Mathf.CeilToInt((6 + Mathf.Pow(cost * 3 / 25f, 1.3f)) * (rechargeQuality + 1) / 2f);
             var args = new VanillaLevelCallbacks.ContraptionSacrificeValueParams(entity, soulFurnace);
-            return entity.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.GET_CONTRAPTION_SACRIFICE_FUEL, args, fuel);
+            return entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.GET_CONTRAPTION_SACRIFICE_FUEL, args, fuel, entity.GetDefinitionID());
         }
         public void Sacrifice(Entity entity, Entity soulFurnace, int fuel)
         {

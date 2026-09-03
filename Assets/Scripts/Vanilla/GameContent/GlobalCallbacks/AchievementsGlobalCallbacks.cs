@@ -19,9 +19,9 @@ namespace MVZ2.GameContent.GlobalCallbacks
     {
         public override void Apply(Mod mod)
         {
-            mod.AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostContraptionDeathCallback, filter: EntityTypes.PLANT);
-            mod.AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEnemyDeathCallback, filter: EntityTypes.ENEMY);
-            mod.AddTrigger(VanillaLevelCallbacks.POST_OBSIDIAN_FIRST_AID, PostAnvilObsidianFirstAidCallback, filter: VanillaContraptionID.anvil);
+            mod.AddTriggerFiltered(LevelCallbacks.POST_ENTITY_DEATH, PostContraptionDeathCallback, filter: EntityTypes.PLANT);
+            mod.AddTriggerFiltered(LevelCallbacks.POST_ENTITY_DEATH, PostEnemyDeathCallback, filter: EntityTypes.ENEMY);
+            mod.AddTriggerFiltered(VanillaLevelCallbacks.POST_OBSIDIAN_FIRST_AID, PostAnvilObsidianFirstAidCallback, filter: VanillaContraptionID.anvil);
         }
         private void PostContraptionDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
         {

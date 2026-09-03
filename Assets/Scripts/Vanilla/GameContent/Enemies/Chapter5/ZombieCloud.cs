@@ -25,7 +25,7 @@ namespace MVZ2.GameContent.Enemies
     {
         public ZombieCloud(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(VanillaLevelCallbacks.PRE_APPLY_STATUS_EFFECT, PreEntitySlowCallback, filter: VanillaBuffID.Enemy.slow);
+            AddTriggerFiltered(VanillaLevelCallbacks.PRE_APPLY_STATUS_EFFECT, PreEntitySlowCallback, filter: VanillaBuffID.Enemy.slow);
         }
         public override void Init(Entity entity)
         {

@@ -276,54 +276,54 @@ namespace MVZ2.Vanilla.Callbacks
         }
 
 
-        public readonly static CallbackType<PreTakeDamageParams, bool> PRE_ENTITY_TAKE_DAMAGE = new();
-        public readonly static CallbackType<PostTakeDamageParams> POST_ENTITY_TAKE_DAMAGE = new();
-        public readonly static CallbackType<PreBodyTakeDamageParams, int> PRE_BODY_TAKE_DAMAGE = new();
-        public readonly static CallbackType<PostBodyTakeDamageParams> POST_BODY_TAKE_DAMAGE = new();
-        public readonly static CallbackType<PreArmorTakeDamageParams, int> PRE_ARMOR_TAKE_DAMAGE = new();
-        public readonly static CallbackType<PostArmorTakeDamageParams> POST_ARMOR_TAKE_DAMAGE = new();
-        public readonly static CallbackType<PostTakeDamageParams> APPLY_DAMAGE_SPECIAL_EFFECTS = new();
+        public readonly static CallbackTypeFiltered<PreTakeDamageParams, bool, int> PRE_ENTITY_TAKE_DAMAGE = new();
+        public readonly static CallbackTypeFiltered<PostTakeDamageParams, int> POST_ENTITY_TAKE_DAMAGE = new();
+        public readonly static CallbackTypeFiltered<PreBodyTakeDamageParams, int, NamespaceID> PRE_BODY_TAKE_DAMAGE = new();
+        public readonly static CallbackTypeFiltered<PostBodyTakeDamageParams, NamespaceID> POST_BODY_TAKE_DAMAGE = new();
+        public readonly static CallbackTypeFiltered<PreArmorTakeDamageParams, int, NamespaceID> PRE_ARMOR_TAKE_DAMAGE = new();
+        public readonly static CallbackTypeFiltered<PostArmorTakeDamageParams, NamespaceID> POST_ARMOR_TAKE_DAMAGE = new();
+        public readonly static CallbackTypeFiltered<PostTakeDamageParams, int> APPLY_DAMAGE_SPECIAL_EFFECTS = new();
         public readonly static CallbackType<PreHealParams, bool> PRE_ENTITY_HEAL = new();
         public readonly static CallbackType<PostHealParams> POST_ENTITY_HEAL = new();
 
-        public readonly static CallbackType<PreApplyStatusEffectParams, bool> PRE_APPLY_STATUS_EFFECT = new();
-        public readonly static CallbackType<PostApplyStatusEffectParams> POST_APPLY_STATUS_EFFECT = new();
-        public readonly static CallbackType<PreRemoveStatusEffectParams, bool> PRE_REMOVE_STATUS_EFFECT = new();
-        public readonly static CallbackType<PostRemoveStatusEffectParams> POST_REMOVE_STATUS_EFFECT = new();
+        public readonly static CallbackTypeFiltered<PreApplyStatusEffectParams, bool, NamespaceID> PRE_APPLY_STATUS_EFFECT = new();
+        public readonly static CallbackTypeFiltered<PostApplyStatusEffectParams, NamespaceID> POST_APPLY_STATUS_EFFECT = new();
+        public readonly static CallbackTypeFiltered<PreRemoveStatusEffectParams, bool, NamespaceID> PRE_REMOVE_STATUS_EFFECT = new();
+        public readonly static CallbackTypeFiltered<PostRemoveStatusEffectParams, NamespaceID> POST_REMOVE_STATUS_EFFECT = new();
 
         public readonly static CallbackType<EntityCallbackParams> POST_CONTRAPTION_TRIGGER = new();
         public readonly static CallbackType<EntityCallbackParams> POST_CONTRAPTION_EMPTY_HAND_CLICK = new();
-        public readonly static CallbackType<EntityCallbackParams> POST_CONTRAPTION_EVOKE = new();
-        public readonly static CallbackType<EntityCallbackParams> POST_CONTRAPTION_DESTROY = new();
-        public readonly static CallbackType<EntityCallbackParams> POST_CONTRAPTION_DETONATE = new();
-        public readonly static CallbackType<ContraptionSacrificeValueParams, bool> CAN_CONTRAPTION_SACRIFICE = new();
-        public readonly static CallbackType<ContraptionSacrificeValueParams, int> GET_CONTRAPTION_SACRIFICE_FUEL = new();
-        public readonly static CallbackType<ContraptionSacrificeParams, bool> PRE_CONTRAPTION_SACRIFICE = new();
-        public readonly static CallbackType<ContraptionSacrificeParams> POST_CONTRAPTION_SACRIFICE = new();
-        public readonly static CallbackType<PreCommandBlockTransformParams, bool> PRE_COMMAND_BLOCK_TRANSFORM = new();
-        public readonly static CallbackType<PostCommandBlockTransformParams> POST_COMMAND_BLOCK_TRANSFORM = new();
+        public readonly static CallbackTypeFiltered<EntityCallbackParams, NamespaceID> POST_CONTRAPTION_EVOKE = new();
+        public readonly static CallbackTypeFiltered<EntityCallbackParams, NamespaceID> POST_CONTRAPTION_DESTROY = new();
+        public readonly static CallbackTypeFiltered<EntityCallbackParams, NamespaceID> POST_CONTRAPTION_DETONATE = new();
+        public readonly static CallbackTypeFiltered<ContraptionSacrificeValueParams, bool, NamespaceID> CAN_CONTRAPTION_SACRIFICE = new();
+        public readonly static CallbackTypeFiltered<ContraptionSacrificeValueParams, int, NamespaceID> GET_CONTRAPTION_SACRIFICE_FUEL = new();
+        public readonly static CallbackTypeFiltered<ContraptionSacrificeParams, bool, NamespaceID> PRE_CONTRAPTION_SACRIFICE = new();
+        public readonly static CallbackTypeFiltered<ContraptionSacrificeParams, NamespaceID> POST_CONTRAPTION_SACRIFICE = new();
+        public readonly static CallbackTypeFiltered<PreCommandBlockTransformParams, bool, NamespaceID> PRE_COMMAND_BLOCK_TRANSFORM = new();
+        public readonly static CallbackTypeFiltered<PostCommandBlockTransformParams, NamespaceID> POST_COMMAND_BLOCK_TRANSFORM = new();
 
-        public readonly static CallbackType<WaterInteractionParams> POST_WATER_INTERACTION = new();
-        public readonly static CallbackType<WaterInteractionParams> POST_AIR_INTERACTION = new();
+        public readonly static CallbackTypeFiltered<WaterInteractionParams, int> POST_WATER_INTERACTION = new();
+        public readonly static CallbackTypeFiltered<WaterInteractionParams, int> POST_AIR_INTERACTION = new();
 
         public readonly static CallbackType<EntityCallbackParams> ENEMY_DROP_REWARDS = new();
         public readonly static CallbackType<EntityCallbackParams, bool> PRE_ENEMY_NEUTRALIZE = new();
         public readonly static CallbackType<EntityCallbackParams> POST_ENEMY_NEUTRALIZE = new();
-        public readonly static CallbackType<EntityCallbackParams, bool> PRE_ENEMY_FAINT = new();
-        public readonly static CallbackType<EntityCallbackParams> POST_ENEMY_FAINT = new();
-        public readonly static CallbackType<EntityCallbackParams> POST_OBSIDIAN_FIRST_AID = new();
+        public readonly static CallbackTypeFiltered<EntityCallbackParams, bool, NamespaceID> PRE_ENEMY_FAINT = new();
+        public readonly static CallbackTypeFiltered<EntityCallbackParams, NamespaceID> POST_ENEMY_FAINT = new();
+        public readonly static CallbackTypeFiltered<EntityCallbackParams, NamespaceID> POST_OBSIDIAN_FIRST_AID = new();
         public readonly static CallbackType<EnemyMeleeAttackParams> POST_ENEMY_MELEE_ATTACK = new();
 
-        public readonly static CallbackType<EntityCallbackParams, bool> CAN_PICKUP_COLLECT = new();
-        public readonly static CallbackType<EntityCallbackParams> POST_PICKUP_COLLECT = new();
+        public readonly static CallbackTypeFiltered<EntityCallbackParams, bool, NamespaceID> CAN_PICKUP_COLLECT = new();
+        public readonly static CallbackTypeFiltered<EntityCallbackParams, NamespaceID> POST_PICKUP_COLLECT = new();
 
-        public readonly static CallbackType<PreProjectileShotParams, bool> PRE_PROJECTILE_SHOT = new();
-        public readonly static CallbackType<PostProjectileShotParams> POST_PROJECTILE_SHOT = new();
-        public readonly static CallbackType<PreProjectileHitParams, bool> PRE_PROJECTILE_HIT = new();
-        public readonly static CallbackType<PostProjectileHitParams> POST_PROJECTILE_HIT = new();
+        public readonly static CallbackTypeFiltered<PreProjectileShotParams, bool, NamespaceID> PRE_PROJECTILE_SHOT = new();
+        public readonly static CallbackTypeFiltered<PostProjectileShotParams, NamespaceID> POST_PROJECTILE_SHOT = new();
+        public readonly static CallbackTypeFiltered<PreProjectileHitParams, bool, NamespaceID> PRE_PROJECTILE_HIT = new();
+        public readonly static CallbackTypeFiltered<PostProjectileHitParams, NamespaceID> POST_PROJECTILE_HIT = new();
 
-        public readonly static CallbackType<EntityCallbackParams> POST_USE_STARSHARD = new();
-        public readonly static CallbackType<PostEntityEjectParams> POST_ENTITY_EJECT = new();
-        public readonly static CallbackType<PostEjectedEntityLandParams> POST_EJECTED_ENTITY_LAND = new();
+        public readonly static CallbackTypeFiltered<EntityCallbackParams, NamespaceID> POST_USE_STARSHARD = new();
+        public readonly static CallbackTypeFiltered<PostEntityEjectParams, NamespaceID> POST_ENTITY_EJECT = new();
+        public readonly static CallbackTypeFiltered<PostEjectedEntityLandParams, NamespaceID> POST_EJECTED_ENTITY_LAND = new();
     }
 }

@@ -183,7 +183,7 @@ namespace MVZ2.Managers
         {
             var defaultValue = LogicBlueprintStyles.normal;
             var args = new LogicCallbacks.GetBlueprintStyleParams(seedDef, isCommandBlock);
-            return Global.Game.RunCallbackWithResultFiltered(LogicCallbacks.GET_BLUEPRINT_STYLE, args, defaultValue, seedDef) ?? defaultValue;
+            return Global.Game.RunCallbackWithResultFiltered(LogicCallbacks.GET_BLUEPRINT_STYLE, args, defaultValue, seedDef.GetID()) ?? defaultValue;
         }
         private void SetBlueprintViewDataStyle(ref BlueprintViewData viewData, BlueprintStyleMeta? styleMeta)
         {

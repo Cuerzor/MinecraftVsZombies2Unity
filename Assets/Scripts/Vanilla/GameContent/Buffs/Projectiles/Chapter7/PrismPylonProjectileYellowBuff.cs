@@ -22,7 +22,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
     {
         public PrismaticPylonProjectileYellowBuff(string nsp, string name) : base(nsp, name)
         {
-            AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback, filter: EntityTypes.PROJECTILE);
+            AddTriggerFiltered(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback, filter: EntityTypes.PROJECTILE);
             AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostContactGroundCallback);
         }
         private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams args, CallbackResultVoid result)

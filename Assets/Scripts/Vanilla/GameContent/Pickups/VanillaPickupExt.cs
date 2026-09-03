@@ -45,7 +45,7 @@ namespace MVZ2.Vanilla.Pickups
                 }
             }
             var args = new EntityCallbackParams(entity);
-            return entity.Level.Triggers.RunCallbackWithResult(VanillaLevelCallbacks.CAN_PICKUP_COLLECT, args, canCollect);
+            return entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.CAN_PICKUP_COLLECT, args, canCollect, entity.GetDefinitionID());
         }
         public static bool CanAutoCollect(this Entity entity)
         {
