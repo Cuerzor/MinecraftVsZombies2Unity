@@ -7,54 +7,68 @@ namespace MVZ2.Resources
 {
     public abstract class LookupKey<T> : IEquatable<LookupKey<T>>
     {
-        public T id;
-        private HashSet<string> tags = new HashSet<string>();
-
         public LookupKey(T id, params string[] tags)
         {
             this.id = id;
-            foreach (var tag in tags)
+
+            // 1. 复制并排序（使用 Ordinal 比较器，无文化开销）
+            if (tags == null || tags.Length == 0)
             {
-                this.tags.Add(tag);
+                _sortedTags = Array.Empty<string>();
             }
+            else
+            {
+                _sortedTags = new string[tags.Length];
+                Array.Copy(tags, _sortedTags, tags.Length);
+                Array.Sort(_sortedTags, StringComparer.Ordinal);
+            }
+
+            // 2. 预计算哈希码（利用字符串内部缓存的哈希码，无额外分配）
+            int hash = id?.GetHashCode() ?? 0;
+            for (int i = 0; i < _sortedTags.Length; i++)
+            {
+                string s = _sortedTags[i];
+                hash = (hash * 397) ^ (s?.GetHashCode() ?? 0);
+            }
+            _hashCode = hash;
         }
         public override bool Equals(object obj)
         {
-            if (obj is LookupKey<T> other)
-            {
-                return Equals(other);
-            }
-            return base.Equals(obj);
-        }
-        public override int GetHashCode()
-        {
-            var hash = id?.GetHashCode() ?? 0;
-            foreach (var item in tags)
-            {
-                if (item != null)
-                {
-                    // 使用异或运算，确保顺序无关性
-                    // 注意：如果集合中有重复元素（针对List），异或可能会导致抵消，
-                    // 但对于 HashSet 来说是安全的。
-                    hash ^= item.GetHashCode();
-                }
-            }
-            return hash;
-        }
-        public override string ToString()
-        {
-            return $"{id}({string.Join(',', tags)})";
+            return obj is LookupKey<T> other && Equals(other);
         }
         public bool Equals(LookupKey<T> other)
         {
-            bool idEquals = false;
-            if (id is null)
-                idEquals = other.id is null;
-            else if (other.id is null)
-                idEquals = false;
-            else
-                idEquals = id.Equals(other.id);
-            return idEquals && tags.SetEquals(other.tags);
+            if (ReferenceEquals(this, other)) return true;
+            if (other is null) return false;
+
+            // 先比较最容易不同的 id
+            bool idEquals = (id == null) ? other.id == null : id.Equals(other.id);
+            if (!idEquals) return false;
+
+            // 长度不同则不等
+            if (_sortedTags.Length != other._sortedTags.Length) return false;
+
+            // 由于都已排序，顺序比较即可
+            for (int i = 0; i < _sortedTags.Length; i++)
+            {
+                // 使用 Ordinal 比较，避免文化相关开销和隐式分配
+                if (!string.Equals(_sortedTags[i], other._sortedTags[i], StringComparison.Ordinal))
+                    return false;
+            }
+            return true;
         }
+
+        public override int GetHashCode() => _hashCode;
+
+        // ---- ToString 仅用于调试，生产环境尽量避免调用 ----
+        public override string ToString()
+        {
+            // 如果必须使用，建议用条件编译或改用不分配的方式（例如仅开发版）
+            // 这里保留但会分配，但通常不会在热路径调用
+            return $"{id}({string.Join(",", _sortedTags)})";
+        }
+        public T id { get; }                     // 只读
+        private readonly string[] _sortedTags;   // 排序后的标签数组（不可变）
+        private readonly int _hashCode;          // 缓存的哈希码
     }
 }
