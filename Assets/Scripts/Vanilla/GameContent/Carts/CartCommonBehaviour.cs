@@ -2,10 +2,12 @@
 
 using MVZ2.GameContent.Buffs.Carts;
 using MVZ2.GameContent.Damages;
+using MVZ2.GameContent.Detections;
 using MVZ2.GameContent.Effects;
 using MVZ2.Vanilla;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Carts;
+using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
@@ -59,7 +61,7 @@ namespace MVZ2.GameContent.Carts
                         velocity.x = 0;
                     }
 
-                    if (entity.Level.EntityExists(e => e.Position.x <= entity.Position.x + TRIGGER_DISTANCE && e.Type == EntityTypes.ENEMY && e.GetLane() == entity.GetLane() && !e.IsDead && !e.IsHarmless() && entity.IsHostile(e)))
+                    if (enemyDetector.DetectExists(entity))
                     {
                         entity.TriggerCart();
                     }
@@ -150,5 +152,10 @@ namespace MVZ2.GameContent.Carts
         public const float TRIGGER_DISTANCE = 28;
         public const int STATE_TRIGGERED = VanillaCartStates.TRIGGERED;
         public const int MAX_TRIGGER_CHARGE = 30;
+        private static readonly Detector enemyDetector = new CartDetector()
+        {
+            canDetectInvisible = true,
+            mask = EntityCollisionHelper.MASK_ENEMY
+        };
     }
 }
