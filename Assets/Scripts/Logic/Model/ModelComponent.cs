@@ -9,7 +9,7 @@ namespace MVZ2Logic.Models
         public virtual void Init() { }
         public virtual void UpdateLogic() { }
         public virtual void UpdateFrame(float deltaTime) { }
-        public virtual void OnPropertySet(string name, object? value) { }
+        public virtual void OnPropertySet<T>(string name, T? value) { }
         public virtual void OnTrigger(string name) { }
         public virtual void SaveToSerializable(SerializableModelData serializable) { }
         public virtual void LoadFromSerializable(SerializableModelData serializable) { }

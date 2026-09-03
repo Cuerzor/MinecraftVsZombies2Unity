@@ -331,14 +331,16 @@ namespace MVZ2Logic.Models
         {
             return propertyDict.GetProperty<T>(name);
         }
-        public void SetProperty(PropertyKeyString name, object? value)
+        public void SetProperty<T>(PropertyKeyString name, T? value)
         {
-            propertyDict.SetProperty(name, value);
-            foreach (var comp in modelComponents)
+            if (propertyDict.SetProperty(name, value))
             {
-                if (comp == null)
-                    continue;
-                comp.OnPropertySet(name, value);
+                foreach (var comp in modelComponents)
+                {
+                    if (comp == null)
+                        continue;
+                    comp.OnPropertySet(name, value);
+                }
             }
         }
         public void TriggerModel(PropertyKeyString name)

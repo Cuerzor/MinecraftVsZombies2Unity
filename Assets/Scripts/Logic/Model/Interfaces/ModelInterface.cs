@@ -52,7 +52,7 @@ namespace MVZ2Logic.Models
                 return null;
             return targetModel.GetAnimatorInterface(name);
         }
-        public void SetModelProperty(string name, object? value)
+        public void SetModelProperty<T>(string name, T? value)
         {
             var model = GetModel();
             if (!model.Exists())

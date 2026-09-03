@@ -7,17 +7,16 @@ namespace MVZ2.GameContent.Models
 {
     public class NyanCatModel : ModelComponent
     {
-        public override void OnPropertySet(string name, object? value)
+        public override void OnPropertySet<T>(string name, T? value) where T : default
         {
             base.OnPropertySet(name, value);
-            if (name == "Nyaightmare")
+            if (name == "Nyaightmare" && value is bool nyaightmare)
             {
-                UpdateNyanCat();
+                UpdateNyanCat(nyaightmare);
             }
         }
-        private void UpdateNyanCat()
+        private void UpdateNyanCat(bool nyaightmare)
         {
-            var nyaightmare = Model.GetProperty<bool>("Nyaightmare");
             nyanCatRoot.SetActive(!nyaightmare);
             nyaightmareRoot.SetActive(nyaightmare);
         }

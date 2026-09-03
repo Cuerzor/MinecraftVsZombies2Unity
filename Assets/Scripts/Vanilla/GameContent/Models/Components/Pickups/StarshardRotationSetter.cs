@@ -7,7 +7,7 @@ namespace MVZ2.GameContent.Models
 {
     public class StarshardRotationSetter : ModelComponent
     {
-        public override void OnPropertySet(string name, object? value)
+        public override void OnPropertySet<T>(string name, T? value) where T : default
         {
             base.OnPropertySet(name, value);
             if (value is not Vector3 vector3)

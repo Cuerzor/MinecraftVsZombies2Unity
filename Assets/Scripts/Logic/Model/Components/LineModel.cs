@@ -6,7 +6,7 @@ namespace MVZ2Logic.Models.Components
 {
     public class LineModel : ModelComponent
     {
-        public override void OnPropertySet(string name, object? value)
+        public override void OnPropertySet<T>(string name, T? value) where T : default
         {
             base.OnPropertySet(name, value);
             if (name == "ShowLine" && value is bool boolValue)

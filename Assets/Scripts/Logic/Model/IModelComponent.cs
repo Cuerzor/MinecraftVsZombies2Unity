@@ -10,7 +10,7 @@ namespace MVZ2Logic.Models
         void SetModel(Model model);
         void UpdateLogic();
         void UpdateFrame(float deltaTime);
-        void OnPropertySet(string name, object? value);
+        void OnPropertySet<T>(string name, T? value);
         void OnTrigger(string name);
         bool IsEnabled();
     }
