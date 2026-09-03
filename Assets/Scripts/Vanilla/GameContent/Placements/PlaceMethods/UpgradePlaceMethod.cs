@@ -26,9 +26,20 @@ namespace MVZ2.GameContent.Placements
         {
             using var gridEntities = grid.GetEntitiesDisposeable();
             var entities = gridEntities.Value;
-            if (entities.Count() <= 0 || !entities.Any(e => e.CanUpgradeToContraption(entity) && e.IsFriendlyEntity()))
+            if (entities.Count <= 0)
             {
                 return VanillaGridStatus.onlyUpgrade;
+            }
+            var upgradeEntity = entities.FirstOrDefault(e => CanUpgradeOn(entity, e));
+            if (!upgradeEntity.ExistsAndAlive())
+            {
+                return VanillaGridStatus.onlyUpgrade;
+            }
+            var layersToTake = entity.GetGridLayersToTake();
+            var conflictEntities = layersToTake.Select(l => grid.GetLayerEntity(l)).OfType<Entity>();
+            if (conflictEntities.Any(e => e != upgradeEntity))
+            {
+                return VanillaGridStatus.alreadyTaken;
             }
             return null;
         }
@@ -56,6 +67,10 @@ namespace MVZ2.GameContent.Placements
                 };
             }
             return PlaceOutput.InvalidOutput;
+        }
+        public static bool CanUpgradeOn(EntityDefinition entity, Entity target)
+        {
+            return target.CanUpgradeToContraption(entity) && target.IsFriendlyEntity();
         }
     }
 }
