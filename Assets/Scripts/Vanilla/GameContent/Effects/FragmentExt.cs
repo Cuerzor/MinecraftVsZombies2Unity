@@ -17,11 +17,13 @@ namespace MVZ2.Vanilla.Effects
         #region 碎片
         public static Entity? CreateFragment(this Entity entity)
         {
-            return entity.Level.Spawn(VanillaEffectID.fragment, entity.Position, entity)?.Let(e =>
+            var fragment = entity.Level.Spawn(VanillaEffectID.fragment, entity.Position, entity);
+            if (fragment.ExistsAndAlive())
             {
-                e.SetParent(entity);
-                Fragment.UpdateFragmentID(e);
-            });
+                fragment.SetParent(entity);
+                Fragment.UpdateFragmentID(fragment);
+            }
+            return fragment;
         }
         public static Entity? CreateFragmentAndPlay(this Entity entity, NamespaceID? id = null, float emitSpeed = 500)
         {
@@ -29,11 +31,13 @@ namespace MVZ2.Vanilla.Effects
         }
         public static Entity? CreateFragmentAndPlay(this Entity entity, Vector3 position, NamespaceID? id = null, float emitSpeed = 500)
         {
-            return entity.Level.Spawn(VanillaEffectID.fragment, position, entity)?.Let(e =>
+            var fragment = entity.Level.Spawn(VanillaEffectID.fragment, position, entity);
+            if (fragment != null)
             {
-                Fragment.SetFragmentID(e, id ?? entity?.GetFragmentID() ?? entity?.GetDefinitionID());
-                Fragment.AddEmitSpeed(e, emitSpeed);
-            });
+                Fragment.SetFragmentID(fragment, id ?? entity?.GetFragmentID() ?? entity?.GetDefinitionID());
+                Fragment.AddEmitSpeed(fragment, emitSpeed);
+            }
+            return fragment;
         }
         public static Entity? GetOrCreateFragment(this Entity entity)
         {
@@ -41,11 +45,12 @@ namespace MVZ2.Vanilla.Effects
             var fragment = fragmentRef?.GetEntity(entity.Level);
             if (fragment == null || !fragment.Exists())
             {
-                fragment = entity.CreateFragment()?.Let(e =>
+                fragment = entity.CreateFragment();
+                if (fragment != null)
                 {
                     fragmentRef = new EntityID(fragment);
                     entity.SetFragment(fragmentRef);
-                });
+                };
             }
             return fragment;
         }
@@ -84,10 +89,11 @@ namespace MVZ2.Vanilla.Effects
         #region 治疗粒子
         public static Entity? CreateHealParticles(this Entity entity)
         {
-            var particles = entity.Level.Spawn(VanillaEffectID.healParticles, entity.Position, entity)?.Let(e =>
+            var particles = entity.Level.Spawn(VanillaEffectID.healParticles, entity.Position, entity);
+            if (particles != null)
             {
-                e.SetParent(entity);
-            });
+                particles.SetParent(entity);
+            };
             var fragmentRef = new EntityID(particles);
             entity.SetHealParticles(fragmentRef);
             return particles;
@@ -97,10 +103,11 @@ namespace MVZ2.Vanilla.Effects
             var healing = entity.GetTickHealing();
             if (healing > 0)
             {
-                entity.GetOrCreateHealParticles()?.Let(e =>
+                var particle = entity.GetOrCreateHealParticles();
+                if (particle.ExistsAndAlive())
                 {
-                    HealParticles.AddEmitSpeed(e, entity.GetTickHealing() * 0.4f);
-                });
+                    HealParticles.AddEmitSpeed(particle, entity.GetTickHealing() * 0.4f);
+                }
                 entity.SetTickHealing(0);
             }
         }
