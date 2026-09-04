@@ -10,6 +10,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Modifiers;
+using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Buffs.Level
 {
@@ -66,7 +67,10 @@ namespace MVZ2.GameContent.Buffs.Level
             public override void GetAuraTargets(AuraEffect auraEffect, List<IBuffTarget> results)
             {
                 var level = auraEffect.Source.GetLevel();
-                results.AddRange(level.GetEntities(EntityTypes.ENEMY));
+                using var bufferItem = ListPool<Entity>.Rent();
+                var buffer = bufferItem.Value;
+                level.GetEntitiesNonAlloc(buffer, EntityTypes.ENEMY);
+                results.AddRange(buffer);
             }
         }
     }
