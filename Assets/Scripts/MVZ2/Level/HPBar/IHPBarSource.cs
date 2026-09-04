@@ -9,5 +9,6 @@ namespace MVZ2.Level.HPBar
         public bool IsActive();
         public void UpdateHPBarList(HPBarList list);
         public Vector3 GetPosition();
+        public string GetName();
     }
 }

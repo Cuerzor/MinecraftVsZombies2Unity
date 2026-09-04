@@ -183,7 +183,14 @@ namespace MVZ2.Grids
             }
         }
         #endregion
-
+        public string GetName()
+        {
+            if (string.IsNullOrEmpty(cachedName))
+            {
+                cachedName = gameObject.name;
+            }
+            return cachedName;
+        }
 
         public event Action<GridController, PointerEventData, PointerInteraction>? OnPointerInteraction;
 
@@ -192,6 +199,7 @@ namespace MVZ2.Grids
         public int Lane { get; set; }
         public int Column { get; set; }
         public float BevelHeight { get; private set; }
+        private string cachedName = string.Empty;
         private LawnGrid? grid;
         private IHPBarSource hpBarSource = null!;
         private List<ModelInsertion> modelInsertionBuffer = new List<ModelInsertion>();
@@ -238,10 +246,12 @@ namespace MVZ2.Grids
         {
             return Controller.transform.position;
         }
+        public string GetName()
+        {
+            return Controller.GetName();
+        }
         public void UpdateHPBarList(HPBarList list)
         {
-            list.gameObject.name = Controller.gameObject.name;
-
             gridHPBarEntityBuffer.Clear();
             gridHPBarBuffer.Clear();
             GetHPBarViewDatas();

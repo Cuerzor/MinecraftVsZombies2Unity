@@ -43,9 +43,12 @@ namespace MVZ2.Level.Entities
             position.y = Mathf.Max(position.y, groundTransPos.y);
             return position + Vector3.up * 0.24f;
         }
+        public string GetName()
+        {
+            return Controller.GetName();
+        }
         public void UpdateHPBarList(HPBarList list)
         {
-            list.gameObject.name = Controller.gameObject.name;
             hpBarBuffer.Clear();
             GetHPBarViewDatas(hpBarBuffer);
 

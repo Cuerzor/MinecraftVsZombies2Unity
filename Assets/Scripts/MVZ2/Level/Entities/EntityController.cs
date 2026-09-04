@@ -43,7 +43,7 @@ namespace MVZ2.Level.Entities
             Entity = entity;
             rng = new RandomGenerator(entity.InitSeed);
             isHighlight = false;
-            gameObject.name = entity.ToString();
+            SetName(entity.ToString());
             transform.position = Level.LawnToTrans(Entity.Position);
             lastPosition = transform.position;
 
@@ -768,6 +768,22 @@ namespace MVZ2.Level.Entities
         }
         #endregion
 
+        #region 名称
+        public void SetName(string name)
+        {
+            cachedName = name;
+            gameObject.name = name;
+        }
+        public string GetName()
+        {
+            if (string.IsNullOrEmpty(cachedName))
+            {
+                SetName(Entity.ToString());
+            }
+            return cachedName;
+        }
+        #endregion
+
         #region 事件
         public event Action<EntityController, PointerEventData, PointerInteraction>? OnPointerInteraction;
         #endregion
@@ -803,6 +819,7 @@ namespace MVZ2.Level.Entities
         private EntityPropertyCache modelPropertyCache = new EntityPropertyCache();
         private List<Animator> animatorBuffer = new List<Animator>();
         private List<ModelInsertion> modelInsertionBuffer = new List<ModelInsertion>();
+        private string cachedName = string.Empty;
         [SerializeField]
         private float maxRenderAccumulator = 1f;
         [SerializeField]

@@ -53,6 +53,7 @@ namespace MVZ2.Level.HPBar
                 if (!activeHPBarItems.TryGetValue(source, out var hpBar) || !hpBar.Exists())
                 {
                     hpBar = barItemPool.Get();
+                    hpBar.name = source.GetName();
                     activeHPBarItems[source] = hpBar;
                 }
                 hpBar.transform.position = source.GetPosition();
