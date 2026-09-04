@@ -24,6 +24,7 @@ using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.SeedPacks;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Contraptions

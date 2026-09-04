@@ -14,6 +14,7 @@ using PVZEngine.Entities;
 using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 
@@ -81,7 +82,9 @@ namespace MVZ2.GameContent.Contraptions
             var projectileID = entity.GetProjectileID();
             if (NamespaceID.IsValid(projectileID))
             {
-                var modes = GetPossibleProjectileModes(entity, projectile, count);
+                using var modesItem = ListPool<PrismaticPylonProjectileMode>.Rent();
+                var modes = modesItem.Value;
+                GetPossibleProjectileModes(entity, projectile, count, modes);
                 for (int i = 0; i < count; i++)
                 {
                     var mode = modes[i];
@@ -127,10 +130,10 @@ namespace MVZ2.GameContent.Contraptions
                 projectile.Remove();
             }
         }
-        public static PrismaticPylonProjectileMode[] GetPossibleProjectileModes(Entity entity, Entity projectile, int count)
+        public static void GetPossibleProjectileModes(Entity entity, Entity projectile, int count, List<PrismaticPylonProjectileMode> results)
         {
             var rng = entity.RNG;
-            return projectileModes.RandomTake(count, rng).ToArray();
+            projectileModes.RandomTake(count, rng, results);
         }
         public static void SetCrystalAlpha(Entity entity, float value) => entity.SetProperty(PROP_CRYSTAL_ALPHA, value);
         public static float GetCrystalAlpha(Entity entity) => entity.GetProperty<float>(PROP_CRYSTAL_ALPHA);

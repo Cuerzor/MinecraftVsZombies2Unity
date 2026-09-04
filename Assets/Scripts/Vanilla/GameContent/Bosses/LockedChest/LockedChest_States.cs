@@ -128,8 +128,15 @@ namespace MVZ2.GameContent.Bosses
         {
             var level = entity.Level;
             var contraptions = level.FindEntities(e => IsValidAttackTarget(entity, e));
-            var groups = contraptions.GroupBy(c => c.GetLane());
-            return groups.Random(entity.RNG).Key;
+
+            using var lanesItem = HashSetPool<int>.Rent();
+            var lanes = lanesItem.Value;
+            foreach (var contraption in contraptions)
+            {
+                var lane = contraption.GetLane();
+                lanes.Add(lane);
+            }
+            return lanes.Random(entity.RNG);
         }
         private static void UpdateFlipX(Entity entity)
         {
@@ -727,10 +734,8 @@ namespace MVZ2.GameContent.Bosses
             GetBlueprintsToLock(level, seedPacks);
             if (seedPacks.Count <= 0)
                 return;
-            var selected = seedPacks.RandomTake(count, entity.RNG);
-            if (selected == null)
-                return;
-            foreach (var seedPack in selected)
+            seedPacks.RandomKeep(count, entity.RNG);
+            foreach (var seedPack in seedPacks)
             {
                 seedPack.AddBuff<BlueprintLockBuff>();
             }

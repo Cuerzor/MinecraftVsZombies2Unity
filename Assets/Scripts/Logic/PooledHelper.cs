@@ -7,28 +7,41 @@ using PVZEngine.Grids;
 using PVZEngine.Level;
 using PVZEngine.SeedPacks;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2Logic
 {
     public static class PooledHelper
     {
+        public static PoolItem<List<T>> RandomTakeDisposeable<T>(this IEnumerable<T> list, int count, RandomGenerator rng)
+        {
+            var poolItem = ListPool<T>.Rent();
+            list.RandomTake(count, rng, poolItem.Value);
+            return poolItem;
+        }
+        public static PoolItem<List<T>> RandomTakeAllDisposeable<T>(this IEnumerable<T> list, RandomGenerator rng)
+        {
+            var poolItem = ListPool<T>.Rent();
+            list.RandomTakeAll(rng, poolItem.Value);
+            return poolItem;
+        }
         public static PoolItem<List<ClassicSeedPack?>> GetAllSeedPacksDisposeable(this LevelEngine level)
         {
-            var seedPacksItem = ListPool<ClassicSeedPack?>.Rent();
-            level.GetAllSeedPacks(seedPacksItem.Value);
-            return seedPacksItem;
+            var poolItem = ListPool<ClassicSeedPack?>.Rent();
+            level.GetAllSeedPacks(poolItem.Value);
+            return poolItem;
         }
         public static PoolItem<List<ConveyorSeedPack>> GetAllConveyorSeedPacksDisposeable(this LevelEngine level)
         {
-            var seedPacksItem = ListPool<ConveyorSeedPack>.Rent();
-            level.GetAllConveyorSeedPacks(seedPacksItem.Value);
-            return seedPacksItem;
+            var poolItem = ListPool<ConveyorSeedPack>.Rent();
+            level.GetAllConveyorSeedPacks(poolItem.Value);
+            return poolItem;
         }
         public static PoolItem<List<LawnGrid>> GetAllGridsDisposeable(this LevelEngine level)
         {
-            var seedPacksItem = ListPool<LawnGrid>.Rent();
-            level.GetAllGrids(seedPacksItem.Value);
-            return seedPacksItem;
+            var poolItem = ListPool<LawnGrid>.Rent();
+            level.GetAllGrids(poolItem.Value);
+            return poolItem;
         }
         public static PoolItem<List<Entity>> GetLayerEntitiesDisposeable(this LawnGrid grid, NamespaceID id)
         {

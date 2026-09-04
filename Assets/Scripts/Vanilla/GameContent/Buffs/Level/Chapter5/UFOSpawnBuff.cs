@@ -11,6 +11,7 @@ using PVZEngine.Definitions;
 using PVZEngine.Grids;
 using PVZEngine.Level;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2.GameContent.Buffs.Level
 {

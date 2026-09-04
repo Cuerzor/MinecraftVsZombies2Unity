@@ -89,7 +89,17 @@ namespace MVZ2.GameContent.Areas
 
             var rng = GetRNG(level);
             var weightArray = weights.ToArray();
-            var grids = rng != null ? valid.WeightedRandomTake(weightArray, count, rng) : valid.Take(count);
+
+            using var gridsItem = ListPool<LawnGrid>.Rent();
+            var grids = gridsItem.Value;
+            if (rng != null)
+            {
+                valid.WeightedRandomTake(weightArray, count, rng, grids);
+            }
+            else
+            {
+                valid.TakeToList(count, grids);
+            }
             foreach (var grid in grids)
             {
                 var entityToSpawn = rng != null ? GetParatroopToSpawn(rng) : VanillaEnemyID.zombie;

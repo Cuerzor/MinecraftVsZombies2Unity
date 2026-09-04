@@ -9,6 +9,7 @@ using MVZ2.Options;
 using MVZ2Logic.Level;
 using MVZ2Logic.Localization;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2.Level

@@ -153,27 +153,30 @@ namespace MVZ2Logic.Level
         {
             if (count <= 0 || rng == null || weightGetter == null)
                 return Array.Empty<LawnGrid>();
-            var allPossible = new HashSet<LawnGrid>();
-            var allPreferred = new HashSet<LawnGrid>();
+            using var allPossibleItem = ListPool<LawnGrid>.Rent();
+            using var allPreferredItem = ListPool<LawnGrid>.Rent();
+            var allPossible = allPossibleItem.Value;
+            var allPreferred = allPreferredItem.Value;
             level.FindAllObstacleSpawnGrids(layersToTake, minColumn, allPossible, allPreferred);
 
             var preferredCount = Mathf.Min(allPreferred.Count, count);
             var possibleCount = Mathf.Min(allPossible.Count, count - preferredCount);
 
-            List<LawnGrid> results = new List<LawnGrid>();
+            using var resultsItem = ListPool<LawnGrid>.Rent();
+            var results = resultsItem.Value;
             if (preferredCount > 0)
             {
                 var weights = allPreferred.Select(g => weightGetter(g)).ToArray();
-                results.AddRange(allPreferred.WeightedRandomTake(weights, preferredCount, rng));
+                allPreferred.WeightedRandomTake(weights, preferredCount, rng, results);
             }
             if (possibleCount > 0)
             {
                 var weights = allPossible.Select(g => weightGetter(g)).ToArray();
-                results.AddRange(allPossible.WeightedRandomTake(weights, possibleCount, rng));
+                allPossible.WeightedRandomTake(weights, possibleCount, rng, results);
             }
             return results.ToArray();
         }
-        private static void FindAllObstacleSpawnGrids(this LevelEngine level, NamespaceID[]? layersToTake, int minColumn, HashSet<LawnGrid> possible, HashSet<LawnGrid> preferred)
+        private static void FindAllObstacleSpawnGrids(this LevelEngine level, NamespaceID[]? layersToTake, int minColumn, List<LawnGrid> possible, List<LawnGrid> preferred)
         {
             for (int col = minColumn; col < level.GetMaxColumnCount(); col++)
             {
@@ -385,30 +388,53 @@ namespace MVZ2Logic.Level
             // 已生成怪物数量。
             int spawnedCount = 0;
 
+            using var possibleSpawnDefsItem = ListPool<SpawnDefinition>.Rent();
+            var possibleSpawnDefs = possibleSpawnDefsItem.Value;
+
+            using var limitedSpawnDefsItem = ListPool<SpawnDefinition>.Rent();
+            var limitedSpawnDefs = limitedSpawnDefsItem.Value;
+
             // 没有剩余点数，或者生成的敌人数量大于50只，则中断。
             while (totalPoints > 0 && spawnedCount < 50)
             {
                 // 当前所有可以生成的敌人。
                 // 不被当前波次限制。
-                var possibleSpawnDefs = validSpawnDefs.Where(def => def.GetSpawnLevel() <= totalPoints);
+                possibleSpawnDefs.Clear();
+                limitedSpawnDefs.Clear();
+                foreach (var def in validSpawnDefs)
+                {
+                    if (def.GetSpawnLevel() <= totalPoints)
+                    {
+                        possibleSpawnDefs.Add(def);
+                    }
+                }
 
                 // 没有可生成的敌人了，跳出
-                if (possibleSpawnDefs.Count() <= 0)
+                if (possibleSpawnDefs.Count <= 0)
                     break;
 
-                IEnumerable<SpawnDefinition> finalSpawnPool = possibleSpawnDefs;
                 // 根据当前波次限制获取有效的敌人。
-                var limitedSpawnDefs = possibleSpawnDefs.Where(def => def.GetMinSpawnWave() <= currentWaveLevelLimit);
-
-                // 如果根据当前波次限制之后，没有可以生成的敌人，则不进行限制。
-                if (limitedSpawnDefs.Count() > 0)
+                foreach (var def in possibleSpawnDefs)
                 {
-                    finalSpawnPool = limitedSpawnDefs;
+                    if (def.GetMinSpawnWave() <= currentWaveLevelLimit)
+                    {
+                        limitedSpawnDefs.Add(def);
+                    }
                 }
 
                 // 随机生成一个敌人。
                 var rng = level.GetSpawnRNG();
-                var spawnDef = finalSpawnPool.WeightedRandom(i => i.GetWeight(level), rng);
+                SpawnDefinition spawnDef;
+
+                // 如果根据当前波次限制之后，没有可以生成的敌人，则不进行限制。
+                if (limitedSpawnDefs.Count > 0)
+                {
+                    spawnDef = limitedSpawnDefs.WeightedRandom(i => i.GetWeight(level), rng);
+                }
+                else
+                {
+                    spawnDef = possibleSpawnDefs.WeightedRandom(i => i.GetWeight(level), rng);
+                }
                 level.SpawnEnemyAtRandomLane(spawnDef);
                 totalPoints -= spawnDef.GetSpawnLevel();
                 spawnedCount++;

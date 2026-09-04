@@ -6,6 +6,7 @@ using MVZ2.GameContent.Enemies;
 using MVZ2.Vanilla.Definitions;
 using MVZ2.Vanilla.Localization;
 using MVZ2.Vanilla.RandomChina;
+using MVZ2Logic;
 using MVZ2Logic.Level;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
@@ -32,8 +33,8 @@ namespace MVZ2.GameContent.RandomChinaEvents
 
             var filteredGrids = UndeadFlyingObject.FilterConflictSpawnGrids(level, possibleGrids);
 
-            var grids = filteredGrids.RandomTake(SPAWN_COUNT, rng);
-            foreach (var grid in grids)
+            using var grids = filteredGrids.RandomTakeDisposeable(SPAWN_COUNT, rng);
+            foreach (var grid in grids.Value)
             {
                 UndeadFlyingObject.SpawnAtGrid(grid, variant);
             }

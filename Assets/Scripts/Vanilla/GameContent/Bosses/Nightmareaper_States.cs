@@ -24,6 +24,7 @@ using PVZEngine.Entities;
 using PVZEngine.Models;
 using PVZEngine.Timing;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 

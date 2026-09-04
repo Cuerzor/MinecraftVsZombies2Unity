@@ -151,9 +151,9 @@ namespace MVZ2.GameContent.Stages
                         if (!spawnDef.CanAppearInEndless(level))
                             return false;
                         return true;
-                    })
-                    .RandomTake(maxEnemyTypeCount, level.GetRoundRNG());
-                entries.AddRange(validEnemies);
+                    });
+                using var randomEnemies = validEnemies.RandomTakeDisposeable(maxEnemyTypeCount, level.GetRoundRNG());
+                entries.AddRange(randomEnemies.Value);
             }
             return entries.ToArray();
         }

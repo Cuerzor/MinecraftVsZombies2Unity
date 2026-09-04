@@ -6,6 +6,7 @@ using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using PVZEngine;
 using PVZEngine.Buffs;
@@ -42,8 +43,9 @@ namespace MVZ2.GameContent.Contraptions
         protected override void OnEvoke(Entity entity)
         {
             base.OnEvoke(entity);
-            var entities = entity.Level.FindEntities(e => e.IsVulnerableEntity() && !e.IsDead && Detection.CanDetect(e) && e.IsHostile(entity)).RandomTake(EVOCATION_MAX_TARGET_COUNT, entity.RNG);
-            var positions = entities.Select(e => e.GetCenter()).ToArray();
+            var entities = entity.Level.FindEntities(e => e.IsVulnerableEntity() && !e.IsDead && Detection.CanDetect(e) && e.IsHostile(entity));
+            using var randomEntities = entities.RandomTakeDisposeable(EVOCATION_MAX_TARGET_COUNT, entity.RNG);
+            var positions = randomEntities.Value.Select(e => e.GetCenter()).ToArray();
             if (positions.Length > 0)
             {
                 var evocationTimer = GetEvocationTimer(entity);

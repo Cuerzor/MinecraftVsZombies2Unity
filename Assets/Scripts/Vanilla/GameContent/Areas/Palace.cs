@@ -58,15 +58,23 @@ namespace MVZ2.GameContent.Areas
                 }
             }
         }
-        public static void LockRandomBlueprints(LevelEngine level, IEnumerable<SeedPack> seedPacks, int count, RandomGenerator rng)
+        public static void LockRandomBlueprints(LevelEngine level, IList<SeedPack> seedPacks, int count, RandomGenerator rng)
         {
             if (count <= 0)
                 return;
-            var validSeedPacks = seedPacks.Where(e => !e.HasBuff<BlueprintLockBuff>());
-            if (validSeedPacks.Count() <= 0)
+            using var validSeedPacksItem = ListPool<SeedPack>.Rent();
+            var validSeedPacks = validSeedPacksItem.Value;
+            foreach (var seedPack in seedPacks)
+            {
+                if (!seedPack.HasBuff<BlueprintLockBuff>())
+                {
+                    validSeedPacks.Add(seedPack);
+                }
+            }
+            if (validSeedPacks.Count <= 0)
                 return;
-            var seeds = validSeedPacks.RandomTake(count, rng);
-            foreach (var seed in seeds)
+            validSeedPacks.RandomKeep(count, rng);
+            foreach (var seed in validSeedPacks)
             {
                 seed.AddBuff<BlueprintLockBuff>();
             }

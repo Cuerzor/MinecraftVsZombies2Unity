@@ -9,6 +9,7 @@ using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using PVZEngine;
 using PVZEngine.Buffs;
@@ -17,6 +18,7 @@ using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Timing;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using PVZEngine.Tools.Timing;
 
 namespace MVZ2.GameContent.Enemies
@@ -63,7 +65,9 @@ namespace MVZ2.GameContent.Enemies
                     else
                     {
                         StartCasting(entity);
-                        GrantShields(entity, detectBuffer.RandomTake(10, entity.RNG));
+
+                        using var shieldTargets = detectBuffer.RandomTakeDisposeable(10, entity.RNG);
+                        GrantShields(entity, shieldTargets.Value);
                     }
                 }
             }

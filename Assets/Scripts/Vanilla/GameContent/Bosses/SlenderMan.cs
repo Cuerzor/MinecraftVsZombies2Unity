@@ -291,7 +291,17 @@ namespace MVZ2.GameContent.Bosses
             var desc = Global.Localization.GetText(CHOOSE_FATE_DESCRIPTION);
 
             int count = level.GetSlendermanFateChoiceCount();
-            var selected = rng != null ? fateOptions.RandomTake(count, rng).ToArray() : fateOptions.Take(count).ToArray();
+
+            // 这里不要用ListPool.Rent，因为后续选项执行时这个List已经被Release了。
+            List<int> selected = new List<int>();
+            if (rng != null)
+            {
+                fateOptions.RandomTake(count, rng, selected);
+            }
+            else
+            {
+                fateOptions.TakeToList(count, selected);
+            }
             var options = selected.Select(i => GetFateOptionText(i)).ToArray();
             level.ShowDialog(title, desc, options, (i) =>
             {
@@ -389,7 +399,17 @@ namespace MVZ2.GameContent.Bosses
             var level = boss.Level;
             var rng = GetEventRNG(boss);
             var possible = level.FindEntities(e => e.Type == EntityTypes.PLANT && e.IsHostile(boss) && !e.IsLoyal());
-            var targets = rng != null ? possible.RandomTake(5, rng) : possible.Take(5);
+
+            using var targetsItem = ListPool<Entity>.Rent();
+            var targets = targetsItem.Value;
+            if (rng != null) 
+            {
+                possible.RandomTake(5, rng, targets);
+            }
+            else
+            {
+                possible.TakeToList(5, targets);
+            }
             foreach (var target in targets)
             {
                 target.CharmPermanent(boss.GetFaction(), new EntitySourceReference(boss));
@@ -423,7 +443,18 @@ namespace MVZ2.GameContent.Bosses
             level.ShakeScreen(50, 0, 30);
             var targets = level.FindEntities(e => e.Type == EntityTypes.PLANT && e.IsOnWater());
             var count = Mathf.CeilToInt(targets.Length * 0.5f);
-            var randomTargets = rng != null ? targets.RandomTake(count, rng) : targets.Take(count);
+
+
+            using var randomTargetsItem = ListPool<Entity>.Rent();
+            var randomTargets = randomTargetsItem.Value;
+            if (rng != null)
+            {
+                targets.RandomTake(count, rng, randomTargets);
+            }
+            else
+            {
+                targets.TakeToList(count, randomTargets);
+            }
             foreach (var target in randomTargets)
             {
                 target.Die(boss);

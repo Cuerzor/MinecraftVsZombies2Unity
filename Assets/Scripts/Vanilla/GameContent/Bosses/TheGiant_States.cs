@@ -20,6 +20,7 @@ using PVZEngine.Grids;
 using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Bosses
@@ -314,17 +315,21 @@ namespace MVZ2.GameContent.Bosses
                             var level = entity.Level;
                             var rng = entity.RNG;
                             var lanes = level.GetMaxLaneCount();
-                            var validLanes = Enumerable.Range(0, lanes);
+
+                            using var validLanesItem = ListPool<int>.Rent();
+                            var validLanes = validLanesItem.Value;
+                            validLanes.FillRange(0, lanes);
+
                             var phase2 = GetPhase(entity) == PHASE_2;
                             for (int x = 0; x < ZOMBIE_BLOCK_COLUMNS; x++)
                             {
                                 int column = GetZombieBlockStartColumn(entity, x, atLeft);
                                 int columnEnd = GetZombieBlockEndColumn(entity, x, atLeft);
-                                var lanesPool = validLanes.Randomize(rng);
+                                validLanes.Shuffle(rng);
                                 for (int y = 0; y < lanes; y++)
                                 {
                                     var i = y + x * lanes;
-                                    var lane = lanesPool.ElementAt(y);
+                                    var lane = validLanes[y];
 
                                     var block = SpawnZombieBlock(entity, entity.Position)?.Let(e =>
                                     {

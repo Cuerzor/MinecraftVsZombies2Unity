@@ -44,8 +44,8 @@ namespace MVZ2Logic.IZombie
         {
             if (grids.Length <= 0)
                 return;
-            var validGrids = grids.RandomTake(count, rng);
-            foreach (var grid in validGrids)
+            using var validGrids = grids.RandomTakeDisposeable(count, rng);
+            foreach (var grid in validGrids.Value)
             {
                 Insert(map, grid, entityID);
             }
