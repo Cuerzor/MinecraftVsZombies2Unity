@@ -6,11 +6,14 @@ using MVZ2.GameContent.Buffs.SeedPacks;
 using MVZ2.Vanilla.Artifacts;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.Level;
 using PVZEngine.Auras;
 using PVZEngine.Buffs;
+using PVZEngine.SeedPacks;
+using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Artifacts
 {
@@ -68,7 +71,8 @@ namespace MVZ2.GameContent.Artifacts
             public override void GetAuraTargets(AuraEffect auraEffect, List<IBuffTarget> results)
             {
                 var level = auraEffect.Source.GetLevel();
-                foreach (var seed in level.GetAllSeedPacks())
+                using var seedPacksItem = level.GetAllSeedPacksDisposeable();
+                foreach (var seed in seedPacksItem.Value)
                 {
                     if (seed == null)
                         continue;

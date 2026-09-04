@@ -25,7 +25,6 @@ namespace MVZ2.GameContent.Contraptions
             var grid = silk.GetGrid();
             if (grid != null)
             {
-                var layers = grid.GetLayers();
                 var orderedLayers = VanillaGridLayers.dreamSilkLayers;
                 foreach (var layer in orderedLayers)
                 {

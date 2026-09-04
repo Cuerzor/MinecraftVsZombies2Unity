@@ -5,6 +5,7 @@ using MVZ2.GameContent.Buffs;
 using MVZ2.Vanilla.Artifacts;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.Entities;
@@ -14,6 +15,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Level;
 using PVZEngine.SeedPacks;
+using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Artifacts
 {
@@ -64,7 +66,8 @@ namespace MVZ2.GameContent.Artifacts
 
                 level.PlaySound(VanillaSoundID.raidhorn);
 
-                foreach (var seed in level.GetAllSeedPacks())
+                using var seedPacksItem = level.GetAllSeedPacksDisposeable();
+                foreach (var seed in seedPacksItem.Value)
                 {
                     if (seed == null)
                         continue;
@@ -91,7 +94,9 @@ namespace MVZ2.GameContent.Artifacts
                 if (sourceArtifact.GetNumber() <= 0)
                     return;
                 var level = sourceArtifact.Level;
-                foreach (var seed in level.GetAllSeedPacks())
+
+                using var seedPacksItem = level.GetAllSeedPacksDisposeable();
+                foreach (var seed in seedPacksItem.Value)
                 {
                     if (seed == null)
                         continue;

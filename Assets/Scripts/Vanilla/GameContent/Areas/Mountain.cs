@@ -10,6 +10,7 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Callbacks;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Grids;
@@ -19,6 +20,7 @@ using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Areas
@@ -103,8 +105,10 @@ namespace MVZ2.GameContent.Areas
                     continue;
 
                 initialMovers.Clear();
-                var carrierEntities = grid.GetLayerEntities(VanillaGridLayers.carrier);
-                if (carrierEntities.Length > 0)
+
+                using var carrierEntitiesItem = grid.GetLayerEntitiesDisposeable(VanillaGridLayers.carrier);
+                var carrierEntities = carrierEntitiesItem.Value;
+                if (carrierEntities.Count > 0)
                 {
                     initialMovers.AddRange(carrierEntities);
                     startX = col;
@@ -191,11 +195,11 @@ namespace MVZ2.GameContent.Areas
 
             // 规则2 & 3：碰撞冲突（检查目标格子上是否有层级冲突的器械）
 
-            var targetGridEntities = targetGrid.GetEntities();
+            using var targetGridEntitiesItem = targetGrid.GetEntitiesDisposeable();
             var currentGridLayers = current.GetGridLayersToTake();
             if (currentGridLayers != null && currentGridLayers.Length > 0)
             {
-                foreach (var targetEntity in targetGridEntities)
+                foreach (var targetEntity in targetGridEntitiesItem.Value)
                 {
                     // 如果目标格子的器械与当前【整个移动集合】在目标位置将要占用的层级有冲突
                     // 简化逻辑：只要当前器械和目标器械有交集层，就会产生碰撞推动

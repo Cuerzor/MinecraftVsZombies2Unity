@@ -19,6 +19,7 @@ using PVZEngine.Spawns;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
 using UnityEngine;
+using static UnityEngine.Networking.UnityWebRequest;
 using Random = UnityEngine.Random;
 
 namespace MVZ2Logic.Level
@@ -60,7 +61,8 @@ namespace MVZ2Logic.Level
         }
         public static void SetupBattleBlueprints(this LevelEngine level, BlueprintChooseItem[] items)
         {
-            var oldSeedPacks = level.GetAllSeedPacks();
+            using var seedPacksBufferItem = level.GetAllSeedPacksDisposeable();
+            var oldSeedPacks = seedPacksBufferItem.Value;
             for (int i = 0; i < level.GetSeedSlotCount(); i++)
             {
                 NamespaceID? blueprintID = null;
@@ -98,7 +100,8 @@ namespace MVZ2Logic.Level
         }
         public static void FillSeedPacks(this LevelEngine level, IEnumerable<NamespaceID> seedPacks)
         {
-            var oldSeedPacks = level.GetAllSeedPacks();
+            using var seedPacksBufferItem = level.GetAllSeedPacksDisposeable();
+            var oldSeedPacks = seedPacksBufferItem.Value;
             int count = seedPacks.Count();
             for (int i = 0; i < count; i++)
             {
@@ -495,9 +498,13 @@ namespace MVZ2Logic.Level
         #endregion
 
         #region 全路
-        public static IEnumerable<int> GetAllLanes(this LevelEngine level)
+        public static void GetAllLanes(this LevelEngine level, List<int> results)
         {
-            return Enumerable.Range(0, level.GetMaxLaneCount());
+            for (int i = 0; i < level.GetMaxLaneCount(); i++)
+            {
+                var lane = i;
+                results.Add(lane);
+            }
         }
         public static bool IsLandAt(this LevelEngine level, float x, float z)
         {
@@ -512,13 +519,27 @@ namespace MVZ2Logic.Level
         }
 
         #region 水路
-        public static IEnumerable<int> GetWaterLanes(this LevelEngine level)
+        public static void GetWaterLanes(this LevelEngine level, List<int> results)
         {
-            return level.GetAllLanes().Where(l => level.IsWaterLane(l));
+            for (int i = 0; i < level.GetMaxLaneCount(); i++)
+            {
+                var lane = i;
+                if (level.IsWaterLane(lane))
+                {
+                    results.Add(lane);
+                }
+            }
         }
-        public static IEnumerable<int> GetEnemySpawnWaterLanes(this LevelEngine level)
+        public static void GetEnemySpawnWaterLanes(this LevelEngine level, List<int> results)
         {
-            return level.GetAllLanes().Where(l => level.IsEnemySpawnWaterLane(l));
+            for (int i = 0; i < level.GetMaxLaneCount(); i++)
+            {
+                var lane = i;
+                if (level.IsEnemySpawnWaterLane(lane))
+                {
+                    results.Add(lane);
+                }
+            }
         }
         public static bool IsWaterLane(this LevelEngine level, int lane)
         {
@@ -564,13 +585,27 @@ namespace MVZ2Logic.Level
         #endregion
 
         #region 空路
-        public static IEnumerable<int> GetAirLanes(this LevelEngine level)
+        public static void GetAirLanes(this LevelEngine level, List<int> results)
         {
-            return level.GetAllLanes().Where(l => level.IsAirLane(l));
+            for (int i = 0; i < level.GetMaxLaneCount(); i++)
+            {
+                var lane = i;
+                if (level.IsAirLane(lane))
+                {
+                    results.Add(lane);
+                }
+            }
         }
-        public static IEnumerable<int> GetEnemySpawnAirLanes(this LevelEngine level)
+        public static void GetEnemySpawnAirLanes(this LevelEngine level, List<int> results)
         {
-            return level.GetAllLanes().Where(l => level.IsEnemySpawnAirLane(l));
+            for (int i = 0; i < level.GetMaxLaneCount(); i++)
+            {
+                var lane = i;
+                if (level.IsEnemySpawnAirLane(lane))
+                {
+                    results.Add(lane);
+                }
+            }
         }
         public static bool IsAirLane(this LevelEngine level, int lane)
         {

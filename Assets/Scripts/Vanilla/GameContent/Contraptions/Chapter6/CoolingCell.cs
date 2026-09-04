@@ -4,6 +4,7 @@ using System.Linq;
 using MVZ2.GameContent.Effects;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Grids;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Definitions;
@@ -27,7 +28,6 @@ namespace MVZ2.GameContent.Contraptions
             var grid = contraption.GetGrid();
             if (grid != null)
             {
-                var layers = grid.GetLayers();
                 var orderedLayers = VanillaGridLayers.coolingCellLayers;
                 bool cooled = false;
                 foreach (var layer in orderedLayers)
@@ -69,7 +69,8 @@ namespace MVZ2.GameContent.Contraptions
             {
                 targetID = CommandBlock.GetTargetEntity(target);
             }
-            return level.GetAllSeedPacks()
+            using var seedPackItem = level.GetAllSeedPacksDisposeable();
+            return seedPackItem.Value
                 .OfType<ClassicSeedPack>()
                 .Where(s => s.GetDefinitionID() == targetID && !s.IsCharged())
                 .OrderBy(s => s.GetRecharge())

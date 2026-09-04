@@ -15,10 +15,12 @@ using MVZ2.GameContent.Seeds;
 using MVZ2.Vanilla.Armors;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Callbacks;
+using MVZ2.Vanilla.Carts;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
 using MVZ2.Vanilla.Shells;
@@ -569,8 +571,8 @@ namespace MVZ2.Vanilla.Entities
             var conflictEntities = new HashSet<Entity>();
             foreach (var layer in layers)
             {
-                var layerEntities = grid.GetLayerEntities(layer);
-                foreach (var ent in layerEntities)
+                using var layerEntities = grid.GetLayerEntitiesDisposeable(layer);
+                foreach (var ent in layerEntities.Value)
                 {
                     if (ent == entity)
                         continue;
@@ -1258,7 +1260,8 @@ namespace MVZ2.Vanilla.Entities
         public static bool TryBehaviourExplode(this Entity entity, float range, float damage)
         {
             bool exploded = false;
-            foreach (var behaviour in entity.Definition.GetBehaviours<IExplodeContraptionBehaviour>())
+            using var behavioursItem = entity.Definition.GetBehavioursDisposeable<IExplodeContraptionBehaviour>();
+            foreach (var behaviour in behavioursItem.Value)
             {
                 behaviour.Explode(entity, range, damage);
                 exploded = true;

@@ -6,6 +6,7 @@ using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Definitions;
@@ -14,6 +15,7 @@ using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.SeedPacks;
+using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Artifacts
@@ -50,10 +52,20 @@ namespace MVZ2.GameContent.Artifacts
             {
                 commandBlock = contraption.IsImitated();
             }
-            var seedPacks = level.GetAllSeedPacks();
-            var seedPack = seedPacks
-                .OfType<ClassicSeedPack>()
-                .FirstOrDefault(s => s.GetSeedType() == SeedTypes.ENTITY && s.GetSeedEntityID() == entityID && s.IsCommandBlock() == commandBlock && !s.IsCharged());
+
+            using var seedPacksItem = level.GetAllSeedPacksDisposeable();
+
+            ClassicSeedPack? seedPack = null;
+            foreach (var seed in seedPacksItem.Value)
+            {
+                if (seed == null)
+                    continue;
+                if (seed.GetSeedType() == SeedTypes.ENTITY && seed.GetSeedEntityID() == entityID && seed.IsCommandBlock() == commandBlock && !seed.IsCharged())
+                {
+                    seedPack = seed;
+                    break;
+                }
+            }
             if (seedPack == null)
                 return;
 

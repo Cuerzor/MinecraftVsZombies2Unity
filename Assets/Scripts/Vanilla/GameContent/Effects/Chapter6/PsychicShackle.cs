@@ -8,6 +8,7 @@ using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Resources;
 using PVZEngine;
@@ -50,7 +51,8 @@ namespace MVZ2.GameContent.Effects
                 var id = GetRequiredEntityID(entity);
                 if (id == null)
                     return;
-                foreach (var ent in grid.GetEntities())
+                using var gridEntities = grid.GetEntitiesDisposeable();
+                foreach (var ent in gridEntities.Value)
                 {
                     if (ent.IsEntityOf(id))
                     {

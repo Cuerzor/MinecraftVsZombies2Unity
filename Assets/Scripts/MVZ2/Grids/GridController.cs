@@ -7,6 +7,7 @@ using MVZ2.Level.HPBar;
 using MVZ2.Level.Inputing;
 using MVZ2.Managers;
 using MVZ2.Models;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Games;
 using MVZ2Logic.Grids;
@@ -19,6 +20,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
 using PVZEngine.Level;
+using PVZEngine.Tools;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -271,13 +273,18 @@ namespace MVZ2.Grids
             var amountMode = Main.OptionsManager.GetHPBarAmountMode();
 
             bool shouldShow = level?.ShouldShowHPBars() ?? false;
-            var layers = grid.GetLayers();
-            Array.Sort(layers, comparer);
+
+            using var layersBufferItem = ListPool<NamespaceID>.Rent();
+            var layers = layersBufferItem.Value;
+            grid.GetLayers(layers);
+            layers.Sort(comparer);
+
             foreach (var layer in layers)
             {
                 var layerDefinition = Main.Game.GetGridLayerDefinition(layer);
-                var entities = grid.GetLayerEntities(layer);
-                foreach (var entity in entities)
+
+                using var entitiesItem = grid.GetLayerEntitiesDisposeable(layer);
+                foreach (var entity in entitiesItem.Value)
                 {
                     if (!entity.Exists())
                         continue;

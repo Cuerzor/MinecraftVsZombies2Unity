@@ -4,6 +4,7 @@ using System.Linq;
 using MVZ2Logic.Level;
 using PVZEngine.Level;
 using PVZEngine.Spawns;
+using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2Logic.Spawns
@@ -22,24 +23,28 @@ namespace MVZ2Logic.Spawns
         }
         public int GetRandomSpawnLane(SpawnDefinition definition, LevelEngine level)
         {
-            var allLanes = level.GetAllLanes();
-            var resultLanes = level.GetAllLanes();
+            using var resultLanesItem = ListPool<int>.Rent();
+            var resultLanes = resultLanesItem.Value;
+            level.GetAllLanes(resultLanes);
+            
+            using var exceptLanesItem = ListPool<int>.Rent();
+            var exceptLanes = exceptLanesItem.Value;
 
             bool isStartWaves = level.CurrentFlag <= 0 && level.CurrentWave <= 3;
             if (isStartWaves || !definition.SpawnInWater())
             {
-                var waterLanes = level.GetEnemySpawnWaterLanes();
-                resultLanes = resultLanes.Except(waterLanes);
+                level.GetEnemySpawnWaterLanes(exceptLanes);
             }
             if (isStartWaves || !definition.SpawnInAir())
             {
-                var airLanes = level.GetEnemySpawnAirLanes();
-                resultLanes = resultLanes.Except(airLanes);
+                level.GetEnemySpawnAirLanes(exceptLanes);
             }
+            resultLanes.ExceptList(exceptLanes);
 
             if (resultLanes.Count() <= 0)
             {
-                resultLanes = allLanes;
+                resultLanes.Clear();
+                level.GetAllLanes(resultLanes);
             }
             return level.GetRandomEnemySpawnLane(resultLanes);
         }

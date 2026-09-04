@@ -34,7 +34,7 @@ namespace MVZ2.GameContent.Artifacts
             {
                 if (artifact == null || artifact.Definition != this)
                     continue;
-                AuraEffect aura = artifact.GetAuraEffect<EyeOfTheGiantAura>();
+                var aura = artifact.GetAuraEffect<EyeOfTheGiantAura>();
                 if (aura == null)
                     continue;
                 aura.UpdateAura();

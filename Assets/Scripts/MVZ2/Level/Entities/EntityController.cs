@@ -27,6 +27,7 @@ using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using PVZEngine.Timing;
+using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
@@ -105,7 +106,10 @@ namespace MVZ2.Level.Entities
             UpdateModelInsertions();
 
             // 重新创建护甲模型
-            foreach (var slot in Entity.GetActiveArmorSlots())
+            using var armorBufferItem = ListPool<NamespaceID>.Rent();
+            var armorBuffer = armorBufferItem.Value;
+            Entity.GetActiveArmorSlots(armorBuffer);
+            foreach (var slot in armorBuffer)
             {
                 var armor = Entity.GetArmorAtSlot(slot);
                 if (armor != null)
@@ -512,7 +516,10 @@ namespace MVZ2.Level.Entities
         {
             if (!Model)
                 return;
-            foreach (var slotSlot in Entity.GetActiveArmorSlots())
+            using var armorBufferItem = ListPool<NamespaceID>.Rent();
+            var armorBuffer = armorBufferItem.Value;
+            Entity.GetActiveArmorSlots(armorBuffer);
+            foreach (var slotSlot in armorBuffer)
             {
                 UpdateArmorModel(slotSlot);
             }

@@ -14,6 +14,7 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.Pickups;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
@@ -242,12 +243,11 @@ namespace MVZ2.GameContent.Contraptions
             if (grid == null)
                 return null;
 
-            var gridEntities = grid.GetEntities();
-            var spawner = gridEntities.FirstOrDefault(e => e.IsEntityOf(VanillaObstacleID.monsterSpawner));
+            using var gridEntities = grid.GetEntitiesDisposeable();
+            var spawner = gridEntities.Value.FirstOrDefault(e => e.IsEntityOf(VanillaObstacleID.monsterSpawner));
             if (spawner.ExistsAndAlive())
                 return spawner;
 
-            var layers = grid.GetLayers();
             var orderedLayers = VanillaGridLayers.devourerLayers;
             foreach (var layer in orderedLayers)
             {

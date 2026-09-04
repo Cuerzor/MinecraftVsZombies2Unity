@@ -7,6 +7,7 @@ using MVZ2.GameContent.Buffs.Contraptions;
 using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Placements;
 using MVZ2.Vanilla.Callbacks;
+using MVZ2.Vanilla.Carts;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2Logic;
@@ -32,9 +33,10 @@ namespace MVZ2.Vanilla.Contraptions
         public static void Evoke(this Entity contraption)
         {
             contraption.Spawn(VanillaEffectID.evocationStar, contraption.GetCenter());
-            foreach (var evokable in contraption.Definition.GetBehaviours<IContraptionEvokeBehaviour>())
+            using var behavioursItem = contraption.Definition.GetBehavioursDisposeable<IContraptionEvokeBehaviour>();
+            foreach (var behaviour in behavioursItem.Value)
             {
-                evokable.Evoke(contraption);
+                behaviour.Evoke(contraption);
             }
             var param = new EntityCallbackParams(contraption);
             contraption.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_CONTRAPTION_EVOKE, param, contraption.GetDefinitionID());
@@ -52,8 +54,8 @@ namespace MVZ2.Vanilla.Contraptions
                 if (grid.GetCarrierEntity() == contraption)
                 {
                     // 选取当前实体所占有图格的非承载层。
-                    var layers = grid.GetLayers();
-                    var carryingLayers = layers.Where(l => l != VanillaGridLayers.carrier);
+                    using var layers = grid.GetLayersDisposeable();
+                    var carryingLayers = layers.Value.Where(l => l != VanillaGridLayers.carrier);
 
                     foreach (var layer in carryingLayers)
                     {
@@ -166,9 +168,10 @@ namespace MVZ2.Vanilla.Contraptions
         }
         public static void Trigger(this Entity contraption)
         {
-            foreach (var triggerable in contraption.Definition.GetBehaviours<ITriggerableContraption>())
+            using var behavioursItem = contraption.Definition.GetBehavioursDisposeable<ITriggerableContraption>();
+            foreach (var behaviour in behavioursItem.Value)
             {
-                triggerable.Trigger(contraption);
+                behaviour.Trigger(contraption);
             }
             contraption.Level.Triggers.RunCallback(VanillaLevelCallbacks.POST_CONTRAPTION_TRIGGER, new EntityCallbackParams(contraption));
         }
@@ -181,7 +184,8 @@ namespace MVZ2.Vanilla.Contraptions
         }
         public static void EmptyHandClick(this Entity contraption)
         {
-            foreach (var behaviour in contraption.Definition.GetBehaviours<IEmptyHandClickEntity>())
+            using var behavioursItem = contraption.Definition.GetBehavioursDisposeable<IEmptyHandClickEntity>();
+            foreach (var behaviour in behavioursItem.Value)
             {
                 behaviour.EmptyHandClick(contraption);
             }

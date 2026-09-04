@@ -3,6 +3,7 @@
 using System.Linq;
 using MVZ2.GameContent.Contraptions;
 using MVZ2.Vanilla.Grids;
+using MVZ2Logic;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
@@ -14,7 +15,8 @@ namespace MVZ2.GameContent.Placements
     {
         public override NamespaceID? GetEntitySpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
-            var entities = grid.GetEntities();
+            using var gridEntities = grid.GetEntitiesDisposeable();
+            var entities = gridEntities.Value;
             if (entities.Count() <= 0 || !entities.Any(e => DreamSilk.CanSleep(e)))
                 return VanillaGridStatus.onlyCanSleep;
 

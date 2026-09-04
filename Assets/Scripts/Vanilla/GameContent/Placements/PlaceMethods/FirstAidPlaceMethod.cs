@@ -21,7 +21,8 @@ namespace MVZ2.GameContent.Placements
                 return VanillaGridStatus.notUnlocked;
             if (!entity.IsDefensive())
                 return VanillaGridStatus.firstAid;
-            var entities = grid.GetEntities();
+            using var gridEntities = grid.GetEntitiesDisposeable();
+            var entities = gridEntities.Value;
             if (entities.Count() <= 0 || !entities.Any(e => CanFirstAid(entity, e)))
             {
                 return VanillaGridStatus.firstAid;
@@ -32,7 +33,8 @@ namespace MVZ2.GameContent.Placements
         {
             if (entityDef.IsDefensive())
             {
-                var entities = grid.GetEntities();
+                using var gridEntities = grid.GetEntitiesDisposeable();
+                var entities = gridEntities.Value;
                 var entity = entities.FirstOrDefault(e => CanFirstAid(entityDef, e));
                 if (entity.ExistsAndAlive())
                 {

@@ -11,6 +11,7 @@ using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Difficulties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
@@ -74,7 +75,9 @@ namespace MVZ2.GameContent.Carts
                         // 碰到小车的僵尸受到伤害。
                         var effects = new DamageEffectList(VanillaDamageEffects.DAMAGE_BOTH_ARMOR_AND_BODY, VanillaDamageEffects.MUTE, VanillaDamageEffects.INSTA_KILL, VanillaDamageEffects.NO_REVIVAL);
                         ent.TakeDamage(VanillaMod.INSTA_DAMAGE_AMOUNT, effects, entity);
-                        foreach (var behaviour in entity.Definition.GetBehaviours<ICartBehaviour>())
+
+                        using var behavioursItem = entity.Definition.GetBehavioursDisposeable<ICartBehaviour>();
+                        foreach (var behaviour in behavioursItem.Value)
                         {
                             behaviour.PostCrush(entity, ent);
                         }

@@ -11,6 +11,7 @@ using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.StateMachine;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
@@ -1274,8 +1275,8 @@ namespace MVZ2.GameContent.Bosses
             public static Entity? SpawnZombieBlockAtRandomGrid(Entity entity)
             {
                 var level = entity.Level;
-                var grids = level.GetAllGrids();
-                var validGrids = grids.Where(g => !GridHasTail(g));
+                using var grids = level.GetAllGridsDisposeable();
+                var validGrids = grids.Value.Where(g => !GridHasTail(g));
                 if (validGrids.Count() <= 0)
                     return null;
                 var grid = validGrids.Random(entity.RNG);

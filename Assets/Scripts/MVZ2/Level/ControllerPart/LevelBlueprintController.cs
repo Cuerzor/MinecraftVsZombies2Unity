@@ -6,8 +6,12 @@ using System.Linq;
 using System.Runtime.Serialization;
 using MVZ2.Blueprints;
 using MVZ2.Level.Blueprints;
+using MVZ2Logic;
 using MVZ2Logic.Level;
+using PVZEngine;
 using PVZEngine.Level;
+using PVZEngine.SeedPacks;
+using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2.Level
@@ -225,11 +229,13 @@ namespace MVZ2.Level
             if (seri is not SerializableLevelBlueprintController serializable)
                 return;
             UpdateUIClassicBlueprintCount();
-            var seedPacks = Level.GetAllSeedPacks();
-            classicBlueprints = new ClassicBlueprintController[seedPacks.Length];
+
+            using var seedPacksBufferItem = Level.GetAllSeedPacksDisposeable();
+            var seedPacks = seedPacksBufferItem.Value;
+            classicBlueprints = new ClassicBlueprintController[seedPacks.Count];
             if (serializable.classicBlueprints != null)
             {
-                for (int i = 0; i < seedPacks.Length; i++)
+                for (int i = 0; i < seedPacks.Count; i++)
                 {
                     var controller = CreateClassicSeedController(i);
                     if (controller == null)
@@ -242,10 +248,13 @@ namespace MVZ2.Level
                 }
             }
             UpdateUIConveyorBlueprintCount();
-            var conveyorSeedPacks = Level.GetAllConveyorSeedPacks();
+
+            using var conveyorSeedPacksItem = Level.GetAllConveyorSeedPacksDisposeable();
+            var conveyorSeedPacks = conveyorSeedPacksItem.Value;
+
             if (serializable.conveyorBlueprints != null)
             {
-                for (int i = 0; i < conveyorSeedPacks.Length; i++)
+                for (int i = 0; i < conveyorSeedPacks.Count; i++)
                 {
                     var controller = CreateConveyorSeedController(i);
                     if (controller == null)

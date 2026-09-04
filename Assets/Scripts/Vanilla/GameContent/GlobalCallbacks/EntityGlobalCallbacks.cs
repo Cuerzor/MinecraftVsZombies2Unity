@@ -3,10 +3,12 @@
 using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Armors;
 using MVZ2.Vanilla.Callbacks;
+using MVZ2.Vanilla.Carts;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Shells;
+using MVZ2Logic;
 using MVZ2Logic.Callbacks;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Modding;
@@ -131,7 +133,8 @@ namespace MVZ2.GameContent.GlobalCallbacks
             var info = param.deathInfo;
             if (entity.ShouldTriggerDeathEffects(info))
             {
-                foreach (var behaviour in entity.Definition.GetBehaviours<IDeathEffectsBehaviour>())
+                using var behavioursItem = entity.Definition.GetBehavioursDisposeable<IDeathEffectsBehaviour>();
+                foreach (var behaviour in behavioursItem.Value)
                 {
                     behaviour.DeathEffects(entity, info);
                 }

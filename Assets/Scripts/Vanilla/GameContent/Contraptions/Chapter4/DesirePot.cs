@@ -163,14 +163,24 @@ namespace MVZ2.GameContent.Contraptions
         private SeedPack[] GetBlueprintsToCopy(Entity entity)
         {
             var level = entity.Level;
-            IEnumerable<SeedPack> heldBlueprints;
+            using var heldBlueprintsItem = ListPool<SeedPack>.Rent();
+            var heldBlueprints = heldBlueprintsItem.Value;
             if (level.IsConveyorMode())
             {
-                heldBlueprints = level.GetAllConveyorSeedPacks();
+                using var conveyor = level.GetAllConveyorSeedPacksDisposeable();
+                heldBlueprints.AddRange(conveyor.Value);
             }
             else
             {
-                heldBlueprints = level.GetAllSeedPacks().OfType<SeedPack>().Where(e => e.IsCharged());
+                using var classic = level.GetAllSeedPacksDisposeable();
+                foreach (var seedPack in classic.Value)
+                {
+                    if (seedPack == null)
+                        continue;
+                    if (!seedPack.IsCharged())
+                        continue;
+                    heldBlueprints.Add(seedPack);
+                }
             }
             var sourceBlueprints = heldBlueprints.TakeLast(EVOCATION_CARD_COUNT);
 

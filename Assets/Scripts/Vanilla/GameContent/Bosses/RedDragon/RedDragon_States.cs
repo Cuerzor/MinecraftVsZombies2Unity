@@ -18,6 +18,7 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.StateMachine;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine;
@@ -1968,7 +1969,8 @@ namespace MVZ2.GameContent.Bosses
                             continue;
 
                         bool stopped = false;
-                        foreach (var gridEntity in grid.GetEntities())
+                        using var gridEntitiesItem = grid.GetEntitiesDisposeable();
+                        foreach (var gridEntity in gridEntitiesItem.Value)
                         {
                             if (gridEntity.Type != EntityTypes.PLANT || !entity.IsHostile(gridEntity))
                                 continue;

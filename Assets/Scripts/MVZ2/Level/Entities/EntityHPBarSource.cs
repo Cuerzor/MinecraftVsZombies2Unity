@@ -6,7 +6,9 @@ using MVZ2.Managers;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Games;
 using MVZ2Logic.Options;
+using PVZEngine;
 using PVZEngine.Armors;
+using PVZEngine.Tools;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
 
@@ -76,7 +78,10 @@ namespace MVZ2.Level.Entities
 
             var entity = Controller.Entity;
             var level = Controller.Level;
-            foreach (var armorSlot in entity.GetActiveArmorSlots())
+            using var armorBufferItem = ListPool<NamespaceID>.Rent();
+            var armorBuffer = armorBufferItem.Value;
+            entity.GetActiveArmorSlots(armorBuffer);
+            foreach (var armorSlot in armorBuffer)
             {
                 var armor = entity.GetArmorAtSlot(armorSlot);
                 if (!Armor.Exists(armor))

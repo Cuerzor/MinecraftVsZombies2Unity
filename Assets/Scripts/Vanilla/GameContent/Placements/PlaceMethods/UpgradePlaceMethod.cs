@@ -4,6 +4,7 @@ using System.Linq;
 using MVZ2.GameContent.Buffs.Contraptions;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Grids;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Placements;
@@ -23,7 +24,8 @@ namespace MVZ2.GameContent.Placements
         }
         public override NamespaceID? GetPlaceError(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
-            var entities = grid.GetEntities();
+            using var gridEntities = grid.GetEntitiesDisposeable();
+            var entities = gridEntities.Value;
             if (entities.Count() <= 0 || !entities.Any(e => e.CanUpgradeToContraption(entity) && e.IsFriendlyEntity()))
             {
                 return VanillaGridStatus.onlyUpgrade;
@@ -32,7 +34,9 @@ namespace MVZ2.GameContent.Placements
         }
         public override PlaceOutput PlaceEntity(PlacementDefinition placement, LawnGrid grid, EntityDefinition entityDef, PlaceParams param)
         {
-            var entity = grid.GetEntities().FirstOrDefault(e => e.CanUpgradeToContraption(entityDef));
+            using var gridEntities = grid.GetEntitiesDisposeable();
+            var entities = gridEntities.Value;
+            var entity = entities.FirstOrDefault(e => e.CanUpgradeToContraption(entityDef));
             if (entity != null && entity.Exists())
             {
                 bool isCommandBlock = param.IsCommandBlock();

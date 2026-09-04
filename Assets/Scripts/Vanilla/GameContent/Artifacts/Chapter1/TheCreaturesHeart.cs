@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using MVZ2.GameContent.Buffs;
 using MVZ2.GameContent.Buffs.SeedPacks;
+using MVZ2Logic;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Definitions;
@@ -14,6 +15,7 @@ using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.SeedPacks;
+using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Artifacts
 {
@@ -39,7 +41,7 @@ namespace MVZ2.GameContent.Artifacts
             {
                 if (artifact == null || artifact.Definition != this)
                     continue;
-                AuraEffect aura = artifact.GetAuraEffect<ReduceCostAura>();
+                var aura = artifact.GetAuraEffect<ReduceCostAura>();
                 if (aura == null)
                     continue;
                 aura.UpdateAura();
@@ -53,7 +55,7 @@ namespace MVZ2.GameContent.Artifacts
             {
                 if (artifact == null || artifact.Definition != this)
                     continue;
-                AuraEffect aura = artifact.GetAuraEffect<ReduceCostAura>();
+                var aura = artifact.GetAuraEffect<ReduceCostAura>();
                 if (aura == null)
                     continue;
                 aura.UpdateAura();
@@ -67,7 +69,7 @@ namespace MVZ2.GameContent.Artifacts
             {
                 if (artifact == null || artifact.Definition != this)
                     continue;
-                AuraEffect aura = artifact.GetAuraEffect<ReduceCostAura>();
+                var aura = artifact.GetAuraEffect<ReduceCostAura>();
                 if (aura == null)
                     continue;
                 aura.UpdateAura();
@@ -83,7 +85,8 @@ namespace MVZ2.GameContent.Artifacts
             public override void GetAuraTargets(AuraEffect auraEffect, List<IBuffTarget> results)
             {
                 var level = auraEffect.Source.GetLevel();
-                foreach (var seed in level.GetAllSeedPacks())
+                using var seedPacksItem = level.GetAllSeedPacksDisposeable();
+                foreach (var seed in seedPacksItem.Value)
                 {
                     if (seed == null)
                         continue;

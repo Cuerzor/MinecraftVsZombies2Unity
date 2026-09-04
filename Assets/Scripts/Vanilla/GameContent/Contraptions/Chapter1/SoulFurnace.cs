@@ -169,7 +169,6 @@ namespace MVZ2.GameContent.Contraptions
             var targetGrid = furnace.Level.GetGrid(column + 1 * furnace.GetFacingX(), lane);
             if (targetGrid == null)
                 return;
-            var layers = targetGrid.GetLayers();
             var orderedLayers = VanillaGridLayers.sacrificeLayers;
             foreach (var layer in orderedLayers)
             {

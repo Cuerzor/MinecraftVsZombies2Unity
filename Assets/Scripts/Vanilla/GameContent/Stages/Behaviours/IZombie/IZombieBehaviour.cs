@@ -206,7 +206,18 @@ namespace MVZ2.GameContent.Stages
             }
             else
             {
-                var minSeedPackEnergy = level.GetAllSeedPacks().OfType<SeedPack>().Select(s => s.GetCost()).Min();
+                var minSeedPackEnergy = int.MaxValue;
+                using var seedPacksItem = level.GetAllSeedPacksDisposeable();
+                foreach (var seedPack in seedPacksItem.Value)
+                {
+                    if (seedPack == null)
+                        continue;
+                    var cost = seedPack.GetCost();
+                    if (cost < minSeedPackEnergy)
+                    {
+                        minSeedPackEnergy = cost;
+                    }
+                }
                 if (level.Energy < minSeedPackEnergy)
                 {
                     cannotAfford = true;

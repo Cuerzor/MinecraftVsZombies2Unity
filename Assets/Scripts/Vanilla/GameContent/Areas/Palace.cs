@@ -5,6 +5,7 @@ using System.Linq;
 using MVZ2.GameContent.Buffs.SeedPacks;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
@@ -25,8 +26,9 @@ namespace MVZ2.GameContent.Areas
         {
             base.PostHugeWaveEvent(level);
 
-
-            IEnumerable<SeedPack> seedPacks = GetBlueprintsToLock(level);
+            using var seedPacksItem = ListPool<SeedPack>.Rent();
+            var seedPacks = seedPacksItem.Value;
+            GetBlueprintsToLock(level, seedPacks);
             var count = seedPacks.Count() / LOCK_DIVISION;
             if (count <= 0)
                 return;
@@ -39,15 +41,21 @@ namespace MVZ2.GameContent.Areas
             LockRandomBlueprints(level, seedPacks, count, rng);
             level.PlaySound(VanillaSoundID.locked);
         }
-        public static IEnumerable<SeedPack> GetBlueprintsToLock(LevelEngine level)
+        public static void GetBlueprintsToLock(LevelEngine level, List<SeedPack> results)
         {
             if (level.IsConveyorMode())
             {
-                return level.GetAllConveyorSeedPacks();
+                using var seedPacksBufferItem = level.GetAllConveyorSeedPacksDisposeable();
+                results.AddRange(seedPacksBufferItem.Value);
             }
             else
             {
-                return level.GetAllSeedPacks().OfType<SeedPack>();
+                using var seedPacksBufferItem = level.GetAllSeedPacksDisposeable();
+                foreach (var classic in seedPacksBufferItem.Value)
+                {
+                    if (classic != null)
+                        results.Add(classic);
+                }
             }
         }
         public static void LockRandomBlueprints(LevelEngine level, IEnumerable<SeedPack> seedPacks, int count, RandomGenerator rng)

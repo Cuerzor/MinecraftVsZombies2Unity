@@ -5,14 +5,18 @@ using System.Linq;
 using MVZ2.GameContent.Difficulties;
 using MVZ2.GameContent.Enemies;
 using MVZ2.Vanilla.Entities;
+using MVZ2Logic;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Level;
+using PVZEngine;
 using PVZEngine.Armors;
 using PVZEngine.Auras;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Modifiers;
+using PVZEngine.SeedPacks;
+using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Buffs.Level
 {
@@ -62,7 +66,9 @@ namespace MVZ2.GameContent.Buffs.Level
             public override void GetAuraTargets(AuraEffect auraEffect, List<IBuffTarget> results)
             {
                 var level = auraEffect.Source.GetLevel();
-                foreach (var seed in level.GetAllSeedPacks())
+
+                using var seedPacksItem = level.GetAllSeedPacksDisposeable();
+                foreach (var seed in seedPacksItem.Value)
                 {
                     if (seed == null)
                         continue;

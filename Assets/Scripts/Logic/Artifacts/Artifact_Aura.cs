@@ -16,13 +16,21 @@ namespace MVZ2Logic.Artifacts
         }
 
         #region 获取
-        public AuraEffect GetAuraEffect<T>() where T : AuraEffectDefinition
+        public AuraEffect? GetAuraEffect<T>()
         {
             return auraComponent.List.Get<T>();
         }
-        public AuraEffect[] GetAuraEffects()
+        public AuraEffect? GetAuraEffect(AuraEffectDefinition definition)
         {
-            return auraComponent.List.GetAll();
+            return auraComponent.List.Get(definition);
+        }
+        public AuraEffect GetAuraEffectAt(int i)
+        {
+            return auraComponent.List.GetAt(i);
+        }
+        public int GetAuraEffectCount()
+        {
+            return auraComponent.List.Count;
         }
         #endregion
 

@@ -73,11 +73,11 @@ namespace MVZ2.GameContent.Commands
                 case "commandblock":
                     {
                         var contraptions = Global.Saves.GetUnlockedContraptions();
-                        var grids = level.GetAllGrids();
+                        using var grids = level.GetAllGridsDisposeable();
                         for (int i = 0; i < contraptions.Length; i++)
                         {
                             var contraption = contraptions[i];
-                            var grid = grids.FirstOrDefault(g => g.CanSpawnEntity(contraption));
+                            var grid = grids.Value.FirstOrDefault(g => g.CanSpawnEntity(contraption));
                             if (grid == null)
                                 continue;
                             var spawnParams = CommandBlock.GetImitateSpawnParams(contraption);

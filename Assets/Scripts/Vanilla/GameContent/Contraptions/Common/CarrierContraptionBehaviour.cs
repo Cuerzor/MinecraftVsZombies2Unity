@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using MVZ2.Vanilla.Contraptions;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using PVZEngine;
 using PVZEngine.Auras;
@@ -23,13 +24,14 @@ namespace MVZ2.GameContent.Contraptions
         }
         public void UpdateCarrier(Entity carrier)
         {
-            foreach (var aura in carrier.GetAuraEffects<CarrierAura>())
+            var auraCount = carrier.GetAuraEffectCount();
+            for (int i = 0; i < auraCount; i++)
             {
-                aura.UpdateAura();
-            }
-            foreach (var aura in carrier.GetAuraEffects<PassengerAura>())
-            {
-                aura.UpdateAura();
+                var aura = carrier.GetAuraEffectAt(i);
+                if (aura.Definition is CarrierAura || aura.Definition is PassengerAura)
+                {
+                    aura.UpdateAura();
+                }
             }
         }
         protected abstract NamespaceID GetCarrierBuffID();
@@ -63,10 +65,11 @@ namespace MVZ2.GameContent.Contraptions
                 {
                     if (grid == null)
                         continue;
-                    foreach (var layer in grid.GetLayers())
+                    using var layersItem = grid.GetLayersDisposeable();
+                    foreach (var layer in layersItem.Value)
                     {
-                        var others = grid.GetLayerEntities(layer);
-                        foreach (var other in others)
+                        using var others = grid.GetLayerEntitiesDisposeable(layer);
+                        foreach (var other in others.Value)
                         {
                             if (other != null && other != sourceEnt)
                                 results.Add(other);

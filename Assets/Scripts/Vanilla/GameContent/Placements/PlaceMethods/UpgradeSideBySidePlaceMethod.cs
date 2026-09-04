@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Buffs.Contraptions;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Grids;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Placements;
@@ -87,7 +88,8 @@ namespace MVZ2.GameContent.Placements
                 return null;
             if (NamespaceID.IsValid(placement.GetTerrainSpawnErrorOfGrid(grid, toPlace)))
                 return null;
-            var entities = grid.GetEntities();
+            using var gridEntities = grid.GetEntitiesDisposeable();
+            var entities = gridEntities.Value;
             foreach (var ent in entities)
             {
                 if (IsCellOfUpgrade(ent, toPlace))

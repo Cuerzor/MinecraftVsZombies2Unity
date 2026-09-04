@@ -14,6 +14,7 @@ using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
 using MVZ2.Vanilla.Unlocks;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Grids;
 using MVZ2Logic.HeldItems;
@@ -183,8 +184,12 @@ namespace MVZ2.GameContent.Contraptions
                 return;
             if (memberDefinition.CanContraptionOnWater())
                 return;
-            if (grid.GetEntities().Any(e => e.IsEntityOf(VanillaContraptionID.lilyPad)))
-                return;
+            using var gridEntities = grid.GetEntitiesDisposeable();
+            foreach (var ent in gridEntities.Value)
+            {
+                if (ent.IsEntityOf(VanillaContraptionID.lilyPad))
+                    return;
+            }
             teleporter.Spawn(VanillaContraptionID.lilyPad, grid.GetEntityPosition())?.Let(e =>
             {
                 e.AddBuff<TeleporterTeleportDownBuff>();

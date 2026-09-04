@@ -7,6 +7,7 @@ using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Definitions;
 using MVZ2.Vanilla.Localization;
 using MVZ2.Vanilla.RandomChina;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using PVZEngine.Armors;
 using PVZEngine.Buffs;
@@ -30,7 +31,8 @@ namespace MVZ2.GameContent.RandomChinaEvents
                 {
                     enemy.AddBuff<BigTroubleBuff>();
                 }
-                foreach (var slot in enemy.GetActiveArmorSlots())
+                using var slots = enemy.GetActiveArmorSlotsDisposeable();
+                foreach (var slot in slots.Value)
                 {
                     var armor = enemy.GetArmorAtSlot(slot);
                     if (!Armor.Exists(armor))

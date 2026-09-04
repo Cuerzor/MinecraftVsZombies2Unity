@@ -341,7 +341,7 @@ namespace MVZ2.GameContent.Bosses
             {
                 contraption.ClearTakenGrids();
             }
-            var grids = level.GetAllGrids();
+            using var grids = level.GetAllGridsDisposeable();
             foreach (var contraption in contraptions)
             {
                 var placementID = contraption.Definition.GetPlacementID();
@@ -350,7 +350,7 @@ namespace MVZ2.GameContent.Bosses
                 var placementDef = level.Content.GetPlacementDefinition(placementID);
                 if (placementDef == null)
                     continue;
-                var targetGrids = grids.Where(g => g.CanSpawnEntity(contraption.GetDefinitionID()));
+                var targetGrids = grids.Value.Where(g => g.CanSpawnEntity(contraption.GetDefinitionID()));
                 if (targetGrids.Count() <= 0)
                     continue;
                 var grid = targetGrids.Random(rng);
