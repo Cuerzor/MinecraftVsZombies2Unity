@@ -12,7 +12,6 @@ using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Modifiers;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 namespace MVZ2.GameContent.Buffs.Projectiles
 {

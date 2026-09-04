@@ -13,7 +13,6 @@ using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Tools.Unity;
-using UnityEngine;
 
 namespace MVZ2.GameContent.Artifacts
 {

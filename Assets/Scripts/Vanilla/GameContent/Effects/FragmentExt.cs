@@ -6,7 +6,6 @@ using MVZ2.Vanilla.Properties;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Properties;
-using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2.Vanilla.Effects
@@ -50,7 +49,8 @@ namespace MVZ2.Vanilla.Effects
                 {
                     fragmentRef = new EntityID(fragment);
                     entity.SetFragment(fragmentRef);
-                };
+                }
+                ;
             }
             return fragment;
         }
@@ -93,7 +93,8 @@ namespace MVZ2.Vanilla.Effects
             if (particles != null)
             {
                 particles.SetParent(entity);
-            };
+            }
+            ;
             var fragmentRef = new EntityID(particles);
             entity.SetHealParticles(fragmentRef);
             return particles;

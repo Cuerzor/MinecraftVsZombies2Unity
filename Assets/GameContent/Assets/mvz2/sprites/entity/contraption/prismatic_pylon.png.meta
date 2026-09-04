@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prismatic_pylon_5
+      name: prismatic_pylon_4
       rect:
         serializedVersion: 2
         x: 100
@@ -228,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prismatic_pylon_6
+      name: prismatic_pylon_5
       rect:
         serializedVersion: 2
         x: 109
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prismatic_pylon_7
+      name: prismatic_pylon_6
       rect:
         serializedVersion: 2
         x: 116

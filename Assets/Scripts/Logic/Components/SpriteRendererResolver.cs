@@ -2,7 +2,6 @@
 
 using PVZEngine.Tools.Unity;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace MVZ2Logic.UI
 {

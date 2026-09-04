@@ -2299,6 +2299,9 @@ MonoBehaviour:
   - name: entity/projectile/dart
     texture: {fileID: 2800000, guid: 0a0f7cbdb4c6650409a18d59ba158a03, type: 3}
     tags: []
+  - name: entity/projectile/dazzle
+    texture: {fileID: 2800000, guid: 8792f02cf412b6249bb042653081c354, type: 3}
+    tags: []
   - name: entity/projectile/falling_star
     texture: {fileID: 2800000, guid: a01552dca04bda94385d92805ccac257, type: 3}
     tags: []
@@ -2358,6 +2361,12 @@ MonoBehaviour:
     tags: []
   - name: entity/projectile/large_fireball
     texture: {fileID: 2800000, guid: 5d32c904c5a41ec4a98e3a8b28e408fa, type: 3}
+    tags: []
+  - name: entity/projectile/light_bullet
+    texture: {fileID: 2800000, guid: 17df0b2ed3d4e9d45b0680219448edb5, type: 3}
+    tags: []
+  - name: entity/projectile/light_bullet_trail
+    texture: {fileID: 2800000, guid: ecd7a5d533411f0498b62304935ac57d, type: 3}
     tags: []
   - name: entity/projectile/locked_chest_trashes
     texture: {fileID: 2800000, guid: 103c5d2ba5cab4749ab48c91a1fd44e6, type: 3}
@@ -9753,6 +9762,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 0a0f7cbdb4c6650409a18d59ba158a03, type: 3}
     tags: []
+  - name: entity/projectile/dazzle
+    index: 0
+    sprite: {fileID: 21300000, guid: 8792f02cf412b6249bb042653081c354, type: 3}
+    tags: []
   - name: entity/projectile/falling_star
     index: 0
     sprite: {fileID: 21300000, guid: a01552dca04bda94385d92805ccac257, type: 3}
@@ -9840,6 +9853,14 @@ MonoBehaviour:
   - name: entity/projectile/large_fireball
     index: 0
     sprite: {fileID: 21300000, guid: 5d32c904c5a41ec4a98e3a8b28e408fa, type: 3}
+    tags: []
+  - name: entity/projectile/light_bullet
+    index: 0
+    sprite: {fileID: 21300000, guid: 17df0b2ed3d4e9d45b0680219448edb5, type: 3}
+    tags: []
+  - name: entity/projectile/light_bullet_trail
+    index: 0
+    sprite: {fileID: 21300000, guid: ecd7a5d533411f0498b62304935ac57d, type: 3}
     tags: []
   - name: entity/projectile/locked_chest_trashes
     index: 0

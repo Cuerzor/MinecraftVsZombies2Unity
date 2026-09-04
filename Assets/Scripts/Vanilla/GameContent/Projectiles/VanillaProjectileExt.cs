@@ -6,7 +6,6 @@ using MVZ2.Vanilla.Entities;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine;
-using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Tools;
@@ -68,7 +67,7 @@ namespace MVZ2.Vanilla.Projectiles
         private static bool PreShootProjectile(this Entity entity, ProjectileShootArgs parameters)
         {
             var args = new VanillaLevelCallbacks.PreProjectileShotParams(entity, parameters);
-            
+
             return entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.PRE_PROJECTILE_SHOT, args, true, entity.GetDefinitionID());
         }
         public static ProjectileShootArgs GetShootParams(this Entity entity)

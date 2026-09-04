@@ -94,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7684981520953058444, guid: deb74e74f1a1e1c47912a17f544cfcee, type: 3}
       propertyPath: m_Name
-      value: Pilot Variant
+      value: axolotl_suit_pilot
       objectReference: {fileID: 0}
     - target: {fileID: 8422707312223269050, guid: deb74e74f1a1e1c47912a17f544cfcee, type: 3}
       propertyPath: m_LocalPosition.y

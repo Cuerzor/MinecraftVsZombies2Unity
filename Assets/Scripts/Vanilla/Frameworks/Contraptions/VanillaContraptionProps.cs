@@ -114,7 +114,7 @@ namespace MVZ2.Vanilla.Contraptions
             return definition.GetProperty<bool>(BANNED_IN_TELEPORTER_TEAM);
         }
         #endregion
-        
+
         #region 尖头
         public static readonly PropertyMeta<bool> HAS_POINTY_HEAD = Get<bool>("has_pointy_head");
         public static bool HasPointyHead(this Entity entity)
