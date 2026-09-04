@@ -326,8 +326,9 @@ namespace MVZ2.Level
             ValidateHeldItem();
 
             var uiSimulationSpeed = IsGamePaused() ? 0 : gameSpeed;
-            foreach (var component in level.GetLevelComponents())
+            for (int i = 0; i < level.GetLevelComponentCount(); i++)
             {
+                var component = level.GetLevelComponentAt(i);
                 if (component is IMVZ2LevelComponent comp)
                 {
                     comp.UpdateFrame(deltaTime, uiSimulationSpeed);

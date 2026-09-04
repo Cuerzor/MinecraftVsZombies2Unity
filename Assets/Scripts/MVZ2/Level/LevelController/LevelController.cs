@@ -70,8 +70,9 @@ namespace MVZ2.Level
             Music.SetTrackWeight(0);
             if (level != null)
             {
-                foreach (var component in level.GetLevelComponents())
+                for (int i = 0; i < level.GetLevelComponentCount(); i++)
                 {
+                    var component = level.GetLevelComponentAt(i);
                     if (component is IMVZ2LevelComponent comp)
                     {
                         comp.PostDispose();

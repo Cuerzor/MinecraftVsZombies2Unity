@@ -31,7 +31,12 @@ namespace MVZ2.Level.Components
         }
         public int GetDelayedMoney()
         {
-            return delayedMoneyEntities.Values.Sum();
+            int sum = 0;
+            foreach (var pair in delayedMoneyEntities)
+            {
+                sum += pair.Value;
+            }
+            return sum;
         }
         public void AddDelayedMoney(Entity entity, int value)
         {

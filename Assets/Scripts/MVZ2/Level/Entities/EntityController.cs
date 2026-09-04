@@ -742,7 +742,7 @@ namespace MVZ2.Level.Entities
             switch (amountMode)
             {
                 case HPBarAmountMode.CURRENT_ONLY:
-                    text = Global.Localization.GetText(HP_BAR_TEXT_TEMPLATE, Mathf.CeilToInt(Mathf.Max(0, health)));
+                    text = Mathf.CeilToInt(Mathf.Max(0, health)).ToString();
                     break;
                 case HPBarAmountMode.CURRENT_AND_MAX:
                     text = Global.Localization.GetText(HP_BAR_TEXT_TEMPLATE_WITH_MAX, Mathf.CeilToInt(Mathf.Max(0, health)), Mathf.CeilToInt(maxHealth));
@@ -806,8 +806,6 @@ namespace MVZ2.Level.Entities
         public const string HP_BAR_TEXT_DEATH = "死亡";
         [TranslateMsg("血条的文字")]
         public const string HP_BAR_TEXT_DESTROYED = "摧毁";
-        [TranslateMsg("血条的文字模板")]
-        public const string HP_BAR_TEXT_TEMPLATE = "{0}";
         [TranslateMsg("血条的文字模板")]
         public const string HP_BAR_TEXT_TEMPLATE_WITH_MAX = "{0}/{1}";
         public MainManager Main => MainManager.Instance;

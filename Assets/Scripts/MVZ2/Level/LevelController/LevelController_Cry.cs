@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using MVZ2Logic.Entities;
+using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
@@ -15,37 +16,44 @@ namespace MVZ2.Level
     {
         private void UpdateEnemyCry()
         {
-            Entity[]? crySoundEnemies = null;
-            if (level.IsTimeInterval(7))
-            {
-                crySoundEnemies = GetCrySoundEnemies().ToArray();
-                var enemyCount = crySoundEnemies.Length;
-                float t = Mathf.Clamp01((float)(enemyCount - MinEnemyCryCount) / (MaxEnemyCryCount - MinEnemyCryCount));
-                maxCryTime = (int)Mathf.Lerp(MaxCryInterval, MinCryInterval, t);
-            }
             cryTimer.Run();
-            if (cryTimer.MaxFrame - cryTimer.Frame >= maxCryTime)
-            {
-                cryTimer.Reset();
 
-                crySoundEnemies ??= GetCrySoundEnemies().ToArray();
-                var enemyCount = crySoundEnemies.Length;
-                if (enemyCount <= 0)
-                    return;
-                var crySoundEnemy = crySoundEnemies.Random(rng);
-                var crySound = crySoundEnemy.GetCrySound();
-                if (crySound != null)
-                {
-                    crySoundEnemy.PlayCrySound(crySound);
-                }
-            }
+            bool shouldAdjustInterval = level.IsTimeInterval(7);
+            bool shouldPlayCry = cryTimer.MaxFrame - cryTimer.Frame >= maxCryTime;
+            if (!shouldAdjustInterval && !shouldPlayCry)
+                return;
+
+            // 仅在需要时获取敌人列表，且只获取一次
+            using var pool = ListPool<Entity>.Rent();
+            var enemies = pool.Value;
+            GetCrySoundEnemies(enemies);
+
+            if (shouldAdjustInterval)
+                UpdateCryInterval(enemies.Count);
+
+            if (shouldPlayCry)
+                PlayRandomEnemyCry(enemies);
         }
-        private IEnumerable<Entity> GetCrySoundEnemies()
+        private void UpdateCryInterval(int enemyCount)
         {
-            var enemies = level.GetEntities(EntityTypes.ENEMY);
-            if (enemies.Length <= 0)
-                return Enumerable.Empty<Entity>();
-            return enemies.Where(e => e.GetCrySound() != null);
+            float t = Mathf.Clamp01((float)(enemyCount - MinEnemyCryCount) / (MaxEnemyCryCount - MinEnemyCryCount));
+            maxCryTime = (int)Mathf.Lerp(MaxCryInterval, MinCryInterval, t);
+        }
+
+        private void PlayRandomEnemyCry(List<Entity> enemies)
+        {
+            cryTimer.Reset();
+            if (enemies.Count == 0) 
+                return;
+
+            var target = enemies.Random(rng);
+            var crySound = target.GetCrySound();
+            if (NamespaceID.IsValid(crySound))
+                target.PlayCrySound(crySound);
+        }
+        private void GetCrySoundEnemies(List<Entity> results)
+        {
+            level.FindEntitiesNonAlloc(e => e.Type == EntityTypes.ENEMY && NamespaceID.IsValid(e.GetCrySound()), results);
         }
         private void WriteToSerializable_Cry(SerializableLevelController seri)
         {

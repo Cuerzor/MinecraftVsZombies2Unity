@@ -176,13 +176,22 @@ namespace MVZ2.Level
             uiPreset.SetStarshardSelected(level.GetHeldItemType() == level.GetStarshardHeldType());
             uiPreset.SetStarshardDisabled(starshardDisabled && level.ShouldShowStarshardDisableIcon());
 
-            var limit = level.GetPickaxeCountLimit();
-            var remainCount = level.GetPickaxeRemainCount();
+            bool limited = level.IsPickaxeCountLimited();
+            var text = string.Empty;
+            Color color = Color.white;
+            if (limited)
+            {
+                var limit = level.GetPickaxeCountLimit();
+                var remainCount = level.GetPickaxeRemainCount();
+                text = $"{remainCount}/{limit}";
+                color = remainCount <= 0 ? Color.red : Color.white;
+            }
+
             var pickaxeNumberText = new PickaxeNumberText()
             {
-                show = level.IsPickaxeCountLimited(),
-                text = $"{remainCount}/{limit}",
-                color = remainCount <= 0 ? Color.red : Color.white
+                show = limited,
+                text = text,
+                color = color
             };
             uiPreset.SetPickaxeSelected(level.IsHoldingPickaxe());
             uiPreset.SetPickaxeDisabled(pickaxeDisabled && level.ShouldShowPickaxeDisableIcon());

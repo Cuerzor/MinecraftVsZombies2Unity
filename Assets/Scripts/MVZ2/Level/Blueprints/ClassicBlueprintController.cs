@@ -27,13 +27,18 @@ namespace MVZ2.Level.Blueprints
         {
             base.UpdateFrame(deltaTime);
 
+            var cost = SeedPack.GetCost();
             var maxRecharge = SeedPack.GetMaxRecharge();
             var recharge = SeedPack.GetRecharge();
             ui.SetRecharge(maxRecharge == 0 ? 0 : 1 - recharge / maxRecharge);
             ui.SetDisabled(!CanPick());
             ui.SetTwinkleAlpha(ShouldBlueprintTwinkle(SeedPack) ? Controller.GetTwinkleAlpha() : 0);
             ui.SetSelected(Level.IsHoldingClassicBlueprint(Index));
-            ui.SetCost(SeedPack.GetCost().ToString());
+            if (cachedCost != cost)
+            {
+                cachedCost = cost;
+                ui.SetCost($"{cost}");
+            }
             ui.UpdateAnimation(deltaTime);
         }
         protected override void OnDeactive()
@@ -62,6 +67,7 @@ namespace MVZ2.Level.Blueprints
         }
         #endregion
 
+        private int cachedCost = -1;
         public bool CurrentRecharged { get; private set; }
     }
 }

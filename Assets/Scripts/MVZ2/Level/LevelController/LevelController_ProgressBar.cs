@@ -9,6 +9,7 @@ using MVZ2Logic.Options;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2.Level
@@ -24,6 +25,7 @@ namespace MVZ2.Level
         {
             levelProgress = 0;
             bannerProgresses = new float[level.GetTotalFlags()];
+            UpdateProgressBarBanners();
 
         }
         private void WriteToSerializable_ProgressBar(SerializableLevelController seri)
@@ -43,6 +45,7 @@ namespace MVZ2.Level
             bossMaxHealth = seri.bossMaxHealth;
             progressBarMode = seri.progressBarMode;
             bossProgressBarStyle = seri.bossProgressBarStyle;
+            UpdateProgressBarBanners();
         }
 
 
@@ -85,16 +88,18 @@ namespace MVZ2.Level
             if (progressBarMode)
             {
                 // BOSS血条
-                var bosses = level.FindEntities(e => e.Type == EntityTypes.BOSS && e.IsHostileEntity() && !e.DontCountBossHP());
-                if (bosses.Count() <= 0)
+                using var bossesItem = ListPool<Entity>.Rent();
+                var bosses = bossesItem.Value;
+                level.FindEntitiesNonAlloc(static e => e.Type == EntityTypes.BOSS && e.IsHostileEntity() && !e.DontCountBossHP(), bosses);
+                bossHealth = 0;
+                bossMaxHealth = 0;
+                if (bosses.Count > 0)
                 {
-                    bossHealth = 0;
-                    bossMaxHealth = 0;
-                }
-                else
-                {
-                    bossHealth = bosses.Sum(b => b.Health);
-                    bossMaxHealth = bosses.Sum(b => b.GetMaxHealth());
+                    foreach (var boss in bosses)
+                    {
+                        bossHealth += boss.Health;
+                        bossMaxHealth += boss.GetMaxHealth();
+                    }
                 }
             }
             else
@@ -109,7 +114,9 @@ namespace MVZ2.Level
                         bannerProgresses.CopyTo(newProgresses, 0);
                     }
                     bannerProgresses = newProgresses;
+                    UpdateProgressBarBanners();
                 }
+
                 for (int i = 0; i < bannerProgresses.Length; i++)
                 {
                     float value = (level.CurrentWave >= (totalFlags - i) * level.GetWavesPerFlag()) ? deltaTime : -deltaTime;
@@ -129,13 +136,29 @@ namespace MVZ2.Level
                 }
             }
         }
+        private void UpdateProgressBarBanners()
+        {
+            var ui = GetUIPreset();
+            ui.SetBannerCount(bannerProgresses?.Length ?? 0);
+            UpdateProgressBarBannersRealtime();
+        }
+        private void UpdateProgressBarBannersRealtime()
+        {
+            if (bannerProgresses != null)
+            {
+                var ui = GetUIPreset();
+                for (int i = 0; i < bannerProgresses.Length; i++)
+                {
+                    ui.SetBannerProgress(i, bannerProgresses[i]);
+                }
+            }
+        }
         private void UpdateLevelProgressUI()
         {
             var ui = GetUIPreset();
             ui.SetProgressBarVisible(level.LevelProgressVisible);
             ui.SetLevelProgress(levelProgress);
-            if (bannerProgresses != null)
-                ui.SetBannerProgresses(bannerProgresses);
+            UpdateProgressBarBannersRealtime();
 
             float bossProgress = 0;
             string bossProgressText = string.Empty;

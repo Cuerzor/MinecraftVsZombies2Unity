@@ -121,10 +121,16 @@ namespace MVZ2.Level
                 level.SetHeldItem(heldID);
             }
         }
-        private void UpdateStarshards()
+        private void UpdateStarshardsUIRealtime()
         {
             var levelUI = GetUIPreset();
-            levelUI.SetStarshardCount(level.GetStarshardCount(), level.GetStarshardSlotCount());
+            int count = level.GetStarshardCount();
+            int maxCount = level.GetStarshardSlotCount();
+            levelUI.SetStarshardPointCount(maxCount);  
+            for (int i = 0; i < maxCount; i++)
+            {
+                levelUI.SetStarshardPointHighlight(i, i < count);
+            }
         }
         private void SetStarshardIcon()
         {
