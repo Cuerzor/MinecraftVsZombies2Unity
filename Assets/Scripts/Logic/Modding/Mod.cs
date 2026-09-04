@@ -87,21 +87,21 @@ namespace MVZ2Logic.Modding
         {
             triggers.Add(new Trigger<TArgs>(callbackID, action, priority));
         }
-        public void AddTrigger<TArgs, TResult, TFiltered>(CallbackTypeFiltered<TArgs, TResult, TFiltered> callbackID, Action<TArgs, CallbackResult<TResult>> action, int priority = 0)
+        public void AddTrigger<TArgs, TResult, TFilter>(CallbackTypeFiltered<TArgs, TResult, TFilter> callbackID, Action<TArgs, CallbackResult<TResult>> action, int priority = 0)
         {
-            triggers.Add(new TriggerFiltered<TArgs, TResult, TFiltered>(callbackID, action, priority));
+            triggers.Add(new TriggerFiltered<TArgs, TResult, TFilter>(callbackID, action, priority));
         }
-        public void AddTrigger<TArgs, TFiltered>(CallbackTypeFiltered<TArgs, TFiltered> callbackID, Action<TArgs, CallbackResultVoid> action, int priority = 0)
+        public void AddTrigger<TArgs, TFilter>(CallbackTypeFiltered<TArgs, TFilter> callbackID, Action<TArgs, CallbackResultVoid> action, int priority = 0)
         {
-            triggers.Add(new TriggerFiltered<TArgs, TFiltered>(callbackID, action, priority));
+            triggers.Add(new TriggerFiltered<TArgs, TFilter>(callbackID, action, priority));
         }
-        public void AddTriggerFiltered<TArgs, TResult, TFiltered>(CallbackTypeFiltered<TArgs, TResult, TFiltered> callbackID, Action<TArgs, CallbackResult<TResult>> action, TFiltered? filter, int priority = 0)
+        public void AddTriggerFiltered<TArgs, TResult, TFilter>(CallbackTypeFiltered<TArgs, TResult, TFilter> callbackID, Action<TArgs, CallbackResult<TResult>> action, TFilter? filter, int priority = 0)
         {
-            triggers.Add(new TriggerFiltered<TArgs, TResult, TFiltered>(callbackID, action, priority, filter));
+            triggers.Add(new TriggerFiltered<TArgs, TResult, TFilter>(callbackID, action, priority, filter));
         }
-        public void AddTriggerFiltered<TArgs, TFiltered>(CallbackTypeFiltered<TArgs, TFiltered> callbackID, Action<TArgs, CallbackResultVoid> action, TFiltered? filter, int priority = 0)
+        public void AddTriggerFiltered<TArgs, TFilter>(CallbackTypeFiltered<TArgs, TFilter> callbackID, Action<TArgs, CallbackResultVoid> action, TFilter? filter, int priority = 0)
         {
-            triggers.Add(new TriggerFiltered<TArgs, TFiltered>(callbackID, action, priority, filter));
+            triggers.Add(new TriggerFiltered<TArgs, TFilter>(callbackID, action, priority, filter));
         }
         public ITrigger[] GetTriggers()
         {
