@@ -1785,6 +1785,7 @@
                 <vector3 name="mvz2:grid_pivot_offset" x="-40" y="0" z="0"  />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:protector " />
                 <idArray name="mvz2:counter_for" value="mvz2:low_enemy mvz2:flying_enemy" />
+                <bool name="mvz2:stable_contraption" value="true" />
                 <bool name="mvz2:no_abduction" value="true" />
                 <bool name="mvz2:no_devourer" value="true" />
                 <bool name="mvz2:no_teleporter" value="true" />
