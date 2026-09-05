@@ -27,10 +27,11 @@ namespace MVZ2.GameContent.Entities
         public override sealed void Update(Entity entity)
         {
             base.Update(entity);
-            entity.GetOrCreateFragment()?.Let(e =>
+            var fragment = entity.GetOrCreateFragment();
+            if (fragment != null)
             {
-                Fragment.AddEmitSpeed(e, entity.GetFragmentTickDamage());
-            });
+                Fragment.AddEmitSpeed(fragment, entity.GetFragmentTickDamage());
+            };
             entity.SetFragmentTickDamage(0);
         }
         public override void PostDeath(Entity entity, DeathInfo damageInfo)
@@ -40,10 +41,12 @@ namespace MVZ2.GameContent.Entities
                 return;
             if (damageInfo.HasEffect(VanillaDamageEffects.FALL_OFF) || damageInfo.HasEffect(VanillaDamageEffects.DROWN))
                 return;
-            entity.GetOrCreateFragment()?.Let(e =>
+            var fragment = entity.GetOrCreateFragment();
+            if (fragment != null)
             {
-                Fragment.AddEmitSpeed(e, 500);
-            });
+                Fragment.AddEmitSpeed(fragment, 500);
+            }
+            ;
         }
         public override void PostTakeDamage(DamageOutput result)
         {
