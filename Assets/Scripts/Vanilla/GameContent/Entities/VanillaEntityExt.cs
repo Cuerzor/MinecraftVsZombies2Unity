@@ -47,7 +47,7 @@ using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
 using UnityEditor;
 using UnityEngine;
-using GridLayerData = System.Tuple<PVZEngine.Grids.LawnGrid, PVZEngine.NamespaceID>;
+using GridLayerData = System.ValueTuple<PVZEngine.Grids.LawnGrid, PVZEngine.NamespaceID>;
 
 namespace MVZ2.Vanilla.Entities
 {
@@ -539,11 +539,8 @@ namespace MVZ2.Vanilla.Entities
         #region 网格
         public static void UpdateTakenGrids(this Entity entity)
         {
-            targetGridLayerDataBuffer.Clear();
-            takenGridLayerDataBuffer.Clear();
-            GetTargetGridLayersToTakeNonAlloc(entity, targetGridLayerDataBuffer);
-            GetCurrentGridLayersToTakeNonAlloc(entity, takenGridLayerDataBuffer);
-            entityGridUpdater.Update(targetGridLayerDataBuffer, takenGridLayerDataBuffer, g => entity.TakeGrid(g.Item1, g.Item2), g => entity.ReleaseGrid(g.Item1, g.Item2));
+            entityGridUpdater.SetEntity(entity);
+            entityGridUpdater.Update();
         }
         public static void DestroyConflictGridEntitiesOnLand(this Entity entity)
         {
@@ -553,8 +550,8 @@ namespace MVZ2.Vanilla.Entities
         {
             entity.UpdateTakenGrids();
 
-            var grids = entity.GetGridsToTake();
-            foreach (var grid in grids)
+            using var grids = entity.GetGridsToTakeDisposeable();
+            foreach (var grid in grids.Value)
             {
                 if (grid == null)
                     continue;
@@ -585,67 +582,12 @@ namespace MVZ2.Vanilla.Entities
                 conflict.Die(entity);
             }
         }
-        private static void GetTargetGridLayersToTakeNonAlloc(Entity entity, List<GridLayerData> buffer)
-        {
-            if (!entity.ExistsAndAlive())
-                return;
-
-            var grids = entity.GetGridsToTake();
-            if (grids == null)
-                return;
-
-            var layers = entity.GetGridLayersToTake();
-            if (layers == null)
-                return;
-
-            foreach (var grid in grids)
-            {
-                if (grid == null)
-                    continue;
-                if (!CanTakeGrid(entity, grid))
-                    continue;
-                foreach (var layer in layers)
-                {
-                    buffer.Add(new GridLayerData(grid, layer));
-                }
-            }
-        }
-        private static void GetCurrentGridLayersToTakeNonAlloc(Entity entity, List<GridLayerData> buffer)
-        {
-            takenGridBuffer.Clear();
-            entity.GetTakenGridsNonAlloc(takenGridBuffer);
-
-            foreach (var grid in takenGridBuffer)
-            {
-                takenGridLayersBuffer.Clear();
-                entity.GetTakingGridLayersNonAlloc(grid, takenGridLayersBuffer);
-
-                foreach (var layer in takenGridLayersBuffer)
-                {
-                    buffer.Add(new GridLayerData(grid, layer));
-                }
-            }
-        }
-        private static bool CanTakeGrid(this Entity entity, LawnGrid grid)
-        {
-            if (grid == null)
-                return false;
-            if (!entity.ExistsAndAlive())
-                return false;
-            if (entity.IsAboveLeaveGridHeight())
-                return false;
-            return true;
-        }
         public static bool IsAboveLeaveGridHeight(this Entity entity)
         {
             return entity.GetRelativeY() > LEAVE_GRID_HEIGHT;
         }
         public const float LEAVE_GRID_HEIGHT = 64;
-        private static ListUpdater<GridLayerData> entityGridUpdater = new ListUpdater<GridLayerData>();
-        private static List<GridLayerData> targetGridLayerDataBuffer = new List<GridLayerData>();
-        private static List<GridLayerData> takenGridLayerDataBuffer = new List<GridLayerData>();
-        private static List<LawnGrid> takenGridBuffer = new List<LawnGrid>();
-        private static List<NamespaceID> takenGridLayersBuffer = new List<NamespaceID>();
+        private static EntityGridUpdater entityGridUpdater = new EntityGridUpdater();
         #endregion
 
 
@@ -1303,5 +1245,91 @@ namespace MVZ2.Vanilla.Entities
         private const string PROP_REGION = "entities";
         [EntityPropertyRegistry(PROP_REGION)]
         public static readonly VanillaEntityPropertyMeta<EntityID> PROP_SHINE_RING = new VanillaEntityPropertyMeta<EntityID>("LightShineRing");
+    }
+    internal class EntityGridUpdater : ListUpdaterBase<GridLayerData> 
+    {
+        public void SetEntity(Entity entity)
+        {
+            this.entity = entity;
+        }
+        public void Update()
+        {
+            if (entity == null)
+                return;
+            using var targetGridLayerDataBufferItem = ListPool<GridLayerData>.Rent();
+            var targetGridLayerDataBuffer = targetGridLayerDataBufferItem.Value;
+            GetTargetGridLayersToTakeNonAlloc(entity, targetGridLayerDataBuffer);
+
+            using var takenGridLayerDataBufferItem = ListPool<GridLayerData>.Rent();
+            var takenGridLayerDataBuffer = takenGridLayerDataBufferItem.Value;
+            GetCurrentGridLayersToTakeNonAlloc(entity, takenGridLayerDataBuffer);
+
+            Update(targetGridLayerDataBuffer, takenGridLayerDataBuffer);
+        }
+        protected override void OnAdd(GridLayerData element)
+        {
+            entity?.TakeGrid(element.Item1, element.Item2);
+        }
+        protected override void OnRemove(GridLayerData element)
+        {
+            entity?.ReleaseGrid(element.Item1, element.Item2);
+        }
+        protected override void OnUpdate(GridLayerData element)
+        {
+        }
+        private static void GetTargetGridLayersToTakeNonAlloc(Entity entity, List<GridLayerData> buffer)
+        {
+            if (!entity.ExistsAndAlive())
+                return;
+
+            using var grids = entity.GetGridsToTakeDisposeable();
+            var layers = entity.GetGridLayersToTake();
+            if (layers == null)
+                return;
+
+            foreach (var grid in grids.Value)
+            {
+                if (grid == null)
+                    continue;
+                if (!CanTakeGrid(entity, grid))
+                    continue;
+                foreach (var layer in layers)
+                {
+                    buffer.Add(new GridLayerData(grid, layer));
+                }
+            }
+        }
+        private static void GetCurrentGridLayersToTakeNonAlloc(Entity entity, List<GridLayerData> buffer)
+        {
+            using var takenGridBufferItem = ListPool<LawnGrid>.Rent();
+            var takenGridBuffer = takenGridBufferItem.Value;
+
+            entity.GetTakenGridsNonAlloc(takenGridBuffer);
+
+            using var takenGridLayersBufferItem = ListPool<NamespaceID>.Rent();
+            var takenGridLayersBuffer = takenGridLayersBufferItem.Value;
+
+            foreach (var grid in takenGridBuffer)
+            {
+                takenGridLayersBuffer.Clear();
+                entity.GetTakingGridLayersNonAlloc(grid, takenGridLayersBuffer);
+
+                foreach (var layer in takenGridLayersBuffer)
+                {
+                    buffer.Add(new GridLayerData(grid, layer));
+                }
+            }
+        }
+        private static bool CanTakeGrid(Entity entity, LawnGrid grid)
+        {
+            if (grid == null)
+                return false;
+            if (!entity.ExistsAndAlive())
+                return false;
+            if (entity.IsAboveLeaveGridHeight())
+                return false;
+            return true;
+        }
+        private Entity? entity = null;
     }
 }

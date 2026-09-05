@@ -28,8 +28,8 @@ namespace MVZ2.GameContent.Contraptions
         }
         private void LeaveLilyPadIfHasProtector(Entity entity)
         {
-            var tiles = entity.GetGridsToTake();
-            foreach (var tile in tiles)
+            using var tiles = entity.GetGridsToTakeDisposeable();
+            foreach (var tile in tiles.Value)
             {
                 if (tile == null || tile.GetProtectorEntity() == null)
                     continue;

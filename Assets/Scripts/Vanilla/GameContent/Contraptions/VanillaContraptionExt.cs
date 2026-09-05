@@ -46,8 +46,8 @@ namespace MVZ2.Vanilla.Contraptions
             if (contraption == null)
                 return false;
             var game = Global.Game;
-            var grids = contraption.GetGridsToTake();
-            foreach (var grid in grids)
+            using var grids = contraption.GetGridsToTakeDisposeable();
+            foreach (var grid in grids.Value)
             {
                 if (grid == null)
                     continue;
@@ -73,8 +73,8 @@ namespace MVZ2.Vanilla.Contraptions
                 return Array.Empty<Entity>();
 
             List<Entity> targets = new List<Entity>();
-            var grids = contraption.GetGridsToTake();
-            foreach (var grid in grids)
+            using var grids = contraption.GetGridsToTakeDisposeable();
+            foreach (var grid in grids.Value)
             {
                 if (grid == null)
                     continue;
@@ -98,8 +98,8 @@ namespace MVZ2.Vanilla.Contraptions
         {
             if (contraption == null)
                 return null;
-            var grids = contraption.GetGridsToTake();
-            foreach (var grid in grids)
+            using var grids = contraption.GetGridsToTakeDisposeable();
+            foreach (var grid in grids.Value)
             {
                 if (grid == null)
                     continue;
@@ -123,8 +123,8 @@ namespace MVZ2.Vanilla.Contraptions
                 return Array.Empty<Entity>();
 
             List<Entity> targets = new List<Entity>();
-            var grids = contraption.GetGridsToTake();
-            foreach (var grid in grids)
+            using var grids = contraption.GetGridsToTakeDisposeable();
+            foreach (var grid in grids.Value)
             {
                 if (grid == null)
                     continue;
@@ -148,8 +148,8 @@ namespace MVZ2.Vanilla.Contraptions
         {
             if (contraption == null)
                 return null;
-            var grids = contraption.GetGridsToTake();
-            foreach (var grid in grids)
+            using var grids = contraption.GetGridsToTakeDisposeable();
+            foreach (var grid in grids.Value)
             {
                 if (grid == null)
                     continue;

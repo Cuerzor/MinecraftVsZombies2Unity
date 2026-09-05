@@ -3,6 +3,7 @@
 using System.Linq;
 using MVZ2.GameContent.Obstacles;
 using MVZ2.Vanilla.Grids;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Grids;
 using PVZEngine;
@@ -16,12 +17,12 @@ namespace MVZ2.GameContent.Placements
     {
         public sealed override NamespaceID? GetSpawnError(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
-            var extraGrids = entity.GetGridsToTake(grid);
+            using var extraGrids = entity.GetGridsToTakeDisposeable(grid);
             var thisGridError = GetSpawnErrorOfGrid(placement, grid, entity);
             if (thisGridError != null)
                 return thisGridError;
 
-            foreach (var extraGrid in extraGrids)
+            foreach (var extraGrid in extraGrids.Value)
             {
                 if (extraGrid == null)
                     return VanillaGridStatus.outOfBounds;

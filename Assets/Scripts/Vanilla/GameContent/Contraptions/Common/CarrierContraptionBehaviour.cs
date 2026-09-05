@@ -60,8 +60,8 @@ namespace MVZ2.GameContent.Contraptions
                 var sourceEnt = auraEffect.Source.GetEntity();
                 if (sourceEnt == null || !sourceEnt.IsOnGround)
                     return;
-                var grids = sourceEnt.GetGridsToTake();
-                foreach (var grid in grids)
+                using var grids = sourceEnt.GetGridsToTakeDisposeable();
+                foreach (var grid in grids.Value)
                 {
                     if (grid == null)
                         continue;

@@ -1,6 +1,7 @@
 #nullable enable
 
 using System.Collections.Generic;
+using MVZ2Logic.Entities;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
@@ -65,6 +66,18 @@ namespace MVZ2Logic
         {
             var poolItem = ListPool<NamespaceID>.Rent();
             entity.GetActiveArmorSlots(poolItem.Value);
+            return poolItem;
+        }
+        public static PoolItem<List<LawnGrid>> GetGridsToTakeDisposeable(this Entity entity)
+        {
+            var poolItem = ListPool<LawnGrid>.Rent();
+            entity.GetGridsToTake(poolItem.Value);
+            return poolItem;
+        }
+        public static PoolItem<List<LawnGrid>> GetGridsToTakeDisposeable(this EntityDefinition entity, LawnGrid grid)
+        {
+            var poolItem = ListPool<LawnGrid>.Rent();
+            entity.GetGridsToTake(grid, poolItem.Value);
             return poolItem;
         }
         public static PoolItem<List<T>> GetBehavioursDisposeable<T>(this EntityDefinition definition)

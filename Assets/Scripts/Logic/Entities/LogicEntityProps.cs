@@ -366,25 +366,27 @@ namespace MVZ2Logic.Entities
         {
             return entity.GetProperty<Vector2Int[]>(EXTRA_GRIDS);
         }
-        public static IEnumerable<LawnGrid?> GetGridsToTake(this Entity entity)
+        public static void GetGridsToTake(this Entity entity, List<LawnGrid> results)
         {
-            return entity.Definition.GetGridsToTake(entity.Level, entity.GetColumn(), entity.GetLane());
+            entity.Definition.GetGridsToTake(entity.Level, entity.GetColumn(), entity.GetLane(), results);
         }
-        public static IEnumerable<LawnGrid?> GetGridsToTake(this EntityDefinition entity, LawnGrid grid)
+        public static void GetGridsToTake(this EntityDefinition entity, LawnGrid grid, List<LawnGrid> results)
         {
-            return entity.GetGridsToTake(grid.Level, grid.Column, grid.Lane);
+            entity.GetGridsToTake(grid.Level, grid.Column, grid.Lane, results);
         }
-        public static IEnumerable<LawnGrid?> GetGridsToTake(this EntityDefinition entity, LevelEngine level, int column, int lane)
+        public static void GetGridsToTake(this EntityDefinition entity, LevelEngine level, int column, int lane, List<LawnGrid> results)
         {
             var gridBelow = level.GetGrid(column, lane);
-            yield return gridBelow;
+            if (gridBelow != null)
+                results.Add(gridBelow);
             var extraGrids = entity.GetExtraGrids();
             if (extraGrids != null)
             {
                 foreach (var offset in extraGrids)
                 {
                     var extraGrid = level.GetGrid(column + offset.x, lane + offset.y);
-                    yield return extraGrid;
+                    if (extraGrid != null)
+                        results.Add(extraGrid);
                 }
             }
         }

@@ -32,15 +32,15 @@ namespace MVZ2Logic.Grids
                     return HeldHighlight.None;
 
                 var error = grid.GetEntityPlaceStatus(entityDef);
-                var grids = entityDef.GetGridsToTake(grid).OfType<LawnGrid>();
+                using var grids = entityDef.GetGridsToTakeDisposeable(grid);
 
                 if (error == null)
                 {
-                    return HeldHighlight.Green(grids);
+                    return HeldHighlight.Green(grids.Value);
                 }
                 else
                 {
-                    return HeldHighlight.Red(grids);
+                    return HeldHighlight.Red(grids.Value);
                 }
             }
             else
