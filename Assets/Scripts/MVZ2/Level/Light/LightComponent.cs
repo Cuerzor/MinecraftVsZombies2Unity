@@ -237,7 +237,7 @@ namespace MVZ2.Level.Light
             var center = light.GetCenter();
             var range = light.GetLightRange();
 
-            float minRange = Mathf.Min(range.x, range.y, range.z);
+            float minRange = Mathf.Min(range.x, Mathf.Min(range.y, range.z));
             float radius = minRange * 0.5f;
 
             Vector3 coreSize = range - Vector3.one * minRange;
