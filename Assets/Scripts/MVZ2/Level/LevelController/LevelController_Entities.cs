@@ -139,7 +139,12 @@ namespace MVZ2.Level
         }
         public EntityController? GetEntityController(Entity entity)
         {
-            return entities.FirstOrDefault(e => e.Entity == entity);
+            foreach (var ent in entities)
+            {
+                if (ent.Entity == entity)
+                    return ent;
+            }
+            return null;
         }
         private EntityController CreateEntityControllerFunc()
         {
