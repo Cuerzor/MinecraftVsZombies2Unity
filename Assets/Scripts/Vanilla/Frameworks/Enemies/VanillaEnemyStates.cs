@@ -25,6 +25,8 @@ namespace MVZ2.Vanilla.Enemies
 
         public const int HACKER_HACK = PRIVATE_NUMBER + 0;
 
+        public const int HOOKSHOT_DROWNED_HOOK = PRIVATE_NUMBER + 0;
+
         public const int AXOLOTL_SUIT_EMPTY = PRIVATE_NUMBER + 0;
         public const int AXOLOTL_SUIT_BEING_ENTERED = PRIVATE_NUMBER + 1;
 

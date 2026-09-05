@@ -8,6 +8,9 @@ namespace MVZ2.Vanilla.Projectiles
 
         public const int COMPELLING_ORB_FLY = PRIVATE_NUMBER + 0;
 
+        public const int HOOKSHOT_CAUGHT = PRIVATE_NUMBER + 0;
+        public const int HOOKSHOT_RETURNING = PRIVATE_NUMBER + 1;
+
         private const int PRIVATE_NUMBER = 10000;
     }
 }

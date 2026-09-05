@@ -516,6 +516,18 @@
         <sample path="mvz2:damage/hit2" weight="1" />
         <sample path="mvz2:damage/hit3" weight="1" />
     </sound>
+    <sound name="hookshot_fire">
+        <sample path="mvz2:entity/hookshot_drowned/hookshot_fire" weight="1" />
+    </sound>
+    <sound name="hookshot_set">
+        <sample path="mvz2:entity/hookshot_drowned/hookshot_set" weight="1" />
+    </sound>
+    <sound name="hookshot_loop" loopFadeInSpeed="100" loopFadeOutSpeed="100">
+        <sample path="mvz2:entity/hookshot_drowned/hookshot_loop" weight="1" />
+    </sound>
+    <sound name="hookshot_target">
+        <sample path="mvz2:entity/hookshot_drowned/hookshot_target" weight="1" />
+    </sound>
     <sound name="horse_angry" priority="64">
         <sample path="mvz2:horse_angry" weight="1" />
     </sound>

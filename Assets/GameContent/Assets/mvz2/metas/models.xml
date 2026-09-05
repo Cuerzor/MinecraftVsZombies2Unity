@@ -269,6 +269,9 @@
     <model name="zombie_cat" type="entity" path="mvz2:enemy/palace/zombie_cat" width="92" height="38" xOffset="-8" yOffset="-19"/>
     <model name="wisp_fly" type="entity" path="mvz2:enemy/palace/wisp_fly" width="24" height="38" xOffset="0" yOffset="-19"/>
 
+    <model name="hookshot_drowned" type="entity" path="mvz2:enemy/mountain/hookshot_drowned" width="72" height="90" xOffset="15" yOffset="-40">
+        <armorconfig>mvz2:humanoid</armorconfig>
+    </model>
     <model name="axolotl_suit" type="entity" path="mvz2:enemy/mountain/axolotl_suit" width="90" height="140" xOffset="-10" yOffset="-62" />
     <model name="axolotl_suit_pilot" type="entity" path="mvz2:enemy/mountain/axolotl_suit_pilot" width="64" height="96" xOffset="10" yOffset="-44">
         <armorconfig>mvz2:humanoid</armorconfig>
@@ -601,6 +604,7 @@
     <model name="meowmere_projectile" type="entity" path="mvz2:projectile/meowmere_projectile" width="32" height="32" xOffset="0" yOffset="-12" />
     <model name="air_slash" type="entity" path="mvz2:projectile/air_slash" width="32" height="10" xOffset="0" yOffset="-5" />
     <model name="light_bullet" type="entity" path="mvz2:projectile/light_bullet" width="32" height="32" xOffset="0" yOffset="0" />
+    <model name="hookshot" type="entity" path="mvz2:projectile/hookshot" width="32" height="32" xOffset="0" yOffset="0" />
 
     <!-- Armors -->
     <model name="leather_cap" type="armor" path="mvz2:armor/leather_cap" width="33" height="14" xOffset="0" yOffset="0" />
@@ -618,6 +622,7 @@
     <model name="umbrella_shield" type="armor" path="mvz2:armor/umbrella_shield" width="64" height="100" xOffset="16" yOffset="0" />
     <model name="cannon" type="armor" path="mvz2:armor/cannon" width="61" height="36" xOffset="5" yOffset="7" />
     <model name="pop_captain_cap" type="armor" path="mvz2:armor/pop_captain_cap" width="40" height="12" xOffset="0" yOffset="-6" />
+    <model name="climbing_helmet" type="armor" path="mvz2:armor/climbing_helmet" width="32" height="22" xOffset="0" yOffset="-6" />
 
     <!-- HeldItems -->
     <model name="starshard.default" type="held" path="mvz2:held/starshards/default" shot="false" width="32" height="32" xOffset="0" yOffset="-28" />

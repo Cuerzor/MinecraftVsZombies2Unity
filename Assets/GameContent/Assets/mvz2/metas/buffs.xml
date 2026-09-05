@@ -241,6 +241,7 @@
     <buff id="prismatic_pylon_projectile_cyan" polarity="positive" level="1000" target="projectile" />
     <buff id="prismatic_pylon_projectile_blue" polarity="positive" level="1000" target="projectile" />
     <buff id="prismatic_pylon_projectile_purple" polarity="positive" level="1000" target="projectile" />
+    <buff id="hookshot_user" polarity="none" level="6000" target="hookshot_user" />
     
 
     <!-- Random China -->

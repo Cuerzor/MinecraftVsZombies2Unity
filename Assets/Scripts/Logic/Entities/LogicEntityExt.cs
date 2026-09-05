@@ -8,6 +8,8 @@ using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Timing;
+using PVZEngine.Tools.Timing;
 using UnityEngine;
 
 namespace MVZ2Logic.Entities
@@ -174,5 +176,27 @@ namespace MVZ2Logic.Entities
                 behaviour.UpdateAnimationParameters(entity, state);
             }
         }
+        #region 获取或初始化计时器
+        public static FrameTimer GetOrCreateTimer(this Entity entity, PropertyKey<FrameTimer> key, int frames)
+        {
+            var timer = entity.GetProperty(key);
+            if (timer == null)
+            {
+                timer = new FrameTimer(frames);
+                entity.SetProperty(key, timer);
+            }
+            return timer;
+        }
+        public static FrameTimer GetOrCreateTimerSeconds(this Entity entity, PropertyKey<FrameTimer> key, float seconds)
+        {
+            var timer = entity.GetProperty(key);
+            if (timer == null)
+            {
+                timer = TimerHelper.NewSecondTimer(seconds);
+                entity.SetProperty(key, timer);
+            }
+            return timer;
+        }
+        #endregion
     }
 }

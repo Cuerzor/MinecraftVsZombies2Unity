@@ -137,6 +137,14 @@ namespace MVZ2Logic.Level
         #endregion
 
         #region 检验地格
+        public static bool ValidateGridOutOfBounds(this LevelEngine level, int column, int lane)
+        {
+            if (column < 0 || lane < 0)
+                return false;
+            if (column >= level.GetMaxColumnCount() || lane >= level.GetMaxLaneCount())
+                return false;
+            return true;
+        }
         public static bool ValidateGridOutOfBounds(this LevelEngine level, Vector2Int position)
         {
             if (position.x < 0 || position.y < 0)

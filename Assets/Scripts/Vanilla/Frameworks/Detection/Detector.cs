@@ -76,6 +76,22 @@ namespace MVZ2.Vanilla.Detections
                 results.Add(collider);
             }
         }
+        public Entity? DetectEntityWithTheLeast<T>(EntityDetectionParams self, Func<Entity, Entity, T> keySelector)
+        {
+            var args = GetDetectionParams(self);
+            Entity? least = null;
+            T? leastKey = default;
+            var comparer = Comparer<T>.Default;
+            foreach (var collider in DetectColliders(args))
+            {
+                if (!ValidateCollider(args, collider))
+                    continue;
+                var entity = collider.Entity;
+                var key = keySelector(self.entity, entity);
+                comparer.GetLessOne(entity, ref least, key, ref leastKey);
+            }
+            return least;
+        }
         public Entity? DetectEntityWithTheLeast<T>(EntityDetectionParams self, Func<Entity, T> keySelector)
         {
             var args = GetDetectionParams(self);
@@ -91,6 +107,22 @@ namespace MVZ2.Vanilla.Detections
                 comparer.GetLessOne(entity, ref least, key, ref leastKey);
             }
             return least;
+        }
+        public Entity? DetectEntityWithTheMost<T>(EntityDetectionParams self, Func<Entity, Entity, T> keySelector)
+        {
+            var args = GetDetectionParams(self);
+            Entity? most = null;
+            T? mostKey = default;
+            var comparer = Comparer<T>.Default;
+            foreach (var collider in DetectColliders(args))
+            {
+                if (!ValidateCollider(args, collider))
+                    continue;
+                var entity = collider.Entity;
+                var key = keySelector(self.entity, entity);
+                comparer.GetGreaterOne(entity, ref most, key, ref mostKey);
+            }
+            return most;
         }
         public Entity? DetectEntityWithTheMost<T>(EntityDetectionParams self, Func<Entity, T> keySelector)
         {

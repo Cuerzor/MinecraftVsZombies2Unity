@@ -288,6 +288,7 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public const string trapped = "trapped";
+            public const string hookshotUser = "hookshot_user";
         }
         public static class Obstacle
         {

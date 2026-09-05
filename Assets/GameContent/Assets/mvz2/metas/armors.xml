@@ -154,5 +154,14 @@
                 <float name="mvz2:maxHealth" value="1110" />
             </props>
         </entry>
+        <entry id="climbing_helmet" type="mvz2:helmet">
+            <behaviours>
+                <behaviour id="mvz2:damage_state_3" />
+            </behaviours>
+            <props>
+                <id name="mvz2:shell" value="mvz2:leather" />
+                <float name="mvz2:maxHealth" value="740" />
+            </props>
+        </entry>
     </entries>
 </armors>

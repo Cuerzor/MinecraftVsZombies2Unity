@@ -138,6 +138,10 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID gunShot = Get("gun_shot");
         public readonly static NamespaceID happyBirthday = Get("happy_birthday");
         public readonly static NamespaceID harp = Get("harp");
+        public readonly static NamespaceID hookshotFire = Get("hookshot_fire");
+        public readonly static NamespaceID hookshotLoop = Get("hookshot_loop");
+        public readonly static NamespaceID hookshotSet = Get("hookshot_set");
+        public readonly static NamespaceID hookshotTarget = Get("hookshot_target");
         public readonly static NamespaceID horseAngry = Get("horse_angry");
         public readonly static NamespaceID horseGallop = Get("horse_gallop");
         public readonly static NamespaceID hugeWave = Get("huge_wave");

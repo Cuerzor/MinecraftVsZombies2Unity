@@ -73,6 +73,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 024e01fe827c5b94fa2db9d6d6072831
+    m_Address: mvz2:entity/armor/climbing_helmet
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 029f969f273624d4693d855c93f039bd
     m_Address: mvz2:effect/pow
     m_ReadOnly: 0
@@ -1389,6 +1396,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 180853945daa38b429a08c99de3c0023
+    m_Address: mvz2:entity/hookshot_drowned/hookshot_set
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 18170164ed705914ebb03c0ee8ca6ef9
     m_Address: mvz2:map/halloween/map
     m_ReadOnly: 0
@@ -1451,6 +1465,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Music
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 199833572594c364d8626700f36c3a45
+    m_Address: mvz2:projectile/hookshot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 199c4447a5d48934f9d39e39afbb6750
     m_Address: mvz2:entity/enemy/zombie_cow
@@ -2273,6 +2294,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 28a1bd2b08b2bc14a82c730358b3d338
     m_Address: mvz2:entity/wither_skeleton/wither_skeleton_death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28a274f72536b2d42ac87eb05c02e33f
+    m_Address: mvz2:entity/hookshot_drowned/hookshot_target
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -5194,6 +5222,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5897bb850fa0cd24381d0e7827f8a0ad
+    m_Address: mvz2:units/hookshot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 58b00e65f2d3cf54e95b866108f55a09
     m_Address: mvz2:artifacts/nether_star
@@ -8168,6 +8203,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8d2caf720dedefa41a6e3079ce22a55a
+    m_Address: mvz2:entity/hookshot_drowned/hookshot_fire
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8d300c068c2e2c2479354ddfb6468e0f
     m_Address: mvz2:entity/contraption/nuke
     m_ReadOnly: 0
@@ -8769,6 +8811,20 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9587f4a7d682171468d3dc1f57874f65
+    m_Address: mvz2:entity/hookshot_drowned/hookshot_loop
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 958bfadab58b5c94c8fccbd79b832b76
+    m_Address: mvz2:entity/enemy/hookshot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 95a0ff4bc65b3c3489a4dd2274848c9d
     m_Address: mvz2:entity/enemy/reverse_satellite
     m_ReadOnly: 0
@@ -8908,6 +8964,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 987d499f434234c428add03abf5c219c
+    m_Address: mvz2:enemy/mountain/hookshot_drowned
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 98ad9b42c55992240a72acfab51a43c9
     m_Address: mvz2:effect/skyward_beam
@@ -10605,6 +10668,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b8edef59b9ae0284082846af29941760
     m_Address: mvz2:entity/projectile/ignited_wooden_ball_cursed
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b906ce783b405fd4d83d997ca69b8010
+    m_Address: mvz2:entity/enemy/hookshot_drowned
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -12464,6 +12534,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dac9321b9202f0641a7ace20757212f1
+    m_Address: mvz2:entity/enemy/hookshot_chains
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dad5c5b715d0ef643b5d0a8f9d9d5d9d
     m_Address: mvz2:entity/drowned/death2
     m_ReadOnly: 0
@@ -12582,6 +12659,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc6298cbbf98b774aa0e9afce922c327
+    m_Address: mvz2:armor/climbing_helmet
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dce15c317b704d949a0d980b190d97be
     m_Address: mvz2:entity/contraption/brick_cannon
