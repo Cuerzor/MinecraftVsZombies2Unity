@@ -9,6 +9,7 @@ using MVZ2Logic.Localization;
 using PVZEngine;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace MVZ2.Managers
 {
@@ -32,7 +33,12 @@ namespace MVZ2.Managers
             var modResource = GetModResource(music.SpaceName);
             if (modResource?.MusicMetaList == null)
                 return null;
-            return modResource.MusicMetaList.metas.FirstOrDefault(m => m.ID == music.Path);
+            foreach (var m in modResource.MusicMetaList.metas)
+            {
+                if (m.ID == music.Path)
+                    return m;
+            }
+            return null;
         }
         public NamespaceID[] GetAllMusicID()
         {

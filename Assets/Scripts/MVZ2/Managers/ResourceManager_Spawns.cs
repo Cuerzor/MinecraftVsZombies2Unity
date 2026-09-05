@@ -25,7 +25,12 @@ namespace MVZ2.Managers
             var resources = GetModResource(id.SpaceName);
             if (resources?.SpawnMetaList == null)
                 return null;
-            return resources.SpawnMetaList.Metas.FirstOrDefault(e => e.ID == id.Path);
+            foreach (var m in resources.SpawnMetaList.Metas)
+            {
+                if (m.ID == id.Path)
+                    return m;
+            }
+            return null;
         }
         #endregion
     }

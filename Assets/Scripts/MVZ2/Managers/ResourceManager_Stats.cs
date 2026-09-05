@@ -26,7 +26,12 @@ namespace MVZ2.Managers
             var stageMetalist = GetStatMetaList(categoryID.SpaceName);
             if (stageMetalist == null)
                 return null;
-            return stageMetalist.categories.FirstOrDefault(m => m.ID == categoryID.Path);
+            foreach (var m in stageMetalist.categories)
+            {
+                if (m.ID == categoryID.Path)
+                    return m;
+            }
+            return null;
         }
         public string GetStatEntryName(NamespaceID entryID, StatCategoryType type)
         {
@@ -46,7 +51,12 @@ namespace MVZ2.Managers
             var stageMetalist = GetStatMetaList(entryID.SpaceName);
             if (stageMetalist == null)
                 return null;
-            return stageMetalist.entries.FirstOrDefault(m => m.ID == entryID.Path);
+            foreach (var m in stageMetalist.entries)
+            {
+                if (m.ID == entryID.Path)
+                    return m;
+            }
+            return null;
         }
         public bool ShouldStatEntryDisplay(NamespaceID entryID, StatCategoryType type)
         {

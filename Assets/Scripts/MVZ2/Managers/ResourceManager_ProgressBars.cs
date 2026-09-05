@@ -30,7 +30,12 @@ namespace MVZ2.Managers
             var barMetalist = GetProgressBarMetaList(progressBarID.SpaceName);
             if (barMetalist == null)
                 return null;
-            return barMetalist.metas.FirstOrDefault(m => m.ID == progressBarID.Path);
+            foreach (var meta in barMetalist.metas)
+            {
+                if (meta.ID == progressBarID.Path)
+                    return meta;
+            }
+            return null;
         }
     }
 }

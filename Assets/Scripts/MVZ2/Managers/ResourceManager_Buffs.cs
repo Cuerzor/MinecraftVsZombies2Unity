@@ -4,6 +4,7 @@ using System.Linq;
 using MVZ2.Metas;
 using PVZEngine;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace MVZ2.Managers
 {
@@ -31,7 +32,12 @@ namespace MVZ2.Managers
             var metalist = GetBuffMetaList(id.SpaceName);
             if (metalist == null)
                 return null;
-            return metalist.metas.FirstOrDefault(m => m.ID == id.Path);
+            foreach (var m in metalist.metas)
+            {
+                if (m.ID == id.Path)
+                    return m;
+            }
+            return null;
         }
         #endregion
     }

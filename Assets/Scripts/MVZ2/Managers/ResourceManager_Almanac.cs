@@ -7,6 +7,7 @@ using MVZ2.Modding;
 using MVZ2Logic.Almanac;
 using PVZEngine;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace MVZ2.Managers
 {
@@ -28,10 +29,26 @@ namespace MVZ2.Managers
                 return null;
             if (!metaList.TryGetCategory(type, out var entries))
                 return null;
-            var entry = entries.entries.FirstOrDefault(e => e.id == id);
-            if (entry != null)
-                return entry;
-            return entries.groups.SelectMany(g => g.entries).FirstOrDefault(e => e.id == id);
+            if (entries.entries != null)
+            {
+                foreach (var e in entries.entries)
+                {
+                    if (e.id == id)
+                        return e;
+                }
+            }
+            if (entries.groups != null)
+            {
+                foreach (var group in entries.groups)
+                {
+                    foreach (var entry in group.entries)
+                    {
+                        if (entry.id == id)
+                            return entry;
+                    }
+                }
+            }
+            return null;
         }
         public AlmanacMetaEntry[] GetAlmanacMetaEntries(string category)
         {
@@ -74,7 +91,12 @@ namespace MVZ2.Managers
             var metaList = GetAlmanacMetaList(id.SpaceName);
             if (metaList == null)
                 return null;
-            return metaList.tags.FirstOrDefault(e => e.id == id.Path);
+            foreach (var m in metaList.tags)
+            {
+                if (m.id == id.Path)
+                    return m;
+            }
+            return null;
         }
         public AlmanacVariable? GetAlmanacGlobalVariable(NamespaceID? id)
         {
@@ -83,7 +105,12 @@ namespace MVZ2.Managers
             var metaList = GetAlmanacMetaList(id.SpaceName);
             if (metaList == null)
                 return null;
-            return metaList.globalVariables.FirstOrDefault(e => e.name == id.Path);
+            foreach (var m in metaList.globalVariables)
+            {
+                if (m.name == id.Path)
+                    return m;
+            }
+            return null;
         }
         public AlmanacTagEnumMeta? GetAlmanacTagEnumMeta(NamespaceID? id)
         {
@@ -92,7 +119,12 @@ namespace MVZ2.Managers
             var metaList = GetAlmanacMetaList(id.SpaceName);
             if (metaList == null)
                 return null;
-            return metaList.enums.FirstOrDefault(e => e.id == id.Path);
+            foreach (var m in metaList.enums)
+            {
+                if (m.id == id.Path)
+                    return m;
+            }
+            return null;
         }
         public IEnumerable<AlmanacTagMeta> GetAllAlmanacTagMetas()
         {

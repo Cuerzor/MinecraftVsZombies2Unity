@@ -18,10 +18,15 @@ namespace MVZ2.Managers
             if (!NamespaceID.IsValid(groupID))
                 return null;
             var resources = GetModResource(groupID.SpaceName);
-            var metaList = resources.UnlockMetaList;
+            var metaList = resources?.UnlockMetaList;
             if (metaList == null)
                 return null;
-            return metaList.groups.FirstOrDefault(m => m.ID == groupID.Path);
+            foreach (var meta in metaList.groups)
+            {
+                if (meta.ID == groupID.Path)
+                    return meta;
+            }
+            return null;
         }
         private void LoadUnlocks_Unlocks(ModResource resource)
         {

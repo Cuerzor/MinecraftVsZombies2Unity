@@ -10,6 +10,7 @@ using MVZ2Logic.Localization;
 using MVZ2Logic.Options;
 using PVZEngine;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace MVZ2.Managers
 {
@@ -87,7 +88,12 @@ namespace MVZ2.Managers
             var metaList = GetArchiveMetaList(tagID.SpaceName);
             if (metaList == null)
                 return null;
-            return metaList.Tags.FirstOrDefault(t => t.ID == tagID.Path);
+            foreach (var m in metaList.Tags)
+            {
+                if (m.ID == tagID.Path)
+                    return m;
+            }
+            return null;
         }
         public string GetArchiveTagName(NamespaceID tagID)
         {

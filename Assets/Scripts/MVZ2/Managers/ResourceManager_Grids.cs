@@ -5,6 +5,7 @@ using System.Linq;
 using MVZ2.Metas;
 using PVZEngine;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace MVZ2.Managers
 {
@@ -18,7 +19,12 @@ namespace MVZ2.Managers
             var modResource = main.ResourceManager.GetModResource(id.SpaceName);
             if (modResource?.GridMetaList == null)
                 return null;
-            return modResource.GridMetaList.metas.FirstOrDefault(m => m.ID == id.Path);
+            foreach (var m in modResource.GridMetaList.metas)
+            {
+                if (m.ID == id.Path)
+                    return m;
+            }
+            return null;
         }
         #endregion
 

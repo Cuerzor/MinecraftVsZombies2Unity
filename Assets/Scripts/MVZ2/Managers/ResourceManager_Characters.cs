@@ -5,6 +5,7 @@ using MVZ2.Metas;
 using MVZ2.Modding;
 using MVZ2Logic.Localization;
 using PVZEngine;
+using UnityEditor.Presets;
 using UnityEngine;
 
 namespace MVZ2.Managers
@@ -29,7 +30,12 @@ namespace MVZ2.Managers
             var modResource = main.ResourceManager.GetModResource(characterID.SpaceName);
             if (modResource?.TalkCharacterMetaList == null)
                 return null;
-            return modResource.TalkCharacterMetaList.metas.FirstOrDefault(m => m.id == characterID.Path);
+            foreach (var m in modResource.TalkCharacterMetaList.metas)
+            {
+                if (m.id == characterID.Path)
+                    return m;
+            }
+            return null;
         }
         #endregion
 

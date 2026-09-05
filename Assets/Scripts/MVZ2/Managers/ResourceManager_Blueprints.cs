@@ -16,6 +16,7 @@ using PVZEngine;
 using PVZEngine.Level;
 using PVZEngine.SeedPacks;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace MVZ2.Managers
 {
@@ -61,7 +62,12 @@ namespace MVZ2.Managers
             var metalist = GetBlueprintMetaList(id.SpaceName);
             if (metalist == null)
                 return null;
-            return metalist.Styles.FirstOrDefault(s => s.ID == id.Path);
+            foreach (var m in metalist.Styles)
+            {
+                if (m.ID == id.Path)
+                    return m;
+            }
+            return null;
         }
         #endregion
 

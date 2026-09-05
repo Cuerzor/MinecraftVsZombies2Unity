@@ -19,10 +19,12 @@ namespace MVZ2.Managers
                 var stageMetalist = mod.MapMetaList;
                 if (stageMetalist == null)
                     continue;
-                var meta = stageMetalist.metas.FirstOrDefault();
-                if (meta == null)
-                    continue;
-                return new NamespaceID(mod.Namespace, meta.id);
+                foreach (var meta in stageMetalist.metas)
+                {
+                    if (meta == null)
+                        continue;
+                    return new NamespaceID(mod.Namespace, meta.id);
+                }
             }
             return Main.Settings.DefaultMapID;
         }
@@ -47,7 +49,12 @@ namespace MVZ2.Managers
             var stageMetalist = GetModMapMetaList(mapID.SpaceName);
             if (stageMetalist == null)
                 return null;
-            return stageMetalist.metas.FirstOrDefault(m => m.id == mapID.Path);
+            foreach (var m in stageMetalist.metas)
+            {
+                if (m.id == mapID.Path)
+                    return m;
+            }
+            return null;
         }
 
         #region 模型

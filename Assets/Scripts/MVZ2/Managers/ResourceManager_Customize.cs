@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MVZ2.Metas;
+using MVZ2.Modding;
 using MVZ2Logic.Customize;
 using PVZEngine;
 using UnityEngine;
@@ -41,7 +42,12 @@ namespace MVZ2.Managers
             var resources = GetModResource(id.SpaceName);
             if (resources?.CustomizeMetaList == null)
                 return null;
-            return resources.CustomizeMetaList.pages.FirstOrDefault(e => e.ID == id.Path);
+            foreach (var m in resources.CustomizeMetaList.pages)
+            {
+                if (m.ID == id.Path)
+                    return m;
+            }
+            return null;
         }
         public CustomizePageController? GetCustomizePagePrefab(NamespaceID? id)
         {

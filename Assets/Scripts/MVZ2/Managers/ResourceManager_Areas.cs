@@ -33,7 +33,12 @@ namespace MVZ2.Managers
             var stageMetalist = GetAreaMetaList(mapID.SpaceName);
             if (stageMetalist == null)
                 return null;
-            return stageMetalist.metas.FirstOrDefault(m => m.ID == mapID.Path);
+            foreach (var m in stageMetalist.metas)
+            {
+                if (m.ID == mapID.Path)
+                    return m;
+            }
+            return null;
         }
         #region 模型
         public AreaModel? GetAreaModel(NamespaceID id)

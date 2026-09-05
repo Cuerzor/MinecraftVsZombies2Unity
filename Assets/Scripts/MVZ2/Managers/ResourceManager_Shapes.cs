@@ -24,7 +24,12 @@ namespace MVZ2.Managers
             var list = GetShapeMetaList(id.SpaceName);
             if (list == null)
                 return null;
-            return list.metas.FirstOrDefault(m => m.ID == id.Path);
+            foreach (var meta in list.metas)
+            {
+                if (meta.ID == id.Path)
+                    return meta;
+            }
+            return null;
         }
         public ShapeMeta[] GetModShapeMetas(string nsp)
         {

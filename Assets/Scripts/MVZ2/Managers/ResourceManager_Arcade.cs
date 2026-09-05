@@ -6,6 +6,7 @@ using MVZ2.Metas;
 using MVZ2.Modding;
 using PVZEngine;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace MVZ2.Managers
 {
@@ -29,7 +30,12 @@ namespace MVZ2.Managers
             var modResource = main.ResourceManager.GetModResource(arcade.SpaceName);
             if (modResource?.ArcadeMetaList == null)
                 return null;
-            return modResource.ArcadeMetaList.metas.FirstOrDefault(m => m.ID == arcade.Path);
+            foreach (var m in modResource.ArcadeMetaList.metas)
+            {
+                if (m.ID == arcade.Path)
+                    return m;
+            }
+            return null;
         }
         #endregion
         public NamespaceID[] GetAllArcadeItems()

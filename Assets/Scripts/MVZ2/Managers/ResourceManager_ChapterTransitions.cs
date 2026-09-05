@@ -5,6 +5,7 @@ using System.Linq;
 using MVZ2.Metas;
 using PVZEngine;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace MVZ2.Managers
 {
@@ -44,7 +45,12 @@ namespace MVZ2.Managers
             var metalist = GetChapterTransitionMetaList(id.SpaceName);
             if (metalist == null)
                 return null;
-            return metalist.Metas.FirstOrDefault(m => m.ID == id.Path);
+            foreach (var m in metalist.Metas)
+            {
+                if (m.ID == id.Path)
+                    return m;
+            }
+            return null;
         }
     }
 }

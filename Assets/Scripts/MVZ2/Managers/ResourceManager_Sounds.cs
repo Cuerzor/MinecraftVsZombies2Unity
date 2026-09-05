@@ -24,7 +24,12 @@ namespace MVZ2.Managers
             var soundMeta = GetSoundMetaList(id.SpaceName);
             if (soundMeta == null)
                 return null;
-            return soundMeta.metas.FirstOrDefault(m => m.name == id.Path);
+            foreach (var m in soundMeta.metas)
+            {
+                if (m.name == id.Path)
+                    return m;
+            }
+            return null;
         }
         #endregion
 

@@ -64,7 +64,12 @@ namespace MVZ2.Managers
             var modResource = GetModResource(presetID.SpaceName);
             if (modResource?.StoreMetaList == null)
                 return null;
-            return modResource.StoreMetaList.Presets.FirstOrDefault(p => p.ID == presetID.Path);
+            foreach (var m in modResource.StoreMetaList.Presets)
+            {
+                if (m.ID == presetID.Path)
+                    return m;
+            }
+            return null;
         }
         public StorePresetMeta[] GetAllStorePresets()
         {

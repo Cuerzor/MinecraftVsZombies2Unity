@@ -5,6 +5,7 @@ using System.Linq;
 using MVZ2.Metas;
 using PVZEngine;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace MVZ2.Managers
 {
@@ -17,7 +18,12 @@ namespace MVZ2.Managers
             var modResource = GetModResource(id.SpaceName);
             if (modResource == null || modResource.OptionMetaList == null)
                 return null;
-            return modResource.OptionMetaList.items.FirstOrDefault(i => i.ID == id.Path);
+            foreach (var m in modResource.OptionMetaList.items)
+            {
+                if (m.ID == id.Path)
+                    return m;
+            }
+            return null;
         }
         public NamespaceID[] GetAllOptionItemsID()
         {
@@ -40,7 +46,12 @@ namespace MVZ2.Managers
             var modResource = GetModResource(id.SpaceName);
             if (modResource == null || modResource.OptionMetaList == null)
                 return null;
-            return modResource.OptionMetaList.categories.FirstOrDefault(i => i.ID == id.Path);
+            foreach (var m in modResource.OptionMetaList.categories)
+            {
+                if (m.ID == id.Path)
+                    return m;
+            }
+            return null;
         }
         public OptionWidgetMeta? GetOptionWidgetMeta(NamespaceID? id)
         {
@@ -49,7 +60,12 @@ namespace MVZ2.Managers
             var modResource = GetModResource(id.SpaceName);
             if (modResource == null || modResource.OptionMetaList == null)
                 return null;
-            return modResource.OptionMetaList.widgets.FirstOrDefault(i => i.ID == id.Path);
+            foreach (var m in modResource.OptionMetaList.widgets)
+            {
+                if (m.ID == id.Path)
+                    return m;
+            }
+            return null;
         }
     }
 }

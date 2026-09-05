@@ -7,6 +7,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MVZ2.IO;
+using MVZ2.Map;
 using MVZ2.Metas;
 using MVZ2.Modding;
 using MVZ2.TalkData;
@@ -68,9 +69,14 @@ namespace MVZ2.Managers
                 await LoadModResourcesMain(nsp, modResource, childProgresses[i]);
             }
         }
-        public ModResource GetModResource(string spaceName)
+        public ModResource? GetModResource(string spaceName)
         {
-            return modResources.FirstOrDefault(m => m.Namespace == spaceName);
+            foreach (var m in modResources)
+            {
+                if (m.Namespace == spaceName)
+                    return m;
+            }
+            return null;
         }
         #endregion
 
@@ -416,7 +422,12 @@ namespace MVZ2.Managers
         {
             if (!locator.Locate(key, typeof(T), out var locs))
                 return default;
-            var loc = locs.FirstOrDefault();
+            IResourceLocation? loc = null;
+            foreach (var l in locs)
+            {
+                loc = l;
+                break;
+            }
             if (loc == null)
                 return default;
             return await Addressables.LoadAssetAsync<T>(loc).Task;
