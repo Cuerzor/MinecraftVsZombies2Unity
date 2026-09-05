@@ -217,6 +217,8 @@ namespace MVZ2.GameContent.Projectiles
             var hit = args.hit;
             var projectile = hit.Projectile;
             var other = hit.Other;
+            if (!projectile.HasBehaviour(this))
+                return;
             if (!IsValidTarget(projectile, other))
                 return;
 
