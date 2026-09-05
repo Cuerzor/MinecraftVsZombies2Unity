@@ -20,9 +20,15 @@ namespace MVZ2Logic.UI
                 spriteChanged = true;
                 BaseTexture = GetTexture();
             }
-            SetTexture(BaseTexture);
+            SetTextureForced(BaseTexture);
         }
-        public virtual void SetTexture(Texture2D? texture)
+        public void SetTexture(Texture2D? texture)
+        {
+            if (texture == BaseTexture)
+                return;
+            SetTextureForced(texture);
+        }
+        public void SetTextureForced(Texture2D? texture)
         {
             var final = texture;
             if (Global.Resources != null && final != null)

@@ -21,9 +21,15 @@ namespace MVZ2Logic.UI
                 spriteChanged = true;
                 BaseSprite = Image.sprite;
             }
-            SetSprite(BaseSprite);
+            SetSpriteForced(BaseSprite);
         }
-        public virtual void SetSprite(Sprite? sprite)
+        public void SetSprite(Sprite? sprite)
+        {
+            if (sprite == BaseSprite)
+                return;
+            SetSpriteForced(sprite);
+        }
+        public void SetSpriteForced(Sprite? sprite)
         {
             var final = sprite;
             if (Global.Resources != null && final != null)

@@ -27,10 +27,16 @@ namespace MVZ2Logic.UI
             }
             if (BaseSprites != null)
             {
-                SetSprites(BaseSprites);
+                SetSpritesForced(BaseSprites);
             }
         }
-        public virtual void SetSprites(Sprite?[] sprites)
+        public void SetSprites(Sprite?[] sprites)
+        {
+            if (BaseSprites == sprites)
+                return;
+            SetSpritesForced(sprites);
+        }
+        public void SetSpritesForced(Sprite?[] sprites)
         {
             if (Global.Resources != null)
             {
