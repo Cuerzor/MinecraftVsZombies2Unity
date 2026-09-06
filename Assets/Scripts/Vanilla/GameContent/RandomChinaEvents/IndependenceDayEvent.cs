@@ -10,7 +10,6 @@ using MVZ2Logic;
 using MVZ2Logic.Level;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
-using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
 
 namespace MVZ2.GameContent.RandomChinaEvents

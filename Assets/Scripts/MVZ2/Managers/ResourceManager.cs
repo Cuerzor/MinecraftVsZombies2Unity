@@ -7,7 +7,6 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using MVZ2.IO;
-using MVZ2.Map;
 using MVZ2.Metas;
 using MVZ2.Modding;
 using MVZ2.TalkData;

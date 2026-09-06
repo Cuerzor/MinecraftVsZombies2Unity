@@ -3,7 +3,6 @@
 using MVZ2.GameContent.Damages;
 using MVZ2.Vanilla.Armors;
 using MVZ2.Vanilla.Callbacks;
-using MVZ2.Vanilla.Carts;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;

@@ -126,7 +126,7 @@ namespace MVZ2.Level
             var levelUI = GetUIPreset();
             int count = level.GetStarshardCount();
             int maxCount = level.GetStarshardSlotCount();
-            levelUI.SetStarshardPointCount(maxCount);  
+            levelUI.SetStarshardPointCount(maxCount);
             for (int i = 0; i < maxCount; i++)
             {
                 levelUI.SetStarshardPointHighlight(i, i < count);

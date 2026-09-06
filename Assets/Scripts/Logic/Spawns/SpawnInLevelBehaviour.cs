@@ -26,7 +26,7 @@ namespace MVZ2Logic.Spawns
             using var resultLanesItem = ListPool<int>.Rent();
             var resultLanes = resultLanesItem.Value;
             level.GetAllLanes(resultLanes);
-            
+
             using var exceptLanesItem = ListPool<int>.Rent();
             var exceptLanes = exceptLanesItem.Value;
 

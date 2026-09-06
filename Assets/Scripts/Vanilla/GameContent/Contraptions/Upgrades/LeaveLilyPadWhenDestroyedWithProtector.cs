@@ -5,12 +5,10 @@ using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2Logic;
-using MVZ2Logic.Entities;
 using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 namespace MVZ2.GameContent.Contraptions
 {

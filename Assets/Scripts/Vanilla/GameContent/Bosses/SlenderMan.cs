@@ -401,7 +401,7 @@ namespace MVZ2.GameContent.Bosses
 
             using var targetsItem = ListPool<Entity>.Rent();
             var targets = targetsItem.Value;
-            if (rng != null) 
+            if (rng != null)
             {
                 possible.RandomTake(5, rng, targets);
             }

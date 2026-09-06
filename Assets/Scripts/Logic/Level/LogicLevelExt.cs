@@ -19,7 +19,6 @@ using PVZEngine.Spawns;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
 using UnityEngine;
-using static UnityEngine.Networking.UnityWebRequest;
 using Random = UnityEngine.Random;
 
 namespace MVZ2Logic.Level

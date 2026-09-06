@@ -7,7 +7,6 @@ using MVZ2.Vanilla.Entities;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
-using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Entities
 {
@@ -31,7 +30,8 @@ namespace MVZ2.GameContent.Entities
             if (fragment != null)
             {
                 Fragment.AddEmitSpeed(fragment, entity.GetFragmentTickDamage());
-            };
+            }
+            ;
             entity.SetFragmentTickDamage(0);
         }
         public override void PostDeath(Entity entity, DeathInfo damageInfo)

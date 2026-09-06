@@ -7,7 +7,6 @@ using MVZ2.GameContent.Buffs.Contraptions;
 using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Placements;
 using MVZ2.Vanilla.Callbacks;
-using MVZ2.Vanilla.Carts;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2Logic;

@@ -15,7 +15,6 @@ using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Level;
 using PVZEngine.SeedPacks;
-using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Artifacts
 {

@@ -15,12 +15,10 @@ using MVZ2.GameContent.Seeds;
 using MVZ2.Vanilla.Armors;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Callbacks;
-using MVZ2.Vanilla.Carts;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
-using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
 using MVZ2.Vanilla.Shells;
@@ -1246,7 +1244,7 @@ namespace MVZ2.Vanilla.Entities
         [EntityPropertyRegistry(PROP_REGION)]
         public static readonly VanillaEntityPropertyMeta<EntityID> PROP_SHINE_RING = new VanillaEntityPropertyMeta<EntityID>("LightShineRing");
     }
-    internal class EntityGridUpdater : ListUpdaterBase<GridLayerData> 
+    internal class EntityGridUpdater : ListUpdaterBase<GridLayerData>
     {
         public void SetEntity(Entity entity)
         {

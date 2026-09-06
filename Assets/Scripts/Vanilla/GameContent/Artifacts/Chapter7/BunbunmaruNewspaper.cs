@@ -12,8 +12,6 @@ using MVZ2Logic.Definitions;
 using MVZ2Logic.Level;
 using PVZEngine.Auras;
 using PVZEngine.Buffs;
-using PVZEngine.SeedPacks;
-using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Artifacts
 {

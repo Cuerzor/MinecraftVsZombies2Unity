@@ -17,8 +17,6 @@ using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Timing;
-using PVZEngine.Tools;
-using PVZEngine.Tools.Random;
 using PVZEngine.Tools.Timing;
 
 namespace MVZ2.GameContent.Enemies

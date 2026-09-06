@@ -9,7 +9,6 @@ using MVZ2Logic.Localization;
 using PVZEngine;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 namespace MVZ2.Managers
 {
