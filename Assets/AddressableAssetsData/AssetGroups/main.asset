@@ -74,7 +74,7 @@ MonoBehaviour:
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 024e01fe827c5b94fa2db9d6d6072831
-    m_Address: mvz2:entity/armor/climbing_helmet
+    m_Address: mvz2:entity/armor/mountaineering_helmet
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -10407,6 +10407,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b45a4908c8e196e44904f643344333fd
+    m_Address: mvz2:mobile_blueprint/hookshot_drowned
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b476d5a275691b241bf16b7ecd5224c7
     m_Address: mvz2:contraption/mountain/ejector
     m_ReadOnly: 0
@@ -12661,7 +12668,7 @@ MonoBehaviour:
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dc6298cbbf98b774aa0e9afce922c327
-    m_Address: mvz2:armor/climbing_helmet
+    m_Address: mvz2:armor/mountaineering_helmet
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
