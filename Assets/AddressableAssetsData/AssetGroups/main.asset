@@ -1326,6 +1326,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16dd5f741bfc0694694c611f5d1de198
+    m_Address: mvz2:entity/bubble/hit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 16fc5dd769a48d34292fd51b6a315f93
     m_Address: mvz2:ship_map
     m_ReadOnly: 0
@@ -1489,6 +1496,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 19f6ee992227b4b4cbbb4f5510375217
     m_Address: mvz2:entity/enemy/hacker_progress
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a2b9bd061e596a4383606c326535d38
+    m_Address: mvz2:entity/enemy/bubble
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -3676,6 +3690,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3e733a81660e9e44c83d34979495d2fe
+    m_Address: mvz2:entity/enemy/drowned
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3e864d13c78ee3f4e99e3f4f8f898634
     m_Address: mvz2:random/iron/break4
     m_ReadOnly: 0
@@ -3923,6 +3944,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 42d4cd48e21a9fe448a9bbff03e200d1
     m_Address: mvz2:effect/nightmare_watching_eye
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42dfe062acca8484ca57456acde468d4
+    m_Address: mvz2:effect/bubble_break_particles
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -4182,6 +4210,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 46e4738e7670514408193864ddcf6e34
     m_Address: mvz2:lightning_attack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46e83e08e2923234598762eed891ff22
+    m_Address: mvz2:entity/bubble/spawn
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -5663,6 +5698,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5f4d00ab4078fc7458c38b5b0e6e8a76
+    m_Address: mvz2:entity/effect/waterfall_particle_mask
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5fa006a3a6b49704c8fdf300d77d032d
     m_Address: mvz2:entity/enemy/ufo
     m_ReadOnly: 0
@@ -5844,6 +5886,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 623e3a8f0386b4547a029ba7cc1144ae
+    m_Address: mvz2:entity/bubble/death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6255f755251c3b04ea24eab5a0800695
     m_Address: mvz2:entity/enemy/necromancer
@@ -9413,6 +9462,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a016bce63f026ed408eabde962d1a2f6
+    m_Address: mvz2:enemy/mountain/bubble
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a02a21c6bbb587e45acc511f885d30a9
     m_Address: mvz2:contraption/halloween/moonlight_sensor
     m_ReadOnly: 0
@@ -9762,6 +9818,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a728246733a0e394ca68d4512b05d39b
+    m_Address: mvz2:entity/enemy/bubble_gun
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a7bfb2b9a5817f7448f08ace245ac075
     m_Address: mvz2:talk/villager/villager_short2
@@ -13981,6 +14044,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f47174e3abb4ab34d90d6257f0f230a8
+    m_Address: mvz2:enemy/mountain/bubble_gun_gurgle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f4743b7a556142b4db02b61d15e9da06
     m_Address: mvz2:ui/almanac/grid_layer_tags

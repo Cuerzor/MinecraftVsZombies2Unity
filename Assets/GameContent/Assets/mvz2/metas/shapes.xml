@@ -323,4 +323,15 @@
             </armor>
         </armors>
     </shape>
+    <shape id="bubble">
+        <armors>
+            <armor slot="mvz2:main">
+                <position x="0" y="70" z="0" />
+                <scale x="1.5" y="1.5" z="1.5" />
+            </armor>
+            <armor slot="mvz2:shield">
+                <position x="-40" y="40" z="0" />
+            </armor>
+        </armors>
+    </shape>
 </shapes>

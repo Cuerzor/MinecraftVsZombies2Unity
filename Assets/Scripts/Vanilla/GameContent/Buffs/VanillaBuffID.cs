@@ -121,7 +121,7 @@ namespace MVZ2.GameContent.Buffs
             public const string cursedCandle = "cursed_candle";
             public const string stoneEyeSlowing = "stone_eye_slowing";
             public const string petrified = "petrified";
-            public const string draggedByBalloon = "dragged_by_balloon";
+            public const string carriedByBalloon = "carried_by_balloon";
             public const string releasedfromLockedChest = "released_from_locked_chest";
             public const string burning = "burning";
 
@@ -289,6 +289,7 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public const string trapped = "trapped";
             public const string hookshotUser = "hookshot_user";
+            public const string bubbleGunUser = "bubble_gun_user";
         }
         public static class Obstacle
         {
@@ -498,7 +499,7 @@ namespace MVZ2.GameContent.Buffs
             public static readonly NamespaceID transfenserGlowing = Get(VanillaBuffNames.Entity.transfenserGlowing);
             public static readonly NamespaceID stoneEyeSlowing = Get(VanillaBuffNames.Entity.stoneEyeSlowing);
             public static readonly NamespaceID petrified = Get(VanillaBuffNames.Entity.petrified);
-            public static readonly NamespaceID draggedByBalloon = Get(VanillaBuffNames.Entity.draggedByBalloon);
+            public static readonly NamespaceID carriedByBalloon = Get(VanillaBuffNames.Entity.carriedByBalloon);
             public static readonly NamespaceID burning = Get(VanillaBuffNames.Entity.burning);
 
             // Random China

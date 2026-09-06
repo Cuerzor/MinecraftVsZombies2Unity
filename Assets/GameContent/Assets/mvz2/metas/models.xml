@@ -269,6 +269,9 @@
     <model name="zombie_cat" type="entity" path="mvz2:enemy/palace/zombie_cat" width="92" height="38" xOffset="-8" yOffset="-19"/>
     <model name="wisp_fly" type="entity" path="mvz2:enemy/palace/wisp_fly" width="24" height="38" xOffset="0" yOffset="-19"/>
 
+    <model name="bubble_gun_gurgle" type="entity" path="mvz2:enemy/mountain/bubble_gun_gurgle" width="48" height="56" xOffset="7" yOffset="-26">
+        <armorconfig>mvz2:humanoid</armorconfig>
+    </model>
     <model name="hookshot_drowned" type="entity" path="mvz2:enemy/mountain/hookshot_drowned" width="72" height="90" xOffset="15" yOffset="-40">
         <armorconfig>mvz2:humanoid</armorconfig>
     </model>
@@ -363,6 +366,7 @@
     <model name="locked_chest_balloon" type="entity" path="mvz2:enemy/palace/locked_chest_balloon" width="60" height="120" xOffset="0" yOffset="-60"/>
     <model name="creaking" type="entity" path="mvz2:enemy/mountain/creaking" width="62" height="152" xOffset="0" yOffset="-64"/>
     <model name="zombie_cow" type="entity" path="mvz2:enemy/ship/zombie_cow" width="86" height="72" xOffset="11" yOffset="-32"/>
+    <model name="bubble" type="entity" path="mvz2:enemy/mountain/bubble" width="80" height="80" xOffset="0" yOffset="-40"/>
 
 
     <!-- Obstacles -->
@@ -546,6 +550,7 @@
     <model name="waterfall" type="entity" path="mvz2:effect/waterfall" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="creaking_particles" type="entity" path="mvz2:effect/creaking_particles" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="cleave_attack" type="entity" path="mvz2:effect/cleave_attack" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
+    <model name="bubble_break_particles" type="entity" path="mvz2:effect/bubble_break_particles" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
     
     <!-- Projectiles -->
     <model name="arrow" type="entity" path="mvz2:projectile/arrow" width="32" height="10" xOffset="0" yOffset="-1" />

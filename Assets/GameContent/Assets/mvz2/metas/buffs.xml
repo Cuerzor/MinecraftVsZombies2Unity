@@ -208,7 +208,7 @@
     <buff id="petrified" polarity="negative" level="0" target="entity" />
     <buff id="broken_tile" polarity="negative" level="0" target="grid" />
     <buff id="psychic_shackled" polarity="negative" level="0" target="contraption" />
-    <buff id="dragged_by_balloon" polarity="none" level="5000" target="entity" />
+    <buff id="carried_by_balloon" polarity="none" level="5000" target="entity" />
     <buff id="released_from_locked_chest" polarity="none" level="5000" target="entity" />
     <buff id="locked_chest_invincible" polarity="none" level="5000" target="boss" />
     <buff id="stone_eye_charged" polarity="positive" level="0" target="contraption" />
@@ -241,7 +241,8 @@
     <buff id="prismatic_pylon_projectile_cyan" polarity="positive" level="1000" target="projectile" />
     <buff id="prismatic_pylon_projectile_blue" polarity="positive" level="1000" target="projectile" />
     <buff id="prismatic_pylon_projectile_purple" polarity="positive" level="1000" target="projectile" />
-    <buff id="hookshot_user" polarity="none" level="6000" target="hookshot_user" />
+    <buff id="hookshot_user" polarity="none" level="6000" target="enemy" />
+    <buff id="bubble_gun_user" polarity="none" level="6000" target="enemy" />
     
 
     <!-- Random China -->

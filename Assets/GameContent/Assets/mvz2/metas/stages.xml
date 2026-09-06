@@ -1547,6 +1547,25 @@
             <spawn id="mvz2:iron_helmetted_zombie" />
         </spawns>
     </stage>
+    <stage id="mountain_2" name="妖怪之山" dayNumber="2">
+        <unlock>
+            <condition required="mvz2:level.mountain_2" />
+        </unlock>
+        <talks>
+            <talk type="start" value="mvz2:mountain_2" />
+            <talk type="end" value="mvz2:mountain_2_over" />
+            <talk type="map" value="mvz2:mountain_2_map" />
+        </talks>
+        <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:ejector" />
+        <spawns flags="2">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
+            <spawn id="mvz2:mummy" />
+            <spawn id="mvz2:pop_captain" />
+            <spawn id="mvz2:zombie_cat" />
+            <spawn id="mvz2:bubble_gun_gurgle" />
+        </spawns>
+    </stage>
     <stage id="mountain_4" name="妖怪之山" dayNumber="4">
         <unlock>
             <condition required="mvz2:level.mountain_3" />

@@ -124,6 +124,8 @@ namespace MVZ2.Vanilla.Entities
         public const string hookshotDrowned_State = "hookshot_drowned/state";
         public const string axolotlSuit_State = "axolotl_suit/state";
         public const string axolotlSuit_DeathEffects = "axolotl_suit/death_effects";
+
+        public const string bubble_Carry = "bubble/carry";
         #endregion
 
         #region Obstacles

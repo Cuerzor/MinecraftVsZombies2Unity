@@ -143,6 +143,18 @@ namespace MVZ2.Vanilla.Enemies
             return enemy.GetProperty<float>(MELEE_ATTACK_MULTIPLIER, ignoreBuffs: ignoreBuffs);
         }
         #endregion
+
+        #region 免疫减速
+        public static readonly VanillaEntityPropertyMeta<bool> CANNOT_BE_CARRIED_BY_OTHER_ENEMY = new VanillaEntityPropertyMeta<bool>("cannot_be_carried_by_other_enemy");
+        public static bool CannotBeCarriedByOtherEnemy(this Entity enemy)
+        {
+            return enemy.GetProperty<bool>(CANNOT_BE_CARRIED_BY_OTHER_ENEMY);
+        }
+        public static void SetCannotBeCarriedByOtherEnemy(this Entity enemy, bool value)
+        {
+            enemy.SetProperty<bool>(CANNOT_BE_CARRIED_BY_OTHER_ENEMY, value);
+        }
+        #endregion
     }
 }
 

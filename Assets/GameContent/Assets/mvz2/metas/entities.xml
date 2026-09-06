@@ -262,6 +262,16 @@
             </properties>
         </humanoid>
         <zombie type="2" parent="humanoid" />
+        <imp type="2" parent="humanoid">
+            <properties>
+                <float name="mvz2:mass" value="-1" />
+                <vector3 name="mvz2:size" x="16" y="54" z="16" />
+                <float name="mvz2:fallResistance" value="18" />
+                <float name="mvz2:cryPitch" value="2" />
+                <int name="mvz2:cost" value="50" />
+                <id name="mvz2:shape" value="mvz2:imp" />
+            </properties>
+        </imp>
         <drowned type="2" parent="humanoid" >
             <properties>
                 <id name="mvz2:crySound" value="mvz2:drowned_cry" />
@@ -2591,6 +2601,15 @@
         </entity>
 
         
+        <entity template="imp" id="bubble_gun_gurgle" name="泡泡枪小鬼" deathMessage="啪">
+            <properties>
+                <float name="mvz2:fallResistance" value="18" />
+                <int name="mvz2:cost" value="50" />
+                <id name="mvz2:crySound" value="mvz2:drowned_cry" />
+                <id name="mvz2:deathSound" value="mvz2:drowned_death" />
+                <int name="mvz2:waterInteraction" value="3" />
+            </properties>
+        </entity>
         <entity template="drowned" id="hookshot_drowned" name="抓钩溺尸" deathMessage="上钩了！">
             <unlock>
                 <condition required="mvz2:level.mountain_3" />
@@ -2654,23 +2673,15 @@
                 <int name="mvz2:teleporter_cost" value="-300" />
             </properties>
         </entity>
-        <entity template="enemy" id="imp" name="小鬼僵尸" deathMessage="被偷家了">
+        <entity template="imp" id="imp" name="小鬼僵尸" deathMessage="被偷家了">
             <behaviours>
-                <behaviour operator="replace" source="mvz2:enemy_common_animation" id="mvz2:humanoid_animation" />
                 <behaviour operator="add" id="mvz2:boated_enemy" />
                 <properties behaviour="mvz2:boated_enemy">
                     <bool name="spawn_with_boat" value="false" />
                 </properties>
             </behaviours>
             <properties>
-                <float name="mvz2:mass" value="-1" />
-                <vector3 name="mvz2:size" x="16" y="54" z="16" />
                 <float name="mvz2:fallResistance" value="18" />
-                <float name="mvz2:cryPitch" value="2" />
-                <int name="mvz2:cost" value="50" />
-                <id name="mvz2:shape" value="mvz2:imp" />
-                <int name="mvz2:waterInteraction" value="2" />
-                <int name="mvz2:airInteraction" value="2" />
             </properties>
         </entity>
 
@@ -2997,6 +3008,7 @@
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:immune_slowing" value="true" />
                 <float name="mvz2:fallResistance" value="10000" />
+                <bool name="mvz2:cannot_be_carried_by_other_enemy" value="true" />
                 <id name="mvz2:shell" value="mvz2:leather" />
                 <id name="mvz2:shape" value="mvz2:block" />
                 <id name="mvz2:crySound" null="true" />
@@ -3157,6 +3169,42 @@
                 <id name="mvz2:shape" value="mvz2:cow" />
 
                 <int name="mvz2:cost" value="25" />
+            </properties>
+        </entity>
+        <entity template="specialEnemy" id="bubble" name="泡泡" deathMessage="啪">
+            <unlock>
+                <condition required="mvz2:level.mountain_2" />
+            </unlock>
+            <behaviours>
+                <behaviour operator="add" id="mvz2:enemy_state" />
+                <behaviour operator="add" id="mvz2:enemy_walk" />
+                <behaviour operator="add" id="mvz2:remove_on_death" />
+                <behaviour operator="add" id="mvz2:timeout_death" />
+                <behaviour operator="add" id="mvz2:bubble/carry" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:harmless" value="true" />
+                <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:loyal" value="true" />
+                <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:cannot_be_carried_by_other_enemy" value="true" />
+                <float name="mvz2:fallResistance" value="10000" />
+                <bool name="mvz2:undead" value="false" />
+                <id name="mvz2:shell" value="mvz2:bubble" />
+                <id name="mvz2:shape" value="mvz2:block" />
+                <id name="mvz2:crySound" null="true" />
+                <id name="mvz2:deathSound" value="mvz2:bubble_death" />
+                <float name="mvz2:maxHealth" value="100" />
+                <float name="mvz2:mass" value="-2" />
+                <float name="mvz2:speed" value="2" />
+                <vector3 name="mvz2:size" x="80" y="80" z="60" />
+                <color name="mvz2:bloodColor" value="#008effff" />
+                <color name="mvz2:bloodColorCensored" value="#008effff" />
+                <int name="mvz2:maxTimeout" value="300" />
+                <float name="mvz2:shadowAlpha" value="0.2" />
+
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-4"/>
+                <int name="mvz2:cost" value="0" />
             </properties>
         </entity>
 
@@ -5125,6 +5173,12 @@
             <behaviours includeSelf="false"/>
             <properties>
                 <int name="mvz2:maxTimeout" value="15" />
+            </properties>
+        </entity>
+        <entity template="effect" id="bubble_break_particles">
+            <behaviours includeSelf="false"/>
+            <properties>
+                <int name="mvz2:maxTimeout" value="3" />
             </properties>
         </entity>
     </entries>

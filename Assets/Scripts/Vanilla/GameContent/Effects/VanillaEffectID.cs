@@ -127,6 +127,7 @@ namespace MVZ2.GameContent.Effects
         public const string waterfall = "waterfall";
         public const string creakingParticles = "creaking_particles";
         public const string cleaveAttack = "cleave_attack";
+        public const string bubbleBreakParticles = "bubble_break_particles";
     }
     public static class VanillaEffectID
     {
@@ -250,6 +251,7 @@ namespace MVZ2.GameContent.Effects
         public static readonly NamespaceID waterfall = Get(VanillaEffectNames.waterfall);
         public static readonly NamespaceID creakingParticles = Get(VanillaEffectNames.creakingParticles);
         public static readonly NamespaceID cleaveAttack = Get(VanillaEffectNames.cleaveAttack);
+        public static readonly NamespaceID bubbleBreakParticles = Get(VanillaEffectNames.bubbleBreakParticles);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

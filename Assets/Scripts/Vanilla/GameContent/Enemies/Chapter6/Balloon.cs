@@ -51,7 +51,7 @@ namespace MVZ2.GameContent.Enemies
         }
         public class DragAura : AuraEffectDefinition
         {
-            public DragAura() : base(VanillaBuffID.Entity.draggedByBalloon, 1)
+            public DragAura() : base(VanillaBuffID.Entity.carriedByBalloon, 1)
             {
             }
 

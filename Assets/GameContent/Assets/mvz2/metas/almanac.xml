@@ -204,6 +204,7 @@
             <value value="mvz2:normal" name="普通" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[14]" backgroundColor="#6b6b6b" />
             <value value="mvz2:ice" name="冰" description="阻挡锐利物体，但受到20x冲击伤害和2x火焰伤害" sprite="mvz2:ui/almanac/shell_tags[15]" backgroundColor="#1b67a3" />
             <value value="mvz2:apparition" name="灵体" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[16]" backgroundColor="#ffffff" />
+            <value value="mvz2:bubble" name="泡泡" description="受到20x锐利伤害和冰冷伤害" sprite="mvz2:ui/almanac/shell_tags[17]" backgroundColor="#005192" />
         </enum>
     </tags>
     <globalVariables>
@@ -1106,6 +1107,7 @@
                 <variable name="cloud_density">property("mvz2:shell/density", "mvz2:cloud", "shell") * 100</variable>
                 <variable name="lightning_density">property("mvz2:shell/density", "mvz2:lightning", "shell") * 100</variable>
                 <variable name="apparition_density">property("mvz2:shell/density", "mvz2:apparition", "shell") * 100</variable>
+                <variable name="bubble_density">property("mvz2:shell/density", "mvz2:bubble", "shell") * 100</variable>
                 <variable name="ice_density">property("mvz2:shell/density", "mvz2:ice", "shell") * 100</variable>
             </variables>
             <header>
@@ -1138,6 +1140,7 @@
                 <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:cloud" />：<color=red><var local="cloud_density"/>%（震飞周围敌怪）</color>]]></p>
                 <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:lightning" />：<color=red><var local="lightning_density"/>%（电击周围敌怪）</color>]]></p>
                 <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:apparition" />：<color=red><var local="apparition_density"/>%</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:bubble" />：<color=red><var local="bubble_density"/>%</color>]]></p>
             </flavor>
         </entry>
         <entry id="mvz2:teleporter">
@@ -2052,7 +2055,7 @@
             </header>
             <properties>
                 <p>生命：<![CDATA[<color=red><var id="mvz2:entity_health" />+<var id="armor_hp" />（登山头盔）</color>]]></p>
-                <p>抓钩间隔：<![CDATA[<color=red><var local="hookshot_seconds"/>秒</color>]]></p>
+                <p>抓钩间隔：<![CDATA[<color=red><var local="hookshot_seconds"/>秒（受攻击速度影响）</color>]]></p>
             </properties>
             <flavor>
                 <p>他生前是个登山家，直到他有一次失足摔下山，掉进了山下的湖里。</p>

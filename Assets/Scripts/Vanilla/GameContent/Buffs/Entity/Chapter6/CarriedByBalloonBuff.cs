@@ -8,10 +8,10 @@ using PVZEngine.Modifiers;
 namespace MVZ2.GameContent.Buffs.Entities
 {
 
-    [AutoBuffDefinition(VanillaBuffNames.Entity.draggedByBalloon)]
-    public class DraggedByBalloonBuff : BuffDefinition
+    [AutoBuffDefinition(VanillaBuffNames.Entity.carriedByBalloon)]
+    public class CarriedByBalloonBuff : BuffDefinition
     {
-        public DraggedByBalloonBuff(string nsp, string name) : base(nsp, name)
+        public CarriedByBalloonBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new FloatModifier(EngineEntityProps.GRAVITY, NumberOperator.Multiply, 0));
         }
