@@ -753,6 +753,9 @@ MonoBehaviour:
   - name: mobile_blueprint/high_frequency_pulse_dispenser
     texture: {fileID: 2800000, guid: f24e02b7e9159cb4ebd603ab477f2152, type: 3}
     tags: []
+  - name: mobile_blueprint/hookshot_drowned
+    texture: {fileID: 2800000, guid: b45a4908c8e196e44904f643344333fd, type: 3}
+    tags: []
   - name: mobile_blueprint/imp
     texture: {fileID: 2800000, guid: 159a0c84d11598e48abae3c94be1ed5f, type: 3}
     tags: []
@@ -1272,6 +1275,9 @@ MonoBehaviour:
     tags: []
   - name: entity/armor/cannon
     texture: {fileID: 2800000, guid: fef5240ef6b58184c95282c0fa82357c, type: 3}
+    tags: []
+  - name: entity/armor/climbing_helmet
+    texture: {fileID: 2800000, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
     tags: []
   - name: entity/armor/diamond_helmet
     texture: {fileID: 2800000, guid: 8c33626bd6dc68e43a68a3b6d0b5f0aa, type: 3}
@@ -2076,6 +2082,15 @@ MonoBehaviour:
     tags: []
   - name: entity/enemy/holy_sword
     texture: {fileID: 2800000, guid: 1774c2ed9635c694080b89ce4c6e09bf, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot
+    texture: {fileID: 2800000, guid: 958bfadab58b5c94c8fccbd79b832b76, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot_chains
+    texture: {fileID: 2800000, guid: dac9321b9202f0641a7ace20757212f1, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot_drowned
+    texture: {fileID: 2800000, guid: b906ce783b405fd4d83d997ca69b8010, type: 3}
     tags: []
   - name: entity/enemy/iron_shovel
     texture: {fileID: 2800000, guid: 414519a6962fb994b855ea73bd0d44e9, type: 3}
@@ -4663,6 +4678,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: f24e02b7e9159cb4ebd603ab477f2152, type: 3}
     tags: []
+  - name: mobile_blueprint/hookshot_drowned
+    index: 0
+    sprite: {fileID: 21300000, guid: b45a4908c8e196e44904f643344333fd, type: 3}
+    tags: []
   - name: mobile_blueprint/imp
     index: 0
     sprite: {fileID: 21300000, guid: 159a0c84d11598e48abae3c94be1ed5f, type: 3}
@@ -5615,6 +5634,18 @@ MonoBehaviour:
   - name: entity/armor/cannon
     index: 2
     sprite: {fileID: -286163847, guid: fef5240ef6b58184c95282c0fa82357c, type: 3}
+    tags: []
+  - name: entity/armor/climbing_helmet
+    index: 0
+    sprite: {fileID: -629886373, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
+    tags: []
+  - name: entity/armor/climbing_helmet
+    index: 1
+    sprite: {fileID: 374134505, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
+    tags: []
+  - name: entity/armor/climbing_helmet
+    index: 2
+    sprite: {fileID: -1765341983, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
     tags: []
   - name: entity/armor/diamond_helmet
     index: 0
@@ -8729,6 +8760,50 @@ MonoBehaviour:
   - name: entity/enemy/holy_sword
     index: 0
     sprite: {fileID: 21300000, guid: 1774c2ed9635c694080b89ce4c6e09bf, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot
+    index: 0
+    sprite: {fileID: -554793441, guid: 958bfadab58b5c94c8fccbd79b832b76, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot
+    index: 1
+    sprite: {fileID: 613389365, guid: 958bfadab58b5c94c8fccbd79b832b76, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot
+    index: 2
+    sprite: {fileID: -2109566237, guid: 958bfadab58b5c94c8fccbd79b832b76, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot_chains
+    index: 0
+    sprite: {fileID: 21300000, guid: dac9321b9202f0641a7ace20757212f1, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot_drowned
+    index: 0
+    sprite: {fileID: -857626409, guid: b906ce783b405fd4d83d997ca69b8010, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot_drowned
+    index: 1
+    sprite: {fileID: -2101585010, guid: b906ce783b405fd4d83d997ca69b8010, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot_drowned
+    index: 2
+    sprite: {fileID: 1108891538, guid: b906ce783b405fd4d83d997ca69b8010, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot_drowned
+    index: 3
+    sprite: {fileID: 462732806, guid: b906ce783b405fd4d83d997ca69b8010, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot_drowned
+    index: 4
+    sprite: {fileID: -1650815172, guid: b906ce783b405fd4d83d997ca69b8010, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot_drowned
+    index: 5
+    sprite: {fileID: -1799827090, guid: b906ce783b405fd4d83d997ca69b8010, type: 3}
+    tags: []
+  - name: entity/enemy/hookshot_drowned
+    index: 6
+    sprite: {fileID: 1151194008, guid: b906ce783b405fd4d83d997ca69b8010, type: 3}
     tags: []
   - name: entity/enemy/iron_shovel
     index: 0

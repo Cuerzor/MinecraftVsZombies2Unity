@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-02 07:09+0800\n"
-"PO-Revision-Date: 2026-09-03 10:36+0800\n"
+"POT-Creation-Date: 2026-09-06 12:36+0800\n"
+"PO-Revision-Date: 2026-09-06 12:45+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -3951,6 +3951,35 @@ msgstr ""
 "1. To solve the issue where frogs get poisoned by eating fireflies in real life, we simply decided not to add fireflies.\n"
 "2. We changed our minds. This time we added fireflies, but only as a block visual effect.\n"
 "3. Now we have truly added \"fireflies.\""
+
+#. Header for enemies mvz2:hookshot_drowned
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid "抓钩溺尸会用它的抓钩枪强行移动你的器械。"
+msgstr "Hookshot Drowneds use their grappling guns to move your contraptions forward."
+
+#. Properties for enemies mvz2:hookshot_drowned
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid ""
+"生命：<color=red><var id=\"mvz2:entity_health\" />+<var id=\"armor_hp\" />（登山头盔）</color>\n"
+"抓钩间隔：<color=red><var local=\"hookshot_seconds\"/>秒</color>"
+msgstr ""
+"Toughness: <color=red><var id=\"mvz2:entity_health\" />+<var id=\"armor_hp\" /> (Mountaineering Helmet)</color>\n"
+"Grapple interval: <color=red><var local=\"hookshot_seconds\"/> seconds</color>"
+
+#. Flavor for enemies mvz2:hookshot_drowned
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid ""
+"他生前是个登山家，直到他有一次失足摔下山，掉进了山下的湖里。\n"
+"他死后，依然孜孜不倦地向山奔去，哪怕腐烂的身体让他寸步难行，他也从来没选择过放弃。\n"
+"他为什么如此执着？因为山就在那里。"
+msgstr ""
+"He was a mountaineer while he was still alive, until one day he slipped and fell down the mountain into the lake below.\n"
+"Even after his death, he continued his relentless journey up the mountain, never giving up, even though his decaying body made him "
+"difficult to move.\n"
+"Why was he so persistent to climb up the mountain? Because it's there."
 
 #. Header for enemies mvz2:axolotl_suit
 #: Almanac meta file
@@ -8666,6 +8695,18 @@ msgstr "Wisp Fly"
 msgctxt "death_message"
 msgid "嗡嗡嗡嗡嗡嗡嗡嗡嗡嗡"
 msgstr "BUZZZZZZZZZZZZZZZZ"
+
+#. Name for entity mvz2:hookshot_drowned
+#: Entity meta file
+msgctxt "entity.name"
+msgid "抓钩溺尸"
+msgstr "Hookshot Drowned"
+
+#. Death message for entity mvz2:hookshot_drowned
+#: Entity meta file
+msgctxt "death_message"
+msgid "上钩了！"
+msgstr "Hooked!"
 
 #. Name for entity mvz2:axolotl_suit
 #: Entity meta file

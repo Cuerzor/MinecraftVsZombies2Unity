@@ -2043,7 +2043,23 @@
         </entry>
 
         <entry />
-        <entry />
+        <entry id="mvz2:hookshot_drowned">
+            <variables>
+                <variable name="hookshot_seconds">10</variable>
+            </variables>
+            <header>
+                <p>抓钩溺尸会用它的抓钩枪强行移动你的器械。</p>
+            </header>
+            <properties>
+                <p>生命：<![CDATA[<color=red><var id="mvz2:entity_health" />+<var id="armor_hp" />（登山头盔）</color>]]></p>
+                <p>抓钩间隔：<![CDATA[<color=red><var local="hookshot_seconds"/>秒</color>]]></p>
+            </properties>
+            <flavor>
+                <p>他生前是个登山家，直到他有一次失足摔下山，掉进了山下的湖里。</p>
+                <p>他死后，依然孜孜不倦地向山奔去，哪怕腐烂的身体让他寸步难行，他也从来没选择过放弃。</p>
+                <p>他为什么如此执着？因为山就在那里。</p>
+            </flavor>
+        </entry>
         <entry />
         <entry id="mvz2:axolotl_suit">
             <header>
