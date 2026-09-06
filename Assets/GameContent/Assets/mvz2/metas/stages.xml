@@ -1607,6 +1607,19 @@
             <spawn id="mvz2:axolotl_suit" />
         </spawns>
     </stage>
+    <stage id="mountain_endless" name="妖怪之山无尽" type="endless">
+        <unlock>
+            <condition required="mvz2:level.mountain_11" />
+        </unlock>
+        <clear pickupModel="mvz2:entity.money_chest" />
+        <spawns flags="2">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
+        </spawns>
+        <properties>
+            <bool name="endless" value="true" />
+        </properties>
+    </stage>
 
     
     <!-- Minigames -->
