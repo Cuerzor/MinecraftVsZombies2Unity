@@ -17,7 +17,7 @@ namespace MVZ2.GameContent.Detections
         {
             var size = new Vector3(64, 1000, 80);
             var center = self.Position + new Vector3(0, size.y * 0.5f, 0);
-            return new Bounds(size, center);
+            return new Bounds(center, size);
         }
         public override bool ValidateTarget(DetectionParams self, Entity target)
         {
