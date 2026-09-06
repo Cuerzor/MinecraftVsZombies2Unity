@@ -154,7 +154,7 @@
                 <float name="mvz2:maxHealth" value="1110" />
             </props>
         </entry>
-        <entry id="climbing_helmet" type="mvz2:helmet">
+        <entry id="mountaineering_helmet" type="mvz2:helmet">
             <behaviours>
                 <behaviour id="mvz2:damage_state_3" />
             </behaviours>

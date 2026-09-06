@@ -622,7 +622,7 @@
     <model name="umbrella_shield" type="armor" path="mvz2:armor/umbrella_shield" width="64" height="100" xOffset="16" yOffset="0" />
     <model name="cannon" type="armor" path="mvz2:armor/cannon" width="61" height="36" xOffset="5" yOffset="7" />
     <model name="pop_captain_cap" type="armor" path="mvz2:armor/pop_captain_cap" width="40" height="12" xOffset="0" yOffset="-6" />
-    <model name="climbing_helmet" type="armor" path="mvz2:armor/climbing_helmet" width="32" height="22" xOffset="0" yOffset="-6" />
+    <model name="mountaineering_helmet" type="armor" path="mvz2:armor/mountaineering_helmet" width="32" height="22" xOffset="0" yOffset="-6" />
 
     <!-- HeldItems -->
     <model name="starshard.default" type="held" path="mvz2:held/starshards/default" shot="false" width="32" height="32" xOffset="0" yOffset="-28" />

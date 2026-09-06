@@ -2599,7 +2599,7 @@
                 <behaviour operator="replace" source="mvz2:enemy_state" id="mvz2:hookshot_drowned/state" />
             </behaviours>
             <properties>
-                <id name="mvz2:starting_armor" value="mvz2:climbing_helmet" />
+                <id name="mvz2:starting_armor" value="mvz2:mountaineering_helmet" />
                 <int name="mvz2:cost" value="75" />
             </properties>
         </entity>

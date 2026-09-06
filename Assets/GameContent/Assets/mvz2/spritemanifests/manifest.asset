@@ -1276,9 +1276,6 @@ MonoBehaviour:
   - name: entity/armor/cannon
     texture: {fileID: 2800000, guid: fef5240ef6b58184c95282c0fa82357c, type: 3}
     tags: []
-  - name: entity/armor/climbing_helmet
-    texture: {fileID: 2800000, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
-    tags: []
   - name: entity/armor/diamond_helmet
     texture: {fileID: 2800000, guid: 8c33626bd6dc68e43a68a3b6d0b5f0aa, type: 3}
     tags: []
@@ -1296,6 +1293,9 @@ MonoBehaviour:
     tags: []
   - name: entity/armor/mesmerizer_crown
     texture: {fileID: 2800000, guid: 5a0ed5d8cf792294fb28827ccdea1c42, type: 3}
+    tags: []
+  - name: entity/armor/mountaineering_helmet
+    texture: {fileID: 2800000, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
     tags: []
   - name: entity/armor/pop_captain_cap
     texture: {fileID: 2800000, guid: 33c49e1a293e6d94f8836070fff9c226, type: 3}
@@ -5635,18 +5635,6 @@ MonoBehaviour:
     index: 2
     sprite: {fileID: -286163847, guid: fef5240ef6b58184c95282c0fa82357c, type: 3}
     tags: []
-  - name: entity/armor/climbing_helmet
-    index: 0
-    sprite: {fileID: -629886373, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
-    tags: []
-  - name: entity/armor/climbing_helmet
-    index: 1
-    sprite: {fileID: 374134505, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
-    tags: []
-  - name: entity/armor/climbing_helmet
-    index: 2
-    sprite: {fileID: -1765341983, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
-    tags: []
   - name: entity/armor/diamond_helmet
     index: 0
     sprite: {fileID: -1492098989, guid: 8c33626bd6dc68e43a68a3b6d0b5f0aa, type: 3}
@@ -5698,6 +5686,18 @@ MonoBehaviour:
   - name: entity/armor/mesmerizer_crown
     index: 0
     sprite: {fileID: 21300000, guid: 5a0ed5d8cf792294fb28827ccdea1c42, type: 3}
+    tags: []
+  - name: entity/armor/mountaineering_helmet
+    index: 0
+    sprite: {fileID: -629886373, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
+    tags: []
+  - name: entity/armor/mountaineering_helmet
+    index: 1
+    sprite: {fileID: 374134505, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
+    tags: []
+  - name: entity/armor/mountaineering_helmet
+    index: 2
+    sprite: {fileID: -1765341983, guid: 024e01fe827c5b94fa2db9d6d6072831, type: 3}
     tags: []
   - name: entity/armor/pop_captain_cap
     index: 0
