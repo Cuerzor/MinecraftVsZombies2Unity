@@ -27,18 +27,22 @@ namespace MVZ2.GameContent.Buffs.Enemies
             var buffs = enemy.GetBuffs<GemCarrierBuff>();
             foreach (var buff in buffs)
             {
-                var weights = gemWeights.Select(g => g.weight).ToArray();
-                var index = enemy.DropRNG.WeightedRandom(weights);
-                var gemID = gemWeights[index].id;
+                var gemID = gemsID.WeightedRandom(gemWeights, enemy.DropRNG);
                 enemy.Produce(gemID);
                 buff.Remove();
             }
         }
-        private static readonly List<(NamespaceID id, float weight)> gemWeights = new List<(NamespaceID, float)>()
+        private static readonly List<NamespaceID> gemsID = new List<NamespaceID>()
         {
-            ( VanillaPickupID.emerald, 100 ),
-            ( VanillaPickupID.ruby, 20 ),
-            ( VanillaPickupID.diamond, 1 ),
+            VanillaPickupID.emerald,
+            VanillaPickupID.ruby,
+            VanillaPickupID.diamond,
+        };
+        private static readonly List<float> gemWeights = new List<float>()
+        {
+            100,
+            20,
+            1,
         };
     }
 }

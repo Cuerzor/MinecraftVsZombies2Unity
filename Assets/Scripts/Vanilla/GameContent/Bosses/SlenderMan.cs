@@ -234,8 +234,7 @@ namespace MVZ2.GameContent.Bosses
         }
         private NamespaceID GetRandomPortalEnemyID(RandomGenerator rng)
         {
-            var index = rng.WeightedRandom(portalPoolWeights);
-            return portalPool[index];
+            return portalPool.WeightedRandom(portalPoolWeights, rng);
         }
         #endregion
 
