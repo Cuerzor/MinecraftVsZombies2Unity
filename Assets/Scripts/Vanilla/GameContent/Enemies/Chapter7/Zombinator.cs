@@ -68,6 +68,8 @@ namespace MVZ2.GameContent.Enemies
             base.PreDeath(entity, deathInfo, result);
             if (deathInfo.HasEffect(VanillaDamageEffects.DROWN) || deathInfo.HasEffect(VanillaDamageEffects.FALL_OFF))
                 return;
+            if (!entity.ShouldTriggerDeathEffects(deathInfo))
+                return;
             var phase = GetPhase(entity);
             if (phase < PHASE_3)
             {
@@ -87,12 +89,9 @@ namespace MVZ2.GameContent.Enemies
             if (deathInfo.HasEffect(VanillaDamageEffects.REMOVE_ON_DEATH))
                 return;
             var phase = GetPhase(entity);
-            if (phase == PHASE_3)
-            {
-                Explosion.Spawn(entity, entity.GetCenter(), 40);
-                entity.PlaySound(VanillaSoundID.largeExplosion);
-                entity.Remove();
-            }
+            Explosion.Spawn(entity, entity.GetCenter(), 40);
+            entity.PlaySound(VanillaSoundID.largeExplosion);
+            entity.Remove();
         }
         public static void SwitchPhase(Entity entity, int phase)
         {
@@ -136,7 +135,7 @@ namespace MVZ2.GameContent.Enemies
         public const int PHASE_1 = 0;
         public const int PHASE_2 = 1;
         public const int PHASE_3 = 2;
-        public const float KNOCKBACK_SPEED = 20;
+        public const float KNOCKBACK_SPEED = 0;
 
         public static readonly NamespaceID PHASE_1_SHELL = VanillaShellID.flesh;
         public const float PHASE_1_MAX_HEALTH = 200;
