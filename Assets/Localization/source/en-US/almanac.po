@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-06 12:36+0800\n"
-"PO-Revision-Date: 2026-09-06 12:45+0800\n"
+"POT-Creation-Date: 2026-09-06 09:37+0800\n"
+"PO-Revision-Date: 2026-09-07 10:33+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -712,6 +712,18 @@ msgstr "Stops sharp objects, but takes 20x impact damage and 2x fire damage"
 msgctxt "almanac_tag_enum.name"
 msgid "灵体"
 msgstr "Apparition"
+
+#. Name for almanac tag enum value mvz2:bubble of enum shell
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "泡泡"
+msgstr "Bubble"
+
+#. Description for almanac tag enum value mvz2:bubble of enum shell
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "受到20x锐利伤害和冰冷伤害"
+msgstr "Takes 20x sharp or cold damage"
 
 #. Header for contraptions mvz2:dispenser
 #: Almanac meta file
@@ -2443,7 +2455,8 @@ msgid ""
 "<tag id=\"mvz2:shell\" enum=\"mvz2:shadow\" />：<color=red><var local=\"shadow_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:cloud\" />：<color=red><var local=\"cloud_density\"/>%（震飞周围敌怪）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:lightning\" />：<color=red><var local=\"lightning_density\"/>%（电击周围敌怪）</color>\n"
-"<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:bubble\" />：<color=red><var local=\"bubble_density\"/>%</color>"
 msgstr ""
 "\"You're too violent! You should be nice, to E for Everyone!\"\n"
 "\"You come over here and I'll let you know what E really stands for.\"\n"
@@ -2467,7 +2480,8 @@ msgstr ""
 "color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:lightning\" />：<color=red><var local=\"lightning_density\"/>% (electrocutes nearby hostile mobs)</"
 "color>\n"
-"<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:apparition\" />：<color=red><var local=\"apparition_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:bubble\" />：<color=red><var local=\"bubble_density\"/>%</color>"
 
 #. Header for contraptions mvz2:teleporter
 #: Almanac meta file
@@ -3952,6 +3966,45 @@ msgstr ""
 "2. We changed our minds. This time we added fireflies, but only as a block visual effect.\n"
 "3. Now we have truly added \"fireflies.\""
 
+#. Header for enemies mvz2:bubble_gun_gurgle
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid ""
+"泡泡枪溺尸会发射<tag id=\"mvz2:shell\" enum=\"mvz2:bubble\" />泡泡，泡泡会裹住碰到的<tag id=\"mvz2:mass\" enum=\"0\" />以下的僵尸，并携"
+"带它们。"
+msgstr ""
+"Bubble Gun Gurgles shoot <tag id=\"mvz2:shell\" enum=\"mvz2:bubble\" /> bubble shields. The bubbles can wrap around and carry away any "
+"mob with a mass below <tag id=\"mvz2:mass\" enum=\"0\" /> that they touch."
+
+#. Properties for enemies mvz2:bubble_gun_gurgle
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid ""
+"生命：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
+"泡泡生命：<color=red><var local=\"bubble_hp\" /></color>\n"
+"泡泡速度：<color=red><var local=\"bubble_speed\" /></color>\n"
+"泡泡时长：<color=red><var local=\"bubble_timeout\" />秒</color>\n"
+"发射间隔：<color=red><var local=\"fire_seconds\"/>秒（受攻击速度影响）</color>"
+msgstr ""
+"Toughness: <color=red><var id=\"mvz2:entity_health\" /></color>\n"
+"Bubble toughness: <color=red><var local=\"bubble_hp\" /></color>\n"
+"Bubble speed: <color=red><var local=\"bubble_speed\" /></color>\n"
+"Bubble duration: <color=red><var local=\"bubble_timeout\" /> seconds</color>\n"
+"Fire rate: <color=red><var local=\"fire_seconds\"/> seconds (affected by attack speed)</color>"
+
+#. Flavor for enemies mvz2:bubble_gun_gurgle
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid ""
+"他生前是个喜欢吹泡泡的小孩，那时的他有个天真的梦想：让泡泡把他带到天空中，漫游世界。\n"
+"后来他不幸早夭，却也因此实现了自己的梦想。\n"
+"泡泡真的把他带到了天上。"
+msgstr ""
+"While still alive, he was a child who loved blowing bubbles, and he had a naive dream: to let the bubbles carry him high up into the "
+"sky and roam around the world. \n"
+"Unfortunately, he tragically died young, but in doing so, his dream came true. \n"
+"The bubbles really did carry him into the sky."
+
 #. Header for enemies mvz2:hookshot_drowned
 #: Almanac meta file
 msgctxt "enemies.description"
@@ -3963,10 +4016,10 @@ msgstr "Hookshot Drowneds use their grappling guns to move your contraptions for
 msgctxt "enemies.description"
 msgid ""
 "生命：<color=red><var id=\"mvz2:entity_health\" />+<var id=\"armor_hp\" />（登山头盔）</color>\n"
-"抓钩间隔：<color=red><var local=\"hookshot_seconds\"/>秒</color>"
+"抓钩间隔：<color=red><var local=\"hookshot_seconds\"/>秒（受攻击速度影响）</color>"
 msgstr ""
 "Toughness: <color=red><var id=\"mvz2:entity_health\" />+<var id=\"armor_hp\" /> (Mountaineering Helmet)</color>\n"
-"Grapple interval: <color=red><var local=\"hookshot_seconds\"/> seconds</color>"
+"Grapple interval: <color=red><var local=\"hookshot_seconds\"/> seconds (affected by attack speed)</color>"
 
 #. Flavor for enemies mvz2:hookshot_drowned
 #: Almanac meta file
@@ -8696,6 +8749,18 @@ msgctxt "death_message"
 msgid "嗡嗡嗡嗡嗡嗡嗡嗡嗡嗡"
 msgstr "BUZZZZZZZZZZZZZZZZ"
 
+#. Name for entity mvz2:bubble_gun_gurgle
+#: Entity meta file
+msgctxt "entity.name"
+msgid "泡泡枪小鬼"
+msgstr "Bubble Gun Gurgle"
+
+#. Death message for entity mvz2:bubble_gun_gurgle
+#: Entity meta file
+msgctxt "death_message"
+msgid "啪"
+msgstr "Pop"
+
 #. Name for entity mvz2:hookshot_drowned
 #: Entity meta file
 msgctxt "entity.name"
@@ -8941,6 +9006,12 @@ msgstr "Zombie Cow"
 msgctxt "death_message"
 msgid "你牛大了"
 msgstr "This cow's got beef with you."
+
+#. Name for entity mvz2:bubble
+#: Entity meta file
+msgctxt "entity.name"
+msgid "泡泡"
+msgstr "Bubble"
 
 #. Name for entity mvz2:gargoyle_statue
 #: Entity meta file

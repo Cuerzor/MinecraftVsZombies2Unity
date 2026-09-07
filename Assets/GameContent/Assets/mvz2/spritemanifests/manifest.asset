@@ -615,6 +615,9 @@ MonoBehaviour:
   - name: mobile_blueprint/brick_cannon
     texture: {fileID: 2800000, guid: 8a3366b53f8c5664da6cfeea30c441e9, type: 3}
     tags: []
+  - name: mobile_blueprint/bubble_gun_gurgle
+    texture: {fileID: 2800000, guid: e915e332043a47b4081ebc9212a0ba18, type: 3}
+    tags: []
   - name: mobile_blueprint/cannonball_zombie
     texture: {fileID: 2800000, guid: 8cdebccec54e7554e9fa0219707d489d, type: 3}
     tags: []
@@ -1969,6 +1972,9 @@ MonoBehaviour:
   - name: entity/effect/vulnerable_particle
     texture: {fileID: 2800000, guid: ca6d456fa79f841498d3f9ba6f35e9db, type: 3}
     tags: []
+  - name: entity/effect/waterfall_particle_mask
+    texture: {fileID: 2800000, guid: 5f4d00ab4078fc7458c38b5b0e6e8a76, type: 3}
+    tags: []
   - name: entity/effect/water_splash
     texture: {fileID: 2800000, guid: 9d730e080bace4646938c15cdabc88d0, type: 3}
     tags: []
@@ -2029,6 +2035,12 @@ MonoBehaviour:
   - name: entity/enemy/bow_texture
     texture: {fileID: 2800000, guid: a517e81da420e4941880bb250f059923, type: 3}
     tags: []
+  - name: entity/enemy/bubble
+    texture: {fileID: 2800000, guid: 1a2b9bd061e596a4383606c326535d38, type: 3}
+    tags: []
+  - name: entity/enemy/bubble_gun
+    texture: {fileID: 2800000, guid: a728246733a0e394ca68d4512b05d39b, type: 3}
+    tags: []
   - name: entity/enemy/cannonball_zombie
     texture: {fileID: 2800000, guid: b11db4b170db8634b901f6162c53376e, type: 3}
     tags: []
@@ -2043,6 +2055,9 @@ MonoBehaviour:
     tags: []
   - name: entity/enemy/creaking
     texture: {fileID: 2800000, guid: 47f24c0ff92746549a92b30073f64aa8, type: 3}
+    tags: []
+  - name: entity/enemy/drowned
+    texture: {fileID: 2800000, guid: 3e733a81660e9e44c83d34979495d2fe, type: 3}
     tags: []
   - name: entity/enemy/dullahan_bended_arm
     texture: {fileID: 2800000, guid: c9bb0408ef5a7624eb4980e99c0c4888, type: 3}
@@ -4493,6 +4508,10 @@ MonoBehaviour:
   - name: mobile_blueprint/brick_cannon
     index: 0
     sprite: {fileID: 21300000, guid: 8a3366b53f8c5664da6cfeea30c441e9, type: 3}
+    tags: []
+  - name: mobile_blueprint/bubble_gun_gurgle
+    index: 0
+    sprite: {fileID: 21300000, guid: e915e332043a47b4081ebc9212a0ba18, type: 3}
     tags: []
   - name: mobile_blueprint/cannonball_zombie
     index: 0
@@ -8241,6 +8260,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: ca6d456fa79f841498d3f9ba6f35e9db, type: 3}
     tags: []
+  - name: entity/effect/waterfall_particle_mask
+    index: 0
+    sprite: {fileID: 21300000, guid: 5f4d00ab4078fc7458c38b5b0e6e8a76, type: 3}
+    tags: []
   - name: entity/effect/water_splash
     index: 0
     sprite: {fileID: 21300000, guid: 9d730e080bace4646938c15cdabc88d0, type: 3}
@@ -8453,6 +8476,14 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: a517e81da420e4941880bb250f059923, type: 3}
     tags: []
+  - name: entity/enemy/bubble
+    index: 0
+    sprite: {fileID: 21300000, guid: 1a2b9bd061e596a4383606c326535d38, type: 3}
+    tags: []
+  - name: entity/enemy/bubble_gun
+    index: 0
+    sprite: {fileID: 21300000, guid: a728246733a0e394ca68d4512b05d39b, type: 3}
+    tags: []
   - name: entity/enemy/cannonball_zombie
     index: 0
     sprite: {fileID: 21300000, guid: b11db4b170db8634b901f6162c53376e, type: 3}
@@ -8536,6 +8567,26 @@ MonoBehaviour:
   - name: entity/enemy/creaking
     index: 5
     sprite: {fileID: 1505890732, guid: 47f24c0ff92746549a92b30073f64aa8, type: 3}
+    tags: []
+  - name: entity/enemy/drowned
+    index: 0
+    sprite: {fileID: -203027014, guid: 3e733a81660e9e44c83d34979495d2fe, type: 3}
+    tags: []
+  - name: entity/enemy/drowned
+    index: 1
+    sprite: {fileID: -272872488, guid: 3e733a81660e9e44c83d34979495d2fe, type: 3}
+    tags: []
+  - name: entity/enemy/drowned
+    index: 2
+    sprite: {fileID: -76568887, guid: 3e733a81660e9e44c83d34979495d2fe, type: 3}
+    tags: []
+  - name: entity/enemy/drowned
+    index: 3
+    sprite: {fileID: 384359353, guid: 3e733a81660e9e44c83d34979495d2fe, type: 3}
+    tags: []
+  - name: entity/enemy/drowned
+    index: 4
+    sprite: {fileID: 329098831, guid: 3e733a81660e9e44c83d34979495d2fe, type: 3}
     tags: []
   - name: entity/enemy/dullahan_bended_arm
     index: 0
