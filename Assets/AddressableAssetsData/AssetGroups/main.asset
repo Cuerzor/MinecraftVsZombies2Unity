@@ -486,6 +486,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08eeecfdfa986614fb5cb55a643bc8f8
+    m_Address: mvz2:mobile_blueprint/zombinator
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 09351709b15db8e4ba5f671be2d087d7
     m_Address: mvz2:horse_angry
     m_ReadOnly: 0
@@ -6083,6 +6090,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6626f4ec92be21645802c6030cab1aeb
+    m_Address: mvz2:mountain_map
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Music
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6661be6b03238a2409e5b705222184e0
     m_Address: mvz2:misc/graveyard
     m_ReadOnly: 0
@@ -6894,6 +6908,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 762cbe71a7e26434aa2d156a6c46f6e7
+    m_Address: mvz2:map/gensokyo/pins/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7653a3ea24e1f0e41b42d54f5d1fed14
     m_Address: mvz2:map_pin
@@ -11273,6 +11294,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c298a49797cd7ee4cad80e11f1f7bef4
+    m_Address: mvz2:mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - MapModel
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c2aeb2a3155f07e428c69e806e0e4b32
     m_Address: mvz2:talk/dialog_bang

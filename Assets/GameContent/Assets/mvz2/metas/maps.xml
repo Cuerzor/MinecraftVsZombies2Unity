@@ -96,6 +96,16 @@
                 </properties>
             </behaviours>
         </element>
+        <element id="pin_mountain" template="pin" >
+            <unlock>
+                <condition requiredGroups="mvz2:chapter.mountain"/>
+            </unlock>
+            <behaviours>
+                <properties behaviour="mvz2:pin">
+                    <id name="target_map_id" value="mvz2:mountain"/>
+                </properties>
+            </behaviours>
+        </element>
         
         <!-- Halloween Contraptions -->
         <element id="small_dispenser" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.small_dispenser"/></unlock></element>
@@ -156,6 +166,16 @@
         <element id="amethyst_pylon" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.amethyst_pylon"/></unlock></element>
         <element id="nuke" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.nuke"/></unlock></element>
         <element id="nether_reactor_core" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.nether_reactor_core"/></unlock></element>
+    
+        <!-- Mountain Contraptions -->
+        <element id="maplewheel" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.maplewheel"/></unlock></element>
+        <element id="ejector" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.ejector"/></unlock></element>
+        <element id="teleporter" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.teleporter"/></unlock></element>
+        <element id="onbashira" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.onbashira"/></unlock></element>
+        <element id="freezenser" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.freezenser"/></unlock></element>
+        <element id="autotrap" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.autotrap"/></unlock></element>
+        <element id="nesting_tnt" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.nesting_tnt"/></unlock></element>
+        <element id="loan_sign" template="contraption"><unlock><condition requiredGroups="mvz2:contraption.loan_sign"/></unlock></element>
     </elements>
     
     <map id="halloween" area="mvz2:halloween">
@@ -295,6 +315,24 @@
             <stage id="mvz2:palace_9" />
             <stage id="mvz2:palace_10" />
             <stage id="mvz2:palace_11" />
+        </stages>
+    </map>
+    <map id="mountain" area="mvz2:mountain" width="3200" height="2400">
+        <presets>
+            <preset id="mvz2:mountain" model="mvz2:mountain" backgroundColor="#000000" music="mvz2:mountain_map" />
+        </presets>
+        <stages endless="mvz2:mountain_endless">
+            <stage id="mvz2:mountain_1" />
+            <stage id="mvz2:mountain_2" />
+            <stage id="mvz2:mountain_3" />
+            <stage id="mvz2:mountain_4" />
+            <stage id="mvz2:mountain_5" />
+            <stage id="mvz2:mountain_6" />
+            <stage id="mvz2:mountain_7" />
+            <stage id="mvz2:mountain_8" />
+            <stage id="mvz2:mountain_9" />
+            <stage id="mvz2:mountain_10" />
+            <stage id="mvz2:mountain_11" />
         </stages>
     </map>
 </maps>
