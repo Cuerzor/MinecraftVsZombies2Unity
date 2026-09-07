@@ -470,6 +470,27 @@
             <p>不可名状的巨型血肉墙壁正在朝你冲过来！！！！！</p>
         </description>
     </music>
+
+    <music id="mountain_map" name="梦想之山">
+        <unlock>
+            <condition required="mvz2:level.mountain_1" />
+        </unlock>
+        <track main="mvz2:mountain_map" />
+        <source>东方风神录</source>
+        <origin>妖怪之山 ～ Mysterious Mountain</origin>
+        <author>幻梦忧</author>
+        <description>
+            <p>妖怪之山地图的音乐。</p>
+            <p>原曲是《东方风神录》中第四关Boss射命丸 文的音乐《妖怪之山 ～ Mysterious Mountain》。</p>
+            <p/>
+            <p>我要问你一个问题，你还记得你小时候的梦想是什么吗？</p>
+            <p>你可能会思考，你可能会发笑。可无论怎样，那座山就在所有人面前伫立着。</p>
+            <p>有人看着它太高，准备掉头；有人试着爬上去，可没到半路就重重地摔下去；</p>
+            <p>有人甚至都没有攀爬它的机会就离开了世界。最后能爬到山顶的人少之又少。</p>
+            <p>包括我现在也在爬这座山。</p>
+            <p>因为山就在那里。</p>
+        </description>
+    </music>
     <music id="mountain_level" name="秋意阑珊之瀑">
         <unlock>
             <condition required="mvz2:level.mountain_1" />

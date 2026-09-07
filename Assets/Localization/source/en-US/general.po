@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-02 09:35+0800\n"
-"PO-Revision-Date: 2026-09-06 13:27+0800\n"
+"POT-Creation-Date: 2026-09-07 10:44+0800\n"
+"PO-Revision-Date: 2026-09-07 10:45+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -441,13 +441,13 @@ msgid "每个敌怪头顶生成一个铁砧"
 msgstr "Summon an Anvil above every enemy monsters"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\BindingChainsEvent.cs:28
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\BindingChainsEvent.cs:31
 msgctxt "random_china.event_name"
 msgid "魂缚锁链"
 msgstr "Binding Chains"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\BindingChainsEvent.cs:30
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\BindingChainsEvent.cs:33
 msgctxt "random_china.event_description"
 msgid "暂时锁定随机3个蓝图"
 msgstr "Temporarily lock 3 random blueprints"
@@ -595,13 +595,13 @@ msgid "30秒内蓝图充能速度翻倍"
 msgstr "Doubles the blueprint recharge speed for 30 seconds"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\StrengthEvent.cs:45
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\StrengthEvent.cs:47
 msgctxt "random_china.event_name"
 msgid "VIII-力量"
 msgstr "VIII - Strength"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\StrengthEvent.cs:47
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\StrengthEvent.cs:49
 msgctxt "random_china.event_description"
 msgid "所有敌怪变大"
 msgstr "All enemy monsters grow big"
@@ -691,13 +691,13 @@ msgid "每行召唤一个友方的催眠者"
 msgstr "Summon a friendly mesmerizer at each lane"
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:46
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:45
 msgctxt "random_china.event_name"
 msgid "VI-恋人"
 msgstr "VI - The Lovers"
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:48
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:47
 msgctxt "random_china.event_description"
 msgid "随机将一对器械和怪物变为中立阵营"
 msgstr "Turns a random pair of contraption and monster into neutral faction"
@@ -968,21 +968,21 @@ msgctxt "advice.collect_money"
 msgid "收集宝石来获得更酷的道具吧！"
 msgstr "Collect gems to purchase COOL stuff!"
 
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:780
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:787
 msgid "能量不足"
 msgstr "Not enough energy"
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:782
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:789
 msgid "数量达到上限"
 msgstr "Reached the count limit"
 
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:784
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:791
 msgid "（{0}/{1}）"
 msgstr "({0}/{1})"
 
 # 死亡信息-无尽模式模板，{0}为普通死亡信息，{1}为存活了多少轮
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:786
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:793
 msgid ""
 "{0}\n"
 "{1}"
@@ -991,12 +991,12 @@ msgstr ""
 "{1}"
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:788
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:795
 msgid "战队的能量不足，请修改阵容之后再保存战队。"
 msgstr "The energy is insufficient. Please modify the team before saving it."
 
 # 传送器战队的警告提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:790
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:797
 msgid ""
 "您有未保存的更改。\n"
 "确认要丢弃所有更改并退出吗？"
@@ -1004,39 +1004,39 @@ msgstr ""
 "You have unsaved changes.\n"
 "Are you sure you want to discard all changes and exit?"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:502
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:532
 msgid "选择你的命运"
 msgstr "Choose your fate"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:504
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:534
 msgid "选吧。"
 msgstr "Choose."
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:506
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:536
 msgid "潘多拉的魔盒"
 msgstr "Pandora's Box"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:508
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:538
 msgid "尸潮"
 msgstr "Biohazard"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:510
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:540
 msgid "衰老"
 msgstr "Decrepify"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:512
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:542
 msgid "疯狂"
 msgstr "Insanity"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:514
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:544
 msgid "成真"
 msgstr "Come True"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:516
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:546
 msgid "深潜者"
 msgstr "The Deep Ones"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:518
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:548
 msgid "黑太阳"
 msgstr "The Black Sun"
 
@@ -1475,7 +1475,7 @@ msgstr ""
 msgid "{0}/{1}"
 msgstr "{0}/{1}"
 
-#: Scripts\MVZ2\Store\StoreManager.cs:115
+#: Scripts\MVZ2\Store\StoreManager.cs:114
 msgid "<color=red>售罄</color>"
 msgstr "<color=red>Sold Out</color>"
 
@@ -1893,24 +1893,20 @@ msgstr ""
 "Excess mods:\n"
 "{0}"
 
-#: Scripts\MVZ2\Level\LevelController\LevelController_Entities.cs:218
+#: Scripts\MVZ2\Level\LevelController\LevelController_Entities.cs:223
 msgctxt "entity.tooltip"
 msgid "在图鉴中查看"
 msgstr "View in Almanac"
 
 # 血条的文字
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:782
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:805
 msgid "死亡"
 msgstr "Dead"
 
 # 血条的文字
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:784
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:807
 msgid "摧毁"
 msgstr "Destroyed"
-
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:786
-msgid "{0}"
-msgstr "{0}"
 
 #: Scripts\MVZ2\Managers\InputManager_Keys.cs:221
 msgctxt "key.name"
@@ -3317,6 +3313,12 @@ msgstr "Palace Endless"
 msgctxt "levelname"
 msgid "妖怪之山"
 msgstr "Mountain"
+
+#. Name for stage mvz2:mountain_endless
+#: Stage meta file
+msgctxt "levelname"
+msgid "妖怪之山无尽"
+msgstr "Mountain Endless"
 
 #. Name for stage mvz2:whack_a_ghost
 #: Stage meta file
@@ -4760,17 +4762,59 @@ msgstr ""
 "!!!FEAR!!!\n"
 "An indescribable, gigantic wall of flesh is charging toward you!!!!!"
 
+#. Name for music mvz2:mountain_map
+#: Music meta file
+msgctxt "music.name"
+msgid "梦想之山"
+msgstr "Mountain of Dream"
+
+#. Source for music mvz2:mountain_map
+#: Music meta file
+msgctxt "music.source"
+msgid "东方风神录"
+msgstr "Mountain of Faith"
+
+#. Origin for music mvz2:mountain_map
+#: Music meta file
+msgctxt "music.origin"
+msgid "妖怪之山 ～ Mysterious Mountain"
+msgstr "Youkai Mountain ~ Mysterious Mountain"
+
+#. Description for music mvz2:mountain_map
+#: Music meta file
+msgctxt "music.description"
+msgid ""
+"妖怪之山地图的音乐。\n"
+"原曲是《东方风神录》中第四关Boss射命丸 文的音乐《妖怪之山 ～ Mysterious "
+"Mountain》。\n"
+"\n"
+"我要问你一个问题，你还记得你小时候的梦想是什么吗？\n"
+"你可能会思考，你可能会发笑。可无论怎样，那座山就在所有人面前伫立着。\n"
+"有人看着它太高，准备掉头；有人试着爬上去，可没到半路就重重地摔下去；\n"
+"有人甚至都没有攀爬它的机会就离开了世界。最后能爬到山顶的人少之又少。\n"
+"包括我现在也在爬这座山。\n"
+"因为山就在那里。"
+msgstr ""
+"The theme for the map of Youkai Mountain.\n"
+"The original soundtrack is <i>Youkai Mountain ~ Mysterious Mountain</i>, the "
+"theme of Aya Shameimaru in <I>Mountain of Faith</i>.\n"
+"\n"
+"Let me ask you something. Do you still remember what your dream was when you "
+"were a kid?\n"
+"You might ponder, you might chuckle, but no matter what, a mountain stood "
+"before everyone.\n"
+"Some people thought it was way too high and backed out; others tried to "
+"climb it but fell hard before even reaching the halfway mark.\n"
+"Some people don't even get the chance to climb it before they leave this "
+"world. In the end, only a handful managed to reach the top.\n"
+"I'm also climbing up this mountain right now.\n"
+"Because it's there."
+
 #. Name for music mvz2:mountain_level
 #: Music meta file
 msgctxt "music.name"
 msgid "秋意阑珊之瀑"
 msgstr "Fallen Fall of Fall"
-
-#. Source for music mvz2:mountain_level
-#: Music meta file
-msgctxt "music.source"
-msgid "东方风神录"
-msgstr "Mountain of Faith"
 
 #. Origin for music mvz2:mountain_level
 #: Music meta file
@@ -6676,6 +6720,9 @@ msgstr "Export Log Files"
 #: Customize meta file
 msgid "传送器战队"
 msgstr "Teleporter Team"
+
+#~ msgid "{0}"
+#~ msgstr "{0}"
 
 #~ msgid "语言包"
 #~ msgstr "Language Packs"

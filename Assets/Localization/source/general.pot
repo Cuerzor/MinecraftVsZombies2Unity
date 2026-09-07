@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-02 09:35+0800\n"
+"POT-Creation-Date: 2026-09-07 10:44+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -425,13 +425,13 @@ msgid "每个敌怪头顶生成一个铁砧"
 msgstr ""
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\BindingChainsEvent.cs:28
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\BindingChainsEvent.cs:31
 msgctxt "random_china.event_name"
 msgid "魂缚锁链"
 msgstr ""
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\BindingChainsEvent.cs:30
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\BindingChainsEvent.cs:33
 msgctxt "random_china.event_description"
 msgid "暂时锁定随机3个蓝图"
 msgstr ""
@@ -581,13 +581,13 @@ msgid "30秒内蓝图充能速度翻倍"
 msgstr ""
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\StrengthEvent.cs:45
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\StrengthEvent.cs:47
 msgctxt "random_china.event_name"
 msgid "VIII-力量"
 msgstr ""
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\StrengthEvent.cs:47
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\StrengthEvent.cs:49
 msgctxt "random_china.event_description"
 msgid "所有敌怪变大"
 msgstr ""
@@ -677,13 +677,13 @@ msgid "每行召唤一个友方的催眠者"
 msgstr ""
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:46
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:45
 msgctxt "random_china.event_name"
 msgid "VI-恋人"
 msgstr ""
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:48
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:47
 msgctxt "random_china.event_description"
 msgid "随机将一对器械和怪物变为中立阵营"
 msgstr ""
@@ -991,81 +991,81 @@ msgid "收集宝石来获得更酷的道具吧！"
 msgstr ""
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:780
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:787
 msgid "能量不足"
 msgstr ""
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:782
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:789
 msgid "数量达到上限"
 msgstr ""
 
 # 传送器战队的错误提示，{0}为目前存在数量，{1}为上限
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:784
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:791
 msgid "（{0}/{1}）"
 msgstr ""
 
 # 传送器战队的错误提示拼接模板，{0}为第一句，{1}为第二句
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:786
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:793
 msgid ""
 "{0}\n"
 "{1}"
 msgstr ""
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:788
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:795
 msgid "战队的能量不足，请修改阵容之后再保存战队。"
 msgstr ""
 
 # 传送器战队的警告提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:790
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:797
 msgid ""
 "您有未保存的更改。\n"
 "确认要丢弃所有更改并退出吗？"
 msgstr ""
 
 # 梦魇对话框标题
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:502
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:532
 msgid "选择你的命运"
 msgstr ""
 
 # 梦魇对话框文本
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:504
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:534
 msgid "选吧。"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:506
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:536
 msgid "潘多拉的魔盒"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:508
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:538
 msgid "尸潮"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:510
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:540
 msgid "衰老"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:512
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:542
 msgid "疯狂"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:514
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:544
 msgid "成真"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:516
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:546
 msgid "深潜者"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:518
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:548
 msgid "黑太阳"
 msgstr ""
 
@@ -1518,7 +1518,7 @@ msgid "{0}/{1}"
 msgstr ""
 
 # 商店文本
-#: Scripts\MVZ2\Store\StoreManager.cs:115
+#: Scripts\MVZ2\Store\StoreManager.cs:114
 msgid "<color=red>售罄</color>"
 msgstr ""
 
@@ -1944,24 +1944,19 @@ msgid ""
 msgstr ""
 
 # 实体提示
-#: Scripts\MVZ2\Level\LevelController\LevelController_Entities.cs:218
+#: Scripts\MVZ2\Level\LevelController\LevelController_Entities.cs:223
 msgctxt "entity.tooltip"
 msgid "在图鉴中查看"
 msgstr ""
 
 # 血条的文字
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:782
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:805
 msgid "死亡"
 msgstr ""
 
 # 血条的文字
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:784
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:807
 msgid "摧毁"
-msgstr ""
-
-# 血条的文字模板
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:786
-msgid "{0}"
 msgstr ""
 
 # 按键名
@@ -3405,6 +3400,12 @@ msgctxt "levelname"
 msgid "妖怪之山"
 msgstr ""
 
+#. Name for stage mvz2:mountain_endless
+#: Stage meta file
+msgctxt "levelname"
+msgid "妖怪之山无尽"
+msgstr ""
+
 #. Name for stage mvz2:whack_a_ghost
 #: Stage meta file
 msgctxt "levelname"
@@ -4566,16 +4567,43 @@ msgid ""
 "不可名状的巨型血肉墙壁正在朝你冲过来！！！！！"
 msgstr ""
 
+#. Name for music mvz2:mountain_map
+#: Music meta file
+msgctxt "music.name"
+msgid "梦想之山"
+msgstr ""
+
+#. Source for music mvz2:mountain_map
+#: Music meta file
+msgctxt "music.source"
+msgid "东方风神录"
+msgstr ""
+
+#. Origin for music mvz2:mountain_map
+#: Music meta file
+msgctxt "music.origin"
+msgid "妖怪之山 ～ Mysterious Mountain"
+msgstr ""
+
+#. Description for music mvz2:mountain_map
+#: Music meta file
+msgctxt "music.description"
+msgid ""
+"妖怪之山地图的音乐。\n"
+"原曲是《东方风神录》中第四关Boss射命丸 文的音乐《妖怪之山 ～ Mysterious Mountain》。\n"
+"\n"
+"我要问你一个问题，你还记得你小时候的梦想是什么吗？\n"
+"你可能会思考，你可能会发笑。可无论怎样，那座山就在所有人面前伫立着。\n"
+"有人看着它太高，准备掉头；有人试着爬上去，可没到半路就重重地摔下去；\n"
+"有人甚至都没有攀爬它的机会就离开了世界。最后能爬到山顶的人少之又少。\n"
+"包括我现在也在爬这座山。\n"
+"因为山就在那里。"
+msgstr ""
+
 #. Name for music mvz2:mountain_level
 #: Music meta file
 msgctxt "music.name"
 msgid "秋意阑珊之瀑"
-msgstr ""
-
-#. Source for music mvz2:mountain_level
-#: Music meta file
-msgctxt "music.source"
-msgid "东方风神录"
 msgstr ""
 
 #. Origin for music mvz2:mountain_level
