@@ -110,6 +110,10 @@ namespace MVZ2.GameContent.GlobalCallbacks
             {
                 damageInfo.Multiply(0);
             }
+            if (entity.ImmuneLightning() && damageInfo.Effects.HasEffect(VanillaDamageEffects.LIGHTNING))
+            {
+                damageInfo.Multiply(0);
+            }
         }
         private void PostDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResultVoid callbackResult)
         {

@@ -442,6 +442,22 @@ namespace MVZ2.Vanilla.Entities
         }
         #endregion
 
+        #region 免疫雷电
+        public static readonly VanillaEntityPropertyMeta<bool> IMMUNE_LIGHTNING = new VanillaEntityPropertyMeta<bool>("immune_lightning");
+        public static bool ImmuneLightning(this EntityDefinition definition)
+        {
+            return definition.GetProperty<bool>(IMMUNE_LIGHTNING);
+        }
+        public static bool ImmuneLightning(this Entity enemy)
+        {
+            return enemy.GetProperty<bool>(IMMUNE_LIGHTNING);
+        }
+        public static void SetImmuneLightning(this Entity enemy, bool value)
+        {
+            enemy.SetProperty<bool>(IMMUNE_LIGHTNING, value);
+        }
+        #endregion
+
         #region 禁止爆炸
         public static readonly PropertyMeta<bool> NO_EXPLOSION = Get<bool>("no_explosion");
 

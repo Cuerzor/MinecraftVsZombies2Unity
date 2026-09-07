@@ -122,6 +122,7 @@ namespace MVZ2.Vanilla.Entities
         public const string rollingGiantBlock = "rolling_giant_block";
 
         public const string hookshotDrowned_State = "hookshot_drowned/state";
+        public const string zombinator_Animation = "zombinator/animation";
         public const string axolotlSuit_State = "axolotl_suit/state";
         public const string axolotlSuit_DeathEffects = "axolotl_suit/death_effects";
 

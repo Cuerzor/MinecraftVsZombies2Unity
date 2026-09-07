@@ -1541,7 +1541,7 @@
             <talk type="map" value="mvz2:mountain_1_map" />
         </talks>
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:maplewheel" />
-        <spawns flags="1">
+        <spawns flags="1" pointsPower="1.02">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
@@ -1557,7 +1557,7 @@
             <talk type="map" value="mvz2:mountain_2_map" />
         </talks>
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:ejector" />
-        <spawns flags="2">
+        <spawns flags="2" pointsPower="1.02">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:mummy" />
@@ -1576,7 +1576,7 @@
             <talk type="map" value="mvz2:mountain_4_map" />
         </talks>
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:onbashira" />
-        <spawns flags="2">
+        <spawns flags="2" pointsPower="1.02">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
@@ -1605,6 +1605,24 @@
         <properties>
             <bool name="noEnergy" value="true" />
         </properties>
+    </stage>
+    <stage id="mountain_7" name="妖怪之山" dayNumber="7">
+        <unlock>
+            <condition required="mvz2:level.mountain_6" />
+        </unlock>
+        <talks>
+            <talk type="start" value="mvz2:mountain_7" />
+            <talk type="end" value="mvz2:mountain_7_over" />
+            <talk type="map" value="mvz2:mountain_7_map" />
+        </talks>
+        <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:autotrap" />
+        <spawns flags="2" pointsPower="1.02">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
+            <spawn id="mvz2:bubble_gun_gurgle" />
+            <spawn id="mvz2:zombinator" />
+            <fixedSpawn id="mvz2:zombinator" wave="6" count="1" />
+        </spawns>
     </stage>
     <stage id="mountain_9" name="妖怪之山" dayNumber="9">
         <unlock>

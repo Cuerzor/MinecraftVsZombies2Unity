@@ -50,6 +50,7 @@ namespace MVZ2.Metas
         public float SpawnPointsMultiplier { get; private set; }
         public float SpawnPointsAddition { get; private set; }
         public NamespaceID[]? Spawns { get; private set; }
+        public StageFixedSpawn[]? FixedSpawns { get; private set; }
         public ConveyorPoolEntry[]? ConveyorPool { get; private set; }
 
         public float FirstWaveTime { get; private set; }
@@ -130,17 +131,31 @@ namespace MVZ2.Metas
             var spawnPointsMultiplier = spawnNode?.GetAttributeFloat("pointsMultiplier") ?? 1;
             var spawnPointsAddition = spawnNode?.GetAttributeFloat("pointsAddition") ?? 0;
             NamespaceID[]? spawns = null;
+            StageFixedSpawn[]? fixedSpawns = null;
             if (spawnNode != null)
             {
-                spawns = new NamespaceID[spawnNode.ChildNodes.Count];
-                for (int i = 0; i < spawns.Length; i++)
+                var spawnsList = new List<NamespaceID>();
+                var fixedSpawnsList = new List<StageFixedSpawn>();
+                for (int i = 0; i < spawnNode.ChildNodes.Count; i++)
                 {
                     var childNode = spawnNode.ChildNodes[i];
-                    var item = childNode.GetAttributeNamespaceID("id", defaultNsp);
-                    if (item == null)
-                        continue;
-                    spawns[i] = item;
+                    if (childNode.Name == "spawn")
+                    {
+                        var item = childNode.GetAttributeNamespaceID("id", defaultNsp);
+                        if (item == null)
+                            continue;
+                        spawnsList.Add(item);
+                    }
+                    else if (childNode.Name == "fixedSpawn")
+                    {
+                        var item = StageFixedSpawn.FromXmlNode(childNode, defaultNsp);
+                        if (item == null)
+                            continue;
+                        fixedSpawnsList.Add(item);
+                    }
                 }
+                spawns = spawnsList.ToArray();
+                fixedSpawns = fixedSpawnsList.ToArray();
             }
 
             var timeNode = node["time"];
@@ -185,6 +200,7 @@ namespace MVZ2.Metas
 
                 TotalFlags = flags,
                 Spawns = spawns,
+                FixedSpawns = fixedSpawns,
 
                 FirstWaveTime = firstWaveTime,
                 EndlessFirstWaveTime = endlessFirstWaveTime,
@@ -229,5 +245,33 @@ namespace MVZ2.Metas
             var minCount = node.GetAttributeInt("minCount") ?? 1;
             return new ConveyorPoolEntry(id, count, minCount);
         }
+    }
+    public class StageFixedSpawn : IStageFixedSpawn
+    {
+        public StageFixedSpawn(NamespaceID id, int wave, int count)
+        {
+            ID = id;
+            Wave = wave;
+            Count = count;
+        }
+        public static StageFixedSpawn? FromXmlNode(XmlNode node, string defaultNsp)
+        {
+            var id = node.GetAttributeNamespaceID("id", defaultNsp);
+            if (!NamespaceID.IsValid(id))
+            {
+                Log.LogError("The ID of a StageFixedSpawn is invalid.");
+                return null;
+            }
+            var wave = node.GetAttributeInt("wave");
+            if (wave == null)
+            {
+                Log.LogError("The wave of a StageFixedSpawn is invalid.");
+            }
+            var count = node.GetAttributeInt("count") ?? 1;
+            return new StageFixedSpawn(id, wave ?? 1, count);
+        }
+        public NamespaceID ID { get; }
+        public int Wave { get; }
+        public int Count { get; }
     }
 }

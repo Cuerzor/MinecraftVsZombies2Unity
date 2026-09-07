@@ -2602,6 +2602,9 @@
 
         
         <entity template="imp" id="bubble_gun_gurgle" name="泡泡枪小鬼" deathMessage="啪">
+            <unlock>
+                <condition required="mvz2:level.mountain_1" />
+            </unlock>
             <properties>
                 <float name="mvz2:fallResistance" value="18" />
                 <int name="mvz2:cost" value="50" />
@@ -2620,6 +2623,25 @@
             <properties>
                 <id name="mvz2:starting_armor" value="mvz2:mountaineering_helmet" />
                 <int name="mvz2:cost" value="75" />
+            </properties>
+        </entity>
+        <entity template="zombie" id="zombinator" name="僵尸终结者" deathMessage="目标已消灭">
+            <unlock>
+                <condition required="mvz2:level.mountain_7" />
+            </unlock>
+            <behaviours>
+                <behaviour operator="replace" source="mvz2:humanoid_animation" id="mvz2:zombinator/animation" />
+            </behaviours>
+            <properties>
+                <id name="mvz2:shell" value="mvz2:metal" />
+                <float name="mvz2:maxHealth" value="600" />
+                <float name="mvz2:speed" value="1" />
+                <int name="mvz2:cost" value="125" />
+                <float name="mvz2:mass" value="2" />
+                <id name="mvz2:crySound" value="mvz2:zombinator_cry" />
+                <id name="mvz2:deathSound" value="mvz2:zombinator_death" />
+                <bool name="mvz2:undead" value="false" />
+                <bool name="mvz2:immune_lightning" value="true" />
             </properties>
         </entity>
         <entity template="enemy" id="axolotl_suit" name="美西螈号机甲" deathMessage="沉入海底">

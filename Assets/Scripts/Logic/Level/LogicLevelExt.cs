@@ -401,6 +401,27 @@ namespace MVZ2Logic.Level
             using var limitedSpawnDefsItem = ListPool<SpawnDefinition>.Rent();
             var limitedSpawnDefs = limitedSpawnDefsItem.Value;
 
+            // 固定生成。
+            var fixedSpawns = level.GetFixedSpawns();
+            if (fixedSpawns != null)
+            {
+                foreach (var fixedSpawn in fixedSpawns)
+                {
+                    if (wave != fixedSpawn.Wave)
+                        continue;
+                    var spawnID = fixedSpawn.ID;
+                    var spawnDef = level.Content.GetSpawnDefinition(spawnID);
+                    if (spawnDef == null)
+                        continue;
+                    for (int i = 0; i < fixedSpawn.Count; i++)
+                    {
+                        level.SpawnEnemyAtRandomLane(spawnDef);
+                        totalPoints -= spawnDef.GetSpawnLevel();
+                        spawnedCount++;
+                    }
+                }
+            }
+
             // 没有剩余点数，或者生成的敌人数量大于50只，则中断。
             while (totalPoints > 0 && spawnedCount < 50)
             {

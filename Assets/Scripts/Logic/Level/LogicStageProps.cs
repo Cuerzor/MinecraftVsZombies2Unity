@@ -186,6 +186,19 @@ namespace MVZ2Logic.Level
         }
         #endregion
 
+        #region 固定出怪
+
+        public static readonly PropertyMeta<IStageFixedSpawn[]> FIXED_SPAWNS = Get<IStageFixedSpawn[]>("fixed_spawns");
+        public static IStageFixedSpawn[]? GetFixedSpawns(this LevelEngine game)
+        {
+            return game.GetProperty<IStageFixedSpawn[]>(FIXED_SPAWNS);
+        }
+        public static void SetFixedSpawns(this LevelEngine game, IStageFixedSpawn[] value)
+        {
+            game.SetProperty(FIXED_SPAWNS, value);
+        }
+        #endregion
+
         #region 波次
         public static readonly PropertyMeta<float> WAVE_MAX_TIME = Get<float>("waveMaxTime");
         public static readonly PropertyMeta<float> WAVE_ADVANCE_TIME = Get<float>("waveAdvanceTime");

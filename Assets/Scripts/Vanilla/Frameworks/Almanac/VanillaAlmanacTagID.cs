@@ -27,6 +27,7 @@ namespace MVZ2.Vanilla.Almanac
         public static readonly NamespaceID controlImmunity = Get("control_immunity");
         public static readonly NamespaceID notUndead = Get("not_undead");
         public static readonly NamespaceID fireImmunity = Get("fire_immunity");
+        public static readonly NamespaceID lightningImmunity = Get("lightning_immunity");
         public static readonly NamespaceID stable = Get("stable");
 
         public static readonly NamespaceID shell = Get("shell");

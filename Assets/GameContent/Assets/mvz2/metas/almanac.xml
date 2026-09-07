@@ -177,6 +177,10 @@
             <icon sprite="mvz2:ui/almanac/attribute_tags[15]" />
             <background sprite="mvz2:ui/almanac/tag_backgrounds[2]" color="#b3d4db" />
         </tag>
+        <tag id="lightning_immunity" name="闪电免疫" description="免疫闪电伤害" priority="4000">
+            <icon sprite="mvz2:ui/almanac/attribute_tags[16]" />
+            <background sprite="mvz2:ui/almanac/tag_backgrounds[2]" color="#96503a" />
+        </tag>
 
 
         <enum id="mass" type="int">

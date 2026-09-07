@@ -87,6 +87,11 @@ namespace MVZ2.GameContent.GlobalCallbacks
             {
                 tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.fireImmunity));
             }
+            // 雷电免疫
+            if (entityDef.ImmuneLightning())
+            {
+                tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.lightningImmunity));
+            }
             // 忠诚
             if (entityDef.IsLoyal() && Global.Saves.IsUnlocked(VanillaUnlockID.castle1))
             {

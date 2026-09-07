@@ -294,6 +294,8 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID zombieCry = Get("zombie_cry");
         public readonly static NamespaceID zombieHurt = Get("zombie_hurt");
         public readonly static NamespaceID zombieDeath = Get("zombie_death");
+        public readonly static NamespaceID zombinatorCry = Get("zombinator_cry");
+        public readonly static NamespaceID zombinatorDeath = Get("zombinator_death");
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

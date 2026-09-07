@@ -1249,4 +1249,12 @@
     <sound name="zombie_death">
         <sample path="mvz2:entity/zombie/zombie_death" weight="1" />
     </sound>
+    <sound name="zombinator_cry">
+        <sample path="mvz2:entity/zombinator/cry1" weight="1" />
+        <sample path="mvz2:entity/zombinator/cry2" weight="1" />
+        <sample path="mvz2:entity/zombinator/cry3" weight="1" />
+    </sound>
+    <sound name="zombinator_death">
+        <sample path="mvz2:entity/zombinator/death" weight="1" />
+    </sound>
 </sounds>

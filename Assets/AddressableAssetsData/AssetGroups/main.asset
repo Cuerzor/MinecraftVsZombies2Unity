@@ -5013,6 +5013,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54451624a393f614ab0caaa5a734d505
+    m_Address: mvz2:entity/zombinator/cry2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 544a0e954e368bd47922b782463ea965
     m_Address: mvz2:slow_down
     m_ReadOnly: 0
@@ -5390,6 +5397,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a87ec312e83f5c42be117dde3e22da9
+    m_Address: mvz2:entity/zombinator/cry1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5b197e2b4a8161c4e8f1808052883a63
     m_Address: mvz2:bones/mutant_zombie
@@ -7251,6 +7265,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c40b0a6635afdb48a4192a690d33773
+    m_Address: mvz2:entity/enemy/zombinator
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7c6a578dbe25d684690f811137ed23d4
     m_Address: mvz2:pickup/zombie_scroll
     m_ReadOnly: 0
@@ -7666,6 +7687,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 810c23b2c1e9b3942b6c43ab0f1cb99c
     m_Address: mvz2:icon/parabot_insected
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 81dd1d267b93d2c4aa981f2132c3f785
+    m_Address: mvz2:enemy/mountain/zombinator
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -9483,6 +9511,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a0314a6e5d908534b87e44324bbc2268
+    m_Address: mvz2:entity/zombinator/death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a06be91936876c74d8f5b245197688cf
     m_Address: mvz2:ui/almanac/book
     m_ReadOnly: 0
@@ -9545,6 +9580,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2165baac12f9c84ab9708b0847c5ebb
+    m_Address: mvz2:units/zombinator_eye
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a24f2a1292d3c6949ae1ebf80560127c
     m_Address: mvz2:mausoleum_level
@@ -13339,6 +13381,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e915e332043a47b4081ebc9212a0ba18
+    m_Address: mvz2:mobile_blueprint/bubble_gun_gurgle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e944251ff7facca478d5b942a1d1ea40
     m_Address: mvz2:entity/contraption/gravelpult
     m_ReadOnly: 0
@@ -14438,6 +14487,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fafac1d45c5bdb24b9dfb56a50fc4fe2
     m_Address: mvz2:pacman_kill
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb0a695323ae5bb4b985c7705ebaf89a
+    m_Address: mvz2:entity/zombinator/cry3
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

@@ -275,6 +275,12 @@
     <model name="hookshot_drowned" type="entity" path="mvz2:enemy/mountain/hookshot_drowned" width="72" height="90" xOffset="15" yOffset="-40">
         <armorconfig>mvz2:humanoid</armorconfig>
     </model>
+    <model name="zombinator" type="entity" path="mvz2:enemy/mountain/zombinator" width="64" height="96" xOffset="10" yOffset="-44">
+        <armorconfig>mvz2:humanoid</armorconfig>
+        <properties>
+            <int name="Phase" value="2" />
+        </properties>
+    </model>
     <model name="axolotl_suit" type="entity" path="mvz2:enemy/mountain/axolotl_suit" width="90" height="140" xOffset="-10" yOffset="-62" />
     <model name="axolotl_suit_pilot" type="entity" path="mvz2:enemy/mountain/axolotl_suit_pilot" width="64" height="96" xOffset="10" yOffset="-44">
         <armorconfig>mvz2:humanoid</armorconfig>
