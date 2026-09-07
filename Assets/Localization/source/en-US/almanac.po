@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
 "POT-Creation-Date: 2026-09-07 03:27+0800\n"
-"PO-Revision-Date: 2026-09-07 15:44+0800\n"
+"PO-Revision-Date: 2026-09-07 19:04+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -4051,7 +4051,7 @@ msgstr ""
 msgctxt "enemies.description"
 msgid "僵尸终结者伪装成<ref=[enemies]mvz2:zombie>僵尸</ref>，并在被击破后暴露，最后变为彻底的机器僵尸。"
 msgstr ""
-"Zombinators disguise themselves as normal <ref=[enemies]mvz2:zombie>zombies</ref>, are exposed after being defeated and eventually "
+"Zombinators disguise themselves as normal <ref=[enemies]mvz2:zombie>zombies</ref> and expose themselves when defeated, eventually "
 "turning into complete mechanized zombies."
 
 #. Properties for enemies mvz2:zombinator
@@ -4082,7 +4082,7 @@ msgstr ""
 #: Almanac meta file
 msgctxt "enemies.description"
 msgid "它需要你的衣服，你的脑子，以及你的小推车。"
-msgstr "It needs your clothes, your brain and your lawnmower."
+msgstr "It needs your clothes, your brain, and your lawnmower."
 
 #. Header for enemies mvz2:axolotl_suit
 #: Almanac meta file
