@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-06 09:37+0800\n"
-"PO-Revision-Date: 2026-09-07 10:33+0800\n"
+"POT-Creation-Date: 2026-09-07 03:27+0800\n"
+"PO-Revision-Date: 2026-09-07 15:44+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -478,6 +478,18 @@ msgstr "Anchored"
 msgctxt "almanac_tag.description"
 msgid "免疫位移"
 msgstr "Cannot be moved"
+
+#. Name for almanac tag lightning_immunity
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "闪电免疫"
+msgstr "Lightning Immunity"
+
+#. Description for almanac tag lightning_immunity
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "免疫闪电伤害"
+msgstr "Immune to lightning damage"
 
 #. Name for almanac tag enum value -2 of enum mass
 #: Almanac meta file
@@ -4033,6 +4045,44 @@ msgstr ""
 "Even after his death, he continued his relentless journey up the mountain, never giving up, even though his decaying body made him "
 "difficult to move.\n"
 "Why was he so persistent to climb up the mountain? Because it's there."
+
+#. Header for enemies mvz2:zombinator
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid "僵尸终结者伪装成<ref=[enemies]mvz2:zombie>僵尸</ref>，并在被击破后暴露，最后变为彻底的机器僵尸。"
+msgstr ""
+"Zombinators disguise themselves as normal <ref=[enemies]mvz2:zombie>zombies</ref>, are exposed after being defeated and eventually "
+"turning into complete mechanized zombies."
+
+#. Properties for enemies mvz2:zombinator
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid ""
+"第一阶段：<tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />\n"
+"  生命：<color=red><var local=\"hp_phase_1\" /></color>\n"
+"  移速：<color=red><var local=\"speed_phase_1\" /></color>\n"
+"第二阶段：<tag id=\"mvz2:shell\" enum=\"mvz2:metal\" /><tag id=\"mvz2:not_undead\" />\n"
+"  生命：<color=red><var local=\"hp_phase_2\" /></color>\n"
+"  移速：<color=red><var local=\"speed_phase_2\" /></color>\n"
+"第三阶段：<tag id=\"mvz2:shell\" enum=\"mvz2:metal\" /><tag id=\"mvz2:not_undead\" />\n"
+"  生命：<color=red><var local=\"hp_phase_3\" /></color>\n"
+"  移速：<color=red><var local=\"speed_phase_3\" /></color>"
+msgstr ""
+"Phase 1: <tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />\n"
+"  Toughness: <color=red><var local=\"hp_phase_1\" /></color>\n"
+"  Speed: <color=red><var local=\"speed_phase_1\" /></color>\n"
+"Phase 2: <tag id=\"mvz2:shell\" enum=\"mvz2:metal\" /><tag id=\"mvz2:not_undead\" />\n"
+"  Toughness: <color=red><var local=\"hp_phase_2\" /></color>\n"
+"  Speed: <color=red><var local=\"speed_phase_2\" /></color>\n"
+"Phase 3: <tag id=\"mvz2:shell\" enum=\"mvz2:metal\" /><tag id=\"mvz2:not_undead\" />\n"
+"  Toughness: <color=red><var local=\"hp_phase_3\" /></color>\n"
+"  Speed: <color=red><var local=\"speed_phase_3\" /></color>"
+
+#. Flavor for enemies mvz2:zombinator
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid "它需要你的衣服，你的脑子，以及你的小推车。"
+msgstr "It needs your clothes, your brain and your lawnmower."
 
 #. Header for enemies mvz2:axolotl_suit
 #: Almanac meta file
@@ -8773,6 +8823,18 @@ msgctxt "death_message"
 msgid "上钩了！"
 msgstr "Hooked!"
 
+#. Name for entity mvz2:zombinator
+#: Entity meta file
+msgctxt "entity.name"
+msgid "僵尸终结者"
+msgstr "Zombinator"
+
+#. Death message for entity mvz2:zombinator
+#: Entity meta file
+msgctxt "death_message"
+msgid "目标已终结"
+msgstr "TERMINATED"
+
 #. Name for entity mvz2:axolotl_suit
 #: Entity meta file
 msgctxt "entity.name"
@@ -9876,6 +9938,10 @@ msgstr "Nether Mage (Frost)"
 msgctxt "entity.name"
 msgid "下界法师（电）"
 msgstr "Nether Mage (Lightning)"
+
+#~ msgctxt "death_message"
+#~ msgid "目标已消灭"
+#~ msgstr "TERMINATED"
 
 #~ msgctxt "almanac_tag_enum.name"
 #~ msgid "下界"

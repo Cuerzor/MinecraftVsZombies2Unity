@@ -2089,7 +2089,33 @@
                 <p>他为什么如此执着？因为山就在那里。</p>
             </flavor>
         </entry>
-        <entry />
+        <entry id="mvz2:zombinator">
+            <variables>
+                <variable name="hp_phase_1">200</variable>
+                <variable name="speed_phase_1">1</variable>
+                <variable name="hp_phase_2">400</variable>
+                <variable name="speed_phase_2">2</variable>
+                <variable name="hp_phase_3">600</variable>
+                <variable name="speed_phase_3">4</variable>
+            </variables>
+            <header>
+                <p>僵尸终结者伪装成<![CDATA[<ref=[enemies]mvz2:zombie>僵尸</ref>]]>，并在被击破后暴露，最后变为彻底的机器僵尸。</p>
+            </header>
+            <properties>
+                <p>第一阶段：<![CDATA[<tag id="mvz2:shell" enum="mvz2:flesh" />]]></p>
+                <p>  生命：<![CDATA[<color=red><var local="hp_phase_1" /></color>]]></p>
+                <p>  移速：<![CDATA[<color=red><var local="speed_phase_1" /></color>]]></p>
+                <p>第二阶段：<![CDATA[<tag id="mvz2:shell" enum="mvz2:metal" /><tag id="mvz2:not_undead" />]]></p>
+                <p>  生命：<![CDATA[<color=red><var local="hp_phase_2" /></color>]]></p>
+                <p>  移速：<![CDATA[<color=red><var local="speed_phase_2" /></color>]]></p>
+                <p>第三阶段：<![CDATA[<tag id="mvz2:shell" enum="mvz2:metal" /><tag id="mvz2:not_undead" />]]></p>
+                <p>  生命：<![CDATA[<color=red><var local="hp_phase_3" /></color>]]></p>
+                <p>  移速：<![CDATA[<color=red><var local="speed_phase_3" /></color>]]></p>
+            </properties>
+            <flavor>
+                <p>它需要你的衣服，你的脑子，以及你的小推车。</p>
+            </flavor>
+        </entry>
         <entry id="mvz2:axolotl_suit">
             <header>
                 <p>美西螈号机甲碾压路上的一切器械。在被摧毁后，它的<![CDATA[<ref=[enemies]mvz2:axolotl_suit_pilot>驾驶员</ref>]]>会弹射逃生。</p>

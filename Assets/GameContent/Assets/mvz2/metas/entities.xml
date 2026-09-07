@@ -2625,7 +2625,7 @@
                 <int name="mvz2:cost" value="75" />
             </properties>
         </entity>
-        <entity template="zombie" id="zombinator" name="僵尸终结者" deathMessage="目标已消灭">
+        <entity template="zombie" id="zombinator" name="僵尸终结者" deathMessage="目标已终结">
             <unlock>
                 <condition required="mvz2:level.mountain_7" />
             </unlock>

@@ -1053,6 +1053,9 @@ MonoBehaviour:
   - name: mobile_blueprint/zombie_cloud_thunder
     texture: {fileID: 2800000, guid: 067521958e94fd440bf2d5a8c1b62383, type: 3}
     tags: []
+  - name: mobile_blueprint/zombinator
+    texture: {fileID: 2800000, guid: 08eeecfdfa986614fb5cb55a643bc8f8, type: 3}
+    tags: []
   - name: note/background_castle
     texture: {fileID: 2800000, guid: cdb5a00e33b0dda46876f58eb7acc614, type: 3}
     tags: []
@@ -2235,6 +2238,9 @@ MonoBehaviour:
     tags: []
   - name: entity/enemy/zombie_cow
     texture: {fileID: 2800000, guid: 199c4447a5d48934f9d39e39afbb6750, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    texture: {fileID: 2800000, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
     tags: []
   - name: entity/obstacle/gargoyle_statue
     texture: {fileID: 2800000, guid: 684ec7aa8b558924d9d579d222e0eac5, type: 3}
@@ -5092,6 +5098,10 @@ MonoBehaviour:
   - name: mobile_blueprint/zombie_cloud_thunder
     index: 0
     sprite: {fileID: 21300000, guid: 067521958e94fd440bf2d5a8c1b62383, type: 3}
+    tags: []
+  - name: mobile_blueprint/zombinator
+    index: 0
+    sprite: {fileID: 21300000, guid: 08eeecfdfa986614fb5cb55a643bc8f8, type: 3}
     tags: []
   - name: note/background_castle
     index: 0
@@ -9648,6 +9658,58 @@ MonoBehaviour:
     index: 4
     sprite: {fileID: 602954751, guid: 199c4447a5d48934f9d39e39afbb6750, type: 3}
     tags: []
+  - name: entity/enemy/zombinator
+    index: 0
+    sprite: {fileID: 549663508, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 1
+    sprite: {fileID: 1420369543, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 2
+    sprite: {fileID: 981548194, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 3
+    sprite: {fileID: -6260210, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 4
+    sprite: {fileID: -1044319506, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 5
+    sprite: {fileID: -1598864860, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 6
+    sprite: {fileID: 1762088274, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 7
+    sprite: {fileID: 1461409694, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 8
+    sprite: {fileID: 1787748202, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 9
+    sprite: {fileID: -1550350271, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 10
+    sprite: {fileID: -1214079698, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 11
+    sprite: {fileID: -1579585058, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
+  - name: entity/enemy/zombinator
+    index: 12
+    sprite: {fileID: 106388492, guid: 7c40b0a6635afdb48a4192a690d33773, type: 3}
+    tags: []
   - name: entity/obstacle/gargoyle_statue
     index: 0
     sprite: {fileID: 1300053136, guid: 684ec7aa8b558924d9d579d222e0eac5, type: 3}
@@ -10576,6 +10638,10 @@ MonoBehaviour:
   - name: ui/almanac/attribute_tags
     index: 15
     sprite: {fileID: 143512459, guid: c419009eb7b0cae44aca6be02f48b0d4, type: 3}
+    tags: []
+  - name: ui/almanac/attribute_tags
+    index: 16
+    sprite: {fileID: -572628743, guid: c419009eb7b0cae44aca6be02f48b0d4, type: 3}
     tags: []
   - name: ui/almanac/background
     index: 0
