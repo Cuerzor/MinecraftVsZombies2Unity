@@ -1566,6 +1566,26 @@
             <spawn id="mvz2:bubble_gun_gurgle" />
         </spawns>
     </stage>
+    <stage id="mountain_3" name="妖怪之山" dayNumber="3">
+        <unlock>
+            <condition required="mvz2:level.mountain_2" />
+        </unlock>
+        <talks>
+            <talk type="start" value="mvz2:mountain_3" />
+            <talk type="end" value="mvz2:mountain_3_over" />
+            <talk type="map" value="mvz2:mountain_3_map" />
+        </talks>
+        <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:teleporter" />
+        <spawns flags="2" pointsPower="1.02">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
+            <spawn id="mvz2:iron_helmetted_zombie" />
+            <spawn id="mvz2:necromancer" />
+            <spawn id="mvz2:reflective_barrier_zombie" />
+            <spawn id="mvz2:hacker" />
+            <spawn id="mvz2:bubble_gun_gurgle" />
+        </spawns>
+    </stage>
     <stage id="mountain_4" name="妖怪之山" dayNumber="4">
         <unlock>
             <condition required="mvz2:level.mountain_3" />
@@ -1580,9 +1600,30 @@
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
-            <spawn id="mvz2:reflective_barrier_zombie" />
+            <spawn id="mvz2:ghast" />
+            <spawn id="mvz2:zombie_cloud" />
             <spawn id="mvz2:cannoneer_zombie" />
-            <spawn id="mvz2:hacker" />
+            <spawn id="mvz2:hookshot_drowned" />
+        </spawns>
+    </stage>
+    <stage id="mountain_5" name="妖怪之山" dayNumber="5">
+        <unlock>
+            <condition required="mvz2:level.mountain_4" />
+        </unlock>
+        <talks>
+            <talk type="start" value="mvz2:mountain_5" />
+            <talk type="end" value="mvz2:mountain_5_over" />
+            <talk type="map" value="mvz2:mountain_5_map" />
+        </talks>
+        <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:cat_tl_mk_ii" />
+        <spawns flags="2" pointsPower="1.02">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
+            <spawn id="mvz2:iron_helmetted_zombie" />
+            <spawn id="mvz2:diamond_helmetted_zombie" />
+            <spawn id="mvz2:dullahan" />
+            <spawn id="mvz2:pop_captain" />
+            <spawn id="mvz2:bubble_gun_gurgle" />
             <spawn id="mvz2:hookshot_drowned" />
         </spawns>
     </stage>
@@ -1624,6 +1665,26 @@
             <fixedSpawn id="mvz2:zombinator" wave="6" count="1" />
         </spawns>
     </stage>
+    <stage id="mountain_8" name="妖怪之山" dayNumber="8">
+        <unlock>
+            <condition required="mvz2:level.mountain_7" />
+        </unlock>
+        <talks>
+            <talk type="start" value="mvz2:mountain_8" />
+            <talk type="end" value="mvz2:mountain_8_over" />
+            <talk type="map" value="mvz2:mountain_8_map" />
+        </talks>
+        <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:nesting_tnt" />
+        <spawns flags="2" pointsPower="1.02">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
+            <spawn id="mvz2:iron_helmetted_zombie" />
+            <spawn id="mvz2:diamond_helmetted_zombie" />
+            <spawn id="mvz2:pop_captain" />
+            <spawn id="mvz2:skeleton_statue" />
+            <spawn id="mvz2:zombinator" />
+        </spawns>
+    </stage>
     <stage id="mountain_9" name="妖怪之山" dayNumber="9">
         <unlock>
             <condition required="mvz2:level.mountain_8" />
@@ -1641,6 +1702,27 @@
             <spawn id="mvz2:cannoneer_zombie" />
             <spawn id="mvz2:shikaisen_zombie" />
             <spawn id="mvz2:emperor_zombie" />
+            <spawn id="mvz2:axolotl_suit" />
+        </spawns>
+    </stage>
+    <stage id="mountain_10" name="妖怪之山" dayNumber="10">
+        <unlock>
+            <condition required="mvz2:level.mountain_9" />
+        </unlock>
+        <talks>
+            <talk type="start" value="mvz2:mountain_10" />
+            <talk type="end" value="mvz2:mountain_10_over" />
+            <talk type="map" value="mvz2:mountain_10_map" />
+        </talks>
+        <clear pickupModel="mvz2:entity.map_pickup" note="mvz2:palace" />
+        <spawns flags="2" pointsPower="1.02">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_helmetted_zombie" />
+            <spawn id="mvz2:iron_helmetted_zombie" />
+            <spawn id="mvz2:diamond_helmetted_zombie" />
+            <spawn id="mvz2:bubble_gun_gurgle" />
+            <spawn id="mvz2:hookshot_drowned" />
+            <spawn id="mvz2:zombinator" />
             <spawn id="mvz2:axolotl_suit" />
         </spawns>
     </stage>
