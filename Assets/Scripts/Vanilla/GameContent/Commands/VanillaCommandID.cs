@@ -27,6 +27,7 @@ namespace MVZ2.GameContent.Commands
         public const string gotolevel = "gotolevel";
         public const string chapterTransition = "chaptertransition";
         public const string izombie = "izombie";
+        public const string money = "money";
     }
     public static class VanillaCommandID
     {
@@ -48,6 +49,7 @@ namespace MVZ2.GameContent.Commands
         public static readonly NamespaceID unlock = Get(VanillaCommandNames.unlock);
         public static readonly NamespaceID gotolevel = Get(VanillaCommandNames.gotolevel);
         public static readonly NamespaceID izombie = Get(VanillaCommandNames.izombie);
+        public static readonly NamespaceID money = Get(VanillaCommandNames.money);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

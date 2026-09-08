@@ -125,6 +125,7 @@ namespace MVZ2Logic.Level.Components
     }
     public interface IMoneyComponent : ILevelComponent
     {
+        void SetMoney(int value);
         void AddMoney(int value);
         int GetMoney();
         int GetDelayedMoney();

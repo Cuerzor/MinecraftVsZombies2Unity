@@ -4,6 +4,8 @@
   - /test finalwaveevent：Triggers the final wave event.
   - /blueprint slots：Sets the slot count for blueprints.
   - /artifact slots：Sets the slot count for artifacts.
+  - /money set：Sets money.
+  - /money add：Increases money.
 - Added entity material "Apparition" and "Wither Bone", removed entity material "Nether".
   - The material of Soul Furnace has been changed to "Wood".
   - The material of Ghost, Ghast, and Napstablook has been changed to "Apparition".

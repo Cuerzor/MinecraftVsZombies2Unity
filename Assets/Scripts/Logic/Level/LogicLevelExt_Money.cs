@@ -12,6 +12,12 @@ namespace MVZ2Logic.Level
         {
             return level.GetLevelComponent<IMoneyComponent>();
         }
+        public static void SetMoney(this LevelEngine level, int value)
+        {
+            var component = level.GetMoneyComponent();
+            if (component == null) return;
+            component.SetMoney(value);
+        }
         public static void AddMoney(this LevelEngine level, int value)
         {
             var component = level.GetMoneyComponent();

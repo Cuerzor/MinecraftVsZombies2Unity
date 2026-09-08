@@ -4,6 +4,8 @@
   - /test finalwaveevent：触发最后一波怪物事件。
   - /blueprint slots：设置蓝图最大栏位。
   - /artifact slots：设置制品最大栏位。
+  - /money set：设置金钱。
+  - /money add：增加金钱。
 - 加入实体材质“灵体”、“凋灵骨”，移除实体材质“下界”。
   - 灵魂熔炉的材质变为了“木头”。
   - 幽灵、恶魂、小幽灵的材质变为了“灵体”。

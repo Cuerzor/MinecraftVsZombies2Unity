@@ -337,4 +337,19 @@
             </params>
         </variant>
     </command>
+    <command id="money">
+        <description>调整当前金钱。</description>
+        <variant subname="set">
+            <description>设置当前金钱。</description>
+            <params>
+                <param name="value" type="int">金钱。</param>
+            </params>
+        </variant>
+        <variant subname="add">
+            <description>增加或减少当前金钱。</description>
+            <params>
+                <param name="value" type="int">金钱。</param>
+            </params>
+        </variant>
+    </command>
 </commands>
