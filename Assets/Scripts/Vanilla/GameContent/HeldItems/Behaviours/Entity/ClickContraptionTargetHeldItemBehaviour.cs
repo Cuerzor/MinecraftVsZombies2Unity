@@ -28,6 +28,8 @@ namespace MVZ2.GameContent.HeldItems
         {
             if (target is not HeldItemTargetGrid targetGrid)
                 return HeldHighlight.None;
+            if (!CanUseOnGrid(targetGrid, data))
+                return HeldHighlight.Red(targetGrid.Target);
             return HeldHighlight.Green(targetGrid.Target);
         }
         public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
@@ -52,8 +54,11 @@ namespace MVZ2.GameContent.HeldItems
                 if (targetGrid.Target == null)
                     return;
                 var level = targetGrid.GetLevel();
-                OnUseOnGrid(targetGrid, data, pointerParams);
-                level.ResetHeldItem();
+                if (CanUseOnGrid(targetGrid, data))
+                {
+                    OnUseOnGrid(targetGrid, data, pointerParams);
+                    level.ResetHeldItem();
+                }
             }
             else if (target is HeldItemTargetLawn targetLawn)
             {
@@ -74,11 +79,14 @@ namespace MVZ2.GameContent.HeldItems
                 }
             }
         }
-
         public bool ShouldMakeEntityTwinkle(Entity entity, IHeldItemData data)
         {
             var current = GetEntity(entity.Level, data);
             return entity == current;
+        }
+        public virtual bool CanUseOnGrid(HeldItemTargetGrid targetGrid, IHeldItemData data)
+        {
+            return true;
         }
         protected abstract void OnUseOnGrid(HeldItemTargetGrid targetGrid, IHeldItemData data, PointerInteractionData pointerParams);
     }

@@ -150,7 +150,7 @@ namespace MVZ2.GameContent.Contraptions
             else
             {
                 var grid = teleporter.Level.GetGrid(column, lane);
-                if (grid != null)
+                if (grid != null && !grid.IsDisabled())
                 {
                     CheckAquatic(teleporter, memberDefinition, grid);
 

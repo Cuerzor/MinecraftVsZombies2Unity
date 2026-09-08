@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Models;
 using MVZ2Logic.Definitions;
+using MVZ2Logic.Grids;
 using MVZ2Logic.HeldItems;
 using MVZ2Logic.Inputs;
 using PVZEngine;
@@ -17,10 +18,15 @@ namespace MVZ2.GameContent.HeldItems
         public TeleporterHeldItemBehaviour(string nsp, string name) : base(nsp, name)
         {
         }
-
         public override void GetModelID(LevelEngine level, IHeldItemData data, CallbackResult<NamespaceID> result)
         {
             result.SetFinalValue(VanillaModelID.targetTeleporter);
+        }
+        public override bool CanUseOnGrid(HeldItemTargetGrid targetGrid, IHeldItemData data)
+        {
+            if (targetGrid.Target.IsDisabled())
+                return false;
+            return base.CanUseOnGrid(targetGrid, data);
         }
         protected override void OnUseOnGrid(HeldItemTargetGrid targetGrid, IHeldItemData data, PointerInteractionData pointerParams)
         {
