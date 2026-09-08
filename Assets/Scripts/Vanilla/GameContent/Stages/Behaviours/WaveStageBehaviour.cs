@@ -148,7 +148,7 @@ namespace MVZ2.GameContent.Stages
         {
             level.WaveState = STATE_HUGE_WAVE_APPROACHING;
             var waveTimer = GetWaveTimer(level);
-            waveTimer?.ResetTime(180);
+            waveTimer?.ResetSeconds(HUGE_WAVE_SECONDS);
             level.Triggers.RunCallback(LogicLevelCallbacks.POST_HUGE_WAVE_APPROACH, new LevelCallbackParams(level));
             UpdateHighWaveState(level);
         }
@@ -276,6 +276,7 @@ namespace MVZ2.GameContent.Stages
         [LevelPropertyRegistry(PROP_REGION)]
         public static readonly VanillaLevelPropertyMeta<bool> PROP_HIGH_WAVE = new VanillaLevelPropertyMeta<bool>("HighWave");
         public const float SUBTRACK_WEIGHT_SPEED = 1 / 90f;
+        public const float HUGE_WAVE_SECONDS = 6f;
         public const int STATE_NOT_STARTED = VanillaLevelStates.STATE_NOT_STARTED;
         public const int STATE_STARTED = VanillaLevelStates.STATE_STARTED;
         public const int STATE_HUGE_WAVE_APPROACHING = VanillaLevelStates.STATE_HUGE_WAVE_APPROACHING;
