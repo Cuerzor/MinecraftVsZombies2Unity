@@ -6,21 +6,25 @@ using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Detections;
 using MVZ2.GameContent.Effects;
+using MVZ2.GameContent.Projectiles;
 using MVZ2.GameContent.Shells;
 using MVZ2.Vanilla.Armors;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Projectiles;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using MVZ2Logic.Modding;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Collisions;
+using PVZEngine.Collisions.Level;
 using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 
 namespace MVZ2.GameContent.GlobalCallbacks
@@ -52,6 +56,11 @@ namespace MVZ2.GameContent.GlobalCallbacks
             {
                 // 下界岩落地时爆出火焰
                 NetherrackLand(entity, damageMultiplier);
+            }
+            else if (shell == VanillaShellID.ice)
+            {
+                // 冰落地时爆出冰锥
+                IceLand(entity, damageMultiplier);
             }
 
             if (!entity.IsAIFrozen())
@@ -115,10 +124,54 @@ namespace MVZ2.GameContent.GlobalCallbacks
             level.ShakeScreen(10, 0, 15);
             entity.PlaySound(VanillaSoundID.explosion);
         }
+        private void IceLand(Entity entity, float damageMultiplier)
+        {
+            if (!entity.IsDead)
+                return;
+            entity.PlaySound(VanillaSoundID.frozenOrb);
+            var level = entity.Level;
+            // 发射冰锥
+            var count = 18;
+            var angleInterval = 360f / count;
+            for (int i = 0; i < count; i++)
+            {
+                var angle = angleInterval * i;
+                var direction = Vector3.right.RotateClockwiseXZ(angle);
+                var position = entity.GetCenter() + direction * (entity.GetScaledSize().x * 0.5f);
+                var velocity = direction * 20;
+
+                var boltDamage = 20 * damageMultiplier;
+
+                var spawnParam = entity.GetSpawnParams();
+                var projArgs = new ProjectileShootArgs(spawnParam);
+                projArgs.damage = boltDamage;
+                projArgs.position = position;
+                projArgs.velocity = velocity;
+                projArgs.projectileID = VanillaProjectileID.iceBolt;
+                entity.ShootProjectile(projArgs);
+            }
+
+            using var resultsItem = ListPool<IEntityCollider>.Rent();
+            var results = resultsItem.Value;
+            slowDetector.DetectMultiple(entity, results);
+            foreach (var collider in results)
+            {
+                if (!collider.IsForMain())
+                    continue;
+                collider.Entity.InflictSlow(SLOW_FRAMES, new EntitySourceReference(entity));
+            }
+        }
         public const float LIGHTNING_RADIUS = 200f;
+        public const float SLOW_RADIUS = 120f;
+        public const int SLOW_FRAMES = 300;
         private Detector thunderDetector = new SphereDetector(LIGHTNING_RADIUS)
         {
             canDetectInvisible = true
+        };
+        private Detector slowDetector = new SphereDetector(SLOW_RADIUS)
+        {
+            canDetectInvisible = true,
+            mask = EntityCollisionHelper.MASK_ENEMY,
         };
         private List<IEntityCollider> thunderBuffer = new List<IEntityCollider>(1024);
     }
