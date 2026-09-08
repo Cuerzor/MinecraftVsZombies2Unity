@@ -114,7 +114,7 @@ namespace MVZ2.GameContent.Stages
                             var difficultyMeta = level.Content.GetDifficultyDefinition(difficulty);
                             if (difficultyMeta != null)
                             {
-                                money = difficultyMeta.GetPuzzleMoney();
+                                money = difficultyMeta.GetTrophyMoney();
                             }
                             var x = level.GetLawnCenterX();
                             var z = level.GetLawnCenterZ();

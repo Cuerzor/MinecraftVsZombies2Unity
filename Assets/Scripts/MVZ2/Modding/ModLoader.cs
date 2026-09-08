@@ -441,10 +441,11 @@ namespace MVZ2.Modding
                 def.SetProperty(LogicDifficultyProps.VALUE, meta.Value);
                 def.SetProperty(LogicDifficultyProps.BUFF_ID, meta.BuffID);
                 def.SetProperty(LogicDifficultyProps.I_ZOMBIE_BUFF_ID, meta.IZombieBuffID);
+                def.SetProperty(LogicDifficultyProps.CART_CONVERT_MONEY, meta.CartConvertMoney);
                 def.SetProperty(LogicDifficultyProps.CLEAR_MONEY, meta.ClearMoney);
                 def.SetProperty(LogicDifficultyProps.RERUN_CLEAR_MONEY, meta.RerunClearMoney);
-                def.SetProperty(LogicDifficultyProps.CART_CONVERT_MONEY, meta.CartConvertMoney);
-                def.SetProperty(LogicDifficultyProps.PUZZLE_MONEY, meta.PuzzleMoney);
+                def.SetProperty(LogicDifficultyProps.TROPHY_MONEY, meta.TrophyMoney);
+                def.SetProperty(LogicDifficultyProps.RERUN_TROPHY_MONEY, meta.RerunTrophyMoney);
                 def.SetProperty(LogicDifficultyProps.MAP_BUTTON_BORDER_BACK, meta.MapButtonBorderBack);
                 def.SetProperty(LogicDifficultyProps.MAP_BUTTON_BORDER_BOTTOM, meta.MapButtonBorderBottom);
                 def.SetProperty(LogicDifficultyProps.MAP_BUTTON_BORDER_OVERLAY, meta.MapButtonBorderOverlay);

@@ -2,18 +2,33 @@
     <difficulty id="easy" name="简单" value="-100">
         <button back="mvz2:map_button[1]" bottom="mvz2:map_button[4]" overlay="mvz2:map_button[7]" />
         <icon arcade="mvz2:ui/arcade/clear_trophy[0]" />
-        <clear cartMoney="10" rerunMoney="100" puzzleMoney="500" />
+        <clear>
+            <money cart="10">
+                <first normal="0" trophy="500"/>
+                <rerun normal="100" trophy="100"/>
+            </money>
+        </clear>
         <buff id="mvz2:level_easy" iZombie="mvz2:i_zombie_easy" />
     </difficulty>
     <difficulty id="normal" name="普通" value="0">
         <button back="mvz2:map_button[2]" bottom="mvz2:map_button[5]" overlay="mvz2:map_button[8]" />
         <icon arcade="mvz2:ui/arcade/clear_trophy[1]" />
-        <clear cartMoney="50" rerunMoney="250" puzzleMoney="1000" />
+        <clear>
+            <money cart="50">
+                <first normal="0" trophy="1000"/>
+                <rerun normal="250" trophy="250"/>
+            </money>
+        </clear>
     </difficulty>
     <difficulty id="hard" name="困难" value="100">
         <button back="mvz2:map_button[3]" bottom="mvz2:map_button[6]" overlay="mvz2:map_button[9]" />
         <icon arcade="mvz2:ui/arcade/clear_trophy[2]" />
-        <clear cartMoney="50" clearMoney="250" rerunMoney="1000" puzzleMoney="2000" />
+        <clear>
+            <money cart="50">
+                <first normal="250" trophy="2000"/>
+                <rerun normal="1000" trophy="1000"/>
+            </money>
+        </clear>
         <buff id="level_hard" iZombie="mvz2:i_zombie_hard" />
     </difficulty>
 </difficulties>

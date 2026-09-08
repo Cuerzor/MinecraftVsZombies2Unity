@@ -18,15 +18,17 @@ namespace MVZ2Logic.Difficulties
         public static string? GetName(this DifficultyDefinition def) => def.GetProperty<string>(NAME);
         public static readonly PropertyMeta<int> VALUE = Get<int>("value");
         public static int GetValue(this DifficultyDefinition def) => def.GetProperty<int>(VALUE);
-        public static readonly PropertyMeta<int> CLEAR_MONEY = Get<int>("clear_money");
-        public static int GetClearMoney(this DifficultyDefinition def) => def.GetProperty<int>(CLEAR_MONEY);
         public static readonly PropertyMeta<int> CART_CONVERT_MONEY = Get<int>("cart_convert_money");
         public static int GetCartConvertMoney(this DifficultyDefinition def) => def.GetProperty<int>(CART_CONVERT_MONEY);
+        public static readonly PropertyMeta<int> CLEAR_MONEY = Get<int>("clear_money");
+        public static int GetClearMoney(this DifficultyDefinition def) => def.GetProperty<int>(CLEAR_MONEY);
         public static readonly PropertyMeta<int> RERUN_CLEAR_MONEY = Get<int>("rerun_clear_money");
         public static int GetRerunClearMoney(this DifficultyDefinition def) => def.GetProperty<int>(RERUN_CLEAR_MONEY);
 
-        public static readonly PropertyMeta<int> PUZZLE_MONEY = Get<int>("puzzle_money");
-        public static int GetPuzzleMoney(this DifficultyDefinition def) => def.GetProperty<int>(PUZZLE_MONEY);
+        public static readonly PropertyMeta<int> TROPHY_MONEY = Get<int>("trophy_money");
+        public static int GetTrophyMoney(this DifficultyDefinition def) => def.GetProperty<int>(TROPHY_MONEY);
+        public static readonly PropertyMeta<int> RERUN_TROPHY_MONEY = Get<int>("rerun_trophy_money");
+        public static int GetRerunTrophyMoney(this DifficultyDefinition def) => def.GetProperty<int>(RERUN_TROPHY_MONEY);
 
         public static readonly PropertyMeta<NamespaceID> BUFF_ID = Get<NamespaceID>("buff_id");
         public static NamespaceID? GetBuffID(this DifficultyDefinition def) => def.GetProperty<NamespaceID>(BUFF_ID);
