@@ -52,4 +52,11 @@
             <condition required="mvz2:entered_palace" />
         </conditions>
     </view>
+    <view id="mountain" priority="700">
+        <bright>mvz2:mainmenu/view/mountain[0]</bright>
+        <dark>mvz2:mainmenu/view/mountain[1]</dark>
+        <conditions>
+            <condition required="mvz2:entered_mountain" />
+        </conditions>
+    </view>
 </views>
