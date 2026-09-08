@@ -2657,7 +2657,7 @@
             <properties>
                 <float name="mvz2:mass" value="2" />
                 <float name="mvz2:speed" value="2" />
-                <float name="mvz2:maxHealth" value="900" />
+                <float name="mvz2:maxHealth" value="1200" />
                 <float name="mvz2:fallResistance" value="10000" />
                 <id name="mvz2:shell" value="mvz2:metal" />
                 <id name="mvz2:shape" value="mvz2:mecha" />
