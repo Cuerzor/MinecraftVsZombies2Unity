@@ -1549,7 +1549,7 @@
     </stage>
     <stage id="mountain_2" name="妖怪之山" dayNumber="2">
         <unlock>
-            <condition required="mvz2:level.mountain_2" />
+            <condition required="mvz2:level.mountain_1" />
         </unlock>
         <talks>
             <talk type="start" value="mvz2:mountain_2" />
@@ -1616,13 +1616,13 @@
             <talk type="map" value="mvz2:mountain_5_map" />
         </talks>
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:cat_tl_mk_ii" />
-        <spawns flags="2" pointsPower="1.02">
+        <spawns flags="3" pointsPower="1.02">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
             <spawn id="mvz2:diamond_helmetted_zombie" />
+            <spawn id="mvz2:cave_spider" />
             <spawn id="mvz2:dullahan" />
-            <spawn id="mvz2:pop_captain" />
             <spawn id="mvz2:bubble_gun_gurgle" />
             <spawn id="mvz2:hookshot_drowned" />
         </spawns>
@@ -1675,12 +1675,12 @@
             <talk type="map" value="mvz2:mountain_8_map" />
         </talks>
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:nesting_tnt" />
-        <spawns flags="2" pointsPower="1.02">
+        <spawns flags="3" pointsPower="1.02">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
             <spawn id="mvz2:diamond_helmetted_zombie" />
-            <spawn id="mvz2:pop_captain" />
+            <spawn id="mvz2:cave_spider" />
             <spawn id="mvz2:skeleton_statue" />
             <spawn id="mvz2:zombinator" />
         </spawns>
@@ -1715,7 +1715,7 @@
             <talk type="map" value="mvz2:mountain_10_map" />
         </talks>
         <clear pickupModel="mvz2:entity.map_pickup" note="mvz2:palace" />
-        <spawns flags="2" pointsPower="1.02">
+        <spawns flags="3" pointsPower="1.02">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_helmetted_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
