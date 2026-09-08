@@ -24,6 +24,8 @@ namespace MVZ2.Options
         public KeyCode GetBlueprintKeyBinding(int index)
         {
             var keyID = HotKeys.GetBlueprintHotKey(index);
+            if (!NamespaceID.IsValid(keyID))
+                return KeyCode.None;
             return GetKeyBinding(keyID);
         }
         public void SetKeyBinding(NamespaceID hotkey, KeyCode code)

@@ -37,8 +37,10 @@ namespace MVZ2.Options
             blueprint9,
             blueprint10,
         };
-        public static NamespaceID GetBlueprintHotKey(int index)
+        public static NamespaceID? GetBlueprintHotKey(int index)
         {
+            if (index < 0 || index >= blueprintList.Length)
+                return null;
             return blueprintList[index];
         }
         public static NamespaceID Get(string path) => new NamespaceID(MainManager.Instance.BuiltinNamespace, path);
