@@ -50,6 +50,10 @@ namespace MVZ2.GameContent.Pickups
                     {
                         money = difficultyDef.GetTrophyMoney();
                     }
+                    else if (level.IsAdventure() && level.IsBossLevel())
+                    {
+                        money = difficultyDef.GetBossMoney();
+                    }
                     else
                     {
                         money = difficultyDef.GetClearMoney();
@@ -64,6 +68,10 @@ namespace MVZ2.GameContent.Pickups
                     if (level.DropsTrophy())
                     {
                         money = difficultyDef.GetRerunTrophyMoney();
+                    }
+                    else if (level.IsAdventure() && level.IsBossLevel())
+                    {
+                        money = difficultyDef.GetRerunBossMoney();
                     }
                     else
                     {

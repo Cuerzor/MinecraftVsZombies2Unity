@@ -446,6 +446,8 @@ namespace MVZ2.Modding
                 def.SetProperty(LogicDifficultyProps.RERUN_CLEAR_MONEY, meta.RerunClearMoney);
                 def.SetProperty(LogicDifficultyProps.TROPHY_MONEY, meta.TrophyMoney);
                 def.SetProperty(LogicDifficultyProps.RERUN_TROPHY_MONEY, meta.RerunTrophyMoney);
+                def.SetProperty(LogicDifficultyProps.BOSS_MONEY, meta.BossMoney);
+                def.SetProperty(LogicDifficultyProps.RERUN_BOSS_MONEY, meta.RerunBossMoney);
                 def.SetProperty(LogicDifficultyProps.MAP_BUTTON_BORDER_BACK, meta.MapButtonBorderBack);
                 def.SetProperty(LogicDifficultyProps.MAP_BUTTON_BORDER_BOTTOM, meta.MapButtonBorderBottom);
                 def.SetProperty(LogicDifficultyProps.MAP_BUTTON_BORDER_OVERLAY, meta.MapButtonBorderOverlay);

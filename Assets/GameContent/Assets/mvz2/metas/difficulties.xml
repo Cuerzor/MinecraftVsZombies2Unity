@@ -3,9 +3,10 @@
         <button back="mvz2:map_button[1]" bottom="mvz2:map_button[4]" overlay="mvz2:map_button[7]" />
         <icon arcade="mvz2:ui/arcade/clear_trophy[0]" />
         <clear>
-            <money cart="10">
-                <first normal="0" trophy="500"/>
-                <rerun normal="100" trophy="100"/>
+            <money cart="50">
+                <normal first="0" rerun="100"/>
+                <trophy first="500" rerun="100"/>
+                <boss first="5000" rerun="100"/>
             </money>
         </clear>
         <buff id="mvz2:level_easy" iZombie="mvz2:i_zombie_easy" />
@@ -15,8 +16,9 @@
         <icon arcade="mvz2:ui/arcade/clear_trophy[1]" />
         <clear>
             <money cart="50">
-                <first normal="0" trophy="1000"/>
-                <rerun normal="250" trophy="250"/>
+                <normal first="0" rerun="250"/>
+                <trophy first="1000" rerun="250"/>
+                <boss first="5000" rerun="250"/>
             </money>
         </clear>
     </difficulty>
@@ -25,8 +27,9 @@
         <icon arcade="mvz2:ui/arcade/clear_trophy[2]" />
         <clear>
             <money cart="50">
-                <first normal="250" trophy="2000"/>
-                <rerun normal="1000" trophy="1000"/>
+                <normal first="250" rerun="1000"/>
+                <trophy first="2000" rerun="1000"/>
+                <boss first="5000" rerun="1000"/>
             </money>
         </clear>
         <buff id="level_hard" iZombie="mvz2:i_zombie_hard" />

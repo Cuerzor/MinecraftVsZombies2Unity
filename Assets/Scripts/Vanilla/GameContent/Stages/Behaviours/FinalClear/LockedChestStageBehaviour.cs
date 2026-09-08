@@ -131,6 +131,7 @@ namespace MVZ2.GameContent.Stages
             // 隐藏UI，关闭输入
             level.ResetHeldItem();
             level.SetUIAndInputDisabled(true);
+            level.GiveAdventureBossReward();
             level.Clear();
         }
     }

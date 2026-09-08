@@ -26,6 +26,9 @@
 - Adventure
   - Reduced the enemy amount for Chapter 1.
   - Reduced the enemy amount for the first half of Chapter 5.
+  - Gives 5000 money after firstly clearing a Boss level.
+- Final Defense Carts
+  - Money given after level clear: 10 -> 50
 - Soul Furnace
   - Adjusted the contraption quality algorithm to get fuel.
     - The cost of a contraption required to fill an empty Soul Furnace:

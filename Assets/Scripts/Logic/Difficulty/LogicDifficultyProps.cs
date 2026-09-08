@@ -30,6 +30,11 @@ namespace MVZ2Logic.Difficulties
         public static readonly PropertyMeta<int> RERUN_TROPHY_MONEY = Get<int>("rerun_trophy_money");
         public static int GetRerunTrophyMoney(this DifficultyDefinition def) => def.GetProperty<int>(RERUN_TROPHY_MONEY);
 
+        public static readonly PropertyMeta<int> BOSS_MONEY = Get<int>("boss_money");
+        public static int GetBossMoney(this DifficultyDefinition def) => def.GetProperty<int>(BOSS_MONEY);
+        public static readonly PropertyMeta<int> RERUN_BOSS_MONEY = Get<int>("rerun_boss_money");
+        public static int GetRerunBossMoney(this DifficultyDefinition def) => def.GetProperty<int>(RERUN_BOSS_MONEY);
+
         public static readonly PropertyMeta<NamespaceID> BUFF_ID = Get<NamespaceID>("buff_id");
         public static NamespaceID? GetBuffID(this DifficultyDefinition def) => def.GetProperty<NamespaceID>(BUFF_ID);
         public static readonly PropertyMeta<NamespaceID> I_ZOMBIE_BUFF_ID = Get<NamespaceID>("i_zombie_buff_id");

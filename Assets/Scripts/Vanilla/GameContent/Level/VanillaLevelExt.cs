@@ -17,6 +17,7 @@ using MVZ2.Vanilla.HeldItems;
 using MVZ2.Vanilla.Pickups;
 using MVZ2Logic;
 using MVZ2Logic.Blueprints;
+using MVZ2Logic.Difficulties;
 using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Buffs;
@@ -325,6 +326,21 @@ namespace MVZ2.Vanilla.Level
                 return pool.Random(rng);
             }
             return VanillaContraptionID.dispenser;
+        }
+        #endregion
+
+        #region 冒险模式BOSS奖励
+        public static void GiveAdventureBossReward(this LevelEngine level)
+        {
+            if (level.IsRerun)
+                return;
+            var difficultyDef = level.Content.GetDifficultyDefinition(level.Difficulty);
+            int money = 5000;
+            if (difficultyDef != null)
+            {
+                money = difficultyDef.GetBossMoney();
+            }
+            GemEffect.SpawnGemEffects(level, money, level.GetLawnCenter(), null);
         }
         #endregion
     }

@@ -751,6 +751,13 @@ namespace MVZ2Logic.Level
             return level.IsAdventure() && !level.IsRerun;
         }
         #endregion
+
+        #region Boss关
+        public static bool IsBossLevel(this LevelEngine level)
+        {
+            return level.StageDefinition.GetStageType() == StageTypes.TYPE_BOSS;
+        }
+        #endregion
     }
     public class LevelSpawnPointParams
     {
