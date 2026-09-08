@@ -2,7 +2,9 @@
 
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Damages;
+using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Enemies;
+using MVZ2.GameContent.Shells;
 using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Unlocks;
 using MVZ2Logic;
@@ -66,6 +68,16 @@ namespace MVZ2.GameContent.GlobalCallbacks
                     if (killedByHostileContraption)
                     {
                         Global.Saves.Unlock(VanillaUnlockID.mesmerisedMatchup);
+                        Global.Saves.SaveToFile(); // 完成成就后保存游戏。
+                    }
+                }
+
+                // 重力板化
+                if (entity.GetShellID() == VanillaShellID.metal && source is EntitySourceReference entitySource && entitySource.DefinitionID == VanillaContraptionID.goldenApple)
+                {
+                    if (info.HasEffect(VanillaDamageEffects.THROWN))
+                    {
+                        Global.Saves.Unlock(VanillaUnlockID.gravityPadded);
                         Global.Saves.SaveToFile(); // 完成成就后保存游戏。
                     }
                 }

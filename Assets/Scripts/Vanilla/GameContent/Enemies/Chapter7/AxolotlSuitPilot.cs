@@ -7,6 +7,8 @@ using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
+using MVZ2.Vanilla.Unlocks;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Damages;
@@ -120,6 +122,14 @@ namespace MVZ2.GameContent.Enemies
         }
         public static void EnterSuit(Entity entity, Entity suit)
         {
+            if (suit.SpawnerReference is EntitySourceReference entitySource)
+            {
+                if (entitySource.DefinitionID == VanillaEnemyID.axolotlSuitPilot && entitySource.ID != entity.ID)
+                {
+                    Global.Saves.Unlock(VanillaUnlockID.cuckoo);
+                    Global.Saves.SaveToFile(); // 完成成就后保存游戏。
+                }
+            }
             AxolotlSuit.SetEmpty(suit, false);
             AxolotlSuit.SetPilotHPPercent(suit, entity.Health / entity.GetMaxHealth());
             entity.PlaySound(VanillaSoundID.axolotlSuitEnter);

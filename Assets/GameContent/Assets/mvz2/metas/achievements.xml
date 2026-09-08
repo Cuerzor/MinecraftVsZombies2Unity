@@ -59,4 +59,14 @@
             <condition required="mvz2:achievement.let_them_eat_cake" />
         </unlock>
     </achievement>
+    <achievement id="gravity_padded" name="重力板化" description="用金苹果砸死一个金属怪物。" icon="mvz2:achievements/gravity_padded">
+        <unlock>
+            <condition required="mvz2:achievement.gravity_padded" />
+        </unlock>
+    </achievement>
+    <achievement id="cuckoo" name="鸠占鹊巢" description="让一个美西螈号驾驶员进入一个其他驾驶员召唤的机甲内。" icon="mvz2:achievements/cuckoo">
+        <unlock>
+            <condition required="mvz2:achievement.cuckoo" />
+        </unlock>
+    </achievement>
 </achievements>

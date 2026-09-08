@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-07 10:44+0800\n"
+"POT-Creation-Date: 2026-09-08 07:49+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1644,109 +1644,109 @@ msgid ""
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:103
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:105
 msgctxt "hotkey.name"
 msgid "？？？"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:105
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:107
 msgctxt "hotkey.name"
 msgid "铁镐"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:107
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:109
 msgctxt "hotkey.name"
 msgid "星之碎片"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:109
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:111
 msgctxt "hotkey.name"
 msgid "触发器"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:111
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:113
 msgctxt "hotkey.name"
 msgid "快进"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:113
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:115
 msgctxt "hotkey.name"
 msgid "血条"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:115
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:117
 msgctxt "hotkey.name"
 msgid "控制台"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:117
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:119
 msgctxt "hotkey.name"
 msgid "截图"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:119
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:121
 msgctxt "hotkey.name"
 msgid "蓝图1"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:121
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:123
 msgctxt "hotkey.name"
 msgid "蓝图2"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:123
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:125
 msgctxt "hotkey.name"
 msgid "蓝图3"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:125
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:127
 msgctxt "hotkey.name"
 msgid "蓝图4"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:127
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:129
 msgctxt "hotkey.name"
 msgid "蓝图5"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:129
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:131
 msgctxt "hotkey.name"
 msgid "蓝图6"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:131
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:133
 msgctxt "hotkey.name"
 msgid "蓝图7"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:133
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:135
 msgctxt "hotkey.name"
 msgid "蓝图8"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:135
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:137
 msgctxt "hotkey.name"
 msgid "蓝图9"
 msgstr ""
 
 # 按键名
-#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:137
+#: Scripts\MVZ2\Options\OptionsManager_KeyBindings.cs:139
 msgctxt "hotkey.name"
 msgid "蓝图10"
 msgstr ""
@@ -3790,6 +3790,30 @@ msgctxt "achievement"
 msgid "让皇帝僵尸吃下一块蛋糕。"
 msgstr ""
 
+#. Name for achievement mvz2:gravity_padded
+#: Achievements meta file
+msgctxt "achievement"
+msgid "重力板化"
+msgstr ""
+
+#. Description for achievement mvz2:gravity_padded
+#: Achievements meta file
+msgctxt "achievement"
+msgid "用金苹果砸死一个金属怪物。"
+msgstr ""
+
+#. Name for achievement mvz2:cuckoo
+#: Achievements meta file
+msgctxt "achievement"
+msgid "鸠占鹊巢"
+msgstr ""
+
+#. Description for achievement mvz2:cuckoo
+#: Achievements meta file
+msgctxt "achievement"
+msgid "让一个美西螈号驾驶员进入一个其他驾驶员召唤的机甲内。"
+msgstr ""
+
 #. Name for music mvz2:mainmenu
 #: Music meta file
 msgctxt "music.name"
@@ -4618,6 +4642,21 @@ msgctxt "music.description"
 msgid ""
 "妖怪之山关卡的音乐。\n"
 "原曲是《东方风神录》中第四关的音乐《Fall of Fall　～ 秋意渐浓之瀑》。\n"
+"===乐评施工中==="
+msgstr ""
+
+#. Name for music mvz2:mountain_final
+#: Music meta file
+msgctxt "music.name"
+msgid "少女曾见的日本原风景"
+msgstr ""
+
+#. Description for music mvz2:mountain_final
+#: Music meta file
+msgctxt "music.description"
+msgid ""
+"妖怪之山最终关的音乐。\n"
+"是《东方风神录》中第五关的音乐。\n"
 "===乐评施工中==="
 msgstr ""
 
@@ -5991,6 +6030,30 @@ msgstr ""
 #: Commands meta file
 msgctxt "command_variant.description"
 msgid "播放章节结束动画。"
+msgstr ""
+
+#. Description for command "mvz2:money"
+#: Commands meta file
+msgctxt "command.description"
+msgid "调整当前金钱。"
+msgstr ""
+
+#. Description for command variant "mvz2:money set"
+#: Commands meta file
+msgctxt "command_variant.description"
+msgid "设置当前金钱。"
+msgstr ""
+
+#. Description for parameter value of command "mvz2:money set"
+#: Commands meta file
+msgctxt "command_parameter.description"
+msgid "金钱。"
+msgstr ""
+
+#. Description for command variant "mvz2:money add"
+#: Commands meta file
+msgctxt "command_variant.description"
+msgid "增加或减少当前金钱。"
 msgstr ""
 
 #. Name for difficulty 简单

@@ -34,6 +34,8 @@ namespace MVZ2.Vanilla.Unlocks
         public const string midasTouchdown = "achievement.midas_touchdown";
         public const string sculptingStrike = "achievement.sculpting_strike";
         public const string letThemEatCake = "achievement.let_them_eat_cake";
+        public const string gravityPadded = "achievement.gravity_padded";
+        public const string cuckoo = "achievement.cuckoo";
 
         public const string brokenLantern = "artifact.broken_lantern";
         public const string bottledBlackhole = "artifact.bottled_blackhole";
@@ -71,6 +73,8 @@ namespace MVZ2.Vanilla.Unlocks
         public static readonly NamespaceID midasTouchdown = Get(VanillaUnlockNames.midasTouchdown);
         public static readonly NamespaceID sculptingStrike = Get(VanillaUnlockNames.sculptingStrike);
         public static readonly NamespaceID letThemEatCake = Get(VanillaUnlockNames.letThemEatCake);
+        public static readonly NamespaceID gravityPadded = Get(VanillaUnlockNames.gravityPadded);
+        public static readonly NamespaceID cuckoo = Get(VanillaUnlockNames.cuckoo);
 
 
         public static readonly NamespaceID brokenLantern = Get(VanillaUnlockNames.brokenLantern);

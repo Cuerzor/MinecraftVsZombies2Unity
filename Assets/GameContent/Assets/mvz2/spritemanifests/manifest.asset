@@ -25,11 +25,17 @@ MonoBehaviour:
   - name: achievements/bonebreaker
     texture: {fileID: 2800000, guid: 7c96fdff5dc5fde4ab6559e24a67dc99, type: 3}
     tags: []
+  - name: achievements/cuckoo
+    texture: {fileID: 2800000, guid: 47475a97e62104842908445eb02d61c3, type: 3}
+    tags: []
   - name: achievements/double_trouble
     texture: {fileID: 2800000, guid: 2becb83796290cb438ce963aff698ae4, type: 3}
     tags: []
   - name: achievements/ghost_buster
     texture: {fileID: 2800000, guid: cd6294e0e010f934b90fb1f9ca35e623, type: 3}
+    tags: []
+  - name: achievements/gravity_padded
+    texture: {fileID: 2800000, guid: 75903275211497942bc0bcb0a4021157, type: 3}
     tags: []
   - name: achievements/let_them_eat_cake
     texture: {fileID: 2800000, guid: 9434fba9801d2cf498f5cb99a0cf8980, type: 3}
@@ -2932,6 +2938,9 @@ MonoBehaviour:
   - name: map/gensokyo/pins/mausoleum
     texture: {fileID: 2800000, guid: 9c2ffe9b1f0c11c4e8e821a591f6f10a, type: 3}
     tags: []
+  - name: map/gensokyo/pins/mountain
+    texture: {fileID: 2800000, guid: 762cbe71a7e26434aa2d156a6c46f6e7, type: 3}
+    tags: []
   - name: map/gensokyo/pins/palace
     texture: {fileID: 2800000, guid: c92acfbe0681ef246991163cfbf4eb72, type: 3}
     tags: []
@@ -3201,6 +3210,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 7c96fdff5dc5fde4ab6559e24a67dc99, type: 3}
     tags: []
+  - name: achievements/cuckoo
+    index: 0
+    sprite: {fileID: 21300000, guid: 47475a97e62104842908445eb02d61c3, type: 3}
+    tags: []
   - name: achievements/double_trouble
     index: 0
     sprite: {fileID: 21300000, guid: 2becb83796290cb438ce963aff698ae4, type: 3}
@@ -3208,6 +3221,10 @@ MonoBehaviour:
   - name: achievements/ghost_buster
     index: 0
     sprite: {fileID: 21300000, guid: cd6294e0e010f934b90fb1f9ca35e623, type: 3}
+    tags: []
+  - name: achievements/gravity_padded
+    index: 0
+    sprite: {fileID: 21300000, guid: 75903275211497942bc0bcb0a4021157, type: 3}
     tags: []
   - name: achievements/let_them_eat_cake
     index: 0
@@ -11312,6 +11329,10 @@ MonoBehaviour:
   - name: map/gensokyo/pins/mausoleum
     index: 0
     sprite: {fileID: 21300000, guid: 9c2ffe9b1f0c11c4e8e821a591f6f10a, type: 3}
+    tags: []
+  - name: map/gensokyo/pins/mountain
+    index: 0
+    sprite: {fileID: 21300000, guid: 762cbe71a7e26434aa2d156a6c46f6e7, type: 3}
     tags: []
   - name: map/gensokyo/pins/palace
     index: 0

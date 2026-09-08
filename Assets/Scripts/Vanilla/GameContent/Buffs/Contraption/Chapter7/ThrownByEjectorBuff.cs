@@ -52,7 +52,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             if (!EngineEntityExt.IsHostile(faction, other.Entity.GetFaction()))
                 return;
             var damage = GetSmashDamage(entity) * multiplier;
-            other.TakeDamage(damage, new DamageEffectList(VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN), entity);
+            other.TakeDamage(damage, SMASH_DAMAGE_EFFECTS, entity);
             other.Entity.PlaySound(VanillaSoundID.punch);
         }
         private void PostEntityContactGroundCallback(LevelCallbacks.PostEntityContactGroundParams args, CallbackResultVoid result)
@@ -109,6 +109,9 @@ namespace MVZ2.GameContent.Buffs.Contraptions
         public static float GetDamageMultiplier(Buff buff) => buff.GetProperty<float>(PROP_DAMAGE_MULTIPLIER);
         public static void SetDamageMultiplier(Buff buff, float value) => buff.SetProperty(PROP_DAMAGE_MULTIPLIER, value);
         public const float VOLUME_DAMAGE_MULTIPLIER = 0.005f;
+        public static readonly DamageEffectList SMASH_DAMAGE_EFFECTS = new DamageEffectList(
+            VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN, 
+            VanillaDamageEffects.THROWN);
         public static readonly VanillaBuffPropertyMeta<int> PROP_FACTION = new VanillaBuffPropertyMeta<int>("faction");
         public static readonly VanillaBuffPropertyMeta<float> PROP_DAMAGE_MULTIPLIER = new VanillaBuffPropertyMeta<float>("damage_multiplier", 1);
     }
