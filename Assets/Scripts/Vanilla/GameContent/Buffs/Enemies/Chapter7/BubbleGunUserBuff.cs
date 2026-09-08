@@ -54,11 +54,13 @@ namespace MVZ2.GameContent.Buffs.Enemies
         private void FireBubble(Buff buff, Entity entity)
         {
             var point = GetBubbleGunPoint(entity);
-            var bubble = entity.SpawnWithParams(VanillaEnemyID.bubble, point);
+            var param = entity.GetSpawnParams();
+            param.EntityVelocity = entity.GetFacingDirection() * INITIAL_BUBBLE_SPEED;
+            var bubble = entity.Spawn(VanillaEnemyID.bubble, point, param);
             if (bubble != null)
             {
                 bubble.PlaySound(VanillaSoundID.bubbleSpawn);
-                bubble.AddBuff<ReleasedFromLockedChestBuff>();
+                bubble.AddBuff<BubbleExpandBuff>();
             }
         }
         public static Vector3 GetBubbleGunPoint(Entity entity)
@@ -80,6 +82,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
         public static readonly PropertyMeta<FrameTimer> PROP_FIRE_TIMER = new VanillaBuffPropertyMeta<FrameTimer>("fire_timer");
         public static readonly PropertyMeta<bool> PROP_HAS_BUBBLE_GUN = new VanillaBuffPropertyMeta<bool>("has_bubble_gun", true);
         private const float HOOK_COOLDOWN_SECONDS = 6f;
+        private const float INITIAL_BUBBLE_SPEED = 2f;
         private static readonly Vector3 bubbleOffset = new Vector3(30, 34, 0);
         public const int STATE_WALK = LogicEnemyStates.WALK;
     }

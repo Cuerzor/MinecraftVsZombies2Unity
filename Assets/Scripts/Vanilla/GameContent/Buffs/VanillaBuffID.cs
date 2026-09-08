@@ -290,6 +290,7 @@ namespace MVZ2.GameContent.Buffs
             public const string trapped = "trapped";
             public const string hookshotUser = "hookshot_user";
             public const string bubbleGunUser = "bubble_gun_user";
+            public const string bubbleExpand = "bubble_expand";
         }
         public static class Obstacle
         {
