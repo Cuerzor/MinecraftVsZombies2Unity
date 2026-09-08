@@ -505,4 +505,16 @@
             <p>===乐评施工中===</p>
         </description>
     </music>
+    <music id="mountain_final" name="少女曾见的日本原风景">
+        <unlock>
+            <condition required="mvz2:level.mountain_11" />
+        </unlock>
+        <track main="mvz2:mountain_final" />
+        <source>东方风神录</source>
+        <description>
+            <p>妖怪之山最终关的音乐。</p>
+            <p>是《东方风神录》中第五关的音乐。</p>
+            <p>===乐评施工中===</p>
+        </description>
+    </music>
 </musics>

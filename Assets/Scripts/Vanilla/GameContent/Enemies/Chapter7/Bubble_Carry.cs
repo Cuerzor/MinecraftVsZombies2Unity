@@ -2,11 +2,13 @@
 
 using System.Collections.Generic;
 using MVZ2.GameContent.Buffs;
+using MVZ2.GameContent.Buffs.Enemies;
 using MVZ2.GameContent.Buffs.Entities;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Contents.Buffs.Enemies;
+using MVZ2Logic.Entities;
 using PVZEngine;
 using PVZEngine.Auras;
 using PVZEngine.Buffs;
@@ -53,11 +55,10 @@ namespace MVZ2.GameContent.Enemies
         }
         public static bool CanBeCarried(Entity entity)
         {
-            return !entity.CannotBeCarriedByOtherEnemy() && 
-                entity.Type == EntityTypes.ENEMY && 
-                entity.GetMass() <= VanillaMass.MEDIUM && 
-                !entity.HasBuff<CarriedByBalloonBuff>() &&
-                !entity.HasBuff<RidingPassengerBuff>();
+            return !entity.CannotBeCarriedByOtherEnemy() &&
+                entity.Type == EntityTypes.ENEMY &&
+                entity.GetMass() <= VanillaMass.MEDIUM &&
+                !entity.IsForcedMovement();
         }
         public static void Carry(Entity entity, Entity parent)
         {

@@ -93,5 +93,17 @@ namespace MVZ2Logic.Entities
             return enemy.GetProperty<bool>(HARMLESS);
         }
         #endregion
+
+        #region 强制移动
+        public static readonly PropertyMeta<bool> FORCED_MOVEMENT = Get<bool>("forced_movement");
+        public static bool IsForcedMovement(this Entity enemy)
+        {
+            return enemy.GetProperty<bool>(FORCED_MOVEMENT);
+        }
+        public static void IsForcedMovement(this Entity enemy, bool value)
+        {
+            enemy.SetProperty<bool>(FORCED_MOVEMENT, value);
+        }
+        #endregion
     }
 }

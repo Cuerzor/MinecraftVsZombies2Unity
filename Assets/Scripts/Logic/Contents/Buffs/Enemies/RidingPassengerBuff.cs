@@ -17,6 +17,7 @@ namespace MVZ2Logic.Contents.Buffs.Enemies
         public RidingPassengerBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new BooleanModifier(LogicEnemyProps.HARMLESS, true));
+            AddModifier(new BooleanModifier(LogicEnemyProps.FORCED_MOVEMENT, true));
         }
         public override void PostUpdate(Buff buff)
         {

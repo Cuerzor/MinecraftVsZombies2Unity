@@ -5223,6 +5223,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57d7e3214ea73f64bb846119f4c7c36a
+    m_Address: mvz2:mountain_final
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Music
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 580a757d547930b41a026df31631b7c9
     m_Address: mvz2:entity/enemy/mesmerizer_head
     m_ReadOnly: 0

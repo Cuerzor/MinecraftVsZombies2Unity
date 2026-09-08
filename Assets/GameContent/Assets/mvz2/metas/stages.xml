@@ -1726,6 +1726,45 @@
             <spawn id="mvz2:axolotl_suit" />
         </spawns>
     </stage>
+    <stage id="mountain_11" name="妖怪之山" dayNumber="11" type="boss" needBlueprints="false" music="mvz2:mountain_final">
+        <unlock>
+            <condition required="mvz2:level.mountain_10" />
+        </unlock>
+        <talks noStartMusic="true">
+            <talk type="start" value="mvz2:mountain_11" />
+            <talk type="end" value="mvz2:mountain_11_over" />
+            <talk type="map" value="mvz2:mountain_11_map" />
+        </talks>
+        <conveyor>
+            <entry id="mvz2:lily_pad" count="24" />
+            <entry id="mvz2:maplewheel" count="24" />
+            <entry id="mvz2:ejector" count="4" />
+            <entry id="mvz2:teleporter" count="2" minCount="0" />
+            <entry id="mvz2:onbashira" count="12" />
+            <entry id="mvz2:freezenser" count="6" />
+            <entry id="mvz2:autotrap" count="8" />
+            <entry id="mvz2:nesting_tnt" count="4" minCount="0" />
+            <entry id="mvz2:loan_sign" count="1" minCount="0" />
+        </conveyor>
+        <clear pickupModel="mvz2:entity.money_chest" />
+        <spawns flags="2" pointsMultiplier="3">
+            <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
+            <spawn id="mvz2:iron_helmetted_zombie" />
+            <spawn id="mvz2:diamond_helmetted_zombie" />
+            <spawn id="mvz2:bubble_gun_gurgle" />
+            <spawn id="mvz2:hookshot_drowned" />
+            <spawn id="mvz2:zombinator" />
+            <spawn id="mvz2:axolotl_suit" />
+        </spawns>
+        <time firstWave="1" />
+        <properties>
+            <bool name="noEnergy" value="true" />
+            <bool name="mvz2:adventure" value="true"/>
+            <id name="clearSound" value="mvz2:final_item" />
+            <float name="boss_spawn_points_multiplier" value="1.5" />
+        </properties>
+    </stage>
     <stage id="mountain_endless" name="妖怪之山无尽" type="endless">
         <unlock>
             <condition required="mvz2:level.mountain_11" />
