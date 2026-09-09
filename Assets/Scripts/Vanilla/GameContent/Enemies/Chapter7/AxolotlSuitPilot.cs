@@ -131,6 +131,7 @@ namespace MVZ2.GameContent.Enemies
                 }
             }
             AxolotlSuit.SetEmpty(suit, false);
+            AxolotlSuit.SetBeingEntered(suit, true);
             AxolotlSuit.SetPilotHPPercent(suit, entity.Health / entity.GetMaxHealth());
             entity.PlaySound(VanillaSoundID.axolotlSuitEnter);
             entity.PlaySound(VanillaSoundID.axolotlSuitAppear);
