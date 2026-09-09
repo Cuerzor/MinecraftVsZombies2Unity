@@ -165,7 +165,7 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static bool IsValidTarget(Entity trap, Entity target)
         {
-            return target.Type == EntityTypes.ENEMY && !target.IsDead && trap.IsHostile(target);
+            return target.Type == EntityTypes.ENEMY && !target.IsDead && trap.IsHostile(target) && !target.IsForcedMovement();
         }
         public static bool IsOpen(Entity trap)
         {
