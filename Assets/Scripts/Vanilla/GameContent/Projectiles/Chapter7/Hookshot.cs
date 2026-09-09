@@ -92,7 +92,7 @@ namespace MVZ2.GameContent.Projectiles
                         DragEnemy(projectile, target, parent);
                     }
                 }
-                if ((parent.Position.x - target.Position.x) <= DRAG_ENEMY_RETURN_THRESOLD)
+                if (Mathf.Abs(parent.Position.x - target.Position.x) <= DRAG_ENEMY_RETURN_THRESOLD)
                 {
                     StartReturning(projectile);
                     return;
@@ -163,9 +163,9 @@ namespace MVZ2.GameContent.Projectiles
         public static void DragToTile(Entity projectile, Entity target)
         {
             var direction = 1;
-            if (target.Parent != null)
+            if (projectile.Parent != null)
             {
-                direction = Math.Sign(target.Parent.Position.x - target.Position.x);
+                direction = Math.Sign(projectile.Parent.Position.x - target.Position.x);
                 if (direction == 0)
                 {
                     direction = 1;

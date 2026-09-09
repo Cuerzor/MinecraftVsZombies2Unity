@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Enemies;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
@@ -149,6 +150,12 @@ namespace MVZ2.GameContent.Buffs.Enemies
             var centerY = point.y;
             var centerZ = point.z;
             return new Bounds(new Vector3(centerX, centerY, centerZ), new Vector3(sizeX, sizeY, sizeZ));
+        }
+        public override bool ValidateTarget(DetectionParams self, Entity target)
+        {
+            if (target.IsFloor())
+                return false;
+            return base.ValidateTarget(self, target);
         }
     }
 }
