@@ -3,9 +3,11 @@
 using MVZ2.GameContent.Buffs.Contraptions;
 using MVZ2.GameContent.Contraptions;
 using MVZ2.Vanilla.Audios;
+using MVZ2Logic.Grids;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
 using PVZEngine.Entities;
+using PVZEngine.Grids;
 using PVZEngine.Level;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
@@ -21,26 +23,49 @@ namespace MVZ2.GameContent.Stages
         {
             base.PostWave(level, wave);
             var rng = level.GetSpawnRNG();
-            for (int i = 0; i < 3; i++)
-            {
-                DropGiantStone(level, rng);
-            }
+            DropGiantStones(level, STONE_COUNT, rng);
         }
-        public static Entity? DropGiantStone(LevelEngine level, RandomGenerator rng)
+        public static void DropGiantStones(LevelEngine level, int count, RandomGenerator rng)
+        {
+            DropGiantStones(level, COLUMN_MIN, COLUMN_MAX, 0, level.GetMaxLaneCount() - 1, count, rng);
+        }
+        public static void DropGiantStones(LevelEngine level, int columnMin, int columnMax, int laneMin, int laneMax, int count, RandomGenerator rng)
         {
             level.PlaySound(VanillaSoundID.rockCrumble);
             level.ShakeScreen(3, 0, 30);
-            var column = rng.Next(COLUMN_MIN, COLUMN_MAX + 1);
-            var lane = rng.Next(0, level.GetMaxLaneCount());
-            var pos = level.GetEntityGridPosition(column, lane);
-            pos.y += 600f;
-            return level.Spawn(VanillaContraptionID.giantStone, pos, null)?.Let(stone =>
+
+            using var tilesItem = ListPool<LawnGrid>.Rent();
+            var tiles = tilesItem.Value;
+
+            for (int l = laneMin; l <= laneMax; l++)
             {
-                stone.AddBuff<ContraptionFallBuff>();
-            });
+                for (int c = columnMin; c <= columnMax; c++)
+                {
+                    var tile = level.GetGrid(c, l);
+                    if (tile == null)
+                        continue;
+                    tiles.Add(tile);
+                }
+            }
+
+            using var resultsItem = ListPool<LawnGrid>.Rent();
+            var results = resultsItem.Value;
+
+            tiles.TakeRandomOfTopOnes(t => t.CanSpawnEntity(VanillaContraptionID.giantStone) ? 1 : 0, count, rng, results, ascending: false);
+
+            foreach (var resultTile in results)
+            {
+                var pos = resultTile.GetEntityPosition();
+                pos.y += 600f;
+                var giantStone = level.Spawn(VanillaContraptionID.giantStone, pos, null);
+                if (giantStone != null)
+                {
+                    giantStone.AddBuff<ContraptionFallBuff>();
+                };
+            }
         }
         public const int COLUMN_MIN = 3;
         public const int COLUMN_MAX = 6;
-        public const int MIN_STONE_COUNT = 3;
+        public const int STONE_COUNT = 3;
     }
 }

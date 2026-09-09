@@ -201,10 +201,7 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static void MountainEarthQuake(LevelEngine level, RandomGenerator rng)
         {
-            for (int i = 0; i < 3; i++)
-            {
-                PrimalForceBehaviour.DropGiantStone(level, rng);
-            }
+            PrimalForceBehaviour.DropGiantStones(level, 3, rng);
         }
         public static bool IsBroken(Entity entity) => entity.GetBehaviourField<bool>(ID, FIELD_BROKEN);
         public static void SetBroken(Entity entity, bool value) => entity.SetBehaviourField(ID, FIELD_BROKEN, value);

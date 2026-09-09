@@ -42,7 +42,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
                     continue;
                 if (!CollisionCheckerBuff.IsEnter(other, buffSource))
                     continue;
-                target.TakeDamage(damage, new DamageEffectList(VanillaDamageEffects.IMPACT, VanillaDamageEffects.MUTE, VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN), contraption);
+                target.TakeDamage(damage, new DamageEffectList(VanillaDamageEffects.IMPACT, VanillaDamageEffects.THROWN, VanillaDamageEffects.MUTE, VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN), contraption);
             }
 
             if (contraption.IsOnGround)
