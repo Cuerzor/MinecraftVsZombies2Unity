@@ -49,8 +49,6 @@ namespace MVZ2.GameContent.Enemies
             var other = collision.Other;
             if (!CanBeCarried(other))
                 return;
-            if (!bubble.IsFriendly(other))
-                return;
             Carry(bubble, other);
         }
         public static bool CanBeCarried(Entity entity)
