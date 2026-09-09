@@ -318,7 +318,7 @@ public class TalkConvertGroup
             name = Name,
             background = new SpriteReference(TalkConverter.GetUnknownID()),
             music = TalkConverter.GetUnknownID(),
-            unlockConditions = new XMLConditionList(new XMLCondition
+            unlockConditions = new XMLConditionList(false, new XMLCondition
             {
                 Required = TalkConverter.GetUnknownIDArray()
             })

@@ -3,70 +3,112 @@
         <unlock>
             <condition required="mvz2:achievement.ghost_buster" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:enemy.ghost" />
+        </hiddenUntil>
     </achievement>
     <achievement id="double_trouble" name="活塞递推" description="使用冲击活塞将一个怪物推到另一个冲击活塞面前。" icon="mvz2:achievements/double_trouble">
         <unlock>
             <condition required="mvz2:achievement.double_trouble" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:contraption.punchton" />
+        </hiddenUntil>
     </achievement>
     <achievement id="rickroll_drown" name="永远不会让你湿亡" description="让一只没有船的僵尸走进水中并沉没。" icon="mvz2:achievements/rickroll_drown">
         <unlock>
             <condition required="mvz2:achievement.rickroll_drown" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:chapter.dream" />
+        </hiddenUntil>
     </achievement>
     <achievement id="return_to_sender" name="见鬼去吧" description="用一枚火焰弹杀死一只恶魂。" icon="mvz2:achievements/return_to_sender">
         <unlock>
             <condition required="mvz2:achievement.return_to_sender" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:enemy.ghast" />
+        </hiddenUntil>
     </achievement>
     <achievement id="mesmerised_matchup" name="倒反天罡" description="用友好的怪物杀死敌对的器械，或者让器械反杀怪物。" icon="mvz2:achievements/mesmerised_matchup">
         <unlock>
             <condition required="mvz2:achievement.mesmerised_matchup" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:enemy.mesmerizer mvz2:contraption.golden_apple" />
+        </hiddenUntil>
     </achievement>
     <achievement id="bonebreaker" name="碎骨者" description="摔死一只骷髅。（射箭的那个！）" icon="mvz2:achievements/bonebreaker">
         <unlock>
             <condition required="mvz2:achievement.bonebreaker" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:enemy.skeleton mvz2:contraption.thunder_drum" />
+        </hiddenUntil>
     </achievement>
     <achievement id="reforged" name="重铸版" description="使用黑曜石修复术修复一个铁砧。" icon="mvz2:achievements/reforged">
         <unlock>
             <condition required="mvz2:achievement.reforged" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:product.obsidian_first_aid" />
+        </hiddenUntil>
     </achievement>
     <achievement id="overdraw" name="往死里抽" description="使用欲望壶的技能抽到两张欲望壶。" icon="mvz2:achievements/overdraw">
         <unlock>
             <condition required="mvz2:achievement.overdraw" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:contraption.desire_pot" />
+        </hiddenUntil>
     </achievement>
     <achievement id="railgun" name="电磁炮" description="使用被闪电充能的TNT杀死一只炮手僵尸。" icon="mvz2:achievements/railgun">
         <unlock>
             <condition required="mvz2:achievement.railgun" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:enemy.cannoneer_zombie mvz2:contraption.tnt" />
+        </hiddenUntil>
     </achievement>
     <achievement id="midas_touchdown" name="金无足赤" description="在不使用重力的情况下，使一只无头骑士被地板杀死。" icon="mvz2:achievements/midas_touchdown">
         <unlock>
             <condition required="mvz2:achievement.midas_touchdown" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:enemy.dullahan mvz2:contraption.jeweled_pagoda" />
+        </hiddenUntil>
     </achievement>
     <achievement id="sculpting_strike" name="雕琢打击" description="用铁镐挖掉一个石像鬼。" icon="mvz2:achievements/sculpting_strike">
         <unlock>
             <condition required="mvz2:achievement.sculpting_strike" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:enemy.gargoyle mvz2:contraption.stone_eye" />
+        </hiddenUntil>
     </achievement>
     <achievement id="let_them_eat_cake" name="何不食肉糜" description="让皇帝僵尸吃下一块蛋糕。" icon="mvz2:achievements/let_them_eat_cake">
         <unlock>
             <condition required="mvz2:achievement.let_them_eat_cake" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:enemy.emperor_zombie mvz2:contraption.cursed_candle" />
+        </hiddenUntil>
     </achievement>
     <achievement id="gravity_padded" name="重力板化" description="用金苹果砸死一个金属怪物。" icon="mvz2:achievements/gravity_padded">
         <unlock>
             <condition required="mvz2:achievement.gravity_padded" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:contraption.golden_apple mvz2:contraption.ejector" />
+        </hiddenUntil>
     </achievement>
     <achievement id="cuckoo" name="鸠占鹊巢" description="让一个美西螈号驾驶员进入一个其他驾驶员召唤的机甲内。" icon="mvz2:achievements/cuckoo">
         <unlock>
             <condition required="mvz2:achievement.cuckoo" />
         </unlock>
+        <hiddenUntil>
+            <condition requiredGroups="mvz2:enemy.axolotl_suit_pilot" />
+        </hiddenUntil>
     </achievement>
 </achievements>

@@ -152,6 +152,66 @@
     <group id="contraption.brick_cannon"><conditions><condition required="mvz2:level.palace_5" /></conditions></group>
     <group id="contraption.command_block"><conditions><condition required="mvz2:level.mausoleum_5" /></conditions></group>
 
+
+    <!-- Prologue Enemies -->
+    <group id="enemy.zombie"><conditions always="true"/></group>
+    <group id="enemy.flag_zombie"><conditions always="true"/></group>
+    <group id="enemy.leather_capped_zombie"><conditions always="true"/></group>
+    <group id="enemy.iron_helmetted_zombie"><conditions always="true"/></group>
+    <group id="enemy.diamond_helmetted_zombie"><conditions><condition required="mvz2:level.palace_2" /></conditions></group>
+
+    <!-- Halloween Enemies -->
+    <group id="enemy.skeleton"><conditions><condition required="mvz2:level.halloween_1" /></conditions></group>
+    <group id="enemy.gargoyle"><conditions><condition required="mvz2:level.halloween_2" /></conditions></group>
+    <group id="enemy.ghost"><conditions><condition required="mvz2:level.halloween_3" /></conditions></group>
+    <group id="enemy.mummy"><conditions><condition required="mvz2:level.halloween_6" /></conditions></group>
+    <group id="enemy.necromancer"><conditions><condition required="mvz2:level.halloween_8" /></conditions></group>
+
+    <!-- Dream Enemies -->
+    <group id="enemy.spider"><conditions><condition required="mvz2:level.dream_1" /></conditions></group>
+    <group id="enemy.cave_spider"><conditions><condition required="mvz2:level.dream_3" /></conditions></group>
+    <group id="enemy.ghast"><conditions><condition required="mvz2:level.dream_6" /></conditions></group>
+    <group id="enemy.mother_terror"><conditions><condition required="mvz2:level.dream_8" /></conditions></group>
+    <group id="enemy.parasite_terror"><conditions><condition required="mvz2:level.dream_9" /></conditions></group>
+
+    <!-- Castle Enemies -->
+    <group id="enemy.mesmerizer"><conditions><condition required="mvz2:level.castle_1" /></conditions></group>
+    <group id="enemy.berserker"><conditions><condition required="mvz2:level.castle_3" /></conditions></group>
+    <group id="enemy.dullahan"><conditions><condition required="mvz2:level.castle_6" /></conditions></group>
+    <group id="enemy.hell_chariot"><conditions><condition required="mvz2:level.castle_8" /></conditions></group>
+    <group id="enemy.anubisand"><conditions><condition required="mvz2:level.castle_9" /></conditions></group>
+
+    <!-- Mausoleum Enemies -->
+    <group id="enemy.reflective_barrier_zombie"><conditions><condition required="mvz2:level.mausoleum_1" /></conditions></group>
+    <group id="enemy.talisman_zombie"><conditions><condition required="mvz2:level.mausoleum_3" /></conditions></group>
+    <group id="enemy.wicked_hermit_zombie"><conditions><condition required="mvz2:level.mausoleum_3" /></conditions></group>
+    <group id="enemy.shikaisen_zombie"><conditions><condition required="mvz2:level.mausoleum_6" /></conditions></group>
+    <group id="enemy.emperor_zombie"><conditions><condition required="mvz2:level.mausoleum_8" /></conditions></group>
+
+    <!-- Ship Enemies -->
+    <group id="enemy.undead_flying_object"><conditions><condition required="mvz2:level.ship_1" /></conditions></group>
+    <group id="enemy.zombie_cloud"><conditions><condition required="mvz2:level.ship_3" /></conditions></group>
+    <group id="enemy.cannoneer_zombie"><conditions><condition required="mvz2:level.ship_6" /></conditions></group>
+    <group id="enemy.cannonball_zombie"><conditions><condition required="mvz2:level.ship_7" /></conditions></group>
+    <group id="enemy.pop_captain"><conditions><condition required="mvz2:level.ship_8" /></conditions></group>
+
+    <!-- Palace Enemies -->
+    <group id="enemy.shadow_cell"><conditions><condition required="mvz2:level.palace_1" /></conditions></group>
+    <group id="enemy.skeleton_statue"><conditions><condition required="mvz2:level.palace_3" /></conditions></group>
+    <group id="enemy.hacker"><conditions><condition required="mvz2:level.palace_6" /></conditions></group>
+    <group id="enemy.zombie_cat"><conditions><condition required="mvz2:level.palace_8" /></conditions></group>
+    <group id="enemy.wisp_fly"><conditions><condition required="mvz2:level.palace_9" /></conditions></group>
+
+    <!-- Mountain Enemies -->
+    <group id="enemy.bubble_gun_gurgle"><conditions><condition required="mvz2:level.mountain_1" /></conditions></group>
+    <group id="enemy.hookshot_drowned"><conditions><condition required="mvz2:level.mountain_3" /></conditions></group>
+    <group id="enemy.zombinator"><conditions><condition required="mvz2:level.mountain_7" /></conditions></group>
+    <group id="enemy.axolotl_suit"><conditions><condition required="mvz2:level.mountain_8" /></conditions></group>
+    <group id="enemy.axolotl_suit_pilot"><conditions><condition required="mvz2:level.mountain_9" /></conditions></group>
+    
+    <!-- Store -->
+    <group id="product.obsidian_first_aid"><conditions><condition required="mvz2:level.mausoleum_5" /></conditions></group>
+
     <!-- Ship Artifacts -->
     <group id="artifact.cow_horn"><conditions><condition required="mvz2:artifact.cow_horn" /></conditions></group>
 

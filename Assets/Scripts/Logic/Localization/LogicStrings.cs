@@ -193,6 +193,8 @@ namespace MVZ2Logic.Localization
 
         #region 成就
         public const string CONTEXT_ACHIEVEMENT = "achievement";
+        [TranslateMsg("成就说明-未知", CONTEXT_ACHIEVEMENT)]
+        public const string UNKNOWN_ACHIEVEMENT_DESCRIPTION = "？？？";
         #endregion
 
         #region 制作人员名单

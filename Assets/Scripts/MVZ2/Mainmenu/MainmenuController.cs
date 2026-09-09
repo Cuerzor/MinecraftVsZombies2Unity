@@ -805,15 +805,17 @@ namespace MVZ2.Mainmenu
         #region 成就
         private void ReloadAchievements()
         {
-            var nsp = main.BuiltinNamespace;
-            var metas = main.ResourceManager.GetModAchievementMetas(nsp);
+            var achievementsID = main.ResourceManager.GetAllAchievements();
             AchievementEntryViewData[] viewDatas;
-            if (metas != null)
+            if (achievementsID != null)
             {
-                viewDatas = new AchievementEntryViewData[metas.Length];
-                for (int i = 0; i < viewDatas.Length; i++)
+                var viewDataList = new List<AchievementEntryViewData>();
+                for (int i = 0; i < achievementsID.Length; i++)
                 {
-                    var meta = metas[i];
+                    var id = achievementsID[i];
+                    if (!NamespaceID.IsValid(id))
+                        continue;
+                    var meta = main.ResourceManager.GetAchievementMeta(id);
                     if (meta == null)
                         continue;
                     var iconRef = meta.Icon;
@@ -821,17 +823,27 @@ namespace MVZ2.Mainmenu
                     var metaDescription = meta.Description;
 
                     var icon = main.GetSprite(iconRef);
+                    var earned = meta.Unlock.IsNullOrMeetsConditions(main.SaveManager);
+                    var hidden = meta.HiddenUntil != null && !meta.HiddenUntil.MeetsConditions(main.SaveManager);
                     var name = main.LanguageManager._p(LogicStrings.CONTEXT_ACHIEVEMENT, metaName);
-                    var earned = main.SaveManager.IsAchievementEarned(new NamespaceID(nsp, meta.ID));
-                    var description = main.LanguageManager._p(LogicStrings.CONTEXT_ACHIEVEMENT, metaDescription);
-                    viewDatas[i] = new AchievementEntryViewData()
+                    var description = string.Empty;
+                    if (hidden && !earned)
+                    {
+                        description = main.LanguageManager._p(LogicStrings.CONTEXT_ACHIEVEMENT, LogicStrings.UNKNOWN_ACHIEVEMENT_DESCRIPTION);
+                    }
+                    else
+                    {
+                        description = main.LanguageManager._p(LogicStrings.CONTEXT_ACHIEVEMENT, metaDescription);
+                    }
+                    viewDataList.Add(new AchievementEntryViewData()
                     {
                         icon = icon,
                         name = name,
                         earned = earned,
                         description = description
-                    };
+                    });
                 }
+                viewDatas = viewDataList.ToArray();
             }
             else
             {

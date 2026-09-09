@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-08 07:49+0800\n"
-"PO-Revision-Date: 2026-09-08 20:07+0800\n"
+"POT-Creation-Date: 2026-09-09 01:23+0800\n"
+"PO-Revision-Date: 2026-09-09 13:24+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1755,46 +1755,46 @@ msgstr "Getting Sponsors..."
 msgid "FPS: {0}"
 msgstr "FPS: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:860
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:872
 msgid "无法删除用户：{0}"
 msgstr "Cannot delete user: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:862
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:874
 msgid "无法切换至用户：{0}"
 msgstr "Cannot switch to user: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:864
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:876
 msgid "没有其他有效的用户可供切换。"
 msgstr "There are no other available users to switch."
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:866
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:878
 msgid "确认要退出吗？"
 msgstr "Quit?"
 
 # 语言包导出失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:868
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:880
 msgid "导出存档失败。"
 msgstr "Failed to export the user."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:870
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:882
 msgid "导入存档失败。"
 msgstr "Failed to import the user."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:872
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:884
 msgid "导入存档失败，文件可能已损坏。"
 msgstr "Failed to import the user. The file may corrupt."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:874
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:886
 msgid "导入存档失败，游戏中存在同名用户，但正在导入的存档不可重命名。"
 msgstr ""
 "Failed to import the user. A user with identical name exists, but the user "
 "to be imported cannot be renamed."
 
 # 语言包导出成功的提示，{0}为路径
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:876
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:888
 msgid "存档已导出至{0}。"
 msgstr "The user has been successfully exported to {0}."
 
@@ -3070,51 +3070,56 @@ msgctxt "music.name"
 msgid "无"
 msgstr "None"
 
-#: Scripts\Logic\Localization\LogicStrings.cs:204
+#: Scripts\Logic\Localization\LogicStrings.cs:196
+msgctxt "achievement"
+msgid "？？？"
+msgstr "???"
+
+#: Scripts\Logic\Localization\LogicStrings.cs:206
 msgid "挖掉器械"
 msgstr "Dig a contraption"
 
-#: Scripts\Logic\Localization\LogicStrings.cs:206
+#: Scripts\Logic\Localization\LogicStrings.cs:208
 msgid "触发器械"
 msgstr "Trigger a contraption"
 
 # 固有蓝图的提示
-#: Scripts\Logic\Localization\LogicStrings.cs:208
+#: Scripts\Logic\Localization\LogicStrings.cs:210
 msgid "固有"
 msgstr "Innate"
 
-#: Scripts\Logic\Localization\LogicStrings.cs:210
+#: Scripts\Logic\Localization\LogicStrings.cs:212
 msgid "不推荐在这关使用"
 msgstr "Not recommended for this level"
 
 # 无法携带提示
-#: Scripts\Logic\Localization\LogicStrings.cs:212
+#: Scripts\Logic\Localization\LogicStrings.cs:214
 msgid "无法模仿此器械"
 msgstr "Cannot imitate this contraption"
 
 # 命令方块蓝图名，{0}为原名称
-#: Scripts\Logic\Localization\LogicStrings.cs:214
+#: Scripts\Logic\Localization\LogicStrings.cs:216
 msgid "[命令方块]{0}"
 msgstr "[Command Block] {0}"
 
-#: Scripts\Logic\Localization\LogicStrings.cs:219
+#: Scripts\Logic\Localization\LogicStrings.cs:221
 msgid "用户名不能为空"
 msgstr "Username cannot be empty"
 
-#: Scripts\Logic\Localization\LogicStrings.cs:221
+#: Scripts\Logic\Localization\LogicStrings.cs:223
 msgid "已经存在该用户名"
 msgstr "This username already exists"
 
 # 输入名称对话框的错误信息
-#: Scripts\Logic\Localization\LogicStrings.cs:223
+#: Scripts\Logic\Localization\LogicStrings.cs:225
 msgid "无法重命名为该用户名"
 msgstr "Cannot rename to this name"
 
-#: Scripts\Logic\Localization\LogicStrings.cs:225
+#: Scripts\Logic\Localization\LogicStrings.cs:227
 msgid "第一次游戏必须输入用户名"
 msgstr "Username must be set when starting the game for the first time"
 
-#: Scripts\Logic\Localization\LogicStrings.cs:227
+#: Scripts\Logic\Localization\LogicStrings.cs:229
 msgid ""
 "确认删除用户{0}吗？\n"
 "该用户所有的数据都将被删除！"
@@ -3123,11 +3128,11 @@ msgstr ""
 "This user's data will be all deleted!"
 
 # 重命名特殊用户时的警告
-#: Scripts\Logic\Localization\LogicStrings.cs:229
+#: Scripts\Logic\Localization\LogicStrings.cs:231
 msgid "你无法重命名该用户"
 msgstr "Cannot rename this user"
 
-#: Scripts\Logic\Localization\LogicStrings.cs:250
+#: Scripts\Logic\Localization\LogicStrings.cs:252
 msgctxt "advice"
 msgid "点击以继续"
 msgstr "Click to continue"

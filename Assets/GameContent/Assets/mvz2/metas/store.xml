@@ -126,7 +126,7 @@
         </product>
         <product id="obsidian_first_aid" sprite="mvz2:products/obsidian_first_aid">
             <unlock>
-                <condition required="mvz2:level.mausoleum_5" />
+                <condition requiredGroups="mvz2:product.obsidian_first_aid" />
             </unlock>
             <talks>
                 <talk character="mvz2:crazy_villager">黑曜石修复术！可以在防御性器械上再放一个同样的器械，以此来完全修复它！</talk>

@@ -23,6 +23,7 @@
 - Adjusted the texture of the tiles destroyed by Nukes, to enhance their visibility against dark backgrounds.
 - Adjusted the textures of Stone Shield and Emperor Zombie.
 - The cursor for Force Pad's evocation and Skyward Beacon now has a unique sprite.
+- Achievement descriptions are now hidden until the prerequisites for unlocking the achievement have been met (such as not having the means to complete the achievement).
 
 ### Balance
 - Adventure

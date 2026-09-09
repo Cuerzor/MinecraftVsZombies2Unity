@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
+using MVZ2.IO;
 using MVZ2Logic.Conditions;
 using MVZ2Logic.Games;
 using PVZEngine;
@@ -11,13 +12,18 @@ namespace MVZ2.Metas
 {
     public class XMLConditionList : IConditionList
     {
-        public XMLConditionList(params XMLCondition[] conditions)
+        public XMLConditionList(bool always = false, params XMLCondition[] conditions)
         {
+            Always = always;
             Conditions = conditions;
         }
         public XmlNode ToXmlNode(string name, XmlDocument document)
         {
             XmlNode node = document.CreateElement(name);
+            if (Always)
+            {
+                node.CreateAttribute("always", Always.ToString());
+            }
             foreach (var condition in Conditions)
             {
                 var conditionNode = condition.ToXmlNode("condition", document);
@@ -28,6 +34,7 @@ namespace MVZ2.Metas
         public static XMLConditionList FromXmlNode(XmlNode node, string defaultNsp)
         {
             List<XMLCondition> conditions = new List<XMLCondition>();
+            bool always = node.GetAttributeBool("always") ?? false;
             for (int i = 0; i < node.ChildNodes.Count; i++)
             {
                 var childNode = node.ChildNodes[i];
@@ -36,21 +43,24 @@ namespace MVZ2.Metas
                     conditions.Add(XMLCondition.FromXmlNode(childNode, defaultNsp));
                 }
             }
-            return new XMLConditionList(conditions.ToArray());
+            return new XMLConditionList(always, conditions.ToArray());
         }
 
         public static XMLConditionList FromSingle(NamespaceID id)
         {
-            return new XMLConditionList(XMLCondition.FromSingle(id));
+            return new XMLConditionList(false, XMLCondition.FromSingle(id));
         }
         public static XMLConditionList FromMultiple(NamespaceID[] ids)
         {
-            return new XMLConditionList(XMLCondition.FromMultiple(ids));
+            return new XMLConditionList(false, XMLCondition.FromMultiple(ids));
         }
         public bool MeetsConditions(IGlobalSaveData save)
         {
+            if (Always)
+                return true;
             return Conditions.Any(c => c.MeetsCondition(save));
         }
         public XMLCondition[] Conditions { get; private set; }
+        public bool Always { get;  private set; }
     }
 }
