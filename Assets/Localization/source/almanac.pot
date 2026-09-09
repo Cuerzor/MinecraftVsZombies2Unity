@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-09 11:50+0800\n"
+"POT-Creation-Date: 2026-09-09 02:00+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5425,6 +5425,29 @@ msgid ""
 "曾经热闹非凡的旧地狱街道，如今也因为异变的原因变得冷清了许多。\n"
 "\n"
 "这里如果发生地震……好吧。"
+msgstr ""
+
+#. Name for misc mvz2:youkai_mountain
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "妖怪之山"
+msgstr ""
+
+#. Header for misc mvz2:youkai_mountain
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "幻想乡中最具代表性的一座古老而又巨大的山。"
+msgstr ""
+
+#. Flavor for misc mvz2:youkai_mountain
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"妖怪之山是一座火山，早在人类出现之前，此地便已有众多妖怪居住。\n"
+"千年之前，妖怪之山经历了最后一次喷发，之后它再也没有活动过。随着时间流逝，这里发生了很多变迁。到现在为止，这里的居民有河童、天狗和一些神明。\n"
+"\n"
+"现在是深秋时节，落叶遍地。不过好像有一片奇特的魔法叶子，始终挂在一棵枯树上，不愿落下。\n"
+"仿佛在等待它真正的主人。"
 msgstr ""
 
 #. Name for almanac group mvz2:starshards

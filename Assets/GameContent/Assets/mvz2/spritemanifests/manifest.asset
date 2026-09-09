@@ -529,6 +529,9 @@ MonoBehaviour:
   - name: misc/memory_with_unknown_person
     texture: {fileID: 2800000, guid: bb754e26dee4d5441be3bad97415c324, type: 3}
     tags: []
+  - name: misc/mountain
+    texture: {fileID: 2800000, guid: b281ded5b7339de43a309d71320b5309, type: 3}
+    tags: []
   - name: misc/murder
     texture: {fileID: 2800000, guid: 944683e1f0da086409759e5b63d9d066, type: 3}
     tags: []
@@ -4395,6 +4398,10 @@ MonoBehaviour:
   - name: misc/memory_with_unknown_person
     index: 0
     sprite: {fileID: 21300000, guid: bb754e26dee4d5441be3bad97415c324, type: 3}
+    tags: []
+  - name: misc/mountain
+    index: 0
+    sprite: {fileID: 21300000, guid: b281ded5b7339de43a309d71320b5309, type: 3}
     tags: []
   - name: misc/murder
     index: 0

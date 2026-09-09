@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-09 11:50+0800\n"
-"PO-Revision-Date: 2026-09-09 11:52+0800\n"
+"POT-Creation-Date: 2026-09-09 02:00+0800\n"
+"PO-Revision-Date: 2026-09-09 15:25+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -6857,6 +6857,36 @@ msgstr ""
 "The once bustling streets of Former Capital had become much quieter due to the incident.\n"
 "\n"
 "If an earthquake were to occur here… well…"
+
+#. Name for misc mvz2:youkai_mountain
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "妖怪之山"
+msgstr "Youkai Mountain"
+
+#. Header for misc mvz2:youkai_mountain
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "幻想乡中最具代表性的一座古老而又巨大的山。"
+msgstr "Gensokyo's most iconic, ancient, and largest mountain."
+
+#. Flavor for misc mvz2:youkai_mountain
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"妖怪之山是一座火山，早在人类出现之前，此地便已有众多妖怪居住。\n"
+"千年之前，妖怪之山经历了最后一次喷发，之后它再也没有活动过。随着时间流逝，这里发生了很多变迁。到现在为止，这里的居民有河童、天狗和一些"
+"神明。\n"
+"\n"
+"现在是深秋时节，落叶遍地。不过好像有一片奇特的魔法叶子，始终挂在一棵枯树上，不愿落下。\n"
+"仿佛在等待它真正的主人。"
+msgstr ""
+"Youkai Mountain is also a volcano inhabited by numerous youkai long before the time of humanity.\n"
+"Thousands of years ago, Youkai Mountain erupted for its final time and has remained dormant ever since. As time goes by, many changes "
+"have taken place here. Up until now, its inhabitants include kappa, tengu, and various gods.\n"
+"\n"
+"It's now late autumn and fallen leaves blanket the ground. However, there seems to be a peculiar magical leaf that still remains "
+"hanging on a withered tree, refusing to fall, as if waiting for its true owner."
 
 #. Name for almanac group mvz2:starshards
 #: Almanac meta file

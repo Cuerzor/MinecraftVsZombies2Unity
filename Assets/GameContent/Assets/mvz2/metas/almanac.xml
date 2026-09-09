@@ -3726,6 +3726,22 @@
                     <p>这里如果发生地震……好吧。</p>
                 </flavor>
             </entry>
+            <entry id="mvz2:youkai_mountain" name="妖怪之山" >
+                <unlock>
+                    <condition required="mvz2:level.mountain_1"/>
+                </unlock>
+                <picture sprite="mvz2:misc/mountain"/>
+                <header>
+                    <p>幻想乡中最具代表性的一座古老而又巨大的山。</p>
+                </header>
+                <flavor>
+                    <p>妖怪之山是一座火山，早在人类出现之前，此地便已有众多妖怪居住。</p>
+                    <p>千年之前，妖怪之山经历了最后一次喷发，之后它再也没有活动过。随着时间流逝，这里发生了很多变迁。到现在为止，这里的居民有河童、天狗和一些神明。</p>
+                    <p/>
+                    <p>现在是深秋时节，落叶遍地。不过好像有一片奇特的魔法叶子，始终挂在一棵枯树上，不愿落下。</p>
+                    <p>仿佛在等待它真正的主人。</p>
+                </flavor>
+            </entry>
         </group>
         <!-- Starshards -->
         <group id="mvz2:starshards" name="星之碎片" order="500">
