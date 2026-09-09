@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-07 03:27+0800\n"
+"POT-Creation-Date: 2026-09-09 11:50+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2018,7 +2018,7 @@ msgid ""
 "<tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />：<color=red><var local=\"flesh_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:leather\" />：<color=red><var local=\"leather_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:grass\" />：<color=red><var local=\"grass_density\"/>%</color>\n"
-"<tag id=\"mvz2:shell\" enum=\"mvz2:ice\" />：<color=red><var local=\"ice_density\"/>%</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:ice\" />：<color=red><var local=\"ice_density\"/>%（砸碎时发射冰锥）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:wood\" />：<color=red><var local=\"wood_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:shadow\" />：<color=red><var local=\"shadow_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:cloud\" />：<color=red><var local=\"cloud_density\"/>%（震飞周围敌怪）</color>\n"
@@ -3142,7 +3142,7 @@ msgstr ""
 #. Header for enemies mvz2:bubble_gun_gurgle
 #: Almanac meta file
 msgctxt "enemies.description"
-msgid "泡泡枪溺尸会发射<tag id=\"mvz2:shell\" enum=\"mvz2:bubble\" />泡泡，泡泡会裹住碰到的<tag id=\"mvz2:mass\" enum=\"0\" />以下的僵尸，并携带它们。"
+msgid "泡泡枪小鬼会发射<tag id=\"mvz2:shell\" enum=\"mvz2:bubble\" />泡泡，泡泡会裹住碰到的<tag id=\"mvz2:mass\" enum=\"0\" />以下的僵尸，并携带它们。"
 msgstr ""
 
 #. Properties for enemies mvz2:bubble_gun_gurgle

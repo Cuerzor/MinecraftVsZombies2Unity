@@ -2057,7 +2057,7 @@
                 <variable name="fire_seconds">6</variable>
             </variables>
             <header>
-                <p>泡泡枪溺尸会发射<![CDATA[<tag id="mvz2:shell" enum="mvz2:bubble" />]]>泡泡，泡泡会裹住碰到的<![CDATA[<tag id="mvz2:mass" enum="0" />]]>以下的僵尸，并携带它们。</p>
+                <p>泡泡枪小鬼会发射<![CDATA[<tag id="mvz2:shell" enum="mvz2:bubble" />]]>泡泡，泡泡会裹住碰到的<![CDATA[<tag id="mvz2:mass" enum="0" />]]>以下的僵尸，并携带它们。</p>
             </header>
             <properties>
                 <p>生命：<![CDATA[<color=red><var id="mvz2:entity_health" /></color>]]></p>
