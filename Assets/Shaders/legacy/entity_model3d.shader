@@ -4,10 +4,10 @@ Shader "MinecraftVSZombies2/Legacy/Model"
     {
         _MainTex ("Diffuse", 2D) = "white" {}
         _Color ("Tint", Color) = (1,1,1,1)
-        _ColorOffset ("Color Offset", Color) = (1,1,1,1)
+        _ColorOffset ("Color Offset", Color) = (0,0,0,0)
 		[Toggle]
 		_GrayscaleMaterial("Grayscale", Int) = 0
-		_GrayscaleFactor("Grayscale Factor", Vector) = (0.5,0.5,0.5,0)
+		_GrayscaleFactor("Grayscale Factor", Vector) = (0.598, 1.174, 0.228,0)
         
 		[Header(Lighting)]
 		[Toggle(LIT)]
@@ -31,6 +31,14 @@ Shader "MinecraftVSZombies2/Legacy/Model"
         { 
             "Queue"="Transparent"
         }
+        Stencil
+        {
+            Ref 1
+            Comp NotEqual
+            Pass Keep
+            Fail Keep
+            ZFail Keep
+        }
         Pass 
         {
             Tags 
@@ -38,11 +46,16 @@ Shader "MinecraftVSZombies2/Legacy/Model"
                 "RenderType"="TransparentCutout" 
             }
             ZWrite On
+            Blend Zero One
             
             HLSLPROGRAM
             #include "UnityCG.cginc"
             #pragma vertex vert
             #pragma fragment frag
+            #include "../hlsl/level.hlsl"
+#if DEPTH_TEST
+            #include "../hlsl/depth_test.hlsl"
+#endif
             struct a2v
             {
                 float4 vertex : POSITION;
@@ -53,6 +66,8 @@ Shader "MinecraftVSZombies2/Legacy/Model"
             {
                 float4 vertex : SV_POSITION;
                 float2 uv : TEXCOORD0;
+                float4 world : TEXCOORD1;
+                float2 levelUV : TEXCOORD2;
             };
             sampler2D _MainTex;
             float4 _MainTex_ST;
@@ -63,6 +78,8 @@ Shader "MinecraftVSZombies2/Legacy/Model"
                 v2f OUT;
                 OUT.uv = TRANSFORM_TEX(IN.uv, _MainTex);
                 OUT.vertex = UnityObjectToClipPos(IN.vertex);
+                OUT.world = mul(unity_ObjectToWorld, IN.vertex);
+                OUT.levelUV = GetLevelUV(IN.vertex);
                 return OUT;
             }
 
@@ -70,6 +87,9 @@ Shader "MinecraftVSZombies2/Legacy/Model"
             {
                 half4 baseColor = tex2D(_MainTex, IN.uv) * _Color;
                 clip(baseColor.a - 1);
+#if DEPTH_TEST
+                ClipDepth(IN.world, IN.levelUV);
+#endif
                 return half4(0,0,0,0);
             }
             ENDHLSL
@@ -93,6 +113,7 @@ Shader "MinecraftVSZombies2/Legacy/Model"
             #pragma vertex EntityVert
             #pragma fragment EntityFrag
             #pragma multi_compile LIT _
+            #pragma multi_compile DEPTH_TEST _
             ENDHLSL
         }
     }

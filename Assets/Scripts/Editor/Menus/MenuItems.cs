@@ -101,6 +101,11 @@ namespace MVZ2.Editor
         {
             TalkMenu.ConvertXMLToPlainText();
         }
+        [MenuItem("MVZ2/Generate Depth Texture for Current Level", priority = 7000, secondaryPriority = 0)]
+        public static void GenerateDepthTextureForCurrentLevel()
+        {
+            DepthTextureMenu.GenerateDepthTextureForCurrentLevel();
+        }
         [MenuItem("MVZ2/Save Data/Decompress", priority = 10000, secondaryPriority = 0)]
         public static void DecompressSaveData()
         {
