@@ -731,37 +731,53 @@ namespace MVZ2.Vanilla.Entities
             var grid = entity.GetGrid();
             return grid == null || (!grid.IsWater() && !grid.IsCloud());
         }
-        public static void PlaySplashEffect(this Entity entity)
+        public static Entity? PlayAirSplashEffect(this Entity entity)
         {
             var size = entity.GetScaledSize();
             var scale = Mathf.Clamp(size.x * size.y * size.z / SPLASH_SIZE_UNIT, 1, 5);
-            entity.PlaySplashEffect(scale * Vector3.one);
+            return entity.PlayAirSplashEffect(scale * Vector3.one);
         }
-        public static void PlaySplashEffect(this Entity entity, Vector3 scale)
+        public static Entity? PlayAirSplashEffect(this Entity entity, Vector3 scale)
         {
-            var level = entity.Level;
-            entity.PlaySplashEffect(scale, level.GetWaterColor());
+            return entity.PlaySplashEffect(scale, new Color(1, 1, 1, 0.5f));
         }
-        public static void PlayAirSplashEffect(this Entity entity)
+        public static Entity? PlaySplashEffectAt(this Entity entity, Vector3 position)
         {
             var size = entity.GetScaledSize();
             var scale = Mathf.Clamp(size.x * size.y * size.z / SPLASH_SIZE_UNIT, 1, 5);
-            entity.PlayAirSplashEffect(scale * Vector3.one);
+            return entity.PlaySplashEffectAt(position, scale * Vector3.one);
         }
-        public static void PlayAirSplashEffect(this Entity entity, Vector3 scale)
+        public static Entity? PlaySplashEffectAt(this Entity entity, Vector3 position, Vector3 scale)
         {
-            entity.PlaySplashEffect(scale, new Color(1, 1, 1, 0.5f));
+            return entity.PlaySplashEffectAt(position, scale, entity.Level.GetWaterColor());
         }
-        public static void PlaySplashEffect(this Entity entity, Vector3 scale, Color color)
+        public static Entity? PlaySplashEffectAt(this Entity entity, Vector3 position, Vector3 scale, Color color)
+        {
+            var splash = entity.Spawn(VanillaEffectID.splashParticles, position);
+            if (splash != null)
+            {
+                splash.SetTint(color);
+                splash.SetDisplayScale(scale);
+            }
+            ;
+            return splash;
+        }
+        public static Entity? PlaySplashEffect(this Entity entity)
+        {
+            var size = entity.GetScaledSize();
+            var scale = Mathf.Clamp(size.x * size.y * size.z / SPLASH_SIZE_UNIT, 1, 5);
+            return entity.PlaySplashEffect(scale * Vector3.one);
+        }
+        public static Entity? PlaySplashEffect(this Entity entity, Vector3 scale)
         {
             var level = entity.Level;
+            return entity.PlaySplashEffect(scale, level.GetWaterColor());
+        }
+        public static Entity? PlaySplashEffect(this Entity entity, Vector3 scale, Color color)
+        {
             var pos = entity.Position;
             pos.y = entity.GetGroundY();
-            level.Spawn(VanillaEffectID.splashParticles, pos, entity)?.Let(e =>
-            {
-                e.SetTint(color);
-                e.SetDisplayScale(scale);
-            });
+            return entity.PlaySplashEffectAt(pos, scale, color);
         }
 
         public static void PlayAirSplashSound(this Entity entity)

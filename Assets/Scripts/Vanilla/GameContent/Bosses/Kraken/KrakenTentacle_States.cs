@@ -41,7 +41,7 @@ namespace MVZ2.GameContent.Bosses
                 AddState(new IdleState());
                 AddState(new AppearState());
                 AddState(new WeaponState());
-                //AddState(new SmashState());
+                AddState(new SmashState());
                 AddState(new DisappearState());
                 AddState(new StunnedState());
                 AddState(new DeathState());
@@ -71,9 +71,9 @@ namespace MVZ2.GameContent.Bosses
                     case ACTION_SUMMON:
                         GetPossibleUseSummonTiles(entity, resultTiles);
                         break;
-                        //case ACTION_SMASH:
-                        //    GetPossibleUseSmashTiles(entity, resultTiles);
-                        //    break;
+                    case ACTION_SMASH:
+                        GetPossibleUseSmashTiles(entity, resultTiles);
+                        break;
                 }
                 if (resultTiles.Count > 0)
                 {
@@ -257,6 +257,47 @@ namespace MVZ2.GameContent.Bosses
         }
         #endregion
 
+        #region 攻击动作判定（砸击）
+        public static void GetPossibleUseSmashTiles(Entity entity, List<LawnGrid> results)
+        {
+            var level = entity.Level;
+            int maxColumn = entity.Level.GetMaxColumnCount();
+            var maxLane = entity.Level.GetMaxLaneCount();
+            int maxCount = 0;
+            for (int lane = 0; lane < maxLane; lane++)
+            {
+                for (int x = 0; x < maxColumn; x++)
+                {
+                    int column = entity.GetMirroredColumn(x, false);
+                    if (!CanAppearAtTile(entity, column, lane))
+                        continue;
+                    int count = GetUseSmashTargetCountAtTile(entity, column, lane);
+                    if (count < maxCount)
+                        continue;
+                    if (count > maxCount)
+                    {
+                        maxCount = count;
+                        results.Clear();
+                    }
+                    var grid = level.GetGrid(column, lane);
+                    if (grid != null)
+                    {
+                        results.Add(grid);
+                    }
+                }
+            }
+        }
+        public static int GetUseSmashTargetCountAtTile(Entity entity, int column, int lane)
+        {
+            DetectionParams detectParams = new DetectionParams(entity, entity.GetFaction(), smashDetector.GetDetectionBoundsAtTile(entity, column, lane));
+            return smashDetector.DetectEntityCount(detectParams);
+        }
+        public static bool CanUseSmash(Entity entity)
+        {
+            return smashDetector.DetectExists(entity);
+        }
+        #endregion
+
         #region 隐藏
         private class HiddenState : EntityStateMachineState
         {
@@ -310,8 +351,12 @@ namespace MVZ2.GameContent.Bosses
             var grid = entity.GetGrid();
             if (grid == null)
                 return;
+            DestroyContraptionsInTile(entity, grid);
+        }
+        public static void DestroyContraptionsInTile(Entity entity, LawnGrid tile)
+        {
             var damageEffects = new DamageEffectList(VanillaDamageEffects.INSTA_KILL);
-            using var gridEntities = grid.GetEntitiesDisposeable();
+            using var gridEntities = tile.GetEntitiesDisposeable();
             foreach (var ent in gridEntities.Value)
             {
                 ent.Die(damageEffects, entity);
@@ -441,6 +486,13 @@ namespace MVZ2.GameContent.Bosses
                             if (CanUseSummon(entity))
                             {
                                 stateMachine.StartState(entity, STATE_WEAPON);
+                                success = true;
+                            }
+                            break;
+                        case ACTION_SMASH:
+                            if (CanUseSmash(entity))
+                            {
+                                stateMachine.StartState(entity, STATE_SMASH);
                                 success = true;
                             }
                             break;
@@ -624,6 +676,85 @@ namespace MVZ2.GameContent.Bosses
         }
         #endregion
 
+        #region 砸击
+        private class SmashState : EntityStateMachineState
+        {
+            public SmashState() : base(STATE_SMASH, ANIMATION_STATE_SMASH) { }
+            public override void OnEnter(EntityStateMachine stateMachine, Entity entity)
+            {
+                base.OnEnter(stateMachine, entity);
+                var substateTimer = stateMachine.GetSubStateTimer(entity);
+                substateTimer.ResetSeconds(2 / 3f);
+            }
+            public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
+            {
+                base.OnUpdateAI(stateMachine, entity);
+                var substateTimer = stateMachine.GetSubStateTimer(entity);
+                substateTimer.Run(stateMachine.GetSpeed(entity));
+                var substate = stateMachine.GetSubState(entity);
+                switch (substate)
+                {
+                    case SUBSTATE_SWING:
+                        if (substateTimer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_SMASHED);
+                            substateTimer.ResetSeconds(1 / 12f);
+                            Smash(entity);
+                            SetInactive(entity, true);
+                        }
+                        break;
+                    case SUBSTATE_SMASHED:
+                        SetShadowAlpha(entity, substateTimer.GetTimeoutPercentage());
+                        if (substateTimer.Expired)
+                        {
+                            stateMachine.StartState(entity, STATE_HIDDEN);
+                        }
+                        break;
+                }
+            }
+            public void Smash(Entity entity)
+            {
+                var point = entity.Position + entity.GetFacingDirection() * (SMASH_RANGE * 0.5f);
+                if (entity.Level.IsWaterAt(point.x, point.z))
+                {
+                    entity.PlaySplashEffectAt(point);
+                    entity.PlaySound(VanillaSoundID.splashBig);
+                }
+                else if (entity.Level.IsLandAt(point.x, point.z))
+                {
+                    entity.PlaySound(VanillaSoundID.anvil);
+                    entity.Level.ShakeScreen(10, 0, 15);
+                }
+
+                using var collidersItem = ListPool<IEntityCollider>.Rent();
+                var colliders = collidersItem.Value;
+                smashDetector.DetectMultiple(entity, colliders);
+
+                var smashEffects = new DamageEffectList(VanillaDamageEffects.IMPACT, VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN);
+                var instakillEffects = new DamageEffectList(VanillaDamageEffects.INSTA_KILL);
+
+                foreach (var collider in colliders)
+                {
+                    if (collider.Entity.Type == EntityTypes.PLANT || collider.Entity.Type == EntityTypes.OBSTACLE)
+                    {
+                        if (collider.IsForMain())
+                        {
+                            collider.Entity.Die(instakillEffects, entity);
+                            collider.Entity.PlaySound(VanillaSoundID.smash);
+                        }
+                    }
+                    else
+                    {
+                        collider.TakeDamage(entity.GetDamage() * SMASH_DAMAGE_MULTIPLIER, smashEffects, entity);
+                        collider.Entity.PlaySound(VanillaSoundID.punch);
+                    }
+                }
+            }
+            public const int SUBSTATE_SWING = 0;
+            public const int SUBSTATE_SMASHED = 1;
+        }
+        #endregion
+
         #region 眩晕
         public static void Stun(Entity chest, float seconds)
         {
@@ -694,18 +825,25 @@ namespace MVZ2.GameContent.Bosses
         public const float CANNON_MISSILE_EXPLODE_RADIUS = 120f;
         public const float LASER_DAMAGE_MULTIPLIER = 1;
         public const int SUMMON_MIN_COLUMN = 5;
+        public const float SMASH_RANGE = 200f;
+        public const float SMASH_DAMAGE_MULTIPLIER = 18f;
 
         public const float DRILL_DAMAGE_MULTIPLIER = 18f;
         public static readonly Vector3 GATLIN_PROJECTILE_OFFSET = new Vector3(70, 35, 0);
         public static readonly Vector3 CANNON_MISSILE_OFFSET = new Vector3(70, 27, 0);
         public static readonly Vector3 LASER_OFFSET = new Vector3(70, 27, 0);
         public static readonly Vector3 SUMMON_OFFSET = new Vector3(40, 0, 0);
+        public static readonly Vector3 SMASH_OFFSET = new Vector3(0, 0, 0);
         private static readonly EntityStateMachine stateMachine = new KrakenTentacleStateMachine();
         private static readonly KrakenTentaclePredicator krakenTentaclePredicator = new KrakenTentaclePredicator();
         private static readonly KrakenPredicator krakenPredicator = new KrakenPredicator();
         private static readonly KrakenTentacleDetector gatlinDetector = new KrakenTentacleDetector(4, GATLIN_PROJECTILE_OFFSET);
         private static readonly KrakenTentacleDetector cannonDetector = new KrakenTentacleDetector(24, CANNON_MISSILE_OFFSET);
         private static readonly KrakenTentacleDetector laserDetector = new KrakenTentacleDetector(24, LASER_OFFSET);
+        private static readonly KrakenTentacleDetector smashDetector = new KrakenTentacleDetector(60, SMASH_OFFSET, SMASH_RANGE)
+        {
+            canDetectInvisible = true
+        };
         private static readonly CollisionDetector drillDetector = new CollisionDetector(true)
         {
             mask = EntityCollisionHelper.MASK_ENEMY | EntityCollisionHelper.MASK_BOSS
@@ -750,10 +888,11 @@ namespace MVZ2.GameContent.Bosses
         }
         public class KrakenTentacleDetector : Detector
         {
-            public KrakenTentacleDetector(float bulletSize, Vector3 offset)
+            public KrakenTentacleDetector(float bulletSize, Vector3 offset, float maxRange = 80000)
             {
                 this.bulletSize = bulletSize;
                 this.offset = offset;
+                this.maxRange = maxRange;
             }
 
             protected override Bounds GetDetectionBounds(Entity self)
@@ -767,7 +906,7 @@ namespace MVZ2.GameContent.Bosses
             }
             public Bounds GetDetectionBoundsAtPosition(Entity entity, Vector3 position)
             {
-                var sizeX = 80000;
+                var sizeX = maxRange;
                 var sizeY = bulletSize;
                 var sizeZ = bulletSize;
                 var centerX = position.x + entity.GetFacingX() * (sizeX * 0.5f + offset.x);
@@ -777,6 +916,7 @@ namespace MVZ2.GameContent.Bosses
             }
             public float bulletSize = 4;
             public Vector3 offset;
+            public float maxRange = 80000;
         }
     }
 }

@@ -163,6 +163,10 @@ namespace MVZ2.Vanilla.Detections
         public int DetectEntityCount(EntityDetectionParams self)
         {
             var args = GetDetectionParams(self);
+            return DetectEntityCount(args);
+        }
+        public int DetectEntityCount(DetectionParams args)
+        {
             entityBuffer.Clear();
             int count = 0;
             foreach (var collider in DetectColliders(args))
