@@ -6,6 +6,7 @@ using MVZ2.GameContent.Buffs.Bosses;
 using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Detections;
 using MVZ2.GameContent.Effects;
+using MVZ2.GameContent.Enemies;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Detections;
@@ -67,9 +68,9 @@ namespace MVZ2.GameContent.Bosses
                     case ACTION_LASER:
                         GetPossibleUseLaserTiles(entity, resultTiles);
                         break;
-                        //case ACTION_SUMMON:
-                        //    GetPossibleUseSummonTiles(entity, resultTiles);
-                        //    break;
+                    case ACTION_SUMMON:
+                        GetPossibleUseSummonTiles(entity, resultTiles);
+                        break;
                         //case ACTION_SMASH:
                         //    GetPossibleUseSmashTiles(entity, resultTiles);
                         //    break;
@@ -219,6 +220,40 @@ namespace MVZ2.GameContent.Bosses
         public static bool CanUseLaser(Entity entity)
         {
             return laserDetector.DetectExists(entity);
+        }
+        #endregion
+
+        #region 攻击动作判定（召唤）
+        public static void GetPossibleUseSummonTiles(Entity entity, List<LawnGrid> results)
+        {
+            var level = entity.Level;
+            int maxColumn = entity.Level.GetMaxColumnCount();
+            var maxLane = entity.Level.GetMaxLaneCount();
+            for (int lane = 0; lane < maxLane; lane++)
+            {
+                for (int x = SUMMON_MIN_COLUMN; x < maxColumn; x++)
+                {
+                    int column = entity.GetMirroredColumn(x, false);
+                    if (!CanAppearAtTile(entity, column, lane))
+                        continue;
+                    if (CanUseSummonAtTile(entity, column, lane))
+                    {
+                        var grid = level.GetGrid(column, lane);
+                        if (grid != null)
+                        {
+                            results.Add(grid);
+                        }
+                    }
+                }
+            }
+        }
+        public static bool CanUseSummonAtTile(Entity entity, int column, int lane)
+        {
+            return true;
+        }
+        public static bool CanUseSummon(Entity entity)
+        {
+            return true;
         }
         #endregion
 
@@ -402,6 +437,13 @@ namespace MVZ2.GameContent.Bosses
                                 success = true;
                             }
                             break;
+                        case ACTION_SUMMON:
+                            if (CanUseSummon(entity))
+                            {
+                                stateMachine.StartState(entity, STATE_WEAPON);
+                                success = true;
+                            }
+                            break;
                     }
                     if (!success)
                     {
@@ -428,6 +470,12 @@ namespace MVZ2.GameContent.Bosses
         public static Vector3 GetLaserPosition(Entity entity)
         {
             var offset = LASER_OFFSET;
+            offset.x *= entity.GetFacingX();
+            return entity.Position + offset;
+        }
+        public static Vector3 GetSummonPosition(Entity entity)
+        {
+            var offset = SUMMON_OFFSET;
             offset.x *= entity.GetFacingX();
             return entity.Position + offset;
         }
@@ -489,6 +537,15 @@ namespace MVZ2.GameContent.Bosses
                                     substateTimer.ResetSeconds(1f);
                                 }
                                 break;
+                            case ACTION_SUMMON:
+                                entity.SetModelProperty("Weapon", WEAPON_SUMMON);
+                                if (substateTimer.Expired)
+                                {
+                                    SummonZombie(entity);
+                                    stateMachine.StartSubState(entity, SUBSTATE_SUMMON);
+                                    substateTimer.ResetSeconds(1f);
+                                }
+                                break;
                         }
                         break;
                     case SUBSTATE_CLOSE:
@@ -518,14 +575,8 @@ namespace MVZ2.GameContent.Bosses
                         }
                         break;
                     case SUBSTATE_CANNON:
-                        if (substateTimer.Expired)
-                        {
-                            stateMachine.StartSubState(entity, SUBSTATE_CLOSE);
-                            entity.PlaySound(VanillaSoundID.krakenHatchClose);
-                            substateTimer.ResetSeconds(0.5f);
-                        }
-                        break;
                     case SUBSTATE_LASER:
+                    case SUBSTATE_SUMMON:
                         if (substateTimer.Expired)
                         {
                             stateMachine.StartSubState(entity, SUBSTATE_CLOSE);
@@ -557,11 +608,18 @@ namespace MVZ2.GameContent.Bosses
                 entity.Spawn(VanillaEffectID.amethystPylonLaser, sourcePosition, param);
                 entity.PlaySound(VanillaSoundID.scifiLaser);
             }
+            public static void SummonZombie(Entity entity)
+            {
+                var sourcePosition = GetSummonPosition(entity);
+                var param = entity.GetSpawnParams();
+                entity.Spawn(VanillaEnemyID.ironHelmettedZombie, sourcePosition, param);
+            }
             public const int SUBSTATE_OPEN = 0;
             public const int SUBSTATE_CLOSE = 1;
             public const int SUBSTATE_GATLIN = 2;
             public const int SUBSTATE_CANNON = 3;
             public const int SUBSTATE_LASER = 4;
+            public const int SUBSTATE_SUMMON = 5;
             public const int GATLIN_INTERVAL = 1;
         }
         #endregion
@@ -635,11 +693,13 @@ namespace MVZ2.GameContent.Bosses
         public const float CANNON_MISSILE_DAMAGE_MULTIPLIER = 1;
         public const float CANNON_MISSILE_EXPLODE_RADIUS = 120f;
         public const float LASER_DAMAGE_MULTIPLIER = 1;
+        public const int SUMMON_MIN_COLUMN = 5;
 
         public const float DRILL_DAMAGE_MULTIPLIER = 18f;
         public static readonly Vector3 GATLIN_PROJECTILE_OFFSET = new Vector3(70, 35, 0);
         public static readonly Vector3 CANNON_MISSILE_OFFSET = new Vector3(70, 27, 0);
         public static readonly Vector3 LASER_OFFSET = new Vector3(70, 27, 0);
+        public static readonly Vector3 SUMMON_OFFSET = new Vector3(40, 0, 0);
         private static readonly EntityStateMachine stateMachine = new KrakenTentacleStateMachine();
         private static readonly KrakenTentaclePredicator krakenTentaclePredicator = new KrakenTentaclePredicator();
         private static readonly KrakenPredicator krakenPredicator = new KrakenPredicator();
