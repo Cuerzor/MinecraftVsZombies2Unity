@@ -58,9 +58,9 @@ namespace MVZ2.GameContent.Bosses
                     case ACTION_GATLIN:
                         GetPossibleUseGatlinTiles(entity, resultTiles);
                         break;
-                        //case ACTION_CANNON:
-                        //    GetPossibleUseCannonTiles(entity, resultTiles);
-                        //    break;
+                    case ACTION_CANNON:
+                        GetPossibleUseCannonTiles(entity, resultTiles);
+                        break;
                         //case ACTION_LASER:
                         //    GetPossibleUseLaserTiles(entity, resultTiles);
                         //    break;
@@ -114,7 +114,7 @@ namespace MVZ2.GameContent.Bosses
             }
             return true;
         }
-        #region 攻击动作判定
+        #region 攻击动作判定（加特林）
         public static void GetPossibleUseGatlinTiles(Entity entity, List<LawnGrid> results)
         {
             var level = entity.Level;
@@ -146,6 +146,41 @@ namespace MVZ2.GameContent.Bosses
         public static bool CanUseGatlin(Entity entity)
         {
             return gatlinDetector.DetectExists(entity);
+        }
+        #endregion
+
+        #region 攻击动作判定（大炮）
+        public static void GetPossibleUseCannonTiles(Entity entity, List<LawnGrid> results)
+        {
+            var level = entity.Level;
+            int maxColumn = entity.Level.GetMaxColumnCount();
+            var maxLane = entity.Level.GetMaxLaneCount();
+            for (int lane = 0; lane < maxLane; lane++)
+            {
+                for (int x = 0; x < maxColumn; x++)
+                {
+                    int column = entity.GetMirroredColumn(x, false);
+                    if (!CanAppearAtTile(entity, column, lane))
+                        continue;
+                    if (CanUseCannonAtTile(entity, column, lane))
+                    {
+                        var grid = level.GetGrid(column, lane);
+                        if (grid != null)
+                        {
+                            results.Add(grid);
+                        }
+                    }
+                }
+            }
+        }
+        public static bool CanUseCannonAtTile(Entity entity, int column, int lane)
+        {
+            DetectionParams detectParams = new DetectionParams(entity, entity.GetFaction(), cannonDetector.GetDetectionBoundsAtTile(entity, column, lane));
+            return cannonDetector.DetectExists(detectParams);
+        }
+        public static bool CanUseCannon(Entity entity)
+        {
+            return cannonDetector.DetectExists(entity);
         }
         #endregion
 
@@ -315,6 +350,13 @@ namespace MVZ2.GameContent.Bosses
                                 success = true;
                             }
                             break;
+                        case ACTION_CANNON:
+                            if (CanUseCannon(entity))
+                            {
+                                stateMachine.StartState(entity, STATE_WEAPON);
+                                success = true;
+                            }
+                            break;
                     }
                     if (!success)
                     {
@@ -329,6 +371,12 @@ namespace MVZ2.GameContent.Bosses
         public static Vector3 GetGatlinBulletPosition(Entity entity)
         {
             var offset = GATLIN_PROJECTILE_OFFSET;
+            offset.x *= entity.GetFacingX();
+            return entity.Position + offset;
+        }
+        public static Vector3 GetCannonMissilePosition(Entity entity)
+        {
+            var offset = CANNON_MISSILE_OFFSET;
             offset.x *= entity.GetFacingX();
             return entity.Position + offset;
         }
@@ -372,6 +420,15 @@ namespace MVZ2.GameContent.Bosses
                                     substateTimer.ResetSeconds(3f);
                                 }
                                 break;
+                            case ACTION_CANNON:
+                                entity.SetModelProperty("Weapon", WEAPON_CANNON);
+                                if (substateTimer.Expired)
+                                {
+                                    CannonFire(entity);
+                                    stateMachine.StartSubState(entity, SUBSTATE_CANNON);
+                                    substateTimer.ResetSeconds(1f);
+                                }
+                                break;
                         }
                         break;
                     case SUBSTATE_CLOSE:
@@ -400,11 +457,31 @@ namespace MVZ2.GameContent.Bosses
                             entity.SetAnimationBool("GatlinFiring", false);
                         }
                         break;
+                    case SUBSTATE_CANNON:
+                        if (substateTimer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_CLOSE);
+                            entity.PlaySound(VanillaSoundID.krakenHatchClose);
+                            substateTimer.ResetSeconds(0.5f);
+                        }
+                        break;
                 }
+            }
+            public static void CannonFire(Entity entity)
+            {
+                var args = entity.GetShootParams();
+                args.spawnParam.SetProperty(VanillaEntityProps.RANGE, CANNON_MISSILE_EXPLODE_RADIUS);
+                args.projectileID = VanillaProjectileID.missile;
+                args.velocity = entity.GetFacingDirection() * CANNON_MISSILE_SPEED;
+                args.position = GetCannonMissilePosition(entity);
+                args.damage = entity.GetDamage() * CANNON_MISSILE_DAMAGE_MULTIPLIER;
+                entity.ShootProjectile(args);
+                entity.PlaySound(VanillaSoundID.missile);
             }
             public const int SUBSTATE_OPEN = 0;
             public const int SUBSTATE_CLOSE = 1;
             public const int SUBSTATE_GATLIN = 2;
+            public const int SUBSTATE_CANNON = 3;
             public const int GATLIN_INTERVAL = 1;
         }
         #endregion
@@ -474,13 +551,19 @@ namespace MVZ2.GameContent.Bosses
 
         public const float GATLIN_BULLET_SPEED = 20f;
         public const float GATLIN_DAMAGE_MULTIPLIER = 0.03f;
-        public const float DRILL_DAMAGE_MULTIPLIER = 18;
+        public const float CANNON_MISSILE_SPEED = 20f;
+        public const float CANNON_MISSILE_DAMAGE_MULTIPLIER = 1;
+        public const float CANNON_MISSILE_EXPLODE_RADIUS = 120f;
+
+        public const float DRILL_DAMAGE_MULTIPLIER = 18f;
         public static readonly Vector3 GATLIN_PROJECTILE_OFFSET = new Vector3(70, 35, 0);
+        public static readonly Vector3 CANNON_MISSILE_OFFSET = new Vector3(70, 35, 0);
         public static readonly Vector3 WEAPON_SLOT_OFFSET = new Vector3(30, 35, 0);
         private static readonly EntityStateMachine stateMachine = new KrakenTentacleStateMachine();
         private static readonly KrakenTentaclePredicator krakenTentaclePredicator = new KrakenTentaclePredicator();
         private static readonly KrakenPredicator krakenPredicator = new KrakenPredicator();
-        private static readonly GatlinDetector gatlinDetector = new GatlinDetector();
+        private static readonly KrakenTentacleDetector gatlinDetector = new KrakenTentacleDetector(4);
+        private static readonly KrakenTentacleDetector cannonDetector = new KrakenTentacleDetector(24);
         private static readonly CollisionDetector drillDetector = new CollisionDetector(true)
         {
             mask = EntityCollisionHelper.MASK_ENEMY | EntityCollisionHelper.MASK_BOSS
@@ -523,8 +606,13 @@ namespace MVZ2.GameContent.Bosses
             private int column;
             private int lane;
         }
-        public class GatlinDetector : Detector
+        public class KrakenTentacleDetector : Detector
         {
+            public KrakenTentacleDetector(float bulletSize)
+            {
+                this.bulletSize = bulletSize;
+            }
+
             protected override Bounds GetDetectionBounds(Entity self)
             {
                 return GetDetectionBoundsAtPosition(self, self.Position);
@@ -537,13 +625,14 @@ namespace MVZ2.GameContent.Bosses
             public Bounds GetDetectionBoundsAtPosition(Entity entity, Vector3 position)
             {
                 var sizeX = 80000;
-                var sizeY = 4;
-                var sizeZ = 4;
+                var sizeY = bulletSize;
+                var sizeZ = bulletSize;
                 var centerX = position.x + entity.GetFacingX() * (sizeX * 0.5f + WEAPON_SLOT_OFFSET.x);
                 var centerY = position.y + sizeY * 0.5f + WEAPON_SLOT_OFFSET.y;
                 var centerZ = position.z + sizeZ * 0.5f + WEAPON_SLOT_OFFSET.z;
                 return new Bounds(new Vector3(centerX, centerY, centerZ), new Vector3(sizeX, sizeY, sizeZ));
             }
+            public float bulletSize = 4;
         }
     }
 }

@@ -76,11 +76,12 @@ namespace MVZ2.GameContent.Bosses
         public const int ACTION_SMASH = 4;
 
         public const int WEAPON_GATLIN = 0;
+        public const int WEAPON_CANNON = 1;
 
         private static int[] actionPool = new int[]
         {
             ACTION_GATLIN,
-            //ACTION_CANNON,
+            ACTION_CANNON,
             //ACTION_LASER,
             //ACTION_SUMMON,
             //ACTION_SMASH,
