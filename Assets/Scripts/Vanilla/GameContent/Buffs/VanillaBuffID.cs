@@ -338,6 +338,9 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 6
             public const string lockedChestInvincible = "locked_chest_invincible";
+
+            // Chapter 7
+            public const string krakenTentacleInactive = "kraken_tentacle_inactive";
         }
         public static class Cart
         {

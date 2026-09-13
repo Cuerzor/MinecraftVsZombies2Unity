@@ -4,8 +4,9 @@ namespace MVZ2Logic.Entities
 {
     public static class HPBarVisibility
     {
-        public const int HIDDEN = -1;
+        public const int NEVER = -1;
         public const int NORMAL = 0;
-        public const int FORCE = 1;
+        public const int ALWAYS = 1;
+        public const int UNLOCKED = 2;
     }
 }

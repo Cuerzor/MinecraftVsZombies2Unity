@@ -78,6 +78,11 @@ namespace MVZ2.Vanilla.Bosses
         public const int LOCKED_CHEST_GIANTIZE = PRIVATE_NUMBER + 18;
         public const int LOCKED_CHEST_FIREBREATH = PRIVATE_NUMBER + 19;
         public const int LOCKED_CHEST_TIRED = PRIVATE_NUMBER + 20;
+        
+        public const int KRAKEN_TENTACLE_DISAPPEAR = PRIVATE_NUMBER + 0;
+        public const int KRAKEN_TENTACLE_WEAPON = PRIVATE_NUMBER + 1;
+        public const int KRAKEN_TENTACLE_SMASH = PRIVATE_NUMBER + 2;
+        public const int KRAKEN_TENTACLE_HIDDEN = PRIVATE_NUMBER + 3;
 
 
         private const int PRIVATE_NUMBER = 10000;

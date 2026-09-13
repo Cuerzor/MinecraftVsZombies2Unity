@@ -391,6 +391,7 @@
     <model name="red_dragon" type="entity" path="mvz2:boss/red_dragon" width="840" height="510" xOffset="-93" yOffset="-170"/>
     <model name="locked_chest" type="entity" path="mvz2:boss/locked_chest" width="60" height="84" xOffset="0" yOffset="-28"/>
     <model name="pink_wither" type="entity" path="mvz2:boss/pink_wither" width="112" height="168" xOffset="6" yOffset="-84" />
+    <model name="kraken_tentacle" type="entity" path="mvz2:boss/kraken_tentacle" width="80" height="220" xOffset="0" yOffset="-95"/>
 
     <!-- Carts -->
     <model name="minecart" type="entity" path="mvz2:cart/minecart" width="64" height="64" xOffset="0" yOffset="-28" />

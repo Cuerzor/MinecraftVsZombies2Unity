@@ -3442,6 +3442,20 @@
                 <color name="mvz2:bloodColorCensored" value="#00000000" />
             </properties>
         </entity>
+        <entity template="boss" id="kraken_tentacle" name="克拉肯的触手">
+            <properties>
+                <bool name="mvz2:dont_count_boss_hp" value="true" />
+                <int name="mvz2:waterInteraction" value="0" />
+                <int name="mvz2:hp_bar_visibility" value="2" />
+                <float name="mvz2:maxHealth" value="2000" />
+                <id name="mvz2:shell" value="mvz2:metal" />
+                <bool name="mvz2:depth_test" value="true" />
+                <vector3 name="mvz2:size" x="70" y="240" z="70" />
+                <vector3 name="mvz2:shadowScale" x="2" y="2" z="2" />
+                <color name="mvz2:bloodColor" value="#000000FF" />
+                <color name="mvz2:bloodColorCensored" value="#000000FF" />
+            </properties>
+        </entity>
 
         <!-- Carts -->
         <entity template="cart" id="minecart" name="矿车" />

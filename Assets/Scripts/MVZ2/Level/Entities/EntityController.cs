@@ -663,7 +663,11 @@ namespace MVZ2.Level.Entities
                 if (!entity.HasTakenGrid())
                     return true;
             }
-            return false; ;
+            if (entity.GetHPBarVisibility() == HPBarVisibility.UNLOCKED)
+            {
+                return true;
+            }
+            return false;
         }
         public bool ShouldShowMainHPBar()
         {

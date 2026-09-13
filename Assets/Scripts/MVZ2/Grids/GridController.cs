@@ -289,9 +289,9 @@ namespace MVZ2.Grids
                     if (!entity.Exists())
                         continue;
                     var visibility = entity.GetHPBarVisibility();
-                    if (visibility == HPBarVisibility.HIDDEN)
+                    if (visibility == HPBarVisibility.NEVER)
                         continue;
-                    if (!shouldShow && visibility != HPBarVisibility.FORCE)
+                    if (!shouldShow && visibility != HPBarVisibility.ALWAYS)
                         continue;
                     if (entity.GetGrid() != grid)
                         continue;

@@ -21,13 +21,20 @@ namespace MVZ2.Vanilla.Detections
         public bool DetectExists(EntityDetectionParams self)
         {
             var collider = Detect(self);
-            if (collider == null || collider.Entity == null)
-                return false;
-            return true;
+            return collider != null && collider.Entity != null;
+        }
+        public bool DetectExists(DetectionParams args)
+        {
+            var collider = Detect(args);
+            return collider != null && collider.Entity != null;
         }
         public IEntityCollider? Detect(EntityDetectionParams self)
         {
             var args = GetDetectionParams(self);
+            return Detect(args);
+        }
+        public IEntityCollider? Detect(DetectionParams args)
+        {
             foreach (var collider in DetectColliders(args))
             {
                 if (!ValidateCollider(args, collider))

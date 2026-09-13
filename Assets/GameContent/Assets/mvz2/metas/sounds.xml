@@ -568,6 +568,12 @@
     <sound name="juicy">
         <sample path="mvz2:juicy" weight="1" />
     </sound>
+    <sound name="kraken_hatch_open">
+        <sample path="mvz2:kraken_hatch_open" weight="1" />
+    </sound>
+    <sound name="kraken_hatch_close">
+        <sample path="mvz2:kraken_hatch_close" weight="1" />
+    </sound>
     <sound name="large_explosion">
         <sample path="mvz2:large_explosion" weight="1" />
     </sound>
