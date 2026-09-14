@@ -151,11 +151,12 @@ namespace MVZ2.GameContent.Stages
             {
                 // “˛≤ÿUI£¨πÿ±’ ‰»Î
                 DisableUIAndInput(level);
+                level.AddBuff<FinalClearAutoCollectBuff>();
             }
             else
             {
-                var reaper = level.FindFirstEntity(entityID);
-                SpawnClearPickup(level, reaper);
+                var boss = level.FindFirstEntity(entityID);
+                SpawnClearPickup(level, boss);
             }
         }
         protected static void SetBossState(LevelEngine level, int value) => level.SetProperty(FIELD_BOSS_PHASE, value);

@@ -120,6 +120,7 @@
     <buff id="nightmareaper_enraged" polarity="positive" level="5000" target="boss" />
     <buff id="nightmareaper_fall" polarity="none" level="5000" target="boss" />
     <buff id="nightmare_cleared" polarity="none" level="5000" target="level" />
+    <buff id="final_clear_auto_collect" polarity="none" level="5000" target="level" />
 
     <!-- Chapter 3 -->
     <buff id="battle_respite" polarity="none" level="5000" target="level" />
