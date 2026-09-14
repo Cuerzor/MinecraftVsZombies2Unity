@@ -219,7 +219,10 @@ namespace MVZ2.Vanilla.Entities
                 return result;
             }
 
-            shell?.EvaluateDamage(input);
+            if (shell != null && !input.HasEffect(VanillaDamageEffects.NO_MODIFICATION))
+            {
+                shell.EvaluateDamage(input);
+            }
 
             // Apply Damage.
             var actualAmount = input.Amount;

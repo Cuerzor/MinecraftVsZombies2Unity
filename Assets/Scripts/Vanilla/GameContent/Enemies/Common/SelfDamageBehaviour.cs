@@ -21,7 +21,7 @@ namespace MVZ2.GameContent.Enemies
             var interval = entity.GetProperty<int>(PROP_DAMAGE_INTERVAL);
             if (entity.IsTimeInterval(interval))
             {
-                var effects = new DamageEffectList(VanillaDamageEffects.SELF_DAMAGE, VanillaDamageEffects.IGNORE_ARMOR);
+                var effects = new DamageEffectList(VanillaDamageEffects.SELF_DAMAGE, VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.NO_MODIFICATION);
                 entity.TakeDamage(entity.GetProperty<float>(PROP_DAMAGE_AMOUNT), effects, entity);
             }
         }

@@ -71,6 +71,8 @@ namespace MVZ2.GameContent.Enemies
         public override void PreTakeDamage(DamageInput input, CallbackResult<bool> result)
         {
             base.PreTakeDamage(input, result);
+            if (input.HasEffect(VanillaDamageEffects.NO_MODIFICATION))
+                return;
             if (input.HasEffect(VanillaDamageEffects.LIGHTNING))
             {
                 ChangeVariant(input.Entity, VARIANT_THUNDER);

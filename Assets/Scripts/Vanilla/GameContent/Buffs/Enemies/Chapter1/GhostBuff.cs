@@ -58,7 +58,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
             var entity = damageInfo.Entity;
             if (entity == null)
                 return;
-            if (damageInfo.Effects.HasEffect(VanillaDamageEffects.WHACK))
+            if (damageInfo.HasEffect(VanillaDamageEffects.WHACK) || damageInfo.HasEffect(VanillaDamageEffects.NO_MODIFICATION))
                 return;
             buffBuffer.Clear();
             entity.GetBuffs<GhostBuff>(buffBuffer);

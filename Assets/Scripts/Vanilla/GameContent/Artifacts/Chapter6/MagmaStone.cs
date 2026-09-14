@@ -26,7 +26,7 @@ namespace MVZ2.GameContent.Artifacts
         private void PreEntityTakeDamageCallback(VanillaLevelCallbacks.PreTakeDamageParams param, CallbackResult<bool> result)
         {
             var input = param.input;
-            if (!input.HasEffect(VanillaDamageEffects.FIRE))
+            if (!input.HasEffect(VanillaDamageEffects.FIRE) || input.HasEffect(VanillaDamageEffects.NO_MODIFICATION))
                 return;
             var entity = input.Entity;
             if (!entity.IsHostileEntity())

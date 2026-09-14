@@ -17,6 +17,7 @@ using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using UnityEngine;
+using UnityEngine.Windows;
 
 namespace MVZ2.GameContent.GlobalCallbacks
 {
@@ -106,6 +107,8 @@ namespace MVZ2.GameContent.GlobalCallbacks
         {
             var damageInfo = args.input;
             var entity = damageInfo.Entity;
+            if (damageInfo.HasEffect(VanillaDamageEffects.NO_MODIFICATION))
+                return;
             if (entity.ImmuneFire() && damageInfo.Effects.HasEffect(VanillaDamageEffects.FIRE))
             {
                 damageInfo.Multiply(0);

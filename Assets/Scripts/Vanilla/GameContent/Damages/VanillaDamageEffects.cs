@@ -42,6 +42,7 @@ namespace MVZ2.GameContent.Damages
         public static readonly NamespaceID NO_DAMAGE_BLINK = Get("no_damage_blink");
         public static readonly NamespaceID BYPASS_BOSS_ARMOR = Get("bypass_boss_armor");
         public static readonly NamespaceID STUNS_FRANKENSTEIN = Get("stuns_frankenstein");
+        public static readonly NamespaceID NO_MODIFICATION = Get("no_modification");
 
         // Death Reason
         public static readonly NamespaceID SACRIFICE = Get("sacrifice");
