@@ -24,10 +24,11 @@ namespace MVZ2.GameContent.Contraptions
                 var grid = level.GetGrid(column, lane);
                 if (grid == null)
                     continue;
-                var positionOffset = Vector3.up * (HEIGHT_PER_LANE * (Mathf.Min(lane, columnCount - 1 - lane)));
+                var positionOffset = Vector3.up * (HEIGHT_PER_LANE * (Mathf.Min(lane, columnCount - 1 - lane)) + HEIGHT_OFFSET);
                 entity.Spawn(VanillaContraptionID.onbashira, grid.GetEntityPosition() + positionOffset);
             }
         }
+        public const float HEIGHT_OFFSET = 400;
         public const float HEIGHT_PER_LANE = 400;
     }
 }
