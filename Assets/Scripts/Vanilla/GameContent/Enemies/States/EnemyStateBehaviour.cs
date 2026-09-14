@@ -55,14 +55,14 @@ namespace MVZ2.GameContent.Enemies
         }
         protected virtual int GetActiveState(Entity enemy)
         {
-            if (EnemyMeleeBehaviour.HasMeleeTarget(enemy))
-            {
-                return STATE_MELEE_ATTACK;
-            }
-            else if (enemy.IsCasting())
+            if (enemy.IsCasting())
             {
                 return STATE_CAST;
             }
+            else if (EnemyMeleeBehaviour.HasMeleeTarget(enemy))
+            {
+                return STATE_MELEE_ATTACK;
+            } 
             else
             {
                 return STATE_WALK;
