@@ -52,6 +52,7 @@ namespace MVZ2.Managers
             LoadUnlocks_Arcade(resource);
             LoadUnlocks_Artifacts(resource);
             LoadUnlocks_Characters(resource);
+            LoadUnlocks_Curses(resource);
             LoadUnlocks_Entities(resource);
             LoadUnlocks_MainmenuView(resource);
             LoadUnlocks_Music(resource);

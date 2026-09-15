@@ -10,6 +10,7 @@ using MVZ2.Modding;
 using MVZ2.UI;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Callbacks;
+using MVZ2Logic.Curses;
 using MVZ2Logic.Difficulties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Games;
@@ -334,6 +335,10 @@ namespace MVZ2.Saves
         {
             return unlockedArtifactsCache.Contains(artifactID);
         }
+        public bool IsCurseUnlocked(NamespaceID artifactID)
+        {
+            return unlockedCursesCache.Contains(artifactID);
+        }
         public bool IsEnemyUnlocked(NamespaceID enemyID)
         {
             return unlockedEnemiesCache.Contains(enemyID);
@@ -349,6 +354,10 @@ namespace MVZ2.Saves
         public NamespaceID[] GetUnlockedArtifacts()
         {
             return unlockedArtifactsCache.ToArray();
+        }
+        public NamespaceID[] GetUnlockedCurses()
+        {
+            return unlockedCursesCache.ToArray();
         }
         public NamespaceID[] GetUnlockedProducts()
         {
@@ -568,6 +577,7 @@ namespace MVZ2.Saves
             EvaluateUnlockedEntities();
             EvaluateUnlockedArtifacts();
             EvaluateUnlockedProducts();
+            EvaluateUnlockedCurses();
             EvaluateUnlockedAchievements(initial);
         }
         private void EvaluateUnlockedArtifacts()
@@ -583,6 +593,21 @@ namespace MVZ2.Saves
                 if (!unlockConditions.IsNullOrMeetsConditions(this))
                     continue;
                 unlockedArtifactsCache.Add(def.GetID());
+            }
+        }
+        private void EvaluateUnlockedCurses()
+        {
+            unlockedCursesCache.Clear();
+            var game = Main.Game;
+            var curses = game.GetAllCurseDefinitions();
+            foreach (var def in curses)
+            {
+                var unlockConditions = def.GetUnlockConditions();
+                if (unlockConditions == null)
+                    continue;
+                if (!unlockConditions.IsNullOrMeetsConditions(this))
+                    continue;
+                unlockedCursesCache.Add(def.GetID());
             }
         }
         private void EvaluateUnlockedProducts()
@@ -648,6 +673,7 @@ namespace MVZ2.Saves
         private List<NamespaceID> unlockedContraptionsCache = new List<NamespaceID>();
         private List<NamespaceID> unlockedEnemiesCache = new List<NamespaceID>();
         private List<NamespaceID> unlockedArtifactsCache = new List<NamespaceID>();
+        private List<NamespaceID> unlockedCursesCache = new List<NamespaceID>();
         private List<NamespaceID> unlockedProductsCache = new List<NamespaceID>();
         private List<NamespaceID> unlockedAchievementsCache = new List<NamespaceID>();
         private float lastPlayTime = 0;

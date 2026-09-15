@@ -45,6 +45,7 @@ namespace MVZ2.Modding
         public UnlockMetaList? UnlockMetaList { get; set; }
         public OptionMetaList? OptionMetaList { get; set; }
         public CustomizeMetaList? CustomizeMetaList { get; set; }
+        public CurseMetaList? CurseMetaList { get; set; }
         public Dictionary<string, CharacterVariantSprite[]> CharacterVariantSprites = new();
         public Dictionary<string, TalkMeta> TalkMetas = new();
         public Dictionary<string, MapModel> MapModels = new();

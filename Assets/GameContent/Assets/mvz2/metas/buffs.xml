@@ -246,6 +246,17 @@
     <buff id="bubble_gun_user" polarity="none" level="6000" target="enemy" />
     <buff id="bubble_expand" polarity="none" level="5000" target="enemy" />
     
+    <!-- Curses -->
+    <buff id="the_creatures_brain" polarity="negative" level="5000" target="level" />
+    <buff id="nightmares_tentacle" polarity="negative" level="5000" target="level" />
+    <buff id="withers_skull" polarity="negative" level="5000" target="level" />
+    <buff id="withers_skull_for_contraption" polarity="negative" level="5000" target="contraption" />
+    <buff id="the_giants_flesh" polarity="negative" level="5000" target="level" />
+    <buff id="the_giants_flesh_for_enemy" polarity="positive" level="5000" target="enemy" />
+    <buff id="red_dragons_scale" polarity="negative" level="5000" target="level" />
+    <buff id="locked_chests_chains" polarity="negative" level="5000" target="level" />
+    <buff id="krakens_backplate" polarity="negative" level="5000" target="level" />
+    <buff id="krakens_backplate_for_enemy" polarity="positive" level="5000" target="enemy" />
 
     <!-- Random China -->
     <buff id="super_recharge" polarity="positive" level="0" target="blueprint" />

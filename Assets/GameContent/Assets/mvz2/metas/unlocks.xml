@@ -221,4 +221,13 @@
     <group id="artifact.extending_arm"><conditions><condition required="mvz2:level.mountain_11" /></conditions></group>
     <group id="artifact.krakens_tentacle"><conditions><condition required="mvz2:artifact.krakens_tentacle" /></conditions></group>
     <group id="artifact.gale_leaf"><conditions><condition required="mvz2:artifact.gale_leaf" /></conditions></group>
+
+    <!-- Curses -->
+    <group id="curse.the_creatures_brain"><conditions><condition required="mvz2:level.halloween_11" /></conditions></group>
+    <group id="curse.nightmares_tentacle"><conditions><condition required="mvz2:level.dream_11" /></conditions></group>
+    <group id="curse.withers_skull"><conditions><condition required="mvz2:level.castle_11" /></conditions></group>
+    <group id="curse.the_giants_flesh"><conditions><condition required="mvz2:level.mausoleum_11" /></conditions></group>
+    <group id="curse.red_dragons_scale"><conditions><condition required="mvz2:level.ship_11" /></conditions></group>
+    <group id="curse.locked_chests_chains"><conditions><condition required="mvz2:level.palace_11" /></conditions></group>
+    <group id="curse.krakens_backplate"><conditions><condition required="mvz2:level.mountain_11" /></conditions></group>
 </unlocks>

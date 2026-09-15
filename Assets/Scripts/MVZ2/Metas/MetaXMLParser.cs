@@ -110,6 +110,9 @@ namespace MVZ2.Metas
                 case "customize":
                     resource.CustomizeMetaList = CustomizeMetaList.FromXmlNode(document["customize"], defaultNsp);
                     break;
+                case "curses":
+                    resource.CurseMetaList = CurseMetaList.FromXmlNode(document["curses"], defaultNsp);
+                    break;
             }
         }
         public static ColliderConstructor LoadColliderConstructor(this XmlNode node)

@@ -266,5 +266,14 @@ namespace MVZ2Logic.Localization
         public const string CONTEXT_TARGET_FRAMERATE = "option.target_framerate";
         public const string CONTEXT_SCREEN_LAYOUT = "option.screen_layout";
         #endregion
+
+        #region 诅咒
+        [TranslateMsg("诅咒名称-未知", CONTEXT_CURSE_NAME)]
+        public const string UNKNOWN_CURSE_NAME = "？？？";
+        [TranslateMsg("诅咒说明-未知", CONTEXT_CURSE_TOOLTIP)]
+        public const string UNKNOWN_CURSE_TOOLTIP = "？？？";
+        public const string CONTEXT_CURSE_NAME = "curse.name";
+        public const string CONTEXT_CURSE_TOOLTIP = "curse.tooltip";
+        #endregion
     }
 }

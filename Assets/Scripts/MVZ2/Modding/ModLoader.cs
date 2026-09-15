@@ -12,6 +12,7 @@ using MVZ2Logic.Artifacts;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Commands;
 using MVZ2Logic.Conditions;
+using MVZ2Logic.Curses;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.Difficulties;
 using MVZ2Logic.Entities;
@@ -188,6 +189,8 @@ namespace MVZ2.Modding
             LoadBuffMetas(mod);
             // 加载所有地图元素信息。
             LoadMapElementMetas(mod);
+            // 加载所有诅咒。
+            LoadCurseMetas(mod);
         }
         private void LoadEntityMetas(Mod mod)
         {
@@ -507,6 +510,26 @@ namespace MVZ2.Modding
                 {
                     def.AddBehaviourID(behaviourID);
                 }
+                mod.AddDefinition(def);
+            }
+        }
+        private void LoadCurseMetas(Mod mod)
+        {
+            var nsp = mod.Namespace;
+            foreach (var meta in res.GetModCurseMetas(nsp))
+            {
+                if (meta == null)
+                    continue;
+                var path = meta.ID;
+                var def = new DefaultCurseDefinition(nsp, path);
+                var entityID = def.GetID();
+
+                def.SetUnlockConditions(meta.UnlockConditions);
+                def.SetBuffID(meta.BuffID);
+                def.SetCurseName(meta.Name);
+                def.SetCurseTooltip(meta.Tooltip);
+                def.SetSpriteReference(meta.Sprite);
+
                 mod.AddDefinition(def);
             }
         }

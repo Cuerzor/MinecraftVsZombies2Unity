@@ -367,6 +367,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0704cf6e70e16a142ba9812e3204d528
+    m_Address: mvz2:ui/question_mark
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 070c5cc13e22e1d4e9a927b55c0c59b7
     m_Address: mvz2:contraption/upgrade/cat_tl_mk_ii
     m_ReadOnly: 0
@@ -2168,6 +2175,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2562dbc08cdc1bd459d0a70219d7d4e4
     m_Address: mvz2:entity/contraption/hellfire_base
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 256b166dcbd233540bfa86ee6b8c56e9
+    m_Address: mvz2:curses/nightmares_tentacle
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -4250,6 +4264,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 47475a97e62104842908445eb02d61c3
+    m_Address: mvz2:achievements/cuckoo
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4756509eba10d744bb3323a794303f92
     m_Address: mvz2:mobile_blueprint/flag_zombie
     m_ReadOnly: 0
@@ -6027,6 +6048,20 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64f5d3ca66a101c4c9a68600f246b904
+    m_Address: mvz2:ui/deselect_all
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64fae9ded1900d64bba8789f78363d41
+    m_Address: mvz2:curses/the_creatures_brain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6514a857fb8b7fc4d992741ae15f66e5
     m_Address: mvz2:mobile_blueprint/zombie
     m_ReadOnly: 0
@@ -6608,6 +6643,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fd7f39aa0a47b84687c0fb1016c4945
+    m_Address: mvz2:ui/select_all
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6fd8c4c1aa016fb4ca753e7d793584a7
     m_Address: mvz2:horse_gallop4
     m_ReadOnly: 0
@@ -6876,6 +6918,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7513cd2470186434dac756e22275249b
     m_Address: mvz2:level/mausoleum/pillbox
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75903275211497942bc0bcb0a4021157
+    m_Address: mvz2:achievements/gravity_padded
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -7923,6 +7972,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85ae0b6fd00720b4b9e220432d7a2f40
+    m_Address: mvz2:curses/krakens_backplate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 85cd02ec2e3be1041b0bae9ff13eb014
     m_Address: mvz2:pickup/trophy
     m_ReadOnly: 0
@@ -8573,6 +8629,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 906a48795c212d546bbec74d7295f974
+    m_Address: mvz2:curses/locked_chests_chains
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 906ce113fd4d66149af2e0d8c40a4299
     m_Address: mvz2:anvil
@@ -9707,6 +9770,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a43a2f06e34811d429fafe65b0cce668
+    m_Address: mvz2:curses
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Meta
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a44c8b2e1cfea4a4bb9c74b2e109c6c9
     m_Address: mvz2:shrink
     m_ReadOnly: 0
@@ -10309,6 +10379,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af725a78e9cd5dc48b3a9e744405b7b7
+    m_Address: mvz2:mainmenu/view/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af8ae476c30921a47b13d90441b45f33
     m_Address: mvz2:credits
     m_ReadOnly: 0
@@ -10416,6 +10493,20 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b27d973956921144f81710753ef50c35
     m_Address: mvz2:ui/level/pause_image_4
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b281ded5b7339de43a309d71320b5309
+    m_Address: mvz2:misc/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b292fa70ced5d684c93e79306021e7ca
+    m_Address: mvz2:map/mountain/map
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -12856,6 +12947,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd9359faba258ba42ac7467d732aa8ae
+    m_Address: mvz2:curses/red_dragons_scale
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ddecb2750e06a86449911b2ad608969f
     m_Address: mvz2:ui/musicroom/frame
     m_ReadOnly: 0
@@ -13009,6 +13107,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0a58013ffdd8304aa2139402f9bf70a
+    m_Address: mvz2:curses/the_giants_flesh
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e0c7697228ff843469a11a3a633766bb
     m_Address: mvz2:ui/gear
@@ -13534,6 +13639,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eaa2689b220a1dc4fbc27f9eb837186e
+    m_Address: mvz2:ui/level/curse
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eac3297eb77eaa9469a14df4d15e1125
     m_Address: mvz2:random/crystal/crystal_place4
     m_ReadOnly: 0
@@ -13694,6 +13806,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - AreaModel
     - Main
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eccf21b7313a33d41a14e2ede291366e
+    m_Address: mvz2:curses/wither_skull
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ecd7a5d533411f0498b62304935ac57d
     m_Address: mvz2:entity/projectile/light_bullet_trail

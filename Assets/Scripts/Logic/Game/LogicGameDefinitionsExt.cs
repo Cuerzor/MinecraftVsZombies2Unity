@@ -4,6 +4,7 @@ using MVZ2Logic.Armors;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Commands;
+using MVZ2Logic.Curses;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Errors;
@@ -119,6 +120,14 @@ namespace MVZ2Logic.Games
         public static MapElementBehaviourDefinition[] GetAllMapElementBehaviourDefinitions(this IGameContent provider)
         {
             return provider.GetDefinitions<MapElementBehaviourDefinition>(LogicDefinitionTypes.MAP_ELEMENT_BEHAVIOUR);
+        }
+        public static CurseDefinition? GetCurseDefinition(this IGameContent provider, NamespaceID? defRef)
+        {
+            return provider.GetDefinition<CurseDefinition>(LogicDefinitionTypes.CURSE, defRef);
+        }
+        public static CurseDefinition[] GetAllCurseDefinitions(this IGameContent provider)
+        {
+            return provider.GetDefinitions<CurseDefinition>(LogicDefinitionTypes.CURSE);
         }
     }
 }

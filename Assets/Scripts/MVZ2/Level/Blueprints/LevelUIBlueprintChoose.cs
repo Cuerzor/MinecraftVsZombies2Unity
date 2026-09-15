@@ -3,6 +3,7 @@
 using System;
 using MVZ2.Blueprints;
 using MVZ2.Level.Artifacts;
+using MVZ2.Level.Curses;
 using MVZ2.UI;
 using MVZ2Logic.Inputs;
 using PVZEngine.Tools.Unity;
@@ -201,6 +202,29 @@ namespace MVZ2.Level.Blueprints
         }
         #endregion
 
+        #region 选择诅咒
+        public CursePanelEntranceButton GetCursePanelEntranceButton()
+        {
+            return cursePanelEntranceButton;
+        }
+        public QuestionMark GetCursePanelQuestionMark()
+        {
+            return curseChoosingDialog.QuestionMark;
+        }
+        public void ShowCurseChoosePanel(CurseSelectItemViewData[] viewDatas)
+        {
+            curseChoosingDialog.gameObject.SetActive(true);
+            curseChoosingDialog.UpdateCurses(viewDatas);
+        }
+        public void HideCurseChoosePanel()
+        {
+            curseChoosingDialog.gameObject.SetActive(false);
+        }
+        public CurseSelectItem? GetCurseSelectItem(int index)
+        {
+            return curseChoosingDialog.GetCurseSelectItem(index);
+        }
+        #endregion
         public Blueprint? GetCommandBlockSlotBlueprint()
         {
             return blueprintChoosePanel.GetCommandBlockBlueprintItem();
@@ -232,6 +256,20 @@ namespace MVZ2.Level.Blueprints
 
             choosingViewAlmanacButton.onClick.AddListener(() => OnViewAlmanacClick?.Invoke());
             choosingViewStoreButton.onClick.AddListener(() => OnViewStoreClick?.Invoke());
+
+            cursePanelEntranceButton.OnClick += () => OnCursePanelEntranceClick?.Invoke();
+            cursePanelEntranceButton.OnPointerEnter += () => OnCursePanelEntrancePointerEnter?.Invoke();
+            cursePanelEntranceButton.OnPointerExit += () => OnCursePanelEntrancePointerExit?.Invoke();
+
+            curseChoosingDialog.OnItemClick += (index) => OnCursePanelItemClick?.Invoke(index);
+            curseChoosingDialog.OnItemPointerEnter += (index) => OnCursePanelItemPointerEnter?.Invoke(index);
+            curseChoosingDialog.OnItemPointerExit += (index) => OnCursePanelItemPointerExit?.Invoke(index);
+            curseChoosingDialog.OnQuestionMarkPointerEnter += () => OnCursePanelQuestionMarkPointerEnter?.Invoke();
+            curseChoosingDialog.OnQuestionMarkPointerExit += () => OnCursePanelQuestionMarkPointerExit?.Invoke();
+            curseChoosingDialog.OnSelectAllButtonClick += () => OnCursePanelSelectAllClick?.Invoke();
+            curseChoosingDialog.OnDeselectAllButtonClick += () => OnCursePanelDeselectAllClick?.Invoke();
+            curseChoosingDialog.OnBackButtonClick += () => OnCursePanelBackClick?.Invoke();
+            curseChoosingDialog.OnRepickButtonClick += () => OnCursePanelRepickClick?.Invoke();
         }
         public void UpdateFrame(float deltaTime)
         {
@@ -282,6 +320,20 @@ namespace MVZ2.Level.Blueprints
         public event Action<int>? OnArtifactChoosingItemExit;
         public event Action? OnArtifactChoosingBackClicked;
         public event Action? OnArtifactRepickButtonClick;
+
+        public event Action? OnCursePanelEntrancePointerEnter;
+        public event Action? OnCursePanelEntrancePointerExit;
+        public event Action? OnCursePanelEntranceClick;
+
+        public event Action<int>? OnCursePanelItemClick;
+        public event Action<int>? OnCursePanelItemPointerEnter;
+        public event Action<int>? OnCursePanelItemPointerExit;
+        public event Action? OnCursePanelQuestionMarkPointerEnter;
+        public event Action? OnCursePanelQuestionMarkPointerExit;
+        public event Action? OnCursePanelBackClick;
+        public event Action? OnCursePanelRepickClick;
+        public event Action? OnCursePanelSelectAllClick;
+        public event Action? OnCursePanelDeselectAllClick;
         #endregion
 
         float sideUIBlend = 1;
@@ -323,5 +375,11 @@ namespace MVZ2.Level.Blueprints
         ElementListUI artifactSlotList = null!;
         [SerializeField]
         Button artifactRepickButton = null!;
+
+        [Header("Curse")]
+        [SerializeField]
+        CursePanelEntranceButton cursePanelEntranceButton = null!;
+        [SerializeField]
+        CurseChoosingDialog curseChoosingDialog = null!;
     }
 }

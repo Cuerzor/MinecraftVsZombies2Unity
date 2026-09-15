@@ -377,5 +377,17 @@ namespace MVZ2Logic.Level
             level.SetProperty(RIGHT_FACTION, value);
         }
         #endregion
+
+        #region 诅咒数量
+        public static readonly PropertyMeta<int> CURSE_COUNT = Get<int>("curse_count");
+        public static int GetCurseCount(this LevelEngine level)
+        {
+            return level.GetProperty<int>(CURSE_COUNT);
+        }
+        public static void SetCurseCount(this LevelEngine level, int value)
+        {
+            level.SetProperty(CURSE_COUNT, value);
+        }
+        #endregion
     }
 }

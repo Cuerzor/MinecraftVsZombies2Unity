@@ -9,11 +9,13 @@ namespace MVZ2Logic.Saves
     {
         public BlueprintChooseSaveItem[] blueprints;
         public ArtifactSelectionItem?[] artifacts;
+        public CurseSelectionItem[] curses;
 
-        public BlueprintSelection(BlueprintChooseSaveItem[] blueprints, ArtifactSelectionItem?[] artifacts)
+        public BlueprintSelection(BlueprintChooseSaveItem[] blueprints, ArtifactSelectionItem?[] artifacts, CurseSelectionItem[] curses)
         {
             this.blueprints = blueprints;
             this.artifacts = artifacts;
+            this.curses = curses;
         }
     }
 }

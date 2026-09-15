@@ -1,0 +1,58 @@
+<curses>
+    <curse id="the_creatures_brain">
+        <texts name="怪物的大脑" tooltip="怪物生成数量+50%"/>
+        <sprite id="mvz2:curses/the_creatures_brain"/>
+        <buff id="mvz2:the_creatures_brain"/>
+        <unlock>
+            <condition requiredGroups="mvz2:curse.the_creatures_brain"/>
+        </unlock>
+    </curse>
+    <curse id="nightmares_tentacle">
+        <texts name="梦魇的触手" tooltip="星之碎片槽位-2"/>
+        <sprite id="mvz2:curses/nightmares_tentacle"/>
+        <buff id="mvz2:nightmares_tentacle"/>
+        <unlock>
+            <condition requiredGroups="mvz2:curse.nightmares_tentacle"/>
+        </unlock>
+    </curse>
+    <curse id="withers_skull">
+        <texts name="凋灵的头颅" tooltip="器械生命x60%"/>
+        <sprite id="mvz2:curses/withers_skull"/>
+        <buff id="mvz2:withers_skull"/>
+        <unlock>
+            <condition requiredGroups="mvz2:curse.withers_skull"/>
+        </unlock>
+    </curse>
+    <curse id="the_giants_flesh">
+        <texts name="巨人的肉块" tooltip="敌怪生命+25%"/>
+        <sprite id="mvz2:curses/the_giants_flesh"/>
+        <buff id="mvz2:the_giants_flesh"/>
+        <unlock>
+            <condition requiredGroups="mvz2:curse.the_giants_flesh"/>
+        </unlock>
+    </curse>
+    <curse id="red_dragons_scale">
+        <texts name="红龙的鳞片" tooltip="敌怪受到60%爆炸和火焰伤害"/>
+        <sprite id="mvz2:curses/red_dragons_scale"/>
+        <buff id="mvz2:red_dragons_scale"/>
+        <unlock>
+            <condition requiredGroups="mvz2:curse.red_dragons_scale"/>
+        </unlock>
+    </curse>
+    <curse id="locked_chests_chains">
+        <texts name="上锁箱子的锁链" tooltip="能量大于500时持续减少"/>
+        <sprite id="mvz2:curses/locked_chests_chains"/>
+        <buff id="mvz2:locked_chests_chains"/>
+        <unlock>
+            <condition requiredGroups="mvz2:curse.locked_chests_chains"/>
+        </unlock>
+    </curse>
+    <curse id="krakens_backplate">
+        <texts name="克拉肯的护板" tooltip="敌怪重量提升一级"/>
+        <sprite id="mvz2:curses/krakens_backplate"/>
+        <buff id="mvz2:krakens_backplate"/>
+        <unlock>
+            <condition requiredGroups="mvz2:curse.krakens_backplate"/>
+        </unlock>
+    </curse>
+</curses>

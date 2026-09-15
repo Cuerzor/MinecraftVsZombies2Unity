@@ -5,16 +5,20 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection;
+using System.Text;
 using MukioI18n;
 using MVZ2.Blueprints;
 using MVZ2.Level.Artifacts;
 using MVZ2.Level.Blueprints;
+using MVZ2.Level.Curses;
 using MVZ2.UI;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Callbacks;
 using MVZ2Logic.Contraptions;
+using MVZ2Logic.Curses;
 using MVZ2Logic.Games;
 using MVZ2Logic.Inputs;
 using MVZ2Logic.Level;
@@ -24,14 +28,16 @@ using MVZ2Logic.Options;
 using MVZ2Logic.Resources;
 using MVZ2Logic.Saves;
 using PVZEngine;
+using PVZEngine.Buffs;
 using PVZEngine.Level;
 using PVZEngine.Tools.Unity;
+using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace MVZ2.Level
 {
-    public class LevelBlueprintChooseController : LevelControllerPart
+    public partial class LevelBlueprintChooseController : LevelControllerPart
     {
         #region 生命周期
         public override void Init(LevelController controller)
@@ -61,6 +67,19 @@ namespace MVZ2.Level
             chooseUI.OnArtifactChoosingItemEnter += UI_OnArtifactChooseItemPointerEnterCallback;
             chooseUI.OnArtifactChoosingItemExit += UI_OnArtifactChooseItemPointerExitCallback;
             chooseUI.OnArtifactChoosingBackClicked += UI_OnArtifactChooseReturnClickCallback;
+
+            chooseUI.OnCursePanelEntrancePointerEnter += UI_OnCursePanelEntrancePointerEnterCallback;
+            chooseUI.OnCursePanelEntrancePointerExit += UI_OnCursePanelEntrancePointerExitCallback;
+            chooseUI.OnCursePanelEntranceClick += UI_OnCursePanelEntranceClickCallback;
+
+            chooseUI.OnCursePanelItemClick += UI_OnCursePanelItemClickCallback;
+            chooseUI.OnCursePanelItemPointerEnter += UI_OnCursePanelItemPointerEnterCallback;
+            chooseUI.OnCursePanelItemPointerExit += UI_OnCursePanelItemPointerExitCallback;
+            chooseUI.OnCursePanelQuestionMarkPointerEnter += UI_OnCursePanelQuestionMarkPointerEnterCallback;
+            chooseUI.OnCursePanelQuestionMarkPointerExit += UI_OnCursePanelQuestionMarkPointerExitCallback;
+            chooseUI.OnCursePanelBackClick += UI_OnCursePanelBackClickCallback;
+            chooseUI.OnCursePanelSelectAllClick += UI_OnCursePanelSelectAllClickCallback;
+            chooseUI.OnCursePanelDeselectAllClick += UI_OnCursePanelDeselectAllClickCallback;
         }
         public override void UpdateFrame(float deltaTime, float simulationSpeed)
         {
@@ -88,7 +107,9 @@ namespace MVZ2.Level
 
             // 替换制品。
             Level.ReplaceArtifacts(chosenArtifacts.Select(i => i?.id).ToArray());
+            ApplyCurses();
             chosenArtifacts = null;
+            enabledCurses.Clear();
         }
         public bool IsInteractable()
         {
@@ -106,8 +127,11 @@ namespace MVZ2.Level
             UI.SetBlueprintsSortingToChoosing(true);
             chooseUI.SetChosenBlueprintsVisible(true);
 
+            ReloadChoosingCurses();
+
             // 继承制品。
             InheritArtifacts();
+            InheritCurses();
 
             Refresh(blueprints);
 
@@ -460,6 +484,21 @@ namespace MVZ2.Level
             errorMessage = null;
             return true;
         }
+        private bool ValidateReplaceCurses(CurseSelectionItem[] curses, out string? errorMessage)
+        {
+            if (curses.GroupBy(x => x).Any(g => g.Count() > 1))
+            {
+                errorMessage = REPLACE_ERROR_DUPLICATE_CURSES;
+                return false;
+            }
+            if (curses.Any(item => item != null && !Main.SaveManager.IsCurseUnlocked(item.id)))
+            {
+                errorMessage = REPLACE_ERROR_CURSE_LOCKED;
+                return false;
+            }
+            errorMessage = null;
+            return true;
+        }
         private void ReplaceBlueprints(BlueprintChooseSaveItem[] targetBlueprints)
         {
             // 移除所有正在移动的蓝图。
@@ -542,6 +581,9 @@ namespace MVZ2.Level
             chooseUI.SetChosenBlueprintsSlotCount(Level.GetSeedSlotCount());
             RefreshChosenArtifacts();
             RefreshBlueprintChoosePanel(blueprints);
+            ReloadChoosingCurses();
+            RefreshCursePanelEntrance();
+            UpdateCursePanelEntranceNumberText();
         }
         private void RefreshBlueprintChoosePanel(IEnumerable<NamespaceID> blueprints)
         {
@@ -778,6 +820,37 @@ namespace MVZ2.Level
             }
             return string.Empty;
         }
+        public string GetCursePanelEntranceTooltip()
+        {
+            var sb = new StringBuilder();
+            foreach (var curseId in choosingCurses)
+            {
+                if (NamespaceID.IsValid(curseId) && IsCurseEnabled(curseId))
+                {
+                    var tooltip = Main.ResourceManager.GetCurseTooltip(curseId);
+                    sb.AppendLine(tooltip);
+                }
+            }
+            return sb.ToString();
+        }
+        public bool GetCursePanelEntranceTooltipError(out string? errorMessage)
+        {
+            errorMessage = null;
+            if (Level.CurrentFlag > 0)
+            {
+                errorMessage = Main.LanguageManager._(CANNOT_CHANGE_CURSE_AFTER_STARTED);
+                return true;
+            }
+            return false;
+        }
+        public string GetCursePanelEntranceTooltipError()
+        {
+            if (GetCursePanelEntranceTooltipError(out var errorMessage) && !string.IsNullOrEmpty(errorMessage))
+            {
+                return errorMessage;
+            }
+            return string.Empty;
+        }
         #endregion
 
         #region 制品
@@ -997,6 +1070,195 @@ namespace MVZ2.Level
         }
         #endregion
 
+        #region 诅咒
+        private void ReloadChoosingCurses()
+        {
+            var unlockedCurses = Main.SaveManager.GetUnlockedCurses();
+            choosingCurses.Clear();
+            choosingCurses.AddRange(unlockedCurses);
+        }
+        private void RefreshCursePanelEntrance()
+        {
+            var entrance = chooseUI.GetCursePanelEntranceButton();
+            entrance.gameObject.SetActive(choosingCurses.Count > 0);
+            entrance.SetInteractable(!GetCursePanelEntranceTooltipError(out _));
+        }
+        private void OpenChooseCurseDialog()
+        {
+            var viewDatas = choosingCurses.Select(id =>
+            {
+                if (!NamespaceID.IsValid(id))
+                    return CurseSelectItemViewData.Empty;
+                var sprite = GetCurseIcon(id);
+                var disabled = !CanChooseArtifact(id);
+                return new CurseSelectItemViewData()
+                {
+                    icon = sprite,
+                    selected = enabledCurses.Any(i => i == id),
+                    disabled = disabled
+                };
+            }).ToArray();
+            chooseUI.ShowCurseChoosePanel(viewDatas);
+            AddPanelFlag(PanelFlags.Curse);
+        }
+        private void CloseCursePanel()
+        {
+            chooseUI.HideCurseChoosePanel();
+            RemovePanelFlag(PanelFlags.Curse);
+        }
+        private NamespaceID? GetCurseIDByIndex(int index)
+        {
+            if (index < 0 || index >= choosingCurses.Count)
+                return null;
+            return choosingCurses[index];
+        }
+        private bool IsCurseEnabled(NamespaceID id)
+        {
+            return enabledCurses.Contains(id);
+        }
+        private void SetCurseEnabled(NamespaceID id, bool enabled)
+        {
+            if (enabled)
+            {
+                enabledCurses.Add(id);
+            }
+            else
+            {
+                enabledCurses.Remove(id);
+            }
+            int index = choosingCurses.IndexOf(id);
+            if (index >= 0)
+            {
+                var item = chooseUI.GetCurseSelectItem(index);
+                if (item.Exists())
+                    item.SetSelected(enabled);
+            }
+            UpdateCursePanelEntranceNumberText();
+        }
+        private void SetAllCursesEnabled(bool enabled)
+        {
+            foreach (var id in choosingCurses)
+            {
+                if (!NamespaceID.IsValid(id))
+                    continue;
+                SetCurseEnabled(id, enabled);
+            }
+        }
+        private void ClearEnabledCurses()
+        {
+            SetAllCursesEnabled(false);
+        }
+        private void InheritCurses()
+        {
+            // 继承制品。
+            if (Level.CurrentFlag > 0)
+            {
+                InheritCursesFromLastRound();
+            }
+            else
+            {
+                RepickCurses();
+            }
+        }
+        private void InheritCursesFromLastRound()
+        {
+            ClearEnabledCurses();
+            foreach (var curseID in choosingCurses)
+            {
+                if (!NamespaceID.IsValid(curseID))
+                    continue;
+                if (LevelHasCurse(curseID))
+                {
+                    SetCurseEnabled(curseID, true);
+                }
+            }
+        }
+        private void InheritCursesFromLastSelection(CurseSelectionItem[] targets)
+        {
+            ClearEnabledCurses();
+            for (int i = 0; i < targets.Length; i++)
+            {
+                var curse = targets[i];
+                if (curse == null)
+                    continue;
+                SetCurseEnabled(curse.id, true);
+            }
+        }
+        private async void RepickCurses()
+        {
+            var lastSelection = Main.SaveManager.GetLastSelection();
+            if (lastSelection != null && lastSelection.curses != null)
+            {
+                if (ValidateReplaceCurses(lastSelection.curses, out var curseMessage))
+                {
+                    InheritCursesFromLastSelection(lastSelection.curses);
+                }
+                else
+                {
+                    var title = Main.LanguageManager._(LogicStrings.ERROR);
+                    var desc = Main.LanguageManager._(curseMessage);
+                    await Main.Scene.ShowDialogMessageAsync(title, desc);
+                }
+            }
+        }
+        public bool LevelHasCurse(NamespaceID curseID)
+        {
+            var curseDef = Main.Game.GetCurseDefinition(curseID);
+            if (curseDef == null)
+                return false;
+            var buffID = curseDef.GetBuffID();
+            if (!NamespaceID.IsValid(buffID))
+                return false;
+            return Level.HasBuff(buffID);
+        }
+        private void UpdateCursePanelEntranceNumberText()
+        {
+            var entrance = chooseUI.GetCursePanelEntranceButton();
+            entrance.SetText(enabledCurses.Count.ToString());
+        }
+        private Sprite? GetCurseIcon(NamespaceID? id)
+        {
+            if (!NamespaceID.IsValid(id))
+                return null;
+            var def = Game.GetCurseDefinition(id);
+            if (def == null)
+                return null;
+            return GetCurseIcon(def);
+        }
+        private Sprite? GetCurseIcon(CurseDefinition def)
+        {
+            if (def == null)
+                return null;
+            var spriteRef = def.GetSpriteReference();
+            if (!SpriteReference.IsValid(spriteRef))
+                return null;
+            return Main.GetSprite(spriteRef);
+        }
+        private void ApplyCurses()
+        {
+            foreach (var curse in choosingCurses)
+            {
+                if (!NamespaceID.IsValid(curse))
+                    continue;
+                var def = Main.Game.GetCurseDefinition(curse);
+                var buffId = def?.GetBuffID();
+                if (!NamespaceID.IsValid(buffId))
+                    continue;
+                if (IsCurseEnabled(curse))
+                {
+                    if (!Level.HasBuff(buffId))
+                    {
+                        Level.AddBuff(buffId);
+                    }
+                }
+                else
+                {
+                    Level.RemoveBuffs(buffId);
+                }
+            }
+        }
+        #endregion
+
         #region UI层
 
         #region 事件回调
@@ -1100,7 +1362,9 @@ namespace MVZ2.Level
             // 保存上次选择
             var selectionBlueprints = chosen.Where(i => !i.innate).Select(i => i.ToSaveItem()).ToArray();
             var selectionArtifacts = chosenArtifacts.Where(e => NamespaceID.IsValid(e?.id) && !e.innate).Select(i => i != null ? new ArtifactSelectionItem(i.id) : null).ToArray();
-            var selection = new BlueprintSelection(selectionBlueprints, selectionArtifacts);
+            var selectionCurses = enabledCurses.Where(c => NamespaceID.IsValid(c)).Select(c => new CurseSelectionItem(c)).ToArray();
+
+            var selection = new BlueprintSelection(selectionBlueprints, selectionArtifacts, selectionCurses);
             Main.SaveManager.SetLastSelection(selection);
             Game.RunCallback(LogicLevelCallbacks.POST_BLUEPRINT_SELECTION, new LogicLevelCallbacks.PostBlueprintSelectionParams(Level, chosen));
             Main.SaveManager.SaveToFile(); // 选卡之后保存游戏。
@@ -1240,6 +1504,77 @@ namespace MVZ2.Level
         }
         #endregion
 
+        #region 诅咒面板入口
+        private void UI_OnCursePanelEntrancePointerEnterCallback()
+        {
+            var ui = chooseUI.GetCursePanelEntranceButton();
+            if (!ui.Exists())
+                return;
+            Controller.ShowTooltip(new CursePanelEntranceTooltipSource(this, ui));
+        }
+        private void UI_OnCursePanelEntrancePointerExitCallback()
+        {
+            Controller.HideTooltip();
+        }
+        private void UI_OnCursePanelEntranceClickCallback()
+        {
+            OpenChooseCurseDialog();
+        }
+        #endregion
+
+        #region 诅咒面板
+        private void UI_OnCursePanelItemPointerEnterCallback(int index)
+        {
+            var ui = chooseUI.GetCurseSelectItem(index);
+            if (!ui.Exists())
+                return;
+            var id = GetCurseIDByIndex(index);
+            if (!NamespaceID.IsValid(id))
+                return;
+            Controller.ShowTooltip(new CursePanelItemTooltipSource(this, id, ui));
+        }
+        private void UI_OnCursePanelItemPointerExitCallback(int index)
+        {
+            Controller.HideTooltip();
+        }
+        private void UI_OnCursePanelItemClickCallback(int index)
+        {
+            var curseId = GetCurseIDByIndex(index);
+            if (!NamespaceID.IsValid(curseId))
+                return;
+            bool enable = !IsCurseEnabled(curseId);
+            SetCurseEnabled(curseId, enable);
+            Main.SoundManager.Play2D(LogicSoundID.tap);
+        }
+        private void UI_OnCursePanelQuestionMarkPointerEnterCallback()
+        {
+            var ui = chooseUI.GetCursePanelQuestionMark();
+            if (!ui.Exists())
+                return;
+            Controller.ShowTooltip(new CursePanelQuestionMarkTooltipSource(this, ui));
+        }
+        private void UI_OnCursePanelQuestionMarkPointerExitCallback()
+        {
+            Controller.HideTooltip();
+        }
+        private void UI_OnCursePanelSelectAllClickCallback()
+        {
+            SetAllCursesEnabled(true);
+        }
+        private void UI_OnCursePanelDeselectAllClickCallback()
+        {
+            SetAllCursesEnabled(false);
+        }
+        private void UI_OnCursePanelRepickButtonClickCallback()
+        {
+            RepickCurses();
+        }
+        private void UI_OnCursePanelBackClickCallback()
+        {
+            CloseCursePanel();
+        }
+        #endregion
+
         #endregion
 
         #endregion
@@ -1314,7 +1649,11 @@ namespace MVZ2.Level
         [TranslateMsg("对话框内容")]
         public const string WARNING_SELECTED_BLUEPRINTS_NOT_FULL = "你没有携带满蓝图，确认要继续吗？";
         [TranslateMsg("关卡UI")]
+        public const string CANNOT_CHANGE_CURSE_AFTER_STARTED = "无法在关卡开始后更换诅咒";
+        [TranslateMsg("关卡UI")]
         public const string CHOOSE_ARTIFACT = "选择制品";
+        [TranslateMsg("关卡UI")]
+        public const string CHOOSE_CURSE = "选择诅咒";
         [TranslateMsg("重选蓝图的验证错误信息")]
         public const string REPLACE_ERROR_DUPLICATE_BLUEPRINTS = "上一次选择的蓝图中包含多个相同的器械。";
         [TranslateMsg("重选蓝图的验证错误信息")]
@@ -1323,6 +1662,10 @@ namespace MVZ2.Level
         public const string REPLACE_ERROR_DUPLICATE_ARTIFACTS = "上一次选择的制品中包含多个相同的制品。";
         [TranslateMsg("重选蓝图的验证错误信息")]
         public const string REPLACE_ERROR_ARTIFACT_LOCKED = "上一次选择的制品中包含未解锁的制品。";
+        [TranslateMsg("重选蓝图的验证错误信息")]
+        public const string REPLACE_ERROR_DUPLICATE_CURSES = "上一次选择的诅咒中包含多个相同的诅咒。";
+        [TranslateMsg("重选蓝图的验证错误信息")]
+        public const string REPLACE_ERROR_CURSE_LOCKED = "上一次选择的诅咒中包含未解锁的诅咒。"; 
         private LevelUIBlueprintChoose chooseUI => UI.BlueprintChoose;
 
         private bool isChoosingBlueprints;
@@ -1335,6 +1678,10 @@ namespace MVZ2.Level
         private int choosingArtifactSlotIndex;
         private NamespaceID?[]? choosingArtifacts;
 
+
+        private readonly HashSet<NamespaceID> enabledCurses = new HashSet<NamespaceID>();
+        private readonly List<NamespaceID?> choosingCurses = new List<NamespaceID?>();
+
         private bool isViewingLawn;
         private bool viewLawnFinished;
         #endregion
@@ -1346,118 +1693,7 @@ namespace MVZ2.Level
             None = 0,
             Artifact = 1,
             CommandBlock = 1 << 1,
-        }
-        private class BlueprintTooltipSource : ITooltipSource
-        {
-            public BlueprintTooltipSource(LevelBlueprintChooseController controller, NamespaceID blueprintID, ITooltipTarget target, bool commandBlock)
-            {
-                this.controller = controller;
-                this.blueprintID = blueprintID;
-                this.target = target;
-                this.commandBlock = commandBlock;
-            }
-            public Camera GetCamera()
-            {
-                return controller.Controller.GetCamera();
-            }
-            public ITooltipTarget GetTarget()
-            {
-                return target;
-            }
-            public TooltipContent GetContent()
-            {
-                var name = controller.Main.ResourceManager.GetBlueprintName(blueprintID, commandBlock);
-                var tooltip = controller.Main.ResourceManager.GetBlueprintTooltip(blueprintID);
-                var error = controller.GetBlueprintTooltipError(blueprintID, commandBlock);
-                return new TooltipContent()
-                {
-                    name = name,
-                    error = error,
-                    description = tooltip
-                };
-            }
-            private LevelBlueprintChooseController controller;
-            private NamespaceID blueprintID;
-            private ITooltipTarget target;
-            private bool commandBlock;
-        }
-        private class ArtifactTooltipSource : ITooltipSource
-        {
-            public ArtifactTooltipSource(LevelBlueprintChooseController controller, NamespaceID artifactID, ITooltipTarget target)
-            {
-                this.controller = controller;
-                this.artifactID = artifactID;
-                this.target = target;
-            }
-            public Camera GetCamera()
-            {
-                return controller.Controller.GetCamera();
-            }
-            public ITooltipTarget GetTarget()
-            {
-                return target;
-            }
-            public TooltipContent GetContent()
-            {
-                var name = controller.Main.ResourceManager.GetArtifactName(artifactID);
-                var tooltip = controller.Main.ResourceManager.GetArtifactTooltip(artifactID);
-                string error = string.Empty;
-                return new TooltipContent()
-                {
-                    name = name,
-                    error = error,
-                    description = tooltip
-                };
-            }
-            private LevelBlueprintChooseController controller;
-            private NamespaceID artifactID;
-            private ITooltipTarget target;
-        }
-        private class ArtifactSlotTooltipSource : ITooltipSource
-        {
-            public ArtifactSlotTooltipSource(LevelBlueprintChooseController controller, int index, ITooltipTarget target)
-            {
-                this.controller = controller;
-                this.index = index;
-                this.target = target;
-            }
-            public Camera GetCamera()
-            {
-                return controller.Controller.GetCamera();
-            }
-            public ITooltipTarget GetTarget()
-            {
-                return target;
-            }
-            public TooltipContent GetContent()
-            {
-                var artifact = controller.chosenArtifacts?[index];
-                var artifactID = artifact?.id;
-                if (NamespaceID.IsValid(artifactID))
-                {
-                    var name = controller.Main.ResourceManager.GetArtifactName(artifactID);
-                    var tooltip = controller.Main.ResourceManager.GetArtifactTooltip(artifactID);
-                    string error = controller.GetChosenArtifactTooltipError(index);
-                    return new TooltipContent()
-                    {
-                        name = name,
-                        error = error,
-                        description = tooltip
-                    };
-                }
-                else
-                {
-                    return new TooltipContent()
-                    {
-                        name = controller.Main.LanguageManager._(CHOOSE_ARTIFACT),
-                        error = string.Empty,
-                        description = string.Empty
-                    };
-                }
-            }
-            private LevelBlueprintChooseController controller;
-            private int index;
-            private ITooltipTarget target;
+            Curse = 1 << 2
         }
         #endregion
     }

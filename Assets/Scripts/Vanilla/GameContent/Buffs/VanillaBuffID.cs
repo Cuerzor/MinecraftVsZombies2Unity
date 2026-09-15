@@ -2,6 +2,7 @@
 
 using MVZ2.Vanilla;
 using PVZEngine;
+using PVZEngine.Buffs;
 
 namespace MVZ2.GameContent.Buffs
 {
@@ -21,6 +22,15 @@ namespace MVZ2.GameContent.Buffs
             public const string debugNoRecharge = "debug_no_recharge";
             public const string debugStarshard = "debug_starshard";
             public const string debugEnergy = "debug_energy";
+
+            // Curses
+            public const string theCreaturesBrain = "the_creatures_brain";
+            public const string nightmaresTentacle = "nightmares_tentacle";
+            public const string withersSkull = "withers_skull";
+            public const string theGiantsFlesh = "the_giants_flesh";
+            public const string redDragonsScale = "red_dragons_scale";
+            public const string lockedChestsChains = "locked_chests_chains";
+            public const string krakensBackplate = "krakens_backplate";
 
             // Tutorial
             public const string tutorialPickaxeDisable = "tutorial_pickaxe_disable";
@@ -161,6 +171,9 @@ namespace MVZ2.GameContent.Buffs
             public const string obsidianArmor = "obsidian_armor";
             public const string mineTNTInvincible = "mine_tnt_invincible";
 
+            // Curses
+            public const string withersSkullForContraption = "withers_skull_for_contraption";
+
             // Chapter 1
             public const string moonlightSensorLaunching = "moonlight_sensor_launching";
             public const string moonlightSensorEvoked = "moonlight_sensor_evoked";
@@ -230,6 +243,10 @@ namespace MVZ2.GameContent.Buffs
 
             // Core
             public const string randomEnemySpeed = "random_enemy_speed";
+
+            // Curses
+            public const string theGiantsFleshForEnemy = "the_giants_flesh_for_enemy";
+            public const string krakensBackplateForEnemy = "krakens_backplate_for_enemy";
 
             // Prologue
             public const string gemCarrier = "gem_carrier";

@@ -334,6 +334,27 @@ MonoBehaviour:
   - name: characters/utsuho
     texture: {fileID: 2800000, guid: 1be099efb0a0d3841ad50caee17e9761, type: 3}
     tags: []
+  - name: curses/krakens_backplate
+    texture: {fileID: 2800000, guid: 85ae0b6fd00720b4b9e220432d7a2f40, type: 3}
+    tags: []
+  - name: curses/locked_chests_chains
+    texture: {fileID: 2800000, guid: 906a48795c212d546bbec74d7295f974, type: 3}
+    tags: []
+  - name: curses/nightmares_tentacle
+    texture: {fileID: 2800000, guid: 256b166dcbd233540bfa86ee6b8c56e9, type: 3}
+    tags: []
+  - name: curses/red_dragons_scale
+    texture: {fileID: 2800000, guid: dd9359faba258ba42ac7467d732aa8ae, type: 3}
+    tags: []
+  - name: curses/the_creatures_brain
+    texture: {fileID: 2800000, guid: 64fae9ded1900d64bba8789f78363d41, type: 3}
+    tags: []
+  - name: curses/the_giants_flesh
+    texture: {fileID: 2800000, guid: e0a58013ffdd8304aa2139402f9bf70a, type: 3}
+    tags: []
+  - name: curses/withers_skull
+    texture: {fileID: 2800000, guid: eccf21b7313a33d41a14e2ede291366e, type: 3}
+    tags: []
   - name: entity/height_indicator
     texture: {fileID: 2800000, guid: 3d0f094a3020c1a4bbec297a273a5ed4, type: 3}
     tags: []
@@ -1264,14 +1285,23 @@ MonoBehaviour:
   - name: ui/debug_console_icon
     texture: {fileID: 2800000, guid: c853afac5f602874e877872193826015, type: 3}
     tags: []
+  - name: ui/deselect_all
+    texture: {fileID: 2800000, guid: 64f5d3ca66a101c4c9a68600f246b904, type: 3}
+    tags: []
   - name: ui/gear
     texture: {fileID: 2800000, guid: e0c7697228ff843469a11a3a633766bb, type: 3}
     tags: []
   - name: ui/gear_banned
     texture: {fileID: 2800000, guid: d7ad17d08589c04459d3a3030abbf9f5, type: 3}
     tags: []
+  - name: ui/question_mark
+    texture: {fileID: 2800000, guid: 0704cf6e70e16a142ba9812e3204d528, type: 3}
+    tags: []
   - name: ui/refresh
     texture: {fileID: 2800000, guid: 92e692ae88b62a541bef812a89e2bac3, type: 3}
+    tags: []
+  - name: ui/select_all
+    texture: {fileID: 2800000, guid: 6fd7f39aa0a47b84687c0fb1016c4945, type: 3}
     tags: []
   - name: ui/snipenser_life
     texture: {fileID: 2800000, guid: 7b77566262542ea459cba42fe15d4825, type: 3}
@@ -2800,6 +2830,9 @@ MonoBehaviour:
   - name: ui/level/conveyor_belt_part_mobile
     texture: {fileID: 2800000, guid: fe83ffae5970de14a9a107d4947b87b0, type: 3}
     tags: []
+  - name: ui/level/curse
+    texture: {fileID: 2800000, guid: eaa2689b220a1dc4fbc27f9eb837186e, type: 3}
+    tags: []
   - name: ui/level/energy_gear
     texture: {fileID: 2800000, guid: e58665a25470bdf438fd493d170f6cc4, type: 3}
     tags: []
@@ -4010,6 +4043,34 @@ MonoBehaviour:
   - name: characters/utsuho
     index: 4
     sprite: {fileID: 824911285, guid: 1be099efb0a0d3841ad50caee17e9761, type: 3}
+    tags: []
+  - name: curses/krakens_backplate
+    index: 0
+    sprite: {fileID: 21300000, guid: 85ae0b6fd00720b4b9e220432d7a2f40, type: 3}
+    tags: []
+  - name: curses/locked_chests_chains
+    index: 0
+    sprite: {fileID: 21300000, guid: 906a48795c212d546bbec74d7295f974, type: 3}
+    tags: []
+  - name: curses/nightmares_tentacle
+    index: 0
+    sprite: {fileID: 21300000, guid: 256b166dcbd233540bfa86ee6b8c56e9, type: 3}
+    tags: []
+  - name: curses/red_dragons_scale
+    index: 0
+    sprite: {fileID: 21300000, guid: dd9359faba258ba42ac7467d732aa8ae, type: 3}
+    tags: []
+  - name: curses/the_creatures_brain
+    index: 0
+    sprite: {fileID: 21300000, guid: 64fae9ded1900d64bba8789f78363d41, type: 3}
+    tags: []
+  - name: curses/the_giants_flesh
+    index: 0
+    sprite: {fileID: 21300000, guid: e0a58013ffdd8304aa2139402f9bf70a, type: 3}
+    tags: []
+  - name: curses/withers_skull
+    index: 0
+    sprite: {fileID: 21300000, guid: eccf21b7313a33d41a14e2ede291366e, type: 3}
     tags: []
   - name: entity/height_indicator
     index: 0
@@ -5646,6 +5707,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: c853afac5f602874e877872193826015, type: 3}
     tags: []
+  - name: ui/deselect_all
+    index: 0
+    sprite: {fileID: 21300000, guid: 64f5d3ca66a101c4c9a68600f246b904, type: 3}
+    tags: []
   - name: ui/gear
     index: 0
     sprite: {fileID: 21300000, guid: e0c7697228ff843469a11a3a633766bb, type: 3}
@@ -5654,9 +5719,17 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: d7ad17d08589c04459d3a3030abbf9f5, type: 3}
     tags: []
+  - name: ui/question_mark
+    index: 0
+    sprite: {fileID: 21300000, guid: 0704cf6e70e16a142ba9812e3204d528, type: 3}
+    tags: []
   - name: ui/refresh
     index: 0
     sprite: {fileID: 21300000, guid: 92e692ae88b62a541bef812a89e2bac3, type: 3}
+    tags: []
+  - name: ui/select_all
+    index: 0
+    sprite: {fileID: 21300000, guid: 6fd7f39aa0a47b84687c0fb1016c4945, type: 3}
     tags: []
   - name: ui/snipenser_life
     index: 0
@@ -11038,6 +11111,10 @@ MonoBehaviour:
   - name: ui/level/conveyor_belt_part_mobile
     index: 0
     sprite: {fileID: 21300000, guid: fe83ffae5970de14a9a107d4947b87b0, type: 3}
+    tags: []
+  - name: ui/level/curse
+    index: 0
+    sprite: {fileID: 21300000, guid: eaa2689b220a1dc4fbc27f9eb837186e, type: 3}
     tags: []
   - name: ui/level/energy_gear
     index: 0

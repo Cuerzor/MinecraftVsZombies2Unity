@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Callbacks;
+using MVZ2Logic.Curses;
 using MVZ2Logic.Difficulties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Localization;
@@ -96,6 +97,29 @@ namespace MVZ2Logic.Games
                 return artifactID.ToString();
             var tooltip = def.GetArtifactTooltip() ?? LogicStrings.UNKNOWN_ARTIFACT_TOOLTIP;
             return Global.Localization.GetTextParticular(tooltip, LogicStrings.CONTEXT_ARTIFACT_TOOLTIP);
+        }
+        #endregion
+
+        #region 诅咒
+        public static string GetCurseName(this IGlobalGame game, NamespaceID? curseID)
+        {
+            if (curseID == null)
+                return "null";
+            var def = game.GetCurseDefinition(curseID);
+            if (def == null)
+                return curseID.ToString();
+            var name = def.GetCurseName() ?? LogicStrings.UNKNOWN_CURSE_NAME;
+            return Global.Localization.GetTextParticular(name, LogicStrings.CONTEXT_CURSE_NAME);
+        }
+        public static string GetCurseTooltip(this IGlobalGame game, NamespaceID? curseID)
+        {
+            if (curseID == null)
+                return "null";
+            var def = game.GetCurseDefinition(curseID);
+            if (def == null)
+                return curseID.ToString();
+            var tooltip = def.GetCurseTooltip() ?? LogicStrings.CONTEXT_CURSE_TOOLTIP;
+            return Global.Localization.GetTextParticular(tooltip, LogicStrings.CONTEXT_CURSE_TOOLTIP);
         }
         #endregion
 
