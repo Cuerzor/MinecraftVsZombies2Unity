@@ -196,7 +196,7 @@
     </entry>
     <entry id="hookshot_drowned">
         <entity id="mvz2:hookshot_drowned" />
-        <spawn level="3" minWave="5" />
+        <spawn level="4" minWave="5" />
         <terrain water="true" />
         <weight base="3000" />
     </entry>
