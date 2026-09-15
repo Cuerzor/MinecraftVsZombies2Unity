@@ -22,6 +22,7 @@ namespace MVZ2.Level
         {
             SetCameraPosition(LevelCameraPosition.Lawn);
             UpdateDifficulty();
+            UpdateCurseIcon();
             Game.RunCallback(LogicLevelCallbacks.PRE_BATTLE, new LevelCallbackParams(level));
             level.PrepareForBattle();
             StartGame();
@@ -38,6 +39,7 @@ namespace MVZ2.Level
         {
             yield return MoveCameraToLawn();
             UpdateDifficulty();
+            UpdateCurseIcon();
             Game.RunCallback(LogicLevelCallbacks.PRE_BATTLE, new LevelCallbackParams(level));
             level.PrepareForBattle();
             yield return new WaitForSeconds(0.5f);
@@ -56,6 +58,7 @@ namespace MVZ2.Level
             yield return GameStartToPreviewTransition();
 
             UpdateDifficulty();
+            UpdateCurseIcon();
             UpdateEnergy();
             level.UpdatePersistentLevelUnlocks();
 

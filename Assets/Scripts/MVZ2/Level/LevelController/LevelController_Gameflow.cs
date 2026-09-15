@@ -171,6 +171,7 @@ namespace MVZ2.Level
             level.Start();
             SetGameStarted(true);
             UpdateFocusLost(Application.isFocused);
+            UpdateCurseIcon();
         }
         private void SetGameStarted(bool value)
         {

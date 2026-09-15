@@ -178,6 +178,17 @@ namespace MVZ2.Level.UI
         }
         #endregion
 
+        #region 诅咒
+        public void SetCurseIconActive(bool active)
+        {
+            curseIcon.gameObject.SetActive(active);
+        }
+        public void SetCurseIconText(string text)
+        {
+            curseIcon.SetText(text);
+        }
+        #endregion
+
         #region 加速
         public void SetSpeedUp(bool speedUp)
         {
@@ -560,6 +571,8 @@ namespace MVZ2.Level.UI
         Button menuButton = null!;
         [SerializeField]
         TextMeshProUGUI difficultyText = null!;
+        [SerializeField]
+        LevelCurseIcon curseIcon = null!;
 
         [Header("Advice")]
         [SerializeField]

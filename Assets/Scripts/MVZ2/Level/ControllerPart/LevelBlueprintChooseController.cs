@@ -108,6 +108,7 @@ namespace MVZ2.Level
             // 替换制品。
             Level.ReplaceArtifacts(chosenArtifacts.Select(i => i?.id).ToArray());
             ApplyCurses();
+
             chosenArtifacts = null;
             enabledCurses.Clear();
         }
