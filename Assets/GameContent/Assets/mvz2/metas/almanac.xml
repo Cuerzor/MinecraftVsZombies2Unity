@@ -230,7 +230,7 @@
             </header>
             <properties>
                 <p>耐久：<![CDATA[<color=red><var id="mvz2:entity_health" /></color>]]></p>
-                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>快速发射60支箭矢</color>]]></p>
             </properties>
@@ -435,7 +435,7 @@
                 <p>在一个驱动发射器上再放置一个驱动发射器，可以增加它每次发射的箭的数量。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>X发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>升级上限：<![CDATA[<color=red>5</color>]]></p>
                 <p>技能：<![CDATA[<color=red>发射五支大箭矢</color>]]></p>
@@ -471,7 +471,7 @@
                 <p>活塞发射器能够伸长自己来攻击高处的敌人。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>特点：<![CDATA[<color=red>能够攻击高处的敌人</color>]]></p>
                 <p>技能：<![CDATA[<color=red>向所有敌人发射巨型尖刺，造成180点穿甲伤害</color>]]></p>
@@ -486,7 +486,7 @@
                 <p><![CDATA[图腾发射器在发射飞镖的同时还会<tag id="mvz2:fire" />喷火烧伤近处的敌人。]]></p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red>15（飞镖），20/秒（火焰）</color>]]></p>
                 <p>特点：<![CDATA[<color=red>飞镖上的箭毒会让<tag id="mvz2:shell" enum="mvz2:flesh" />怪物肌肉松弛而无法造成近战伤害</color>]]></p>
                 <p>技能：<![CDATA[<color=red>投出穿透敌人的长矛，并留下使敌人虚弱的毒雾轨迹</color>]]></p>
@@ -529,7 +529,7 @@
                 <p>木制投掷器向敌人发射滚动的木球。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>立即喷射30颗大型木球，每颗造成80点伤害</color>]]></p>
             </properties>
@@ -543,7 +543,7 @@
                 <p>尖刺方块会对走在上面的敌人造成伤害。</p>
             </header>
             <properties>
-                <p>攻击频率：<![CDATA[<color=red>1秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1次/1秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>对一整行地面上的敌人快速造成伤害，并将它们拉向自身</color>]]></p>
             </properties>
@@ -560,7 +560,7 @@
                 <p>石制投掷器向敌人发射小型卵石，偶尔会发射能击退敌方怪物并分裂的巨石。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/1.5秒</color>]]></p>
                 <p>巨石概率：<![CDATA[<color=red>25%</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" />（卵石），<var local="boulder_damage" />（巨石）</color>]]></p>
                 <p>技能：<![CDATA[<color=red>立即喷射30发巨石</color>]]></p>
@@ -612,7 +612,7 @@
                 <p>磁暴线圈会电击周围大范围内的敌人。</p>
             </header>
             <properties>
-                <p>攻击速度：<![CDATA[<color=red>3秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1次/3秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>半径：<![CDATA[<color=red>2.5格</color>]]></p>
                 <p>特殊：<![CDATA[<color=red>可以攻击空中敌人；电击水域会对周围水域也造成伤害</color>]]></p>
@@ -643,10 +643,10 @@
             </header>
             <properties>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
-                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/1.5秒</color>]]></p>
                 <p>音符上限：<![CDATA[<color=red>10</color>]]></p>
                 <p>射程：<![CDATA[<color=red>4格</color>]]></p>
-                <p>技能：<![CDATA[<color=red>在30秒内x500%伤害，x500%发射速度，x200%音符飞行速度，+10格射程</color>]]></p>
+                <p>技能：<![CDATA[<color=red>在30秒内x500%伤害，x500%攻击速度，x200%音符飞行速度，+10格射程</color>]]></p>
             </properties>
             <flavor>
                 <p>永远不要试图做音符盒的邻居，别问为什么。</p>
@@ -671,7 +671,7 @@
                 <p>双向发射器在向前发射箭矢的同时，也会向后方发射双倍的箭矢。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1发/1.5秒（前方），2发/1.5秒（后方）</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/1.5秒（前方），2发/1.5秒（后方）</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>快速向前后分别发射60支箭矢，最后向后发射一支大箭矢</color>]]></p>
             </properties>
@@ -810,7 +810,7 @@
                 <p>三头发射器一次能发射三行的箭矢。如果它位于最外侧的行，则改为向它自己所在的一行额外发射箭矢。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>3支/1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>3发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>发射三颗缓慢飞行的，互相环绕的星球，穿透并反复打击敌人</color>]]></p>
             </properties>
@@ -824,7 +824,7 @@
                 <p>烟花发射器会自动轰击上方高空中的敌人。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1发/3秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/3秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" />，只能伤害高空中的敌人</color>]]></p>
                 <p>爆炸半径：<![CDATA[<color=red>1.5格</color>]]></p>
                 <p>技能：<![CDATA[<color=red>爆炸半径永久+1格</color>]]></p>
@@ -838,7 +838,7 @@
                 <p>连射发射器一次能发射两支箭矢。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>2支/1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>2发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>快速发射60支箭矢，最后发射一支大箭矢</color>]]></p>
             </properties>
@@ -852,7 +852,7 @@
                 <p>信标能向后方、上方、下方、前上方、前下方五个方向同时发射星星手里剑。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>5发/1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>5发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>召唤10颗陨石，打击场上随机位置</color>]]></p>
             </properties>
@@ -920,7 +920,7 @@
                 <p>特点：<![CDATA[<color=red>发光的敌人额外受到<var local="glowing_damage_addition" />%伤害</color>]]></p>
                 <p>射击模式：</p>
                 <p>  伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
-                <p>  发射间隔：<![CDATA[<color=red><var local="fire_interval" />秒</color>]]></p>
+                <p>  攻击速度：<![CDATA[<color=red>1发/<var local="fire_interval" />秒</color>]]></p>
                 <p>  发光时长：<![CDATA[<color=red><var local="glowing_duration" />秒</color>]]></p>
                 <p>  技能：<![CDATA[<color=red>射出<var local="evocation_arrow_count" />支光灵箭</color>]]></p>
                 <p>激光模式：</p>
@@ -942,7 +942,7 @@
             </header>
             <properties>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" />（燧石），<var local="gravel_damage" />（沙砾）</color>]]></p>
-                <p>投掷间隔：<![CDATA[<color=red>3秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/3秒</color>]]></p>
                 <p>定身时长：<![CDATA[<color=red>5秒</color>]]></p>
                 <p>沙砾概率：<![CDATA[<color=red>25%</color>]]></p>
                 <p>技能：<![CDATA[<color=red>向每个敌人投出一块沙砾</color>]]></p>
@@ -1021,11 +1021,11 @@
         </entry>
         <entry id="mvz2:amethyst_pylon">
             <header>
-                <p><![CDATA[紫晶塔向前发射穿透所有敌人的激光。周围的<tag id="mvz2:light_source"/>光源越多，紫晶塔的伤害越高。]]></p>
+                <p><![CDATA[紫晶塔向前发射穿透所有敌人的激光。紫晶塔受到的<tag id="mvz2:light_source"/>光照越多，激光的伤害越高。]]></p>
             </header>
             <properties>
-                <p>伤害：<![CDATA[<color=red>10（无光源），20（1光源），40（2光源），60（3光源）</color>]]></p>
-                <p>攻击间隔：<![CDATA[<color=red>3秒</color>]]></p>
+                <p>伤害：<![CDATA[<color=red>10（无光照），20（1光照），40（2光照），60（3光照）</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/3秒</color>]]></p>
                 <p>技能：<![CDATA[<color=red>发射一道贯穿三行的超能光束，之后紫晶塔被禁用30秒</color>]]></p>
             </properties>
             <flavor>
@@ -1080,7 +1080,7 @@
                 <p>枫车会向前发射风刃。风刃如果经过其他枫车，其伤害会增加。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1发/<var local="fire_interval" />秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/<var local="fire_interval" />秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" />锐利伤害</color>]]></p>
                 <p>特殊：<![CDATA[<color=red>经过枫车的风刃+<var id="mvz2:entity_damage" />伤害</color>]]></p>
                 <p>技能：<![CDATA[<color=red>对所有敌人造成<var local="evocation_damage" />点伤害X次。（X=场上枫车的数量）</color>]]></p>
@@ -1182,7 +1182,7 @@
                 <p>寒冰发射器发射可以使敌人减速的冰箭。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>发射一枚致命的冰封球</color>]]></p>
             </properties>
@@ -1348,7 +1348,7 @@
                 <p>金制投掷器向敌人发射金球，金球在击中敌人后有概率产生绿宝石，并在敌人间反弹。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" />，每次反弹后减半</color>]]></p>
                 <p>宝石概率：<![CDATA[<color=red>25%</color>]]></p>
                 <p>技能：<![CDATA[<color=red>立即喷射30发金球</color>]]></p>
@@ -1365,7 +1365,7 @@
                 <p>御天信标会发射光柱持续打击一处定点内的所有敌人。点击它可以修改打击的定点位置。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>1发/3秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1发/3秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>展开一片星空，将场地临时变为黑夜，空中会掉落总共300颗星星子弹，每颗星星造成55点伤害，持续30秒</color>]]></p>
             </properties>
@@ -1420,7 +1420,7 @@
                 <p>高频脉冲发射器一次能发射四支箭矢。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>4支/1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>4发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>永久改为发射六支箭矢，并<tag id="mvz2:light_source" />发光</color>]]></p>
             </properties>
@@ -1441,7 +1441,7 @@
                 <p>香蒲II型会向任何敌人发射跟踪尖刺。</p>
             </header>
             <properties>
-                <p>发射速度：<![CDATA[<color=red>2发/1.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>2发/1.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>特殊：<![CDATA[<color=red>尖刺会跟踪敌人</color>]]></p>
                 <p>技能：<![CDATA[<color=red>发射很多在战场上弹跳的彩虹猫！</color>]]></p>
@@ -1465,7 +1465,7 @@
             </header>
             <properties>
                 <p>耐久：<![CDATA[<color=red><var id="mvz2:entity_health" /></color>]]></p>
-                <p>攻击频率：<![CDATA[<color=red>0.5秒</color>]]></p>
+                <p>攻击速度：<![CDATA[<color=red>1次/0.5秒</color>]]></p>
                 <p>伤害：<![CDATA[<color=red><var id="mvz2:entity_damage" /></color>]]></p>
                 <p>技能：<![CDATA[<color=red>对一整行地面上的敌人快速造成伤害，并将它们拉向自身；向周围扔出30个钻石蒺藜，对踩到的敌人造成100伤害</color>]]></p>
             </properties>
@@ -1715,7 +1715,7 @@
             <properties>
                 <p>生命：<![CDATA[<color=red><var id="mvz2:entity_health" />+<var id="armor_hp" /></color>]]></p>
                 <p>速度：<![CDATA[<color=red><var id="mvz2:entity_speed" /></color>]]></p>
-                <p>弱点：<![CDATA[<color=red>荧石周围的器械无法被控制</color>]]></p>
+                <p>弱点：<![CDATA[<color=red>荧石光照范围内的器械无法被控制</color>]]></p>
             </properties>
             <flavor>
                 <p><![CDATA[<color=#F0F>催眠者是整个世界上最帅气、最美丽、最伟大、最厉害的生物！</color>]]></p>
@@ -3147,7 +3147,7 @@
                 <properties>
                     <p>耐久：<![CDATA[<color=red><var local="hp"/></color>]]></p>
                     <p>伤害：<![CDATA[<color=red><var local="damage"/></color>]]></p>
-                    <p>射速：<![CDATA[<color=red>1支/<var local="fire_interval"/>秒</color>]]></p>
+                    <p>攻击速度：<![CDATA[<color=red>1发/<var local="fire_interval"/>秒</color>]]></p>
                 </properties>
                 <flavor>
                     <p>他没有消失。他只是累了，想休息了。</p>

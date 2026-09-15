@@ -499,7 +499,7 @@
         </sentence>
         <!--语句2-->
         <sentence speaker="mvz2:steve" sounds="mvz2:talk">
-          <text>不过，荧石的光能够防止周围的器械被它们控制。</text>
+          <text>不过，荧石能够防止光照范围内的器械被它们控制。</text>
         </sentence>
         <!--语句3-->
         <sentence speaker="mvz2:shinmyoumaru" sounds="mvz2:dialog_weird">

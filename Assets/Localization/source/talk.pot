@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-08-08 07:46+0800\n"
+"POT-Creation-Date: 2026-09-15 07:41+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -452,7 +452,7 @@ msgstr ""
 #. Text for talk sentence 2 in talk group castle_3's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:castle_3"
-msgid "不过，荧石的光能够防止周围的器械被它们控制。"
+msgid "不过，荧石能够防止光照范围内的器械被它们控制。"
 msgstr ""
 
 #. Text for talk sentence 3 in talk group castle_3's section 0
@@ -11000,7 +11000,7 @@ msgstr ""
 #. Text for talk sentence 4 in talk group palace_5_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:palace_5_map"
-msgid "妖怪之山……就是幻想乡里的那一座非常高的山脉吧？"
+msgid "妖怪之山……就是幻想乡里的那一座非常高的山吧？"
 msgstr ""
 
 #. Text for talk sentence 5 in talk group palace_5_map's section 0
