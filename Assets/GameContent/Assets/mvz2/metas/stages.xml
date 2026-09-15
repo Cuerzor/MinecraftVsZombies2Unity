@@ -1744,7 +1744,6 @@
             <entry id="mvz2:freezenser" count="6" />
             <entry id="mvz2:autotrap" count="8" />
             <entry id="mvz2:nesting_tnt" count="4" minCount="0" />
-            <entry id="mvz2:loan_sign" count="1" minCount="0" />
         </conveyor>
         <clear pickupModel="mvz2:entity.money_chest" />
         <spawns flags="2" pointsMultiplier="3">
