@@ -79,6 +79,8 @@
   - Cost in I, Zombie mode: 150 -> 125 
 - Mutant Zombie
   - Now blocks Skeleton Horses from jumping.
+- Wither
+  - Now can be interrupted by Golden Apple even when Wither is using a charge attack instead of an eat attack.
 - Eye of the Giant
   - Damage multiplier: 250% -> 200%
   - Attack speed multiplier: 50% -> 60%

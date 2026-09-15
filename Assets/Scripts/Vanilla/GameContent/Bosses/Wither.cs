@@ -24,6 +24,7 @@ using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.Tools.Random;
 using UnityEngine;
+using static MVZ2.GameContent.Bosses.Nightmareaper;
 
 namespace MVZ2.GameContent.Bosses
 {
@@ -86,36 +87,17 @@ namespace MVZ2.GameContent.Bosses
             if (other.Type != EntityTypes.PLANT && other.Type != EntityTypes.OBSTACLE)
                 return;
             var otherCollider = collision.OtherCollider;
-            var crushDamage = VanillaMod.INSTA_DAMAGE_AMOUNT;
+            var entityState = stateMachine.GetStateNumber(self);
             var substate = stateMachine.GetSubState(self);
             if (other.IsInvincible())
             {
-                if (self.State == STATE_CHARGE && substate == ChargeState.SUBSTATE_DASH)
-                {
-                    Stun(self);
-                }
+                ContactWithInvincibleTarget(self, other, otherCollider);
             }
             else
             {
-                var result = otherCollider.TakeDamage(crushDamage, new DamageEffectList(VanillaDamageEffects.GRIND, VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN), self);
-                if (result != null && result.HasAnyFatal())
-                {
-                    other.PlaySound(VanillaSoundID.smash);
-                    if (self.State == STATE_EAT && (substate == EatState.SUBSTATE_DASH || substate == EatState.SUBSTATE_EATEN))
-                    {
-                        if (other.IsEntityOf(VanillaContraptionID.goldenApple))
-                        {
-                            Stun(self);
-                            self.TakeDamage(GOLDEN_APPLE_DAMAGE, new DamageEffectList(VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.BYPASS_BOSS_ARMOR), other);
-                        }
-                        else
-                        {
-                            self.HealEffects(EAT_HEALING, other);
-                        }
-                    }
-                }
+                DealContactDamage(self, other, otherCollider);
             }
-            if (self.State == STATE_EAT && substate == EatState.SUBSTATE_DASH)
+            if (entityState == STATE_EAT && substate == EatState.SUBSTATE_DASH)
             {
                 FinishEat(self);
             }
@@ -159,6 +141,45 @@ namespace MVZ2.GameContent.Bosses
             result.SetFinalValue(false);
             var projectile = hit.Projectile;
             projectile.Remove();
+        }
+        private void ContactWithInvincibleTarget(Entity self, Entity other, IEntityCollider otherCollider)
+        {
+            var state = stateMachine.GetStateNumber(self);
+            var substate = stateMachine.GetSubState(self);
+            if (state == STATE_CHARGE && substate == ChargeState.SUBSTATE_DASH)
+            {
+                Stun(self);
+            }
+        }
+        private void DealContactDamage(Entity self, Entity other, IEntityCollider otherCollider)
+        {
+            var crushDamage = VanillaMod.INSTA_DAMAGE_AMOUNT;
+            var result = otherCollider.TakeDamage(crushDamage, new DamageEffectList(VanillaDamageEffects.GRIND, VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN), self);
+            if (result != null && result.HasAnyFatal())
+            {
+                ProcessContactKill(self, other, otherCollider);
+            }
+        }
+        private void ProcessContactKill(Entity self, Entity other, IEntityCollider otherCollider)
+        {
+            other.PlaySound(VanillaSoundID.smash);
+            var state = stateMachine.GetStateNumber(self);
+            var substate = stateMachine.GetSubState(self);
+
+            bool eating = state == STATE_EAT && (substate == EatState.SUBSTATE_DASH || substate == EatState.SUBSTATE_EATEN);
+            bool charging = state == STATE_CHARGE && substate == ChargeState.SUBSTATE_DASH;
+            if (eating || charging)
+            {
+                if (other.IsEntityOf(VanillaContraptionID.goldenApple))
+                {
+                    Stun(self);
+                    self.TakeDamage(GOLDEN_APPLE_DAMAGE, new DamageEffectList(VanillaDamageEffects.IGNORE_ARMOR, VanillaDamageEffects.BYPASS_BOSS_ARMOR), other);
+                }
+                else if (eating)
+                {
+                    self.HealEffects(EAT_HEALING, other);
+                }
+            }
         }
         #endregion 事件
 
