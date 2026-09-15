@@ -61,14 +61,13 @@ namespace MVZ2.GameContent.Effects
             gas.GetCurrentCollisions(collisionBuffer);
             foreach (var collision in collisionBuffer)
             {
-                if (!collision.Entity.IsVulnerableEntity())
+                var other = collision.Other;
+                if (!other.IsVulnerableEntity())
                     continue;
-                if (gas.IsHostile(collision.Entity))
+                if (gas.IsHostile(other))
                     continue;
                 var damageEffectList = new DamageEffectList(VanillaDamageEffects.FIRE);
-                var other = collision.Other;
-                var otherCollider = collision.OtherCollider;
-                otherCollider.TakeDamage(100, damageEffectList, gas);
+                collision.OtherCollider.TakeDamage(100, damageEffectList, gas);
             }
         }
         #endregion
