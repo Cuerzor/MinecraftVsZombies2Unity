@@ -111,4 +111,20 @@
             <condition requiredGroups="mvz2:enemy.axolotl_suit_pilot" />
         </hiddenUntil>
     </achievement>
+
+    <notify id="curse_unlocked" name="诅咒" icon="mvz2:achievements/notify/curse_unlocked">
+        <unlock>
+            <condition requiredGroups="mvz2:curses" />
+        </unlock>
+    </notify>
+    <notify id="music_room_unlocked" name="音乐室" icon="mvz2:achievements/notify/music_room_unlocked">
+        <unlock>
+            <condition requiredGroups="mvz2:music_room" />
+        </unlock>
+    </notify>
+    <notify id="arcade_unlocked" name="游戏箱" icon="mvz2:achievements/notify/arcade_unlocked">
+        <unlock>
+            <condition requiredGroups="mvz2:arcade" />
+        </unlock>
+    </notify>
 </achievements>

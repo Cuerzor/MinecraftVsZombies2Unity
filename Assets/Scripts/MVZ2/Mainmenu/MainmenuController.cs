@@ -818,6 +818,8 @@ namespace MVZ2.Mainmenu
                     var meta = main.ResourceManager.GetAchievementMeta(id);
                     if (meta == null)
                         continue;
+                    if (meta.Type != AchievementType.Achievement)
+                        continue;
                     var iconRef = meta.Icon;
                     var metaName = meta.Name;
                     var metaDescription = meta.Description;

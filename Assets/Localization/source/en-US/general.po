@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-15 03:26+0800\n"
-"PO-Revision-Date: 2026-09-15 15:27+0800\n"
+"POT-Creation-Date: 2026-09-15 05:43+0800\n"
+"PO-Revision-Date: 2026-09-15 17:44+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -328,11 +328,6 @@ msgstr "Reset"
 #: /MainGame/MainScene/GlobalUICanvas/Credits/Title
 msgid "制作人员名单"
 msgstr "Credits"
-
-#. 成就完成提示
-#: /MainGame/MainScene/GlobalUICanvas/AchievementHint/Root/Region/Texts/Earned
-msgid "完成成就！"
-msgstr "Achievement Earned!"
 
 #. 菜单对话框的标题
 #: /MainGame/MainScene/GlobalUICanvas/Dialogs/DeleteUserDialog/Dialog/TitleArea/Title
@@ -1484,6 +1479,15 @@ msgstr "{0}/{1}"
 msgid "<color=red>售罄</color>"
 msgstr "<color=red>Sold Out</color>"
 
+#: Scripts\MVZ2\Scene\AchievementHintController.cs:68
+msgid "完成成就！"
+msgstr "Achievement Earned!"
+
+# 内容解锁通知
+#: Scripts\MVZ2\Scene\AchievementHintController.cs:70
+msgid "已解锁内容："
+msgstr "You Unlocked:"
+
 #: Scripts\MVZ2\Scene\GameEntrance.cs:168
 msgid ""
 "游戏加载失败：\n"
@@ -1760,46 +1764,46 @@ msgstr "Getting Sponsors..."
 msgid "FPS: {0}"
 msgstr "FPS: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:872
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:874
 msgid "无法删除用户：{0}"
 msgstr "Cannot delete user: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:874
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:876
 msgid "无法切换至用户：{0}"
 msgstr "Cannot switch to user: {0}"
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:876
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:878
 msgid "没有其他有效的用户可供切换。"
 msgstr "There are no other available users to switch."
 
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:878
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:880
 msgid "确认要退出吗？"
 msgstr "Quit?"
 
 # 语言包导出失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:880
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:882
 msgid "导出存档失败。"
 msgstr "Failed to export the user."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:882
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:884
 msgid "导入存档失败。"
 msgstr "Failed to import the user."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:884
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:886
 msgid "导入存档失败，文件可能已损坏。"
 msgstr "Failed to import the user. The file may corrupt."
 
 # 语言包导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:886
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:888
 msgid "导入存档失败，游戏中存在同名用户，但正在导入的存档不可重命名。"
 msgstr ""
 "Failed to import the user. A user with identical name exists, but the user "
 "to be imported cannot be renamed."
 
 # 语言包导出成功的提示，{0}为路径
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:888
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:890
 msgid "存档已导出至{0}。"
 msgstr "The user has been successfully exported to {0}."
 
@@ -1809,42 +1813,42 @@ msgctxt "language_name"
 msgid "中文"
 msgstr "English (United States)"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1650
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1658
 msgid "你没有携带满蓝图，确认要继续吗？"
 msgstr "Are you sure to continue without filling up the contraption slots?"
 
 # 关卡UI
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1652
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1660
 msgid "无法在关卡开始后更换诅咒"
 msgstr "Cannot change curses after the level starts"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1658
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1666
 msgid "上一次选择的蓝图中包含多个相同的器械。"
 msgstr ""
 "The blueprints selected last time contained multiple identical contraptions."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1660
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1668
 msgid "上一次选择的蓝图中包含未解锁的器械。"
 msgstr ""
 "The blueprints selected last time contained contraptions that are not "
 "unlocked yet."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1662
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1670
 msgid "上一次选择的制品中包含多个相同的制品。"
 msgstr ""
 "The artifacts selected last time contained multiple identical artifacts."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1664
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1672
 msgid "上一次选择的制品中包含未解锁的制品。"
 msgstr ""
 "The artifacts selected last time contained artifacts that are not unlocked "
 "yet."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1666
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1674
 msgid "上一次选择的诅咒中包含多个相同的诅咒。"
 msgstr "The curses selected last time contained multiple identical curses."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1668
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1676
 msgid "上一次选择的诅咒中包含未解锁的诅咒。"
 msgstr ""
 "The curses selected last time contained curses that are not unlocked yet."
@@ -3769,6 +3773,24 @@ msgstr "Cuckoo"
 msgctxt "achievement"
 msgid "让一个美西螈号驾驶员进入一个其他驾驶员召唤的机甲内。"
 msgstr "Let an Axolotl Pilot enter a suit summoned by another pilot."
+
+#. Name for achievement mvz2:curse_unlocked
+#: Achievements meta file
+msgctxt "achievement"
+msgid "诅咒"
+msgstr "Curses"
+
+#. Name for achievement mvz2:music_room_unlocked
+#: Achievements meta file
+msgctxt "achievement"
+msgid "音乐室"
+msgstr "Music Room"
+
+#. Name for achievement mvz2:arcade_unlocked
+#: Achievements meta file
+msgctxt "achievement"
+msgid "游戏箱"
+msgstr "Arcade"
 
 #. Name for music mvz2:mainmenu
 #: Music meta file

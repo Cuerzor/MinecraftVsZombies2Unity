@@ -20,6 +20,10 @@ namespace MVZ2.Scenes
             iconImage.SetSprite(icon);
             nameText.text = name;
         }
+        public void SetEarnedText(string text)
+        {
+            earnedText.text = text;
+        }
         public void SetShowValue(float value)
         {
             animator.SetFloat("Blend", value);
@@ -39,5 +43,7 @@ namespace MVZ2.Scenes
         private Button button = null!;
         [SerializeField]
         private TextMeshProUGUI nameText = null!;
+        [SerializeField]
+        private TextMeshProUGUI earnedText = null!;
     }
 }

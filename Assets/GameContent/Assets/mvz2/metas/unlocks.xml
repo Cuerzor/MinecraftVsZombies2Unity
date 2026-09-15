@@ -230,4 +230,15 @@
     <group id="curse.red_dragons_scale"><conditions><condition required="mvz2:level.ship_11" /></conditions></group>
     <group id="curse.locked_chests_chains"><conditions><condition required="mvz2:level.palace_11" /></conditions></group>
     <group id="curse.krakens_backplate"><conditions><condition required="mvz2:level.mountain_11" /></conditions></group>
+    <group id="curses">
+        <conditions>
+            <condition requiredGroups="mvz2:curse.the_creatures_brain" />
+            <condition requiredGroups="mvz2:curse.nightmares_tentacle" />
+            <condition requiredGroups="mvz2:curse.withers_skull" />
+            <condition requiredGroups="mvz2:curse.the_giants_flesh" />
+            <condition requiredGroups="mvz2:curse.red_dragons_scale" />
+            <condition requiredGroups="mvz2:curse.locked_chests_chains" />
+            <condition requiredGroups="mvz2:curse.krakens_backplate" />
+        </conditions>
+    </group>
 </unlocks>

@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: 8507715078373092830}
   - component: {fileID: 5798599240503071495}
   - component: {fileID: 7020099249617935082}
-  - component: {fileID: 4959963274883779618}
   m_Layer: 14
   m_Name: Earned
   m_TagString: Untagged
@@ -220,20 +219,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &4959963274883779618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1676142479847558275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ac39d519d5b7564dbf3a99440d3aae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  context: 
-  comment: "\u6210\u5C31\u5B8C\u6210\u63D0\u793A"
 --- !u!1 &3622581620281780728
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,6 +445,7 @@ MonoBehaviour:
   iconImage: {fileID: 3892771026774770037}
   button: {fileID: 8552143785645780398}
   nameText: {fileID: 4305064974561137671}
+  earnedText: {fileID: 7020099249617935082}
 --- !u!95 &4180647422055924600
 Animator:
   serializedVersion: 5

@@ -23,6 +23,7 @@ namespace MVZ2.Metas
                 switch (childNode.Name)
                 {
                     case "achievement":
+                    case "notify":
                         var meta = AchievementMeta.FromXmlNode(node.ChildNodes[i], defaultNsp);
                         if (meta != null)
                         {
