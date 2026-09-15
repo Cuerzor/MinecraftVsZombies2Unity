@@ -41,17 +41,20 @@ namespace MVZ2.Editor
             var talkcharacterDocument = LoadMetaXmlDocument(spaceName, "talkcharacters.xml");
             var artifactsDocument = LoadMetaXmlDocument(spaceName, "artifacts.xml");
             var blueprintsDocument = LoadMetaXmlDocument(spaceName, "blueprints.xml");
+            var cursesDocument = LoadMetaXmlDocument(spaceName, "curses.xml");
 
             var almanacEntryList = AlmanacMetaList.FromXmlNode(almanacDocument["almanac"], spaceName);
             var entitiesList = EntityMetaList.FromXmlNode(spaceName, entitiesDocument["entities"], spaceName);
             var characterList = TalkCharacterMetaList.FromXmlNode(talkcharacterDocument["characters"], spaceName);
             var artifactsList = ArtifactMetaList.FromXmlNode(artifactsDocument["artifacts"], spaceName);
             var blueprintsList = BlueprintMetaList.FromXmlNode(spaceName, blueprintsDocument["blueprints"], spaceName);
+            var cursesList = CurseMetaList.FromXmlNode(cursesDocument["curses"], spaceName);
 
             var entitiesReference = "Entity meta file";
             var characterReference = "Character meta file";
             var artifactsReference = "Artifact meta file";
             var blueprintsReference = "Blueprints meta file";
+            var cursesReference = "Curses meta file";
             foreach (var tag in almanacEntryList.tags)
             {
                 AddTranslation(potGenerator, tag.name, almanacReference, $"Name for almanac tag {tag.id}", LogicStrings.CONTEXT_ALMANAC_TAG_NAME);
@@ -117,6 +120,12 @@ namespace MVZ2.Editor
             {
                 AddTranslation(potGenerator, entity.Name, blueprintsReference, $"Name for entity blueprint {entity.ID}", LogicStrings.CONTEXT_ENTITY_NAME);
                 AddTranslation(potGenerator, entity.Tooltip, blueprintsReference, $"Tooltip for entity blueprint {entity.ID}", LogicStrings.CONTEXT_ENTITY_TOOLTIP);
+            }
+            foreach (var meta in cursesList.metas)
+            {
+                var id = new NamespaceID(spaceName, meta.ID);
+                AddTranslation(potGenerator, meta.Name, cursesReference, $"Name for curse {id}", LogicStrings.CONTEXT_CURSE_NAME);
+                AddTranslation(potGenerator, meta.Tooltip, cursesReference, $"Tooltip for curse {id}", LogicStrings.CONTEXT_CURSE_TOOLTIP);
             }
             potGenerator.WriteOut(GetPoTemplatePath("almanac.pot"));
             Debug.Log("Almanac Translations Updated.");

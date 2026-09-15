@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-09 02:00+0800\n"
+"POT-Creation-Date: 2026-09-15 03:21+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3142,7 +3142,7 @@ msgstr ""
 #. Header for enemies mvz2:bubble_gun_gurgle
 #: Almanac meta file
 msgctxt "enemies.description"
-msgid "泡泡枪小鬼会发射<tag id=\"mvz2:shell\" enum=\"mvz2:bubble\" />泡泡，泡泡会裹住碰到的<tag id=\"mvz2:mass\" enum=\"0\" />以下的僵尸，并携带它们。"
+msgid "泡泡枪小鬼会发射<tag id=\"mvz2:shell\" enum=\"mvz2:bubble\" />泡泡，泡泡会裹住碰到的较轻的怪物，并携带它们。"
 msgstr ""
 
 #. Properties for enemies mvz2:bubble_gun_gurgle
@@ -8392,5 +8392,89 @@ msgstr ""
 #: Blueprints meta file
 msgctxt "entity.name"
 msgid "下界法师（电）"
+msgstr ""
+
+#. Name for curse mvz2:the_creatures_brain
+#: Curses meta file
+msgctxt "curse.name"
+msgid "怪物的大脑"
+msgstr ""
+
+#. Tooltip for curse mvz2:the_creatures_brain
+#: Curses meta file
+msgctxt "curse.tooltip"
+msgid "怪物生成数量+50%"
+msgstr ""
+
+#. Name for curse mvz2:nightmares_tentacle
+#: Curses meta file
+msgctxt "curse.name"
+msgid "梦魇的触手"
+msgstr ""
+
+#. Tooltip for curse mvz2:nightmares_tentacle
+#: Curses meta file
+msgctxt "curse.tooltip"
+msgid "星之碎片槽位-2"
+msgstr ""
+
+#. Name for curse mvz2:withers_skull
+#: Curses meta file
+msgctxt "curse.name"
+msgid "凋灵的头颅"
+msgstr ""
+
+#. Tooltip for curse mvz2:withers_skull
+#: Curses meta file
+msgctxt "curse.tooltip"
+msgid "器械生命x60%"
+msgstr ""
+
+#. Name for curse mvz2:the_giants_flesh
+#: Curses meta file
+msgctxt "curse.name"
+msgid "巨人的肉块"
+msgstr ""
+
+#. Tooltip for curse mvz2:the_giants_flesh
+#: Curses meta file
+msgctxt "curse.tooltip"
+msgid "敌怪生命+25%"
+msgstr ""
+
+#. Name for curse mvz2:red_dragons_scale
+#: Curses meta file
+msgctxt "curse.name"
+msgid "红龙的鳞片"
+msgstr ""
+
+#. Tooltip for curse mvz2:red_dragons_scale
+#: Curses meta file
+msgctxt "curse.tooltip"
+msgid "敌怪受到60%爆炸和火焰伤害"
+msgstr ""
+
+#. Name for curse mvz2:locked_chests_chains
+#: Curses meta file
+msgctxt "curse.name"
+msgid "上锁箱子的锁链"
+msgstr ""
+
+#. Tooltip for curse mvz2:locked_chests_chains
+#: Curses meta file
+msgctxt "curse.tooltip"
+msgid "能量大于500时持续减少"
+msgstr ""
+
+#. Name for curse mvz2:krakens_backplate
+#: Curses meta file
+msgctxt "curse.name"
+msgid "克拉肯的护板"
+msgstr ""
+
+#. Tooltip for curse mvz2:krakens_backplate
+#: Curses meta file
+msgctxt "curse.tooltip"
+msgid "敌怪重量提升一级"
 msgstr ""
 

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-09 01:23+0800\n"
-"PO-Revision-Date: 2026-09-09 13:24+0800\n"
+"POT-Creation-Date: 2026-09-15 03:26+0800\n"
+"PO-Revision-Date: 2026-09-15 15:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -365,6 +365,11 @@ msgstr "Imitate a blueprint"
 #: /Level/UI/Presets/UIPresetMobile/SharedCanvas/SelectArtifactDialog/Dialog/Content/Top/Title
 msgid "选择制品"
 msgstr "Select artifacts"
+
+#. 暂停游戏对话框的标题
+#: /Level/UI/Presets/UIPresetMobile/SharedCanvas/SelectCurseDialog/Dialog/Content/Top/Title
+msgid "选择诅咒"
+msgstr "Select curses"
 
 #. 按钮文本
 #: /Level/UI/Presets/UIPresetStandalone/Canvas/Limitation/CameraLimit/Front/BlueprintChoose/Root/BlueprintChoosingPanel/BlueprintListStandalone/Bottom/ViewLawnButton/Text
@@ -1804,31 +1809,45 @@ msgctxt "language_name"
 msgid "中文"
 msgstr "English (United States)"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1314
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1650
 msgid "你没有携带满蓝图，确认要继续吗？"
 msgstr "Are you sure to continue without filling up the contraption slots?"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1318
+# 关卡UI
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1652
+msgid "无法在关卡开始后更换诅咒"
+msgstr "Cannot change curses after the level starts"
+
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1658
 msgid "上一次选择的蓝图中包含多个相同的器械。"
 msgstr ""
 "The blueprints selected last time contained multiple identical contraptions."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1320
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1660
 msgid "上一次选择的蓝图中包含未解锁的器械。"
 msgstr ""
 "The blueprints selected last time contained contraptions that are not "
 "unlocked yet."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1322
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1662
 msgid "上一次选择的制品中包含多个相同的制品。"
 msgstr ""
 "The artifacts selected last time contained multiple identical artifacts."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1324
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1664
 msgid "上一次选择的制品中包含未解锁的制品。"
 msgstr ""
 "The artifacts selected last time contained artifacts that are not unlocked "
 "yet."
+
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1666
+msgid "上一次选择的诅咒中包含多个相同的诅咒。"
+msgstr "The curses selected last time contained multiple identical curses."
+
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1668
+msgid "上一次选择的诅咒中包含未解锁的诅咒。"
+msgstr ""
+"The curses selected last time contained curses that are not unlocked yet."
 
 #: Scripts\MVZ2\Level\LevelController\LevelController_Dialogs.cs:195
 msgid ""
@@ -2840,6 +2859,12 @@ msgstr "The resource pack has been successfully exported to {0}."
 msgid "点击查看教程：{0}"
 msgstr "Click for tutorial: {0}"
 
+# 针对诅咒系统的说明
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController_TooltipSources.cs:179
+msgid "你可以选择启用一些诅咒来提升游戏难度。"
+msgstr ""
+"You can choose to enable some curses to increase the difficulty of the game."
+
 #: Scripts\Logic\LogicMain.cs:14
 msgid "{0}%"
 msgstr "{0}%"
@@ -3136,6 +3161,16 @@ msgstr "Cannot rename this user"
 msgctxt "advice"
 msgid "点击以继续"
 msgstr "Click to continue"
+
+#: Scripts\Logic\Localization\LogicStrings.cs:271
+msgctxt "curse.name"
+msgid "？？？"
+msgstr "???"
+
+#: Scripts\Logic\Localization\LogicStrings.cs:273
+msgctxt "curse.tooltip"
+msgid "？？？"
+msgstr "???"
 
 # 命令方块模式
 #: Scripts\Logic\Options\Definitions\CommandBlockModeOptionDropdown.cs:37

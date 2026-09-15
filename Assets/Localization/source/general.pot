@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-09 01:23+0800\n"
+"POT-Creation-Date: 2026-09-15 03:26+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -348,6 +348,11 @@ msgstr ""
 #. 暂停游戏对话框的标题
 #: /Level/UI/Presets/UIPresetMobile/SharedCanvas/SelectArtifactDialog/Dialog/Content/Top/Title
 msgid "选择制品"
+msgstr ""
+
+#. 暂停游戏对话框的标题
+#: /Level/UI/Presets/UIPresetMobile/SharedCanvas/SelectCurseDialog/Dialog/Content/Top/Title
+msgid "选择诅咒"
 msgstr ""
 
 #. 按钮文本
@@ -1864,28 +1869,43 @@ msgid "中文"
 msgstr ""
 
 # 对话框内容
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1314
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1650
 msgid "你没有携带满蓝图，确认要继续吗？"
 msgstr ""
 
+# 关卡UI
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1652
+msgid "无法在关卡开始后更换诅咒"
+msgstr ""
+
 # 重选蓝图的验证错误信息
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1318
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1658
 msgid "上一次选择的蓝图中包含多个相同的器械。"
 msgstr ""
 
 # 重选蓝图的验证错误信息
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1320
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1660
 msgid "上一次选择的蓝图中包含未解锁的器械。"
 msgstr ""
 
 # 重选蓝图的验证错误信息
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1322
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1662
 msgid "上一次选择的制品中包含多个相同的制品。"
 msgstr ""
 
 # 重选蓝图的验证错误信息
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1324
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1664
 msgid "上一次选择的制品中包含未解锁的制品。"
+msgstr ""
+
+# 重选蓝图的验证错误信息
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1666
+msgid "上一次选择的诅咒中包含多个相同的诅咒。"
+msgstr ""
+
+# 重选蓝图的验证错误信息
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1668
+msgid "上一次选择的诅咒中包含未解锁的诅咒。"
 msgstr ""
 
 # 对话框内容
@@ -2891,6 +2911,11 @@ msgstr ""
 msgid "点击查看教程：{0}"
 msgstr ""
 
+# 针对诅咒系统的说明
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController_TooltipSources.cs:179
+msgid "你可以选择启用一些诅咒来提升游戏难度。"
+msgstr ""
+
 # 值，{0}为百分数
 #: Scripts\Logic\LogicMain.cs:14
 msgid "{0}%"
@@ -3219,6 +3244,18 @@ msgstr ""
 #: Scripts\Logic\Localization\LogicStrings.cs:252
 msgctxt "advice"
 msgid "点击以继续"
+msgstr ""
+
+# 诅咒名称-未知
+#: Scripts\Logic\Localization\LogicStrings.cs:271
+msgctxt "curse.name"
+msgid "？？？"
+msgstr ""
+
+# 诅咒说明-未知
+#: Scripts\Logic\Localization\LogicStrings.cs:273
+msgctxt "curse.tooltip"
+msgid "？？？"
 msgstr ""
 
 # 命令方块模式
