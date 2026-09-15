@@ -49,14 +49,19 @@ namespace MVZ2.GameContent.Enemies
             var other = collision.Other;
             if (!CanBeCarried(other))
                 return;
+            if (!CanCarry(bubble, other))
+                return;
             Carry(bubble, other);
         }
         public static bool CanBeCarried(Entity entity)
         {
             return !entity.CannotBeCarriedByOtherEnemy() &&
                 entity.Type == EntityTypes.ENEMY &&
-                entity.GetMass() <= VanillaMass.MEDIUM &&
                 !entity.IsForcedMovement();
+        }
+        public static bool CanCarry(Entity bubble, Entity target)
+        {
+            return target.GetMass() <= bubble.GetMass() + 2;
         }
         public static void Carry(Entity entity, Entity parent)
         {
