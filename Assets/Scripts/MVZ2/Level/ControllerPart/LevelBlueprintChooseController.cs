@@ -80,6 +80,7 @@ namespace MVZ2.Level
             chooseUI.OnCursePanelBackClick += UI_OnCursePanelBackClickCallback;
             chooseUI.OnCursePanelSelectAllClick += UI_OnCursePanelSelectAllClickCallback;
             chooseUI.OnCursePanelDeselectAllClick += UI_OnCursePanelDeselectAllClickCallback;
+            chooseUI.OnCursePanelRepickClick += UI_OnCursePanelRepickButtonClickCallback;
         }
         public override void UpdateFrame(float deltaTime, float simulationSpeed)
         {
@@ -1158,7 +1159,14 @@ namespace MVZ2.Level
             }
             else
             {
-                RepickCurses();
+                var lastSelection = Main.SaveManager.GetLastSelection();
+                if (lastSelection != null && lastSelection.curses != null)
+                {
+                    if (ValidateReplaceCurses(lastSelection.curses, out var curseMessage))
+                    {
+                        InheritCursesFromLastSelection(lastSelection.curses);
+                    }
+                }
             }
         }
         private void InheritCursesFromLastRound()
