@@ -84,6 +84,9 @@ namespace MVZ2.Level
                 return false;
             }
 
+            // 游戏开始状态
+            SetGameStarted(true);
+            
             // 设置UI可见状态
             SetUIVisibleState(LevelUIPreset.VisibleState.InLevel);
             // 相机位置
@@ -98,10 +101,6 @@ namespace MVZ2.Level
             ShowMoney();
             // 光照
             UpdateLighting();
-
-            // 游戏开始状态
-            SetGameStarted(true);
-
 
             for (int i = 0; i < level.GetLevelComponentCount(); i++)
             {

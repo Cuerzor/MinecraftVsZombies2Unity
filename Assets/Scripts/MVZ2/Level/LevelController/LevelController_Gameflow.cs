@@ -147,6 +147,7 @@ namespace MVZ2.Level
         {
             if (isGameStarted)
                 return;
+            SetGameStarted(true);
             level.ResetHeldItem();
             level.RemovePreviewEnemies();
             var starshardSlots = Saves.GetStarshardSlots();
@@ -156,6 +157,7 @@ namespace MVZ2.Level
             BlueprintChoosePart.ApplyChoose();
             // 设置难度
             UpdateDifficulty();
+            UpdateCurseIcon();
 
             StartGame_Audio();
             StartGame_ProgressBar();
@@ -169,9 +171,7 @@ namespace MVZ2.Level
             }
 
             level.Start();
-            SetGameStarted(true);
             UpdateFocusLost(Application.isFocused);
-            UpdateCurseIcon();
         }
         private void SetGameStarted(bool value)
         {
