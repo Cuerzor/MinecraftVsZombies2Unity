@@ -24,6 +24,7 @@ using PVZEngine.Models;
 using PVZEngine.Timing;
 using PVZEngine.Tools.Timing;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace MVZ2.GameContent.Contraptions
 {
@@ -70,7 +71,7 @@ namespace MVZ2.GameContent.Contraptions
             if (!CanClose(trap))
                 return;
             var other = collision.Other;
-            if (!IsValidTarget(trap, other) || !Detection.CanDetect(other))
+            if (!IsValidTarget(trap, other) || !Detection.CanDetect(other) || other.IsForcedMovement())
                 return;
             StartClosing(trap);
         }
@@ -165,7 +166,7 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static bool IsValidTarget(Entity trap, Entity target)
         {
-            return target.Type == EntityTypes.ENEMY && !target.IsDead && trap.IsHostile(target) && !target.IsForcedMovement();
+            return target.Type == EntityTypes.ENEMY && !target.IsDead && trap.IsHostile(target);
         }
         public static bool IsOpen(Entity trap)
         {
