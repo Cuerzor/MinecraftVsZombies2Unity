@@ -6132,13 +6132,6 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6626f4ec92be21645802c6030cab1aeb
-    m_Address: mvz2:mountain_map
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Main
-    - Music
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6661be6b03238a2409e5b705222184e0
     m_Address: mvz2:misc/graveyard
     m_ReadOnly: 0
