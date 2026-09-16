@@ -146,7 +146,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
             var sizeX = 80000;
             var sizeY = 160;
             var sizeZ = 32;
-            var centerX = point.x + self.GetFacingX() * (80 + sizeX * 0.5f);
+            var centerX = point.x + self.GetFacingX() * (sizeX * 0.5f);
             var centerY = point.y;
             var centerZ = point.z;
             return new Bounds(new Vector3(centerX, centerY, centerZ), new Vector3(sizeX, sizeY, sizeZ));
