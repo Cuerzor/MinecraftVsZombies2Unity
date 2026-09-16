@@ -110,7 +110,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
         public static void SetDamageMultiplier(Buff buff, float value) => buff.SetProperty(PROP_DAMAGE_MULTIPLIER, value);
         public const float VOLUME_DAMAGE_MULTIPLIER = 0.005f;
         public static readonly DamageEffectList SMASH_DAMAGE_EFFECTS = new DamageEffectList(
-            VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN, 
+            VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN,
             VanillaDamageEffects.THROWN);
         public static readonly VanillaBuffPropertyMeta<int> PROP_FACTION = new VanillaBuffPropertyMeta<int>("faction");
         public static readonly VanillaBuffPropertyMeta<float> PROP_DAMAGE_MULTIPLIER = new VanillaBuffPropertyMeta<float>("damage_multiplier", 1);

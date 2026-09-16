@@ -3,7 +3,6 @@
 using MVZ2Logic.Curses;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
-using PVZEngine.Definitions;
 using PVZEngine.Modifiers;
 
 namespace MVZ2.GameContent.Buffs.Level

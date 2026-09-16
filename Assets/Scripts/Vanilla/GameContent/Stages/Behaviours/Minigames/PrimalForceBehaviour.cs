@@ -6,7 +6,6 @@ using MVZ2.Vanilla.Audios;
 using MVZ2Logic.Grids;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
-using PVZEngine.Entities;
 using PVZEngine.Grids;
 using PVZEngine.Level;
 using PVZEngine.Tools;
@@ -61,7 +60,8 @@ namespace MVZ2.GameContent.Stages
                 if (giantStone != null)
                 {
                     giantStone.AddBuff<ContraptionFallBuff>();
-                };
+                }
+                ;
             }
         }
         public const int COLUMN_MIN = 3;

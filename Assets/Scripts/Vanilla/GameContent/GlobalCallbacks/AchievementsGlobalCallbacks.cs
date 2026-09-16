@@ -2,7 +2,6 @@
 
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Damages;
-using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Enemies;
 using MVZ2.GameContent.Shells;
 using MVZ2.Vanilla.Callbacks;

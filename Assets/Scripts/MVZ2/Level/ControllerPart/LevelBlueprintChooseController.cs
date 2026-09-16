@@ -5,7 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using MukioI18n;
 using MVZ2.Blueprints;
@@ -31,7 +30,6 @@ using PVZEngine;
 using PVZEngine.Buffs;
 using PVZEngine.Level;
 using PVZEngine.Tools.Unity;
-using UnityEditor.Experimental;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -1674,7 +1672,7 @@ namespace MVZ2.Level
         [TranslateMsg("重选蓝图的验证错误信息")]
         public const string REPLACE_ERROR_DUPLICATE_CURSES = "上一次选择的诅咒中包含多个相同的诅咒。";
         [TranslateMsg("重选蓝图的验证错误信息")]
-        public const string REPLACE_ERROR_CURSE_LOCKED = "上一次选择的诅咒中包含未解锁的诅咒。"; 
+        public const string REPLACE_ERROR_CURSE_LOCKED = "上一次选择的诅咒中包含未解锁的诅咒。";
         private LevelUIBlueprintChoose chooseUI => UI.BlueprintChoose;
 
         private bool isChoosingBlueprints;

@@ -2,7 +2,6 @@
 
 using MVZ2.Vanilla;
 using PVZEngine;
-using PVZEngine.Buffs;
 
 namespace MVZ2.GameContent.Buffs
 {
@@ -50,7 +49,7 @@ namespace MVZ2.GameContent.Buffs
             public const string slendermanTransition = "slenderman_transition";
             public const string nightmareaperTransition = "nightmareaper_transition";
             public const string nightmareCleared = "nightmare_cleared";
-            public const string finalClearAutoCollect = "final_clear_auto_collect"; 
+            public const string finalClearAutoCollect = "final_clear_auto_collect";
 
             // Chapter 3
             public const string reverseSatellite = "reverse_satellite";

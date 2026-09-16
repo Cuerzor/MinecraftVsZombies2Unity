@@ -61,6 +61,6 @@ namespace MVZ2.Metas
             return Conditions.Any(c => c.MeetsCondition(save));
         }
         public XMLCondition[] Conditions { get; private set; }
-        public bool Always { get;  private set; }
+        public bool Always { get; private set; }
     }
 }

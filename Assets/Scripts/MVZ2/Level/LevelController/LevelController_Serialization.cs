@@ -86,7 +86,7 @@ namespace MVZ2.Level
 
             // 游戏开始状态
             SetGameStarted(true);
-            
+
             // 设置UI可见状态
             SetUIVisibleState(LevelUIPreset.VisibleState.InLevel);
             // 相机位置

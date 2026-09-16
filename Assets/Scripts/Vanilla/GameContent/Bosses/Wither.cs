@@ -24,7 +24,6 @@ using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.Tools.Random;
 using UnityEngine;
-using static MVZ2.GameContent.Bosses.Nightmareaper;
 
 namespace MVZ2.GameContent.Bosses
 {
