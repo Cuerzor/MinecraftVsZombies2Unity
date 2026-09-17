@@ -1695,7 +1695,7 @@
                 <id name="mvz2:upgradeFrom" value="mvz2:amethyst_pylon" />
                 <id name="mvz2:placement" value="mvz2:upgrade" />
 
-                <int name="mvz2:cost" value="125" />
+                <int name="mvz2:cost" value="150" />
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </entity>
