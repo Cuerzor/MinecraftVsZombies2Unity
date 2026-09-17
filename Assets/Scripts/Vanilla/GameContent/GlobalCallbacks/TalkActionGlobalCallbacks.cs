@@ -240,6 +240,11 @@ namespace MVZ2.GameContent.GlobalCallbacks
                         saves.SaveToFile(); // 进入地灵殿过渡时保存游戏
                         Global.Game.StartCoroutine(VanillaChapterTransitions.TransitionTalkToLevel(VanillaChapterTransitions.palace, VanillaAreaID.palace, VanillaStageID.palace1));
                         break;
+                    case "goto_mountain":
+                        saves.SetLastMapID(VanillaMapID.mountain);
+                        saves.SaveToFile(); // 进入妖怪之山过渡时保存游戏
+                        Global.Game.StartCoroutine(VanillaChapterTransitions.TransitionTalkToLevel(VanillaChapterTransitions.mountain, VanillaAreaID.mountain, VanillaStageID.mountain1));
+                        break;
                     case "chapter_3_finish":
                         Global.Game.StartCoroutine(VanillaChapterTransitions.TransitionToMap(VanillaChapterTransitions.castle, VanillaMapID.gensokyo, true));
                         break;
@@ -250,9 +255,12 @@ namespace MVZ2.GameContent.GlobalCallbacks
                         Global.Game.StartCoroutine(VanillaChapterTransitions.TransitionToMap(VanillaChapterTransitions.ship, VanillaMapID.gensokyo, true));
                         break;
                     case "chapter_6_finish":
+                        Global.Game.StartCoroutine(VanillaChapterTransitions.TransitionToMap(VanillaChapterTransitions.palace, VanillaMapID.gensokyo, true));
+                        break;
+                    case "chapter_7_finish":
                         IEnumerator coroutineFunc()
                         {
-                            yield return VanillaChapterTransitions.TransitionToMap(VanillaChapterTransitions.palace, VanillaMapID.gensokyo, true);
+                            yield return VanillaChapterTransitions.TransitionToMap(VanillaChapterTransitions.mountain, VanillaMapID.gensokyo, true);
                             var title = Global.Localization.GetText(VanillaStrings.UI_GAME_CLEARED);
                             var desc = Global.Localization.GetText(VanillaStrings.UI_COMING_SOON);
                             var options = new string[] { Global.Localization.GetText(LogicStrings.CONFIRM) };

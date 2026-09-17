@@ -5,4 +5,5 @@
     <transition id="mausoleum" angle="120" textSprite="mvz2:chapter_transition/title_mausoleum" />
     <transition id="ship" angle="150" textSprite="mvz2:chapter_transition/title_ship" />
     <transition id="palace" angle="180" textSprite="mvz2:chapter_transition/title_palace" />
+    <transition id="mountain" angle="-150" textSprite="mvz2:chapter_transition/title_mountain" />
 </transitions>

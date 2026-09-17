@@ -253,6 +253,9 @@ MonoBehaviour:
   - name: chapter_transition/title_mausoleum
     texture: {fileID: 2800000, guid: e67606b0e90b7e940844495857add1f7, type: 3}
     tags: []
+  - name: chapter_transition/title_mountain
+    texture: {fileID: 2800000, guid: c9d19f5411337a243beed27052d79af6, type: 3}
+    tags: []
   - name: chapter_transition/title_palace
     texture: {fileID: 2800000, guid: 23c593eab5a6c084f8279e3507114199, type: 3}
     tags: []
@@ -3564,6 +3567,10 @@ MonoBehaviour:
   - name: chapter_transition/title_mausoleum
     index: 0
     sprite: {fileID: 21300000, guid: e67606b0e90b7e940844495857add1f7, type: 3}
+    tags: []
+  - name: chapter_transition/title_mountain
+    index: 0
+    sprite: {fileID: 21300000, guid: c9d19f5411337a243beed27052d79af6, type: 3}
     tags: []
   - name: chapter_transition/title_palace
     index: 0

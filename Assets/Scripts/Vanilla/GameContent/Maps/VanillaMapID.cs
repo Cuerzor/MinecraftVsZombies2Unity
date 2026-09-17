@@ -14,6 +14,7 @@ namespace MVZ2.GameContent.Maps
         public static readonly NamespaceID mausoleum = Get("mausoleum");
         public static readonly NamespaceID ship = Get("ship");
         public static readonly NamespaceID palace = Get("palace");
+        public static readonly NamespaceID mountain = Get("mountain");
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

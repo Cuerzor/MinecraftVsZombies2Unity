@@ -15,6 +15,7 @@ namespace MVZ2.Vanilla.ChapterTransitions
         public readonly static NamespaceID mausoleum = Get("mausoleum");
         public readonly static NamespaceID ship = Get("ship");
         public readonly static NamespaceID palace = Get("palace");
+        public readonly static NamespaceID mountain = Get("mountain");
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

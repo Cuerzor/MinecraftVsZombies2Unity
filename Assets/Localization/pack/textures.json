@@ -102,6 +102,15 @@
       ]
     },
     {
+      "texture": "mvz2/sprites/chapter_transition/title_mountain@en-US.png",
+      "key": "mvz2:chapter_transition/title_mountain@en-US",
+      "slices": [
+        {
+          "single": true
+        }
+      ]
+    },
+    {
       "texture": "mvz2/sprites/chapter_transition/title_palace@en-US.png",
       "key": "mvz2:chapter_transition/title_palace@en-US",
       "slices": [

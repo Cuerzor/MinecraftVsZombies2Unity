@@ -1263,6 +1263,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15dcdb0b2cc2a8a46b27bd8cee0be1e4
+    m_Address: mvz2:achievements/notify/curse_unlocked
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 15e228f0bfccab240a04829253b7cca5
     m_Address: mvz2:effect/slice_spark
     m_ReadOnly: 0
@@ -1388,6 +1395,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17603344107c96a4c928f40181f9bfa1
+    m_Address: mvz2:achievements/notify/music_room_unlocked
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1774c2ed9635c694080b89ce4c6e09bf
     m_Address: mvz2:entity/enemy/holy_sword
@@ -6069,6 +6083,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6537608cf1a243044ad2a7b5364d0306
+    m_Address: mvz2:mountain_map
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Music
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6547c6ff033b6bb4ab184eb67c67183f
     m_Address: mvz2:harp
     m_ReadOnly: 0
@@ -9776,6 +9797,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a4651535c4836dc47bdb75587a5e5155
+    m_Address: mvz2:achievements/notify/arcade_unlocked
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a4dea0edb3164a64a84a57821e191087
     m_Address: mvz2:random/gravel/hit4
@@ -13801,7 +13829,7 @@ MonoBehaviour:
     - Main
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eccf21b7313a33d41a14e2ede291366e
-    m_Address: mvz2:curses/wither_skull
+    m_Address: mvz2:curses/withers_skull
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
