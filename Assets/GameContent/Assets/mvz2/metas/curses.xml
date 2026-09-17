@@ -32,7 +32,7 @@
         </unlock>
     </curse>
     <curse id="red_dragons_scale">
-        <texts name="红龙的鳞片" tooltip="敌怪受到60%爆炸和火焰伤害"/>
+        <texts name="红龙的鳞片" tooltip="敌怪受到75%爆炸和火焰伤害"/>
         <sprite id="mvz2:curses/red_dragons_scale"/>
         <buff id="mvz2:red_dragons_scale"/>
         <unlock>

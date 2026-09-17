@@ -27,8 +27,9 @@ namespace MVZ2.GameContent.Buffs.Level
                 return;
             if (input.HasEffect(VanillaDamageEffects.EXPLOSION) || input.HasEffect(VanillaDamageEffects.FIRE))
             {
-                input.Multiply(0.6f);
+                input.Multiply(DAMAGE_MULTIPLIER);
             }
         }
+        public const float DAMAGE_MULTIPLIER = 0.75f;
     }
 }
