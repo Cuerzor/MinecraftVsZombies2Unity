@@ -5,6 +5,10 @@
     <category id="enemy_spawn" name="怪物生成" type="entity" />
     <category id="enemy_neutralize" name="消灭怪物" type="entity" />
     <category id="enemy_gameover" name="被怪物击杀" type="entity" />
+    <category id="level_completed" name="完成关卡" type="stage" />
+    <category id="level_game_over" name="游戏结束" type="stage" />
+    <category id="level_restart" name="重新开始关卡" type="stage" />
+    <category id="level_enabled_curse_count" name="启用诅咒数" type="stage" />
     <category id="max_endless_flags" name="无尽模式最高轮数" type="stage" operation="max" />
     <category id="iz_contraption_destroy" name="我是僵尸-摧毁器械" type="entity" />
     <category id="iz_enemy_place" name="我是僵尸-放置怪物" type="entity" />

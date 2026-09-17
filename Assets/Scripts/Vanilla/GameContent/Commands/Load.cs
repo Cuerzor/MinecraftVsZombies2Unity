@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Commands
             var level = Global.Level.GetLevel();
             if (level == null)
                 return;
-            await level.ReloadLevel();
+            await level.ReloadLevel(LevelRestartStatus.InLevel);
         }
     }
 }

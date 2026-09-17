@@ -15,7 +15,13 @@
   - Applied to Soul Furnace and Wisp Fly.
 - Added screenshot function.
 - Added textures for Moonlight Sensors in their daytime form.
-- Add unlock hint for the music room and arcade.
+- Added unlock hint for the music room and arcade.
+- Added curse system.
+- Added 4 new stats categories:
+  - Level completed
+  - Game over
+  - Level restarted
+  - Enabled curses
 
 ## Modified
 - When a projectile entity undergoes angular rotation due to directional deflection, its hitbox will now rotate correctly.

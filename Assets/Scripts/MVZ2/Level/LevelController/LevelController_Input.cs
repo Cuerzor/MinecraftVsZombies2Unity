@@ -197,7 +197,7 @@ namespace MVZ2.Level
             if (isGameStarted && !isGameOver)
             {
                 Debug.Log("Restarting Game...");
-                _ = ReloadLevel();
+                _ = ReloadLevel(LevelRestartStatus.InLevel);
             }
         }
         private void OnPerformanceTestKey()

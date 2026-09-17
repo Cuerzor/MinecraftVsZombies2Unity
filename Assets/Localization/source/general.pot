@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-15 07:40+0800\n"
+"POT-Creation-Date: 2026-09-17 04:55+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1602,52 +1602,52 @@ msgid "截图已保存：{0}"
 msgstr ""
 
 # 选项
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:586
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:587
 msgid "交换触发"
 msgstr ""
 
 # 选项
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:588
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:589
 msgid "全屏"
 msgstr ""
 
 # 选项
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:590
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:591
 msgid "设备震动"
 msgstr ""
 
 # 选项
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:592
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:593
 msgid "后台暂停"
 msgstr ""
 
 # 选项
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:594
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:595
 msgid "更多选项"
 msgstr ""
 
 # 选项，{0}为难度
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:596
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:597
 msgid "难度：{0}"
 msgstr ""
 
 # 选项，{0}为量
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:604
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:605
 msgid "音乐音量：{0}"
 msgstr ""
 
 # 选项，{0}为量
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:606
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:607
 msgid "音效音量：{0}"
 msgstr ""
 
 # 选项，{0}为量
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:608
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:609
 msgid "加速倍率：{0}"
 msgstr ""
 
 # 对话框内容
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:610
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:611
 msgid ""
 "确认要返回吗？\n"
 "你的进度会被保存。"
@@ -1874,42 +1874,42 @@ msgid "中文"
 msgstr ""
 
 # 对话框内容
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1658
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1656
 msgid "你没有携带满蓝图，确认要继续吗？"
 msgstr ""
 
 # 关卡UI
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1660
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1658
 msgid "无法在关卡开始后更换诅咒"
 msgstr ""
 
 # 重选蓝图的验证错误信息
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1666
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1664
 msgid "上一次选择的蓝图中包含多个相同的器械。"
 msgstr ""
 
 # 重选蓝图的验证错误信息
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1668
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1666
 msgid "上一次选择的蓝图中包含未解锁的器械。"
 msgstr ""
 
 # 重选蓝图的验证错误信息
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1670
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1668
 msgid "上一次选择的制品中包含多个相同的制品。"
 msgstr ""
 
 # 重选蓝图的验证错误信息
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1672
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1670
 msgid "上一次选择的制品中包含未解锁的制品。"
 msgstr ""
 
 # 重选蓝图的验证错误信息
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1674
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1672
 msgid "上一次选择的诅咒中包含多个相同的诅咒。"
 msgstr ""
 
 # 重选蓝图的验证错误信息
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1676
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1674
 msgid "上一次选择的诅咒中包含未解锁的诅咒。"
 msgstr ""
 
@@ -3650,6 +3650,30 @@ msgstr ""
 #: Stats meta file
 msgctxt "stat_category"
 msgid "被怪物击杀"
+msgstr ""
+
+#. Name for stat category mvz2:level_completed
+#: Stats meta file
+msgctxt "stat_category"
+msgid "完成关卡"
+msgstr ""
+
+#. Name for stat category mvz2:level_game_over
+#: Stats meta file
+msgctxt "stat_category"
+msgid "游戏结束"
+msgstr ""
+
+#. Name for stat category mvz2:level_restart
+#: Stats meta file
+msgctxt "stat_category"
+msgid "重新开始关卡"
+msgstr ""
+
+#. Name for stat category mvz2:level_enabled_curse_count
+#: Stats meta file
+msgctxt "stat_category"
+msgid "启用诅咒数"
 msgstr ""
 
 #. Name for stat category mvz2:max_endless_flags

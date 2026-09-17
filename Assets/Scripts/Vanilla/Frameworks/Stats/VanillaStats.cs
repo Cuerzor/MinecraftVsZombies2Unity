@@ -12,6 +12,10 @@ namespace MVZ2.Vanilla.Stats
         public static readonly NamespaceID CATEGORY_ENEMY_SPAWN = Get("enemy_spawn");
         public static readonly NamespaceID CATEGORY_ENEMY_NEUTRALIZE = Get("enemy_neutralize");
         public static readonly NamespaceID CATEGORY_ENEMY_GAME_OVER = Get("enemy_gameover");
+        public static readonly NamespaceID CATEGORY_LEVEL_COMPLETED = Get("level_completed");
+        public static readonly NamespaceID CATEGORY_LEVEL_GAME_OVER = Get("level_game_over");
+        public static readonly NamespaceID CATEGORY_LEVEL_RESTART = Get("level_restart");
+        public static readonly NamespaceID CATEGORY_LEVEL_ENABLED_CURSE_COUNT = Get("level_enabled_curse_count"); 
 
         public static readonly NamespaceID CATEGORY_IZ_CONTRAPTION_DESTROY = Get("iz_contraption_destroy");
         public static readonly NamespaceID CATEGORY_IZ_ENEMY_PLACE = Get("iz_enemy_place");

@@ -25,6 +25,9 @@ namespace MVZ2.GameContent.GlobalCallbacks
             mod.AddTrigger(VanillaLevelCallbacks.POST_ENEMY_NEUTRALIZE, PostEnemyNeutralizeCallback);
             mod.AddTriggerFiltered(LevelCallbacks.POST_ENTITY_DEATH, PostEnemyDeathCallback, filter: EntityTypes.ENEMY);
             mod.AddTrigger(LevelCallbacks.POST_GAME_OVER, PostGameOverCallback);
+            mod.AddTrigger(LogicLevelCallbacks.POST_LEVEL_RESTART, PostLevelRestartCallback);
+
+            mod.AddTrigger(LevelCallbacks.POST_LEVEL_CLEAR, PostLevelClearCallback);
         }
         private void PostUseEntityBlueprintCallback(LogicLevelCallbacks.PostUseEntityBlueprintParams param, CallbackResultVoid callbackResult)
         {
@@ -108,6 +111,31 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 {
                     Global.Saves.AddStat(VanillaStats.CATEGORY_ENEMY_GAME_OVER, killer.GetDefinitionID(), 1);
                 }
+                Global.Saves.AddStat(VanillaStats.CATEGORY_LEVEL_GAME_OVER, level.StageID, 1);
+            }
+        }
+        private void PostLevelClearCallback(LevelCallbackParams args, CallbackResultVoid result)
+        {
+            var level = args.level;
+            int curseCount = level.GetCurseCount();
+            if (curseCount > 0)
+            {
+                var stageID = level.StageID;
+                var stat = Global.Saves.GetStat(VanillaStats.CATEGORY_LEVEL_ENABLED_CURSE_COUNT, stageID);
+                if (curseCount > stat)
+                {
+                    Global.Saves.SetStat(VanillaStats.CATEGORY_LEVEL_ENABLED_CURSE_COUNT, stageID, curseCount);
+                }
+            }
+            Global.Saves.AddStat(VanillaStats.CATEGORY_LEVEL_COMPLETED, level.StageID, 1);
+        }
+        private void PostLevelRestartCallback(LogicLevelCallbacks.LevelRestartArgs args, CallbackResultVoid result)
+        {
+            var level = args.level;
+            var status = args.status;
+            if (status != LevelRestartStatus.GameOver)
+            {
+                Global.Saves.AddStat(VanillaStats.CATEGORY_LEVEL_RESTART, level.StageID, 1);
             }
         }
     }

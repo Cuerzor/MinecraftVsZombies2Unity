@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-15 05:43+0800\n"
-"PO-Revision-Date: 2026-09-15 17:44+0800\n"
+"POT-Creation-Date: 2026-09-17 04:55+0800\n"
+"PO-Revision-Date: 2026-09-17 16:56+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1557,43 +1557,43 @@ msgstr "Are you sure to reset all key bindings?"
 msgid "截图已保存：{0}"
 msgstr "Screenshot saved: {0}"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:586
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:587
 msgid "交换触发"
 msgstr "Swap Trigger"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:588
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:589
 msgid "全屏"
 msgstr "Full Screen"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:590
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:591
 msgid "设备震动"
 msgstr "Vibration"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:592
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:593
 msgid "后台暂停"
 msgstr "Pause on Focus Lost"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:594
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:595
 msgid "更多选项"
 msgstr "More Options"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:596
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:597
 msgid "难度：{0}"
 msgstr "Difficulty: {0}"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:604
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:605
 msgid "音乐音量：{0}"
 msgstr "Music Volume: {0}"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:606
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:607
 msgid "音效音量：{0}"
 msgstr "Sound Volume: {0}"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:608
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:609
 msgid "加速倍率：{0}"
 msgstr "Fast-forward: {0}"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:610
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:611
 msgid ""
 "确认要返回吗？\n"
 "你的进度会被保存。"
@@ -1813,42 +1813,42 @@ msgctxt "language_name"
 msgid "中文"
 msgstr "English (United States)"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1658
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1656
 msgid "你没有携带满蓝图，确认要继续吗？"
 msgstr "Are you sure to continue without filling up the contraption slots?"
 
 # 关卡UI
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1660
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1658
 msgid "无法在关卡开始后更换诅咒"
 msgstr "Cannot change curses after the level starts"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1666
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1664
 msgid "上一次选择的蓝图中包含多个相同的器械。"
 msgstr ""
 "The blueprints selected last time contained multiple identical contraptions."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1668
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1666
 msgid "上一次选择的蓝图中包含未解锁的器械。"
 msgstr ""
 "The blueprints selected last time contained contraptions that are not "
 "unlocked yet."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1670
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1668
 msgid "上一次选择的制品中包含多个相同的制品。"
 msgstr ""
 "The artifacts selected last time contained multiple identical artifacts."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1672
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1670
 msgid "上一次选择的制品中包含未解锁的制品。"
 msgstr ""
 "The artifacts selected last time contained artifacts that are not unlocked "
 "yet."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1674
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1672
 msgid "上一次选择的诅咒中包含多个相同的诅咒。"
 msgstr "The curses selected last time contained multiple identical curses."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1676
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1674
 msgid "上一次选择的诅咒中包含未解锁的诅咒。"
 msgstr ""
 "The curses selected last time contained curses that are not unlocked yet."
@@ -3562,6 +3562,30 @@ msgctxt "stat_category"
 msgid "被怪物击杀"
 msgstr "Killed by monsters"
 
+#. Name for stat category mvz2:level_completed
+#: Stats meta file
+msgctxt "stat_category"
+msgid "完成关卡"
+msgstr "Level completed"
+
+#. Name for stat category mvz2:level_game_over
+#: Stats meta file
+msgctxt "stat_category"
+msgid "游戏结束"
+msgstr "Game over"
+
+#. Name for stat category mvz2:level_restart
+#: Stats meta file
+msgctxt "stat_category"
+msgid "重新开始关卡"
+msgstr "Level restarted"
+
+#. Name for stat category mvz2:level_enabled_curse_count
+#: Stats meta file
+msgctxt "stat_category"
+msgid "启用诅咒数"
+msgstr "Enabled curses"
+
 #. Name for stat category mvz2:max_endless_flags
 #: Stats meta file
 msgctxt "stat_category"
@@ -3590,13 +3614,13 @@ msgstr "I, Zombie - Died enemies"
 #: Stats meta file
 msgctxt "stat_category"
 msgid "我是僵尸-触发侦测器"
-msgstr "I, Zombie - Triggered Observers"
+msgstr "I, Zombie - Triggered observers"
 
 #. Name for stat category mvz2:iz_game_over
 #: Stats meta file
 msgctxt "stat_category"
 msgid "我是僵尸-游戏结束"
-msgstr "I, Zombie - Game Over"
+msgstr "I, Zombie - Game over"
 
 #. Name for stat entry mvz2:deceived_by_the_cake
 #: Stats meta file

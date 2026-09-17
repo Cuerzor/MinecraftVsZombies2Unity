@@ -38,7 +38,7 @@ namespace MVZ2Logic.Level.Components
         void BeginLevel();
         void StopLevel();
         void SaveStateData();
-        Task ReloadLevel();
+        Task ReloadLevel(LevelRestartStatus status);
         bool IsGamePaused();
         bool IsGameStarted();
         bool IsGameOver();

@@ -33,7 +33,7 @@ namespace MVZ2.Level
         }
 
         #region 重新开始确认
-        public void ShowRestartConfirmDialog()
+        public void ShowRestartConfirmDialog(LevelRestartStatus status)
         {
             var title = Localization._(LogicStrings.RESTART);
             var desc = Localization._(DIALOG_DESC_RESTART);
@@ -41,7 +41,7 @@ namespace MVZ2.Level
             {
                 if (confirm)
                 {
-                    await RestartLevel();
+                    await RestartLevel(status);
                 }
             });
         }
@@ -109,7 +109,7 @@ namespace MVZ2.Level
                     levelLoaded = false;
                     break;
                 case LevelLoadedDialog.ButtonType.Restart:
-                    ShowRestartConfirmDialog();
+                    ShowRestartConfirmDialog(LevelRestartStatus.Loaded);
                     break;
                 default:
                     await ExitLevel();
@@ -121,7 +121,7 @@ namespace MVZ2.Level
             ui.SetLevelErrorLoadingDialogInteractable(false);
             if (restart)
             {
-                await RestartLevel();
+                await RestartLevel(LevelRestartStatus.Error);
             }
             else
             {
@@ -182,7 +182,7 @@ namespace MVZ2.Level
         private async void UI_OnGameOverRetryButtonClickedCallback()
         {
             ui.SetGameOverDialogInteractable(false);
-            await RestartLevel();
+            await RestartLevel(LevelRestartStatus.GameOver);
         }
         private async void UI_OnGameOverBackButtonClickedCallback()
         {

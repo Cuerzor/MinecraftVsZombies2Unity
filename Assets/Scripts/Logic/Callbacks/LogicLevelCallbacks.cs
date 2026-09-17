@@ -151,6 +151,17 @@ namespace MVZ2Logic.Callbacks
                 this.terrainType = terrainType;
             }
         }
+        public readonly struct LevelRestartArgs
+        {
+            public readonly LevelEngine level;
+            public readonly LevelRestartStatus status;
+
+            public LevelRestartArgs(LevelEngine level, LevelRestartStatus status)
+            {
+                this.level = level;
+                this.status = status;
+            }
+        }
         public readonly static CallbackType<LevelCallbackParams> POST_LEVEL_STOP = new();
         public readonly static CallbackType<LevelCallbackParams> PRE_BATTLE = new();
         public readonly static CallbackTypeFiltered<GetBlueprintNotRecommondedParams, bool, NamespaceID> GET_BLUEPRINT_NOT_RECOMMENDED = new();
@@ -169,5 +180,6 @@ namespace MVZ2Logic.Callbacks
         public readonly static CallbackType<LevelCallbackParams> POST_PAUSE = new();
         public readonly static CallbackType<LevelCallbackParams> POST_RESUME = new();
         public readonly static CallbackTypeFiltered<IsTerrainCallbackParams, bool, NamespaceID> IS_TERRAIN = new();
+        public readonly static CallbackType<LevelRestartArgs> POST_LEVEL_RESTART = new();
     }
 }

@@ -30,11 +30,11 @@ namespace MVZ2Logic.Level
             if (component == null) return;
             component.SaveStateData();
         }
-        public static Task ReloadLevel(this LevelEngine level)
+        public static Task ReloadLevel(this LevelEngine level, LevelRestartStatus status)
         {
             var component = level.GetLogicComponent();
             if (component == null) return Task.CompletedTask;
-            return component.ReloadLevel();
+            return component.ReloadLevel(status);
         }
         public static bool IsGamePaused(this LevelEngine level)
         {

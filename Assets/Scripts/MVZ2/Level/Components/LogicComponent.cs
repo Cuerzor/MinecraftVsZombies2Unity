@@ -2,6 +2,7 @@
 
 using System.Threading.Tasks;
 using MVZ2Logic;
+using MVZ2Logic.Level;
 using MVZ2Logic.Level.Components;
 using PVZEngine;
 using PVZEngine.Level;
@@ -25,9 +26,9 @@ namespace MVZ2.Level.Components
         {
             Main.LevelManager.SaveLevel();
         }
-        public Task ReloadLevel()
+        public Task ReloadLevel(LevelRestartStatus status)
         {
-            return Controller.ReloadLevel();
+            return Controller.ReloadLevel(status);
         }
         public bool IsGamePaused()
         {
