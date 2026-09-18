@@ -6,6 +6,7 @@ using MVZ2Logic.Games;
 using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Buffs;
+using PVZEngine.Collisions;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Timing;
@@ -196,6 +197,13 @@ namespace MVZ2Logic.Entities
                 entity.SetProperty(key, timer);
             }
             return timer;
+        }
+        #endregion
+
+        #region 碰撞体
+        public static IEntityCollider? GetMainCollider(this Entity entity)
+        {
+            return entity.GetCollider(EntityCollisionHelper.NAME_MAIN);
         }
         #endregion
     }

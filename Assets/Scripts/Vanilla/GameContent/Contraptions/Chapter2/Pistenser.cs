@@ -223,7 +223,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             entity.SetBehaviourField(PROP_EXTEND_TARGET, new EntityID(value));
         }
-        public static FrameTimer GetEvocationTimer(Entity entity) => entity.GetOrCreateTimerProperty(PROP_EVOCATION_TIMER, EVOCATION_TIME);
+        public static FrameTimer GetEvocationTimer(Entity entity) => entity.GetOrCreateTimer(PROP_EVOCATION_TIMER, EVOCATION_TIME);
         public static void SetEvocationTimer(Entity entity, FrameTimer value) => entity.SetBehaviourField(PROP_EVOCATION_TIMER, value);
         public static float GetExtend(Entity entity) => entity.GetBehaviourField<float>(PROP_EXTEND);
         public static void SetExtend(Entity entity, float value) => entity.SetBehaviourField(PROP_EXTEND, value);

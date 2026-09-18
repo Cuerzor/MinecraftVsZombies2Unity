@@ -8,6 +8,7 @@ using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic.Entities;
 using MVZ2Logic.Grids;
 using PVZEngine;
 using PVZEngine.Buffs;
@@ -32,7 +33,7 @@ namespace MVZ2.GameContent.Obstacles
         public override void Init(Entity entity)
         {
             base.Init(entity);
-            var mainCollider = entity.GetCollider(EntityCollisionHelper.NAME_MAIN);
+            var mainCollider = entity.GetMainCollider();
             if (mainCollider != null)
             {
                 mainCollider.SetEnabled(false);

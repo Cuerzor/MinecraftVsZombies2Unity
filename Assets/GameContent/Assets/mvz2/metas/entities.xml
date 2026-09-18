@@ -4672,6 +4672,17 @@
                 <int name="mvz2:sortingOrder" value="-9999" />
             </properties>
         </entity>
+        <entity template="effect" id="miracle_mallet_minion">
+            <properties>
+                <bool name="mvz2:decorative" value="false" />
+                <float name="mvz2:damage" value="50" />
+                <float name="mvz2:range" value="16" />
+                <float name="mvz2:attackSpeed" value="1" />
+                <vector3 name="mvz2:size" x="24" y="24" z="24" />
+                <bool name="mvz2:shadowHidden" value="false" />
+                <vector3 name="mvz2:shadowScale" x="0.5" y="0.5" z="0.5" />
+            </properties>
+        </entity>
         <entity template="effect" id="thunder_bolt_horizontal">
             <behaviours>
                 <behaviour operator="add" id="mvz2:fadeout_by_timeout"/>
@@ -5201,18 +5212,21 @@
         <entity template="effect" id="creaking_particles">
             <properties>
                 <int name="mvz2:maxTimeout" value="45" />
+                <bool name="mvz2:decorative" value="true" />
             </properties>
         </entity>
         <entity template="effect" id="cleave_attack">
             <behaviours includeSelf="false"/>
             <properties>
                 <int name="mvz2:maxTimeout" value="15" />
+                <bool name="mvz2:decorative" value="true" />
             </properties>
         </entity>
         <entity template="effect" id="bubble_break_particles">
             <behaviours includeSelf="false"/>
             <properties>
                 <int name="mvz2:maxTimeout" value="3" />
+                <bool name="mvz2:decorative" value="true" />
             </properties>
         </entity>
     </entries>

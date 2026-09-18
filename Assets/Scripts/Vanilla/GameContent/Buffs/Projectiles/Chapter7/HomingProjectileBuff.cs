@@ -66,7 +66,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
         }
         public static bool IsTargetValid(Entity projectile, [NotNullWhen(true)] Entity? target)
         {
-            var mainCollider = target?.GetCollider(EntityCollisionHelper.NAME_MAIN);
+            var mainCollider = target?.GetMainCollider();
             return target != null && (target.ExistsAndAlive() || target.AssumeAlive()) && (mainCollider != null && !projectile.IsProjectileColliderIgnored(mainCollider));
         }
         public static Entity? FindNextTarget(Entity projectile)

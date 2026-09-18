@@ -9553,6 +9553,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9fc3aa71f87a9934ab4d841cb5a1fa7a
+    m_Address: mvz2:effect/miracle_mallet_minion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9fd348792cb250d419f2ac5c7effec83
     m_Address: mvz2:contraption/ship/elastic_cloud
     m_ReadOnly: 0
@@ -11855,6 +11862,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9d19f5411337a243beed27052d79af6
+    m_Address: mvz2:chapter_transition/title_mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c9f749b0027f2b94f8dbc619feb089de
     m_Address: mvz2:fire_breath_big
     m_ReadOnly: 0
@@ -13593,6 +13607,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e9ab803f0d271bd48b365bc8766feb6b
     m_Address: mvz2:map/gensokyo/map
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9c2bf7fd23752840a85d59c5bc659eb
+    m_Address: mvz2:entity/effect/miracle_mallet_minion
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

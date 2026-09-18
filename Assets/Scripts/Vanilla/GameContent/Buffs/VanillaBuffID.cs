@@ -201,7 +201,6 @@ namespace MVZ2.GameContent.Buffs
             public const string stoneShieldProtected = "stone_shield_protected";
             public const string glowstoneProtected = "glowstone_protected";
             public const string ironCurtain = "iron_curtain";
-            public const string miracleMalletReplicaDamage = "miracle_mallet_replica_damage";
             public const string brokenLantern = "broken_lantern";
 
             // Chapter 4
@@ -578,7 +577,6 @@ namespace MVZ2.GameContent.Buffs
             public static readonly NamespaceID stoneShieldProtected = Get(VanillaBuffNames.Contraption.stoneShieldProtected);
             public static readonly NamespaceID glowstoneProtected = Get(VanillaBuffNames.Contraption.glowstoneProtected);
             public static readonly NamespaceID ironCurtain = Get(VanillaBuffNames.Contraption.ironCurtain);
-            public static readonly NamespaceID miracleMalletReplicaDamage = Get(VanillaBuffNames.Contraption.miracleMalletReplicaDamage);
             public static readonly NamespaceID brokenLantern = Get(VanillaBuffNames.Contraption.brokenLantern);
 
             // Chapter 4

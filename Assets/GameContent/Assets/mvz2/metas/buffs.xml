@@ -125,7 +125,6 @@
     <!-- Chapter 3 -->
     <buff id="battle_respite" polarity="none" level="5000" target="level" />
     <buff id="inverted_mirror" polarity="negative" level="3000" target="projectile" />
-    <buff id="miracle_mallet_replica_damage" polarity="positive" level="2000" target="contraption" />
     <buff id="broken_lantern" polarity="mixed" level="2000" target="contraption" />
     <buff id="charm" polarity="negative" level="0" target="entity" />
     <buff id="seija_mesmerizer" polarity="none" level="5000" target="enemy" />

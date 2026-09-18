@@ -20,6 +20,8 @@ namespace MVZ2.Vanilla.Effects
         public const int PAGODA_LASER_SWIPE = PRIVATE_NUMBER + 1;
         public const int PAGODA_LASER_SUBTRACT = PRIVATE_NUMBER + 2;
 
+        public const int MIRACLE_MALLET_MINION_ATTACK = PRIVATE_NUMBER + 0;
+
         private const int PRIVATE_NUMBER = 10000;
     }
 }

@@ -69,7 +69,7 @@ namespace MVZ2.GameContent.Contraptions
         {
             var newProjectile = SpawnProjectile(projectileID, position, oldProjectile, spawnParams)?.Let(proj =>
             {
-                var collider = prism?.GetCollider(EntityCollisionHelper.NAME_MAIN);
+                var collider = prism?.GetMainCollider();
                 if (collider != null)
                 {
                     proj.AddIgnoredProjectileCollider(collider);
