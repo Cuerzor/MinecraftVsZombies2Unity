@@ -4675,12 +4675,12 @@
         <entity template="effect" id="miracle_mallet_minion">
             <properties>
                 <bool name="mvz2:decorative" value="false" />
-                <float name="mvz2:damage" value="50" />
                 <float name="mvz2:range" value="16" />
                 <float name="mvz2:attackSpeed" value="1" />
-                <vector3 name="mvz2:size" x="24" y="24" z="24" />
+                <vector3 name="mvz2:size" x="40" y="40" z="40" />
                 <bool name="mvz2:shadowHidden" value="false" />
                 <vector3 name="mvz2:shadowScale" x="0.5" y="0.5" z="0.5" />
+                <vector3 name="mvz2:model_position_offset" x="0" y="0" z="-10"/>
             </properties>
         </entity>
         <entity template="effect" id="thunder_bolt_horizontal">

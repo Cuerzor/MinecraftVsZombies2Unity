@@ -9,6 +9,7 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using PVZEngine;
+using PVZEngine.Collisions;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
@@ -70,7 +71,7 @@ namespace MVZ2.GameContent.Effects
             attackTimer.Run(entity.GetAttackSpeed());
 
             var sign = Mathf.Sign(entity.Velocity.x);
-            if (sign != 0)
+            if (Mathf.Abs(entity.Velocity.x) > 0.2f)
             {
                 SetFlip(entity, sign < 0);
             }
@@ -85,7 +86,7 @@ namespace MVZ2.GameContent.Effects
                 targetPosition = FindWanderPosition(entity);
                 SetTargetPosition(entity, targetPosition);
             }
-            ChaseTarget(entity, targetPosition);
+            ChaseTarget(entity, targetPosition, 0.5f);
 
             if (entity.IsTimeInterval(FIND_TARGET_INTERVAL))
             {
@@ -98,7 +99,7 @@ namespace MVZ2.GameContent.Effects
             var target = entity.Target;
             if (!target.ExistsAndAlive())
                 return;
-            ChaseTarget(entity, target.GetCenter());
+            ChaseTarget(entity, target.GetCenter(), 0.1f);
             var mainCollider = target.GetMainCollider();
             var range = entity.GetRange();
             if (mainCollider != null && mainCollider.CheckSphere(entity.GetCenter(), range))
@@ -124,12 +125,7 @@ namespace MVZ2.GameContent.Effects
         }
         public static void Whack(Entity entity, Entity target)
         {
-            var effects = new DamageEffectList(VanillaDamageEffects.REMOVE_ON_DEATH, VanillaDamageEffects.NO_DEATH_EFFECTS);
-            var damageOutput = target.TakeDamage(entity.GetDamage(), effects, entity);
-            if (damageOutput.BodyResult != null && damageOutput.BodyResult.Fatal)
-            {
-                entity.Spawn(VanillaEffectID.pow, entity.GetCenter());
-            }
+            entity.Spawn(VanillaEffectID.pow, entity.GetCenter());
             entity.TriggerAnimation("Whack");
             entity.PlaySound(VanillaSoundID.bonk);
             if (target.CanDeactive())
@@ -163,16 +159,25 @@ namespace MVZ2.GameContent.Effects
             tilePosition.y = entity.Level.GetGroundY(tilePosition.x, tilePosition.z) + IDLE_SUSPENSION_HEIGHT;
             return tilePosition;
         }
-        private static void ChaseTarget(Entity entity, Vector3 targetPosition)
+        private static void ChaseTarget(Entity entity, Vector3 targetPosition, float factor)
         {
             var velocity = entity.Velocity;
             var distance = (targetPosition - entity.Position);
-            var speed = Mathf.Clamp(distance.magnitude * 0.05f + CHASE_SPEED_OFFSET, 0, MAX_SPEED);
+            var speed = Mathf.Clamp(distance.magnitude * SPEED_MULTIPLIER_BY_DISTANCE + CHASE_SPEED_OFFSET, 0, MAX_SPEED);
             var direction = distance.normalized;
 
             var targetVelocity = direction * speed;
-            velocity = velocity * 0.5f + targetVelocity * 0.5f;
+            velocity = velocity * (1 - factor) + targetVelocity * factor;
             entity.Velocity = velocity;
+        }
+        private static bool ColliderFilter(DetectionParams args, IEntityCollider collider)
+        {
+            var entity = collider.Entity;
+            if (!entity.CanDeactive())
+            {
+                return false;
+            }
+            return true;
         }
         public static Vector3 GetTargetPosition(Entity entity) => entity.GetProperty<Vector3>(PROP_TARGET_POSITION);
         public static void SetTargetPosition(Entity entity, Vector3 value) => entity.SetProperty(PROP_TARGET_POSITION, value);
@@ -184,15 +189,17 @@ namespace MVZ2.GameContent.Effects
         public const int STATE_ATTACK = VanillaEffectStates.MIRACLE_MALLET_MINION_ATTACK;
         public const int WANDER_TILE_EXTENT = 1;
         public const int WANDER_MAX_OFFSET = 40;
-        public const float CHASE_SPEED_OFFSET = -0.05f;
+        public const float SPEED_MULTIPLIER_BY_DISTANCE = 0.2f;
+        public const float CHASE_SPEED_OFFSET = -SPEED_MULTIPLIER_BY_DISTANCE;
         public const float MAX_SPEED = 20f;
         public const float IDLE_SUSPENSION_HEIGHT = 40f;
         public const int FIND_TARGET_INTERVAL = 7;
         public const int WANDER_SECONDS = 5;
         public const float ATTACK_INTERVAL_SECONDS = 3;
-        public const int STUN_DURATION = 150;
+        public const int STUN_DURATION = 60;
         public static readonly Detector targetDetector = new LawnDetector()
         {
+            colliderFilter = ColliderFilter,
             mask = EntityCollisionHelper.MASK_ENEMY
         };
         public static readonly PropertyMeta<Vector3> PROP_TARGET_POSITION = new VanillaEntityPropertyMeta<Vector3>("target_position");

@@ -499,7 +499,7 @@
     <model name="seija_faint_effect" type="entity" path="mvz2:effect/seija_faint_effect" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
     <model name="wither_summoners" type="entity" path="mvz2:effect/wither_summoners" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
     <model name="castle_twilight" type="entity" path="mvz2:effect/castle_twilight" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
-    <model name="miracle_mallet_minion" type="entity" path="mvz2:effect/miracle_mallet_minion" width="28" height="28" xOffset="0" yOffset="-10" />
+    <model name="miracle_mallet_minion" type="entity" path="mvz2:effect/miracle_mallet_minion" width="40" height="40" xOffset="0" yOffset="-12" />
     
     <model name="thunder_bolt_horizontal" type="entity" path="mvz2:effect/thunder_bolt_horizontal" width="920" height="120" xOffset="-414" yOffset="0" />
     <model name="spawner_appear_embers" type="entity" path="mvz2:effect/spawner_appear_embers" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
