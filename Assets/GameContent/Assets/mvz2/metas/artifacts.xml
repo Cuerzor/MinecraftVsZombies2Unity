@@ -76,7 +76,7 @@
     </artifact>
 
     <!-- Mausoleum -->
-    <artifact id="manipulative_talismans" name="控制灵符" tooltip="怪物死亡并倒下时有10%的概率复活，并变为友方" sprite="mvz2:artifacts/manipulative_talismans">
+    <artifact id="manipulative_talismans" name="控制灵符" tooltip="怪物死亡并倒下时有25%的概率复活，并变为友方" sprite="mvz2:artifacts/manipulative_talismans">
         <unlock>
             <condition required="mvz2:level.mausoleum_3" />
         </unlock>

@@ -9,6 +9,7 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
+using PVZEngine.Tools.Random;
 
 namespace MVZ2.GameContent.Artifacts
 {
@@ -31,7 +32,7 @@ namespace MVZ2.GameContent.Artifacts
                 if (artifact?.Definition != this)
                     continue;
                 var rng = artifact.RNG;
-                if (rng.Next(100) < REVIVE_CHANCE)
+                if (rng.NextPercent(REVIVE_CHANCE))
                 {
                     enemy.Revive();
                     enemy.Health = enemy.GetMaxHealth();
@@ -43,6 +44,6 @@ namespace MVZ2.GameContent.Artifacts
                 }
             }
         }
-        public const int REVIVE_CHANCE = 10;
+        public const float REVIVE_CHANCE = 0.25f;
     }
 }

@@ -91,6 +91,8 @@
   - Effect reworked: Kills the first enemy monster every battle -> Kills the first 3 enemy monsters every battle
 - Miracle Mallet Replica
   - Effect reworked: +15% damage for friendly contraptions -> Summons a mallet minion that stuns the leftmost enemy monster
+- Manipulative Talismans
+  - Chance: 10% -> 25%
 - Eye of the Giant
   - Damage multiplier: 250% -> 200%
   - Attack speed multiplier: 50% -> 60%

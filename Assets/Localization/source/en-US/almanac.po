@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-19 11:40+0800\n"
-"PO-Revision-Date: 2026-09-19 11:42+0800\n"
+"POT-Creation-Date: 2026-09-19 11:48+0800\n"
+"PO-Revision-Date: 2026-09-19 11:49+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -4493,8 +4493,8 @@ msgstr "A stack of talismans gifted by <ref=[misc]mvz2:seiga>Seiga</ref>, which 
 #. Properties for artifacts mvz2:manipulative_talismans
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>敌方怪物死亡并倒下时，有10%的概率复活并变为友方</color>"
-msgstr "Effect: <color=red>Enemy monsters have 10% chance to be revived as friendly ones when they die and faint</color>"
+msgid "效果：<color=red>敌方怪物死亡并倒下时，有25%的概率复活并变为友方</color>"
+msgstr "Effect: <color=red>Enemy monsters have 25% chance to be revived as friendly ones when they die and faint</color>"
 
 #. Flavor for artifacts mvz2:manipulative_talismans
 #: Almanac meta file
@@ -9600,8 +9600,8 @@ msgstr "Manipulative Talismans"
 #. Tooltip for artifact mvz2:manipulative_talismans
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "怪物死亡并倒下时有10%的概率复活，并变为友方"
-msgstr "Enemies have 10% chance to be revived as friendly ones when they die and faint"
+msgid "怪物死亡并倒下时有25%的概率复活，并变为友方"
+msgstr "Enemies have 25% chance to be revived as friendly ones when they die and faint"
 
 #. Name for artifact mvz2:greedy_vacuum
 #: Artifact meta file

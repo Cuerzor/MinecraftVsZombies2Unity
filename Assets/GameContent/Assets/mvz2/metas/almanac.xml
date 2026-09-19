@@ -2344,7 +2344,7 @@
                 <p><![CDATA[<ref=[misc]mvz2:seiga>青娥</ref>]]>赠送的一叠符箓，据说可以控制僵尸。</p>
             </header>
             <properties>
-                <p>效果：<![CDATA[<color=red>敌方怪物死亡并倒下时，有10%的概率复活并变为友方</color>]]></p>
+                <p>效果：<![CDATA[<color=red>敌方怪物死亡并倒下时，有25%的概率复活并变为友方</color>]]></p>
             </properties>
             <flavor>
                 <p>“这是我们之间的秘密哦……”</p>
