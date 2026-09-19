@@ -87,6 +87,8 @@
   - Now blocks Skeleton Horses from jumping.
 - Wither
   - Now can be interrupted by Golden Apple even when Wither is using a charge attack instead of an eat attack.
+- Miracle Mallet
+  - Effect reworked: +15% damage for friendly contraptions -> Summons a mallet minion that stuns the leftmost enemy monster
 - Eye of the Giant
   - Damage multiplier: 250% -> 200%
   - Attack speed multiplier: 50% -> 60%
