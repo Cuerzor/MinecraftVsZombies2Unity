@@ -7,6 +7,7 @@ using MVZ2Logic.Grids;
 using MVZ2Logic.Level;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
+using PVZEngine.Grids;
 using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Artifacts
@@ -29,6 +30,7 @@ namespace MVZ2.GameContent.Artifacts
                     continue;
                 if (artifact.Definition.GetID() != VanillaArtifactID.hoe)
                     continue;
+                artifact.SetNumber(MAX_NUMBER);
                 artifact.SetInactive(false);
             }
         }
@@ -43,12 +45,13 @@ namespace MVZ2.GameContent.Artifacts
                     continue;
                 if (artifact.Definition.GetID() != VanillaArtifactID.hoe)
                     continue;
-                if (artifact.IsInactive())
+                var number = artifact.GetNumber();
+                if (artifact.IsInactive() || number <= 0)
                     continue;
                 var targetLane = enemy.GetLane();
                 var targetColumn = TARGET_COLUMN;
                 var grid = level.GetGrid(targetColumn, targetLane);
-                while (grid != null && !grid.IsLand())
+                while (grid != null && (!grid.IsLand() || TileHasHoe(grid)))
                 {
                     grid = level.GetGrid(grid.Column - 1, grid.Lane);
                 }
@@ -63,10 +66,21 @@ namespace MVZ2.GameContent.Artifacts
                     });
                 });
                 artifact.Highlight();
-                artifact.SetInactive(true);
+                number--;
+                artifact.SetNumber(number);
+                if (number <= 0)
+                {
+                    artifact.SetNumber(-1);
+                    artifact.SetInactive(true);
+                }
                 break;
             }
         }
+        private static bool TileHasHoe(LawnGrid tile)
+        {
+            return tile.Level.EntityExists(e => e.IsEntityOf(VanillaEffectID.hoe) && e.GetGrid() == tile);
+        }
+        public const int MAX_NUMBER = 3;
         public const int TARGET_COLUMN = 3;
     }
 }

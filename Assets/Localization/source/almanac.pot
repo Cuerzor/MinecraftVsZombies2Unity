@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-15 07:43+0800\n"
+"POT-Creation-Date: 2026-09-19 11:40+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3292,7 +3292,7 @@ msgstr ""
 #. Properties for artifacts mvz2:hoe
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>每场战斗中，击杀最先出场的怪物</color>"
+msgid "效果：<color=red>消灭每场战斗的前三只敌方怪物</color>"
 msgstr ""
 
 #. Flavor for artifacts mvz2:hoe
@@ -3490,15 +3490,13 @@ msgstr ""
 #. Properties for artifacts mvz2:miracle_mallet_replica
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>+15%友方器械伤害</color>"
+msgid "效果：<color=red>召唤万宝槌仆从击晕最前方的敌怪</color>"
 msgstr ""
 
 #. Flavor for artifacts mvz2:miracle_mallet_replica
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid ""
-"万宝槌的仿制品，没有什么魔力，只能普通地造成物理伤害。\n"
-"\n"
 "却说那<ref=[misc]mvz2:seija>小人</ref>参见<ref=[misc]mvz2:shinmyoumaru>小人</ref>，图谋以小搏大。蚍蜉欲撼参天木，终作金靴踏下尘。\n"
 "<ref=[misc]mvz2:shinmyoumaru>小人</ref>遭缚，<ref=[misc]mvz2:seija>小人</ref>遁形。小人间彼此算计，最终却成了知己。\n"
 "然族民百姓叫苦不迭，城内苍生忧心忡忡。\n"
@@ -7875,7 +7873,7 @@ msgstr ""
 #. Tooltip for artifact mvz2:hoe
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "消灭每场战斗的第一个敌方怪物"
+msgid "消灭每场战斗的前三只敌方怪物"
 msgstr ""
 
 #. Name for artifact mvz2:dream_key
@@ -7995,7 +7993,7 @@ msgstr ""
 #. Tooltip for artifact mvz2:miracle_mallet_replica
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "+15%友方器械伤害"
+msgid "召唤万宝槌仆从击晕最前方的敌怪"
 msgstr ""
 
 #. Name for artifact mvz2:nether_star
@@ -8451,7 +8449,7 @@ msgstr ""
 #. Tooltip for curse mvz2:red_dragons_scale
 #: Curses meta file
 msgctxt "curse.tooltip"
-msgid "敌怪受到60%爆炸和火焰伤害"
+msgid "敌怪受到75%爆炸和火焰伤害"
 msgstr ""
 
 #. Name for curse mvz2:locked_chests_chains

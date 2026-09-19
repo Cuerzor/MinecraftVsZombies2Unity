@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-15 07:43+0800\n"
-"PO-Revision-Date: 2026-09-15 19:43+0800\n"
+"POT-Creation-Date: 2026-09-19 11:40+0800\n"
+"PO-Revision-Date: 2026-09-19 11:42+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -4190,8 +4190,8 @@ msgstr "An agricultural tool."
 #. Properties for artifacts mvz2:hoe
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>每场战斗中，击杀最先出场的怪物</color>"
-msgstr "Effect: <color=red>Kills the first monster of every battle</color>"
+msgid "效果：<color=red>消灭每场战斗的前三只敌方怪物</color>"
+msgstr "Effect: <color=red>Kills the first 3 enemy monsters of every battle</color>"
 
 #. Flavor for artifacts mvz2:hoe
 #: Almanac meta file
@@ -4417,23 +4417,19 @@ msgstr ""
 #. Properties for artifacts mvz2:miracle_mallet_replica
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>+15%友方器械伤害</color>"
-msgstr "Effect: <color=red>+15% friendly contraption damage</color>"
+msgid "效果：<color=red>召唤万宝槌仆从击晕最前方的敌怪</color>"
+msgstr "Effect: <color=red>Summons a mallet minion that stuns the leftmost enemy monster</color>"
 
 #. Flavor for artifacts mvz2:miracle_mallet_replica
 #: Almanac meta file
 msgctxt "artifacts.description"
 msgid ""
-"万宝槌的仿制品，没有什么魔力，只能普通地造成物理伤害。\n"
-"\n"
 "却说那<ref=[misc]mvz2:seija>小人</ref>参见<ref=[misc]mvz2:shinmyoumaru>小人</ref>，图谋以小搏大。蚍蜉欲撼参天木，终作金靴踏下尘。\n"
 "<ref=[misc]mvz2:shinmyoumaru>小人</ref>遭缚，<ref=[misc]mvz2:seija>小人</ref>遁形。小人间彼此算计，最终却成了知己。\n"
 "然族民百姓叫苦不迭，城内苍生忧心忡忡。\n"
 "亡者之劫已解，天下信任尽失。\n"
 "一城之君，怎会落得这般下场？"
 msgstr ""
-"The replica of the Miracle Mallet. Contains no magic and can only be used to cause physical harm.\n"
-"\n"
 "<ref=[misc]mvz2:shinmyoumaru>The meager princess</ref> in the clouds, and <ref=[misc]mvz2:seija>she</ref> who filled her head with the "
 "clouds. These lowly ones soared towards the heavens, but tragically never saw the light.\n"
 "<ref=[misc]mvz2:shinmyoumaru>One</ref> confined, <ref=[misc]mvz2:seija>one</ref> escaped. Yet, from their deception blossomed "
@@ -9448,8 +9444,8 @@ msgstr "Hoe"
 #. Tooltip for artifact mvz2:hoe
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "消灭每场战斗的第一个敌方怪物"
-msgstr "Kills the first enemy monster of every battle"
+msgid "消灭每场战斗的前三只敌方怪物"
+msgstr "Kills the first 3 enemy monsters of every battle"
 
 #. Name for artifact mvz2:dream_key
 #: Artifact meta file
@@ -9568,8 +9564,8 @@ msgstr "Miracle Mallet Replica"
 #. Tooltip for artifact mvz2:miracle_mallet_replica
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "+15%友方器械伤害"
-msgstr "+15% friendly contraption damage"
+msgid "召唤万宝槌仆从击晕最前方的敌怪"
+msgstr "Summons a mallet minion that stuns the leftmost enemy monster"
 
 #. Name for artifact mvz2:nether_star
 #: Artifact meta file
@@ -10024,8 +10020,8 @@ msgstr "Red Dragon's Scale"
 #. Tooltip for curse mvz2:red_dragons_scale
 #: Curses meta file
 msgctxt "curse.tooltip"
-msgid "敌怪受到60%爆炸和火焰伤害"
-msgstr "Enemy monsters take 60% explosion or fire damage"
+msgid "敌怪受到75%爆炸和火焰伤害"
+msgstr "Enemy monsters take 75% explosion or fire damage"
 
 #. Name for curse mvz2:locked_chests_chains
 #: Curses meta file
@@ -10050,6 +10046,14 @@ msgstr "Kraken's Backplate"
 msgctxt "curse.tooltip"
 msgid "敌怪重量提升一级"
 msgstr "Increases the mass of the enemy monsters by one level"
+
+#~ msgctxt "artifacts.description"
+#~ msgid "效果：<color=red>+15%友方器械伤害</color>"
+#~ msgstr "Effect: <color=red>+15% friendly contraption damage</color>"
+
+#~ msgctxt "artifact.tooltip"
+#~ msgid "+15%友方器械伤害"
+#~ msgstr "+15% friendly contraption damage"
 
 #~ msgctxt "death_message"
 #~ msgid "目标已消灭"

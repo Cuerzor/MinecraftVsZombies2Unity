@@ -5,7 +5,7 @@
             <condition required="mvz2:level.halloween_5" />
         </unlock>
     </artifact>
-    <artifact id="hoe" name="锄头" tooltip="消灭每场战斗的第一个敌方怪物" sprite="mvz2:artifacts/hoe">
+    <artifact id="hoe" name="锄头" tooltip="消灭每场战斗的前三只敌方怪物" sprite="mvz2:artifacts/hoe">
         <unlock>
             <condition required="mvz2:artifact.hoe" />
         </unlock>

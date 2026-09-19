@@ -2176,7 +2176,7 @@
                 <p>农具。</p>
             </header>
             <properties>
-                <p>效果：<![CDATA[<color=red>每场战斗中，击杀最先出场的怪物</color>]]></p>
+                <p>效果：<![CDATA[<color=red>消灭每场战斗的前三只敌方怪物</color>]]></p>
             </properties>
             <flavor>
                 <p>踩到了的话被打一下很痛。真的。</p>
