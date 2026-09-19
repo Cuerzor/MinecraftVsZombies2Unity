@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: kraken_cannon
+  m_Name: kraken_laser_gun
   m_Shader: {fileID: 4800000, guid: 0339b51ffd2f27f4dad70093ee4efe0a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -35,7 +35,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 301c55f40e4a8ba4192b008f237552d3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6fbdb1f1d4d6ba44fbbcf0abbe8cd3f1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []

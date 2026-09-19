@@ -2,6 +2,8 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using MVZ2.GameContent.Buffs.Contraptions;
+using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Effects;
 using MVZ2.Vanilla.Audios;
@@ -15,11 +17,15 @@ using MVZ2Logic.Callbacks;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Grids;
 using MVZ2Logic.Level;
+using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Grids;
 using PVZEngine.Level;
+using PVZEngine.Tools;
+using PVZEngine.Tools.Random;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Areas
@@ -214,6 +220,41 @@ namespace MVZ2.GameContent.Areas
                 }
             }
             return true;
+        }
+        public static void DropGiantStones(LevelEngine level, int columnMin, int columnMax, int laneMin, int laneMax, int count, RandomGenerator rng)
+        {
+            level.PlaySound(VanillaSoundID.rockCrumble);
+            level.ShakeScreen(3, 0, 30);
+
+            using var tilesItem = ListPool<LawnGrid>.Rent();
+            var tiles = tilesItem.Value;
+
+            for (int l = laneMin; l <= laneMax; l++)
+            {
+                for (int c = columnMin; c <= columnMax; c++)
+                {
+                    var tile = level.GetGrid(c, l);
+                    if (tile == null)
+                        continue;
+                    tiles.Add(tile);
+                }
+            }
+
+            using var resultsItem = ListPool<LawnGrid>.Rent();
+            var results = resultsItem.Value;
+
+            tiles.TakeRandomOfTopOnes(t => t.CanSpawnEntity(VanillaContraptionID.giantStone) ? 1 : 0, count, rng, results, ascending: false);
+
+            foreach (var resultTile in results)
+            {
+                var pos = resultTile.GetEntityPosition();
+                pos.y += 600f;
+                var giantStone = level.Spawn(VanillaContraptionID.giantStone, pos, null);
+                if (giantStone != null)
+                {
+                    giantStone.AddBuff<ContraptionFallBuff>();
+                }
+            }
         }
         public static float GetPoolWave(LevelEngine level)
         {

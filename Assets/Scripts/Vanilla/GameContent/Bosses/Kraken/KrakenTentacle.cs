@@ -46,6 +46,11 @@ namespace MVZ2.GameContent.Bosses
         }
         #endregion 事件
 
+        public static void Recall(Entity entity)
+        {
+            stateMachine.StartState(entity, STATE_DISAPPEAR);
+            stateMachine.StartSubState(entity, DisappearState.SUBSTATE_RECALLED);
+        }
         public static float GetShadowAlpha(Entity entity) => entity.GetProperty<float>(PROP_SHADOW_ALPHA);
         public static void SetShadowAlpha(Entity entity, float value) => entity.SetProperty(PROP_SHADOW_ALPHA, value);
         public static int GetNextAction(Entity entity) => entity.GetProperty<int>(PROP_NEXT_ACTION);

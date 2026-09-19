@@ -2334,6 +2334,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 271cc8677a82aeb4e9571fe68b871c9c
+    m_Address: mvz2:kraken_roar
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 274fe14239cfc904690be243b7a2e8dc
     m_Address: mvz2:icons/blueprint_lock
     m_ReadOnly: 0
@@ -6365,6 +6372,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 691131bb6028ac44c8e585797df31cec
     m_Address: mvz2:talk/villager/villager_long2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6922b0b1b8e4a3d4eaabc2e3c1bcde66
+    m_Address: mvz2:kraken_death
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

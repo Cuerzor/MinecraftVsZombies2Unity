@@ -111,6 +111,12 @@ namespace MVZ2Logic.Level
             if (component == null) return;
             component.ShakeScreen(startAmplitude, endAmplitude, time);
         }
+        public static void AddSlowMotion(this LevelEngine level, float timeout, float multiplier = 0.1f)
+        {
+            var component = level.GetUIComponent();
+            if (component == null) return;
+            component.AddSlowMotion(timeout, multiplier);
+        }
         public static void SetHintArrowPointToBlueprint(this LevelEngine level, int index)
         {
             var component = level.GetUIComponent();

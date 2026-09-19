@@ -33,6 +33,10 @@ namespace MVZ2.Level.Components
         {
             Main.ShakeManager.AddShake(startAmplitude * Controller.LawnToTransScale, endAmplitude * Controller.LawnToTransScale, time / (float)Ticks.GetTPS());
         }
+        public void AddSlowMotion(float timeout, float multiplier = 0.1f)
+        {
+            Controller.AddSlowMotion(new SlowMotion(timeout, multiplier));
+        }
         public void ShowMoney()
         {
             Controller.ShowMoney();

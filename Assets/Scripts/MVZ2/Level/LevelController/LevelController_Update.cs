@@ -24,7 +24,13 @@ namespace MVZ2.Level
                 return 0;
             if (advancedPause)
                 return 0;
-            return speedUp && !isGameOver ? Main.OptionsManager.GetFastForwardMultiplier() : 1;
+            float multiplier = 1;
+            if (speedUp && !isGameOver)
+            {
+                multiplier = Main.OptionsManager.GetFastForwardMultiplier();
+            }
+            multiplier *= GetSlowMotionMultiplier();
+            return multiplier;
         }
         private bool IsConsoleActive()
         {
@@ -205,6 +211,8 @@ namespace MVZ2.Level
 
             // 更新关卡。
             UpdateFrameLevelEngine(deltaTime, gameSpeed);
+
+            UpdateFrame_SlowMotion(deltaTime);
         }
         private void UpdateFrameAnimators(float deltaTime, float gameSpeed)
         {

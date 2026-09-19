@@ -151,8 +151,11 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID impLaugh = Get("imp_laugh");
         public readonly static NamespaceID impact = Get("impact");
         public readonly static NamespaceID ironCurtain = Get("iron_curtain");
+        public readonly static NamespaceID killed = Get("killed");
+        public readonly static NamespaceID krakenDeath = Get("kraken_death");
         public readonly static NamespaceID krakenHatchOpen = Get("kraken_hatch_open");
         public readonly static NamespaceID krakenHatchClose = Get("kraken_hatch_close");
+        public readonly static NamespaceID krakenRoar = Get("kraken_roar");
         public readonly static NamespaceID largeExplosion = Get("large_explosion");
         public readonly static NamespaceID launch = Get("launch");
         public readonly static NamespaceID leatherHit = Get("leather_hit");

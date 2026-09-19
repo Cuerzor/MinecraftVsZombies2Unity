@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: kraken_gatlin
+  m_Name: kraken_cannon
   m_Shader: {fileID: 4800000, guid: 0339b51ffd2f27f4dad70093ee4efe0a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -35,7 +35,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5427592a0ca8c824dabdec5db522801e, type: 3}
+        m_Texture: {fileID: 2800000, guid: d66d84e359546d04eaddcc22eeff9431, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []

@@ -82,6 +82,7 @@ namespace MVZ2Logic.Level.Components
         Vector3 ScreenToLawnPositionByZ(Vector2 screenPosition, float y);
         Vector3 ScreenToLawnPositionByRelativeY(Vector2 screenPosition, float relativeY);
         void ShakeScreen(float startAmplitude, float endAmplitude, int time);
+        void AddSlowMotion(float timeout, float multiplier = 0.1f);
 
         void ShowMoney();
         void SetMoneyFade(bool fade);

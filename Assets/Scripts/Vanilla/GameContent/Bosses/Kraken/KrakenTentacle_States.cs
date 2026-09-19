@@ -409,6 +409,15 @@ namespace MVZ2.GameContent.Bosses
         private class DisappearState : EntityStateMachineState
         {
             public DisappearState() : base(STATE_DISAPPEAR, ANIMATION_STATE_DISAPPEAR) { }
+            public override int GetAnimationSubstate(int substate)
+            {
+                switch (substate)
+                {
+                    case SUBSTATE_RECALLED:
+                        return ANIMATION_SUBSTATE_RECALLED;
+                }
+                return ANIMATION_SUBSTATE_DRILL;
+            }
             public override void OnEnter(EntityStateMachine stateMachine, Entity entity)
             {
                 base.OnEnter(stateMachine, entity);
@@ -433,6 +442,10 @@ namespace MVZ2.GameContent.Bosses
                     stateMachine.StartState(entity, STATE_HIDDEN);
                 }
             }
+            public const int SUBSTATE_DRILL = 0;
+            public const int SUBSTATE_RECALLED = 1;
+            public const int ANIMATION_SUBSTATE_DRILL = 0;
+            public const int ANIMATION_SUBSTATE_RECALLED = 1;
         }
         #endregion
 
