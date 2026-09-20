@@ -120,6 +120,17 @@ namespace MVZ2.GameContent.Bosses
                 e.SetParent(entity);
             });
 
+            using var portalsItem = ListPool<Entity>.Rent();
+            var portals = portalsItem.Value;
+            entity.Level.FindEntitiesNonAlloc(e => 
+                e.IsEntityOf(VanillaEffectID.nightmarePortalPandora) && 
+                e.SpawnerReference is EntitySourceReference entityRef && 
+                entityRef.ID == entity.ID, portals);
+            foreach (var portal in portals)
+            {
+                NightmarePortalPandora.Close(portal);
+            }
+
             entity.SetAnimationBool("IsDead", true);
             entity.Timeout = 180;
         }
@@ -341,30 +352,30 @@ namespace MVZ2.GameContent.Bosses
             boss.PlaySound(VanillaSoundID.odd);
 
             var level = boss.Level;
+            using var lanesItem = ListPool<int>.Rent();
+            var lanes = lanesItem.Value;
+            for (int i = 0; i < level.GetMaxLaneCount(); i++)
+            {
+                var lane = i;
+                if (level.EntityExists(e => e.IsEntityOf(VanillaEffectID.nightmarePortalPandora) && e.GetLane() == lane))
+                    continue;
+                lanes.Add(lane);
+            }
+            if (lanes.Count <= 0)
+                return;
             var eventRng = GetEventRNG(boss);
             if (eventRng == null)
                 return;
             var rng = new RandomGenerator(eventRng.Next());
-            var contraptions = level.FindEntities(e => e.Type == EntityTypes.PLANT && e.IsHostile(boss));
-            foreach (var contraption in contraptions)
+            lanes.RandomKeep(2, rng);
+            foreach (var chosenLane in lanes)
             {
-                contraption.ClearTakenGrids();
-            }
-            using var grids = level.GetAllGridsDisposeable();
-            foreach (var contraption in contraptions)
-            {
-                var placementID = contraption.Definition.GetPlacementID();
-                if (placementID == null)
-                    continue;
-                var placementDef = level.Content.GetPlacementDefinition(placementID);
-                if (placementDef == null)
-                    continue;
-                var targetGrids = grids.Value.Where(g => g.CanSpawnEntity(contraption.GetDefinitionID()));
-                if (targetGrids.Count() <= 0)
-                    continue;
-                var grid = targetGrids.Random(rng);
-                contraption.Position = grid.GetEntityPosition();
-                contraption.UpdateTakenGrids();
+                var column = boss.GetMirroredColumn(level.GetMaxColumnCount() - 1, false);
+                var position = level.GetEntityGridPosition(column, chosenLane);
+
+                var spawnParams = boss.GetSpawnParams();
+                spawnParams.SetProperty(NightmarePortalPandora.PROP_ENEMY_ID, VanillaEnemyID.ironHelmettedZombie);
+                boss.Spawn(VanillaEffectID.nightmarePortalPandora, position, spawnParams);
             }
         }
         public static void Biohazard(Entity boss)

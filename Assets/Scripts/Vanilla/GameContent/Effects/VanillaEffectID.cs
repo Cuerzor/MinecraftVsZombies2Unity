@@ -46,6 +46,7 @@ namespace MVZ2.GameContent.Effects
         public const string breakoutBoard = "breakout_board";
         public const string nightmareWatchingEye = "nightmare_watching_eye";
         public const string nightmarePortal = "nightmare_portal";
+        public const string nightmarePortalPandora = "nightmare_portal_pandora";
         public const string darkMatterParticles = "dark_matter_particles";
         public const string nightmareaperSplash = "nightmareaper_splash";
         public const string nightmareaperShadow = "nightmareaper_shadow";
@@ -172,6 +173,7 @@ namespace MVZ2.GameContent.Effects
         public static readonly NamespaceID breakoutBoard = Get(VanillaEffectNames.breakoutBoard);
         public static readonly NamespaceID nightmareWatchingEye = Get(VanillaEffectNames.nightmareWatchingEye);
         public static readonly NamespaceID nightmarePortal = Get(VanillaEffectNames.nightmarePortal);
+        public static readonly NamespaceID nightmarePortalPandora = Get(VanillaEffectNames.nightmarePortalPandora);
         public static readonly NamespaceID darkMatterParticles = Get(VanillaEffectNames.darkMatterParticles);
         public static readonly NamespaceID nightmareaperSplash = Get(VanillaEffectNames.nightmareaperSplash);
         public static readonly NamespaceID nightmareaperShadow = Get(VanillaEffectNames.nightmareaperShadow);

@@ -85,6 +85,8 @@
   - Cost in I, Zombie mode: 150 -> 125 
 - Mutant Zombie
   - Now blocks Skeleton Horses from jumping.
+- Nightmare
+  - "Pandora's Box " fate option reworked: Randomly swap the positions of all contraptions on the battlefield -> Opens two green summoning portals in random lanes that continuously summon Iron Helmet Zombies
 - Wither
   - Now can be interrupted by Golden Apple even when Wither is using a charge attack instead of an eat attack.
 - Hoe

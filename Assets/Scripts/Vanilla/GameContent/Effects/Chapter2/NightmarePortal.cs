@@ -7,22 +7,16 @@ using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 
 namespace MVZ2.GameContent.Effects
 {
     [AutoEntityBehaviourDefinition(VanillaEffectNames.nightmarePortal)]
     public class NightmarePortal : EffectBehaviour
     {
-        #region 公有方法
         public NightmarePortal(string nsp, string name) : base(nsp, name)
         {
 
-        }
-        public override void Init(Entity entity)
-        {
-            base.Init(entity);
-            SetSpawnTime(entity, MAX_SPAWN_TIME);
-            entity.SetSortingOrder(-10);
         }
         public override void Update(Entity entity)
         {
@@ -41,18 +35,16 @@ namespace MVZ2.GameContent.Effects
                     }
                 }
             }
-        }
-        public static int GetSpawnTime(Entity entity) => entity.GetBehaviourField<int>(ID, PROP_SPAWN_TIME);
-        public static void SetSpawnTime(Entity entity, int value) => entity.SetBehaviourField(ID, PROP_SPAWN_TIME, value);
-        public static NamespaceID? GetEnemyID(Entity entity) => entity.GetBehaviourField<NamespaceID>(ID, PROP_ENEMY_ID);
-        public static void SetEnemyID(Entity entity, NamespaceID value) => entity.SetBehaviourField(ID, PROP_ENEMY_ID, value);
-        #endregion
 
-        #region 属性字段
-        public static readonly NamespaceID ID = VanillaEffectID.nightmarePortal;
-        public const int MAX_SPAWN_TIME = 15;
-        public static readonly VanillaEntityPropertyMeta<int> PROP_SPAWN_TIME = new VanillaEntityPropertyMeta<int>("SpawnTime");
+            entity.SetAnimationBool("Close", entity.Timeout <= CLOSE_TIMEOUT);
+        }
+        public static int GetSpawnTime(Entity entity) => entity.GetBehaviourField<int>(PROP_SPAWN_TIME);
+        public static void SetSpawnTime(Entity entity, int value) => entity.SetBehaviourField(PROP_SPAWN_TIME, value);
+        public static NamespaceID? GetEnemyID(Entity entity) => entity.GetBehaviourField<NamespaceID>(PROP_ENEMY_ID);
+        public static void SetEnemyID(Entity entity, NamespaceID value) => entity.SetBehaviourField(PROP_ENEMY_ID, value);
+
+        public const int CLOSE_TIMEOUT = 8;
+        public static readonly VanillaEntityPropertyMeta<int> PROP_SPAWN_TIME = new VanillaEntityPropertyMeta<int>("SpawnTime", 15);
         public static readonly VanillaEntityPropertyMeta<NamespaceID> PROP_ENEMY_ID = new VanillaEntityPropertyMeta<NamespaceID>("EnemyID");
-        #endregion
     }
 }

@@ -5552,6 +5552,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5cabc55ed05492d4486f84b9eb04388b
+    m_Address: mvz2:effect/nightmare_portal_pandora
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5cb65fd577d7e08419b04d3ec0a43859
     m_Address: mvz2:entity/wither_skeleton/wither_skeleton2
     m_ReadOnly: 0
@@ -10428,6 +10435,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af8792d825c458342b0f0f787135ae6c
+    m_Address: mvz2:entity/effect/nightmare_portal_background_pandora
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af8ae476c30921a47b13d90441b45f33
     m_Address: mvz2:credits
     m_ReadOnly: 0
@@ -13464,6 +13478,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6e1cb37a3ce65d4da721fb510fcb246
+    m_Address: mvz2:entity/effect/nightmare_portal_frame_pandora
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e6ef82d213584ae4e8a121cddec4c0ca
     m_Address: mvz2:entity/effect/rain
