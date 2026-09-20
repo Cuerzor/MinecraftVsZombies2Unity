@@ -238,8 +238,10 @@
                 <id name="mvz2:fragmentId" value="mvz2:nesting_tnt" />
                 <bool name="mvz2:triggerActive" value="true" />
                 <bool name="mvz2:instantTrigger" value="true" />
+                <id name="mvz2:placement" value="mvz2:amphibious" />
+                <int name="mvz2:waterInteraction" value="3" />
 
-                <int name="mvz2:cost" value="150" />
+                <int name="mvz2:cost" value="175" />
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </nestingTNT>
