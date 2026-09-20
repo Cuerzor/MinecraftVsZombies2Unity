@@ -971,7 +971,7 @@
                 <vector3 name="mvz2:lightRange" x="80" y="80" z="80" />
                 <color name="mvz2:lightColor" value="#FFAA00" />
 
-                <int name="mvz2:cost" value="175" />
+                <int name="mvz2:cost" value="200" />
                 <id name="mvz2:rechargeId" value="mvz2:short" />
             </properties>
         </entity>
@@ -1543,7 +1543,7 @@
                 <vector3 name="mvz2:size" x="36" y="36" z="36" />
                 <vector3 name="mvz2:shadowScale" x="0.75" y="0.75" z="0.75" />
 
-                <int name="mvz2:cost" value="100" />
+                <int name="mvz2:cost" value="125" />
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </entity>
