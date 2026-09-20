@@ -551,6 +551,12 @@
             <key hex="#ABABAB" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="anti_gravity_pad">
+        <colorKeys>
+            <key hex="#00FF00" time="0.75" />
+            <key hex="#a2ff80" time="1" />
+        </colorKeys>
+    </fragment>
 
     <!-- Halloween Enemies -->
     <fragment name="gargoyle">

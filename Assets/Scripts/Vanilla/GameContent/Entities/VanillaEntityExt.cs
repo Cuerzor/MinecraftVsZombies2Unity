@@ -45,7 +45,9 @@ using PVZEngine.Shells;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
 using UnityEditor;
+using UnityEditor.Graphs;
 using UnityEngine;
+using static UnityEngine.Networking.UnityWebRequest;
 using GridLayerData = System.ValueTuple<PVZEngine.Grids.LawnGrid, PVZEngine.NamespaceID>;
 
 namespace MVZ2.Vanilla.Entities
@@ -1262,6 +1264,23 @@ namespace MVZ2.Vanilla.Entities
                     behaviour.BeFrozen(ent, entity);
                 }
             }
+        }
+        #endregion
+
+        #region 盔甲丢弃物
+        public static Entity? ThrowArmorDiscard(this Entity entity, Armor armor, NamespaceID slot, Vector3 velocity)
+        {
+            var armorID = armor.Definition.GetID();
+            var position = entity.GetArmorDisplayPosition(slot, armorID);
+            var displayScale = entity.GetArmorDisplayScale(slot, armorID);
+
+            var spawnParam = entity.GetSpawnParams();
+            spawnParam.SetProperty(EngineEntityProps.DISPLAY_SCALE, displayScale);
+            spawnParam.EntityVelocity = velocity;
+            return entity.Spawn(VanillaEffectID.brokenArmor, position, spawnParam)?.Let(e =>
+            {
+                e.ChangeModel(armor.Definition.GetModelID());
+            });
         }
         #endregion
 

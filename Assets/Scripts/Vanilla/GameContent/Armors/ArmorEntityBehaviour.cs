@@ -46,25 +46,15 @@ namespace MVZ2.GameContent.Entities
 
             if (!armor.HasNoDiscard())
             {
-                var armorID = armor.Definition.GetID();
-                var position = entity.GetArmorDisplayPosition(slot, armorID);
-                var displayScale = entity.GetArmorDisplayScale(slot, armorID);
-
-                var spawnParam = entity.GetSpawnParams();
-                spawnParam.SetProperty(EngineEntityProps.DISPLAY_SCALE, displayScale);
-                entity.Spawn(VanillaEffectID.brokenArmor, position, spawnParam)?.Let(e =>
+                var sourcePosition = result?.Source?.GetEntity(entity.Level)?.Position;
+                var moveDirection = entity.GetFacingDirection();
+                if (sourcePosition.HasValue)
                 {
-                    var sourcePosition = result?.Source?.GetEntity(entity.Level)?.Position;
-                    var moveDirection = entity.GetFacingDirection();
-                    if (sourcePosition.HasValue)
-                    {
-                        moveDirection = (entity.Position - sourcePosition.Value).normalized;
-                    }
-                    e.Velocity = moveDirection * 10;
+                    moveDirection = (entity.Position - sourcePosition.Value).normalized;
+                }
+                var velocity = moveDirection * 10;
 
-                    e.ChangeModel(armor.Definition.GetModelID());
-                });
-
+                entity.ThrowArmorDiscard(armor, slot, velocity);
             }
         }
         #endregion

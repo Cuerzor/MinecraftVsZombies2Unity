@@ -4117,6 +4117,13 @@ MonoBehaviour:
     - Main
     - Music
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44fdc3f416c1b094a80c7e2502b3a910
+    m_Address: mvz2:entity/contraption/anti_gravity_pad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 450e6aea7722acc4191546342ffd43e8
     m_Address: mvz2:entity/nightmareaper/wheel_of_death_start
     m_ReadOnly: 0
@@ -8245,6 +8252,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a53854f8710b3145ac47d4faba478f0
+    m_Address: mvz2:contraption/upgrade/anti_gravity_pad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8a70d92a6c7b75340b98df7a8a5bee15
     m_Address: mvz2:random/crystal/crystal3
     m_ReadOnly: 0
@@ -9804,6 +9818,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3c56b34ce5f8204792ee0ccd2d1d482
+    m_Address: mvz2:mobile_blueprint/anti_gravity_pad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a3ffec953f3b51d4fbe1130f7e6f67e5
     m_Address: mvz2:entity/contraption/dispenser
