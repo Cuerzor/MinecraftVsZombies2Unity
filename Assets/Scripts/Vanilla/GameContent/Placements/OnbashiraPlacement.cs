@@ -9,9 +9,9 @@ namespace MVZ2.GameContent.Placements
     [AutoPlacementDefinition(VanillaPlacementNames.onbashira)]
     public class OnbashiraPlacement : PlacementDefinition
     {
-        public OnbashiraPlacement(string nsp, string name) : base(nsp, name, VanillaSpawnConditions.any)
+        public OnbashiraPlacement(string nsp, string name) : base(nsp, name, VanillaSpawnConditions.amphibious)
         {
-            AddMethod(VanillaPlaceMethods.entity);
+            AddMethod(VanillaPlaceMethods.onbashira);
             this.SetAlmanacTag(VanillaAlmanacTagID.placementOnbashira);
         }
     }
