@@ -2355,6 +2355,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28b2a81d2dfedf444826311414e56ef0
+    m_Address: mvz2:icon/frozen_feet
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 28e059928341d4a478068901b17d82bb
     m_Address: mvz2:effect/skyward_sky
     m_ReadOnly: 0
@@ -9168,6 +9175,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98c3c4abfa390cd42b9f9fb459149755
+    m_Address: mvz2:entity/effect/frozen_shard
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 98ceb6465d489164ab22b423d1a3d218
     m_Address: mvz2:mobile_blueprint/wooden_dropper
     m_ReadOnly: 0
@@ -11343,6 +11357,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Music
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c101e038c6933884ba46b093beaafa76
+    m_Address: mvz2:effect/frozen_shards
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c10d5cdc8afb68b48a2e80b9dae85b0f
     m_Address: mvz2:bash
@@ -14338,6 +14359,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f51e605779f2951469683e6e88f6c210
+    m_Address: mvz2:icons/frozen
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f5346a49dd46a2a4194dcbca45d9a022
     m_Address: mvz2:map/dream/sleepenser

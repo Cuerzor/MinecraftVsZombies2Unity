@@ -139,6 +139,7 @@ namespace MVZ2.GameContent.Buffs
             public const string teleporterTeleportUp = "teleporter_teleport_up";
             public const string teleporterTeleportDown = "teleporter_teleport_down";
             public const string galeLeafArtifactPickup = "gale_leaf_artifact_pickup";
+            public const string frozen = "frozen";
 
             // Random China
             public const string worldwideCelebration = "worldwide_celebration";
@@ -518,6 +519,7 @@ namespace MVZ2.GameContent.Buffs
             public static readonly NamespaceID petrified = Get(VanillaBuffNames.Entity.petrified);
             public static readonly NamespaceID carriedByBalloon = Get(VanillaBuffNames.Entity.carriedByBalloon);
             public static readonly NamespaceID burning = Get(VanillaBuffNames.Entity.burning);
+            public static readonly NamespaceID frozen = Get(VanillaBuffNames.Entity.frozen);
 
             // Random China
             public static readonly NamespaceID worldwideCelebration = Get(VanillaBuffNames.Entity.worldwideCelebration);

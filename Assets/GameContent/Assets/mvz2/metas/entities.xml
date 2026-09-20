@@ -5231,5 +5231,12 @@
                 <bool name="mvz2:decorative" value="true" />
             </properties>
         </entity>
+        <entity template="effect" id="frozen_shards">
+            <behaviours includeSelf="false"/>
+            <properties>
+                <int name="mvz2:maxTimeout" value="15" />
+                <bool name="mvz2:decorative" value="true" />
+            </properties>
+        </entity>
     </entries>
 </entities>

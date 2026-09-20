@@ -244,6 +244,7 @@
     <buff id="hookshot_user" polarity="none" level="6000" target="enemy" />
     <buff id="bubble_gun_user" polarity="none" level="6000" target="enemy" />
     <buff id="bubble_expand" polarity="none" level="5000" target="enemy" />
+    <buff id="frozen" polarity="negative" level="0" target="entity" />
     
     <!-- Curses -->
     <buff id="the_creatures_brain" polarity="negative" level="5000" target="level" />

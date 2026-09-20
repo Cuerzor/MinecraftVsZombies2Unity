@@ -559,7 +559,8 @@
     <model name="creaking_particles" type="entity" path="mvz2:effect/creaking_particles" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="cleave_attack" type="entity" path="mvz2:effect/cleave_attack" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="bubble_break_particles" type="entity" path="mvz2:effect/bubble_break_particles" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
-    
+    <model name="frozen_shards" type="entity" path="mvz2:effect/frozen_shards" shot="false" width="32" height="32" xOffset="0" yOffset="0"/>
+
     <!-- Projectiles -->
     <model name="arrow" type="entity" path="mvz2:projectile/arrow" width="32" height="10" xOffset="0" yOffset="-1" />
     <model name="mine_tnt_seed" type="entity" path="mvz2:projectile/mine_tnt_seed" width="64" height="64" xOffset="0" yOffset="-24" />
@@ -676,6 +677,7 @@
     <model name="shackled" type="icon" path="mvz2:icon/shackled" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="burning" type="icon" path="mvz2:icon/burning" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="dazzle" type="icon" path="mvz2:icon/dazzle" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
+    <model name="frozen_feet" type="icon" path="mvz2:icon/frozen_feet" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
 
     <model name="mind_swap" type="ui" path="mvz2:ui/mind_swap" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="blueprint_lock" type="ui" path="mvz2:ui/blueprint_lock" shot="false" width="64" height="64" xOffset="0" yOffset="0" />

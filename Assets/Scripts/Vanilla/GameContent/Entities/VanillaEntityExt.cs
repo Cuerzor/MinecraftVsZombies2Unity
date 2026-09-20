@@ -16,6 +16,7 @@ using MVZ2.Vanilla.Armors;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Contraptions;
+using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
@@ -1008,6 +1009,30 @@ namespace MVZ2.Vanilla.Entities
             PetrifiedBuff.MaxTime(buff, time);
             PostApplyStatusEffect(entity, buff, source);
         }
+        public static void InflictFrozen(this Entity entity, int time, ILevelSourceReference? source)
+        {
+            var buffDefinition = entity.Level.Content.GetBuffDefinition(VanillaBuffID.Entity.frozen);
+            if (buffDefinition == null || !PreApplyStatusEffect(entity, buffDefinition, source))
+                return;
+            Buff? buff = entity.GetBuffs(buffDefinition).FirstOrDefault(e => !e.IsFromAura);
+            if (buff == null)
+            {
+                buff = entity.AddBuff(buffDefinition);
+            }
+            FrozenBuff.MaxTime(buff, time);
+            PostApplyStatusEffect(entity, buff, source);
+        }
+        public static void InflictFrozenAndSlow(this Entity entity, int freezeTime, int slowTime, ILevelSourceReference? source)
+        {
+            if (entity.CanDeactive())
+            {
+                entity.InflictFrozen(freezeTime, source);
+            }
+            if (!entity.ImmuneSlowing())
+            {
+                entity.InflictSlow(freezeTime + slowTime, source);
+            }
+        }
 
 
         public static void ShortCircuit(this Entity entity, int time, ILevelSourceReference? source)
@@ -1220,6 +1245,23 @@ namespace MVZ2.Vanilla.Entities
             if (behaviour == null)
                 return;
             behaviour.Ignite(target, hellfire, cursed, enter);
+        }
+        #endregion
+
+        #region 冻结物体
+        public static void FreezeObjects(this Entity entity, Detector detector)
+        {
+            using var resultsItem = ListPool<Entity>.Rent();
+            var results = resultsItem.Value;
+            detector.DetectEntities(entity, results);
+            foreach (var ent in results)
+            {
+                using var behavioursItem = ent.Definition.GetBehavioursDisposeable<IBeFrozenBehaviour>();
+                foreach (var behaviour in behavioursItem.Value)
+                {
+                    behaviour.BeFrozen(ent, entity);
+                }
+            }
         }
         #endregion
 

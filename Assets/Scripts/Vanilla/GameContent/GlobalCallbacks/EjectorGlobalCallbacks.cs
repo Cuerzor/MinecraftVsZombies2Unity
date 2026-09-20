@@ -150,6 +150,10 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 entity.ShootProjectile(projArgs);
             }
 
+            var spawnParams = entity.GetSpawnParams();
+            spawnParams.SetProperty(EngineEntityProps.TINT, new Color(0.75f, 0.85f, 1, 1));
+            entity.Spawn(VanillaEffectID.smokeCluster, entity.GetCenter(), spawnParams);
+
             using var resultsItem = ListPool<IEntityCollider>.Rent();
             var results = resultsItem.Value;
             slowDetector.DetectMultiple(entity, results);
@@ -157,15 +161,23 @@ namespace MVZ2.GameContent.GlobalCallbacks
             {
                 if (!collider.IsForMain())
                     continue;
-                collider.Entity.InflictSlow(SLOW_FRAMES, new EntitySourceReference(entity));
+                collider.Entity.InflictFrozenAndSlow(FROZEN_FRAMES, SLOW_FRAMES, new EntitySourceReference(entity));
             }
+            entity.FreezeObjects(freezeObjectDetector);
         }
         public const float LIGHTNING_RADIUS = 200f;
         public const float SLOW_RADIUS = 120f;
+        public const int FROZEN_FRAMES = 300;
         public const int SLOW_FRAMES = 300;
         private Detector thunderDetector = new SphereDetector(LIGHTNING_RADIUS)
         {
             canDetectInvisible = true
+        };
+        private Detector freezeObjectDetector = new SphereDetector(SLOW_RADIUS)
+        {
+            canDetectInvisible = true,
+            mask = EntityCollisionHelper.MASK_ALL,
+            factionTarget = FactionTarget.Any
         };
         private Detector slowDetector = new SphereDetector(SLOW_RADIUS)
         {
