@@ -739,13 +739,15 @@ namespace MVZ2.Level.Entities
         public static string GetHPBarText(float health, float maxHealth, int amountMode)
         {
             var text = string.Empty;
+            int current = Mathf.Max(1, Mathf.RoundToInt(health));
+            int max = Mathf.RoundToInt(maxHealth);
             switch (amountMode)
             {
                 case HPBarAmountMode.CURRENT_ONLY:
-                    text = Mathf.CeilToInt(Mathf.Max(0, health)).ToString();
+                    text = current.ToString();
                     break;
                 case HPBarAmountMode.CURRENT_AND_MAX:
-                    text = Global.Localization.GetText(HP_BAR_TEXT_TEMPLATE_WITH_MAX, Mathf.CeilToInt(Mathf.Max(0, health)), Mathf.CeilToInt(maxHealth));
+                    text = Global.Localization.GetText(HP_BAR_TEXT_TEMPLATE_WITH_MAX, current, max);
                     break;
             }
             return text;
