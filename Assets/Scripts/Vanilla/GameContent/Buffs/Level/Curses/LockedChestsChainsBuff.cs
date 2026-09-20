@@ -2,6 +2,7 @@
 
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
+using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Level
 {
@@ -14,9 +15,11 @@ namespace MVZ2.GameContent.Buffs.Level
         public override void PostUpdate(Buff buff)
         {
             base.PostUpdate(buff);
-            if (buff.Level.Energy > ENERGY_THRESOLD)
+            var energy = buff.Level.Energy;
+            if (energy > ENERGY_THRESOLD)
             {
-                buff.Level.AddEnergy(-ENERGY_LOSE_SPEED);
+                energy = Mathf.Max(ENERGY_THRESOLD, energy - ENERGY_LOSE_SPEED);
+                buff.Level.SetEnergy(energy);
             }
         }
         public const float ENERGY_THRESOLD = 500;
