@@ -512,7 +512,7 @@ namespace MVZ2.Vanilla.Entities
             {
                 buff = entity.AddBuff<StunBuff>();
             }
-            StunBuff.SetStunTime(buff, timeout);
+            StunBuff.MaxStunTime(buff, timeout);
         }
 
         #region 阻挡火焰

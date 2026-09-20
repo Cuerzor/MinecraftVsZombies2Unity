@@ -85,6 +85,13 @@ namespace MVZ2.GameContent.Buffs.Enemies
                 return;
             timer.ResetTime(value);
         }
+        public static void MaxStunTime(Buff buff, int value)
+        {
+            var timer = buff.GetProperty<FrameTimer>(PROP_TIMER);
+            if (timer == null || timer.Frame > value)
+                return;
+            timer.ResetTime(value);
+        }
         public static EntityID? GetStunStars(Buff buff) => buff.GetProperty<EntityID>(PROP_STUN_STARS);
         public static void SetStunStars(Buff buff, EntityID value) => buff.SetProperty(PROP_STUN_STARS, value);
         public static readonly VanillaBuffPropertyMeta<FrameTimer> PROP_TIMER = new VanillaBuffPropertyMeta<FrameTimer>("Timer");
