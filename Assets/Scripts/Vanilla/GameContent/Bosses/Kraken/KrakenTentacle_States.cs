@@ -856,7 +856,7 @@ namespace MVZ2.GameContent.Bosses
         private static readonly KrakenTentacleDetector gatlinDetector = new KrakenTentacleDetector(4, GATLIN_PROJECTILE_OFFSET);
         private static readonly KrakenTentacleDetector cannonDetector = new KrakenTentacleDetector(24, CANNON_MISSILE_OFFSET);
         private static readonly KrakenTentacleDetector laserDetector = new KrakenTentacleDetector(24, LASER_OFFSET);
-        private static readonly KrakenTentacleDetector smashDetector = new KrakenTentacleDetector(60, SMASH_OFFSET, SMASH_RANGE)
+        private static readonly KrakenTentacleDetector smashDetector = new KrakenTentacleDetector(40, SMASH_OFFSET, SMASH_RANGE)
         {
             canDetectInvisible = true
         };
