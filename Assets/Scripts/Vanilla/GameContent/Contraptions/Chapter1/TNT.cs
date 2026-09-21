@@ -62,9 +62,12 @@ namespace MVZ2.GameContent.Contraptions
                 if (result != null && result.Fatal)
                 {
                     var target = output.Entity;
-                    var distance = (target.Position - entity.Position).magnitude;
-                    var speed = 25 * Mathf.Lerp(1f, 0.5f, distance / range);
-                    target.Velocity = target.Velocity + Vector3.up * speed;
+                    if (target.Type == EntityTypes.ENEMY)
+                    {
+                        var distance = (target.Position - entity.Position).magnitude;
+                        var speed = 25 * Mathf.Lerp(1f, 0.5f, distance / range);
+                        target.Velocity = target.Velocity + Vector3.up * speed;
+                    }
                 }
             }
             Explosion.Spawn(entity, entity.GetCenter(), range);
