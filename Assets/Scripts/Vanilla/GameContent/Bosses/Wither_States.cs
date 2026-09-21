@@ -105,9 +105,9 @@ namespace MVZ2.GameContent.Bosses
             public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
             {
                 base.OnUpdateAI(stateMachine, entity);
-                if (GetPhase(entity) == PHASE_1 && entity.Health <= entity.GetMaxHealth() * 0.5f)
+                if (entity.GetPhase() == PHASE_1 && entity.Health <= entity.GetMaxHealth() * 0.5f)
                 {
-                    SetPhase(entity, PHASE_2);
+                    entity.SetPhase(PHASE_2);
                     stateMachine.StartState(entity, STATE_SWITCH);
                     return;
                 }
@@ -257,7 +257,7 @@ namespace MVZ2.GameContent.Bosses
                 if (lastState == STATE_IDLE || lastState == STATE_EAT)
                 {
                     lastState = STATE_SUMMON;
-                    if (GetPhase(entity) == PHASE_2)
+                    if (entity.GetPhase() == PHASE_2)
                     {
                         return lastState;
                     }

@@ -21,5 +21,17 @@ namespace MVZ2Logic.Entities
             return enemy.GetProperty<bool>(DONT_COUNT_BOSS_HP);
         }
         #endregion
+
+        #region 阶段
+        public static readonly PropertyMeta<int> PROP_PHASE = Get<int>("phase");
+        public static int GetPhase(this Entity enemy)
+        {
+            return enemy.GetProperty<int>(PROP_PHASE);
+        }
+        public static void SetPhase(this Entity enemy, int value)
+        {
+            enemy.SetProperty(PROP_PHASE, value);
+        }
+        #endregion
     }
 }

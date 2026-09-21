@@ -24,7 +24,6 @@ namespace MVZ2.GameContent.Bosses
         public override void Init(Entity boss)
         {
             base.Init(boss);
-            SetNextAction(boss, actionPool[Math.Abs(boss.InitSeed) % actionPool.Length]);
             stateMachine.Init(boss);
             stateMachine.StartState(boss, STATE_HIDDEN);
         }
@@ -42,7 +41,14 @@ namespace MVZ2.GameContent.Bosses
         public override void PostDeath(Entity entity, DeathInfo deathInfo)
         {
             base.PostDeath(entity, deathInfo);
-            stateMachine.StartState(entity, STATE_DEATH);
+            if (entity.State == STATE_HIDDEN)
+            {
+                entity.Remove();
+            }
+            else
+            {
+                stateMachine.StartState(entity, STATE_DEATH);
+            }
         }
         #endregion 事件
 
@@ -51,10 +57,17 @@ namespace MVZ2.GameContent.Bosses
             stateMachine.StartState(entity, STATE_DISAPPEAR);
             stateMachine.StartSubState(entity, DisappearState.SUBSTATE_RECALLED);
         }
+        public static void CommandAttack(Entity entity)
+        {
+            NextAppear(entity);
+        }
+        public static bool IsAutoAct(Entity entity) => entity.GetProperty<bool>(PROP_AUTO_ACT);
+        public static void SetAutoAct(Entity entity, bool value) => entity.SetProperty(PROP_AUTO_ACT, value);
         public static float GetShadowAlpha(Entity entity) => entity.GetProperty<float>(PROP_SHADOW_ALPHA);
         public static void SetShadowAlpha(Entity entity, float value) => entity.SetProperty(PROP_SHADOW_ALPHA, value);
         public static int GetNextAction(Entity entity) => entity.GetProperty<int>(PROP_NEXT_ACTION);
         public static void SetNextAction(Entity entity, int value) => entity.SetProperty(PROP_NEXT_ACTION, value);
+        public static readonly VanillaEntityPropertyMeta<bool> PROP_AUTO_ACT = new VanillaEntityPropertyMeta<bool>("auto_act", true);
         public static readonly VanillaEntityPropertyMeta<float> PROP_SHADOW_ALPHA = new VanillaEntityPropertyMeta<float>("shadow_alpha", 0f);
         public static readonly VanillaEntityPropertyMeta<int> PROP_NEXT_ACTION = new VanillaEntityPropertyMeta<int>("next_action", ACTION_GATLIN);
         public const int STATE_IDLE = VanillaBossStates.IDLE;
@@ -86,7 +99,7 @@ namespace MVZ2.GameContent.Bosses
         public const int WEAPON_LASER = 2;
         public const int WEAPON_SUMMON = 3;
 
-        private static int[] actionPool = new int[]
+        public static int[] actionPool = new int[]
         {
             ACTION_GATLIN,
             ACTION_CANNON,

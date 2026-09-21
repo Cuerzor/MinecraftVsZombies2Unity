@@ -122,8 +122,6 @@ namespace MVZ2.GameContent.Bosses
         public static void SetGravityMultiplier(Entity entity, float value) => entity.SetBehaviourField(PROP_GRAVITY_MULTIPLIER, value);
         public static float GetGroundLimitOffset(Entity entity) => entity.GetBehaviourField<float>(PROP_GROUND_LIMIT_OFFSET);
         public static void SetGroundLimitOffset(Entity entity, float value) => entity.SetBehaviourField(PROP_GROUND_LIMIT_OFFSET, value);
-        public static int GetPhase(Entity entity) => entity.GetBehaviourField<int>(PROP_PHASE);
-        public static void SetPhase(Entity entity, int value) => entity.SetBehaviourField(PROP_PHASE, value);
         public static int GetEatenFlags(Entity entity) => entity.GetBehaviourField<int>(PROP_EATEN_FLAGS);
         public static void SetEatenFlags(Entity entity, int value) => entity.SetBehaviourField(PROP_EATEN_FLAGS, value);
         public static Vector3 GetJumpTarget(Entity entity) => entity.GetBehaviourField<Vector3>(PROP_JUMP_TARGET);
@@ -139,7 +137,6 @@ namespace MVZ2.GameContent.Bosses
         #region 常量
         private static readonly VanillaEntityPropertyMeta<bool> PROP_FIRE_IN_MOUTH = new VanillaEntityPropertyMeta<bool>("fire_in_mouth");
         private static readonly VanillaEntityPropertyMeta<bool> PROP_INVINCIBLE = new VanillaEntityPropertyMeta<bool>("invincible");
-        private static readonly VanillaEntityPropertyMeta<int> PROP_PHASE = new VanillaEntityPropertyMeta<int>("phase");
         private static readonly VanillaEntityPropertyMeta<int> PROP_EATEN_FLAGS = new VanillaEntityPropertyMeta<int>("eaten_flags");
         private static readonly VanillaEntityPropertyMeta<int> PROP_JUMP_FINISH_STATE = new VanillaEntityPropertyMeta<int>("jump_finish_state", -1);
         private static readonly VanillaEntityPropertyMeta<float> PROP_HEAD_ROTATION = new VanillaEntityPropertyMeta<float>("head_rotation");

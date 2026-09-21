@@ -290,7 +290,7 @@ namespace MVZ2.GameContent.Bosses
             public override void OnEnter(EntityStateMachine stateMachine, Entity entity)
             {
                 base.OnEnter(stateMachine, entity);
-                var seconds = GetPhase(entity) == PHASE_1 ? 3f : 2f; // 一阶段行动更慢
+                var seconds = entity.GetPhase() == PHASE_1 ? 3f : 2f; // 一阶段行动更慢
                 var stateTimer = stateMachine.GetStateTimer(entity);
                 stateTimer.ResetSeconds(seconds);
                 SetInvincible(entity, false);
@@ -308,9 +308,9 @@ namespace MVZ2.GameContent.Bosses
             private void UpdateStateSwitch(EntityStateMachine stateMachine, Entity entity)
             {
                 // 转阶段
-                if (entity.Health <= entity.GetMaxHealth() * 0.5f && GetPhase(entity) == PHASE_1)
+                if (entity.Health <= entity.GetMaxHealth() * 0.5f && entity.GetPhase() == PHASE_1)
                 {
-                    SetPhase(entity, PHASE_2);
+                    entity.SetPhase(PHASE_2);
                     SetEatenFlags(entity, 0);
                     stateMachine.StartState(entity, STATE_ROAR);
                     return;
@@ -322,7 +322,7 @@ namespace MVZ2.GameContent.Bosses
                 {
                     var nextIndex = stateMachine.GetNextStateIndex(entity);
                     int[] pool;
-                    if (GetPhase(entity) == PHASE_1)
+                    if (entity.GetPhase() == PHASE_1)
                     {
                         pool = statePoolPhase1;
                         nextIndex = pool.FindNextStateIndex(nextIndex, state => CanSwitchStatePhase1(entity, state));
@@ -989,7 +989,7 @@ namespace MVZ2.GameContent.Bosses
                 base.OnEnter(stateMachine, entity);
                 var substateTimer = stateMachine.GetSubStateTimer(entity);
                 substateTimer.ResetSeconds(2 / 3f);
-                if (GetPhase(entity) == PHASE_2)
+                if (entity.GetPhase() == PHASE_2)
                 {
                     SetFireInMouth(entity, true);
                 }
@@ -1055,7 +1055,7 @@ namespace MVZ2.GameContent.Bosses
                 var variant = Tornado.VARIANT_NORMAL;
                 var speed = 2;
                 int count = 1;
-                bool phase2 = GetPhase(entity) == PHASE_2;
+                bool phase2 = entity.GetPhase() == PHASE_2;
                 if (phase2)
                 {
                     variant = Tornado.VARIANT_FIRE;

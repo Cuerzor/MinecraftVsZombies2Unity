@@ -90,7 +90,7 @@ namespace MVZ2.GameContent.Bosses
         {
             if (!entity.IsDead)
                 return;
-            if (GetPhase(entity) != PHASE_3)
+            if (entity.GetPhase() != PHASE_3)
             {
                 stateMachine.StartState(entity, STATE_FAINT);
             }
@@ -119,7 +119,7 @@ namespace MVZ2.GameContent.Bosses
             public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
             {
                 base.OnUpdateAI(stateMachine, entity);
-                if (GetPhase(entity) == PHASE_3)
+                if (entity.GetPhase() == PHASE_3)
                 {
                     if (CanCrawl(entity))
                     {
@@ -157,7 +157,7 @@ namespace MVZ2.GameContent.Bosses
                         return;
                     }
                 }
-                if (GetPhase(entity) == PHASE_1 && entity.Health <= entity.GetMaxHealth() * 0.5f)
+                if (entity.GetPhase() == PHASE_1 && entity.Health <= entity.GetMaxHealth() * 0.5f)
                 {
                     Stun(entity, 30);
                     return;
@@ -192,7 +192,7 @@ namespace MVZ2.GameContent.Bosses
                 var lastState = stateMachine.GetPreviousState(entity);
 
                 var atLeft = AtLeft(entity);
-                bool phase2 = GetPhase(entity) == PHASE_2;
+                bool phase2 = entity.GetPhase() == PHASE_2;
                 int attackFlag = GetAttackFlag(entity);
                 if (atLeft)
                 {
@@ -320,7 +320,7 @@ namespace MVZ2.GameContent.Bosses
                             var validLanes = validLanesItem.Value;
                             validLanes.FillRange(0, lanes);
 
-                            var phase2 = GetPhase(entity) == PHASE_2;
+                            var phase2 = entity.GetPhase() == PHASE_2;
                             for (int x = 0; x < ZOMBIE_BLOCK_COLUMNS; x++)
                             {
                                 int column = GetZombieBlockStartColumn(entity, x, atLeft);
@@ -403,7 +403,7 @@ namespace MVZ2.GameContent.Bosses
                     case SUBSTATE_RESTORE:
                         if (substateTimer.Expired)
                         {
-                            if (GetPhase(entity) == PHASE_3)
+                            if (entity.GetPhase() == PHASE_3)
                             {
                                 if (IsFlipX(entity))
                                 {
@@ -1368,9 +1368,9 @@ namespace MVZ2.GameContent.Bosses
                         if (substateTimer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_IDLE);
-                            if (GetPhase(entity) == PHASE_1 && entity.Health <= entity.GetMaxHealth() * 0.5f)
+                            if (entity.GetPhase() == PHASE_1 && entity.Health <= entity.GetMaxHealth() * 0.5f)
                             {
-                                SetPhase(entity, PHASE_2);
+                                entity.SetPhase(PHASE_2);
                             }
                         }
                         break;
@@ -1428,7 +1428,7 @@ namespace MVZ2.GameContent.Bosses
                         }
                         break;
                     case SUBSTATE_HEAL:
-                        SetPhase(entity, PHASE_3);
+                        entity.SetPhase(PHASE_3);
                         entity.Health = entity.GetMaxHealth() * substateTimer.GetPassedPercentage();
                         if (substateTimer.Expired)
                         {

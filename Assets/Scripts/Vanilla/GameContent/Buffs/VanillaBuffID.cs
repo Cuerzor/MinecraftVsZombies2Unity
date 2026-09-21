@@ -341,6 +341,7 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 7
             public const string krakenTentacleInactive = "kraken_tentacle_inactive";
+            public const string krakenInactive = "kraken_inactive";
         }
         public static class Cart
         {

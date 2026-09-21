@@ -175,7 +175,7 @@ namespace MVZ2.GameContent.Pickups
                 {
                     param.SetProperty(LockedChest.PROP_HAVE_BEEN_PRICKED, true);
                     param.SetProperty(LockedChest.PROP_NEXT_JOKE, LockedChest.JOKE_COUNT);
-                    param.SetProperty(LockedChest.PROP_PHASE, LockedChest.PHASE_2);
+                    param.SetProperty(LogicBossProps.PROP_PHASE, LockedChest.PHASE_2);
                     param.SetProperty(LockedChest.PROP_REVIVED_TIMES, variant);
                 }
 

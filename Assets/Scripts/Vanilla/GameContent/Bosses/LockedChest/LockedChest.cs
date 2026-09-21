@@ -52,12 +52,12 @@ namespace MVZ2.GameContent.Bosses
             base.UpdateLogic(entity);
             stateMachine.UpdateLogic(entity);
 
-            if (GetPhase(entity) == PHASE_1 && entity.Health / (float)entity.GetMaxHealth() < PHASE_2_THRESOLD)
+            if (entity.GetPhase() == PHASE_1 && entity.Health / (float)entity.GetMaxHealth() < PHASE_2_THRESOLD)
             {
                 Stun(entity, 5);
                 entity.CreateFragmentAndPlay(VanillaFragmentID.furnace);
                 entity.PlaySound(VanillaSoundID.chainsBreak);
-                SetPhase(entity, PHASE_2);
+                entity.SetPhase(PHASE_2);
                 stateMachine.SetNextStateIndex(entity, 1);
             }
 
@@ -67,7 +67,7 @@ namespace MVZ2.GameContent.Bosses
                 stateMachine.StartState(entity, STATE_DEATH);
             }
 
-            var phase = GetPhase(entity);
+            var phase = entity.GetPhase();
             entity.SetAnimationInt("Phase", phase);
             entity.SetModelProperty("Phase", phase);
         }
@@ -150,8 +150,6 @@ namespace MVZ2.GameContent.Bosses
             entity.Remove();
         }
 
-        public static int GetPhase(Entity entity) => entity.GetProperty<int>(PROP_PHASE);
-        public static void SetPhase(Entity entity, int value) => entity.SetProperty(PROP_PHASE, value);
         public static int GetRevivedTimes(Entity entity) => entity.GetProperty<int>(PROP_REVIVED_TIMES);
         public static void SetRevivedTimes(Entity entity, int value) => entity.SetProperty(PROP_REVIVED_TIMES, value);
         public static bool IsFlipX(Entity entity) => entity.GetProperty<bool>(PROP_FLIP_X);
@@ -177,7 +175,6 @@ namespace MVZ2.GameContent.Bosses
         public static Vector3 GetScaleMultiplier(Entity entity) => entity.GetProperty<Vector3>(PROP_SCALE_MULTIPLIER);
         public static void SetScaleMultiplier(Entity entity, Vector3 value) => entity.SetProperty(PROP_SCALE_MULTIPLIER, value);
 
-        public static readonly VanillaEntityPropertyMeta<int> PROP_PHASE = new VanillaEntityPropertyMeta<int>("phase");
         public static readonly VanillaEntityPropertyMeta<int> PROP_REVIVED_TIMES = new VanillaEntityPropertyMeta<int>("revived_times");
         public static readonly VanillaEntityPropertyMeta<int> PROP_COUGH_TYPE = new VanillaEntityPropertyMeta<int>("cough_type");
         public static readonly VanillaEntityPropertyMeta<int> PROP_USED_COUGH_TYPES = new VanillaEntityPropertyMeta<int>("used_cough_types");

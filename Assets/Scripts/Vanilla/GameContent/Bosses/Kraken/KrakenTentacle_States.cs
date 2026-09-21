@@ -313,12 +313,15 @@ namespace MVZ2.GameContent.Bosses
             public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
             {
                 base.OnUpdateAI(stateMachine, entity);
-                var stateTimer = stateMachine.GetStateTimer(entity);
-                stateTimer.Run(stateMachine.GetSpeed(entity));
-                if (stateTimer.Expired)
+                if (IsAutoAct(entity))
                 {
-                    stateTimer.Reset();
-                    NextAppear(entity);
+                    var stateTimer = stateMachine.GetStateTimer(entity);
+                    stateTimer.Run(stateMachine.GetSpeed(entity));
+                    if (stateTimer.Expired)
+                    {
+                        stateTimer.Reset();
+                        NextAppear(entity);
+                    }
                 }
             }
         }
@@ -886,13 +889,19 @@ namespace MVZ2.GameContent.Bosses
             {
                 if (!value.IsEntityOf(VanillaBossID.kraken))
                     return false;
+                if (value.IsCollisionCheckDisabled())
+                    return false;
                 var bounds = value.GetBounds();
                 var min = bounds.min;
                 var max = bounds.max;
-                var minColumn = value.Level.GetColumn(min.x);
-                var maxColumn = value.Level.GetColumn(max.x);
-                var minLane = value.Level.GetLane(min.z);
-                var maxLane = value.Level.GetLane(max.z);
+                var c1 = value.Level.GetColumn(min.x);
+                var c2 = value.Level.GetColumn(max.x);
+                var l1 = value.Level.GetLane(min.z);
+                var l2 = value.Level.GetLane(max.z);
+                var minColumn = Mathf.Min(c1, c2);
+                var maxColumn = Mathf.Max(c1, c2);
+                var minLane = Mathf.Min(l1, l2);
+                var maxLane = Mathf.Max(l1, l2);
 
                 return column >= minColumn && column <= maxColumn && lane >= minLane && lane <= maxLane;
             }

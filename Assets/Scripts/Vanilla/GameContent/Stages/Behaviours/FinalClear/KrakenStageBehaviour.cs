@@ -47,7 +47,7 @@ namespace MVZ2.GameContent.Stages
         //    // 巨人1、2阶段战斗
         //    // 如果不存在Boss，或者所有Boss死亡，进入BOSS后阶段。
         //    // 如果有Boss存活，不停生成怪物。
-        //    var phase2Boss = level.EntityExists(e => e.IsEntityOf(VanillaBossID.theGiant) && e.IsHostileEntity() && !e.IsDead && TheGiant.GetPhase(e) == TheGiant.PHASE_2);
+        //    var phase2Boss = level.EntityExists(e => e.IsEntityOf(VanillaBossID.theGiant) && e.IsHostileEntity() && !e.IsDead && TheGiant.e.GetPhase() == TheGiant.PHASE_2);
 
         //    WaveStageBehaviour.SetHighWave(level, phase2Boss);
         //    if (level.EntityExists(IsAliveHostileBoss))
@@ -64,7 +64,7 @@ namespace MVZ2.GameContent.Stages
         //{
         //    ClearEnemies(level);
         //    EnterLevelEnemiesClearedState(level);
-        //    if (level.EntityExists(e => e.IsEntityOf(VanillaBossID.theGiant) && e.IsHostileEntity() && !e.IsDead && TheGiant.GetPhase(e) == TheGiant.PHASE_3))
+        //    if (level.EntityExists(e => e.IsEntityOf(VanillaBossID.theGiant) && e.IsHostileEntity() && !e.IsDead && TheGiant.e.GetPhase() == TheGiant.PHASE_3))
         //    {
         //        // 巨人3阶段出现
         //        level.PlayMusic(VanillaMusicID.mausoleumBoss2);

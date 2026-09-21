@@ -183,8 +183,6 @@ namespace MVZ2.GameContent.Bosses
         #endregion 事件
 
         #region 字段
-        public static int GetPhase(Entity entity) => entity.GetBehaviourField<int>(PROP_PHASE);
-        public static void SetPhase(Entity entity, int value) => entity.SetBehaviourField(PROP_PHASE, value);
         public static float[]? GetHeadAngles(Entity entity) => entity.GetBehaviourField<float[]>(PROP_HEAD_ANGLES);
         public static void SetHeadAngles(Entity entity, float[] value) => entity.SetBehaviourField(PROP_HEAD_ANGLES, value);
         public static float GetHeadOpen(Entity entity) => entity.GetBehaviourField<float>(PROP_HEAD_OPEN);
@@ -339,7 +337,7 @@ namespace MVZ2.GameContent.Bosses
         }
         public static bool HasArmor(Entity entity)
         {
-            return GetPhase(entity) == PHASE_2 && !entity.IsDead;
+            return entity.GetPhase() == PHASE_2 && !entity.IsDead;
         }
         public static Vector3 GetHeadPosition(Entity entity, int head)
         {
@@ -357,7 +355,6 @@ namespace MVZ2.GameContent.Bosses
         private static readonly VanillaEntityPropertyMeta<float> PROP_HEAD_OPEN = new VanillaEntityPropertyMeta<float>("HeadOpen");
         private static readonly VanillaEntityPropertyMeta<EntityID?[]> PROP_HEAD_TARGETS = new VanillaEntityPropertyMeta<EntityID?[]>("HeadTargets");
         private static readonly VanillaEntityPropertyMeta<float[]> PROP_SKULL_CHARGES = new VanillaEntityPropertyMeta<float[]>("SkullCharges");
-        private static readonly VanillaEntityPropertyMeta<int> PROP_PHASE = new VanillaEntityPropertyMeta<int>("Phase");
         private static readonly VanillaEntityPropertyMeta<int> PROP_TARGET_LANE = new VanillaEntityPropertyMeta<int>("TargetLane");
 
         private static readonly Vector3[] headPositionOffsets = new Vector3[]

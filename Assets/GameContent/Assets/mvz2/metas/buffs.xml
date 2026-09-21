@@ -247,6 +247,7 @@
     <buff id="bubble_expand" polarity="none" level="5000" target="enemy" />
     <buff id="frozen" polarity="negative" level="0" target="entity" />
     <buff id="kraken_tentacle_inactive" polarity="none" level="5000" target="boss" />
+    <buff id="kraken_inactive" polarity="none" level="5000" target="boss" />
     
     <!-- Curses -->
     <buff id="the_creatures_brain" polarity="negative" level="5000" target="level" />

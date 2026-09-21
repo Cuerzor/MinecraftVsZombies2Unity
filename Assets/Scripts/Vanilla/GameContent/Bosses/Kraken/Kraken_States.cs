@@ -11,6 +11,7 @@ using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Entities;
 using PVZEngine.Timing;
+using UnityEditorInternal;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Bosses
@@ -61,23 +62,47 @@ namespace MVZ2.GameContent.Bosses
             public override void OnEnter(EntityStateMachine stateMachine, Entity entity)
             {
                 base.OnEnter(stateMachine, entity);
-                SetTintMultiplier(entity, Color.clear);
-                SetShadowAlpha(entity, 0);
+                SetInactive(entity, true);
                 SetInvincible(entity, true);
+                SetShadowAlpha(entity, 0);
             }
             public override void OnExit(EntityStateMachine machine, Entity entity)
             {
                 base.OnExit(machine, entity);
-                SetTintMultiplier(entity, Color.white);
+                SetInactive(entity, false);
+                entity.Level.RemoveLoopSoundEntity(VanillaSoundID.earthquake, entity.ID);
             }
             public override void OnUpdateAI(EntityStateMachine machine, Entity entity)
             {
                 base.OnUpdateAI(machine, entity);
-                // 转阶段
-                if (AllTentaclesAreDead(entity))
+                var substate = stateMachine.GetSubState(entity);
+                var timer = stateMachine.GetSubStateTimer(entity);
+                timer.Run(stateMachine.GetSpeed(entity));
+                switch (substate)
                 {
-                    SwitchToPhase2(entity);
-                    return;
+                    case SUBSTATE_HIDDEN:
+                        // 转阶段
+                        if (AllTentaclesAreDead(entity))
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_WAITING);
+                            timer.ResetSeconds(3f);
+                        }
+                        break;
+                    case SUBSTATE_WAITING:
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_SHAKING);
+                            timer.ResetSeconds(3f);
+                            entity.Level.AddLoopSoundEntity(VanillaSoundID.earthquake, entity.ID);
+                        }
+                        break;
+                    case SUBSTATE_SHAKING:
+                        entity.Level.ShakeScreen(15, 15, 1);
+                        if (timer.Expired)
+                        {
+                            SwitchToPhase2(entity);
+                        }
+                        break;
                 }
             }
             public override void OnUpdateLogic(EntityStateMachine machine, Entity entity)
@@ -85,6 +110,9 @@ namespace MVZ2.GameContent.Bosses
                 base.OnUpdateLogic(machine, entity);
                 CheckDeath(entity);
             }
+            public const int SUBSTATE_HIDDEN = 0;
+            public const int SUBSTATE_WAITING = 1;
+            public const int SUBSTATE_SHAKING = 2;
         }
         #endregion
 
@@ -98,7 +126,9 @@ namespace MVZ2.GameContent.Bosses
                 var substateTimer = stateMachine.GetSubStateTimer(entity);
                 substateTimer.ResetSeconds(0.5f);
                 SetInvincible(entity, true);
-                SetTintMultiplier(entity, Color.white);
+                SetInactive(entity, false);
+
+                AdjustZ(entity);
             }
             public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
             {
@@ -115,12 +145,14 @@ namespace MVZ2.GameContent.Bosses
                             stateMachine.StartSubState(entity, SUBSTATE_OUT);
                             timer.ResetSeconds(1f);
                             PlaySplash(entity);
+                            entity.Level.ShakeScreen(10, 0, 15);
                         }
                         break;
                     case SUBSTATE_OUT:
                         if (timer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_ROAR);
+                            ResummonTentacles(entity, 2, false);
                         }
                         break;
                 }
@@ -188,9 +220,9 @@ namespace MVZ2.GameContent.Bosses
             {
                 base.OnEnter(stateMachine, entity);
                 var stateTimer = stateMachine.GetStateTimer(entity);
-                stateTimer.ResetSeconds(3f);
+                stateTimer.ResetSeconds(8f);
                 SetInvincible(entity, false);
-                SetTintMultiplier(entity, Color.white);
+                SetInactive(entity, false);
                 SetShadowAlpha(entity, 1);
             }
             public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
@@ -198,7 +230,7 @@ namespace MVZ2.GameContent.Bosses
                 base.OnUpdateAI(stateMachine, entity);
 
                 // 转阶段
-                if (entity.Health <= entity.GetMaxHealth() * 0.5f && GetPhase(entity) == PHASE_1)
+                if (entity.Health <= entity.GetMaxHealth() * 0.5f && entity.GetPhase() == PHASE_1)
                 {
                     SwitchToPhase3(entity);
                     return;
@@ -210,7 +242,7 @@ namespace MVZ2.GameContent.Bosses
                 {
                     var nextIndex = stateMachine.GetNextStateIndex(entity);
                     int[] pool;
-                    var phase = GetPhase(entity);
+                    var phase = entity.GetPhase();
                     switch (phase)
                     {
                         case PHASE_1:
@@ -309,6 +341,7 @@ namespace MVZ2.GameContent.Bosses
                         if (timer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_IDLE);
+                            CommandTentaclesToAttack(entity);
                         }
                         break;
                 }
@@ -348,7 +381,7 @@ namespace MVZ2.GameContent.Bosses
                 base.OnEnter(stateMachine, entity);
                 var substateTimer = stateMachine.GetSubStateTimer(entity);
                 substateTimer.ResetSeconds(2f);
-                SetTintMultiplier(entity, Color.white);
+                SetInactive(entity, false);
                 SetShadowAlpha(entity, 1);
             }
             public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
@@ -408,7 +441,7 @@ namespace MVZ2.GameContent.Bosses
                 base.OnEnter(stateMachine, entity);
                 var substateTimer = stateMachine.GetSubStateTimer(entity);
                 substateTimer.ResetSeconds(2f);
-                SetTintMultiplier(entity, Color.white);
+                SetInactive(entity, false);
                 SetShadowAlpha(entity, 1);
 
                 entity.PlaySound(VanillaSoundID.killed);
@@ -426,6 +459,7 @@ namespace MVZ2.GameContent.Bosses
                         if (timer.PassedSecondsFromMax(0.2f))
                         {
                             entity.PlaySound(VanillaSoundID.krakenDeath);
+                            KillAllTentacles(entity);
                         }
                         if (timer.Expired)
                         {
