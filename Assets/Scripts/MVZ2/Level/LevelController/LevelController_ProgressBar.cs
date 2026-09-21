@@ -97,8 +97,15 @@ namespace MVZ2.Level
                 {
                     foreach (var boss in bosses)
                     {
-                        bossHealth += boss.Health;
-                        bossMaxHealth += boss.GetMaxHealth();
+                        if (boss.Health > 0)
+                        {
+                            bossHealth += boss.Health;
+                        }
+                        var maxHealth = boss.GetMaxHealth();
+                        if (maxHealth > 0)
+                        {
+                            bossMaxHealth += maxHealth;
+                        }
                     }
                 }
             }
