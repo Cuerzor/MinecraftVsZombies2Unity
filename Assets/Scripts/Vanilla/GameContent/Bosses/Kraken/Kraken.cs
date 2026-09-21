@@ -52,7 +52,7 @@ namespace MVZ2.GameContent.Bosses
 
         public static void PlaySplash(Entity entity)
         {
-            entity.PlaySound(VanillaSoundID.splashBig);
+            entity.PlaySound(VanillaSoundID.splashBig, pitch: 0.75f);
             entity.PlaySplashEffectAt(entity.Position, SPLASH_EFFECT_SCALE);
         }
         public static void SwitchToPhase2(Entity entity)
@@ -199,7 +199,7 @@ namespace MVZ2.GameContent.Bosses
         public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_TENTACLES = new VanillaEntityPropertyMeta<List<EntityID>>("tentacles");
         public static readonly VanillaEntityPropertyMeta<float> PROP_SHADOW_ALPHA = new VanillaEntityPropertyMeta<float>("shadow_alpha", 0);
 
-        public static readonly Vector3 SPLASH_EFFECT_SCALE = Vector3.one * 100f;
+        public static readonly Vector3 SPLASH_EFFECT_SCALE = Vector3.one * 8f;
 
         public const int PHASE_1 = 0;
         public const int PHASE_2 = 1;

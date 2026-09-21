@@ -220,7 +220,7 @@ namespace MVZ2.GameContent.Bosses
             {
                 base.OnEnter(stateMachine, entity);
                 var stateTimer = stateMachine.GetStateTimer(entity);
-                stateTimer.ResetSeconds(8f);
+                stateTimer.ResetSeconds(9f);
                 SetInvincible(entity, false);
                 SetInactive(entity, false);
                 SetShadowAlpha(entity, 1);
