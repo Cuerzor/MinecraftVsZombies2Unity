@@ -22,6 +22,7 @@ namespace MVZ2.Options
         {
             options = new Options();
             InitKeyBindings();
+            InitOptionsDefaultValues();
         }
         public void LoadOptions()
         {
@@ -135,19 +136,18 @@ namespace MVZ2.Options
         public NamespaceID? GetOptionID(NamespaceID id) => TryGetOptionID(id, out var value) ? value : GetDefaultOptionValueID(id);
 
 
-        public bool GetDefaultOptionValueBool(NamespaceID id) => GetOrSetOptionDefaultValue(defaultOptionValuesBool, id, false);
-        public int GetDefaultOptionValueInt(NamespaceID id) => GetOrSetOptionDefaultValue(defaultOptionValuesInt, id, 0);
-        public float GetDefaultOptionValueFloat(NamespaceID id) => GetOrSetOptionDefaultValue(defaultOptionValuesFloat, id, 0f);
-        public string GetDefaultOptionValueString(NamespaceID id) => GetOrSetOptionDefaultValue(defaultOptionValuesString, id, string.Empty);
-        public NamespaceID? GetDefaultOptionValueID(NamespaceID id) => GetOrSetOptionDefaultValue(defaultOptionValuesID, id, null);
-        private T GetOrSetOptionDefaultValue<T>(Dictionary<NamespaceID, T> dictionary, NamespaceID id, T fallback)
+        public bool GetDefaultOptionValueBool(NamespaceID id) => GetOptionDefaultValue(defaultOptionValuesBool, id, false);
+        public int GetDefaultOptionValueInt(NamespaceID id) => GetOptionDefaultValue(defaultOptionValuesInt, id, 0);
+        public float GetDefaultOptionValueFloat(NamespaceID id) => GetOptionDefaultValue(defaultOptionValuesFloat, id, 0f);
+        public string GetDefaultOptionValueString(NamespaceID id) => GetOptionDefaultValue(defaultOptionValuesString, id, string.Empty);
+        public NamespaceID? GetDefaultOptionValueID(NamespaceID id) => GetOptionDefaultValue(defaultOptionValuesID, id, null);
+        private T GetOptionDefaultValue<T>(Dictionary<NamespaceID, T> dictionary, NamespaceID id, T fallback)
         {
-            if (!dictionary.TryGetValue(id, out var value))
+            if (dictionary.TryGetValue(id, out var value))
             {
-                value = GetOptionItemMetaDefaultValue<T>(id, fallback);
-                dictionary.Add(id, value);
+                return value;
             }
-            return value;
+            return GetOptionItemMetaDefaultValue<T>(id, fallback);
         }
         private T GetOptionItemMetaDefaultValue<T>(NamespaceID id, T fallback)
         {
@@ -158,7 +158,49 @@ namespace MVZ2.Options
             }
             return fallback;
         }
-
+        private void InitOptionsDefaultValues()
+        {
+            var options = Main.ResourceManager.GetAllOptionItemsID();
+            foreach (var optionId in options)
+            {
+                var itemMeta = Main.ResourceManager.GetOptionItemMeta(optionId);
+                if (itemMeta == null)
+                    continue;
+                switch (itemMeta.Type)
+                {
+                    case OptionItemType.Boolean:
+                        if (itemMeta.DefaultValue is bool boolValue)
+                        {
+                            defaultOptionValuesBool[optionId] = boolValue;
+                        }
+                        break;
+                    case OptionItemType.Int:
+                        if (itemMeta.DefaultValue is int intValue)
+                        {
+                            defaultOptionValuesInt[optionId] = intValue;
+                        }
+                        break;
+                    case OptionItemType.Float:
+                        if (itemMeta.DefaultValue is float floatValue)
+                        {
+                            defaultOptionValuesFloat[optionId] = floatValue;
+                        }
+                        break;
+                    case OptionItemType.String:
+                        if (itemMeta.DefaultValue is string stringValue)
+                        {
+                            defaultOptionValuesString[optionId] = stringValue;
+                        }
+                        break;
+                    case OptionItemType.ID:
+                        if (itemMeta.DefaultValue is NamespaceID idValue)
+                        {
+                            defaultOptionValuesID[optionId] = idValue;
+                        }
+                        break;
+                }
+            }
+        }
         private void UpdateOptions()
         {
             NamespaceID[] metasID = Main.ResourceManager.GetAllOptionItemsID();
