@@ -2,10 +2,11 @@
 
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Damages;
-using MVZ2.Vanilla.Callbacks;
+using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Contraptions;
+using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Pickups;
 using MVZ2.Vanilla.Properties;
-using MVZ2Logic;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Definitions;
@@ -13,8 +14,6 @@ using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
-using PVZEngine.SeedPacks;
-using UnityEngine;
 
 namespace MVZ2.GameContent.Artifacts
 {
@@ -23,21 +22,24 @@ namespace MVZ2.GameContent.Artifacts
     {
         public BrokenLock(string nsp, string name) : base(nsp, name)
         {
-            AddTriggerFiltered(VanillaLevelCallbacks.POST_ENTITY_TAKE_DAMAGE, PostContraptionTakeDamageCallback, filter: EntityTypes.PLANT);
+            AddTriggerFiltered(LevelCallbacks.POST_ENTITY_DEATH, PostContraptionDeathCallback, filter: EntityTypes.PLANT);
+        }
+        public override void PostAdd(Artifact artifact)
+        {
+            base.PostAdd(artifact);
+            artifact.SetNumber(0);
         }
         public override void PostUpdate(Artifact artifact)
         {
             base.PostUpdate(artifact);
-            artifact.SetGlowing(false);
+            artifact.SetGlowing(artifact.GetNumber() >= GetTriggerTimes(artifact) - 1);
         }
-        private void PostContraptionTakeDamageCallback(VanillaLevelCallbacks.PostTakeDamageParams param, CallbackResultVoid result)
+        private void PostContraptionDeathCallback(LevelCallbacks.EntityDeathParams args, CallbackResultVoid result)
         {
-            var output = param.output;
-            var contraption = output.Entity;
+            var info = args.deathInfo;
+            var contraption = info.Entity;
             var level = contraption.Level;
-            if (output.BodyResult != null && output.BodyResult.HasEffect(VanillaDamageEffects.NO_BROKEN_LOCK))
-                return;
-            if (level.IsConveyorMode())
+            if (info.HasEffect(VanillaDamageEffects.NO_BROKEN_LOCK))
                 return;
             NamespaceID? entityID = contraption.GetDefinitionID();
             bool commandBlock;
@@ -51,38 +53,33 @@ namespace MVZ2.GameContent.Artifacts
                 commandBlock = contraption.IsImitated();
             }
 
-            using var seedPacksItem = level.GetAllSeedPacksDisposeable();
-
-            ClassicSeedPack? seedPack = null;
-            foreach (var seed in seedPacksItem.Value)
-            {
-                if (seed == null)
-                    continue;
-                if (seed.GetSeedType() == SeedTypes.ENTITY && seed.GetSeedEntityID() == entityID && seed.IsCommandBlock() == commandBlock && !seed.IsCharged())
-                {
-                    seedPack = seed;
-                    break;
-                }
-            }
-            if (seedPack == null)
+            if (!NamespaceID.IsValid(entityID))
                 return;
-
-            var maxRecharge = seedPack.GetMaxRecharge();
-            var totalAmount = output.GetTotalAmount();
-            var amountPercentage = Mathf.Clamp01(totalAmount / contraption.GetMaxHealth());
 
             foreach (var artifact in level.GetArtifacts())
             {
                 if (artifact == null || artifact.Definition != this)
                     continue;
-                var percentage = amountPercentage * GetRechargeMultiplier(artifact);
-                seedPack.AddRecharge(maxRecharge * percentage);
-                artifact.SetGlowing(true);
+                int number = artifact.GetNumber();
+                number++;
+                var triggerTimes = GetTriggerTimes(artifact);
+                int times = number / triggerTimes;
+                for (int i = 0; i < times; i++)
+                {
+                    var blueprintID = LogicBlueprintID.FromEntity(entityID);
+                    var spawnParams = contraption.GetSpawnParams();
+                    spawnParams.SetProperty(VanillaPickupProps.CONTENT_ID, blueprintID);
+                    spawnParams.SetProperty(BlueprintPickup.PROP_COMMAND_BLOCK, commandBlock);
+                    contraption.Produce(VanillaPickupID.blueprintPickup, spawnParams);
+                    artifact.Highlight();
+                }
+                number %= triggerTimes;
+                artifact.SetNumber(number);
             }
         }
 
-        public static float GetRechargeMultiplier(Artifact artifact) => artifact.GetProperty<float>(PROP_RECHARGE_MULTIPLIER);
-        public static void SetRechargeMultiplier(Artifact artifact, float value) => artifact.SetProperty(PROP_RECHARGE_MULTIPLIER, value);
-        public static readonly VanillaArtifactPropertyMeta<float> PROP_RECHARGE_MULTIPLIER = new VanillaArtifactPropertyMeta<float>("recharge_multiplier", 0.5f);
+        public static int GetTriggerTimes(Artifact artifact) => artifact.GetProperty<int>(PROP_TRIGGER_TIMES);
+        public static void SetTriggerTimes(Artifact artifact, int value) => artifact.SetProperty(PROP_TRIGGER_TIMES, value);
+        public static readonly VanillaArtifactPropertyMeta<int> PROP_TRIGGER_TIMES = new VanillaArtifactPropertyMeta<int>("trigger_times", 3);
     }
 }

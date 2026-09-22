@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-27 10:17+0800\n"
-"PO-Revision-Date: 2026-09-27 10:18+0800\n"
+"POT-Creation-Date: 2026-09-28 09:17+0800\n"
+"PO-Revision-Date: 2026-09-28 21:19+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -4819,8 +4819,8 @@ msgstr "A broken padlock that fell off the <ref=[misc]mvz2:locked_chest>Locked C
 #. Properties for artifacts mvz2:broken_lock
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>器械每受到2%伤害，其蓝图冷却时间便减少1%</color>"
-msgstr "Effect: <color=red>For every 2% damage a contraption has taken, its blueprint recharge time will be decreased by 1%</color>"
+msgid "效果：<color=red>每有三个器械被摧毁，生成第三个器械的蓝图掉落物</color>"
+msgstr "Effect: <color=red>Whenever 3 contraptions are destroyed, spawns a blueprint pickup of the 3rd contraption</color>"
 
 #. Flavor for artifacts mvz2:broken_lock
 #: Almanac meta file
@@ -9779,8 +9779,8 @@ msgstr "Broken Lock"
 #. Tooltip for artifact mvz2:broken_lock
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "器械每受到2%伤害，其蓝图冷却时间便减少1%"
-msgstr "For every 2% damage a contraption has taken, its blueprint recharge time will be decreased by 1%"
+msgid "每有三个器械被摧毁，生成第三个器械的蓝图掉落物"
+msgstr "Whenever 3 contraptions are destroyed, spawns a blueprint pickup of the 3rd contraption"
 
 #. Name for artifact mvz2:magma_stone
 #: Artifact meta file
@@ -10081,6 +10081,14 @@ msgstr "Kraken's Backplate"
 msgctxt "curse.tooltip"
 msgid "敌怪重量提升一级"
 msgstr "Increases the mass of the enemy monsters by one level"
+
+#~ msgctxt "artifacts.description"
+#~ msgid "效果：<color=red>器械每受到2%伤害，其蓝图冷却时间便减少1%</color>"
+#~ msgstr "Effect: <color=red>For every 2% damage a contraption has taken, its blueprint recharge time will be decreased by 1%</color>"
+
+#~ msgctxt "artifact.tooltip"
+#~ msgid "器械每受到2%伤害，其蓝图冷却时间便减少1%"
+#~ msgstr "For every 2% damage a contraption has taken, its blueprint recharge time will be decreased by 1%"
 
 #~ msgctxt "artifacts.description"
 #~ msgid "效果：<color=red>+15%友方器械伤害</color>"
