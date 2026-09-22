@@ -3,7 +3,6 @@
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
-using MVZ2.Vanilla.Localization;
 using MVZ2Logic;
 using MVZ2Logic.Level;
 using PVZEngine.Definitions;

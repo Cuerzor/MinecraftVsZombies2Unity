@@ -17,7 +17,6 @@ using MVZ2.Vanilla.Properties;
 using MVZ2Logic;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Entities;
-using MVZ2Logic.Grids;
 using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Buffs;
@@ -122,9 +121,9 @@ namespace MVZ2.GameContent.Bosses
 
             using var portalsItem = ListPool<Entity>.Rent();
             var portals = portalsItem.Value;
-            entity.Level.FindEntitiesNonAlloc(e => 
-                e.IsEntityOf(VanillaEffectID.nightmarePortalPandora) && 
-                e.SpawnerReference is EntitySourceReference entityRef && 
+            entity.Level.FindEntitiesNonAlloc(e =>
+                e.IsEntityOf(VanillaEffectID.nightmarePortalPandora) &&
+                e.SpawnerReference is EntitySourceReference entityRef &&
                 entityRef.ID == entity.ID, portals);
             foreach (var portal in portals)
             {
