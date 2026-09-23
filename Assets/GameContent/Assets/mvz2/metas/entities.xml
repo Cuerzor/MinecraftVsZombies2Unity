@@ -1920,7 +1920,6 @@
                 <id name="mvz2:upgradeFrom" value="mvz2:gravity_pad" />
                 <bool name="mvz2:loyal" value="true" />
 
-                <bool name="mvz2:triggerActive" value="true" />
                 <bool name="mvz2:shadowHidden" value="true" />
                 <bool name="mvz2:isFloor" value="true" />
                 <id name="mvz2:shell" value="mvz2:metal" />
