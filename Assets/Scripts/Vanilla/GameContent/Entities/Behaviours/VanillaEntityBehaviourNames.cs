@@ -70,6 +70,7 @@ namespace MVZ2.Vanilla.Entities
         public const string cattailMKII_Evoke = "cat_tl_mk_ii/evoke";
         public const string cattailMKII_Carrier = "cat_tl_mk_ii/carrier";
         public const string prismaticPylon_Evoke = "prismatic_pylon/evoke";
+        public const string antiGravityPad_Evoke = "anti_gravity_pad/evoke";
         #endregion
 
         #region Enemies

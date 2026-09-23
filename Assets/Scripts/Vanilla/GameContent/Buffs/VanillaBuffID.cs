@@ -272,6 +272,7 @@ namespace MVZ2.GameContent.Buffs
             public const string forcePadDrag = "force_pad_drag";
             public const string nightmareComeTrue = "nightmare_come_true";
             public const string darkMatterInvisible = "dark_matter_invisible";
+            public const string antiGravityPad = "anti_gravity_pad";
 
             // Chapter 3
             public const string littleZombie = "little_zombie";
@@ -640,6 +641,7 @@ namespace MVZ2.GameContent.Buffs
             public static readonly NamespaceID forcePadDrag = Get(VanillaBuffNames.Enemy.forcePadDrag);
             public static readonly NamespaceID nightmareComeTrue = Get(VanillaBuffNames.Enemy.nightmareComeTrue);
             public static readonly NamespaceID darkMatterInvisible = Get(VanillaBuffNames.Enemy.darkMatterInvisible);
+            public static readonly NamespaceID antiGravityPad = Get(VanillaBuffNames.Enemy.antiGravityPad);
 
             // Chapter 3
             public static readonly NamespaceID littleZombie = Get(VanillaBuffNames.Enemy.littleZombie);

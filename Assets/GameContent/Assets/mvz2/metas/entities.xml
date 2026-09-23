@@ -1915,6 +1915,9 @@
             </properties>
         </entity>
         <entity template="contraption" id="anti_gravity_pad" name="反重力板" tooltip="（需要重力板）\n吹飞上方怪物的头盔">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:anti_gravity_pad/evoke" />
+            </behaviours>
             <properties>
                 <bool name="mvz2:upgradeBlueprint" value="true" />
                 <id name="mvz2:upgradeFrom" value="mvz2:gravity_pad" />
