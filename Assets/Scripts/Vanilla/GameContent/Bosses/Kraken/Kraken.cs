@@ -3,10 +3,12 @@
 using System.Collections.Generic;
 using MVZ2.GameContent.Buffs.Bosses;
 using MVZ2.GameContent.Damages;
-using MVZ2.Vanilla;
+using MVZ2.GameContent.Effects;
+using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Bosses;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
@@ -15,9 +17,11 @@ using PVZEngine.Collisions;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Bosses
@@ -44,11 +48,16 @@ namespace MVZ2.GameContent.Bosses
         {
             base.UpdateAI(entity);
             stateMachine.UpdateAI(entity);
+
+            UpdateBlueEyeRotation(entity);
+            UpdateGreenEyeRotation(entity);
         }
         protected override void UpdateLogic(Entity entity)
         {
             base.UpdateLogic(entity);
             stateMachine.UpdateLogic(entity);
+            entity.SetAnimationFloat("BlueEyeRotation", GetBlueEyeRotation(entity));
+            entity.SetAnimationFloat("GreenEyeRotation", GetGreenEyeRotation(entity));
         }
         public override void PostCollision(EntityCollision collision, int state)
         {
@@ -203,6 +212,78 @@ namespace MVZ2.GameContent.Bosses
         }
         #endregion
 
+        #region 眼睛
+        public static void UpdateBlueEyeRotation(Entity entity)
+        {
+            var target = GetBlueEyeTargetRotation(entity);
+            var rotation = GetBlueEyeRotation(entity);
+            var factor = EYE_ROTATION_FACTOR;
+            rotation = rotation * (1 - factor) + target * factor;
+            SetBlueEyeRotation(entity, rotation);
+        }
+        public static void UpdateGreenEyeRotation(Entity entity)
+        {
+            var target = GetGreenEyeTargetRotation(entity);
+            var rotation = GetGreenEyeRotation(entity);
+            var factor = EYE_ROTATION_FACTOR;
+            rotation = rotation * (1 - factor) + target * factor;
+            SetGreenEyeRotation(entity, rotation);
+        }
+        public static Vector3 GetBlueEyePosition(Entity entity)
+        {
+            var offset = BLUE_EYE_OFFSET;
+            offset.x *= entity.GetFacingX();
+            return entity.Position + offset;
+        }
+        public static Vector3 GetGreenEyePosition(Entity entity)
+        {
+            var offset = GREEN_EYE_OFFSET;
+            offset.x *= entity.GetFacingX();
+            return entity.Position + offset;
+        }
+        public static Vector3 GetEyePosition(Entity entity, bool green)
+        {
+            return green ? GetGreenEyePosition(entity) : GetBlueEyePosition(entity);
+        }
+        public static Vector3 GetBlueEyeDirection(Entity entity)
+        {
+            var rotation = GetBlueEyeRotation(entity);
+            var direction = Vector2.right.RotateClockwise(-rotation);
+            direction.x *= entity.GetFacingX();
+            return new Vector3(direction.x, 0, direction.y);
+        }
+        public static Vector3 GetGreenEyeDirection(Entity entity)
+        {
+            var rotation = GetGreenEyeRotation(entity);
+            var direction = Vector2.right.RotateClockwise(-rotation);
+            direction.x *= entity.GetFacingX();
+            return new Vector3(direction.x, 0, direction.y);
+        }
+        public static void FireAGroupOfSpreadProjectiles(Entity entity, Vector3 position, Vector3 direction, float damage, int spreadCount, float anglePerSpread, float speed)
+        {
+            var args = entity.GetShootParams();
+            args.projectileID = VanillaProjectileID.reflectionBullet;
+            args.position = position;
+            args.damage = damage;
+            args.spawnParam.SetProperty(LogicEntityProps.HSV_OFFSET, new Vector3(-120, 0, 0));
+            args.soundID = null;
+
+            var minAngle = (spreadCount - 1) * anglePerSpread * -0.5f;
+            for (int i = 0; i < spreadCount; i++)
+            {
+                var angle = minAngle + anglePerSpread * i;
+                args.velocity = direction.RotateClockwiseXZ(angle) * speed;
+                entity.ShootProjectile(args);
+            }
+        }
+        public static void ShootCursedFlameBreath(Entity entity, Vector3 position, Vector3 velocity, float damage)
+        {
+            var spawnParam = entity.GetSpawnParams();
+            spawnParam.EntityVelocity = velocity;
+            spawnParam.SetProperty(VanillaEntityProps.DAMAGE, damage);
+            entity.Spawn(VanillaEffectID.cursedFireBreath, position, spawnParam);
+        }
+        #endregion
 
         #region 字段
         public static bool GetInvincible(Entity entity) => entity.GetBehaviourField<bool>(PROP_INVINCIBLE);
@@ -211,20 +292,44 @@ namespace MVZ2.GameContent.Bosses
         public static void SetTentacles(Entity entity, List<EntityID>? value) => entity.SetBehaviourField(PROP_TENTACLES, value);
         public static float GetShadowAlpha(Entity entity) => entity.GetBehaviourField<float>(PROP_SHADOW_ALPHA);
         public static void SetShadowAlpha(Entity entity, float value) => entity.SetBehaviourField(PROP_SHADOW_ALPHA, value);
+        public static float GetBlueEyeRotation(Entity entity) => entity.GetBehaviourField<float>(PROP_BLUE_EYE_ROTATION);
+        public static void SetBlueEyeRotation(Entity entity, float value) => entity.SetBehaviourField(PROP_BLUE_EYE_ROTATION, value);
+        public static float GetGreenEyeRotation(Entity entity) => entity.GetBehaviourField<float>(PROP_GREEN_EYE_ROTATION);
+        public static void SetGreenEyeRotation(Entity entity, float value) => entity.SetBehaviourField(PROP_GREEN_EYE_ROTATION, value);
+        public static float GetBlueEyeTargetRotation(Entity entity) => entity.GetBehaviourField<float>(PROP_BLUE_EYE_TARGET_ROTATION);
+        public static void SetBlueEyeTargetRotation(Entity entity, float value) => entity.SetBehaviourField(PROP_BLUE_EYE_TARGET_ROTATION, value);
+        public static float GetGreenEyeTargetRotation(Entity entity) => entity.GetBehaviourField<float>(PROP_GREEN_EYE_TARGET_ROTATION);
+        public static void SetGreenEyeTargetRotation(Entity entity, float value) => entity.SetBehaviourField(PROP_GREEN_EYE_TARGET_ROTATION, value);
         #endregion
 
         #region 常量
         public static readonly VanillaEntityPropertyMeta<bool> PROP_INVINCIBLE = new VanillaEntityPropertyMeta<bool>("invincible");
         public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_TENTACLES = new VanillaEntityPropertyMeta<List<EntityID>>("tentacles");
         public static readonly VanillaEntityPropertyMeta<float> PROP_SHADOW_ALPHA = new VanillaEntityPropertyMeta<float>("shadow_alpha", 0);
+        public static readonly VanillaEntityPropertyMeta<float> PROP_BLUE_EYE_ROTATION = new VanillaEntityPropertyMeta<float>("blue_eye_rotation", 0);
+        public static readonly VanillaEntityPropertyMeta<float> PROP_GREEN_EYE_ROTATION = new VanillaEntityPropertyMeta<float>("green_eye_rotation", 0);
+        public static readonly VanillaEntityPropertyMeta<float> PROP_BLUE_EYE_TARGET_ROTATION = new VanillaEntityPropertyMeta<float>("blue_eye_target_rotation", 0);
+        public static readonly VanillaEntityPropertyMeta<float> PROP_GREEN_EYE_TARGET_ROTATION = new VanillaEntityPropertyMeta<float>("green_eye_target_rotation", 0);
 
         public static readonly Vector3 SPLASH_EFFECT_SCALE = Vector3.one * 8f;
+        public static readonly Vector3 BLUE_EYE_OFFSET = new Vector3(130, 20, -80);
+        public static readonly Vector3 GREEN_EYE_OFFSET = new Vector3(130, 20, -20);
 
         public const int PHASE_1 = 0;
         public const int PHASE_2 = 1;
         public const int PHASE_3 = 2;
 
         public const float ROAR_SECONDS = 4f;
+
+        public const float EYE_ROTATION_FACTOR = 0.25f;
+        public const float BARRAGE_EYE_DAMAGE_MULTIPLIER = 0.3f;
+        public const float BARRAGE_EYE_SHOT_SPEED = 20f;
+        public const int BARRAGE_EYE_SPREAD_COUNT = 5;
+        public const int BARRAGE_EYE_SPREAD_ANGLE = 10;
+        public const int BARRAGE_EYE_GROUP_COUNT = 3;
+        public const int FLAME_EYE_INTERVAL = 7;
+        public const float FLAME_EYE_SHOT_SPEED = 20f;
+        public const float FLAME_EYE_DAMAGE_MULTIPLIER = 0.05f;
 
         // Phase 1
         public const int STATE_HIDDEN = VanillaBossStates.KRAKEN_HIDDEN;
@@ -233,8 +338,7 @@ namespace MVZ2.GameContent.Bosses
         public const int STATE_APPEAR = VanillaBossStates.APPEAR;
         public const int STATE_IDLE = VanillaBossStates.IDLE;
 
-        public const int STATE_BARRAGE_EYE = VanillaBossStates.KRAKEN_BARRAGE_EYE;
-        public const int STATE_FLAME_EYE = VanillaBossStates.KRAKEN_FLAME_EYE;
+        public const int STATE_EYES = VanillaBossStates.KRAKEN_EYES;
         public const int STATE_ROAR = VanillaBossStates.KRAKEN_ROAR;
         public const int STATE_LASER_EYE = VanillaBossStates.KRAKEN_LASER_EYE;
         public const int STATE_ABSORB = VanillaBossStates.KRAKEN_ABSORB;
@@ -258,6 +362,7 @@ namespace MVZ2.GameContent.Bosses
         public const int ANIMATION_STATE_HIDDEN = 10002;
         public const int ANIMATION_STATE_LASER_EYE = 10003;
         public const int ANIMATION_STATE_ABSORB = 10004;
+        public const int ANIMATION_STATE_EYES = 10005;
         #endregion 常量
     }
 }

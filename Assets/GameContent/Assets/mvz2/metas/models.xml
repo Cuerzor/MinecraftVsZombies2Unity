@@ -564,6 +564,7 @@
     <model name="cleave_attack" type="entity" path="mvz2:effect/cleave_attack" shot="false" width="64" height="64" xOffset="0" yOffset="0" />
     <model name="bubble_break_particles" type="entity" path="mvz2:effect/bubble_break_particles" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
     <model name="frozen_shards" type="entity" path="mvz2:effect/frozen_shards" shot="false" width="32" height="32" xOffset="0" yOffset="0"/>
+    <model name="cursed_fire_breath" type="entity" path="mvz2:effect/cursed_fire_breath" shot="false" width="32" height="32" xOffset="0" yOffset="0"/>
 
     <!-- Projectiles -->
     <model name="arrow" type="entity" path="mvz2:projectile/arrow" width="32" height="10" xOffset="0" yOffset="-1" />

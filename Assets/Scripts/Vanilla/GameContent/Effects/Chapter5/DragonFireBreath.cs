@@ -13,7 +13,7 @@ using UnityEngine;
 namespace MVZ2.GameContent.Effects
 {
     [AutoEntityBehaviourDefinition(VanillaEffectNames.dragonFireBreath)]
-    public class DragonFireBreath : EntityBehaviourDefinition, IBeBlownBehaviour
+    public class DragonFireBreath : EntityBehaviourDefinition
     {
         public DragonFireBreath(string nsp, string name) : base(nsp, name)
         {
@@ -57,12 +57,6 @@ namespace MVZ2.GameContent.Effects
             var param = entity.GetSpawnParams();
             param.SetProperty(VanillaEntityProps.DAMAGE, entity.GetDamage());
             GridFire.Spawn(grid, entity, param);
-        }
-        public void BeBlown(Entity entity, Entity source)
-        {
-            var newVelocity = source.GetFacingDirection();
-            newVelocity *= entity.Velocity.magnitude;
-            entity.Velocity = newVelocity;
         }
         private static readonly VanillaEntityPropertyMeta<Color> PROP_LIGHT_COLOR = new VanillaEntityPropertyMeta<Color>("light_color", defaultLightColor);
         public const int VARIANT_ORANGE = 0;

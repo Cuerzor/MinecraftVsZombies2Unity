@@ -2061,6 +2061,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 22abe1d2d3d11004ca61de9239bb6755
+    m_Address: mvz2:effect/cursed_fire_breath
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 22e179046dae5d843b78cf65056dad99
     m_Address: mvz2:entity/effect/nightmare_portal_background
     m_ReadOnly: 0
@@ -6748,6 +6755,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6fbdb1f1d4d6ba44fbbcf0abbe8cd3f1
+    m_Address: mvz2:entity/boss/kraken_laser_gun
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6fd7f39aa0a47b84687c0fb1016c4945
     m_Address: mvz2:ui/select_all
     m_ReadOnly: 0
@@ -7988,6 +8002,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 839decadd93608a458dfa0676ac6ce7f
     m_Address: mvz2:artifacts/ufo_toy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 83dec3f12f9e3b6488eac50496909347
+    m_Address: mvz2:entity/boss/kraken_gatlin
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -10855,6 +10876,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b4afdab92f4b85646b50d18d8a20820f
+    m_Address: mvz2:kraken_barrage
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b4bcd83773a2fd64dac5dca5973eaf59
     m_Address: mvz2:entity/enemy/hay_block_model
     m_ReadOnly: 0
@@ -11504,6 +11532,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Music
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c028a39a673529145b343b4759699d3f
+    m_Address: mvz2:kraken_eyes
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c101e038c6933884ba46b093beaafa76
     m_Address: mvz2:effect/frozen_shards
@@ -12753,6 +12788,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d666b54ec2852694a99c839ab3cea3b6
     m_Address: mvz2:entity/boss/the_giant_pacman
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d66d84e359546d04eaddcc22eeff9431
+    m_Address: mvz2:entity/boss/kraken_cannon
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

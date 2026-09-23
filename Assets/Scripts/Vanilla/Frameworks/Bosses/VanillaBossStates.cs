@@ -90,8 +90,7 @@ namespace MVZ2.Vanilla.Bosses
         public const int KRAKEN_HIDDEN = PRIVATE_NUMBER + 3;
         public const int KRAKEN_LASER_EYE = PRIVATE_NUMBER + 4;
         public const int KRAKEN_ABSORB = PRIVATE_NUMBER + 5;
-        public const int KRAKEN_BARRAGE_EYE = PRIVATE_NUMBER + 6;
-        public const int KRAKEN_FLAME_EYE = PRIVATE_NUMBER + 7;
+        public const int KRAKEN_EYES = PRIVATE_NUMBER + 6;
         public const int KRAKEN_DRAINAGE = PRIVATE_NUMBER + 8;
         public const int KRAKEN_SWITCH_PHASE_2 = PRIVATE_NUMBER + 9;
         public const int KRAKEN_COMMAND_ROAR = PRIVATE_NUMBER + 10;

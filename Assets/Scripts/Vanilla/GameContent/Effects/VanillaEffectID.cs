@@ -131,6 +131,7 @@ namespace MVZ2.GameContent.Effects
         public const string cleaveAttack = "cleave_attack";
         public const string bubbleBreakParticles = "bubble_break_particles";
         public const string frozenShards = "frozen_shards";
+        public const string cursedFireBreath = "cursed_fire_breath";
     }
     public static class VanillaEffectID
     {
@@ -258,6 +259,7 @@ namespace MVZ2.GameContent.Effects
         public static readonly NamespaceID cleaveAttack = Get(VanillaEffectNames.cleaveAttack);
         public static readonly NamespaceID bubbleBreakParticles = Get(VanillaEffectNames.bubbleBreakParticles);
         public static readonly NamespaceID frozenShards = Get(VanillaEffectNames.frozenShards);
+        public static readonly NamespaceID cursedFireBreath = Get(VanillaEffectNames.cursedFireBreath);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);
