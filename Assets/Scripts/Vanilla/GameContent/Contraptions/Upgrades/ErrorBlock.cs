@@ -7,6 +7,7 @@ using MVZ2Logic;
 using MVZ2Logic.Level;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Grids;
 using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Contraptions
@@ -30,11 +31,11 @@ namespace MVZ2.GameContent.Contraptions
             bool full = false;
             foreach (var tile in tiles)
             {
-                var mainEntity = tile.GetMainEntity();
-                if (mainEntity.ExistsAndAlive() && mainEntity.IsEntityOf(VanillaContraptionID.errorBlock))
+                var errorBlock = GetErrorBlockInTile(tile);
+                if (errorBlock != null)
                 {
                     full = true;
-                    errorBlocks.Add(mainEntity);
+                    errorBlocks.Add(errorBlock);
                     continue;
                 }
                 full = false;
@@ -54,6 +55,22 @@ namespace MVZ2.GameContent.Contraptions
                     pad.DestroyConflictGridEntities();
                 }
             }
+        }
+        private static Entity? GetErrorBlockInTile(LawnGrid tile)
+        {
+            using var errorBlocksInTileItem = ListPool<Entity>.Rent();
+            var errorBlocksInTile = errorBlocksInTileItem.Value;
+
+            tile.GetEntities(errorBlocksInTile);
+
+            foreach (var ent in errorBlocksInTile)
+            {
+                if (ent.ExistsAndAlive() && ent.IsEntityOf(VanillaContraptionID.errorBlock))
+                {
+                    return ent;
+                }
+            }
+            return null;
         }
     }
 }
