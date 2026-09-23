@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using MVZ2.GameContent.Buffs.Bosses;
 using MVZ2.GameContent.Damages;
+using MVZ2.Vanilla;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Bosses;
 using MVZ2.Vanilla.Entities;
@@ -10,6 +11,7 @@ using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
+using PVZEngine.Collisions;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
@@ -47,6 +49,23 @@ namespace MVZ2.GameContent.Bosses
         {
             base.UpdateLogic(entity);
             stateMachine.UpdateLogic(entity);
+        }
+        public override void PostCollision(EntityCollision collision, int state)
+        {
+            base.PostCollision(collision, state);
+            if (state == EntityCollisionHelper.STATE_EXIT)
+                return;
+            var other = collision.Other;
+            var self = collision.Entity;
+            if (self.IsDead)
+                return;
+            if (!other.Exists() || !other.IsHostile(self))
+                return;
+            var otherCollider = collision.OtherCollider;
+            if (!other.IsInvincible() && other.Type == EntityTypes.PLANT)
+            {
+                self.BossCrush(otherCollider);
+            }
         }
         #endregion 事件
 

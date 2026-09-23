@@ -129,12 +129,7 @@ namespace MVZ2.GameContent.Bosses
             var otherCollider = collision.OtherCollider;
             if (!other.IsInvincible() && other.Type == EntityTypes.PLANT)
             {
-                var crushDamage = VanillaMod.INSTA_DAMAGE_AMOUNT;
-                var result = otherCollider.TakeDamage(crushDamage, new DamageEffectList(VanillaDamageEffects.GRIND, VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN), self);
-                if (result != null && result.HasAnyFatal())
-                {
-                    other.PlaySound(VanillaSoundID.smash);
-                }
+                self.BossCrush(otherCollider);
             }
         }
         public override void PostTakeDamage(DamageOutput result)

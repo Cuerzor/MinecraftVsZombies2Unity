@@ -1,14 +1,19 @@
 fileFormatVersion: 2
-guid: d6d06e91428ddf64e9e5a9c1f68669fe
+guid: a1dd971995b38f84ab45996a1839b0dc
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kraken_tentacle.png
+    second: {fileID: 2100000, guid: f904cd3c4eabf9d4bbe7559cbec4ef83, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

@@ -1,14 +1,19 @@
 fileFormatVersion: 2
-guid: bcd2f262f5d96214c86b8b82d168a826
+guid: d6d06e91428ddf64e9e5a9c1f68669fe
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kraken_gatlin.png
+    second: {fileID: 2100000, guid: d96a7249dae66fb458e2c01d9e144816, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
-    materialSearch: 0
-    materialLocation: 0
+    materialSearch: 1
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

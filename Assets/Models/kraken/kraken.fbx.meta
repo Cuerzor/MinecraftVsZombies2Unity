@@ -1,14 +1,49 @@
 fileFormatVersion: 2
-guid: 7a8cff2d69b67524a8e720330f236d3c
+guid: bcd2f262f5d96214c86b8b82d168a826
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kraken.png
+    second: {fileID: 2100000, guid: c6c52db23cc833e499ed3003c70ea782, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kraken_core.png
+    second: {fileID: 2100000, guid: 2949b52b7293b544089241887976193e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kraken_eye_blue.png
+    second: {fileID: 2100000, guid: 757e1d4c98581544980bf097cd93bb2b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kraken_eye_green.png
+    second: {fileID: 2100000, guid: f9c03e548a0cd8a4e9eeb88cace54823, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kraken_eyeball_red.png
+    second: {fileID: 2100000, guid: 70eec26beec76134e9b4d7d98a967fca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kraken_eyelid_left.png
+    second: {fileID: 2100000, guid: 59c405cb572eccb4da9f3af5c514eaf6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kraken_eyelid_right.png
+    second: {fileID: 2100000, guid: d191c20b2c36f9142ba481b54db84ef5, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
-    materialSearch: 1
-    materialLocation: 0
+    materialSearch: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
