@@ -17,10 +17,14 @@ namespace MVZ2.Level.Starshards
         }
         public void SetSelected(bool selected)
         {
+            if (!animator.gameObject.activeInHierarchy)
+                return;
             animator.SetBool("Selected", selected);
         }
         public void SetDisabled(bool selected)
         {
+            if (!animator.gameObject.activeInHierarchy)
+                return;
             animator.SetBool("Disabled", selected);
         }
         public void SetHotkeyText(string hotkey)
