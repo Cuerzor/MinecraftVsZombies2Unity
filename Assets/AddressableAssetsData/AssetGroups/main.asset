@@ -507,6 +507,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0914b8876893d74498f15b5d5c48eb4e
+    m_Address: mvz2:kraken_laser_charge
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 09351709b15db8e4ba5f671be2d087d7
     m_Address: mvz2:horse_angry
     m_ReadOnly: 0
@@ -2732,6 +2739,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2e753412cec561746b14be38083ffc2a
+    m_Address: mvz2:laser_power_up
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2e76fd1251c333743bf3c70a8fb12362
     m_Address: mvz2:talk/villager/villager_long1
     m_ReadOnly: 0
@@ -2822,6 +2836,20 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2fb4610d3736e804c9c5282a578ae64e
+    m_Address: mvz2:entity/effect/kraken_death_ray
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30001ef2c68ab2b4fbb8fb8e8d3c6d8b
+    m_Address: mvz2:kraken_laser_ready_roar
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 30186cc749987114d9e9551582fb27ca
     m_Address: mvz2:cart/nyaightmare
@@ -2983,6 +3011,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33407578696d9d4498f6ca0dcff042dd
+    m_Address: mvz2:kraken_death_ray
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3358e00bce0b2da4cafbb5941d366592
     m_Address: mvz2:mainmenu/help
@@ -5753,6 +5788,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5dbc9f602d05f2c4487c5f86fcd17525
+    m_Address: mvz2:entity/boss/kraken_charge_line
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5ddce6aa3c01acf40aa89b5845c9d961
     m_Address: mvz2:achievements/overdraw
@@ -13535,6 +13577,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e41236a6967813e4ab29d3ff8f9adcc7
+    m_Address: mvz2:entity/boss/kraken_charge_spot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e42bc5d20b830a14881649237e6f6723
     m_Address: mvz2:enemy/palace/rolling_hay_bale
     m_ReadOnly: 0
@@ -15131,6 +15180,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe5c3b6b658b05c478ffb6c1397dcd0f
     m_Address: mvz2:effect/breakout_board
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe61435b2f5f991449ea687a333363e7
+    m_Address: mvz2:effect/kraken_death_ray
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

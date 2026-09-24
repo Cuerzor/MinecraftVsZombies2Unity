@@ -580,11 +580,20 @@
     <sound name="kraken_death">
         <sample path="mvz2:kraken_death" weight="1" />
     </sound>
+    <sound name="kraken_death_ray">
+        <sample path="mvz2:kraken_death_ray" weight="1" />
+    </sound>
     <sound name="kraken_hatch_open">
         <sample path="mvz2:kraken_hatch_open" weight="1" />
     </sound>
     <sound name="kraken_hatch_close">
         <sample path="mvz2:kraken_hatch_close" weight="1" />
+    </sound>
+    <sound name="kraken_laser_ready_roar">
+        <sample path="mvz2:kraken_laser_ready_roar" weight="1" />
+    </sound>
+    <sound name="kraken_laser_charge">
+        <sample path="mvz2:kraken_laser_charge" weight="1" />
     </sound>
     <sound name="kraken_roar">
         <sample path="mvz2:kraken_roar" weight="1" />

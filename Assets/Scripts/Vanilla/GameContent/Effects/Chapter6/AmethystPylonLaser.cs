@@ -26,8 +26,7 @@ namespace MVZ2.GameContent.Effects
             entity.PlaySound(VanillaSoundID.lightbeam);
             detectBuffer.Clear();
             laserDetector.DetectEntities(entity, detectBuffer);
-            var effectsArray = entity.GetDamageEffects();
-            var damageEffects = effectsArray == null ? new DamageEffectList() : new DamageEffectList(effectsArray);
+            var damageEffects = entity.GetDamageEffectList();
             foreach (var target in detectBuffer)
             {
                 target.TakeDamage(entity.GetDamage(), damageEffects, entity);

@@ -1318,6 +1318,25 @@ namespace MVZ2.Vanilla.Entities
             return entity.Level.SpawnUnlockArtifactPickupIfPossible(areaID, unlockID, artifactID, position, entity);
         }
 
+        #region 覆盖地块范围
+        public static RectInt GetOverlappedTileRect(this Entity entity)
+        {
+            var level = entity.Level;
+            var bounds = entity.GetBounds();
+            var min = bounds.min;
+            var max = bounds.max;
+            var column1 = level.GetColumn(min.x);
+            var column2 = level.GetColumn(max.x);
+            var lane1 = level.GetLane(min.z);
+            var lane2 = level.GetLane(max.z);
+            var minColumn = Mathf.Min(column1, column2);
+            var maxColumn = Mathf.Max(column1, column2);
+            var minLane = Mathf.Min(lane1, lane2);
+            var maxLane = Mathf.Max(lane1, lane2);
+            return new RectInt(minColumn, minLane, maxColumn - minColumn, maxLane - minLane);
+        }
+        #endregion
+
         private const string PROP_REGION = "entities";
         [EntityPropertyRegistry(PROP_REGION)]
         public static readonly VanillaEntityPropertyMeta<EntityID> PROP_SHINE_RING = new VanillaEntityPropertyMeta<EntityID>("LightShineRing");

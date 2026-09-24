@@ -6,6 +6,7 @@ using MVZ2.Vanilla.Entities;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine;
+using PVZEngine.Damages;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Tools;
@@ -182,6 +183,14 @@ namespace MVZ2.Vanilla.Projectiles
         public static bool CanPierce(this Entity projectile)
         {
             return projectile.IsPiercing() || projectile.GetPiercedCount() < projectile.GetMaxPierceCount();
+        }
+        #endregion
+
+        #region 伤害效果
+        public static DamageEffectList GetDamageEffectList(this Entity entity)
+        {
+            var effectsArray = entity.GetDamageEffects();
+            return effectsArray == null ? new DamageEffectList() : new DamageEffectList(effectsArray);
         }
         #endregion
     }

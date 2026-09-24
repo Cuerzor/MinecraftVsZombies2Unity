@@ -891,19 +891,8 @@ namespace MVZ2.GameContent.Bosses
                     return false;
                 if (value.IsCollisionCheckDisabled())
                     return false;
-                var bounds = value.GetBounds();
-                var min = bounds.min;
-                var max = bounds.max;
-                var c1 = value.Level.GetColumn(min.x);
-                var c2 = value.Level.GetColumn(max.x);
-                var l1 = value.Level.GetLane(min.z);
-                var l2 = value.Level.GetLane(max.z);
-                var minColumn = Mathf.Min(c1, c2);
-                var maxColumn = Mathf.Max(c1, c2);
-                var minLane = Mathf.Min(l1, l2);
-                var maxLane = Mathf.Max(l1, l2);
-
-                return column >= minColumn && column <= maxColumn && lane >= minLane && lane <= maxLane;
+                var rect = value.GetOverlappedTileRect();
+                return column >= rect.min.x && column <= rect.max.x && lane >= rect.min.y && lane <= rect.max.y;
             }
             private int column;
             private int lane;

@@ -58,6 +58,7 @@ namespace MVZ2.GameContent.Bosses
             stateMachine.UpdateLogic(entity);
             entity.SetAnimationFloat("BlueEyeRotation", GetBlueEyeRotation(entity));
             entity.SetAnimationFloat("GreenEyeRotation", GetGreenEyeRotation(entity));
+            entity.SetModelProperty("LaserCharging", IsLaserCharging(entity));
         }
         public override void PostCollision(EntityCollision collision, int state)
         {
@@ -285,6 +286,57 @@ namespace MVZ2.GameContent.Bosses
         }
         #endregion
 
+        #region 激光眼
+        public static Vector3 GetLaserEyePosition(Entity entity)
+        {
+            var offset = RED_EYE_OFFSET;
+            offset.x *= entity.GetFacingX();
+            return entity.Position + offset;
+        }
+        public static Entity? FireDeathRay(Entity entity, int lane, float totalDamage)
+        {
+            var position = GetLaserEyePosition(entity);
+            var args = entity.GetSpawnParams();
+            args.EntityParent = entity;
+            args.SetProperty(KrakenDeathRay.PROP_TARGET_LANE, lane);
+            args.SetProperty(EngineEntityProps.FACE_LEFT_AT_DEFAULT, entity.IsFacingLeft());
+            args.SetProperty(VanillaEntityProps.DAMAGE, entity.GetDamage() * DEATH_RAY_TOTAL_DAMAGE_MULTIPLIER);
+            var ray = entity.Spawn(VanillaEffectID.krakenDeathRay, position, args);
+            if (ray != null)
+            {
+                SetDeathRay(entity, new EntityID(ray));
+            }
+            return ray;
+        }
+        public static void RemoveDeathRay(Entity entity)
+        {
+            var rayID = GetDeathRay(entity);
+            var ray = rayID?.GetEntity(entity.Level);
+            if (ray != null && ray.Exists())
+            {
+                KrakenDeathRay.Shrink(ray);
+            }
+        }
+        #endregion
+
+        #region 警告提示
+        public static void RemoveWarningTargets(Entity entity)
+        {
+            var warningTargets = GetWarningTargets(entity);
+            if (warningTargets == null)
+                return;
+            foreach (var warningTargetID in warningTargets)
+            {
+                var target = warningTargetID.GetEntity(entity.Level);
+                if (target != null && target.Exists())
+                {
+                    target.Remove();
+                }
+            }
+            warningTargets.Clear();
+        }
+        #endregion
+
         #region 字段
         public static bool GetInvincible(Entity entity) => entity.GetBehaviourField<bool>(PROP_INVINCIBLE);
         public static void SetInvincible(Entity entity, bool value) => entity.SetBehaviourField(PROP_INVINCIBLE, value);
@@ -300,20 +352,36 @@ namespace MVZ2.GameContent.Bosses
         public static void SetBlueEyeTargetRotation(Entity entity, float value) => entity.SetBehaviourField(PROP_BLUE_EYE_TARGET_ROTATION, value);
         public static float GetGreenEyeTargetRotation(Entity entity) => entity.GetBehaviourField<float>(PROP_GREEN_EYE_TARGET_ROTATION);
         public static void SetGreenEyeTargetRotation(Entity entity, float value) => entity.SetBehaviourField(PROP_GREEN_EYE_TARGET_ROTATION, value);
+        public static bool IsLaserCharging(Entity entity) => entity.GetBehaviourField<bool>(PROP_LASER_CHARGING);
+        public static void SetLaserCharging(Entity entity, bool value) => entity.SetBehaviourField(PROP_LASER_CHARGING, value);
+        public static int GetTargetLane(Entity entity) => entity.GetBehaviourField<int>(PROP_TARGET_LANE);
+        public static void SetTargetLane(Entity entity, int value) => entity.SetBehaviourField(PROP_TARGET_LANE, value);
+        public static int GetLaserFiredTimes(Entity entity) => entity.GetBehaviourField<int>(PROP_LASER_FIRED_TIMES);
+        public static void SetLaserFiredTimes(Entity entity, int value) => entity.SetBehaviourField(PROP_LASER_FIRED_TIMES, value);
+        public static List<EntityID>? GetWarningTargets(Entity entity) => entity.GetBehaviourField<List<EntityID>>(PROP_WARNING_TARGETS);
+        public static void SetWarningTargets(Entity entity, List<EntityID>? value) => entity.SetBehaviourField(PROP_WARNING_TARGETS, value);
+        public static EntityID? GetDeathRay(Entity entity) => entity.GetBehaviourField<EntityID>(PROP_DEATH_RAY);
+        public static void SetDeathRay(Entity entity, EntityID? value) => entity.SetBehaviourField(PROP_DEATH_RAY, value);
         #endregion
 
         #region 常量
         public static readonly VanillaEntityPropertyMeta<bool> PROP_INVINCIBLE = new VanillaEntityPropertyMeta<bool>("invincible");
         public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_TENTACLES = new VanillaEntityPropertyMeta<List<EntityID>>("tentacles");
+        public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_WARNING_TARGETS = new VanillaEntityPropertyMeta<List<EntityID>>("warning_targets");
         public static readonly VanillaEntityPropertyMeta<float> PROP_SHADOW_ALPHA = new VanillaEntityPropertyMeta<float>("shadow_alpha", 0);
         public static readonly VanillaEntityPropertyMeta<float> PROP_BLUE_EYE_ROTATION = new VanillaEntityPropertyMeta<float>("blue_eye_rotation", 0);
         public static readonly VanillaEntityPropertyMeta<float> PROP_GREEN_EYE_ROTATION = new VanillaEntityPropertyMeta<float>("green_eye_rotation", 0);
         public static readonly VanillaEntityPropertyMeta<float> PROP_BLUE_EYE_TARGET_ROTATION = new VanillaEntityPropertyMeta<float>("blue_eye_target_rotation", 0);
         public static readonly VanillaEntityPropertyMeta<float> PROP_GREEN_EYE_TARGET_ROTATION = new VanillaEntityPropertyMeta<float>("green_eye_target_rotation", 0);
+        public static readonly VanillaEntityPropertyMeta<bool> PROP_LASER_CHARGING = new VanillaEntityPropertyMeta<bool>("laser_charging");
+        public static readonly VanillaEntityPropertyMeta<int> PROP_TARGET_LANE = new VanillaEntityPropertyMeta<int>("target_lane");
+        public static readonly VanillaEntityPropertyMeta<int> PROP_LASER_FIRED_TIMES = new VanillaEntityPropertyMeta<int>("laser_fired_times");
+        public static readonly VanillaEntityPropertyMeta<EntityID> PROP_DEATH_RAY = new VanillaEntityPropertyMeta<EntityID>("death_ray");
 
         public static readonly Vector3 SPLASH_EFFECT_SCALE = Vector3.one * 8f;
         public static readonly Vector3 BLUE_EYE_OFFSET = new Vector3(130, 20, -80);
         public static readonly Vector3 GREEN_EYE_OFFSET = new Vector3(130, 20, -20);
+        public static readonly Vector3 RED_EYE_OFFSET = new Vector3(160, 100, -50);
 
         public const int PHASE_1 = 0;
         public const int PHASE_2 = 1;
@@ -330,6 +398,15 @@ namespace MVZ2.GameContent.Bosses
         public const int FLAME_EYE_INTERVAL = 7;
         public const float FLAME_EYE_SHOT_SPEED = 20f;
         public const float FLAME_EYE_DAMAGE_MULTIPLIER = 0.05f;
+
+        public const int LASER_EYE_MODE_RANDOM = 0;
+        public const int LASER_EYE_MODE_NO_GIANT_STONES = 1;
+        public const int LASER_EYE_MODE_ONLY_GIANT_STONES = 2;
+
+        public const int LASER_TIMES_AIM_NO_STONES = 0;
+        public const int LASER_TIMES_AIM_STONES = 1;
+
+        public const float DEATH_RAY_TOTAL_DAMAGE_MULTIPLIER = 60f;
 
         // Phase 1
         public const int STATE_HIDDEN = VanillaBossStates.KRAKEN_HIDDEN;
