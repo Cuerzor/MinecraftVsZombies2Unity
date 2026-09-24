@@ -12,7 +12,7 @@ namespace MVZ2.GameContent.Buffs.Level
     {
         public DebugNoRechargeBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new FloatModifier(EngineLevelProps.RECHARGE_SPEED, NumberOperator.Set, 99999999));
+            AddModifier(new BooleanModifier(EngineLevelProps.NO_RECHARGE, true));
         }
     }
 }

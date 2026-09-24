@@ -13,7 +13,7 @@ namespace MVZ2.Level.Blueprints
             base.UpdateFixed();
             var maxRecharge = SeedPack.GetMaxRecharge();
             var recharge = SeedPack.GetRecharge();
-            bool recharged = recharge >= maxRecharge;
+            bool recharged = SeedPack.IsCharged();
             if (recharged != CurrentRecharged)
             {
                 CurrentRecharged = recharged;
@@ -28,9 +28,14 @@ namespace MVZ2.Level.Blueprints
             base.UpdateFrame(deltaTime);
 
             var cost = SeedPack.GetCost();
-            var maxRecharge = SeedPack.GetMaxRecharge();
-            var recharge = SeedPack.GetRecharge();
-            ui.SetRecharge(maxRecharge == 0 ? 0 : 1 - recharge / maxRecharge);
+            float rechargePercentage = 0;
+            if (!SeedPack.IsCharged())
+            {
+                var maxRecharge = SeedPack.GetMaxRecharge();
+                var recharge = SeedPack.GetRecharge();
+                rechargePercentage = maxRecharge == 0 ? 0 : 1 - recharge / maxRecharge;
+            }
+            ui.SetRecharge(rechargePercentage);
             ui.SetDisabled(!CanPick());
             ui.SetTwinkleAlpha(ShouldBlueprintTwinkle(SeedPack) ? Controller.GetTwinkleAlpha() : 0);
             ui.SetSelected(Level.IsHoldingClassicBlueprint(Index));
