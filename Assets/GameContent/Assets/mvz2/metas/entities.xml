@@ -5324,5 +5324,13 @@
                 <idArray name="mvz2:damageEffects" value="mvz2:light mvz2:mute mvz2:damage_body_after_armor_broken" />
             </properties>
         </entity>
+        <entity template="effect" id="critical_sparks">
+            <behaviours includeSelf="false"/>
+            <properties>
+                <int name="mvz2:sortingOrder" value="99" />
+                <int name="mvz2:maxTimeout" value="15" />
+                <bool name="mvz2:decorative" value="true" />
+            </properties>
+        </entity>
     </entries>
 </entities>

@@ -5,6 +5,8 @@ Shader "MinecraftVSZombies2/Legacy/Particle"
         _MainTex ("Texture", 2D) = "white" {}
         _Color ("Tint", Color) = (1,1,1,1)
         _SoftFactor ("Soft Depth Factor", Range(0.1, 10)) = 2
+        [Enum(UnityEngine.Rendering.CompareFunction)]
+        _ZTest ("Z Test", Int) = 4
 
 		[Header(Lighting)]
 		[Toggle(LIT)]
@@ -32,7 +34,7 @@ Shader "MinecraftVSZombies2/Legacy/Particle"
 
         ZWrite Off
         Cull Off
-        ZTest LEqual
+        ZTest [_ZTest]
         Lighting Off
         Blend One OneMinusSrcAlpha
 
@@ -90,8 +92,8 @@ Shader "MinecraftVSZombies2/Legacy/Particle"
                 // …Ó∂»≤‚ ‘
                 #if DEPTH_TEST
                 float4 world = mul(unity_ObjectToWorld, v.vertex);
-                float depth = SampleDepthParticle(world, lodUV);
-                o.color.a *= saturate(1.0 - depth * _SoftFactor);
+                float factor = SampleDepthColorFactor(world, lodUV, _SoftFactor);
+                o.color.a *= factor;
                 #endif
 
                 return o;

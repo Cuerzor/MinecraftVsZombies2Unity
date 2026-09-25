@@ -175,6 +175,9 @@
     <sound name="creaking_spawn">
         <sample path="mvz2:entity/creaking/spawn" weight="1" />
     </sound>
+    <sound name="critical">
+        <sample path="mvz2:critical" weight="1" />
+    </sound>
     <sound name="crystal_break">
         <sample path="mvz2:random/crystal/crystal_break1" weight="1" />
         <sample path="mvz2:random/crystal/crystal_break2" weight="1" />
@@ -568,6 +571,12 @@
     <sound name="juicy">
         <sample path="mvz2:juicy" weight="1" />
     </sound>
+    <sound name="kraken_absorb">
+        <sample path="mvz2:flood" weight="1" />
+    </sound>
+    <sound name="kraken_absorb_roar">
+        <sample path="mvz2:kraken_eyes" weight="1" />
+    </sound>
     <sound name="kraken_barrage">
         <sample path="mvz2:kraken_barrage" weight="1" />
     </sound>
@@ -594,6 +603,9 @@
     </sound>
     <sound name="kraken_laser_charge">
         <sample path="mvz2:kraken_laser_charge" weight="1" />
+    </sound>
+    <sound name="kraken_pain">
+        <sample path="mvz2:kraken_pain" weight="1" />
     </sound>
     <sound name="kraken_roar">
         <sample path="mvz2:kraken_roar" weight="1" />

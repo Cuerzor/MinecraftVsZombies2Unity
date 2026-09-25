@@ -76,6 +76,8 @@ namespace MVZ2.GameContent.Bosses
 
         public static void Recall(Entity entity)
         {
+            if (entity.State == STATE_HIDDEN || entity.State == STATE_DISAPPEAR)
+                return;
             stateMachine.StartState(entity, STATE_DISAPPEAR);
             stateMachine.StartSubState(entity, DisappearState.SUBSTATE_RECALLED);
         }

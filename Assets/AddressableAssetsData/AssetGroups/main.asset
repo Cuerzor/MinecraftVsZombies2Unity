@@ -4740,6 +4740,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d2bd3cd0a578c944b9b26cc3042cf0d
+    m_Address: mvz2:critical
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4d3d29d16a0b1324cb4ae241a835c361
     m_Address: mvz2:entity/effect/psychic_shackle
     m_ReadOnly: 0
@@ -5195,6 +5202,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 548b398968776fe499100956f8e71e0c
+    m_Address: mvz2:effect/critical_sparks
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 54ecd9cd84713b046b9df22f056c36c9
     m_Address: mvz2:artifacts/dragon_tooth
     m_ReadOnly: 0
@@ -5649,6 +5663,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5c9d92b859873624595f1e4a9722c4fc
+    m_Address: mvz2:entity/effect/critical_spark
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5ca362fac41be824dbf32d58fb7bb26c
     m_Address: mvz2:entity/terror/terror_cry3
@@ -13577,6 +13598,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e3fe9b61a70a9ab4bb7d31587c942d33
+    m_Address: mvz2:killed
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e41236a6967813e4ab29d3ff8f9adcc7
     m_Address: mvz2:entity/boss/kraken_charge_spot
     m_ReadOnly: 0
@@ -15219,6 +15247,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fee0eb032707cc4459eed6057bd29175
+    m_Address: mvz2:kraken_pain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fef0213e3bb1cb94bb894f0e99399ef4
     m_Address: mvz2:pickup/almanac_pickup

@@ -68,6 +68,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID confusionShimmer = Get("confusion_shimmer");
         public readonly static NamespaceID creakingActivate = Get("creaking_activate");
         public readonly static NamespaceID creakingSpawn = Get("creaking_spawn");
+        public readonly static NamespaceID critical = Get("critical");
         public readonly static NamespaceID crystal = Get("crystal");
         public readonly static NamespaceID crystalBreak = Get("crystal_break");
         public readonly static NamespaceID danmaku = Get("danmaku");
@@ -152,6 +153,8 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID impact = Get("impact");
         public readonly static NamespaceID ironCurtain = Get("iron_curtain");
         public readonly static NamespaceID killed = Get("killed");
+        public readonly static NamespaceID krakenAbsorb = Get("kraken_absorb");
+        public readonly static NamespaceID krakenAbsorbRoar = Get("kraken_absorb_roar");
         public readonly static NamespaceID krakenBarrage = Get("kraken_barrage");
         public readonly static NamespaceID krakenEyes = Get("kraken_eyes");
         public readonly static NamespaceID krakenCursedFlame = Get("kraken_cursed_flame");
@@ -161,6 +164,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID krakenHatchClose = Get("kraken_hatch_close");
         public readonly static NamespaceID krakenLaserCharge = Get("kraken_laser_charge");
         public readonly static NamespaceID krakenLaserReadyRoar = Get("kraken_laser_ready_roar");
+        public readonly static NamespaceID krakenPain = Get("kraken_pain");
         public readonly static NamespaceID krakenRoar = Get("kraken_roar");
         public readonly static NamespaceID largeExplosion = Get("large_explosion");
         public readonly static NamespaceID launch = Get("launch");

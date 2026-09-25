@@ -248,6 +248,8 @@
     <buff id="frozen" polarity="negative" level="0" target="entity" />
     <buff id="kraken_tentacle_inactive" polarity="none" level="5000" target="boss" />
     <buff id="kraken_inactive" polarity="none" level="5000" target="boss" />
+    <buff id="absorbed_by_kraken" polarity="none" level="5000" target="contraption" />
+    <buff id="kraken_absorbed_dynamite" polarity="none" level="5000" target="boss" />
     
     <!-- Curses -->
     <buff id="the_creatures_brain" polarity="negative" level="5000" target="level" />

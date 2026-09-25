@@ -17,7 +17,7 @@ namespace MVZ2.GameContent.Buffs.Entities
         public ChangeGridBuff(string nsp, string name) : base(nsp, name)
         {
             var modifier = new IntModifier(VanillaEntityProps.WATER_INTERACTION, IntegerOperator.Set, PROP_WATER_INTERACTION, priority: VanillaModifierPriorities.FORCE);
-            modifier.Condition = v => v >= 0;
+            modifier.Condition = static v => v >= 0;
             AddModifier(modifier);
         }
         public override void PostAdd(Buff buff)

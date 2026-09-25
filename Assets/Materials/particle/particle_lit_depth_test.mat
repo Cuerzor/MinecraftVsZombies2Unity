@@ -7,12 +7,13 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: particle_unlit_ztest
+  m_Name: particle_lit_depth_test
   m_Shader: {fileID: 4800000, guid: 3db785e965bfc3947a30fc72a2703f0f, type: 3}
-  m_Parent: {fileID: 2100000, guid: 32ad3b661d8b0cd479fa25b5395b5542, type: 2}
+  m_Parent: {fileID: 2100000, guid: 0382c8c7c9909ed46a6a7f6d913f4579, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
   - DEPTH_TEST
+  - LIT
   m_InvalidKeywords:
   - _ALPHAPREMULTIPLY_ON
   - _EMISSION
@@ -32,7 +33,6 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Cull: 0
     - _DepthTest: 1
     - _DepthTestEnabled: 1
     m_Colors: []

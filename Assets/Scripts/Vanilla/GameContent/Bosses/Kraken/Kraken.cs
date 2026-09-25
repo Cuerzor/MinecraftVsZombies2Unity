@@ -12,6 +12,7 @@ using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
+using MVZ2Logic.Notes;
 using PVZEngine.Buffs;
 using PVZEngine.Collisions;
 using PVZEngine.Damages;
@@ -319,6 +320,15 @@ namespace MVZ2.GameContent.Bosses
         }
         #endregion
 
+        #region 吸水
+        public static Vector3 GetAbsorbTargetPosition(Entity entity)
+        {
+            var offset = MOUTH_OFFSET;
+            offset.x *= entity.GetFacingX();
+            return entity.Position + offset;
+        }
+        #endregion
+
         #region 警告提示
         public static void RemoveWarningTargets(Entity entity)
         {
@@ -382,12 +392,15 @@ namespace MVZ2.GameContent.Bosses
         public static readonly Vector3 BLUE_EYE_OFFSET = new Vector3(130, 20, -80);
         public static readonly Vector3 GREEN_EYE_OFFSET = new Vector3(130, 20, -20);
         public static readonly Vector3 RED_EYE_OFFSET = new Vector3(160, 100, -50);
+        public static readonly Vector3 MOUTH_OFFSET = new Vector3(130, 0, -50);
 
         public const int PHASE_1 = 0;
         public const int PHASE_2 = 1;
         public const int PHASE_3 = 2;
 
         public const float ROAR_SECONDS = 4f;
+
+        public const float STUN_SECONDS = 10f;
 
         public const float EYE_ROTATION_FACTOR = 0.25f;
         public const float BARRAGE_EYE_DAMAGE_MULTIPLIER = 0.3f;
@@ -407,6 +420,9 @@ namespace MVZ2.GameContent.Bosses
         public const int LASER_TIMES_AIM_STONES = 1;
 
         public const float DEATH_RAY_TOTAL_DAMAGE_MULTIPLIER = 60f;
+
+        public const float INNER_EXPLOSION_DAMAGE = 600;
+        public const int ABSORB_COLUMN_RANGE = 2;
 
         // Phase 1
         public const int STATE_HIDDEN = VanillaBossStates.KRAKEN_HIDDEN;

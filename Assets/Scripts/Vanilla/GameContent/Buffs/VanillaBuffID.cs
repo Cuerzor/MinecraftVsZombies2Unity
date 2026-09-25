@@ -234,6 +234,7 @@ namespace MVZ2.GameContent.Buffs
             public const string contraptionFall = "contraption_fall";
             public const string carryingOtherTargetable = "carrying_other_targetable";
             public const string whirlwindAttack = "whirlwind_attack";
+            public const string absorbedByKraken = "absorbed_by_kraken";
         }
         public static class Enemy
         {
@@ -342,6 +343,7 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public const string krakenTentacleInactive = "kraken_tentacle_inactive";
             public const string krakenInactive = "kraken_inactive";
+            public const string krakenAbsorbedDynamite = "kraken_absorbed_dynamite"; 
         }
         public static class Cart
         {
