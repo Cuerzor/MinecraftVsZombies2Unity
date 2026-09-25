@@ -623,12 +623,16 @@
             </flavor>
         </entry>
         <entry id="mvz2:giant_bowl">
+            <variables>
+                <variable name="produce_time">60</variable>
+                <variable name="store_limit">3</variable>
+            </variables>
             <header>
                 <p><![CDATA[巨碗能够缓慢生产并存储<ref=[misc]mvz2:starshard.miracle_mallet>星之碎片</ref>，这些星之碎片只能通过摧毁巨碗取出。]]></p>
             </header>
             <properties>
-                <p>生产时间：<![CDATA[<color=red>60秒</color>]]></p>
-                <p>存储上限：<![CDATA[<color=red>5</color>]]></p>
+                <p>生产时间：<![CDATA[<color=red><var local="produce_time"/>秒</color>]]></p>
+                <p>存储上限：<![CDATA[<color=red><var local="store_limit"/></color>]]></p>
                 <p>技能：<![CDATA[<color=red>向内部存储一颗星之碎片</color>]]></p>
             </properties>
             <flavor>

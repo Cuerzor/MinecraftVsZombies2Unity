@@ -64,6 +64,8 @@
 - Amethyst Pylon
   - Cost: 125 -> 175
   - Evocation will now be affected by damage bonuses as usual.
+- Giant Bowl
+  - Capacity: 5 -> 3
 - Black Hole Bomb
   - Recharge Time: Very Long -> Long
 - Nuke

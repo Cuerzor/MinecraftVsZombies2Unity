@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-19 11:49+0800\n"
+"POT-Creation-Date: 2026-09-25 01:12+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1342,8 +1342,8 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"生产时间：<color=red>60秒</color>\n"
-"存储上限：<color=red>5</color>\n"
+"生产时间：<color=red><var local=\"produce_time\"/>秒</color>\n"
+"存储上限：<color=red><var local=\"store_limit\"/></color>\n"
 "技能：<color=red>向内部存储一颗星之碎片</color>"
 msgstr ""
 
@@ -2018,7 +2018,7 @@ msgid ""
 "<tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />：<color=red><var local=\"flesh_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:leather\" />：<color=red><var local=\"leather_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:grass\" />：<color=red><var local=\"grass_density\"/>%</color>\n"
-"<tag id=\"mvz2:shell\" enum=\"mvz2:ice\" />：<color=red><var local=\"ice_density\"/>%（砸碎时发射冰锥）</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:ice\" />：<color=red><var local=\"ice_density\"/>%（砸碎时发射冰锥并冻结怪物）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:wood\" />：<color=red><var local=\"wood_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:shadow\" />：<color=red><var local=\"shadow_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:cloud\" />：<color=red><var local=\"cloud_density\"/>%（震飞周围敌怪）</color>\n"
@@ -6852,6 +6852,20 @@ msgstr ""
 #: Entity meta file
 msgctxt "entity.name"
 msgid "巨型石块"
+msgstr ""
+
+#. Name for entity mvz2:anti_gravity_pad
+#: Entity meta file
+msgctxt "entity.name"
+msgid "反重力板"
+msgstr ""
+
+#. Tooltip for entity mvz2:anti_gravity_pad
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid ""
+"（需要重力板）\n"
+"吹飞上方怪物的头盔"
 msgstr ""
 
 #. Name for entity mvz2:zombie
