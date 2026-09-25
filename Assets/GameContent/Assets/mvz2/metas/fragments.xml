@@ -698,5 +698,15 @@
             <key hex="#463529" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="rising_ice_pillar">
+        <colorKeys>
+            <key hex="#86aefd" time="0.5" />
+            <key hex="#bcd4ff" time="1" />
+        </colorKeys>
+        <alphaKeys>
+            <key alpha="0.75" time="0" />
+            <key alpha="0.75" time="1" />
+        </alphaKeys>
+    </fragment>
     
 </fragments>

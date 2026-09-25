@@ -4131,6 +4131,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4480fd7f73fb4c14680778916ba67ec1
+    m_Address: mvz2:effect/kraken_drainage_splash
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4494512fbdc4ae74493dde69625e10d7
     m_Address: mvz2:random/iron/break1
     m_ReadOnly: 0
@@ -4263,6 +4270,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 45ea938212880e445acc9a1f73e32018
+    m_Address: mvz2:effect/rising_ice_pillar
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 45fb7b442cb23474f837d22074313bd3
     m_Address: mvz2:entity/zombie_cow/hurt1
@@ -12526,6 +12540,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cfec3fbf52a48584eb64d7f307e7ea2e
+    m_Address: mvz2:entity/effect/ice_pillar
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d00aabb5514ee4743a361ad46e38de95
     m_Address: mvz2:entity/contraption/punchton_arm

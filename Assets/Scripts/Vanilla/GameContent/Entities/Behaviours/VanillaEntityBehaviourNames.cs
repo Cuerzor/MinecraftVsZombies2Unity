@@ -34,6 +34,8 @@ namespace MVZ2.Vanilla.Entities
         public const string instakillByFire = "instakill_by_fire";
         public const string instakillByImpact = "instakill_by_impact";
 
+        public const string playDeathSound = "play_death_sound";
+
         public const string balloon = "balloon";
         public const string randomChangeVelocity = "random_change_velocity";
 

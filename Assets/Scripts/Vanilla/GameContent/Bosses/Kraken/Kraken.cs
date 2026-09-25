@@ -372,12 +372,15 @@ namespace MVZ2.GameContent.Bosses
         public static void SetWarningTargets(Entity entity, List<EntityID>? value) => entity.SetBehaviourField(PROP_WARNING_TARGETS, value);
         public static EntityID? GetDeathRay(Entity entity) => entity.GetBehaviourField<EntityID>(PROP_DEATH_RAY);
         public static void SetDeathRay(Entity entity, EntityID? value) => entity.SetBehaviourField(PROP_DEATH_RAY, value);
+        public static List<EntityID>? GetDrainageSplashes(Entity entity) => entity.GetBehaviourField<List<EntityID>>(PROP_DRAINAGE_SPLASHES);
+        public static void SetDrainageSplashes(Entity entity, List<EntityID>? value) => entity.SetBehaviourField(PROP_DRAINAGE_SPLASHES, value);
         #endregion
 
         #region 常量
         public static readonly VanillaEntityPropertyMeta<bool> PROP_INVINCIBLE = new VanillaEntityPropertyMeta<bool>("invincible");
         public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_TENTACLES = new VanillaEntityPropertyMeta<List<EntityID>>("tentacles");
         public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_WARNING_TARGETS = new VanillaEntityPropertyMeta<List<EntityID>>("warning_targets");
+        public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_DRAINAGE_SPLASHES = new VanillaEntityPropertyMeta<List<EntityID>>("drainage_splashes");
         public static readonly VanillaEntityPropertyMeta<float> PROP_SHADOW_ALPHA = new VanillaEntityPropertyMeta<float>("shadow_alpha", 0);
         public static readonly VanillaEntityPropertyMeta<float> PROP_BLUE_EYE_ROTATION = new VanillaEntityPropertyMeta<float>("blue_eye_rotation", 0);
         public static readonly VanillaEntityPropertyMeta<float> PROP_GREEN_EYE_ROTATION = new VanillaEntityPropertyMeta<float>("green_eye_rotation", 0);
@@ -423,6 +426,9 @@ namespace MVZ2.GameContent.Bosses
 
         public const float INNER_EXPLOSION_DAMAGE = 600;
         public const int ABSORB_COLUMN_RANGE = 2;
+
+        public const int DRAINAGE_COLUMN_RANGE = 2;
+        public const float DRAINAGE_SPLASH_DAMAGE_MULTIPLIER = 0.2f;
 
         // Phase 1
         public const int STATE_HIDDEN = VanillaBossStates.KRAKEN_HIDDEN;

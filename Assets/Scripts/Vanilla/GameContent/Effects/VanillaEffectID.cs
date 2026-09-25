@@ -134,6 +134,8 @@ namespace MVZ2.GameContent.Effects
         public const string cursedFireBreath = "cursed_fire_breath";
         public const string krakenDeathRay = "kraken_death_ray";
         public const string criticalSparks = "critical_sparks";
+        public const string krakenDrainageSplash = "kraken_drainage_splash";
+        public const string risingIcePillar = "rising_ice_pillar";
     }
     public static class VanillaEffectID
     {
@@ -264,6 +266,8 @@ namespace MVZ2.GameContent.Effects
         public static readonly NamespaceID cursedFireBreath = Get(VanillaEffectNames.cursedFireBreath);
         public static readonly NamespaceID krakenDeathRay = Get(VanillaEffectNames.krakenDeathRay);
         public static readonly NamespaceID criticalSparks = Get(VanillaEffectNames.criticalSparks);
+        public static readonly NamespaceID krakenDrainageSplash = Get(VanillaEffectNames.krakenDrainageSplash);
+        public static readonly NamespaceID risingIcePillar = Get(VanillaEffectNames.risingIcePillar);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

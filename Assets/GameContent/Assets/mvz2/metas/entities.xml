@@ -4482,6 +4482,7 @@
             </properties>
         </entity>
         <entity template="effect" id="splash_particles">
+            <behaviours includeSelf="false"/>
             <properties>
                 <int name="mvz2:maxTimeout" value="30" />
             </properties>
@@ -5330,6 +5331,29 @@
                 <int name="mvz2:sortingOrder" value="99" />
                 <int name="mvz2:maxTimeout" value="15" />
                 <bool name="mvz2:decorative" value="true" />
+            </properties>
+        </entity>
+        <entity template="effect" id="kraken_drainage_splash">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:dot_collision_damage"/>
+            </behaviours>
+            <properties>
+                <vector3 name="mvz2:size" x="80" y="160" z="80" />
+                <int name="mvz2:collision_mask_hostile" value="15" />
+                <int name="mvz2:maxTimeout" value="180" />
+            </properties>
+        </entity>
+        <entity template="effect" id="rising_ice_pillar">
+            <behaviours>
+                <behaviour operator="replace" source="mvz2:timeout_remove" id="mvz2:timeout_death" />
+                <behaviour operator="add" id="mvz2:fragmented" />
+                <behaviour operator="add" id="mvz2:play_death_sound"/>
+                <behaviour operator="add" id="mvz2:remove_on_death" />
+            </behaviours>
+            <properties>
+                <vector3 name="mvz2:size" x="80" y="160" z="80" />
+                <int name="mvz2:maxTimeout" value="30" />
+                <id name="mvz2:deathSound" value="mvz2:glass_break" />
             </properties>
         </entity>
     </entries>

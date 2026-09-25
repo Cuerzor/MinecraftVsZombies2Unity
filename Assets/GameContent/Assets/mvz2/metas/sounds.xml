@@ -583,14 +583,17 @@
     <sound name="kraken_cursed_flame">
         <sample path="mvz2:dragon_breath" weight="1" />
     </sound>
-    <sound name="kraken_eyes">
-        <sample path="mvz2:kraken_eyes" weight="1" />
-    </sound>
     <sound name="kraken_death">
         <sample path="mvz2:kraken_death" weight="1" />
     </sound>
     <sound name="kraken_death_ray">
         <sample path="mvz2:kraken_death_ray" weight="1" />
+    </sound>
+    <sound name="kraken_drainage">
+        <sample path="mvz2:flood" weight="1" />
+    </sound>
+    <sound name="kraken_eyes">
+        <sample path="mvz2:kraken_eyes" weight="1" />
     </sound>
     <sound name="kraken_hatch_open">
         <sample path="mvz2:kraken_hatch_open" weight="1" />

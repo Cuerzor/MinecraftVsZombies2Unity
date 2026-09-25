@@ -63,14 +63,15 @@ namespace MVZ2.GameContent.Buffs.Level
             else if (timeout <= 0)
             {
                 Vector3 pos = new Vector3(level.GetEntityColumnX(4), 0, level.GetEntityLaneZ(2));
-                var boss = level.Spawn(VanillaBossID.slenderman, pos, null)?.Let(e =>
+                var boss = level.Spawn(VanillaBossID.slenderman, pos, null);
+                if (boss != null)
                 {
-                    e.Velocity = Vector3.up * 5;
-                    e.PlaySound(VanillaSoundID.splashBig);
-                    e.PlaySound(VanillaSoundID.glassBreakBig);
-                    e.Spawn(VanillaEffectID.nightmareaperSplash, pos);
-                    e.ApplyBuffForBossRevenge();
-                });
+                    boss.Velocity = Vector3.up * 5;
+                    boss.PlaySound(VanillaSoundID.splashBig);
+                    boss.PlaySound(VanillaSoundID.glassBreakBig);
+                    boss.Spawn(VanillaEffectID.nightmareaperSplash, pos);
+                    boss.ApplyBuffForBossRevenge();
+                };
                 level.ShakeScreen(30, 0, 30);
 
                 level.SetProgressBarToBoss(VanillaProgressBarID.nightmare);

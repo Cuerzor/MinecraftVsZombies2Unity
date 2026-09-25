@@ -567,6 +567,8 @@
     <model name="cursed_fire_breath" type="entity" path="mvz2:effect/cursed_fire_breath" shot="false" width="32" height="32" xOffset="0" yOffset="0"/>
     <model name="kraken_death_ray" type="entity" path="mvz2:effect/kraken_death_ray" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
     <model name="critical_sparks" type="entity" path="mvz2:effect/critical_sparks" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
+    <model name="kraken_drainage_splash" type="entity" path="mvz2:effect/kraken_drainage_splash" shot="false" width="32" height="32" xOffset="0" yOffset="0" />
+    <model name="rising_ice_pillar" type="entity" path="mvz2:effect/rising_ice_pillar" width="80" height="120" xOffset="0" yOffset="-104" />
 
     <!-- Projectiles -->
     <model name="arrow" type="entity" path="mvz2:projectile/arrow" width="32" height="10" xOffset="0" yOffset="-1" />
