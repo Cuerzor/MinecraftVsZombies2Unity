@@ -266,6 +266,33 @@ namespace MVZ2Logic.Entities
         {
             return entity.GetProperty<Color>(LIGHT_COLOR);
         }
+        public static readonly PropertyMeta<bool> USE_POSITION_AS_LIGHT_CENTER = Get<bool>("use_position_as_light_center");
+        public static void SetUsePositionAsLightCenter(this Entity entity, bool value)
+        {
+            entity.SetProperty(USE_POSITION_AS_LIGHT_CENTER, value);
+        }
+        public static bool UsePositionAsLightCenter(this Entity entity)
+        {
+            return entity.GetProperty<bool>(USE_POSITION_AS_LIGHT_CENTER);
+        }
+        public static readonly PropertyMeta<Vector3> LIGHT_CENTER_OFFSET = Get<Vector3>("light_center_offset");
+        public static void SetLightCenterOffset(this Entity entity, Vector3 value)
+        {
+            entity.SetProperty(LIGHT_CENTER_OFFSET, value);
+        }
+        public static Vector3 GetLightCenterOffset(this Entity entity)
+        {
+            return entity.GetProperty<Vector3>(LIGHT_CENTER_OFFSET);
+        }
+        public static readonly PropertyMeta<bool> HIDE_LIGHT = Get<bool>("hide_light");
+        public static void SetHideLight(this Entity entity, bool value)
+        {
+            entity.SetProperty(HIDE_LIGHT, value);
+        }
+        public static bool GetHideLight(this Entity entity)
+        {
+            return entity.GetProperty<bool>(HIDE_LIGHT);
+        }
         #endregion
 
         #region 影子

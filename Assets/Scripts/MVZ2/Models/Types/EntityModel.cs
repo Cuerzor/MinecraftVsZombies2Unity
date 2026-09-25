@@ -30,6 +30,16 @@ namespace MVZ2.Models
             if (bone)
                 bone.SetLightRange(range);
         }
+        public void SetLightParent(Transform? transform)
+        {
+            if (bone)
+                bone.SetLightParent(transform);
+        }
+        public void SetLightOffset(Vector3 offset)
+        {
+            if (bone)
+                bone.SetLightOffset(offset);
+        }
         public void SetColliderActive(bool active)
         {
             if (modelCollider)

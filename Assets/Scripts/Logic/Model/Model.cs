@@ -430,13 +430,6 @@ namespace MVZ2Logic.Models
         {
             return GraphicGroup.GetAllAnchors();
         }
-        public Transform? GetCenterTransform()
-        {
-            var anchor = GetAnchor(LogicModelHelper.ANCHOR_CENTER);
-            if (!anchor.Exists())
-                return null;
-            return anchor.transform;
-        }
         #endregion
         public RandomGenerator GetRNG()
         {

@@ -5,6 +5,7 @@ using MVZ2Logic.Games;
 using MVZ2Logic.Models;
 using PVZEngine;
 using PVZEngine.Armors;
+using UnityEngine;
 
 namespace MVZ2.Models
 {
@@ -17,6 +18,14 @@ namespace MVZ2.Models
             if (slotMeta == null)
                 return null;
             return slotMeta.Anchor;
+        }
+        public static ModelAnchor? GetCenterAnchor(this Model model)
+        {
+            return model.GetAnchor(LogicModelHelper.ANCHOR_CENTER);
+        }
+        public static ModelAnchor? GetRootAnchor(this Model model)
+        {
+            return model.GetAnchor(LogicModelHelper.ANCHOR_ROOT);
         }
         public static Model? CreateArmor(this Model model, string anchor, NamespaceID slot, NamespaceID id)
         {

@@ -572,9 +572,11 @@ namespace MVZ2.Level.Entities
             Model.SetGroundY(transGroundPos.y);
             Model.transform.localPosition = Level.LawnToTransScale * Entity.GetModelPositionOffset();
 
-            var centerTransform = Model.GetCenterTransform();
-            if (centerTransform.Exists())
-                centerTransform.localEulerAngles = Entity.RenderRotation;
+            var centerAnchor = Model.GetCenterAnchor();
+            if (centerAnchor.Exists())
+            {
+                centerAnchor.transform.localEulerAngles = Entity.RenderRotation;
+            }
 
             if (modelPropertyCache.IsDirty)
             {
@@ -866,8 +868,9 @@ namespace MVZ2.Level.Entities
                     model.transform.localScale = entity.GetFinalDisplayScale();
                     model.SortingLayerID = SortingLayer.NameToID(entity.GetSortingLayer());
                     model.SortingOrder = entity.GetSortingOrder();
-                    model.SetLightVisible(entity.IsLightSource());
+                    model.SetLightVisible(entity.IsLightSource() && !entity.GetHideLight());
                     model.SetLightColor(entity.GetLightColor());
+                    UpdateLightPosition(entityCtrl, model);
                     var lightScaleLawn = entity.GetLightRange();
                     var lightScale = new Vector2(lightScaleLawn.x, Mathf.Max(lightScaleLawn.y, lightScaleLawn.z)) * entityCtrl.Level.LawnToTransScale;
                     model.SetLightRange(lightScale);
@@ -970,10 +973,11 @@ namespace MVZ2.Level.Entities
                             break;
 
                         case PropertyName.LightSource:
+                        case PropertyName.HideLight:
                             {
                                 if (model is EntityModel sprModel)
                                 {
-                                    sprModel.SetLightVisible(entity.IsLightSource());
+                                    sprModel.SetLightVisible(entity.IsLightSource() && !entity.GetHideLight());
                                 }
                             }
                             break;
@@ -995,9 +999,42 @@ namespace MVZ2.Level.Entities
                                 }
                             }
                             break;
+                        case PropertyName.UsePositionAsLightCenter:
+                        case PropertyName.LightCenterOffset:
+                            {
+                                if (model is EntityModel sprModel)
+                                {
+                                    UpdateLightPosition(entityCtrl, sprModel);
+                                }
+                            }
+                            break;
                     }
                 }
                 dirtyProperties.Clear();
+            }
+            private void UpdateLightPosition(EntityController entityCtrl, EntityModel sprModel)
+            {
+                var entity = entityCtrl.Entity;
+                bool usePosition = entity.UsePositionAsLightCenter();
+                ModelAnchor? anchor;
+                if (usePosition)
+                {
+                    anchor = sprModel.GetRootAnchor();
+                }
+                else
+                {
+                    anchor = sprModel.GetCenterAnchor();
+                }
+                Transform? parent = null;
+                if (anchor.Exists())
+                {
+                    parent = anchor.transform;
+                }
+                sprModel.SetLightParent(parent);
+
+                var offset = entity.GetLightCenterOffset();
+                offset = entityCtrl.Level.LawnToTransDistance(offset);
+                sprModel.SetLightOffset(offset);
             }
             public void SetDirtyProperty(PropertyName property)
             {
@@ -1040,6 +1077,9 @@ namespace MVZ2.Level.Entities
                 { LogicEntityProps.IS_LIGHT_SOURCE, PropertyName.LightSource },
                 { LogicEntityProps.LIGHT_COLOR, PropertyName.LightColor },
                 { LogicEntityProps.LIGHT_RANGE, PropertyName.LightRange },
+                { LogicEntityProps.USE_POSITION_AS_LIGHT_CENTER, PropertyName.UsePositionAsLightCenter },
+                { LogicEntityProps.LIGHT_CENTER_OFFSET, PropertyName.LightCenterOffset },
+                { LogicEntityProps.HIDE_LIGHT, PropertyName.HideLight },
             };
             public enum PropertyName
             {
@@ -1061,6 +1101,9 @@ namespace MVZ2.Level.Entities
                 LightSource,
                 LightColor,
                 LightRange,
+                UsePositionAsLightCenter,
+                LightCenterOffset,
+                HideLight
             }
         }
         #endregion

@@ -234,7 +234,8 @@ namespace MVZ2.Level.Light
         }
         private void ComputeLight(Entity light, HashSet<long> results)
         {
-            var center = light.GetCenter();
+            var center = light.UsePositionAsLightCenter() ? light.Position : light.GetCenter();
+            center += Vector3.Scale(light.GetLightCenterOffset(), light.GetFinalScale());
             var range = light.GetLightRange();
 
             float minRange = Mathf.Min(range.x, Mathf.Min(range.y, range.z));
