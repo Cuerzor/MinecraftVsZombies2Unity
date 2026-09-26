@@ -83,6 +83,7 @@ namespace MVZ2.Vanilla.Bosses
         public const int KRAKEN_TENTACLE_WEAPON = PRIVATE_NUMBER + 1;
         public const int KRAKEN_TENTACLE_SMASH = PRIVATE_NUMBER + 2;
         public const int KRAKEN_TENTACLE_HIDDEN = PRIVATE_NUMBER + 3;
+        public const int KRAKEN_TENTACLE_DRILL = PRIVATE_NUMBER + 4;
 
         public const int KRAKEN_ROAR = PRIVATE_NUMBER + 0;
         public const int KRAKEN_DIVE = PRIVATE_NUMBER + 1;

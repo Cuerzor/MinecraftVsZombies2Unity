@@ -50,7 +50,7 @@ namespace MVZ2.GameContent.Bosses
                 AddState(new DrainageState());
 
                 // Phase 3
-                //AddState(new SwitchPhase2State());
+                AddState(new SwitchPhase2State());
                 //AddState(new CommandRoarState());
                 //AddState(new TimeBombState());
 
@@ -250,7 +250,7 @@ namespace MVZ2.GameContent.Bosses
                 base.OnUpdateAI(stateMachine, entity);
 
                 // 转阶段
-                if (entity.Health <= entity.GetMaxHealth() * 0.5f && entity.GetPhase() == PHASE_1)
+                if (entity.Health <= entity.GetMaxHealth() * PHASE_3_THRESOLD_HP_PERCENTAGE && entity.GetPhase() == PHASE_2)
                 {
                     SwitchToPhase3(entity);
                     return;
@@ -1199,6 +1199,174 @@ namespace MVZ2.GameContent.Bosses
         }
         #endregion
 
+
+        #region 第三阶段
+        private class SwitchPhase2State : EntityStateMachineState
+        {
+            public SwitchPhase2State() : base(STATE_SWITCH_PHASE_2, ANIMATION_STATE_DIVE) { }
+            public override int GetAnimationState(int substate)
+            {
+                switch (substate)
+                {
+                    case SUBSTATE_START_1:
+                    case SUBSTATE_START_2:
+                        return ANIMATION_STATE_DIVE;
+                    case SUBSTATE_END_1:
+                    case SUBSTATE_END_2:
+                        return ANIMATION_STATE_APPEAR;
+                }
+                return ANIMATION_STATE_HIDDEN;
+            }
+            public override void OnEnter(EntityStateMachine stateMachine, Entity entity)
+            {
+                base.OnEnter(stateMachine, entity);
+                var substateTimer = stateMachine.GetSubStateTimer(entity);
+                substateTimer.ResetSeconds(0.5f);
+
+                SetInvincible(entity, true);
+            }
+            public override void OnExit(EntityStateMachine machine, Entity entity)
+            {
+                base.OnExit(machine, entity);
+                SetInactive(entity, false);
+                SetInvincible(entity, false);
+                entity.Level.RemoveLoopSoundEntity(VanillaSoundID.earthquake, entity.ID);
+            }
+            public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
+            {
+                base.OnUpdateAI(stateMachine, entity);
+                var substate = stateMachine.GetSubState(entity);
+                var timer = stateMachine.GetSubStateTimer(entity);
+                timer.Run(stateMachine.GetSpeed(entity));
+                switch (substate)
+                {
+                    case SUBSTATE_START_1:
+                        SetShadowAlpha(entity, timer.GetTimeoutPercentage());
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_START_2);
+                            timer.ResetSeconds(1f);
+                            PlaySplash(entity);
+                            entity.Level.ShakeScreen(10, 0, 15);
+                            SetInactive(entity, true);
+                        }
+                        break;
+                    case SUBSTATE_START_2:
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_DESTROY_STONES);
+                            timer.ResetSeconds(1f);
+                            ResummonTentacles(entity, 2, false);
+                        }
+                        break;
+                    case SUBSTATE_DESTROY_STONES:
+                        if (timer.Expired)
+                        {
+                            var stoneToDestroy = GetStoneToDestroy(entity);
+                            if (stoneToDestroy.ExistsAndAlive() && !AllTentaclesAreDead(entity))
+                            {
+                                CommandATentacleToDestroyStone(entity, stoneToDestroy);
+                                timer.ResetSeconds(0.6f);
+                            }
+                            else
+                            {
+                                stateMachine.StartSubState(entity, SUBSTATE_SHAKE);
+                                timer.ResetSeconds(2f);
+                                entity.Level.AddLoopSoundEntity(VanillaSoundID.earthquake, entity.ID);
+                            }
+                        }
+                        break;
+                    case SUBSTATE_SHAKE:
+                        entity.Level.ShakeScreen(10, 10, 1);
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_LAND_TENTACLES_SUMMONED);
+                            timer.ResetSeconds(3f);
+                            SummonLandTentacles(entity);
+                        }
+                        break;
+                    case SUBSTATE_LAND_TENTACLES_SUMMONED:
+                        entity.Level.ShakeScreen(10, 10, 1);
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_END_1);
+                            timer.ResetSeconds(0.5f);
+                        }
+                        break;
+                    case SUBSTATE_END_1:
+                        SetShadowAlpha(entity, timer.GetPassedPercentage());
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_END_2);
+                            timer.ResetSeconds(1f);
+                            PlaySplash(entity);
+                            entity.Level.ShakeScreen(10, 0, 15);
+                        }
+                        break;
+                    case SUBSTATE_END_2:
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartState(entity, STATE_IDLE);
+                        }
+                        break;
+                }
+            }
+            public override void OnUpdateLogic(EntityStateMachine machine, Entity entity)
+            {
+                base.OnUpdateLogic(machine, entity);
+                CheckDeath(entity);
+            }
+            public static Entity? GetStoneToDestroy(Entity entity)
+            {
+                return entity.Level.FindFirstEntity(e => IsStoneToDestroy(entity, e));
+            }
+            public static bool IsStoneToDestroy(Entity boss, Entity target)
+            {
+                if (!target.ExistsAndAlive())
+                    return false;
+                if (!target.IsEntityOf(VanillaContraptionID.giantStone))
+                    return false;
+                if (!Detection.CanDetect(target))
+                    return false;
+                if (!boss.IsHostile(target))
+                    return false;
+                if (!target.IsOnWater())
+                    return false;
+                if (target.Position.y >= 80)
+                    return false;
+                return true;
+            }
+            public static void SummonLandTentacles(Entity boss)
+            {
+                SummonLandTentacle(boss, 0, false);
+                SummonLandTentacle(boss, boss.Level.GetMaxLaneCount() - 1, true);
+            }
+            public static void SummonLandTentacle(Entity boss, int lane, bool up)
+            {
+                var column = boss.GetMirroredColumn(0, true);
+                var pos = boss.Level.GetEntityGridPosition(column, lane);
+                var spawnParams = boss.GetSpawnParams();
+                spawnParams.SetProperty(EngineEntityProps.FACE_LEFT_AT_DEFAULT, boss.IsFacingLeft());
+                spawnParams.SetProperty(KrakenLandTentacle.PROP_FACE_UP, up);
+                var landTentacle = boss.Spawn(VanillaEffectID.krakenLandTentacle, pos, spawnParams);
+                var landTentacles = GetLandTentacles(boss);
+                if (landTentacles == null)
+                {
+                    landTentacles = new List<EntityID>();
+                    SetLandTentacles(boss, landTentacles);
+                }
+                landTentacles.Add(new EntityID(landTentacle));
+            }
+            public const int SUBSTATE_START_1 = 0;
+            public const int SUBSTATE_START_2 = 1;
+            public const int SUBSTATE_DESTROY_STONES = 2;
+            public const int SUBSTATE_SHAKE = 3;
+            public const int SUBSTATE_LAND_TENTACLES_SUMMONED = 4;
+            public const int SUBSTATE_END_1 = 5;
+            public const int SUBSTATE_END_2 = 6;
+        }
+        #endregion
+
         #region 眩晕
         public static bool CanStun(Entity kraken)
         {
@@ -1313,12 +1481,18 @@ namespace MVZ2.GameContent.Bosses
             {
                 base.OnEnter(stateMachine, entity);
                 var substateTimer = stateMachine.GetSubStateTimer(entity);
-                substateTimer.ResetSeconds(2f);
+                substateTimer.ResetSeconds(4f);
                 SetInactive(entity, false);
                 SetShadowAlpha(entity, 1);
 
+                KillAllLandTentacles(entity);
+
                 entity.PlaySound(VanillaSoundID.killed);
                 entity.Level.AddSlowMotion(1.5f);
+                entity.Level.ShakeScreen(15, 0, 15);
+                var spawnParams = entity.GetSpawnParams();
+                spawnParams.SetProperty(EngineEntityProps.DISPLAY_SCALE, Vector3.one * 3);
+                entity.Spawn(VanillaEffectID.criticalSparks, entity.GetCenter(), spawnParams);
             }
             public override void OnUpdateLogic(EntityStateMachine stateMachine, Entity entity)
             {

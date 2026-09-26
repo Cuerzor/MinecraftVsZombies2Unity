@@ -67,9 +67,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 6
     m_ConditionEvent: AnimationState
     m_EventTreshold: 10001
-  - m_ConditionMode: 6
-    m_ConditionEvent: AnimationSubstate
-    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 9103620555455102022}
   m_Solo: 0
@@ -1284,9 +1281,9 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 2621965993686554171}
-    second: []
   - first: {fileID: -2783298470556761906}
+    second: []
+  - first: {fileID: 2621965993686554171}
     second: []
   - first: {fileID: 3401767824892808795}
     second: []

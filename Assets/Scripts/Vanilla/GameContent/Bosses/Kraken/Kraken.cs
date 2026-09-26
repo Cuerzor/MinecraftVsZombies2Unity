@@ -211,6 +211,26 @@ namespace MVZ2.GameContent.Bosses
                 ClearDeadTentacles(entity);
             }
         }
+        public static void CommandATentacleToDestroyStone(Entity entity, Entity stone)
+        {
+            var tentacles = GetTentacles(entity);
+            if (tentacles != null)
+            {
+                foreach (var tentacleID in tentacles)
+                {
+                    var tentacle = tentacleID.GetEntity(entity.Level);
+                    if (!tentacle.ExistsAndAlive())
+                        continue;
+                    if (!KrakenTentacle.IsHidden(tentacle))
+                        continue;
+                    var position = stone.Position;
+                    position.y = stone.GetGroundY();
+                    tentacle.Position = position;
+                    KrakenTentacle.CommandDrill(tentacle);
+                    return;
+                }
+            }
+        }
         public static bool AreAllTentaclesHiddenOrDead(Entity entity)
         {
             var tentacles = GetTentacles(entity);
@@ -219,7 +239,7 @@ namespace MVZ2.GameContent.Bosses
                 foreach (var tentacleID in tentacles)
                 {
                     var tentacle = tentacleID.GetEntity(entity.Level);
-                    if (tentacle.ExistsAndAlive() && tentacle.State != KrakenTentacle.STATE_HIDDEN)
+                    if (tentacle.ExistsAndAlive() && !KrakenTentacle.IsHidden(tentacle))
                         return false;
                 }
             }
@@ -260,6 +280,23 @@ namespace MVZ2.GameContent.Bosses
                         continue;
                     tentacle.Die(effects, entity);
                 }
+                tentacles.Clear();
+            }
+        }
+        public static void KillAllLandTentacles(Entity entity)
+        {
+            var tentacles = GetLandTentacles(entity);
+            if (tentacles != null)
+            {
+                var effects = new DamageEffectList(VanillaDamageEffects.INSTA_KILL);
+                foreach (var tentacleID in tentacles)
+                {
+                    var tentacle = tentacleID.GetEntity(entity.Level);
+                    if (tentacle == null || tentacle.IsDead)
+                        continue;
+                    tentacle.Die(effects, entity);
+                }
+                tentacles.Clear();
             }
         }
         #endregion
@@ -450,6 +487,8 @@ namespace MVZ2.GameContent.Bosses
         public static void SetInvincible(Entity entity, bool value) => entity.SetBehaviourField(PROP_INVINCIBLE, value);
         public static List<EntityID>? GetTentacles(Entity entity) => entity.GetBehaviourField<List<EntityID>>(PROP_TENTACLES);
         public static void SetTentacles(Entity entity, List<EntityID>? value) => entity.SetBehaviourField(PROP_TENTACLES, value);
+        public static List<EntityID>? GetLandTentacles(Entity entity) => entity.GetBehaviourField<List<EntityID>>(PROP_LAND_TENTACLES);
+        public static void SetLandTentacles(Entity entity, List<EntityID>? value) => entity.SetBehaviourField(PROP_LAND_TENTACLES, value);
         public static float GetShadowAlpha(Entity entity) => entity.GetBehaviourField<float>(PROP_SHADOW_ALPHA);
         public static void SetShadowAlpha(Entity entity, float value) => entity.SetBehaviourField(PROP_SHADOW_ALPHA, value);
         public static float GetBlueEyeRotation(Entity entity) => entity.GetBehaviourField<float>(PROP_BLUE_EYE_ROTATION);
@@ -481,6 +520,7 @@ namespace MVZ2.GameContent.Bosses
         public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_TENTACLES = new VanillaEntityPropertyMeta<List<EntityID>>("tentacles");
         public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_WARNING_TARGETS = new VanillaEntityPropertyMeta<List<EntityID>>("warning_targets");
         public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_DRAINAGE_SPLASHES = new VanillaEntityPropertyMeta<List<EntityID>>("drainage_splashes");
+        public static readonly VanillaEntityPropertyMeta<List<EntityID>> PROP_LAND_TENTACLES = new VanillaEntityPropertyMeta<List<EntityID>>("land_tentacles");
         public static readonly VanillaEntityPropertyMeta<float> PROP_SHADOW_ALPHA = new VanillaEntityPropertyMeta<float>("shadow_alpha", 0);
         public static readonly VanillaEntityPropertyMeta<float> PROP_BLUE_EYE_ROTATION = new VanillaEntityPropertyMeta<float>("blue_eye_rotation", 0);
         public static readonly VanillaEntityPropertyMeta<float> PROP_GREEN_EYE_ROTATION = new VanillaEntityPropertyMeta<float>("green_eye_rotation", 0);
@@ -535,6 +575,8 @@ namespace MVZ2.GameContent.Bosses
 
         public const float WEAKSPOT_RADIUS = 40f;
         public const float WEAKSPOT_DAMAGE = 16000f;
+
+        public const float PHASE_3_THRESOLD_HP_PERCENTAGE = 1 / 3f;
 
         // Phase 1
         public const int STATE_HIDDEN = VanillaBossStates.KRAKEN_HIDDEN;

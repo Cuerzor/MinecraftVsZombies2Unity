@@ -63,7 +63,7 @@ namespace MVZ2.GameContent.Bosses
         public override void PostDeath(Entity entity, DeathInfo deathInfo)
         {
             base.PostDeath(entity, deathInfo);
-            if (entity.State == STATE_HIDDEN)
+            if (IsHidden(entity))
             {
                 entity.Remove();
             }
@@ -76,7 +76,7 @@ namespace MVZ2.GameContent.Bosses
 
         public static void Recall(Entity entity)
         {
-            if (entity.State == STATE_HIDDEN || entity.State == STATE_DISAPPEAR)
+            if (IsHidden(entity) || entity.State == STATE_DISAPPEAR)
                 return;
             stateMachine.StartState(entity, STATE_DISAPPEAR);
             stateMachine.StartSubState(entity, DisappearState.SUBSTATE_RECALLED);
@@ -84,6 +84,14 @@ namespace MVZ2.GameContent.Bosses
         public static void CommandAttack(Entity entity)
         {
             NextAppear(entity);
+        }
+        public static void CommandDrill(Entity entity)
+        {
+            stateMachine.StartState(entity, STATE_DRILL);
+        }
+        public static bool IsHidden(Entity tentacle)
+        {
+            return tentacle.State == KrakenTentacle.STATE_HIDDEN;
         }
         public static bool IsAutoAct(Entity entity) => entity.GetProperty<bool>(PROP_AUTO_ACT);
         public static void SetAutoAct(Entity entity, bool value) => entity.SetProperty(PROP_AUTO_ACT, value);
@@ -102,6 +110,7 @@ namespace MVZ2.GameContent.Bosses
         public const int STATE_WEAPON = VanillaBossStates.KRAKEN_TENTACLE_WEAPON;
         public const int STATE_SMASH = VanillaBossStates.KRAKEN_TENTACLE_SMASH;
         public const int STATE_HIDDEN = VanillaBossStates.KRAKEN_TENTACLE_HIDDEN;
+        public const int STATE_DRILL = VanillaBossStates.KRAKEN_TENTACLE_DRILL;
 
         public const int ANIMATION_STATE_IDLE = 0;
         public const int ANIMATION_STATE_APPEAR = 1;
@@ -111,6 +120,7 @@ namespace MVZ2.GameContent.Bosses
         public const int ANIMATION_STATE_WEAPON = 10001;
         public const int ANIMATION_STATE_SMASH = 10002;
         public const int ANIMATION_STATE_HIDDEN = 10003;
+        public const int ANIMATION_STATE_DRILL = 10004;
 
         public const int ACTION_GATLIN = 0;
         public const int ACTION_CANNON = 1;

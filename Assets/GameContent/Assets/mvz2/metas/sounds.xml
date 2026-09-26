@@ -571,6 +571,9 @@
     <sound name="juicy">
         <sample path="mvz2:juicy" weight="1" />
     </sound>
+    <sound name="killed">
+        <sample path="mvz2:killed" weight="1" />
+    </sound>
     <sound name="kraken_absorb">
         <sample path="mvz2:flood" weight="1" />
     </sound>

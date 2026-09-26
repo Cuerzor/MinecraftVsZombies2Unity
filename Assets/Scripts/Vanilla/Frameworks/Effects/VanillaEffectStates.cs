@@ -25,6 +25,9 @@ namespace MVZ2.Vanilla.Effects
         public const int KRAKEN_DEATH_RAY_NO_TARGET = PRIVATE_NUMBER + 0;
         public const int KRAKEN_DEATH_RAY_SHRINK = PRIVATE_NUMBER + 1;
 
+        public const int KRAKEN_LAND_TENTACLE_APPEAR = PRIVATE_NUMBER + 0;
+        public const int KRAKEN_LAND_TENTACLE_DEATH = PRIVATE_NUMBER + 1;
+
         private const int PRIVATE_NUMBER = 10000;
     }
 }

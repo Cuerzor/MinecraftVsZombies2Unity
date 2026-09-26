@@ -44,6 +44,7 @@ namespace MVZ2.GameContent.Bosses
                 AddState(new SmashState());
                 AddState(new DisappearState());
                 AddState(new StunnedState());
+                AddState(new DrillState());
                 AddState(new DeathState());
             }
         }
@@ -768,6 +769,50 @@ namespace MVZ2.GameContent.Bosses
             }
             public const int SUBSTATE_SWING = 0;
             public const int SUBSTATE_SMASHED = 1;
+        }
+        #endregion
+
+        #region 钻击
+
+        private class DrillState : EntityStateMachineState
+        {
+            public DrillState() : base(STATE_DRILL, ANIMATION_STATE_DRILL) { }
+            public override void OnEnter(EntityStateMachine stateMachine, Entity entity)
+            {
+                base.OnEnter(stateMachine, entity);
+                var timer = stateMachine.GetStateTimer(entity);
+                timer.ResetSeconds(0.5f);
+                SetInactive(entity, false);
+                if (entity.IsOnWater())
+                {
+                    entity.PlaySplashEffect();
+                    entity.PlaySound(VanillaSoundID.splashBig);
+                }
+                DestroyContraptionsInTile(entity);
+                DealDrillDamage(entity);
+            }
+            public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
+            {
+                base.OnUpdateAI(stateMachine, entity);
+                var timer = stateMachine.GetStateTimer(entity);
+                timer.Run(stateMachine.GetSpeed(entity));
+
+                float alpha = timer.GetPassedPercentage();
+                if (alpha > 0.5f)
+                {
+                    alpha = 1 - alpha;
+                }
+                SetShadowAlpha(entity, alpha);
+                if (timer.Expired)
+                {
+                    if (entity.IsOnWater())
+                    {
+                        entity.PlaySplashEffect();
+                        entity.PlaySound(VanillaSoundID.splashBig);
+                    }
+                    stateMachine.StartState(entity, STATE_HIDDEN);
+                }
+            }
         }
         #endregion
 
