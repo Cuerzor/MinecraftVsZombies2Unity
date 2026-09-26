@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using MVZ2.GameContent.Buffs.Bosses;
+using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Projectiles;
@@ -21,9 +22,12 @@ using PVZEngine.Entities;
 using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using PVZEngine.Tools;
+using PVZEngine.Tools.Geometry;
+using PVZEngine.Tools.Mathematics;
 using PVZEngine.Tools.Random;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace MVZ2.GameContent.Bosses
 {
@@ -35,6 +39,7 @@ namespace MVZ2.GameContent.Bosses
             AddModifier(new FloatModifier(LogicEntityProps.SHADOW_ALPHA, NumberOperator.Multiply, PROP_SHADOW_ALPHA));
             AddModifier(new BooleanModifier(EngineEntityProps.INVINCIBLE, PROP_INVINCIBLE));
             AddModifier(new BooleanModifier(VanillaEntityProps.INVISIBLE, PROP_INVINCIBLE));
+            AddModifier(new Vector3Modifier(EngineEntityProps.BOUNDS_OFFSET, NumberOperator.Add, PROP_BOUNDS_OFFSET));
         }
 
         #region 回调
@@ -76,6 +81,37 @@ namespace MVZ2.GameContent.Bosses
             if (!other.IsInvincible() && other.Type == EntityTypes.PLANT)
             {
                 self.BossCrush(otherCollider);
+            }
+        }
+        public override void PostTakeDamage(DamageOutput result)
+        {
+            base.PostTakeDamage(result);
+            var bodyResult = result.BodyResult;
+            if (bodyResult == null)
+                return;
+            var kraken = bodyResult.Entity;
+            if (CanWeakSpotBeAttacked(kraken))
+            {
+                if (AttackIsForWeakSpot(kraken, bodyResult))
+                {
+                    WeakSpotAttack(kraken, bodyResult);
+                }
+            }
+            else
+            {
+                if (CanStun(kraken))
+                {
+                    Entity? sourceEnt = null;
+                    if (bodyResult.Source is EntitySourceReference entSource)
+                    {
+                        sourceEnt = entSource.GetEntity(kraken.Level);
+                    }
+                    if (bodyResult.HasEffect(VanillaDamageEffects.THROWN) && sourceEnt != null && sourceEnt.IsEntityOf(VanillaContraptionID.giantStone))
+                    {
+                        Stun(kraken, STUN_SECONDS);
+                        PlayCriticalEffects(sourceEnt, sourceEnt.GetCenter());
+                    }
+                }
             }
         }
         #endregion 事件
@@ -174,6 +210,20 @@ namespace MVZ2.GameContent.Bosses
                 }
                 ClearDeadTentacles(entity);
             }
+        }
+        public static bool AreAllTentaclesHiddenOrDead(Entity entity)
+        {
+            var tentacles = GetTentacles(entity);
+            if (tentacles != null)
+            {
+                foreach (var tentacleID in tentacles)
+                {
+                    var tentacle = tentacleID.GetEntity(entity.Level);
+                    if (tentacle.ExistsAndAlive() && tentacle.State == KrakenTentacle.STATE_HIDDEN)
+                        return false;
+                }
+            }
+            return true;
         }
         public static bool AllTentaclesAreDead(Entity entity)
         {
@@ -347,6 +397,54 @@ namespace MVZ2.GameContent.Bosses
         }
         #endregion
 
+        #region 弱点
+        public static bool CanWeakSpotBeAttacked(Entity kraken)
+        {
+            return kraken.State == STATE_STUNNED && stateMachine.GetSubState(kraken) == StunnedState.SUBSTATE_START;
+        }
+        public static Vector3 GetWeakSpotPoint(Entity kraken)
+        {
+            var offset = WEAKSPOT_OFFSET;
+            offset.x *= kraken.GetFacingX();
+            return kraken.Position + offset;
+        }
+        public static bool AttackIsForWeakSpot(Entity kraken, BodyDamageOutputPart bodyResult)
+        {
+            if (!bodyResult.HasEffect(VanillaDamageEffects.THROWN))
+                return false;
+            var sourceEnt = bodyResult.Source is EntitySourceReference entSource ? entSource.GetEntity(kraken.Level) : null;
+            if (sourceEnt == null) 
+                return false;
+            var krakenBounds = kraken.GetBounds();
+            var sourceBounds = sourceEnt.GetBounds();
+            var weakspotPoint = GetWeakSpotPoint(kraken);
+            var weakspotRadius = WEAKSPOT_RADIUS;
+            return Geometry.CollideBetweenCubeAndSphere(weakspotPoint, weakspotRadius, sourceBounds.center, sourceBounds.size);
+        }
+        public static void WeakSpotAttack(Entity kraken, BodyDamageOutputPart bodyResult)
+        {
+            var damage = GetWeakSpotDamage(kraken);
+            var effects = new DamageEffectList(VanillaDamageEffects.BYPASS_BOSS_ARMOR);
+            kraken.TakeDamageSourced(damage, effects, bodyResult.Source);
+
+            kraken.Level.AddSlowMotion(1f);
+            var sparksParams = kraken.GetSpawnParams();
+            sparksParams.SetProperty(EngineEntityProps.DISPLAY_SCALE, Vector3.one * 2);
+            kraken.Spawn(VanillaEffectID.criticalSparks, GetWeakSpotPoint(kraken), sparksParams);
+            kraken.PlaySound(VanillaSoundID.largeExplosion, volume: 2);
+            kraken.PlaySound(VanillaSoundID.krakenPain);
+            kraken.Level.ShakeScreen(15, 0, 30);
+            if (kraken.State == STATE_STUNNED && stateMachine.GetSubState(kraken) == StunnedState.SUBSTATE_START)
+            {
+                StunnedState.Awake(stateMachine, kraken);
+            }
+        }
+        public static float GetWeakSpotDamage(Entity kraken)
+        {
+            return WEAKSPOT_DAMAGE;
+        }
+        #endregion
+
         #region 字段
         public static bool GetInvincible(Entity entity) => entity.GetBehaviourField<bool>(PROP_INVINCIBLE);
         public static void SetInvincible(Entity entity, bool value) => entity.SetBehaviourField(PROP_INVINCIBLE, value);
@@ -374,6 +472,8 @@ namespace MVZ2.GameContent.Bosses
         public static void SetDeathRay(Entity entity, EntityID? value) => entity.SetBehaviourField(PROP_DEATH_RAY, value);
         public static List<EntityID>? GetDrainageSplashes(Entity entity) => entity.GetBehaviourField<List<EntityID>>(PROP_DRAINAGE_SPLASHES);
         public static void SetDrainageSplashes(Entity entity, List<EntityID>? value) => entity.SetBehaviourField(PROP_DRAINAGE_SPLASHES, value);
+        public static Vector3 GetBoundsOffset(Entity entity) => entity.GetBehaviourField<Vector3>(PROP_BOUNDS_OFFSET);
+        public static void SetBoundsOffset(Entity entity, Vector3 value) => entity.SetBehaviourField(PROP_BOUNDS_OFFSET, value);
         #endregion
 
         #region 常量
@@ -390,12 +490,15 @@ namespace MVZ2.GameContent.Bosses
         public static readonly VanillaEntityPropertyMeta<int> PROP_TARGET_LANE = new VanillaEntityPropertyMeta<int>("target_lane");
         public static readonly VanillaEntityPropertyMeta<int> PROP_LASER_FIRED_TIMES = new VanillaEntityPropertyMeta<int>("laser_fired_times");
         public static readonly VanillaEntityPropertyMeta<EntityID> PROP_DEATH_RAY = new VanillaEntityPropertyMeta<EntityID>("death_ray");
+        public static readonly VanillaEntityPropertyMeta<Vector3> PROP_BOUNDS_OFFSET = new VanillaEntityPropertyMeta<Vector3>("bounds_offset");
 
         public static readonly Vector3 SPLASH_EFFECT_SCALE = Vector3.one * 8f;
         public static readonly Vector3 BLUE_EYE_OFFSET = new Vector3(130, 20, -80);
         public static readonly Vector3 GREEN_EYE_OFFSET = new Vector3(130, 20, -20);
         public static readonly Vector3 RED_EYE_OFFSET = new Vector3(160, 100, -50);
         public static readonly Vector3 MOUTH_OFFSET = new Vector3(130, 0, -50);
+        public static readonly Vector3 WEAKSPOT_OFFSET = new Vector3(-85, 20, 0);
+        public static readonly Vector3 FALLEN_BOUNDS_OFFSET = new Vector3(0, -140, 0);
 
         public const int PHASE_1 = 0;
         public const int PHASE_2 = 1;
@@ -429,6 +532,9 @@ namespace MVZ2.GameContent.Bosses
 
         public const int DRAINAGE_COLUMN_RANGE = 2;
         public const float DRAINAGE_SPLASH_DAMAGE_MULTIPLIER = 0.2f;
+
+        public const float WEAKSPOT_RADIUS = 40f;
+        public const float WEAKSPOT_DAMAGE = 16000f;
 
         // Phase 1
         public const int STATE_HIDDEN = VanillaBossStates.KRAKEN_HIDDEN;

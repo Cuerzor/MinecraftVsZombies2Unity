@@ -26,6 +26,7 @@ using PVZEngine.Timing;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace MVZ2.GameContent.Bosses
 {
@@ -240,10 +241,8 @@ namespace MVZ2.GameContent.Bosses
             {
                 base.OnEnter(stateMachine, entity);
 
-                var seconds = AllTentaclesAreDead(entity) ? 1f : 9f;
-
                 var stateTimer = stateMachine.GetStateTimer(entity);
-                stateTimer.ResetSeconds(seconds);
+                stateTimer.ResetSeconds(2f);
                 SetExposedStates(entity, true);
             }
             public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
@@ -258,7 +257,10 @@ namespace MVZ2.GameContent.Bosses
                 }
 
                 var stateTimer = stateMachine.GetStateTimer(entity);
-                stateTimer.Run(stateMachine.GetSpeed(entity));
+                if (AreAllTentaclesHiddenOrDead(entity))
+                {
+                    stateTimer.Run(stateMachine.GetSpeed(entity));
+                }
                 if (stateTimer.Expired)
                 {
                     var nextIndex = stateMachine.GetNextStateIndex(entity);
@@ -1221,7 +1223,7 @@ namespace MVZ2.GameContent.Bosses
         public static void PlayCriticalEffects(Entity entity, Vector3 position)
         {
             entity.Level.AddSlowMotion(1f);
-            entity.Spawn(VanillaEffectID.criticalSparks, entity.Position);
+            entity.Spawn(VanillaEffectID.criticalSparks, position);
             entity.PlaySound(VanillaSoundID.critical, volume: 2);
         }
         private class StunnedState : EntityStateMachineState
@@ -1241,6 +1243,11 @@ namespace MVZ2.GameContent.Bosses
 
                 RecallAllAliveTentacles(entity);
             }
+            public override void OnExit(EntityStateMachine machine, Entity entity)
+            {
+                base.OnExit(machine, entity);
+                SetBoundsOffset(entity, Vector3.zero);
+            }
             public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
             {
                 base.OnUpdateAI(stateMachine, entity);
@@ -1256,12 +1263,11 @@ namespace MVZ2.GameContent.Bosses
                             PlaySplash(entity);
                             entity.Level.ShakeScreen(10, 0, 15);
                             entity.PlaySound(VanillaSoundID.krakenPain);
+                            SetBoundsOffset(entity, FALLEN_BOUNDS_OFFSET);
                         }
                         if (timer.Expired)
                         {
-                            stateMachine.StartSubState(entity, SUBSTATE_END);
-                            timer.ResetSeconds(1f);
-                            entity.PlaySound(VanillaSoundID.krakenPain);
+                            Awake(stateMachine, entity);
                         }
                         break;
                     case SUBSTATE_END:
@@ -1271,6 +1277,14 @@ namespace MVZ2.GameContent.Bosses
                         }
                         break;
                 }
+            }
+            public static void Awake(EntityStateMachine stateMachine, Entity kraken)
+            {
+                var timer = stateMachine.GetSubStateTimer(kraken);
+                stateMachine.StartSubState(kraken, SUBSTATE_END);
+                timer.ResetSeconds(1f);
+                kraken.PlaySound(VanillaSoundID.krakenPain);
+                SetBoundsOffset(kraken, Vector3.zero);
             }
             public override void OnUpdateLogic(EntityStateMachine machine, Entity entity)
             {
@@ -1353,11 +1367,11 @@ namespace MVZ2.GameContent.Bosses
         private static Detector flameEyeDetector = new EyeDetector(true);
         private static int[] statePoolPhase2 = new int[]
         {
-            STATE_EYES,
-            STATE_ROAR,
             STATE_LASER_EYE,
+            STATE_EYES,
             STATE_ABSORB,
             STATE_DRAINAGE,
+            STATE_ROAR,
         };
         private static int[] statePoolPhase3 = new int[]
         {
