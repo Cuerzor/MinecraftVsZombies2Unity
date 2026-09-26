@@ -7,6 +7,7 @@ using MVZ2.GameContent.Buffs.Bosses;
 using MVZ2.GameContent.Buffs.Contraptions;
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Damages;
+using MVZ2.GameContent.Difficulties;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
 using MVZ2Logic.Entities;
@@ -55,7 +56,8 @@ namespace MVZ2.Vanilla.Bosses
             var level = entity.Level;
             if (level.AreaID == VanillaAreaID.mountain)
             {
-                Mountain.DropGiantStones(level, ROAR_STONE_DROP_COLUMN_MIN, ROAR_STONE_DROP_COLUMN_MAX, 0, level.GetMaxLaneCount() - 1, ROAR_STONE_DROP_COUNT, entity.RNG);
+                int count = level.GetMountainBossDropStoneCount();
+                Mountain.DropGiantStones(level, ROAR_STONE_DROP_COLUMN_MIN, ROAR_STONE_DROP_COLUMN_MAX, 0, level.GetMaxLaneCount() - 1, count, entity.RNG);
             }
         }
         public static bool CanBossRoarStun(this Entity entity, Entity target)
@@ -64,7 +66,6 @@ namespace MVZ2.Vanilla.Bosses
         }
         public const int ROAR_STONE_DROP_COLUMN_MIN = 2;
         public const int ROAR_STONE_DROP_COLUMN_MAX = 4;
-        public const int ROAR_STONE_DROP_COUNT = 3;
 
         public static void BossCrush(this Entity boss, IEntityCollider otherCollider)
         {

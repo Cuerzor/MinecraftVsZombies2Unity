@@ -222,6 +222,7 @@ For v0.3.0+ versions, save structures are cross-platform compatible (Windows/And
 - Nightmareaper's time limit is 2 minutes.
 - Wither won't regenerate health.
 - The blueprints spitted by the Locked Chest are Zombies.
+- Kraken's roar will summon 3 Giant Stones.
 
 **Misc**
 
@@ -266,6 +267,7 @@ For v0.3.0+ versions, save structures are cross-platform compatible (Windows/And
 - The radius of the flame explosion caused by the Red Dragon's flying in phase 2 is doubled.
 - The blueprints spitted by the Locked Chest are Iron Helmet Zombies.
 - Locked Chest will ask for 2 starshards in the ransom pop-up.
+- Kraken's roar will only summon 1 Giant Stone.
 
 **Misc**
 

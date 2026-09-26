@@ -50,6 +50,8 @@ namespace MVZ2.GameContent.Buffs.Level
 
             AddModifier(new NamespaceIDModifier(VanillaDifficultyLevelProps.LOCKED_CHEST_SPIT_BLUEPRINT_ID, SetOperator.Set, LogicBlueprintID.FromEntity(VanillaEnemyID.zombie)));
 
+            AddModifier(new IntModifier(VanillaDifficultyLevelProps.MOUNTAIN_BOSS_DROP_STONE_COUNT, IntegerOperator.Add, 1));
+
             AddModifier(new FloatModifier(VanillaDifficultyLevelProps.STARSHARD_CARRIER_COUNTER_INCREAMENT, NumberOperator.Multiply, 2f));
             AddModifier(new FloatModifier(VanillaDifficultyLevelProps.REDSTONE_CARRIER_COUNTER_INCREAMENT, NumberOperator.Multiply, 2f));
         }

@@ -60,6 +60,7 @@ namespace MVZ2.GameContent.Difficulties
         public static readonly VanillaDifficultyPropertyMeta<int> RED_DRAGON_TORNADO_COUNT = Get<int>("red_dragon_tornado_count", 1);
         public static readonly VanillaDifficultyPropertyMeta<NamespaceID> LOCKED_CHEST_SPIT_BLUEPRINT_ID = Get<NamespaceID>("locked_chest_spit_blueprint_id", LogicBlueprintID.FromEntity(VanillaEnemyID.leatherCappedZombie));
         public static readonly VanillaDifficultyPropertyMeta<int> LOCKED_CHEST_REQUIRED_STARSHARDS = Get<int>("locked_chest_required_starshards", 1);
+        public static readonly VanillaDifficultyPropertyMeta<int> MOUNTAIN_BOSS_DROP_STONE_COUNT = Get<int>("mountain_boss_drop_stone_count", 2);
 
         public static bool FrankensteinNoSteelPhase(this LevelEngine level) => level.GetProperty<bool>(FRANKENSTEIN_NO_STEEL);
         public static bool FrankensteinInstantSteelPhase(this LevelEngine level) => level.GetProperty<bool>(FRANKENSTEIN_INSTANT_STEEL);
@@ -78,6 +79,7 @@ namespace MVZ2.GameContent.Difficulties
         public static int GetRedDragonTornadoCount(this LevelEngine level) => level.GetProperty<int>(RED_DRAGON_TORNADO_COUNT);
         public static NamespaceID? GetLockedChestSpitBlueprintID(this LevelEngine level) => level.GetProperty<NamespaceID>(LOCKED_CHEST_SPIT_BLUEPRINT_ID);
         public static int GetLockedChestRequiredStarshards(this LevelEngine level) => level.GetProperty<int>(LOCKED_CHEST_REQUIRED_STARSHARDS);
+        public static int GetMountainBossDropStoneCount(this LevelEngine level) => level.GetProperty<int>(MOUNTAIN_BOSS_DROP_STONE_COUNT);
 
         // Level
         public static readonly VanillaDifficultyPropertyMeta<float> STARSHARD_CARRIER_COUNTER_INCREAMENT = Get<float>("starshardCarrierCounterIncreament", 1f);

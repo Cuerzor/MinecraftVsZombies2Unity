@@ -219,7 +219,7 @@ namespace MVZ2.GameContent.Bosses
                 foreach (var tentacleID in tentacles)
                 {
                     var tentacle = tentacleID.GetEntity(entity.Level);
-                    if (tentacle.ExistsAndAlive() && tentacle.State == KrakenTentacle.STATE_HIDDEN)
+                    if (tentacle.ExistsAndAlive() && tentacle.State != KrakenTentacle.STATE_HIDDEN)
                         return false;
                 }
             }

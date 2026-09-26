@@ -55,6 +55,8 @@ namespace MVZ2.GameContent.Buffs.Level
 
             AddModifier(new NamespaceIDModifier(VanillaDifficultyLevelProps.LOCKED_CHEST_SPIT_BLUEPRINT_ID, SetOperator.Set, LogicBlueprintID.FromEntity(VanillaEnemyID.ironHelmettedZombie)));
             AddModifier(new IntModifier(VanillaDifficultyLevelProps.LOCKED_CHEST_REQUIRED_STARSHARDS, IntegerOperator.Add, 1));
+
+            AddModifier(new IntModifier(VanillaDifficultyLevelProps.MOUNTAIN_BOSS_DROP_STONE_COUNT, IntegerOperator.Add, -1));
             AddAura(new EnemyAura());
         }
 
