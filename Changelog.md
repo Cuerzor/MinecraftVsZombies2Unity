@@ -85,7 +85,6 @@
 - Zombie Cat
   - Stun duration after revival: 1 second -> 0 second
   - Probability of Wisp Fly Spawn: 50% -> 100% (Hard), 50% (Other Difficulties)
-  - Cost in I, Zombie mode: 150 -> 125 
 - Mutant Zombie
   - Now blocks Skeleton Horses from jumping.
 - Nightmare
