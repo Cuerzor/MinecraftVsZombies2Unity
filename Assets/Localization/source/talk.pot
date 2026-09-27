@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-15 07:41+0800\n"
+"POT-Creation-Date: 2026-09-27 11:22+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -10064,7 +10064,7 @@ msgstr ""
 #. Text for talk sentence 1 in talk group palace_1_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:palace_1_map"
-msgid "找回记忆的事情，我会做些准备，你们现在这里安顿下来吧。"
+msgid "找回记忆的事情，我会做些准备，你们先在这里安顿下来吧。"
 msgstr ""
 
 #. Text for talk sentence 2 in talk group palace_1_map's section 0

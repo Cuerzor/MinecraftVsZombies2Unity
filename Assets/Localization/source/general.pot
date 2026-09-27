@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-17 04:55+0800\n"
+"POT-Creation-Date: 2026-09-27 11:41+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1025,47 +1025,47 @@ msgid ""
 msgstr ""
 
 # 梦魇对话框标题
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:532
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:542
 msgid "选择你的命运"
 msgstr ""
 
 # 梦魇对话框文本
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:534
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:544
 msgid "选吧。"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:536
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:546
 msgid "潘多拉的魔盒"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:538
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:548
 msgid "尸潮"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:540
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:550
 msgid "衰老"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:542
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:552
 msgid "疯狂"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:544
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:554
 msgid "成真"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:546
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:556
 msgid "深潜者"
 msgstr ""
 
 # 梦魇选项
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:548
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:558
 msgid "黑太阳"
 msgstr ""
 
@@ -1975,12 +1975,12 @@ msgid "在图鉴中查看"
 msgstr ""
 
 # 血条的文字
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:805
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:813
 msgid "死亡"
 msgstr ""
 
 # 血条的文字
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:807
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:815
 msgid "摧毁"
 msgstr ""
 
@@ -4732,7 +4732,8 @@ msgctxt "music.description"
 msgid ""
 "妖怪之山关卡的音乐。\n"
 "原曲是《东方风神录》中第四关的音乐《Fall of Fall　～ 秋意渐浓之瀑》。\n"
-"===乐评施工中==="
+"秋色将阑，寒冬渐近。\n"
+"碧瀑飞流天外降，枫叶飘零满山红。"
 msgstr ""
 
 #. Name for music mvz2:mountain_final
@@ -4747,7 +4748,9 @@ msgctxt "music.description"
 msgid ""
 "妖怪之山最终关的音乐。\n"
 "是《东方风神录》中第五关的音乐。\n"
-"===乐评施工中==="
+"这次旅途接近尾声了。\n"
+"这里很美，大家都很友好，也都过得很不容易。\n"
+"希望我们都能够度过难关，好好地活下去。"
 msgstr ""
 
 #. Name for archive tag mvz2:prologue

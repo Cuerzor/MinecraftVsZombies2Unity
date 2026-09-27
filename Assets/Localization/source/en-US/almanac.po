@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-25 01:12+0800\n"
-"PO-Revision-Date: 2026-09-25 13:14+0800\n"
+"POT-Creation-Date: 2026-09-27 10:17+0800\n"
+"PO-Revision-Date: 2026-09-27 10:18+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -4965,8 +4965,26 @@ msgstr "Effect: <color=red>x150% attack speed for friendly contraptions, but the
 #. Flavor for artifacts mvz2:krakens_tentacle
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "====施工中===="
+msgid ""
+"克拉肯——不知由何人、于何时何地建造的巨型钢铁怪物。\n"
+"它常常潜入水中，趁人不备将人拉入水中溺死，甚至残忍地啃食活人。\n"
+"\n"
+"它的蓝色眼睛能发射致命魔弹，绿色眼睛能喷射诅咒火焰。\n"
+"而头顶那只激光眼一旦睁开，等待目标的便只有死亡。\n"
+"\n"
+"它那重量级外壳，无论多么强大的力量都无法将其打穿；唯有能量超过几十万K的高能激光武器，才是它为数不多的弱点。\n"
+"而由于某些设计缺陷，克拉肯一旦机身受损，排水需求便会大幅增加。这也成了它最大的弱点之一。"
 msgstr ""
+"The Kraken is a colossal steel monstrosity built by unknown hands, during an unknown time, and at an unknown place.\n"
+"It often lurks underwater, dragging unsuspecting victims down to drown or even savagely devouring them alive.\n"
+"\n"
+"Its blue eye fires lethal demonic projectiles while its green eye spews cursed flames.\n"
+"Once its laser eye on the middle of its head opens, nothing awaits its target but death.\n"
+"\n"
+"Its heavy-duty armor is impervious to even the most powerful attacks. High-energy laser weapons capable of generating temperatures "
+"exceeding hundreds of thousands of Kelvin represent one of its few vulnerabilities.\n"
+"However, due to certain design flaws, the Kraken’s need for water drainage drastically increases whenever its body sustains damage, "
+"making this one of its greatest weaknesses."
 
 #. Header for artifacts mvz2:gale_leaf
 #: Almanac meta file

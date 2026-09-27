@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-25 01:12+0800\n"
+"POT-Creation-Date: 2026-09-27 10:17+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3927,7 +3927,15 @@ msgstr ""
 #. Flavor for artifacts mvz2:krakens_tentacle
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "====施工中===="
+msgid ""
+"克拉肯——不知由何人、于何时何地建造的巨型钢铁怪物。\n"
+"它常常潜入水中，趁人不备将人拉入水中溺死，甚至残忍地啃食活人。\n"
+"\n"
+"它的蓝色眼睛能发射致命魔弹，绿色眼睛能喷射诅咒火焰。\n"
+"而头顶那只激光眼一旦睁开，等待目标的便只有死亡。\n"
+"\n"
+"它那重量级外壳，无论多么强大的力量都无法将其打穿；唯有能量超过几十万K的高能激光武器，才是它为数不多的弱点。\n"
+"而由于某些设计缺陷，克拉肯一旦机身受损，排水需求便会大幅增加。这也成了它最大的弱点之一。"
 msgstr ""
 
 #. Header for artifacts mvz2:gale_leaf

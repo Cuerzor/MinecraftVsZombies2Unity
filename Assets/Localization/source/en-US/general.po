@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-17 04:55+0800\n"
-"PO-Revision-Date: 2026-09-17 16:56+0800\n"
+"POT-Creation-Date: 2026-09-27 11:41+0800\n"
+"PO-Revision-Date: 2026-09-27 13:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1004,39 +1004,39 @@ msgstr ""
 "You have unsaved changes.\n"
 "Are you sure you want to discard all changes and exit?"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:532
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:542
 msgid "选择你的命运"
 msgstr "Choose your fate"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:534
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:544
 msgid "选吧。"
 msgstr "Choose."
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:536
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:546
 msgid "潘多拉的魔盒"
 msgstr "Pandora's Box"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:538
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:548
 msgid "尸潮"
 msgstr "Biohazard"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:540
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:550
 msgid "衰老"
 msgstr "Decrepify"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:542
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:552
 msgid "疯狂"
 msgstr "Insanity"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:544
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:554
 msgid "成真"
 msgstr "Come True"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:546
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:556
 msgid "深潜者"
 msgstr "The Deep Ones"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:548
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:558
 msgid "黑太阳"
 msgstr "The Black Sun"
 
@@ -1922,12 +1922,12 @@ msgid "在图鉴中查看"
 msgstr "View in Almanac"
 
 # 血条的文字
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:805
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:813
 msgid "死亡"
 msgstr "Dead"
 
 # 血条的文字
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:807
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:815
 msgid "摧毁"
 msgstr "Destroyed"
 
@@ -4924,7 +4924,7 @@ msgstr ""
 #: Music meta file
 msgctxt "music.name"
 msgid "秋意阑珊之瀑"
-msgstr "Fallen Fall of Fall"
+msgstr "Fall of Fallen Fall"
 
 #. Origin for music mvz2:mountain_level
 #: Music meta file
@@ -4938,8 +4938,15 @@ msgctxt "music.description"
 msgid ""
 "妖怪之山关卡的音乐。\n"
 "原曲是《东方风神录》中第四关的音乐《Fall of Fall　～ 秋意渐浓之瀑》。\n"
-"===乐评施工中==="
+"秋色将阑，寒冬渐近。\n"
+"碧瀑飞流天外降，枫叶飘零满山红。"
 msgstr ""
+"The theme for the levels of Youkai Mountain.\n"
+"The original soundtrack is <i>Fall of Fall ~ Autumnal Waterfall</i> from "
+"<i>Mountain of Faith</i>.\n"
+"Autumn's hues fade as Winter's chill nears.\n"
+"A jade-green waterfall cascades from the heavens while drifting maple leaves "
+"paint the mountain red."
 
 #. Name for music mvz2:mountain_final
 #: Music meta file
@@ -4953,8 +4960,16 @@ msgctxt "music.description"
 msgid ""
 "妖怪之山最终关的音乐。\n"
 "是《东方风神录》中第五关的音乐。\n"
-"===乐评施工中==="
+"这次旅途接近尾声了。\n"
+"这里很美，大家都很友好，也都过得很不容易。\n"
+"希望我们都能够度过难关，好好地活下去。"
 msgstr ""
+"The theme for the final level of Youkai Mountain.\n"
+"This soundtrack is from the fifth stage of <I>Mountain of faith</i>.\n"
+"This journey is about to come to an end.\n"
+"It's beautiful here, and everyone is friendly, although life hasn't been "
+"easy.\n"
+"I hope we all can get through these hardships and keep living well. "
 
 #. Name for archive tag mvz2:prologue
 #: Archive meta file
