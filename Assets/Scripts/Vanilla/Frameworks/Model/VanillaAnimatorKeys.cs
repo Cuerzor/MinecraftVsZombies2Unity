@@ -5,5 +5,8 @@ namespace MVZ2.Vanilla.Models
     public static class VanillaAnimatorKeys
     {
         public const string main = "main";
+
+        public const string krakenLandTentacleGun1 = "gun1";
+        public const string krakenLandTentacleGun2 = "gun2";
     }
 }

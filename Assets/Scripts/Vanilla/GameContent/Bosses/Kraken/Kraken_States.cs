@@ -51,7 +51,7 @@ namespace MVZ2.GameContent.Bosses
 
                 // Phase 3
                 AddState(new SwitchPhase2State());
-                //AddState(new CommandRoarState());
+                AddState(new CommandRoarState());
                 //AddState(new TimeBombState());
 
                 // Extra
@@ -209,8 +209,8 @@ namespace MVZ2.GameContent.Bosses
             {
                 case STATE_EYES:
                     return HasEyeTarget(entity);
-                    //case STATE_COMMAND_ROAR:
-                    //    return HasCommandRoarTarget(entity);
+                case STATE_COMMAND_ROAR:
+                    return HasCommandRoarTarget(entity);
                     //case STATE_TIME_BOMB:
                     //    return HasTimeBombTarget(entity);
             }
@@ -1307,6 +1307,7 @@ namespace MVZ2.GameContent.Bosses
                         if (timer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_IDLE);
+                            CommandTentaclesToAttack(entity);
                         }
                         break;
                 }
@@ -1346,7 +1347,7 @@ namespace MVZ2.GameContent.Bosses
                 var column = boss.GetMirroredColumn(0, true);
                 var pos = boss.Level.GetEntityGridPosition(column, lane);
                 var spawnParams = boss.GetSpawnParams();
-                spawnParams.SetProperty(EngineEntityProps.FACE_LEFT_AT_DEFAULT, boss.IsFacingLeft());
+                spawnParams.SetProperty(EngineEntityProps.FLIP_X, !boss.IsFacingLeft());
                 spawnParams.SetProperty(KrakenLandTentacle.PROP_FACE_UP, up);
                 var landTentacle = boss.Spawn(VanillaEffectID.krakenLandTentacle, pos, spawnParams);
                 var landTentacles = GetLandTentacles(boss);
@@ -1364,6 +1365,95 @@ namespace MVZ2.GameContent.Bosses
             public const int SUBSTATE_LAND_TENTACLES_SUMMONED = 4;
             public const int SUBSTATE_END_1 = 5;
             public const int SUBSTATE_END_2 = 6;
+        }
+        #endregion
+
+        #region 命令怒吼
+        public static bool HasCommandRoarTarget(Entity entity)
+        {
+            return roarDetector.DetectExists(entity);
+        }
+        private class CommandRoarState : EntityStateMachineState
+        {
+            public CommandRoarState() : base(STATE_COMMAND_ROAR, ANIMATION_STATE_ROAR) { }
+            public override int GetAnimationSubstate(int substate)
+            {
+                switch (substate)
+                {
+                    case SUBSTATE_START:
+                        return ANIMATION_SUBSTATE_START;
+                    case SUBSTATE_ROAR:
+                    case SUBSTATE_ATTACK:
+                        return ANIMATION_SUBSTATE_LOOP;
+                    case SUBSTATE_END:
+                        return ANIMATION_SUBSTATE_END;
+                }
+                return base.GetAnimationSubstate(substate);
+            }
+            public override void OnEnter(EntityStateMachine stateMachine, Entity entity)
+            {
+                base.OnEnter(stateMachine, entity);
+                var substateTimer = stateMachine.GetSubStateTimer(entity);
+                substateTimer.ResetSeconds(1 / 6f);
+            }
+            public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
+            {
+                base.OnUpdateAI(stateMachine, entity);
+                var substate = stateMachine.GetSubState(entity);
+                var timer = stateMachine.GetSubStateTimer(entity);
+                timer.Run(stateMachine.GetSpeed(entity));
+                switch (substate)
+                {
+                    case SUBSTATE_START:
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_ROAR);
+                            timer.ResetSeconds(COMMAND_ROAR_SECONDS);
+                            entity.PlaySound(VanillaSoundID.krakenCommandRoar);
+                            CommandAllLandTentaclesToAim(entity);
+                        }
+                        break;
+                    case SUBSTATE_ROAR:
+                        entity.Level.ShakeScreen(5, 0, 30);
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_ATTACK);
+                            timer.ResetSeconds(ATTACK_SECONDS);
+                        }
+                        break;
+                    case SUBSTATE_ATTACK:
+                        CommandAllLandTentaclesToFire(entity);
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_END);
+                            timer.ResetSeconds(1 / 6f);
+                        }
+                        break;
+                    case SUBSTATE_END:
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartState(entity, STATE_IDLE);
+                            CommandTentaclesToAttack(entity);
+                        }
+                        break;
+                }
+            }
+            public override void OnUpdateLogic(EntityStateMachine machine, Entity entity)
+            {
+                base.OnUpdateLogic(machine, entity);
+                CheckDeath(entity);
+            }
+
+            public const int SUBSTATE_START = 0;
+            public const int SUBSTATE_ROAR = 1;
+            public const int SUBSTATE_ATTACK = 2;
+            public const int SUBSTATE_END = 3;
+            public const int ANIMATION_SUBSTATE_START = 0;
+            public const int ANIMATION_SUBSTATE_LOOP = 1;
+            public const int ANIMATION_SUBSTATE_END = 2;
+            public const float COMMAND_ROAR_SECONDS = 1f;
+            public const float ATTACK_SECONDS = 3f;
+
         }
         #endregion
 
@@ -1488,6 +1578,7 @@ namespace MVZ2.GameContent.Bosses
                 KillAllLandTentacles(entity);
 
                 entity.PlaySound(VanillaSoundID.killed);
+                entity.PlaySound(VanillaSoundID.largeExplosion);
                 entity.Level.AddSlowMotion(1.5f);
                 entity.Level.ShakeScreen(15, 0, 15);
                 var spawnParams = entity.GetSpawnParams();

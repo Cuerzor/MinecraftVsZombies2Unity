@@ -283,22 +283,6 @@ namespace MVZ2.GameContent.Bosses
                 tentacles.Clear();
             }
         }
-        public static void KillAllLandTentacles(Entity entity)
-        {
-            var tentacles = GetLandTentacles(entity);
-            if (tentacles != null)
-            {
-                var effects = new DamageEffectList(VanillaDamageEffects.INSTA_KILL);
-                foreach (var tentacleID in tentacles)
-                {
-                    var tentacle = tentacleID.GetEntity(entity.Level);
-                    if (tentacle == null || tentacle.IsDead)
-                        continue;
-                    tentacle.Die(effects, entity);
-                }
-                tentacles.Clear();
-            }
-        }
         #endregion
 
         #region 眼睛
@@ -479,6 +463,53 @@ namespace MVZ2.GameContent.Bosses
         public static float GetWeakSpotDamage(Entity kraken)
         {
             return WEAKSPOT_DAMAGE;
+        }
+        #endregion
+
+        #region 陆地触手
+        public static void CommandAllLandTentaclesToAim(Entity entity)
+        {
+            var tentacles = GetLandTentacles(entity);
+            if (tentacles != null)
+            {
+                foreach (var tentacleID in tentacles)
+                {
+                    var tentacle = tentacleID.GetEntity(entity.Level);
+                    if (!tentacle.ExistsAndAlive())
+                        continue;
+                    KrakenLandTentacle.AimTarget(tentacle);
+                }
+            }
+        }
+        public static void CommandAllLandTentaclesToFire(Entity entity)
+        {
+            var tentacles = GetLandTentacles(entity);
+            if (tentacles != null)
+            {
+                foreach (var tentacleID in tentacles)
+                {
+                    var tentacle = tentacleID.GetEntity(entity.Level);
+                    if (!tentacle.ExistsAndAlive())
+                        continue;
+                    KrakenLandTentacle.Fire(tentacle);
+                }
+            }
+        }
+        public static void KillAllLandTentacles(Entity entity)
+        {
+            var tentacles = GetLandTentacles(entity);
+            if (tentacles != null)
+            {
+                var effects = new DamageEffectList(VanillaDamageEffects.INSTA_KILL);
+                foreach (var tentacleID in tentacles)
+                {
+                    var tentacle = tentacleID.GetEntity(entity.Level);
+                    if (tentacle == null || tentacle.IsDead)
+                        continue;
+                    tentacle.Die(effects, entity);
+                }
+                tentacles.Clear();
+            }
         }
         #endregion
 

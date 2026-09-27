@@ -583,6 +583,9 @@
     <sound name="kraken_barrage">
         <sample path="mvz2:kraken_barrage" weight="1" />
     </sound>
+    <sound name="kraken_command_roar">
+        <sample path="mvz2:kraken_laser_ready_roar" weight="1" />
+    </sound>
     <sound name="kraken_cursed_flame">
         <sample path="mvz2:dragon_breath" weight="1" />
     </sound>

@@ -3,15 +3,20 @@
 using MVZ2.GameContent.Buffs.Grids;
 using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Entities;
+using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Effects;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Models;
+using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
 using MVZ2.Vanilla.StateMachine;
 using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine.Buffs;
+using PVZEngine.Collisions;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
@@ -20,6 +25,7 @@ using PVZEngine.Models;
 using PVZEngine.Timing;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Timing;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Effects
@@ -46,6 +52,7 @@ namespace MVZ2.GameContent.Effects
         {
             base.UpdateLogic(entity);
             stateMachine.UpdateLogic(entity);
+            UpdateGunRotation(entity);
             UpdateModel(entity);
         }
         public override void PostDeath(Entity entity, DeathInfo deathInfo)
@@ -53,11 +60,48 @@ namespace MVZ2.GameContent.Effects
             base.PostDeath(entity, deathInfo);
             stateMachine.StartState(entity, STATE_DEATH);
         }
+        private static void UpdateGunRotation(Entity entity)
+        {
+            var targetRotation1 = GetGunTargetRotation1(entity);
+            var rotation1 = GetGunRotation1(entity);
+            rotation1 = rotation1 * (1 - GUN_ROTATION_FACTOR) + targetRotation1 * GUN_ROTATION_FACTOR;
+            SetGunRotation1(entity, rotation1);
+
+            var targetRotation2 = GetGunTargetRotation2(entity);
+            var rotation2 = GetGunRotation2(entity);
+            rotation2 = rotation2 * (1 - GUN_ROTATION_FACTOR) + targetRotation2 * GUN_ROTATION_FACTOR;
+            SetGunRotation2(entity, rotation2);
+
+            var cycleSpeed1 = GetGunCycleSpeed1(entity);
+            cycleSpeed1 = Mathf.Max(0, cycleSpeed1 - CYCLE_SPEED_FADE_SPEED);
+            SetGunCycleSpeed1(entity, cycleSpeed1);
+
+            var cycleSpeed2 = GetGunCycleSpeed2(entity);
+            cycleSpeed2 = Mathf.Max(0, cycleSpeed2 - CYCLE_SPEED_FADE_SPEED);
+            SetGunCycleSpeed2(entity, cycleSpeed2);
+        }
         private static void UpdateModel(Entity entity)
         {
-            entity.SetAnimationInt("GunDirection", GetAnimationGunDirection(entity));
-            entity.SetAnimationFloat("GunRotation1", GetGunRotation1(entity));
-            entity.SetAnimationFloat("GunRotation2", GetGunRotation2(entity));
+            var gunDirection = GetAnimationGunDirection(entity);
+            var mainAnimator = entity.GetAnimatorInterface(VanillaAnimatorKeys.main);
+            if (mainAnimator != null)
+            {
+                entity.SetAnimationInt("HatchDirection", gunDirection);
+            }
+            var gun1Animator = entity.GetAnimatorInterface(VanillaAnimatorKeys.krakenLandTentacleGun1);
+            if (gun1Animator != null)
+            {
+                gun1Animator.SetInt("GunDirection", gunDirection);
+                gun1Animator.SetFloat("GunRotation", GetGunRotation1(entity));
+                gun1Animator.SetFloat("GunCycleSpeed", GetGunCycleSpeed1(entity));
+            }
+            var gun2Animator = entity.GetAnimatorInterface(VanillaAnimatorKeys.krakenLandTentacleGun2);
+            if (gun2Animator != null)
+            {
+                gun2Animator.SetInt("GunDirection", gunDirection);
+                gun2Animator.SetFloat("GunRotation", GetGunRotation2(entity));
+                gun2Animator.SetFloat("GunCycleSpeed", GetGunCycleSpeed2(entity));
+            }
         }
         public static void DestroyWholeLane(Entity entity)
         {
@@ -113,17 +157,110 @@ namespace MVZ2.GameContent.Effects
                 timeoutTimer?.Reset();
             }
         }
-        public static Vector3 GetNearTentaclePosition(Entity entity)
+
+        #region 瞄准目标
+        public static void AimTarget(Entity tentacle)
         {
-            var offset = NEAR_TENTACLE_POSITION;
+            AimTargetGun1(tentacle);
+            AimTargetGun2(tentacle);
+        }
+        public static void AimTargetGun1(Entity tentacle)
+        {
+            var point = GetNearGunRootPosition(tentacle);
+            var target = gun1Detector.DetectEntityWithTheLeast(tentacle, e => (e.GetCenter() - point).sqrMagnitude);
+            if (!target.ExistsAndAlive())
+                return;
+            SetGunTargetRotation1(tentacle, GetGunRotationByDirection(tentacle, target.GetCenter() - point));
+        }
+        public static void AimTargetGun2(Entity tentacle)
+        {
+            var point = GetFarGunRootPosition(tentacle);
+            var target = gun2Detector.DetectEntityWithTheLeast(tentacle, e => (e.GetCenter() - point).sqrMagnitude);
+            if (!target.ExistsAndAlive())
+                return;
+            SetGunTargetRotation2(tentacle, GetGunRotationByDirection(tentacle, target.GetCenter() - point));
+        }
+        public static float GetGunRotationByDirection(Entity entity, Vector3 direction)
+        {
+            var vector2 = new Vector2(direction.x, direction.z);
+            if (GetFaceUp(entity))
+            {
+                return -Vector2.SignedAngle(Vector2.up, vector2);
+            }
+            else
+            {
+                return -Vector2.SignedAngle(Vector2.down, vector2);
+            }
+        }
+        public static Vector3 GetGunDirectionByRotation(Entity entity, float rotation)
+        {
+            if (GetFaceUp(entity))
+            {
+                return Vector3.forward.RotateClockwiseXZ(-rotation);
+            }
+            else
+            {
+                return Vector3.back.RotateClockwiseXZ(-rotation);
+            }
+        }
+        #endregion
+
+        #region 发射
+        public static void Fire(Entity entity)
+        {
+            FireGun1(entity);
+            FireGun2(entity);
+        }
+        public static void FireGun1(Entity entity)
+        {
+            var direction = GetGunDirectionByRotation(entity, GetGunRotation1(entity));
+            var position = GetNearGunRootPosition(entity) + direction * GUN_LENGTH;
+            var velocity = direction * GATLIN_BULLET_SPEED;
+            var damage = entity.GetDamage() * GATLIN_DAMAGE_MULTIPLIER;
+            FireGun(entity, position, velocity, damage);
+            SetGunCycleSpeed1(entity, MAX_GUN_CYCLE_SPEED);
+        }
+        public static void FireGun2(Entity entity)
+        {
+            var direction = GetGunDirectionByRotation(entity, GetGunRotation2(entity));
+            var position = GetFarGunRootPosition(entity) + direction * GUN_LENGTH;
+            var velocity = direction * GATLIN_BULLET_SPEED;
+            var damage = entity.GetDamage() * GATLIN_DAMAGE_MULTIPLIER;
+            FireGun(entity, position, velocity, damage);
+            SetGunCycleSpeed2(entity, MAX_GUN_CYCLE_SPEED);
+        }
+        public static void FireGun(Entity entity, Vector3 point, Vector3 velocity, float damage)
+        {
+            var args = entity.GetShootParams();
+            args.projectileID = VanillaProjectileID.bullet;
+            args.velocity = velocity;
+            args.position = point;
+            args.damage = damage;
+            entity.ShootProjectile(args);
+            entity.PlaySound(VanillaSoundID.gunShot, volume: 0.1f);
+        }
+        #endregion
+        public static Vector3 GetNearSegmentPosition(Entity entity)
+        {
+            var offset = NEAR_TENTACLE_OFFSET;
             offset.x *= entity.GetFacingX();
             return entity.Position + offset;
         }
-        public static Vector3 GetFarTentaclePosition(Entity entity)
+        public static Vector3 GetFarSegmentPosition(Entity entity)
         {
-            var offset = FAR_TENTACLE_POSITION;
+            var offset = FAR_TENTACLE_OFFSET;
             offset.x *= entity.GetFacingX();
             return entity.Position + offset;
+        }
+        public static Vector3 GetNearGunRootPosition(Entity entity)
+        {
+            var segmentPosition = GetNearSegmentPosition(entity);
+            return segmentPosition + (GetFaceUp(entity) ? GUN_ROOT_OFFSET_UP : GUN_ROOT_OFFSET_DOWN);
+        }
+        public static Vector3 GetFarGunRootPosition(Entity entity)
+        {
+            var segmentPosition = GetFarSegmentPosition(entity);
+            return segmentPosition + (GetFaceUp(entity) ? GUN_ROOT_OFFSET_UP : GUN_ROOT_OFFSET_DOWN);
         }
         public static int GetAnimationGunDirection(Entity entity)
         {
@@ -146,6 +283,14 @@ namespace MVZ2.GameContent.Effects
         public static float GetGunRotation1(Entity entity) => entity.GetProperty<float>(PROP_GUN_ROTATION_1);
         public static void SetGunRotation2(Entity entity, float value) => entity.SetProperty(PROP_GUN_ROTATION_2, value);
         public static float GetGunRotation2(Entity entity) => entity.GetProperty<float>(PROP_GUN_ROTATION_2);
+        public static void SetGunTargetRotation1(Entity entity, float value) => entity.SetProperty(PROP_GUN_TARGET_ROTATION_1, value);
+        public static float GetGunTargetRotation1(Entity entity) => entity.GetProperty<float>(PROP_GUN_TARGET_ROTATION_1);
+        public static void SetGunTargetRotation2(Entity entity, float value) => entity.SetProperty(PROP_GUN_TARGET_ROTATION_2, value);
+        public static float GetGunTargetRotation2(Entity entity) => entity.GetProperty<float>(PROP_GUN_TARGET_ROTATION_2);
+        public static void SetGunCycleSpeed1(Entity entity, float value) => entity.SetProperty(PROP_GUN_CYCLE_SPEED_1, value);
+        public static float GetGunCycleSpeed1(Entity entity) => entity.GetProperty<float>(PROP_GUN_CYCLE_SPEED_1);
+        public static void SetGunCycleSpeed2(Entity entity, float value) => entity.SetProperty(PROP_GUN_CYCLE_SPEED_2, value);
+        public static float GetGunCycleSpeed2(Entity entity) => entity.GetProperty<float>(PROP_GUN_CYCLE_SPEED_2);
         public const int STATE_IDLE = VanillaEffectStates.IDLE;
         public const int STATE_APPEAR = VanillaEffectStates.KRAKEN_LAND_TENTACLE_APPEAR;
         public const int STATE_DEATH = VanillaEffectStates.KRAKEN_LAND_TENTACLE_DEATH;
@@ -154,15 +299,65 @@ namespace MVZ2.GameContent.Effects
         public const int ANIMATION_STATE_APPEAR = 10001;
         public const int ANIMATION_STATE_SHAKE = 10002;
 
-        public static readonly Vector3 NEAR_TENTACLE_POSITION = new Vector3(270, 80, 0);
-        public static readonly Vector3 FAR_TENTACLE_POSITION = new Vector3(570, 80, 0);
+        public const int NEAR_GUN_INDEX = 0;
+        public const int FAR_GUN_INDEX = 1;
+        public const float GUN_ROTATION_FACTOR = 0.25f;
+        public const float GATLIN_BULLET_SPEED = 20f;
+        public const float GATLIN_DAMAGE_MULTIPLIER = 0.03f;
+        public const float MAX_GUN_CYCLE_SPEED = 8f;
+        public const float CYCLE_SPEED_FADE_SPEED = 3 / 10f;
+
+        public static readonly Vector3 NEAR_TENTACLE_OFFSET = new Vector3(275, 85, 0);
+        public static readonly Vector3 FAR_TENTACLE_OFFSET = new Vector3(565, 85, 0);
+        public static readonly Vector3 GUN_ROOT_OFFSET_UP = new Vector3(0, -30, 27);
+        public static readonly Vector3 GUN_ROOT_OFFSET_DOWN = new Vector3(0, -30, 14);
+        public const float GUN_LENGTH = 40;
 
         public static readonly VanillaEntityPropertyMeta<bool> PROP_FACE_UP = new VanillaEntityPropertyMeta<bool>("face_up");
+        public static readonly VanillaEntityPropertyMeta<float> PROP_GUN_TARGET_ROTATION_1 = new VanillaEntityPropertyMeta<float>("gun_target_rotation_1");
         public static readonly VanillaEntityPropertyMeta<float> PROP_GUN_ROTATION_1 = new VanillaEntityPropertyMeta<float>("gun_rotation_1");
+        public static readonly VanillaEntityPropertyMeta<float> PROP_GUN_CYCLE_SPEED_1 = new VanillaEntityPropertyMeta<float>("gun_cycle_speed_1");
+        public static readonly VanillaEntityPropertyMeta<float> PROP_GUN_TARGET_ROTATION_2 = new VanillaEntityPropertyMeta<float>("gun_target_rotation_2");
         public static readonly VanillaEntityPropertyMeta<float> PROP_GUN_ROTATION_2 = new VanillaEntityPropertyMeta<float>("gun_rotation_2");
+        public static readonly VanillaEntityPropertyMeta<float> PROP_GUN_CYCLE_SPEED_2 = new VanillaEntityPropertyMeta<float>("gun_cycle_speed_2");
 
+        private static readonly Detector gun1Detector = new GunDetector(NEAR_GUN_INDEX);
+        private static readonly Detector gun2Detector = new GunDetector(FAR_GUN_INDEX);
         private static readonly KrakenLandTentacleStateMachine stateMachine = new KrakenLandTentacleStateMachine();
 
+        public class GunDetector : Detector
+        {
+            public GunDetector(int gunIndex)
+            {
+                this.gunIndex = gunIndex;
+            }
+            protected override Bounds GetDetectionBounds(Entity self)
+            {
+                var radius = self.GetRange();
+                var sizeX = radius * 2;
+                var sizeY = 4;
+                var sizeZ = radius;
+                var point = GetPoint(self);
+                var centerX = point.x;
+                var centerY = point.y;
+                var centerZ = point.z + sizeZ * (GetFaceUp(self) ? 0.5f : -0.5f);
+                return new Bounds(new Vector3(centerX, centerY, centerZ), new Vector3(sizeX, sizeY, sizeZ));
+            }
+            protected override bool ValidateCollider(DetectionParams param, IEntityCollider collider)
+            {
+                if (!base.ValidateCollider(param, collider))
+                    return false;
+                var self = param.entity;
+                var radius = self.GetRange();
+                var point = GetPoint(self);
+                return collider.CheckSphere(point, radius);
+            }
+            public Vector3 GetPoint(Entity self)
+            {
+                return gunIndex == NEAR_GUN_INDEX ? GetNearGunRootPosition(self) : GetFarGunRootPosition(self);
+            }
+            public int gunIndex;
+        }
         public class KrakenLandTentacleStateMachine : EntityStateMachine
         {
             public KrakenLandTentacleStateMachine()
@@ -229,8 +424,8 @@ namespace MVZ2.GameContent.Effects
                 if (timer.Expired)
                 {
                     entity.PlaySound(VanillaSoundID.largeExplosion);
-                    Explosion.Spawn(entity, GetNearTentaclePosition(entity), 120f);
-                    Explosion.Spawn(entity, GetFarTentaclePosition(entity), 120f);
+                    Explosion.Spawn(entity, GetNearSegmentPosition(entity), 120f);
+                    Explosion.Spawn(entity, GetFarSegmentPosition(entity), 120f);
                     entity.Remove();
                 }
             }

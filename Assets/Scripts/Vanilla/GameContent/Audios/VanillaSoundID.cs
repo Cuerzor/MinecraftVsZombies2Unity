@@ -156,6 +156,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID krakenAbsorb = Get("kraken_absorb");
         public readonly static NamespaceID krakenAbsorbRoar = Get("kraken_absorb_roar");
         public readonly static NamespaceID krakenBarrage = Get("kraken_barrage");
+        public readonly static NamespaceID krakenCommandRoar = Get("kraken_command_roar");
         public readonly static NamespaceID krakenEyes = Get("kraken_eyes");
         public readonly static NamespaceID krakenCursedFlame = Get("kraken_cursed_flame");
         public readonly static NamespaceID krakenDeath = Get("kraken_death");

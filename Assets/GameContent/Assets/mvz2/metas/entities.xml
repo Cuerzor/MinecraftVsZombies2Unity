@@ -5356,12 +5356,16 @@
                 <id name="mvz2:deathSound" value="mvz2:glass_break" />
             </properties>
         </entity>
-        <entity template="boss" id="kraken_land_tentacle" name="克拉肯的陆地触手">
+        <entity template="effect" id="kraken_land_tentacle" name="克拉肯的陆地触手">
             <properties>
                 <int name="mvz2:waterInteraction" value="0" />
+                <float name="mvz2:range" value="320" />
+                <float name="mvz2:damage" value="100" />
                 <bool name="mvz2:depth_test" value="true" />
                 <vector3 name="mvz2:size" x="720" y="80" z="60" />
+                <vector3 name="mvz2:boundsPivot" x="1" y="0" z="0.5" />
                 <bool name="mvz2:shadowHidden" value="true" />
+                <bool name="mvz2:faceLeftAtDefault" value="true" />
             </properties>
         </entity>
     </entries>
