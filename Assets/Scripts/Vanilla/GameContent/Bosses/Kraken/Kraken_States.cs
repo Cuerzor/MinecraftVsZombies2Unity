@@ -1562,20 +1562,26 @@ namespace MVZ2.GameContent.Bosses
             {
                 switch (substate)
                 {
-                    case SUBSTATE_EXPLODED:
-                        return ANIMATION_SUBSTATE_END;
+                    case SUBSTATE_START:
+                        return ANIMATION_SUBSTATE_START;
+                    case SUBSTATE_FALL:
+                    case SUBSTATE_FALLEN:
+                        return ANIMATION_SUBSTATE_FALL;
+                    case SUBSTATE_SINK:
+                        return ANIMATION_SUBSTATE_SINK;
                 }
-                return ANIMATION_SUBSTATE_START;
+                return ANIMATION_SUBSTATE_LOOP;
             }
             public override void OnEnter(EntityStateMachine stateMachine, Entity entity)
             {
                 base.OnEnter(stateMachine, entity);
                 var substateTimer = stateMachine.GetSubStateTimer(entity);
-                substateTimer.ResetSeconds(4f);
+                substateTimer.ResetSeconds(1/6f);
                 SetInactive(entity, false);
                 SetShadowAlpha(entity, 1);
 
                 KillAllLandTentacles(entity);
+                KillAllTentacles(entity);
 
                 entity.PlaySound(VanillaSoundID.killed);
                 entity.PlaySound(VanillaSoundID.largeExplosion);
@@ -1590,24 +1596,46 @@ namespace MVZ2.GameContent.Bosses
                 base.OnUpdateLogic(stateMachine, entity);
                 var substate = stateMachine.GetSubState(entity);
                 var timer = stateMachine.GetSubStateTimer(entity);
-                timer.Run(stateMachine.GetSpeed(entity));
+                timer.Run();
                 switch (substate)
                 {
                     case SUBSTATE_START:
-                        if (timer.PassedSecondsFromMax(0.2f))
+                        if (timer.Expired)
                         {
+                            stateMachine.StartSubState(entity, SUBSTATE_LOOP);
+                            timer.ResetSeconds(3f);
                             entity.PlaySound(VanillaSoundID.krakenDeath);
-                            KillAllTentacles(entity);
                         }
+                        break;
+                    case SUBSTATE_LOOP:
                         if (timer.Expired)
                         {
                             entity.PlaySound(VanillaSoundID.largeExplosion);
                             Explosion.Spawn(entity, entity.GetCenter(), 240f);
-                            stateMachine.StartSubState(entity, SUBSTATE_EXPLODED);
-                            timer.ResetSeconds(5f);
+                            stateMachine.StartSubState(entity, SUBSTATE_FALL);
+                            entity.Level.ShakeScreen(30, 0, 15);
+                            timer.ResetSeconds(0.5f);
                         }
                         break;
-                    case SUBSTATE_EXPLODED:
+                    case SUBSTATE_FALL:
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_FALLEN);
+                            timer.ResetSeconds(2f);
+
+                            entity.Level.ShakeScreen(10, 0, 15);
+                            PlaySplash(entity);
+                        }
+                        break;
+                    case SUBSTATE_FALLEN:
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_SINK);
+                            timer.ResetSeconds(2f);
+                        }
+                        break;
+                    case SUBSTATE_SINK:
+                        SetShadowAlpha(entity, timer.GetTimeoutPercentage());
                         if (timer.Expired)
                         {
                             entity.Remove();
@@ -1616,9 +1644,14 @@ namespace MVZ2.GameContent.Bosses
                 }
             }
             public const int SUBSTATE_START = 0;
-            public const int SUBSTATE_EXPLODED = 1;
+            public const int SUBSTATE_LOOP = 1;
+            public const int SUBSTATE_FALL = 2;
+            public const int SUBSTATE_FALLEN = 3;
+            public const int SUBSTATE_SINK = 4;
             public const int ANIMATION_SUBSTATE_START = 0;
-            public const int ANIMATION_SUBSTATE_END = 1;
+            public const int ANIMATION_SUBSTATE_LOOP = 1;
+            public const int ANIMATION_SUBSTATE_FALL = 2;
+            public const int ANIMATION_SUBSTATE_SINK = 3;
         }
         #endregion
 

@@ -426,6 +426,7 @@ namespace MVZ2.GameContent.Effects
                     entity.PlaySound(VanillaSoundID.largeExplosion);
                     Explosion.Spawn(entity, GetNearSegmentPosition(entity), 120f);
                     Explosion.Spawn(entity, GetFarSegmentPosition(entity), 120f);
+                    entity.Level.ShakeScreen(10, 0, 15);
                     entity.Remove();
                 }
             }
