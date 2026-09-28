@@ -26,6 +26,7 @@ using PVZEngine.Models;
 using PVZEngine.Timing;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Bosses
@@ -634,9 +635,11 @@ namespace MVZ2.GameContent.Bosses
                     case SUBSTATE_GATLIN:
                         for (int i = 0; i < substateTimer.PassedIntervalCount(GATLIN_INTERVAL); i++)
                         {
+                            var angleOffset = entity.RNG.Next(-GATLIN_ANGLE_OFFSET, GATLIN_ANGLE_OFFSET);
+                            var direction = entity.GetFacingDirection().RotateClockwiseXZ(angleOffset);
                             var args = entity.GetShootParams();
                             args.projectileID = VanillaProjectileID.bullet;
-                            args.velocity = entity.GetFacingDirection() * GATLIN_BULLET_SPEED;
+                            args.velocity = direction * GATLIN_BULLET_SPEED;
                             args.position = GetGatlinBulletPosition(entity);
                             args.damage = entity.GetDamage() * GATLIN_DAMAGE_MULTIPLIER;
                             entity.ShootProjectile(args);

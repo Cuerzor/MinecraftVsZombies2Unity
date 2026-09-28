@@ -133,6 +133,8 @@ namespace MVZ2.GameContent.Bosses
         public const int WEAPON_LASER = 2;
         public const int WEAPON_SUMMON = 3;
 
+        public const float GATLIN_ANGLE_OFFSET = 5;
+
         public static int[] actionPool = new int[]
         {
             ACTION_GATLIN,

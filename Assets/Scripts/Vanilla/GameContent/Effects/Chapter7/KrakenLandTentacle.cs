@@ -214,6 +214,7 @@ namespace MVZ2.GameContent.Effects
         public static void FireGun1(Entity entity)
         {
             var direction = GetGunDirectionByRotation(entity, GetGunRotation1(entity));
+            direction = direction.RotateClockwiseXZ(entity.RNG.Next(-GATLIN_ANGLE_OFFSET, GATLIN_ANGLE_OFFSET));
             var position = GetNearGunRootPosition(entity) + direction * GUN_LENGTH;
             var velocity = direction * GATLIN_BULLET_SPEED;
             var damage = entity.GetDamage() * GATLIN_DAMAGE_MULTIPLIER;
@@ -223,6 +224,7 @@ namespace MVZ2.GameContent.Effects
         public static void FireGun2(Entity entity)
         {
             var direction = GetGunDirectionByRotation(entity, GetGunRotation2(entity));
+            direction = direction.RotateClockwiseXZ(entity.RNG.Next(-GATLIN_ANGLE_OFFSET, GATLIN_ANGLE_OFFSET));
             var position = GetFarGunRootPosition(entity) + direction * GUN_LENGTH;
             var velocity = direction * GATLIN_BULLET_SPEED;
             var damage = entity.GetDamage() * GATLIN_DAMAGE_MULTIPLIER;
@@ -306,6 +308,7 @@ namespace MVZ2.GameContent.Effects
         public const float GATLIN_DAMAGE_MULTIPLIER = 0.03f;
         public const float MAX_GUN_CYCLE_SPEED = 8f;
         public const float CYCLE_SPEED_FADE_SPEED = 3 / 10f;
+        public const float GATLIN_ANGLE_OFFSET = 5;
 
         public static readonly Vector3 NEAR_TENTACLE_OFFSET = new Vector3(275, 85, 0);
         public static readonly Vector3 FAR_TENTACLE_OFFSET = new Vector3(565, 85, 0);
