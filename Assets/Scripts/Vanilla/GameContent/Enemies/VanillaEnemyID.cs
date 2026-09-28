@@ -80,6 +80,7 @@ namespace MVZ2.GameContent.Enemies
         public const string creaking = "creaking";
         public const string zombieCow = "zombie_cow";
         public const string bubble = "bubble";
+        public const string drowned = "drowned";
     }
     public static class VanillaEnemyID
     {
@@ -156,6 +157,7 @@ namespace MVZ2.GameContent.Enemies
         public static readonly NamespaceID creaking = Get(VanillaEnemyNames.creaking);
         public static readonly NamespaceID zombieCow = Get(VanillaEnemyNames.zombieCow);
         public static readonly NamespaceID bubble = Get(VanillaEnemyNames.bubble);
+        public static readonly NamespaceID drowned = Get(VanillaEnemyNames.drowned);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

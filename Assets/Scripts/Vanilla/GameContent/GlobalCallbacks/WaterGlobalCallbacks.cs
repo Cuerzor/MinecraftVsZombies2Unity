@@ -33,7 +33,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             // 障碍物、小推车：如果重力大于0，沉没。否则漂在水面上。
             UpdateWater(entity);
         }
-        private void TriggerWaterInteraction(Entity entity, int action)
+        private static void TriggerWaterInteraction(Entity entity, int action)
         {
             var callbackParam = new VanillaLevelCallbacks.WaterInteractionParams()
             {
@@ -42,7 +42,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             };
             entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_WATER_INTERACTION, callbackParam, action);
         }
-        private void UpdateWater(Entity entity)
+        public static void UpdateWater(Entity entity)
         {
             bool water = entity.IsOnWater();
             if (!water)

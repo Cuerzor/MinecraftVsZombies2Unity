@@ -418,7 +418,7 @@ namespace MVZ2.GameContent.Bosses
                         if (timer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_IDLE);
-                            CommandTentaclesToAttack(entity);
+                            PostStateAttack(entity);
                         }
                         break;
                 }
@@ -690,7 +690,7 @@ namespace MVZ2.GameContent.Bosses
                         if (timer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_IDLE);
-                            CommandTentaclesToAttack(entity);
+                            PostStateAttack(entity);
                         }
                         break;
                 }
@@ -825,7 +825,7 @@ namespace MVZ2.GameContent.Bosses
                         if (timer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_IDLE);
-                            CommandTentaclesToAttack(entity);
+                            PostStateAttack(entity);
                         }
                         break;
                 }
@@ -997,7 +997,7 @@ namespace MVZ2.GameContent.Bosses
                         if (timer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_IDLE);
-                            CommandTentaclesToAttack(entity);
+                            PostStateAttack(entity);
                         }
                         break;
                 }
@@ -1184,7 +1184,7 @@ namespace MVZ2.GameContent.Bosses
                 if (timer.Expired)
                 {
                     stateMachine.StartState(entity, STATE_IDLE);
-                    CommandTentaclesToAttack(entity);
+                    PostStateAttack(entity);
                 }
             }
             public override void OnUpdateLogic(EntityStateMachine machine, Entity entity)
@@ -1304,7 +1304,7 @@ namespace MVZ2.GameContent.Bosses
                         if (timer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_IDLE);
-                            CommandTentaclesToAttack(entity);
+                            PostStateAttack(entity);
                         }
                         break;
                 }
@@ -1430,7 +1430,7 @@ namespace MVZ2.GameContent.Bosses
                         if (timer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_IDLE);
-                            CommandTentaclesToAttack(entity);
+                            PostStateAttack(entity);
                         }
                         break;
                 }
@@ -1561,7 +1561,7 @@ namespace MVZ2.GameContent.Bosses
                         if (timer.Expired)
                         {
                             stateMachine.StartState(entity, STATE_IDLE);
-                            CommandTentaclesToAttack(entity);
+                            PostStateAttack(entity);
                         }
                         break;
                 }

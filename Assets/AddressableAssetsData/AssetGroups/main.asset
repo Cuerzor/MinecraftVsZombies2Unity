@@ -15220,6 +15220,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fd6b648c3ace4054eba0eaec5b127edc
+    m_Address: mvz2:enemy/mountain/drowned
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fd81cc50c2effc04687a0f7feb588738
     m_Address: mvz2:enemy/dream/parasite_terror
     m_ReadOnly: 0

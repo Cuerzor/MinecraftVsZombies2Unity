@@ -375,6 +375,9 @@
     <model name="creaking" type="entity" path="mvz2:enemy/mountain/creaking" width="62" height="152" xOffset="0" yOffset="-64"/>
     <model name="zombie_cow" type="entity" path="mvz2:enemy/ship/zombie_cow" width="86" height="72" xOffset="11" yOffset="-32"/>
     <model name="bubble" type="entity" path="mvz2:enemy/mountain/bubble" width="80" height="80" xOffset="0" yOffset="-40"/>
+    <model name="drowned" type="entity" path="mvz2:enemy/mountain/drowned" width="64" height="96" xOffset="10" yOffset="-44">
+        <armorconfig>mvz2:humanoid</armorconfig>
+    </model>
 
 
     <!-- Obstacles -->

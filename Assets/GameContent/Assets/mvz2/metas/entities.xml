@@ -3290,6 +3290,13 @@
                 <int name="mvz2:cost" value="0" />
             </properties>
         </entity>
+        <entity template="drowned" id="drowned" name="溺尸" deathMessage="沉入海底">
+            <behaviours includeSelf="false"/>
+            <properties>
+                <int name="mvz2:cost" value="50" />
+                <int name="mvz2:teleporter_cost" value="-25" />
+            </properties>
+        </entity>
 
         <!-- Obstacles -->
         <entity template="obstacle" id="gargoyle_statue" name="石像鬼雕像">
