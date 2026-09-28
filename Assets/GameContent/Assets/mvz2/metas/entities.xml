@@ -3297,6 +3297,22 @@
                 <int name="mvz2:teleporter_cost" value="-25" />
             </properties>
         </entity>
+        <entity template="drowned" id="leather_capped_drowned" name="皮帽溺尸" deathMessage="沉入海底">
+            <behaviours includeSelf="false"/>
+            <properties>
+                <id name="mvz2:starting_armor" value="mvz2:leather_cap" />
+                <int name="mvz2:cost" value="75" />
+                <int name="mvz2:teleporter_cost" value="-50" />
+            </properties>
+        </entity>
+        <entity template="drowned" id="iron_helmetted_drowned" name="铁盔溺尸" deathMessage="沉入海底">
+            <behaviours includeSelf="false"/>
+            <properties>
+                <id name="mvz2:starting_armor" value="mvz2:iron_helmet" />
+                <int name="mvz2:cost" value="125" />
+                <int name="mvz2:teleporter_cost" value="-75" />
+            </properties>
+        </entity>
 
         <!-- Obstacles -->
         <entity template="obstacle" id="gargoyle_statue" name="石像鬼雕像">

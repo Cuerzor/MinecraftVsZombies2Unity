@@ -4376,6 +4376,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 46ae3466e50026e44918c501f0c02ba9
+    m_Address: mvz2:enemy/mountain/leather_capped_drowned
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 46b81ca814bbeea46b60ea83192a8c5b
     m_Address: mvz2:scifi_laser
     m_ReadOnly: 0
@@ -8350,6 +8357,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 879d4f2efbb04984881af139f0189b52
+    m_Address: mvz2:enemy/mountain/iron_helmetted_drowned
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 87b336d7b20b7a145a9300914c7bf0e8
     m_Address: mvz2:characters/marisa
     m_ReadOnly: 0
@@ -9307,6 +9321,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 966ec5d1b3ab917429cae0355d2d4a5c
+    m_Address: mvz2:enemy/mountain/drowned
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9696331d07114754fbccc29acd1b4846
     m_Address: mvz2:map/gensokyo/pins/castle
@@ -15249,7 +15270,7 @@ MonoBehaviour:
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fd6b648c3ace4054eba0eaec5b127edc
-    m_Address: mvz2:enemy/mountain/drowned
+    m_Address: mvz2:enemy/mountain/drowned_base
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

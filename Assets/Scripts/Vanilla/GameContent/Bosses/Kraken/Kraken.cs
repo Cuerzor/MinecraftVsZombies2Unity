@@ -557,26 +557,25 @@ namespace MVZ2.GameContent.Bosses
             {
                 lanes.Add(l);
             }
-            lanes.RandomKeep(2, entity.RNG);
+            lanes.RandomKeep(DROWNED_SUMMON_COUNT, entity.RNG);
             foreach (var lane in lanes)
             {
                 SummonADrowned(entity, column, lane);
             }
         }
-        public static NamespaceID? GetRandomDrownedStartingArmor(Entity boss)
+        public static NamespaceID GetRandomDrownedID(Entity boss)
         {
             var rng = boss.RNG;
-            return drownedArmors.WeightedRandom(drownedArmorWeights, rng);
+            return drownedID.WeightedRandom(drownedIDWeights, rng);
         }
         public static void SummonADrowned(Entity entity, int column, int lane)
         {
             var position = entity.Level.GetEntityGridPosition(column, lane);
             position.y += -100;
 
-            var startingArmor = GetRandomDrownedStartingArmor(entity);
+            var id = GetRandomDrownedID(entity);
             var spawnParam = entity.GetSpawnParams();
-            spawnParam.SetProperty(VanillaEnemyProps.STARTING_ARMOR, startingArmor);
-            var drowned = entity.Spawn(VanillaEnemyID.drowned, position, spawnParam);
+            var drowned = entity.Spawn(id, position, spawnParam);
             if (drowned != null)
             {
                 WaterGlobalCallbacks.UpdateWater(drowned);
@@ -641,17 +640,17 @@ namespace MVZ2.GameContent.Bosses
         public static readonly Vector3 MOUTH_OFFSET = new Vector3(130, 0, -50);
         public static readonly Vector3 WEAKSPOT_OFFSET = new Vector3(-85, 20, 0);
         public static readonly Vector3 FALLEN_BOUNDS_OFFSET = new Vector3(0, -140, 0);
-        public static readonly NamespaceID?[] drownedArmors = new NamespaceID?[]
+        public static readonly NamespaceID[] drownedID = new NamespaceID[]
         {
-            null,
-            VanillaArmorID.leatherCap,
-            VanillaArmorID.ironHelmet
+            VanillaEnemyID.drowned,
+            VanillaEnemyID.leatherCappedDrowned,
+            VanillaEnemyID.ironHelmettedDrowned
         };
-        public static readonly float[] drownedArmorWeights = new float[]
+        public static readonly float[] drownedIDWeights = new float[]
         {
             6,
             3,
-            1
+            1,
         };
 
         public const int PHASE_1 = 0;
@@ -693,6 +692,7 @@ namespace MVZ2.GameContent.Bosses
         public const float PHASE_3_THRESOLD_HP_PERCENTAGE = 1 / 3f;
 
         public const int TIME_BOMB_TARGET_COLUMN_OFFSET = 2;
+        public const int DROWNED_SUMMON_COUNT = 3;
 
         // Phase 1
         public const int STATE_HIDDEN = VanillaBossStates.KRAKEN_HIDDEN;

@@ -378,6 +378,12 @@
     <model name="drowned" type="entity" path="mvz2:enemy/mountain/drowned" width="64" height="96" xOffset="10" yOffset="-44">
         <armorconfig>mvz2:humanoid</armorconfig>
     </model>
+    <model name="leather_capped_drowned" type="entity" path="mvz2:enemy/mountain/leather_capped_drowned" width="64" height="96" xOffset="10" yOffset="-44">
+        <armorconfig>mvz2:humanoid</armorconfig>
+    </model>
+    <model name="iron_helmetted_drowned" type="entity" path="mvz2:enemy/mountain/iron_helmetted_drowned" width="64" height="96" xOffset="10" yOffset="-44">
+        <armorconfig>mvz2:humanoid</armorconfig>
+    </model>
 
 
     <!-- Obstacles -->
