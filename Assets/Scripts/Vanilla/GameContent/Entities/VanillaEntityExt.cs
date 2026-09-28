@@ -46,6 +46,7 @@ using PVZEngine.Tools;
 using PVZEngine.Tools.Random;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using GridLayerData = System.ValueTuple<PVZEngine.Grids.LawnGrid, PVZEngine.NamespaceID>;
 
 namespace MVZ2.Vanilla.Entities
@@ -1334,6 +1335,26 @@ namespace MVZ2.Vanilla.Entities
             var minLane = Mathf.Min(lane1, lane2);
             var maxLane = Mathf.Max(lane1, lane2);
             return new RectInt(minColumn, minLane, maxColumn - minColumn, maxLane - minLane);
+        }
+        #endregion
+
+        #region 炸飞
+        public static void BlowUpEnemiesToSky(this Entity entity, float range, DamageOutput[] damageOutputs)
+        {
+            foreach (var output in damageOutputs)
+            {
+                var result = output.BodyResult;
+                if (result != null && result.Fatal)
+                {
+                    var target = output.Entity;
+                    if (target.Type == EntityTypes.ENEMY)
+                    {
+                        var distance = (target.Position - entity.Position).magnitude;
+                        var speed = 25 * Mathf.Lerp(1f, 0.5f, distance / range);
+                        target.Velocity = target.Velocity + Vector3.up * speed;
+                    }
+                }
+            }
         }
         #endregion
 

@@ -27,17 +27,7 @@ namespace MVZ2.GameContent.Projectiles
 
             var damageEffects = new DamageEffectList(VanillaDamageEffects.MUTE, VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN, VanillaDamageEffects.EXPLOSION);
             var damageOutputs = entity.Explode(entity.Position, range, entity.GetFaction(), entity.GetDamage(), damageEffects);
-            foreach (var output in damageOutputs)
-            {
-                var result = output.BodyResult;
-                if (result != null && result.Fatal)
-                {
-                    var target = output.Entity;
-                    var distance = (target.Position - entity.Position).magnitude;
-                    var speed = 25 * Mathf.Lerp(1f, 0.5f, distance / range);
-                    target.Velocity = target.Velocity + Vector3.up * speed;
-                }
-            }
+            entity.BlowUpEnemiesToSky(range, damageOutputs);
             var param = entity.GetSpawnParams();
             param.SetProperty(EngineEntityProps.DISPLAY_SCALE, Vector3.one * (range * 2 / 100f));
             var explosion = entity.Spawn(VanillaEffectID.magicBombExplosion, entity.GetCenter(), param);
