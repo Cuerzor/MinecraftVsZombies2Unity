@@ -9,6 +9,7 @@ using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Enemies;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Projectiles;
@@ -338,7 +339,7 @@ namespace MVZ2.GameContent.Bosses
         {
             if (tile.IsEmpty())
                 return 1;
-            if (tile.HasEntity(e => entity.IsFriendly(e)))
+            if (tile.HasEntity(e => entity.IsFriendly(e) || e.StunsKrakenWhenThrown()))
                 return -1;
             return 0;
         }
