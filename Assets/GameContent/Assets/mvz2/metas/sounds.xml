@@ -1108,6 +1108,15 @@
         <sample path="mvz2:random/thunder2" weight="1" />
         <sample path="mvz2:random/thunder3" weight="1" />
     </sound>
+    <sound name="time_bomb_appears">
+        <sample path="mvz2:time_bomb_appears" weight="1" />
+    </sound>
+    <sound name="time_bomb_explosion">
+        <sample path="mvz2:meteor_land" weight="1" />
+    </sound>
+    <sound name="time_bomb_tick">
+        <sample path="mvz2:time_bomb_tick" weight="1" />
+    </sound>
     <sound name="time_warp">
         <sample path="mvz2:time_warp" weight="1" />
     </sound>

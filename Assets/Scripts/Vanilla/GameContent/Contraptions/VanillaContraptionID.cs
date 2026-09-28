@@ -98,6 +98,7 @@ namespace MVZ2.GameContent.Contraptions
         public const string snipenser = "snipenser";
         public const string giantStone = "giant_stone";
         public const string antiGravityPad = "anti_gravity_pad";
+        public const string timeBomb = "time_bomb";
     }
     public static class VanillaContraptionID
     {
@@ -191,6 +192,7 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly NamespaceID snipenser = Get(VanillaContraptionNames.snipenser);
         public static readonly NamespaceID giantStone = Get(VanillaContraptionNames.giantStone);
         public static readonly NamespaceID antiGravityPad = Get(VanillaContraptionNames.antiGravityPad);
+        public static readonly NamespaceID timeBomb = Get(VanillaContraptionNames.timeBomb);
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

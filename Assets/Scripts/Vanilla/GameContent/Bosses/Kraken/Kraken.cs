@@ -8,12 +8,12 @@ using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Bosses;
+using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
-using MVZ2Logic.Notes;
 using PVZEngine.Buffs;
 using PVZEngine.Collisions;
 using PVZEngine.Damages;
@@ -23,11 +23,9 @@ using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using PVZEngine.Tools;
 using PVZEngine.Tools.Geometry;
-using PVZEngine.Tools.Mathematics;
 using PVZEngine.Tools.Random;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace MVZ2.GameContent.Bosses
 {
@@ -106,10 +104,14 @@ namespace MVZ2.GameContent.Bosses
                     {
                         sourceEnt = entSource.GetEntity(kraken.Level);
                     }
-                    if (bodyResult.HasEffect(VanillaDamageEffects.THROWN) && sourceEnt != null && sourceEnt.IsEntityOf(VanillaContraptionID.giantStone))
+                    if (bodyResult.HasEffect(VanillaDamageEffects.THROWN) && sourceEnt != null && sourceEnt.StunsKrakenWhenThrown())
                     {
                         Stun(kraken, STUN_SECONDS);
                         PlayCriticalEffects(sourceEnt, sourceEnt.GetCenter());
+                        if (sourceEnt.IsEntityOf(VanillaContraptionID.timeBomb))
+                        {
+                            sourceEnt.Die();
+                        }
                     }
                 }
             }
@@ -394,6 +396,14 @@ namespace MVZ2.GameContent.Bosses
         #region 吸水
         public static Vector3 GetAbsorbTargetPosition(Entity entity)
         {
+            return GetMouthTargetPosition(entity);
+        }
+        public static Vector3 GetTimeBombSourcePosition(Entity entity)
+        {
+            return GetMouthTargetPosition(entity);
+        }
+        public static Vector3 GetMouthTargetPosition(Entity entity)
+        {
             var offset = MOUTH_OFFSET;
             offset.x *= entity.GetFacingX();
             return entity.Position + offset;
@@ -434,7 +444,7 @@ namespace MVZ2.GameContent.Bosses
             if (!bodyResult.HasEffect(VanillaDamageEffects.THROWN))
                 return false;
             var sourceEnt = bodyResult.Source is EntitySourceReference entSource ? entSource.GetEntity(kraken.Level) : null;
-            if (sourceEnt == null) 
+            if (sourceEnt == null)
                 return false;
             var krakenBounds = kraken.GetBounds();
             var sourceBounds = sourceEnt.GetBounds();
@@ -608,6 +618,8 @@ namespace MVZ2.GameContent.Bosses
         public const float WEAKSPOT_DAMAGE = 16000f;
 
         public const float PHASE_3_THRESOLD_HP_PERCENTAGE = 1 / 3f;
+
+        public const int TIME_BOMB_TARGET_COLUMN_OFFSET = 2;
 
         // Phase 1
         public const int STATE_HIDDEN = VanillaBossStates.KRAKEN_HIDDEN;

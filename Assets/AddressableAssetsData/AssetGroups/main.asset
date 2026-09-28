@@ -164,6 +164,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 039a0ad0e04655c4abfbb1c147573a52
+    m_Address: mvz2:units/gun_fire
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 03a01e1df2865d441a9fa227eab6a1f6
     m_Address: mvz2:mobile_blueprint/golden_apple
     m_ReadOnly: 0
@@ -828,6 +835,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ed470f103647d8429034cfb3db18fbc
+    m_Address: mvz2:entity/contraption/time_bomb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0ee514c074ca3dd4cafad1abc2e8d5a6
     m_Address: mvz2:mobile_blueprint/undead_flying_object_blue
@@ -3886,6 +3900,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3fff445d83fdbd0418217dbd59fa499f
+    m_Address: mvz2:contraption/mountain/time_bomb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4020decd1a5c0cb49be19fd1c17e9698
     m_Address: mvz2:chapter_transition/title_dream
     m_ReadOnly: 0
@@ -4123,6 +4144,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 444693e6215c24448a6ed93131579cac
+    m_Address: mvz2:time_bomb_appears
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 44691debf33607e4a85f6e43c29ba535
     m_Address: mvz2:mobile_blueprint/amethyst_pylon
@@ -12968,6 +12996,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d79738f9c32550d43bda5b5aa5eeafbd
+    m_Address: mvz2:entity/contraption/time_bomb_number
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d79a5e8c8bfc32f4cbbe87f93c408231
     m_Address: mvz2:entity/creaking/idle4
     m_ReadOnly: 0
@@ -13887,6 +13922,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e89effdbf1bdd9747bf63aff60c3370d
     m_Address: mvz2:zap2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8b2d9622f2b83c45ad6bb5621657d79
+    m_Address: mvz2:time_bomb_tick
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -15296,6 +15338,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff0adb57a3638a248a03ce203da2c8e3
+    m_Address: mvz2:units/kraken_land_tentacle_weapon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ff1139cf5b4ce3e408ba7ca6e7fd9ab0
     m_Address: mvz2:castle_level

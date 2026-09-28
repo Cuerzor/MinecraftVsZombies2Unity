@@ -1,5 +1,6 @@
 #nullable enable
 
+using System.Collections.Generic;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Callbacks;
 using MVZ2Logic.Entities;
@@ -269,6 +270,75 @@ namespace MVZ2Logic.Grids
             var level = grid.Level;
             level.Triggers.RunCallbackFiltered(LogicLevelCallbacks.POST_PLACE_ENTITY, new LogicLevelCallbacks.PostPlaceEntityParams(grid, entity), entity.GetDefinitionID());
         }
+        #endregion
+
+        #region µØ¿é·½Ïò
+        public static void GetDirectionedTile(TileDirection direction, int column, int lane, out int newColumn, out int newLane)
+        {
+            newColumn = column;
+            newLane = lane;
+            switch (direction)
+            {
+                case TileDirection.Left:
+                    newColumn--;
+                    break;
+                case TileDirection.Up:
+                    newLane--;
+                    break;
+                case TileDirection.Right:
+                    newColumn++;
+                    break;
+                case TileDirection.Down:
+                    newLane++;
+                    break;
+                case TileDirection.LeftUp:
+                    newColumn--;
+                    newLane--;
+                    break;
+                case TileDirection.RightUp:
+                    newColumn++;
+                    newLane--;
+                    break;
+                case TileDirection.RightDown:
+                    newColumn++;
+                    newLane++;
+                    break;
+                case TileDirection.LeftDown:
+                    newColumn--;
+                    newLane++;
+                    break;
+            }
+        }
+        public static LawnGrid? GetDirectionedTile(this LawnGrid tile, TileDirection direction)
+        {
+            GetDirectionedTile(direction, tile.Column, tile.Lane, out int newColumn, out int newLane);
+            return tile.Level.GetGrid(newColumn, newLane);
+        }
+        public static void GetDirectionedTiles(this LawnGrid tile, TileDirection directions, List<LawnGrid> results)
+        {
+            foreach (var direction in allTileDirections)
+            {
+                if (directions.HasFlag(direction))
+                {
+                    var newTile = tile.GetDirectionedTile(direction);
+                    if (newTile != null)
+                    {
+                        results.Add(newTile);
+                    }
+                }
+            }
+        }
+        public static readonly TileDirection[] allTileDirections = new TileDirection[]
+        {
+            TileDirection.Left,
+            TileDirection.Up,
+            TileDirection.Right,
+            TileDirection.Down,
+            TileDirection.LeftUp,
+            TileDirection.RightUp,
+            TileDirection.RightDown,
+            TileDirection.LeftDown
+        };
         #endregion
     }
 }

@@ -1903,6 +1903,7 @@
                 <vector3 name="mvz2:size" x="58" y="58" z="58" />
                 <bool name="mvz2:instantEvoke" value="false" />
                 <bool name="mvz2:no_evoke" value="true" />
+                <bool name="mvz2:stuns_kraken_when_thrown" value="true" />
                 <float name="mvz2:fallResistance" value="10000" />
                 <float name="mvz2:ejector_damage_override" value="1200" />
                 <float name="mvz2:water_ground_limit_offset" value="-34" />
@@ -1933,6 +1934,30 @@
                 <string name="mvz2:sortingLayer" value="Carriers" />
 
                 <int name="mvz2:cost" value="125" />
+                <id name="mvz2:rechargeId" value="mvz2:very_long" />
+            </properties>
+        </entity>
+        <entity template="contraption" id="time_bomb" name="定时炸弹" tooltip="一定时间后爆炸">
+            <behaviours>
+                <behaviour operator="add" id="mvz2:explode_on_fire_death" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:dynamite" value="true" />
+                <bool name="mvz2:instantEvoke" value="false" />
+                <bool name="mvz2:no_evoke" value="true" />
+                <bool name="mvz2:stuns_kraken_when_thrown" value="true" />
+                <float name="mvz2:damage" value="18000" />
+                <float name="mvz2:range" value="60" />
+                <float name="mvz2:maxHealth" value="1000" />
+                <vector3 name="mvz2:size" x="48" y="48" z="48" />
+                <int name="mvz2:waterInteraction" value="3" />
+                <id name="mvz2:placeSound" value="mvz2:metal_break" />
+                <id name="mvz2:shell" value="mvz2:metal" />
+                <id name="mvz2:deathSound" value="mvz2:metal_break" />
+                <id name="mvz2:placement" value="mvz2:amphibious" />
+
+                <int name="mvz2:cost" value="50" />
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </entity>

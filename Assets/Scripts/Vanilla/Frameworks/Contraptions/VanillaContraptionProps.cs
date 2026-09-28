@@ -130,6 +130,14 @@ namespace MVZ2.Vanilla.Contraptions
             return entity.GetProperty<float>(EJECTOR_DAMAGE_OVERRIDE);
         }
         #endregion
+
+        #region 投掷击晕克拉肯
+        public static readonly PropertyMeta<bool> STUNS_KRAKEN_WHEN_THROWN = Get<bool>("stuns_kraken_when_thrown");
+        public static bool StunsKrakenWhenThrown(this Entity entity)
+        {
+            return entity.GetProperty<bool>(STUNS_KRAKEN_WHEN_THROWN);
+        }
+        #endregion
     }
 }
 

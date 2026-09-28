@@ -95,6 +95,9 @@ namespace MVZ2.GameContent.Buffs
 
             // Chapter 6
             public const string brokenTile = "broken_tile";
+
+            // Chapter 6
+            public const string timeBombExplosion = "time_bomb_explosion";
         }
         public static class Entity
         {

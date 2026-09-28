@@ -128,6 +128,7 @@
     <model name="snipenser" type="entity" path="mvz2:contraption/palace/snipenser" width="64" height="64" xOffset="0" yOffset="-28" />
     <model name="giant_stone" type="entity" path="mvz2:contraption/mountain/giant_stone" width="80" height="80" xOffset="0" yOffset="-28" />
     <model name="anti_gravity_pad" type="entity" path="mvz2:contraption/upgrade/anti_gravity_pad" width="64" height="64" xOffset="0" yOffset="-28" />
+    <model name="time_bomb" type="entity" path="mvz2:contraption/mountain/time_bomb" width="64" height="64" xOffset="0" yOffset="-28" />
 
 
     <!-- Enemies -->

@@ -331,7 +331,15 @@ namespace MVZ2.GameContent.Bosses
         #region 出现
         public static LawnGrid SelectTileToAppear(Entity entity, List<LawnGrid> tiles)
         {
-            return tiles.GetRandomOfTopOnes(g => g.IsEmpty() ? 1 : 0, entity.RNG, false);
+            return tiles.GetRandomOfTopOnes(g => GetSelectTilePriorityToAppear(entity, g), entity.RNG, false);
+        }
+        public static float GetSelectTilePriorityToAppear(Entity entity, LawnGrid tile)
+        {
+            if (tile.IsEmpty())
+                return 1;
+            if (tile.HasEntity(e => entity.IsFriendly(e)))
+                return -1;
+            return 0;
         }
         public static void NextAppear(Entity entity)
         {

@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using MVZ2Logic.Entities;
+using MVZ2Logic.Grids;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Grids;
@@ -61,6 +62,12 @@ namespace MVZ2Logic
             var targetGridEntitiesItem = ListPool<NamespaceID>.Rent();
             grid.GetLayers(targetGridEntitiesItem.Value);
             return targetGridEntitiesItem;
+        }
+        public static PoolItem<List<LawnGrid>> GetDirectionedTilesDisposeable(this LawnGrid grid, TileDirection directions)
+        {
+            var tilesItems = ListPool<LawnGrid>.Rent();
+            grid.GetDirectionedTiles(directions, tilesItems.Value);
+            return tilesItems;
         }
         public static PoolItem<List<NamespaceID>> GetActiveArmorSlotsDisposeable(this Entity entity)
         {
