@@ -654,8 +654,8 @@ namespace MVZ2.GameContent.Bosses
         public static readonly Vector3 GREEN_EYE_OFFSET = new Vector3(130, 20, -20);
         public static readonly Vector3 RED_EYE_OFFSET = new Vector3(160, 100, -50);
         public static readonly Vector3 MOUTH_OFFSET = new Vector3(130, 0, -50);
-        public static readonly Vector3 WEAKSPOT_OFFSET = new Vector3(-85, 20, 0);
-        public static readonly Vector3 FALLEN_BOUNDS_OFFSET = new Vector3(0, -140, 0);
+        public static readonly Vector3 WEAKSPOT_OFFSET = new Vector3(-85, 20, -10f);
+        public static readonly Vector3 FALLEN_BOUNDS_OFFSET = new Vector3(0, -120, 0);
         public static readonly NamespaceID[] drownedID = new NamespaceID[]
         {
             VanillaEnemyID.drowned,
@@ -702,7 +702,7 @@ namespace MVZ2.GameContent.Bosses
         public const int DRAINAGE_COLUMN_RANGE = 2;
         public const float DRAINAGE_SPLASH_DAMAGE_MULTIPLIER = 0.2f;
 
-        public const float WEAKSPOT_RADIUS = 40f;
+        public const float WEAKSPOT_RADIUS = 60f;
         public const float WEAKSPOT_DAMAGE = 16000f;
 
         public const float PHASE_3_THRESOLD_HP_PERCENTAGE = 1 / 3f;
