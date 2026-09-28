@@ -520,4 +520,16 @@
             <p>希望我们都能够度过难关，好好地活下去。</p>
         </description>
     </music>
+    <music id="mountain_boss" name="钟道兽">
+        <unlock>
+            <condition required="mvz2:level.mountain_11" />
+        </unlock>
+        <track main="mvz2:mountain_boss" />
+        <source>空洞骑士：丝之歌</source>
+        <description>
+            <p>克拉肯的音乐。</p>
+            <p>是《空洞骑士：丝之歌》中钟道兽和噬钟兽的音乐。</p>
+            <p>准确来说——是噬钟兽。</p>
+        </description>
+    </music>
 </musics>

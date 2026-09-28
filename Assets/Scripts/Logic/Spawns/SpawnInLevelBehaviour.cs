@@ -30,18 +30,17 @@ namespace MVZ2Logic.Spawns
             using var exceptLanesItem = ListPool<int>.Rent();
             var exceptLanes = exceptLanesItem.Value;
 
-            bool isStartWaves = level.CurrentFlag <= 0 && level.CurrentWave <= 3;
-            if (isStartWaves || !definition.SpawnInWater())
+            if (!definition.SpawnInWater() || !level.CanSpawnEnemyInWater())
             {
                 level.GetEnemySpawnWaterLanes(exceptLanes);
             }
-            if (isStartWaves || !definition.SpawnInAir())
+            if (!definition.SpawnInAir() || !level.CanSpawnEnemyInAir())
             {
                 level.GetEnemySpawnAirLanes(exceptLanes);
             }
             resultLanes.ExceptList(exceptLanes);
 
-            if (resultLanes.Count() <= 0)
+            if (resultLanes.Count <= 0)
             {
                 resultLanes.Clear();
                 level.GetAllLanes(resultLanes);

@@ -42,4 +42,11 @@
         <padding left="5" right="5" top="7" bottom="7" />
         <text yOffset="0"/>
     </bar>
+    <bar id="kraken" type="boss" width="150" height="39">
+        <background sprite="mvz2:ui/level/progress_bar/kraken_background" />
+        <foreground sprite="mvz2:ui/level/progress_bar/kraken_foreground" />
+        <bar sprite="mvz2:ui/level/progress_bar/kraken_fill" fromLeft="true" mode="filled" />
+        <padding left="7" right="7" top="16" bottom="5" />
+        <text yOffset="-5"/>
+    </bar>
 </bars>

@@ -80,6 +80,10 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public const string decorativeWindSpeed = "decorative_wind_speed";
             public const string raining = "raining";
+            public const string krakenNoWaterLaneEnemySpawn = "kraken_no_water_lane_enemy_spawn";
+            public const string krakenNoEnemySpawn = "kraken_no_enemy_spawn";
+            public const string krakenTransition = "kraken_transition";
+            public const string krakenCleared = "kraken_cleared";
 
             // Random China
             public const string greedyVacuum = "greedy_vacuum";
@@ -487,6 +491,8 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public static readonly NamespaceID decorativeWindSpeed = Get(VanillaBuffNames.Level.decorativeWindSpeed);
             public static readonly NamespaceID raining = Get(VanillaBuffNames.Level.raining);
+            public static readonly NamespaceID krakenNoWaterLaneEnemySpawn = Get(VanillaBuffNames.Level.krakenNoWaterLaneEnemySpawn);
+            public static readonly NamespaceID krakenNoEnemySpawn = Get(VanillaBuffNames.Level.krakenNoEnemySpawn);
 
             // Random China
             public static readonly NamespaceID superRecharge = Get(VanillaBuffNames.Level.superRecharge);

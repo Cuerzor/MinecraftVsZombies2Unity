@@ -73,6 +73,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0238fc2446bd78744a25cbceee03a5d5
+    m_Address: mvz2:mountain_boss
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Music
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0247cd36ced288f4f8c45c53226978c3
     m_Address: mvz2:entity/boss/kraken_eyelid_left
     m_ReadOnly: 0
@@ -1104,6 +1111,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 13026b5d2e6efdc4e9f551e6433d1600
     m_Address: mvz2:note/background_halloween
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1302921f4e5d60c48988c4559f03a94f
+    m_Address: mvz2:ui/level/progress_bar/kraken_background
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -9973,6 +9987,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2cd642208324b14ebe87ed6b9a48a8b
+    m_Address: mvz2:ui/level/progress_bar/kraken_fill
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a2cfaa6b4cafa4e4cb84af18ad63d07f
     m_Address: mvz2:ui/level/card_upgrade_mobile
     m_ReadOnly: 0
@@ -12029,6 +12050,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c809229c55a81fc44aef503393a05467
+    m_Address: mvz2:ui/level/progress_bar/kraken_foreground
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c82886228e56ce84d8d101bb2e34ab8d
     m_Address: mvz2:armor/reflective_barrier

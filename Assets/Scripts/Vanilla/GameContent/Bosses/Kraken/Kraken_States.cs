@@ -239,7 +239,7 @@ namespace MVZ2.GameContent.Bosses
                 base.OnEnter(stateMachine, entity);
 
                 var stateTimer = stateMachine.GetStateTimer(entity);
-                stateTimer.ResetSeconds(2f);
+                stateTimer.ResetSeconds(4f);
                 SetExposedStates(entity, true);
             }
             public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)

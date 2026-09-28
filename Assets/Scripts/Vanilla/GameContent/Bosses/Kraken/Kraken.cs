@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 using MVZ2.GameContent.Armors;
+using MVZ2.GameContent.Buffs;
 using MVZ2.GameContent.Buffs.Bosses;
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Damages;
@@ -19,11 +20,13 @@ using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine;
+using PVZEngine.Auras;
 using PVZEngine.Buffs;
 using PVZEngine.Collisions;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
+using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.Modifiers;
 using PVZEngine.Tools;
@@ -43,6 +46,9 @@ namespace MVZ2.GameContent.Bosses
             AddModifier(new BooleanModifier(EngineEntityProps.INVINCIBLE, PROP_INVINCIBLE));
             AddModifier(new BooleanModifier(VanillaEntityProps.INVISIBLE, PROP_INVINCIBLE));
             AddModifier(new Vector3Modifier(EngineEntityProps.BOUNDS_OFFSET, NumberOperator.Add, PROP_BOUNDS_OFFSET));
+
+            AddAura(new NoWaterLaneEnemySpawnAura());
+            AddAura(new NoEnemySpawnAura());
         }
 
         #region 回调
@@ -155,10 +161,14 @@ namespace MVZ2.GameContent.Bosses
                 entity.RemoveBuffs<KrakenInactiveBuff>();
             }
         }
+        public static float GetAdjustZ(LevelEngine level)
+        {
+            return level.GetLaneCenterZFloat((level.GetMaxLaneCount() - 1) * 0.5f);
+        }
         public static void AdjustZ(Entity entity)
         {
             var position = entity.Position;
-            position.z = entity.Level.GetLaneCenterZFloat((entity.Level.GetMaxLaneCount() - 1) * 0.5f);
+            position.z = GetAdjustZ(entity.Level);
             entity.Position = position;
         }
         #region 触手
@@ -541,9 +551,16 @@ namespace MVZ2.GameContent.Bosses
             var maxLane = rect.max.y;
 
             var column = entity.IsFacingLeft() ? rect.min.x : rect.max.x;
+            using var lanesItem = ListPool<int>.Rent();
+            var lanes = lanesItem.Value;
             for (int l = minLane; l <= maxLane; l++)
             {
-                SummonADrowned(entity, column, l);
+                lanes.Add(l);
+            }
+            lanes.RandomKeep(2, entity.RNG);
+            foreach (var lane in lanes)
+            {
+                SummonADrowned(entity, column, lane);
             }
         }
         public static NamespaceID? GetRandomDrownedStartingArmor(Entity boss)
@@ -710,5 +727,42 @@ namespace MVZ2.GameContent.Bosses
         public const int ANIMATION_STATE_ABSORB = 10004;
         public const int ANIMATION_STATE_EYES = 10005;
         #endregion 常量
+
+        #region 光环
+        public class NoWaterLaneEnemySpawnAura : AuraEffectDefinition
+        {
+            public NoWaterLaneEnemySpawnAura() : base(VanillaBuffID.Level.krakenNoWaterLaneEnemySpawn, 7)
+            {
+            }
+
+            public override void GetAuraTargets(AuraEffect auraEffect, List<IBuffTarget> results)
+            {
+                var sourceEntity = auraEffect.Source as Entity;
+                if (sourceEntity == null)
+                    return;
+                if (sourceEntity.GetPhase() == PHASE_2)
+                {
+                    results.Add(auraEffect.Level);
+                }
+            }
+        }
+        public class NoEnemySpawnAura : AuraEffectDefinition
+        {
+            public NoEnemySpawnAura() : base(VanillaBuffID.Level.krakenNoEnemySpawn, 7)
+            {
+            }
+
+            public override void GetAuraTargets(AuraEffect auraEffect, List<IBuffTarget> results)
+            {
+                var sourceEntity = auraEffect.Source as Entity;
+                if (sourceEntity == null)
+                    return;
+                if (sourceEntity.GetPhase() == PHASE_3)
+                {
+                    results.Add(auraEffect.Level);
+                }
+            }
+        }
+        #endregion
     }
 }

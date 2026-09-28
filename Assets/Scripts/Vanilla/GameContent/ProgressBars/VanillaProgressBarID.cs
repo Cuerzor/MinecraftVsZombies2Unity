@@ -14,6 +14,7 @@ namespace MVZ2.GameContent.ProgressBars
         public static readonly NamespaceID theGiant = Get("the_giant");
         public static readonly NamespaceID redDragon = Get("red_dragon");
         public static readonly NamespaceID lockedChest = Get("locked_chest");
+        public static readonly NamespaceID kraken = Get("kraken");
         private static NamespaceID Get(string name)
         {
             return new NamespaceID(VanillaMod.spaceName, name);

@@ -389,5 +389,41 @@ namespace MVZ2Logic.Level
             level.SetProperty(CURSE_COUNT, value);
         }
         #endregion
+
+        #region 怪物不生成在水路
+        public static readonly PropertyMeta<bool> NO_SPAWN_ENEMY_IN_WATER = Get<bool>("no_spawn_enemy_in_water");
+        public static bool NoSpawnEnemyInWater(this LevelEngine level)
+        {
+            return level.GetProperty<bool>(NO_SPAWN_ENEMY_IN_WATER);
+        }
+        public static void SetNoSpawnEnemyInWater(this LevelEngine level, bool value)
+        {
+            level.SetProperty(NO_SPAWN_ENEMY_IN_WATER, value);
+        }
+        #endregion
+
+        #region 怪物不生成在空路
+        public static readonly PropertyMeta<bool> NO_SPAWN_ENEMY_IN_AIR = Get<bool>("no_spawn_enemy_in_air");
+        public static bool NoSpawnEnemyInAir(this LevelEngine level)
+        {
+            return level.GetProperty<bool>(NO_SPAWN_ENEMY_IN_AIR);
+        }
+        public static void SetNoSpawnEnemyInAir(this LevelEngine level, bool value)
+        {
+            level.SetProperty(NO_SPAWN_ENEMY_IN_AIR, value);
+        }
+        #endregion
+
+        #region 不推进波次
+        public static readonly PropertyMeta<bool> NO_WAVE_ADVANCEMENT = Get<bool>("no_wave_advancement");
+        public static bool NoWaveAdvancement(this LevelEngine level)
+        {
+            return level.GetProperty<bool>(NO_WAVE_ADVANCEMENT);
+        }
+        public static void SetNoWaveAdvancement(this LevelEngine level, bool value)
+        {
+            level.SetProperty(NO_WAVE_ADVANCEMENT, value);
+        }
+        #endregion
     }
 }

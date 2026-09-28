@@ -758,6 +758,21 @@ namespace MVZ2Logic.Level
             return level.StageDefinition.GetStageType() == StageTypes.TYPE_BOSS;
         }
         #endregion
+
+        #region 生成怪物有效性
+        public static bool CanSpawnEnemyInWater(this LevelEngine level)
+        {
+            if (level.CurrentFlag <= 0 && level.CurrentWave <= 3)
+                return false;
+            return !level.NoSpawnEnemyInWater();
+        }
+        public static bool CanSpawnEnemyInAir(this LevelEngine level)
+        {
+            if (level.CurrentFlag <= 0 && level.CurrentWave <= 3)
+                return false;
+            return !level.NoSpawnEnemyInAir();
+        }
+        #endregion
     }
     public class LevelSpawnPointParams
     {
