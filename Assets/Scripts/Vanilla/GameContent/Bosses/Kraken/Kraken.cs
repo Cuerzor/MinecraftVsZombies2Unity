@@ -685,7 +685,7 @@ namespace MVZ2.GameContent.Bosses
         public const int BARRAGE_EYE_GROUP_COUNT = 3;
         public const int FLAME_EYE_INTERVAL = 7;
         public const float FLAME_EYE_SHOT_SPEED = 20f;
-        public const float FLAME_EYE_DAMAGE_MULTIPLIER = 0.05f;
+        public const float FLAME_EYE_DAMAGE_MULTIPLIER = 0.02f;
 
         public const int LASER_EYE_MODE_RANDOM = 0;
         public const int LASER_EYE_MODE_NO_GIANT_STONES = 1;
