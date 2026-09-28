@@ -11,6 +11,8 @@
         [Toggle]
         _GrayscaleMaterial("Grayscale", Int) = 0
         _GrayscaleFactor("Grayscale Factor", Vector) = (0.598,1.174,0.224,0)
+        [Enum(UnityEngine.Rendering.CompareFunction)]
+        _ZTest ("Z Test", Float) = 4
 
         [Header(Burn)]
         _BurnNoise("Noise Tex", 2D) = "white"{}
@@ -75,7 +77,7 @@
         Blend One OneMinusSrcAlpha
         Cull Off
         ZWrite Off
-        ZTest LEqual
+        ZTest [_ZTest]
 
         Pass
         {
