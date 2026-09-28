@@ -1221,6 +1221,8 @@ namespace MVZ2.GameContent.Bosses
                 substateTimer.ResetSeconds(0.5f);
 
                 SetInvincible(entity, true);
+
+                RecallAllAliveTentacles(entity);
             }
             public override void OnExit(EntityStateMachine machine, Entity entity)
             {
@@ -1253,6 +1255,7 @@ namespace MVZ2.GameContent.Bosses
                         {
                             stateMachine.StartSubState(entity, SUBSTATE_DESTROY_STONES);
                             timer.ResetSeconds(1f);
+                            RemoveAllTentacles(entity);
                             ResummonTentacles(entity, 2, false);
                         }
                         break;

@@ -190,6 +190,22 @@ namespace MVZ2.GameContent.Bosses
         {
             KrakenTentacle.Recall(tentacle);
         }
+        public static void RemoveAllTentacles(Entity entity)
+        {
+            var tentacles = GetTentacles(entity);
+            if (tentacles == null)
+            {
+                return;
+            }
+            foreach (var tentacleID in tentacles)
+            {
+                var tentacle = tentacleID.GetEntity(entity.Level);
+                if (!tentacle.ExistsAndAlive())
+                    continue;
+                tentacle.Remove();
+            }
+            tentacles.Clear();
+        }
         public static void ResummonTentacles(Entity entity, int count, bool autoAct)
         {
             var tentacles = GetTentacles(entity);
