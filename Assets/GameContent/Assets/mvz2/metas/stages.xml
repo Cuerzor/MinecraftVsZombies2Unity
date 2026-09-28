@@ -1736,14 +1736,14 @@
             <talk type="map" value="mvz2:mountain_11_map" />
         </talks>
         <conveyor>
-            <entry id="mvz2:lily_pad" count="24" />
-            <entry id="mvz2:maplewheel" count="24" />
-            <entry id="mvz2:ejector" count="4" />
-            <entry id="mvz2:teleporter" count="2" minCount="0" />
-            <entry id="mvz2:onbashira" count="12" />
-            <entry id="mvz2:freezenser" count="6" />
-            <entry id="mvz2:autotrap" count="8" />
-            <entry id="mvz2:nesting_tnt" count="4" minCount="0" />
+            <entry id="mvz2:lily_pad" count="15" />
+            <entry id="mvz2:maplewheel" count="12" />
+            <entry id="mvz2:ejector" count="8" />
+            <entry id="mvz2:teleporter" count="4" minCount="0" />
+            <entry id="mvz2:onbashira" count="8" />
+            <entry id="mvz2:freezenser" count="7" />
+            <entry id="mvz2:autotrap" count="4" />
+            <entry id="mvz2:nesting_tnt" count="3" minCount="0" />
         </conveyor>
         <clear pickupModel="mvz2:entity.money_chest" />
         <spawns flags="2" pointsMultiplier="3">
