@@ -30,7 +30,7 @@ namespace MVZ2.GameContent.Effects
             entity.SetModelProperty("Color", entity.GetTint());
             entity.SetModelProperty("Text", GetText(entity));
             var zOffset = Mathf.Lerp(10, 0, entity.Timeout / (float)entity.GetMaxTimeout());
-            entity.SetModelPositionOffset(Vector3.forward * zOffset);
+            SetModelOffset(entity, Vector3.forward * zOffset);
         }
         public static string? GetText(Entity entity) => entity.GetBehaviourField<string>(PROP_TEXT);
         public static void SetText(Entity entity, string value) => entity.SetBehaviourField(PROP_TEXT, value);

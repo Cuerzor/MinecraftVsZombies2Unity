@@ -11,6 +11,8 @@ namespace MVZ2.Vanilla.Localization
         public const string TOOLTIP_DISABLE_MESSAGE = "无法使用";
         [TranslateMsg("教程无法使用提示")]
         public const string TOOLTIP_DECREPIFY = "受到衰老诅咒！";
+        [TranslateMsg("克拉肯战斗提示")]
+        public const string KRAKEN_WEAKSPOT_HINT = "<color=#0FF>[荷取]</color>\n史蒂夫，砸这里！";
 
         [TranslateMsg("梦魇战斗提示", LogicStrings.CONTEXT_ADVICE)]
         public const string ADVICE_CLICK_TO_DRAG_CRUSHING_WALLS = "点击屏幕阻止碾压墙！";
@@ -36,6 +38,8 @@ namespace MVZ2.Vanilla.Localization
         public const string ADVICE_HEAVY_WEAPON_TIP_MOUSE = "移动鼠标来移动，按住左键来射击！";
         [TranslateMsg("重装兵器小游戏的提示", LogicStrings.CONTEXT_ADVICE)]
         public const string ADVICE_HEAVY_WEAPON_TIP_TOUCH = "触摸屏幕来移动并射击！";
+        [TranslateMsg("克拉肯战斗提示", LogicStrings.CONTEXT_ADVICE)]
+        public const string ADVICE_ATTACK_KRAKEN_WEAKSPOT = "砸击克拉肯的弱点！";
 
 
         [TranslateMsg]

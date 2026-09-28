@@ -15,10 +15,13 @@ using MVZ2.Vanilla.Bosses;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Localization;
 using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
+using MVZ2Logic.Localization;
 using PVZEngine;
 using PVZEngine.Auras;
 using PVZEngine.Buffs;
@@ -505,10 +508,27 @@ namespace MVZ2.GameContent.Bosses
             {
                 StunnedState.Awake(stateMachine, kraken);
             }
+            if (!IsWeakspotAttacked(kraken))
+            {
+                SetWeakspotAttacked(kraken, true);
+                kraken.Level.HideAdvice();
+            }
         }
         public static float GetWeakSpotDamage(Entity kraken)
         {
             return WEAKSPOT_DAMAGE;
+        }
+        public static void ShowWeakspotHint(Entity kraken)
+        {
+            var value = Global.Localization.GetText(VanillaStrings.KRAKEN_WEAKSPOT_HINT);
+            var param = kraken.GetSpawnParams();
+            param.SetProperty(FloatingText.PROP_TEXT, value);
+            param.SetProperty(EngineEntityProps.MODEL_POSITION_OFFSET, Vector3.back * 5000);
+            param.SetProperty(VanillaEntityProps.MAX_TIMEOUT, 180);
+            var position = GetWeakSpotPoint(kraken);
+            kraken.Spawn(VanillaEffectID.floatingText, position, param);
+
+            kraken.Level.ShowAdvice(LogicStrings.CONTEXT_ADVICE, VanillaStrings.ADVICE_ATTACK_KRAKEN_WEAKSPOT, 100, 300);
         }
         #endregion
 
@@ -630,6 +650,8 @@ namespace MVZ2.GameContent.Bosses
         public static void SetDrainageSplashes(Entity entity, List<EntityID>? value) => entity.SetBehaviourField(PROP_DRAINAGE_SPLASHES, value);
         public static Vector3 GetBoundsOffset(Entity entity) => entity.GetBehaviourField<Vector3>(PROP_BOUNDS_OFFSET);
         public static void SetBoundsOffset(Entity entity, Vector3 value) => entity.SetBehaviourField(PROP_BOUNDS_OFFSET, value);
+        public static bool IsWeakspotAttacked(Entity entity) => entity.GetBehaviourField<bool>(PROP_WEAKSPOT_ATTACKED);
+        public static void SetWeakspotAttacked(Entity entity, bool value) => entity.SetBehaviourField(PROP_WEAKSPOT_ATTACKED, value);
         #endregion
 
         #region 常量
@@ -648,6 +670,7 @@ namespace MVZ2.GameContent.Bosses
         public static readonly VanillaEntityPropertyMeta<int> PROP_LASER_FIRED_TIMES = new VanillaEntityPropertyMeta<int>("laser_fired_times");
         public static readonly VanillaEntityPropertyMeta<EntityID> PROP_DEATH_RAY = new VanillaEntityPropertyMeta<EntityID>("death_ray");
         public static readonly VanillaEntityPropertyMeta<Vector3> PROP_BOUNDS_OFFSET = new VanillaEntityPropertyMeta<Vector3>("bounds_offset");
+        public static readonly VanillaEntityPropertyMeta<bool> PROP_WEAKSPOT_ATTACKED = new VanillaEntityPropertyMeta<bool>("weakspot_attacked");
 
         public static readonly Vector3 SPLASH_EFFECT_SCALE = Vector3.one * 8f;
         public static readonly Vector3 BLUE_EYE_OFFSET = new Vector3(130, 20, -80);

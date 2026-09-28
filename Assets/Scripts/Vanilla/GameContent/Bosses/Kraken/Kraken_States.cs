@@ -1665,6 +1665,13 @@ namespace MVZ2.GameContent.Bosses
                             entity.PlaySound(VanillaSoundID.krakenPain);
                             SetBoundsOffset(entity, FALLEN_BOUNDS_OFFSET);
                         }
+                        if (timer.PassedSecondsFromMax(4 / 3f))
+                        {
+                            if (entity.Level.IsFirstAdventure() && !IsWeakspotAttacked(entity))
+                            {
+                                ShowWeakspotHint(entity);
+                            }
+                        }
                         if (timer.Expired)
                         {
                             Awake(stateMachine, entity);
