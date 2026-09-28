@@ -141,6 +141,10 @@ namespace MVZ2.GameContent.Bosses
             ACTION_CANNON,
             ACTION_LASER,
             ACTION_SUMMON,
+            ACTION_GATLIN,
+            ACTION_CANNON,
+            ACTION_LASER,
+            ACTION_SUMMON,
             ACTION_SMASH,
         };
 
