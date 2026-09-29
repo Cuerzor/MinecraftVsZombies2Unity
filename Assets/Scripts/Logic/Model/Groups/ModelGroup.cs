@@ -183,6 +183,7 @@ namespace MVZ2Logic.Models
                     var data = serializable.animators[i];
                     if (!element.Exists() || data == null)
                         continue;
+                    element.Animator.logWarnings = false;
                     data.Deserialize(element.Animator);
                 }
             }
