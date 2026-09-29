@@ -1703,6 +1703,8 @@
             <spawn id="mvz2:shikaisen_zombie" />
             <spawn id="mvz2:emperor_zombie" />
             <spawn id="mvz2:axolotl_suit" />
+            <fixedSpawn id="mvz2:axolotl_suit" wave="11" count="1" />
+            <fixedSpawn id="mvz2:axolotl_suit" wave="20" count="1" />
         </spawns>
     </stage>
     <stage id="mountain_10" name="妖怪之山" dayNumber="10">
