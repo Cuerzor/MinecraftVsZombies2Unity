@@ -1346,6 +1346,7 @@ namespace MVZ2.GameContent.Bosses
             {
                 var column = boss.GetMirroredColumn(0, true);
                 var pos = boss.Level.GetEntityGridPosition(column, lane);
+                pos.y -= 30f;
                 var spawnParams = boss.GetSpawnParams();
                 spawnParams.SetProperty(EngineEntityProps.FLIP_X, !boss.IsFacingLeft());
                 spawnParams.SetProperty(KrakenLandTentacle.PROP_FACE_UP, up);
@@ -1371,7 +1372,7 @@ namespace MVZ2.GameContent.Bosses
         #region 命令怒吼
         public static bool HasCommandRoarTarget(Entity entity)
         {
-            return roarDetector.DetectExists(entity);
+            return commandRoarDetector.DetectExists(entity);
         }
         private class CommandRoarState : EntityStateMachineState
         {
@@ -1810,6 +1811,7 @@ namespace MVZ2.GameContent.Bosses
         {
             colliderFilter = CanBeRoarTarget
         };
+        private static Detector commandRoarDetector = new LawnDetector();
         private static Detector barrageEyeDetector = new EyeDetector(false);
         private static Detector flameEyeDetector = new EyeDetector(true);
         private static int[] statePoolPhase2 = new int[]

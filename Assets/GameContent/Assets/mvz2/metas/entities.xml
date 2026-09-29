@@ -5406,6 +5406,7 @@
         </entity>
         <entity template="effect" id="kraken_land_tentacle" name="克拉肯的陆地触手">
             <properties>
+                <float name="mvz2:groundLimitOffset" value="-100" />
                 <int name="mvz2:waterInteraction" value="0" />
                 <float name="mvz2:range" value="320" />
                 <float name="mvz2:damage" value="100" />
