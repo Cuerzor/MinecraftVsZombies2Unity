@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-28 09:28+0800\n"
+"POT-Creation-Date: 2026-09-29 11:37+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3537,6 +3537,12 @@ msgstr ""
 #: Stage meta file
 msgctxt "levelname"
 msgid "上锁箱子的复仇"
+msgstr ""
+
+#. Name for stage mvz2:krakens_revenge
+#: Stage meta file
+msgctxt "levelname"
+msgid "克拉肯的复仇"
 msgstr ""
 
 #. Name for stage mvz2:puzzle_i_zombie

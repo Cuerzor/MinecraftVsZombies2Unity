@@ -516,6 +516,8 @@ namespace MVZ2.GameContent.Bosses
         }
         public static float GetWeakSpotDamage(Entity kraken)
         {
+            if (kraken.IsBossRevengeVersion())
+                return WEAKSPOT_DAMAGE_REVENGE;
             return WEAKSPOT_DAMAGE;
         }
         public static void ShowWeakspotHint(Entity kraken)
@@ -727,6 +729,7 @@ namespace MVZ2.GameContent.Bosses
 
         public const float WEAKSPOT_RADIUS = 60f;
         public const float WEAKSPOT_DAMAGE = 16000f;
+        public const float WEAKSPOT_DAMAGE_REVENGE = 9000f;
 
         public const float PHASE_3_THRESOLD_HP_PERCENTAGE = 1 / 3f;
 

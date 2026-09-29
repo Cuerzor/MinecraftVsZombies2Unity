@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-28 09:28+0800\n"
-"PO-Revision-Date: 2026-09-28 21:29+0800\n"
+"POT-Creation-Date: 2026-09-29 11:37+0800\n"
+"PO-Revision-Date: 2026-09-29 11:37+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -3450,6 +3450,12 @@ msgstr "The Red Dragon's Revenge"
 msgctxt "levelname"
 msgid "上锁箱子的复仇"
 msgstr "Locked Chest's Revenge"
+
+#. Name for stage mvz2:krakens_revenge
+#: Stage meta file
+msgctxt "levelname"
+msgid "克拉肯的复仇"
+msgstr "Kraken's Revenge"
 
 #. Name for stage mvz2:puzzle_i_zombie
 #: Stage meta file

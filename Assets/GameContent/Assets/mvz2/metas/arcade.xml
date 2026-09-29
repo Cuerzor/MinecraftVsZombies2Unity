@@ -28,6 +28,11 @@
             <condition required="mvz2:level.palace_11"/>
         </hiddenUntil>
     </minigame>
+    <minigame id="krakens_revenge" stage="mvz2:krakens_revenge" area="mvz2:mountain" icon="mvz2:arcade/krakens_revenge">
+        <hiddenUntil>
+            <condition required="mvz2:level.mountain_11"/>
+        </hiddenUntil>
+    </minigame>
 
     <puzzle id="puzzle_i_zombie" stage="mvz2:puzzle_i_zombie" area="mvz2:mausoleum_minigame" icon="mvz2:arcade/i_zombie" />
     <puzzle id="puzzle_i_skeleton" stage="mvz2:puzzle_i_skeleton" area="mvz2:mausoleum_minigame" icon="mvz2:arcade/i_zombie" />

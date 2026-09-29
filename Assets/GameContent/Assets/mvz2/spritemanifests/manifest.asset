@@ -85,6 +85,9 @@ MonoBehaviour:
   - name: arcade/i_zombie
     texture: {fileID: 2800000, guid: 954f4a9aadd5d0141a70086f5aaedcc5, type: 3}
     tags: []
+  - name: arcade/krakens_revenge
+    texture: {fileID: 2800000, guid: 16d8ae1b40eaded4f9770dc99b287a0a, type: 3}
+    tags: []
   - name: arcade/locked
     texture: {fileID: 2800000, guid: 2f65e88c41fd23d4987bba1066e05ba3, type: 3}
     tags: []
@@ -3442,6 +3445,10 @@ MonoBehaviour:
   - name: arcade/i_zombie
     index: 0
     sprite: {fileID: 21300000, guid: 954f4a9aadd5d0141a70086f5aaedcc5, type: 3}
+    tags: []
+  - name: arcade/krakens_revenge
+    index: 0
+    sprite: {fileID: 21300000, guid: 16d8ae1b40eaded4f9770dc99b287a0a, type: 3}
     tags: []
   - name: arcade/locked
     index: 0
