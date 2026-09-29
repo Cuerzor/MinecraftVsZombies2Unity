@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-28 09:17+0800\n"
+"POT-Creation-Date: 2026-09-29 12:11+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2018,7 +2018,7 @@ msgid ""
 "<tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />：<color=red><var local=\"flesh_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:leather\" />：<color=red><var local=\"leather_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:grass\" />：<color=red><var local=\"grass_density\"/>%</color>\n"
-"<tag id=\"mvz2:shell\" enum=\"mvz2:ice\" />：<color=red><var local=\"ice_density\"/>%（砸碎时发射冰锥并冻结怪物）</color>\n"
+"<tag id=\"mvz2:shell\" enum=\"mvz2:ice\" />：<color=red><var local=\"ice_density\"/>%（发射冰锥并冻结怪物）</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:wood\" />：<color=red><var local=\"wood_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:shadow\" />：<color=red><var local=\"shadow_density\"/>%</color>\n"
 "<tag id=\"mvz2:shell\" enum=\"mvz2:cloud\" />：<color=red><var local=\"cloud_density\"/>%（震飞周围敌怪）</color>\n"
@@ -6876,6 +6876,18 @@ msgid ""
 "吹飞上方怪物的头盔"
 msgstr ""
 
+#. Name for entity mvz2:time_bomb
+#: Entity meta file
+msgctxt "entity.name"
+msgid "定时炸弹"
+msgstr ""
+
+#. Tooltip for entity mvz2:time_bomb
+#: Entity meta file
+msgctxt "entity.tooltip"
+msgid "一定时间后爆炸"
+msgstr ""
+
 #. Name for entity mvz2:zombie
 #: Entity meta file
 msgctxt "entity.name"
@@ -7550,6 +7562,24 @@ msgctxt "entity.name"
 msgid "泡泡"
 msgstr ""
 
+#. Name for entity mvz2:drowned
+#: Entity meta file
+msgctxt "entity.name"
+msgid "溺尸"
+msgstr ""
+
+#. Name for entity mvz2:leather_capped_drowned
+#: Entity meta file
+msgctxt "entity.name"
+msgid "皮帽溺尸"
+msgstr ""
+
+#. Name for entity mvz2:iron_helmetted_drowned
+#: Entity meta file
+msgctxt "entity.name"
+msgid "铁盔溺尸"
+msgstr ""
+
 #. Name for entity mvz2:gargoyle_statue
 #: Entity meta file
 msgctxt "entity.name"
@@ -7620,6 +7650,18 @@ msgstr ""
 #: Entity meta file
 msgctxt "entity.name"
 msgid "粉红凋灵"
+msgstr ""
+
+#. Name for entity mvz2:kraken
+#: Entity meta file
+msgctxt "entity.name"
+msgid "克拉肯"
+msgstr ""
+
+#. Name for entity mvz2:kraken_tentacle
+#: Entity meta file
+msgctxt "entity.name"
+msgid "克拉肯的触手"
 msgstr ""
 
 #. Name for entity mvz2:minecart
@@ -7746,6 +7788,12 @@ msgstr ""
 #: Entity meta file
 msgctxt "entity.name"
 msgid "梦魇碾压墙"
+msgstr ""
+
+#. Name for entity mvz2:kraken_land_tentacle
+#: Entity meta file
+msgctxt "entity.name"
+msgid "克拉肯的陆地触手"
 msgstr ""
 
 #. Name for character mvz2:steve

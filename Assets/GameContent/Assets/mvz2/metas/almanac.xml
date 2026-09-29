@@ -1142,7 +1142,7 @@
                 <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:flesh" />：<color=red><var local="flesh_density"/>%</color>]]></p>
                 <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:leather" />：<color=red><var local="leather_density"/>%</color>]]></p>
                 <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:grass" />：<color=red><var local="grass_density"/>%</color>]]></p>
-                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:ice" />：<color=red><var local="ice_density"/>%（砸碎时发射冰锥并冻结怪物）</color>]]></p>
+                <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:ice" />：<color=red><var local="ice_density"/>%（发射冰锥并冻结怪物）</color>]]></p>
                 <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:wood" />：<color=red><var local="wood_density"/>%</color>]]></p>
                 <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:shadow" />：<color=red><var local="shadow_density"/>%</color>]]></p>
                 <p><![CDATA[<tag id="mvz2:shell" enum="mvz2:cloud" />：<color=red><var local="cloud_density"/>%（震飞周围敌怪）</color>]]></p>

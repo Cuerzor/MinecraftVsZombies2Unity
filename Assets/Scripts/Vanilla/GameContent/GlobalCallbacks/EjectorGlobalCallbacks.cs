@@ -33,8 +33,45 @@ namespace MVZ2.GameContent.GlobalCallbacks
     {
         public override void Apply(Mod mod)
         {
+            mod.AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEjectedEntityDeathCallback);
             mod.AddTrigger(VanillaLevelCallbacks.POST_EJECTED_ENTITY_LAND, PostEjectedEntityLandCallback);
             mod.AddTrigger(VanillaLevelCallbacks.POST_COMMAND_BLOCK_TRANSFORM, PostCommandBlockTransformCallback);
+        }
+        private void PostEjectedEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
+        {
+            var entity = param.entity;
+            var deathInfo = param.deathInfo;
+            if (!entity.ShouldTriggerDeathEffects(deathInfo))
+                return;
+            using var buffsItem = ListPool<Buff>.Rent();
+            var buffs = buffsItem.Value;
+            entity.GetBuffs<ThrownByEjectorBuff>(buffs);
+            if (buffs.Count <= 0)
+                return;
+            int faction = 0;
+            float damageMultiplier = 1;
+            foreach (var buff in buffs)
+            {
+                faction = ThrownByEjectorBuff.GetFaction(buff);
+                damageMultiplier *= ThrownByEjectorBuff.GetDamageMultiplier(buff);
+            }
+            
+            var shell = entity.GetShellID();
+            if (shell == VanillaShellID.ice)
+            {
+                // 冰落地时爆出冰锥
+                IceLand(entity, damageMultiplier);
+            }
+
+            if (!entity.IsAIFrozen())
+            {
+                // 炸药落地后如果死亡，就引爆
+                if (entity.TryBehaviourExplode(entity.GetRange(), entity.GetDamage()))
+                {
+                    entity.Remove();
+                }
+            }
+            entity.RemoveBuffs(buffs);
         }
         private void PostEjectedEntityLandCallback(VanillaLevelCallbacks.PostEjectedEntityLandParams param, CallbackResultVoid result)
         {
@@ -125,8 +162,6 @@ namespace MVZ2.GameContent.GlobalCallbacks
         }
         private void IceLand(Entity entity, float damageMultiplier)
         {
-            if (!entity.IsDead)
-                return;
             entity.PlaySound(VanillaSoundID.frozenOrb);
             var level = entity.Level;
             // 发射冰锥
