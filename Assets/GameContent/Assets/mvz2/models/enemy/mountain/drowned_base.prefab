@@ -194,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5119668504025542221, guid: a2a566a7ce07850428f426c3406edea6, type: 3}
       propertyPath: m_Name
-      value: bubble_gun_gurgle 1
+      value: drowned_base
       objectReference: {fileID: 0}
     - target: {fileID: 5449253582177849332, guid: a2a566a7ce07850428f426c3406edea6, type: 3}
       propertyPath: m_Sprite
