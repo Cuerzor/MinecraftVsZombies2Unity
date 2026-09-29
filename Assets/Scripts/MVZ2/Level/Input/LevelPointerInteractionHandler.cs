@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using MVZ2Logic.Inputs;
+using PVZEngine.Tools.Unity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -55,6 +56,14 @@ namespace MVZ2.Level.Inputing
         #region 接口实现
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
+            var pointerID = eventData.pointerId;
+            foreach (var pointerData in hoveredPointerDatas)
+            {
+                if (pointerData.pointerId == pointerID)
+                {
+                    Log.LogWarning($"Trying to add a PointerEventData with existing pointerID to hoveredPointerDatas:\n old: {pointerData}\nnew: {eventData}");
+                }
+            }
             hoveredPointerDatas.Add(eventData);
             OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Enter);
         }
