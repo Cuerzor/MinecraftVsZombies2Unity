@@ -722,7 +722,7 @@
                 <idArray name="mvz2:gridLayers" value="" />
                 <int name="mvz2:hp_bar_visibility" value="-1" />
 
-                <int name="mvz2:cost" value="75" />
+                <int name="mvz2:cost" value="50" />
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
             </properties>
         </entity>
