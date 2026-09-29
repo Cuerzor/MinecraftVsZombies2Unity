@@ -11,13 +11,13 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2026
 		Month: 9
-		Day: 12
-		Hour: 11
-		Minute: 11
-		Second: 11
-		Millisecond: 670
+		Day: 29
+		Hour: 19
+		Minute: 5
+		Second: 40
+		Millisecond: 108
 	}
-	Creator: "Blockbench 5.1.6"
+	Creator: "Blockbench 5.2.1"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
 		Type: "UserData"
 		Version: 100
@@ -36,20 +36,20 @@ FBXHeaderExtension:  {
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", "Blockbench"
 			P: "Original|ApplicationName", "KString", "", "", "Blockbench FBX Exporter"
-			P: "Original|ApplicationVersion", "KString", "", "", "5.1.6"
+			P: "Original|ApplicationVersion", "KString", "", "", "5.2.1"
 			P: "Original|DateTime_GMT", "DateTime", "", "", "01/01/1970 00:00:00.000"
 			P: "Original|FileName", "KString", "", "", "/foobar.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Blockbench"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Blockbench FBX Exporter"
-			P: "LastSaved|ApplicationVersion", "KString", "", "", "5.1.6"
+			P: "LastSaved|ApplicationVersion", "KString", "", "", "5.2.1"
 			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "01/01/1970 00:00:00.000"
 			P: "Original|ApplicationNativeFile", "KString", "", "", ""
 		}
 	}
 }
 FileId: "iVFoobar"
-CreationTime: "2026-09-12 03:11:11:670"
+CreationTime: "2026-09-29 11:05:40:108"
 Creator: "Made with Blockbench"
 GlobalSettings:  {
 	Version: 1000
@@ -78,7 +78,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1544007529 {
+	Document: 178557909 {
 		Scene: "Scene"
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
@@ -268,7 +268,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Model: 78670283, "Model::Tentacle", "Null" {
+	Model: 70243237, "Model::Tentacle", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -282,7 +282,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 79767021, "Model::segment1", "Null" {
+	Model: 79558434, "Model::segment1", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -296,7 +296,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 74513800, "Model::segment2", "Null" {
+	Model: 71296051, "Model::segment2", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -310,7 +310,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 72160241, "Model::segment3", "Null" {
+	Model: 79259369, "Model::segment3", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -324,7 +324,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 77866502, "Model::segment4", "Null" {
+	Model: 70130692, "Model::segment4", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -338,7 +338,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 70183514, "Model::segment5", "Null" {
+	Model: 79463292, "Model::segment5", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -352,7 +352,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 77537622, "Model::segment4hatch2", "Null" {
+	Model: 74995272, "Model::segment4hatch2", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -366,7 +366,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 71309812, "Model::segment4hatch1", "Null" {
+	Model: 70680092, "Model::segment4hatch1", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -380,7 +380,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 71335750, "Model::segment6", "Null" {
+	Model: 71994368, "Model::segment6", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -394,7 +394,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 71695075, "Model::segment7", "Null" {
+	Model: 79150233, "Model::segment7", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -408,7 +408,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 70171222, "Model::segment7Cube", "Mesh" {
+	Model: 70757397, "Model::segment7Cube", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -423,7 +423,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 78975950, "Geometry::segment7Cube", "Mesh" {
+	Geometry: 77889188, "Geometry::segment7Cube", "Mesh" {
 		Vertices: *15 {
 			a: 50,0,50,50,0,-50,0,100,0,-50,0,50,-50,0,-50
 		}
@@ -446,7 +446,7 @@ Objects:  {
 			MappingInformationType: "ByPolygonVertex"
 			ReferenceInformationType: "Direct"
 			UV: *32 {
-				a: 0.5,0.75,0.640625,0.875,0.5,1,0.375,0.75,0.375,1,0.5,1,0.5,0.75,0.640625,0.625,0.5,0.75,0.5,0.5,0.640625,0.375,0.5,0.49019531250000004,0.5,0.25582031250000004,0.5,0,0.640625,0.11917968749999996,0.5,0.25
+				a: 0.5,0.75,0.640625,0.875,0.5,1,0.375,0.75,0.375,1,0.5,1,0.5,0.75,0.5,0.5,0.6484375,0.625,0.5,0.75,0.640625,0.375,0.5,0.5,0.5,0.25,0.5,0,0.640625,0.125,0.5,0.25
 			}
 		}
 		LayerElementMaterial: 0 {
@@ -474,7 +474,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 79326129, "Model::segment1Cube", "Mesh" {
+	Model: 73193623, "Model::segment1Cube", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -489,7 +489,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 77942285, "Geometry::segment1Cube", "Mesh" {
+	Geometry: 71003225, "Geometry::segment1Cube", "Mesh" {
 		Vertices: *24 {
 			a: 50,100,50,50,100,-50,50,0,50,50,0,-50,-50,100,-50,-50,100,50,-50,0,-50,-50,0,50
 		}
@@ -540,7 +540,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 75223249, "Model::segment2Cube", "Mesh" {
+	Model: 75855267, "Model::segment2Cube", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -555,7 +555,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 71714850, "Geometry::segment2Cube", "Mesh" {
+	Geometry: 74438746, "Geometry::segment2Cube", "Mesh" {
 		Vertices: *24 {
 			a: 50,100,50,50,100,-50,50,0,50,50,0,-50,-50,100,-50,-50,100,50,-50,0,-50,-50,0,50
 		}
@@ -606,7 +606,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 74895074, "Model::segment3Cube", "Mesh" {
+	Model: 77640625, "Model::segment3Cube", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -621,7 +621,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 76461619, "Geometry::segment3Cube", "Mesh" {
+	Geometry: 74781817, "Geometry::segment3Cube", "Mesh" {
 		Vertices: *24 {
 			a: 50,100,50,50,100,-50,50,0,50,50,0,-50,-50,100,-50,-50,100,50,-50,0,-50,-50,0,50
 		}
@@ -672,7 +672,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 71407645, "Model::segment4Cube", "Mesh" {
+	Model: 72894719, "Model::segment4Cube", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -687,7 +687,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 77984143, "Geometry::segment4Cube", "Mesh" {
+	Geometry: 75639003, "Geometry::segment4Cube", "Mesh" {
 		Vertices: *24 {
 			a: 50,100,50,50,100,-50,50,0,50,50,0,-50,-50,100,-50,-50,100,50,-50,0,-50,-50,0,50
 		}
@@ -738,7 +738,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 77905814, "Model::segment5Cube", "Mesh" {
+	Model: 78970847, "Model::segment5Cube", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -753,7 +753,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 71244318, "Geometry::segment5Cube", "Mesh" {
+	Geometry: 79282579, "Geometry::segment5Cube", "Mesh" {
 		Vertices: *24 {
 			a: 50,200,50,50,200,-50,50,100,50,50,100,-50,-50,200,-50,-50,200,50,-50,100,-50,-50,100,50
 		}
@@ -804,7 +804,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 74661656, "Model::segment4hatch2Up", "Mesh" {
+	Model: 73427582, "Model::segment4hatch2Up", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -819,7 +819,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 71539894, "Geometry::segment4hatch2Up", "Mesh" {
+	Geometry: 76962375, "Geometry::segment4hatch2Up", "Mesh" {
 		Vertices: *24 {
 			a: 31.25,0,0,31.25,0,-6.25,31.25,-37.5,0,31.25,-37.5,-6.25,-31.25,0,-6.25,-31.25,0,0,-31.25,-37.5,-6.25,-31.25,-37.5,0
 		}
@@ -870,7 +870,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 73219703, "Model::segment4hatch2Down", "Mesh" {
+	Model: 77666254, "Model::segment4hatch2Down", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -885,7 +885,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 72702220, "Geometry::segment4hatch2Down", "Mesh" {
+	Geometry: 73834796, "Geometry::segment4hatch2Down", "Mesh" {
 		Vertices: *24 {
 			a: 31.25,37.5,0,31.25,37.5,-6.25,31.25,0,0,31.25,0,-6.25,-31.25,37.5,-6.25,-31.25,37.5,0,-31.25,0,-6.25,-31.25,0,0
 		}
@@ -936,7 +936,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 71008172, "Model::segment4hatch1Up", "Mesh" {
+	Model: 77515802, "Model::segment4hatch1Up", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -951,7 +951,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 77046681, "Geometry::segment4hatch1Up", "Mesh" {
+	Geometry: 74944090, "Geometry::segment4hatch1Up", "Mesh" {
 		Vertices: *24 {
 			a: 31.25,0,6.25,31.25,0,0,31.25,-37.5,6.25,31.25,-37.5,0,-31.25,0,0,-31.25,0,6.25,-31.25,-37.5,0,-31.25,-37.5,6.25
 		}
@@ -1002,7 +1002,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 78498211, "Model::segment4hatch1Down", "Mesh" {
+	Model: 75139660, "Model::segment4hatch1Down", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1017,7 +1017,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 79774287, "Geometry::segment4hatch1Down", "Mesh" {
+	Geometry: 73173821, "Geometry::segment4hatch1Down", "Mesh" {
 		Vertices: *24 {
 			a: 31.25,37.5,6.25,31.25,37.5,0,31.25,0,6.25,31.25,0,0,-31.25,37.5,0,-31.25,37.5,6.25,-31.25,0,0,-31.25,0,6.25
 		}
@@ -1068,7 +1068,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 73437643, "Model::segment6Cube", "Mesh" {
+	Model: 70505930, "Model::segment6Cube", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -1083,7 +1083,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Geometry: 75544640, "Geometry::segment6Cube", "Mesh" {
+	Geometry: 75394941, "Geometry::segment6Cube", "Mesh" {
 		Vertices: *24 {
 			a: 50,100,50,50,100,-50,50,0,50,50,0,-50,-50,100,-50,-50,100,50,-50,0,-50,-50,0,50
 		}
@@ -1134,7 +1134,7 @@ Objects:  {
 			}
 		}
 	}
-	Material: 79460059, "Material::kraken_tentacle.png", "" {
+	Material: 79230615, "Material::kraken_tentacle.png", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -1145,7 +1145,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Texture: 71968599, "Texture::kraken_tentacle.png", "" {
+	Texture: 78499726, "Texture::kraken_tentacle.png", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::kraken_tentacle.png"
@@ -1157,7 +1157,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Video: 76910418, "Video::kraken_tentacle.png", "Clip" {
+	Video: 74327345, "Video::kraken_tentacle.png", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "E:\MVZ2\Bosses\Unity\Kraken\kraken_tentacle.png"
@@ -1174,139 +1174,139 @@ Objects:  {
 Connections:  {
 
 	;Model::Tentacle, Model::RootNode
-	C: "OO",78670283,0
+	C: "OO",70243237,0
 
 	;Model::segment1, Model::Tentacle
-	C: "OO",79767021,78670283
+	C: "OO",79558434,70243237
 
 	;Model::segment2, Model::segment1
-	C: "OO",74513800,79767021
+	C: "OO",71296051,79558434
 
 	;Model::segment3, Model::segment2
-	C: "OO",72160241,74513800
+	C: "OO",79259369,71296051
 
 	;Model::segment4, Model::segment3
-	C: "OO",77866502,72160241
+	C: "OO",70130692,79259369
 
 	;Model::segment5, Model::segment4
-	C: "OO",70183514,77866502
+	C: "OO",79463292,70130692
 
 	;Model::segment4hatch2, Model::segment4
-	C: "OO",77537622,77866502
+	C: "OO",74995272,70130692
 
 	;Model::segment4hatch1, Model::segment4
-	C: "OO",71309812,77866502
+	C: "OO",70680092,70130692
 
 	;Model::segment6, Model::segment5
-	C: "OO",71335750,70183514
+	C: "OO",71994368,79463292
 
 	;Model::segment7, Model::segment6
-	C: "OO",71695075,71335750
+	C: "OO",79150233,71994368
 
 	;Model::segment7Cube, Model::segment7
-	C: "OO",70171222,71695075
+	C: "OO",70757397,79150233
 
 	;Geometry::segment7Cube, Model::segment7Cube
-	C: "OO",78975950,70171222
+	C: "OO",77889188,70757397
 
 	;Material::kraken_tentacle.png, Model::segment7Cube
-	C: "OO",79460059,70171222
+	C: "OO",79230615,70757397
 
 	;Model::segment1Cube, Model::segment1
-	C: "OO",79326129,79767021
+	C: "OO",73193623,79558434
 
 	;Geometry::segment1Cube, Model::segment1Cube
-	C: "OO",77942285,79326129
+	C: "OO",71003225,73193623
 
 	;Material::kraken_tentacle.png, Model::segment1Cube
-	C: "OO",79460059,79326129
+	C: "OO",79230615,73193623
 
 	;Model::segment2Cube, Model::segment2
-	C: "OO",75223249,74513800
+	C: "OO",75855267,71296051
 
 	;Geometry::segment2Cube, Model::segment2Cube
-	C: "OO",71714850,75223249
+	C: "OO",74438746,75855267
 
 	;Material::kraken_tentacle.png, Model::segment2Cube
-	C: "OO",79460059,75223249
+	C: "OO",79230615,75855267
 
 	;Model::segment3Cube, Model::segment3
-	C: "OO",74895074,72160241
+	C: "OO",77640625,79259369
 
 	;Geometry::segment3Cube, Model::segment3Cube
-	C: "OO",76461619,74895074
+	C: "OO",74781817,77640625
 
 	;Material::kraken_tentacle.png, Model::segment3Cube
-	C: "OO",79460059,74895074
+	C: "OO",79230615,77640625
 
 	;Model::segment4Cube, Model::segment4
-	C: "OO",71407645,77866502
+	C: "OO",72894719,70130692
 
 	;Geometry::segment4Cube, Model::segment4Cube
-	C: "OO",77984143,71407645
+	C: "OO",75639003,72894719
 
 	;Material::kraken_tentacle.png, Model::segment4Cube
-	C: "OO",79460059,71407645
+	C: "OO",79230615,72894719
 
 	;Model::segment5Cube, Model::segment5
-	C: "OO",77905814,70183514
+	C: "OO",78970847,79463292
 
 	;Geometry::segment5Cube, Model::segment5Cube
-	C: "OO",71244318,77905814
+	C: "OO",79282579,78970847
 
 	;Material::kraken_tentacle.png, Model::segment5Cube
-	C: "OO",79460059,77905814
+	C: "OO",79230615,78970847
 
 	;Model::segment4hatch2Up, Model::segment4hatch2
-	C: "OO",74661656,77537622
+	C: "OO",73427582,74995272
 
 	;Geometry::segment4hatch2Up, Model::segment4hatch2Up
-	C: "OO",71539894,74661656
+	C: "OO",76962375,73427582
 
 	;Material::kraken_tentacle.png, Model::segment4hatch2Up
-	C: "OO",79460059,74661656
+	C: "OO",79230615,73427582
 
 	;Model::segment4hatch2Down, Model::segment4hatch2
-	C: "OO",73219703,77537622
+	C: "OO",77666254,74995272
 
 	;Geometry::segment4hatch2Down, Model::segment4hatch2Down
-	C: "OO",72702220,73219703
+	C: "OO",73834796,77666254
 
 	;Material::kraken_tentacle.png, Model::segment4hatch2Down
-	C: "OO",79460059,73219703
+	C: "OO",79230615,77666254
 
 	;Model::segment4hatch1Up, Model::segment4hatch1
-	C: "OO",71008172,71309812
+	C: "OO",77515802,70680092
 
 	;Geometry::segment4hatch1Up, Model::segment4hatch1Up
-	C: "OO",77046681,71008172
+	C: "OO",74944090,77515802
 
 	;Material::kraken_tentacle.png, Model::segment4hatch1Up
-	C: "OO",79460059,71008172
+	C: "OO",79230615,77515802
 
 	;Model::segment4hatch1Down, Model::segment4hatch1
-	C: "OO",78498211,71309812
+	C: "OO",75139660,70680092
 
 	;Geometry::segment4hatch1Down, Model::segment4hatch1Down
-	C: "OO",79774287,78498211
+	C: "OO",73173821,75139660
 
 	;Material::kraken_tentacle.png, Model::segment4hatch1Down
-	C: "OO",79460059,78498211
+	C: "OO",79230615,75139660
 
 	;Model::segment6Cube, Model::segment6
-	C: "OO",73437643,71335750
+	C: "OO",70505930,71994368
 
 	;Geometry::segment6Cube, Model::segment6Cube
-	C: "OO",75544640,73437643
+	C: "OO",75394941,70505930
 
 	;Material::kraken_tentacle.png, Model::segment6Cube
-	C: "OO",79460059,73437643
+	C: "OO",79230615,70505930
 
 	;Texture::kraken_tentacle.png, Material::kraken_tentacle.png
-	C: "OP",71968599,79460059, "DiffuseColor"
+	C: "OP",78499726,79230615, "DiffuseColor"
 
 	;Video::kraken_tentacle.png, Texture::kraken_tentacle.png
-	C: "OO",76910418,71968599
+	C: "OO",74327345,78499726
 }
 
 ; Takes section
