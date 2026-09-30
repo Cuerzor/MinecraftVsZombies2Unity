@@ -202,7 +202,7 @@
     </entry>
     <entry id="zombinator">
         <entity id="mvz2:zombinator" />
-        <spawn level="4" minWave="5" />
+        <spawn level="5" minWave="5" />
         <weight base="2500" />
     </entry>
     <entry id="axolotl_suit">
