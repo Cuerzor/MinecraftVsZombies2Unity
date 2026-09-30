@@ -432,7 +432,7 @@ namespace MVZ2.Level.UI
             animator.enabled = false;
             foreach (var receiver in receivers)
             {
-                receiver.OnPointerInteraction += (r, data, interaction) => OnRaycastReceiverPointerInteraction?.Invoke(r.GetArea(), data, interaction);
+                receiver.OnPointerInteraction += (r, args) => OnRaycastReceiverPointerInteraction?.Invoke(r.GetArea(), args);
             }
 
             starshardPanel.OnPointerDown += (data) => OnStarshardPointerDown?.Invoke(data);
@@ -455,7 +455,7 @@ namespace MVZ2.Level.UI
             menuButton.onClick.AddListener(() => OnMenuButtonClick?.Invoke());
             speedUpButton.onClick.AddListener(() => OnSpeedUpButtonClick?.Invoke());
 
-            blueprints.OnBlueprintPointerInteraction += (index, e, i, c) => OnBlueprintPointerInteraction?.Invoke(index, e, i, c);
+            blueprints.OnBlueprintPointerInteraction += (index, args, c) => OnBlueprintPointerInteraction?.Invoke(index, args, c);
         }
 
         private void OnArtifactPointerEnterCallback(ArtifactItemUI item)
@@ -469,7 +469,7 @@ namespace MVZ2.Level.UI
         #endregion
 
         #region 事件
-        public event Action<LawnArea, PointerEventData, PointerInteraction>? OnRaycastReceiverPointerInteraction;
+        public event Action<LawnArea, PointerInteractionArgs>? OnRaycastReceiverPointerInteraction;
 
         public event Action<PointerEventData>? OnPickaxePointerEnter;
         public event Action<PointerEventData>? OnPickaxePointerExit;
@@ -484,7 +484,7 @@ namespace MVZ2.Level.UI
         public event Action<PointerEventData>? OnTriggerPointerExit;
         public event Action<PointerEventData>? OnTriggerPointerDown;
 
-        public event Action<int, PointerEventData, PointerInteraction, bool>? OnBlueprintPointerInteraction;
+        public event Action<int, PointerInteractionArgs, bool>? OnBlueprintPointerInteraction;
 
         public event Action? OnStartGameCalled;
         public event Action? OnMenuButtonClick;

@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2.Blueprints;
+using MVZ2.Level.Inputing;
 using MVZ2.Level.UI;
 using MVZ2.Models;
 using MVZ2.UI;
@@ -116,13 +117,13 @@ namespace MVZ2.GameContent.Customize
             pickaxe.OnPointerDown += OnPickaxePointerDownCallback;
             layout.OnPointerInteraction += OnLayoutTilePointerInteractionCallback;
         }
-        private void OnBlueprintPointerInteractionCallback(int index, PointerEventData eventData, PointerInteraction interaction)
+        private void OnBlueprintPointerInteractionCallback(int index, PointerInteractionArgs args)
         {
-            OnBlueprintPointerInteraction?.Invoke(index, eventData, interaction);
+            OnBlueprintPointerInteraction?.Invoke(index, args);
         }
-        private void OnLayoutTilePointerInteractionCallback(int index, PointerEventData eventData, PointerInteraction interaction)
+        private void OnLayoutTilePointerInteractionCallback(int index, PointerInteractionArgs args)
         {
-            OnLayoutTilePointerInteraction?.Invoke(index, eventData, interaction);
+            OnLayoutTilePointerInteraction?.Invoke(index, args);
         }
         private void OnPickaxePointerEnterCallback(PointerEventData eventData)
         {
@@ -144,8 +145,8 @@ namespace MVZ2.GameContent.Customize
         {
             OnCancelClick?.Invoke();
         }
-        public event Action<int, PointerEventData, PointerInteraction>? OnBlueprintPointerInteraction;
-        public event Action<int, PointerEventData, PointerInteraction>? OnLayoutTilePointerInteraction;
+        public event Action<int, PointerInteractionArgs>? OnBlueprintPointerInteraction;
+        public event Action<int, PointerInteractionArgs>? OnLayoutTilePointerInteraction;
         public event Action<PointerEventData>? OnPickaxePointerEnter;
         public event Action<PointerEventData>? OnPickaxePointerExit;
         public event Action<PointerEventData>? OnPickaxePointerDown;

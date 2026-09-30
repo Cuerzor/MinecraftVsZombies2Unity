@@ -4,6 +4,7 @@ using System;
 using MVZ2.Blueprints;
 using MVZ2.Level.Artifacts;
 using MVZ2.Level.Curses;
+using MVZ2.Level.Inputing;
 using MVZ2.UI;
 using MVZ2Logic.Inputs;
 using PVZEngine.Tools.Unity;
@@ -245,13 +246,13 @@ namespace MVZ2.Level.Blueprints
             blueprintChoosePanel.OnViewLawnButtonClick += () => OnViewLawnClick?.Invoke();
             blueprintChoosePanel.OnRepickButtonClick += () => OnRepickClick?.Invoke();
             blueprintChoosePanel.OnCancelButtonClick += () => OnCancelChooseClick?.Invoke();
-            blueprintChoosePanel.OnCommandBlockBlueprintPointerInteraction += (e, i) => OnCommandBlockPointerInteraction?.Invoke(e, i);
-            blueprintChoosePanel.OnCommandBlockBlueprintSelect += (e) => OnCommandBlockSlotSelect?.Invoke(e);
-            blueprintChoosePanel.OnBlueprintPointerInteraction += (index, data, i) => OnBlueprintItemPointerInteraction?.Invoke(index, data, i, false);
+            blueprintChoosePanel.OnCommandBlockBlueprintPointerInteraction += (args) => OnCommandBlockPointerInteraction?.Invoke(args);
+            blueprintChoosePanel.OnCommandBlockBlueprintSelect += (args) => OnCommandBlockSlotSelect?.Invoke(args);
+            blueprintChoosePanel.OnBlueprintPointerInteraction += (index, args) => OnBlueprintItemPointerInteraction?.Invoke(index, args, false);
             blueprintChoosePanel.OnBlueprintSelect += (index, data) => OnBlueprintItemSelect?.Invoke(index, data, false);
 
             commandBlockChoosePanel.OnCancelButtonClick += () => OnCommandBlockPanelCancelClick?.Invoke();
-            commandBlockChoosePanel.OnBlueprintPointerInteraction += (index, data, i) => OnBlueprintItemPointerInteraction?.Invoke(index, data, i, true);
+            commandBlockChoosePanel.OnBlueprintPointerInteraction += (index, args) => OnBlueprintItemPointerInteraction?.Invoke(index, args, true);
             commandBlockChoosePanel.OnBlueprintSelect += (index, data) => OnBlueprintItemSelect?.Invoke(index, data, true);
 
             choosingViewAlmanacButton.onClick.AddListener(() => OnViewAlmanacClick?.Invoke());
@@ -302,14 +303,14 @@ namespace MVZ2.Level.Blueprints
         public event Action? OnViewLawnClick;
         public event Action? OnRepickClick;
         public event Action? OnCancelChooseClick;
-        public event Action<PointerEventData, PointerInteraction>? OnCommandBlockPointerInteraction;
-        public event Action<PointerEventData>? OnCommandBlockSlotSelect;
+        public event Action<PointerInteractionArgs>? OnCommandBlockPointerInteraction;
+        public event Action<PointerInteractionArgs>? OnCommandBlockSlotSelect;
         public event Action? OnCommandBlockPanelCancelClick;
         public event Action<int>? OnArtifactSlotClick;
         public event Action<int>? OnArtifactSlotPointerEnter;
         public event Action<int>? OnArtifactSlotPointerExit;
-        public event Action<int, PointerEventData, PointerInteraction, bool>? OnBlueprintItemPointerInteraction;
-        public event Action<int, PointerEventData, bool>? OnBlueprintItemSelect;
+        public event Action<int, PointerInteractionArgs, bool>? OnBlueprintItemPointerInteraction;
+        public event Action<int, PointerInteractionArgs, bool>? OnBlueprintItemSelect;
 
         public event Action? OnViewAlmanacClick;
         public event Action? OnViewStoreClick;

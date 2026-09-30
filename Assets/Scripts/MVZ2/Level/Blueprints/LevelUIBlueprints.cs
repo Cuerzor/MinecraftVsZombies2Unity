@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2.Blueprints;
+using MVZ2.Level.Inputing;
 using MVZ2Logic.Inputs;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -59,13 +60,13 @@ namespace MVZ2.Level.Blueprints
             blueprints.OnBlueprintPointerInteraction += OnBlueprintPointerInteractionCallback;
             conveyor.OnBlueprintPointerInteraction += OnConveyorPointerInteractionCallback;
         }
-        private void OnBlueprintPointerInteractionCallback(int index, PointerEventData eventData, PointerInteraction interaction)
+        private void OnBlueprintPointerInteractionCallback(int index, PointerInteractionArgs args)
         {
-            OnBlueprintPointerInteraction?.Invoke(index, eventData, interaction, false);
+            OnBlueprintPointerInteraction?.Invoke(index, args, false);
         }
-        private void OnConveyorPointerInteractionCallback(int index, PointerEventData eventData, PointerInteraction interaction)
+        private void OnConveyorPointerInteractionCallback(int index, PointerInteractionArgs args)
         {
-            OnBlueprintPointerInteraction?.Invoke(index, eventData, interaction, true);
+            OnBlueprintPointerInteraction?.Invoke(index, args, true);
         }
 
         #region 经典模式蓝图
@@ -155,7 +156,7 @@ namespace MVZ2.Level.Blueprints
         }
         #endregion
 
-        public event Action<int, PointerEventData, PointerInteraction, bool>? OnBlueprintPointerInteraction;
+        public event Action<int, PointerInteractionArgs, bool>? OnBlueprintPointerInteraction;
 
         private bool isConveyor;
         [SerializeField]

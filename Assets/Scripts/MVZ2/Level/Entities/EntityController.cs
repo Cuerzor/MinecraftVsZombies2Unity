@@ -202,7 +202,7 @@ namespace MVZ2.Level.Entities
         public bool IsHovered() => holdStreakHandler.IsHovered();
         public bool IsPressed() => holdStreakHandler.IsPressed();
         public int GetHoveredPointerCount() => holdStreakHandler.GetHoveredPointerCount();
-        public PointerEventData GetHoveredPointerEventData(int index) => holdStreakHandler.GetHoveredPointerEventData(index);
+        public int GetHoveredPointerID(int index) => holdStreakHandler.GetHoveredPointerID(index);
         public Vector2 TransformWorld2ColliderPosition(Vector3 worldPosition)
         {
             if (Model is not EntityModel spriteModel)
@@ -251,10 +251,10 @@ namespace MVZ2.Level.Entities
             var pos = TransformWorld2ColliderPosition(worldPosition);
             return new HeldItemTargetEntity(Entity, pos, screenPosition);
         }
-        public HeldItemTargetEntity GetHeldItemTarget(PointerEventData data)
+        public HeldItemTargetEntity GetHeldItemTarget(RaycastResult result)
         {
-            var worldPosition = data.pointerCurrentRaycast.worldPosition;
-            var screenPosition = data.pointerCurrentRaycast.screenPosition;
+            var worldPosition = result.worldPosition;
+            var screenPosition = result.screenPosition;
             var pos = TransformWorld2ColliderPosition(worldPosition);
             return new HeldItemTargetEntity(Entity, pos, screenPosition);
         }
@@ -284,7 +284,7 @@ namespace MVZ2.Level.Entities
         #region 生命周期
         private void Awake()
         {
-            holdStreakHandler.OnPointerInteraction += (_, d, i) => OnPointerInteraction?.Invoke(this, d, i);
+            holdStreakHandler.OnPointerInteraction += (_, args) => OnPointerInteraction?.Invoke(this, args);
             bodyModelInterface = new BodyModelInterface(this);
             hpBarSource = new EntityHPBarSource(this);
         }
@@ -351,7 +351,7 @@ namespace MVZ2.Level.Entities
             }
             if (definition == null)
                 return false;
-            var target = GetHeldItemTarget(d);
+            var target = GetHeldItemTarget(d.pointerCurrentRaycast);
             var pointer = InputHelper.GetPointerDataFromEventData(d);
             return definition.IsValidFor(target, data, pointer);
         }
@@ -804,7 +804,7 @@ namespace MVZ2.Level.Entities
         #endregion
 
         #region 事件
-        public event Action<EntityController, PointerEventData, PointerInteraction>? OnPointerInteraction;
+        public event Action<EntityController, PointerInteractionArgs>? OnPointerInteraction;
         #endregion
 
         #region 属性字段

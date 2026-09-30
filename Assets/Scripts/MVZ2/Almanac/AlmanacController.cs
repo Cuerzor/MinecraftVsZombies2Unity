@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using MukioI18n;
+using MVZ2.Level.Inputing;
 using MVZ2.Managers;
 using MVZ2.Metas;
 using MVZ2.Models;
@@ -115,16 +116,16 @@ namespace MVZ2.Almanacs
                     break;
             }
         }
-        private void OnCommandBlockClickCallback(PointerEventData eventData)
+        private void OnCommandBlockClickCallback(PointerInteractionArgs args)
         {
-            if (eventData.IsMouseButNotLeft())
+            if (InputHelper.IsMouseButNotLeft(args.pointerId))
                 return;
             SetActiveContraptionEntry(LogicContraptionID.commandBlock);
             Main.SoundManager.Play2D(LogicSoundID.tap);
         }
-        private void OnContraptionEntryClickCallback(int index, PointerEventData data)
+        private void OnContraptionEntryClickCallback(int index, PointerInteractionArgs args)
         {
-            if (data.IsMouseButNotLeft())
+            if (InputHelper.IsMouseButNotLeft(args.pointerId))
                 return;
             SetActiveContraptionEntry(contraptionEntries[index]);
             Main.SoundManager.Play2D(LogicSoundID.tap);

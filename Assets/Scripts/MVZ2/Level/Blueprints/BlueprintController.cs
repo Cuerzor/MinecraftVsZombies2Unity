@@ -2,6 +2,7 @@
 
 using MVZ2.Blueprints;
 using MVZ2.Level.Blueprints;
+using MVZ2.Level.Inputing;
 using MVZ2.Managers;
 using MVZ2.UI;
 using MVZ2Logic.Inputs;
@@ -113,9 +114,9 @@ namespace MVZ2.Level.Blueprints
 
 
         #region 事件回调
-        private void OnPointerInteractionCallback(Blueprint blueprint, PointerEventData eventData, PointerInteraction interaction)
+        private void OnPointerInteractionCallback(Blueprint blueprint, PointerInteractionArgs args)
         {
-            switch (interaction)
+            switch (args.interaction)
             {
                 case PointerInteraction.Enter:
                     Controller.ShowTooltip(tooltipSource);

@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2.Blueprints;
+using MVZ2.Level.Inputing;
 using MVZ2Logic.Inputs;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
@@ -31,11 +32,11 @@ namespace MVZ2.Level.Blueprints
         }
         public abstract Blueprint? GetBlueprintAt(int index);
         public abstract int GetBlueprintIndex(Blueprint value);
-        protected void OnBlueprintPointerInteractionCallback(Blueprint blueprint, PointerEventData data, PointerInteraction interaction)
+        protected void OnBlueprintPointerInteractionCallback(Blueprint blueprint, PointerInteractionArgs args)
         {
-            OnBlueprintPointerInteraction?.Invoke(GetBlueprintIndex(blueprint), data, interaction);
+            OnBlueprintPointerInteraction?.Invoke(GetBlueprintIndex(blueprint), args);
         }
-        public event Action<int, PointerEventData, PointerInteraction>? OnBlueprintPointerInteraction;
+        public event Action<int, PointerInteractionArgs>? OnBlueprintPointerInteraction;
         [SerializeField]
         protected bool horizontal;
     }

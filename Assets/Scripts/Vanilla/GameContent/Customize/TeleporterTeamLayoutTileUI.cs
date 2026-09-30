@@ -60,11 +60,11 @@ namespace MVZ2.GameContent.Customize
             modelContainerTemplate.gameObject.SetActive(false);
             handler.OnPointerInteraction += OnPointerInteractionCallback;
         }
-        private void OnPointerInteractionCallback(LevelPointerInteractionHandler handler, PointerEventData eventData, PointerInteraction interaction)
+        private void OnPointerInteractionCallback(LevelPointerInteractionHandler handler, PointerInteractionArgs args)
         {
-            OnPointerInteraction?.Invoke(this, eventData, interaction);
+            OnPointerInteraction?.Invoke(this, args);
         }
-        public event Action<TeleporterTeamLayoutTileUI, PointerEventData, PointerInteraction>? OnPointerInteraction;
+        public event Action<TeleporterTeamLayoutTileUI, PointerInteractionArgs>? OnPointerInteraction;
         [SerializeField]
         private Image tileHighlight = null!;
         [SerializeField]

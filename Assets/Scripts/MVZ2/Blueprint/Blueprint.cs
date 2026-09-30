@@ -82,7 +82,7 @@ namespace MVZ2.Blueprints
         }
         private void Awake()
         {
-            holdStreakHandler.OnPointerInteraction += (_, d, i) => CallPointerInteraction(d, i);
+            holdStreakHandler.OnPointerInteraction += (_, args) => CallPointerInteraction(args);
         }
         private void UpdateRechargeFlash()
         {
@@ -90,16 +90,16 @@ namespace MVZ2.Blueprints
             color.a = rechargeFlashAlpha;
             rechargeFlashImage.color = color;
         }
-        private void CallPointerInteraction(PointerEventData eventData, PointerInteraction interaction)
+        private void CallPointerInteraction(PointerInteractionArgs args)
         {
-            OnPointerInteraction?.Invoke(this, eventData, interaction);
-            if (interaction == selectInteraction)
+            OnPointerInteraction?.Invoke(this, args);
+            if (args.interaction == selectInteraction)
             {
-                OnSelect?.Invoke(this, eventData);
+                OnSelect?.Invoke(this, args);
             }
         }
-        public event Action<Blueprint, PointerEventData, PointerInteraction>? OnPointerInteraction;
-        public event Action<Blueprint, PointerEventData>? OnSelect;
+        public event Action<Blueprint, PointerInteractionArgs>? OnPointerInteraction;
+        public event Action<Blueprint, PointerInteractionArgs>? OnSelect;
         ITooltipAnchor ITooltipTarget.Anchor => tooltipAnchor;
         public UIModel Model => model;
         private float rechargeFlashAlpha = 0;

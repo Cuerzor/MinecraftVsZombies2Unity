@@ -59,11 +59,15 @@ namespace MVZ2Logic.Inputs
             }
             return false;
         }
+        public static bool IsMouseButNotLeft(int pointerId)
+        {
+            var pointerType = GetPointerType(pointerId);
+            var pointerButton = GetPointerButton(pointerId);
+            return pointerType == PointerTypes.MOUSE && pointerButton != MouseButtons.LEFT;
+        }
         public static bool IsMouseButNotLeft(this PointerEventData data)
         {
-            var pointerType = GetPointerType(data.pointerId);
-            var pointerButton = GetPointerButton(data.pointerId);
-            return pointerType == PointerTypes.MOUSE && pointerButton != MouseButtons.LEFT;
+            return IsMouseButNotLeft(data.pointerId);
         }
         #endregion
 
@@ -99,20 +103,12 @@ namespace MVZ2Logic.Inputs
                 type = GetPointerType(pointerId)
             };
         }
-        public static PointerInteractionData GetPointerInteractionParamsFromEventData(PointerEventData eventData, PointerInteraction interaction)
-        {
-            return new PointerInteractionData()
-            {
-                pointer = GetPointerDataFromEventData(eventData),
-                interaction = interaction
-            };
-        }
         public static PointerInteractionData GetPointerInteractionParamsFromPointerId(int pointerId, PointerInteraction interaction)
         {
             return new PointerInteractionData()
             {
                 pointer = GetPointerDataFromPointerId(pointerId),
-                interaction = PointerInteraction.Hold
+                interaction = interaction
             };
         }
         #endregion

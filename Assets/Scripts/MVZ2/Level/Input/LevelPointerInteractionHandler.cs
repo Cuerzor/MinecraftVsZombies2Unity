@@ -13,112 +13,165 @@ namespace MVZ2.Level.Inputing
     {
         public void ResetData()
         {
-            hoveredPointerDatas.Clear();
-            pressedPointerDatas.Clear();
+            hoveredPointerIDs.Clear();
+            pressedPointerIDs.Clear();
         }
         public void UpdateHoldAndStreak()
         {
-            hoveredPointerDataBuffer.Clear();
-            hoveredPointerDataBuffer.AddRange(hoveredPointerDatas);
-            foreach (var eventData in hoveredPointerDataBuffer)
+            hoveredPointerIDsBuffer.Clear();
+            hoveredPointerIDsBuffer.AddRange(hoveredPointerIDs);
+            foreach (var hoverID in hoveredPointerIDsBuffer)
             {
-                OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Stay);
-                if (pressedPointerDatas.Exists(e => e.pointerId == eventData.pointerId))
+                ExecutePointerInteraction(hoverID, PointerInteraction.Stay);
+                if (pressedPointerIDs.Exists(e => e == hoverID))
                 {
-                    OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Hold);
+                    ExecutePointerInteraction(hoverID, PointerInteraction.Hold);
                 }
-                if (InputHelper.IsPointerHolding(eventData.pointerId))
+                if (InputHelper.IsPointerHolding(hoverID))
                 {
-                    OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Streak);
+                    ExecutePointerInteraction(hoverID, PointerInteraction.Streak);
                 }
             }
         }
         public bool IsHovered()
         {
-            return hoveredPointerDatas.Count > 0;
+            return hoveredPointerIDs.Count > 0;
         }
         public bool IsPressed()
         {
-            return hoveredPointerDatas.Count > 0;
+            return pressedPointerIDs.Count > 0;
         }
         public int GetHoveredPointerCount()
         {
-            return hoveredPointerDatas.Count;
+            return hoveredPointerIDs.Count;
         }
-        public PointerEventData GetHoveredPointerEventData(int index)
+        public int GetHoveredPointerID(int index)
         {
-            return hoveredPointerDatas[index];
+            return hoveredPointerIDs[index];
         }
 
         #region 私有方法
 
+        private void OnDisable()
+        {
+            ResetData();
+        }
 
         #region 接口实现
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
             var pointerID = eventData.pointerId;
-            foreach (var pointerData in hoveredPointerDatas)
+            foreach (var oldId in hoveredPointerIDs)
             {
-                if (pointerData.pointerId == pointerID)
+                if (oldId == pointerID)
                 {
-                    Log.LogWarning($"Trying to add a PointerEventData with existing pointerID to hoveredPointerDatas:\n old: {pointerData}\nnew: {eventData}");
+                    Log.LogWarning($"Trying to add a PointerEventData with existing pointerID to hoveredPointerDatas:\nnew: {eventData}");
                 }
             }
-            hoveredPointerDatas.Add(eventData);
-            OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Enter);
+            hoveredPointerIDs.Add(pointerID);
+            ExecutePointerInteraction(eventData, PointerInteraction.Enter);
         }
         void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
         {
-            hoveredPointerDatas.RemoveAll(e => e.pointerId == eventData.pointerId);
-            OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Exit);
+            int count = hoveredPointerIDs.RemoveAll(e => e == eventData.pointerId);
+            if (count <= 0)
+            {
+                Log.LogWarning($"Removed nothing from hoveredPointerDatas:\nnew: {eventData}");
+            }
+            ExecutePointerInteraction(eventData, PointerInteraction.Exit);
         }
         void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
         {
-            pressedPointerDatas.Add(eventData);
-            OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Down);
+            pressedPointerIDs.Add(eventData.pointerId);
+            ExecutePointerInteraction(eventData, PointerInteraction.Down);
         }
         void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
         {
-            pressedPointerDatas.RemoveAll(e => e.pointerId == eventData.pointerId);
-            OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Up);
+            pressedPointerIDs.RemoveAll(e => e == eventData.pointerId);
+            ExecutePointerInteraction(eventData, PointerInteraction.Up);
         }
         void IPointerReleaseHandler.OnPointerRelease(PointerEventData eventData)
         {
-            OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Release);
+            ExecutePointerInteraction(eventData, PointerInteraction.Release);
         }
         void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
         {
-            OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.BeginDrag);
+            ExecutePointerInteraction(eventData, PointerInteraction.BeginDrag);
         }
         void IDragHandler.OnDrag(PointerEventData eventData)
         {
-            OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Drag);
+            ExecutePointerInteraction(eventData, PointerInteraction.Drag);
         }
         void IEndDragHandler.OnEndDrag(PointerEventData eventData)
         {
-            OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.EndDrag);
+            ExecutePointerInteraction(eventData, PointerInteraction.EndDrag);
         }
         void IDropHandler.OnDrop(PointerEventData eventData)
         {
-            OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Drop);
+            ExecutePointerInteraction(eventData, PointerInteraction.Drop);
         }
         void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
         {
-            OnPointerInteraction?.Invoke(this, eventData, PointerInteraction.Click);
+            ExecutePointerInteraction(eventData, PointerInteraction.Click);
         }
         #endregion
+        private void ExecutePointerInteraction(PointerEventData e, PointerInteraction interaction)
+        {
+            ExecutePointerInteraction(new PointerInteractionArgs
+            {
+                pointerId = e.pointerId,
+                interaction = interaction,
+                position = e.position,
+                delta = e.delta,
+                button = e.button,
+                pointerCurrentRaycast = e.pointerCurrentRaycast,
+                eventData = e,
+            });
+        }
+
+        private void ExecutePointerInteraction(int pointerId, PointerInteraction interaction)
+        {
+            ExecutePointerInteraction(new PointerInteractionArgs
+            {
+                pointerId = pointerId,
+                interaction = interaction,
+                eventData = null,
+            });
+        }
+        private void ExecutePointerInteraction(PointerInteractionArgs args)
+        {
+            OnPointerInteraction?.Invoke(this, args);
+        }
 
         #endregion
 
         #region 事件
-        public event Action<LevelPointerInteractionHandler, PointerEventData, PointerInteraction>? OnPointerInteraction;
+        public event Action<LevelPointerInteractionHandler, PointerInteractionArgs>? OnPointerInteraction;
         #endregion
 
         #region 属性字段
-        private List<PointerEventData> hoveredPointerDataBuffer = new List<PointerEventData>();
-        private List<PointerEventData> hoveredPointerDatas = new List<PointerEventData>();
-        private List<PointerEventData> pressedPointerDatas = new List<PointerEventData>();
+        private List<int> hoveredPointerIDsBuffer = new List<int>();
+        private List<int> hoveredPointerIDs = new List<int>();
+        private List<int> pressedPointerIDs = new List<int>();
         #endregion
+    }
+    public struct PointerInteractionArgs
+    {
+        public int pointerId;
+        public PointerInteraction interaction;
+
+        // 值快照，所有情况都尽量填
+        public Vector2 position;
+        public PointerEventData.InputButton button;
+        public Vector2 delta;
+        public RaycastResult pointerCurrentRaycast;
+
+        /// <summary>
+        /// 仅在 EventSystem 回调直接触发时非空。
+        /// Stay / Hold / Streak 这类轮询交互此字段为 null。
+        /// 严禁缓存此引用。
+        /// </summary>
+        public PointerEventData? eventData;
     }
     public interface IPointerReleaseHandler : IEventSystemHandler
     {

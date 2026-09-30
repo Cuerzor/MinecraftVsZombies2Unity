@@ -19,7 +19,7 @@ namespace MVZ2.Grids
         #region 生命周期
         private void Awake()
         {
-            holdStreakHandler.OnPointerInteraction += (_, d, i) => OnPointerInteraction?.Invoke(this, d, i);
+            holdStreakHandler.OnPointerInteraction += (_, args) => OnPointerInteraction?.Invoke(this, args);
         }
         public void UpdateFixed()
         {
@@ -117,7 +117,7 @@ namespace MVZ2.Grids
         }
         #endregion
 
-        public event Action<GridView, PointerEventData, PointerInteraction>? OnPointerInteraction;
+        public event Action<GridView, PointerInteractionArgs>? OnPointerInteraction;
         [SerializeField]
         private Transform rendererTransform = null!;
         [SerializeField]

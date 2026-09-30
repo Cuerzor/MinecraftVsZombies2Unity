@@ -18,7 +18,7 @@ namespace MVZ2.Level.Inputing
         }
         private void Awake()
         {
-            holdStreakHandler.OnPointerInteraction += (_, d, i) => OnPointerInteraction?.Invoke(this, d, i);
+            holdStreakHandler.OnPointerInteraction += (_, args) => OnPointerInteraction?.Invoke(this, args);
         }
         bool ILevelRaycastReceiver.IsValidReceiver(LevelEngine level, HeldItemDefinition definition, IHeldItemData data, PointerEventData eventData)
         {
@@ -36,7 +36,7 @@ namespace MVZ2.Level.Inputing
         {
             return canvas.sortingOrder;
         }
-        public event Action<LawnRaycastReceiver, PointerEventData, PointerInteraction>? OnPointerInteraction;
+        public event Action<LawnRaycastReceiver, PointerInteractionArgs>? OnPointerInteraction;
         [SerializeField]
         private Canvas canvas = null!;
         [SerializeField]

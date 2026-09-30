@@ -3,6 +3,7 @@
 using System;
 using System.Linq;
 using MVZ2.Grids;
+using MVZ2.Level.Inputing;
 using MVZ2.Models;
 using MVZ2Logic.Grids;
 using MVZ2Logic.HeldItems;
@@ -108,7 +109,7 @@ namespace MVZ2.Level
 
         #region 事件回调
 
-        private void UI_OnGridPointerInteractionCallback(int lane, int column, PointerEventData data, PointerInteraction interaction)
+        private void UI_OnGridPointerInteractionCallback(int lane, int column, PointerInteractionArgs args)
         {
             var gridUI = gridLayout.GetGrid(lane, column);
             if (gridUI.Exists() && IsGameRunning())
@@ -116,30 +117,30 @@ namespace MVZ2.Level
                 var grid = level.GetGrid(column, lane);
                 if (grid != null)
                 {
-                    var worldPosition = data.pointerCurrentRaycast.worldPosition;
-                    var screenPosition = data.pointerCurrentRaycast.screenPosition;
+                    var worldPosition = args.pointerCurrentRaycast.worldPosition;
+                    var screenPosition = args.pointerCurrentRaycast.screenPosition;
                     var pointerPosition = gridUI.TransformWorld2ColliderPosition(worldPosition);
-                    var pointerParams = InputHelper.GetPointerInteractionParamsFromEventData(data, interaction);
+                    var pointerParams = InputHelper.GetPointerInteractionParamsFromPointerId(args.pointerId, args.interaction);
                     var target = new HeldItemTargetGrid(grid, pointerPosition, screenPosition);
                     level.DoHeldItemPointerEvent(target, pointerParams);
                 }
             }
 
 
-            if (interaction == PointerInteraction.Enter)
+            if (args.interaction == PointerInteraction.Enter)
             {
-                OnGridPointerEnterCallback(lane, column, data);
+                OnGridPointerEnterCallback(lane, column, args);
             }
-            else if (interaction == PointerInteraction.Exit)
+            else if (args.interaction == PointerInteraction.Exit)
             {
-                OnGridPointerExitCallback(lane, column, data);
+                OnGridPointerExitCallback(lane, column, args);
             }
         }
-        private void OnGridPointerEnterCallback(int lane, int column, PointerEventData data)
+        private void OnGridPointerEnterCallback(int lane, int column, PointerInteractionArgs args)
         {
-            SetPointingGrid(level.GetGridIndex(column, lane), data.pointerId);
+            SetPointingGrid(level.GetGridIndex(column, lane), args.pointerId);
         }
-        private void OnGridPointerExitCallback(int lane, int column, PointerEventData data)
+        private void OnGridPointerExitCallback(int lane, int column, PointerInteractionArgs args)
         {
             ClearPointingGrid();
         }

@@ -2,6 +2,7 @@
 
 using System;
 using MVZ2.Blueprints;
+using MVZ2.Level.Inputing;
 using MVZ2.UI;
 using MVZ2Logic.Inputs;
 using UnityEngine;
@@ -40,23 +41,23 @@ namespace MVZ2.Level.Blueprints
             viewLawnButton.onClick.AddListener(() => OnViewLawnButtonClick?.Invoke());
             cancelButton.onClick.AddListener(() => OnCancelButtonClick?.Invoke());
             repickButton.onClick.AddListener(() => OnRepickButtonClick?.Invoke());
-            displayer.OnBlueprintPointerInteraction += (index, data, i) => OnBlueprintPointerInteraction?.Invoke(index, data, i);
+            displayer.OnBlueprintPointerInteraction += (index, args) => OnBlueprintPointerInteraction?.Invoke(index, args);
             displayer.OnBlueprintSelect += (index, data) => OnBlueprintSelect?.Invoke(index, data);
-            commandBlockSlot.OnPointerInteraction += (e, i) => OnCommandBlockBlueprintPointerInteraction?.Invoke(e, i);
+            commandBlockSlot.OnPointerInteraction += (args) => OnCommandBlockBlueprintPointerInteraction?.Invoke(args);
             commandBlockSlot.OnSelect += (data) => OnCommandBlockBlueprintSelect?.Invoke(data);
         }
-        protected void CallBlueprintPointerInteraction(int index, PointerEventData eventData, PointerInteraction interaction)
+        protected void CallBlueprintPointerInteraction(int index, PointerInteractionArgs args)
         {
-            OnBlueprintPointerInteraction?.Invoke(index, eventData, interaction);
+            OnBlueprintPointerInteraction?.Invoke(index, args);
         }
         public event Action? OnStartButtonClick;
         public event Action? OnViewLawnButtonClick;
         public event Action? OnCancelButtonClick;
         public event Action? OnRepickButtonClick;
-        public event Action<PointerEventData, PointerInteraction>? OnCommandBlockBlueprintPointerInteraction;
-        public event Action<PointerEventData>? OnCommandBlockBlueprintSelect;
-        public event Action<int, PointerEventData, PointerInteraction>? OnBlueprintPointerInteraction;
-        public event Action<int, PointerEventData>? OnBlueprintSelect;
+        public event Action<PointerInteractionArgs>? OnCommandBlockBlueprintPointerInteraction;
+        public event Action<PointerInteractionArgs>? OnCommandBlockBlueprintSelect;
+        public event Action<int, PointerInteractionArgs>? OnBlueprintPointerInteraction;
+        public event Action<int, PointerInteractionArgs>? OnBlueprintSelect;
         [SerializeField]
         Button startButton = null!;
         [SerializeField]

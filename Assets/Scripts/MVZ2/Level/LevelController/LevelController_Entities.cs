@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using MukioI18n;
 using MVZ2.Level.Entities;
+using MVZ2.Level.Inputing;
 using MVZ2.UI;
 using MVZ2Logic.Audios;
 using MVZ2Logic.Entities;
@@ -56,27 +57,27 @@ namespace MVZ2.Level
         {
             RemoveControllerFromEntity(entity);
         }
-        private void UI_OnEntityPointerInteractionCallback(EntityController entityCtrl, PointerEventData eventData, PointerInteraction interaction)
+        private void UI_OnEntityPointerInteractionCallback(EntityController entityCtrl, PointerInteractionArgs args)
         {
             if (IsGameRunning())
             {
                 // 触发手持物品指针事件。
-                var target = entityCtrl.GetHeldItemTarget(eventData);
-                var pointerParams = InputHelper.GetPointerInteractionParamsFromEventData(eventData, interaction);
+                var target = entityCtrl.GetHeldItemTarget(args.pointerCurrentRaycast);
+                var pointerParams = InputHelper.GetPointerInteractionParamsFromPointerId(args.pointerId, args.interaction);
                 level.DoHeldItemPointerEvent(target, pointerParams);
             }
 
-            if (interaction == PointerInteraction.Enter) // 指针进入
+            if (args.interaction == PointerInteraction.Enter) // 指针进入
             {
                 OnEntityPointerEnter(entityCtrl);
             }
-            else if (interaction == PointerInteraction.Exit) // 指针退出
+            else if (args.interaction == PointerInteraction.Exit) // 指针退出
             {
                 OnEntityPointerExit(entityCtrl);
             }
-            else if (interaction == PointerInteraction.Down) // 指针按下
+            else if (args.interaction == PointerInteraction.Down) // 指针按下
             {
-                OnEntityPointerDown(entityCtrl, eventData);
+                OnEntityPointerDown(entityCtrl, args.pointerId);
             }
         }
         private void OnEntityPointerEnter(EntityController entityCtrl)
@@ -97,11 +98,11 @@ namespace MVZ2.Level
                 HideTooltip();
             }
         }
-        private void OnEntityPointerDown(EntityController entityCtrl, PointerEventData eventData)
+        private void OnEntityPointerDown(EntityController entityCtrl, int pointerId)
         {
             if (IsGameStarted())
                 return;
-            var pointer = InputHelper.GetPointerDataFromEventData(eventData);
+            var pointer = InputHelper.GetPointerDataFromPointerId(pointerId);
             var entity = entityCtrl.Entity;
             if (pointer.type == PointerTypes.MOUSE && pointer.button != MouseButtons.LEFT)
                 return;

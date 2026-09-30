@@ -11,6 +11,7 @@ using MVZ2.Blueprints;
 using MVZ2.Level.Artifacts;
 using MVZ2.Level.Blueprints;
 using MVZ2.Level.Curses;
+using MVZ2.Level.Inputing;
 using MVZ2.UI;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Audios;
@@ -1271,9 +1272,9 @@ namespace MVZ2.Level
         #region 事件回调
 
         #region 可选蓝图
-        private void UI_OnBlueprintPointerInteractionCallback(int index, PointerEventData eventData, PointerInteraction interaction, bool commandBlock)
+        private void UI_OnBlueprintPointerInteractionCallback(int index, PointerInteractionArgs args, bool commandBlock)
         {
-            switch (interaction)
+            switch (args.interaction)
             {
                 case PointerInteraction.Enter:
                     var id = choosingBlueprints?[index];
@@ -1291,9 +1292,9 @@ namespace MVZ2.Level
                     break;
             }
         }
-        private void UI_OnBlueprintSelectCallback(int index, PointerEventData eventData, bool commandBlock)
+        private void UI_OnBlueprintSelectCallback(int index, PointerInteractionArgs args, bool commandBlock)
         {
-            if (eventData.IsMouseButNotLeft())
+            if (InputHelper.IsMouseButNotLeft(args.pointerId))
                 return;
             var id = choosingBlueprints?[index];
             if (commandBlock)
@@ -1388,9 +1389,9 @@ namespace MVZ2.Level
         {
             viewLawnFinished = true;
         }
-        private void UI_OnCommandBlockPointerInteractionCallback(PointerEventData eventData, PointerInteraction interaction)
+        private void UI_OnCommandBlockPointerInteractionCallback(PointerInteractionArgs args)
         {
-            switch (interaction)
+            switch (args.interaction)
             {
                 case PointerInteraction.Enter:
                     var ui = chooseUI.GetCommandBlockSlotBlueprint();
@@ -1408,9 +1409,9 @@ namespace MVZ2.Level
                     break;
             }
         }
-        private void UI_OnCommandBlockSelectCallback(PointerEventData eventData)
+        private void UI_OnCommandBlockSelectCallback(PointerInteractionArgs args)
         {
-            if (eventData.IsMouseButNotLeft())
+            if (InputHelper.IsMouseButNotLeft(args.pointerId))
                 return;
             if (!CanChooseCommandBlock())
                 return;

@@ -14,6 +14,7 @@ using PVZEngine;
 using PVZEngine.Level;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 using static MVZ2.Level.UI.LevelUIPreset;
 
 namespace MVZ2.Level
@@ -213,32 +214,32 @@ namespace MVZ2.Level
         }
 
         #region 事件回调
-        private void UI_OnRaycastReceiverPointerInteractionCallback(LawnArea area, PointerEventData eventData, PointerInteraction interaction)
+        private void UI_OnRaycastReceiverPointerInteractionCallback(LawnArea area, PointerInteractionArgs args)
         {
             if (!IsGameRunning())
                 return;
             var target = new HeldItemTargetLawn(level, area);
-            var pointerParams = InputHelper.GetPointerInteractionParamsFromEventData(eventData, interaction);
+            var pointerParams = InputHelper.GetPointerInteractionParamsFromPointerId(args.pointerId, args.interaction);
             level.DoHeldItemPointerEvent(target, pointerParams);
 
-            switch (interaction)
+            switch (args.interaction)
             {
                 case PointerInteraction.Enter:
-                    OnRaycastReceiverPointerEnter(area, eventData);
+                    OnRaycastReceiverPointerEnter(area, args.pointerId);
                     break;
                 case PointerInteraction.Exit:
-                    OnRaycastReceiverPointerExit(area, eventData);
+                    OnRaycastReceiverPointerExit(area);
                     break;
             }
         }
-        private void OnRaycastReceiverPointerEnter(LawnArea area, PointerEventData eventData)
+        private void OnRaycastReceiverPointerEnter(LawnArea area, int pointerId)
         {
             isPointingLawnArea = true;
             pointingLawnArea = area;
-            pointingLawnPointerId = eventData.pointerId;
+            pointingLawnPointerId = pointerId;
             UpdateHeldHighlight();
         }
-        private void OnRaycastReceiverPointerExit(LawnArea area, PointerEventData eventData)
+        private void OnRaycastReceiverPointerExit(LawnArea area)
         {
             isPointingLawnArea = false;
             pointingLawnPointerId = -1;
@@ -275,32 +276,32 @@ namespace MVZ2.Level
         {
             SwitchSpeedUp();
         }
-        private void UI_OnBlueprintPointerInteractionCallback(int index, PointerEventData eventData, PointerInteraction interaction, bool conveyor)
+        private void UI_OnBlueprintPointerInteractionCallback(int index, PointerInteractionArgs args, bool conveyor)
         {
             if (!IsGameRunning())
                 return;
             var target = new HeldItemTargetBlueprint(level, index, conveyor);
-            var pointerParams = InputHelper.GetPointerInteractionParamsFromEventData(eventData, interaction);
+            var pointerParams = InputHelper.GetPointerInteractionParamsFromPointerId(args.pointerId, args.interaction);
             level.DoHeldItemPointerEvent(target, pointerParams);
 
-            switch (interaction)
+            switch (args.interaction)
             {
                 case PointerInteraction.Enter:
-                    OnBlueprintPointerEnter(index, eventData, conveyor);
+                    OnBlueprintPointerEnter(index, args.pointerId, conveyor);
                     break;
                 case PointerInteraction.Exit:
-                    OnBlueprintPointerExit(index, eventData, conveyor);
+                    OnBlueprintPointerExit(index, conveyor);
                     break;
             }
         }
-        private void OnBlueprintPointerEnter(int index, PointerEventData eventData, bool conveyor)
+        private void OnBlueprintPointerEnter(int index, int pointerId, bool conveyor)
         {
             pointingBlueprint = index;
-            pointingBlueprintPointerId = eventData.pointerId;
+            pointingBlueprintPointerId = pointerId;
             pointingBlueprintConveyor = conveyor;
             UpdateHeldHighlight();
         }
-        private void OnBlueprintPointerExit(int index, PointerEventData eventData, bool conveyor)
+        private void OnBlueprintPointerExit(int index, bool conveyor)
         {
             pointingBlueprint = -1;
             pointingBlueprintPointerId = -1;
