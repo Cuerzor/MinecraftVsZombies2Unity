@@ -52,38 +52,56 @@ namespace MVZ2.GameContent.Bosses
         }
         #endregion
 
-        public static int EvaluateNextAction(Entity entity, int currentAction, List<LawnGrid> resultTiles)
+        public static int EvaluateNextAction(Entity entity, int currentAction)
         {
-            var currentIndex = Array.IndexOf(actionPool, currentAction);
+            using var weightsItem = ListPool<float>.Rent();
+            var weights = weightsItem.Value;
+
+            using var checkTilesItem = ListPool<LawnGrid>.Rent();
+            var checkTiles = checkTilesItem.Value;
+
+            float weightSum = 0;
             for (int i = 0; i < actionPool.Length; i++)
             {
-                currentIndex = (currentIndex + 1) % actionPool.Length;
-                currentAction = actionPool[currentIndex];
-                resultTiles.Clear();
-                switch (currentAction)
+                var action = actionPool[i];
+                if (currentAction != action)
                 {
-                    case ACTION_GATLIN:
-                        GetPossibleUseGatlinTiles(entity, resultTiles);
-                        break;
-                    case ACTION_CANNON:
-                        GetPossibleUseCannonTiles(entity, resultTiles);
-                        break;
-                    case ACTION_LASER:
-                        GetPossibleUseLaserTiles(entity, resultTiles);
-                        break;
-                    case ACTION_SUMMON:
-                        GetPossibleUseSummonTiles(entity, resultTiles);
-                        break;
-                    case ACTION_SMASH:
-                        GetPossibleUseSmashTiles(entity, resultTiles);
-                        break;
+                    var weight = actionWeights[i];
+                    checkTiles.Clear();
+                    GetPossibleActionTiles(entity, action, checkTiles);
+                    if (checkTiles.Count > 0)
+                    {
+                        weights.Add(weight);
+                        weightSum += weight;
+                        continue;
+                    }
                 }
-                if (resultTiles.Count > 0)
-                {
-                    return currentAction;
-                }
+                weights.Add(0);
             }
-            return currentAction;
+            if (weightSum <= 0)
+                return currentAction;
+            return actionPool.WeightedRandom(weights, entity.RNG);
+        }
+        public static void GetPossibleActionTiles(Entity entity, int action, List<LawnGrid> results)
+        {
+            switch (action)
+            {
+                case ACTION_GATLIN:
+                    GetPossibleUseGatlinTiles(entity, results);
+                    break;
+                case ACTION_CANNON:
+                    GetPossibleUseCannonTiles(entity, results);
+                    break;
+                case ACTION_LASER:
+                    GetPossibleUseLaserTiles(entity, results);
+                    break;
+                case ACTION_SUMMON:
+                    GetPossibleUseSummonTiles(entity, results);
+                    break;
+                case ACTION_SMASH:
+                    GetPossibleUseSmashTiles(entity, results);
+                    break;
+            }
         }
         public static void SetInactive(Entity entity, bool value)
         {
@@ -275,7 +293,7 @@ namespace MVZ2.GameContent.Bosses
                     if (!CanAppearAtTile(entity, column, lane))
                         continue;
                     int count = GetUseSmashTargetCountAtTile(entity, column, lane);
-                    if (count < maxCount)
+                    if (count < maxCount || count <= 0)
                         continue;
                     if (count > maxCount)
                     {
@@ -349,7 +367,9 @@ namespace MVZ2.GameContent.Bosses
 
             using var resultTilesItem = ListPool<LawnGrid>.Rent();
             var resultTiles = resultTilesItem.Value;
-            var next = EvaluateNextAction(entity, current, resultTiles);
+            var next = EvaluateNextAction(entity, current);
+
+            GetPossibleActionTiles(entity, next, resultTiles);
 
             SetNextAction(entity, next);
 

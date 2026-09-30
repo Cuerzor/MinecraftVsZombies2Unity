@@ -102,6 +102,7 @@ namespace MVZ2.GameContent.Bosses
         public static readonly VanillaEntityPropertyMeta<bool> PROP_AUTO_ACT = new VanillaEntityPropertyMeta<bool>("auto_act", true);
         public static readonly VanillaEntityPropertyMeta<float> PROP_SHADOW_ALPHA = new VanillaEntityPropertyMeta<float>("shadow_alpha", 0f);
         public static readonly VanillaEntityPropertyMeta<int> PROP_NEXT_ACTION = new VanillaEntityPropertyMeta<int>("next_action", ACTION_GATLIN);
+
         public const int STATE_IDLE = VanillaBossStates.IDLE;
         public const int STATE_APPEAR = VanillaBossStates.APPEAR;
         public const int STATE_STUNNED = VanillaBossStates.STUNNED;
@@ -141,11 +142,15 @@ namespace MVZ2.GameContent.Bosses
             ACTION_CANNON,
             ACTION_LASER,
             ACTION_SUMMON,
-            ACTION_GATLIN,
-            ACTION_CANNON,
-            ACTION_LASER,
-            ACTION_SUMMON,
             ACTION_SMASH,
+        };
+        public static float[] actionWeights = new float[]
+        {
+            1,
+            1,
+            1,
+            1,
+            0.5f,
         };
 
     }
