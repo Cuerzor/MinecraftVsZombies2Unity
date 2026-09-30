@@ -1028,7 +1028,7 @@
                 <p><![CDATA[紫晶塔向前发射穿透所有敌人的激光。紫晶塔受到的<tag id="mvz2:light_source"/>光照越多，激光的伤害越高。]]></p>
             </header>
             <properties>
-                <p>伤害：<![CDATA[<color=red>10（无光照），20（1光照），40（2光照），60（3光照）</color>]]></p>
+                <p>伤害：<![CDATA[<color=red>10（无光照），20（1光照），30（2光照），40（3光照）</color>]]></p>
                 <p>攻击速度：<![CDATA[<color=red>1发/3秒</color>]]></p>
                 <p>技能：<![CDATA[<color=red>发射一道贯穿三行的超能光束，之后紫晶塔被禁用30秒</color>]]></p>
             </properties>

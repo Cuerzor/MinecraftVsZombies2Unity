@@ -62,7 +62,7 @@
 - Transfenser
   - Laser Damage: 5 -> 3
 - Amethyst Pylon
-  - Cost: 125 -> 175
+  - Damage: 10/20/40/60 -> 10/20/30/40
   - Evocation will now be affected by damage bonuses as usual.
 - Giant Bowl
   - Capacity: 5 -> 3

@@ -51,7 +51,7 @@ namespace MVZ2.GameContent.Contraptions
                     }
                 }
                 count = Mathf.Clamp(count, 0, MAX_LIGHT_SOURCE_COUNT);
-                SetDamageMultiplier(entity, Mathf.Max(count * 2, 1));
+                SetDamageMultiplier(entity, 1 + count);
                 entity.SetModelProperty("LightSourceCount", count);
                 timer.Reset();
             }
