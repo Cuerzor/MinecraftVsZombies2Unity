@@ -48,6 +48,15 @@
       ]
     },
     {
+      "texture": "mvz2/sprites/archive/mountain_note@en-US.png",
+      "key": "mvz2:archive/mountain_note@en-US",
+      "slices": [
+        {
+          "single": true
+        }
+      ]
+    },
+    {
       "texture": "mvz2/sprites/archive/palace_note@en-US.png",
       "key": "mvz2:archive/palace_note@en-US",
       "slices": [
@@ -397,6 +406,15 @@
     {
       "texture": "mvz2/sprites/note/help_front@en-US.png",
       "key": "mvz2:note/help_front@en-US",
+      "slices": [
+        {
+          "single": true
+        }
+      ]
+    },
+    {
+      "texture": "mvz2/sprites/note/mountain@en-US.png",
+      "key": "mvz2:note/mountain@en-US",
       "slices": [
         {
           "single": true

@@ -101,6 +101,9 @@ namespace MVZ2.GameContent.Bosses
                         {
                             stateMachine.StartSubState(entity, SUBSTATE_WAITING);
                             timer.ResetSeconds(3f);
+
+                            entity.SetPhase(PHASE_2);
+                            RecallAllAliveTentacles(entity);
                         }
                         break;
                     case SUBSTATE_WAITING:
@@ -115,7 +118,7 @@ namespace MVZ2.GameContent.Bosses
                         entity.Level.ShakeScreen(15, 15, 1);
                         if (timer.Expired)
                         {
-                            SwitchToPhase2(entity);
+                            stateMachine.StartState(entity, STATE_APPEAR);
                         }
                         break;
                 }

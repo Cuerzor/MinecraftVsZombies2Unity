@@ -127,6 +127,9 @@ MonoBehaviour:
   - name: archive/mausoleum_note
     texture: {fileID: 2800000, guid: 3cc2a4067785bbb479556fa02098483e, type: 3}
     tags: []
+  - name: archive/mountain_note
+    texture: {fileID: 2800000, guid: 71b4461aed005fd4cb5084cfffcc4554, type: 3}
+    tags: []
   - name: archive/palace_note
     texture: {fileID: 2800000, guid: d17d37c1a790e63419fc44c2c577189a, type: 3}
     tags: []
@@ -1116,6 +1119,9 @@ MonoBehaviour:
   - name: note/background_mausoleum
     texture: {fileID: 2800000, guid: e22d8952fb88ae345a9f5ae2e633b5d4, type: 3}
     tags: []
+  - name: note/background_mountain
+    texture: {fileID: 2800000, guid: a3698e01407869b4a9910d4cadeb4c56, type: 3}
+    tags: []
   - name: note/background_palace
     texture: {fileID: 2800000, guid: 5fe8cc97fa275b24c8696a7ff5c984fa, type: 3}
     tags: []
@@ -1139,6 +1145,9 @@ MonoBehaviour:
     tags: []
   - name: note/mausoleum
     texture: {fileID: 2800000, guid: b453b81b803463f4ba41b29936133619, type: 3}
+    tags: []
+  - name: note/mountain
+    texture: {fileID: 2800000, guid: 1c8fb5a201f2bfb4e8b305bedea3e7f2, type: 3}
     tags: []
   - name: note/palace
     texture: {fileID: 2800000, guid: 41b8b1da0aae7ce4ca2f884df9b30083, type: 3}
@@ -3502,6 +3511,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 3cc2a4067785bbb479556fa02098483e, type: 3}
     tags: []
+  - name: archive/mountain_note
+    index: 0
+    sprite: {fileID: 21300000, guid: 71b4461aed005fd4cb5084cfffcc4554, type: 3}
+    tags: []
   - name: archive/palace_note
     index: 0
     sprite: {fileID: 21300000, guid: d17d37c1a790e63419fc44c2c577189a, type: 3}
@@ -5348,6 +5361,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: e22d8952fb88ae345a9f5ae2e633b5d4, type: 3}
     tags: []
+  - name: note/background_mountain
+    index: 0
+    sprite: {fileID: 21300000, guid: a3698e01407869b4a9910d4cadeb4c56, type: 3}
+    tags: []
   - name: note/background_palace
     index: 0
     sprite: {fileID: 21300000, guid: 5fe8cc97fa275b24c8696a7ff5c984fa, type: 3}
@@ -5379,6 +5396,10 @@ MonoBehaviour:
   - name: note/mausoleum
     index: 0
     sprite: {fileID: 21300000, guid: b453b81b803463f4ba41b29936133619, type: 3}
+    tags: []
+  - name: note/mountain
+    index: 0
+    sprite: {fileID: 21300000, guid: 1c8fb5a201f2bfb4e8b305bedea3e7f2, type: 3}
     tags: []
   - name: note/palace
     index: 0

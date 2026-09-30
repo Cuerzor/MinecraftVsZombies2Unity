@@ -238,7 +238,7 @@ namespace MVZ2.Level
         }
         private HeldHighlight GetEntityHeldHighlight(EntityController entity)
         {
-            var pointerId = entity.GetHoveredPointerID(0);
+            var pointerId = entity.GetHoveredPointerID();
             var pointerPosition = InputHelper.GetPointerPosition(pointerId);
             var worldPosition = levelCamera.Camera.ScreenToWorldPoint(pointerPosition);
             var target = entity.GetHeldItemTarget(worldPosition, pointerPosition);

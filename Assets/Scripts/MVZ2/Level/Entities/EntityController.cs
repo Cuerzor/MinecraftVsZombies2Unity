@@ -202,7 +202,7 @@ namespace MVZ2.Level.Entities
         public bool IsHovered() => holdStreakHandler.IsHovered();
         public bool IsPressed() => holdStreakHandler.IsPressed();
         public int GetHoveredPointerCount() => holdStreakHandler.GetHoveredPointerCount();
-        public int GetHoveredPointerID(int index) => holdStreakHandler.GetHoveredPointerID(index);
+        public int GetHoveredPointerID() => holdStreakHandler.GetHoveredPointerID();
         public Vector2 TransformWorld2ColliderPosition(Vector3 worldPosition)
         {
             if (Model is not EntityModel spriteModel)

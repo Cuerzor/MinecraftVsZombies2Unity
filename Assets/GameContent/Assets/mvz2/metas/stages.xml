@@ -1716,7 +1716,7 @@
             <talk type="end" value="mvz2:mountain_10_over" />
             <talk type="map" value="mvz2:mountain_10_map" />
         </talks>
-        <clear pickupModel="mvz2:entity.map_pickup" note="mvz2:palace" />
+        <clear pickupModel="mvz2:entity.map_pickup" note="mvz2:mountain" />
         <spawns flags="3" pointsPower="1.02">
             <spawn id="mvz2:zombie" />
             <spawn id="mvz2:leather_helmetted_zombie" />

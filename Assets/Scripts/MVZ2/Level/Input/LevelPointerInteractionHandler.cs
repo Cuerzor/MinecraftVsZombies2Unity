@@ -23,7 +23,7 @@ namespace MVZ2.Level.Inputing
             foreach (var hoverID in hoveredPointerIDsBuffer)
             {
                 ExecutePointerInteraction(hoverID, PointerInteraction.Stay);
-                if (pressedPointerIDs.Exists(e => e == hoverID))
+                if (pressedPointerIDs.Contains(hoverID))
                 {
                     ExecutePointerInteraction(hoverID, PointerInteraction.Hold);
                 }
@@ -45,9 +45,13 @@ namespace MVZ2.Level.Inputing
         {
             return hoveredPointerIDs.Count;
         }
-        public int GetHoveredPointerID(int index)
+        public int GetHoveredPointerID()
         {
-            return hoveredPointerIDs[index];
+            foreach (var id in hoveredPointerIDs) 
+            {
+                return id;
+            }
+            return -1;
         }
 
         #region 私有方法
@@ -61,23 +65,15 @@ namespace MVZ2.Level.Inputing
         void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
         {
             var pointerID = eventData.pointerId;
-            foreach (var oldId in hoveredPointerIDs)
+            if (!hoveredPointerIDs.Contains(pointerID))
             {
-                if (oldId == pointerID)
-                {
-                    Log.LogWarning($"Trying to add a PointerEventData with existing pointerID to hoveredPointerDatas:\nnew: {eventData}");
-                }
+                hoveredPointerIDs.Add(pointerID);
             }
-            hoveredPointerIDs.Add(pointerID);
             ExecutePointerInteraction(eventData, PointerInteraction.Enter);
         }
         void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
         {
-            int count = hoveredPointerIDs.RemoveAll(e => e == eventData.pointerId);
-            if (count <= 0)
-            {
-                Log.LogWarning($"Removed nothing from hoveredPointerDatas:\nnew: {eventData}");
-            }
+            hoveredPointerIDs.Remove(eventData.pointerId);
             ExecutePointerInteraction(eventData, PointerInteraction.Exit);
         }
         void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
@@ -87,7 +83,7 @@ namespace MVZ2.Level.Inputing
         }
         void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
         {
-            pressedPointerIDs.RemoveAll(e => e == eventData.pointerId);
+            pressedPointerIDs.Remove(eventData.pointerId);
             ExecutePointerInteraction(eventData, PointerInteraction.Up);
         }
         void IPointerReleaseHandler.OnPointerRelease(PointerEventData eventData)
@@ -151,8 +147,8 @@ namespace MVZ2.Level.Inputing
 
         #region 属性字段
         private List<int> hoveredPointerIDsBuffer = new List<int>();
-        private List<int> hoveredPointerIDs = new List<int>();
-        private List<int> pressedPointerIDs = new List<int>();
+        private HashSet<int> hoveredPointerIDs = new HashSet<int>();
+        private HashSet<int> pressedPointerIDs = new HashSet<int>();
         #endregion
     }
     public struct PointerInteractionArgs

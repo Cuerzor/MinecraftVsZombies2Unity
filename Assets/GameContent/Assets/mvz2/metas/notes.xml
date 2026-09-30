@@ -7,4 +7,5 @@
     <note id="mausoleum" sprite="note/mausoleum" background="note/background_mausoleum" startTalk="mvz2:mausoleum_note" />
     <note id="ship" sprite="note/ship" background="note/background_ship" startTalk="mvz2:ship_note" />
     <note id="palace" sprite="note/palace" background="note/background_palace" startTalk="mvz2:palace_note" />
+    <note id="mountain" sprite="note/mountain" background="note/background_mountain" startTalk="mvz2:mountain_note" />
 </notes>

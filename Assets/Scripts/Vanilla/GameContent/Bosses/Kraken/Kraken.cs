@@ -137,12 +137,6 @@ namespace MVZ2.GameContent.Bosses
             entity.PlaySound(VanillaSoundID.splashBig, pitch: 0.75f);
             entity.PlaySplashEffectAt(entity.Position, SPLASH_EFFECT_SCALE);
         }
-        public static void SwitchToPhase2(Entity entity)
-        {
-            entity.SetPhase(PHASE_2);
-            RecallAllAliveTentacles(entity);
-            stateMachine.StartState(entity, STATE_APPEAR);
-        }
         public static void SwitchToPhase3(Entity entity)
         {
             entity.SetPhase(PHASE_3);
