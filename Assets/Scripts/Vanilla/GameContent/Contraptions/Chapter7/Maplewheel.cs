@@ -102,7 +102,7 @@ namespace MVZ2.GameContent.Contraptions
         public static void SetMaxSpinSpeed(Entity entity) => SetSpinSpeed(entity, MAX_SPIN_SPEED);
         public static float GetSpinSpeed(Entity entity) => entity.GetBehaviourField<float>(PROP_SPIN_SPEED);
         public static void SetSpinSpeed(Entity entity, float value) => entity.SetBehaviourField(PROP_SPIN_SPEED, value);
-        public const float MAX_DAMAGE_UP = 190;
+        public const float MAX_DAMAGE_UP = 180;
         public const float MAX_SPIN_SPEED = 5f;
         public const float SPIN_SPEED_FADE_SPEED = 1 / 6f;
         public const float BLOWN_SHOOT_INTERVAL = 0.5f;
