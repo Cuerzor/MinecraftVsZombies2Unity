@@ -8,13 +8,12 @@ using PVZEngine.Modifiers;
 
 namespace MVZ2.GameContent.Buffs.Contraptions
 {
-    [AutoBuffDefinition(VanillaBuffNames.Contraption.carryingOtherTargetable)]
-    public class CarryingOtherTargetableBuff : BuffDefinition
+    [AutoBuffDefinition(VanillaBuffNames.Contraption.carryingOtherCattail)]
+    public class CarryingOtherCattailBuff : BuffDefinition
     {
-        public CarryingOtherTargetableBuff(string nsp, string name) : base(nsp, name)
+        public CarryingOtherCattailBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new BooleanModifier(VanillaEntityProps.INVISIBLE, true));
-            AddModifier(new BooleanModifier(EngineEntityProps.INVINCIBLE, true));
         }
     }
 }
