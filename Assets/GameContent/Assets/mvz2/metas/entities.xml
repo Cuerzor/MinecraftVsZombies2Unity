@@ -1413,7 +1413,7 @@
                 <id name="mvz2:rechargeId" value="mvz2:short" />
             </properties>
         </entity>
-        <entity template="contraption" id="ejector" name="弹射器" tooltip="点击投掷内部的器械">
+        <entity template="contraption" id="ejector" name="弹射器" tooltip="触发后投掷内部的器械">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.ejector" />
             </unlock>
@@ -1434,7 +1434,7 @@
                 <id name="mvz2:rechargeId" value="mvz2:long" />
             </properties>
         </entity>
-        <entity template="contraption" id="teleporter" name="传送器" tooltip="触发后传送器械">
+        <entity template="contraption" id="teleporter" name="传送器" tooltip="点击与器械交换位置">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.teleporter" />
             </unlock>

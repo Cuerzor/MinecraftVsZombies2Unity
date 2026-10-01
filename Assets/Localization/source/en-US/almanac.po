@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-01 02:03+0800\n"
+"POT-Creation-Date: 2026-10-01 09:05+0800\n"
 "PO-Revision-Date: 2026-10-01 21:44+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
@@ -8185,8 +8185,8 @@ msgstr "Ejector"
 #. Tooltip for entity mvz2:ejector
 #: Entity meta file
 msgctxt "entity.tooltip"
-msgid "点击投掷内部的器械"
-msgstr "Click to eject the contraption inside"
+msgid "触发后投掷内部的器械"
+msgstr "Trigger to eject the contraption inside"
 
 #. Name for entity mvz2:teleporter
 #: Entity meta file
@@ -8197,8 +8197,8 @@ msgstr "Teleporter"
 #. Tooltip for entity mvz2:teleporter
 #: Entity meta file
 msgctxt "entity.tooltip"
-msgid "触发后传送器械"
-msgstr "teleport contraptions after being triggered"
+msgid "点击与器械交换位置"
+msgstr "Click to swap position with a contraption"
 
 #. Name for entity mvz2:onbashira
 #: Entity meta file
@@ -10185,6 +10185,10 @@ msgstr "Kraken's Backplate"
 msgctxt "curse.tooltip"
 msgid "敌怪重量提升一级"
 msgstr "Increases the mass of the enemy monsters by one level"
+
+#~ msgctxt "entity.tooltip"
+#~ msgid "触发后传送器械"
+#~ msgstr "teleport contraptions after being triggered"
 
 #~ msgctxt "artifacts.description"
 #~ msgid "效果：<color=red>器械每受到2%伤害，其蓝图冷却时间便减少1%</color>"

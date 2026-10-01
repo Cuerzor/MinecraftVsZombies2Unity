@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-01 02:03+0800\n"
+"POT-Creation-Date: 2026-10-01 09:05+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -6606,7 +6606,7 @@ msgstr ""
 #. Tooltip for entity mvz2:ejector
 #: Entity meta file
 msgctxt "entity.tooltip"
-msgid "点击投掷内部的器械"
+msgid "触发后投掷内部的器械"
 msgstr ""
 
 #. Name for entity mvz2:teleporter
@@ -6618,7 +6618,7 @@ msgstr ""
 #. Tooltip for entity mvz2:teleporter
 #: Entity meta file
 msgctxt "entity.tooltip"
-msgid "触发后传送器械"
+msgid "点击与器械交换位置"
 msgstr ""
 
 #. Name for entity mvz2:onbashira
