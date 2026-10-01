@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-09-29 12:11+0800\n"
+"POT-Creation-Date: 2026-10-01 02:03+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1895,7 +1895,7 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red>10（无光照），20（1光照），40（2光照），60（3光照）</color>\n"
+"伤害：<color=red>10（无光照），20（1光照），30（2光照），40（3光照）</color>\n"
 "攻击速度：<color=red>1发/3秒</color>\n"
 "技能：<color=red>发射一道贯穿三行的超能光束，之后紫晶塔被禁用30秒</color>"
 msgstr ""
@@ -4187,6 +4187,43 @@ msgid ""
 "“是啊，你怎么知道你的后面不会有人准备对你动手呢？”\n"
 "箱子最后还在咯咯地笑着，那之后便散架了。\n"
 "骑士沉思了。"
+msgstr ""
+
+#. Name for misc mvz2:kraken
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "克拉肯"
+msgstr ""
+
+#. Header for misc mvz2:kraken
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "克拉肯是一台机械巨兽，装载了不可思议的军火与毁灭性的武器。"
+msgstr ""
+
+#. Properties for misc mvz2:kraken
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"生命：<color=red><var local=\"hp\" />+<var local=\"tentacle_hp\"/>x8（触手）</color>\n"
+"阶段1：<color=red>召唤两只触手。触手会使用机关枪、导弹、激光、召唤、砸击</color>\n"
+"阶段2：<color=red>本体出现，再召唤两只触手。本体会使用吼叫、死亡射线、魔焰与魔弹、吸取、排水</color>\n"
+"阶段3：<color=red>用触手封锁陆地，再召唤两只触手；本体会使用魔焰与魔弹、命令怒吼、定时炸弹</color>"
+msgstr ""
+
+#. Flavor for misc mvz2:kraken
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"骑士一行人来到一片湖区，他们这次的目标是一只巨型水妖。\n"
+"那水妖名为克拉肯，是一头巨大而柔韧的章鱼怪物，常出没于湖泊和河流中。每当它出现，总会破坏岸旁的所有建筑，受到它攻击的人无一幸免。\n"
+"他们正准备发起进攻，却收到了国王要求召回他们的旨意。骑士有一种不祥的预感。\n"
+"回到王宫后，等着他们的却是国王“赏赐”他们的一长串罪名。什么“谋反”啊、“诽谤”啊，不计其数。他们就这样入了狱。\n"
+"骑士不甘心，问狱卒到底发生了什么。狱卒冷笑道：“这件事，你应该比我们更清楚。你们这么强大还受人欢迎，谁看了都眼红啊。”\n"
+"“还有，以后别想着对国王的宠物动手，那头章鱼可是国王用来处理他的敌人的！”\n"
+"之后，狱卒便离开了。\n"
+"骑士坐回牢里，握着脖子上黑色的骷髅护身符。似乎若有所思。\n"
+"有那么一瞬间，骑士笑了一下。"
 msgstr ""
 
 #. Name for almanac group mvz2:misc_entities
