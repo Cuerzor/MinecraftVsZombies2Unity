@@ -547,10 +547,10 @@ namespace MVZ2Logic.Models
 
                 SerializableAnimatorPlayingData playingData = new SerializableAnimatorPlayingData()
                 {
-                    currentHash = current.shortNameHash,
+                    currentHash = current.fullPathHash,
                     currentTime = GetNormalizedTime(current.normalizedTime),
 
-                    nextHash = next.shortNameHash,
+                    nextHash = next.fullPathHash,
                     nextNormalizedTime = GetNormalizedTime(next.normalizedTime),
                     nextLength = next.length == Mathf.Infinity ? 0 : next.length,
 
