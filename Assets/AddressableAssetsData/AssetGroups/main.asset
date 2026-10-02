@@ -1396,6 +1396,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16d8ae1b40eaded4f9770dc99b287a0a
+    m_Address: mvz2:arcade/krakens_revenge
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 16dd5f741bfc0694694c611f5d1de198
     m_Address: mvz2:entity/bubble/hit
     m_ReadOnly: 0
@@ -1718,6 +1725,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1c8fb5a201f2bfb4e8b305bedea3e7f2
+    m_Address: mvz2:note/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1ca1d7816d59cbe48bf40c774794bc5e
     m_Address: mvz2:entity/ghost/ghost_cry3
     m_ReadOnly: 0
@@ -1881,6 +1895,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1fa7f21a7f8675f47a19b64ae5086153
     m_Address: mvz2:mainmenu/mainmenu
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1fb58e13be515ac4ba86881026972d7b
+    m_Address: mvz2:misc/kraken_appears
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -2347,6 +2368,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2677b35242f2f93439793805fd1929ca
+    m_Address: mvz2:misc/kraken_pov_underwater
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 268b8b4827c8ede4195ce3bff8a0e620
     m_Address: mvz2:projectile/fire_charge
@@ -2942,6 +2970,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31fe0f41d379d7b4e8b6b728f403c20d
+    m_Address: mvz2:misc/nitoris_machine
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 32162e4052e1e7445af16d420281eebd
     m_Address: mvz2:units/bow
     m_ReadOnly: 0
@@ -3367,6 +3402,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Model
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 38202251749970243b3779ef6623045c
+    m_Address: mvz2:misc/kraken_broken_eye
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3847d450b03229144ba7c63f7ea7f3c0
     m_Address: mvz2:boss/pink_wither
@@ -6979,6 +7021,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71b4461aed005fd4cb5084cfffcc4554
+    m_Address: mvz2:archive/mountain_note
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 71f48786f7f9b7842918c094e82252c9
     m_Address: mvz2:entity/zombie_cow/say4
     m_ReadOnly: 0
@@ -8972,6 +9021,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9183a57c807999f448422b7fc08ba742
+    m_Address: mvz2:misc/kraken_entangled
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 918f12843c5e74a42a07dbd415e91d1c
     m_Address: mvz2:effect/soulfire
     m_ReadOnly: 0
@@ -9065,6 +9121,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 92c38217e084470499178a44014b451c
     m_Address: mvz2:entity/enemy/balloon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92c4375d1ea0656428e74e371fd3a4d6
+    m_Address: mvz2:misc/debris_of_nitoris_lab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -9826,6 +9889,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f5deac37b2dd074fbf216b9fd119b57
+    m_Address: mvz2:misc/kraken_shot_by_laser
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9f887f3e85dc48d4e8d4bd36aa0a9e12
     m_Address: mvz2:entity/effect/nightmare_portal_frame
     m_ReadOnly: 0
@@ -10063,6 +10133,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Music
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a3698e01407869b4a9910d4cadeb4c56
+    m_Address: mvz2:note/background_mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a375b3420dd9da54b8197294f005405b
     m_Address: mvz2:huge_wave
@@ -12359,6 +12436,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cbaafa442f23ad146b1ebdae6a6ec378
+    m_Address: mvz2:misc/kraken_broken
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cbe2117cde68d914493afb8f0aaa9bb0
     m_Address: mvz2:map/dream/nightmare@censored
     m_ReadOnly: 0
@@ -13892,6 +13976,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e730faf94d12d364892e6bd4e9e54d49
+    m_Address: mvz2:misc/misty_lake
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e732382db38cd764888b963c49cc59c5
     m_Address: mvz2:note/dream
     m_ReadOnly: 0
@@ -15135,6 +15226,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb247d0a2aa14b8459e51b9d2d077ee6
+    m_Address: mvz2:misc/kappas_base
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fb49bf03d7a39f74493d7f10e7512dfc
     m_Address: mvz2:ui/level/progress_bar/the_giant_background

@@ -505,6 +505,9 @@ MonoBehaviour:
   - name: misc/dead_red_dragon
     texture: {fileID: 2800000, guid: 0da8ea7b3ec83e94793e912ac5ea6c81, type: 3}
     tags: []
+  - name: misc/debris_of_nitoris_lab
+    texture: {fileID: 2800000, guid: 92c4375d1ea0656428e74e371fd3a4d6, type: 3}
+    tags: []
   - name: misc/downed_tokiko
     texture: {fileID: 2800000, guid: afa886669857a1e418b0316c139ebcc2, type: 3}
     tags: []
@@ -547,11 +550,29 @@ MonoBehaviour:
   - name: misc/human_village
     texture: {fileID: 2800000, guid: 1a6935911a14b294597e34fb03cfb049, type: 3}
     tags: []
+  - name: misc/kappas_base
+    texture: {fileID: 2800000, guid: fb247d0a2aa14b8459e51b9d2d077ee6, type: 3}
+    tags: []
   - name: misc/kourindou_front
     texture: {fileID: 2800000, guid: 1d01c78f7d98df044b653eab390c102e, type: 3}
     tags: []
   - name: misc/kraken_appears
     texture: {fileID: 2800000, guid: 1fb58e13be515ac4ba86881026972d7b, type: 3}
+    tags: []
+  - name: misc/kraken_broken
+    texture: {fileID: 2800000, guid: cbaafa442f23ad146b1ebdae6a6ec378, type: 3}
+    tags: []
+  - name: misc/kraken_broken_eye
+    texture: {fileID: 2800000, guid: 38202251749970243b3779ef6623045c, type: 3}
+    tags: []
+  - name: misc/kraken_entangled
+    texture: {fileID: 2800000, guid: 9183a57c807999f448422b7fc08ba742, type: 3}
+    tags: []
+  - name: misc/kraken_pov_underwater
+    texture: {fileID: 2800000, guid: 2677b35242f2f93439793805fd1929ca, type: 3}
+    tags: []
+  - name: misc/kraken_shot_by_laser
+    texture: {fileID: 2800000, guid: 9f5deac37b2dd074fbf216b9fd119b57, type: 3}
     tags: []
   - name: misc/letter_for_help
     texture: {fileID: 2800000, guid: 7c77b2bc79808994aaee8edec5031dc8, type: 3}
@@ -567,6 +588,9 @@ MonoBehaviour:
     tags: []
   - name: misc/memory_with_unknown_person
     texture: {fileID: 2800000, guid: bb754e26dee4d5441be3bad97415c324, type: 3}
+    tags: []
+  - name: misc/misty_lake
+    texture: {fileID: 2800000, guid: e730faf94d12d364892e6bd4e9e54d49, type: 3}
     tags: []
   - name: misc/mountain
     texture: {fileID: 2800000, guid: b281ded5b7339de43a309d71320b5309, type: 3}
@@ -593,6 +617,9 @@ MonoBehaviour:
     tags: []
   - name: misc/nightmare_art
     texture: {fileID: 2800000, guid: 80c498f2605fad848859bce97a8c16ed, type: 3}
+    tags: []
+  - name: misc/nitoris_machine
+    texture: {fileID: 2800000, guid: 31fe0f41d379d7b4e8b6b728f403c20d, type: 3}
     tags: []
   - name: misc/palace
     texture: {fileID: 2800000, guid: a834091dfc5d3884cb48abf3ecb36da3, type: 3}
@@ -4510,6 +4537,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 0da8ea7b3ec83e94793e912ac5ea6c81, type: 3}
     tags: []
+  - name: misc/debris_of_nitoris_lab
+    index: 0
+    sprite: {fileID: 21300000, guid: 92c4375d1ea0656428e74e371fd3a4d6, type: 3}
+    tags: []
   - name: misc/downed_tokiko
     index: 0
     sprite: {fileID: 21300000, guid: afa886669857a1e418b0316c139ebcc2, type: 3}
@@ -4582,6 +4613,10 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 1a6935911a14b294597e34fb03cfb049, type: 3}
     tags: []
+  - name: misc/kappas_base
+    index: 0
+    sprite: {fileID: 21300000, guid: fb247d0a2aa14b8459e51b9d2d077ee6, type: 3}
+    tags: []
   - name: misc/kourindou_front
     index: 0
     sprite: {fileID: 21300000, guid: 1d01c78f7d98df044b653eab390c102e, type: 3}
@@ -4589,6 +4624,26 @@ MonoBehaviour:
   - name: misc/kraken_appears
     index: 0
     sprite: {fileID: 21300000, guid: 1fb58e13be515ac4ba86881026972d7b, type: 3}
+    tags: []
+  - name: misc/kraken_broken
+    index: 0
+    sprite: {fileID: 21300000, guid: cbaafa442f23ad146b1ebdae6a6ec378, type: 3}
+    tags: []
+  - name: misc/kraken_broken_eye
+    index: 0
+    sprite: {fileID: 21300000, guid: 38202251749970243b3779ef6623045c, type: 3}
+    tags: []
+  - name: misc/kraken_entangled
+    index: 0
+    sprite: {fileID: 21300000, guid: 9183a57c807999f448422b7fc08ba742, type: 3}
+    tags: []
+  - name: misc/kraken_pov_underwater
+    index: 0
+    sprite: {fileID: 21300000, guid: 2677b35242f2f93439793805fd1929ca, type: 3}
+    tags: []
+  - name: misc/kraken_shot_by_laser
+    index: 0
+    sprite: {fileID: 21300000, guid: 9f5deac37b2dd074fbf216b9fd119b57, type: 3}
     tags: []
   - name: misc/letter_for_help
     index: 0
@@ -4609,6 +4664,10 @@ MonoBehaviour:
   - name: misc/memory_with_unknown_person
     index: 0
     sprite: {fileID: 21300000, guid: bb754e26dee4d5441be3bad97415c324, type: 3}
+    tags: []
+  - name: misc/misty_lake
+    index: 0
+    sprite: {fileID: 21300000, guid: e730faf94d12d364892e6bd4e9e54d49, type: 3}
     tags: []
   - name: misc/mountain
     index: 0
@@ -4643,6 +4702,10 @@ MonoBehaviour:
   - name: misc/nightmare_art
     index: 0
     sprite: {fileID: 21300000, guid: 80c498f2605fad848859bce97a8c16ed, type: 3}
+    tags: []
+  - name: misc/nitoris_machine
+    index: 0
+    sprite: {fileID: 21300000, guid: 31fe0f41d379d7b4e8b6b728f403c20d, type: 3}
     tags: []
   - name: misc/palace
     index: 0
