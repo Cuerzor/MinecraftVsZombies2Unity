@@ -117,6 +117,7 @@
 - Fixed the issue where Black Hole Bombs cannot attract monsters from the upper row to the current row.
 - Fixed the issue where Anvils do not destroy invincible contraptions upon landing.
 - Fixed the issue where the Mummies' Poison Gas did not deal damage to enemies when it burned.
+- Fixed the issue where Reverse Satellite will try to align with the position of its lane.
 
 ---
 

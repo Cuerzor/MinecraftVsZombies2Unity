@@ -2834,6 +2834,7 @@
                 <bool name="mvz2:undead" value="false" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:flying_enemy" value="true" />
+                <bool name="mvz2:no_align_to_lane" value="true" />
                 <id name="mvz2:shell" value="mvz2:metal" />
                 <id name="mvz2:crySound" null="true" />
                 <id name="mvz2:deathSound" value="mvz2:power_off" />
