@@ -216,7 +216,7 @@
     <group id="artifact.cow_horn"><conditions><condition required="mvz2:artifact.cow_horn" /></conditions></group>
 
     <!-- Mountain Artifacts -->
-    <group id="artifact.bunbunmaru_newspaper"><conditions><condition required="mvz2:level.mountain_3" /></conditions></group>
+    <group id="artifact.bunbunmaru_newspaper"><conditions><condition required="mvz2:level.mountain_4" /></conditions></group>
     <group id="artifact.lily_platform"><conditions><condition required="mvz2:artifact.lily_platform" /></conditions></group>
     <group id="artifact.extending_arm"><conditions><condition required="mvz2:level.mountain_11" /></conditions></group>
     <group id="artifact.krakens_tentacle"><conditions><condition required="mvz2:artifact.krakens_tentacle" /></conditions></group>
