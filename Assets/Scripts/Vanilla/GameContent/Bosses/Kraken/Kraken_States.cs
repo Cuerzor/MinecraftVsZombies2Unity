@@ -566,7 +566,7 @@ namespace MVZ2.GameContent.Bosses
         }
         public static bool IsLaserEyeTarget(Entity boss, Entity target)
         {
-            if (!target.ExistsAndAlive())
+            if (!target.ExistsAndAlive() || !target.IsVulnerableEntity())
                 return false;
             if (!boss.IsHostile(target))
                 return false;
@@ -1326,7 +1326,7 @@ namespace MVZ2.GameContent.Bosses
             }
             public static bool IsStoneToDestroy(Entity boss, Entity target)
             {
-                if (!target.ExistsAndAlive())
+                if (!target.ExistsAndAlive() || !target.IsVulnerableEntity())
                     return false;
                 if (!target.IsEntityOf(VanillaContraptionID.giantStone))
                     return false;
@@ -1494,7 +1494,7 @@ namespace MVZ2.GameContent.Bosses
         }
         public static bool IsTimeBombTarget(Entity boss, Entity target)
         {
-            if (!target.ExistsAndAlive())
+            if (!target.ExistsAndAlive() || !target.IsVulnerableEntity())
                 return false;
             if (!boss.IsHostile(target))
                 return false;
