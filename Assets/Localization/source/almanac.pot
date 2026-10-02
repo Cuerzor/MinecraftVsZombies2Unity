@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-01 09:05+0800\n"
+"POT-Creation-Date: 2026-10-02 03:21+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4410,7 +4410,7 @@ msgstr ""
 #. Flavor for misc mvz2:tainted_sun
 #: Almanac meta file
 msgctxt "misc.description"
-msgid "梦魇来到梦境世界之后，开始对梦境世界进行污染，并将整个世界伪装成什么都没有发生过的样子，然而这受污染的太阳便是它唯一的疏忽。"
+msgid "<ref=[misc]mvz2:nightmare_boss>梦魇</ref>来到梦境世界之后，开始对梦境世界进行污染，并将整个世界伪装成什么都没有发生过的样子，然而这受污染的太阳便是它唯一的疏忽。"
 msgstr ""
 
 #. Name for misc mvz2:nyaightmare
@@ -5319,7 +5319,7 @@ msgstr ""
 #. Header for misc mvz2:nightmare_world
 #: Almanac meta file
 msgctxt "misc.description"
-msgid "噩梦世界是被<ref=[misc]mvz2:nightmare>梦魇</ref>所腐化的<ref=[misc]mvz2:dream_world>梦境世界</ref>。"
+msgid "噩梦世界是被<ref=[misc]mvz2:nightmare_boss>梦魇</ref>所腐化的<ref=[misc]mvz2:dream_world>梦境世界</ref>。"
 msgstr ""
 
 #. Flavor for misc mvz2:nightmare_world
@@ -5683,7 +5683,7 @@ msgstr ""
 #. Header for misc mvz2:nightmare_box
 #: Almanac meta file
 msgctxt "misc.description"
-msgid "梦魇魔盒是将<ref=[misc]mvz2:nightmare>梦魇</ref>的黑魔法收集起来制作而成，并可以使<ref=[misc]mvz2:dream_world>梦境世界</ref>变成<ref=[misc]mvz2:nightmare_world>噩梦世界</ref>的容器。"
+msgid "梦魇魔盒是将<ref=[misc]mvz2:nightmare_boss>梦魇</ref>的黑魔法收集起来制作而成，并可以使<ref=[misc]mvz2:dream_world>梦境世界</ref>变成<ref=[misc]mvz2:nightmare_world>噩梦世界</ref>的容器。"
 msgstr ""
 
 #. Flavor for misc mvz2:nightmare_box

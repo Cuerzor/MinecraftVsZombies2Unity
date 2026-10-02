@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-01 09:05+0800\n"
-"PO-Revision-Date: 2026-10-01 21:44+0800\n"
+"POT-Creation-Date: 2026-10-02 03:21+0800\n"
+"PO-Revision-Date: 2026-10-02 15:22+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -5606,10 +5606,12 @@ msgstr "The cause is currently unknown."
 #. Flavor for misc mvz2:tainted_sun
 #: Almanac meta file
 msgctxt "misc.description"
-msgid "梦魇来到梦境世界之后，开始对梦境世界进行污染，并将整个世界伪装成什么都没有发生过的样子，然而这受污染的太阳便是它唯一的疏忽。"
+msgid ""
+"<ref=[misc]mvz2:nightmare_boss>梦魇</ref>来到梦境世界之后，开始对梦境世界进行污染，并将整个世界伪装成什么都没有发生过的样子，然而这受污"
+"染的太阳便是它唯一的疏忽。"
 msgstr ""
-"After Nightmare arrived in the Dream World, it began to corrupt the realm and disguise the entire world as if nothing had ever "
-"happened. However, the tainted sun was its one and only oversight."
+"After <ref=[misc]mvz2:nightmare_boss>Nightmare</ref> arrived in the Dream World, it began to corrupt the realm and disguise the entire "
+"world as if nothing had ever happened. However, the tainted sun was its one and only oversight."
 
 #. Name for misc mvz2:nyaightmare
 #: Almanac meta file
@@ -6713,8 +6715,9 @@ msgstr "Nightmare World"
 #. Header for misc mvz2:nightmare_world
 #: Almanac meta file
 msgctxt "misc.description"
-msgid "噩梦世界是被<ref=[misc]mvz2:nightmare>梦魇</ref>所腐化的<ref=[misc]mvz2:dream_world>梦境世界</ref>。"
-msgstr "Nightmare World is the <ref=[misc]mvz2:dream_world>Dream World</ref> corrupted by <ref=[misc]mvz2:nightmare>Nightmare</ref>."
+msgid "噩梦世界是被<ref=[misc]mvz2:nightmare_boss>梦魇</ref>所腐化的<ref=[misc]mvz2:dream_world>梦境世界</ref>。"
+msgstr ""
+"Nightmare World is the <ref=[misc]mvz2:dream_world>Dream World</ref> corrupted by <ref=[misc]mvz2:nightmare_boss>Nightmare</ref>."
 
 #. Flavor for misc mvz2:nightmare_world
 #: Almanac meta file
@@ -7214,10 +7217,10 @@ msgstr "Nightmare Box"
 #: Almanac meta file
 msgctxt "misc.description"
 msgid ""
-"梦魇魔盒是将<ref=[misc]mvz2:nightmare>梦魇</ref>的黑魔法收集起来制作而成，并可以使<ref=[misc]mvz2:dream_world>梦境世界</ref>变成"
+"梦魇魔盒是将<ref=[misc]mvz2:nightmare_boss>梦魇</ref>的黑魔法收集起来制作而成，并可以使<ref=[misc]mvz2:dream_world>梦境世界</ref>变成"
 "<ref=[misc]mvz2:nightmare_world>噩梦世界</ref>的容器。"
 msgstr ""
-"The Nightmare Box is a container made by collecting dark magic from <ref=[misc]mvz2:nightmare>Nightmare</ref>, and can turn the "
+"The Nightmare Box is a container made by collecting dark magic from <ref=[misc]mvz2:nightmare_boss>Nightmare</ref>, and can turn the "
 "<ref=[misc]mvz2:dream_world>Dream World</ref> into <ref=[misc]mvz2:nightmare_world>Nightmare World</ref>."
 
 #. Flavor for misc mvz2:nightmare_box

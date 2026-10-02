@@ -2964,7 +2964,7 @@
                         <conditions>
                             <condition required="mvz2:level.dream_7"/>
                         </conditions>
-                        <p>梦魇来到梦境世界之后，开始对梦境世界进行污染，并将整个世界伪装成什么都没有发生过的样子，然而这受污染的太阳便是它唯一的疏忽。</p>
+                        <p><![CDATA[<ref=[misc]mvz2:nightmare_boss>梦魇</ref>]]>来到梦境世界之后，开始对梦境世界进行污染，并将整个世界伪装成什么都没有发生过的样子，然而这受污染的太阳便是它唯一的疏忽。</p>
                     </flavor>
                 </flavors>
             </entry>
@@ -3659,7 +3659,7 @@
                 </unlock>
                 <picture sprite="mvz2:misc/nightmare" />
                 <header>
-                    <p>噩梦世界是被<![CDATA[<ref=[misc]mvz2:nightmare>梦魇</ref>]]>所腐化的<![CDATA[<ref=[misc]mvz2:dream_world>梦境世界</ref>]]>。</p>
+                    <p>噩梦世界是被<![CDATA[<ref=[misc]mvz2:nightmare_boss>梦魇</ref>]]>所腐化的<![CDATA[<ref=[misc]mvz2:dream_world>梦境世界</ref>]]>。</p>
                 </header>
                 <flavor>
                     <p><![CDATA[<ref=[misc]mvz2:doremy>哆来咪</ref>]]>曾经在几个月前在梦境世界目击到一只黑马，那就是伪装起来的梦魇。然后，梦魇开始了它的腐化，欺骗梦境所有人的眼睛，直到它诅咒哆来咪。</p>
@@ -3940,7 +3940,7 @@
                 </unlock>
                 <picture sprite="mvz2:map/dream/nightmare_box" fixedSize="true" zoom="false" />
                 <header>
-                    <p>梦魇魔盒是将<![CDATA[<ref=[misc]mvz2:nightmare>梦魇</ref>]]>的黑魔法收集起来制作而成，并可以使<![CDATA[<ref=[misc]mvz2:dream_world>梦境世界</ref>]]>变成<![CDATA[<ref=[misc]mvz2:nightmare_world>噩梦世界</ref>]]>的容器。</p>
+                    <p>梦魇魔盒是将<![CDATA[<ref=[misc]mvz2:nightmare_boss>梦魇</ref>]]>的黑魔法收集起来制作而成，并可以使<![CDATA[<ref=[misc]mvz2:dream_world>梦境世界</ref>]]>变成<![CDATA[<ref=[misc]mvz2:nightmare_world>噩梦世界</ref>]]>的容器。</p>
                 </header>
                 <flavor>
                     <p>梦魇魔盒中不再包含任何有害魔力，它所能做的只有将梦境世界投影成为噩梦世界了。</p>
