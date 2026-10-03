@@ -4144,7 +4144,21 @@
                         <p><![CDATA[<ref=[misc]mvz2:futo>布都</ref>]]>无意间透露了这件事。</p>
                     </flavor>
                     <flavor>
+                        <conditions>
+                            <condition requiredNot="mvz2:level.mountain_4"/>
+                        </conditions>
                         <p>细节尚不知情。</p>
+                    </flavor>
+                    <flavor>
+                        <conditions>
+                            <condition required="mvz2:level.mountain_4"/>
+                        </conditions>
+                        <p>在三年前的人类村庄，发生了一件匪夷所思的杀人案。</p>
+                        <p>多名被害者接连在光天化日，众目睽睽之下突然被杀死，现场的目击者没有一人目击到真正的凶手是谁。</p>
+                        <p>那些目击者只看到了被害者致命部位受伤，随后倒地的惨象，这引起了大范围的恐慌。</p>
+                        <p>被杀死的五名被害者，以及一位幸存下来的受害者，全部都是伪装成人类居住在村庄里的妖怪。</p>
+                        <p>最后，有一名人类的尸体在运河中被发现，旁边找到了他亲自写下的遗书。</p>
+                        <p>在遗书的内容中，他承认了自己的罪行，以及自己对妖怪的憎恨与咒骂。</p>
                     </flavor>
                 </flavors>
             </entry>
