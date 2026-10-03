@@ -465,6 +465,10 @@ namespace MVZ2.Vanilla.Entities
         #endregion
 
         #region 换格
+        public static bool IsChangingTile(this Entity entity)
+        {
+            return entity.HasBuff<ChangeGridBuff>();
+        }
         public static void StartChangingGrid(this Entity entity, int column, int lane, bool destroyConflict = true, float speedFactor = 0.5f)
         {
             var buff = entity.GetFirstBuff<ChangeGridBuff>();
@@ -1355,6 +1359,23 @@ namespace MVZ2.Vanilla.Entities
                     }
                 }
             }
+        }
+        #endregion
+
+        #region 对齐地块
+        public static void AdjustToTile(this Entity entity)
+        {
+            entity.AdjustToTile(entity.GetColumn(), entity.GetLane());
+        }
+        public static void AdjustToTile(this Entity entity, int targetColumn, int targetLane)
+        {
+            var gridPivotOffset = entity.GetGridPivotOffset();
+            float targetX = entity.Level.GetEntityColumnX(targetColumn) - gridPivotOffset.x;
+            float targetZ = entity.Level.GetEntityLaneZ(targetLane) - gridPivotOffset.z;
+            var pos = entity.Position;
+            pos.x = targetX;
+            pos.z = targetZ;
+            entity.Position = pos;
         }
         #endregion
 

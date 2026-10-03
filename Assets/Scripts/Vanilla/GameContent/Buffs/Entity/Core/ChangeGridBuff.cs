@@ -60,6 +60,7 @@ namespace MVZ2.GameContent.Buffs.Entities
             {
                 pos.x = targetX;
                 pos.z = targetZ;
+                entity.DestroyConflictGridEntities();
                 Stop(buff);
             }
             entity.Position = pos;
@@ -73,11 +74,6 @@ namespace MVZ2.GameContent.Buffs.Entities
         }
         public static void Stop(Buff buff)
         {
-            var entity = buff.GetEntity();
-            if (entity != null && entity.GetGridLayersToTake() != null)
-            {
-                entity.DestroyConflictGridEntities();
-            }
             buff.Remove();
         }
         public static int GetTargetLane(Buff entity) => entity.GetProperty<int>(PROP_TARGET_LANE);

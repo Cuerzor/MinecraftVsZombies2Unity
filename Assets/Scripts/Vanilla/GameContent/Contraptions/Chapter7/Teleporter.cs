@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Buffs.Entities;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Contraptions;
+using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2Logic.Entities;
 using PVZEngine.Buffs;
@@ -48,6 +49,21 @@ namespace MVZ2.GameContent.Contraptions
             var tileOffset2D = entity.GetGridPivotOffset();
             var tileOffset = new Vector3(tileOffset2D.x, 0, tileOffset2D.y);
             TeleporterTeleportUpBuff.SetTargetPosition(buff, position + tileOffset);
+
+            bool changingLane = entity.IsChangingLane();
+            bool changingTile = entity.IsChangingTile();
+            if (changingLane || changingTile)
+            {
+                if (changingTile)
+                {
+                    entity.StopChangingGrid();
+                }
+                if (changingLane)
+                {
+                    entity.StopChangingLane();
+                }
+                entity.AdjustToTile();
+            }
         }
     }
 }
