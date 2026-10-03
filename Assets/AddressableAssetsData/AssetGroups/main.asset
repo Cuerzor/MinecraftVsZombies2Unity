@@ -3270,6 +3270,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3642e43cee363bd47b7df8b75dd10e21
+    m_Address: mvz2:talks/mountain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Meta
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 364cbf731035032499adb5896b6b058e
     m_Address: mvz2:grind2
     m_ReadOnly: 0
@@ -15228,7 +15235,7 @@ MonoBehaviour:
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fb247d0a2aa14b8459e51b9d2d077ee6
-    m_Address: mvz2:misc/kappas_base
+    m_Address: mvz2:misc/kappa_base
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<talks order="7000">
+  <group id="kourindou_visit_mountain_1" tags="mvz2:gensokyo;mvz2:store">
+    <archive name="第七章-访问香霖堂" background="mvz2:store/background_kourindou" music="mvz2:gensokyo_map">
+      <unlock>
+        <condition required="mvz2:entered_mountain" />
+      </unlock>
+    </archive>
+    <section>
+      <!--分段跳过脚本-->
+      <onSkip>
+        <script>unlock mvz2:entered_mountain</script>
+        <script>music play mvz2:gensokyo_map</script>
+        <script>music fade 0</script>
+        <script>bubble hide</script>
+        <script>forecolor fade #0000 #000F 1</script>
+        <script>delay 1</script>
+        <script>action goto_mountain</script>
+        <script>end</script>
+      </onSkip>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:crazy_villager" side="left" />
+        <character id="mvz2:tokiko" side="right" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>然后呢，然后呢，之后发生了什么？</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <!--语句开始脚本-->
+          <onStart>
+            <script>music fade 0</script>
+          </onStart>
+          <text>那时，我的家里根本就没有多少积蓄，戴夫得了病，家里就更没有收入了。</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>然后，我为了给戴夫治病，就离开了家，来到城市打工。</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>可即使如此，我的收入依旧相当微薄。</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>后来不知怎么的我陷入了很长时间的昏迷，醒来之后，我的右手不知道为什么就断了。</text>
+        </sentence>
+        <!--语句5-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_surprised">
+          <onStart>
+            <script>character variant mvz2:tokiko mvz2:surprised</script>
+          </onStart>
+          <text>而且我更奇怪的是，戴夫居然完全康复了！</text>
+        </sentence>
+        <!--语句6-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>诶，有这种事吗？</text>
+        </sentence>
+        <!--语句7-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>戴夫，你到底是吃了什么灵丹妙药？</text>
+        </sentence>
+        <!--语句8-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>你那时候病得很重，我都以为你撑不了多久了。</text>
+        </sentence>
+        <!--语句9-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_scream1">
+          <text>当然是瞬间治疗药水和金苹果！</text>
+        </sentence>
+        <!--语句10-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>……可是我们家的钱买不了那些东西啊？</text>
+        </sentence>
+        <!--语句11-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_crazy">
+          <text>当然是我们家祖传的！</text>
+        </sentence>
+        <!--语句12-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <onStart>
+            <script>character variant mvz2:tokiko mvz2:worried</script>
+          </onStart>
+          <text>……就跟现在一样，他病是好了，可是人却疯了。</text>
+        </sentence>
+        <!--语句13-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>唉，史蒂夫先生好可怜……</text>
+        </sentence>
+        <!--语句14-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>不说这些伤心事了。朱鹭子，在我们来之前，有没有什么有意思的事情说来听听？</text>
+        </sentence>
+        <!--语句15-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <onStart>
+            <script>character variant mvz2:tokiko mvz2:normal</script>
+          </onStart>
+          <text>在你们来之前吗？唔……</text>
+        </sentence>
+        <!--语句16-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:dialog_surprised">
+          <text>啊！说起来，他好像很久没来了呢。</text>
+        </sentence>
+        <!--语句17-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>哪位？</text>
+        </sentence>
+        <!--语句18-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>你们到这里之前，香霖堂曾经来了一位奇怪的顾客。</text>
+        </sentence>
+        <!--语句19-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:dialog_weird">
+          <text>他皮肤黝黑，高高的，非常瘦——几乎都皮包骨头了。所以我们常管他叫“骨瘦如柴先生”。</text>
+        </sentence>
+        <!--语句20-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>他常来香霖堂这里购买一些外界来的电子设备，而且，他好像就知道自己该怎么用那些东西一样。</text>
+        </sentence>
+        <!--语句21-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>幻想乡里面，会用这些东西的人可以说是相当稀有了。</text>
+        </sentence>
+        <!--语句22-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>不过，自从你们来了之后，他好像就再也没来过这里了。他在哪里干什么呢？</text>
+        </sentence>
+        <!--语句23-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text><![CDATA[<color=blue>（“骨瘦如柴先生”……？好奇怪的人。）</color>]]></text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>delay 1</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句24-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk" variant="mvz2:worried">
+          <text>那个——史蒂夫先生？我其实有些好奇。</text>
+        </sentence>
+        <!--语句25-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>你最近好像都一副无精打采的样子。有什么心事吗？</text>
+        </sentence>
+        <!--语句26-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>啊……算是有吧。</text>
+        </sentence>
+        <!--语句27-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>其实，我——</text>
+        </sentence>
+        <!--语句28-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <onStart>
+            <script>music volume 1</script>
+            <script>music play mvz2:distress</script>
+          </onStart>
+          <text>自从我记事开始起，我就感觉，我一直在追寻着一些虚无飘渺的东西走，但是却永远走不到尽头。</text>
+        </sentence>
+        <!--语句29-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我几岁的时候，我将寻找亲生父母作为前行的方向。</text>
+        </sentence>
+        <!--语句30-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>然而戴夫病重后，我又不得不打工赚钱，治好戴夫的病。</text>
+        </sentence>
+        <!--语句31-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>等我从漫长的昏迷中醒来之后，我又发现戴夫莫名其妙地康复，却又疯掉了。</text>
+        </sentence>
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我长久以来的坚持就这样突兀地失去意义，而剩下的想法只有让戴夫的余生好过一点。</text>
+        </sentence>
+        <!--语句32-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>这次来幻想乡也是因为这个想法。然而就在这里，我最初的目的又被唤醒了——找回自己的父母。</text>
+        </sentence>
+        <!--语句33-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>然后，就又是一场空。</text>
+        </sentence>
+        <!--语句34-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我最后还是什么都没有得到，而我已经不知道该走向哪里了。</text>
+        </sentence>
+        <!--语句35-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>……</text>
+        </sentence>
+        <!--语句36-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我不知道，我存在的意义到底是什么。</text>
+        </sentence>
+        <!--语句37-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>村里的大家嘲笑我这个异类，所有人都排斥我。</text>
+        </sentence>
+        <!--语句38-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <onStart>
+            <script>character variant mvz2:tokiko mvz2:surprised</script>
+          </onStart>
+          <text>我是不是本来就不该存在于这个世界上？</text>
+        </sentence>
+        <!--语句39-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>不、不是的！史蒂夫先生帮了我们很多忙不是吗？</text>
+        </sentence>
+        <!--语句40-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>史蒂夫先生当然有存在的意义了！呃……是……</text>
+        </sentence>
+        <!--语句41-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk" variant="mvz2:worried">
+          <text>……</text>
+        </sentence>
+        <!--语句42-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>抱歉，我没办法帮史蒂夫先生回答这种问题，对不起。</text>
+        </sentence>
+        <!--语句43-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>不过史蒂夫先生确实帮了很多人啊，有神子小姐，白莲小姐，还有……</text>
+        </sentence>
+        <!--语句44-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>没事的，不用安慰我的。</text>
+        </sentence>
+        <!--语句45-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:talk">
+          <text>史蒂夫先生……</text>
+        </sentence>
+        <!--语句46-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <onStart>
+            <script>music fade 0</script>
+          </onStart>
+          <text><![CDATA[<color=blue>（……）</color>]]></text>
+        </sentence>
+        <!--语句47-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（不过，除此之外，有一件事仍然纠缠在我的心头。）</color>]]></text>
+        </sentence>
+        <!--语句48-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（我之前在圣辇船做过一个可怕的猜想。如果那个猜想是真的，这场异变的原因可能是——）</color>]]></text>
+        </sentence>
+        <!--语句49-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_surprised">
+          <onStart>
+            <script>shake</script>
+            <script>character variant mvz2:tokiko mvz2:surprised</script>
+          </onStart>
+          <text>有、有、有人在吗？</text>
+        </sentence>
+        <!--语句49-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>？</text>
+        </sentence>
+        <!--语句50-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_scream1">
+          <text>当然有人啦！进来说话！</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>character variant mvz2:tokiko mvz2:normal</script>
+            <script>character create mvz2:nitori left</script>
+            <script>delay 0.5</script>
+            <script>playsound mvz2:dialog_weird</script>
+            <script>delay 1</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句51-->
+        <sentence speaker="mvz2:nitori" description="（荷取入场）" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>啊——那个，我、我来找史蒂夫先生。</text>
+        </sentence>
+        <!--语句52-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>啊，我就是，您是？</text>
+        </sentence>
+        <!--语句53-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>呼……</text>
+        </sentence>
+        <!--语句54-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>我是——河城 荷取，是妖怪之山上的河童。</text>
+        </sentence>
+        <!--语句55-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>今天是来找史蒂夫先生，有事要办的。</text>
+        </sentence>
+        <!--语句56-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>什么事？</text>
+        </sentence>
+        <!--语句57-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>呃——</text>
+        </sentence>
+        <!--语句58-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>妖怪之山上，最近出现了很多的方块怪物。它们就好像活过来的溺死尸体一样。</text>
+        </sentence>
+        <!--语句59-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>希望您能帮我们把它们赶走——嗯，就这样。</text>
+        </sentence>
+        <!--语句60-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……</text>
+        </sentence>
+        <!--语句61-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>还是要我帮忙清理怪物吗？</text>
+        </sentence>
+        <!--语句62-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>对、对！</text>
+        </sentence>
+        <!--语句63-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <onStart>
+            <script>character variant mvz2:tokiko mvz2:surprised</script>
+          </onStart>
+          <text>抱歉，容我拒绝。</text>
+        </sentence>
+        <!--语句64-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>诶？史蒂夫先生？</text>
+        </sentence>
+        <!--语句65-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_cut" variant="mvz2:surprised">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>不行吗？！</text>
+        </sentence>
+        <!--语句66-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <onStart>
+            <script>character variant mvz2:tokiko mvz2:worried</script>
+          </onStart>
+          <text>从一开始来到这里，我已经帮别人做过太多的事情了。</text>
+        </sentence>
+        <!--语句67-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我一直在帮别人跑东跑西，自己的答案却一直都没得到解答。</text>
+        </sentence>
+        <!--语句68-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我——不太想干了。</text>
+        </sentence>
+        <!--语句69-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:sad">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>怎么会……</text>
+        </sentence>
+        <!--语句70-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>那——贤者留给我的任务又怎么办……</text>
+        </sentence>
+        <!--语句71-->
+        <sentence speaker="mvz2:tokiko" sounds="mvz2:dialog_surprised" variant="mvz2:surprised">
+          <text>诶，贤者？是负责管理整个幻想乡的那些贤者吗？</text>
+        </sentence>
+        <!--语句72-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>是。</text>
+        </sentence>
+        <!--语句73-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>她们给我留下了一个重要的任务，必须由某一个人亲自来完成。</text>
+        </sentence>
+        <!--语句74-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>自从我听到史蒂夫先生你的消息之后，我越发越相信，史蒂夫先生就是贤者们提到的那个人。</text>
+        </sentence>
+        <!--语句75-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <onStart>
+            <script>character variant mvz2:tokiko mvz2:worried</script>
+          </onStart>
+          <text>如果史蒂夫先生拒绝——那我也不知道该如何是好了。</text>
+        </sentence>
+        <!--语句76-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>delay 1</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句77-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_long1">
+          <onStart>
+            <script>character variant mvz2:tokiko mvz2:surprised</script>
+          </onStart>
+          <text>嘿，邻居！为啥不去看看呢！看看又不会掉块肉！</text>
+        </sentence>
+        <!--语句78-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_short3">
+          <text>况且说不定最后还会有大收获呢！</text>
+        </sentence>
+        <!--语句78-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>戴夫……？</text>
+        </sentence>
+        <!--语句79-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_long3">
+          <text>而且，之前不是听地灵殿那边说过，妖怪之山那边也是发生过情况的吗？</text>
+        </sentence>
+        <!--语句80-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_long2">
+          <text>那就更得去探查一番了！</text>
+        </sentence>
+        <!--语句81-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>delay 2</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句82-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_surprised">
+          <onStart>
+            <script>character variant mvz2:nitori mvz2:surprised</script>
+          </onStart>
+          <text>那，好吧。我就再去一次吧。</text>
+        </sentence>
+        <!--语句83-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:happy">
+          <onStart>
+            <script>character variant mvz2:tokiko mvz2:normal</script>
+          </onStart>
+          <text>您同意了？！太好了！</text>
+        </sentence>
+        <!--语句84-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+            <script>music volume 1</script>
+            <script>music play mvz2:gensokyo_map</script>
+          </onStart>
+          <text>我这就带您去目的地！实在是感激不尽！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>unlock mvz2:entered_mountain</script>
+            <script>bubble hide</script>
+            <script>music fade 0</script>
+            <script>forecolor fade #0000 #000F 1</script>
+            <script>delay 1</script>
+            <script>action goto_mountain</script>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+</talks>

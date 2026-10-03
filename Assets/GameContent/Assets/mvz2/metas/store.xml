@@ -48,6 +48,11 @@
                 <condition required="mvz2:level.ship_11" requiredNot="mvz2:entered_palace" />
             </conditions>
         </talk>
+        <talk id="mvz2:kourindou_visit_mountain_1">
+            <conditions>
+                <condition required="mvz2:level.palace_11" requiredNot="mvz2:entered_mountain" />
+            </conditions>
+        </talk>
     </talks>
     <chats>
         <group character="mvz2:crazy_villager">

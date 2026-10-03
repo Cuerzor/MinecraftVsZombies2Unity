@@ -620,4 +620,18 @@
             <layer sprite="mvz2:characters/utsuho[3]" positionX="592" positionY="128" />
         </variant>
     </character>
+    <character id="nitori" name="荷取">
+        <variant id="mvz2:normal" width="448" height="896" pivotX="0.5" pivotY="0.5">
+            <layer sprite="mvz2:characters/armor_stand" />
+        </variant>
+        <variant id="mvz2:surprised" parent="mvz2:normal">
+            <layer sprite="mvz2:characters/armor_stand" />
+        </variant>
+        <variant id="mvz2:sad" parent="mvz2:normal">
+            <layer sprite="mvz2:characters/armor_stand" />
+        </variant>
+        <variant id="mvz2:happy" parent="mvz2:normal">
+            <layer sprite="mvz2:characters/armor_stand" />
+        </variant>
+    </character>
 </characters>
