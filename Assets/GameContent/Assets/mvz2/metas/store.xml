@@ -345,6 +345,30 @@
                 <stage price="15000" unlocks="mvz2:artifact.broken_lock" />
             </stages>
         </product>
+        <product id="lily_platform" sprite="mvz2:artifacts/lily_platform">
+            <unlock>
+                <condition required="mvz2:level.mountain_5" />
+            </unlock>
+            <talks>
+                <talk character="mvz2:crazy_villager">睡莲形状的平台！占据承载位的器械花费减少25！</talk>
+                <talk character="mvz2:tokiko">河童们的睡莲形状的平台！用于承载其他器械的器械会变得更便宜！</talk>
+            </talks>
+            <stages>
+                <stage price="5550" unlocks="mvz2:artifact.lily_platform" />
+            </stages>
+        </product>
+        <product id="krakens_tentacle" sprite="mvz2:artifacts/krakens_tentacle">
+            <unlock>
+                <condition required="mvz2:level.mountain_11" />
+            </unlock>
+            <talks>
+                <talk character="mvz2:crazy_villager">克拉肯的触手！器械攻击速度x150%，但是会向随机方向发射子弹！</talk>
+                <talk character="mvz2:tokiko">克拉肯的触手！器械攻击更快，但是它们会胡乱发射子弹！</talk>
+            </talks>
+            <stages>
+                <stage price="15000" unlocks="mvz2:artifact.krakens_tentacle" />
+            </stages>
+        </product>
         <product id="cake" sprite="mvz2:products/cake">
             <unlock>
                 <condition requiredGroups="mvz2:game_completed" />
