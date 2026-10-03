@@ -4207,6 +4207,33 @@
                     <p>据<![CDATA[<ref=[misc]mvz2:rin>燐</ref>]]>和<![CDATA[<ref=[misc]mvz2:tokiko>朱鹭子</ref>]]>称，地灵殿中曾出现过一位特殊的凋灵骷髅黑客，它控制了燐和朱鹭子。</p>
                 </flavor>
             </entry>
+            <entry id="mvz2:nitoris_machine" name="荷取的机器">
+                <unlock>
+                    <condition required="mvz2:level.mountain_8" />
+                </unlock>
+                <picture sprite="mvz2:misc/nitoris_machine" />
+                <header>
+                    <p><![CDATA[<ref=[misc]mvz2:nitori>河城 荷取</ref>]]>在三年前制作过的，用于测试末影珍珠的机器。</p>
+                </header>
+                <flavors>
+                    <flavor>
+                        <p>在三年前，爆炸发生之前的前些时间，荷取在山上捡到了一颗末影珍珠。</p>
+                        <p>它引起了河童们很大的兴趣，于是就对它进行了研究。</p>
+                        <p>然后他们以末影珍珠为核心制造了一台测试用的机器，结果在机器启动后，却发生了<![CDATA[<ref=[misc]mvz2:explosion_before_3_years>意外的爆炸</ref>]]>。</p>
+                    </flavor>
+                    <flavor>
+                        <p>末影珍珠是来自史蒂夫世界的物品，它是怎么出现在这里的？</p>
+                    </flavor>
+                    <flavor>
+                        <conditions>
+                            <condition required="mvz2:level.mountain_11"/>
+                        </conditions>
+                        <p>荷取坦白了自己曾经见过的恐怖画面：</p>
+                        <p>在机器启动后，机器上突然张开了一只巨大的眼睛盯着她。</p>
+                        <p>在下一个瞬间，机器就发生了爆炸。</p>
+                    </flavor>
+                </flavors>
+            </entry>
         </group>
     </misc>
 </almanac>
