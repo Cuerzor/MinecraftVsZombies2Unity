@@ -540,7 +540,12 @@ namespace MVZ2.Talk
                     break;
                 case "playsound":
                     {
-                        Main.SoundManager.Play2D(ParseArgumentNamespaceID(args[0]));
+                        float pitch = 1;
+                        if (args.Length > 1)
+                        {
+                            pitch = ParseArgumentFloat(args[1]);
+                        }
+                        Main.SoundManager.Play2D(ParseArgumentNamespaceID(args[0]), pitch);
                     }
                     break;
                 case "loopsound":
