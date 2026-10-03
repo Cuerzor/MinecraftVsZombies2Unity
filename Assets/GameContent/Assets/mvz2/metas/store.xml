@@ -338,8 +338,8 @@
                 <condition required="mvz2:level.palace_11" />
             </unlock>
             <talks>
-                <talk character="mvz2:crazy_villager">上锁箱子的挂锁！当器械受到伤害时，减少它蓝图的充能时间！</talk>
-                <talk character="mvz2:tokiko">那个可恶箱子的挂锁！当器械受到伤害时，减少它蓝图的充能时间！</talk>
+                <talk character="mvz2:crazy_villager">上锁箱子的挂锁！当器械被摧毁时，生成它的蓝图掉落物，然后挂锁进入冷却时间！</talk>
+                <talk character="mvz2:tokiko">那个可恶箱子的挂锁！当器械被摧毁时，它会变回一张蓝图，然后挂锁需要休息一段时间！</talk>
             </talks>
             <stages>
                 <stage price="15000" unlocks="mvz2:artifact.broken_lock" />

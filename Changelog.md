@@ -105,7 +105,7 @@
 - Broken Lock
   - Effect reworked:
     - Old: For every 1% damage a contraption has taken, its blueprint recharge time will be decreased by 1%
-    - New: Whenever 3 contraptions are destroyed, spawns a blueprint pickup of the 3rd contraption
+    - New: When a contraption is destroyed, it drops a blueprint pickup. This artifact is then put on a 15s cooldown
 
 ## Fixed
 - Fixed the issue where the charging animation of Tesla Coil would continue to play even when it was disabled.

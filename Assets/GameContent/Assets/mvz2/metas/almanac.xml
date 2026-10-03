@@ -2522,7 +2522,7 @@
                 <p>从<![CDATA[<ref=[misc]mvz2:locked_chest>上锁的箱子</ref>]]>上掉落的损坏挂锁。</p>
             </header>
             <properties>
-                <p>效果：<![CDATA[<color=red>每有三个器械被摧毁，生成第三个器械的蓝图掉落物</color>]]></p>
+                <p>效果：<![CDATA[<color=red>当一个器械被摧毁时，生成它的蓝图掉落物，然后该制品冷却15秒</color>]]></p>
             </properties>
             <flavor>
                 <p><![CDATA[<b>项目编号：</b>]]>MCP-988</p>

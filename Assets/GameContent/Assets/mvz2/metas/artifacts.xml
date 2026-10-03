@@ -140,7 +140,7 @@
             <condition required="mvz2:level.palace_11" />
         </unlock>
     </artifact>
-    <artifact id="broken_lock" name="损坏的挂锁" tooltip="每有三个器械被摧毁，生成第三个器械的蓝图掉落物" sprite="mvz2:artifacts/broken_lock">
+    <artifact id="broken_lock" name="损坏的挂锁" tooltip="当一个器械被摧毁时，生成它的蓝图掉落物，然后该制品冷却15秒" sprite="mvz2:artifacts/broken_lock">
         <unlock>
             <condition required="mvz2:artifact.broken_lock" />
         </unlock>

@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Contraptions;
 using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Pickups;
+using MVZ2.Vanilla.Artifacts;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Pickups;
@@ -24,15 +25,23 @@ namespace MVZ2.GameContent.Artifacts
         {
             AddTriggerFiltered(LevelCallbacks.POST_ENTITY_DEATH, PostContraptionDeathCallback, filter: EntityTypes.PLANT);
         }
-        public override void PostAdd(Artifact artifact)
-        {
-            base.PostAdd(artifact);
-            artifact.SetNumber(0);
-        }
         public override void PostUpdate(Artifact artifact)
         {
             base.PostUpdate(artifact);
-            artifact.SetGlowing(artifact.GetNumber() >= GetTriggerTimes(artifact) - 1);
+            var number = artifact.GetNumber();
+            if (number > 0)
+            {
+                if (artifact.RunAndPassedOneSecond())
+                {
+                    number--;
+                    if (number <= 0)
+                    {
+                        number = -1;
+                    }
+                    artifact.SetNumber(number);
+                    artifact.SetInactive(number > 0);
+                }
+            }
         }
         private void PostContraptionDeathCallback(LevelCallbacks.EntityDeathParams args, CallbackResultVoid result)
         {
@@ -60,26 +69,25 @@ namespace MVZ2.GameContent.Artifacts
             {
                 if (artifact == null || artifact.Definition != this)
                     continue;
-                int number = artifact.GetNumber();
-                number++;
-                var triggerTimes = GetTriggerTimes(artifact);
-                int times = number / triggerTimes;
-                for (int i = 0; i < times; i++)
-                {
-                    var blueprintID = LogicBlueprintID.FromEntity(entityID);
-                    var spawnParams = contraption.GetSpawnParams();
-                    spawnParams.SetProperty(VanillaPickupProps.CONTENT_ID, blueprintID);
-                    spawnParams.SetProperty(BlueprintPickup.PROP_COMMAND_BLOCK, commandBlock);
-                    contraption.Produce(VanillaPickupID.blueprintPickup, spawnParams);
-                    artifact.Highlight();
-                }
-                number %= triggerTimes;
-                artifact.SetNumber(number);
+                if (artifact.IsInactive())
+                    continue;
+                SpawnBlueprintPickup(contraption, entityID, commandBlock);
+                artifact.Highlight();
+                var maxCooldown = GetMaxCooldownSeconds(artifact);
+                artifact.SetNumber(maxCooldown);
+                artifact.SetInactive(true);
             }
         }
-
-        public static int GetTriggerTimes(Artifact artifact) => artifact.GetProperty<int>(PROP_TRIGGER_TIMES);
-        public static void SetTriggerTimes(Artifact artifact, int value) => artifact.SetProperty(PROP_TRIGGER_TIMES, value);
-        public static readonly VanillaArtifactPropertyMeta<int> PROP_TRIGGER_TIMES = new VanillaArtifactPropertyMeta<int>("trigger_times", 3);
+        public static Entity? SpawnBlueprintPickup(Entity entity, NamespaceID entityID, bool commandBlock)
+        {
+            var blueprintID = LogicBlueprintID.FromEntity(entityID);
+            var spawnParams = entity.GetSpawnParams();
+            spawnParams.SetProperty(VanillaPickupProps.CONTENT_ID, blueprintID);
+            spawnParams.SetProperty(BlueprintPickup.PROP_COMMAND_BLOCK, commandBlock);
+            return entity.Produce(VanillaPickupID.blueprintPickup, spawnParams);
+        }
+        public static int GetMaxCooldownSeconds(Artifact artifact) => artifact.GetProperty<int>(PROP_MAX_COOLDOWN_SECONDS);
+        public static void SetMaxCooldownSeconds(Artifact artifact, int value) => artifact.SetProperty(PROP_MAX_COOLDOWN_SECONDS, value);
+        public static readonly VanillaArtifactPropertyMeta<int> PROP_MAX_COOLDOWN_SECONDS = new VanillaArtifactPropertyMeta<int>("max_cooldown_seconds", 15);
     }
 }
