@@ -3804,6 +3804,33 @@
                     </flavor>
                 </flavors>
             </entry>
+            <entry id="mvz2:misty_lake" name="雾之湖" >
+                <unlock>
+                    <condition required="mvz2:level.mountain_4"/>
+                </unlock>
+                <picture sprite="mvz2:misc/misty_lake"/>
+                <header>
+                    <p>幻想乡里的一片大型湖泊，位于妖怪之山山脚。</p>
+                </header>
+                <flavors>
+                    <flavor>
+                        <p>这片湖泊充满雾气，非常寒冷，能见度非常低。</p>
+                    </flavor>
+                    <flavor>
+                        <conditions>
+                            <condition required="mvz2:level.mountain_4"/>
+                        </conditions>
+                        <p>根据报纸上的传闻，三年前，这里似乎曾有一种幽灵一样的存在在附近游荡。</p>
+                        <p>那种存在似乎会尝试将岸旁的人拖入水中。</p>
+                    </flavor>
+                    <flavor>
+                        <conditions>
+                            <condition required="mvz2:level.mountain_6"/>
+                        </conditions>
+                        <p>史蒂夫在<![CDATA[<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>]]>被<![CDATA[<ref=[misc]mvz2:kraken>克拉肯</ref>]]>抓住后，落入水中，醒来时却发现已经来到了这片湖泊附近。</p>
+                    </flavor>
+                </flavors>
+            </entry>
         </group>
         <!-- Starshards -->
         <group id="mvz2:starshards" name="星之碎片" order="500">
