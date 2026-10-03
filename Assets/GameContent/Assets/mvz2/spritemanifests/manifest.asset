@@ -550,7 +550,7 @@ MonoBehaviour:
   - name: misc/human_village
     texture: {fileID: 2800000, guid: 1a6935911a14b294597e34fb03cfb049, type: 3}
     tags: []
-  - name: misc/kappas_base
+  - name: misc/kappa_base
     texture: {fileID: 2800000, guid: fb247d0a2aa14b8459e51b9d2d077ee6, type: 3}
     tags: []
   - name: misc/kourindou_front
@@ -4613,7 +4613,7 @@ MonoBehaviour:
     index: 0
     sprite: {fileID: 21300000, guid: 1a6935911a14b294597e34fb03cfb049, type: 3}
     tags: []
-  - name: misc/kappas_base
+  - name: misc/kappa_base
     index: 0
     sprite: {fileID: 21300000, guid: fb247d0a2aa14b8459e51b9d2d077ee6, type: 3}
     tags: []
