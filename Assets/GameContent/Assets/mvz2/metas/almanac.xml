@@ -2821,10 +2821,10 @@
                     <p>克拉肯是一台机械巨兽，装载了不可思议的军火与毁灭性的武器。</p>
                 </header>
                 <properties>
-                    <p>生命：<![CDATA[<color=red><var local="hp" />+<var local="tentacle_hp"/>x8（触手）</color>]]></p>
-                    <p>阶段1：<![CDATA[<color=red>召唤两只触手。触手会使用机关枪、导弹、激光、召唤、砸击</color>]]></p>
-                    <p>阶段2：<![CDATA[<color=red>本体出现，再召唤两只触手。本体会使用吼叫、死亡射线、魔焰与魔弹、吸取、排水</color>]]></p>
-                    <p>阶段3：<![CDATA[<color=red>用触手封锁陆地，再召唤两只触手；本体会使用魔焰与魔弹、命令怒吼、定时炸弹</color>]]></p>
+                    <p>生命：<![CDATA[<color=red><var local="hp" />+<var local="tentacle_hp"/>x6（触手）</color>]]></p>
+                    <p>阶段1：<![CDATA[<color=red>召唤两只触手；触手会使用：机关枪、导弹、激光、召唤、砸击</color>]]></p>
+                    <p>阶段2：<![CDATA[<color=red>本体出现，再召唤两只触手；本体会使用：吼叫、死亡射线、魔焰与魔弹、吸取、排水</color>]]></p>
+                    <p>阶段3：<![CDATA[<color=red>用触手封锁陆地，再召唤两只触手；本体会使用：魔焰与魔弹、命令怒吼、定时炸弹</color>]]></p>
                 </properties>
                 <flavor>
                     <p>骑士一行人来到一片湖区，他们这次的目标是一只巨型水妖。</p>
