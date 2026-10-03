@@ -5,6 +5,7 @@ using MVZ2.GameContent.Damages;
 using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Models;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Models;
@@ -33,7 +34,7 @@ namespace MVZ2.GameContent.Buffs.Entities
             AddModelInsertion(LogicModelHelper.ANCHOR_CENTER, VanillaModelKeys.candleCursed, VanillaModelID.candleCursed);
             AddModifier(new BooleanModifier(LogicEntityProps.REMOVE_ON_DEATH, true));
             AddModifier(new BooleanModifier(LogicEntityProps.NO_DEATH_EFFECTS, true));
-            AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback);
+            AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback, VanillaCallbackPriorities.LATE);
         }
         public override void OnCreate(Buff buff)
         {
