@@ -633,5 +633,8 @@
         <variant id="mvz2:happy" parent="mvz2:normal">
             <layer sprite="mvz2:characters/armor_stand" />
         </variant>
+        <variant id="mvz2:worried" parent="mvz2:normal">
+            <layer sprite="mvz2:characters/armor_stand" />
+        </variant>
     </character>
 </characters>
