@@ -33,6 +33,7 @@
 - Adjusted the textures of Stone Shield and Emperor Zombie.
 - The cursor for Force Pad's evocation and Skyward Beacon now has a unique sprite.
 - Achievement descriptions are now hidden until the prerequisites for unlocking the achievement have been met (such as not having the means to complete the achievement).
+- Adjusted the shattered glass texture at the beginning of the second phase of Nightmare Battle.
 
 ### Balance
 - Adventure
