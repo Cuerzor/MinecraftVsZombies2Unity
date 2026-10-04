@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-09-29 11:37+0800\n"
-"PO-Revision-Date: 2026-09-29 20:16+0800\n"
+"POT-Creation-Date: 2026-10-03 06:24+0800\n"
+"PO-Revision-Date: 2026-10-04 11:46+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -968,21 +968,21 @@ msgctxt "advice.collect_money"
 msgid "收集宝石来获得更酷的道具吧！"
 msgstr "Collect gems to purchase COOL stuff!"
 
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:787
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:788
 msgid "能量不足"
 msgstr "Not enough energy"
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:789
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:790
 msgid "数量达到上限"
 msgstr "Reached the count limit"
 
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:791
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:792
 msgid "（{0}/{1}）"
 msgstr "({0}/{1})"
 
 # 死亡信息-无尽模式模板，{0}为普通死亡信息，{1}为存活了多少轮
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:793
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:794
 msgid ""
 "{0}\n"
 "{1}"
@@ -991,12 +991,12 @@ msgstr ""
 "{1}"
 
 # 传送器战队的错误提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:795
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:796
 msgid "战队的能量不足，请修改阵容之后再保存战队。"
 msgstr "The energy is insufficient. Please modify the team before saving it."
 
 # 传送器战队的警告提示
-#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:797
+#: Scripts\Vanilla\GameContent\Customize\TeleporterTeamController.cs:798
 msgid ""
 "您有未保存的更改。\n"
 "确认要丢弃所有更改并退出吗？"
@@ -1828,42 +1828,42 @@ msgctxt "language_name"
 msgid "中文"
 msgstr "English (United States)"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1656
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1657
 msgid "你没有携带满蓝图，确认要继续吗？"
 msgstr "Are you sure to continue without filling up the contraption slots?"
 
 # 关卡UI
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1658
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1659
 msgid "无法在关卡开始后更换诅咒"
 msgstr "Cannot change curses after the level starts"
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1664
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1665
 msgid "上一次选择的蓝图中包含多个相同的器械。"
 msgstr ""
 "The blueprints selected last time contained multiple identical contraptions."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1666
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1667
 msgid "上一次选择的蓝图中包含未解锁的器械。"
 msgstr ""
 "The blueprints selected last time contained contraptions that are not "
 "unlocked yet."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1668
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1669
 msgid "上一次选择的制品中包含多个相同的制品。"
 msgstr ""
 "The artifacts selected last time contained multiple identical artifacts."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1670
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1671
 msgid "上一次选择的制品中包含未解锁的制品。"
 msgstr ""
 "The artifacts selected last time contained artifacts that are not unlocked "
 "yet."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1672
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1673
 msgid "上一次选择的诅咒中包含多个相同的诅咒。"
 msgstr "The curses selected last time contained multiple identical curses."
 
-#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1674
+#: Scripts\MVZ2\Level\ControllerPart\LevelBlueprintChooseController.cs:1675
 msgid "上一次选择的诅咒中包含未解锁的诅咒。"
 msgstr ""
 "The curses selected last time contained curses that are not unlocked yet."
@@ -1931,7 +1931,7 @@ msgstr ""
 "Excess mods:\n"
 "{0}"
 
-#: Scripts\MVZ2\Level\LevelController\LevelController_Entities.cs:223
+#: Scripts\MVZ2\Level\LevelController\LevelController_Entities.cs:224
 msgctxt "entity.tooltip"
 msgid "在图鉴中查看"
 msgstr "View in Almanac"
@@ -2800,34 +2800,34 @@ msgstr ""
 "Best Streak:\n"
 "{0}"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:995
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:996
 msgctxt "almanac"
 msgid "花费：<color=red>{0}</color>"
 msgstr "Cost: <color=red>{0}</color>"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:997
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:998
 msgctxt "almanac"
 msgid "充能时间：<color=red>{0}</color>"
 msgstr "Recharge: <color=red>{0}</color>"
 
 # 图鉴放大选项，{0}为缩放等级
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:999
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1000
 msgctxt "almanac"
 msgid "缩放：{0}"
 msgstr "Scale: {0}"
 
 # 图鉴标签枚举值的名称模板，{0}为标签名，{1}为值名
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:1001
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1002
 msgctxt "almanac"
 msgid "{0}：{1}"
 msgstr "{0}: {1}"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:1003
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1004
 msgctxt "almanac"
 msgid "左键拖拽以移动视图；滚轮以缩放视图"
 msgstr "Hold left mouse and drag to move; Scroll to scale"
 
-#: Scripts\MVZ2\Almanac\AlmanacController.cs:1005
+#: Scripts\MVZ2\Almanac\AlmanacController.cs:1006
 msgctxt "almanac"
 msgid "单指拖拽以移动视图；双指拖拽以缩放视图"
 msgstr "Drag with one finger to move; Touch with two fingers to scale"
@@ -5680,6 +5680,38 @@ msgid "那个可恶箱子的挂锁！当器械受到伤害时，减少它蓝图�
 msgstr ""
 "It's the padlock on that wretched chest! When a contraption is damaged, the "
 "recharge time of its blueprint will be reduced!"
+
+#. Store item description of mvz2:lily_platform by character mvz2:crazy_villager
+#: Store meta file
+msgctxt "store_talk"
+msgid "睡莲形状的平台！占据承载位的器械花费减少25！"
+msgstr ""
+"A platform in the shape of a water lily! Contraptions that occupy the "
+"carrier layer of tiles will cost 25 less energy!"
+
+#. Store item description of mvz2:lily_platform by character mvz2:tokiko
+#: Store meta file
+msgctxt "store_talk"
+msgid "河童们的睡莲形状的平台！用于承载其他器械的器械会变得更便宜！"
+msgstr ""
+"A water lily-shaped platform used by the kappas! Contraptions that occupy "
+"the carrier layer of tiles will cost less energy!"
+
+#. Store item description of mvz2:krakens_tentacle by character mvz2:crazy_villager
+#: Store meta file
+msgctxt "store_talk"
+msgid "克拉肯的触手！器械攻击速度x150%，但是会向随机方向发射子弹！"
+msgstr ""
+"It's the Kraken's tentacle! It increases contraptions' fire rate by x150%, "
+"but they will fire projectiles at random directions!"
+
+#. Store item description of mvz2:krakens_tentacle by character mvz2:tokiko
+#: Store meta file
+msgctxt "store_talk"
+msgid "克拉肯的触手！器械攻击更快，但是它们会胡乱发射子弹！"
+msgstr ""
+"The Kraken's tentacle! It makes contraptions fire faster, but the "
+"projectiles will go wild!"
 
 #. Store item description of mvz2:cake by character mvz2:crazy_villager
 #: Store meta file
