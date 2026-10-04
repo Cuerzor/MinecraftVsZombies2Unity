@@ -59,6 +59,8 @@ namespace MVZ2.GameContent.Buffs.Level
                 // 音乐。
                 level.PlayMusic(VanillaMusicID.nightmareBoss);
                 level.SetMusicVolume(1);
+
+                level.AddBuff<NightmareRedFilterBuff>();
             }
             else if (timeout <= 0)
             {

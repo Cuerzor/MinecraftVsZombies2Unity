@@ -122,6 +122,8 @@
     <buff id="nightmare_cleared" polarity="none" level="5000" target="level" />
     <buff id="final_clear_auto_collect" polarity="none" level="5000" target="level" />
     <buff id="anti_gravity_pad" polarity="negative" level="3000" target="enemy" />
+    <buff id="nightmare_red_filter" polarity="none" level="5000" target="level" />
+    
 
     <!-- Chapter 3 -->
     <buff id="battle_respite" polarity="none" level="5000" target="level" />

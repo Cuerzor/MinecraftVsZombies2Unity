@@ -50,6 +50,7 @@ namespace MVZ2.GameContent.Buffs
             public const string nightmareaperTransition = "nightmareaper_transition";
             public const string nightmareCleared = "nightmare_cleared";
             public const string finalClearAutoCollect = "final_clear_auto_collect";
+            public const string nightmareRedFilter = "nightmare_red_filter";
 
             // Chapter 3
             public const string reverseSatellite = "reverse_satellite";

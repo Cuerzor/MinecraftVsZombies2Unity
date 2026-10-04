@@ -23,6 +23,7 @@
   - Level restarted
   - Enabled curses
 - Added a hidden Easter egg for Error Blocks. **NEVER TRY IT.**
+- Added the red filter before version 0.3.0 back for Nightmare Battle.
 
 ## Modified
 - When a projectile entity undergoes angular rotation due to directional deflection, its hitbox will now rotate correctly.

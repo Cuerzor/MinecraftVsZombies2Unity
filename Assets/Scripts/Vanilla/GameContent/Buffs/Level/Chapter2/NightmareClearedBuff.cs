@@ -52,6 +52,7 @@ namespace MVZ2.GameContent.Buffs.Level
                 if (timeout == LIGHT_TIMEOUT)
                 {
                     Dream.SetToDream(level);
+                    level.RemoveBuffs<NightmareRedFilterBuff>();
                 }
                 // 屏幕变白
                 var cover = buff.GetProperty<Color>(PROP_SCREEN_COVER);
