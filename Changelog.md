@@ -120,6 +120,7 @@
 - Fixed the issue where the Mummies' Poison Gas did not deal damage to enemies when it burned.
 - Fixed the issue where Reverse Satellite will try to align with the position of its lane.
 - Fixed the issue of bad pixels in the armor icon of HP bars.
+- Fixed the issue of dark matter particles located at the bottom of Slenderman when it dies.
 
 ---
 

@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Effects
             base.Update(entity);
             if (entity.Parent != null && entity.Parent.Exists())
             {
-                entity.Position = entity.Parent.Position;
+                entity.Position = entity.Parent.GetCenter();
             }
         }
         #endregion
