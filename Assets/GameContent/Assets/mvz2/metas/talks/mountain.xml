@@ -1302,4 +1302,351 @@
       </sentences>
     </section>
   </group>
+  <group id="mountain_4" tags="mvz2:mountain mvz2:intro">
+    <archive name="妖怪之山第4天入场" background="mvz2:misc/mountain" music="mvz2:mainmenu">
+      <unlock>
+        <condition required="mvz2:level.mountain_4" />
+      </unlock>
+    </archive>
+    <section>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:nitori" side="left" variant="mvz2:sad" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>荷取，钥匙怎么样了？</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>抱歉，我在地上和水里都找遍了，都还是没找到，可能真是被克拉肯带走了。</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>该怎么办啊……</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>唉……要不暂时先算了，今天还有很多怪物要打呢。</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>说的也是。</text>
+        </sentence>
+        <!--语句5-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_surprised" variant="mvz2:surprised">
+          <text>啊，看！那边有穿着登山装备的溺尸！</text>
+        </sentence>
+        <!--语句6-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>它的手里——还拿着一把抓钩枪！</text>
+        </sentence>
+        <!--语句7-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>抓钩枪？</text>
+        </sentence>
+        <!--语句8-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>它会发射抓钩，把东西抓过来，或者把自己抓过去！</text>
+        </sentence>
+        <!--语句9-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>小心点，史蒂夫先生！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+  <group id="mountain_4_over" tags="mvz2:mountain mvz2:over">
+    <archive name="妖怪之山第4天结束" background="mvz2:misc/mountain">
+      <unlock>
+        <condition required="mvz2:level.mountain_4" />
+      </unlock>
+    </archive>
+    <section>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:nitori" side="left" variant="mvz2:surprised" />
+        <character id="mvz2:crazy_villager" side="right" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_surprised">
+          <text>咦？！这个不是山上神明的——</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_short3">
+          <text>这个东西叫御柱！是一根巨大的木头！</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_long2">
+          <text>但是可别小看它！它一开始是从天而降的，可以直接砸击你的敌人！</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_long3">
+          <text>落地之后，它还会插在地里或者水中，变得相当稳固，几乎没有人能挪的动！</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_scream1">
+          <text>感受神明之怒吧！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+  <group id="mountain_4_map" tags="mvz2:mountain mvz2:map">
+    <archive name="妖怪之山第4天地图" background="mvz2:misc/mountain" music="mvz2:mountain_map">
+      <unlock>
+        <condition required="mvz2:level.mountain_4" />
+      </unlock>
+    </archive>
+    <section>
+      <!--分段跳过脚本-->
+      <onSkip>
+        <script>item hide</script>
+        <script>music fade 1</script>
+        <script>end</script>
+      </onSkip>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:aya" side="left" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_surprised">
+          <text>哦？老朋友史蒂夫，原来是你啊！</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>本来以为能找到一些那台怪兽的新闻，没想到竟然撞见你了！</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>啊？我认得你吗？</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_surprised">
+          <text>哇，你居然已经忘掉我了吗，真是让我心碎啊！</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>？</text>
+        </sentence>
+        <!--语句5-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>要不是我给你的那些英雄事迹拍下来，写进报纸里，“史蒂夫”这个名字现在可能还不会这么出名呢！</text>
+        </sentence>
+        <!--语句6-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>原来是搞偷拍的！</text>
+        </sentence>
+        <!--语句7-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_surprised" variant="mvz2:grinning">
+          <text>啊呀，别用这么贬义的词嘛，这叫“取材”！</text>
+        </sentence>
+        <!--语句8-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>呃呃呃。</text>
+        </sentence>
+        <!--语句9-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（不过，说起来——她好像是一名记者来着？）</color>]]></text>
+        </sentence>
+        <!--语句10-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（也许能从她那里了解一些线索？比如异变发生时的各种事情？）</color>]]></text>
+        </sentence>
+        <!--语句11-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>那个，请问——</text>
+        </sentence>
+        <!--语句12-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_surprised" variant="mvz2:normal">
+          <text>哦？请问是要订购我们的“文文。新闻”吗？</text>
+        </sentence>
+        <!--语句13-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……不是，我想向你了解一些——异变发生时的事情。就是三年前那段时间。</text>
+        </sentence>
+        <!--语句14-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:talk">
+          <text>三年前的事情啊，很可惜，新闻的“时效性”早就过了哦。</text>
+        </sentence>
+        <!--语句15-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>不不不，给我一点“旧闻”就可以。</text>
+        </sentence>
+        <!--语句16-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:talk">
+          <text>那好吧，我找找。</text>
+        </sentence>
+        <!--语句17-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:talk">
+          <onStart>
+            <script>item show mvz2:artifacts/bunbunmaru_newspaper</script>
+          </onStart>
+          <text>找着了！给你。</text>
+        </sentence>
+        <!--语句18-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>呃，我看看——</text>
+        </sentence>
+        <!--语句19-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_surprised">
+          <onStart>
+            <script>music fade 0</script>
+          </onStart>
+          <text>！人类村庄的杀人案？</text>
+        </sentence>
+        <!--语句20-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（在三年前的人类村庄，发生了一件匪夷所思的杀人案。）</color>]]></text>
+        </sentence>
+        <!--语句21-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（多名被害者接连在光天化日，众目睽睽之下突然被杀死，现场的目击者没有一人目击到真正的凶手是谁。）</color>]]></text>
+        </sentence>
+        <!--语句22-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（那些目击者只看到了被害者致命部位受伤，随后倒地的惨象，这引起了大范围的恐慌。）</color>]]></text>
+        </sentence>
+        <!--语句23-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（被杀死的五名被害者，以及一位幸存下来的受害者，全部都是伪装成人类居住在村庄里的妖怪。）</color>]]></text>
+        </sentence>
+        <!--语句24-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（最后，有一名人类的尸体在运河中被发现，旁边找到了他亲自写下的遗书。）</color>]]></text>
+        </sentence>
+        <!--语句25-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（在遗书的内容中，他承认了自己的罪行，以及自己对妖怪的憎恨与咒骂。）</color>]]></text>
+        </sentence>
+        <!--语句26-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……匪夷所思啊。竟然还有这种事情。</text>
+        </sentence>
+        <!--语句27-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_surprised" variant="mvz2:grinning">
+          <text>哦，你原来对这种东西感兴趣啊！</text>
+        </sentence>
+        <!--语句28-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:talk">
+          <text>作为赠品，我还可以告诉你当时大伙热议的一条话题哦。</text>
+        </sentence>
+        <!--语句29-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>什么？</text>
+        </sentence>
+        <!--语句30-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:talk" variant="mvz2:normal">
+          <text>看这个。</text>
+        </sentence>
+        <!--语句31-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text><![CDATA[<color=blue>（“雾之湖的幽灵”……？）</color>]]></text>
+        </sentence>
+        <!--语句32-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（有报告称，自己在雾之湖旁路过时，突然感觉自己被某种力量向湖中拉去。）</color>]]></text>
+        </sentence>
+        <!--语句33-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（报告者拼尽全力逃脱了力量的拉扯，之后便成功逃脱了。）</color>]]></text>
+        </sentence>
+        <!--语句34-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（这种报告频繁出现，“雾之湖有幽灵”的传闻因此流行了起来。）</color>]]></text>
+        </sentence>
+        <!--语句35-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（并且，雾之湖中居住的人鱼——若鹭姬也于同期失踪。）</color>]]></text>
+        </sentence>
+        <!--语句36-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（这可能是若鹭姬意外离世后，仍留于人间的怨灵吗？欲知后续，请订阅……呃。 ）</color>]]></text>
+        </sentence>
+        <!--语句37-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>这个怎么了？和异变有什么关系？</text>
+        </sentence>
+        <!--语句38-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_beat" variant="mvz2:grinning">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>没什么，只是觉得你可能会感兴趣而已！</text>
+        </sentence>
+        <!--语句39-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>请不要模仿推荐算法。</text>
+        </sentence>
+        <!--语句40-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_weird" variant="mvz2:normal">
+          <text>可是，那起杀人案不也跟这些方块怪物的异变没什么关系嘛？史蒂夫先生看的可开心咯。</text>
+        </sentence>
+        <!--语句41-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>也、也是吧。</text>
+        </sentence>
+        <!--语句42-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（唉……还是什么线索都没有。）</color>]]></text>
+        </sentence>
+        <!--语句43-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_surprised">
+          <text>哦对了，如果您不介意，不妨订购我们后续的“文文。新闻”——</text>
+        </sentence>
+        <!--语句44-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>不、不用了。</text>
+        </sentence>
+        <!--语句45-->
+        <sentence speaker="mvz2:aya" sounds="mvz2:talk">
+          <text>啊呀啊呀，好吧。</text>
+        </sentence>
+        <!--语句46-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（一个一个的都掉钱眼里了……）</color>]]></text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>item hide</script>
+            <script>music fade 1</script>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
 </talks>
