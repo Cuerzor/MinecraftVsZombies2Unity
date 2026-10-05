@@ -11,6 +11,7 @@ using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Tools.Random;
+using static MVZ2Logic.Sponsors.SponsorPlans;
 
 namespace MVZ2.GameContent.GlobalCallbacks
 {
@@ -54,7 +55,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             var name = names.Random(rng);
             var param = new SpawnParams();
             param.SetProperty(FloatingText.PROP_TEXT, name);
-            furnace.Spawn(VanillaEffectID.floatingText, furnace.GetCenter(), param);
+            furnace.Level.Spawn(VanillaEffectID.floatingText, furnace.GetCenter(), furnace, rng.Next(), param);
         }
         private void ShowMoonlightSensorSponsorName(Entity sensor)
         {
@@ -65,7 +66,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             var name = names.Random(rng);
             var param = new SpawnParams();
             param.SetProperty(FloatingText.PROP_TEXT, name);
-            sensor.Spawn(VanillaEffectID.floatingText, sensor.GetCenter(), param);
+            sensor.Level.Spawn(VanillaEffectID.floatingText, sensor.GetCenter(), sensor, rng.Next(), param);
         }
         private void ShowGunpowderBarrelSensorSponsorName(Entity barrel)
         {
@@ -76,7 +77,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             var name = names.Random(rng);
             var param = new SpawnParams();
             param.SetProperty(FloatingText.PROP_TEXT, name);
-            barrel.Spawn(VanillaEffectID.floatingText, barrel.GetCenter(), param);
+            barrel.Level.Spawn(VanillaEffectID.floatingText, barrel.GetCenter(), barrel, rng.Next(), param);
         }
     }
 }
