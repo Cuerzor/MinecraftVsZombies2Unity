@@ -186,6 +186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4482644278176258204}
   - component: {fileID: 1171825541422654835}
+  - component: {fileID: 5074053006438309541}
   - component: {fileID: 2130503887628975766}
   m_Layer: 0
   m_Name: Background
@@ -225,6 +226,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbde7b08383e8074a9147fda9c6862f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5074053006438309541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1341889581145927385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a37e27ef176ead449aa1ecc0ce57911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!225 &2130503887628975766
@@ -1009,11 +1022,13 @@ MonoBehaviour:
   foregroundCanvasGroup: {fileID: 4372977444566867777}
   foregroundImage: {fileID: 1170082587647251085}
   foregroundFader: {fileID: 3567761593372130009}
+  foregroundScaleFader: {fileID: 407073020363155246}
   forecolorImage: {fileID: 4066030483195302882}
   forecolorFader: {fileID: 5190400283876745763}
   backgroundCanvasGroup: {fileID: 2130503887628975766}
   backgroundImage: {fileID: 6404965617326763052}
   backgroundFader: {fileID: 1171825541422654835}
+  backgroundScaleFader: {fileID: 5074053006438309541}
   backcolorImage: {fileID: 5674026477228575767}
   backcolorFader: {fileID: 5111202658305602517}
   shakeRoots:
@@ -1246,6 +1261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3655672932039397397}
   - component: {fileID: 3567761593372130009}
+  - component: {fileID: 407073020363155246}
   - component: {fileID: 4372977444566867777}
   m_Layer: 0
   m_Name: Foreground
@@ -1285,6 +1301,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dbde7b08383e8074a9147fda9c6862f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &407073020363155246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8240618892827598349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a37e27ef176ead449aa1ecc0ce57911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!225 &4372977444566867777

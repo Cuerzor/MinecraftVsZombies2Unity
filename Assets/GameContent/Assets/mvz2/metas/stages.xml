@@ -1631,6 +1631,11 @@
         <unlock>
             <condition required="mvz2:kourindou_visited_mountain_2" />
         </unlock>
+        <talks>
+            <talk type="start" value="mvz2:mountain_6" />
+            <talk type="end" value="mvz2:mountain_6_over" />
+            <talk type="map" value="mvz2:mountain_6_map" />
+        </talks>
         <conveyor>
             <entry id="mvz2:lily_pad" count="4" />
             <entry id="mvz2:ejector" count="6" />

@@ -60,6 +60,26 @@ namespace MVZ2.UI.Talk
         {
             foregroundFader.StartFade(target, duration);
         }
+        public void SetForegroundScale(Vector2 value)
+        {
+            foregroundScaleFader.Value = value;
+            foregroundScaleFader.StopFade();
+        }
+        public Vector2 GetForegroundScale()
+        {
+            return foregroundScaleFader.Value;
+        }
+        public void StartForegroundScaleFade(Vector2 target, float duration)
+        {
+            foregroundScaleFader.StartFade(target, duration);
+        }
+        public void SetForegroundPivot(Vector2 value)
+        {
+            if (foregroundCanvasGroup.transform is RectTransform rectTransform)
+            {
+                rectTransform.pivot = value;
+            }
+        }
         #endregion
 
         #region 前景色
@@ -89,6 +109,26 @@ namespace MVZ2.UI.Talk
         public void StartBackgroundFade(float target, float duration)
         {
             backgroundFader.StartFade(target, duration);
+        }
+        public void SetBackgroundScale(Vector2 value)
+        {
+            backgroundScaleFader.Value = value;
+            backgroundScaleFader.StopFade();
+        }
+        public Vector2 GetBackgroundScale()
+        {
+            return backgroundScaleFader.Value;
+        }
+        public void StartBackgroundScaleFade(Vector2 target, float duration)
+        {
+            backgroundScaleFader.StartFade(target, duration);
+        }
+        public void SetBackgroundPivot(Vector2 value)
+        {
+            if (backgroundCanvasGroup.transform is RectTransform rectTransform)
+            {
+                rectTransform.pivot = value;
+            }
         }
         #endregion
 
@@ -142,8 +182,10 @@ namespace MVZ2.UI.Talk
             skipButton.onClick.AddListener(() => OnSkipClick?.Invoke());
             raycastReceiver.OnPointerDown += OnRaycastReceiverPointerDownCallback;
             foregroundFader.OnValueChanged += OnForegroundAlphaChangedCallback;
+            foregroundScaleFader.OnValueChanged += OnForegroundScaleChangedCallback;
             forecolorFader.OnValueChanged += OnForegroundColorChangedCallback;
             backgroundFader.OnValueChanged += OnBackgroundAlphaChangedCallback;
+            backgroundScaleFader.OnValueChanged += OnBackgroundScaleChangedCallback;
             backcolorFader.OnValueChanged += OnBackgroundColorChangedCallback;
         }
         #endregion
@@ -157,6 +199,10 @@ namespace MVZ2.UI.Talk
         {
             foregroundCanvasGroup.alpha = value;
         }
+        private void OnForegroundScaleChangedCallback(Vector2 value)
+        {
+            foregroundCanvasGroup.transform.localScale = value;
+        }
         private void OnForegroundColorChangedCallback(Color value)
         {
             var color = forecolorImage.color;
@@ -169,6 +215,10 @@ namespace MVZ2.UI.Talk
         private void OnBackgroundAlphaChangedCallback(float value)
         {
             backgroundCanvasGroup.alpha = value;
+        }
+        private void OnBackgroundScaleChangedCallback(Vector2 value)
+        {
+            backgroundCanvasGroup.transform.localScale = value;
         }
         private void OnBackgroundColorChangedCallback(Color value)
         {
@@ -209,6 +259,8 @@ namespace MVZ2.UI.Talk
         [SerializeField]
         private FloatFader foregroundFader = null!;
         [SerializeField]
+        private Vector2Fader foregroundScaleFader = null!;
+        [SerializeField]
         private ImageResolver forecolorImage = null!;
         [SerializeField]
         private ColorFader forecolorFader = null!;
@@ -220,6 +272,8 @@ namespace MVZ2.UI.Talk
         private ImageResolver backgroundImage = null!;
         [SerializeField]
         private FloatFader backgroundFader = null!;
+        [SerializeField]
+        private Vector2Fader backgroundScaleFader = null!;
         [SerializeField]
         private ImageResolver backcolorImage = null!;
         [SerializeField]

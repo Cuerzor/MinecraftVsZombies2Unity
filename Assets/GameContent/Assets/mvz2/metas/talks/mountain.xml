@@ -1580,7 +1580,7 @@
         </sentence>
         <!--语句33-->
         <sentence speaker="mvz2:steve" sounds="mvz2:talk">
-          <text><![CDATA[<color=blue>（报告者拼尽全力逃脱了力量的拉扯，之后便成功逃脱了。）</color>]]></text>
+          <text><![CDATA[<color=blue>（报告者拼尽全力摆脱了力量的拉扯，之后便逃离了这里。）</color>]]></text>
         </sentence>
         <!--语句34-->
         <sentence speaker="mvz2:steve" sounds="mvz2:talk">
@@ -1987,6 +1987,831 @@
           <!--语句点击脚本-->
           <onClick>
             <script>unlock mvz2:kourindou_visited_mountain_2</script>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+    <group id="mountain_6" tags="mvz2:mountain mvz2:intro">
+    <archive name="妖怪之山第6天入场" background="mvz2:misc/mountain" music="mvz2:mainmenu">
+      <unlock>
+        <condition required="mvz2:level.mountain_6" />
+      </unlock>
+    </archive>
+    <section>
+      <!--分段开始脚本-->
+      <onStart>
+        <script>shake 0.1 3</script>
+        <script>playsound mvz2:earthquake</script>
+      </onStart>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:nitori" side="left" variant="mvz2:surprised" />
+        <character id="mvz2:crazy_villager" side="right" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_surprised">
+          <text>诶？地震了！</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>啊？多少级？</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>啊，停了。好像也就4级左右。</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>不过要小心，山上可能有落石！</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_scream1">
+          <text>落石？啊！我有主意了！</text>
+        </sentence>
+        <!--语句5-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>什么？</text>
+        </sentence>
+        <!--语句6-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_crazy">
+          <text>让你的敌人尝尝重力的滋味吧！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+  <group id="mountain_6_over" tags="mvz2:mountain mvz2:over">
+    <archive name="妖怪之山第6天结束" background="mvz2:misc/mountain">
+      <unlock>
+        <condition required="mvz2:level.mountain_6" />
+      </unlock>
+    </archive>
+    <section>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:crazy_villager" side="left" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_short2">
+          <text>这是寒冰发射器！</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_short3">
+          <text>它会发射能让怪物减速的箭矢！</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_short1">
+          <text>冻你意思！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+  <group id="mountain_6_map" tags="mvz2:mountain mvz2:map">
+    <archive name="妖怪之山第6天地图" background="mvz2:misc/mountain" music="mvz2:mountain_map">
+      <unlock>
+        <condition required="mvz2:level.mountain_6" />
+      </unlock>
+    </archive>
+    <section>
+      <onSkip notForAutoSkip="True">
+        <script>foreground scale 1 1</script>
+        <script>foreground pivot 0.5 0.5</script>
+        <script>foreground alpha 0</script>
+        <script>forecolor set black</script>
+        <script>music stop</script>
+        <script>character clear</script>
+        <script>loopsound stop mvz2:waterfall</script>
+        <script>loopsound stop mvz2:underwater_ambience</script>
+        <script>section 1</script>
+      </onSkip>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:nitori" side="left" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>嘿，这里要装个螺丝……</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>怎么样了，荷取？</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>啊，史蒂夫先生！</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>我们还在造着呢，今天史蒂夫先生也辛苦了！</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>嗯……介意跟我讲讲你们河童的事情吗？</text>
+        </sentence>
+        <!--语句5-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>啊，可以，您想了解点什么？</text>
+        </sentence>
+        <!--语句6-->
+        <sentence speaker="mvz2:steve" description="（视角切换到水下）" bubbleDirection="up" sounds="mvz2:talk">
+          <onStart>
+            <script>foreground change mvz2:misc/kraken_pov_underwater</script>
+            <script>foreground scale 1 1</script>
+            <script>foreground scalefade 1.2 1.2 10</script>
+            <script>foreground pivot 0.5 1</script>
+            <script>foreground alpha 1</script>
+            <script>loopsound play mvz2:waterfall</script>
+            <script>loopsound play mvz2:underwater_ambience</script>
+            <script>music fade 0</script>
+          </onStart>
+          <text>说起来，我比较在意一件事情。你们的基地看起来——有点破？</text>
+        </sentence>
+        <!--语句7-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" bubbleDirection="up" variant="mvz2:surprised">
+          <text>啊，这件事啊……</text>
+        </sentence>
+        <!--语句8-->
+        <sentence speaker="mvz2:steve" bubbleDirection="up" sounds="mvz2:talk">
+          <text>怎么了？</text>
+        </sentence>
+        <!--语句9-->
+        <sentence speaker="mvz2:nitori" bubbleDirection="up" sounds="mvz2:talk">
+          <text>这件事，等附近没人了再说吧。现在说这些不太适合。</text>
+        </sentence>
+        <!--语句10-->
+        <sentence speaker="mvz2:steve" bubbleDirection="up" sounds="mvz2:talk">
+          <text>那——</text>
+          <onClick>
+            <script>playsound mvz2:splash_big</script>
+            <script>bubble hide</script>
+            <script>forecolor fade #FFF0 white 0.25</script>
+            <script>delay 0.25</script>
+
+            <script>foreground scale 1 1</script>
+            <script>foreground pivot 0.5 0.5</script>
+            <script>loopsound stop mvz2:waterfall</script>
+            <script>loopsound stop mvz2:underwater_ambience</script>
+            <script>forecolor set #0000</script>
+            <script>foreground change mvz2:misc/kraken_appears</script>
+            <script>foreground alpha 1</script>
+            <script>playsound mvz2:dialog_bang</script>
+            <script>shake 0.1 4</script>
+            <script>music volume 1</script>
+            <script>music play mvz2:suspension</script>
+            <script>delay 0.25</script>
+
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句11-->
+        <sentence speakerName="克拉肯" speaker="mvz2:none" description="（克拉肯突然出现并嚎叫）" sounds="mvz2:kraken_roar">
+          <text>嗷嗷嗷嗷嗷嗷嗷嗷嗷嗷嗷嗷嗷——</text>
+        </sentence>
+        <!--语句12-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>forecolor set black</script>
+            <script>shake</script>
+          </onStart>
+          <text>哇！！！</text>
+        </sentence>
+        <!--语句13-->
+        <sentence speaker="mvz2:none" speakerName="河童们" bubbleDirection="up" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>哇！！！快跑！！！！</text>
+        </sentence>
+        <!--语句14-->
+        <sentence speaker="mvz2:nitori" bubbleDirection="up" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>史蒂夫先生！</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>forecolor set #0000</script>
+            <script>foreground change mvz2:misc/kraken_entangled</script>
+            <script>foreground alpha 1</script>
+            <script>playsound mvz2:dialog_bang</script>
+            <script>playsound mvz2:kraken_laser_ready_roar</script>
+            <script>shake 0.1 1</script>
+            <script>delay 0.25</script>
+
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句15-->
+        <sentence speaker="mvz2:steve" description="（克拉肯抓住了史蒂夫）" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text><![CDATA[<color=blue>（该死！被抓住了！）</color>]]></text>
+        </sentence>
+        <!--语句16-->
+        <sentence speaker="mvz2:nitori" bubbleDirection="up" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>史蒂夫先生！！！</text>
+        </sentence>
+        <!--语句17-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>放、放开我！</text>
+        </sentence>
+        <!--语句18-->
+        <sentence speakerName="克拉肯" speaker="mvz2:none" bubbleDirection="up" sounds="mvz2:kraken_roar">
+          <onStart>
+            <script>shake 0.1 3</script>
+          </onStart>
+          <text>嗷嗷嗷嗷嗷嗷嗷嗷嗷——！！！</text>
+        </sentence>
+        <!--语句19-->
+        <sentence speaker="mvz2:nitori" bubbleDirection="up" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>forecolor set black</script>
+            <script>shake</script>
+          </onStart>
+          <text>不、不行，必须——</text>
+        </sentence>
+        <!--语句20-->
+        <sentence speaker="mvz2:none" speakerName="河童" bubbleDirection="up" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>可是，它还没有——</text>
+        </sentence>
+        <!--语句21-->
+        <sentence speaker="mvz2:nitori" bubbleDirection="up" sounds="mvz2:dialog_explosive">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>管不了那么多了！</text>
+        </sentence>
+        <!--语句22-->
+        <sentence speaker="mvz2:nitori" bubbleDirection="up" sounds="mvz2:dialog_objection">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>史蒂夫先生，闭上眼睛！</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>playsound mvz2:bolt_charge</script>
+            <script>forecolor fade black white 0.5</script>
+            <script>delay 0.75</script>
+
+            <script>forecolor set #0000</script>
+            <script>playsound mvz2:scifi_laser</script>
+            <script>playsound mvz2:meteor_land</script>
+            <script>playsound mvz2:explosion</script>
+            <script>playsound mvz2:dialog_bang</script>
+            <script>foreground change mvz2:misc/kraken_shot_by_laser</script>
+            <script>foreground alpha 1</script>
+            <script>shake 0.1 2</script>
+
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句23-->
+        <sentence speakerName="克拉肯" speaker="mvz2:none" description="（荷取使用激光炮射击了克拉肯）" bubbleDirection="up" sounds="mvz2:kraken_pain">
+          <text>嗷嗷嗷嗷嗷嗷嗷嗷嗷嗷嗷嗷嗷！！！！！！！！！</text>
+        </sentence>
+        <!--语句24-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>forecolor set black</script>
+            <script>shake</script>
+          </onStart>
+          <text>哇啊啊啊啊啊啊！！！</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>delay 0.25</script>
+
+            <script>playsound mvz2:splash_big</script>
+            <script>loopsound play mvz2:waterfall</script>
+            <script>shake</script>
+            <script>delay 1</script>
+
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句25-->
+        <sentence speaker="mvz2:steve" description="（史蒂夫掉进了河流里）" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text><![CDATA[<color=blue>（糟了！我不会游泳！）</color>]]></text>
+        </sentence>
+        <!--语句26-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>救命！救、咳咳！救命！</text>
+        </sentence>
+        <!--语句27-->
+        <sentence speaker="mvz2:nitori" bubbleDirection="up" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>史蒂夫先生！！！</text>
+        </sentence>
+        <!--语句28-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>咳咳咳咳！</text>
+        </sentence>
+        <!--语句29-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text><![CDATA[<color=blue>（不行！我正在被冲走！）</color>]]></text>
+        </sentence>
+        <!--语句30-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>救、救救我！快来人……</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>music fade 0</script>
+            <script>delay 2</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句31-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（湍急的水流正在把我吞噬，我离最初的地方越来越远。）</color>]]></text>
+        </sentence>
+        <!--语句32-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（无论我怎么挣扎，也无法逃离这狂嚎的深渊。）</color>]]></text>
+        </sentence>
+        <!--语句33-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（而我已经失去了我所有的力气，在水中下沉着。）</color>]]></text>
+        </sentence>
+        <!--语句34-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>救……命……</text>
+        </sentence>
+        <!--语句35-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>救……</text>
+        </sentence>
+        <!--语句36-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>loopsound fade mvz2:waterfall 0</script>
+            <script>bubble hide</script>
+            <script>delay 3</script>
+            <script>character clear</script>
+            <script>section 1</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+    <!--沉默。-->
+    <section>
+      <onSkip notForAutoSkip="True">
+        <script>foreground scale 1 1</script>
+        <script>foreground alpha 0</script>
+        <script>forecolor set black</script>
+        <script>music stop</script>
+        <script>section 2</script>
+      </onSkip>
+      <!--分段开始脚本-->
+      <onStart>
+        <script>bubble hide</script>
+        <script>character init</script>
+        <script>forecolor fade black #0000 2</script>
+        <script>foreground scale 1 1</script>
+        <script>foreground alpha 1</script>
+        <script>foreground change mvz2:misc/memory_with_unknown_person</script>
+        <script>delay 2.5</script>
+      </onStart>
+      <!--对话档案文本-->
+      <text>沉默。</text>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <onStart>
+            <script>music volume 1</script>
+            <script>music play mvz2:distress</script>
+          </onStart>
+          <text>是的，我一直都是个怪胎。</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>别人总是用异样的眼光看着我，不敢和我接近……</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我就这么被排斥着、歧视着，我在这里从来没有过幸福，只有痛苦在我心中回荡。</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我没有朋友，一个也没有……我好孤独……</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>没有任何人愿意听我说话，没有任何人能够理解我……</text>
+        </sentence>
+        <!--语句5-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>没错，这种感觉就好像……在深海中，下沉。向着黑暗，下沉……</text>
+        </sentence>
+        <!--语句6-->
+        <sentence speaker="mvz2:none" speakerName="？？？" bubbleDirection="up" sounds="mvz2:talk">
+          <text>……</text>
+        </sentence>
+        <!--语句7-->
+        <sentence speaker="mvz2:none" speakerName="？？？" bubbleDirection="up" sounds="mvz2:talk">
+          <text>我何尝又不是呢？</text>
+        </sentence>
+        <!--语句8-->
+        <sentence speaker="mvz2:none" speakerName="？？？" bubbleDirection="up" sounds="mvz2:talk">
+          <text>我来到这里的第一天，所有人都害怕我。他们尖叫着喊来守卫，要把我驱逐出这里……</text>
+        </sentence>
+        <!--语句9-->
+        <sentence speaker="mvz2:none" speakerName="？？？" bubbleDirection="up" sounds="mvz2:talk">
+          <text>但是，现在我已经习惯了这样的生活了。他们怎么看我是他们的事，我们只要做好自己。</text>
+        </sentence>
+        <!--语句10-->
+        <sentence speaker="mvz2:none" speakerName="？？？" bubbleDirection="up" sounds="mvz2:talk">
+          <text>别再哭了，我愿意做你的朋友。</text>
+        </sentence>
+        <!--语句11-->
+        <sentence speaker="mvz2:none" speakerName="？？？" bubbleDirection="up" sounds="mvz2:talk">
+          <text>我们同病相怜，既然如此，我们为何不能成为朋友呢？</text>
+        </sentence>
+        <!--语句12-->
+        <sentence speaker="mvz2:none" speakerName="？？？" bubbleDirection="up" sounds="mvz2:talk">
+          <text>如果你想的话，我可以陪你一起走下去。</text>
+        </sentence>
+        <!--语句13-->
+        <sentence speaker="mvz2:none" speakerName="？？？" bubbleDirection="up" sounds="mvz2:talk">
+          <text>朋友，加油活下去吧。</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>bubble hide</script>
+            <script>forecolor fade #0000 black 2</script>
+            <script>delay 3</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句14-->
+        <sentence speaker="mvz2:steve" description="（停顿）" sounds="mvz2:talk">
+          <text>……</text>
+        </sentence>
+        <!--语句15-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>父亲……？</text>
+        </sentence>
+        <!--语句16-->
+        <sentence speaker="mvz2:crazy_villager" bubbleDirection="up" sounds="mvz2:talk">
+          <text>史……蒂夫……</text>
+        </sentence>
+        <!--语句17-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>父亲，您没事吧！</text>
+        </sentence>
+        <!--语句18-->
+        <sentence speaker="mvz2:crazy_villager" bubbleDirection="up" sounds="mvz2:talk">
+          <text>我的病好重……好难受……</text>
+        </sentence>
+        <!--语句19-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>父亲！我这就给您治病！</text>
+        </sentence>
+        <!--语句20-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>快！药呢！</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>music volume 0</script>
+            <script>forecolor fade white #FFF0 0.5</script>
+            <script>foreground change mvz2:misc/balance_insufficient[0]</script>
+            <script>playsound mvz2:dialog_dong</script>
+            <script>delay 1</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句21-->
+        <sentence speaker="mvz2:none" speakerName="机器" bubbleDirection="up">
+          <text>您的余额不足。</text>
+        </sentence>
+        <!--语句22-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>！！！骗人的吧！</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>forecolor fade white #FFF0 0.5</script>
+            <script>foreground change mvz2:misc/balance_insufficient[0]</script>
+            <script>playsound mvz2:dialog_dong</script>
+            <script>delay 1</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句23-->
+        <sentence speaker="mvz2:none" speakerName="机器" bubbleDirection="up" sounds="mvz2:talk">
+          <text>您的余额不足。</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>forecolor fade white #FFF0 0.5</script>
+            <script>foreground change mvz2:misc/balance_insufficient[1]</script>
+            <script>playsound mvz2:dialog_dong</script>
+            <script>delay 1</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句24-->
+        <sentence speaker="mvz2:none" speakerName="机器" bubbleDirection="up" sounds="mvz2:talk">
+          <text>您的余额不足。</text>
+          <text>您的余额不足。</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>forecolor fade white #FFF0 0.5</script>
+            <script>foreground change mvz2:misc/balance_insufficient[2]</script>
+            <script>playsound mvz2:dialog_dong</script>
+            <script>delay 1</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句26-->
+        <sentence speaker="mvz2:none" speakerName="机器" bubbleDirection="up" sounds="mvz2:talk">
+          <text><![CDATA[<color=red>您  的  余  额  不  足。</color>]]></text>
+          <text><![CDATA[<color=red>您  的  余  额  不  足。</color>]]></text>
+          <text><![CDATA[<color=red>您  的  余  额  不  足。</color>]]></text>
+          <text><![CDATA[<color=red>您  的  余  额  不  足。</color>]]></text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>forecolor fade #0000 #F00F 3</script>
+            <script>foreground scalefade 1 1 1.5 1.5 3</script>
+            <script>playsound mvz2:meteor_land 0.5</script>
+            <script>shake 0 3 0.1</script>
+            <script>delay 3</script>
+
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句30-->
+        <sentence speaker="mvz2:crazy_villager" bubbleDirection="up" sounds="mvz2:talk">
+          <text>史……蒂夫……</text>
+        </sentence>
+        <!--语句31-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>父亲！父亲！</text>
+        </sentence>
+        <!--语句32-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_bang">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>父亲！求求你！！！</text>
+        </sentence>
+        <!--语句33-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_judge">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>不要离开我！！！！</text>
+        </sentence>
+        <!--语句34-->
+        <sentence speaker="mvz2:doremy" bubbleDirection="up" sounds="mvz2:dialog_objection">
+          <onStart>
+            <script>shake</script>
+            <script>forecolor fade white black 0.1</script>
+            <script>foreground scale 1 1</script>
+            <script>foreground alpha 0</script>
+          </onStart>
+          <text>史蒂夫！</text>
+        </sentence>
+        <!--语句35-->
+        <sentence speaker="mvz2:doremy" bubbleDirection="up" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>这只是一场噩梦，快醒来！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>section 2</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+    <!--史蒂夫醒了过来。-->
+    <section>
+      <onSkip notForAutoSkip="True">
+        <script>foreground scale 1 1</script>
+        <script>foreground alpha 0</script>
+        <script>forecolor set #0000</script>
+        <script>music volume 1</script>
+        <script>music play mvz2:mountain_map</script>
+        <script>end</script>
+      </onSkip>
+      <!--分段开始脚本-->
+      <onStart>
+        <script>forecolor set #0000</script>
+        <script>foreground alpha 0</script>
+        <script>background alpha 1</script>
+        <script>background scale 1 1</script>
+        <script>background change mvz2:misc/misty_lake</script>
+      </onStart>
+      <!--对话档案文本-->
+      <text>史蒂夫醒了过来。</text>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>forecolor fade black #0000 0.25</script>
+            <script>shake</script>
+          </onStart>
+          <text>！！！</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>这里是……哪儿？</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我在一片湖旁边？</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我还活着吗？</text>
+        </sentence>
+        <!--语句5-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……</text>
+        </sentence>
+        <!--语句6-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>应该是还活着吧。</text>
+        </sentence>
+        <!--语句7-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>荷取？戴夫？你们在吗？</text>
+        </sentence>
+        <!--语句8-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……</text>
+        </sentence>
+        <!--语句9-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>这里雾好大，难道这里就是雾之湖？</text>
+        </sentence>
+        <!--语句10-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……</text>
+        </sentence>
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我记得我沉到了水底下的，可我现在却在岸上。</text>
+        </sentence>
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>是有人救了我吗？</text>
+        </sentence>
+        <!--语句11-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>说起雾之湖，总该不会是那个幽灵救了我吧……</text>
+        </sentence>
+        <!--语句12-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>雾太大了，先不要到处乱走了，还是等荷取他们来找我吧。</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>forecolor fade #0000 black 1</script>
+            <script>delay 2</script>
+
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句13-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（之后我在这里大约待了十几分钟，我才隐隐约约地听到了他们的声音。）</color>]]></text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>forecolor fade black #0000 1</script>
+            <script>delay 2</script>
+
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句14-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>史蒂夫！</text>
+        </sentence>
+        <!--语句15-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>我在这里！</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>delay 0.5</script>
+            <script>character create mvz2:crazy_villager left</script>
+            <script>character create mvz2:nitori right mvz2:sad</script>
+            <script>delay 0.5</script>
+
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句16-->
+        <sentence speaker="mvz2:nitori" description="（荷取和村民入场）" sounds="mvz2:talk">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>太好了，史蒂夫先生……您没事。</text>
+        </sentence>
+        <!--语句17-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_scream1">
+          <text>邻居！你看来还真是命大啊！</text>
+        </sentence>
+        <!--语句18-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我本来以为自己死定了……但是不知道是谁救了我。</text>
+        </sentence>
+        <!--语句19-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>奇怪的是，我醒来之后就发现自己在岸上了，周围一个人都没有。</text>
+        </sentence>
+        <!--语句20-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:surprised">
+          <text>这样啊……好奇怪。</text>
+        </sentence>
+        <!--语句21-->
+        <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_scream1">
+          <text>好了，邻居，先回妖怪之山再说吧！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>music volume 1</script>
+            <script>music play mvz2:mountain_map</script>
             <script>end</script>
           </onClick>
         </sentence>

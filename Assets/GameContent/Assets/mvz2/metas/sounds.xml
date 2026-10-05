@@ -223,6 +223,9 @@
     <sound name="dialog_cut">
         <sample path="mvz2:talk/dialog_cut" weight="1" />
     </sound>
+    <sound name="dialog_dong">
+        <sample path="mvz2:talk/dialog_dong" weight="1" />
+    </sound>
     <sound name="dialog_explosive">
         <sample path="mvz2:talk/dialog_explosive" weight="1" />
     </sound>
@@ -1156,6 +1159,9 @@
     </sound>
     <sound name="ufo_alert" maxCount="1">
         <sample path="mvz2:ufo_alert" weight="1" />
+    </sound>
+    <sound name="underwater_ambience">
+        <sample path="mvz2:underwater_ambience" weight="1" />
     </sound>
     <sound name="villager_crazy" priority="64">
         <sample path="mvz2:talk/villager/villager_crazy" weight="1" />

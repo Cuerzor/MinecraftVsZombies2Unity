@@ -365,6 +365,45 @@ namespace MVZ2.Talk
                                     ui.StartForegroundFade(ParseArgumentFloat(args[1]), 1);
                                 }
                                 break;
+                            case "pivot":
+                                {
+                                    var x = ParseArgumentFloat(args[1]);
+                                    var y = ParseArgumentFloat(args[2]);
+                                    ui.SetForegroundPivot(new Vector2(x, y));
+                                }
+                                break;
+                            case "scale":
+                                {
+                                    var x = ParseArgumentFloat(args[1]);
+                                    var y = ParseArgumentFloat(args[2]);
+                                    ui.SetForegroundScale(new Vector2(x, y));
+                                }
+                                break;
+                            case "scalefade":
+                                if (args.Length >= 6)
+                                {
+                                    var x1 = ParseArgumentFloat(args[1]);
+                                    var y1 = ParseArgumentFloat(args[2]);
+                                    var x2 = ParseArgumentFloat(args[3]);
+                                    var y2 = ParseArgumentFloat(args[4]);
+                                    var duration = ParseArgumentFloat(args[5]);
+                                    ui.SetForegroundScale(new Vector2(x1, y1));
+                                    ui.StartForegroundScaleFade(new Vector2(x2, y2), duration);
+                                }
+                                else if (args.Length == 4)
+                                {
+                                    var x = ParseArgumentFloat(args[1]);
+                                    var y = ParseArgumentFloat(args[2]);
+                                    var duration = ParseArgumentFloat(args[3]);
+                                    ui.StartForegroundScaleFade(new Vector2(x, y), duration);
+                                }
+                                else if (args.Length == 3)
+                                {
+                                    var x = ParseArgumentFloat(args[1]);
+                                    var y = ParseArgumentFloat(args[2]);
+                                    ui.StartForegroundScaleFade(new Vector2(x, y), 1);
+                                }
+                                break;
                         }
                     }
                     break;
@@ -394,6 +433,45 @@ namespace MVZ2.Talk
                                 else if (args.Length == 2)
                                 {
                                     ui.StartBackgroundFade(ParseArgumentFloat(args[1]), 1);
+                                }
+                                break;
+                            case "pivot":
+                                {
+                                    var x = ParseArgumentFloat(args[1]);
+                                    var y = ParseArgumentFloat(args[2]);
+                                    ui.SetBackgroundPivot(new Vector2(x, y));
+                                }
+                                break;
+                            case "scale":
+                                {
+                                    var x = ParseArgumentFloat(args[1]);
+                                    var y = ParseArgumentFloat(args[2]);
+                                    ui.SetBackgroundScale(new Vector2(x, y));
+                                }
+                                break;
+                            case "scalefade":
+                                if (args.Length >= 6)
+                                {
+                                    var x1 = ParseArgumentFloat(args[1]);
+                                    var y1 = ParseArgumentFloat(args[2]);
+                                    var x2 = ParseArgumentFloat(args[3]);
+                                    var y2 = ParseArgumentFloat(args[4]);
+                                    var duration = ParseArgumentFloat(args[5]);
+                                    ui.SetBackgroundScale(new Vector2(x1, y1));
+                                    ui.StartBackgroundScaleFade(new Vector2(x2, y2), duration);
+                                }
+                                else if (args.Length == 4)
+                                {
+                                    var x = ParseArgumentFloat(args[1]);
+                                    var y = ParseArgumentFloat(args[2]);
+                                    var duration = ParseArgumentFloat(args[3]);
+                                    ui.StartBackgroundScaleFade(new Vector2(x, y), duration);
+                                }
+                                else if (args.Length == 3)
+                                {
+                                    var x = ParseArgumentFloat(args[1]);
+                                    var y = ParseArgumentFloat(args[2]);
+                                    ui.StartBackgroundScaleFade(new Vector2(x, y), 1);
                                 }
                                 break;
                         }
@@ -817,6 +895,12 @@ namespace MVZ2.Talk
                 bubbleDirection = SpeechBubbleDirection.Down;
                 showSpeakerName = true;
             }
+            if (sentence.overrideBubbleDirection)
+            {
+                bubbleDirection = sentence.bubbleDirection;
+                showSpeakerName = true;
+            }
+
             if (showSpeakerName)
             {
                 bubbleText = Main.LanguageManager._p(LogicStrings.CONTEXT_TALK, FORGROUND_TALK_TEMPLATE, speakerName, bubbleText);
@@ -1044,6 +1128,8 @@ namespace MVZ2.Talk
                 ui.StartForecolorFade(Color.clear, 1);
                 ui.StartBackgroundFade(0, 1);
                 ui.StartForegroundFade(0, 1);
+                ui.StartBackgroundScaleFade(Vector2.one, 1);
+                ui.StartForegroundScaleFade(Vector2.one, 1);
             }
             else
             {
@@ -1051,6 +1137,8 @@ namespace MVZ2.Talk
                 ui.SetForecolor(Color.clear);
                 ui.SetBackgroundAlpha(0);
                 ui.SetForegroundAlpha(0);
+                ui.SetBackgroundScale(Vector2.one);
+                ui.SetForegroundScale(Vector2.one);
             }
 
             ui.SetBlockerActive(false);

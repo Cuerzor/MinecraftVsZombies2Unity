@@ -505,6 +505,9 @@ MonoBehaviour:
   - name: misc/abandoned_house
     texture: {fileID: 2800000, guid: 50bf732bad4c58e4594fe0d57da0eeff, type: 3}
     tags: []
+  - name: misc/balance_insufficient
+    texture: {fileID: 2800000, guid: 9f858d359d58aaf4b8c8c90deffcb3db, type: 3}
+    tags: []
   - name: misc/blazing_hell_cliff
     texture: {fileID: 2800000, guid: f395daa66520f244ab609c2feaea92c7, type: 3}
     tags: []
@@ -4583,6 +4586,18 @@ MonoBehaviour:
   - name: misc/abandoned_house
     index: 0
     sprite: {fileID: 21300000, guid: 50bf732bad4c58e4594fe0d57da0eeff, type: 3}
+    tags: []
+  - name: misc/balance_insufficient
+    index: 0
+    sprite: {fileID: -462341804, guid: 9f858d359d58aaf4b8c8c90deffcb3db, type: 3}
+    tags: []
+  - name: misc/balance_insufficient
+    index: 1
+    sprite: {fileID: -1978496456, guid: 9f858d359d58aaf4b8c8c90deffcb3db, type: 3}
+    tags: []
+  - name: misc/balance_insufficient
+    index: 2
+    sprite: {fileID: 1754060175, guid: 9f858d359d58aaf4b8c8c90deffcb3db, type: 3}
     tags: []
   - name: misc/blazing_hell_cliff
     index: 0

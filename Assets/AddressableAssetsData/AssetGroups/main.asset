@@ -1970,6 +1970,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20f62567e2777f949a40677808f8a129
+    m_Address: mvz2:misc/nitoris_key
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 211657565d216cd4a9fb3b2c489ff0af
     m_Address: mvz2:ui/level/nightmare_broken_glasses
     m_ReadOnly: 0
@@ -2795,13 +2802,6 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 2e753412cec561746b14be38083ffc2a
-    m_Address: mvz2:laser_power_up
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Main
-    - Sound
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2e76fd1251c333743bf3c70a8fb12362
     m_Address: mvz2:talk/villager/villager_long1
     m_ReadOnly: 0
@@ -3074,6 +3074,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 333884de44c808948bd4de8115aed4c9
+    m_Address: mvz2:underwater_ambience
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 33407578696d9d4498f6ca0dcff042dd
     m_Address: mvz2:kraken_death_ray
@@ -4172,6 +4179,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - AreaModel
     - Main
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4345fda2cd86628478a1ce628b29dd6c
+    m_Address: mvz2:characters/seija_icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 434824b4c6871cb40b7121122b27dfd9
     m_Address: mvz2:charged_bolt2
@@ -6064,6 +6078,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5ff28871fd459c0479645419965e61d4
     m_Address: mvz2:mobile_blueprint/undead_flying_object_rainbow
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 600d5920c6039f040bc0c11816818368
+    m_Address: mvz2:characters/marisa_icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -9903,6 +9924,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9f858d359d58aaf4b8c8c90deffcb3db
+    m_Address: mvz2:misc/balance_insufficient
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9f887f3e85dc48d4e8d4bd36aa0a9e12
     m_Address: mvz2:entity/effect/nightmare_portal_frame
     m_ReadOnly: 0
@@ -11771,6 +11799,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c05fe6d7322c4ca4893c859973615f67
+    m_Address: mvz2:talk/dialog_dong
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c101e038c6933884ba46b093beaafa76
     m_Address: mvz2:effect/frozen_shards
     m_ReadOnly: 0
@@ -13535,6 +13570,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: deb495fd1d3e94049b97f37eb1ad8db4
+    m_Address: mvz2:characters/nitori
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: deb74e74f1a1e1c47912a17f544cfcee
     m_Address: mvz2:units/humanoid/humanoid
     m_ReadOnly: 0
@@ -14006,6 +14048,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e77dc77a7ebd8c54aa8708cbdc9ed0ac
     m_Address: mvz2:level/grids/broken_tile_radiation
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e7e3e3ce1446ec845a9bdbe0320f999e
+    m_Address: mvz2:characters/reimu
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
