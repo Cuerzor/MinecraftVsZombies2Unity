@@ -301,6 +301,9 @@ MonoBehaviour:
   - name: characters/marisa
     texture: {fileID: 2800000, guid: 87b336d7b20b7a145a9300914c7bf0e8, type: 3}
     tags: []
+  - name: characters/marisa_icon
+    texture: {fileID: 2800000, guid: 600d5920c6039f040bc0c11816818368, type: 3}
+    tags: []
   - name: characters/miko
     texture: {fileID: 2800000, guid: 2ed94ca4477dddd4d8e58ecc9da541c5, type: 3}
     tags: []
@@ -313,6 +316,9 @@ MonoBehaviour:
   - name: characters/orant
     texture: {fileID: 2800000, guid: 403593c82a7adb74b8cc7ce5e0a7e925, type: 3}
     tags: []
+  - name: characters/reimu
+    texture: {fileID: 2800000, guid: e7e3e3ce1446ec845a9bdbe0320f999e, type: 3}
+    tags: []
   - name: characters/rin
     texture: {fileID: 2800000, guid: 93dd3cca0a6f1a24da49df3b3eed57fa, type: 3}
     tags: []
@@ -324,6 +330,9 @@ MonoBehaviour:
     tags: []
   - name: characters/seija
     texture: {fileID: 2800000, guid: 1723b13d8d44a654a8424dc59197b0aa, type: 3}
+    tags: []
+  - name: characters/seija_icon
+    texture: {fileID: 2800000, guid: 4345fda2cd86628478a1ce628b29dd6c, type: 3}
     tags: []
   - name: characters/sekibanki
     texture: {fileID: 2800000, guid: 5e391a23c6381c14c9f44d8b0da02c2b, type: 3}
@@ -3899,6 +3908,10 @@ MonoBehaviour:
     index: 5
     sprite: {fileID: -1758476239, guid: 87b336d7b20b7a145a9300914c7bf0e8, type: 3}
     tags: []
+  - name: characters/marisa_icon
+    index: 0
+    sprite: {fileID: 21300000, guid: 600d5920c6039f040bc0c11816818368, type: 3}
+    tags: []
   - name: characters/miko
     index: 0
     sprite: {fileID: -1815168315, guid: 2ed94ca4477dddd4d8e58ecc9da541c5, type: 3}
@@ -3982,6 +3995,14 @@ MonoBehaviour:
   - name: characters/orant
     index: 2
     sprite: {fileID: 180654886, guid: 403593c82a7adb74b8cc7ce5e0a7e925, type: 3}
+    tags: []
+  - name: characters/reimu
+    index: 0
+    sprite: {fileID: -1244388808, guid: e7e3e3ce1446ec845a9bdbe0320f999e, type: 3}
+    tags: []
+  - name: characters/reimu
+    index: 1
+    sprite: {fileID: 556154212, guid: e7e3e3ce1446ec845a9bdbe0320f999e, type: 3}
     tags: []
   - name: characters/rin
     index: 0
@@ -4082,6 +4103,10 @@ MonoBehaviour:
   - name: characters/seija
     index: 8
     sprite: {fileID: 1360310571, guid: 1723b13d8d44a654a8424dc59197b0aa, type: 3}
+    tags: []
+  - name: characters/seija_icon
+    index: 0
+    sprite: {fileID: 21300000, guid: 4345fda2cd86628478a1ce628b29dd6c, type: 3}
     tags: []
   - name: characters/sekibanki
     index: 0

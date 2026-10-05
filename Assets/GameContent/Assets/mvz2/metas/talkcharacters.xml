@@ -666,4 +666,12 @@
             <layer sprite="mvz2:characters/armor_stand"/>
         </variant>
     </character>
+    <character id="reimu" name="灵梦">
+        <variant id="mvz2:normal" width="635" height="1280" extendLeft="75" extendRight="75" pivotX="0.5" pivotY="0.35">
+            <layer sprite="mvz2:characters/reimu[0]" />
+        </variant>
+        <variant id="mvz2:close_eyes" parent="mvz2:normal">
+            <layer sprite="mvz2:characters/reimu[1]" positionX="240" positionY="160" />
+        </variant>
+    </character>
 </characters>

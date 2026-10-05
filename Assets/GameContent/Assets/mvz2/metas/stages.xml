@@ -1629,7 +1629,7 @@
     </stage>
     <stage id="mountain_6" name="妖怪之山" dayNumber="6" needBlueprints="false" type="minigame" music="mvz2:minigame">
         <unlock>
-            <condition required="mvz2:level.mountain_5" />
+            <condition required="mvz2:kourindou_visited_mountain_2" />
         </unlock>
         <conveyor>
             <entry id="mvz2:lily_pad" count="4" />
