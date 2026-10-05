@@ -621,6 +621,9 @@ MonoBehaviour:
   - name: misc/nightmare_art
     texture: {fileID: 2800000, guid: 80c498f2605fad848859bce97a8c16ed, type: 3}
     tags: []
+  - name: misc/nitoris_key
+    texture: {fileID: 2800000, guid: 20f62567e2777f949a40677808f8a129, type: 3}
+    tags: []
   - name: misc/nitoris_machine
     texture: {fileID: 2800000, guid: 31fe0f41d379d7b4e8b6b728f403c20d, type: 3}
     tags: []
@@ -4737,6 +4740,10 @@ MonoBehaviour:
   - name: misc/nightmare_art
     index: 0
     sprite: {fileID: 21300000, guid: 80c498f2605fad848859bce97a8c16ed, type: 3}
+    tags: []
+  - name: misc/nitoris_key
+    index: 0
+    sprite: {fileID: 21300000, guid: 20f62567e2777f949a40677808f8a129, type: 3}
     tags: []
   - name: misc/nitoris_machine
     index: 0
