@@ -359,7 +359,7 @@
           <text>诶？史蒂夫先生？</text>
         </sentence>
         <!--语句65-->
-        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_cut" variant="mvz2:surprised">
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_cut" variant="mvz2:scared">
           <onStart>
             <script>shake</script>
           </onStart>
@@ -630,7 +630,7 @@
           <text>我们河童栖息在任何水源丰富的地方，也是幻想乡里有名的工匠和发明家。</text>
         </sentence>
         <!--语句4-->
-        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_beat">
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_beat" variant="mvz2:happy">
           <onStart>
             <script>shake</script>
           </onStart>
@@ -638,6 +638,9 @@
         </sentence>
         <!--语句5-->
         <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <onStart>
+            <script>character variant mvz2:nitori mvz2:normal</script>
+          </onStart>
           <text>这些机器，从来没见过……太神奇了。</text>
         </sentence>
         <!--语句6-->
@@ -712,13 +715,14 @@
         <!--语句20-->
         <sentence speaker="mvz2:steve" sounds="mvz2:dialog_cut">
           <onStart>
+            <script>character variant mvz2:nitori mvz2:surprised</script>
             <script>shake</script>
           </onStart>
           <text>这这这几个0啊！</text>
         </sentence>
         <!--语句21-->
-        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:surprised">
-          <text>啊……？</text>
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>啊——</text>
         </sentence>
         <!--语句22-->
         <sentence speaker="mvz2:steve" sounds="mvz2:talk">
@@ -758,7 +762,7 @@
           <text>诶，怎么还有——小的？</text>
         </sentence>
         <!--语句2-->
-        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:worried">
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:sad">
           <text>甚至还拿着泡泡枪玩具……这么小就失去了生命吗？</text>
         </sentence>
         <!--语句3-->
@@ -848,7 +852,7 @@
           <text>那么这场爆炸，具体在哪个位置？爆炸发生的原因是什么？</text>
         </sentence>
         <!--语句5-->
-        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:worried">
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:sad">
           <text>啊，这个……说起来有些难以启齿。</text>
         </sentence>
         <!--语句6-->
@@ -885,7 +889,7 @@
           <text>就这样吗？</text>
         </sentence>
         <!--语句12-->
-        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:sad">
           <text>实在是抱歉，不知道为什么，我对于这一段的记忆十分模糊。</text>
         </sentence>
         <!--语句13-->

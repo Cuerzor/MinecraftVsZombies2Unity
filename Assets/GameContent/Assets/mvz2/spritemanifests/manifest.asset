@@ -304,6 +304,9 @@ MonoBehaviour:
   - name: characters/miko
     texture: {fileID: 2800000, guid: 2ed94ca4477dddd4d8e58ecc9da541c5, type: 3}
     tags: []
+  - name: characters/nitori
+    texture: {fileID: 2800000, guid: deb495fd1d3e94049b97f37eb1ad8db4, type: 3}
+    tags: []
   - name: characters/nue
     texture: {fileID: 2800000, guid: ea907a3e2eaa545429191634d8af4841, type: 3}
     tags: []
@@ -3924,6 +3927,38 @@ MonoBehaviour:
   - name: characters/miko
     index: 7
     sprite: {fileID: 1527462565, guid: 2ed94ca4477dddd4d8e58ecc9da541c5, type: 3}
+    tags: []
+  - name: characters/nitori
+    index: 0
+    sprite: {fileID: -1714250842, guid: deb495fd1d3e94049b97f37eb1ad8db4, type: 3}
+    tags: []
+  - name: characters/nitori
+    index: 1
+    sprite: {fileID: -1447608187, guid: deb495fd1d3e94049b97f37eb1ad8db4, type: 3}
+    tags: []
+  - name: characters/nitori
+    index: 2
+    sprite: {fileID: 362114915, guid: deb495fd1d3e94049b97f37eb1ad8db4, type: 3}
+    tags: []
+  - name: characters/nitori
+    index: 3
+    sprite: {fileID: -240023498, guid: deb495fd1d3e94049b97f37eb1ad8db4, type: 3}
+    tags: []
+  - name: characters/nitori
+    index: 4
+    sprite: {fileID: 762190977, guid: deb495fd1d3e94049b97f37eb1ad8db4, type: 3}
+    tags: []
+  - name: characters/nitori
+    index: 5
+    sprite: {fileID: 1770158782, guid: deb495fd1d3e94049b97f37eb1ad8db4, type: 3}
+    tags: []
+  - name: characters/nitori
+    index: 6
+    sprite: {fileID: 1755804379, guid: deb495fd1d3e94049b97f37eb1ad8db4, type: 3}
+    tags: []
+  - name: characters/nitori
+    index: 7
+    sprite: {fileID: -730168879, guid: deb495fd1d3e94049b97f37eb1ad8db4, type: 3}
     tags: []
   - name: characters/nue
     index: 0
@@ -11627,11 +11662,7 @@ MonoBehaviour:
     tags: []
   - name: ui/level/nightmare_broken_glasses
     index: 22
-    sprite: {fileID: 3439651553194031847, guid: 211657565d216cd4a9fb3b2c489ff0af, type: 3}
-    tags: []
-  - name: ui/level/nightmare_broken_glasses
-    index: 23
-    sprite: {fileID: -2918477655606386715, guid: 211657565d216cd4a9fb3b2c489ff0af, type: 3}
+    sprite: {fileID: -724685578, guid: 211657565d216cd4a9fb3b2c489ff0af, type: 3}
     tags: []
   - name: ui/level/pause_image_0
     index: 0

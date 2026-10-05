@@ -621,20 +621,41 @@
         </variant>
     </character>
     <character id="nitori" name="荷取">
-        <variant id="mvz2:normal" width="448" height="896" pivotX="0.5" pivotY="0.5">
-            <layer sprite="mvz2:characters/armor_stand" />
+        <variant id="mvz2:normal" width="520" height="1280" extendLeft="50" extendRight="0" pivotX="0.5" pivotY="0.35">
+            <layer sprite="mvz2:characters/nitori[0]" />
         </variant>
-        <variant id="mvz2:surprised" parent="mvz2:normal">
-            <layer sprite="mvz2:characters/armor_stand" />
+        <variant id="mvz2:scared" parent="mvz2:normal">
+            <layer sprite="mvz2:characters/nitori[1]" positionX="192" positionY="144" />
         </variant>
         <variant id="mvz2:sad" parent="mvz2:normal">
-            <layer sprite="mvz2:characters/armor_stand" />
+            <layer sprite="mvz2:characters/nitori[3]" positionX="176" positionY="112" />
         </variant>
         <variant id="mvz2:happy" parent="mvz2:normal">
-            <layer sprite="mvz2:characters/armor_stand" />
+            <layer sprite="mvz2:characters/nitori[4]" positionX="176" positionY="144"/>
+        </variant>
+        <variant id="mvz2:surprised" parent="mvz2:normal">
+            <unlock>
+                <condition required="mvz2:level.mountain_1" />
+            </unlock>
+            <layer sprite="mvz2:characters/nitori[2]" positionX="192" positionY="144" />
         </variant>
         <variant id="mvz2:worried" parent="mvz2:normal">
-            <layer sprite="mvz2:characters/armor_stand" />
+            <unlock>
+                <condition required="mvz2:level.mountain_2" />
+            </unlock>
+            <layer sprite="mvz2:characters/nitori[5]" positionX="176" positionY="112" />
+        </variant>
+        <variant id="mvz2:angry" parent="mvz2:normal">
+            <unlock>
+                <condition required="mvz2:level.mountain_10" />
+            </unlock>
+            <layer sprite="mvz2:characters/nitori[6]" positionX="176" positionY="112" />
+        </variant>
+        <variant id="mvz2:madness" parent="mvz2:normal">
+            <unlock>
+                <condition required="mvz2:level.mountain_11" />
+            </unlock>
+            <layer sprite="mvz2:characters/nitori[7]" />
         </variant>
     </character>
 </characters>
