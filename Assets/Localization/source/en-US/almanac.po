@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-05 02:25+0800\n"
-"PO-Revision-Date: 2026-10-05 14:25+0800\n"
+"POT-Creation-Date: 2026-10-05 03:29+0800\n"
+"PO-Revision-Date: 2026-10-05 17:27+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -6651,6 +6651,56 @@ msgstr ""
 "know her well, she will reveal a cheerful side to her personality.\n"
 "Greedy."
 
+#. Name for misc mvz2:aya
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "射命丸 文"
+msgstr "Aya Shameimaru"
+
+#. Header for misc mvz2:aya
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>的天狗记者。"
+msgstr "A crow tengu journalist from <ref=[misc]mvz2:youkai_mountain>Youkai Mountain</ref>."
+
+#. Flavor for misc mvz2:aya
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"以超级飞行速度，以及满口胡话的报道而臭名昭著的鸦天狗记者。\n"
+"谨慎而狡猾，喜欢说谎。在编写报道时甚至完全不在乎报道的真实性。"
+msgstr ""
+"She is notorious for her incredible flying speed and news articles filled with nonsense. \n"
+"She is careful yet cunning, and likes to lie. When writing her news articles, she completely disregards their authenticity."
+
+#. Name for misc mvz2:reimu
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "博丽 灵梦"
+msgstr "Reimu Hakurei"
+
+#. Header for misc mvz2:reimu
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "<ref=[misc]mvz2:hakurei_shrine>博丽神社</ref>的巫女，负责解决幻想乡异变的主要人物。"
+msgstr ""
+"The shrine maiden of <ref=[misc]mvz2:hakurei_shrine>Hakurei Shrine</ref>. She is a prominent figure in Gensokyo responsible for "
+"resolving incidents."
+
+#. Flavor for misc mvz2:reimu
+#: Almanac meta file
+msgctxt "misc.description"
+msgid ""
+"神社的巫女，人脉很广，<ref=[misc]mvz2:marisa>魔理沙</ref>的挚友之一。\n"
+"是治理异变的专家，曾解决过无数大大小小的幻想乡异变，因此而广受人类尊敬。\n"
+"也曾尝试过解决这场持续了三年的异变，然而实际需求远远超出了她的能力范围，因此也逐渐开始放弃了。"
+msgstr ""
+"As a shrine maiden with extensive connections, she is a close friend of <ref=[misc]mvz2:marisa>Marisa</ref>.\n"
+"She is an expert in resolving incidents, having handled countless incidents of all kinds in Gensokyo, which makes her widely respected "
+"by humans.\n"
+"She also tried to resolve this incident that had been ongoing for 3 years, but it was far beyond her capabilities, so she gradually "
+"began to give up."
+
 #. Name for almanac group mvz2:areas
 #: Almanac meta file
 msgctxt "almanac.group_name"
@@ -9757,6 +9807,12 @@ msgstr "Nitori"
 msgctxt "character.name"
 msgid "文"
 msgstr "Aya"
+
+#. Name for character mvz2:reimu
+#: Character meta file
+msgctxt "character.name"
+msgid "灵梦"
+msgstr "Reimu"
 
 #. Name for artifact mvz2:almanac
 #: Artifact meta file

@@ -3628,6 +3628,39 @@
                     <p>非常贪财。</p>
                 </flavor>
             </entry>
+            <entry id="mvz2:aya" name="射命丸 文" >
+                <unlock>
+                    <condition required="mvz2:level.mountain_4"/>
+                </unlock>
+                <picture sprite="mvz2:characters/armor_stand" character="mvz2:aya"/>
+                <header>
+                    <p><![CDATA[<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>]]>的天狗记者。</p>
+                </header>
+                <properties>
+                    <p>画师：<![CDATA[<color=red>三花花</color>]]></p>
+                </properties>
+                <flavor>
+                    <p>以超级飞行速度，以及满口胡话的报道而臭名昭著的鸦天狗记者。</p>
+                    <p>谨慎而狡猾，喜欢说谎。在编写报道时甚至完全不在乎报道的真实性。</p>
+                </flavor>
+            </entry>
+            <entry id="mvz2:reimu" name="博丽 灵梦" >
+                <unlock>
+                    <condition required="mvz2:kourindou_visited_mountain_2"/>
+                </unlock>
+                <picture sprite="mvz2:characters/reimu[0]" character="mvz2:reimu"/>
+                <header>
+                    <p><![CDATA[<ref=[misc]mvz2:hakurei_shrine>博丽神社</ref>]]>的巫女，负责解决幻想乡异变的主要人物。</p>
+                </header>
+                <properties>
+                    <p>画师：<![CDATA[<color=red>小幽喜欢口乙烯</color>]]></p>
+                </properties>
+                <flavor>
+                    <p>神社的巫女，人脉很广，<![CDATA[<ref=[misc]mvz2:marisa>魔理沙</ref>]]>的挚友之一。</p>
+                    <p>是治理异变的专家，曾解决过无数大大小小的幻想乡异变，因此而广受人类尊敬。</p>
+                    <p>也曾尝试过解决这场持续了三年的异变，然而实际需求远远超出了她的能力范围，因此也逐渐开始放弃了。</p>
+                </flavor>
+            </entry>
         </group>
         <!-- Areas -->
         <group id="mvz2:areas" name="地点" order="400">
