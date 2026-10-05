@@ -3826,7 +3826,7 @@
                 </unlock>
                 <picture sprite="mvz2:misc/misty_lake"/>
                 <header>
-                    <p>幻想乡里的一片大型湖泊，位于妖怪之山山脚。</p>
+                    <p>幻想乡里的一片大型湖泊，位于<![CDATA[<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>]]>山脚。</p>
                 </header>
                 <flavors>
                     <flavor>
@@ -3843,7 +3843,7 @@
                         <conditions>
                             <condition required="mvz2:level.mountain_6"/>
                         </conditions>
-                        <p>史蒂夫在<![CDATA[<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>]]>被<![CDATA[<ref=[misc]mvz2:kraken>克拉肯</ref>]]>抓住后，落入水中，醒来时却发现已经来到了这片湖泊附近。</p>
+                        <p>史蒂夫在妖怪之山被<![CDATA[<ref=[misc]mvz2:kraken>克拉肯</ref>]]>抓住后，落入水中，醒来时却发现已经来到了这片湖泊附近。</p>
                     </flavor>
                 </flavors>
             </entry>

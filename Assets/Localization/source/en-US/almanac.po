@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-05 12:43+0800\n"
-"PO-Revision-Date: 2026-10-05 13:42+0800\n"
+"POT-Creation-Date: 2026-10-05 02:08+0800\n"
+"PO-Revision-Date: 2026-10-05 14:09+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -7029,8 +7029,8 @@ msgstr "Misty Lake"
 #. Header for misc mvz2:misty_lake
 #: Almanac meta file
 msgctxt "misc.description"
-msgid "幻想乡里的一片大型湖泊，位于妖怪之山山脚。"
-msgstr "A massive lake located at the foot of the Youkai Mountain in Gensokyo."
+msgid "幻想乡里的一片大型湖泊，位于<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>山脚。"
+msgstr "A massive lake located at the foot of the <ref=[misc]mvz2:youkai_mountain>Youkai Mountain</ref> in Gensokyo."
 
 #. Flavor for misc mvz2:misty_lake
 #: Almanac meta file
@@ -7051,12 +7051,10 @@ msgstr ""
 #. Flavor for misc mvz2:misty_lake
 #: Almanac meta file
 msgctxt "misc.description"
-msgid ""
-"史蒂夫在<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>被<ref=[misc]mvz2:kraken>克拉肯</ref>抓住后，落入水中，醒来时却发现已经来到了这片"
-"湖泊附近。"
+msgid "史蒂夫在妖怪之山被<ref=[misc]mvz2:kraken>克拉肯</ref>抓住后，落入水中，醒来时却发现已经来到了这片湖泊附近。"
 msgstr ""
-"At the <ref=[misc]mvz2:youkai_mountain>Youkai Mountain</ref>, after Steve was dragged by <ref=[misc]mvz2:kraken>the Kraken</ref> into "
-"the water, he woke up and found himself next to the lake."
+"At the Youkai Mountain, after Steve was dragged by <ref=[misc]mvz2:kraken>the Kraken</ref> into the water, he woke up and found "
+"himself next to the lake."
 
 #. Name for almanac group mvz2:starshards
 #: Almanac meta file
