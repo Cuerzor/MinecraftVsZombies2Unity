@@ -1993,7 +1993,7 @@
       </sentences>
     </section>
   </group>
-    <group id="mountain_6" tags="mvz2:mountain mvz2:intro">
+  <group id="mountain_6" tags="mvz2:mountain mvz2:intro">
     <archive name="妖怪之山第6天入场" background="mvz2:misc/mountain" music="mvz2:mainmenu">
       <unlock>
         <condition required="mvz2:level.mountain_6" />
@@ -3132,6 +3132,360 @@
           <text>哈，贵也值了！</text>
           <!--语句点击脚本-->
           <onClick>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+  <group id="mountain_8" tags="mvz2:mountain mvz2:intro">
+    <archive name="妖怪之山第8天入场" background="mvz2:misc/mountain" music="mvz2:mainmenu">
+      <unlock>
+        <condition required="mvz2:level.mountain_8" />
+      </unlock>
+    </archive>
+    <section>
+      <onSkip>
+        <script>item hide</script>
+        <script>end</script>
+      </onSkip>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:nitori" side="left" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>对了，我把那个东西拿回来了。</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_surprised">
+          <onStart>
+            <script>item show mvz2:misc/nitoris_key</script>
+          </onStart>
+          <text>基地深处的钥匙。</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>哦？你拿回来了？</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>嗯，就在克拉肯被轰击之后，它就把这把钥匙扔了回来。</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>之前就答应您的，一定要带您去那个被封印的房间。</text>
+        </sentence>
+        <!--语句5-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>那么，在这场战斗之后，就务必让我带您去吧！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>item hide</script>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+  <group id="mountain_8_over" tags="mvz2:mountain mvz2:over">
+    <archive name="妖怪之山第8天结束" background="mvz2:misc/mountain">
+      <unlock>
+        <condition required="mvz2:level.mountain_8" />
+      </unlock>
+    </archive>
+    <section>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:nitori" side="left" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>嘿！这是我们河童常用的炸药！</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>它叫套娃TNT，可以放置在陆地上或者水上！</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>虽然它每次爆炸的威力比较弱，但是在爆炸后还会给你在其他位置放置的机会！</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>一共可以爆炸三次，适合清理一些脆弱的障碍！</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>也请您务必试一试！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+  <group id="mountain_8_map" tags="mvz2:mountain mvz2:map">
+    <archive name="妖怪之山第8天地图" background="mvz2:misc/mountain" music="mvz2:mountain_map">
+      <unlock>
+        <condition required="mvz2:level.mountain_8" />
+      </unlock>
+    </archive>
+    <section>
+      <onSkip>
+        <script>forecolor fade #0000</script>
+        <script>background alpha 0</script>
+        <script>music fade 1</script>
+        <script>item hide</script>
+        <script>end</script>
+      </onSkip>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:nitori" side="left" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>战斗结束了，按照约定，我现在可以带史蒂夫先生您去那个房间了。</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>background change mvz2:misc/kappa_base</script>
+            <script>background fade 1 1</script>
+            <script>delay 2</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <onStart>
+            <script>item show mvz2:misc/nitoris_key</script>
+          </onStart>
+          <text>……</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <onStart>
+            <script>item hide</script>
+          </onStart>
+          <text>打开了，进去看看吧。</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>forecolor fade #0000 black 1</script>
+            <script>music fade 0</script>
+            <script>delay 2</script>
+            
+            <script>background change mvz2:misc/debris_of_nitoris_lab</script>
+            <script>forecolor fade black #0000 1</script>
+            <script>delay 2</script>
+
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:steve" description="（史蒂夫和荷取进入了被封印的房间）" sounds="mvz2:talk">
+          <text>好黑啊。</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>是这样的。自从爆炸之后，这个房间已经很久没有人来过了。我来打一下手电筒。</text>
+        </sentence>
+        <!--语句5-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>这里能看到一些散落一地的机器零件。这是当年荷取小姐的制造机器上的吗？</text>
+        </sentence>
+        <!--语句6-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>应该是吧，我好像有点印象。</text>
+        </sentence>
+        <!--语句7-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>这场爆炸在地上留了个大坑啊……</text>
+        </sentence>
+        <!--语句8-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text><![CDATA[<color=blue>（不过话说回来，辉针城都能听到巨响，那这爆炸范围——其实好像也没想象中那么大？）</color>]]></text>
+        </sentence>
+        <!--语句9-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>说起来，荷取小姐当时应该就在这个房间里？</text>
+        </sentence>
+        <!--语句10-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>您没有被爆炸波及吗？</text>
+        </sentence>
+        <!--语句11-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>实际上，有一点吧。</text>
+        </sentence>
+        <!--语句12-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>不过我当时为了保险起见穿着安全服装，应该是没受到什么严重的伤。</text>
+        </sentence>
+        <!--语句13-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>……？</text>
+        </sentence>
+        <!--语句14-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>刚才似乎有什么东西闪了一下？</text>
+        </sentence>
+        <!--语句15-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <onStart>
+            <script>item show mvz2:misc/ender_pearl_fragment</script>
+          </onStart>
+          <text>这是什么？</text>
+        </sentence>
+        <!--语句16-->
+        <sentence speaker="mvz2:steve" description="（史蒂夫拿起了一个墨绿色的碎片）" sounds="mvz2:dialog_weird">
+          <text>一片墨绿色的碎片？而且——好像很圆？</text>
+        </sentence>
+        <!--语句17-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:surprised">
+          <text>这个东西是？</text>
+        </sentence>
+        <!--语句18-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_cut">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>等等，这个东西是——末影珍珠？</text>
+        </sentence>
+        <!--语句19-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>这个东西怎么会出现在这里？！</text>
+        </sentence>
+        <!--语句20-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>怎么了，史蒂夫？</text>
+        </sentence>
+        <!--语句21-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>这是末影珍珠，是一种拥有传送魔力的东西，并且也和某个特殊的维度有关。</text>
+        </sentence>
+        <!--语句22-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_beat">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>但是，这个东西是来自于我们世界的啊，怎么会在这里呢！</text>
+        </sentence>
+        <!--语句23-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_surprised" variant="mvz2:scared">
+          <text>！珍、珍珠？</text>
+        </sentence>
+        <!--语句24-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:surprised">
+          <text>我好像有点印象……</text>
+        </sentence>
+        <!--语句25-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>怎么？</text>
+        </sentence>
+        <!--语句26-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:worried">
+          <text>我有点想起来了。</text>
+        </sentence>
+        <!--语句27-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:sad">
+          <onStart>
+            <script>item hide</script>
+          </onStart>
+          <text>在三年前，爆炸发生之前的前些时间，我在山上捡到了一颗奇怪的墨绿色的珍珠。</text>
+        </sentence>
+        <!--语句28-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>我之前从来没见过这种东西，而且似乎还散发着神奇的魔力。</text>
+        </sentence>
+        <!--语句29-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>这东西引起了我们很大的兴趣，于是就在这个房间里对它进行了研究。</text>
+        </sentence>
+        <!--语句30-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>我们的研究取得了不少成果，当时我们发现，这种东西甚至还可以用于在不同的世界之间穿梭。</text>
+        </sentence>
+        <!--语句31-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>于是我们以它为核心制造了一台测试用的机器——应该就是这个房间里的那些零件的主人。</text>
+        </sentence>
+        <!--语句32-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>然后、然后……呃……</text>
+        </sentence>
+        <!--语句33-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>我只记得我启动了机器，然后、然后……</text>
+        </sentence>
+        <!--语句34-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>然后就爆炸了。</text>
+        </sentence>
+        <!--语句35-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>你想不起来了吗？</text>
+        </sentence>
+        <!--语句36-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>是。当时的记忆不知道为什么非常模糊。</text>
+        </sentence>
+        <!--语句37-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>但是我仍然记得一件事情——那台机器本不应该爆炸的。</text>
+        </sentence>
+        <!--语句38-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text><![CDATA[我们在处理这种实验性机器的时候是慎之又慎的，经过多方面的检查之后，我们最后确定这台机器<b>绝对不可能</b>发生意外情况。]]></text>
+        </sentence>
+        <!--语句39-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>甚至我自己也亲眼确认了很多遍，可是最后还是……</text>
+        </sentence>
+        <!--语句40-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>奇怪……如此精密的检查，竟然还是发生了意外？</text>
+        </sentence>
+        <!--语句41-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>……</text>
+          <onClick>
+            <script>bubble hide</script>
+            <script>forecolor fade #0000 black 1</script>
+            <script>delay 2</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句42-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（我们在这里又进行了很多调查，但是并没有什么其他让我们在意的地方。）</color>]]></text>
+        </sentence>
+        <!--语句43-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text><![CDATA[<color=blue>（最后我们一起离开了这个房间。只不过，荷取小姐似乎看起来有些不对劲。）</color>]]></text>
+        </sentence>
+        <!--语句44-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text><![CDATA[<color=blue>（那种神色，似乎是某种——不安，以及恐惧？）</color>]]></text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>forecolor fade #0000</script>
+            <script>background alpha 0</script>
+            <script>music fade 1</script>
             <script>end</script>
           </onClick>
         </sentence>
