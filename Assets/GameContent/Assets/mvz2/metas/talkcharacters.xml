@@ -658,12 +658,12 @@
             <layer sprite="mvz2:characters/nitori[7]" />
         </variant>
     </character>
-    <character id="aya" name="文">
-        <variant id="mvz2:normal" width="448" height="896" pivotX="0.5" pivotY="0.5">
-            <layer sprite="mvz2:characters/armor_stand" />
+    <character id="aya" name="文" faceRight="true">
+        <variant id="mvz2:normal" width="810" height="1280" extendLeft="100" extendRight="100" pivotX="0.5" pivotY="0.4">
+            <layer sprite="mvz2:characters/aya[0]" />
         </variant>
         <variant id="mvz2:grinning" parent="mvz2:normal">
-            <layer sprite="mvz2:characters/armor_stand"/>
+            <layer sprite="mvz2:characters/aya[1]" positionX="352" positionY="144" />
         </variant>
     </character>
     <character id="reimu" name="灵梦">

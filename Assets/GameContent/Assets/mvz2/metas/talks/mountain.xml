@@ -1449,7 +1449,7 @@
           <text>？</text>
         </sentence>
         <!--语句5-->
-        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_beat">
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_beat" variant="mvz2:grinning">
           <onStart>
             <script>shake</script>
           </onStart>
@@ -1463,7 +1463,7 @@
           <text>原来是搞偷拍的！</text>
         </sentence>
         <!--语句7-->
-        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_surprised" variant="mvz2:grinning">
+        <sentence speaker="mvz2:aya" sounds="mvz2:dialog_surprised">
           <text>啊呀，别用这么贬义的词嘛，这叫“取材”！</text>
         </sentence>
         <!--语句8-->

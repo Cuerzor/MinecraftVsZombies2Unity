@@ -3632,7 +3632,7 @@
                 <unlock>
                     <condition required="mvz2:level.mountain_4"/>
                 </unlock>
-                <picture sprite="mvz2:characters/armor_stand" character="mvz2:aya"/>
+                <picture sprite="mvz2:characters/aya[0]" character="mvz2:aya"/>
                 <header>
                     <p><![CDATA[<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>]]>的天狗记者。</p>
                 </header>
