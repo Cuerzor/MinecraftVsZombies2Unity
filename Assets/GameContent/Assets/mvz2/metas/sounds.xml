@@ -114,6 +114,9 @@
     <sound name="cave">
         <sample path="mvz2:cave" weight="1" />
     </sound>
+    <sound name="cave_ambience">
+        <sample path="mvz2:cave_ambience" weight="1" />
+    </sound>
     <sound name="chains_break" maxCount="1" priority="0">
         <sample path="mvz2:chains_break" weight="1" />
     </sound>

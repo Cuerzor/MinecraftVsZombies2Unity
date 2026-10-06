@@ -5335,6 +5335,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54ad5c4d8faf2904ba63b26bc46ce577
+    m_Address: mvz2:misc/fake_chapter_transition_7
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 54ecd9cd84713b046b9df22f056c36c9
     m_Address: mvz2:artifacts/dragon_tooth
     m_ReadOnly: 0
@@ -8161,6 +8168,13 @@ MonoBehaviour:
     - Main
     - Music
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82c6e658f46d763498c78528bca383a4
+    m_Address: mvz2:misc/eye_on_nitoris_machine
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 82ca6d08081ef804899c8e96a1492992
     m_Address: mvz2:entity/contraption/freezenser
     m_ReadOnly: 0
@@ -8268,6 +8282,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 84d24c865b8c9b341a85b8104370a001
     m_Address: mvz2:ui/arcade/clear_trophy
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 84de6080eb4ceb14ba8e79f53d55a5b5
+    m_Address: mvz2:misc/new_prosthesis
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -8674,6 +8695,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8c33626bd6dc68e43a68a3b6d0b5f0aa
     m_Address: mvz2:entity/armor/diamond_helmet
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c64ca25f06e50342a0dc9628c381323
+    m_Address: mvz2:misc/gems_icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -9457,6 +9485,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 97fb6eef6b0b240438ad3bc4f783cf48
     m_Address: mvz2:entity/cart/rainbow_trail
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 981e06318f0565543b9f7d17a3dd56d8
+    m_Address: mvz2:misc/ender_pearl_fragment
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -12450,6 +12485,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cad4a017e4796ce438f3f3a952553710
+    m_Address: mvz2:cave_ambience
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: caf294fde03a7ab4d81dbd866034edb2
     m_Address: mvz2:contraption/mausoleum/note_block
     m_ReadOnly: 0
@@ -14831,6 +14873,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f307ca42f92ea0343bc5a7916590a612
     m_Address: mvz2:chapter_transition/chapter_wheel_dark
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f323863dc4a7d3d409736848c3a1773c
+    m_Address: mvz2:characters/aya
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

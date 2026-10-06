@@ -553,6 +553,12 @@ MonoBehaviour:
   - name: misc/explosion_before_3_years
     texture: {fileID: 2800000, guid: 831f7ad8d2311d448970951982d07ad8, type: 3}
     tags: []
+  - name: misc/eye_on_nitoris_machine
+    texture: {fileID: 2800000, guid: 82c6e658f46d763498c78528bca383a4, type: 3}
+    tags: []
+  - name: misc/fake_chapter_transition_7
+    texture: {fileID: 2800000, guid: 54ad5c4d8faf2904ba63b26bc46ce577, type: 3}
+    tags: []
   - name: misc/fall_from_ship
     texture: {fileID: 2800000, guid: a81e7ee6085bf10488c8ac5cec8948f8, type: 3}
     tags: []
@@ -4674,6 +4680,38 @@ MonoBehaviour:
   - name: misc/explosion_before_3_years
     index: 0
     sprite: {fileID: 21300000, guid: 831f7ad8d2311d448970951982d07ad8, type: 3}
+    tags: []
+  - name: misc/eye_on_nitoris_machine
+    index: 0
+    sprite: {fileID: 1261516928, guid: 82c6e658f46d763498c78528bca383a4, type: 3}
+    tags: []
+  - name: misc/eye_on_nitoris_machine
+    index: 1
+    sprite: {fileID: 1075868484, guid: 82c6e658f46d763498c78528bca383a4, type: 3}
+    tags: []
+  - name: misc/eye_on_nitoris_machine
+    index: 2
+    sprite: {fileID: 749274696, guid: 82c6e658f46d763498c78528bca383a4, type: 3}
+    tags: []
+  - name: misc/eye_on_nitoris_machine
+    index: 3
+    sprite: {fileID: 191735576, guid: 82c6e658f46d763498c78528bca383a4, type: 3}
+    tags: []
+  - name: misc/eye_on_nitoris_machine
+    index: 4
+    sprite: {fileID: 1006614309, guid: 82c6e658f46d763498c78528bca383a4, type: 3}
+    tags: []
+  - name: misc/eye_on_nitoris_machine
+    index: 5
+    sprite: {fileID: -734336342, guid: 82c6e658f46d763498c78528bca383a4, type: 3}
+    tags: []
+  - name: misc/eye_on_nitoris_machine
+    index: 6
+    sprite: {fileID: -421642021, guid: 82c6e658f46d763498c78528bca383a4, type: 3}
+    tags: []
+  - name: misc/fake_chapter_transition_7
+    index: 0
+    sprite: {fileID: 21300000, guid: 54ad5c4d8faf2904ba63b26bc46ce577, type: 3}
     tags: []
   - name: misc/fall_from_ship
     index: 0
