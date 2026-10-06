@@ -24,6 +24,6 @@ namespace MVZ2.GameContent.Contraptions
             }
             entity.PlaySound(VanillaSoundID.potion);
         }
-        public const int BLUEPRINT_PRODUCE_COUNT = 2;
+        public const int BLUEPRINT_PRODUCE_COUNT = 1;
     }
 }
