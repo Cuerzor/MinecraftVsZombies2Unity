@@ -122,6 +122,7 @@
 - Fixed the issue where Reverse Satellite will try to align with the position of its lane.
 - Fixed the issue of bad pixels in the armor icon of HP bars.
 - Fixed the issue of dark matter particles located at the bottom of Slenderman when it dies.
+- Fixed the issue where the zombie before transforming into Frankenstein can be petrified.
 
 ---
 
