@@ -3732,4 +3732,189 @@
       </sentences>
     </section>
   </group>
+  <group id="mountain_10" tags="mvz2:mountain mvz2:intro">
+    <archive name="妖怪之山第10天入场" background="mvz2:misc/mountain" music="mvz2:mainmenu">
+      <unlock>
+        <condition required="mvz2:level.mountain_10" />
+      </unlock>
+    </archive>
+    <section>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:nitori" side="left" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>史蒂夫，之前答应你的义肢已经做好了！</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>这样，等我结束今天的战斗，再去装也不迟！</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>那我等你回来！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+  <group id="outdated_newspaper" tags="mvz2:ship;mvz2:note">
+    <archive name="过时的报纸" background="mvz2:archive/mountain_note">
+      <unlock>
+        <condition required="mvz2:level.mountain_10" />
+      </unlock>
+    </archive>
+    <section>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:nitori" side="left" variant="mvz2:surprised" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>……新闻？</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>啊，那个天狗写的。</text>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>我读读。</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>……哦，这已经是几天前的新闻了，不知道是谁扔的。</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_beat" variant="mvz2:angry">
+          <onStart>
+            <script>shake</script>
+          </onStart>
+          <text>不要乱丢垃圾啊！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
+  <group id="mountain_10_map" tags="mvz2:mountain mvz2:map">
+    <archive name="妖怪之山第10天地图" background="mvz2:misc/mountain" music="mvz2:mountain_map">
+      <unlock>
+        <condition required="mvz2:level.mountain_10" />
+      </unlock>
+    </archive>
+    <section>
+      <onSkip>
+        <script>item hide</script>
+        <script>forecolor fade #0000</script>
+        <script>end</script>
+      </onSkip>
+      <!--角色列表-->
+      <characters>
+        <character id="mvz2:nitori" side="left" />
+        <character id="mvz2:steve" side="self" />
+      </characters>
+      <!--语句列表-->
+      <sentences>
+        <!--语句0-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <onStart>
+            <script>item show mvz2:misc/new_prosthesis</script>
+          </onStart>
+          <text>好了！史蒂夫，我来帮你换上义肢吧。</text>
+        </sentence>
+        <!--语句1-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>嗯，拜托你了。</text>
+          <onClick>
+            <script>item hide</script>
+            <script>bubble hide</script>
+            <script>forecolor fade #0000 black 1</script>
+            <script>delay 1</script>
+
+            <script>playsound mvz2:mechanism</script>
+            <script>delay 1</script>
+
+            <script>forecolor fade black #0000 1</script>
+            <script>delay 1</script>
+            <script>next</script>
+          </onClick>
+        </sentence>
+        <!--语句2-->
+        <sentence speaker="mvz2:steve" description="（史蒂夫装上了义肢）" sounds="mvz2:talk">
+          <onStart>
+            <script>item show mvz2:misc/new_prosthesis</script>
+          </onStart>
+          <text>意外的还不错啊，很轻。</text>
+        </sentence>
+        <!--语句3-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>对的，这种材料是我们河童的特产，不容易生锈，而且让人在水中也能活动自如。</text>
+        </sentence>
+        <!--语句4-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>谢谢你了，荷取。</text>
+        </sentence>
+        <!--语句5-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:sad">
+          <onStart>
+            <script>item hide</script>
+          </onStart>
+          <text>……</text>
+        </sentence>
+        <!--语句6-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
+          <text>怎么了？</text>
+        </sentence>
+        <!--语句7-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
+          <text>史蒂夫，我们实在欠你太多了。我一直想帮你做点什么……</text>
+        </sentence>
+        <!--语句8-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>不要这么说，你其实已经帮了我很多了。</text>
+        </sentence>
+        <!--语句9-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_surprised" variant="mvz2:surprised">
+          <text>诶？</text>
+        </sentence>
+        <!--语句10-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>如果当时不是你用那台武器轰击了克拉肯，说不定我现在已经离开这个世界了。</text>
+        </sentence>
+        <!--语句11-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>不要再因为这种事而内疚了，好吗？</text>
+        </sentence>
+        <!--语句12-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:normal">
+          <text>嗯，谢谢……</text>
+        </sentence>
+        <!--语句13-->
+        <sentence speaker="mvz2:steve" sounds="mvz2:talk">
+          <text>如果克拉肯再次来到这里，请告诉我吧，我会帮你解决它的！</text>
+        </sentence>
+        <!--语句14-->
+        <sentence speaker="mvz2:nitori" sounds="mvz2:talk" variant="mvz2:happy">
+          <text>明白了！</text>
+          <!--语句点击脚本-->
+          <onClick>
+            <script>end</script>
+          </onClick>
+        </sentence>
+      </sentences>
+    </section>
+  </group>
 </talks>
