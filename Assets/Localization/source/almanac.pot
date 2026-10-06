@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-05 03:29+0800\n"
+"POT-Creation-Date: 2026-10-06 02:47+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3815,7 +3815,7 @@ msgstr ""
 #. Properties for artifacts mvz2:broken_lock
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>每有三个器械被摧毁，生成第三个器械的蓝图掉落物</color>"
+msgid "效果：<color=red>当一个器械被摧毁时，生成它的蓝图掉落物，然后该制品冷却15秒</color>"
 msgstr ""
 
 #. Flavor for artifacts mvz2:broken_lock
@@ -8483,7 +8483,7 @@ msgstr ""
 #. Tooltip for artifact mvz2:broken_lock
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "每有三个器械被摧毁，生成第三个器械的蓝图掉落物"
+msgid "当一个器械被摧毁时，生成它的蓝图掉落物，然后该制品冷却15秒"
 msgstr ""
 
 #. Name for artifact mvz2:magma_stone

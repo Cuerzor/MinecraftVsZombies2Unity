@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-03 06:24+0800\n"
-"PO-Revision-Date: 2026-10-04 11:46+0800\n"
+"POT-Creation-Date: 2026-10-06 02:47+0800\n"
+"PO-Revision-Date: 2026-10-06 14:49+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1455,7 +1455,7 @@ msgstr "Version {0}"
 msgid "点击以开始！"
 msgstr "Click to start!"
 
-#: Scripts\MVZ2\Talks\Components\TalkController.cs:1068
+#: Scripts\MVZ2\Talks\Components\TalkController.cs:1161
 msgid ""
 "<color=blue>[{0}]</color>\n"
 "{1}"
@@ -1463,7 +1463,7 @@ msgstr ""
 "<color=blue>[{0}]</color>\n"
 "{1}"
 
-#: Scripts\MVZ2\Talks\Components\TalkController.cs:1070
+#: Scripts\MVZ2\Talks\Components\TalkController.cs:1163
 msgid "已跳过对话\"{0}\""
 msgstr "Dialogue skipped: {0}"
 
@@ -5065,6 +5065,12 @@ msgctxt "archive.tagname"
 msgid "地灵殿"
 msgstr "Palace"
 
+#. Name for archive tag mvz2:mountain
+#: Archive meta file
+msgctxt "archive.tagname"
+msgid "妖怪之山"
+msgstr "Mountain"
+
 #. Name for archive tag mvz2:tutorial
 #: Archive meta file
 msgctxt "archive.tagname"
@@ -5668,18 +5674,21 @@ msgstr ""
 #. Store item description of mvz2:broken_lock by character mvz2:crazy_villager
 #: Store meta file
 msgctxt "store_talk"
-msgid "上锁箱子的挂锁！当器械受到伤害时，减少它蓝图的充能时间！"
+msgid ""
+"上锁箱子的挂锁！当器械被摧毁时，生成它的蓝图掉落物，然后挂锁进入冷却时间！"
 msgstr ""
-"It's the padlock on the Locked Chest! When a contraption is damaged, the "
-"recharge time of its blueprint will be reduced!"
+"It's the padlock on the Locked Chest! When a contraption is destroyed, "
+"spawns its blueprint pickup, and the padlock is then put on cooldown!"
 
 #. Store item description of mvz2:broken_lock by character mvz2:tokiko
 #: Store meta file
 msgctxt "store_talk"
-msgid "那个可恶箱子的挂锁！当器械受到伤害时，减少它蓝图的充能时间！"
+msgid ""
+"那个可恶箱子的挂锁！当器械被摧毁时，它会变回一张蓝图，然后挂锁需要休息一段时"
+"间！"
 msgstr ""
-"It's the padlock on that wretched chest! When a contraption is damaged, the "
-"recharge time of its blueprint will be reduced!"
+"It's the padlock on that wretched chest! When a contraption is destroyed, it "
+"will turn back into a blueprint, then the padlock needs to rest for a while!"
 
 #. Store item description of mvz2:lily_platform by character mvz2:crazy_villager
 #: Store meta file

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-05 03:29+0800\n"
-"PO-Revision-Date: 2026-10-05 17:27+0800\n"
+"POT-Creation-Date: 2026-10-06 02:47+0800\n"
+"PO-Revision-Date: 2026-10-06 14:48+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -4818,8 +4818,9 @@ msgstr "A broken padlock that fell off the <ref=[misc]mvz2:locked_chest>Locked C
 #. Properties for artifacts mvz2:broken_lock
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>每有三个器械被摧毁，生成第三个器械的蓝图掉落物</color>"
-msgstr "Effect: <color=red>Whenever 3 contraptions are destroyed, spawns a blueprint pickup of the 3rd contraption</color>"
+msgid "效果：<color=red>当一个器械被摧毁时，生成它的蓝图掉落物，然后该制品冷却15秒</color>"
+msgstr ""
+"Effect: <color=red>When a contraption is destroyed, it drops a blueprint pickup. This artifact is then put on a 15s cooldown</color>"
 
 #. Flavor for artifacts mvz2:broken_lock
 #: Almanac meta file
@@ -10135,8 +10136,8 @@ msgstr "Broken Lock"
 #. Tooltip for artifact mvz2:broken_lock
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "每有三个器械被摧毁，生成第三个器械的蓝图掉落物"
-msgstr "Whenever 3 contraptions are destroyed, spawns a blueprint pickup of the 3rd contraption"
+msgid "当一个器械被摧毁时，生成它的蓝图掉落物，然后该制品冷却15秒"
+msgstr "When a contraption is destroyed, it drops a blueprint pickup. This artifact is then put on a 15s cooldown"
 
 #. Name for artifact mvz2:magma_stone
 #: Artifact meta file

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-03 06:24+0800\n"
+"POT-Creation-Date: 2026-10-06 02:47+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1492,14 +1492,14 @@ msgid "点击以开始！"
 msgstr ""
 
 # 前景图生效时的对话模板，{0}为讨论者，{1}为文本
-#: Scripts\MVZ2\Talks\Components\TalkController.cs:1068
+#: Scripts\MVZ2\Talks\Components\TalkController.cs:1161
 msgid ""
 "<color=blue>[{0}]</color>\n"
 "{1}"
 msgstr ""
 
 # 跳过对话时的提示，{0}为对话名称
-#: Scripts\MVZ2\Talks\Components\TalkController.cs:1070
+#: Scripts\MVZ2\Talks\Components\TalkController.cs:1163
 msgid "已跳过对话\"{0}\""
 msgstr ""
 
@@ -4841,6 +4841,12 @@ msgctxt "archive.tagname"
 msgid "地灵殿"
 msgstr ""
 
+#. Name for archive tag mvz2:mountain
+#: Archive meta file
+msgctxt "archive.tagname"
+msgid "妖怪之山"
+msgstr ""
+
 #. Name for archive tag mvz2:tutorial
 #: Archive meta file
 msgctxt "archive.tagname"
@@ -5346,13 +5352,13 @@ msgstr ""
 #. Store item description of mvz2:broken_lock by character mvz2:crazy_villager
 #: Store meta file
 msgctxt "store_talk"
-msgid "上锁箱子的挂锁！当器械受到伤害时，减少它蓝图的充能时间！"
+msgid "上锁箱子的挂锁！当器械被摧毁时，生成它的蓝图掉落物，然后挂锁进入冷却时间！"
 msgstr ""
 
 #. Store item description of mvz2:broken_lock by character mvz2:tokiko
 #: Store meta file
 msgctxt "store_talk"
-msgid "那个可恶箱子的挂锁！当器械受到伤害时，减少它蓝图的充能时间！"
+msgid "那个可恶箱子的挂锁！当器械被摧毁时，它会变回一张蓝图，然后挂锁需要休息一段时间！"
 msgstr ""
 
 #. Store item description of mvz2:lily_platform by character mvz2:crazy_villager
