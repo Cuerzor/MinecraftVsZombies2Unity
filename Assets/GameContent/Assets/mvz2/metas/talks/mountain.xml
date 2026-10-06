@@ -3781,7 +3781,7 @@
       </sentences>
     </section>
   </group>
-  <group id="outdated_newspaper" tags="mvz2:ship;mvz2:note">
+  <group id="mountain_note" tags="mvz2:ship;mvz2:note">
     <archive name="过时的报纸" background="mvz2:archive/mountain_note">
       <unlock>
         <condition required="mvz2:level.mountain_10" />
