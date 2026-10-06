@@ -1833,15 +1833,15 @@
         </sentence>
         <!--语句6-->
         <sentence speaker="mvz2:reimu" sounds="mvz2:talk">
-          <text>我是灵梦，博丽神社的巫女，有的时候会负责解决这个幻想乡的异变。</text>
+          <text>我是博丽 灵梦，博丽神社的巫女，有的时候会负责解决这个幻想乡的异变。</text>
         </sentence>
         <!--语句7-->
         <sentence speaker="mvz2:reimu" sounds="mvz2:talk">
-          <text>久闻大名已久了，没想到除了我们一行人之外还有其他能解决异变的能人义士。</text>
+          <text>久闻大名了，没想到除了我们一行人之外还有其他能解决异变的能人义士。</text>
         </sentence>
         <!--语句8-->
         <sentence speaker="mvz2:steve" sounds="mvz2:talk">
-          <text>灵梦小姐这次前来，是为了——？</text>
+          <text>博丽小姐这次前来，是为了——？</text>
         </sentence>
         <!--语句9-->
         <sentence speaker="mvz2:reimu" sounds="mvz2:dialog_surprised">
@@ -1870,11 +1870,11 @@
           <onStart>
             <script>character variant mvz2:reimu mvz2:normal</script>
           </onStart>
-          <text>说起来——灵梦小姐，我一直都有一个疑问想问您。</text>
+          <text>说起来——博丽小姐，我一直都有一个疑问想问您。</text>
         </sentence>
         <!--语句14-->
         <sentence speaker="mvz2:steve" sounds="mvz2:dialog_weird">
-          <text>灵梦小姐是解决异变的巫女，为什么不去解决这场异变呢？</text>
+          <text>博丽小姐是解决异变的巫女，为什么不去解决这场异变呢？</text>
         </sentence>
         <!--语句15-->
         <sentence speaker="mvz2:reimu" sounds="mvz2:dialog_beat" variant="mvz2:close_eyes">
@@ -1885,7 +1885,7 @@
         </sentence>
         <!--语句16-->
         <sentence speaker="mvz2:reimu" sounds="mvz2:talk">
-          <text>我虽然懒，但是事关幻想乡的大事我还是不会坐视不管的。</text>
+          <text>别听某些人的流言就把我想得那么差劲，事关幻想乡的大事我还是不会坐视不管的。</text>
         </sentence>
         <!--语句17-->
         <sentence speaker="mvz2:reimu" sounds="mvz2:talk">
@@ -1908,7 +1908,7 @@
           <onStart>
             <script>music fade 0</script>
           </onStart>
-          <text>啊，另外，史蒂夫，我得提醒你一下。</text>
+          <text>啊，另外，我得提醒你一下。</text>
         </sentence>
         <!--语句22-->
         <sentence speaker="mvz2:steve" sounds="mvz2:talk">
