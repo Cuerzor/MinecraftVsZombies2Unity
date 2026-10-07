@@ -90,6 +90,7 @@ namespace MVZ2.GameContent.Buffs
             public const string greedyVacuum = "greedy_vacuum";
             public const string superRecharge = "super_recharge";
             public const string ancientEgypt = "ancient_egypt";
+            public const string theMagician = "the_magician";
         }
         public static class Grid
         {

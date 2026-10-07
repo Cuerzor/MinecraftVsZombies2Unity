@@ -3845,6 +3845,7 @@
                 <float name="mvz2:gravity" value="1" />
                 <vector3 name="mvz2:size" x="24" y="24" z="24" />
                 <bool name="mvz2:ignore_gravity_pad" value="true" />
+                <bool name="mvz2:ignore_force_pad" value="true" />
             </properties>
         </entity>
         <entity template="projectile" id="diamond_caltrop">

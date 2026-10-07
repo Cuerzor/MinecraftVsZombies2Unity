@@ -77,6 +77,9 @@ namespace MVZ2.GameContent.Buffs.Projectiles
             var mainCollider = target.GetMainCollider();
             if (mainCollider == null || projectile.IsProjectileColliderIgnored(mainCollider))
                 return false;
+            var lockedTargetID = target.GetLockedTargetID();
+            if (lockedTargetID != null && !lockedTargetID.IsEntity(target))
+                return false;
             return true;
         }
         public static Entity? FindNextTarget(Entity projectile)
