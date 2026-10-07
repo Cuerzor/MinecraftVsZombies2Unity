@@ -377,8 +377,8 @@ namespace MVZ2.GameContent.Bosses
             {
                 var chosenTile = SelectTileToAppear(entity, resultTiles);
                 entity.Position = chosenTile.GetEntityPosition();
+                stateMachine.StartState(entity, STATE_APPEAR);
             }
-            stateMachine.StartState(entity, STATE_APPEAR);
         }
         public static void DestroyContraptionsInTile(Entity entity)
         {
