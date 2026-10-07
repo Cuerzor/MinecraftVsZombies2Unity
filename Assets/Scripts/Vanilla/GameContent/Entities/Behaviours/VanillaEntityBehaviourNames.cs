@@ -128,6 +128,7 @@ namespace MVZ2.Vanilla.Entities
         public const string zombinator_Animation = "zombinator/animation";
         public const string axolotlSuit_State = "axolotl_suit/state";
         public const string axolotlSuit_DeathEffects = "axolotl_suit/death_effects";
+        public const string axolotlSuit_VehicleCrush = "axolotl_suit/vehicle_crush";
 
         public const string bubble_Carry = "bubble/carry";
         #endregion

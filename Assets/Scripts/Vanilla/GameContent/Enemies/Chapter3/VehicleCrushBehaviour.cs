@@ -11,6 +11,7 @@ using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Tools;
+using UnityEngine;
 
 namespace MVZ2.GameContent.Enemies
 {
@@ -23,17 +24,28 @@ namespace MVZ2.GameContent.Enemies
         public override void PostCollision(EntityCollision collision, int state)
         {
             base.PostCollision(collision, state);
-            if (state == EntityCollisionHelper.STATE_EXIT)
-                return;
-            if (!collision.Collider.IsForMain())
-                return;
-            var other = collision.Other;
-            if (!other.IsVulnerableEntity())
-                return;
-            var entity = collision.Entity;
-            if (NoCrush(entity) || !entity.IsHostile(other))
+            if (!ShouldCollide(collision, state))
                 return;
 
+            OnTargetCollide(collision, state);
+        }
+        public virtual bool ShouldCollide(EntityCollision collision, int state)
+        {
+            if (state == EntityCollisionHelper.STATE_EXIT)
+                return false;
+            if (!collision.Collider.IsForMain())
+                return false;
+            var other = collision.Other;
+            if (!other.IsVulnerableEntity())
+                return false;
+            var entity = collision.Entity;
+            if (NoCrush(entity) || !entity.IsHostile(other))
+                return false;
+            return true;
+        }
+        public virtual void OnTargetCollide(EntityCollision collision, int state)
+        {
+            var entity = collision.Entity;
             Crush(entity, collision.OtherCollider);
         }
 

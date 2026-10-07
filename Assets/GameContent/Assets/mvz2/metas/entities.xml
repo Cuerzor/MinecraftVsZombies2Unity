@@ -2712,7 +2712,7 @@
                 <condition requiredGroups="mvz2:enemy.axolotl_suit" />
             </unlock>
             <behaviours>
-                <behaviour operator="add" id="mvz2:vehicle_crush" />
+                <behaviour operator="add" id="mvz2:axolotl_suit/vehicle_crush" />
                 <behaviour operator="add" id="mvz2:axolotl_suit/death_effects" />
                 <behaviour operator="replace" source="mvz2:enemy_state" id="mvz2:axolotl_suit/state" />
                 <behaviour operator="remove" id="mvz2:enemy_melee" />
