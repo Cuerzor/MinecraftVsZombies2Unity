@@ -260,7 +260,7 @@
           <text><![CDATA[<color=blue>（我之前在圣辇船做过一个可怕的猜想。如果那个猜想是真的，这场异变的原因可能是——）</color>]]></text>
         </sentence>
         <!--语句49-->
-        <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_surprised">
+        <sentence speakerName="？？？" speaker="mvz2:nitori" sounds="mvz2:dialog_surprised">
           <onStart>
             <script>shake</script>
             <script>character variant mvz2:tokiko mvz2:surprised</script>
