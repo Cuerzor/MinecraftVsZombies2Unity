@@ -21,6 +21,6 @@ namespace MVZ2.GameContent.Contraptions
             var count = PrismaticPylon.GetKaleidoscopeCount(entity);
             PrismaticPylon.SetKaleidoscopeCount(entity, count + EVOCATION_COUNT);
         }
-        public const int EVOCATION_COUNT = 7;
+        public const int EVOCATION_COUNT = 4;
     }
 }

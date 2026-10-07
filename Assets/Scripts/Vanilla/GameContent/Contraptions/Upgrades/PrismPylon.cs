@@ -96,18 +96,19 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static void TransformProjectileEvoked(Entity entity, Entity projectile)
         {
-            var modes = projectileModes;
-            var count = modes.Count;
             var projectileID = entity.GetProjectileID();
             if (NamespaceID.IsValid(projectileID))
             {
 
                 var position = projectile.Position;
 
+                var count = evokedColorModeIndexes.Length;
                 var initialAngle = ANGLE_PER_EVOKED_BULLET * (count - 1) * -0.5f;
+                var modes = projectileModes;
                 for (int i = 0; i < count; i++)
                 {
-                    var colorMode = modes[i];
+                    var colorModeIndex = evokedColorModeIndexes[i];
+                    var colorMode = modes[colorModeIndex];
                     var angle = initialAngle + ANGLE_PER_EVOKED_BULLET * i;
                     var velocity = projectile.Velocity.RotateClockwiseXZ(angle);
                     var hsv = colorMode.GetHSV(entity, projectile);
@@ -148,6 +149,12 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly VanillaBuffPropertyMeta<int> PROP_KALEIDOSCOPE_COUNT = new VanillaBuffPropertyMeta<int>("kaleidoscope_count");
         public static readonly VanillaBuffPropertyMeta<EntityID> PROP_TRANSFORMER_PRISM = new VanillaBuffPropertyMeta<EntityID>("transformer_prism");
         public static readonly VanillaBuffPropertyMeta<float> PROP_CRYSTAL_ALPHA = new VanillaBuffPropertyMeta<float>("crystal_alpha");
+        public static readonly int[] evokedColorModeIndexes = new int[]
+        {
+            0,
+            3,
+            5
+        };
         public static readonly List<PrismaticPylonProjectileMode> projectileModes = new List<PrismaticPylonProjectileMode>()
         {
             new PrismaticPylonProjectileModeRed(),
