@@ -118,10 +118,21 @@ namespace MVZ2.GameContent.Bosses
                     {
                         sourceEnt = entSource.GetEntity(kraken.Level);
                     }
-                    if (bodyResult.HasEffect(VanillaDamageEffects.THROWN) && sourceEnt != null && sourceEnt.StunsKrakenWhenThrown())
+                    if (bodyResult.HasEffect(VanillaDamageEffects.THROWN) && sourceEnt != null)
                     {
-                        Stun(kraken, STUN_SECONDS);
-                        PlayCriticalEffects(sourceEnt, sourceEnt.GetCenter());
+                        var force = sourceEnt.GetForceAgainstKraken();
+                        if (force > 0)
+                        {
+                            if (force > 1 || IsUnstable(kraken))
+                            {
+                                Stun(kraken, STUN_SECONDS);
+                                PlayCriticalEffects(sourceEnt, sourceEnt.GetCenter());
+                            }
+                            else
+                            {
+                                StartUnstable(kraken);
+                            }
+                        }
                         if (sourceEnt.IsEntityOf(VanillaContraptionID.timeBomb))
                         {
                             sourceEnt.Die();
@@ -722,7 +733,7 @@ namespace MVZ2.GameContent.Bosses
         public const float DRAINAGE_SPLASH_DAMAGE_MULTIPLIER = 0.2f;
 
         public const float WEAKSPOT_RADIUS = 60f;
-        public const float WEAKSPOT_DAMAGE = 16000f;
+        public const float WEAKSPOT_DAMAGE = 12000f;
         public const float WEAKSPOT_DAMAGE_REVENGE = 9000f;
 
         public const float PHASE_3_THRESOLD_HP_PERCENTAGE = 1 / 3f;
@@ -750,6 +761,7 @@ namespace MVZ2.GameContent.Bosses
 
         // Extra
         public const int STATE_STUNNED = VanillaBossStates.STUNNED;
+        public const int STATE_UNSTABLE = VanillaBossStates.KRAKEN_UNSTABLE; 
         public const int STATE_DEATH = VanillaBossStates.DEATH;
 
         public const int ANIMATION_STATE_IDLE = 0;
@@ -762,6 +774,7 @@ namespace MVZ2.GameContent.Bosses
         public const int ANIMATION_STATE_LASER_EYE = 10003;
         public const int ANIMATION_STATE_ABSORB = 10004;
         public const int ANIMATION_STATE_EYES = 10005;
+        public const int ANIMATION_STATE_UNSTABLE = 10006;
         #endregion 常量
 
         #region 光环

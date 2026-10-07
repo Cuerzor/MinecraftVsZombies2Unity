@@ -132,10 +132,10 @@ namespace MVZ2.Vanilla.Contraptions
         #endregion
 
         #region 投掷击晕克拉肯
-        public static readonly PropertyMeta<bool> STUNS_KRAKEN_WHEN_THROWN = Get<bool>("stuns_kraken_when_thrown");
-        public static bool StunsKrakenWhenThrown(this Entity entity)
+        public static readonly PropertyMeta<int> FORCE_AGAINST_KRAKEN = Get<int>("force_against_kraken");
+        public static int GetForceAgainstKraken(this Entity entity)
         {
-            return entity.GetProperty<bool>(STUNS_KRAKEN_WHEN_THROWN);
+            return entity.GetProperty<int>(FORCE_AGAINST_KRAKEN);
         }
         #endregion
     }

@@ -96,6 +96,7 @@ namespace MVZ2.Vanilla.Bosses
         public const int KRAKEN_SWITCH_PHASE_2 = PRIVATE_NUMBER + 9;
         public const int KRAKEN_COMMAND_ROAR = PRIVATE_NUMBER + 10;
         public const int KRAKEN_TIME_BOMB = PRIVATE_NUMBER + 11;
+        public const int KRAKEN_UNSTABLE = PRIVATE_NUMBER + 12;
 
 
         private const int PRIVATE_NUMBER = 10000;

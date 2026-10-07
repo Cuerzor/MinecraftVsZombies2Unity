@@ -357,7 +357,7 @@ namespace MVZ2.GameContent.Bosses
         {
             if (tile.IsEmpty())
                 return 1;
-            if (tile.HasEntity(e => entity.IsFriendly(e) || e.StunsKrakenWhenThrown()))
+            if (tile.HasEntity(e => entity.IsFriendly(e) || e.GetForceAgainstKraken() > 0))
                 return -1;
             return 0;
         }

@@ -52,6 +52,7 @@ namespace MVZ2.GameContent.Bosses
                 AddState(new TimeBombState());
 
                 // Extra
+                AddState(new UnstableState());
                 AddState(new StunnedState());
                 AddState(new DeathState());
             }
@@ -1696,6 +1697,68 @@ namespace MVZ2.GameContent.Bosses
                 timer.ResetSeconds(1f);
                 kraken.PlaySound(VanillaSoundID.krakenPain);
                 SetBoundsOffset(kraken, Vector3.zero);
+            }
+            public override void OnUpdateLogic(EntityStateMachine machine, Entity entity)
+            {
+                base.OnUpdateLogic(machine, entity);
+                CheckDeath(entity);
+            }
+            public const int SUBSTATE_START = 0;
+            public const int SUBSTATE_END = 1;
+        }
+        #endregion
+
+
+        #region 不稳
+        public static void StartUnstable(Entity kraken)
+        {
+            stateMachine.StartState(kraken, STATE_UNSTABLE);
+        }
+        public static bool IsUnstable(Entity kraken)
+        {
+            return kraken.State == STATE_UNSTABLE;
+        }
+        private class UnstableState : EntityStateMachineState
+        {
+            public UnstableState() : base(STATE_UNSTABLE, ANIMATION_STATE_UNSTABLE) { }
+            public override int GetAnimationSubstate(int substate)
+            {
+                return substate;
+            }
+            public override void OnEnter(EntityStateMachine stateMachine, Entity entity)
+            {
+                base.OnEnter(stateMachine, entity);
+                var substateTimer = stateMachine.GetSubStateTimer(entity);
+                substateTimer.ResetSeconds(1f);
+                SetExposedStates(entity, true);
+                entity.PlaySound(VanillaSoundID.krakenPain);
+            }
+            public override void OnUpdateAI(EntityStateMachine stateMachine, Entity entity)
+            {
+                base.OnUpdateAI(stateMachine, entity);
+                var substate = stateMachine.GetSubState(entity);
+                var timer = stateMachine.GetSubStateTimer(entity);
+                timer.Run(stateMachine.GetSpeed(entity));
+                switch (substate)
+                {
+                    case SUBSTATE_START:
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartSubState(entity, SUBSTATE_END);
+                            timer.ResetSeconds(1f);
+                        }
+                        break;
+                    case SUBSTATE_END:
+                        if (timer.PassedSecondsFromMax(1 / 4f))
+                        {
+                            PlaySplash(entity);
+                        }
+                        if (timer.Expired)
+                        {
+                            stateMachine.StartState(entity, STATE_IDLE);
+                        }
+                        break;
+                }
             }
             public override void OnUpdateLogic(EntityStateMachine machine, Entity entity)
             {

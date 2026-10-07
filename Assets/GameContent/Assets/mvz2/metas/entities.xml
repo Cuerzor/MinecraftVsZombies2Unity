@@ -1481,6 +1481,7 @@
                 <id name="mvz2:deathSound" value="mvz2:wood" />
                 <id name="mvz2:placement" value="mvz2:onbashira" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
+                <int name="mvz2:force_against_kraken" value="1" />
 
                 <int name="mvz2:cost" value="100" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
@@ -1848,7 +1849,7 @@
                 <id name="mvz2:shell" value="mvz2:metal" />
                 <int name="mvz2:collision_mask_hostile" value="15" />
                 <int name="mvz2:collision_mask_friendly" value="15" />
-                <bool name="mvz2:stuns_kraken_when_thrown" value="true" />
+                <int name="mvz2:force_against_kraken" value="2" />
 
                 <int name="mvz2:cost" value="25" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
@@ -1904,7 +1905,7 @@
                 <vector3 name="mvz2:size" x="58" y="58" z="58" />
                 <bool name="mvz2:instantEvoke" value="false" />
                 <bool name="mvz2:no_evoke" value="true" />
-                <bool name="mvz2:stuns_kraken_when_thrown" value="true" />
+                <int name="mvz2:force_against_kraken" value="2" />
                 <float name="mvz2:fallResistance" value="10000" />
                 <float name="mvz2:ejector_damage_override" value="1200" />
                 <float name="mvz2:water_ground_limit_offset" value="-34" />
@@ -1947,7 +1948,7 @@
                 <bool name="mvz2:dynamite" value="true" />
                 <bool name="mvz2:instantEvoke" value="false" />
                 <bool name="mvz2:no_evoke" value="true" />
-                <bool name="mvz2:stuns_kraken_when_thrown" value="true" />
+                <int name="mvz2:force_against_kraken" value="2" />
                 <float name="mvz2:damage" value="18000" />
                 <float name="mvz2:range" value="30" />
                 <float name="mvz2:maxHealth" value="1000" />
