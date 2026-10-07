@@ -91,6 +91,7 @@ namespace MVZ2.GameContent.Buffs
             public const string superRecharge = "super_recharge";
             public const string ancientEgypt = "ancient_egypt";
             public const string theMagician = "the_magician";
+            public const string temperance = "temperance";
         }
         public static class Grid
         {
@@ -428,6 +429,9 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public const string bunbunmaruNewspaper = "bunbunmaru_newspaper";
             public const string lilyPlatform = "lily_platform";
+
+            // Random China
+            public const string temperanceCostReduction = "temperance_cost_reduction";
         }
     }
     public static class VanillaBuffID
@@ -787,6 +791,9 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public static readonly NamespaceID bunbunmaruNewspaper = Get(VanillaBuffNames.SeedPack.bunbunmaruNewspaper);
             public static readonly NamespaceID lilyPlatform = Get(VanillaBuffNames.SeedPack.lilyPlatform);
+
+            // Random China
+            public static readonly NamespaceID temperanceCostReduction = Get(VanillaBuffNames.SeedPack.temperanceCostReduction);
         }
     }
 }

@@ -22,7 +22,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
     [RandomChinaEventDefinition(VanillaRandomChinaEventNames.death)]
     public class DeathEvent : RandomChinaEventDefinition
     {
-        public DeathEvent(string nsp, string path) : base(nsp, path, NAME, DESCRIPTION, 99999999f)
+        public DeathEvent(string nsp, string path) : base(nsp, path, NAME, DESCRIPTION)
         {
         }
         public override void Run(Entity contraption, RandomGenerator rng)

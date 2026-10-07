@@ -277,4 +277,6 @@
     <buff id="control_rod_recharge" polarity="positive" level="2000" target="blueprint" />
     <buff id="control_rod_unstable" polarity="positive" level="2000" target="enemy" />
     <buff id="the_magician" polarity="mixed" level="0" target="level" />
+    <buff id="temperance" polarity="positive" level="0" target="level" />
+    <buff id="temperance_cost_reduction" polarity="positive" level="0" target="blueprint" />
 </buffs>
