@@ -17,7 +17,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
     [RandomChinaEventDefinition(VanillaRandomChinaEventNames.justice)]
     public class JusticeEvent : RandomChinaEventDefinition
     {
-        public JusticeEvent(string nsp, string path) : base(nsp, path, NAME, DESCRIPTION, 99999999f)
+        public JusticeEvent(string nsp, string path) : base(nsp, path, NAME, DESCRIPTION)
         {
         }
         public override void Run(Entity contraption, RandomGenerator rng)

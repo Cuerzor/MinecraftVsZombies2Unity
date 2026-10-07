@@ -211,6 +211,9 @@
     <sound name="data_stream">
         <sample path="mvz2:data_stream" weight="1" />
     </sound>
+    <sound name="death_tarot">
+        <sample path="mvz2:death_tarot" weight="1" />
+    </sound>
     <sound name="decrepify">
         <sample path="mvz2:decrepify" weight="1" />
     </sound>

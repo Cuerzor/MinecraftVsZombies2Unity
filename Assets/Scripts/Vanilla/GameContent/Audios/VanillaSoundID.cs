@@ -75,6 +75,7 @@ namespace MVZ2.Vanilla.Audios
         public readonly static NamespaceID darkSkiesCast = Get("dark_skies_cast");
         public readonly static NamespaceID darkSkiesImpact = Get("dark_skies_impact");
         public readonly static NamespaceID dataStream = Get("data_stream");
+        public readonly static NamespaceID deathTarot = Get("death_tarot");
         public readonly static NamespaceID decrepify = Get("decrepify");
         public readonly static NamespaceID desirePotEvocation = Get("desire_pot_evocation");
         public readonly static NamespaceID dialogJudge = Get("dialog_judge");

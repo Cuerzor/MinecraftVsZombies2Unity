@@ -4803,6 +4803,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b87b9c210c08fe4983993690b764c1e
+    m_Address: mvz2:death_tarot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sound
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4b87f74f6f1e97f4386165be6bd910c9
     m_Address: mvz2:ui/level/target_skyward_beacon
     m_ReadOnly: 0
