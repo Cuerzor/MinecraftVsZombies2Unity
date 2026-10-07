@@ -66,6 +66,8 @@ namespace MVZ2.GameContent.Pickups
                 {
                     var position = pickup.Position;
                     var velocity = pickup.Velocity;
+                    velocity.z += velocity.y;
+                    velocity.y = 0;
                     var minZ = GetMinZ(pickup);
                     var maxZ = GetMaxZ(pickup);
                     if ((position.z <= minZ && velocity.z < 0) || (position.z >= maxZ && velocity.z >= 0))

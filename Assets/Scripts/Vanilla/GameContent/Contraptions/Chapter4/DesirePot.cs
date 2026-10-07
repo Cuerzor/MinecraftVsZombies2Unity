@@ -205,7 +205,7 @@ namespace MVZ2.GameContent.Contraptions
 
         public static void DuplicateStarshard(Entity pot)
         {
-            pot.Spawn(VanillaPickupID.starshard, pot.GetCenter());
+            pot.ProduceStarshard(pot.GetCenter());
             var count = GetDuplicatedCount(pot);
             count++;
             SetDuplicatedCount(pot, count);

@@ -6,6 +6,7 @@ using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Callbacks;
+using MVZ2.Vanilla.Pickups;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using PVZEngine.Buffs;
@@ -71,7 +72,7 @@ namespace MVZ2.GameContent.Buffs.Enemies
             var buffs = enemy.GetBuffs<StarshardCarrierBuff>();
             foreach (var buff in buffs)
             {
-                enemy.Level.Spawn(VanillaPickupID.starshard, enemy.Position, enemy);
+                enemy.ProduceStarshard(enemy.Position);
                 buff.Remove();
             }
         }

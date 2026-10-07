@@ -6,6 +6,7 @@ using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Models;
+using MVZ2.Vanilla.Pickups;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Models;
@@ -67,7 +68,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             {
                 var level = buff.Level;
                 var position = contraption.GetCenter();
-                level.Spawn(VanillaPickupID.starshard, position, contraption);
+                contraption.ProduceStarshard(position);
                 level.Spawn(VanillaEffectID.smokeCluster, position, contraption)?.Let(e =>
                 {
                     e.SetTint(new Color(1, 0.8f, 1, 1));

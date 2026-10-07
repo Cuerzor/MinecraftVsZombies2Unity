@@ -4,6 +4,7 @@ using MukioI18n;
 using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Definitions;
 using MVZ2.Vanilla.Localization;
+using MVZ2.Vanilla.Pickups;
 using PVZEngine.Entities;
 
 namespace MVZ2.GameContent.RandomChinaEvents
@@ -16,7 +17,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
         }
         protected override void Transform(Entity target, Entity china)
         {
-            china.Spawn(VanillaPickupID.starshard, target.Position);
+            china.ProduceStarshard(target.Position);
         }
         [TranslateMsg("随机瓷器事件名称", VanillaStrings.CONTEXT_RANDOM_CHINA_EVENT_NAME)]
         public const string NAME = "黑桃A";

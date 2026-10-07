@@ -3,6 +3,7 @@
 using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Pickups;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
@@ -102,7 +103,7 @@ namespace MVZ2.GameContent.Contraptions
             var points = GetPointCount(entity);
             for (int i = 0; i < points; i++)
             {
-                entity.Spawn(VanillaPickupID.starshard, entity.Position);
+                entity.ProduceStarshard(entity.Position);
             }
             SetPointCount(entity, 0);
         }

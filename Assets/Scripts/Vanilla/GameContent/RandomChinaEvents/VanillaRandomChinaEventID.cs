@@ -23,6 +23,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
         public const string strength = "strength";
         public const string theHermit = "the_hermit";
         public const string wheelOfFortune = "wheel_of_fortune";
+        public const string justice = "justice";
         public const string theHangedMan = "the_hanged_man";
         public const string theTower = "the_tower";
         public const string theStar = "the_star";

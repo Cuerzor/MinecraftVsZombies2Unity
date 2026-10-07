@@ -2,6 +2,7 @@
 
 using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Callbacks;
+using MVZ2.Vanilla.Pickups;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Definitions;
 using MVZ2Logic.Level;
@@ -45,7 +46,7 @@ namespace MVZ2.GameContent.Artifacts
                 {
                     artifact.Highlight();
                     number -= MAX_NUMBER;
-                    contraption.Spawn(VanillaPickupID.starshard, contraption.Position);
+                    contraption.ProduceStarshard(contraption.Position);
                 }
                 artifact.SetNumber(number);
             }

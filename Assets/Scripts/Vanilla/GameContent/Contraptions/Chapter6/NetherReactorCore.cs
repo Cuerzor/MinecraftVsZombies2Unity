@@ -7,6 +7,7 @@ using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
+using MVZ2.Vanilla.Pickups;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using PVZEngine;
@@ -158,7 +159,7 @@ namespace MVZ2.GameContent.Contraptions
             if (productionTimer.RunToExpiredAndNotNull(entity.GetProduceSpeed()))
             {
                 productionTimer.Reset();
-                entity.Spawn(VanillaPickupID.starshard, entity.GetCenter());
+                entity.ProduceStarshard(entity.GetCenter());
             }
         }
         public static FrameTimer? GetProductionTimer(Entity entity) => entity.GetProperty<FrameTimer>(PROP_PRODUCTION_TIMER);

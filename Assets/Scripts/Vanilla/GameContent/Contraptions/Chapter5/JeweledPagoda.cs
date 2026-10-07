@@ -4,6 +4,7 @@ using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Entities;
 using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Contraptions;
+using MVZ2.Vanilla.Pickups;
 using MVZ2.Vanilla.Properties;
 using MVZ2.Vanilla.StateMachine;
 using MVZ2Logic.Entities;
@@ -125,7 +126,7 @@ namespace MVZ2.GameContent.Contraptions
                     var starshardCount = count / GRIDS_PER_STARSHARD;
                     for (int i = 0; i < starshardCount; i++)
                     {
-                        entity.Spawn(VanillaPickupID.starshard, entity.GetCenter());
+                        entity.ProduceStarshard(entity.GetCenter());
                     }
                     machine.StartState(entity, STATE_DISAPPEAR);
                 }

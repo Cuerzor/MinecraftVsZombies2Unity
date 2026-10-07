@@ -15,7 +15,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
     [RandomChinaEventDefinition(VanillaRandomChinaEventNames.theHighPriestess)]
     public class TheHighPriestessEvent : RandomChinaEventDefinition
     {
-        public TheHighPriestessEvent(string nsp, string path) : base(nsp, path, NAME, DESCRIPTION, 99999999f)
+        public TheHighPriestessEvent(string nsp, string path) : base(nsp, path, NAME, DESCRIPTION)
         {
         }
         public override void Run(Entity contraption, RandomGenerator rng)
