@@ -145,7 +145,7 @@ namespace MVZ2.GameContent.Contraptions
             var quality1 = Mathf.Pow(cost1 / 25f, 1.3f) * (rechargeQuality1 + 1) / 2f;
             var quality2 = Mathf.Pow(cost2 / 25f, 1.3f) * (rechargeQuality2 + 1) / 2f;
             var qualityAccumulate = Mathf.CeilToInt(quality1 * quality2);
-            var t = Mathf.Clamp01((qualityAccumulate / 150f) / 14f);
+            var t = Mathf.Clamp01(qualityAccumulate / 2250f);
 
             var minSeconds = entity.GetProperty<float>(PROP_MIN_PRODUCE_TIME);
             var maxSeconds = entity.GetProperty<float>(PROP_MAX_PRODUCE_TIME);
