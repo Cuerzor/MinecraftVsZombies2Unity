@@ -123,6 +123,7 @@
 - Fixed the issue of bad pixels in the armor icon of HP bars.
 - Fixed the issue of dark matter particles located at the bottom of Slenderman when it dies.
 - Fixed the issue where the zombie before transforming into Frankenstein can be petrified.
+- Fixed the issue where bullets fired from the reflective barrier could climb when a projectile that too low in position hit the barrier.
 
 ---
 

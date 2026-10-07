@@ -11,6 +11,8 @@ using MVZ2Logic.Armors;
 using PVZEngine.Armors;
 using PVZEngine.Callbacks;
 using PVZEngine.Definitions;
+using PVZEngine.Entities;
+using PVZEngine.Level;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Armors
@@ -64,13 +66,23 @@ namespace MVZ2.GameContent.Armors
                 return;
 
             var owner = shield.Owner;
+            var projID = VanillaProjectileID.reflectionBullet;
 
             var shootParams = owner.GetShootParams();
-            shootParams.projectileID = VanillaProjectileID.reflectionBullet;
+            shootParams.projectileID = projID;
             shootParams.position = hit.Projectile.GetCenter();
             shootParams.damage = shieldResult.Amount;
             shootParams.soundID = VanillaSoundID.reflection;
             shootParams.velocity = owner.GetFacingDirection() * 10;
+            var def = owner.Level.Content.GetEntityDefinition(projID);
+            if (def != null)
+            {
+                var position = shootParams.position;
+                var groundY = owner.Level.GetGroundY(position.x, position.z);
+                var minY = groundY + def.GetSize().y * shootParams.pivot.y + 1;
+                position.y = Mathf.Max(position.y, minY);
+                shootParams.position = position;
+            }
             owner.ShootProjectile(shootParams);
         }
     }
