@@ -14,6 +14,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
 
         public const string theFool = "the_fool";
         public const string theMagician = "the_magician";
+        public const string theHighPriestess = "the_high_priestess";
         public const string theEmpress = "the_empress";
         public const string theEmperor = "the_emperor";
         public const string theHierophant = "the_hierophant";
