@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-06 02:47+0800\n"
+"POT-Creation-Date: 2026-10-07 03:12+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -449,6 +449,18 @@ msgid "用随机瓷器填满战场"
 msgstr ""
 
 # 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\DriverlessEvent.cs:36
+msgctxt "random_china.event_name"
+msgid "无人驾驶"
+msgstr ""
+
+# 随机瓷器事件描述
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\DriverlessEvent.cs:38
+msgctxt "random_china.event_description"
+msgid "在最右侧生成一列无人驾驶的美西螈号机甲"
+msgstr ""
+
+# 随机瓷器事件名称
 #: Scripts\Vanilla\GameContent\RandomChinaEvents\HeavyContraptionEvent.cs:31
 msgctxt "random_china.event_name"
 msgid "重装器械"
@@ -497,6 +509,18 @@ msgid "用黑曜石困住所有敌怪"
 msgstr ""
 
 # 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\PaleDebtEvent.cs:34
+msgctxt "random_china.event_name"
+msgid "苍白债务"
+msgstr ""
+
+# 随机瓷器事件描述
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\PaleDebtEvent.cs:36
+msgctxt "random_china.event_description"
+msgid "在随机行召唤一只嘎枝"
+msgstr ""
+
+# 随机瓷器事件名称
 #: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfClubsEvent.cs:32
 msgctxt "random_china.event_name"
 msgid "梅花A"
@@ -533,13 +557,13 @@ msgid "将所有怪物和掉落物变为红石"
 msgstr ""
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfSpadesEvent.cs:21
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfSpadesEvent.cs:22
 msgctxt "random_china.event_name"
 msgid "黑桃A"
 msgstr ""
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfSpadesEvent.cs:23
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Pokers\AceOfSpadesEvent.cs:24
 msgctxt "random_china.event_description"
 msgid "将所有怪物和掉落物变为星之碎片"
 msgstr ""
@@ -581,6 +605,30 @@ msgid "30秒内蓝图充能速度翻倍"
 msgstr ""
 
 # 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\DeathEvent.cs:46
+msgctxt "random_china.event_name"
+msgid "XIII-死神"
+msgstr ""
+
+# 随机瓷器事件描述
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\DeathEvent.cs:48
+msgctxt "random_china.event_description"
+msgid "对所有敌人造成500点穿甲伤害"
+msgstr ""
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\JusticeEvent.cs:33
+msgctxt "random_china.event_name"
+msgid "XI-正义"
+msgstr ""
+
+# 随机瓷器事件描述
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\JusticeEvent.cs:35
+msgctxt "random_china.event_description"
+msgid "生成红石、红宝石、星之碎片和TNT蓝图各一个"
+msgstr ""
+
+# 随机瓷器事件名称
 #: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\StrengthEvent.cs:47
 msgctxt "random_china.event_name"
 msgid "VIII-力量"
@@ -590,6 +638,18 @@ msgstr ""
 #: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\StrengthEvent.cs:49
 msgctxt "random_china.event_description"
 msgid "所有敌怪变大"
+msgstr ""
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TemperanceEvent.cs:28
+msgctxt "random_china.event_name"
+msgid "XIV-节制"
+msgstr ""
+
+# 随机瓷器事件描述
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TemperanceEvent.cs:30
+msgctxt "random_china.event_description"
+msgid "30秒内蓝图花费降低50"
 msgstr ""
 
 # 随机瓷器事件名称
@@ -677,6 +737,18 @@ msgid "每行召唤一个友方的催眠者"
 msgstr ""
 
 # 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheHighPriestessEvent.cs:37
+msgctxt "random_china.event_name"
+msgid "II-女祭司"
+msgstr ""
+
+# 随机瓷器事件描述
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheHighPriestessEvent.cs:39
+msgctxt "random_china.event_description"
+msgid "召唤8个御柱"
+msgstr ""
+
+# 随机瓷器事件名称
 #: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:45
 msgctxt "random_china.event_name"
 msgid "VI-恋人"
@@ -686,6 +758,18 @@ msgstr ""
 #: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheLoversEvent.cs:47
 msgctxt "random_china.event_description"
 msgid "随机将一对器械和怪物变为中立阵营"
+msgstr ""
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheMagicianEvent.cs:28
+msgctxt "random_china.event_name"
+msgid "I-魔术师"
+msgstr ""
+
+# 随机瓷器事件描述
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\TheMagicianEvent.cs:30
+msgctxt "random_china.event_description"
+msgid "所有子弹在30秒内跟踪"
 msgstr ""
 
 # 随机瓷器事件名称
@@ -722,6 +806,18 @@ msgstr ""
 #: Scripts\Vanilla\GameContent\RandomChinaEvents\Tarots\WheelOfFortuneEvent.cs:41
 msgctxt "random_china.event_description"
 msgid "生成3张随机器械的蓝图"
+msgstr ""
+
+# 随机瓷器事件名称
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\ToTheMoonEvent.cs:32
+msgctxt "random_china.event_name"
+msgid "去月球"
+msgstr ""
+
+# 随机瓷器事件描述
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\ToTheMoonEvent.cs:34
+msgctxt "random_china.event_description"
+msgid "生成反重力板"
 msgstr ""
 
 # 随机瓷器事件名称
