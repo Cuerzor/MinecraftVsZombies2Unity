@@ -16,7 +16,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
     [RandomChinaEventDefinition(VanillaRandomChinaEventNames.toTheMoon)]
     public class ToTheMoonEvent : RandomChinaEventDefinition
     {
-        public ToTheMoonEvent(string nsp, string path) : base(nsp, path, NAME, DESCRIPTION, 9999999f)
+        public ToTheMoonEvent(string nsp, string path) : base(nsp, path, NAME, DESCRIPTION)
         {
         }
         public override void Run(Entity contraption, RandomGenerator rng)

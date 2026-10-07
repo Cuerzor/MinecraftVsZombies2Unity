@@ -47,6 +47,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
 
         public const string driverless = "driverless";
         public const string toTheMoon = "to_the_moon";
+        public const string paleDebt = "pale_debt";
     }
     public static class VanillaRandomChinaEventID
     {
