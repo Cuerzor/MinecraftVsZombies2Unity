@@ -16,7 +16,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
     [RandomChinaEventDefinition(VanillaRandomChinaEventNames.driverless)]
     public class DriverlessEvent : RandomChinaEventDefinition
     {
-        public DriverlessEvent(string nsp, string path) : base(nsp, path, NAME, DESCRIPTION, 9999999f)
+        public DriverlessEvent(string nsp, string path) : base(nsp, path, NAME, DESCRIPTION)
         {
         }
         public override void Run(Entity contraption, RandomGenerator rng)

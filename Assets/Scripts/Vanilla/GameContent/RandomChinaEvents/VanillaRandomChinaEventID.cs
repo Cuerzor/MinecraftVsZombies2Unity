@@ -46,6 +46,7 @@ namespace MVZ2.GameContent.RandomChinaEvents
         public const string bindingChains = "binding_chains";
 
         public const string driverless = "driverless";
+        public const string toTheMoon = "to_the_moon";
     }
     public static class VanillaRandomChinaEventID
     {
