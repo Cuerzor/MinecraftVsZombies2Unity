@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MukioI18n;
 using MVZ2.GameContent.Buffs.Enemies;
+using MVZ2.GameContent.Buffs.Entities;
 using MVZ2.GameContent.Buffs.Level;
 using MVZ2.GameContent.Buffs.SeedPacks;
 using MVZ2.GameContent.Contraptions;
@@ -129,6 +130,17 @@ namespace MVZ2.GameContent.Bosses
             foreach (var portal in portals)
             {
                 NightmarePortalPandora.Close(portal);
+            }
+
+            entity.Level.RemoveBuffs<NightmareDecrepifyBuff>();
+
+            using var charmedEntitiesItem = ListPool<Entity>.Rent();
+            var charmedEntities = charmedEntitiesItem.Value;
+            entity.Level.FindEntitiesNonAlloc(e => e.HasBuff<CharmBuff>() && e.Type == EntityTypes.PLANT, charmedEntities);
+            foreach (var charmed in charmedEntities)
+            {
+                charmed.RemoveCharm(new EntitySourceReference(entity));
+                charmed.PlaySound(VanillaSoundID.mindClear);
             }
 
             entity.SetAnimationBool("IsDead", true);
@@ -421,7 +433,7 @@ namespace MVZ2.GameContent.Bosses
 
             var level = boss.Level;
             var rng = GetEventRNG(boss);
-            var possible = level.FindEntities(e => e.Type == EntityTypes.PLANT && e.IsHostile(boss) && !e.IsLoyal());
+            var possible = level.FindEntities(e => e.Type == EntityTypes.PLANT && e.IsHostile(boss) && e.GetColumn() > 0 && !e.IsLoyal());
 
             using var targetsItem = ListPool<Entity>.Rent();
             var targets = targetsItem.Value;

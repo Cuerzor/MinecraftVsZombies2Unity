@@ -92,14 +92,16 @@
   - Now blocks Skeleton Horses from jumping.
 - Nightmare
   - Reduced the weight of some fate options:
-    - Decripify: 80% weight
+    - Decrepify: 80% weight
     - Insanity: 60% weight
     - Come True: 80% weight
     - The Lurker: 60% weight
     - The Black Sun: 90% weight
+  - "Insanity" fate option: No longer select the leftmost contraptions
   - "Come True" fate option: No longer give Ghasts stats bonuses
   - "Pandora's Box " fate option reworked: Randomly swap the positions of all contraptions on the battlefield -> Opens two green summoning portals in random lanes that continuously summon Iron Helmet Zombies
   - After selecting a fate option, a text effect description of the option will now pop up.
+  - The effect of Decrepify and Insanity is not cleared after the death of Slender Man.
 - Wither
   - Now can be interrupted by Golden Apple even when Wither is using a charge attack instead of an eat attack.
 - Hoe
