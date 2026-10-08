@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-08 03:59+0800\n"
-"PO-Revision-Date: 2026-10-08 16:04+0800\n"
+"POT-Creation-Date: 2026-10-08 10:07+0800\n"
+"PO-Revision-Date: 2026-10-08 22:07+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -15,7 +15,43 @@ msgstr ""
 "X-Crowdin-Language: en-US\n"
 "X-Crowdin-File: /crowdin/general.pot\n"
 "X-Crowdin-File-ID: 20\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.9\n"
+
+#. 初始界面的健康警告标题
+#: /MainGame/MainScene/Init/HealthWarning/Canvas/Texts/HealthWarningTitle
+msgid "健康警告"
+msgstr "Health Warning"
+
+#. 初始界面的健康警告
+#: /MainGame/MainScene/Init/HealthWarning/Canvas/Texts/HealthWarning
+msgid ""
+"本游戏包含闪烁画面、快速图像变化、旋转画面、镜头晃动等效果，可能引起光敏性癫"
+"痫发作或晕动症。如感不适，请立即停止游戏并就医。有相关病史者请先咨询医生。"
+msgstr ""
+"This game contains flashing images, rapid image changes, rotating scenes, "
+"and camera movement that may trigger photosensitive epilepsy or motion "
+"sickness. Stop playing and consult a doctor if you feel unwell. Consult a "
+"doctor before playing if you have a relevant medical history."
+
+#. 初始界面的警告标题
+#: /MainGame/MainScene/Init/HealthWarning/Canvas/Texts/ContentWarningTitle
+msgid "内容警告"
+msgstr "Content Warning"
+
+#. 初始界面的内容警告
+#: /MainGame/MainScene/Init/HealthWarning/Canvas/Texts/ContentWarning
+msgid ""
+"本游戏包含血腥/血液表现，并提及焦虑、创伤、精神疾病、自杀等敏感心理话题。部分"
+"内容可能引起强烈不适或情绪波动。请根据自身状况谨慎游玩。如感到不适，请停止游"
+"玩，并与信任的人或专业心理支持人员联系。如果您有自伤或自杀念头，请立即联系当"
+"地紧急服务或心理援助热线。"
+msgstr ""
+"This game contains blood/gore and references to anxiety, trauma, mental "
+"illness, and suicide. Some content may be intensely disturbing or "
+"emotionally triggering. Please play with care. If you feel distressed, stop "
+"playing and reach out to someone you trust or a mental health professional. "
+"If you are having thoughts of self-harm or suicide, contact your local "
+"emergency services or a crisis helpline immediately."
 
 #. 初始界面的作者标识
 #: /MainGame/MainScene/Init/Splash/Canvas/Creator
@@ -1707,7 +1743,7 @@ msgid "确认要重置所有按键绑定吗？"
 msgstr "Are you sure to reset all key bindings?"
 
 # 截图保存的提示
-#: Scripts\MVZ2\Scene\MainSceneController.cs:550
+#: Scripts\MVZ2\Scene\MainSceneController.cs:552
 msgid "截图已保存：{0}"
 msgstr "Screenshot saved: {0}"
 

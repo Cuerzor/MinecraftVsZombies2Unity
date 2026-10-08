@@ -478,6 +478,7 @@ namespace MVZ2.Scenes
         #region 生命周期
         private void Awake()
         {
+            pages.Add(MainScenePageType.HealthWarning, healthWarning);
             pages.Add(MainScenePageType.Splash, splash);
             pages.Add(MainScenePageType.Titlescreen, titlescreen);
             pages.Add(MainScenePageType.Mainmenu, mainmenu);
@@ -522,6 +523,7 @@ namespace MVZ2.Scenes
             if (main.LevelManager.IsInLevel())
                 return true;
             return currentPage != MainScenePageType.None &&
+                currentPage != MainScenePageType.HealthWarning &&
                 currentPage != MainScenePageType.Splash &&
                 currentPage != MainScenePageType.Titlescreen;
         }
@@ -556,6 +558,8 @@ namespace MVZ2.Scenes
         private CameraLimiter uiCameraLimiter = null!;
         [SerializeField]
         private MainSceneUI ui = null!;
+        [SerializeField]
+        private HealthWarningController healthWarning = null!;
         [SerializeField]
         private SplashController splash = null!;
         [SerializeField]

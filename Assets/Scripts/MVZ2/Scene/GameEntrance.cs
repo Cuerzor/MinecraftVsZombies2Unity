@@ -51,7 +51,7 @@ namespace MVZ2.Scenes
 
                 if (!main.IsFastMode())
                 {
-                    main.Scene.DisplayPage(MainScenePageType.Splash);
+                    main.Scene.DisplayPage(MainScenePageType.HealthWarning);
                 }
                 else
                 {
@@ -61,8 +61,8 @@ namespace MVZ2.Scenes
                         await initTask;
                     }
                     main.Scene.DisplayMainmenu();
+                    main.MusicManager.Play(LogicMusicID.mainmenu);
                 }
-                main.MusicManager.Play(LogicMusicID.mainmenu);
             }
             catch (Exception e)
             {

@@ -5,6 +5,7 @@ namespace MVZ2Logic.Scenes
     public enum MainScenePageType
     {
         None,
+        HealthWarning,
         Splash,
         Titlescreen,
         Mainmenu,

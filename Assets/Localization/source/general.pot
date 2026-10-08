@@ -3,13 +3,33 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-08 03:59+0800\n"
+"POT-Creation-Date: 2026-10-08 10:07+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-KeywordsList: GetString;GetPluralString:1,2;GetParticularString:1c,2;GetParticularPluralString:1c,2,3;_;_n:1,2;_p:1c,2;_pn:1c,2,3\n"
+
+#. 初始界面的健康警告标题
+#: /MainGame/MainScene/Init/HealthWarning/Canvas/Texts/HealthWarningTitle
+msgid "健康警告"
+msgstr ""
+
+#. 初始界面的健康警告
+#: /MainGame/MainScene/Init/HealthWarning/Canvas/Texts/HealthWarning
+msgid "本游戏包含闪烁画面、快速图像变化、旋转画面、镜头晃动等效果，可能引起光敏性癫痫发作或晕动症。如感不适，请立即停止游戏并就医。有相关病史者请先咨询医生。"
+msgstr ""
+
+#. 初始界面的警告标题
+#: /MainGame/MainScene/Init/HealthWarning/Canvas/Texts/ContentWarningTitle
+msgid "内容警告"
+msgstr ""
+
+#. 初始界面的内容警告
+#: /MainGame/MainScene/Init/HealthWarning/Canvas/Texts/ContentWarning
+msgid "本游戏包含血腥/血液表现，并提及焦虑、创伤、精神疾病、自杀等敏感心理话题。部分内容可能引起强烈不适或情绪波动。请根据自身状况谨慎游玩。如感到不适，请停止游玩，并与信任的人或专业心理支持人员联系。如果您有自伤或自杀念头，请立即联系当地紧急服务或心理援助热线。"
+msgstr ""
 
 #. 初始界面的作者标识
 #: /MainGame/MainScene/Init/Splash/Canvas/Creator
@@ -1748,7 +1768,7 @@ msgid "确认要重置所有按键绑定吗？"
 msgstr ""
 
 # 截图保存的提示
-#: Scripts\MVZ2\Scene\MainSceneController.cs:550
+#: Scripts\MVZ2\Scene\MainSceneController.cs:552
 msgid "截图已保存：{0}"
 msgstr ""
 
