@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-07 03:12+0800\n"
-"PO-Revision-Date: 2026-10-07 15:18+0800\n"
+"POT-Creation-Date: 2026-10-08 03:59+0800\n"
+"PO-Revision-Date: 2026-10-08 16:04+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1100,41 +1100,84 @@ msgstr ""
 "You have unsaved changes.\n"
 "Are you sure you want to discard all changes and exit?"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:542
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:571
 msgid "选择你的命运"
 msgstr "Choose your fate"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:544
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:573
 msgid "选吧。"
 msgstr "Choose."
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:546
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:575
+msgid ""
+"<color=red>{0}</color>\n"
+"{1}"
+msgstr ""
+"<color=red>[{0}]</color>\n"
+"{1}"
+
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:577
 msgid "潘多拉的魔盒"
 msgstr "Pandora's Box"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:548
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:579
 msgid "尸潮"
 msgstr "Biohazard"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:550
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:581
 msgid "衰老"
 msgstr "Decrepify"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:552
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:583
 msgid "疯狂"
 msgstr "Insanity"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:554
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:585
 msgid "成真"
 msgstr "Come True"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:556
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:587
 msgid "深潜者"
 msgstr "The Deep Ones"
 
-#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:558
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:589
 msgid "黑太阳"
 msgstr "The Black Sun"
+
+# 梦魇选项
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:591
+msgid "开启两道永久的僵尸传送门"
+msgstr "Open 2 permanent zombie portals"
+
+# 梦魇选项
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:593
+msgid "召唤两列铁盔僵尸"
+msgstr "Summon 2 columns of iron helmet zombie"
+
+# 梦魇选项
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:595
+msgid "禁用星之碎片和铁镐一分钟"
+msgstr "Disable starshards and pickaxe for a minute"
+
+# 梦魇选项
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:597
+msgid "随机使3个器械叛变"
+msgstr "Hypnotize 3 random contraptions"
+
+# 随机瓷器事件描述
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:599
+msgid "将所有怪物变为恶魂"
+msgstr "Transform all monsters into Ghasts"
+
+# 梦魇选项
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:601
+msgid "摧毁水上一半的器械"
+msgstr "Destroy half of contraptions above water"
+
+# 梦魇选项
+#: Scripts\Vanilla\GameContent\Bosses\SlenderMan.cs:603
+msgid "所有器械失效10秒"
+msgstr "Deactivate all contraptions for 10 seconds"
 
 #: Scripts\Vanilla\Frameworks\Localization\VanillaStrings.cs:10
 msgid "无法使用"
@@ -1551,7 +1594,7 @@ msgstr "Version {0}"
 msgid "点击以开始！"
 msgstr "Click to start!"
 
-#: Scripts\MVZ2\Talks\Components\TalkController.cs:1161
+#: Scripts\MVZ2\Talks\Components\TalkController.cs:1167
 msgid ""
 "<color=blue>[{0}]</color>\n"
 "{1}"
@@ -1559,7 +1602,7 @@ msgstr ""
 "<color=blue>[{0}]</color>\n"
 "{1}"
 
-#: Scripts\MVZ2\Talks\Components\TalkController.cs:1163
+#: Scripts\MVZ2\Talks\Components\TalkController.cs:1169
 msgid "已跳过对话\"{0}\""
 msgstr "Dialogue skipped: {0}"
 
