@@ -4165,7 +4165,10 @@
           <text><![CDATA[<color=blue>（看起来，似乎我在妖怪之山的旅途已经结束了。）</color>]]></text>
           <onClick>
             <script>bubble hide</script>
-            <script>delay 2</script>
+            <script>delay 1</script>
+
+            <script>skip hide</script>
+            <script>delay 1</script>
 
             <script>item hide</script>
             <script>forecolor fade black #0000 0.5</script>
@@ -4173,6 +4176,7 @@
             <script>foreground change mvz2:misc/fake_chapter_transition_7</script>
             <script>delay 2.5</script>
             
+            <script>skip show</script>
             <script>next</script>
           </onClick>
         </sentence>

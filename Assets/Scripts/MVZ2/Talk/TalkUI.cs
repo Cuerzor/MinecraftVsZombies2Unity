@@ -174,10 +174,9 @@ namespace MVZ2.UI.Talk
         #region 生命周期
         private void Awake()
         {
-            skipButton.gameObject.SetActive(false);
-            blockerObject.SetActive(false);
-            raycastReceiver.gameObject.SetActive(false);
             SetSkipButtonActive(false);
+            SetBlockerActive(false);
+            SetRaycastReceiverActive(false);
 
             skipButton.onClick.AddListener(() => OnSkipClick?.Invoke());
             raycastReceiver.OnPointerDown += OnRaycastReceiverPointerDownCallback;

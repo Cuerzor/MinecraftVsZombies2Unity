@@ -725,6 +725,10 @@ namespace MVZ2.Talk
                 case "bubble":
                     ui.SetSpeechBubbleShowing(args[0] != "hide");
                     break;
+
+                case "skip":
+                    ui.SetSkipButtonActive(args[0] != "hide");
+                    break;
                     #endregion
             }
         }
