@@ -13,6 +13,7 @@ using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Enemies;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Localization;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic;
 using MVZ2Logic.Blueprints;
@@ -288,6 +289,7 @@ namespace MVZ2.GameContent.Bosses
             ChooseFate(entity, rng, (option) =>
             {
                 DoFate(entity, option);
+                ShowFateText(entity, option);
                 // 用Delayed，防止当前手持僵尸时点击按钮后直接把僵尸放在地上
                 entity.Level.ResumeGameDelayed(100);
             });
@@ -311,7 +313,7 @@ namespace MVZ2.GameContent.Bosses
             {
                 fateOptions.TakeToList(count, selected);
             }
-            var options = selected.Select(i => GetFateOptionText(i)).ToArray();
+            var options = selected.Select(i => GetFateOptionName(i)).ToArray();
             level.ShowDialog(title, desc, options, (i) =>
             {
                 var option = selected[i];
@@ -345,7 +347,19 @@ namespace MVZ2.GameContent.Bosses
                     break;
             }
         }
+        private void ShowFateText(Entity boss, int option)
+        {
+            var name = GetFateOptionName(option);
+            var desc = GetFateOptionDescription(option);
+            var text = Global.Localization.GetText(FATE_TEXT_TEMPLATE, name, desc);
 
+            var pos = boss.Level.GetLawnCenter();
+
+            var param = boss.GetSpawnParams();
+            param.SetProperty(EngineEntityProps.MODEL_POSITION_OFFSET, Vector3.back * 5000);
+            param.SetProperty(FloatingText.PROP_TEXT, text);
+            boss.Spawn(VanillaEffectID.floatingText, pos, param);
+        }
         private void PandorasBox(Entity boss)
         {
             boss.PlaySound(VanillaSoundID.odd);
@@ -480,10 +494,16 @@ namespace MVZ2.GameContent.Bosses
                 contraption.ShortCircuit(300, new EntitySourceReference(boss));
             }
         }
-        private static string GetFateOptionText(int option)
+        private static string GetFateOptionName(int option)
         {
             var index = Array.IndexOf(fateOptions, option);
-            var text = fateTexts[index];
+            var text = fateNames[index];
+            return Global.Localization.GetText(text);
+        }
+        private static string GetFateOptionDescription(int option)
+        {
+            var index = Array.IndexOf(fateOptions, option);
+            var text = fateDescriptions[index];
             return Global.Localization.GetText(text);
         }
         #endregion
@@ -541,6 +561,8 @@ namespace MVZ2.GameContent.Bosses
         [TranslateMsg("梦魇对话框文本")]
         public const string CHOOSE_FATE_DESCRIPTION = "选吧。";
         [TranslateMsg("梦魇选项")]
+        public const string FATE_TEXT_TEMPLATE = "<color=red>{0}</color>\n{1}";
+        [TranslateMsg("梦魇选项")]
         public const string FATE_TEXT_PANDORAS_BOX = "潘多拉的魔盒";
         [TranslateMsg("梦魇选项")]
         public const string FATE_TEXT_BIOHAZARD = "尸潮";
@@ -554,6 +576,20 @@ namespace MVZ2.GameContent.Bosses
         public const string FATE_TEXT_THE_LURKER = "深潜者";
         [TranslateMsg("梦魇选项")]
         public const string FATE_TEXT_BLACK_SUN = "黑太阳";
+        [TranslateMsg("梦魇选项")]
+        public const string FATE_DESCRIPTION_PANDORAS_BOX = "开启两道永久的僵尸传送门";
+        [TranslateMsg("梦魇选项")]
+        public const string FATE_DESCRIPTION_BIOHAZARD = "召唤两列铁盔僵尸";
+        [TranslateMsg("梦魇选项")]
+        public const string FATE_DESCRIPTION_DECREPIFY = "禁用星之碎片和铁镐一分钟";
+        [TranslateMsg("梦魇选项")]
+        public const string FATE_DESCRIPTION_INSANITY = "随机使3个器械叛变";
+        [TranslateMsg("梦魇选项")]
+        public const string FATE_DESCRIPTION_COME_TRUE = "将所有怪物变为恶魂";
+        [TranslateMsg("梦魇选项")]
+        public const string FATE_DESCRIPTION_THE_LURKER = "摧毁水上一半的器械";
+        [TranslateMsg("梦魇选项")]
+        public const string FATE_DESCRIPTION_BLACK_SUN = "所有器械失效10秒";
 
         public const int MAX_MOVE_TIMEOUT = 30;
 
@@ -638,7 +674,7 @@ namespace MVZ2.GameContent.Bosses
             0.6f,
             0.9f,
         };
-        private static string[] fateTexts = new string[]
+        private static string[] fateNames = new string[]
         {
             FATE_TEXT_PANDORAS_BOX,
             FATE_TEXT_BIOHAZARD,
@@ -647,6 +683,16 @@ namespace MVZ2.GameContent.Bosses
             FATE_TEXT_COME_TRUE,
             FATE_TEXT_THE_LURKER,
             FATE_TEXT_BLACK_SUN,
+        };
+        private static string[] fateDescriptions = new string[]
+        {
+            FATE_DESCRIPTION_PANDORAS_BOX,
+            FATE_DESCRIPTION_BIOHAZARD,
+            FATE_DESCRIPTION_DECREPIFY,
+            FATE_DESCRIPTION_INSANITY,
+            FATE_DESCRIPTION_COME_TRUE,
+            FATE_DESCRIPTION_THE_LURKER,
+            FATE_DESCRIPTION_BLACK_SUN,
         };
         #endregion 常量
     }
