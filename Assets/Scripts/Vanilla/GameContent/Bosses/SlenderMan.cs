@@ -434,10 +434,7 @@ namespace MVZ2.GameContent.Bosses
             var targets = level.FindEntities(e => e.Type == EntityTypes.ENEMY && e.IsFriendly(boss) && !e.IsEntityOf(VanillaEnemyID.ghast));
             foreach (var enemy in targets)
             {
-                boss.SpawnWithParams(VanillaEnemyID.ghast, enemy.Position)?.Let(e =>
-                {
-                    e.AddBuff<NightmareComeTrueBuff>();
-                });
+                boss.SpawnWithParams(VanillaEnemyID.ghast, enemy.Position);
                 enemy.Remove();
             }
         }

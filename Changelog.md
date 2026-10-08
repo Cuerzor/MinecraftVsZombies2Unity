@@ -91,6 +91,7 @@
 - Mutant Zombie
   - Now blocks Skeleton Horses from jumping.
 - Nightmare
+  - "Come True" fate option: No longer give Ghasts stats bonuses
   - "Pandora's Box " fate option reworked: Randomly swap the positions of all contraptions on the battlefield -> Opens two green summoning portals in random lanes that continuously summon Iron Helmet Zombies
 - Wither
   - Now can be interrupted by Golden Apple even when Wither is using a charge attack instead of an eat attack.
