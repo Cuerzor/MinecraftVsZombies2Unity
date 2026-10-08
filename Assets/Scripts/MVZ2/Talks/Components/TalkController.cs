@@ -1103,6 +1103,8 @@ namespace MVZ2.Talk
             ui.SetBackcolor(Color.clear);
             ui.SetForegroundAlpha(0);
             ui.SetBackgroundAlpha(0);
+            ui.SetForegroundScale(Vector3.one);
+            ui.SetBackgroundScale(Vector3.one);
             ui.SetForegroundSprite(null);
             ui.SetBackgroundSprite(null);
 
