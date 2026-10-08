@@ -1,11 +1,7 @@
 ## Added
-- Added commands:
-  - /test hugewaveevent: Triggers the huge wave event.
-  - /test finalwaveevent：Triggers the final wave event.
-  - /blueprint slots：Sets the slot count for blueprints.
-  - /artifact slots：Sets the slot count for artifacts.
-  - /money set：Sets money.
-  - /money add：Increases money.
+- Added Chapter 7 - Youkai Mountian.
+- Added curse system.
+- Added screenshot function.
 - Added entity material "Apparition" and "Wither Bone", removed entity material "Nether".
   - The material of Soul Furnace has been changed to "Wood".
   - The material of Ghost, Ghast, and Napstablook has been changed to "Apparition".
@@ -13,18 +9,23 @@
   - The material of the Wisp Fly has been changed to "Flesh".
 - Added entity attribute "Fire Immunity".
   - Applied to Soul Furnace and Wisp Fly.
-- Added screenshot function.
 - Added textures for Moonlight Sensors in their daytime form.
 - Added unlock hint for the music room and arcade.
-- Added curse system.
 - Added 4 new stats categories:
   - Level completed
   - Game over
   - Level restarted
   - Enabled curses
-- Added a hidden Easter egg for Error Blocks. **NEVER TRY IT.**
 - Added the red filter before version 0.3.0 back for Nightmare Battle.
 - Added 8 new Random China events.
+- Added commands:
+  - /test hugewaveevent: Triggers the huge wave event.
+  - /test finalwaveevent：Triggers the final wave event.
+  - /blueprint slots：Sets the slot count for blueprints.
+  - /artifact slots：Sets the slot count for artifacts.
+  - /money set：Sets money.
+  - /money add：Increases money.
+- Added a hidden Easter egg for Error Blocks. **NEVER TRY IT.**
 
 ## Modified
 - When a projectile entity undergoes angular rotation due to directional deflection, its hitbox will now rotate correctly.
