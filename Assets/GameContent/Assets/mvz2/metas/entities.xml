@@ -3259,7 +3259,7 @@
         </entity>
         <entity template="specialEnemy" id="bubble" name="泡泡" deathMessage="啪">
             <unlock>
-                <condition required="mvz2:enemy.bubble_gun_gurgle" />
+                <condition requiredGroups="mvz2:enemy.bubble_gun_gurgle" />
             </unlock>
             <behaviours>
                 <behaviour operator="add" id="mvz2:enemy_state" />
