@@ -3730,6 +3730,7 @@
                 <bool name="mvz2:noHitEntities" value="true" />
                 <float name="mvz2:gravity" value="1" />
                 <vector3 name="mvz2:size" x="24" y="24" z="24" />
+                <bool name="mvz2:no_homing" value="true" />
                 <bool name="mvz2:ignore_prismatic_pylon" value="true" />
             </properties>
         </entity>
@@ -3758,6 +3759,7 @@
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
                 <vector3 name="mvz2:shadowScale" x="1" y="1" z="1" />
                 <id name="mvz2:modelId" value="mvz2:entity.tnt" />
+                <bool name="mvz2:no_homing" value="true" />
                 <bool name="mvz2:ignore_prismatic_pylon" value="true" />
             </properties>
         </entity>
@@ -3844,6 +3846,7 @@
                 <bool name="mvz2:noHitEntities" value="true" />
                 <float name="mvz2:gravity" value="1" />
                 <vector3 name="mvz2:size" x="24" y="24" z="24" />
+                <bool name="mvz2:no_homing" value="true" />
                 <bool name="mvz2:ignore_gravity_pad" value="true" />
                 <bool name="mvz2:ignore_force_pad" value="true" />
             </properties>
@@ -3955,6 +3958,7 @@
                 <bool name="mvz2:isLightSource" value="true" />
                 <vector3 name="mvz2:lightRange" x="40" y="40" z="40" />
                 <color name="mvz2:lightColor" value="#FF00FF" />
+                <bool name="mvz2:no_homing" value="true" />
                 <bool name="mvz2:ignore_prismatic_pylon" value="true" />
 
                 <vector3 name="mvz2:size" x="24" y="24" z="24" />
@@ -3967,6 +3971,7 @@
                 <float name="mvz2:damage" value="100" />
                 <float name="mvz2:range" value="120" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
+                <bool name="mvz2:no_homing" value="true" />
                 <bool name="mvz2:ignore_prismatic_pylon" value="true" />
             </properties>
         </entity>
@@ -4136,6 +4141,7 @@
                 <int name="mvz2:maxTimeout" value="10" />
                 <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
+                <bool name="mvz2:no_homing" value="true" />
                 <bool name="mvz2:ignore_prismatic_pylon" value="true" />
             </properties>
         </entity>
@@ -4156,6 +4162,7 @@
                 <int name="mvz2:maxTimeout" value="10" />
                 <vector3 name="mvz2:boundsPivot" x="0.5" y="0.5" z="0.5" />
                 <vector3 name="mvz2:size" x="32" y="32" z="32" />
+                <bool name="mvz2:no_homing" value="true" />
                 <bool name="mvz2:ignore_prismatic_pylon" value="true" />
             </properties>
         </entity>
@@ -4185,6 +4192,7 @@
                 <float name="mvz2:range" value="120" />
                 <vector3 name="mvz2:size" x="130" y="130" z="130" />
                 <vector3 name="mvz2:shadowScale" x="3" y="3" z="3" />
+                <bool name="mvz2:no_homing" value="true" />
                 <bool name="mvz2:ignore_prismatic_pylon" value="true" />
             </properties>
         </entity>
@@ -4236,6 +4244,7 @@
                 <bool name="mvz2:noDestroyOutsideLawn" value="true" />
                 <bool name="mvz2:pointToDirection" value="true" />
                 <bool name="mvz2:noHitEntities" value="true" />
+                <bool name="mvz2:no_homing" value="true" />
                 <bool name="mvz2:ignore_force_pad" value="true" />
                 <bool name="mvz2:ignore_prismatic_pylon" value="true" />
                 <float name="mvz2:range" value="120" />

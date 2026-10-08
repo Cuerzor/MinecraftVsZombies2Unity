@@ -123,5 +123,16 @@ namespace MVZ2.Vanilla.Projectiles
         {
             return projectile.GetProperty<bool>(DIRECTION_CHANGED_BY_KRAKENS_TENTACLE);
         }
+        #region 禁用跟踪
+        public static readonly PropertyMeta<bool> NO_HOMING = new PropertyMeta<bool>("no_homing");
+        public static bool NoHoming(this Entity projectile)
+        {
+            return projectile.GetProperty<bool>(NO_HOMING);
+        }
+        public static void SetNoHoming(this Entity projectile, bool value)
+        {
+            projectile.SetProperty(NO_HOMING, value);
+        }
+        #endregion
     }
 }
