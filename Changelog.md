@@ -91,6 +91,12 @@
 - Mutant Zombie
   - Now blocks Skeleton Horses from jumping.
 - Nightmare
+  - Reduced the weight of some fate options:
+    - Decripify: 80% weight
+    - Insanity: 60% weight
+    - Come True: 80% weight
+    - The Lurker: 60% weight
+    - The Black Sun: 90% weight
   - "Come True" fate option: No longer give Ghasts stats bonuses
   - "Pandora's Box " fate option reworked: Randomly swap the positions of all contraptions on the battlefield -> Opens two green summoning portals in random lanes that continuously summon Iron Helmet Zombies
 - Wither

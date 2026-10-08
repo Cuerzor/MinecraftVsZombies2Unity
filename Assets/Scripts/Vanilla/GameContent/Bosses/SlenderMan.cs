@@ -305,7 +305,7 @@ namespace MVZ2.GameContent.Bosses
             List<int> selected = new List<int>();
             if (rng != null)
             {
-                fateOptions.RandomTake(count, rng, selected);
+                fateOptions.WeightedRandomTake(fateOptionWeights, count, rng, selected);
             }
             else
             {
@@ -627,6 +627,16 @@ namespace MVZ2.GameContent.Bosses
             FATE_COME_TRUE,
             FATE_THE_LURKER,
             FATE_BLACK_SUN,
+        };
+        private static float[] fateOptionWeights = new float[]
+        {
+            1,
+            1,
+            0.8f,
+            0.6f,
+            0.8f,
+            0.6f,
+            0.9f,
         };
         private static string[] fateTexts = new string[]
         {
