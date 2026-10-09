@@ -1976,7 +1976,7 @@ namespace MVZ2.GameContent.Bosses
                                 continue;
 
                             // 遇到稳固器械就不移动。
-                            if (gridEntity.IsStableContraption())
+                            if (gridEntity.IsAnchoredContraption())
                             {
                                 stopped = true;
                                 break;

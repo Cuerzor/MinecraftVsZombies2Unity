@@ -720,7 +720,7 @@
                 <id name="mvz2:deathSound" null="true" />
                 <id name="mvz2:hitSound" null="true" />
                 <idArray name="mvz2:gridLayers" value="" />
-                <bool name="mvz2:suspending_contraption" value="true" />
+                <bool name="mvz2:water_displacement_immune" value="true" />
                 <int name="mvz2:hp_bar_visibility" value="-1" />
 
                 <int name="mvz2:cost" value="50" />
@@ -906,7 +906,7 @@
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:defensive" value="true" />
                 <bool name="mvz2:noClimb" value="true" />
-                <bool name="mvz2:suspending_contraption" value="true" />
+                <bool name="mvz2:water_displacement_immune" value="true" />
                 <bool name="mvz2:fragments/noDamageFragments" value="true" />
                 <float name="mvz2:maxHealth" value="3000" />
                 <float name="mvz2:fallResistance" value="10000" />
@@ -948,7 +948,7 @@
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
                 <id name="mvz2:placement" value="mvz2:devourer" />
                 <idArray name="mvz2:gridLayers" value="mvz2:tool" />
-                <bool name="mvz2:suspending_contraption" value="true" />
+                <bool name="mvz2:water_displacement_immune" value="true" />
                 <int name="mvz2:waterInteraction" value="0" />
                 <int name="mvz2:airInteraction" value="0" />
 
@@ -1147,7 +1147,7 @@
                 <id name="mvz2:placement" value="mvz2:suspension" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:defensive" value="true" />
-                <bool name="mvz2:suspending_contraption" value="true" />
+                <bool name="mvz2:water_displacement_immune" value="true" />
                 <float name="mvz2:maxHealth" value="3000" />
                 <float name="mvz2:fallResistance" value="10000" />
                 <int name="mvz2:waterInteraction" value="0" />
@@ -1178,7 +1178,7 @@
                 <vector3 name="mvz2:size" x="0" y="0" z="0" />
                 <id name="mvz2:placement" value="mvz2:any" />
                 <idArray name="mvz2:gridLayers" value="" />
-                <bool name="mvz2:suspending_contraption" value="true" />
+                <bool name="mvz2:water_displacement_immune" value="true" />
                 <int name="mvz2:hp_bar_visibility" value="-1" />
                 <bool name="mvz2:isLightSource" value="true" />
                 <vector3 name="mvz2:lightRange" x="256" y="256" z="256" />
@@ -1307,7 +1307,7 @@
                 <id name="mvz2:deathSound" null="true" />
                 <id name="mvz2:hitSound" null="true" />
                 <idArray name="mvz2:gridLayers" value="" />
-                <bool name="mvz2:suspending_contraption" value="true" />
+                <bool name="mvz2:water_displacement_immune" value="true" />
                 <int name="mvz2:hp_bar_visibility" value="-1" />
 
                 <int name="mvz2:cost" value="75" />
@@ -1470,7 +1470,7 @@
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:defensive" value="true" />
                 <bool name="mvz2:blocksJump" value="true" />
-                <bool name="mvz2:stable_contraption" value="true" />
+                <bool name="mvz2:anchored_contraption" value="true" />
                 <float name="mvz2:maxHealth" value="2000" />
                 <float name="mvz2:fallResistance" value="10000" />
                 <float name="mvz2:groundLimitOffset" value="-16" />
@@ -1802,7 +1802,7 @@
                 <vector3 name="mvz2:grid_pivot_offset" x="-40" y="0" z="0"  />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:protector " />
                 <idArray name="mvz2:counter_for" value="mvz2:low_enemy mvz2:flying_enemy" />
-                <bool name="mvz2:stable_contraption" value="true" />
+                <bool name="mvz2:anchored_contraption" value="true" />
                 <bool name="mvz2:no_abduction" value="true" />
                 <bool name="mvz2:no_devourer" value="true" />
                 <bool name="mvz2:no_teleporter" value="true" />

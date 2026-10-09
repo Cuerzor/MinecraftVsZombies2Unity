@@ -59,7 +59,7 @@ namespace MVZ2.GameContent.Effects
             var self = collision.Entity;
             if (other.IsVulnerableEntity())
             {
-                if (!other.IsStableContraption())
+                if (!other.IsAnchoredContraption())
                 {
                     other.Velocity += Vector3.up * 1.5f;
                     if (!other.HasBuff<ClearGridOnLandBuff>())

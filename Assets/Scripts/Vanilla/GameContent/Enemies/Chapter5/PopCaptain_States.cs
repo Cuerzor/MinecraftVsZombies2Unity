@@ -159,7 +159,7 @@ namespace MVZ2.GameContent.Enemies
             else if (target.Type == EntityTypes.PLANT)
             {
                 // 如果目标是器械，并且不是稳固器械：
-                if (!target.IsStableContraption())
+                if (!target.IsAnchoredContraption())
                 {
                     var column = target.GetColumn();
                     var targetGrid = entity.Level.GetGrid(column, thisLane + rowOffset);

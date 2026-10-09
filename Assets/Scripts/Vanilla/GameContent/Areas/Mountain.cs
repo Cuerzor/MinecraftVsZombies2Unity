@@ -167,7 +167,7 @@ namespace MVZ2.GameContent.Areas
                 return true;
 
             // 1. 如果自身是稳固的，直接宣告推不动
-            if (current.IsStableContraption())
+            if (current.IsAnchoredContraption())
                 return false;
 
             affected.Add(current);
@@ -184,7 +184,7 @@ namespace MVZ2.GameContent.Areas
                 if (ent == current)
                     continue;
                 // 不带着悬浮器械移动。
-                if (ent.IsSuspendingContraption())
+                if (ent.IsWaterDisplacementImmune())
                     continue;
                 if (!CalculatePushChain(ent, lane, affected))
                     return false;

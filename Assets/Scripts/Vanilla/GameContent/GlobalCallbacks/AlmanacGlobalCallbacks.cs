@@ -98,7 +98,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.loyal));
             }
             // 忠诚
-            if (entityDef.IsStableContraption())
+            if (entityDef.IsAnchoredContraption())
             {
                 tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.stable));
             }

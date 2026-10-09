@@ -139,13 +139,13 @@ namespace MVZ2.GameContent.Projectiles
         #region мов╖
         public static bool CanBeDraggedToTile(Entity target)
         {
-            return !target.IsStableContraption() && (target.Type == EntityTypes.PLANT || target.Type == EntityTypes.OBSTACLE);
+            return !target.IsAnchoredContraption() && (target.Type == EntityTypes.PLANT || target.Type == EntityTypes.OBSTACLE);
         }
         public static bool WillBeDraggedInsteadOfDraggingOther(Entity self, Entity other)
         {
             if (other.Type == EntityTypes.PLANT || other.Type == EntityTypes.OBSTACLE)
             {
-                if (other.IsStableContraption())
+                if (other.IsAnchoredContraption())
                 {
                     return true;
                 }

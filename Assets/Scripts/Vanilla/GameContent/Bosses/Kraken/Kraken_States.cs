@@ -878,9 +878,9 @@ namespace MVZ2.GameContent.Bosses
                 return false;
             if (!target.IsOnGround)
                 return false;
-            if (target.IsSuspendingContraption())
+            if (target.IsWaterDisplacementImmune())
                 return false;
-            if (target.IsStableContraption())
+            if (target.IsAnchoredContraption())
                 return false;
             return true;
         }
