@@ -1,4 +1,4 @@
-语言: 简体中文 | [English](Readme.md)
+语言: 简体中文 | [English](Introduction.md)
 
 - [概述](#概述)
 - [游戏内容](#游戏内容)
