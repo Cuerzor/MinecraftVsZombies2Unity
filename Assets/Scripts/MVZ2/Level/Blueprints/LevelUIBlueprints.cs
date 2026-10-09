@@ -3,9 +3,7 @@
 using System;
 using MVZ2.Blueprints;
 using MVZ2.Level.Inputing;
-using MVZ2Logic.Inputs;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace MVZ2.Level.Blueprints
 {

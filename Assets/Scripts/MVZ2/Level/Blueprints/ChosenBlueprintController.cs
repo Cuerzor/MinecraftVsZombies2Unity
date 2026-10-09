@@ -7,7 +7,6 @@ using MVZ2Logic.Blueprints;
 using MVZ2Logic.Saves;
 using PVZEngine;
 using PVZEngine.SeedPacks;
-using UnityEngine.EventSystems;
 
 namespace MVZ2.Level.Blueprints
 {

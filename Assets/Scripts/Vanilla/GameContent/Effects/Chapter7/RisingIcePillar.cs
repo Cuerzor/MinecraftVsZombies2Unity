@@ -2,13 +2,10 @@
 
 using MVZ2.GameContent.Bosses;
 using MVZ2.Vanilla.Detections;
-using MVZ2.Vanilla.Entities;
-using MVZ2.Vanilla.Level;
 using MVZ2Logic.Entities;
 using PVZEngine.Collisions;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
-using PVZEngine.Models;
 using PVZEngine.Tools;
 using UnityEngine;
 

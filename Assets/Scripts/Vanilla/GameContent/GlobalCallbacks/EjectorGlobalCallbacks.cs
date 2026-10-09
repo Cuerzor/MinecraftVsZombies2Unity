@@ -55,7 +55,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 faction = ThrownByEjectorBuff.GetFaction(buff);
                 damageMultiplier *= ThrownByEjectorBuff.GetDamageMultiplier(buff);
             }
-            
+
             var shell = entity.GetShellID();
             if (shell == VanillaShellID.ice)
             {

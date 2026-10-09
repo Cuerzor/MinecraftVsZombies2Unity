@@ -4,9 +4,7 @@ using System;
 using MVZ2.Blueprints;
 using MVZ2.Level.Inputing;
 using MVZ2.UI;
-using MVZ2Logic.Inputs;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace MVZ2.Level.Blueprints

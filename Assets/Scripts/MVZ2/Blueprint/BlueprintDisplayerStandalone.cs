@@ -3,11 +3,9 @@
 using System.Linq;
 using MVZ2.Level.Inputing;
 using MVZ2.UI;
-using MVZ2Logic.Inputs;
 using PVZEngine.Tools.Unity;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace MVZ2.Blueprints

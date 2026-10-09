@@ -35,7 +35,6 @@ using PVZEngine.SeedPacks;
 using PVZEngine.Tools.Mathematics;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace MVZ2.Almanacs
 {

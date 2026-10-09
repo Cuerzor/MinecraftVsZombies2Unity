@@ -9,7 +9,6 @@ using MVZ2Logic.Models;
 using MVZ2Logic.UI;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace MVZ2.Blueprints
 {

@@ -3,7 +3,6 @@
 using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Enemies;
 using MVZ2.GameContent.Entities;
-using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Pickups;
@@ -16,10 +15,8 @@ using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Models;
 using PVZEngine.Timing;
-using PVZEngine.Tools;
 using PVZEngine.Tools.Timing;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace MVZ2.GameContent.Contraptions
 {
@@ -133,7 +130,8 @@ namespace MVZ2.GameContent.Contraptions
                     param.SetProperty(CreakingParticles.PROP_SOURCE_POSITION, entity.GetCenter());
                     param.SetProperty(CreakingParticles.PROP_TARGET_POSITION, creaking.GetCenter());
                     entity.Spawn(VanillaEffectID.creakingParticles, entity.GetCenter(), param);
-                };
+                }
+                ;
                 return creaking;
             }
             return null;

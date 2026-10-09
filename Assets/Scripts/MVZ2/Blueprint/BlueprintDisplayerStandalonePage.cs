@@ -3,10 +3,8 @@
 using System;
 using MVZ2.Level.Inputing;
 using MVZ2.UI;
-using MVZ2Logic.Inputs;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace MVZ2.Blueprints
 {

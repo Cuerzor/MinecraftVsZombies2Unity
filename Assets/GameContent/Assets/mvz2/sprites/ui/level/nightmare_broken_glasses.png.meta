@@ -219,7 +219,7 @@ TextureImporter:
         width: 481
         height: 361
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -240,7 +240,7 @@ TextureImporter:
         width: 528
         height: 296
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -261,7 +261,7 @@ TextureImporter:
         width: 326
         height: 368
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -282,7 +282,7 @@ TextureImporter:
         width: 208
         height: 246
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -303,7 +303,7 @@ TextureImporter:
         width: 478
         height: 241
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -324,7 +324,7 @@ TextureImporter:
         width: 182
         height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -345,7 +345,7 @@ TextureImporter:
         width: 408
         height: 242
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -358,7 +358,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_8
+      name: nightmare_broken_glasses_7
       rect:
         serializedVersion: 2
         x: 680
@@ -366,7 +366,7 @@ TextureImporter:
         width: 250
         height: 119
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -379,7 +379,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_9
+      name: nightmare_broken_glasses_8
       rect:
         serializedVersion: 2
         x: 961
@@ -387,7 +387,7 @@ TextureImporter:
         width: 259
         height: 313
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -400,7 +400,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_10
+      name: nightmare_broken_glasses_9
       rect:
         serializedVersion: 2
         x: 1221
@@ -408,7 +408,7 @@ TextureImporter:
         width: 348
         height: 220
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -421,7 +421,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_11
+      name: nightmare_broken_glasses_10
       rect:
         serializedVersion: 2
         x: 0
@@ -429,7 +429,7 @@ TextureImporter:
         width: 255
         height: 182
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -442,7 +442,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_12
+      name: nightmare_broken_glasses_11
       rect:
         serializedVersion: 2
         x: 256
@@ -450,7 +450,7 @@ TextureImporter:
         width: 126
         height: 114
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -463,7 +463,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_13
+      name: nightmare_broken_glasses_12
       rect:
         serializedVersion: 2
         x: 680
@@ -471,7 +471,7 @@ TextureImporter:
         width: 455
         height: 113
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -484,7 +484,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_14
+      name: nightmare_broken_glasses_13
       rect:
         serializedVersion: 2
         x: 1221
@@ -492,7 +492,7 @@ TextureImporter:
         width: 174
         height: 267
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -505,7 +505,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_15
+      name: nightmare_broken_glasses_14
       rect:
         serializedVersion: 2
         x: 1396
@@ -513,7 +513,7 @@ TextureImporter:
         width: 181
         height: 164
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -526,7 +526,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_16
+      name: nightmare_broken_glasses_15
       rect:
         serializedVersion: 2
         x: 0
@@ -534,7 +534,7 @@ TextureImporter:
         width: 170
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -547,7 +547,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_17
+      name: nightmare_broken_glasses_16
       rect:
         serializedVersion: 2
         x: 256
@@ -555,7 +555,7 @@ TextureImporter:
         width: 311
         height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -568,7 +568,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_18
+      name: nightmare_broken_glasses_17
       rect:
         serializedVersion: 2
         x: 568
@@ -576,7 +576,7 @@ TextureImporter:
         width: 85
         height: 203
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -589,7 +589,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_19
+      name: nightmare_broken_glasses_18
       rect:
         serializedVersion: 2
         x: 654
@@ -597,7 +597,7 @@ TextureImporter:
         width: 130
         height: 109
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -610,7 +610,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_20
+      name: nightmare_broken_glasses_19
       rect:
         serializedVersion: 2
         x: 785
@@ -618,7 +618,7 @@ TextureImporter:
         width: 163
         height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -631,7 +631,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_21
+      name: nightmare_broken_glasses_20
       rect:
         serializedVersion: 2
         x: 949
@@ -639,7 +639,7 @@ TextureImporter:
         width: 95
         height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -652,7 +652,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_22
+      name: nightmare_broken_glasses_21
       rect:
         serializedVersion: 2
         x: 1396
@@ -660,7 +660,7 @@ TextureImporter:
         width: 182
         height: 124
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -673,7 +673,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: nightmare_broken_glasses_7
+      name: nightmare_broken_glasses_22
       rect:
         serializedVersion: 2
         x: 409
@@ -681,7 +681,7 @@ TextureImporter:
         width: 270
         height: 221
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

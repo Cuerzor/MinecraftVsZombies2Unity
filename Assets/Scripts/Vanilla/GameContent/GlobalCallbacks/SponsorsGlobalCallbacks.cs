@@ -11,7 +11,6 @@ using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
 using PVZEngine.Tools.Random;
-using static MVZ2Logic.Sponsors.SponsorPlans;
 
 namespace MVZ2.GameContent.GlobalCallbacks
 {

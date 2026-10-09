@@ -12,7 +12,6 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Modifiers;
-using PVZEngine.Tools;
 using UnityEngine;
 
 namespace MVZ2.GameContent.Buffs.Level
@@ -73,7 +72,8 @@ namespace MVZ2.GameContent.Buffs.Level
                     boss.PlaySound(VanillaSoundID.glassBreakBig);
                     boss.Spawn(VanillaEffectID.nightmareaperSplash, pos);
                     boss.ApplyBuffForBossRevenge();
-                };
+                }
+                ;
                 level.ShakeScreen(30, 0, 30);
 
                 level.SetProgressBarToBoss(VanillaProgressBarID.nightmare);

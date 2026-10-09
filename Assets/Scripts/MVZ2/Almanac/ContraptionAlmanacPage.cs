@@ -7,7 +7,6 @@ using MVZ2.UI;
 using MVZ2Logic.Models;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace MVZ2.Almanacs
 {

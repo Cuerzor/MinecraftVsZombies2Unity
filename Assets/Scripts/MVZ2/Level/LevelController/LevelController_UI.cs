@@ -13,8 +13,6 @@ using MVZ2Logic.Options;
 using PVZEngine;
 using PVZEngine.Level;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
 using static MVZ2.Level.UI.LevelUIPreset;
 
 namespace MVZ2.Level

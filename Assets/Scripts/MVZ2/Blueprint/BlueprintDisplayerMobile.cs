@@ -5,7 +5,6 @@ using MVZ2.UI;
 using MVZ2Logic.Inputs;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace MVZ2.Blueprints

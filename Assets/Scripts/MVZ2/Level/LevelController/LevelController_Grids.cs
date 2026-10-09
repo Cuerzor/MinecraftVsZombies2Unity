@@ -12,7 +12,6 @@ using MVZ2Logic.Level;
 using MVZ2Logic.Resources;
 using PVZEngine.Tools.Unity;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 namespace MVZ2.Level
 {

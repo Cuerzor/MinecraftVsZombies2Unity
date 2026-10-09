@@ -2,7 +2,6 @@
 
 using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Entities;
-using MVZ2.GameContent.Pickups;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Pickups;
 using MVZ2.Vanilla.Properties;
