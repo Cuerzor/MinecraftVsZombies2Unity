@@ -11,6 +11,7 @@ namespace MVZ2.GameContent.Placements
         public AnyPlacement(string nsp, string name) : base(nsp, name, VanillaSpawnConditions.any)
         {
             AddMethod(VanillaPlaceMethods.entity);
+            this.SetCanOnWater(true);
         }
     }
 }

@@ -13,6 +13,7 @@ namespace MVZ2.GameContent.Placements
         {
             AddMethod(VanillaPlaceMethods.onbashira);
             this.SetAlmanacTag(VanillaAlmanacTagID.placementOnbashira);
+            this.SetCanOnWater(true);
         }
     }
 }

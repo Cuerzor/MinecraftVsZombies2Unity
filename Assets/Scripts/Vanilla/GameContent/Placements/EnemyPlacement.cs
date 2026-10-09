@@ -11,6 +11,7 @@ namespace MVZ2.GameContent.Placements
         public EnemyPlacement(string nsp, string name) : base(nsp, name, VanillaSpawnConditions.any)
         {
             AddMethod(VanillaPlaceMethods.enemy);
+            this.SetCanOnWater(true);
         }
     }
 }

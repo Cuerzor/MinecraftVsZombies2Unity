@@ -12,6 +12,7 @@ namespace MVZ2.GameContent.Placements
         {
             AddMethod(VanillaPlaceMethods.entity);
             AddMethod(VanillaPlaceMethods.firstAid);
+            this.SetCanOnWater(true);
         }
     }
 }
