@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
 "POT-Creation-Date: 2026-10-08 08:29+0800\n"
-"PO-Revision-Date: 2026-10-08 20:29+0800\n"
+"PO-Revision-Date: 2026-10-09 11:16+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -12662,13 +12662,13 @@ msgstr "GRRRRAAAARRRRGH—!"
 #: Talk meta file
 msgctxt "archive"
 msgid "（克拉肯突然出现并嚎叫）"
-msgstr "(Kraken suddenly appears and shrieks)"
+msgstr "(The Kraken suddenly appears and shrieks)"
 
 #. Speaker Name for talk sentence 11 in talk group mountain_6_map's section 0
 #: Talk meta file
 msgctxt "character.name"
 msgid "克拉肯"
-msgstr "Kraken"
+msgstr "The Kraken"
 
 #. Text for talk sentence 12 in talk group mountain_6_map's section 0
 #: Talk meta file
@@ -12704,7 +12704,7 @@ msgstr "<color=blue>(Damn! I've been caught!)</color>"
 #: Talk meta file
 msgctxt "archive"
 msgid "（克拉肯抓住了史蒂夫）"
-msgstr "(Kraken grabs Steve)"
+msgstr "(The Kraken grabs Steve)"
 
 #. Text for talk sentence 16 in talk group mountain_6_map's section 0
 #: Talk meta file
@@ -12764,7 +12764,7 @@ msgstr "GRRRRAAAARRRRGH!!!!!!!!!"
 #: Talk meta file
 msgctxt "archive"
 msgid "（荷取使用激光炮射击了克拉肯）"
-msgstr "(Nitori fires the laser cannon at Kraken)"
+msgstr "(Nitori fires the laser cannon at the Kraken)"
 
 #. Text for talk sentence 24 in talk group mountain_6_map's section 0
 #: Talk meta file
@@ -13207,7 +13207,7 @@ msgstr "Mountain Day 7 Intro"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_7"
 msgid "话说，克拉肯怎么样了？"
-msgstr "By the way, how's Kraken?"
+msgstr "By the way, how's the Kraken?"
 
 #. Text for talk sentence 1 in talk group mountain_7's section 0
 #: Talk meta file
@@ -13400,7 +13400,7 @@ msgctxt "talk-mvz2:mountain_7_map"
 msgid "到了三年前的那个时候，异变发生了，甚至还产生了克拉肯这样的巨大怪物……"
 msgstr ""
 "Back to three years ago, the incident occurred, and it even gave rise to a "
-"huge monster like Kraken..."
+"huge monster like the Kraken..."
 
 #. Text for talk sentence 13 in talk group mountain_7_map's section 0
 #: Talk meta file
@@ -13583,7 +13583,7 @@ msgstr "Oh? You brought it back?"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8"
 msgid "嗯，就在克拉肯被轰击之后，它就把这把钥匙扔了回来。"
-msgstr "Yes. Right after Kraken was blasted, it threw this key back."
+msgstr "Yes. Right after the Kraken was blasted, it threw this key back."
 
 #. Text for talk sentence 4 in talk group mountain_8's section 0
 #: Talk meta file
@@ -14142,7 +14142,7 @@ msgstr "Yeah, thank you."
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_9_map"
 msgid "说起来，克拉肯怎么样了？最近有检测到它的出现吗？"
-msgstr "That said, how's Kraken? Has there been any sign of it recently?"
+msgstr "That said, how's the Kraken? Has there been any sign of it recently?"
 
 #. Text for talk sentence 15 in talk group mountain_9_map's section 0
 #: Talk meta file
@@ -14380,7 +14380,7 @@ msgstr "Huh?"
 msgctxt "talk-mvz2:mountain_10_map"
 msgid "如果当时不是你用那台武器轰击了克拉肯，说不定我现在已经离开这个世界了。"
 msgstr ""
-"If you hadn't blasted Kraken with that weapon back then, I might have "
+"If you hadn't blasted the Kraken with that weapon back then, I might have "
 "already left this world."
 
 #. Text for talk sentence 11 in talk group mountain_10_map's section 0
@@ -14400,7 +14400,8 @@ msgstr "Okay, thank you..."
 msgctxt "talk-mvz2:mountain_10_map"
 msgid "如果克拉肯再次来到这里，请告诉我吧，我会帮你解决它的！"
 msgstr ""
-"If Kraken comes here again, please tell me, and I'll help you deal with it!"
+"If the Kraken comes here again, please tell me, and I'll help you deal with "
+"it!"
 
 #. Text for talk sentence 14 in talk group mountain_10_map's section 0
 #: Talk meta file
@@ -14418,7 +14419,7 @@ msgstr "Mountain Day 11 Intro"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11"
 msgid "探测器显示，克拉肯似乎又有活动的迹象了。"
-msgstr "The detector shows that Kraken appears to be active again."
+msgstr "The detector shows that the Kraken appears to be active again."
 
 #. Text for talk sentence 1 in talk group mountain_11's section 0
 #: Talk meta file
@@ -14512,7 +14513,7 @@ msgstr "It has fallen! It has fallen!"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_over"
 msgid "克拉肯似乎已经——失去了行动能力了！"
-msgstr "Kraken seems to have—lost its ability to move!"
+msgstr "The Kraken seems to have—lost its ability to move!"
 
 #. Text for talk sentence 2 in talk group mountain_11_over's section 0
 #: Talk meta file
@@ -14557,7 +14558,8 @@ msgstr "I'm so glad I could help Steve!"
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "克拉肯已经被彻底摧毁了，大家都又重新燃起了希望！"
 msgstr ""
-"Kraken has been completely destroyed, and everyone's hope has been rekindled!"
+"The Kraken has been completely destroyed, and everyone's hope has been "
+"rekindled!"
 
 #. Text for talk sentence 3 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -14583,7 +14585,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "如今，克拉肯已灭，我们的未来看起来一片光明！"
-msgstr "Now that Kraken is destroyed, our future looks bright!"
+msgstr "Now that the Kraken is destroyed, our future looks bright!"
 
 #. Text for talk sentence 7 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -14639,8 +14641,8 @@ msgstr "Steve, you will always be our kappa ally!"
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "<color=blue>（河童们在克拉肯沉入水底的遗骸旁不停忙碌。）</color>"
 msgstr ""
-"<color=blue>(The kappas are busily working beside Kraken's sunken remains.)</"
-"color>"
+"<color=blue>(The kappas are busily working beside the Kraken's sunken "
+"remains.)</color>"
 
 #. Text for talk sentence 16 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -14669,7 +14671,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "荷取大人！克拉肯的残躯已经捞上来了！"
-msgstr "Lady Nitori! Kraken's remains have been salvaged!"
+msgstr "Lady Nitori! The Kraken's remains have been salvaged!"
 
 #. Text for talk sentence 20 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -14687,7 +14689,7 @@ msgstr "What a big creature—"
 #: Talk meta file
 msgctxt "archive"
 msgid "（荷取看向了克拉肯的残躯）"
-msgstr "(Nitori looks at Kraken's remains)"
+msgstr "(Nitori looks at the Kraken's remains)"
 
 #. Text for talk sentence 22 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -14699,7 +14701,7 @@ msgstr "KYAAAAAAAAAA!!!!"
 #: Talk meta file
 msgctxt "archive"
 msgid "（荷取看到了克拉肯睁开的，已经失去光芒的眼睛）"
-msgstr "(Nitori sees Kraken's opened, lightless eyes)"
+msgstr "(Nitori sees the Kraken's opened, lightless eyes)"
 
 #. Text for talk sentence 23 in talk group mountain_11_map's section 0
 #: Talk meta file

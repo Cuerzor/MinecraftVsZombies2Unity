@@ -9172,7 +9172,7 @@ msgstr "+50% range but x75% damage for friendly contraptions"
 #: Artifact meta file
 msgctxt "artifact.name"
 msgid "克拉肯的触手"
-msgstr "Kraken's Tentacle"
+msgstr "The Kraken's Tentacle"
 
 #. Tooltip for artifact mvz2:krakens_tentacle
 #: Artifact meta file

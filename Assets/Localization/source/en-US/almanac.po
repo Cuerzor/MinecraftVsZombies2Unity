@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
 "POT-Creation-Date: 2026-10-08 03:59+0800\n"
-"PO-Revision-Date: 2026-10-08 16:04+0800\n"
+"PO-Revision-Date: 2026-10-09 11:16+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -15,7 +15,7 @@ msgstr ""
 "X-Crowdin-Language: en-US\n"
 "X-Crowdin-File: /crowdin/almanac.pot\n"
 "X-Crowdin-File-ID: 18\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.9\n"
 
 #. Name for almanac tag placement_buried
 #: Almanac meta file
@@ -2002,8 +2002,8 @@ msgstr "\"How many times do we have to say it? We don't provide web servers here
 msgctxt "contraptions.description"
 msgid "珠光宝塔会暂时禁用一整行内的所有空地格，并在立即生产<ref=[misc]mvz2:starshard.ufo_fragment>星之碎片</ref>后消失。"
 msgstr ""
-"Jeweled Pagodas temporarily disable all empty tiles in an entire row, then vanish after producing <ref=[misc]mvz2:starshard."
-"ufo_fragment>starshards</ref>."
+"Jeweled Pagodas temporarily disable all empty tiles in an entire row, then vanish after producing "
+"<ref=[misc]mvz2:starshard.ufo_fragment>starshards</ref>."
 
 #. Properties for contraptions mvz2:jeweled_pagoda
 #: Almanac meta file
@@ -2345,8 +2345,8 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"如果下界反应核被放置在一个由器械组成的特殊结构的中心，则会持续产出<ref=[misc]mvz2:starshard.uranium_235>星之碎片</ref>并<tag id=\"mvz2:"
-"light_source\"/>发光。"
+"如果下界反应核被放置在一个由器械组成的特殊结构的中心，则会持续产出<ref=[misc]mvz2:starshard.uranium_235>星之碎片</ref>并<tag "
+"id=\"mvz2:light_source\"/>发光。"
 msgstr ""
 "If a Nether Reactor Core is placed at the center of a special structure made of contraptions, it will continuously produce "
 "<ref=[misc]mvz2:starshard.uranium_235>starshards</ref> and <tag id=\"mvz2:light_source\"/> glow."
@@ -2653,9 +2653,9 @@ msgid ""
 msgstr ""
 "Starshards on loan: <color=red><var local=\"lend_count\"/></color>\n"
 "Starshards to pay off: <color=red><var local=\"repay_count\"/></color>\n"
-"Special: <color=red>If the starshards are not paid off within <var local=\"max_seconds\"/> seconds, spawns a <ref=[misc]mvz2:"
-"creaking>Creaking</ref> and halves the spawning time (lowest being <var local=\"min_seconds\"/> seconds). Spawns a Creaking on every "
-"row if destroyed.</color>\n"
+"Special: <color=red>If the starshards are not paid off within <var local=\"max_seconds\"/> seconds, spawns a "
+"<ref=[misc]mvz2:creaking>Creaking</ref> and halves the spawning time (lowest being <var local=\"min_seconds\"/> seconds). Spawns a "
+"Creaking on every row if destroyed.</color>\n"
 "Evocation: <color=red>Pays a starshard, resets the Creaking spawning time, and removes all spawned Creakings. Disappears if the loan "
 "is paid off.</color>"
 
@@ -3895,8 +3895,9 @@ msgstr ""
 "km/h toward the nearest living target and attempts to attack. If obstructed, it can physically dig through barriers.\n"
 "If physically damaged, MCP-173's remnants rapidly reassemble within about 10 seconds, restoring it to its original state. This process "
 "can only be halted by destroying the remnants again. Even then, fragments will slowly self-reassemble over approximately one day.\n"
-"<b>Addendum MCP-173-A: </b>Testing confirms that MCP-173 remains immobile when within the line of sight of <ref=[contraptions]mvz2:"
-"stone_eye>MCP-531</ref>. A proposal to integrate MCP-531 into long-term containment protocols is pending approval."
+"<b>Addendum MCP-173-A: </b>Testing confirms that MCP-173 remains immobile when within the line of sight of "
+"<ref=[contraptions]mvz2:stone_eye>MCP-531</ref>. A proposal to integrate MCP-531 into long-term containment protocols is pending "
+"approval."
 
 #. Header for enemies mvz2:hacker
 #: Almanac meta file
@@ -5111,8 +5112,8 @@ msgid ""
 msgstr ""
 "Toughness: <color=red><var local=\"hp\" />, restores 15 per second</color>\n"
 "Phase 1: <color=red>Fly, fire wither skulls, dash, eat your contraptions</color>\n"
-"Phase 2: <color=red>Land, Immune to bullets, fire wither skulls, dash, eat your contraptions, summon <ref=[misc]mvz2:"
-"bedserker>bedserkers</ref></color>"
+"Phase 2: <color=red>Land, Immune to bullets, fire wither skulls, dash, eat your contraptions, summon "
+"<ref=[misc]mvz2:bedserker>bedserkers</ref></color>"
 
 #. Flavor for misc mvz2:wither
 #: Almanac meta file
@@ -5354,7 +5355,7 @@ msgstr ""
 #: Almanac meta file
 msgctxt "misc.name"
 msgid "克拉肯"
-msgstr "Kraken"
+msgstr "The Kraken"
 
 #. Header for misc mvz2:kraken
 #: Almanac meta file
@@ -6120,8 +6121,8 @@ msgstr "Tokiko"
 msgctxt "misc.description"
 msgid "常在<ref=[misc]mvz2:kourindou>香霖堂</ref>附近活动的读书妖怪，在<ref=[misc]mvz2:rinnosuke>霖之助</ref>失踪后成为了香霖堂的店主。"
 msgstr ""
-"A book-reading youkai who often hangs out near <ref=[misc]mvz2:kourindou>Kourindou</ref>. She took over Kourindou when <ref=[misc]mvz2:"
-"rinnosuke>Rinnosuke</ref> disappeared."
+"A book-reading youkai who often hangs out near <ref=[misc]mvz2:kourindou>Kourindou</ref>. She took over Kourindou when "
+"<ref=[misc]mvz2:rinnosuke>Rinnosuke</ref> disappeared."
 
 #. Flavor for misc mvz2:tokiko
 #: Almanac meta file
@@ -6178,8 +6179,8 @@ msgid ""
 "她这样想着。"
 msgstr ""
 "After Steve fell from the <ref=[misc]mvz2:palanquin_ship>Palanquin Ship</ref>, it seemed that she was the one who saved him.\n"
-"However, this wasn't an act out of kindness, but rather because she had her eyes on the <ref=[misc]mvz2:starshard."
-"ufo_fragment>Starshards</ref> that Steve carries.\n"
+"However, this wasn't an act out of kindness, but rather because she had her eyes on the "
+"<ref=[misc]mvz2:starshard.ufo_fragment>Starshards</ref> that Steve carries.\n"
 "\"As long as I have these Starshards, I might be able to restore Shinmyoumaru's status and overturn the entire Gensokyo.\" This was "
 "what she thought."
 
@@ -6381,8 +6382,8 @@ msgid ""
 "她和白莲的关系说起来比较复杂。白莲供奉毘沙门天，而她又选择了星作为弟子，也作为毘沙门天的化身。因此白莲实际上也在供奉她自己的弟子。\n"
 "星在工作上十分优秀，表面看上去十分冷静而威严，然而其实是个很感性的家伙。\n"
 "\n"
-"<ref=[misc]mvz2:red_dragon>红龙</ref>出现后，白莲失去了消息，于是星和命莲寺众僧侣商议过后，找到了史蒂夫用来对付空中的<ref=[misc]mvz2:"
-"end_ship>末地船</ref>，之后便和村纱（船长）以及史蒂夫踏上了寻找白莲的旅途。"
+"<ref=[misc]mvz2:red_dragon>红龙</ref>出现后，白莲失去了消息，于是星和命莲寺众僧侣商议过后，找到了史蒂夫用来对付空中的"
+"<ref=[misc]mvz2:end_ship>末地船</ref>，之后便和村纱（船长）以及史蒂夫踏上了寻找白莲的旅途。"
 msgstr ""
 "She was originally an ordinary tiger youkai, but was then taken in by Byakuren Hijiri and became a disciple and the avatar of "
 "Bishamonten.\n"
@@ -6872,8 +6873,8 @@ msgstr ""
 "oni's secret treasure.\n"
 "This taboo was forgotten by his descendants, who excessively used the Miracle Mallet's magic, causing the upside-down castle to appear "
 "and trapping all the inchlings inside.\n"
-"Then, the princess of the inchlings—<ref=[misc]mvz2:shinmyoumaru>Shinmyoumaru Sukuna</ref>—was bewitched by an <ref=[misc]mvz2:"
-"seija>amanojaku</ref> and used the Miracle Mallet to incite chaos in Gensokyo.\n"
+"Then, the princess of the inchlings—<ref=[misc]mvz2:shinmyoumaru>Shinmyoumaru Sukuna</ref>—was bewitched by an "
+"<ref=[misc]mvz2:seija>amanojaku</ref> and used the Miracle Mallet to incite chaos in Gensokyo.\n"
 "I wonder, will the inchlings forget this cruel lesson once more, in the future after many years?\n"
 "\n"
 "By the way, the ceiling—or floor, rather—seems to have something glowing on it."
@@ -6998,8 +6999,8 @@ msgid ""
 "\n"
 "这里如果发生地震……好吧。"
 msgstr ""
-"The Palace of the Earth Spirits is located in the center of Old Hell, with the mistress of the mansion being <ref=[misc]mvz2:"
-"satori>Satori Komeiji</ref>.\n"
+"The Palace of the Earth Spirits is located in the center of Old Hell, with the mistress of the mansion being "
+"<ref=[misc]mvz2:satori>Satori Komeiji</ref>.\n"
 "Beneath it lies the Remains of Blazing Hell, with the Nuclear Furnace located at its deepest point. Ever since Old Hell was abandoned, "
 "Satori was entrusted with managing the vengeful spirits lingering here and the Nuclear Furnace.\n"
 "Satori keeps a large number of pets that assist her in managing the mansion and the Remains of Blazing Hell. Among such pets are "
@@ -7521,8 +7522,8 @@ msgid ""
 "史蒂夫并不是和村民一样的方块生物，因此常常受到歧视和嘲笑，史蒂夫也因此特别想知道自己的父母是谁。\n"
 "似乎，这个谜就要从这场冒险中解开了。"
 msgstr ""
-"Steve had no parents from the very start of his life. He was unknowingly transferred to the village and was raised by <ref=[misc]mvz2:"
-"villager>Dave</ref>.\n"
+"Steve had no parents from the very start of his life. He was unknowingly transferred to the village and was raised by "
+"<ref=[misc]mvz2:villager>Dave</ref>.\n"
 "Steve was not a blocky creature like the Villager, so he was often discriminated against and ridiculed, while wanting to know who his "
 "parents were.\n"
 "It seems that this mystery will be solved in this adventure."
@@ -7555,11 +7556,11 @@ msgstr ""
 #: Almanac meta file
 msgctxt "misc.description"
 msgid ""
-"根据<ref=[misc]mvz2:satori>觉</ref>所说，三年前爆炸的位置位于<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>上，大概是<ref=[misc]mvz2:"
-"kappa_base>河童基地</ref>的位置。"
+"根据<ref=[misc]mvz2:satori>觉</ref>所说，三年前爆炸的位置位于<ref=[misc]mvz2:youkai_mountain>妖怪之山</ref>上，大概是"
+"<ref=[misc]mvz2:kappa_base>河童基地</ref>的位置。"
 msgstr ""
-"According to <ref=[misc]mvz2:satori>Satori</ref>, the location of the explosion three years ago was on the <ref=[misc]mvz2:"
-"youkai_mountain>Youkai Mountain</ref>, presumably at the <ref=[misc]mvz2:kappa_base>Kappa base</ref>."
+"According to <ref=[misc]mvz2:satori>Satori</ref>, the location of the explosion three years ago was on the "
+"<ref=[misc]mvz2:youkai_mountain>Youkai Mountain</ref>, presumably at the <ref=[misc]mvz2:kappa_base>Kappa base</ref>."
 
 #. Flavor for misc mvz2:explosion_before_3_years
 #: Almanac meta file
@@ -7744,8 +7745,8 @@ msgid ""
 msgstr ""
 "Three years ago, shortly before the explosion occured, Nitori found an ender pearl on the mountain.\n"
 "The kappas were greatly intrigued, and so they began researching the pearl.\n"
-"They then built a machine with the pearl as the core. However, when the machine was activated, it <ref=[misc]mvz2:"
-"explosion_before_3_years>accidentally exploded</ref>."
+"They then built a machine with the pearl as the core. However, when the machine was activated, it "
+"<ref=[misc]mvz2:explosion_before_3_years>accidentally exploded</ref>."
 
 #. Flavor for misc mvz2:nitoris_machine
 #: Almanac meta file
@@ -9533,13 +9534,13 @@ msgstr "Pink Wither"
 #: Entity meta file
 msgctxt "entity.name"
 msgid "克拉肯"
-msgstr "Kraken"
+msgstr "The Kraken"
 
 #. Name for entity mvz2:kraken_tentacle
 #: Entity meta file
 msgctxt "entity.name"
 msgid "克拉肯的触手"
-msgstr "Kraken's Tentacle"
+msgstr "The Kraken's Tentacle"
 
 #. Name for entity mvz2:minecart
 #: Entity meta file
@@ -9671,7 +9672,7 @@ msgstr "Nightmare Crushing Walls"
 #: Entity meta file
 msgctxt "entity.name"
 msgid "克拉肯的陆地触手"
-msgstr "Kraken's Land Tentacle"
+msgstr "The Kraken's Land Tentacle"
 
 #. Name for character mvz2:steve
 #: Character meta file
@@ -10193,7 +10194,7 @@ msgstr "+50% range but x75% damage for friendly contraptions"
 #: Artifact meta file
 msgctxt "artifact.name"
 msgid "克拉肯的触手"
-msgstr "Kraken's Tentacle"
+msgstr "The Kraken's Tentacle"
 
 #. Tooltip for artifact mvz2:krakens_tentacle
 #: Artifact meta file
@@ -10433,7 +10434,7 @@ msgstr "Decreases energy when it's greater than 500"
 #: Curses meta file
 msgctxt "curse.name"
 msgid "克拉肯的护板"
-msgstr "Kraken's Backplate"
+msgstr "The Kraken's Backplate"
 
 #. Tooltip for curse mvz2:krakens_backplate
 #: Curses meta file

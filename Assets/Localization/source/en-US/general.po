@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
 "POT-Creation-Date: 2026-10-08 10:07+0800\n"
-"PO-Revision-Date: 2026-10-08 22:07+0800\n"
+"PO-Revision-Date: 2026-10-09 11:16+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1310,7 +1310,7 @@ msgstr "Touch the screen to move and shoot!"
 #: Scripts\Vanilla\Frameworks\Localization\VanillaStrings.cs:41
 msgctxt "advice"
 msgid "砸击克拉肯的弱点！"
-msgstr "Smash Kraken's weak spot!"
+msgstr "Smash The Kraken's weak spot!"
 
 #: Scripts\Vanilla\Frameworks\Localization\VanillaStrings.cs:45
 msgid "购买"
@@ -3630,7 +3630,7 @@ msgstr "Locked Chest's Revenge"
 #: Stage meta file
 msgctxt "levelname"
 msgid "克拉肯的复仇"
-msgstr "Kraken's Revenge"
+msgstr "The Kraken's Revenge"
 
 #. Name for stage mvz2:puzzle_i_zombie
 #: Stage meta file
@@ -5187,7 +5187,7 @@ msgid ""
 "是《空洞骑士：丝之歌》中钟道兽和噬钟兽的音乐。\n"
 "严格来说，我用它是因为噬钟兽。"
 msgstr ""
-"Kraken's theme.\n"
+"The Kraken's theme.\n"
 "It is the theme of Bell Beast and Bell Eater from <i>Hollow Knight: "
 "Silksong</i>.\n"
 "Strictly speaking, I used it because of the Bell Eater."
