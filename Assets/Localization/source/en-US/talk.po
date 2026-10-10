@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-08 08:29+0800\n"
-"PO-Revision-Date: 2026-10-09 11:16+0800\n"
+"POT-Creation-Date: 2026-10-10 07:08+0800\n"
+"PO-Revision-Date: 2026-10-10 21:38+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -10204,7 +10204,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:kourindou_visit_mountain_1"
 msgid "可即使如此，我的收入依旧相当微薄。"
-msgstr "But even then, my income was still barely sufficient like before."
+msgstr "But even then, my income remained meager."
 
 #. Text for talk sentence 4 in talk group kourindou_visit_mountain_1's section 0
 #: Talk meta file
@@ -10582,7 +10582,7 @@ msgstr "I am—Nitori Kawashiro, a kappa residing on Youkai Mountain."
 #: Talk meta file
 msgctxt "talk-mvz2:kourindou_visit_mountain_1"
 msgid "今天是来找史蒂夫先生，有事要办的。"
-msgstr "I am here today to find Mr. Steve for his help."
+msgstr "I came today because I need Mr. Steve's help."
 
 #. Text for talk sentence 58 in talk group kourindou_visit_mountain_1's section 0
 #: Talk meta file
@@ -10626,7 +10626,7 @@ msgstr "Y-yes!"
 #: Talk meta file
 msgctxt "talk-mvz2:kourindou_visit_mountain_1"
 msgid "抱歉，容我拒绝。"
-msgstr "Sorry, I refuse."
+msgstr "Sorry, but I have to refuse."
 
 #. Text for talk sentence 66 in talk group kourindou_visit_mountain_1's section 0
 #: Talk meta file
@@ -10676,8 +10676,7 @@ msgstr "Then—how do I complete the mission that the sages gave me?"
 #: Talk meta file
 msgctxt "talk-mvz2:kourindou_visit_mountain_1"
 msgid "诶，贤者？是负责管理整个幻想乡的那些贤者吗？"
-msgstr ""
-"Wait, sages? Like, the sages who govern and manage the entire Gensokyo?"
+msgstr "Wait, sages? Like, the sages who govern and manage all of Gensokyo?"
 
 #. Text for talk sentence 74 in talk group kourindou_visit_mountain_1's section 0
 #: Talk meta file
@@ -10776,7 +10775,7 @@ msgstr "We're here!"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_1"
 msgid "……哪儿呢？"
-msgstr "...Here at where?"
+msgstr "...Where exactly?"
 
 #. Text for talk sentence 2 in talk group mountain_1's section 0
 #: Talk meta file
@@ -10869,14 +10868,14 @@ msgstr "To think there would be a cave behind the waterfall, how astonishing."
 msgctxt "talk-mvz2:mountain_1_map"
 msgid "我们河童栖息在任何水源丰富的地方，也是幻想乡里有名的工匠和发明家。"
 msgstr ""
-"Us kappas reside anywhere with a plentiful water source, as well as being "
-"the acclaimed inventors and artisans of Gensokyo."
+"We kappa live anywhere with plenty of water, and we're also known as "
+"Gensokyo's artisans and inventors."
 
 #. Text for talk sentence 4 in talk group mountain_1_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_1_map"
 msgid "和机械有关的事情，找我们河童就对了！"
-msgstr "If it's anything about machinery, just find us kappas!"
+msgstr "If it's anything about machinery, just find us kappa!"
 
 #. Text for talk sentence 5 in talk group mountain_1_map's section 0
 #: Talk meta file
@@ -10955,7 +10954,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_1_map"
 msgid "如果有什么感兴趣的东西，欢迎您购买哦。"
-msgstr "If there's anything of your interest, you are welcome to buy them."
+msgstr "If anything catches your interest, feel free to buy it."
 
 #. Text for talk sentence 16 in talk group mountain_1_map's section 0
 #: Talk meta file
@@ -10980,7 +10979,7 @@ msgstr "A hand-cranked electric fan?"
 msgctxt "talk-mvz2:mountain_1_map"
 msgid "能看到自己背后的镜子组？这个还有点用，多少钱？"
 msgstr ""
-"A set of mirrors that lets you see your own back? That might be a little "
+"A set of mirrors that let you see your own back? That might be a little "
 "useful, how much is it?"
 
 #. Text for talk sentence 20 in talk group mountain_1_map's section 0
@@ -11081,7 +11080,7 @@ msgstr "Mountain Day 2 Map"
 msgctxt "talk-mvz2:mountain_2_map"
 msgid "说起来，荷取。我听别人说，三年前妖怪之山这里发生过爆炸，对吗？"
 msgstr ""
-"I just remembered something, Nitori. I heard from others, that there was an "
+"I just remembered something, Nitori. I heard from others that there was an "
 "explosion here on Youkai Mountain three years ago. Is that correct?"
 
 #. Text for talk sentence 1 in talk group mountain_2_map's section 0
@@ -11104,8 +11103,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_2_map"
 msgid "这场爆炸，可以说是这起异变的根源了吧？"
-msgstr ""
-"Which means, could this explosion be described as the origin of the incident?"
+msgstr "So, could this explosion be described as the origin of the incident?"
 
 #. Text for talk sentence 4 in talk group mountain_2_map's section 0
 #: Talk meta file
@@ -11137,8 +11135,8 @@ msgstr "Huh?"
 msgctxt "talk-mvz2:mountain_2_map"
 msgid "……不不不！别用这种看犯人的眼神看我啊！那次爆炸其实只是一场意外。"
 msgstr ""
-"...Nonono! Don't look at me like you're looking at a criminal! That "
-"explosion was an accident."
+"...Nonono! Don't look at me like I'm a criminal! That explosion was an "
+"accident."
 
 #. Text for talk sentence 9 in talk group mountain_2_map's section 0
 #: Talk meta file
@@ -11262,8 +11260,8 @@ msgstr "Woah, this thing is called an ejector?"
 msgctxt "talk-mvz2:mountain_3"
 msgid "真是不错的设计！居然有着可以投掷巨物的力量！"
 msgstr ""
-"What a fascinating design! Who could have thought that it has such "
-"catapulting power!"
+"What a fascinating design! Who would have thought it had the power to launch "
+"huge objects!"
 
 #. Text for talk sentence 2 in talk group mountain_3's section 0
 #: Talk meta file
@@ -11286,7 +11284,7 @@ msgstr ""
 msgctxt "talk-mvz2:mountain_3"
 msgid "哦！意思就是说，我这下就不用担心侵权问题了是吗！"
 msgstr ""
-"Oh! So, you're telling me, that I don't have to worry about patent "
+"Oh! So you're telling me, that I don't have to worry about patent "
 "infringement for this thing!"
 
 #. Text for talk sentence 5 in talk group mountain_3's section 0
@@ -11397,7 +11395,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_3_map"
 msgid "别、别说话！它会发现我们的！"
-msgstr "S—shut up! It's going to find us!"
+msgstr "Be quiet! It's going to find us!"
 
 #. Text for talk sentence 8 in talk group mountain_3_map's section 0
 #: Talk meta file
@@ -11445,9 +11443,7 @@ msgstr "\"Again\"?"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_3_map"
 msgid "那个东西是一台巨型的水上战争机器，我们都叫它克拉肯。"
-msgstr ""
-"That monster was a giant marine machine made for battle, we called it the "
-"Kraken."
+msgstr "That monster was a giant marine war machine. We called it the Kraken."
 
 #. Text for talk sentence 15 in talk group mountain_3_map's section 0
 #: Talk meta file
@@ -11541,7 +11537,7 @@ msgid ""
 msgstr ""
 "In the years in between then and now, we've thoroughly studied the partial "
 "remains of the Kraken, and discovered that its armor is actually weak to "
-"high energy laser weapons."
+"high-energy laser weapons."
 
 #. Text for talk sentence 28 in talk group mountain_3_map's section 0
 #: Talk meta file
@@ -11555,7 +11551,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_3_map"
 msgid "这么高科技啊。"
-msgstr "Wow, that's very high tech."
+msgstr "Wow, that's very high-tech."
 
 #. Text for talk sentence 30 in talk group mountain_3_map's section 0
 #: Talk meta file
@@ -11569,7 +11565,7 @@ msgstr ""
 msgctxt "talk-mvz2:mountain_3_map"
 msgid "如果史蒂夫先生不介意帮忙支持一下我们河童的经济，也许——"
 msgstr ""
-"So, if Mr. Steve doesn't mind supporting the economy of the kappas, maybe—"
+"So, if Mr. Steve doesn't mind supporting the economy of the kappa, maybe—"
 
 #. Text for talk sentence 32 in talk group mountain_3_map's section 0
 #: Talk meta file
@@ -11877,7 +11873,7 @@ msgstr "Alright, let me see—"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_4_map"
 msgid "！人类村庄的杀人案？"
-msgstr "! Murder in the human village?"
+msgstr "! Murder in the Human Village?"
 
 #. Text for talk sentence 20 in talk group mountain_4_map's section 0
 #: Talk meta file
@@ -11906,8 +11902,8 @@ msgid ""
 "大范围的恐慌。）</color>"
 msgstr ""
 "<color=blue>(When someone was attacked, the witnesses only saw the victim's "
-"throat suddenly get slit, then the victim collapsing onto the floor shortly "
-"after. This caused widespread fear and anxiety.)</color>"
+"fatal wound and them collapsing onto the floor shortly after. This caused "
+"widespread fear and anxiety.)</color>"
 
 #. Text for talk sentence 23 in talk group mountain_4_map's section 0
 #: Talk meta file
@@ -11943,7 +11939,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_4_map"
 msgid "……匪夷所思啊。竟然还有这种事情。"
-msgstr "How interesting, I can't believe something like this happened."
+msgstr "How bizarre... I can't believe something like this happened."
 
 #. Text for talk sentence 27 in talk group mountain_4_map's section 0
 #: Talk meta file
@@ -12005,7 +12001,7 @@ msgid ""
 "color>"
 msgstr ""
 "<color=blue>(As the frequency of these reports increased, the myth of \"The "
-"Ghost of Misty Lake\" began trending.)</color>"
+"Ghost of Misty Lake\" became popular.)</color>"
 
 #. Text for talk sentence 35 in talk group mountain_4_map's section 0
 #: Talk meta file
@@ -12191,7 +12187,7 @@ msgid ""
 "虽然这里其实还是有很多又便宜又好用的东西的，河童们工作也很勤奋，我这次也算是"
 "大开了眼界。"
 msgstr ""
-"But there are actually lots of cheap and useful things here, and the kappas "
+"But there are actually lots of cheap and useful things here, and the kappa "
 "work really hard to make them. This trip has been surprisingly eye-opening."
 
 #. Text for talk sentence 3 in talk group mountain_5_map's section 0
@@ -12256,7 +12252,7 @@ msgstr "Ah, you're that guy—\"Slime\", right?"
 #: Talk meta file
 msgctxt "archive"
 msgid "（灵梦和朱鹭子登场）"
-msgstr "(Reimu and Tokiko enters)"
+msgstr "(Reimu and Tokiko enter)"
 
 #. Text for talk sentence 4 in talk group kourindou_visit_mountain_2's section 0
 #: Talk meta file
@@ -12276,7 +12272,7 @@ msgctxt "talk-mvz2:kourindou_visit_mountain_2"
 msgid "我是博丽 灵梦，博丽神社的巫女，有的时候会负责解决这个幻想乡的异变。"
 msgstr ""
 "I am Reimu Hakurei, shrine maiden of the Hakurei Shrine, and sometimes "
-"responsible for resolving this incident in Gensokyo."
+"responsible for resolving incidents in Gensokyo."
 
 #. Text for talk sentence 7 in talk group kourindou_visit_mountain_2's section 0
 #: Talk meta file
@@ -12284,7 +12280,7 @@ msgctxt "talk-mvz2:kourindou_visit_mountain_2"
 msgid "久闻大名了，没想到除了我们一行人之外还有其他能解决异变的能人义士。"
 msgstr ""
 "Your reputation precedes you; I never thought there would be other brave "
-"souls that can resolve incidents other than us."
+"souls who can resolve incidents besides us."
 
 #. Text for talk sentence 8 in talk group kourindou_visit_mountain_2's section 0
 #: Talk meta file
@@ -12441,7 +12437,7 @@ msgstr "If you ever see her again, be careful."
 #: Talk meta file
 msgctxt "talk-mvz2:kourindou_visit_mountain_2"
 msgid "呃，是。"
-msgstr "Uh, roger."
+msgstr "Uh, got it."
 
 #. Text for talk sentence 30 in talk group kourindou_visit_mountain_2's section 0
 #: Talk meta file
@@ -12450,8 +12446,8 @@ msgid ""
 "<color=blue>（哎呀……果然还是在靠着从我身上带走的星之碎片到处捣乱啊。）</"
 "color>"
 msgstr ""
-"<color=blue>(Damn it... of course, she's using the starshards that I carried "
-"around on myself to cause trouble.)</color>"
+"<color=blue>(Damn it... of course, she's using the starshards she took from "
+"me to cause trouble.)</color>"
 
 #. Text for talk sentence 31 in talk group kourindou_visit_mountain_2's section 0
 #: Talk meta file
@@ -12483,7 +12479,7 @@ msgctxt "talk-mvz2:kourindou_visit_mountain_2"
 msgid "来看看吧，我的邻居！这些可都是从河童那边进的货哦！"
 msgstr ""
 "Come take a look, my neighbor! These are all products imported from the "
-"kappas!"
+"kappa!"
 
 #. Text for talk sentence 35 in talk group kourindou_visit_mountain_2's section 0
 #: Talk meta file
@@ -12519,7 +12515,7 @@ msgstr "Huh? What magnitude?"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6"
 msgid "啊，停了。好像也就4级左右。"
-msgstr "Ah, it stopped. Seems like only around magnitude 4."
+msgstr "Ah, it stopped. Seems like it was only around magnitude 4."
 
 #. Text for talk sentence 3 in talk group mountain_6's section 0
 #: Talk meta file
@@ -12555,7 +12551,7 @@ msgstr "Mountain Day 6 Outro"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6_over"
 msgid "这是寒冰发射器！"
-msgstr "This is Freezenser!"
+msgstr "This is the Freezenser!"
 
 #. Text for talk sentence 1 in talk group mountain_6_over's section 0
 #: Talk meta file
@@ -12579,7 +12575,7 @@ msgstr "Mountain Day 6 Map"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "嘿，这里要装个螺丝……"
-msgstr "Hey, I need to install a screw here..."
+msgstr "Hm, I need to install a screw here..."
 
 #. Text for talk sentence 1 in talk group mountain_6_map's section 0
 #: Talk meta file
@@ -12604,7 +12600,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "嗯……介意跟我讲讲你们河童的事情吗？"
-msgstr "Uhh... Would you mind telling me a bit about you kappas?"
+msgstr "Uhh... Would you mind telling me something about your people?"
 
 #. Text for talk sentence 5 in talk group mountain_6_map's section 0
 #: Talk meta file
@@ -12617,8 +12613,8 @@ msgstr "Ah, sure. What would you like to know?"
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "说起来，我比较在意一件事情。你们的基地看起来——有点破？"
 msgstr ""
-"Speaking of which, there's a thing I'm more concerned about. Your base looks—"
-"a little run-down?"
+"There's something I have been quite concerned about. Your base looks—a "
+"little run-down?"
 
 #. Description for talk sentence 6 in talk group mountain_6_map's section 0
 #: Talk meta file
@@ -12686,7 +12682,7 @@ msgstr "Wah!!! Run!!!!"
 #: Talk meta file
 msgctxt "character.name"
 msgid "河童们"
-msgstr "The kappas"
+msgstr "The kappa"
 
 #. Text for talk sentence 14 in talk group mountain_6_map's section 0
 #: Talk meta file
@@ -12746,7 +12742,7 @@ msgstr "A kappa"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "管不了那么多了！"
-msgstr "I can't worry about that now!"
+msgstr "Who cares about all that anymore!"
 
 #. Text for talk sentence 22 in talk group mountain_6_map's section 0
 #: Talk meta file
@@ -12806,7 +12802,7 @@ msgstr "<color=blue>(No! I'm being swept away!)</color>"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "救、救救我！快来人……"
-msgstr "S-Save me! Someone, please..."
+msgstr "S-save me! Someone, please..."
 
 #. Text for talk sentence 31 in talk group mountain_6_map's section 0
 #: Talk meta file
@@ -12814,7 +12810,7 @@ msgctxt "talk-mvz2:mountain_6_map"
 msgid ""
 "<color=blue>（湍急的水流正在把我吞噬，我离最初的地方越来越远。）</color>"
 msgstr ""
-"<color=blue>(The rushing current is swallowing me up. I'm getting further "
+"<color=blue>(The rushing current swallowed me whole, and dragged me further "
 "and further from where I first fell in.)</color>"
 
 #. Text for talk sentence 32 in talk group mountain_6_map's section 0
@@ -12822,28 +12818,27 @@ msgstr ""
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "<color=blue>（无论我怎么挣扎，也无法逃离这狂嚎的深渊。）</color>"
 msgstr ""
-"<color=blue>(No matter how I struggled, I couldn't escape this howling "
-"abyss.)</color>"
+"<color=blue>(No matter how I struggled, I couldn't escape the fate of being "
+"consumed by this howling abyss.)</color>"
 
 #. Text for talk sentence 33 in talk group mountain_6_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "<color=blue>（而我已经失去了我所有的力气，在水中下沉着。）</color>"
 msgstr ""
-"<color=blue>(And I had already lost all my strength as I sank in the "
-"water.)</color>"
+"<color=blue>(Having lost all my strength, I sank in the water.)</color>"
 
 #. Text for talk sentence 34 in talk group mountain_6_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "救……命……"
-msgstr "Help... me..."
+msgstr "Save... me..."
 
 #. Text for talk sentence 35 in talk group mountain_6_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "救……"
-msgstr "Help..."
+msgstr "Save..."
 
 #. Text for talk sentence 36 in talk group mountain_6_map's section 0
 #: Talk meta file
@@ -12876,8 +12871,8 @@ msgctxt "talk-mvz2:mountain_6_map"
 msgid ""
 "我就这么被排斥着、歧视着，我在这里从来没有过幸福，只有痛苦在我心中回荡。"
 msgstr ""
-"I was rejected and discriminated against like this. I never had happiness "
-"here, only pain echoing in my heart."
+"I was rejected and discriminated because of this. I never found happiness "
+"here, only the pain echoing in my heart."
 
 #. Text for talk sentence 3 in talk group mountain_6_map's section 1
 #: Talk meta file
@@ -12896,14 +12891,14 @@ msgstr "No one is willing to listen to me, no one can understand me..."
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "没错，这种感觉就好像……在深海中，下沉。向着黑暗，下沉……"
 msgstr ""
-"Yeah, this feeling is like... sinking in the deep sea. Sinking toward the "
+"Yeah, this feeling is like... sinking—in the deep sea. Sinking—toward the "
 "darkness..."
 
 #. Text for talk sentence 7 in talk group mountain_6_map's section 1
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "我何尝又不是呢？"
-msgstr "Am I not the same?"
+msgstr "Aren't I the same?"
 
 #. Text for talk sentence 8 in talk group mountain_6_map's section 1
 #: Talk meta file
@@ -12911,7 +12906,7 @@ msgctxt "talk-mvz2:mountain_6_map"
 msgid ""
 "我来到这里的第一天，所有人都害怕我。他们尖叫着喊来守卫，要把我驱逐出这里……"
 msgstr ""
-"On my first day here, everyone was afraid of me. They screamed for the "
+"Yes, on my first day here, everyone was afraid of me. They screamed for the "
 "guards to drive me out..."
 
 #. Text for talk sentence 9 in talk group mountain_6_map's section 1
@@ -12921,8 +12916,8 @@ msgid ""
 "但是，现在我已经习惯了这样的生活了。他们怎么看我是他们的事，我们只要做好自"
 "己。"
 msgstr ""
-"But now I've already gotten used to this kind of life. How they see me is "
-"their business. We just need to be ourselves."
+"But, I've already gotten used to this kind of life. How they see me is their "
+"business. We just need to take care of ourselves."
 
 #. Text for talk sentence 10 in talk group mountain_6_map's section 1
 #: Talk meta file
@@ -12941,7 +12936,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_6_map"
 msgid "如果你想的话，我可以陪你一起走下去。"
-msgstr "If you want, I can walk with you through it all."
+msgstr "If you so desire, I can walk with you through it all."
 
 #. Text for talk sentence 13 in talk group mountain_6_map's section 1
 #: Talk meta file
@@ -13165,7 +13160,7 @@ msgstr "That's great, Mr. Steve... You're all right."
 #: Talk meta file
 msgctxt "archive"
 msgid "（荷取和村民入场）"
-msgstr "(Nitori and Villager enters)"
+msgstr "(Nitori and Villager enter)"
 
 #. Text for talk sentence 19 in talk group mountain_6_map's section 2
 #: Talk meta file
@@ -13276,13 +13271,13 @@ msgstr "Mountain Day 7 Outro"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_7_over"
 msgid "啊！这个是我们河童的得意之作！"
-msgstr "Ah! This is our kappas' proud work!"
+msgstr "Ah! This is the proud work of us kappa!"
 
 #. Text for talk sentence 1 in talk group mountain_7_over's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_7_over"
 msgid "这是自动兽夹！可以放在陆地上也可以放在水上！"
-msgstr "This is Autotrap! It can be placed on land or on water!"
+msgstr "This is the Autotrap! It can be placed on land or on water!"
 
 #. Text for talk sentence 2 in talk group mountain_7_over's section 0
 #: Talk meta file
@@ -13296,7 +13291,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_7_over"
 msgid "并且，这种款式还是可复用性的！"
-msgstr "Also, this model is reusable!"
+msgstr "Additionally, this model is reusable!"
 
 #. Text for talk sentence 4 in talk group mountain_7_over's section 0
 #: Talk meta file
@@ -13325,9 +13320,10 @@ msgstr "Mr. Steve actually had that kind of experience..."
 #. Text for talk sentence 2 in talk group mountain_7_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_7_map"
-msgid "家父重病，经济拮据，这种感觉，实在是——"
+msgid "父亲重病，经济拮据，这种感觉，实在是——"
 msgstr ""
-"Your father was seriously ill, and money was tight. This feeling, it's truly—"
+"Your father was seriously ill, and money was tight. That feeling, it must've "
+"been—"
 
 #. Text for talk sentence 3 in talk group mountain_7_map's section 0
 #: Talk meta file
@@ -13382,7 +13378,7 @@ msgid ""
 "我们河童一直是以科技和创新为生的。但是近些年来，我们的科技似乎已经达到了某种"
 "瓶颈。"
 msgstr ""
-"We kappas have always lived by technology and innovation. But in recent "
+"We kappa have always lived by technology and innovation. But in recent "
 "years, our technology seems to have reached some kind of bottleneck."
 
 #. Text for talk sentence 11 in talk group mountain_7_map's section 0
@@ -13392,7 +13388,7 @@ msgid ""
 "大家都在因为发明问题而苦恼，河童间的氛围因此开始变得有些让人喘不过气来。"
 msgstr ""
 "Everyone was troubled by invention problems, and the atmosphere among the "
-"kappas began to become somewhat suffocating."
+"kappa began to become somewhat suffocating."
 
 #. Text for talk sentence 12 in talk group mountain_7_map's section 0
 #: Talk meta file
@@ -13438,7 +13434,7 @@ msgstr "Nitori, please accept these gems."
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_7_map"
 msgid "史蒂夫先生，您这是在做什么！"
-msgstr "Mr. Steve, what are you doing!"
+msgstr "Mr. Steve, what are you doing?!"
 
 #. Text for talk sentence 20 in talk group mountain_7_map's section 0
 #: Talk meta file
@@ -13463,7 +13459,7 @@ msgstr "You may have misunderstood us."
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_7_map"
 msgid "是的，大家都说我们河童贪财，我们也确实这样。"
-msgstr "Yes, everyone says we kappas are greedy, and we indeed are."
+msgstr "Yes, everyone says we kappa are greedy, and we indeed are."
 
 #. Text for talk sentence 25 in talk group mountain_7_map's section 0
 #: Talk meta file
@@ -13473,7 +13469,7 @@ msgid ""
 "底线。"
 msgstr ""
 "But what we want is to create wealth with our own hands, not through the "
-"charity of others. This is our bottom line as kappas."
+"charity of others. This is our bottom line as kappa."
 
 #. Text for talk sentence 26 in talk group mountain_7_map's section 0
 #: Talk meta file
@@ -13535,7 +13531,7 @@ msgstr "Is this really okay?"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_7_map"
 msgid "对于我们河童来说，做这种东西简直就是小菜一碟！"
-msgstr "For us kappas, making this kind of thing is a piece of cake!"
+msgstr "For us kappa, making this kind of thing is a piece of cake!"
 
 #. Text for talk sentence 38 in talk group mountain_7_map's section 0
 #: Talk meta file
@@ -13577,7 +13573,7 @@ msgstr "The key to the depths of the base."
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8"
 msgid "哦？你拿回来了？"
-msgstr "Oh? You brought it back?"
+msgstr "Oh? You finally retrieved it?"
 
 #. Text for talk sentence 3 in talk group mountain_8's section 0
 #: Talk meta file
@@ -13607,13 +13603,13 @@ msgstr "Mountain Day 8 Outro"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8_over"
 msgid "嘿！这是我们河童常用的炸药！"
-msgstr "Hey! This is an explosive commonly used by us kappas!"
+msgstr "Hey! This is an explosive commonly used by us kappa!"
 
 #. Text for talk sentence 1 in talk group mountain_8_over's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8_over"
 msgid "它叫套娃TNT，可以放置在陆地上或者水上！"
-msgstr "It's called Nesting TNT, and you can place it on land or water!"
+msgstr "It's called the Nesting TNT, and you can place it on land or water!"
 
 #. Text for talk sentence 2 in talk group mountain_8_over's section 0
 #: Talk meta file
@@ -13695,7 +13691,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "应该是吧，我好像有点印象。"
-msgstr "I think so. I seem to have some impression of it."
+msgstr "I think so. I seem to have some memories of it."
 
 #. Text for talk sentence 7 in talk group mountain_8_map's section 0
 #: Talk meta file
@@ -13719,14 +13715,13 @@ msgstr ""
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "说起来，荷取小姐当时应该就在这个房间里？"
 msgstr ""
-"Come to think of it, Miss Nitori, you should have been in this room at the "
-"time?"
+"Come to think of it, Miss Nitori, weren't you in this room at the time?"
 
 #. Text for talk sentence 10 in talk group mountain_8_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "您没有被爆炸波及吗？"
-msgstr "Weren't you affected by the explosion?"
+msgstr "Were you affected by the explosion?"
 
 #. Text for talk sentence 11 in talk group mountain_8_map's section 0
 #: Talk meta file
@@ -13739,7 +13734,7 @@ msgstr "Actually, a little."
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "不过我当时为了保险起见穿着安全服装，应该是没受到什么严重的伤。"
 msgstr ""
-"But to be safe, I was wearing protective clothing at the time, so I probably "
+"But to be safe, I was wearing protective gear at the time, so I probably "
 "didn't receive any serious injuries."
 
 #. Text for talk sentence 13 in talk group mountain_8_map's section 0
@@ -13752,7 +13747,7 @@ msgstr "...?"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "刚才似乎有什么东西闪了一下？"
-msgstr "Something seemed to flash just now?"
+msgstr "Did I see something flash just now?"
 
 #. Text for talk sentence 15 in talk group mountain_8_map's section 0
 #: Talk meta file
@@ -13788,7 +13783,7 @@ msgstr "Wait, this thing is—an Ender Pearl?"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "这个东西怎么会出现在这里？！"
-msgstr "How did this thing appear here?!"
+msgstr "How did this thing show up here?!"
 
 #. Text for talk sentence 20 in talk group mountain_8_map's section 0
 #: Talk meta file
@@ -13808,7 +13803,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "但是，这个东西是来自于我们世界的啊，怎么会在这里呢！"
-msgstr "However, this thing comes from our world. How could it be here!"
+msgstr "However, this thing comes from our world. How did it end up here?!"
 
 #. Text for talk sentence 23 in talk group mountain_8_map's section 0
 #: Talk meta file
@@ -13826,7 +13821,7 @@ msgstr "I think I vaguely remember it..."
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "怎么？"
-msgstr "How?"
+msgstr "What is it?"
 
 #. Text for talk sentence 26 in talk group mountain_8_map's section 0
 #: Talk meta file
@@ -13875,8 +13870,8 @@ msgid ""
 "于是我们以它为核心制造了一台测试用的机器——应该就是这个房间里的那些零件的主"
 "人。"
 msgstr ""
-"So we used it as the core to build a test machine—which should be the "
-"machine those parts in this room belonged to."
+"So we used it as the core to build a prototype machine—which should be the "
+"origin of those parts in this room."
 
 #. Text for talk sentence 32 in talk group mountain_8_map's section 0
 #: Talk meta file
@@ -13900,7 +13895,7 @@ msgstr "Then it exploded."
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "你想不起来了吗？"
-msgstr "You can't remember?"
+msgstr "You can't remember anything more?"
 
 #. Text for talk sentence 36 in talk group mountain_8_map's section 0
 #: Talk meta file
@@ -13913,7 +13908,7 @@ msgstr "Yes. For some reason, my memory of that time is very blurry."
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "但是我仍然记得一件事情——那台机器本不应该爆炸的。"
 msgstr ""
-"But I still remember one thing—that machine was not supposed to explode."
+"But I am sure about one thing—that machine was not supposed to explode."
 
 #. Text for talk sentence 38 in talk group mountain_8_map's section 0
 #: Talk meta file
@@ -13936,7 +13931,8 @@ msgstr "I even verified it myself many times, but in the end..."
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "奇怪……如此精密的检查，竟然还是发生了意外？"
-msgstr "Strange... With such meticulous checks, an accident still happened?"
+msgstr ""
+"Strange... even with such meticulous inspections, an accident still happened?"
 
 #. Text for talk sentence 42 in talk group mountain_8_map's section 0
 #: Talk meta file
@@ -13963,8 +13959,7 @@ msgstr ""
 msgctxt "talk-mvz2:mountain_8_map"
 msgid "<color=blue>（那种神色，似乎是某种——不安，以及恐惧？）</color>"
 msgstr ""
-"<color=blue>(That expression seemed to be some kind of—unease, and fear?)</"
-"color>"
+"<color=blue>(That expression seemed to be that of—unease, and fear?)</color>"
 
 #. Archive name for talk group mountain_9
 #: Talk meta file
@@ -13989,14 +13984,14 @@ msgstr "What?!"
 msgctxt "talk-mvz2:mountain_9"
 msgid "那台机甲看起来十分坚硬，甚至还是水中作业用的型号！"
 msgstr ""
-"That mecha looks extremely sturdy, and it's even a model for underwater "
+"That mech looks extremely sturdy, and it's even a model for underwater "
 "operations!"
 
 #. Text for talk sentence 3 in talk group mountain_9's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_9"
 msgid "一定要小心那个大家伙！"
-msgstr "Be careful of that big creature!"
+msgstr "Be careful of that big guy!"
 
 #. Archive name for talk group mountain_9_over
 #: Talk meta file
@@ -14015,7 +14010,7 @@ msgstr "Wow! Are you looking to borrow money from me?"
 msgctxt "talk-mvz2:mountain_9_over"
 msgid "这是借贷告示牌，你放下它之后，它会立即借给你两个星之碎片！"
 msgstr ""
-"This is Loan Sign. After you place it, it will immediately lend you two "
+"This is the Loan Sign. After you place it, it will immediately lend you two "
 "starshards!"
 
 #. Text for talk sentence 2 in talk group mountain_9_over's section 0
@@ -14092,29 +14087,29 @@ msgstr "I still can't remember—I'm afraid..."
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_9_map"
 msgid "你害怕？"
-msgstr "You are afraid?"
+msgstr "You're afraid?"
 
 #. Text for talk sentence 8 in talk group mountain_9_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_9_map"
 msgid "是的。我的印象里，当时似乎发生了非常恐怖的事情。"
-msgstr ""
-"Yes. As I remember it, something very terrifying seemed to happen at the "
-"time."
+msgstr "Yes. In my memory, something very terrifying happened at that time."
 
 #. Text for talk sentence 9 in talk group mountain_9_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_9_map"
 msgid "大概是为了保护自己，我的内心深深的把这段记忆封锁了。"
-msgstr "Probably to protect myself, my heart deeply sealed away this memory."
+msgstr ""
+"Probably to protect myself, my heart sealed what happened away into the "
+"depths of my memory."
 
 #. Text for talk sentence 10 in talk group mountain_9_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_9_map"
 msgid "如果我真的回想起来那次的事情，我的精神可能会承受不住……"
 msgstr ""
-"If I really recall what happened then, my mind might not be able to bear "
-"it..."
+"If I really manage to recall what happened, my mind might not be able to "
+"bear it..."
 
 #. Text for talk sentence 11 in talk group mountain_9_map's section 0
 #: Talk meta file
@@ -14166,7 +14161,7 @@ msgstr "I'm not really sure what to do..."
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_9_map"
 msgid "要不还是我来吧。"
-msgstr "Let me do it instead."
+msgstr "How about you let me do it instead?"
 
 #. Text for talk sentence 19 in talk group mountain_9_map's section 0
 #: Talk meta file
@@ -14253,7 +14248,7 @@ msgstr "Steve, the prosthetic I promised you before is done!"
 msgctxt "talk-mvz2:mountain_10"
 msgid "这样，等我结束今天的战斗，再去装也不迟！"
 msgstr ""
-"All right, after I finish today's battle, it won't be too late to install it!"
+"All right, the installation can wait until after I finish today's battle!"
 
 #. Text for talk sentence 2 in talk group mountain_10's section 0
 #: Talk meta file
@@ -14334,8 +14329,8 @@ msgctxt "talk-mvz2:mountain_10_map"
 msgid ""
 "对的，这种材料是我们河童的特产，不容易生锈，而且让人在水中也能活动自如。"
 msgstr ""
-"Yes, this material is a specialty of us kappas. It doesn't rust easily, and "
-"it also allows you to move freely in water."
+"Indeed, this material is a specialty of us kappa. It doesn't rust easily, "
+"and it also allows you to move freely in water."
 
 #. Text for talk sentence 4 in talk group mountain_10_map's section 0
 #: Talk meta file
@@ -14434,15 +14429,15 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11"
 msgid "也许这可以成为我们击败它的致胜点？"
-msgstr "Could this become our key to defeat it?"
+msgstr "Could this be our key to victory?"
 
 #. Text for talk sentence 3 in talk group mountain_11's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11"
 msgid "也许是个好主意。可是我要怎么打到那里？那个位置很高啊。"
 msgstr ""
-"That might be a good idea. But how do I hit there? That position is very "
-"high."
+"That might be a good idea. But how do I attack that spot? That position is "
+"very high."
 
 #. Text for talk sentence 4 in talk group mountain_11's section 0
 #: Talk meta file
@@ -14482,7 +14477,7 @@ msgstr ""
 msgctxt "talk-mvz2:mountain_11"
 msgid "第三，借助某些从水面升起的力量，直接把它整个掀翻过来！"
 msgstr ""
-"Third, by means of a force rising from the water surface to flip it over "
+"Third, use a force that rises from the water surface to flip it over "
 "completely!"
 
 #. Text for talk sentence 10 in talk group mountain_11's section 0
@@ -14495,7 +14490,7 @@ msgstr "Those are all I can think of."
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11"
 msgid "这三点吗。我要好好考虑一下了。"
-msgstr "These three points... I'll need to think carefully."
+msgstr "These three points... I'll consider them carefully."
 
 #. Archive name for talk group mountain_11_over
 #: Talk meta file
@@ -14531,7 +14526,7 @@ msgstr "Thank you, Steve!"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_over"
 msgid "你是我们所有河童的恩人！"
-msgstr "You are the benefactor of all of us kappas!"
+msgstr "You are the benefactor of all of us kappa!"
 
 #. Archive name for talk group mountain_11_map
 #: Talk meta file
@@ -14545,7 +14540,7 @@ msgctxt "talk-mvz2:mountain_11_map"
 msgid "真是一番苦战啊，若不是荷取小姐的提示，恐怕这场战斗还要再打得更久一点。"
 msgstr ""
 "That was truly a tough battle. If not for Miss Nitori's hints, I'm afraid "
-"this fight would have lasted even longer."
+"the fight would have lasted even longer."
 
 #. Text for talk sentence 1 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -14565,13 +14560,13 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "荷取，这些年来，也真是辛苦你们了。"
-msgstr "Nitori, you've really had it hard all these years."
+msgstr "Nitori, you've all had it really hard all these years."
 
 #. Text for talk sentence 4 in talk group mountain_11_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "是啊，不过就算如此，我还是在咬牙坚持着。"
-msgstr "Yes, but even so, I kept gritting my teeth and holding on."
+msgstr "Yes, but even so, I kept gritting my teeth and held on."
 
 #. Text for talk sentence 5 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -14585,7 +14580,7 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "如今，克拉肯已灭，我们的未来看起来一片光明！"
-msgstr "Now that the Kraken is destroyed, our future looks bright!"
+msgstr "Now that the Kraken is destroyed, our future looks bright again!"
 
 #. Text for talk sentence 7 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -14609,7 +14604,7 @@ msgstr "Ah, and there's also this thing, a gift for you!"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "这是我们河童的招牌科技——延展手臂！"
-msgstr "This is our kappa signature technology—the extending arm!"
+msgstr "This is the signature technology of us kappa—the Extending Arm!"
 
 #. Text for talk sentence 11 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -14621,27 +14616,27 @@ msgstr "It lets contraptions reach farther places!"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "看起来应该用处会不小啊。"
-msgstr "It looks like it should be quite useful."
+msgstr "It looks like it will be quite useful."
 
 #. Text for talk sentence 13 in talk group mountain_11_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "这个东西，也是我们河童和最亲密的盟友之间的证明。"
 msgstr ""
-"This thing is also proof of the bond between us kappas and our closest ally."
+"This thing is also proof of the bond between us kappa and our closest ally."
 
 #. Text for talk sentence 14 in talk group mountain_11_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "史蒂夫，你永远是我们河童的盟友！"
-msgstr "Steve, you will always be our kappa ally!"
+msgstr "Steve, you will always be the kappa's ally!"
 
 #. Text for talk sentence 15 in talk group mountain_11_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "<color=blue>（河童们在克拉肯沉入水底的遗骸旁不停忙碌。）</color>"
 msgstr ""
-"<color=blue>(The kappas are busily working beside the Kraken's sunken "
+"<color=blue>(The kappa are busily working beside the Kraken's sunken "
 "remains.)</color>"
 
 #. Text for talk sentence 16 in talk group mountain_11_map's section 0
@@ -14677,13 +14672,13 @@ msgstr "Lady Nitori! The Kraken's remains have been salvaged!"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "啊，我看看！"
-msgstr "Ah, let me see!"
+msgstr "Ah, let me take a look!"
 
 #. Text for talk sentence 21 in talk group mountain_11_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "真是个大家伙——"
-msgstr "What a big creature—"
+msgstr "What a massive creature—"
 
 #. Description for talk sentence 21 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -14774,7 +14769,7 @@ msgstr "Wh-what?"
 #: Talk meta file
 msgctxt "talk-mvz2:mountain_11_map"
 msgid "那台机器上一开始明明没有什么眼睛一样的东西的！"
-msgstr "There was originally no eye-like thing on that machine at all!"
+msgstr "There was clearly nothing like an eye on that machine at first!"
 
 #. Description for talk sentence 34 in talk group mountain_11_map's section 0
 #: Talk meta file
@@ -16556,13 +16551,13 @@ msgstr "Yes, and more specifically..."
 #: Talk meta file
 msgctxt "talk-mvz2:palace_5_map"
 msgid "是在河童基地附近吧。"
-msgstr "It was near the kappas' hideout."
+msgstr "It was near the kappa's hideout."
 
 #. Text for talk sentence 7 in talk group palace_5_map's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:palace_5_map"
 msgid "河童基地吗……那里发生过什么？"
-msgstr "The kappas' hideout...? What happened there?"
+msgstr "The kappa's hideout...? What happened there?"
 
 #. Text for talk sentence 8 in talk group palace_5_map's section 0
 #: Talk meta file
@@ -20283,7 +20278,7 @@ msgstr "Oh? Someone's here."
 #: Talk meta file
 msgctxt "archive"
 msgid "（魔理沙和朱鹭子出场）"
-msgstr "(Marisa and Tokiko enters)"
+msgstr "(Marisa and Tokiko enter)"
 
 #. Text for talk sentence 4 in talk group kourindou_visit_ship_2's section 0
 #: Talk meta file
@@ -21034,7 +21029,7 @@ msgstr "Ah, you're here."
 #: Talk meta file
 msgctxt "archive"
 msgid "（星和村民出场）"
-msgstr "(Shou and Villager enters)"
+msgstr "(Shou and Villager enter)"
 
 #. Text for talk sentence 16 in talk group ship_7_map's section 2
 #: Talk meta file
@@ -22145,7 +22140,7 @@ msgid ""
 "<color=blue>（我们来到了红龙坠落的地方，这里就在人类村落的不远处。）</color>"
 msgstr ""
 "<color=blue>(We’re here where the Red Dragon fell. It’s not far away from "
-"the human village.)</color>"
+"the Human Village.)</color>"
 
 #. Description for talk sentence 3 in talk group ship_11_map's section 0
 #: Talk meta file
@@ -22169,7 +22164,7 @@ msgstr ""
 msgctxt "talk-mvz2:ship_11_map"
 msgid "<color=blue>（它死不瞑目，身下是早已被从内到外压碎的末地船。）</color>"
 msgstr ""
-"<color=blue>(the Red Dragon’s eyes still stare from its corpse, and all the "
+"<color=blue>(The Red Dragon’s eyes still stare from its corpse, and all the "
 "crumbled remains of the End Ship lie beneath it.)</color>"
 
 #. Text for talk sentence 6 in talk group ship_11_map's section 0
