@@ -557,6 +557,14 @@ namespace MVZ2.Mainmenu
                 HideUserManageDialog();
                 Reload();
             }
+            catch (NewerSaveDataException e)
+            {
+                var title = main.LanguageManager._(LogicStrings.ERROR);
+                var message = main.LanguageManager._(ERROR_MESSAGE_USERDATA_IS_NEWER);
+                var desc = main.LanguageManager._(ERROR_MESSAGE_UNABLE_TO_SWITCH_TO_USER, message);
+                main.Scene.ShowDialogMessage(title, desc);
+                Debug.LogError($"Unable to switch to user{userIndex}'s save data : {e}");
+            }
             catch (Exception e)
             {
                 var title = main.LanguageManager._(LogicStrings.ERROR);
@@ -875,6 +883,8 @@ namespace MVZ2.Mainmenu
         public const string ERROR_MESSAGE_UNABLE_TO_DELETE_USER = "无法删除用户：{0}";
         [TranslateMsg("切换用户时的错误信息，{0}为错误信息")]
         public const string ERROR_MESSAGE_UNABLE_TO_SWITCH_TO_USER = "无法切换至用户：{0}";
+        [TranslateMsg("切换用户时的错误信息")]
+        public const string ERROR_MESSAGE_USERDATA_IS_NEWER = "该用户的存档来自于更新的版本。";
         [TranslateMsg("删除用户时的错误信息")]
         public const string ERROR_MESSAGE_NO_SPARE_USERS_TO_SWITCH = "没有其他有效的用户可供切换。";
         [TranslateMsg("退出对话框的描述")]

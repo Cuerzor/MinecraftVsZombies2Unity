@@ -16,7 +16,7 @@ namespace MVZ2Logic.Modding
         ITrigger[] GetTriggers();
         Definition[] GetDefinitions();
         ModSaveData CreateSaveData();
-        ModSaveData LoadSaveData(string json);
+        ModSaveData DeserializeSaveData(string json);
         void PostAllSaveDataLoaded();
     }
 }

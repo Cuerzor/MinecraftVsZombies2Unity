@@ -21,7 +21,6 @@ namespace MVZ2Logic.Saves
             base.WriteToSerializable(serializable);
             if (serializable is not SerializableLogicSaveData logicSeri)
                 return;
-            logicSeri.version = 0;
             logicSeri.lastMapID = LastMapID;
             logicSeri.mapTalkID = MapTalkID;
             logicSeri.money = money;

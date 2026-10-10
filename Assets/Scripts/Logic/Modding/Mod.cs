@@ -44,7 +44,8 @@ namespace MVZ2Logic.Modding
 
         #region 保存&读取数据
         public abstract ModSaveData CreateSaveData();
-        public abstract ModSaveData LoadSaveData(string json);
+        public abstract string SerializeSaveData(ModSaveData saveData);
+        public abstract ModSaveData DeserializeSaveData(string json);
         public virtual void PostAllSaveDataLoaded() { }
         #endregion
 

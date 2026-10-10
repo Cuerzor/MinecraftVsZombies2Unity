@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using MVZ2.IO;
 using MVZ2.Managers;
 using MVZ2.Modding;
@@ -63,15 +64,14 @@ namespace MVZ2.Saves
                 var guid = Guid.NewGuid().ToString("N");
                 var tempSavePath = GetUserModSaveDataTempPath(userIndex, spaceName, guid);
                 FileHelper.ValidateDirectoryExists(tempSavePath);
-                var serializable = modSaveData.ToSerializable();
-                var metaJson = serializable.ToBson();
+                var metaJson = modInfo.Logic.SerializeSaveData(modSaveData);
                 Main.FileManager.WriteStringFile(tempSavePath, metaJson);
 
                 // 2. 检验临时文件能否正确被读取。如果不能则终止保存并发出警告。
                 try
                 {
                     var validateString = Main.FileManager.ReadStringFile(tempSavePath);
-                    var validateSerializable = modInfo.Logic.LoadSaveData(validateString);
+                    var validateSerializable = modInfo.Logic.DeserializeSaveData(validateString);
                 }
                 catch (Exception e)
                 {
@@ -218,7 +218,10 @@ namespace MVZ2.Saves
             // 加载存档。
             ModSaveData? saveData = null;
 
+            NewerSaveDataException? newerException = null;
+            Exception? failedException = null;
             int i;
+            bool loadedFromBackup = false;
             // 如果目标存档文件不存在，或者加载失败了，那就尝试寻找备份文件。
             for (i = 0; i <= backupCount; i++)
             {
@@ -228,33 +231,51 @@ namespace MVZ2.Saves
                     try
                     {
                         var saveDataJson = Main.FileManager.ReadStringFile(path);
-                        saveData = modInfo.Logic.LoadSaveData(saveDataJson);
+                        saveData = modInfo.Logic.DeserializeSaveData(saveDataJson);
+                        if (i > 0)
+                        {
+                            loadedFromBackup = true;
+                        }
                         break;
+                    }
+                    catch (NewerSaveDataException e)
+                    {
+                        Log.LogWarning($"用户{userIndex}的MOD{modInfo.Namespace}的存档的第{i}份存档文件来自更高的版本，读取失败：{e}");
+                        newerException = e;
                     }
                     catch (Exception e)
                     {
-                        Log.LogWarning($"用户{userIndex}的MOD{modInfo.Namespace}的存档的第{i}份备份读取失败：{e}");
+                        Log.LogWarning($"用户{userIndex}的MOD{modInfo.Namespace}的存档的第{i}份存档文件读取失败：{e}");
+                        failedException = e;
                     }
                 }
             }
 
 
-            // 如果备份文件都加载失败了或不存在，直接创建一个新存档。
             if (saveData == null)
             {
-                saveData = modInfo.Logic.CreateSaveData();
-                Log.LogWarning($"无法读取用户{userIndex}的MOD{modInfo.Namespace}的存档或任何备份，创建一个新存档。");
-            }
-            else
-            {
-                if (i > 0)
+                if (newerException != null)
                 {
-                    Log.LogWarning($"用户{userIndex}的MOD{modInfo.Namespace}的存档将以第{i}份备份开始游戏。");
+                    // 如果备份文件有过时的，报错。
+                    throw new NewerSaveDataException($"加载用户{userIndex}的MOD{modInfo.Namespace}的存档失败：存档来自更高的版本。", newerException);
                 }
-            }
+                if (failedException != null)
+                {
+                    // 如果备份文件有加载失败的，报错。
+                    throw new FileLoadException($"加载用户{userIndex}的MOD{modInfo.Namespace}的存档失败。", failedException);
+                }
 
+                // 如果文件不存在，直接创建一个新存档。
+                loadedFromBackup = false;
+                saveData = modInfo.Logic.CreateSaveData();
+                Log.LogMessage($"用户{userIndex}的MOD{modInfo.Namespace}的存档不存在，创建一个新存档。");
+            }
 
             modSaveDatas.Add(saveData);
+            if (loadedFromBackup)
+            {
+                Log.LogMessage($"用户{userIndex}的MOD{modInfo.Namespace}的存档将以第{i}份备份开始游戏。");
+            }
         }
         private void PostAllModDataLoaded(int userIndex, ModInfo? modInfo)
         {
@@ -699,5 +720,23 @@ namespace MVZ2.Saves
         SomeCorrupted,
         AllCorrupted,
         FullCorrupted
+    }
+    public class NewerSaveDataException : Exception
+    {
+        public NewerSaveDataException()
+        {
+        }
+
+        public NewerSaveDataException(string message) : base(message)
+        {
+        }
+
+        public NewerSaveDataException(string message, Exception innerException) : base(message, innerException)
+        {
+        }
+
+        protected NewerSaveDataException(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
     }
 }
