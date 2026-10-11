@@ -1776,7 +1776,7 @@
       </sentences>
     </section>
   </group>
-  <group id="kourindou_visit_mountain_2" tags="mvz2:gensokyo;mvz2:store">
+  <group id="kourindou_visit_mountain_2" tags="mvz2:mountain;mvz2:store">
     <archive name="访问香霖堂-妖怪之山" background="mvz2:store/background_kourindou" music="mvz2:gensokyo_map">
       <unlock>
         <condition required="mvz2:kourindou_visited_mountain_2" />
