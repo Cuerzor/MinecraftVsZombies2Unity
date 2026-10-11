@@ -623,7 +623,7 @@
                 <id name="mvz2:rechargeId" value="mvz2:short" />
             </properties>
         </entity>
-        <entity template="contraption" id="vortex_hopper" name="漩涡漏斗" tooltip="把附近的僵尸拉入水底">
+        <entity template="contraption" id="vortex_hopper" name="漩涡漏斗" tooltip="把附近的敌怪拉入水底">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.vortex_hopper" />
             </unlock>
@@ -658,7 +658,7 @@
                 <id name="mvz2:rechargeId" value="mvz2:short" />
             </properties>
         </entity>
-        <entity template="dispenser" id="totenser" name="图腾发射器" tooltip="发射虚弱的飞镖并灼烧前方的僵尸">
+        <entity template="dispenser" id="totenser" name="图腾发射器" tooltip="发射虚弱的飞镖并灼烧前方的敌人">
             <unlock>
                 <condition requiredGroups="mvz2:contraption.totenser" />
             </unlock>
