@@ -78,6 +78,7 @@
     <buff id="frankenstein_transforming" polarity="none" level="5000" target="boss" />
     <buff id="frankenstein_shocked" polarity="negative" level="0" target="contraption" />
     <buff id="frankenstein_steel" polarity="positive" level="4000" target="boss" />
+    <buff id="moonlight_sensor_daylight" polarity="none" level="5000" target="contraption" />
 
     <!-- Chapter 2 -->
     <buff id="tainted_sun" polarity="negative" level="0" target="level" />

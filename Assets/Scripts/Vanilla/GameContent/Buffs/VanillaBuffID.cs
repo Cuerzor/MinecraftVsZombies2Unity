@@ -194,6 +194,7 @@ namespace MVZ2.GameContent.Buffs
             public const string magichestInvincible = "magichest_invincible";
             public const string frankensteinShocked = "frankenstein_shocked";
             public const string dreamKeyShield = "dream_key_shield";
+            public const string moonlightSensorDaylight = "moonlight_sensor_daylight";
 
             // Chapter 2
             public const string nocturnal = "nocturnal";

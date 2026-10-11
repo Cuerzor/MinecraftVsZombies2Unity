@@ -11,6 +11,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Models;
+using PVZEngine.Modifiers;
 using PVZEngine.Timing;
 using PVZEngine.Tools.Timing;
 using UnityEngine;
@@ -41,9 +42,24 @@ namespace MVZ2.GameContent.Contraptions
         protected override void UpdateLogic(Entity entity)
         {
             base.UpdateLogic(entity);
+            bool isDaylight = entity.Level.IsDay() && !entity.HasBuff<NocturnalBuff>();
+            if (isDaylight)
+            {
+                if (!entity.HasBuff<MoonlightSensorDaylightBuff>())
+                {
+                    entity.AddBuff<MoonlightSensorDaylightBuff>();
+                }
+            }
+            else
+            {
+                if (entity.HasBuff<MoonlightSensorDaylightBuff>())
+                {
+                    entity.RemoveBuffs<MoonlightSensorDaylightBuff>();
+                }
+            }
             entity.UpdateShineRing();
             entity.SetAnimationBool("Upgraded", GetUpgraded(entity));
-            entity.SetModelProperty("Day", entity.Level.IsDay() && !entity.HasBuff<NocturnalBuff>());
+            entity.SetModelProperty("Day", isDaylight);
         }
 
         public override bool CanEvoke(Entity entity)
