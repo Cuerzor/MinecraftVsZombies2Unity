@@ -885,6 +885,12 @@ MonoBehaviour:
   - name: mobile_blueprint/jeweled_pagoda
     texture: {fileID: 2800000, guid: 91145db7ce144ae46b011cc317c0fd39, type: 3}
     tags: []
+  - name: mobile_blueprint/kraken
+    texture: {fileID: 2800000, guid: 7b02c064d8862d043b3f72e9b597fb6b, type: 3}
+    tags: []
+  - name: mobile_blueprint/kraken_tentacle
+    texture: {fileID: 2800000, guid: a10d9e99736eeaf4e983426d14cc2160, type: 3}
+    tags: []
   - name: mobile_blueprint/leather_capped_zombie
     texture: {fileID: 2800000, guid: 682a1f5ec6af4b54d81d95c0fcf56384, type: 3}
     tags: []
@@ -5182,6 +5188,14 @@ MonoBehaviour:
   - name: mobile_blueprint/jeweled_pagoda
     index: 0
     sprite: {fileID: 21300000, guid: 91145db7ce144ae46b011cc317c0fd39, type: 3}
+    tags: []
+  - name: mobile_blueprint/kraken
+    index: 0
+    sprite: {fileID: 21300000, guid: 7b02c064d8862d043b3f72e9b597fb6b, type: 3}
+    tags: []
+  - name: mobile_blueprint/kraken_tentacle
+    index: 0
+    sprite: {fileID: 21300000, guid: a10d9e99736eeaf4e983426d14cc2160, type: 3}
     tags: []
   - name: mobile_blueprint/leather_capped_zombie
     index: 0
