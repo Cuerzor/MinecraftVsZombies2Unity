@@ -13,6 +13,10 @@ namespace MVZ2.GameContent.Enemies
         public AxolotlSuit_VehicleCrush(string nsp, string name) : base(nsp, name)
         {
         }
+        public override bool ShouldIgnoreSpikes(Entity chariot, Entity other)
+        {
+            return false;
+        }
         public override bool ShouldCollide(EntityCollision collision, int state)
         {
             if (!base.ShouldCollide(collision, state))

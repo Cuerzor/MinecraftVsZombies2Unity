@@ -7,5 +7,6 @@ namespace MVZ2.Vanilla.Entities
         public const int CRUSH = 0;
         public const int IGNORE = 1;
         public const int BLOCK = 2;
+        public const int SPIKE = 3;
     }
 }

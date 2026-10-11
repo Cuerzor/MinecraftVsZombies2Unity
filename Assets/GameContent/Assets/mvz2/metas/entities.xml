@@ -763,7 +763,7 @@
                 <vector3 name="mvz2:size" x="64" y="16" z="64" />
                 <idArray name="mvz2:gridLayers" value="mvz2:carrier mvz2:main" />
                 <idArray name="mvz2:counter_for" value="mvz2:low_enemy" />
-                <int name="mvz2:vehicleInteraction" value="1" />
+                <int name="mvz2:vehicleInteraction" value="3" />
 
                 <int name="mvz2:cost" value="75" />
                 <id name="mvz2:rechargeId" value="mvz2:short" />
