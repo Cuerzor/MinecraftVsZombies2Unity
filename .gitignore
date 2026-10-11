@@ -83,3 +83,4 @@ InitTestScene*.unity
 /ProfileAnalyzer
 /push.sh
 TalkConverter
+/*.keystore
