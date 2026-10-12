@@ -1,3 +1,4 @@
+# 0.7.0
 ## Added
 - Added Chapter 7 - Youkai Mountian.
 - Added curse system.
