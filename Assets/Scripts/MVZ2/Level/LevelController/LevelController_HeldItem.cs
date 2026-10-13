@@ -292,7 +292,7 @@ namespace MVZ2.Level
         private void UpdateGridHighlight(HeldHighlight highlight)
         {
             ClearGridHighlight();
-            if (highlight.mode != HeldHighlightMode.Grid)
+            if (!highlight.mode.HasFlag(HeldHighlightMode.Grid))
                 return;
             if (Main.InputManager.GetActivePointerType() == PointerTypes.TOUCH)
             {
@@ -309,7 +309,7 @@ namespace MVZ2.Level
                 if (targetGridUI != null)
                 {
                     Color color = Color.clear;
-                    if (highlight.mode == HeldHighlightMode.Grid)
+                    if (highlight.mode.HasFlag(HeldHighlightMode.Grid))
                     {
                         color = gridHighlight.valid ? Color.green : Color.red;
                     }
@@ -322,7 +322,7 @@ namespace MVZ2.Level
         }
         private void UpdateEntityHighlight(HeldHighlight highlight)
         {
-            if (highlight.mode != HeldHighlightMode.Entity)
+            if (!highlight.mode.HasFlag(HeldHighlightMode.Entity))
             {
                 SetHighlightedEntity(null);
                 return;
