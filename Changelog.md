@@ -3,6 +3,7 @@
 - Added Chapter 7 - Youkai Mountian.
 - Added curse system.
 - Added screenshot function.
+- On mobile, when multiple targetable entities are within a tile, a icon bubble are now displayed on the left to confirm the final target.
 - Added entity material "Apparition" and "Wither Bone", removed entity material "Nether".
   - The material of Soul Furnace has been changed to "Wood".
   - The material of Ghost, Ghast, and Napstablook has been changed to "Apparition".

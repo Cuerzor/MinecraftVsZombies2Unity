@@ -13,7 +13,8 @@ namespace MVZ2Logic.HeldItems
     {
         None = 0,
         Entity = 1,
-        Grid = 2
+        Grid = 2,
+        EntityBubble = 4,
     }
     public struct HeldHighlight
     {

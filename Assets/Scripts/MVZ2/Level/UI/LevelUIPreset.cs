@@ -367,6 +367,20 @@ namespace MVZ2.Level.UI
         }
         #endregion
 
+        #region 手持物品气泡
+        public void SetHeldItemBubbleActive(bool active)
+        {
+            heldTargetBubble.SetVisible(active);
+        }
+        public void SetHeldItemBubbleContent(Sprite? sprite)
+        {
+            heldTargetBubble.SetContent(sprite);
+        }
+        public void SetHeldItemBubblePosition(Vector2 position)
+        {
+            heldTargetBubble.SetPosition(position);
+        }
+        #endregion
         public void SetCameraLimitWidth(float t)
         {
             t = Mathf.Clamp01(t);
@@ -578,6 +592,10 @@ namespace MVZ2.Level.UI
         GameObject adviceObject = null!;
         [SerializeField]
         TextMeshProUGUI adviceText = null!;
+
+        [Header("Held Target Bubble")]
+        [SerializeField]
+        HeldTargetBubble heldTargetBubble = null!;
 
         [Header("Hint Arrow")]
         [SerializeField]

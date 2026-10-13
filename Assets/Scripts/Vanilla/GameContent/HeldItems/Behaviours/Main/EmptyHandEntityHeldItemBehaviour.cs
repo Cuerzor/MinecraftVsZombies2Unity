@@ -53,7 +53,7 @@ namespace MVZ2.GameContent.HeldItems
                             if (entityTarget != null)
                             {
                                 var highlight = HeldHighlight.Green(grid, rangeMin, rangeMax);
-                                highlight.mode |= HeldHighlightMode.Entity;
+                                highlight.mode |= HeldHighlightMode.Entity | HeldHighlightMode.EntityBubble;
                                 highlight.entity = entityTarget;
                                 return highlight;
                             }

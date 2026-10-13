@@ -288,6 +288,7 @@ namespace MVZ2.Level
             }
             UpdateGridHighlight(highlight);
             UpdateEntityHighlight(highlight);
+            UpdateHeldTargetBubble(highlight);
         }
         private void UpdateGridHighlight(HeldHighlight highlight)
         {
@@ -333,6 +334,32 @@ namespace MVZ2.Level
                 var ctrl = GetEntityController(targetEntity);
                 SetHighlightedEntity(ctrl);
             }
+        }
+        private void UpdateHeldTargetBubble(HeldHighlight highlight)
+        {
+            var uiPreset = GetUIPreset();
+            var targetEntity = highlight.entity;
+            if (!highlight.mode.HasFlag(HeldHighlightMode.EntityBubble) || targetEntity == null)
+            { 
+                uiPreset.SetHeldItemBubbleActive(false);
+                return;
+            }
+            var modelID = targetEntity.ModelID;
+            var sprite = Main.ResourceManager.GetModelIcon(modelID);
+            var tile = targetEntity.GetGrid();
+            Vector3 lawnPosition;
+            if (tile != null)
+            {
+                lawnPosition = tile.GetCenterPosition();
+            }
+            else
+            {
+                lawnPosition = targetEntity.GetCenter();
+            }
+            var worldPosition = LawnToTrans(lawnPosition);
+            uiPreset.SetHeldItemBubbleContent(sprite);
+            uiPreset.SetHeldItemBubblePosition(worldPosition);
+            uiPreset.SetHeldItemBubbleActive(true);
         }
         #endregion
 
