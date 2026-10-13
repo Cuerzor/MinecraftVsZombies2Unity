@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubbleRoot: {fileID: 4690562895815058144}
-  contentImage: {fileID: 6547142614189290704}
+  contentImage: {fileID: 8006869160976356561}
 --- !u!1 &4738599285092870393
 GameObject:
   m_ObjectHideFlags: 0
