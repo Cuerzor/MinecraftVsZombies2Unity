@@ -3028,6 +3028,9 @@ MonoBehaviour:
   - name: ui/level/final_wave
     texture: {fileID: 2800000, guid: 003fea51ebc7be1498297e7b66cc61d1, type: 3}
     tags: []
+  - name: ui/level/held_target_bubble
+    texture: {fileID: 2800000, guid: 852536933faed164ea28577a7706b1a5, type: 3}
+    tags: []
   - name: ui/level/hint_arrow
     texture: {fileID: 2800000, guid: e54f2595624bbc447b98881de587ce72, type: 3}
     tags: []
@@ -11674,6 +11677,10 @@ MonoBehaviour:
   - name: ui/level/final_wave
     index: 0
     sprite: {fileID: 21300000, guid: 003fea51ebc7be1498297e7b66cc61d1, type: 3}
+    tags: []
+  - name: ui/level/held_target_bubble
+    index: 0
+    sprite: {fileID: 21300000, guid: 852536933faed164ea28577a7706b1a5, type: 3}
     tags: []
   - name: ui/level/hint_arrow
     index: 0

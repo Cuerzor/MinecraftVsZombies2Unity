@@ -340,7 +340,7 @@ namespace MVZ2.Level
             var uiPreset = GetUIPreset();
             var targetEntity = highlight.entity;
             if (!highlight.mode.HasFlag(HeldHighlightMode.EntityBubble) || targetEntity == null)
-            { 
+            {
                 uiPreset.SetHeldItemBubbleActive(false);
                 return;
             }

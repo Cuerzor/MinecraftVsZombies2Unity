@@ -7601,6 +7601,13 @@ MonoBehaviour:
     - Main
     - Model
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b02c064d8862d043b3f72e9b597fb6b
+    m_Address: mvz2:mobile_blueprint/kraken
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7b0c65aa1b6f186488a0e171913281ba
     m_Address: mvz2:effect/pagoda_laser
     m_ReadOnly: 0
@@ -8303,6 +8310,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 850d4c9b6833d8047ac10f992af536ff
     m_Address: mvz2:products/artifact_slot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 852536933faed164ea28577a7706b1a5
+    m_Address: mvz2:ui/level/held_target_bubble
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
@@ -10091,6 +10105,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sound
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a10d9e99736eeaf4e983426d14cc2160
+    m_Address: mvz2:mobile_blueprint/kraken_tentacle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a1132a67883efb442a49359b288bea2a
     m_Address: mvz2:entity/nightmareaper/wheel_of_death_loop
