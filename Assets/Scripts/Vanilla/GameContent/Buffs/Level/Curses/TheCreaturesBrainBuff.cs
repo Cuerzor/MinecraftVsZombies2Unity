@@ -11,7 +11,7 @@ namespace MVZ2.GameContent.Buffs.Level
     {
         public TheCreaturesBrainBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new FloatModifier(LogicLevelProps.SPAWN_POINTS_MUTLIPLIER, NumberOperator.AddMultiple, 0.5f));
+            AddModifier(new FloatModifier(LogicLevelProps.SPAWN_POINTS_MULTIPLIER, NumberOperator.AddMultiple, 0.5f));
         }
     }
 }

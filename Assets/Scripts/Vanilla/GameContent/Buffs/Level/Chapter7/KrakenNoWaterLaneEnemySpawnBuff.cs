@@ -13,7 +13,7 @@ namespace MVZ2.GameContent.Buffs.Level
         public KrakenNoWaterLaneEnemySpawnBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new BooleanModifier(LogicLevelProps.NO_SPAWN_ENEMY_IN_WATER, true));
-            AddModifier(new FloatModifier(LogicLevelProps.SPAWN_POINTS_MUTLIPLIER, NumberOperator.Multiply, 1 / 3f));
+            AddModifier(new FloatModifier(LogicLevelProps.SPAWN_POINTS_MULTIPLIER, NumberOperator.Multiply, 1 / 3f));
         }
     }
 }

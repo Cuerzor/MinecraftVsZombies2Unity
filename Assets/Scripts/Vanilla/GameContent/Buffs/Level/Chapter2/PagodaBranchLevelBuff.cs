@@ -12,7 +12,7 @@ namespace MVZ2.GameContent.Buffs.Level
     {
         public PagodaBranchLevelBuff(string nsp, string name) : base(nsp, name)
         {
-            AddModifier(new FloatModifier(LogicLevelProps.SPAWN_POINTS_MUTLIPLIER, NumberOperator.AddMultiple, 2));
+            AddModifier(new FloatModifier(LogicLevelProps.SPAWN_POINTS_MULTIPLIER, NumberOperator.AddMultiple, 2));
         }
     }
 }
