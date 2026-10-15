@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using MVZ2.GameContent.Buffs.Contraptions;
+using MVZ2.GameContent.Buffs.Entities;
 using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Placements;
 using MVZ2.Vanilla.Callbacks;
@@ -17,6 +18,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Tools;
 
 namespace MVZ2.Vanilla.Contraptions
 {
@@ -202,6 +204,7 @@ namespace MVZ2.Vanilla.Contraptions
             var grid = contraption.GetGrid();
             if (grid == null)
                 return null;
+            var position = contraption.Position;
             var awake = !contraption.HasBuff<NocturnalBuff>();
             contraption.Remove();
             foreach (var ent in extraEntities)
@@ -215,6 +218,8 @@ namespace MVZ2.Vanilla.Contraptions
             {
                 upgraded.RemoveBuffs<NocturnalBuff>();
             }
+            upgraded.Position = position - upgraded.GetGridPivotOffset();
+            upgraded.InheritContraptionMotionBuffs(contraption);
             upgraded.DestroyConflictGridEntities();
             return upgraded;
         }
@@ -241,5 +246,38 @@ namespace MVZ2.Vanilla.Contraptions
                 return false;
             return placementDefinition.CanOnWater();
         }
+
+        #region 器械移动
+        public static void StopContraptionMotionBuffsAndAlign(this Entity entity)
+        {
+            bool changingLane = entity.IsChangingLane();
+            bool changingTile = entity.IsChangingTile();
+            if (changingLane || changingTile)
+            {
+                if (changingTile)
+                {
+                    entity.StopChangingGrid();
+                }
+                if (changingLane)
+                {
+                    entity.StopChangingLane();
+                }
+                entity.AdjustToTile();
+            }
+        }
+        public static void InheritContraptionMotionBuffs(this Entity entity, Entity from)
+        {
+            using var buffsItem = ListPool<Buff>.Rent();
+            var buffs = buffsItem.Value;
+            from.GetBuffs<ChangeLaneBuff>(buffs);
+            from.GetBuffs<ChangeGridBuff>(buffs);
+
+            foreach (var buff in buffs)
+            {
+                var newBuff = buff.Clone(entity);
+                entity.AddBuff(newBuff);
+            }
+        }
+        #endregion
     }
 }
