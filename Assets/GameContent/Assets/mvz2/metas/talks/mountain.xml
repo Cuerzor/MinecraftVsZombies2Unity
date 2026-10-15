@@ -1380,7 +1380,7 @@
       <sentences>
         <!--语句0-->
         <sentence speaker="mvz2:nitori" sounds="mvz2:dialog_surprised">
-          <text>咦？！这个不是山上神明的——</text>
+          <text>咦？！这个不是那位风神的——</text>
         </sentence>
         <!--语句1-->
         <sentence speaker="mvz2:crazy_villager" sounds="mvz2:villager_short3">
@@ -1677,7 +1677,7 @@
         </sentence>
         <!--语句3-->
         <sentence speaker="mvz2:nitori" sounds="mvz2:talk">
-          <text>其中有些材料是我向山上的神明那边借来的，威力应该是没问题的！</text>
+          <text>其中有些材料是我从那位在山上的风神那边借来的，威力应该是没问题的！</text>
         </sentence>
         <!--语句4-->
         <sentence speaker="mvz2:steve" sounds="mvz2:talk">
