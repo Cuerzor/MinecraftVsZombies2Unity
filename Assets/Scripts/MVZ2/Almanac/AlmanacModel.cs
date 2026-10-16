@@ -27,6 +27,14 @@ namespace MVZ2.Almanacs
                 }
             }
         }
+        public void SetModelColor(Color color)
+        {
+            if (model.Exists())
+            {
+                model.SetShaderColor(ShaderProperties.TINT, color);
+                model.ApplyShaderProperties();
+            }
+        }
         [SerializeField]
         private Transform rootTransform = null!;
         [SerializeField]

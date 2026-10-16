@@ -82,19 +82,19 @@ namespace MVZ2.Almanacs
         }
         public void SetActiveEnemyEntry(IModelBuilder model, string name, string description)
         {
-            enemies.SetActiveEntry(model, name, description);
+            enemies.SetActiveEntry(model, Color.white, name, description);
         }
         public void SetActiveArtifactEntry(Sprite? sprite, Color color, string name, string description)
         {
             artifacts.SetActiveEntry(sprite, color, name, description, true, false);
         }
-        public void SetActiveMiscEntry(Sprite? sprite, string name, string description, bool sized = false, bool zoom = true)
+        public void SetActiveMiscEntry(Sprite? sprite, Color color, string name, string description, bool sized = false, bool zoom = true)
         {
-            miscs.SetActiveEntry(sprite, Color.white, name, description, sized, zoom);
+            miscs.SetActiveEntry(sprite, color, name, description, sized, zoom);
         }
-        public void SetActiveMiscEntry(IModelBuilder model, string name, string description)
+        public void SetActiveMiscEntry(IModelBuilder model, Color color, string name, string description)
         {
-            miscs.SetActiveEntry(model, name, description);
+            miscs.SetActiveEntry(model, color, name, description);
         }
         public void UpdateTagIcons(AlmanacPageType page, AlmanacTagIconViewData[] viewDatas)
         {

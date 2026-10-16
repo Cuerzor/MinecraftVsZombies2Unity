@@ -513,29 +513,44 @@ namespace MVZ2.Almanacs
             if (entry == null)
                 return;
             activeMiscEntryID = miscID;
-            var name = GetTranslatedString(LogicStrings.GetAlmanacNameContext(LogicAlmanacCategories.MISC), entry.name);
 
-            var descContext = LogicStrings.GetAlmanacDescriptionContext(LogicAlmanacCategories.MISC);
-            var header = GetTranslatedString(descContext, entry.header);
-            header = $"<color=#00007F>{header}</color>";
-            var properties = GetTranslatedString(descContext, entry.properties);
-
-            var flavorKeys = entry.GetValidFlavors(Main.SaveManager);
-            var flavors = flavorKeys.Select(f => GetTranslatedString(descContext, f));
-            var flavor = string.Join("\n\n", flavors);
-
-            var strings = new string[] { header, properties, flavor }.Where(s => !string.IsNullOrEmpty(s));
-            var description = string.Join("\n\n", strings);
-            if (propReplacer != null)
+            Color color = Color.white;
+            string name;
+            string description;
+            if (entry.unlock.IsNullOrMeetsConditions(Main.SaveManager))
             {
-                var context = new AlmanacVariableContext(Main, EngineDefinitionTypes.ENTITY, miscID, entry);
-                description = propReplacer.Replace(description, context);
+                name = GetTranslatedString(LogicStrings.GetAlmanacNameContext(LogicAlmanacCategories.MISC), entry.name);
+
+                var descContext = LogicStrings.GetAlmanacDescriptionContext(LogicAlmanacCategories.MISC);
+                var header = GetTranslatedString(descContext, entry.header);
+                header = $"<color=#00007F>{header}</color>";
+                var properties = GetTranslatedString(descContext, entry.properties);
+
+                var flavorKeys = entry.GetValidFlavors(Main.SaveManager);
+                var flavors = flavorKeys.Select(f => GetTranslatedString(descContext, f));
+                var flavor = string.Join("\n\n", flavors);
+
+                var strings = new string[] { header, properties, flavor }.Where(s => !string.IsNullOrEmpty(s));
+                description = string.Join("\n\n", strings);
+                if (propReplacer != null)
+                {
+                    var context = new AlmanacVariableContext(Main, EngineDefinitionTypes.ENTITY, miscID, entry);
+                    description = propReplacer.Replace(description, context);
+                }
+                description = ReplaceHyperlinkReferences(description);
+
+                UpdateEntryTags(AlmanacPageType.Miscs, LogicAlmanacCategories.MISC, miscID);
             }
-            description = ReplaceHyperlinkReferences(description);
+            else
+            {
+                color = Color.black;
+                name = Main.LanguageManager._p(LogicStrings.CONTEXT_ARTIFACT_NAME, LogicStrings.UNKNOWN_ARTIFACT_NAME);
+                description = Main.LanguageManager._p(LogicStrings.CONTEXT_ALMANAC, LogicStrings.ALMANAC_UNKNOWN);
+                ClearEntryTags(AlmanacPageType.Miscs);
+            }
 
             var picture = entry.picture;
 
-            UpdateEntryTags(AlmanacPageType.Miscs, LogicAlmanacCategories.MISC, miscID);
 
             var iconInfos = GetDescriptionTagIconInfos(description);
             var replacements = iconInfos.Select(i => i.replacement).ToArray();
@@ -548,7 +563,7 @@ namespace MVZ2.Almanacs
                 if (NamespaceID.IsValid(modelID) && Main.ResourceManager.GetModelMeta(modelID) is ModelMeta modelMeta)
                 {
                     var viewData = new ModelBuilder(modelID, almanacCamera);
-                    ui.SetActiveMiscEntry(viewData, name, finalDesc);
+                    ui.SetActiveMiscEntry(viewData, color, name, finalDesc);
                 }
                 else
                 {
@@ -556,7 +571,7 @@ namespace MVZ2.Almanacs
                     var spriteSized = entry.pictureFixedSize;
                     var zoom = entry.pictureZoom;
 
-                    ui.SetActiveMiscEntry(sprite, name, finalDesc, spriteSized, zoom);
+                    ui.SetActiveMiscEntry(sprite, color, name, finalDesc, spriteSized, zoom);
                 }
             }
             ui.UpdateMiscDescriptionIcons(iconStacks);

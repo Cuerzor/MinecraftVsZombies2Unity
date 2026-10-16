@@ -15,6 +15,7 @@ using MVZ2Logic.Localization;
 using MVZ2Logic.Resources;
 using PVZEngine;
 using PVZEngine.Level;
+using UnityEditor.Experimental;
 using UnityEngine;
 
 namespace MVZ2.Almanacs
@@ -65,9 +66,10 @@ namespace MVZ2.Almanacs
                     var id = entry.id;
                     if (!NamespaceID.IsValid(id))
                         continue;
-                    if (!entry.unlock.IsNullOrMeetsConditions(Main.SaveManager))
-                        continue;
-                    groupEntries[i] = id;
+                    if (entry.unlock.IsNullOrMeetsConditions(Main.SaveManager) || (entry.silhouetteUnlock != null && entry.silhouetteUnlock.MeetsConditions(Main.SaveManager)))
+                    {
+                        groupEntries[i] = id;
+                    }
                 }
                 var compressedEntries = CompressLayout(groupEntries, miscCountPerRow).ToArray();
                 var g = new AlmanacEntryGroup(group.name, compressedEntries);
@@ -195,7 +197,9 @@ namespace MVZ2.Almanacs
             if (entry == null)
                 return AlmanacEntryViewData.Empty;
 
-            return new AlmanacEntryViewData() { sprite = GetEntryThumbnailSprite(entry), color = Color.white };
+            Color color = entry.unlock.IsNullOrMeetsConditions(Main.SaveManager)? Color.white : Color.black;
+
+            return new AlmanacEntryViewData() { sprite = GetEntryThumbnailSprite(entry), color = color };
         }
         public AlmanacEntryGroupViewData GetMiscGroupViewData(AlmanacEntryGroup group)
         {

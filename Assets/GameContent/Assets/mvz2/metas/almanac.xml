@@ -3114,6 +3114,9 @@
                 </flavor>
             </entry>
             <entry id="mvz2:zombie_cow" name="僵尸牛">
+                <silhouette>
+                    <condition required="mvz2:level.ship_11" />
+                </silhouette>
                 <unlock>
                     <condition required="mvz2:artifact.cow_horn" />
                 </unlock>
