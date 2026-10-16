@@ -1,3 +1,11 @@
+## 修改
+- After clearing the Palanquin Ship, the silhouette of the zombie cow will now be displayed in the Almanac.
+
+## Fixed
+- Fixed the issue of the target entity bubble in mobile platforms won't display and will cause errors.
+
+---
+
 # 0.7.0
 ## Added
 - Added Chapter 7 - Youkai Mountian.
