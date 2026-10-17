@@ -95,7 +95,10 @@ namespace MVZ2.GameContent.Contraptions
                     speedline.Timeout = Ticks.FromSeconds(BLOW_SECONDS);
                 });
 
-                SpawnGaleLeafPickupIfPossible(entity);
+                if (evoked)
+                {
+                    SpawnGaleLeafPickupIfPossible(entity);
+                }
             }
         }
         private void UpdateStateBlow(Entity entity)

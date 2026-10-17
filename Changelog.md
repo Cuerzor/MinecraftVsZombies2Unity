@@ -4,6 +4,7 @@
 ## Fixed
 - Fixed the issue of the target entity bubble in mobile platforms won't display and will cause errors.
 - Fixed the issue where icons of blueprint pickups on mobile devices would be removed by 3D models.
+- Fixed the issue where the artifact pickup of Gale Leaf will still be spawned even if the Wooden Fan is not evoked.
 
 ---
 
