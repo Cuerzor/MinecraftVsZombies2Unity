@@ -3,6 +3,7 @@
 
 ## Fixed
 - Fixed the issue of the target entity bubble in mobile platforms won't display and will cause errors.
+- Fixed the issue where icons of blueprint pickups on mobile devices would be removed by 3D models.
 
 ---
 

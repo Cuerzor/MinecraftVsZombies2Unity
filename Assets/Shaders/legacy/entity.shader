@@ -12,7 +12,7 @@
         _GrayscaleMaterial("Grayscale", Int) = 0
         _GrayscaleFactor("Grayscale Factor", Vector) = (0.598,1.174,0.224,0)
         [Enum(UnityEngine.Rendering.CompareFunction)]
-        _ZTest ("Z Test", Float) = 4
+        _ZTest ("Z Test", Int) = 4
 
         [Header(Burn)]
         _BurnNoise("Noise Tex", 2D) = "white"{}

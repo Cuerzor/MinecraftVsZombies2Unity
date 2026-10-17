@@ -25,6 +25,7 @@ Shader "MinecraftVSZombies2/Legacy/Mask"
         Cull Off
         Lighting Off
         ZWrite Off
+        ZTest Always
         Blend Off
         ColorMask 0
 

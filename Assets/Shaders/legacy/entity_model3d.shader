@@ -46,7 +46,7 @@ Shader "MinecraftVSZombies2/Legacy/Model"
                 "RenderType"="TransparentCutout" 
             }
             ZWrite On
-            Blend Zero One
+            ColorMask 0
             
             HLSLPROGRAM
             #include "UnityCG.cginc"
