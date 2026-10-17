@@ -1724,7 +1724,7 @@
         <clear pickupModel="mvz2:entity.map_pickup" note="mvz2:mountain" />
         <spawns flags="3" pointsPower="1.02">
             <spawn id="mvz2:zombie" />
-            <spawn id="mvz2:leather_helmetted_zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
             <spawn id="mvz2:diamond_helmetted_zombie" />
             <spawn id="mvz2:bubble_gun_gurgle" />

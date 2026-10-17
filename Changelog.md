@@ -22,6 +22,7 @@
 - Fixed the issue where Lily Pad's evocation cannot spawn Lily Pads under suspending contraptions.
 - Fixed the issue where CAT-TL MK-II does not display as "not recommended" in pure land levels.
 - Fixed the issue where fire damage cannot unfreeze enemies.
+- Fixed the issue where Leather Cap Zombies does not appear on Youkai Mountain Day 10 (it indeed does not appear on Day 9).
 
 ---
 
