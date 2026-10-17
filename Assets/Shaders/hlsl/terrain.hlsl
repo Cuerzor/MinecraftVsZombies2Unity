@@ -17,7 +17,7 @@ const int GridOverlayFlag = 8;
 
 int GetTerrainFlags(float2 levelUV)
 {
-    half4 color = tex2D(_TerrainTexture, levelUV);
+    float4 color = tex2D(_TerrainTexture, levelUV);
     return Color3ToFlags(color.rgb);
 }
 void ClipTerrain(float2 levelUV)
