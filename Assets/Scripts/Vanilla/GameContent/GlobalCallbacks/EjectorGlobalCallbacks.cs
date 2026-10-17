@@ -61,6 +61,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             {
                 // 冰落地时爆出冰锥
                 IceLand(entity, damageMultiplier);
+                entity.RemoveBuffs(buffs);
             }
 
             if (!entity.IsAIFrozen())
@@ -69,9 +70,9 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 if (entity.TryBehaviourExplode(entity.GetRange(), entity.GetDamage()))
                 {
                     entity.Remove();
+                    entity.RemoveBuffs(buffs);
                 }
             }
-            entity.RemoveBuffs(buffs);
         }
         private void PostEjectedEntityLandCallback(VanillaLevelCallbacks.PostEjectedEntityLandParams param, CallbackResultVoid result)
         {
