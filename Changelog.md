@@ -1,5 +1,6 @@
 ## 修改
 - After clearing the Palanquin Ship, the silhouette of the zombie cow will now be displayed in the Almanac.
+- Projectiles fired by CAT-TL MK-II no longer sink into water.
 
 ## Fixed
 - Fixed the issue of the target entity bubble in mobile platforms won't display and will cause errors.

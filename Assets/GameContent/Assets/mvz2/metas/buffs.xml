@@ -223,6 +223,7 @@
     <buff id="decorative_wind_speed" polarity="none" level="5000" target="level" />
     <buff id="chill_projectile" polarity="positive" level="1000" target="projectile" />
     <buff id="homing_projectile" polarity="positive" level="1000" target="projectile" />
+    <buff id="cattail_projectile" polarity="none" level="5000" target="projectile" />
     <buff id="teleporter_teleport_up" polarity="none" level="5000" target="entity" />
     <buff id="teleporter_teleport_down" polarity="none" level="5000" target="entity" />
     <buff id="teleporter_triggered" polarity="none" level="5000" target="contraption" />

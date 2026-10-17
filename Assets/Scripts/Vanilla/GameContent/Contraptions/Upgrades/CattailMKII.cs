@@ -53,14 +53,19 @@ namespace MVZ2.GameContent.Contraptions
         }
         public Entity? Shoot(Entity entity)
         {
-            return entity.ShootProjectile()?.Let(p =>
+            var projectile = entity.ShootProjectile();
+            if (projectile != null)
             {
-                p.AddBuff<HomingProjectileBuff>()?.Let(b =>
+                var homingBuff = projectile.AddBuff<HomingProjectileBuff>();
+                if (homingBuff != null)
                 {
-                    HomingProjectileBuff.SetTarget(b, new EntityID(entity.Target));
-                    HomingProjectileBuff.SetSpeed(b, entity.GetShotVelocity().magnitude);
-                });
-            });
+                    HomingProjectileBuff.SetTarget(homingBuff, new EntityID(entity.Target));
+                    HomingProjectileBuff.SetSpeed(homingBuff, entity.GetShotVelocity().magnitude);
+                };
+                projectile.AddBuff<CattailProjectileBuff>();
+            };
+
+            return projectile;
         }
         private void StartIdleState(Entity entity)
         {

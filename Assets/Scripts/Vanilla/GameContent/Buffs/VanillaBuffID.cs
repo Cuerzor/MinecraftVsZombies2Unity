@@ -387,6 +387,7 @@ namespace MVZ2.GameContent.Buffs
             // Chapter 7
             public const string chillProjectile = "chill_projectile";
             public const string homingProjectile = "homing_projectile";
+            public const string cattailProjectile = "cattail_projectile";
             public const string airSlashDamageUp = "air_slash_damage_up";
             public const string prismaticPylonProjectileRed = "prismatic_pylon_projectile_red";
             public const string prismaticPylonProjectileOrange = "prismatic_pylon_projectile_orange";
