@@ -21,9 +21,10 @@ namespace MVZ2.GameContent.Bosses
         {
             base.Update(entity);
 
+            var max = GetMaxDamageAmount(entity);
             var current = GetCurrentDamageAmount(entity);
             var decay = GetDecay(entity);
-            SetCurrentDamageAmount(entity, Mathf.Max(0, current - decay));
+            SetCurrentDamageAmount(entity, Mathf.Clamp(current - decay, 0, max));
         }
         public override void PreTakeDamage(DamageInput damageInfo, CallbackResult<bool> result)
         {

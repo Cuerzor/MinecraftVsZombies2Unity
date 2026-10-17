@@ -3,6 +3,7 @@
 
 ## Fixed
 - Fixed the issue where when a huge wave of monsters arrived, the number of spawned monsters actually increased by another huge wave.
+- Fixed the issue where a boss in a vulnerable state would remain invincible for a period of time when receiving damage exceeding the damage limit.
 
 ---
 

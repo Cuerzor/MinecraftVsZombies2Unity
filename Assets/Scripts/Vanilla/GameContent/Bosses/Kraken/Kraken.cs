@@ -11,18 +11,21 @@ using MVZ2.GameContent.GlobalCallbacks;
 using MVZ2.GameContent.Projectiles;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Bosses;
+using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Contraptions;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Localization;
 using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic;
+using MVZ2Logic.Callbacks;
 using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using MVZ2Logic.Localization;
 using PVZEngine;
 using PVZEngine.Auras;
 using PVZEngine.Buffs;
+using PVZEngine.Callbacks;
 using PVZEngine.Collisions;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
@@ -50,6 +53,8 @@ namespace MVZ2.GameContent.Bosses
 
             AddAura(new NoWaterLaneEnemySpawnAura());
             AddAura(new NoEnemySpawnAura());
+
+            AddTrigger(VanillaLevelCallbacks.APPLY_DAMAGE_SPECIAL_EFFECTS, ApplyDamageSpecialEffectsCallback);
         }
 
         #region 回调
@@ -93,10 +98,12 @@ namespace MVZ2.GameContent.Bosses
                 self.BossCrush(otherCollider);
             }
         }
-        public override void PostTakeDamage(DamageOutput result)
+        private void ApplyDamageSpecialEffectsCallback(VanillaLevelCallbacks.PostTakeDamageParams args, CallbackResultVoid result)
         {
-            base.PostTakeDamage(result);
-            var bodyResult = result.BodyResult;
+            var output = args.output;
+            if (!output.Entity.HasBehaviour(this))
+                return;
+            var bodyResult = output.BodyResult;
             if (bodyResult == null)
                 return;
             var kraken = bodyResult.Entity;
