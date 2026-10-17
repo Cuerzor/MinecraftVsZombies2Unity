@@ -16,5 +16,8 @@ namespace MVZ2.GameContent.Placements
         public static readonly PropertyMeta<bool> CAN_ON_WATER = new PropertyMeta<bool>("can_on_water");
         public static bool CanOnWater(this PlacementDefinition definition) => definition.GetProperty<bool>(CAN_ON_WATER);
         public static void SetCanOnWater(this PlacementDefinition definition, bool value) => definition.SetProperty(CAN_ON_WATER, value);
+        public static readonly PropertyMeta<bool> CAN_ON_LAND = new PropertyMeta<bool>("can_on_land", true);
+        public static bool CanOnLand(this PlacementDefinition definition) => definition.GetProperty<bool>(CAN_ON_LAND);
+        public static void SetCanOnLand(this PlacementDefinition definition, bool value) => definition.SetProperty(CAN_ON_LAND, value);
     }
 }

@@ -73,7 +73,9 @@ namespace MVZ2.GameContent.GlobalCallbacks
                     if (areaTags.Contains(LogicAreaTags.noWater))
                     {
                         // 无水地形的水生器械
-                        if (entityDef.GetPlacementID() == VanillaPlacementID.aquatic)
+                        var placementID = entityDef.GetPlacementID();
+                        var placement = level.Content.GetPlacementDefinition(placementID);
+                        if (placement != null && !placement.CanOnLand())
                         {
                             callbackResult.SetFinalValue(true);
                             return;

@@ -15,6 +15,7 @@ namespace MVZ2.GameContent.Placements
             AddMethod(VanillaPlaceMethods.firstAid);
             this.SetAlmanacTag(VanillaAlmanacTagID.placementAquatic);
             this.SetCanOnWater(true);
+            this.SetCanOnLand(false);
         }
     }
 }

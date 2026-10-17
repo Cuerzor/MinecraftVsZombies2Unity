@@ -20,6 +20,7 @@
 - Fixed the issue of Cow Horn triggering in BOSS waves.
 - Fixed the issue of Broken Lock will trigger for enemy contraptions.
 - Fixed the issue where Lily Pad's evocation cannot spawn Lily Pads under suspending contraptions.
+- Fixed the issue where CAT-TL MK-II does not display as "not recommended" in pure land levels.
 
 ---
 

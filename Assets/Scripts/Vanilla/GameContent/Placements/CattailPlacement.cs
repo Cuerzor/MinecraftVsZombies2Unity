@@ -12,6 +12,7 @@ namespace MVZ2.GameContent.Placements
         {
             AddMethod(VanillaPlaceMethods.upgrade);
             this.SetCanOnWater(true);
+            this.SetCanOnLand(false);
         }
     }
 }
