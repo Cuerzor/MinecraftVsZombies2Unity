@@ -73,7 +73,7 @@ namespace MVZ2.GameContent.Stages
             roundTimer?.Run();
             if ((roundTimer != null && roundTimer.Expired) || level.HasNoAliveEnemy())
             {
-                level.PostWaveFinished(level.CurrentWave, false);
+                level.PostWaveFinished(level.CurrentWave);
                 level.WaveState = VanillaLevelStates.STATE_AFTER_FINAL_WAVE;
                 roundTimer?.ResetTime(150);
                 level.PlaySound(VanillaSoundID.hugeWave);

@@ -86,7 +86,7 @@ namespace MVZ2.Vanilla.Level
             }
             else if (level.HasNoAliveEnemy())
             {
-                level.PostWaveFinished(level.CurrentWave, false);
+                level.PostWaveFinished(level.CurrentWave);
                 level.SetNoEnergy(true);
                 if (!level.IsAllEnemiesCleared())
                 {

@@ -292,17 +292,17 @@ namespace MVZ2Logic.Level
         #endregion
 
         #region 波次
-        public static void PostWaveFinished(this LevelEngine level, int wave, bool hugewave)
+        public static void PostWaveFinished(this LevelEngine level, int wave)
         {
-            if (hugewave)
+            if (level.IsHugeWave(wave))
             {
                 level.CurrentFlag++;
             }
             level.Triggers.RunCallbackFiltered(LevelCallbacks.POST_WAVE_FINISHED, new LevelCallbacks.PostWaveParams(level, wave), wave);
         }
-        public static void NextWave(this LevelEngine level, bool hugewave)
+        public static void NextWave(this LevelEngine level)
         {
-            level.PostWaveFinished(level.CurrentWave, hugewave);
+            level.PostWaveFinished(level.CurrentWave);
             level.CurrentWave++;
             level.RunWave();
         }

@@ -1,6 +1,9 @@
 ## Modified
 - Add alternating patterns to the land tiles of the level background of Youkai Mountain.
 
+## Fixed
+- Fixed the issue where when a huge wave of monsters arrived, the number of spawned monsters actually increased by another huge wave.
+
 ---
 
 # 0.7.1

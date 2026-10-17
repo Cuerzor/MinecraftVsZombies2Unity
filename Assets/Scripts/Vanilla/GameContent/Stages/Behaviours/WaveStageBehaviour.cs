@@ -148,7 +148,7 @@ namespace MVZ2.GameContent.Stages
             }
             else
             {
-                NextWave(level, false);
+                NextWave(level);
             }
         }
         private void TriggerHugeWaveApproaching(LevelEngine level)
@@ -159,12 +159,12 @@ namespace MVZ2.GameContent.Stages
             level.Triggers.RunCallback(LogicLevelCallbacks.POST_HUGE_WAVE_APPROACH, new LevelCallbackParams(level));
             UpdateHighWaveState(level);
         }
-        private void NextWave(LevelEngine level, bool hugewave)
+        private void NextWave(LevelEngine level)
         {
             var waveTimer = GetWaveTimer(level);
             waveTimer?.ResetSeconds(level.GetWaveMaxSeconds());
             SetWaveMaxHealth(level, 0);
-            level.NextWave(hugewave);
+            level.NextWave();
             if (level.IsFinalWave(level.CurrentWave))
             {
                 level.WaveState = VanillaLevelStates.STATE_FINAL_WAVE;
@@ -201,7 +201,7 @@ namespace MVZ2.GameContent.Stages
             {
                 level.PlaySound(VanillaSoundID.siren);
                 level.WaveState = STATE_STARTED;
-                NextWave(level, true);
+                NextWave(level);
                 if (SpawnFlagZombie)
                 {
                     level.SpawnFlagZombie();
