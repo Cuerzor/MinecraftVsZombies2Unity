@@ -4,7 +4,7 @@
 - Projectiles fired by CAT-TL MK-II no longer sink into water.
 
 ### Balance
-- Youkai Mountain Day 4 and Day 5
+- Youkai Mountain Day 3, Day 4 and Day 5
   - Adjusted enemy types to spawn.
 - Youkai Mountain Day 11
   - After Kraken enters phase 2, Nitori will now provide blueprints of Lily Pads.
