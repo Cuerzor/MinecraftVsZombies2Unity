@@ -58,14 +58,23 @@ namespace MVZ2.GameContent.Enemies
                 case STATE_GALLOP:
                     UpdateStateGallop(entity);
                     break;
-
-                case STATE_JUMP:
-                    UpdateStateJump(entity);
-                    break;
-
                 case STATE_LAND:
                     UpdateStateLand(entity);
                     break;
+            }
+        }
+        protected override void UpdateLogic(Entity entity)
+        {
+            base.UpdateLogic(entity);
+            if (blocksJumpDetector.DetectExists(entity) && GetJumpState(entity) == JUMP_STATE_JUMP)
+            {
+                var vel = entity.Velocity;
+                vel.x = 0;
+                vel.y = 0;
+                entity.Velocity = vel;
+                SetJumpState(entity, JUMP_STATE_NONE);
+                entity.Stun(30);
+                entity.PlaySound(VanillaSoundID.bonk);
             }
         }
         private void UpdateStateGallop(Entity entity)
@@ -95,19 +104,6 @@ namespace MVZ2.GameContent.Enemies
                 entity.PlaySound(VanillaSoundID.horseGallop);
             }
 
-        }
-        private void UpdateStateJump(Entity entity)
-        {
-            if (blocksJumpDetector.DetectExists(entity))
-            {
-                var vel = entity.Velocity;
-                vel.x = 0;
-                vel.y = 0;
-                entity.Velocity = vel;
-                SetJumpState(entity, JUMP_STATE_NONE);
-                entity.Stun(30);
-                entity.PlaySound(VanillaSoundID.bonk);
-            }
         }
         private void UpdateStateLand(Entity entity)
         {
