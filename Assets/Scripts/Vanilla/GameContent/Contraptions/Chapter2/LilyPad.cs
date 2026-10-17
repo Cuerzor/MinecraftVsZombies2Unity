@@ -29,13 +29,14 @@ namespace MVZ2.GameContent.Contraptions
                 for (int y = lane - 1; y <= lane + 1; y++)
                 {
                     var grid = level.GetGrid(x, y);
-                    if (grid == null || !grid.IsWater() || !grid.IsEmpty() || grid.IsDisabled())
+                    if (grid == null || !grid.CanSpawnEntity(VanillaContraptionID.lilyPad))
                         continue;
-                    level.Spawn(VanillaContraptionID.lilyPad, grid.GetEntityPosition(), entity)?.Let(e =>
+                    var lily = level.Spawn(VanillaContraptionID.lilyPad, grid.GetEntityPosition(), entity);
+                    if (lily != null)
                     {
-                        e.AddBuff<LilyPadEvocationBuff>();
-                        e.PlaySplashEffect();
-                    });
+                        lily.AddBuff<LilyPadEvocationBuff>();
+                        lily.PlaySplashEffect();
+                    }
                 }
             }
             level.PlaySound(VanillaSoundID.water);

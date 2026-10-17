@@ -19,6 +19,7 @@
 - Fixed the issue where when using an Ejector to throw a netherrack contraption, if the contraption is destroyed, the flame effect will not be triggered.
 - Fixed the issue of Cow Horn triggering in BOSS waves.
 - Fixed the issue of Broken Lock will trigger for enemy contraptions.
+- Fixed the issue where Lily Pad's evocation cannot spawn Lily Pads under suspending contraptions.
 
 ---
 
