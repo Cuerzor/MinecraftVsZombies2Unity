@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-08 03:59+0800\n"
+"POT-Creation-Date: 2026-10-17 11:42+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3815,7 +3815,7 @@ msgstr ""
 #. Properties for artifacts mvz2:broken_lock
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>当一个器械被摧毁时，生成它的蓝图掉落物，然后该制品冷却15秒</color>"
+msgid "效果：<color=red>当一个友方器械被摧毁时，生成它的蓝图掉落物，然后该制品冷却15秒</color>"
 msgstr ""
 
 #. Flavor for artifacts mvz2:broken_lock
@@ -6335,7 +6335,7 @@ msgstr ""
 #. Tooltip for entity mvz2:vortex_hopper
 #: Entity meta file
 msgctxt "entity.tooltip"
-msgid "把附近的僵尸拉入水底"
+msgid "把附近的敌怪拉入水底"
 msgstr ""
 
 #. Name for entity mvz2:pistenser
@@ -6359,7 +6359,7 @@ msgstr ""
 #. Tooltip for entity mvz2:totenser
 #: Entity meta file
 msgctxt "entity.tooltip"
-msgid "发射虚弱的飞镖并灼烧前方的僵尸"
+msgid "发射虚弱的飞镖并灼烧前方的敌人"
 msgstr ""
 
 #. Name for entity mvz2:dream_crystal
@@ -8483,7 +8483,7 @@ msgstr ""
 #. Tooltip for artifact mvz2:broken_lock
 #: Artifact meta file
 msgctxt "artifact.tooltip"
-msgid "当一个器械被摧毁时，生成它的蓝图掉落物，然后该制品冷却15秒"
+msgid "当一个友方器械被摧毁时，生成它的蓝图掉落物，然后该制品冷却15秒"
 msgstr ""
 
 #. Name for artifact mvz2:magma_stone
