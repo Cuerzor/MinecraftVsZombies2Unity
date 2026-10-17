@@ -18,6 +18,12 @@ namespace MVZ2.GameContent.Customize
         {
             tileHighlight.color = color;
         }
+        public void SetZ(float z)
+        {
+            var position = transform.localPosition;
+            position.z = z;
+            transform.localPosition = position;
+        }
         public void ClearLayerModels()
         {
             foreach (var model in models.Values)

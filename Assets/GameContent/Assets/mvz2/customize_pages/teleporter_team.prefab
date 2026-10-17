@@ -585,7 +585,6 @@ GameObject:
   - component: {fileID: 3283465245779183078}
   - component: {fileID: 2490271758323455041}
   - component: {fileID: 7057311595970249823}
-  - component: {fileID: 7539629749882113634}
   m_Layer: 14
   m_Name: Layout
   m_TagString: Untagged
@@ -665,18 +664,6 @@ MonoBehaviour:
   _template: {fileID: 5817061407761569582, guid: 37dcdf20ca6c1e24aa4e424ff1edc1ba, type: 3}
   pooled: 0
   itemList: []
---- !u!210 &7539629749882113634
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7797173790144788277}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortAtRoot: 0
 --- !u!1 &8965108081599202959
 GameObject:
   m_ObjectHideFlags: 0

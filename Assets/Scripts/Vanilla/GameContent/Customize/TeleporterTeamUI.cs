@@ -63,6 +63,10 @@ namespace MVZ2.GameContent.Customize
         {
             layout.SetTileHighlight(index, color);
         }
+        public void SetLayoutTileZ(int index, float z)
+        {
+            layout.SetTileZ(index, z);
+        }
         public void ClearTiles()
         {
             layout.ClearTiles();

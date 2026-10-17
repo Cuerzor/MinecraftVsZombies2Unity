@@ -73,8 +73,12 @@ namespace MVZ2.GameContent.Customize
         }
         private void Update()
         {
-            var pointerPosition = Global.Input.GetPointerScreenPosition();
-            var worldPosition = GetCamera().ScreenToWorldPoint(pointerPosition);
+            var worldPosition = Vector3.one * -1000f;
+
+            if (Global.Input.TryGetPointerScreenPosition(out var pointerPosition))
+            {
+                worldPosition = GetCamera().ScreenToWorldPoint(pointerPosition);
+            }
             worldPosition.z = transform.position.z;
             ui.SetHoldingModelPosition(worldPosition);
 
@@ -285,6 +289,12 @@ namespace MVZ2.GameContent.Customize
         {
             SetEnergyCost(0);
             ui.SetLayoutTileCount(MAX_TILE_COUNT);
+            for (int i = 0; i < MAX_TILE_COUNT; i++)
+            {
+                var lane = i / Teleporter_Evoke.WIDTH;
+                ui.SetLayoutTileZ(i, lane * Z_OFFSET_PER_LANE);
+            }
+
             ui.ClearTiles();
             var tileIndexes = team.GetTileIndexes();
             foreach (var index in tileIndexes)
@@ -798,6 +808,7 @@ namespace MVZ2.GameContent.Customize
         [TranslateMsg("传送器战队的警告提示")]
         public const string WARNING_NOT_SAVED = "您有未保存的更改。\n确认要丢弃所有更改并退出吗？";
         public const int MAX_TILE_COUNT = 9;
+        public const float Z_OFFSET_PER_LANE = -80f;
         public const int MAX_ENERGY = 250;
         [SerializeField]
         private TeleporterTeamUI ui = null!;

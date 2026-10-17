@@ -32,6 +32,14 @@ namespace MVZ2.GameContent.Customize
                 tile.SetHighlightColor(color);
             }
         }
+        public void SetTileZ(int index, float z)
+        {
+            var tile = tilesList.getElement<TeleporterTeamLayoutTileUI>(index);
+            if (tile.Exists())
+            {
+                tile.SetZ(z);
+            }
+        }
         public void ClearTiles()
         {
             foreach (var tile in tilesList.getElements<TeleporterTeamLayoutTileUI>())
