@@ -1085,13 +1085,26 @@ namespace MVZ2.Vanilla.Entities
             PostApplyStatusEffect(entity, buff, source);
         }
 
-        public static void Unfreeze(this Entity entity, ILevelSourceReference? source)
+        public static void RemoveSlow(this Entity entity, ILevelSourceReference? source)
         {
             var buffDefinition = entity.Level.Content.GetBuffDefinition(VanillaBuffID.Enemy.slow);
             if (buffDefinition == null || !PreRemoveStatusEffect(entity, buffDefinition, source))
                 return;
             entity.RemoveBuffs(buffDefinition);
             PostRemoveStatusEffect(entity, buffDefinition, source);
+        }
+        public static void RemoveFrozen(this Entity entity, ILevelSourceReference? source)
+        {
+            var buffDefinition = entity.Level.Content.GetBuffDefinition(VanillaBuffID.Entity.frozen);
+            if (buffDefinition == null || !PreRemoveStatusEffect(entity, buffDefinition, source))
+                return;
+            entity.RemoveBuffs(buffDefinition);
+            PostRemoveStatusEffect(entity, buffDefinition, source);
+        }
+        public static void Unfreeze(this Entity entity, ILevelSourceReference? source)
+        {
+            entity.RemoveSlow(source);
+            entity.RemoveFrozen(source);
         }
         #region 魅惑
         public static void CharmPermanent(this Entity entity, int faction, ILevelSourceReference? source)
