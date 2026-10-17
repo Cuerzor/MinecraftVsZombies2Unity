@@ -128,8 +128,8 @@ namespace MVZ2.GameContent.Contraptions
         }
         public static void BreakTile(LawnGrid tile, Entity source)
         {
-            DestroyEntitiesInGrid(tile, source);
             BrokenTileBuff.Break(tile, true);
+            DestroyEntitiesInGrid(tile, source);
         }
         public static void DestroyEntitiesInGrid(LawnGrid grid, Entity source)
         {

@@ -5,6 +5,7 @@ using MVZ2.Vanilla.Callbacks;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2Logic;
+using MVZ2Logic.Grids;
 using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
@@ -29,7 +30,10 @@ namespace MVZ2.GameContent.Contraptions
             using var tiles = entity.GetGridsToTakeDisposeable();
             foreach (var tile in tiles.Value)
             {
-                if (tile == null || tile.GetProtectorEntity() == null)
+                if (tile == null || !tile.GetProtectorEntity().ExistsAndAlive())
+                    continue;
+
+                if (tile.IsDisabled())
                     continue;
 
                 using var carriers = tile.GetLayerEntitiesDisposeable(VanillaGridLayers.carrier);
