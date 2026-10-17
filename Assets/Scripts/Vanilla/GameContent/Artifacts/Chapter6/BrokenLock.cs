@@ -11,6 +11,7 @@ using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Artifacts;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Definitions;
+using MVZ2Logic.Entities;
 using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Callbacks;
@@ -49,6 +50,8 @@ namespace MVZ2.GameContent.Artifacts
             var contraption = info.Entity;
             var level = contraption.Level;
             if (info.HasEffect(VanillaDamageEffects.NO_BROKEN_LOCK))
+                return;
+            if (!contraption.IsFriendlyEntity())
                 return;
             NamespaceID? entityID = contraption.GetDefinitionID();
             bool commandBlock;
