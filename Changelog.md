@@ -1,3 +1,8 @@
+## Modified
+- Add alternating patterns to the land tiles of the level background of Youkai Mountain.
+
+---
+
 # 0.7.1
 ## Modified
 - After clearing the Palanquin Ship, the silhouette of the zombie cow will now be displayed in the Almanac.
