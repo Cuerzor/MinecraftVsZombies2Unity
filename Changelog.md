@@ -6,6 +6,7 @@
 - Fixed the issue where icons of blueprint pickups on mobile devices would be removed by 3D models.
 - Fixed the issue where the artifact pickup of Gale Leaf will still be spawned even if the Wooden Fan is not evoked.
 - Fixed the issue of incorrect rendering in Teleporter Team UI.
+- Fixed the issue where the contraption transformed from Command Block does not inherit the movement effect of the Command Block.
 
 ---
 

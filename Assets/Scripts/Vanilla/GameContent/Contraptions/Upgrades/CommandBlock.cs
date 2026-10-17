@@ -120,23 +120,25 @@ namespace MVZ2.GameContent.Contraptions
             var spawnParams = entity.GetSpawnParams();
             spawnParams.SetProperty(LogicEntityProps.VARIANT, entity.GetVariant());
             spawnParams.EntityVelocity = entity.Velocity;
-            var spawned = entity.Spawn(targetDef, entity.Position, spawnParams)?.Let(e =>
+            var spawned = entity.Spawn(targetDef, entity.Position, spawnParams);
+            if (spawned != null)
             {
-                e.AddBuff<ImitatedBuff>();
-                if (IsTriggered(entity) && e.CanTrigger())
+                spawned.AddBuff<ImitatedBuff>();
+                if (IsTriggered(entity) && spawned.CanTrigger())
                 {
-                    e.Trigger();
+                    spawned.Trigger();
                 }
-                if (entity.IsEvoked() && e.CanEvoke())
+                if (entity.IsEvoked() && spawned.CanEvoke())
                 {
-                    e.Evoke();
+                    spawned.Evoke();
                 }
-                var grid = e.GetGrid();
+                var grid = spawned.GetGrid();
                 if (grid != null)
                 {
-                    e.PlaySoundIfNotNull(grid.GetPlaceSound(e));
+                    spawned.PlaySoundIfNotNull(grid.GetPlaceSound(spawned));
                 }
-            });
+                spawned.InheritContraptionMotionBuffs(entity);
+            };
             PostTransform(entity, spawned, targetDef.GetID(), false);
         }
         private static void TransformFailure(Entity entity)
@@ -145,10 +147,13 @@ namespace MVZ2.GameContent.Contraptions
             if (!PreTransform(entity, id, true))
                 return;
 
-            var spawned = entity.Spawn(id, entity.Position)?.Let(e =>
+            var spawned = entity.Spawn(id, entity.Position);
+            if (spawned != null)
             {
-                e.Velocity = entity.Velocity;
-            });
+                spawned.Velocity = entity.Velocity;
+                spawned.InheritContraptionMotionBuffs(entity);
+            }
+            ;
             PostTransform(entity, spawned, id, true);
             entity.PlaySound(VanillaSoundID.errorXP);
         }
