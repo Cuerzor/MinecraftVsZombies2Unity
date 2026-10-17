@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using MVZ2.GameContent.Buffs;
 using MVZ2.Vanilla.Artifacts;
 using MVZ2.Vanilla.Audios;
+using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic;
 using MVZ2Logic.Artifacts;
@@ -55,7 +56,7 @@ namespace MVZ2.GameContent.Artifacts
         {
             var level = args.level;
             var wave = args.wave;
-            if (!level.IsHugeWave(wave))
+            if (!level.IsHugeWave(wave) || !level.IsNormalLevelProgression())
                 return;
             var artifact = level.GetArtifact(GetID());
             if (artifact != null)

@@ -35,7 +35,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             {
                 var totalWave = level.GetLevelTotalWaves(wave, flags);
                 output.basePoints = Mathf.FloorToInt(totalWave * 0.8f) / 2 + 1;
-                if (level.IsHugeWave(wave) && (level.WaveState == VanillaLevelStates.STATE_STARTED || level.WaveState == VanillaLevelStates.STATE_FINAL_WAVE))
+                if (level.IsHugeWave(wave) && level.IsNormalLevelProgression())
                 {
                     output.multiplier *= 2.5f;
                 }

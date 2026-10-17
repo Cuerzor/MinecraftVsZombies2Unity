@@ -9,6 +9,7 @@
 - Fixed the issue where the contraption transformed from Command Block does not inherit the movement effect of the Command Block.
 - Fixed the issue of Thunder Drum shaking monsters in the waters outside screen at Youkai Mountain.
 - Fixed the issue where when using an Ejector to throw a netherrack contraption, if the contraption is destroyed, the flame effect will not be triggered.
+- Fixed the issue of Cow Horn triggering in BOSS waves.
 
 ---
 

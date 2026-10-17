@@ -86,7 +86,7 @@ namespace MVZ2.Vanilla.Level
             }
             else if (level.HasNoAliveEnemy())
             {
-                level.PostWaveFinished(level.CurrentWave);
+                level.PostWaveFinished(level.CurrentWave, false);
                 level.SetNoEnergy(true);
                 if (!level.IsAllEnemiesCleared())
                 {
@@ -230,14 +230,11 @@ namespace MVZ2.Vanilla.Level
             var waveState = level.WaveState;
             if (waveState == VanillaLevelStates.STATE_HUGE_WAVE_APPROACHING)
                 return true;
-            if (level.IsHugeWave(level.CurrentWave))
-            {
-                if (waveState == VanillaLevelStates.STATE_STARTED)
-                    return true;
-                if (waveState == VanillaLevelStates.STATE_FINAL_WAVE)
-                    return true;
-            }
-            return false;
+            return level.IsHugeWave(level.CurrentWave) && level.IsNormalLevelProgression();
+        }
+        public static bool IsNormalLevelProgression(this LevelEngine level)
+        {
+            return level.WaveState == VanillaLevelStates.STATE_STARTED || level.WaveState == VanillaLevelStates.STATE_FINAL_WAVE;
         }
         #endregion
 

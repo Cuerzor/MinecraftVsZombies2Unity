@@ -52,7 +52,7 @@ namespace MVZ2.GameContent.Stages
         protected virtual void StartAfterFinalWave(LevelEngine level)
         {
             level.WaveState = VanillaLevelStates.STATE_AFTER_FINAL_WAVE;
-            level.PostWaveFinished(level.CurrentWave);
+            level.PostWaveFinished(level.CurrentWave, false);
         }
         protected virtual void AfterFinalWaveUpdate(LevelEngine level)
         {
