@@ -259,6 +259,7 @@
     <buff id="kraken_no_enemy_spawn" polarity="none" level="5000" target="level" />
     <buff id="kraken_transition" polarity="none" level="5000" target="level" />
     <buff id="kraken_cleared" polarity="none" level="5000" target="level" />
+    <buff id="nitori_gives_lily_pad" polarity="none" level="5000" target="level" />
     
     <!-- Curses -->
     <buff id="the_creatures_brain" polarity="negative" level="5000" target="level" />

@@ -5,6 +5,8 @@
 ### Balance
 - Youkai Mountain Day 4
   - No longer spawn Ghasts.
+- Youkai Mountain Day 11
+  - After Kraken enters phase 2, Nitori will now provide blueprints of Lily Pads.
 
 ## Fixed
 - Fixed the issue of the target entity bubble in mobile platforms won't display and will cause errors.
@@ -127,7 +129,7 @@
   - "Come True" fate option: No longer give Ghasts stats bonuses
   - "Pandora's Box " fate option reworked: Randomly swap the positions of all contraptions on the battlefield -> Opens two green summoning portals in random lanes that continuously summon Iron Helmet Zombies
   - After selecting a fate option, a text effect description of the option will now pop up.
-  - The effect of Decrepify and Insanity is not cleared after the death of Slender Man.
+  - The effect of Decrepify and Insanity is now cleared after the death of Slender Man.
 - Wither
   - Now can be interrupted by Golden Apple even when Wither is using a charge attack instead of an eat attack.
 - Hoe

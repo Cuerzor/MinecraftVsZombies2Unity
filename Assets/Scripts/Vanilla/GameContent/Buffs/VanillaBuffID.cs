@@ -85,6 +85,7 @@ namespace MVZ2.GameContent.Buffs
             public const string krakenNoEnemySpawn = "kraken_no_enemy_spawn";
             public const string krakenTransition = "kraken_transition";
             public const string krakenCleared = "kraken_cleared";
+            public const string nitoriGivesLilyPad = "nitori_gives_lily_pad"; 
 
             // Random China
             public const string greedyVacuum = "greedy_vacuum";

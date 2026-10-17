@@ -64,6 +64,10 @@ namespace MVZ2.GameContent.Buffs.Level
                         level.SetMusicVolume(1);
                         level.SetProgressBarToBoss(VanillaProgressBarID.kraken);
                         level.PlayMusic(VanillaMusicID.mountainBoss);
+                        if (level.IsAdventure() && level.IsConveyorMode())
+                        {
+                            level.AddBuff<NitoriGivesLilyPadBuff>();
+                        }
                         buff.Remove();
                     }
                     break;
