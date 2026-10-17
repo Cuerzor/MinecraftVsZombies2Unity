@@ -49,11 +49,11 @@ namespace MVZ2.GameContent.Buffs.Level
             }
             else
             {
-                var timer = GetOrCreateTimer(buff, Ticks.FromSeconds(PRODUCE_INTERVAL_SECONDS));
+                var timer = GetOrCreateTimer(buff);
                 if (timer.RunToExpired())
                 {
-                    timer.Reset();
                     ProduceLilyPad(buff);
+                    timer.ResetSeconds(GetDynamicProduceIntervalSeconds(buff));
                 }
             }
         }
@@ -99,14 +99,25 @@ namespace MVZ2.GameContent.Buffs.Level
             param.EntityVelocity = velocity;
             level.SpawnSourced(VanillaPickupID.blueprintPickup, position, new BuffSourceReference(level, buff), param);
         }
+        public static float GetDynamicProduceIntervalSeconds(Buff buff)
+        {
+            var level = buff.Level;
+            var count = level.GetEntityCount(static e => e.IsEntityOf(VanillaContraptionID.lilyPad));
+            var t = (float)(count - PRODUCE_LILYPAD_COUNT_MIN) / (PRODUCE_LILYPAD_COUNT_MAX - PRODUCE_LILYPAD_COUNT_MIN);
+            return PRODUCE_INTERVAL_SECONDS / Mathf.Lerp(PRODUCE_INTERVAL_SPEED_MIN, PRODUCE_INTERVAL_SPEED_MAX, t);
+        }
         public static bool IsOpen(Buff buff) => buff.GetProperty<bool>(PROP_OPEN);
         public static void SetOpen(Buff buff, bool value) => buff.SetProperty(PROP_OPEN, value);
-        public static FrameTimer GetOrCreateTimer(Buff buff, int frames) => buff.GetOrCreateTimer(PROP_TIMER, frames);
+        public static FrameTimer GetOrCreateTimer(Buff buff) => buff.GetOrCreateTimer(PROP_TIMER, Ticks.FromSeconds(GetDynamicProduceIntervalSeconds(buff)));
         public static FrameTimer? GetTimer(Buff buff) => buff.GetProperty<FrameTimer>(PROP_TIMER);
         public static void SetTimer(Buff buff, FrameTimer? value) => buff.SetProperty(PROP_TIMER, value);
         public static RandomGenerator? GetRNG(Buff buff) => buff.GetProperty<RandomGenerator>(PROP_RNG);
         public static void SetRNG(Buff buff, RandomGenerator? value) => buff.SetProperty(PROP_RNG, value);
+        public const float PRODUCE_INTERVAL_SPEED_MIN = 2f;
+        public const float PRODUCE_INTERVAL_SPEED_MAX = 0.5f;
         public const float PRODUCE_INTERVAL_SECONDS = 10f;
+        public const int PRODUCE_LILYPAD_COUNT_MIN = 0;
+        public const int PRODUCE_LILYPAD_COUNT_MAX = 16;
         public static readonly VanillaBuffPropertyMeta<RandomGenerator> PROP_RNG = new VanillaBuffPropertyMeta<RandomGenerator>("rng");
         public static readonly VanillaBuffPropertyMeta<FrameTimer> PROP_TIMER = new VanillaBuffPropertyMeta<FrameTimer>("timer");
         public static readonly VanillaBuffPropertyMeta<bool> PROP_OPEN = new VanillaBuffPropertyMeta<bool>("open");

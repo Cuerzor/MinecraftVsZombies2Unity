@@ -1,6 +1,10 @@
 ## Modified
 - Add alternating patterns to the land tiles of the level background of Youkai Mountain.
 
+### Balance
+- Youkai Mountain Day 11
+  - The speed of the Lily Pads provided by Nitori will now be dynamically adjusted based on the number of Lily Pads on the battlefield: 5 seconds when there are no Lily Pads, and 20 seconds when there are 16 Lily Pads.
+
 ## Fixed
 - Fixed the issue where when a huge wave of monsters arrived, the number of spawned monsters actually increased by another huge wave.
 - Fixed the issue where a boss in a vulnerable state would remain invincible for a period of time when receiving damage exceeding the damage limit.
