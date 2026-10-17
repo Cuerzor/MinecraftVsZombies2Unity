@@ -732,8 +732,7 @@ namespace MVZ2.Vanilla.Entities
         }
         public static bool IsAboveLand(this Entity entity)
         {
-            var grid = entity.GetGrid();
-            return grid == null || (!grid.IsWater() && !grid.IsCloud());
+            return !entity.IsOnWater() && !entity.IsAboveCloud();
         }
         public static Entity? PlayAirSplashEffect(this Entity entity)
         {
