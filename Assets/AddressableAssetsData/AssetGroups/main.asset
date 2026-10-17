@@ -5650,6 +5650,13 @@ MonoBehaviour:
     - Main
     - Meta
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5944025fda4d2094b8cf2f64c041365a
+    m_Address: mvz2:mobile_blueprint/time_bomb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 59ab9a6cecef3704297679a5a4c3e342
     m_Address: mvz2:effect/smoke
     m_ReadOnly: 0
@@ -14642,6 +14649,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: efe7279b9efd4e149afa436e1e203195
     m_Address: mvz2:mainmenu/view/ship
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eff83f4b92807d34aa8a6930548d2f54
+    m_Address: mvz2:entity/contraption/small_dispenser
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main
