@@ -2836,6 +2836,7 @@
             <properties>
                 <bool name="mvz2:harmless" value="true" />
                 <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:noReward" value="true" />
                 <bool name="mvz2:undead" value="false" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:flying_enemy" value="true" />
@@ -2905,6 +2906,7 @@
             <properties>
                 <bool name="mvz2:harmless" value="true" />
                 <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:noReward" value="true" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <float name="mvz2:fallResistance" value="10000" />
@@ -2927,6 +2929,7 @@
             <properties>
                 <bool name="mvz2:harmless" value="true" />
                 <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:noReward" value="true" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:invincible" value="true" />
@@ -2954,6 +2957,7 @@
             <properties>
                 <bool name="mvz2:dynamite" value="true" />
                 <id name="mvz2:starting_armor" value="mvz2:bedserker_helmet" />
+                <bool name="mvz2:noReward" value="true" />
                 <float name="mvz2:range" value="80" />
                 <float name="mvz2:speed" value="2" />
                 <float name="mvz2:maxHealth" value="10000" />
@@ -3013,6 +3017,7 @@
             <properties>
                 <bool name="mvz2:harmless" value="true" />
                 <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:noReward" value="true" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:immune_slowing" value="true" />
@@ -3094,6 +3099,7 @@
             <properties>
                 <bool name="mvz2:harmless" value="true" />
                 <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:noReward" value="true" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:immune_slowing" value="true" />
@@ -3130,6 +3136,7 @@
             <properties>
                 <bool name="mvz2:harmless" value="true" />
                 <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:noReward" value="true" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:immune_slowing" value="true" />
@@ -3168,6 +3175,7 @@
             <properties>
                 <bool name="mvz2:harmless" value="true" />
                 <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:noReward" value="true" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:immune_slowing" value="true" />
@@ -3203,6 +3211,7 @@
             <properties>
                 <bool name="mvz2:harmless" value="true" />
                 <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:noReward" value="true" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:immune_slowing" value="true" />
@@ -3229,6 +3238,7 @@
             </behaviours>
             <properties>
                 <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:noReward" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:immune_slowing" value="true" />
                 <bool name="mvz2:immune_instakill" value="true" />
@@ -3275,6 +3285,7 @@
             <properties>
                 <bool name="mvz2:harmless" value="true" />
                 <bool name="mvz2:notActiveEnemy" value="true" />
+                <bool name="mvz2:noReward" value="true" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:cannot_be_carried_by_other_enemy" value="true" />

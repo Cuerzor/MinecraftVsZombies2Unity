@@ -2,6 +2,7 @@
 ## Modified
 - After clearing the Palanquin Ship, the silhouette of the zombie cow will now be displayed in the Almanac.
 - Projectiles fired by CAT-TL MK-II no longer sink into water.
+- Some specially spawned enemy monsters (such as Soul Sand, Bubbles, etc.) no longer drop any rewards.
 
 ### Balance
 - Youkai Mountain Day 3, Day 4 and Day 5
