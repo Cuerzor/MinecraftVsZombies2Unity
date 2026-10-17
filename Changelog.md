@@ -18,7 +18,7 @@
 - Fixed the issue of Thunder Drum shaking monsters in the waters outside screen at Youkai Mountain.
 - Fixed the issue where when using an Ejector to throw a netherrack contraption, if the contraption is destroyed, the flame effect will not be triggered.
 - Fixed the issue of Cow Horn triggering in BOSS waves.
-- Fixed the issue of Broken Lock will trigger for enemy contraptions.
+- Fixed the issue where Broken Lock will trigger for enemy contraptions.
 - Fixed the issue where Lily Pad's evocation cannot spawn Lily Pads under suspending contraptions.
 - Fixed the issue where CAT-TL MK-II does not display as "not recommended" in pure land levels.
 - Fixed the issue where fire damage cannot unfreeze enemies.
