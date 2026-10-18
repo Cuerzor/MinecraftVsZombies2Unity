@@ -1215,6 +1215,7 @@ MonoBehaviour:
   inputField: {fileID: 70476676929249954}
   outputText: {fileID: 3166202896713389583}
   outputScroll: {fileID: 1464764380157550129}
+  maxOutputLines: 100
   autoCompletePanel: {fileID: 7268135152762623706}
   autoCompleteArrowUp: {fileID: 8655113759600389849}
   autoCompleteArrowDown: {fileID: 7676621555030252591}

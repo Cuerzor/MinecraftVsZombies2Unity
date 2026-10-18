@@ -14,7 +14,6 @@ Material:
   m_ValidKeywords:
   - LIT
   m_InvalidKeywords:
-  - _BACKGROUNDLIT_ON
   - _CIRCLESTART_RIGHT
   - _SPOTLIT_ON
   - _TERRAINFLAGREVERSE_ON
