@@ -8,6 +8,10 @@
 ### Balance
 - Youkai Mountain Day 11
   - The speed of the Lily Pads provided by Nitori will now be dynamically adjusted based on the number of Lily Pads on the battlefield: 5 seconds when there are no Lily Pads, and 20 seconds when there are 16 Lily Pads.
+- Force Pad
+  - Effect adjustment:
+    - Previously: If a projectile's velocity along the direction of the Force Pad was positive, it would apply a knockback effect to the projectile; otherwise, the projectile would not be redirected (this caused bullets with velocities such as 0.0001 not to turn).
+    - Now: If the angle between the projectile's velocity and the direction of the Force Pad is less than 45°, it applies a knockback effect to the projectile. Passing projectiles are always redirected toward the direction of the Force Pad.
 
 ## Fixed
 - Fixed the issue where when a huge wave of monsters arrived, the number of spawned monsters actually increased by another huge wave.

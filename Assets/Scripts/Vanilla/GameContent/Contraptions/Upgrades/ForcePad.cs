@@ -174,46 +174,52 @@ namespace MVZ2.GameContent.Contraptions
                 return;
             var direction = GetPadDirection(pad);
             Vector3 projVelocity = projectile.Velocity;
+            Vector2 projVelocity2D = new Vector2(projVelocity.x, projVelocity.z);
 
             var up = direction == DIRECTION_UP;
             var down = direction == DIRECTION_DOWN;
             var right = direction == DIRECTION_RIGHT;
             var left = direction == DIRECTION_LEFT;
-            bool sameDirection = false;
-            Vector3 velocityDir = Vector3.right;
+            Vector2 normal2D = Vector2.right;
             if (left || right)
             {
                 // Horizontal.
-                float facingX = pad.GetFacingX();
-                var pointX = (right ? 1 : -1) * facingX;
-                sameDirection = projVelocity.x * pointX > 0;
-                velocityDir = new Vector3(pointX, 0, 0);
+                var pointX = (right ? 1 : -1) * pad.GetFacingX();
+                normal2D = new Vector2(pointX, 0);
             }
             else if (up || down)
             {
                 // Vertical.
                 var pointZ = (up ? 1 : -1);
-                sameDirection = projVelocity.z * pointZ > 0;
-                velocityDir = new Vector3(0, 0, pointZ);
+                normal2D = new Vector2(0, pointZ);
             }
+            Vector3 velocityDir = new Vector3(normal2D.x, 0, normal2D.y);
 
+            bool applyKnockback = Vector2.Angle(projVelocity2D, normal2D) <= 45;
             // 相同方向，增加击退效果并提升弹速
-            if (sameDirection)
+            if (applyKnockback)
             {
                 if (!projectile.HasBuff<ProjectileKnockbackBuff>())
                     projectile.AddBuff<ProjectileKnockbackBuff>();
                 projectile.Velocity += PROJECTILE_SPEED_BOOST * velocityDir;
             }
-            else
-            {
-                // 不同方向，转移方向。
-                projectile.Velocity = velocityDir * projectile.Velocity.magnitude;
-                var pos = pad.Position;
-                pos.y = projectile.Position.y;
-                projectile.Position = pos;
-                projectile.StopChangingLane();
-            }
 
+            // 转移方向。
+            projectile.Velocity = velocityDir * projectile.Velocity.magnitude;
+
+            // 设置子弹位置。
+            var pos = projectile.Position;
+            if (left || right)
+            {
+                pos.z = pad.Position.z;
+            }
+            else if (up || down)
+            {
+                pos.x = pad.Position.x;
+            }
+            projectile.Position = pos;
+
+            projectile.StopChangingLane();
         }
         private void EvokedUpdate(Entity pad)
         {
