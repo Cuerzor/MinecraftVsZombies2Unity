@@ -444,6 +444,9 @@
                 <vector3 name="mvz2:size" x="48" y="24" z="48" />
                 <color name="mvz2:lightColor" value="#0000FF" />
                 <id name="mvz2:shell" value="mvz2:wood" />
+                <id name="mvz2:hitSound" value="mvz2:wood" />
+                <id name="mvz2:placeSound" value="mvz2:wood" />
+                <id name="mvz2:deathSound" value="mvz2:wood" />
 
                 <int name="mvz2:cost" value="25" />
                 <id name="mvz2:rechargeId" value="mvz2:short" />
