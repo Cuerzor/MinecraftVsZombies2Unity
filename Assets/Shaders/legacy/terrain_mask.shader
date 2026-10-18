@@ -56,7 +56,7 @@ Shader "MinecraftVSZombies2/Legacy/TerrainMask"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            int _TerrainFlags;
+            uint _TerrainFlags;
             half _Clip;
             
             sampler2D _BurnNoise;
@@ -96,7 +96,7 @@ Shader "MinecraftVSZombies2/Legacy/TerrainMask"
                 col = Burn(col, burnParams);
                 clip(col.a - _Clip);
 
-                col.rgb = FlagsToColor3(_TerrainFlags);
+                col = FlagsToColor4(_TerrainFlags);
 
                 return col;
             }

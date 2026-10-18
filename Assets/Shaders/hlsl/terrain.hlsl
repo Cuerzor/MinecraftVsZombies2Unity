@@ -4,25 +4,24 @@
 #define TERRAIN
 
 sampler2D _TerrainTexture;
-int _TerrainMode;
-int _TerrainMask;
-int _TerrainFlagRequiredNot;
-int _TerrainFlagRequired;
+uint _TerrainMask;
+uint _TerrainFlagRequiredNot;
+uint _TerrainFlagRequired;
 int _TerrainFlagReverse;
 
-const int WaterFlag = 1;
-const int PoolFlag = 2;
-const int CloudFlag = 4;
-const int GridOverlayFlag = 8;
+const uint WaterFlag = 1;
+const uint PoolFlag = 2;
+const uint CloudFlag = 4;
+const uint GridOverlayFlag = 8;
 
-int GetTerrainFlags(float2 levelUV)
+uint GetTerrainFlags(float2 levelUV)
 {
     float4 color = tex2D(_TerrainTexture, levelUV);
-    return Color3ToFlags(color.rgb);
+    return Color4ToFlags(color);
 }
 void ClipTerrain(float2 levelUV)
 {
-    int flags = GetTerrainFlags(levelUV) & _TerrainMask;
+    uint flags = GetTerrainFlags(levelUV) & _TerrainMask;
     bool valid = ((flags & _TerrainFlagRequired) != 0) || ((flags & _TerrainFlagRequiredNot) == 0);
     if (_TerrainFlagReverse > 0.5)
     {
