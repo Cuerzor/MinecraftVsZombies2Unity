@@ -17,6 +17,7 @@
 - Fixed the issue of "Starshard" not having hyperlinks in the Almanac description of Loan Sign.
 - Fixed the issue where the Anvils summoned by the Random China event 'Anvil Shower' does not have impact damage.
 - Fixed the issue where Gravity Pads will pull monsters in the Bubbles.
+- Fixed the issue where Gravity Pads cannot be displayed correctly in the interface of Teleporter Team.
 
 ---
 
