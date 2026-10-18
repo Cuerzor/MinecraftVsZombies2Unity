@@ -7238,6 +7238,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 74b06f4b29b2a654a826531705e9f36a
+    m_Address: mvz2:entity/contraption/mine_tnt_body
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 74d8652e30ae6cc4facf859271ca3fff
     m_Address: mvz2:commands
     m_ReadOnly: 0

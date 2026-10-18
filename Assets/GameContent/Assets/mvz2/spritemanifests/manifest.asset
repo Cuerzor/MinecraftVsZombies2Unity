@@ -1792,6 +1792,9 @@ MonoBehaviour:
   - name: entity/contraption/mine_dirt
     texture: {fileID: 2800000, guid: caad8c3049dedbb4796afa81b872ead5, type: 3}
     tags: []
+  - name: entity/contraption/mine_tnt_body
+    texture: {fileID: 2800000, guid: 74b06f4b29b2a654a826531705e9f36a, type: 3}
+    tags: []
   - name: entity/contraption/moonlight_sensor
     texture: {fileID: 2800000, guid: 6b600f1f5110d7644843e4595de25748, type: 3}
     tags: []
@@ -7634,6 +7637,10 @@ MonoBehaviour:
   - name: entity/contraption/mine_dirt
     index: 5
     sprite: {fileID: -1830890523, guid: caad8c3049dedbb4796afa81b872ead5, type: 3}
+    tags: []
+  - name: entity/contraption/mine_tnt_body
+    index: 0
+    sprite: {fileID: 21300000, guid: 74b06f4b29b2a654a826531705e9f36a, type: 3}
     tags: []
   - name: entity/contraption/moonlight_sensor
     index: 0
