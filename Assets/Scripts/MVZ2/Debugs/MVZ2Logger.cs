@@ -82,23 +82,7 @@ namespace MVZ2.Debugs
                 pendingLogs.Clear();
             }
 
-            lock (logExportLock)
-            {
-                if (logWriter == null)
-                {
-                    StartLogWriter();
-                }
-
-                if (logWriter == null)
-                    return;
-
-                foreach (var log in writeBuffer)
-                {
-                    logWriter.WriteLine(log);
-                }
-
-                logWriter.Flush();
-            }
+            TryWriteLogs();
         }
 #if UNITY_ANDROID || UNITY_IOS
         private void OnApplicationFocus(bool focus)
@@ -173,15 +157,8 @@ namespace MVZ2.Debugs
         }
         private void StartLogWriter()
         {
-            try
-            {
-                var path = GetLogPath();
-                StartLogWriter(path);
-            }
-            catch (Exception ex)
-            {
-                Debug.LogError($"Failed to start in-game logger: {ex}");
-            }
+            var path = GetLogPath();
+            StartLogWriter(path);
         }
         private void StartLogWriter(string path)
         {
@@ -245,6 +222,76 @@ namespace MVZ2.Debugs
             }
         }
         #endregion
+        private void TryWriteLogs()
+        {
+            string? errorToReport = null;
+            bool reportAsWarning = false;
+
+            lock (logExportLock)
+            {
+                // 1. 尝试初始化（限流重试）
+                if (logWriter == null && Time.realtimeSinceStartup >= nextRetryRealtime)
+                {
+                    try
+                    {
+                        StartLogWriter();
+                        logWriterInitFailed = false;
+                    }
+                    catch (Exception e)
+                    {
+                        // 只在第一次失败时打错误，后续降级为静默
+                        if (!logWriterInitFailed)
+                            errorToReport = $"Failed to start log writer, retry later: {e}";
+                        logWriterInitFailed = true;
+                        nextRetryRealtime = Time.realtimeSinceStartup + RetryIntervalSeconds;
+                    }
+                }
+
+                // 2. 有 writer 就写
+                if (writeBuffer.Count > 0)
+                {
+                    if (logWriter != null)
+                    {
+                        try
+                        {
+                            foreach (var log in writeBuffer)
+                                logWriter.WriteLine(log);
+                            logWriter.Flush();
+                            writeBuffer.Clear();
+                        }
+                        catch (Exception e)
+                        {
+                            // 写入失败：丢弃 buffer，重置 writer，下次重新初始化
+                            writeBuffer.Clear();
+                            try { logWriter.Dispose(); } catch { }
+                            logWriter = null;
+                            nextRetryRealtime = Time.realtimeSinceStartup + RetryIntervalSeconds;
+                            errorToReport = $"Failed to write logs: {e}";
+                        }
+                    }
+                    else
+                    {
+                        // 3. writer 不可用，buffer 又不能无限涨：超出上限就丢弃最旧的
+                        if (writeBuffer.Count > MaxBufferSize)
+                        {
+                            int drop = writeBuffer.Count - MaxBufferSize;
+                            writeBuffer.RemoveRange(0, drop);
+                            if (!logWriterInitFailed)
+                                reportAsWarning = true;
+                        }
+                    }
+                }
+            }
+
+            // 4. lock 外再输出，避免重入/死锁
+            if (errorToReport != null)
+            {
+                if (reportAsWarning) 
+                    Debug.LogWarning(errorToReport);
+                else 
+                    Debug.LogError(errorToReport);
+            }
+        }
 
         public static MVZ2Logger Instance { get; private set; } = null!;
         [SerializeField]
@@ -258,6 +305,11 @@ namespace MVZ2.Debugs
         StreamWriter? logWriter;
         private readonly List<string> pendingLogs = new();
         private readonly List<string> writeBuffer = new();
+        private bool logWriterInitFailed = false;
+        private float nextRetryRealtime = 0;
+        private const float RetryIntervalSeconds = 10f; // 10s 后重试
+        private const int MaxBufferSize = 10_000;   // 缓冲上限，防止 OOM
+
         readonly object logLock = new object();
         readonly object logExportLock = new object();
     }

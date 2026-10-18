@@ -37,7 +37,8 @@ namespace MVZ2.DebugConsole
         }
         public void Print(string text)
         {
-            outputText.text += text;
+            var newText = outputText.text + text;
+            outputText.text = newText.GetLastLines(maxOutputLines);
             Canvas.ForceUpdateCanvases();
             outputScroll.verticalNormalizedPosition = 0;
         }
@@ -149,6 +150,8 @@ namespace MVZ2.DebugConsole
         private TextMeshProUGUI outputText = null!;
         [SerializeField]
         private ScrollRect outputScroll = null!;
+        [SerializeField]
+        private int maxOutputLines = 100;
 
         [Header("Auto Complete")]
         [SerializeField]
