@@ -15,7 +15,6 @@ using MVZ2Logic.Localization;
 using MVZ2Logic.Resources;
 using PVZEngine;
 using PVZEngine.Level;
-using UnityEditor.Experimental;
 using UnityEngine;
 
 namespace MVZ2.Almanacs
@@ -197,7 +196,7 @@ namespace MVZ2.Almanacs
             if (entry == null)
                 return AlmanacEntryViewData.Empty;
 
-            Color color = entry.unlock.IsNullOrMeetsConditions(Main.SaveManager)? Color.white : Color.black;
+            Color color = entry.unlock.IsNullOrMeetsConditions(Main.SaveManager) ? Color.white : Color.black;
 
             return new AlmanacEntryViewData() { sprite = GetEntryThumbnailSprite(entry), color = color };
         }

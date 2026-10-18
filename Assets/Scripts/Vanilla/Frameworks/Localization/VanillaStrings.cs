@@ -14,7 +14,7 @@ namespace MVZ2.Vanilla.Localization
         [TranslateMsg("克拉肯战斗提示")]
         public const string KRAKEN_WEAKSPOT_HINT = "<color=#0FF>[荷取]</color>\n史蒂夫，砸这里！";
         [TranslateMsg("克拉肯战斗提示")]
-        public const string KRAKEN_NITORIS_SUPPORT = "<color=#0FF>[荷取]</color>\n它出来了！我去准备睡莲！"; 
+        public const string KRAKEN_NITORIS_SUPPORT = "<color=#0FF>[荷取]</color>\n它出来了！我去准备睡莲！";
 
         [TranslateMsg("梦魇战斗提示", LogicStrings.CONTEXT_ADVICE)]
         public const string ADVICE_CLICK_TO_DRAG_CRUSHING_WALLS = "点击屏幕阻止碾压墙！";

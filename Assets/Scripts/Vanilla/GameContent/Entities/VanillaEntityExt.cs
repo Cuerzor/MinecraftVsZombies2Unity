@@ -27,7 +27,6 @@ using MVZ2Logic;
 using MVZ2Logic.Armors;
 using MVZ2Logic.Contents.Enemies;
 using MVZ2Logic.Entities;
-using MVZ2Logic.Grids;
 using MVZ2Logic.Level;
 using PVZEngine;
 using PVZEngine.Armors;

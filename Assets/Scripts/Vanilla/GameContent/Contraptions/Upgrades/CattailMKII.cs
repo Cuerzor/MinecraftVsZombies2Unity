@@ -12,7 +12,6 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Models;
-using PVZEngine.Tools;
 using PVZEngine.Tools.Timing;
 using UnityEngine;
 
@@ -61,9 +60,11 @@ namespace MVZ2.GameContent.Contraptions
                 {
                     HomingProjectileBuff.SetTarget(homingBuff, new EntityID(entity.Target));
                     HomingProjectileBuff.SetSpeed(homingBuff, entity.GetShotVelocity().magnitude);
-                };
+                }
+                ;
                 projectile.AddBuff<CattailProjectileBuff>();
-            };
+            }
+            ;
 
             return projectile;
         }

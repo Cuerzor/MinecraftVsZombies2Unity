@@ -3,7 +3,6 @@
 using MVZ2.GameContent.Buffs.Entities;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Contraptions;
-using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2Logic.Entities;
 using PVZEngine.Buffs;

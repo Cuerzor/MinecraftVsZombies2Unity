@@ -286,9 +286,9 @@ namespace MVZ2.Debugs
             // 4. lock 外再输出，避免重入/死锁
             if (errorToReport != null)
             {
-                if (reportAsWarning) 
+                if (reportAsWarning)
                     Debug.LogWarning(errorToReport);
-                else 
+                else
                     Debug.LogError(errorToReport);
             }
         }
