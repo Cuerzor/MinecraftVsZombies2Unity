@@ -44,7 +44,7 @@ namespace MVZ2.GameContent.Detections
                 return false;
             if (target.Type == EntityTypes.PROJECTILE && target.Position.y <= param.entity.Position.y + MIN_HEIGHT)
                 return false;
-            if (target.IgnoreGravityPad())
+            if (target.IgnoreGravityPad() || target.IsForcedMovement())
                 return false;
             return true;
         }
