@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-17 12:33+0800\n"
+"POT-Creation-Date: 2026-10-18 01:16+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -82,16 +82,12 @@ msgid "自定义"
 msgstr ""
 
 #. 游玩时长统计
-#: /MainGame/MainScene/Mainmenu/Elements/Buttons/Stats/Region/Scroll View/Viewport/Content/PlayTime/Title/Title
+#: /MainGame/MainScene/Mainmenu/Elements/Stats/Region/Scroll View/Viewport/Content/PlayTime/Title/Title
 msgid "游玩时长"
 msgstr ""
 
-#: /MainGame/MainScene/Mainmenu/Elements/Buttons/Stats/ReturnButton/Text
+#: /MainGame/MainScene/Mainmenu/Elements/Stats/ReturnButton/Text
 msgid "返回"
-msgstr ""
-
-#: /MainGame/MainScene/Mainmenu/Elements/Buttons/Achievements/Region/Scroll View/Viewport/Content/Entry/Texts/TitleRegion/Earned
-msgid "已完成！"
 msgstr ""
 
 #. 菜单对话框的标题
@@ -433,13 +429,13 @@ msgid "每行召唤一个木乃伊，然后……"
 msgstr ""
 
 # 随机瓷器事件名称
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\AnvilShowerEvent.cs:36
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\AnvilShowerEvent.cs:42
 msgctxt "random_china.event_name"
 msgid "铁砧雨"
 msgstr ""
 
 # 随机瓷器事件描述
-#: Scripts\Vanilla\GameContent\RandomChinaEvents\AnvilShowerEvent.cs:38
+#: Scripts\Vanilla\GameContent\RandomChinaEvents\AnvilShowerEvent.cs:44
 msgctxt "random_china.event_description"
 msgid "每个敌怪头顶生成一个铁砧"
 msgstr ""
@@ -1075,22 +1071,22 @@ msgid "试着挖掉所有器械！"
 msgstr ""
 
 # 选卡警告，{0}为原器械，{1}为升级器械
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:175
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:177
 msgid "你确定想要在没有{0}的情况下使用{1}？"
 msgstr ""
 
 # 选卡警告，{0}为目标敌人
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:177
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:179
 msgid "你没有选能干掉{0}的器械，确定要继续吗？"
 msgstr ""
 
 # 选卡警告
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:179
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:181
 msgid "你没有选能生产能量的器械，确定要继续吗？"
 msgstr ""
 
 # 选卡警告
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:181
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:183
 msgid "你确定这关不使用任何水生器械吗？"
 msgstr ""
 
@@ -2001,52 +1997,52 @@ msgid "FPS: {0}"
 msgstr ""
 
 # 删除用户时的错误信息，{0}为错误信息
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:882
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:884
 msgid "无法删除用户：{0}"
 msgstr ""
 
 # 切换用户时的错误信息，{0}为错误信息
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:884
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:886
 msgid "无法切换至用户：{0}"
 msgstr ""
 
 # 切换用户时的错误信息
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:886
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:888
 msgid "该用户的存档来自于更新的版本。"
 msgstr ""
 
 # 删除用户时的错误信息
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:888
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:890
 msgid "没有其他有效的用户可供切换。"
 msgstr ""
 
 # 退出对话框的描述
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:890
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:892
 msgid "确认要退出吗？"
 msgstr ""
 
 # 存档导出失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:892
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:894
 msgid "导出存档失败。"
 msgstr ""
 
 # 存档导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:894
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:896
 msgid "导入存档失败。"
 msgstr ""
 
 # 存档导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:896
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:898
 msgid "导入存档失败，文件可能已损坏。"
 msgstr ""
 
 # 存档导入失败的警告
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:898
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:900
 msgid "导入存档失败，游戏中存在同名用户，但正在导入的存档不可重命名。"
 msgstr ""
 
 # 存档导出成功的提示，{0}为路径
-#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:900
+#: Scripts\MVZ2\Mainmenu\MainmenuController.cs:902
 msgid "存档已导出至{0}。"
 msgstr ""
 
@@ -3366,82 +3362,88 @@ msgctxt "achievement"
 msgid "？？？"
 msgstr ""
 
-# 游戏内文本提示
-#: Scripts\Logic\Localization\LogicStrings.cs:206
-msgid "挖掉器械"
+# 成就说明-未知
+#: Scripts\Logic\Localization\LogicStrings.cs:198
+msgctxt "achievement"
+msgid "已完成！"
 msgstr ""
 
 # 游戏内文本提示
 #: Scripts\Logic\Localization\LogicStrings.cs:208
+msgid "挖掉器械"
+msgstr ""
+
+# 游戏内文本提示
+#: Scripts\Logic\Localization\LogicStrings.cs:210
 msgid "触发器械"
 msgstr ""
 
 # 固有蓝图的提示
-#: Scripts\Logic\Localization\LogicStrings.cs:210
+#: Scripts\Logic\Localization\LogicStrings.cs:212
 msgid "固有"
 msgstr ""
 
 # 不推荐使用的提示
-#: Scripts\Logic\Localization\LogicStrings.cs:212
+#: Scripts\Logic\Localization\LogicStrings.cs:214
 msgid "不推荐在这关使用"
 msgstr ""
 
 # 无法携带提示
-#: Scripts\Logic\Localization\LogicStrings.cs:214
+#: Scripts\Logic\Localization\LogicStrings.cs:216
 msgid "无法模仿此器械"
 msgstr ""
 
 # 命令方块蓝图名，{0}为原名称
-#: Scripts\Logic\Localization\LogicStrings.cs:216
+#: Scripts\Logic\Localization\LogicStrings.cs:218
 msgid "[命令方块]{0}"
 msgstr ""
 
 # 输入名称对话框的错误信息
-#: Scripts\Logic\Localization\LogicStrings.cs:221
+#: Scripts\Logic\Localization\LogicStrings.cs:223
 msgid "用户名不能为空"
 msgstr ""
 
 # 输入名称对话框的错误信息
-#: Scripts\Logic\Localization\LogicStrings.cs:223
+#: Scripts\Logic\Localization\LogicStrings.cs:225
 msgid "已经存在该用户名"
 msgstr ""
 
 # 输入名称对话框的错误信息
-#: Scripts\Logic\Localization\LogicStrings.cs:225
+#: Scripts\Logic\Localization\LogicStrings.cs:227
 msgid "无法重命名为该用户名"
 msgstr ""
 
 # 输入名称对话框的错误信息
-#: Scripts\Logic\Localization\LogicStrings.cs:227
+#: Scripts\Logic\Localization\LogicStrings.cs:229
 msgid "第一次游戏必须输入用户名"
 msgstr ""
 
 # 删除用户时的警告，{0}为名称
-#: Scripts\Logic\Localization\LogicStrings.cs:229
+#: Scripts\Logic\Localization\LogicStrings.cs:231
 msgid ""
 "确认删除用户{0}吗？\n"
 "该用户所有的数据都将被删除！"
 msgstr ""
 
 # 重命名特殊用户时的警告
-#: Scripts\Logic\Localization\LogicStrings.cs:231
+#: Scripts\Logic\Localization\LogicStrings.cs:233
 msgid "你无法重命名该用户"
 msgstr ""
 
 # 预览战场的提示
-#: Scripts\Logic\Localization\LogicStrings.cs:252
+#: Scripts\Logic\Localization\LogicStrings.cs:254
 msgctxt "advice"
 msgid "点击以继续"
 msgstr ""
 
 # 诅咒名称-未知
-#: Scripts\Logic\Localization\LogicStrings.cs:271
+#: Scripts\Logic\Localization\LogicStrings.cs:273
 msgctxt "curse.name"
 msgid "？？？"
 msgstr ""
 
 # 诅咒说明-未知
-#: Scripts\Logic\Localization\LogicStrings.cs:273
+#: Scripts\Logic\Localization\LogicStrings.cs:275
 msgctxt "curse.tooltip"
 msgid "？？？"
 msgstr ""

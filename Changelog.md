@@ -23,6 +23,7 @@
 - Fixed the issue where Gravity Pads will pull monsters in the Bubbles.
 - Fixed the issue where Gravity Pads cannot be displayed correctly in the interface of Teleporter Team.
 - Fixed the issue where Dream Silk and Cooling Cell in Teleporter Team, when summoned onto an existing contraption, would apply their effects to the existing contraption first instead of prioritizing the contraption at the same position in the team.
+- Fixed the issue where the translation of the "Earned!" text in the achievements interface was not working.
 
 ---
 

@@ -15,8 +15,7 @@ namespace MVZ2.Mainmenu
             iconImage.SetEnabled(viewData.earned);
             notEarnedIconImage.SetEnabled(!viewData.earned);
             nameText.text = viewData.name;
-            earnedObj.SetActive(false); // 先禁用，这样会触发Translator的OnEnable，重新对文本进行翻译，防止切换语言后出现问题。
-            earnedObj.SetActive(viewData.earned);
+            earnedText.text = viewData.earnedText;
             descriptionText.text = viewData.description;
         }
         [SerializeField]
@@ -26,7 +25,7 @@ namespace MVZ2.Mainmenu
         [SerializeField]
         private TextMeshProUGUI nameText = null!;
         [SerializeField]
-        private GameObject earnedObj = null!;
+        private TextMeshProUGUI earnedText = null!;
         [SerializeField]
         private TextMeshProUGUI descriptionText = null!;
     }
@@ -35,6 +34,7 @@ namespace MVZ2.Mainmenu
         public Sprite? icon;
         public string name;
         public bool earned;
+        public string earnedText;
         public string description;
     }
 }

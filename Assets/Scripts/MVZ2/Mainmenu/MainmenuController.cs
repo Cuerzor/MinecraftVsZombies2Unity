@@ -836,6 +836,7 @@ namespace MVZ2.Mainmenu
                     var earned = meta.Unlock.IsNullOrMeetsConditions(main.SaveManager);
                     var hidden = meta.HiddenUntil != null && !meta.HiddenUntil.MeetsConditions(main.SaveManager);
                     var name = main.LanguageManager._p(LogicStrings.CONTEXT_ACHIEVEMENT, metaName);
+                    var earnedText = earned ? main.LanguageManager._p(LogicStrings.CONTEXT_ACHIEVEMENT, LogicStrings.ACHIEVEMENT_EARNED) : string.Empty;
                     var description = string.Empty;
                     if (hidden && !earned)
                     {
@@ -850,6 +851,7 @@ namespace MVZ2.Mainmenu
                         icon = icon,
                         name = name,
                         earned = earned,
+                        earnedText = earnedText,
                         description = description
                     });
                 }
