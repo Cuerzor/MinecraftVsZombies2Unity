@@ -722,6 +722,7 @@
                 <idArray name="mvz2:gridLayers" value="" />
                 <bool name="mvz2:water_displacement_immune" value="true" />
                 <int name="mvz2:hp_bar_visibility" value="-1" />
+                <int name="mvz2:teleporter_team_spawn_order" value="1" />
 
                 <int name="mvz2:cost" value="50" />
                 <id name="mvz2:rechargeId" value="mvz2:very_long" />
@@ -1309,6 +1310,7 @@
                 <idArray name="mvz2:gridLayers" value="" />
                 <bool name="mvz2:water_displacement_immune" value="true" />
                 <int name="mvz2:hp_bar_visibility" value="-1" />
+                <int name="mvz2:teleporter_team_spawn_order" value="1" />
 
                 <int name="mvz2:cost" value="75" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />

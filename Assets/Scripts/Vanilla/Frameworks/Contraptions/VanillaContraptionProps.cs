@@ -115,6 +115,14 @@ namespace MVZ2.Vanilla.Contraptions
         }
         #endregion
 
+        #region 传送器战队生成顺序
+        public static readonly PropertyMeta<int> TELEPORTER_TEAM_SPAWN_ORDER = Get<int>("teleporter_team_spawn_order");
+        public static int GetTeleporterTeamSpawnOrder(this EntityDefinition definition)
+        {
+            return definition.GetProperty<int>(TELEPORTER_TEAM_SPAWN_ORDER);
+        }
+        #endregion
+
         #region 尖头
         public static readonly PropertyMeta<bool> HAS_POINTY_HEAD = Get<bool>("has_pointy_head");
         public static bool HasPointyHead(this Entity entity)
