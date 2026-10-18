@@ -1,3 +1,6 @@
+## Added
+- Added the horde version for theme "Witherstep".
+
 ## Modified
 - Add alternating patterns to the land tiles of the level background of Youkai Mountain.
 - Freezenser will now freeze the water stains created by Zombie Clouds.

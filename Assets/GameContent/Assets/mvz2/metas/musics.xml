@@ -189,10 +189,10 @@
         </description>
     </music>
     <music id="castle_level" name="凋灵舞曲">
-        <track main="mvz2:castle_level" />
         <source>Minecraft</source>
         <origin>Pigstep</origin>
         <author>幻梦忧</author>
+        <track main="mvz2:castle_level" sub="mvz2:castle_level_sub" />
         <description>
             <p>辉针城关卡的音乐。</p>
             <p>原曲是《Minecraft》唱片《Pigstep》。</p>
