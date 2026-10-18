@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-17 11:42+0800\n"
+"POT-Creation-Date: 2026-10-18 10:02+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2138,7 +2138,7 @@ msgstr ""
 #. Header for contraptions mvz2:loan_sign
 #: Almanac meta file
 msgctxt "contraptions.description"
-msgid "借贷告示牌在被放置时会立即借给你星之碎片并要求你偿还，逾期偿还可能有不好的后果。"
+msgid "借贷告示牌在被放置时会立即借给你<ref=[misc]mvz2:starshard.power_cell>星之碎片</ref>并要求你偿还，逾期偿还可能有不好的后果。"
 msgstr ""
 
 #. Properties for contraptions mvz2:loan_sign

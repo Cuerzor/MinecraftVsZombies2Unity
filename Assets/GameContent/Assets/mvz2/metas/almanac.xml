@@ -1243,7 +1243,7 @@
                 <variable name="min_seconds">property("mvz2:entity_behaviour/loan_sign/min_creaking_seconds")</variable>
             </variables>
             <header>
-                <p>借贷告示牌在被放置时会立即借给你星之碎片并要求你偿还，逾期偿还可能有不好的后果。</p>
+                <p>借贷告示牌在被放置时会立即借给你<![CDATA[<ref=[misc]mvz2:starshard.power_cell>星之碎片</ref>]]>并要求你偿还，逾期偿还可能有不好的后果。</p>
             </header>
             <properties>
                 <p>借出星之碎片：<![CDATA[<color=red><var local="lend_count"/></color>]]></p>

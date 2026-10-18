@@ -11,6 +11,7 @@
 - Fixed the issue where a boss in a vulnerable state would remain invincible for a period of time when receiving damage exceeding the damage limit.
 - Fixed the issue where when a CAT-TL MK-II is destroyed by a Nuke, it would leave a Lily Pad on the broken tile.
 - Fixed the issue where the Skeleton Horse would become immobilized after jumping, causing it to pass over tall contraptions.
+- Fixed the issue of "Starshard" not having hyperlinks in the Almanac description of Loan Sign.
 
 ---
 

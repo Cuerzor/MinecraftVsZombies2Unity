@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-17 11:42+0800\n"
-"PO-Revision-Date: 2026-10-17 11:42+0800\n"
+"POT-Creation-Date: 2026-10-18 10:02+0800\n"
+"PO-Revision-Date: 2026-10-18 10:03+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -2638,8 +2638,10 @@ msgstr ""
 #. Header for contraptions mvz2:loan_sign
 #: Almanac meta file
 msgctxt "contraptions.description"
-msgid "借贷告示牌在被放置时会立即借给你星之碎片并要求你偿还，逾期偿还可能有不好的后果。"
-msgstr "When placed, Loan Signs lend you starshards, which you must pay off. Overdue debts are not tolerated."
+msgid "借贷告示牌在被放置时会立即借给你<ref=[misc]mvz2:starshard.power_cell>星之碎片</ref>并要求你偿还，逾期偿还可能有不好的后果。"
+msgstr ""
+"When placed, Loan Signs lend you <ref=[misc]mvz2:starshard.power_cell>starshards</ref>, which you must pay off. Overdue debts are not "
+"tolerated."
 
 #. Properties for contraptions mvz2:loan_sign
 #: Almanac meta file
