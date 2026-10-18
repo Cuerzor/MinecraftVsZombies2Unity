@@ -88,7 +88,10 @@
 	half4 frag(v2f i) :SV_Target
 	{
 #if DEPTH_TEST
-		ClipDepth(i.world, i.levelUV);
+		if (!CheckDepthValid(i.world, i.levelUV))
+		{
+			discard;
+		}
 #endif
 		// 获取原本贴图颜色
 		half4 col = tex2D(_MainTex, i.uv);

@@ -86,11 +86,23 @@ v2f_entity EntityVert(appdata_entity v)
     return o;
 }
 
-half4 EntityFrag(v2f_entity i) : SV_Target
+half4 GetEntityFragColor(v2f_entity i)
 {
-    ClipTerrain(i.levelUV);
+    if (!CheckTerrainValid(i.levelUV))
+    {
+        return 0;
+    }
 #if DEPTH_TEST
-    ClipDepth(i.world, i.levelUV);
+    if (!CheckDepthValid(i.world, i.levelUV))
+    {
+        return 0;
+    }
+#endif
+#if CIRCLE_TILED
+    if (!CheckCircleTile(i.uv))
+    {
+        return 0;
+    }
 #endif
     
     half4 col = tex2D(_MainTex, i.uv);
@@ -104,16 +116,23 @@ half4 EntityFrag(v2f_entity i) : SV_Target
                 
     col.rgb = col.rgb + _ColorOffset.rgb;
                             
-#if CIRCLE_TILED
-    CircleTile(col, i.uv);
-#endif
     
     burn_struct burnParams = GetBurnParameters(i);
     col = Burn(col, burnParams);
+    if (col.a <= 0)
+    {
+        return 0;
+    }
     
 #if LIT
     col = ApplyLight(col, i.levelUV);
 #endif
+    return col;
+}
+
+half4 EntityFrag(v2f_entity i) : SV_Target
+{
+    half4 col = GetEntityFragColor(i);
     
     clip(col.a - 0.01);
     col.rgb *= col.a;

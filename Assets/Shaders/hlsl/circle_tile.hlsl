@@ -2,7 +2,7 @@ half _CircleFill;
 int _CircleTiled;
 int _CircleStart;
 int _CircleClockwise;
-void CircleTile(half4 col, float2 uv)
+bool CheckCircleTile(float2 uv)
 {
     float2 pos = uv - float2(0.5f, 0.5f);
 
@@ -19,5 +19,5 @@ void CircleTile(half4 col, float2 uv)
     angles[3] = float2(-pos.x * clockwise, -pos.y);
 
     float ang = degrees(atan2(angles[_CircleStart].x, angles[_CircleStart].y)) + 180;
-    clip(_CircleFill * 360 - ang);
+    return _CircleFill * 360 > ang;
 }

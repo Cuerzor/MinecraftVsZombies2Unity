@@ -80,7 +80,10 @@ Shader "MinecraftVSZombies2/Legacy/Lit"
             half4 frag (v2f i) : SV_Target
             {
 #if DEPTH_TEST
-                ClipDepth(i.world, i.levelUV);
+                if (!CheckDepthValid(i.world, i.levelUV))
+                {
+                    discard;
+                }
 #endif
                 half4 col = tex2D(_MainTex, i.uv) * i.color * _Color;
                 col = saturate(col);

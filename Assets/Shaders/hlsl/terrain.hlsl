@@ -19,16 +19,13 @@ uint GetTerrainFlags(float2 levelUV)
     float4 color = tex2D(_TerrainTexture, levelUV);
     return Color4ToFlags(color);
 }
-void ClipTerrain(float2 levelUV)
+bool CheckTerrainValid(float2 levelUV)
 {
     uint flags = GetTerrainFlags(levelUV) & _TerrainMask;
     bool valid = ((flags & _TerrainFlagRequired) != 0) || ((flags & _TerrainFlagRequiredNot) == 0);
-    if (_TerrainFlagReverse > 0.5)
+    if (_TerrainFlagReverse != 0)
     {
         valid = !valid;
     }
-    if (!valid)
-    {
-        discard;
-    }
+    return valid;
 }

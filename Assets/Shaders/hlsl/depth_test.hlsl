@@ -46,15 +46,12 @@ float SampleDepthParticle(fixed4 depthUV)
     float backgroundZ = SampleBackgroundZParticle(depthUV);
     return backgroundZ / 100 - 2.1 + _DepthOffset;
 }
-void ClipDepth(float4 world, fixed2 depthUV)
+bool CheckDepthValid(float4 world, fixed2 depthUV)
 {
     if (_DepthTest < 0.5)
-        return;
+        return true;
     float backgroundDepth = SampleDepth(depthUV);
-    if (world.z > backgroundDepth)
-    {
-        discard;
-    }
+    return world.z <= backgroundDepth;
 }
 float SampleDepthColorFactor(float4 world, fixed4 depthUV, float softFactor)
 {

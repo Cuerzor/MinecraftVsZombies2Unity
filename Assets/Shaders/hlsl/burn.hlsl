@@ -20,7 +20,10 @@ half4 Burn(half4 col, burn_struct i)
         float2 noiseUV = i.uv.zw;
         half noise = tex2D(noiseTexture, noiseUV).r - value;
 
-        clip(noise);
+        if (noise <= 0)
+        {
+            return 0;
+        }
         
         float edgeThresold = i.edgeThresold;
         if (noise <= edgeThresold + uv.y)

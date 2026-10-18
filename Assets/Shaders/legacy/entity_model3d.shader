@@ -85,11 +85,14 @@ Shader "MinecraftVSZombies2/Legacy/Model"
 
             half4 frag(v2f IN) : SV_Target
             {
+#if DEPTH_TEST
+                if (!CheckDepthValid(IN.world, IN.levelUV))
+                {
+                    discard;
+                }
+#endif
                 half4 baseColor = tex2D(_MainTex, IN.uv) * _Color;
                 clip(baseColor.a - 1);
-#if DEPTH_TEST
-                ClipDepth(IN.world, IN.levelUV);
-#endif
                 return half4(0,0,0,0);
             }
             ENDHLSL
