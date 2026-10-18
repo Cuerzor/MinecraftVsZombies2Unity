@@ -195,6 +195,7 @@ namespace MVZ2.Vanilla.Entities
         public const string gas = "gas";
         public const string gasBlown = "gas_blown";
         public const string waterStainBlown = "water_stain_blown";
+        public const string waterStainFrozen = "water_stain_frozen"; 
         public const string stopParticlesWithoutParent = "stop_particles_without_parent";
         public const string skyBackground = "sky_background";
         public const string dotCollisionDamage = "dot_collision_damage";

@@ -1498,6 +1498,7 @@
             <properties>
                 <id name="mvz2:shell" value="mvz2:ice" />
                 <id name="mvz2:deathSound" value="mvz2:glass_break" />
+                <bool name="mvz2:is_frost" value="true" />
 
                 <int name="mvz2:cost" value="175" />
             </properties>
@@ -4999,6 +5000,7 @@
         <entity template="effect" id="water_stain">
             <behaviours>
                 <behaviour operator="add" id="mvz2:water_stain_blown" />
+                <behaviour operator="add" id="mvz2:water_stain_frozen" />
             </behaviours>
             <properties>
                 <string name="mvz2:sortingLayer" value="Ground" />
