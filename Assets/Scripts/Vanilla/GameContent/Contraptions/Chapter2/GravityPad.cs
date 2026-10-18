@@ -52,10 +52,11 @@ namespace MVZ2.GameContent.Contraptions
             base.OnEvoke(entity);
             var pos = entity.Position + Vector3.up * 600;
             entity.SpawnUnlockArtifactPickup(VanillaAreaID.castle, VanillaUnlockID.brokenLantern, VanillaArtifactID.brokenLantern, pos + Vector3.up * 100);
-            entity.SpawnWithParams(VanillaContraptionID.anvil, pos)?.Let(anvil =>
+            var anvil = entity.SpawnWithParams(VanillaContraptionID.anvil, pos);
+            if (anvil != null)
             {
                 anvil.AddBuff<ContraptionFallBuff>();
-            });
+            }
         }
         public const float AFFECT_HEIGHT = 64;
         public const float MIN_HEIGHT = 5;

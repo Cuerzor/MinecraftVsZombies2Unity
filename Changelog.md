@@ -12,6 +12,7 @@
 - Fixed the issue where when a CAT-TL MK-II is destroyed by a Nuke, it would leave a Lily Pad on the broken tile.
 - Fixed the issue where the Skeleton Horse would become immobilized after jumping, causing it to pass over tall contraptions.
 - Fixed the issue of "Starshard" not having hyperlinks in the Almanac description of Loan Sign.
+- Fixed the issue where the anvils summoned by the Random China event 'Anvil Shower' does not have impact damage.
 
 ---
 
