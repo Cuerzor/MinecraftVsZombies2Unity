@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-18 01:16+0800\n"
+"POT-Creation-Date: 2026-10-19 11:29+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5392,13 +5392,13 @@ msgstr ""
 #. Store item description of mvz2:hoe by character mvz2:crazy_villager
 #: Store meta file
 msgctxt "store_talk"
-msgid "我以前用过的锄头！每场战斗它都能杀死最开始出现的那只怪物！"
+msgid "我以前用过的锄头！每场战斗它都能杀死前三只出现的怪物！"
 msgstr ""
 
 #. Store item description of mvz2:hoe by character mvz2:tokiko
 #: Store meta file
 msgctxt "store_talk"
-msgid "村民先生的锄头，每场战斗都能给第一只来的怪物当头一棒！"
+msgid "村民先生的锄头，每场战斗都能给前三只来的怪物当头一棒！"
 msgstr ""
 
 #. Store item description of mvz2:the_creatures_heart by character mvz2:crazy_villager
