@@ -1,6 +1,13 @@
 ## Added
 - In levels with water, if the player does not carry Lily Pad, a warning will now be displayed.
 
+## Modifid
+### Balance
+- Mine TNT
+  - Added "Anchored" tag.
+- Necrotombstone
+  - Added "Anchored" tag.
+
 ## Fixed
 - Fixed the issue where the movement status of the ejected contraption would not be removed when using a Ejector.
 - Fixed the issue of Cow Horn not displaying its silhouette in the Almanac.

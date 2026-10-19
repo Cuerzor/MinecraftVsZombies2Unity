@@ -397,6 +397,7 @@
                 <bool name="mvz2:canDeactive" value="false" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:dynamite" value="true" />
+                <bool name="mvz2:anchored_contraption" value="true" />
                 <float name="mvz2:damage" value="1800" />
                 <float name="mvz2:range" value="40" />
                 <id name="mvz2:placeSound" value="mvz2:grass" />
@@ -990,6 +991,7 @@
             </behaviours>
             <properties>
                 <bool name="mvz2:nocturnal" value="true" />
+                <bool name="mvz2:anchored_contraption" value="true" />
                 <id name="mvz2:placement" value="mvz2:buried" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
