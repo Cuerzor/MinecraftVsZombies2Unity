@@ -172,6 +172,11 @@ namespace MVZ2.GameContent.GlobalCallbacks
                 {
                     results.Add(Global.Localization.GetText(WARNING_MISSING_AQUATIC));
                 }
+                // 睡莲
+                if (!chosenBlueprintEntityDefs.Any(e => e.GetID() == VanillaContraptionID.lilyPad) && entityDefsForChoose.Any(e => e.GetID() == VanillaContraptionID.lilyPad))
+                {
+                    results.Add(Global.Localization.GetText(WARNING_MISSING_LILYPAD));
+                }
             }
         }
         [TranslateMsg("选卡警告，{0}为原器械，{1}为升级器械")]
@@ -182,5 +187,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
         public const string WARNING_MISSING_PRODUCER = "你没有选能生产能量的器械，确定要继续吗？";
         [TranslateMsg("选卡警告")]
         public const string WARNING_MISSING_AQUATIC = "你确定这关不使用任何水生器械吗？";
+        [TranslateMsg("选卡警告")]
+        public const string WARNING_MISSING_LILYPAD = "你确定这关不使用睡莲吗？";
     }
 }

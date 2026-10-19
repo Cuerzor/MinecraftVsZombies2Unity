@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-19 11:29+0800\n"
-"PO-Revision-Date: 2026-10-19 11:31+0800\n"
+"POT-Creation-Date: 2026-10-19 11:41+0800\n"
+"PO-Revision-Date: 2026-10-19 11:41+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1065,25 +1065,29 @@ msgctxt "advice.tutorial.17"
 msgid "试着挖掉所有器械！"
 msgstr "Try to dig out all contraptions!"
 
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:177
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:182
 msgid "你确定想要在没有{0}的情况下使用{1}？"
 msgstr "Are you sure you want to use the {1} without the {0}?"
 
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:179
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:184
 msgid "你没有选能干掉{0}的器械，确定要继续吗？"
 msgstr ""
 "You haven't chosen any contraptions that fight off {0}, are you sure you "
 "want to continue?"
 
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:181
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:186
 msgid "你没有选能生产能量的器械，确定要继续吗？"
 msgstr ""
 "You haven't chosen any energy-producing contraptions, are you sure you want "
 "to continue?"
 
-#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:183
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:188
 msgid "你确定这关不使用任何水生器械吗？"
 msgstr "Are you sure want to play this level without any aquatic contraptions?"
+
+#: Scripts\Vanilla\GameContent\GlobalCallbacks\BlueprintRecommendGlobalCallbacks.cs:190
+msgid "你确定这关不使用睡莲吗？"
+msgstr "Are you sure want to play this level without Lily Pad?"
 
 #: Scripts\Vanilla\GameContent\GlobalCallbacks\GemStageGlobalCallbacks.cs:96
 msgctxt "advice.collect_money"
