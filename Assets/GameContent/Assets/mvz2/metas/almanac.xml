@@ -2474,6 +2474,9 @@
             </flavor>
         </entry>
         <entry id="mvz2:cow_horn">
+            <silhouette>
+                <condition required="mvz2:level.ship_11" />
+            </silhouette>
             <header>
                 <p><![CDATA[<ref=[misc]mvz2:zombie_cow>僵尸牛</ref>]]>的牛角。</p>
             </header>

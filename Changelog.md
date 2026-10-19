@@ -1,5 +1,6 @@
 ## Fixed
 - Fixed the issue where the movement status of the ejected contraption would not be removed when using a Ejector.
+- Fixed the issue of Cow Horn not displaying its silhouette in the Almanac.
 
 ---
 
