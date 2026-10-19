@@ -248,7 +248,7 @@ namespace MVZ2.Vanilla.Contraptions
         }
 
         #region 器械移动
-        public static void StopContraptionMotionBuffsAndAlign(this Entity entity)
+        public static void StopContraptionMotionBuffs(this Entity entity, bool alignToTile = true)
         {
             bool changingLane = entity.IsChangingLane();
             bool changingTile = entity.IsChangingTile();
@@ -262,7 +262,10 @@ namespace MVZ2.Vanilla.Contraptions
                 {
                     entity.StopChangingLane();
                 }
-                entity.AdjustToTile();
+                if (alignToTile)
+                {
+                    entity.AdjustToTile();
+                }
             }
         }
         public static void InheritContraptionMotionBuffs(this Entity entity, Entity from)

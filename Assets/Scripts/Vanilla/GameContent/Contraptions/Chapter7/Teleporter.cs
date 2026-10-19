@@ -49,7 +49,7 @@ namespace MVZ2.GameContent.Contraptions
             var tileOffset = new Vector3(tileOffset2D.x, 0, tileOffset2D.y);
             TeleporterTeleportUpBuff.SetTargetPosition(buff, position + tileOffset);
 
-            entity.StopContraptionMotionBuffsAndAlign();
+            entity.StopContraptionMotionBuffs();
         }
     }
 }

@@ -1,3 +1,8 @@
+## Fixed
+- Fixed the issue where the movement status of the ejected contraption would not be removed when using a Ejector.
+
+---
+
 # 0.7.2
 ## Added
 - Added the horde version for theme "Witherstep".
