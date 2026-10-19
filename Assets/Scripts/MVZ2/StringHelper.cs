@@ -10,28 +10,33 @@ namespace MVZ2
                 return string.Empty;
 
             int end = text.Length;
-            // 跳过末尾的换行符（不把结尾空行算作一行）
+
+            // 只用于定位“有效最后一行”的末尾，不用于最终截断
             while (end > 0 && (text[end - 1] == '\n' || text[end - 1] == '\r'))
                 end--;
 
+            if (end == 0)
+                return text; // 全是换行符时，按原样返回；也可按你的定义返回 string.Empty
+
             int newlineCount = 0;
             int i = end - 1;
+
             for (; i >= 0; i--)
             {
                 if (text[i] == '\n')
                 {
-                    if (++newlineCount == lineCount)
+                    newlineCount++;
+                    if (newlineCount == lineCount)
                     {
-                        i++;   // 跳过这个 '\n'（若是 \r\n，'\r' 在其前一位，自然被跳过）
+                        i++; // 跳到这一行开头
                         break;
                     }
                 }
             }
 
-            if (i < 0)                          // 行数不足 N 行
-                return text.Substring(0, end);
-
-            return text.Substring(i, end - i);  // 保留原文的 \r\n / \n
+            if (i < 0)
+                return text; // 行数不足，原样返回，保留换行
+            return text.Substring(i);
         }
     }
 }
