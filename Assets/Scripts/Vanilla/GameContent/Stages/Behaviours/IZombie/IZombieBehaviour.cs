@@ -222,6 +222,7 @@ namespace MVZ2.GameContent.Stages
                     cannotAfford = true;
                 }
             }
+            bool gameOver = false;
             if (cannotAfford)
             {
                 // 上帝模式
@@ -236,13 +237,29 @@ namespace MVZ2.GameContent.Stages
                 // 可以使用铁镐并且存在熔炉
                 if (level.CanUsePickaxe() && level.EntityExists(e => e.IsEntityOf(VanillaContraptionID.furnace)))
                     return;
-                level.GameOver(GameOverTypes.INSTANT, null, VanillaStrings.DEATH_MESSAGE_IZ_LOSE_ALL_ENEMIES);
+                gameOver = true;
+            }
+            if (gameOver)
+            {
+                var delay = GetGameOverDelay(level);
+                delay++;
+                SetGameOverDelay(level, delay);
+                if (delay >= GAME_OVER_DELAY_MAX)
+                {
+                    level.GameOver(GameOverTypes.INSTANT, null, VanillaStrings.DEATH_MESSAGE_IZ_LOSE_ALL_ENEMIES);
+                }
+            }
+            else
+            {
+                SetGameOverDelay(level, 0);
             }
         }
         public NamespaceID? GetCurrentLayout(LevelEngine level) => level.GetProperty<NamespaceID>(PROP_CURRENT_LAYOUT);
         public void SetCurrentLayout(LevelEngine level, NamespaceID value) => level.SetProperty(PROP_CURRENT_LAYOUT, value);
         public FrameTimer? GetRoundTimer(LevelEngine level) => level.GetProperty<FrameTimer>(PROP_ROUND_TIMER);
         public void SetRoundTimer(LevelEngine level, FrameTimer value) => level.SetProperty(PROP_ROUND_TIMER, value);
+        public int GetGameOverDelay(LevelEngine level) => level.GetProperty<int>(PROP_GAME_OVER_DELAY);
+        public void SetGameOverDelay(LevelEngine level, int value) => level.SetProperty(PROP_GAME_OVER_DELAY, value);
 
         #region 属性字段
         private const string PROP_REGION = "i_zombie_stage";
@@ -251,9 +268,12 @@ namespace MVZ2.GameContent.Stages
         public static readonly VanillaLevelPropertyMeta<FrameTimer> PROP_ROUND_TIMER = new VanillaLevelPropertyMeta<FrameTimer>("RoundTimer");
         [LevelPropertyRegistry(PROP_REGION)]
         public static readonly VanillaLevelPropertyMeta<NamespaceID> PROP_CURRENT_LAYOUT = new VanillaLevelPropertyMeta<NamespaceID>("CurrentLayout");
+        [LevelPropertyRegistry(PROP_REGION)]
+        public static readonly VanillaLevelPropertyMeta<int> PROP_GAME_OVER_DELAY = new VanillaLevelPropertyMeta<int>("game_over_delay");
         public const int STATE_NORMAL = VanillaLevelStates.STATE_IZ_NORMAL;
         public const int STATE_NEXT_ROUND = VanillaLevelStates.STATE_IZ_NEXT;
         public const int STATE_FINISHED = VanillaLevelStates.STATE_IZ_FINISHED;
+        public const int GAME_OVER_DELAY_MAX = 15;
         public virtual bool AllowPickaxe => false;
         #endregion
     }
