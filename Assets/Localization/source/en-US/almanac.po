@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
 "POT-Creation-Date: 2026-10-21 01:10+0800\n"
-"PO-Revision-Date: 2026-10-21 13:14+0800\n"
+"PO-Revision-Date: 2026-10-21 15:33+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -6038,7 +6038,7 @@ msgstr "A giant magma block."
 #: Almanac meta file
 msgctxt "misc.description"
 msgid "别再塞小垃圾了！！！"
-msgstr "STOP ADDING RANDOM BULLSHIT!!!"
+msgstr "STOP ADDING RANDOM JUNK!!!"
 
 #. Name for misc mvz2:creaking
 #: Almanac meta file
