@@ -5,10 +5,12 @@ using MVZ2.GameContent.Buffs.Entities;
 using MVZ2.GameContent.Detections;
 using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.Stages;
+using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Level;
 using MVZ2.Vanilla.Localization;
+using MVZ2Logic.Entities;
 using MVZ2Logic.Grids;
 using MVZ2Logic.Level;
 using MVZ2Logic.Localization;
@@ -21,7 +23,7 @@ using UnityEngine;
 namespace MVZ2.GameContent.Contraptions
 {
     [AutoEntityBehaviourDefinition(VanillaEffectNames.gridFire)]
-    public class GridFire : EntityBehaviourDefinition, IBeBlownBehaviour
+    public class GridFire : EntityBehaviourDefinition, IBeBlownBehaviour, IBeFrozenBehaviour
     {
         public GridFire(string nsp, string name) : base(nsp, name)
         {
@@ -63,6 +65,12 @@ namespace MVZ2.GameContent.Contraptions
         public void BeBlown(Entity entity, Entity source)
         {
             entity.Timeout = Mathf.Min(entity.Timeout, 15);
+        }
+
+        public void BeFrozen(Entity entity, Entity source)
+        {
+            entity.PlaySound(VanillaSoundID.fizz);
+            entity.Remove();
         }
         public static Entity? Spawn(LawnGrid grid, Entity source, SpawnParams spawnParam)
         {
