@@ -17,15 +17,16 @@ using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Timing;
 using UnityEngine;
+using UnityEngine.Windows;
 
 namespace MVZ2.GameContent.Enemies
 {
     [AutoEntityBehaviourDefinition(VanillaEnemyNames.zombieCloud)]
-    public class ZombieCloud : AIEntityBehaviour
+    public class ZombieCloud : AIEntityBehaviour, IBeFrozenBehaviour
     {
         public ZombieCloud(string nsp, string name) : base(nsp, name)
         {
-            AddTriggerFiltered(VanillaLevelCallbacks.PRE_APPLY_STATUS_EFFECT, PreEntitySlowCallback, filter: VanillaBuffID.Enemy.slow);
+            AddTrigger(VanillaLevelCallbacks.PRE_APPLY_STATUS_EFFECT, PreEntityApplyStatusCallback);
         }
         public override void Init(Entity entity)
         {
@@ -105,6 +106,10 @@ namespace MVZ2.GameContent.Enemies
             param.SetProperty(EngineEntityProps.TINT, GetSmokeColor(entity));
             entity.Spawn(VanillaEffectID.smokeCluster, entity.GetCenter(), param);
         }
+        public void BeFrozen(Entity entity, Entity source)
+        {
+            ChangeVariant(entity, VARIANT_SNOW);
+        }
         private static Color GetSmokeColor(Entity entity)
         {
             switch (entity.GetVariant())
@@ -116,8 +121,12 @@ namespace MVZ2.GameContent.Enemies
             }
             return SMOKE_COLOR_NORMAL;
         }
-        private void PreEntitySlowCallback(VanillaLevelCallbacks.PreApplyStatusEffectParams param, CallbackResult<bool> result)
+        private void PreEntityApplyStatusCallback(VanillaLevelCallbacks.PreApplyStatusEffectParams param, CallbackResult<bool> result)
         {
+            var buffDefinition = param.buffDefinition;
+            var buffID = buffDefinition.GetID();
+            if (buffID != VanillaBuffID.Enemy.slow && buffID != VanillaBuffID.Entity.frozen)
+                return;
             var entity = param.entity;
             if (!entity.IsEntityOf(VanillaEnemyID.zombieCloud))
                 return;
