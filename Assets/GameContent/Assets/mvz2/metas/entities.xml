@@ -479,6 +479,7 @@
                 <float name="mvz2:damage" value="100" />
                 <float name="mvz2:range" value="120" />
                 <vector3 name="mvz2:size" x="32" y="48" z="32" />
+                <idArray name="mvz2:counter_for" value="mvz2:low_enemy" />
 
                 <int name="mvz2:cost" value="75" />
                 <id name="mvz2:rechargeId" value="mvz2:short" />
@@ -995,6 +996,7 @@
                 <id name="mvz2:placement" value="mvz2:buried" />
                 <vector3 name="mvz2:size" x="48" y="48" z="48" />
                 <idArray name="mvz2:gridLayers" value="mvz2:main mvz2:carrier" />
+                <idArray name="mvz2:counter_for" value="mvz2:low_enemy" />
 
                 <int name="mvz2:cost" value="125" />
                 <id name="mvz2:rechargeId" value="mvz2:long" />
@@ -1436,6 +1438,7 @@
                 <bool name="mvz2:canDeactive" value="false" />
                 <vector3 name="mvz2:size" x="80" y="40" z="64" />
                 <idArray name="mvz2:gridLayers" value="mvz2:protector" />
+                <idArray name="mvz2:counter_for" value="mvz2:low_enemy mvz2:flying_enemy" />
                 <id name="mvz2:shell" value="mvz2:metal" />
                 <bool name="mvz2:loyal" value="true" />
                 <bool name="mvz2:triggerActive" value="true" />
@@ -1604,6 +1607,7 @@
                 <bool name="mvz2:nocturnal" value="true" />
                 <bool name="mvz2:upgradeBlueprint" value="true" />
                 <id name="mvz2:upgradeFrom" value="mvz2:small_dispenser" />
+                <idArray name="mvz2:counter_for" value="mvz2:low_enemy" />
 
                 <float name="mvz2:damage" value="30" />
                 <float name="mvz2:range" value="360" />

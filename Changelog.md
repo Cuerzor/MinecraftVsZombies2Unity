@@ -1,7 +1,13 @@
 ## Added
 - In levels with water, if the player does not carry Lily Pad, a warning will now be displayed.
 
-## Modifid
+## Modified
+- Added counter-monster tags to the following contraptions; when these contraptions are brought, the corresponding warnings will no longer pop up:
+  - Punchton: Short
+  - Necrotombstone: Short
+  - Ejector: Short, Flying
+  - Infectenser: Short
+
 ### Balance
 - Youkai Mountain Day 6
   - The number of waves between huge waves of monsters is 7 instead of the usual 10.
