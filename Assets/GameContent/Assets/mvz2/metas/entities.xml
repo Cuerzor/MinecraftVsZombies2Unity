@@ -1929,6 +1929,58 @@
                 <id name="mvz2:rechargeId" value="mvz2:long" />
             </properties>
         </entity>
+        <entity template="contraption" id="giant_ice" name="巨型冰块" tooltip="阻碍怪物的前进，并保护背后的其他器械">
+            <behaviours includeSelf="false">
+                <behaviour operator="add" id="mvz2:model_damage_percent" />
+                <behaviour operator="add" id="mvz2:giant_stone" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:defensive" value="true" />
+                <bool name="mvz2:is_frost" value="true" />
+                <float name="mvz2:maxHealth" value="2000" />
+                <vector3 name="mvz2:size" x="58" y="58" z="58" />
+                <bool name="mvz2:instantEvoke" value="false" />
+                <bool name="mvz2:no_evoke" value="true" />
+                <int name="mvz2:force_against_kraken" value="1" />
+                <float name="mvz2:fallResistance" value="10000" />
+                <float name="mvz2:ejector_damage_override" value="400" />
+                <float name="mvz2:water_ground_limit_offset" value="-34" />
+                <int name="mvz2:waterInteraction" value="3" />
+                <id name="mvz2:placement" value="mvz2:amphibious" />
+                <id name="mvz2:shell" value="mvz2:ice" />
+                <vector3 name="mvz2:shadowScale" x="1.5" y="1.5" z="1.5" />
+
+                <int name="mvz2:cost" value="50" />
+                <id name="mvz2:rechargeId" value="mvz2:long" />
+            </properties>
+        </entity>
+        <entity template="contraption" id="giant_magma_block" name="巨型岩浆块" tooltip="阻碍怪物的前进，并保护背后的其他器械">
+            <behaviours includeSelf="false">
+                <behaviour operator="add" id="mvz2:model_damage_percent" />
+                <behaviour operator="add" id="mvz2:giant_stone" />
+            </behaviours>
+            <properties>
+                <bool name="mvz2:isFire" value="true" />
+                <bool name="mvz2:canDeactive" value="false" />
+                <bool name="mvz2:defensive" value="true" />
+                <float name="mvz2:maxHealth" value="2000" />
+                <vector3 name="mvz2:size" x="58" y="58" z="58" />
+                <bool name="mvz2:instantEvoke" value="false" />
+                <bool name="mvz2:no_evoke" value="true" />
+                <int name="mvz2:force_against_kraken" value="1" />
+                <float name="mvz2:fallResistance" value="10000" />
+                <float name="mvz2:ejector_damage_override" value="900" />
+                <float name="mvz2:water_ground_limit_offset" value="-34" />
+                <int name="mvz2:waterInteraction" value="3" />
+                <id name="mvz2:placement" value="mvz2:amphibious" />
+                <id name="mvz2:shell" value="mvz2:netherrack" />
+                <vector3 name="mvz2:shadowScale" x="1.5" y="1.5" z="1.5" />
+
+                <int name="mvz2:cost" value="50" />
+                <id name="mvz2:rechargeId" value="mvz2:long" />
+            </properties>
+        </entity>
         <entity template="contraption" id="anti_gravity_pad" name="反重力板" tooltip="（需要重力板）\n吹飞上方怪物的头盔">
             <behaviours>
                 <behaviour operator="add" id="mvz2:anti_gravity_pad/evoke" />

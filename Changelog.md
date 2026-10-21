@@ -3,6 +3,14 @@
 
 ## Modifid
 ### Balance
+- Youkai Mountain Day 6
+  - The number of waves between huge waves of monsters is 7 instead of the usual 10.
+  - After a huge wave of zombies, Lightning Orb, Elastic Cloud, Giant Ice, and Giant Magma Block now drop randomly.
+  - Added Leather Cap Zombie.
+  - Number of contraptions dropped per wave: 3 -> 2
+- Primal Force
+  - After a huge wave of zombies, Lightning Orb, Elastic Cloud, Giant Ice, and Giant Magma Block now drop randomly.
+  - Number of contraptions dropped per wave: 3 -> 2
 - Mine TNT
   - Added "Anchored" tag.
 - Necrotombstone

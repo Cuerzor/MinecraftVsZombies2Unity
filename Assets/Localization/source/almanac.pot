@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-18 10:02+0800\n"
+"POT-Creation-Date: 2026-10-21 01:10+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -4744,6 +4744,42 @@ msgctxt "misc.description"
 msgid "被它砸过的人都没喊疼，由此可见这东西其实并不重。"
 msgstr ""
 
+#. Name for misc mvz2:giant_ice
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "巨型冰块"
+msgstr ""
+
+#. Header for misc mvz2:giant_ice
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "巨大的冰块。"
+msgstr ""
+
+#. Flavor for misc mvz2:giant_ice
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "这是这个东西该在的季节吗？"
+msgstr ""
+
+#. Name for misc mvz2:giant_magma_block
+#: Almanac meta file
+msgctxt "misc.name"
+msgid "巨型岩浆块"
+msgstr ""
+
+#. Header for misc mvz2:giant_magma_block
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "巨大的岩浆块。"
+msgstr ""
+
+#. Flavor for misc mvz2:giant_magma_block
+#: Almanac meta file
+msgctxt "misc.description"
+msgid "别再塞小垃圾了！！！"
+msgstr ""
+
 #. Name for misc mvz2:creaking
 #: Almanac meta file
 msgctxt "misc.name"
@@ -7082,6 +7118,18 @@ msgstr ""
 #: Entity meta file
 msgctxt "entity.name"
 msgid "巨型石块"
+msgstr ""
+
+#. Name for entity mvz2:giant_ice
+#: Entity meta file
+msgctxt "entity.name"
+msgid "巨型冰块"
+msgstr ""
+
+#. Name for entity mvz2:giant_magma_block
+#: Entity meta file
+msgctxt "entity.name"
+msgid "巨型岩浆块"
 msgstr ""
 
 #. Name for entity mvz2:anti_gravity_pad

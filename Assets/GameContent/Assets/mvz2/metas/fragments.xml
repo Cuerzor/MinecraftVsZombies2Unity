@@ -551,6 +551,20 @@
             <key hex="#ABABAB" time="1" />
         </colorKeys>
     </fragment>
+    <fragment name="giant_ice">
+        <colorKeys>
+            <key hex="#a1c3ff" time="0.33333" />
+            <key hex="#92b9fe" time="0.66667" />
+            <key hex="#7ca5f4" time="1" />
+        </colorKeys>
+    </fragment>
+    <fragment name="giant_magma_block">
+        <colorKeys>
+            <key hex="#f89e44" time="0.33333" />
+            <key hex="#723232" time="0.66667" />
+            <key hex="#411616" time="1" />
+        </colorKeys>
+    </fragment>
     <fragment name="anti_gravity_pad">
         <colorKeys>
             <key hex="#00FF00" time="0.75" />

@@ -1644,12 +1644,14 @@
         <clear pickupModel="mvz2:entity.blueprint_pickup" pickupContentID="mvz2:freezenser" />
         <spawns flags="2">
             <spawn id="mvz2:zombie" />
+            <spawn id="mvz2:leather_capped_zombie" />
             <spawn id="mvz2:iron_helmetted_zombie" />
             <spawn id="mvz2:diamond_helmetted_zombie" />
         </spawns>
         <time firstWave="1" />
         <properties>
             <bool name="noEnergy" value="true" />
+            <int name="wavesPerFlag" value="7" />
         </properties>
     </stage>
     <stage id="mountain_7" name="妖怪之山" dayNumber="7">

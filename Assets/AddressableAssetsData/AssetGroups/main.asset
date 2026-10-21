@@ -108,6 +108,13 @@ MonoBehaviour:
     - Main
     - Sprite
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 02b63fb3d84ee6d4285222681f7efdb1
+    m_Address: mvz2:entity/contraption/giant_magma_block
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 02ca0605cd3b9ee4780201d36a424d5f
     m_Address: mvz2:entity/enemy/stone_model
     m_ReadOnly: 0
@@ -9917,6 +9924,13 @@ MonoBehaviour:
     - Main
     - Sound
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9dd483601f2a1f04ebd970b364f055fa
+    m_Address: mvz2:contraption/mountain/giant_ice
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9decbf7bacbe3b0429fa80811d0a000a
     m_Address: mvz2:entity/contraption/dream_crystal
     m_ReadOnly: 0
@@ -11022,6 +11036,13 @@ MonoBehaviour:
     m_SerializedLabels:
     - Main
     - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b215c5c72fa809a4790f6932f86f74c4
+    m_Address: mvz2:contraption/mountain/giant_magma_block
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Model
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b2385c35695e45846a215788533e520a
     m_Address: mvz2:entity/boss/seija
@@ -14474,6 +14495,13 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ec212abe3448fae468e8a869c194bb7c
     m_Address: mvz2:entity/contraption/totenser
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Main
+    - Sprite
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec528ff67a6e9334bb92cb1644714112
+    m_Address: mvz2:entity/contraption/giant_ice
     m_ReadOnly: 0
     m_SerializedLabels:
     - Main

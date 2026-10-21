@@ -3233,6 +3233,44 @@
                     <p>被它砸过的人都没喊疼，由此可见这东西其实并不重。</p>
                 </flavor>
             </entry>
+            <entry id="mvz2:giant_ice" name="巨型冰块" >
+                <unlock>
+                    <condition required="mvz2:level.mountain_6"/>
+                </unlock>
+                <tags sourceEntity="mvz2:giant_ice" />
+                <variables>
+                    <variable name="hp">property("mvz2:entity/maxHealth", "mvz2:giant_ice", "entity")</variable>
+                </variables>
+                <picture model="mvz2:entity.giant_ice"/>
+                <header>
+                    <p>巨大的冰块。</p>
+                </header>
+                <properties>
+                    <p>耐久：<![CDATA[<color=red><var local="hp"/></color>]]></p>
+                </properties>
+                <flavor>
+                    <p>这是这个东西该在的季节吗？</p>
+                </flavor>
+            </entry>
+            <entry id="mvz2:giant_magma_block" name="巨型岩浆块" >
+                <unlock>
+                    <condition required="mvz2:level.mountain_6"/>
+                </unlock>
+                <tags sourceEntity="mvz2:giant_magma_block" />
+                <variables>
+                    <variable name="hp">property("mvz2:entity/maxHealth", "mvz2:giant_magma_block", "entity")</variable>
+                </variables>
+                <picture model="mvz2:entity.giant_magma_block"/>
+                <header>
+                    <p>巨大的岩浆块。</p>
+                </header>
+                <properties>
+                    <p>耐久：<![CDATA[<color=red><var local="hp"/></color>]]></p>
+                </properties>
+                <flavor>
+                    <p>别再塞小垃圾了！！！</p>
+                </flavor>
+            </entry>
             <entry id="mvz2:creaking" name="嘎枝" >
                 <unlock>
                     <condition requiredGroups="mvz2:contraption.loan_sign"/>

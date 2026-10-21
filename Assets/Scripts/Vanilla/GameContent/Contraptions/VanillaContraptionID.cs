@@ -97,6 +97,8 @@ namespace MVZ2.GameContent.Contraptions
         public const string errorBlock = "error_block";
         public const string snipenser = "snipenser";
         public const string giantStone = "giant_stone";
+        public const string giantIce = "giant_ice";
+        public const string giantMagmaBlock = "giant_magma_block";
         public const string antiGravityPad = "anti_gravity_pad";
         public const string timeBomb = "time_bomb";
     }
@@ -191,6 +193,8 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly NamespaceID errorBlock = Get(VanillaContraptionNames.errorBlock);
         public static readonly NamespaceID snipenser = Get(VanillaContraptionNames.snipenser);
         public static readonly NamespaceID giantStone = Get(VanillaContraptionNames.giantStone);
+        public static readonly NamespaceID giantIce = Get(VanillaContraptionNames.giantIce);
+        public static readonly NamespaceID giantMagmaBlock = Get(VanillaContraptionNames.giantMagmaBlock);
         public static readonly NamespaceID antiGravityPad = Get(VanillaContraptionNames.antiGravityPad);
         public static readonly NamespaceID timeBomb = Get(VanillaContraptionNames.timeBomb);
         private static NamespaceID Get(string name)
