@@ -51,7 +51,7 @@ namespace MVZ2.Vanilla.Grids
 
             var column = grid.Column;
             var lane = grid.Lane;
-            var protectedEntities = protectedLayers.Select(t => grid.GetLayerEntity(t)).OfType<Entity>();
+            var protectedEntities = protectedLayers.Select(t => grid.GetLayerEntity(t)).Where(e => e != protector).OfType<Entity>();
             var hasMain = protectedEntities.Count() > 0;
             var validMain = protectedEntities.FirstOrDefault(t => t.GetColumn() == column && t.GetLane() == lane && predicate(t));
 
