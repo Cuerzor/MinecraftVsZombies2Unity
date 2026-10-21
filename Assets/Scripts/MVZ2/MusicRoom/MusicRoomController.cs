@@ -46,8 +46,7 @@ namespace MVZ2.MusicRoom
         private void OnIndexReturnClickCallback()
         {
             Main.MusicManager.Stop();
-            Main.MusicManager.SetTrackWeight(0);
-            playingSubTrack = false;
+            StopSubTrack();
             Return();
         }
         private void OnMusicItemClickCallback(int index)
@@ -56,15 +55,7 @@ namespace MVZ2.MusicRoom
         }
         private void OnPlayButtonClickCallback()
         {
-            if (Main.MusicManager.IsPaused && currentMusicId == Main.MusicManager.GetCurrentMusicID())
-            {
-                Main.MusicManager.Resume();
-            }
-            else if (NamespaceID.IsValid(currentMusicId))
-            {
-                Main.MusicManager.Play(currentMusicId);
-                playingSubTrack = false;
-            }
+            PlayOrResumeMusic(currentMusicId);
         }
         private void OnPauseButtonClickCallback()
         {
@@ -89,23 +80,14 @@ namespace MVZ2.MusicRoom
             var music = Main.MusicManager.GetCurrentMusicID();
             if (currentMusicId != music)
             {
-                Main.MusicManager.Play(currentMusicId);
-                playingSubTrack = false;
+                PlayNewMusic(currentMusicId);
             }
             Main.MusicManager.Pause();
             Main.MusicManager.SetNormalizedMusicTime(value);
         }
         private void OnMusicBarPointerUpCallback()
         {
-            if (Main.MusicManager.IsPaused && currentMusicId == Main.MusicManager.GetCurrentMusicID())
-            {
-                Main.MusicManager.Resume();
-            }
-            else if (NamespaceID.IsValid(currentMusicId))
-            {
-                Main.MusicManager.Play(currentMusicId);
-                playingSubTrack = false;
-            }
+            PlayOrResumeMusic(currentMusicId);
             Main.MusicManager.SetNormalizedMusicTime(ui.GetMusicBarValue());
         }
         #endregion
@@ -136,19 +118,41 @@ namespace MVZ2.MusicRoom
             var playing = NamespaceID.IsValid(currentMusicId) && Main.MusicManager.IsPlaying(currentMusicId) && !Main.MusicManager.IsPaused;
             ui.SetPlaying(playing);
             var music = Main.MusicManager.GetCurrentMusicID();
-            if (music != currentMusicId)
+            float time = 0;
+            float normalizedTime = 0;
+            if (music == currentMusicId)
             {
-                ui.SetMusicTime(0, "00:00");
+                normalizedTime = Main.MusicManager.GetNormalizedMusicTime();
+                time = Main.MusicManager.Time;
             }
-            else
-            {
-                var time = Main.MusicManager.Time;
-                var timeString = string.Format("{0:00}:{1:00}", (int)time / 60, (int)time % 60);
-                ui.SetMusicTime(Main.MusicManager.GetNormalizedMusicTime(), timeString);
-            }
+            var timeString = string.Format("{0:00}:{1:00}", (int)time / 60, (int)time % 60);
+            ui.SetMusicTime(normalizedTime, timeString);
+
             float weightSpeed = playingSubTrack ? 1 : -1;
             subTrackWeight = Mathf.Clamp01(subTrackWeight + weightSpeed * 0.03f);
             Main.MusicManager.SetTrackWeight(subTrackWeight);
+        }
+        private void PlayOrResumeMusic(NamespaceID? id)
+        {
+            if (Main.MusicManager.IsPaused && id == Main.MusicManager.GetCurrentMusicID())
+            {
+                Main.MusicManager.Resume();
+            }
+            else if (NamespaceID.IsValid(id))
+            {
+                PlayNewMusic(id);
+            }
+        }
+        private void PlayNewMusic(NamespaceID id)
+        {
+            Main.MusicManager.Play(id);
+            StopSubTrack();
+        }
+        private void StopSubTrack()
+        {
+            subTrackWeight = 0;
+            Main.MusicManager.SetTrackWeight(subTrackWeight);
+            playingSubTrack = false;
         }
         private void DisplayMusic(int index)
         {
