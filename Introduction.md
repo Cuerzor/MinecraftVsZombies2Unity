@@ -29,9 +29,9 @@ Language: English | [简体中文](Introduction-ZH.md)
 
 # Overview
 
-**Minecraft vs Zombies 2**(MvZ2) is a fan game of Minecraft, Plants vs Zombies and Touhou Project, it is developed solely by Cuerzor.
+**Minecraft vs. Zombies 2** (MvZ2) is a fan game of Minecraft, Plants vs. Zombies and Touhou Project, it is developed solely by Cuerzor.
 
-The game features mechanics from Plants vs Zombies, elements from Minecraft and Touhou Project’s setting and characters. Players take on the role of Steve the mechanic as he travels to Gensokyo with his friend Crazy Villager to solve the Minecraft incident.
+The game features mechanics from Plants vs. Zombies, elements from Minecraft and Touhou Project’s setting and characters. Players take on the role of Steve the mechanic as he travels to Gensokyo with his friend Crazy Villager to solve the Minecraft incident.
 
 There are two versions of this game. The previous version made with Gamemaker Studio 2 was developed until chapter 4 and has been discontinued, whereas the current version made with Unity is still under development. Currently, it is expected to have around 112 contraptions, 64 monsters and 132 levels.
 
@@ -43,7 +43,7 @@ For news and updates about the game, please follow Cuerzor’s online activity, 
 
 ## Energy
 
-**Energy** is a resource used to place contraptions, corresponds to **sun** from Plants vs Zombies.
+**Energy** is a resource used to place contraptions, corresponding to **sun** from Plants vs. Zombies.
 
 Without energy, it is impossible to place contraptions. Additional energy can be obtained by collecting Redstone or by using contraptions that produce energy.
 
@@ -51,9 +51,9 @@ You can only have up to 9,990 energy at a time.
 
 ## Contraptions
 
-**Contraptions** are the weapons you use to attack monsters, corresponds to **plants** from Plants vs Zombies.
+**Contraptions** are the weapons you use to attack monsters, corresponding to **plants** from Plants vs. Zombies.
 
-There are many different types of contraptions, such as: 
+There are many different types of contraptions: 
 
 - **Dispenser** for attacking monsters.
 - **Furnace** for producing redstone.
@@ -65,20 +65,20 @@ A specified amount of energy must be spent to place a contraption. After you pla
 
 ## Monsters
 
-**Monsters** are what you need to defeat, corresponds to **zombies** from Plants vs. Zombies.
+**Monsters** are what you need to defeat, corresponding to **zombies** from Plants vs. Zombies.
 
 There are various kinds of monsters, such as:
 
 - **Zombie** which is the most common.
 - **Iron Helmet Zombie** which is tougher.
-- **Skeleton** which shoots arrows to your contraptions.
+- **Skeleton** which shoots arrows at your contraptions.
 - etc.
 
 The core of the game is to judiciously use contraptions to defeat monsters.
 
 ## Gems
 
-**Gems** are collectable objects, corresponds to **coins** from Plants vs Zombies.
+**Gems** are collectibles, corresponding to **coins** from Plants vs. Zombies.
 
 There are three types of gems: 
 
@@ -93,19 +93,19 @@ After collecting enough gems, you can buy and unlock items from the store or fro
 **Battlefields** are where battles take place. Different battlefields have different effects.
 
 For example: 
-**Halloween** takes place at night, so you can’t get extra energy from the mine, and at every wave two Gargoyles are summoned to disrupt your formation.
+**Halloween** takes place at night, so you can’t get extra energy from the mine, and two Gargoyle Statues are summoned every huge wave to disrupt your formation.
 
 ## Starshards
 
-**Starshards** are items capable of shifting the entire battlefield, corresponds to **plant food** from Plants vs Zombies.
+**Starshards** are items capable of shifting the entire battlefield, corresponding to **plant food** from Plants vs. Zombies.
 
-When you defeat an monster that is glowing green, it will drop a starshard. You can also get additional starshards from contraptions that produce them.
+When you defeat a monster that is glowing green, it will drop a starshard. You can also get additional starshards from contraptions that produce them.
 
 After using a starshard on a contraption, the contraption is **evoked**, erupting with enough power to shift the tide of battle.
 
 Different contraptions have different **evocation abilities**. Using starshards wisely can reduce the game’s difficulty.
 
-## Artifact
+## Artifacts
 
 **Artifacts** are a series of in-game items with passive effects. After unlocking Artifacts, you can equip them during battles to gain enhancements or special effects.
 
@@ -135,8 +135,8 @@ For the differences between difficulties, see the [Difficulty Differences](#diff
 
 ## Is This a Bug?
 Some scenarios are intentional game mechanics rather than bugs. Examples include: 
-- Infectenser under mind-control infecting contraptions.
-- Reduced glowstone light range caused by the Broken Lantern artifact cant prevent mind-control.
+- Infectenser infects other contraptions while mind-controlled.
+- Reduced glowstone light range caused by the Broken Lantern artifact can't prevent mind-control.
 
 If you're unsure whether a phenomenon is a bug, **search existing Issues** first as similar reports might exist.
 
@@ -155,7 +155,7 @@ Alternatively, email `mvz2feedback@qq.com` with all above details.
 ## Where Are Game Logs?
 Version 0.4.0 introduces a new log export feature. To export the file, go to the main menu and open Options → More Options → Export Log Files → Select target location.
 
-**Warning:** Game logs are only retained for the current session and the immediately preceding launch. Logs from launches older than two sessions will be automatically deleted.
+**Warning:** Game logs are only retained for the current session and the immediate preceding launch. Logs from launches older than two sessions will be automatically deleted.
 
 The log file locations differ between Windows and Android devices, as follows:
 
@@ -194,40 +194,40 @@ For v0.3.0+ versions, save structures are cross-platform compatible (Windows/And
 
 **General**
 
-- The recharge time of blueprints have been reduced to 80%.
-- The blueprint convey speed in converyor belt stages have been increased to 200%.
-- Starshard zombies have increased spawn rate. 
+- The recharge time of blueprints has been reduced to 80%.
+- The blueprint conveyor speed in conveyor belt stages has been increased to 200%.
+- Starshard zombies have increased spawn rates. 
 - Clearing a level that has already been cleared only gives 2 rubies, the remaining carts are settled as emeralds.
 
 **Contraptions**
 
-- x150% produce speed for contraptions.
-- +1 grid of lightning radius for glowing contraptions.
+- x150% production speed for contraptions.
+- Lighting radius of glowing contraptions is increased by 1 grid.
 - The explosion damage of Gunpowder Barrel and Gunpowder is 100.
 
 **Monsters**
 
-- x50% toughness for monsters' armors.
-- Monsters drop more redstones in the levels which they will drop restones.
-- -1 spawned Parasite Terrors from monsters.
+- x50% toughness for monsters' armor pieces.
+- Monsters drop more redstones in the levels where they drop redstones.
+- Monsters spawn 1 fewer Parasite Terror.
 - Skeleton Horses won't jump.
 - Wicked Hermit Zombie is stunned for 7.5 seconds after teleporting.
-- The Self-destruction of Wisp Flies deals 100 damage.
+- The self-destruction of Wisp Flies deals 100 damage.
 
 **Bosses**
 
 - Frankenstein will not go into phase 2.
-- Slenderman’s Fate Choosing will appear up to 3 times, with 4 choices.
+- Slenderman’s Fate Choosing will appear up to 3 times, with 4 choices each time.
 - Nightmareaper's Crushing Wall closes slower.
 - Nightmareaper's time limit is 2 minutes.
 - Wither won't regenerate health.
-- The blueprints spitted by the Locked Chest are Zombies.
+- The blueprints spew by the Locked Chest are Zombies.
 - The Kraken's roar will summon 3 Giant Stones.
 
-**Misc**
+**Misc.**
 
 - Paralysis time for the sword in Whack-A-Ghost level is 0.75 seconds.
-- Every furnace drops 9 redstones as total in I Zombie mode.
+- Every furnace drops a total of 9 redstones in I, Zombie mode.
 
 
 ## Hard
@@ -236,7 +236,7 @@ For v0.3.0+ versions, save structures are cross-platform compatible (Windows/And
 
 - No carts.
 - More monsters will be spawned.
-- Clearing a level that has already been cleared gives a diamond, if it has not been cleared 5 rubies will be given instead.
+- Clearing a level that has already been cleared gives a diamond. If it has not been cleared, 5 rubies will be given instead.
 
 **Contraptions**
 
@@ -247,29 +247,29 @@ For v0.3.0+ versions, save structures are cross-platform compatible (Windows/And
 
 - x150% attack speed for monsters.
 - Ghast's fire charge deals 300 damage.
-- +1 spawned Parasite Terrors from monsters.
+- Monsters spawn 1 additional Parasite Terror.
 - Skeleton Horses jump twice.
 - Wicked Hermit Zombie is stunned for 2.5 seconds after teleporting.
-- The Self-destruction of Wisp Flies deals 300 damage.
+- The self-destruction of Wisp Flies deals 300 damage.
 
 **Bosses**
 
-- Frankenstein starts at phase 2, and move 100% faster.
-- Slenderman’s Fate Choosing will appear up to 5 times, with 2 choices.
+- Frankenstein starts at phase 2, and moves 100% faster.
+- Slenderman’s Fate Choosing will appear up to 5 times, with 2 choices each time.
 - Slenderman will turn blueprints into zombies, and zombie blueprints will not be turned into other blueprints.
 - Nightmareaper's Crushing Wall closes faster.
 - Nightmareaper's time limit is 1 minute.
 - Nightmareaper's Wheel of Death attack deals 40% more damage.
-- Contraptions damaged by Wither Skulls will be withering, losing 10 HP per second in 30 seconds.
+- Contraptions damaged by Wither Skulls will get withered, losing 10 HP per second for 30 seconds.
 - The Giant will take less damage after every damage taken. Reforming from cells will reset this effect.
-- The Red Dragon will summon three tornados in phase 1.
-- The Red Dragon's giant fire ball in phase 2 flies and explodes faster.
+- The Red Dragon will summon three tornadoes in phase 1.
+- The Red Dragon's giant fireball in phase 2 flies and explodes faster.
 - The radius of the flame explosion caused by the Red Dragon's flying in phase 2 is doubled.
-- The blueprints spitted by the Locked Chest are Iron Helmet Zombies.
+- The blueprints spew by the Locked Chest are Iron Helmet Zombies.
 - Locked Chest will ask for 2 starshards in the ransom pop-up.
 - The Kraken's roar will only summon 1 Giant Stone.
 
-**Misc**
+**Misc.**
 
 - Paralysis time for the sword in Whack-A-Ghost level is 3 seconds.
-- Every furnace drops 7 redstones as total in I Zombie mode.
+- Every furnace drops a total of 7 redstones in I, Zombie mode.
