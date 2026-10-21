@@ -113,7 +113,7 @@ namespace MVZ2.Level
         }
         public bool ShouldShowHPBars()
         {
-            return Main.OptionsManager.IsHPBarEnabled() && IsHPBarsUnlocked();
+            return IsHPBarsUnlocked();
         }
 
         private void OnOptionChangedBoolCallback(NamespaceID id, bool value)

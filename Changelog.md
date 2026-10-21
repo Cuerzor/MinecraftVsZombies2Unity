@@ -7,6 +7,7 @@
   - Necrotombstone: Short
   - Ejector: Short, Flying
   - Infectenser: Short
+- Now, even if the "HP Bar Enabled" option is turned off, as long as the "Hover Display Range" option is greater than 0, entities within the cursor range will still display HP bars.
 
 ### Balance
 - Youkai Mountain Day 6

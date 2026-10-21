@@ -675,20 +675,23 @@ namespace MVZ2.Level.Entities
             {
                 return true;
             }
-            if (Main.OptionsManager.IsHPBarAutoHide())
+            if (Main.OptionsManager.IsHPBarEnabled())
             {
-                var entity = Entity;
-                if (Mathf.Abs(entity.GetMaxHealth() - entity.Health) <= 0.01f)
+                if (Main.OptionsManager.IsHPBarAutoHide())
                 {
-                    // 满血
-                    return false;
+                    var entity = Entity;
+                    if (Mathf.Abs(entity.GetMaxHealth() - entity.Health) > 0.01f)
+                    {
+                        // 满血
+                        return true;
+                    }
                 }
-                return true;
+                else
+                {
+                    return true;
+                }
             }
-            else
-            {
-                return true;
-            }
+            return false;
         }
         public bool ShouldShowArmorHPBar(Armor armor)
         {
@@ -696,19 +699,22 @@ namespace MVZ2.Level.Entities
             {
                 return true;
             }
-            if (Main.OptionsManager.IsHPBarAutoHide())
+            if (Main.OptionsManager.IsHPBarEnabled())
             {
-                if (Mathf.Abs(armor.GetMaxHealth() - armor.Health) <= 0.01f)
+                if (Main.OptionsManager.IsHPBarAutoHide())
                 {
-                    // 满血
-                    return false;
+                    if (Mathf.Abs(armor.GetMaxHealth() - armor.Health) > 0.01f)
+                    {
+                        // 满血
+                        return true;
+                    }
                 }
-                return true;
+                else
+                {
+                    return true;
+                }
             }
-            else
-            {
-                return true;
-            }
+            return false;
         }
         public float GetMainHPBarAmount()
         {

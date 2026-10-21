@@ -30,7 +30,7 @@ namespace MVZ2.Level.Entities
             if (entity.IsPreviewEnemy())
                 return false;
             var visibility = entity.GetHPBarVisibility();
-            bool shouldShow = visibility == HPBarVisibility.ALWAYS || level.ShouldShowHPBars() && visibility != HPBarVisibility.NEVER;
+            bool shouldShow = visibility == HPBarVisibility.ALWAYS || (level.ShouldShowHPBars() && visibility != HPBarVisibility.NEVER);
             if (!shouldShow || !Controller.ShouldShowHPBarOnEntity())
                 return false;
             return true;
