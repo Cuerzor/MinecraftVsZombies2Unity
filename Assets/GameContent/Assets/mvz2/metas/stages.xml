@@ -1652,6 +1652,7 @@
         <properties>
             <bool name="noEnergy" value="true" />
             <int name="wavesPerFlag" value="7" />
+            <bool name="teleporter_evocation_disabled" value="true" />
         </properties>
     </stage>
     <stage id="mountain_7" name="妖怪之山" dayNumber="7">
@@ -1917,6 +1918,7 @@
         <time firstWave="1" />
         <properties>
             <bool name="noEnergy" value="true" />
+            <bool name="teleporter_evocation_disabled" value="true" />
         </properties>
     </stage>
 

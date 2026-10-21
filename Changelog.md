@@ -14,9 +14,11 @@
   - After a huge wave of zombies, Lightning Orb, Elastic Cloud, Giant Ice, and Giant Magma Block now drop randomly.
   - Added Leather Cap Zombie.
   - Number of contraptions dropped per wave: 3 -> 2
+  - Starshards are now allowed, but not for Teleporters.
 - Primal Force
   - After a huge wave of zombies, Lightning Orb, Elastic Cloud, Giant Ice, and Giant Magma Block now drop randomly.
   - Number of contraptions dropped per wave: 3 -> 2
+  - Starshards are now allowed, but not for Teleporters.
 - Mine TNT
   - Added "Anchored" tag.
 - Necrotombstone

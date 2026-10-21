@@ -70,6 +70,12 @@ namespace MVZ2.GameContent.Contraptions
                 pad.SetEvoked(false);
             }
         }
+        public override bool CanEvoke(Entity entity)
+        {
+            if (entity.Level.IsTeleporterEvocationDisabled())
+                return false;
+            return base.CanEvoke(entity);
+        }
         public override void Evoke(Entity entity)
         {
             var level = entity.Level;

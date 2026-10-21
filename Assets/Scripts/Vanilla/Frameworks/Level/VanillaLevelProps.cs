@@ -88,5 +88,17 @@ namespace MVZ2.Vanilla.Level
             level.SetProperty(RAINING, value);
         }
         #endregion
+
+        #region 禁用传送器技能
+        public static readonly PropertyMeta<bool> TELEPORTER_EVOCATION_DISABLED = Get<bool>("teleporter_evocation_disabled");
+        public static bool IsTeleporterEvocationDisabled(this LevelEngine level)
+        {
+            return level.GetProperty<bool>(TELEPORTER_EVOCATION_DISABLED);
+        }
+        public static void SetTeleporterEvocationDisabled(this LevelEngine level, bool value)
+        {
+            level.SetProperty(TELEPORTER_EVOCATION_DISABLED, value);
+        }
+        #endregion
     }
 }

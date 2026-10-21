@@ -15,12 +15,8 @@ namespace MVZ2.GameContent.Stages
             AddBehaviour(new PrimalForceBehaviour(this));
             AddBehaviour(new ConveyorStageBehaviour(this));
             AddBehaviour(new FinalWaveClearBehaviour(this));
+            AddBehaviour(new StarshardStageBehaviour(this));
             AddBehaviour(new GemStageBehaviour(this));
-        }
-        public override void OnStart(LevelEngine level)
-        {
-            base.OnStart(level);
-            level.SetStarshardActive(false);
         }
     }
 }
