@@ -1412,7 +1412,7 @@ msgid ""
 "技能：<color=red>引发4秒地震，对所有地面上的敌人造成总共25%最大生命的伤害</color>"
 msgstr ""
 "Repair time：<color=red>60 seconds</color>\n"
-"Evocation: <color=red>Makes a earthquake for 4 seconds, dealing a total damage of 25% maximum health to all enemies on the ground</"
+"Evocation: <color=red>Makes an earthquake for 4 seconds, dealing a total damage of 25% maximum health to all enemies on the ground</"
 "color>"
 
 #. Flavor for contraptions mvz2:thunder_drum
