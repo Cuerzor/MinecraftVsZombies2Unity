@@ -72,14 +72,31 @@ namespace ExpressionEvaluator
         {
             _pos++; // skip "
             int start = _pos;
+            var sb = new System.Text.StringBuilder();
 
-            while (_pos < _text.Length && _text[_pos] != '"')
+            while (_pos < _text.Length)
+            {
+                char c = _text[_pos];
+
+                // 处理转义：\" -> "
+                if (c == '\\' && _pos + 1 < _text.Length && _text[_pos + 1] == '"')
+                {
+                    sb.Append('"');
+                    _pos += 2; // 跳过 \" 两个字符
+                    continue;
+                }
+
+                // 未转义的 " 才是字符串结束
+                if (c == '"')
+                    break;
+
+                sb.Append(c);
                 _pos++;
+            }
 
-            string s = _text.Substring(start, _pos - start);
-            _pos++; // skip "
+            _pos++; // skip closing "
 
-            return new Token { Type = TokenType.String, Text = s };
+            return new Token { Type = TokenType.String, Text = sb.ToString() };
         }
 
         private Token ReadIdentifier()
