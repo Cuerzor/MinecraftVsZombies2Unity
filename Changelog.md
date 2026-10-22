@@ -46,6 +46,7 @@
 - Fixed the issue of console outputs not breaking lines.
 - Fixed an issue in the music room where, after enabling a track's horde version, switching to another track that has a horde version and playing it would cause that track's horde version to continue for a few seconds after playback begins.
 - Fixed an issue in touch mode where the Pickaxe, Trigger, or Starshard could not correctly target the contraption directly below a Brick Cannon.
+- Fixed an issue where Prismatic Pylon caused the Iron Curtain effect of Stone Shield on the pylon to change from red to rainbow-colored.
 
 ---
 

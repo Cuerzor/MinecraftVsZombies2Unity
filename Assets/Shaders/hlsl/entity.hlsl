@@ -88,17 +88,20 @@ v2f_entity EntityVert(appdata_entity v)
 
 half4 GetEntityFragColor(v2f_entity i)
 {
+    // 地形裁切
     if (!CheckTerrainValid(i.levelUV))
     {
         return 0;
     }
 #if DEPTH_TEST
+    // 场景深度裁切
     if (!CheckDepthValid(i.world, i.levelUV))
     {
         return 0;
     }
 #endif
 #if CIRCLE_TILED
+    // 扇形裁切效果
     if (!CheckCircleTile(i.uv))
     {
         return 0;
@@ -106,17 +109,21 @@ half4 GetEntityFragColor(v2f_entity i)
 #endif
     
     half4 col = tex2D(_MainTex, i.uv);
+    // Renderer提供的颜色
     col *= i.color;
+    // 灰度
     if (_Grayscale > 0 || _GrayscaleMaterial > 0)
     {
         col = Grayscale(col, _GrayscaleFactor);
     }
-    col *= _Color;
+    // HSV偏移
     col = ModifyHSV(col, _HSVOffset);
-                
+    // Tint属性
+    col *= _Color;
+    // ColorOffset属性
     col.rgb = col.rgb + _ColorOffset.rgb;
                             
-    
+    // 燃烧溶解效果
     burn_struct burnParams = GetBurnParameters(i);
     col = Burn(col, burnParams);
     if (col.a <= 0)
@@ -125,6 +132,7 @@ half4 GetEntityFragColor(v2f_entity i)
     }
     
 #if LIT
+    // 光照效果
     col = ApplyLight(col, i.levelUV);
 #endif
     return col;
