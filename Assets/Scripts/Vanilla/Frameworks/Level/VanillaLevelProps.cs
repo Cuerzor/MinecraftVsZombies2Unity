@@ -4,6 +4,7 @@ using MVZ2.GameContent.Customize;
 using PVZEngine;
 using PVZEngine.Level;
 using PVZEngine.Properties;
+using UnityEngine;
 
 namespace MVZ2.Vanilla.Level
 {
@@ -98,6 +99,18 @@ namespace MVZ2.Vanilla.Level
         public static void SetTeleporterEvocationDisabled(this LevelEngine level, bool value)
         {
             level.SetProperty(TELEPORTER_EVOCATION_DISABLED, value);
+        }
+        #endregion
+
+        #region 水流速度
+        public static readonly PropertyMeta<Vector3> WATER_FLOW_VELOCITY = Get<Vector3>("water_flow_velocity");
+        public static Vector3 GetWaterFlowVelocity(this LevelEngine level)
+        {
+            return level.GetProperty<Vector3>(WATER_FLOW_VELOCITY);
+        }
+        public static void SetWaterFlowVelocity(this LevelEngine level, Vector3 value)
+        {
+            level.SetProperty(WATER_FLOW_VELOCITY, value);
         }
         #endregion
     }

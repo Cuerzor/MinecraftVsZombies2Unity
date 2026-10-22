@@ -1,5 +1,6 @@
 ## Added
 - In levels with water, if the player does not carry Lily Pad, a warning will now be displayed.
+- Wooden balls in the river of Youkai Mountain now drift with water.
 
 ## Modified
 - Added counter-monster tags to the following contraptions; when these contraptions are brought, the corresponding warnings will no longer pop up:
