@@ -82,6 +82,11 @@ namespace MVZ2.GameContent.GlobalCallbacks
             {
                 tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.fire));
             }
+            // 寒冷
+            if (entityDef.IsFrost())
+            {
+                tags.Add(new AlmanacEntryTagInfo(VanillaAlmanacTagID.cold));
+            }
             // 火焰免疫
             if (entityDef.ImmuneFire())
             {

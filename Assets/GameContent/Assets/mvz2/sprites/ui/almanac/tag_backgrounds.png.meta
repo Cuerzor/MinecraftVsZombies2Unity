@@ -160,7 +160,7 @@ TextureImporter:
       name: tag_backgrounds_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 33
         y: 0
         width: 32
         height: 32
@@ -181,7 +181,7 @@ TextureImporter:
       name: tag_backgrounds_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 66
         y: 0
         width: 32
         height: 32
@@ -202,7 +202,7 @@ TextureImporter:
       name: tag_backgrounds_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 99
         y: 0
         width: 32
         height: 32
@@ -223,7 +223,7 @@ TextureImporter:
       name: tag_backgrounds_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 132
         y: 0
         width: 32
         height: 32
@@ -236,6 +236,27 @@ TextureImporter:
       bones: []
       spriteID: 51ecf0c792100b544a0ad6317ed35783
       internalID: 1456763691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tag_backgrounds_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b5c4959cd698dc47b398b12ad82892c
+      internalID: -955291341
       vertices: []
       indices: 
       edges: []
@@ -256,6 +277,7 @@ TextureImporter:
       tag_backgrounds_2: 1941320443
       tag_backgrounds_3: -157417127
       tag_backgrounds_4: 1456763691
+      tag_backgrounds_5: -955291341
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -29,6 +29,7 @@ namespace MVZ2.Vanilla.Almanac
         public static readonly NamespaceID fireImmunity = Get("fire_immunity");
         public static readonly NamespaceID lightningImmunity = Get("lightning_immunity");
         public static readonly NamespaceID stable = Get("stable");
+        public static readonly NamespaceID cold = Get("cold");
 
         public static readonly NamespaceID shell = Get("shell");
         public static readonly NamespaceID shellShield = Get("shell_shield");

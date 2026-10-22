@@ -1,6 +1,18 @@
 ## Added
 - In levels with water, if the player does not carry Lily Pad, a warning will now be displayed.
 - Wooden balls in the river of Youkai Mountain now drift with water.
+- Added the following tags for the Almanac:
+  - Cold
+  - Damage Type: Normal
+  - Damage Type: Explosion
+  - Damage Type: Slice
+  - Damage Type: Impact
+  - Damage Type: Fire
+  - Damage Type: Ice
+  - Damage Type: Lightning
+  - Damage Type: Light
+  - Damage Type: Armor-piercing
+  - Damage Type: Gold
 
 ## Modified
 - Added counter-monster tags to the following contraptions; when these contraptions are brought, the corresponding warnings will no longer pop up:

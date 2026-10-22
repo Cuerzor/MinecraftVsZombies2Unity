@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-21 01:10+0800\n"
+"POT-Creation-Date: 2026-10-22 02:52+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -293,6 +293,12 @@ msgctxt "almanac_tag.name"
 msgid "马质量"
 msgstr ""
 
+#. Name for almanac tag damage_type
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "伤害类型"
+msgstr ""
+
 #. Name for almanac tag light_source
 #: Almanac meta file
 msgctxt "almanac_tag.name"
@@ -485,6 +491,18 @@ msgctxt "almanac_tag.description"
 msgid "免疫闪电伤害"
 msgstr ""
 
+#. Name for almanac tag cold
+#: Almanac meta file
+msgctxt "almanac_tag.name"
+msgid "寒冷"
+msgstr ""
+
+#. Description for almanac tag cold
+#: Almanac meta file
+msgctxt "almanac_tag.description"
+msgid "可冻结物体"
+msgstr ""
+
 #. Name for almanac tag enum value -2 of enum mass
 #: Almanac meta file
 msgctxt "almanac_tag_enum.name"
@@ -566,7 +584,7 @@ msgstr ""
 #. Description for almanac tag enum value mvz2:grass of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "会被锐利物体穿透，受到2x火焰伤害"
+msgid "受到2x切割和火焰伤害"
 msgstr ""
 
 #. Name for almanac tag enum value mvz2:flesh of enum shell
@@ -578,7 +596,7 @@ msgstr ""
 #. Description for almanac tag enum value mvz2:flesh of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "会被锐利物体穿透"
+msgid "受到2x切割伤害"
 msgstr ""
 
 #. Name for almanac tag enum value mvz2:leather of enum shell
@@ -728,7 +746,109 @@ msgstr ""
 #. Description for almanac tag enum value mvz2:bubble of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "受到20x锐利伤害和冰冷伤害"
+msgid "受到20x切割伤害和冰冷伤害"
+msgstr ""
+
+#. Name for almanac tag enum value mvz2:explosion of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "爆炸"
+msgstr ""
+
+#. Description for almanac tag enum value mvz2:explosion of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "爆炸伤害"
+msgstr ""
+
+#. Name for almanac tag enum value mvz2:slice of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "切割"
+msgstr ""
+
+#. Description for almanac tag enum value mvz2:slice of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "切割伤害"
+msgstr ""
+
+#. Name for almanac tag enum value mvz2:impact of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "冲击"
+msgstr ""
+
+#. Description for almanac tag enum value mvz2:impact of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "冲击伤害"
+msgstr ""
+
+#. Name for almanac tag enum value mvz2:fire of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "火焰"
+msgstr ""
+
+#. Description for almanac tag enum value mvz2:fire of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "火焰伤害"
+msgstr ""
+
+#. Name for almanac tag enum value mvz2:ice of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "寒冰"
+msgstr ""
+
+#. Description for almanac tag enum value mvz2:ice of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "寒冰伤害"
+msgstr ""
+
+#. Description for almanac tag enum value mvz2:lightning of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "闪电伤害"
+msgstr ""
+
+#. Name for almanac tag enum value mvz2:light of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "光明"
+msgstr ""
+
+#. Description for almanac tag enum value mvz2:light of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "光明伤害"
+msgstr ""
+
+#. Name for almanac tag enum value mvz2:ignore_armor of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "穿甲"
+msgstr ""
+
+#. Description for almanac tag enum value mvz2:ignore_armor of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "穿过敌人的头盔"
+msgstr ""
+
+#. Name for almanac tag enum value mvz2:gold of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.name"
+msgid "金"
+msgstr ""
+
+#. Description for almanac tag enum value mvz2:gold of enum damage_type
+#: Almanac meta file
+msgctxt "almanac_tag_enum.description"
+msgid "金物体造成的伤害"
 msgstr ""
 
 #. Header for contraptions mvz2:dispenser
@@ -835,7 +955,7 @@ msgctxt "contraptions.description"
 msgid ""
 "耐久：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
 "准备时间：<color=red>15秒</color>\n"
-"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>\n"
 "技能：<color=red>立即准备完毕，并向最前方投掷两个新的地雷TNT</color>"
 msgstr ""
 
@@ -916,9 +1036,9 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red>100（无视护甲）</color>\n"
+"伤害：<color=red>100<tag id=\"mvz2:damage_type\" enum=\"mvz2:impact\"/><tag id=\"mvz2:damage_type\" enum=\"mvz2:ignore_armor\"/></color>\n"
 "修复时间：<color=red>20秒</color>\n"
-"技能：<color=red>对前方的所有敌人造成500点伤害，并将其击退至最右侧</color>"
+"技能：<color=red>对前方的所有敌人造成500点<tag id=\"mvz2:damage_type\" enum=\"mvz2:impact\"/><tag id=\"mvz2:damage_type\" enum=\"mvz2:ignore_armor\"/>伤害，并将其击退至最右侧</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:punchton
@@ -937,7 +1057,7 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>\n"
 "半径：<color=red>1.5格</color>\n"
 "技能：<color=red>炸出4个TNT分身</color>"
 msgstr ""
@@ -958,11 +1078,11 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
-"溅射伤害：<color=red><var local=\"splash_damage\" />（不伤害直接目标）</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/></color>\n"
+"溅射伤害：<color=red><var local=\"splash_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/>（不伤害直接目标）</color>\n"
 "特点：<color=red>需要烧毁器械补充燃料；有燃料时<tag id=\"mvz2:light_source\" />发光</color>\n"
 "燃料上限：<color=red>120</color>\n"
-"技能：<color=red>将燃料补至<var local=\"evocation_refuel_percentage\"/>%。然后消耗所有燃料，每有一发燃料被消耗，便随机对一个敌人发射爆炸灵魂火球</color>"
+"技能：<color=red>将燃料补至<var local=\"evocation_refuel_percentage\"/>%。然后消耗所有燃料，每有一发燃料被消耗，便随机对一个敌人发射<tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/><tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/>爆炸灵魂火球</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:soul_furnace
@@ -981,7 +1101,7 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red><var id=\"mvz2:entity_damage\" />，<var local=\"flesh_damage\"/>（对肉体）</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:slice\"/></color>\n"
 "特点：<color=red>穿透多个敌人，但无法穿透硬物</color>\n"
 "技能：<color=red>以至多10个敌人为中心创造飞刀圈，数秒后飞刀开始飞行</color>"
 msgstr ""
@@ -1101,7 +1221,7 @@ msgid ""
 "攻击速度：<color=red>1发/1.5秒</color>\n"
 "伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
 "特点：<color=red>能够攻击高处的敌人</color>\n"
-"技能：<color=red>向所有敌人发射巨型尖刺，造成180点穿甲伤害</color>"
+"技能：<color=red>向所有敌人发射巨型尖刺，造成180点<tag id=\"mvz2:damage_type\" enum=\"mvz2:ignore_armor\"/>伤害</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:pistenser
@@ -1123,7 +1243,7 @@ msgstr ""
 msgctxt "contraptions.description"
 msgid ""
 "攻击速度：<color=red>1发/1.5秒</color>\n"
-"伤害：<color=red>15（飞镖），20/秒（火焰）</color>\n"
+"伤害：<color=red>15（飞镖），20<tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/>/秒（火焰）</color>\n"
 "特点：<color=red>飞镖上的箭毒会让<tag id=\"mvz2:shell\" enum=\"mvz2:flesh\" />怪物肌肉松弛而无法造成近战伤害</color>\n"
 "技能：<color=red>投出穿透敌人的长矛，并留下使敌人虚弱的毒雾轨迹</color>"
 msgstr ""
@@ -1320,7 +1440,7 @@ msgstr ""
 msgctxt "contraptions.description"
 msgid ""
 "攻击速度：<color=red>1次/3秒</color>\n"
-"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:lightning\"/></color>\n"
 "半径：<color=red>2.5格</color>\n"
 "特殊：<color=red>可以攻击空中敌人；电击水域会对周围水域也造成伤害</color>\n"
 "技能：<color=red>召唤闪电风暴，劈击一定范围内的随机位置</color>"
@@ -1388,7 +1508,7 @@ msgctxt "contraptions.description"
 msgid ""
 "耐久：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
 "特点：<color=red>吸收敌弹，并恢复100耐久</color>\n"
-"技能：<color=red>在5秒内吸收所有伤害并治疗自己，之后将这些伤害返还给所有敌人（最高1800）</color>"
+"技能：<color=red>在5秒内吸收所有伤害并治疗自己，之后将这些伤害<tag id=\"mvz2:damage_type\" enum=\"mvz2:lightning\"/>返还给所有敌人（最高1800）</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:lightning_orb
@@ -1462,8 +1582,8 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害增幅：<color=red>+100%火焰伤害，+66%溅射伤害</color>\n"
-"技能：<color=red>变为诅咒火焰，为箭矢+200%火焰伤害，+133%溅射伤害</color>"
+"伤害增幅：<color=red>+100%<tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/>伤害，+66%溅射伤害</color>\n"
+"技能：<color=red>变为诅咒火焰，为箭矢+200%<tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/>伤害，+133%溅射伤害</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:hellfire
@@ -1563,7 +1683,7 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"爆炸伤害：<color=red>100（简单）、150（普通）、300（困难）</color>\n"
+"爆炸伤害：<color=red>100（简单）、150（普通）、300（困难）<tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>\n"
 "爆炸半径：<color=red>1.5格</color>\n"
 "生产时间：<color=red>36秒</color>\n"
 "提供能量：<color=red><var local=\"gunpowder_value\" /></color>\n"
@@ -1615,7 +1735,7 @@ msgstr ""
 msgctxt "contraptions.description"
 msgid ""
 "攻击速度：<color=red>1发/3秒</color>\n"
-"伤害：<color=red><var id=\"mvz2:entity_damage\" />，只能伤害高空中的敌人</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/>，只能伤害高空中的敌人</color>\n"
 "爆炸半径：<color=red>1.5格</color>\n"
 "技能：<color=red>爆炸半径永久+1格</color>"
 msgstr ""
@@ -1748,14 +1868,14 @@ msgctxt "contraptions.description"
 msgid ""
 "特点：<color=red>发光的敌人额外受到<var local=\"glowing_damage_addition\" />%伤害</color>\n"
 "射击模式：\n"
-"  伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"  伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:light\"/></color>\n"
 "  攻击速度：<color=red>1发/<var local=\"fire_interval\" />秒</color>\n"
 "  发光时长：<color=red><var local=\"glowing_duration\" />秒</color>\n"
 "  技能：<color=red>射出<var local=\"evocation_arrow_count\" />支光灵箭</color>\n"
 "激光模式：\n"
-"  伤害：<color=red><var local=\"laser_dps\" />/秒</color>\n"
+"  伤害：<color=red><var local=\"laser_dps\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:light\"/>/秒</color>\n"
 "  发光时长：<color=red>瞬间</color>\n"
-"  技能：<color=red>对前方的所有敌人造成<var local=\"evocation_laser_damage\" />点伤害并使其发光<var local=\"evocation_glowing_duration\" />秒</color>"
+"  技能：<color=red>对前方的所有敌人造成<var local=\"evocation_laser_damage\" />点<tag id=\"mvz2:damage_type\" enum=\"mvz2:light\"/>伤害并使其发光<var local=\"evocation_glowing_duration\" />秒</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:transfenser
@@ -1815,8 +1935,8 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"火焰伤害：<color=red>20/秒</color>\n"
-"爆炸伤害：<color=red>900</color>\n"
+"诅咒伤害：<color=red>20<tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/>/秒</color>\n"
+"爆炸伤害：<color=red>900<tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>\n"
 "爆炸半径：<color=red>1.5格</color>\n"
 "特点：<color=red>不会触发死亡效果</color>\n"
 "技能：<color=red>插在蛋糕上，怪物自爆时半径和伤害翻倍，并且被炸死的其他怪物也不会触发死亡效果</color>"
@@ -1895,7 +2015,7 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red>10（无光照），20（1光照），30（2光照），40（3光照）</color>\n"
+"伤害：<color=red>10（无光照），20（1光照），30（2光照），40（3光照）<tag id=\"mvz2:damage_type\" enum=\"mvz2:light\"/></color>\n"
 "攻击速度：<color=red>1发/3秒</color>\n"
 "技能：<color=red>发射一道贯穿三行的超能光束，之后紫晶塔被禁用30秒</color>"
 msgstr ""
@@ -1916,7 +2036,7 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>\n"
 "半径：<color=red>3.5格</color>\n"
 "特点：<color=red>不会触发死亡效果；引爆后破坏所在的地块，无法放置器械，持续3分钟</color>\n"
 "技能：<color=red>消灭所有敌怪，并破坏3x3范围内的地块</color>"
@@ -1941,9 +2061,9 @@ msgstr ""
 msgctxt "contraptions.description"
 msgid ""
 "结构：<color=red><color=black>X</color>为下界反应核，A和<color=blue>B</color>为两种不同的器械</color>\n"
-"<color=red>A<color=blue>B</color>A</color>\n"
-"<color=blue>B<color=black>X</color>B</color>\n"
-"<color=red>A<color=blue>B</color>A</color>\n"
+"<align=\"center\"><color=red>A<color=blue>B</color>A</color></align>\n"
+"<align=\"center\"><color=blue>B<color=black>X</color>B</color></align>\n"
+"<align=\"center\"><color=red>A<color=blue>B</color>A</color></align>\n"
 "生产时间：<color=red><var local=\"min_produce_time\"/>-<var local=\"max_produce_time\"/>秒（根据器械A和B的花费和充能时间而定）</color>\n"
 "技能：<color=red>召唤4个友方的凋灵骷髅，分别是<ref=[enemies]mvz2:berserker>狂战士</ref>、猎手、法师和<ref=[enemies]mvz2:mesmerizer>催眠者</ref></color>"
 msgstr ""
@@ -1968,9 +2088,9 @@ msgstr ""
 msgctxt "contraptions.description"
 msgid ""
 "攻击速度：<color=red>1发/<var local=\"fire_interval\" />秒</color>\n"
-"伤害：<color=red><var id=\"mvz2:entity_damage\" />锐利伤害</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:slice\"/></color>\n"
 "特殊：<color=red>经过枫车的风刃+<var id=\"mvz2:entity_damage\" />伤害</color>\n"
-"技能：<color=red>对所有敌人造成<var local=\"evocation_damage\" />点伤害X次。（X=场上枫车的数量）</color>"
+"技能：<color=red>对所有敌人造成<var local=\"evocation_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:slice\"/>点伤害X次。（X=场上枫车的数量）</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:maplewheel
@@ -2056,7 +2176,7 @@ msgstr ""
 msgctxt "contraptions.description"
 msgid ""
 "耐久：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
-"坠落伤害：<color=red><var local=\"fall_damage\" /></color>\n"
+"坠落伤害：<color=red><var local=\"fall_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:impact\"/></color>\n"
 "技能：<color=red>召唤御柱填满本列（注意：会砸坏器械！）</color>"
 msgstr ""
 
@@ -2077,7 +2197,7 @@ msgstr ""
 msgctxt "contraptions.description"
 msgid ""
 "攻击速度：<color=red>1发/1.5秒</color>\n"
-"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:ice\"/></color>\n"
 "技能：<color=red>发射一枚致命的冰封球</color>"
 msgstr ""
 
@@ -2097,8 +2217,8 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red><var local=\"trapped_damage\"/>锐利伤害（夹取），<var local=\"continuous_damage\"/>锐利伤害/<var local=\"continuous_interval\"/>秒（持续）</color>\n"
-"技能：<color=red>下一次夹取会直接击杀被困住的目标，并对半径<var local=\"evoked_range\"/>格内的敌人造成<var local=\"evoked_damage\"/>点闪电伤害</color>"
+"伤害：<color=red><var local=\"trapped_damage\"/><tag id=\"mvz2:damage_type\" enum=\"mvz2:slice\"/>（夹取），<var local=\"continuous_damage\"/><tag id=\"mvz2:damage_type\" enum=\"mvz2:slice\"/>/<var local=\"continuous_interval\"/>秒（持续）</color>\n"
+"技能：<color=red>下一次夹取会直接击杀被困住的目标，并对半径<var local=\"evoked_range\"/>格内的敌人造成<var local=\"evoked_damage\"/>点<tag id=\"mvz2:damage_type\" enum=\"mvz2:lightning\"/>伤害</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:autotrap
@@ -2117,7 +2237,7 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>\n"
 "半径：<color=red><var local=\"radius\" />格</color>\n"
 "技能：<color=red>生成一个最大的套娃TNT的蓝图掉落物</color>"
 msgstr ""
@@ -2172,7 +2292,7 @@ msgctxt "contraptions.description"
 msgid ""
 "射程：<color=red><var id=\"mvz2:entity_range_in_tiles\" />格</color>\n"
 "伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
-"技能：<color=red>使所有寄生中的机器人自爆，造成<var local=\"evocation_damage\" />点伤害</color>"
+"技能：<color=red>使所有寄生中的机器人自爆，造成<var local=\"evocation_damage\" />点<tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/>伤害</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:infectenser
@@ -2213,7 +2333,7 @@ msgstr ""
 msgctxt "contraptions.description"
 msgid ""
 "攻击速度：<color=red>1发/1.5秒</color>\n"
-"伤害：<color=red><var id=\"mvz2:entity_damage\" />，每次反弹后减半</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:gold\"/>，每次反弹后减半</color>\n"
 "宝石概率：<color=red>25%</color>\n"
 "技能：<color=red>立即喷射30发金球</color>"
 msgstr ""
@@ -2235,7 +2355,7 @@ msgstr ""
 msgctxt "contraptions.description"
 msgid ""
 "攻击速度：<color=red>1发/3秒</color>\n"
-"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:light\"/></color>\n"
 "技能：<color=red>展开一片星空，将场地临时变为黑夜，空中会掉落总共300颗星星子弹，每颗星星造成55点伤害，持续30秒</color>"
 msgstr ""
 
@@ -2259,12 +2379,12 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red>继承原射弹的伤害</color>\n"
+"伤害：<color=red>继承原射弹的伤害<tag id=\"mvz2:damage_type\" enum=\"mvz2:light\"/></color>\n"
 "技能：<color=red>下<var local=\"evoked_transform_times\"/>发经过的射弹各分裂为<var local=\"evoked_split_count\"/>枚拥有所有附魔效果的光弹</color>\n"
 "附魔效果：\n"
 "<#f00>红</color>：复制为两发\n"
 "<#f80>橙</color>：+<var local=\"orange_pierce_count\"/>穿透数量，击中后弹向另一个敌人\n"
-"<#ff0>黄</color>：消失时产生爆炸，造成<var local=\"yellow_explosion_damage\"/>%伤害\n"
+"<#ff0>黄</color>：消失时产生爆炸，造成<var local=\"yellow_explosion_damage\"/>%<tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/>伤害\n"
 "<#0f0>绿</color>：击中后分裂为两个<var local=\"green_split_damage\"/>%伤害的射弹\n"
 "<#0ff>青</color>：每秒持续造成<var local=\"cyan_dps\"/>%范围伤害\n"
 "<#00f>蓝</color>：+<var local=\"blue_pierce_count\"/>穿透数量\n"
@@ -2365,10 +2485,10 @@ msgstr ""
 #: Almanac meta file
 msgctxt "contraptions.description"
 msgid ""
-"伤害：<color=red><var id=\"mvz2:entity_damage\" /></color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>\n"
 "装载时间：<color=red>30秒</color>\n"
 "特殊：<color=red>占两格地块；被炸死的怪物不会触发死亡效果</color>\n"
-"技能：<color=red>立即装载导弹，且下一发导弹会炸出36个火焰弹，每个造成135爆炸伤害</color>"
+"技能：<color=red>立即装载导弹，且下一发导弹会炸出36个火焰弹，每个造成135<tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/>伤害</color>"
 msgstr ""
 
 #. Flavor for contraptions mvz2:brick_cannon
@@ -2491,7 +2611,7 @@ msgstr ""
 msgctxt "enemies.description"
 msgid ""
 "生命：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
-"箭矢伤害：<color=red>每发<var id=\"mvz2:entity_damage\" /></color>\n"
+"箭矢伤害：<color=red><var id=\"mvz2:entity_damage\" />/发</color>\n"
 "特点：<color=red>无法射中并无视低矮器械</color>"
 msgstr ""
 
@@ -2621,6 +2741,15 @@ msgctxt "enemies.description"
 msgid "恶魂能够飞在天上并对你的器械进行轰炸。"
 msgstr ""
 
+#. Properties for enemies mvz2:ghast
+#: Almanac meta file
+msgctxt "enemies.description"
+msgid ""
+"生命：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
+"速度：<color=red><var id=\"mvz2:entity_speed\" /></color>\n"
+"伤害：<color=red><var local=\"fire_charge_damage\" />，<var local=\"fire_charge_damage_hard\" />（困难）<tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>"
+msgstr ""
+
 #. Flavor for enemies mvz2:ghast
 #: Almanac meta file
 msgctxt "enemies.description"
@@ -2708,7 +2837,7 @@ msgctxt "enemies.description"
 msgid ""
 "生命：<color=red><var id=\"mvz2:entity_health\" />+<var id=\"armor_hp\" /></color>\n"
 "速度：<color=red><var id=\"mvz2:entity_speed\" /></color>\n"
-"爆炸伤害：<color=red><var local=\"explosion_damage\" /></color>"
+"爆炸伤害：<color=red><var local=\"explosion_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>"
 msgstr ""
 
 #. Flavor for enemies mvz2:berserker
@@ -2733,7 +2862,7 @@ msgid ""
 "马速度：<color=red><var local=\"horse_speed\" />（跳跃前），<var local=\"horse_speed_jumped\" />（跳跃后）</color>\n"
 "身体速度：<color=red><var id=\"mvz2:entity_speed\" /></color>\n"
 "头颅速度：<color=red><var local=\"head_speed\" /></color>\n"
-"弱点：<color=red>金质物品，无法跳过<tag id=\"mvz2:tall\" />高器械</color>"
+"弱点：<color=red><tag id=\"mvz2:damage_type\" enum=\"mvz2:gold\"/>金质物品，无法跳过<tag id=\"mvz2:tall\" />高器械</color>"
 msgstr ""
 
 #. Flavor for enemies mvz2:dullahan
@@ -2948,7 +3077,7 @@ msgstr ""
 msgctxt "enemies.description"
 msgid ""
 "生命：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
-"特点：<color=red>被闪电和冰冷伤害攻击会转换为对应的形态</color>"
+"特点：<color=red>被<tag id=\"mvz2:damage_type\" enum=\"mvz2:lightning\"/>和<tag id=\"mvz2:damage_type\" enum=\"mvz2:ice\"/>伤害攻击会转换为对应的形态</color>"
 msgstr ""
 
 #. Flavor for enemies mvz2:zombie_cloud
@@ -3003,7 +3132,7 @@ msgstr ""
 msgctxt "enemies.description"
 msgid ""
 "生命：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
-"伤害：<color=red><var id=\"mvz2:entity_damage\" />（冲击）</color>\n"
+"伤害：<color=red><var id=\"mvz2:entity_damage\" /><tag id=\"mvz2:damage_type\" enum=\"mvz2:impact\"/></color>\n"
 "速度：<color=red><var id=\"mvz2:entity_speed\" /></color>\n"
 "特殊：<color=red>若被移动的器械移动到已有器械的位置，原来的器械将直接被摧毁</color>"
 msgstr ""
@@ -3118,7 +3247,7 @@ msgstr ""
 #. Header for enemies mvz2:wisp_fly
 #: Almanac meta file
 msgctxt "enemies.description"
-msgid "鬼火苍蝇会冲向你的器械，并产生一次小型自爆，造成<tag id=\"mvz2:fire\" />火焰伤害。"
+msgid "鬼火苍蝇会冲向你的器械，并产生一次小型自爆。"
 msgstr ""
 
 #. Properties for enemies mvz2:wisp_fly
@@ -3127,7 +3256,7 @@ msgctxt "enemies.description"
 msgid ""
 "生命：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
 "速度：<color=red><var id=\"mvz2:entity_speed\" /></color>\n"
-"自爆伤害：<color=red><var local=\"easy_damage\"/>（简单），<var local=\"normal_damage\"/>（普通），<var local=\"hard_damage\"/>（困难）</color>"
+"自爆伤害：<color=red><var local=\"easy_damage\"/>（简单），<var local=\"normal_damage\"/>（普通），<var local=\"hard_damage\"/>（困难）<tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/></color>"
 msgstr ""
 
 #. Flavor for enemies mvz2:wisp_fly
@@ -3594,7 +3723,7 @@ msgstr ""
 #. Properties for artifacts mvz2:lightbomb
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>友方器械自爆时，对所有敌人额外造成等同于该器械能量消耗的伤害</color>"
+msgid "效果：<color=red>友方器械自爆时，对所有敌人额外造成等同于该器械能量消耗的<tag id=\"mvz2:damage_type\" enum=\"mvz2:light\"/><tag id=\"mvz2:damage_type\" enum=\"mvz2:ignore_armor\"/>伤害</color>"
 msgstr ""
 
 #. Flavor for artifacts mvz2:lightbomb
@@ -3697,9 +3826,9 @@ msgstr ""
 msgctxt "artifacts.description"
 msgid ""
 "效果：<color=red>星之碎片的效果改为格斗术</color>\n"
-"横向拖动：<color=red>冲拳，对一整行内的敌人造成1200点伤害并将其击飞</color>\n"
-"向下拖动：<color=red>俯冲，对半径1.5格内的敌人造成1800点伤害</color>\n"
-"向上拖动：<color=red>上勾拳，对半径2.5格内的敌人造成400点伤害并将其击飞</color>"
+"横向拖动：<color=red>冲拳，对一整行内的敌人造成1200点<tag id=\"mvz2:damage_type\" enum=\"mvz2:impact\"/>伤害并将其击飞</color>\n"
+"向下拖动：<color=red>俯冲，对半径1.5格内的敌人造成1800点<tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/>伤害</color>\n"
+"向上拖动：<color=red>上勾拳，对半径2.5格内的敌人造成400点<tag id=\"mvz2:damage_type\" enum=\"mvz2:impact\"/>伤害并将其击飞</color>"
 msgstr ""
 
 #. Flavor for artifacts mvz2:sorcerers_scroll
@@ -3841,7 +3970,7 @@ msgstr ""
 #. Properties for artifacts mvz2:magma_stone
 #: Almanac meta file
 msgctxt "artifacts.description"
-msgid "效果：<color=red>敌人受到的火焰伤害+50%</color>"
+msgid "效果：<color=red>敌人受到的<tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/>伤害+50%</color>"
 msgstr ""
 
 #. Flavor for artifacts mvz2:magma_stone
@@ -4497,7 +4626,7 @@ msgid ""
 "生命：<color=red><var local=\"hp\"/>+<var local=\"armor_hp\" /></color>\n"
 "速度：<color=red><var local=\"speed\"/></color>\n"
 "爆炸时间：<color=red><var local=\"explosion_time\"/>秒</color>\n"
-"爆炸伤害：<color=red><var local=\"explosion_damage\"/></color>\n"
+"爆炸伤害：<color=red><var local=\"explosion_damage\"/><tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>\n"
 "特殊：<color=red>自爆也会伤害到友军</color>"
 msgstr ""
 
