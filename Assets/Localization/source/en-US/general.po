@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-19 11:41+0800\n"
-"PO-Revision-Date: 2026-10-21 13:14+0800\n"
+"POT-Creation-Date: 2026-10-22 11:56+0800\n"
+"PO-Revision-Date: 2026-10-22 11:57+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1903,15 +1903,15 @@ msgctxt "hotkey.name"
 msgid "蓝图10"
 msgstr "Blueprint 10"
 
-#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:214
+#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:218
 msgid "来源：{0}"
 msgstr "Source: {0}"
 
-#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:216
+#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:220
 msgid "原曲：{0}"
 msgstr "Origin: {0}"
 
-#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:218
+#: Scripts\MVZ2\MusicRoom\MusicRoomController.cs:222
 msgid "作者：{0}"
 msgstr "Composer: {0}"
 
@@ -2125,12 +2125,12 @@ msgid "在图鉴中查看"
 msgstr "View in Almanac"
 
 # 血条的文字
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:817
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:823
 msgid "死亡"
 msgstr "Dead"
 
 # 血条的文字
-#: Scripts\MVZ2\Level\Entities\EntityController.cs:819
+#: Scripts\MVZ2\Level\Entities\EntityController.cs:825
 msgid "摧毁"
 msgstr "Destroyed"
 
@@ -5807,10 +5807,10 @@ msgstr ""
 #. Store item description of mvz2:eye_of_the_giant by character mvz2:crazy_villager
 #: Store meta file
 msgctxt "store_talk"
-msgid "巨人的眼睛！你的器械造成的伤害变为两倍半，但是攻击速度也会减半！"
+msgid "巨人的眼睛！你的器械造成的伤害变为两倍，但是攻击速度也会变为60%！"
 msgstr ""
-"Eye of the Giant! Your contraptions' damage is a half more than doubled, but "
-"their attack speed is halved!"
+"Eye of the Giant! Your contraptions' damage is doubled, but their attack "
+"speed is decreased to 60%!"
 
 #. Store item description of mvz2:eye_of_the_giant by character mvz2:tokiko
 #: Store meta file
