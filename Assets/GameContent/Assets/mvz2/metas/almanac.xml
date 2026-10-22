@@ -199,8 +199,8 @@
         </enum>
         <enum id="shell" type="id">
             <value value="mvz2:stone" name="石头" description="阻挡锐利物体和火焰溅射，但受到20x冲击伤害" sprite="mvz2:ui/almanac/shell_tags[0]" backgroundColor="#6b6b6b" />
-            <value value="mvz2:grass" name="草" description="受到2x切割和火焰伤害" sprite="mvz2:ui/almanac/shell_tags[1]" backgroundColor="#a48f34" />
-            <value value="mvz2:flesh" name="血肉" description="受到2x切割伤害" sprite="mvz2:ui/almanac/shell_tags[2]" backgroundColor="#934329" />
+            <value value="mvz2:grass" name="草" description="受到2x锐利和火焰伤害" sprite="mvz2:ui/almanac/shell_tags[1]" backgroundColor="#a48f34" />
+            <value value="mvz2:flesh" name="血肉" description="受到2x锐利伤害" sprite="mvz2:ui/almanac/shell_tags[2]" backgroundColor="#934329" />
             <value value="mvz2:leather" name="皮革" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[3]" backgroundColor="#893b25" />
             <value value="mvz2:metal" name="金属" description="阻挡锐利物体" sprite="mvz2:ui/almanac/shell_tags[4]" backgroundColor="#aaaaaa" />
             <value value="mvz2:bone" name="骨" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[5]" backgroundColor="#494b3e" />
@@ -215,12 +215,12 @@
             <value value="mvz2:normal" name="普通" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[14]" backgroundColor="#6b6b6b" />
             <value value="mvz2:ice" name="冰" description="阻挡锐利物体，但受到20x冲击伤害和2x火焰伤害" sprite="mvz2:ui/almanac/shell_tags[15]" backgroundColor="#1b67a3" />
             <value value="mvz2:apparition" name="灵体" description="无特殊效果" sprite="mvz2:ui/almanac/shell_tags[16]" backgroundColor="#ffffff" />
-            <value value="mvz2:bubble" name="泡泡" description="受到20x切割伤害和冰冷伤害" sprite="mvz2:ui/almanac/shell_tags[17]" backgroundColor="#032947" />
+            <value value="mvz2:bubble" name="泡泡" description="受到20x锐利伤害和冰冷伤害" sprite="mvz2:ui/almanac/shell_tags[17]" backgroundColor="#032947" />
         </enum>
         <enum id="damage_type" type="id">
             <value value="mvz2:normal" name="普通" description="无特殊效果" sprite="mvz2:ui/almanac/damage_type_tags[0]" backgroundColor="#6b6b6b" />
             <value value="mvz2:explosion" name="爆炸" description="爆炸伤害" sprite="mvz2:ui/almanac/damage_type_tags[1]" backgroundColor="#b55a5a" />
-            <value value="mvz2:slice" name="切割" description="切割伤害" sprite="mvz2:ui/almanac/damage_type_tags[2]" backgroundColor="#5a5ab5" />
+            <value value="mvz2:slice" name="锐利" description="锐利伤害" sprite="mvz2:ui/almanac/damage_type_tags[2]" backgroundColor="#5a5ab5" />
             <value value="mvz2:impact" name="冲击" description="冲击伤害" sprite="mvz2:ui/almanac/damage_type_tags[3]" backgroundColor="#816141" />
             <value value="mvz2:fire" name="火焰" description="火焰伤害" sprite="mvz2:ui/almanac/damage_type_tags[4]" backgroundColor="#b35c00" />
             <value value="mvz2:ice" name="寒冰" description="寒冰伤害" sprite="mvz2:ui/almanac/damage_type_tags[5]" backgroundColor="#00b2b3" />

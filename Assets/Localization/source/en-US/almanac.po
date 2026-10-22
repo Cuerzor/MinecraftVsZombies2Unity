@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-22 02:52+0800\n"
-"PO-Revision-Date: 2026-10-22 14:54+0800\n"
+"POT-Creation-Date: 2026-10-22 07:20+0800\n"
+"PO-Revision-Date: 2026-10-22 19:20+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -590,8 +590,8 @@ msgstr "Grass"
 #. Description for almanac tag enum value mvz2:grass of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "受到2x切割和火焰伤害"
-msgstr "Takes 2x slice and fire damage"
+msgid "受到2x锐利和火焰伤害"
+msgstr "Takes 2x sharp and fire damage"
 
 #. Name for almanac tag enum value mvz2:flesh of enum shell
 #: Almanac meta file
@@ -602,8 +602,8 @@ msgstr "Flesh"
 #. Description for almanac tag enum value mvz2:flesh of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "受到2x切割伤害"
-msgstr "Takes 2x slice damage"
+msgid "受到2x锐利伤害"
+msgstr "Takes 2x sharp damage"
 
 #. Name for almanac tag enum value mvz2:leather of enum shell
 #: Almanac meta file
@@ -752,8 +752,8 @@ msgstr "Bubble"
 #. Description for almanac tag enum value mvz2:bubble of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "受到20x切割伤害和冰冷伤害"
-msgstr "Takes 20x slice and ice damage"
+msgid "受到20x锐利伤害和冰冷伤害"
+msgstr "Takes 20x sharp and ice damage"
 
 #. Name for almanac tag enum value mvz2:explosion of enum damage_type
 #: Almanac meta file
@@ -770,14 +770,14 @@ msgstr "Explosion damage"
 #. Name for almanac tag enum value mvz2:slice of enum damage_type
 #: Almanac meta file
 msgctxt "almanac_tag_enum.name"
-msgid "切割"
-msgstr "Slice"
+msgid "锐利"
+msgstr "Sharp"
 
 #. Description for almanac tag enum value mvz2:slice of enum damage_type
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "切割伤害"
-msgstr "Slice damage"
+msgid "锐利伤害"
+msgstr "Sharp damage"
 
 #. Name for almanac tag enum value mvz2:impact of enum damage_type
 #: Almanac meta file
@@ -10655,6 +10655,14 @@ msgstr "The Kraken's Backplate"
 msgctxt "curse.tooltip"
 msgid "敌怪重量提升一级"
 msgstr "Increases the mass of the enemy monsters by one level"
+
+#~ msgctxt "almanac_tag_enum.name"
+#~ msgid "切割"
+#~ msgstr "Slice"
+
+#~ msgctxt "almanac_tag_enum.description"
+#~ msgid "切割伤害"
+#~ msgstr "Slice damage"
 
 #~ msgctxt "almanac_tag_enum.description"
 #~ msgid "会被锐利物体穿透，受到2x火焰伤害"

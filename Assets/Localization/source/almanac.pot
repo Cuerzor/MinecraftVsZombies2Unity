@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-22 02:52+0800\n"
+"POT-Creation-Date: 2026-10-22 07:20+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -584,7 +584,7 @@ msgstr ""
 #. Description for almanac tag enum value mvz2:grass of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "受到2x切割和火焰伤害"
+msgid "受到2x锐利和火焰伤害"
 msgstr ""
 
 #. Name for almanac tag enum value mvz2:flesh of enum shell
@@ -596,7 +596,7 @@ msgstr ""
 #. Description for almanac tag enum value mvz2:flesh of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "受到2x切割伤害"
+msgid "受到2x锐利伤害"
 msgstr ""
 
 #. Name for almanac tag enum value mvz2:leather of enum shell
@@ -746,7 +746,7 @@ msgstr ""
 #. Description for almanac tag enum value mvz2:bubble of enum shell
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "受到20x切割伤害和冰冷伤害"
+msgid "受到20x锐利伤害和冰冷伤害"
 msgstr ""
 
 #. Name for almanac tag enum value mvz2:explosion of enum damage_type
@@ -764,13 +764,13 @@ msgstr ""
 #. Name for almanac tag enum value mvz2:slice of enum damage_type
 #: Almanac meta file
 msgctxt "almanac_tag_enum.name"
-msgid "切割"
+msgid "锐利"
 msgstr ""
 
 #. Description for almanac tag enum value mvz2:slice of enum damage_type
 #: Almanac meta file
 msgctxt "almanac_tag_enum.description"
-msgid "切割伤害"
+msgid "锐利伤害"
 msgstr ""
 
 #. Name for almanac tag enum value mvz2:impact of enum damage_type
