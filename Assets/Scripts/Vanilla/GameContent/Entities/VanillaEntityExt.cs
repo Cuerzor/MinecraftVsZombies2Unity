@@ -1267,6 +1267,18 @@ namespace MVZ2.Vanilla.Entities
             }
             return exploded;
         }
+        public static bool TryBehaviourExplodeAndRemove(this Entity entity, float range, float damage)
+        {
+            if (entity.HasBehaviourExploded())
+                return false;
+            if (entity.TryBehaviourExplode(range, damage))
+            {
+                entity.Remove();
+                entity.SetHasBehaviourExploded(true);
+                return true;
+            }
+            return false;
+        }
         #endregion
 
         #region 地狱火

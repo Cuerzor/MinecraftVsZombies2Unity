@@ -66,10 +66,7 @@ namespace MVZ2.GameContent.Contraptions
                     }
                     if (explosionTimer.Expired)
                     {
-                        if (entity.TryBehaviourExplode(entity.GetRange(), entity.GetDamage()))
-                        {
-                            entity.Remove();
-                        }
+                        entity.TryBehaviourExplodeAndRemove(entity.GetRange(), entity.GetDamage());
                     }
                     if (explosionTimer.Frame <= 30 && explosionTimer.Frame % 4 < 2)
                     {

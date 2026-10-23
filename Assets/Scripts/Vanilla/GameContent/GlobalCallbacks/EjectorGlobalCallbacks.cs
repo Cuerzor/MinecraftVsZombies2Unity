@@ -67,9 +67,8 @@ namespace MVZ2.GameContent.GlobalCallbacks
             if (!entity.IsAIFrozen())
             {
                 // 炸药落地后如果死亡，就引爆
-                if (entity.TryBehaviourExplode(entity.GetRange(), entity.GetDamage()))
+                if (entity.TryBehaviourExplodeAndRemove(entity.GetRange(), entity.GetDamage()))
                 {
-                    entity.Remove();
                     entity.RemoveBuffs(buffs);
                 }
             }
@@ -103,10 +102,7 @@ namespace MVZ2.GameContent.GlobalCallbacks
             if (!entity.IsAIFrozen())
             {
                 // 炸药落地后如果死亡，就引爆
-                if (entity.TryBehaviourExplode(entity.GetRange(), entity.GetDamage()))
-                {
-                    entity.Remove();
-                }
+                entity.TryBehaviourExplodeAndRemove(entity.GetRange(), entity.GetDamage());
             }
         }
         private void PostCommandBlockTransformCallback(VanillaLevelCallbacks.PostCommandBlockTransformParams args, CallbackResultVoid result)

@@ -146,6 +146,19 @@ namespace MVZ2.Vanilla.Contraptions
             return entity.GetProperty<int>(FORCE_AGAINST_KRAKEN);
         }
         #endregion
+
+        #region 已被引爆
+        public static readonly PropertyMeta<bool> HAS_BEHAVIOUR_EXPLODED = Get<bool>("has_behaviour_exploded");
+        public static bool HasBehaviourExploded(this Entity entity)
+        {
+            return entity.GetProperty<bool>(HAS_BEHAVIOUR_EXPLODED);
+        }
+        public static void SetHasBehaviourExploded(this Entity entity, bool value)
+        {
+            entity.SetProperty(HAS_BEHAVIOUR_EXPLODED, value);
+        }
+
+        #endregion
     }
 }
 

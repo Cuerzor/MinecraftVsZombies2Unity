@@ -30,10 +30,7 @@ namespace MVZ2.GameContent.Contraptions
                 return;
             var range = entity.GetRange();
             var damage = entity.GetDamage();
-            if (entity.TryBehaviourExplode(range, damage))
-            {
-                entity.Remove();
-            }
+            entity.TryBehaviourExplodeAndRemove(range, damage);
         }
     }
 }
