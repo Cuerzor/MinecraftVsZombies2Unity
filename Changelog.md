@@ -35,12 +35,12 @@
   - After a huge wave of zombies, Lightning Orb, Elastic Cloud, Giant Ice, and Giant Magma Block now drop randomly.
   - Number of contraptions dropped per wave: 3 -> 2
   - Starshards are now allowed, but not for Teleporters.
-- Mine TNT
+- Mine TNT, Necrotombstone
   - Added "Anchored" tag.
 - Pistenser, CAT-TL MK-II
   - Size of spike projectiles: 20x11x11 (px)->20x8x8 (px)
-- Necrotombstone
-  - Added "Anchored" tag.
+- Desire Pot
+  - The movement speed of blueprint pickups spawned by the evocation now randomly fluctuates between 50% and 200%.
 
 ## Fixed
 - Fixed the issue where the movement status of the ejected contraption would not be removed when using a Ejector.

@@ -107,16 +107,19 @@ namespace MVZ2.GameContent.Contraptions
                 var spawnParams = entity.GetSpawnParams();
                 spawnParams.SetProperty(VanillaPickupProps.CONTENT_ID, blueprintID);
                 spawnParams.SetProperty(BlueprintPickup.PROP_COMMAND_BLOCK, seed.IsCommandBlock());
-                entity.Spawn(VanillaPickupID.blueprintPickup, entity.GetCenter(), spawnParams)?.Let(e =>
+                var pickup = entity.Spawn(VanillaPickupID.blueprintPickup, entity.GetCenter(), spawnParams);
+                if (pickup != null)
                 {
                     float xSpeed = 0;
                     if (selectedCount > 1)
                     {
                         xSpeed = minXSpeed + i / (float)(selectedCount - 1) * (maxXSpeed - minXSpeed);
                     }
-                    var vel = new Vector3(xSpeed, 7, 0);
-                    e.Velocity = vel;
-                });
+                    var xSpeedRandom = entity.RNG.Next(0.5f, 2f);
+                    var ySpeedRandom = entity.RNG.Next(0.5f, 2f);
+                    var vel = new Vector3(xSpeed * xSpeedRandom, 7 * ySpeedRandom, 0);
+                    pickup.Velocity = vel;
+                };
 
 
                 if (seed is ClassicSeedPack)
