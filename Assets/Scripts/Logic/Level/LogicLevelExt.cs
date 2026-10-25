@@ -735,16 +735,6 @@ namespace MVZ2Logic.Level
         }
         #endregion
 
-        #region 传送带
-        public static SeedPack? ConveyRandomSeedPack(this LevelEngine level)
-        {
-            var pool = level.GetConveyorPool();
-            if (pool == null)
-                return null;
-            return level.ConveyRandomSeedPack(pool);
-        }
-        #endregion
-
         #region 首次冒险模式
         public static bool IsFirstAdventure(this LevelEngine level)
         {

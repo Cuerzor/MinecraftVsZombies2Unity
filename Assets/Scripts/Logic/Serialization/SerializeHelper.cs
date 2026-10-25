@@ -57,6 +57,14 @@ namespace MVZ2Logic.Serialization
             RegisterClass<SerializablePropertyDictionaryString>();
 
             // PVZEngine.Level
+            RegisterClass<ConveyorPoolPatch>();
+            RegisterClass<ConveyorPoolPatchAddEntry>();
+            RegisterClass<ConveyorPoolPatchRemoveEntry>();
+            RegisterClass<ConveyorPoolPatchSetCount>();
+            RegisterClass<ConveyorPoolPatchAddCount>();
+            RegisterClass<ConveyorPoolPatchSetMinRefillCount>();
+            RegisterClass<ConveyorPoolPatchAddMinRefillCount>();
+
             RegisterClass<EntitySourceReference>();
             RegisterClass<ArtifactSourceReference>();
             RegisterClass<GridSourceReference>();

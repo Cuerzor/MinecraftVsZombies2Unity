@@ -35,11 +35,6 @@ namespace MVZ2Logic.Level
         public static void SetUnlockConditions(this StageDefinition stage, IConditionList value) => stage.SetProperty(UNLOCK_CONDITIONS, value);
         #endregion
 
-        #region 传送带卡池
-        public static readonly PropertyMeta<IConveyorPoolEntry[]> CONVEYOR_POOL = Get<IConveyorPoolEntry[]>("conveyorPool");
-        public static IConveyorPoolEntry[]? GetConveyorPool(this LevelEngine game) => game.GetProperty<IConveyorPoolEntry[]>(CONVEYOR_POOL);
-        #endregion
-
         #region 传送带速度
         public static readonly PropertyMeta<float> CONVEY_SPEED = Get("conveySpeed", 1f);
         public static float GetConveySpeed(this LevelEngine game) => game.GetProperty<float>(CONVEY_SPEED);

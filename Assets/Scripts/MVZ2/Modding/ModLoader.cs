@@ -671,7 +671,7 @@ namespace MVZ2.Modding
                 stageDef.SetProperty(LogicStageProps.ENEMY_POOL, meta.Spawns);
                 stageDef.SetProperty<IStageFixedSpawn[]>(LogicStageProps.FIXED_SPAWNS, meta.FixedSpawns);
                 stageDef.SetProperty<IStageTalkMeta[]>(LogicStageProps.TALKS, meta.Talks);
-                stageDef.SetProperty<IConveyorPoolEntry[]>(LogicStageProps.CONVEYOR_POOL, meta.ConveyorPool);
+                stageDef.SetProperty<IConveyorPoolEntry[]>(EngineLevelProps.CONVEYOR_POOL, meta.ConveyorPool);
 
                 stageDef.SetNeedBlueprints(meta.NeedBlueprints);
                 stageDef.SetSpawnPointPower(meta.SpawnPointsPower);

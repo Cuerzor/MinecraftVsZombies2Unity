@@ -17,6 +17,7 @@ using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Level;
+using PVZEngine.Modifiers;
 using PVZEngine.Timing;
 using PVZEngine.Tools.Random;
 using PVZEngine.Tools.Timing;
@@ -29,6 +30,7 @@ namespace MVZ2.GameContent.Buffs.Level
     {
         public NitoriGivesLilyPadBuff(string nsp, string name) : base(nsp, name)
         {
+            AddModifier(new ConveyorPoolPatchArrayModifier(EngineLevelProps.CONVEYOR_POOL_PATCHES, ArrayOperator.Append, PROP_CONVEYOR_POOL_PATCHES));
         }
         public override void PostUpdate(Buff buff)
         {
@@ -46,6 +48,7 @@ namespace MVZ2.GameContent.Buffs.Level
                     SetOpen(buff, true);
                     ShowText(buff);
                 }
+                SetConveyorPoolPatches(buff, null);
             }
             else
             {
@@ -55,6 +58,7 @@ namespace MVZ2.GameContent.Buffs.Level
                     ProduceLilyPad(buff);
                     timer.ResetSeconds(GetDynamicProduceIntervalSeconds(buff));
                 }
+                SetConveyorPoolPatches(buff, openConveyorPoolPatches);
             }
         }
         public static void ShowText(Buff buff)
@@ -113,13 +117,20 @@ namespace MVZ2.GameContent.Buffs.Level
         public static void SetTimer(Buff buff, FrameTimer? value) => buff.SetProperty(PROP_TIMER, value);
         public static RandomGenerator? GetRNG(Buff buff) => buff.GetProperty<RandomGenerator>(PROP_RNG);
         public static void SetRNG(Buff buff, RandomGenerator? value) => buff.SetProperty(PROP_RNG, value);
+        public static IConveyorPoolPatch[]? GetConveyorPoolPatches(Buff buff) => buff.GetProperty<IConveyorPoolPatch[]>(PROP_CONVEYOR_POOL_PATCHES);
+        public static void SetConveyorPoolPatches(Buff buff, IConveyorPoolPatch[]? value) => buff.SetProperty(PROP_CONVEYOR_POOL_PATCHES, value);
         public const float PRODUCE_INTERVAL_SPEED_MIN = 2f;
         public const float PRODUCE_INTERVAL_SPEED_MAX = 0.5f;
-        public const float PRODUCE_INTERVAL_SECONDS = 10f;
+        public const float PRODUCE_INTERVAL_SECONDS = 5f;
         public const int PRODUCE_LILYPAD_COUNT_MIN = 0;
         public const int PRODUCE_LILYPAD_COUNT_MAX = 16;
         public static readonly VanillaBuffPropertyMeta<RandomGenerator> PROP_RNG = new VanillaBuffPropertyMeta<RandomGenerator>("rng");
         public static readonly VanillaBuffPropertyMeta<FrameTimer> PROP_TIMER = new VanillaBuffPropertyMeta<FrameTimer>("timer");
         public static readonly VanillaBuffPropertyMeta<bool> PROP_OPEN = new VanillaBuffPropertyMeta<bool>("open");
+        public static readonly VanillaBuffPropertyMeta<IConveyorPoolPatch[]> PROP_CONVEYOR_POOL_PATCHES = new VanillaBuffPropertyMeta<IConveyorPoolPatch[]>("conveyor_pool_patches");
+        public static readonly IConveyorPoolPatch[] openConveyorPoolPatches = new IConveyorPoolPatch[]
+        {
+            new ConveyorPoolPatchRemoveEntry(LogicBlueprintID.FromEntity(VanillaContraptionID.lilyPad)),
+        };
     }
 }

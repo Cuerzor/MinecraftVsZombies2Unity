@@ -32,6 +32,9 @@
   - Added Leather Cap Zombie.
   - Number of contraptions dropped per wave: 3 -> 2
   - Starshards are now allowed, but not for Teleporters.
+- Youkai Mountain Day 11
+  - Nitori now provides Lily Pads twice as fast as before.
+  - If Nitori has already started providing Lily Pads, the conveyor belt will no longer provide any Lily Pads.
 - Primal Force
   - After a huge wave of zombies, Lightning Orb, Elastic Cloud, Giant Ice, and Giant Magma Block now drop randomly.
   - Number of contraptions dropped per wave: 3 -> 2
