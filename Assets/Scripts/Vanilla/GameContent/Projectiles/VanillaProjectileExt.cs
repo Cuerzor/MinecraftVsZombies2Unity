@@ -193,6 +193,16 @@ namespace MVZ2.Vanilla.Projectiles
             return effectsArray == null ? new DamageEffectList() : new DamageEffectList(effectsArray);
         }
         #endregion
+
+        #region 换行
+        public static void StopProjectileMotionBuffs(this Entity entity)
+        {
+            if (entity.IsChangingLane())
+            {
+                entity.StopChangingLane();
+            }
+        }
+        #endregion
     }
     public class ProjectileShootArgs
     {

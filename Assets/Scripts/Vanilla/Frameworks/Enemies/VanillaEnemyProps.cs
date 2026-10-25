@@ -4,6 +4,7 @@ using MVZ2.Vanilla.Properties;
 using PVZEngine;
 using PVZEngine.Entities;
 using PVZEngine.Properties;
+using UnityEngine;
 
 namespace MVZ2.Vanilla.Enemies
 {
@@ -153,6 +154,14 @@ namespace MVZ2.Vanilla.Enemies
         public static void SetCannotBeCarriedByOtherEnemy(this Entity enemy, bool value)
         {
             enemy.SetProperty<bool>(CANNOT_BE_CARRIED_BY_OTHER_ENEMY, value);
+        }
+        #endregion
+
+        #region 乘客位置
+        public static readonly PropertyMeta<Vector3> PASSENGER_OFFSET = Get<Vector3>("passengerOffset");
+        public static Vector3 GetPassengerOffset(this Entity enemy)
+        {
+            return enemy.GetProperty<Vector3>(PASSENGER_OFFSET);
         }
         #endregion
     }

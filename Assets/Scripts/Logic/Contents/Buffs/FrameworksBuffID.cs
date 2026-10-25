@@ -10,11 +10,6 @@ namespace MVZ2Logic.Contents.Buffs
         {
             public const string damageColor = "damage_color";
         }
-        public static class Enemy
-        {
-            public const string beingRiden = "being_riden";
-            public const string ridingPassenger = "riding_passenger";
-        }
     }
     public static class FrameworksBuffID
     {
@@ -26,11 +21,6 @@ namespace MVZ2Logic.Contents.Buffs
         {
             // Core
             public static readonly NamespaceID damageColor = Get(FrameworksBuffNames.Entity.damageColor);
-        }
-        public static class Enemy
-        {
-            public static readonly NamespaceID beingRiden = Get(FrameworksBuffNames.Enemy.beingRiden);
-            public static readonly NamespaceID ridingPassenger = Get(FrameworksBuffNames.Enemy.ridingPassenger);
         }
     }
 }

@@ -10,7 +10,9 @@ using MVZ2.GameContent.Effects;
 using MVZ2.GameContent.HeldItems;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Detections;
+using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Projectiles;
 using MVZ2.Vanilla.Properties;
 using MVZ2Logic.Entities;
 using MVZ2Logic.HeldItems;
@@ -219,7 +221,7 @@ namespace MVZ2.GameContent.Contraptions
             }
             projectile.Position = pos;
 
-            projectile.StopChangingLane();
+            projectile.StopProjectileMotionBuffs();
         }
         private void EvokedUpdate(Entity pad)
         {
@@ -246,7 +248,7 @@ namespace MVZ2.GameContent.Contraptions
                     }
                     pos.y = pad.Level.GetGroundY(pos.x, pos.z) + 10;
                     target.Position = target.Position * 0.5f + pos * 0.5f;
-                    target.StopChangingLane();
+                    target.StopMonsterMotionBuffs();
                 }
             }
             // 拖动倒计时。

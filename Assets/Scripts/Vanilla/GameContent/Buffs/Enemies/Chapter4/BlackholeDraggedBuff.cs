@@ -3,6 +3,7 @@
 using MVZ2.Vanilla.Enemies;
 using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Properties;
+using MVZ2Logic.Entities;
 using PVZEngine.Buffs;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
@@ -18,6 +19,7 @@ namespace MVZ2.GameContent.Buffs.Entities
         public BlackholeDraggedBuff(string nsp, string name) : base(nsp, name)
         {
             AddModifier(new BooleanModifier(VanillaEnemyProps.NO_ALIGN_TO_LANE, true));
+            AddModifier(new BooleanModifier(LogicEnemyProps.FORCED_MOVEMENT, true));
         }
         public override void PostAdd(Buff buff)
         {
@@ -38,7 +40,7 @@ namespace MVZ2.GameContent.Buffs.Entities
                 var entity = buff.GetEntity();
                 if (entity != null)
                 {
-                    entity.StopChangingLane();
+                    entity.StopMonsterMotionBuffs();
                 }
             }
         }
