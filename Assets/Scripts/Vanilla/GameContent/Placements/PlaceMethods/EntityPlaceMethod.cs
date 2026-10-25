@@ -25,6 +25,7 @@ namespace MVZ2.GameContent.Placements
             if (commandBlock)
             {
                 var spawnParam = CommandBlock.GetImitateSpawnParams(entity.GetID());
+                spawnParam.SetProperty(EngineEntityProps.FACTION, entity.GetFaction());
                 spawnParam.SetProperty(LogicEntityProps.VARIANT, param.GetVariant());
                 ent = grid.SpawnPlacedEntity(VanillaContraptionID.commandBlock, spawnParam);
             }
