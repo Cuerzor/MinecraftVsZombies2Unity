@@ -34,15 +34,15 @@ namespace MVZ2.GameContent.Placements
         }
         private NamespaceID? GetSpawnErrorOfGrid(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
-            var terrainSpawnError = GetTerrainSpawnErrorOfGrid(placement, grid, entity);
-            if (NamespaceID.IsValid(terrainSpawnError))
-            {
-                return terrainSpawnError;
-            }
             var entitySpawnError = GetEntitySpawnErrorOfGrid(placement, grid, entity);
             if (NamespaceID.IsValid(entitySpawnError))
             {
                 return entitySpawnError;
+            }
+            var terrainSpawnError = GetTerrainSpawnErrorOfGrid(placement, grid, entity);
+            if (NamespaceID.IsValid(terrainSpawnError))
+            {
+                return terrainSpawnError;
             }
             return null;
         }

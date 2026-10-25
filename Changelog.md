@@ -22,6 +22,7 @@
   - Infectenser: Short
 - Now, even if the "HP Bar Enabled" option is turned off, as long as the "Hover Display Range" option is greater than 0, entities within the cursor range will still display HP bars.
 - Added a 0.5-second game-over delay to "I, Zombie" levels to prevent an issue where a Wisp Fly's self-destruction causes the game to end immediately when the Furnace is about to produce redstone.
+- The priority of placement error messages for terrain-related contraptions, such as “Place Lily Pad first”, is now lower than that of entity-related error messages, such as “Position Occupied” (i.e., will not be displayed in preference).
 
 ### Balance
 - Youkai Mountain Day 6
