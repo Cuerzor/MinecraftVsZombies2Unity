@@ -138,6 +138,10 @@
             <description>不会游戏结束。</description>
             <params />
         </variant>
+        <variant subname="all">
+            <description>如果有没有启用的作弊选项，启用所有作弊选项；否则关闭所有作弊选项。</description>
+            <params />
+        </variant>
     </command>
     <command id="repeat">
         <description>重复上一条指令。</description>
