@@ -3918,6 +3918,7 @@
             <properties>
                 <bool name="mvz2:pointToDirection" value="true" />
                 <vector3 name="mvz2:size" x="20" y="8" z="8" />
+                <idArray name="mvz2:damageEffects" value="mvz2:pointy" />
             </properties>
         </entity>
         <entity template="projectile" id="spike_ball">
@@ -3928,6 +3929,7 @@
                 <bool name="mvz2:no_homing" value="true" />
                 <bool name="mvz2:ignore_gravity_pad" value="true" />
                 <bool name="mvz2:ignore_force_pad" value="true" />
+                <idArray name="mvz2:damageEffects" value="mvz2:pointy mvz2:ignore_armor" />
             </properties>
         </entity>
         <entity template="projectile" id="diamond_caltrop">
@@ -4647,6 +4649,7 @@
             </properties>
         </entity>
         <entity template="effect" id="giant_spike">
+            <behaviours includeSelf="false"/>
             <properties>
                 <bool name="mvz2:decorative" value="false" />
                 <int name="mvz2:maxTimeout" value="42" />

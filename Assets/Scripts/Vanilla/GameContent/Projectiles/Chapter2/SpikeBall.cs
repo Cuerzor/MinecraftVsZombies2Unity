@@ -5,6 +5,7 @@ using MVZ2.GameContent.Effects;
 using MVZ2.Vanilla.Audios;
 using MVZ2.Vanilla.Detections;
 using MVZ2.Vanilla.Entities;
+using MVZ2.Vanilla.Projectiles;
 using MVZ2Logic.Entities;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
@@ -28,14 +29,16 @@ namespace MVZ2.GameContent.Projectiles
             position.y = entity.GetGroundY();
             var param = entity.GetSpawnParams();
             param.SetProperty(VanillaEntityProps.DAMAGE, entity.GetDamage());
-            entity.Spawn(VanillaEffectID.giantSpike, position, param)?.Let(spike =>
+            var spike = entity.Spawn(VanillaEffectID.giantSpike, position, param);
+            if (spike != null)
             {
+                var damageEffects = entity.GetDamageEffectList();
                 spike.PlaySound(VanillaSoundID.giantSpike);
                 foreach (Entity target in entity.Level.FindEntities(enemy => IsEnemyAndInRange(spike, enemy)))
                 {
-                    target.TakeDamage(spike.GetDamage(), new DamageEffectList(VanillaDamageEffects.IGNORE_ARMOR), spike);
+                    target.TakeDamage(spike.GetDamage(), damageEffects, spike);
                 }
-            });
+            };
             entity.Remove();
         }
         private bool IsEnemyAndInRange(Entity self, Entity target)

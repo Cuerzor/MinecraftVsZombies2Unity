@@ -41,6 +41,9 @@
   - Size of spike projectiles: 20x11x11 (px)->20x8x8 (px)
 - Desire Pot
   - The movement speed of blueprint pickups spawned by the evocation now randomly fluctuates between 50% and 200%.
+- Bubble Gun Gurgle
+  - Bubbles now take 20x spike damage or ground-spike damage.
+  - Bubbles now burst immediately after being chilled or frozen.
 
 ## Fixed
 - Fixed the issue where the movement status of the ejected contraption would not be removed when using a Ejector.

@@ -30,6 +30,7 @@ namespace MVZ2.GameContent.Damages
         public static readonly NamespaceID ENEMY_MELEE = Get("enemy_melee");
         public static readonly NamespaceID GROUND_SPIKES = Get("ground_spikes");
         public static readonly NamespaceID THROWN = Get("thrown");
+        public static readonly NamespaceID POINTY = Get("pointy");
 
         // Hit Effect
         public static readonly NamespaceID MUTE = Get("mute");

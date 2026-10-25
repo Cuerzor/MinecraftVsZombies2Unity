@@ -21,7 +21,7 @@ namespace MVZ2.GameContent.Shells
         public override void EvaluateDamage(DamageInputPart input)
         {
             base.EvaluateDamage(input);
-            if (input.Effects.HasEffect(VanillaDamageEffects.SLICE))
+            if (input.Effects.HasEffect(VanillaDamageEffects.SLICE) || input.Effects.HasEffect(VanillaDamageEffects.POINTY) || input.Effects.HasEffect(VanillaDamageEffects.GROUND_SPIKES))
             {
                 input.Multiply(20);
             }
