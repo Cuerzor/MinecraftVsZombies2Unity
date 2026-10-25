@@ -37,6 +37,8 @@
   - Starshards are now allowed, but not for Teleporters.
 - Mine TNT
   - Added "Anchored" tag.
+- Pistenser, CAT-TL MK-II
+  - Size of spike projectiles: 20x11x11 (px)->20x8x8 (px)
 - Necrotombstone
   - Added "Anchored" tag.
 
