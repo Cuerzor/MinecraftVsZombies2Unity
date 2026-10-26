@@ -68,6 +68,11 @@ namespace MVZ2Logic.Options
         public static void SetShowSponsorNames(this IGlobalOptions options, bool value) => options.SetOptionBool(LogicOptionItemID.showSponsorNames, value);
         #endregion
 
+        #region 自动更新赞助者名单
+        public static bool AutoUpdateSponsors(this IGlobalOptions options) => options.GetOptionBool(LogicOptionItemID.autoUpdateSponsors);
+        public static void SetAutoUpdateSponsors(this IGlobalOptions options, bool value) => options.SetOptionBool(LogicOptionItemID.autoUpdateSponsors, value);
+        #endregion
+
         #region 跳过对话
         public static bool SkipAllTalks(this IGlobalOptions options) => options.GetOptionBool(LogicOptionItemID.skipTalks);
         public static void SetSkipAllTalks(this IGlobalOptions options, bool value) => options.SetOptionBool(LogicOptionItemID.skipTalks, value);

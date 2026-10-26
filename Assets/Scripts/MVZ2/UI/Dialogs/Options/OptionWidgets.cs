@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using MVZ2Logic.Options;
 using PVZEngine;
 using PVZEngine.Tools.Unity;
+using TMPro;
 using UnityEngine;
 
 namespace MVZ2.UI
@@ -35,6 +36,7 @@ namespace MVZ2.UI
         public void UpdateWidgets(OptionWidgetsViewData viewData)
         {
             optionID = viewData.namespaceID;
+            SetWidgetType(viewData.type);
             switch (viewData.type)
             {
                 case OptionWidgetType.Toggle:
@@ -49,15 +51,14 @@ namespace MVZ2.UI
                 case OptionWidgetType.Button:
                     UpdateButton(viewData);
                     break;
+                case OptionWidgetType.Label:
+                    UpdateLabel(viewData);
+                    break;
             }
         }
         private void UpdateToggle(OptionWidgetsViewData viewData)
         {
-            toggle.gameObject.SetActive(true);
-            slider.gameObject.SetActive(false);
-            dropdown.gameObject.SetActive(false);
-            button.gameObject.SetActive(false);
-
+            toggle.Toggle.interactable = viewData.interactable;
             toggle.Text.text = viewData.label;
 
             if (viewData.value is bool boolValue)
@@ -67,13 +68,9 @@ namespace MVZ2.UI
         }
         private void UpdateSlider(OptionWidgetsViewData viewData)
         {
-            toggle.gameObject.SetActive(false);
-            slider.gameObject.SetActive(true);
-            dropdown.gameObject.SetActive(false);
-            button.gameObject.SetActive(false);
-
             slider.Text.text = viewData.label;
 
+            slider.Slider.interactable = viewData.interactable;
             slider.Slider.wholeNumbers = viewData.sliderWholeNumbers;
             slider.Slider.minValue = viewData.sliderMinValue;
             slider.Slider.maxValue = viewData.sliderMaxValue;
@@ -85,14 +82,10 @@ namespace MVZ2.UI
         }
         private void UpdateDropdown(OptionWidgetsViewData viewData)
         {
-            toggle.gameObject.SetActive(false);
-            slider.gameObject.SetActive(false);
-            dropdown.gameObject.SetActive(true);
-            button.gameObject.SetActive(false);
-
             dropdown.Text.text = viewData.label;
             dropdown.Dropdown.ClearOptions();
             dropdown.Dropdown.AddOptions(viewData.dropdownOptions);
+            dropdown.Dropdown.interactable = viewData.interactable;
 
             if (viewData.value is int index)
             {
@@ -101,12 +94,20 @@ namespace MVZ2.UI
         }
         private void UpdateButton(OptionWidgetsViewData viewData)
         {
-            toggle.gameObject.SetActive(false);
-            slider.gameObject.SetActive(false);
-            dropdown.gameObject.SetActive(false);
-            button.gameObject.SetActive(true);
-
+            button.Button.interactable = viewData.interactable;
             button.Text.text = viewData.label;
+        }
+        private void UpdateLabel(OptionWidgetsViewData viewData)
+        {
+            label.text = viewData.label;
+        }
+        private void SetWidgetType(OptionWidgetType type)
+        {
+            toggle.gameObject.SetActive(type == OptionWidgetType.Toggle);
+            slider.gameObject.SetActive(type == OptionWidgetType.Slider);
+            dropdown.gameObject.SetActive(type == OptionWidgetType.Dropdown);
+            button.gameObject.SetActive(type == OptionWidgetType.Button);
+            label.gameObject.SetActive(type == OptionWidgetType.Label);
         }
         private void Awake()
         {
@@ -126,6 +127,7 @@ namespace MVZ2.UI
         public TextSlider Slider => slider;
         public LabeledDropdown Dropdown => dropdown;
         public TextButton TextButton => button;
+        public TextMeshProUGUI Label => label;
         private NamespaceID? optionID;
 
         [SerializeField]
@@ -136,6 +138,8 @@ namespace MVZ2.UI
         private LabeledDropdown dropdown = null!;
         [SerializeField]
         private TextButton button = null!;
+        [SerializeField]
+        private TextMeshProUGUI label = null!;
     }
     public struct OptionWidgetsViewData
     {
@@ -149,5 +153,6 @@ namespace MVZ2.UI
         public string tooltipContext;
         public NamespaceID namespaceID;
         public List<string> dropdownOptions;
+        public bool interactable;
     }
 }

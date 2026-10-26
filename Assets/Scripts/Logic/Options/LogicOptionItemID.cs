@@ -18,6 +18,7 @@ namespace MVZ2Logic.Options
         public const string pauseOnFocusLost = "pause_on_focus_lost";
         public const string skipTalks = "skip_talks";
         public const string showSponsorNames = "show_sponsor_names";
+        public const string autoUpdateSponsors = "auto_update_sponsors";
         public const string blueprintWarnings = "blueprint_warnings";
         public const string showHotkeys = "show_hotkeys";
         public const string hdrLighting = "hdr_lighting";
@@ -53,6 +54,7 @@ namespace MVZ2Logic.Options
         public static readonly NamespaceID pauseOnFocusLost = Get(LogicOptionItemNames.pauseOnFocusLost);
         public static readonly NamespaceID skipTalks = Get(LogicOptionItemNames.skipTalks);
         public static readonly NamespaceID showSponsorNames = Get(LogicOptionItemNames.showSponsorNames);
+        public static readonly NamespaceID autoUpdateSponsors = Get(LogicOptionItemNames.autoUpdateSponsors);
         public static readonly NamespaceID blueprintWarnings = Get(LogicOptionItemNames.blueprintWarnings);
         public static readonly NamespaceID showHotkeys = Get(LogicOptionItemNames.showHotkeys);
         public static readonly NamespaceID hdrLighting = Get(LogicOptionItemNames.hdrLighting);

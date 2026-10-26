@@ -22,6 +22,10 @@ namespace MVZ2Logic.Options
         public const string hpBarsAmountMode = "hp_bars_amount_mode";
         public const string hpBarsHoverDisplayRange = "hp_bars_hover_display_range";
         public const string showSponsorNames = "show_sponsor_names";
+        public const string autoUpdateSponsors = "auto_update_sponsors";
+        public const string lastSponsorSuccessTime = "last_sponsor_success_time";
+        public const string lastSponsorAttemptTime = "last_sponsor_attempt_time";
+        public const string updateSponsors = "update_sponsors"; 
         public const string commandBlockMode = "command_block_mode";
         public const string skipTalks = "skip_talks";
         public const string vibration = "vibration";

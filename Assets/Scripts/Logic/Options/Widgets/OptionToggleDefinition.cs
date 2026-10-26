@@ -13,5 +13,6 @@ namespace MVZ2Logic.Options
         }
         public abstract bool GetValue(IOptionContext context);
         public abstract void OnValueChanged(IOptionContext context, bool value);
+        public virtual bool IsInteractable(IOptionContext context) => true;
     }
 }

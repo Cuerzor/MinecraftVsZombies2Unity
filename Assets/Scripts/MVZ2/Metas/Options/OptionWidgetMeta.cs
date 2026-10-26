@@ -74,6 +74,7 @@ namespace MVZ2.Metas
             { "toggle", OptionWidgetType.Toggle },
             { "dropdown", OptionWidgetType.Dropdown },
             { "slider", OptionWidgetType.Slider },
+            { "label", OptionWidgetType.Label },
         };
     }
 }

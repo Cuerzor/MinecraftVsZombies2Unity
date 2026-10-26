@@ -21,6 +21,42 @@ namespace MVZ2.Supporters
 {
     public class SponsorManager : MonoBehaviour, IGlobalSponsors
     {
+        public void StartUpdateSponsors()
+        {
+            if (sponsorPipeline != null)
+            {
+                return;
+            }
+            sponsorPipeline = new TaskPipeline();
+            sponsorPipeline.AddTask(new PipelineTask(TASK_LOAD_SPONSORS, async (p) =>
+            {
+                await PullSponsors(p);
+            }));
+            var sponsorTask = sponsorPipeline.Run();
+            sponsorTask.ContinueWith((t) =>
+            {
+                sponsorPipeline = null;
+            });
+        }
+        public void ForceUpdateSponsors(Action<bool>? onFinished)
+        {
+            if (sponsorPipeline != null)
+            {
+                return;
+            }
+            sponsorPipeline = new TaskPipeline();
+            sponsorPipeline.AddTask(new PipelineTask(TASK_LOAD_SPONSORS, async (p) =>
+            {
+                bool result = await ForcePullSponsors(p);
+                onFinished?.Invoke(result);
+                OnSponsorUpdateFinished?.Invoke(result);
+            }));
+            var sponsorTask = sponsorPipeline.Run();
+            sponsorTask.ContinueWith((t) =>
+            {
+                sponsorPipeline = null;
+            });
+        }
         public async Task PullSponsors(TaskProgress progress)
         {
             SponsorInfos? sponserCache = null;
@@ -44,26 +80,41 @@ namespace MVZ2.Supporters
                 return;
             }
 
-            await ForcePullSponsors(progress);
+            bool result = await ForcePullSponsors(progress);
+            OnSponsorUpdateFinished?.Invoke(result);
         }
-        public async Task ForcePullSponsors(TaskProgress progress)
+        public async Task<bool> ForcePullSponsors(TaskProgress progress)
         {
+            SponsorInfos? sponsorCache = null;
             try
             {
+                isUpdating = true;
                 var items = await GetAllSponsors(progress);
-                var sponserCache = new SponsorInfos(this, items);
-                sponserCache.lastUpdateTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-                SetCurrentSponsorInfos(sponserCache);
-                SaveSponsorsCache(sponserCache);
+                sponsorCache = new SponsorInfos(this, items);
+                sponsorCache.lastUpdateTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
                 var msg = Main.LanguageManager._(SPONSOR_UPDATED_SUCCESSFULLY);
                 Main.Scene.ShowPopup(msg);
+                return true;
             }
             catch (Exception e)
             {
+                sponsorCache = currentSponsors ?? new SponsorInfos(this, Array.Empty<SponsorItem>());
+
                 Debug.LogError($"更新赞助者名单时出现错误：{e}");
                 var msg = Main.LanguageManager._(SPONSOR_UPDATE_FAILED);
                 Main.Scene.ShowPopup(msg);
+                return false;
+            }
+            finally
+            {
+                isUpdating = false;
+                if (sponsorCache != null)
+                {
+                    sponsorCache.lastAttemptTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+                    SetCurrentSponsorInfos(sponsorCache);
+                    SaveSponsorsCache(sponsorCache);
+                }
             }
         }
         public string[] GetSponsorPlanNames(int rankType, int rank)
@@ -94,8 +145,29 @@ namespace MVZ2.Supporters
             }
             return false;
         }
+        public long GetLastAttemptTime()
+        {
+            if (currentSponsors != null)
+            {
+                return currentSponsors.lastAttemptTime;
+            }
+            return -1;
+        }
+        public long GetLastSuccessTime()
+        {
+            if (currentSponsors != null)
+            {
+                return currentSponsors.lastUpdateTime;
+            }
+            return -1;
+        }
+        public bool IsUpdatingSponsors()
+        {
+            return isUpdating;
+        }
         private async Task<SponsorItem[]> GetAllSponsors(TaskProgress progress)
         {
+            Debug.Log("开始下载赞助者名单。");
             List<SponsorItem> sponsorList = new List<SponsorItem>();
             int numPerPage = 100;
             progress.SetProgress(0, "Page 1");
@@ -283,7 +355,11 @@ namespace MVZ2.Supporters
         #endregion
 
         public MainManager Main => MainManager.Instance;
+        public event Action<bool>? OnSponsorUpdateFinished;
+        private TaskPipeline? sponsorPipeline;
         private SponsorInfos? currentSponsors;
+        [TranslateMsg("初始化任务名称")]
+        public const string TASK_LOAD_SPONSORS = "获取赞助者列表……";
         [TranslateMsg("赞助者名单更新提醒")]
         public const string SPONSOR_UPDATED_SUCCESSFULLY = "赞助者名单已成功更新。";
         [TranslateMsg("赞助者名单更新提醒")]
@@ -308,6 +384,7 @@ namespace MVZ2.Supporters
             0x11, 0x45, 0x14, 0x19, 0x19, 0x81, 0x08, 0x10,
             0x11, 0x45, 0x14, 0x19, 0x19, 0x81, 0x08, 0x10
         };
+        private bool isUpdating = false;
         [Serializable]
         public struct PlanEntry
         {

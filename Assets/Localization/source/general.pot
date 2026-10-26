@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-26 01:41+0800\n"
+"POT-Creation-Date: 2026-10-26 03:19+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1701,13 +1701,18 @@ msgstr ""
 msgid "<color=red>售罄</color>"
 msgstr ""
 
+# 初始化任务名称
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:361
+msgid "获取赞助者列表……"
+msgstr ""
+
 # 赞助者名单更新提醒
-#: Scripts\MVZ2\Sponsors\SponsorManager.cs:287
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:363
 msgid "赞助者名单已成功更新。"
 msgstr ""
 
 # 赞助者名单更新提醒
-#: Scripts\MVZ2\Sponsors\SponsorManager.cs:289
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:365
 msgid "赞助者名单更新失败。"
 msgstr ""
 
@@ -1791,52 +1796,52 @@ msgid "截图已保存：{0}"
 msgstr ""
 
 # 选项
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:587
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:614
 msgid "交换触发"
 msgstr ""
 
 # 选项
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:589
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:616
 msgid "全屏"
 msgstr ""
 
 # 选项
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:591
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:618
 msgid "设备震动"
 msgstr ""
 
 # 选项
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:593
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:620
 msgid "后台暂停"
 msgstr ""
 
 # 选项
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:595
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:622
 msgid "更多选项"
 msgstr ""
 
 # 选项，{0}为难度
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:597
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:624
 msgid "难度：{0}"
 msgstr ""
 
 # 选项，{0}为量
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:605
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:632
 msgid "音乐音量：{0}"
 msgstr ""
 
 # 选项，{0}为量
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:607
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:634
 msgid "音效音量：{0}"
 msgstr ""
 
 # 选项，{0}为量
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:609
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:636
 msgid "加速倍率：{0}"
 msgstr ""
 
 # 对话框内容
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:611
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:638
 msgid ""
 "确认要返回吗？\n"
 "你的进度会被保存。"
@@ -1999,11 +2004,6 @@ msgstr ""
 # 进入关卡的错误信息，{0}为关卡ID
 #: Scripts\MVZ2\Map\MapController.cs:713
 msgid "目标关卡{0}不存在。"
-msgstr ""
-
-# 初始化任务名称
-#: Scripts\MVZ2\Managers\MainManager.cs:306
-msgid "获取赞助者列表……"
 msgstr ""
 
 # 帧率显示
@@ -3461,6 +3461,21 @@ msgstr ""
 #: Scripts\Logic\Localization\LogicStrings.cs:275
 msgctxt "curse.tooltip"
 msgid "？？？"
+msgstr ""
+
+# 无效的赞助者时间
+#: Scripts\Logic\Localization\LogicStrings.cs:282
+msgid "无"
+msgstr ""
+
+# 频繁点击更新赞助者名单按钮时的提醒
+#: Scripts\Logic\Localization\LogicStrings.cs:284
+msgid "请稍后再试。"
+msgstr ""
+
+# 正在更新赞助者时，按钮的显示文本
+#: Scripts\Logic\Localization\LogicStrings.cs:286
+msgid "更新中……"
 msgstr ""
 
 # 命令方块模式
@@ -6460,6 +6475,12 @@ msgctxt "option.category"
 msgid "控制"
 msgstr ""
 
+#. Label for option category 赞助者
+#: Option meta file
+msgctxt "option.category"
+msgid "赞助者"
+msgstr ""
+
 #. Label for option category 关于
 #: Option meta file
 msgctxt "option.category"
@@ -6506,18 +6527,6 @@ msgstr ""
 #: Option meta file
 msgctxt "option.tooltip"
 msgid "是否在蓝图选择完毕后，根据当前情况提出警告。"
-msgstr ""
-
-#. Label for option widget 赞助者名称
-#: Option meta file
-msgctxt "option.name"
-msgid "赞助者名称"
-msgstr ""
-
-#. Tooltip for option widget 在关卡中放置特定器械时，是否随机显示赞助了对应方案的赞助者的名称。
-#: Option meta file
-msgctxt "option.tooltip"
-msgid "在关卡中放置特定器械时，是否随机显示赞助了对应方案的赞助者的名称。"
 msgstr ""
 
 #. Label for option widget 命令方块
@@ -6751,6 +6760,48 @@ msgstr ""
 #: Option meta file
 msgctxt "option.name"
 msgid "快捷键设置"
+msgstr ""
+
+#. Label for option widget 自动更新赞助者名单
+#: Option meta file
+msgctxt "option.name"
+msgid "自动更新赞助者名单"
+msgstr ""
+
+#. Tooltip for option widget 是否在游戏开始时，通过网络尝试自动更新赞助者名单。
+#: Option meta file
+msgctxt "option.tooltip"
+msgid "是否在游戏开始时，通过网络尝试自动更新赞助者名单。"
+msgstr ""
+
+#. Label for option widget 赞助者名称
+#: Option meta file
+msgctxt "option.name"
+msgid "赞助者名称"
+msgstr ""
+
+#. Tooltip for option widget 在关卡中放置特定器械时，是否随机显示赞助了对应方案的赞助者的名称。
+#: Option meta file
+msgctxt "option.tooltip"
+msgid "在关卡中放置特定器械时，是否随机显示赞助了对应方案的赞助者的名称。"
+msgstr ""
+
+#. Label for option widget 上次更新时间：{0}
+#: Option meta file
+msgctxt "option.name"
+msgid "上次更新时间：{0}"
+msgstr ""
+
+#. Label for option widget 上次尝试时间：{0}
+#: Option meta file
+msgctxt "option.name"
+msgid "上次尝试时间：{0}"
+msgstr ""
+
+#. Label for option widget 更新赞助者名单
+#: Option meta file
+msgctxt "option.name"
+msgid "更新赞助者名单"
 msgstr ""
 
 #. Label for option widget 制作人员名单

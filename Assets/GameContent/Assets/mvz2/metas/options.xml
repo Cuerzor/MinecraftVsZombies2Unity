@@ -5,6 +5,7 @@
         <category id="gameplay" label="游戏" />
         <category id="hp_bar" label="血条" />
         <category id="control" label="控制" />
+        <category id="sponsor" label="赞助者" />
         <category id="about" label="关于" />
     </categories>
     <items>
@@ -18,6 +19,7 @@
         <bool id="pause_on_focus_lost" defaultValue="true" />
         <bool id="skip_talks" defaultValue="false" />
         <bool id="show_sponsor_names" defaultValue="false" />
+        <bool id="auto_update_sponsors" defaultValue="true" />
         <bool id="blueprint_warnings" defaultValue="true" />
         <bool id="show_hotkeys" defaultValue="false" />
         <bool id="hdr_lighting" defaultValue="true" />
@@ -56,11 +58,6 @@
         <toggle id="blueprint_warnings" category="mvz2:general" label="选卡警告">
             <tooltip>
                 <p>是否在蓝图选择完毕后，根据当前情况提出警告。</p>
-            </tooltip>
-        </toggle>
-        <toggle id="show_sponsor_names" category="mvz2:general" label="赞助者名称">
-            <tooltip>
-                <p>在关卡中放置特定器械时，是否随机显示赞助了对应方案的赞助者的名称。</p>
             </tooltip>
         </toggle>
         <dropdown id="command_block_mode" category="mvz2:general" label="命令方块">
@@ -165,6 +162,21 @@
             </tooltip>
         </toggle>
         <button id="keybinding" category="mvz2:control" label="快捷键设置" />
+
+        <!-- Sponsor -->
+        <toggle id="auto_update_sponsors" category="mvz2:sponsor" label="自动更新赞助者名单">
+            <tooltip>
+                <p>是否在游戏开始时，通过网络尝试自动更新赞助者名单。</p>
+            </tooltip>
+        </toggle>
+        <toggle id="show_sponsor_names" category="mvz2:sponsor" label="赞助者名称">
+            <tooltip>
+                <p>在关卡中放置特定器械时，是否随机显示赞助了对应方案的赞助者的名称。</p>
+            </tooltip>
+        </toggle>
+        <label id="last_sponsor_success_time" category="mvz2:sponsor" label="上次更新时间：{0}" />
+        <label id="last_sponsor_attempt_time" category="mvz2:sponsor" label="上次尝试时间：{0}" />
+        <button id="update_sponsors" category="mvz2:sponsor" label="更新赞助者名单" />
 
         <!-- About -->
         <button id="credits" category="mvz2:about" label="制作人员名单" />

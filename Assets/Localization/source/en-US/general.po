@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-26 01:41+0800\n"
-"PO-Revision-Date: 2026-10-26 13:43+0800\n"
+"POT-Creation-Date: 2026-10-26 03:19+0800\n"
+"PO-Revision-Date: 2026-10-26 15:21+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1677,13 +1677,17 @@ msgstr "{0}/{1}"
 msgid "<color=red>售罄</color>"
 msgstr "<color=red>Sold Out</color>"
 
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:361
+msgid "获取赞助者列表……"
+msgstr "Getting Sponsors..."
+
 # 赞助者名单更新提醒
-#: Scripts\MVZ2\Sponsors\SponsorManager.cs:287
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:363
 msgid "赞助者名单已成功更新。"
 msgstr "Successfully updated the list of sponsors."
 
 # 赞助者名单更新提醒
-#: Scripts\MVZ2\Sponsors\SponsorManager.cs:289
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:365
 msgid "赞助者名单更新失败。"
 msgstr "Failed to update the list of sponsors."
 
@@ -1765,43 +1769,43 @@ msgstr "Are you sure to reset all key bindings?"
 msgid "截图已保存：{0}"
 msgstr "Screenshot saved: {0}"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:587
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:614
 msgid "交换触发"
 msgstr "Swap Trigger"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:589
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:616
 msgid "全屏"
 msgstr "Full Screen"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:591
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:618
 msgid "设备震动"
 msgstr "Vibration"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:593
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:620
 msgid "后台暂停"
 msgstr "Pause on Focus Lost"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:595
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:622
 msgid "更多选项"
 msgstr "More Options"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:597
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:624
 msgid "难度：{0}"
 msgstr "Difficulty: {0}"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:605
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:632
 msgid "音乐音量：{0}"
 msgstr "Music Volume: {0}"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:607
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:634
 msgid "音效音量：{0}"
 msgstr "Sound Volume: {0}"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:609
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:636
 msgid "加速倍率：{0}"
 msgstr "Fast-forward: {0}"
 
-#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:611
+#: Scripts\MVZ2\Options\Dialog\OptionsDialogController.cs:638
 msgid ""
 "确认要返回吗？\n"
 "你的进度会被保存。"
@@ -1962,10 +1966,6 @@ msgstr "Target area {0} does not exist."
 #: Scripts\MVZ2\Map\MapController.cs:713
 msgid "目标关卡{0}不存在。"
 msgstr "Target stage {0} does not exist."
-
-#: Scripts\MVZ2\Managers\MainManager.cs:306
-msgid "获取赞助者列表……"
-msgstr "Getting Sponsors..."
 
 # 帧率显示
 #: Scripts\MVZ2\Managers\PerformanceManager.cs:81
@@ -3393,6 +3393,20 @@ msgstr "???"
 msgctxt "curse.tooltip"
 msgid "？？？"
 msgstr "???"
+
+#: Scripts\Logic\Localization\LogicStrings.cs:282
+msgid "无"
+msgstr "None"
+
+# 频繁点击更新赞助者名单按钮时的提醒
+#: Scripts\Logic\Localization\LogicStrings.cs:284
+msgid "请稍后再试。"
+msgstr "Try again later."
+
+# 正在更新赞助者时，按钮的显示文本
+#: Scripts\Logic\Localization\LogicStrings.cs:286
+msgid "更新中……"
+msgstr "Updating..."
 
 # 命令方块模式
 #: Scripts\Logic\Options\Definitions\CommandBlockModeOptionDropdown.cs:37
@@ -6839,6 +6853,12 @@ msgctxt "option.category"
 msgid "控制"
 msgstr "Control"
 
+#. Label for option category 赞助者
+#: Option meta file
+msgctxt "option.category"
+msgid "赞助者"
+msgstr "Sponsors"
+
 #. Label for option category 关于
 #: Option meta file
 msgctxt "option.category"
@@ -6888,20 +6908,6 @@ msgid "是否在蓝图选择完毕后，根据当前情况提出警告。"
 msgstr ""
 "Option to display warnings after selecting blueprints based on the current "
 "situation."
-
-#. Label for option widget 赞助者名称
-#: Option meta file
-msgctxt "option.name"
-msgid "赞助者名称"
-msgstr "Sponsor Names"
-
-#. Tooltip for option widget 在关卡中放置特定器械时，是否随机显示赞助了对应方案的赞助者的名称。
-#: Option meta file
-msgctxt "option.tooltip"
-msgid "在关卡中放置特定器械时，是否随机显示赞助了对应方案的赞助者的名称。"
-msgstr ""
-"When placing specific contraptions in a level, option to randomly display "
-"the names of sponsors who supported the corresponding tier."
 
 # 命令方块蓝图名，{0}为原名称
 #. Label for option widget 命令方块
@@ -7164,6 +7170,52 @@ msgstr "Option to display the corresponding hotkeys for the UI in a level."
 msgctxt "option.name"
 msgid "快捷键设置"
 msgstr "Hotkeys"
+
+#. Label for option widget 自动更新赞助者名单
+#: Option meta file
+msgctxt "option.name"
+msgid "自动更新赞助者名单"
+msgstr "Auto-update Sponsor List"
+
+#. Tooltip for option widget 是否在游戏开始时，通过网络尝试自动更新赞助者名单。
+#: Option meta file
+msgctxt "option.tooltip"
+msgid "是否在游戏开始时，通过网络尝试自动更新赞助者名单。"
+msgstr ""
+"Should the sponsor list be automatically updated through the internet at the "
+"beginning of the game."
+
+#. Label for option widget 赞助者名称
+#: Option meta file
+msgctxt "option.name"
+msgid "赞助者名称"
+msgstr "Sponsor Names"
+
+#. Tooltip for option widget 在关卡中放置特定器械时，是否随机显示赞助了对应方案的赞助者的名称。
+#: Option meta file
+msgctxt "option.tooltip"
+msgid "在关卡中放置特定器械时，是否随机显示赞助了对应方案的赞助者的名称。"
+msgstr ""
+"When placing specific contraptions in a level, option to randomly display "
+"the names of sponsors who supported the corresponding tier."
+
+#. Label for option widget 上次更新时间：{0}
+#: Option meta file
+msgctxt "option.name"
+msgid "上次更新时间：{0}"
+msgstr "Last updated: {0}"
+
+#. Label for option widget 上次尝试时间：{0}
+#: Option meta file
+msgctxt "option.name"
+msgid "上次尝试时间：{0}"
+msgstr "Last attempt: {0}"
+
+#. Label for option widget 更新赞助者名单
+#: Option meta file
+msgctxt "option.name"
+msgid "更新赞助者名单"
+msgstr "Update Sponsor List"
 
 #. Label for option widget 制作人员名单
 #: Option meta file

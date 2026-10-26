@@ -11,7 +11,7 @@ namespace MVZ2Logic.Contents.Options
         public ExportLogFilesOptionButton(string nsp, string name) : base(nsp, name)
         {
         }
-        public override void OnClick()
+        public override void OnClick(IOptionContext context)
         {
             Global.Debugs.ExportLogFiles();
         }

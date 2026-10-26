@@ -26,6 +26,13 @@ namespace MVZ2.Options
         public void Open(IOptionContext context)
         {
             this.context = context;
+            context.OnDialogUpdateRequested += (c) =>
+            {
+                if (IsOpen())
+                {
+                    UpdateMoreOptionsPageWidgets();
+                }
+            };
 
             UpdateMainPageWidgets();
             UpdateMoreOptionsPageWidgets();
@@ -62,6 +69,8 @@ namespace MVZ2.Options
             ui.MoreOptions.OnButtonClick += OnMoreOptionsButtonClickCallback;
             ui.MoreOptions.OnTooltipShow += OnTooltipShowCallback;
             ui.MoreOptions.OnTooltipHide += OnTooltipHideCallback;
+
+            Main.SponsorManager.OnSponsorUpdateFinished += OnSponsorUpdateFinishedCallback;
         }
         private void OnEnable()
         {
@@ -238,8 +247,7 @@ namespace MVZ2.Options
 
             slider.OnValueChanged(context, value);
 
-            var sliderValue = slider.GetLabelValue(context, value);
-            var label = Main.LanguageManager._p(LogicStrings.CONTEXT_OPTION_NAME, definition.GetLabel(), sliderValue);
+            var label = slider.GetLabelText(context);
             widgets.SetSliderText(label);
         }
         private void OnMoreOptionsSliderEndCallback(OptionWidgets widgets, float value)
@@ -273,11 +281,9 @@ namespace MVZ2.Options
             if (definition is not OptionButtonDefinition button)
                 return;
 
-            button.OnClick();
+            button.OnClick(context);
 
-            var labelValue = button.GetLabelValue(context);
-            var label = Main.LanguageManager._p(LogicStrings.CONTEXT_OPTION_NAME, definition.GetLabel(), labelValue);
-            widgets.SetButtonText(label);
+            widgets.SetButtonText(button.GetLabelText(context));
         }
         private void OnTooltipShowCallback(TooltipHandler handler)
         {
@@ -300,6 +306,13 @@ namespace MVZ2.Options
         private void OnTooltipHideCallback(TooltipHandler handler)
         {
             Main.Scene.HideTooltip();
+        }
+        private void OnSponsorUpdateFinishedCallback(bool success)
+        {
+            if (IsOpen())
+            {
+                UpdateMoreOptionsPageWidgets();
+            }
         }
         #endregion
         private void SaveOptions()
@@ -491,20 +504,20 @@ namespace MVZ2.Options
                 case OptionToggleDefinition toggle:
                     return new OptionWidgetsViewData()
                     {
-                        label = Main.LanguageManager._p(LogicStrings.CONTEXT_OPTION_NAME, definition.GetLabel()),
+                        label = toggle.GetLabelText(context),
                         namespaceID = definition.GetID(),
                         tooltipText = tooltipText,
                         tooltipContext = tooltipContext,
                         type = OptionWidgetType.Toggle,
-                        value = toggle.GetValue(context)
+                        value = toggle.GetValue(context),
+                        interactable = toggle.IsInteractable(context),
                     };
                 case OptionSliderDefinition slider:
                     {
                         var value = slider.GetValue(context);
-                        var sliderValue = slider.GetLabelValue(context, value);
                         return new OptionWidgetsViewData()
                         {
-                            label = Main.LanguageManager._p(LogicStrings.CONTEXT_OPTION_NAME, definition.GetLabel(), sliderValue),
+                            label = slider.GetLabelText(context),
                             namespaceID = definition.GetID(),
                             tooltipText = tooltipText,
                             tooltipContext = tooltipContext,
@@ -512,7 +525,8 @@ namespace MVZ2.Options
                             sliderMinValue = definition.GetSliderMinValue(),
                             sliderMaxValue = definition.GetSliderMaxValue(),
                             type = OptionWidgetType.Slider,
-                            value = value
+                            value = value,
+                            interactable = slider.IsInteractable(context),
                         };
                     }
                 case OptionDropdownDefinition dropdown:
@@ -522,24 +536,37 @@ namespace MVZ2.Options
                         dropdown.FillItems(context, items);
                         return new OptionWidgetsViewData()
                         {
-                            label = Main.LanguageManager._p(LogicStrings.CONTEXT_OPTION_NAME, definition.GetLabel()),
+                            label = dropdown.GetLabelText(context),
                             namespaceID = definition.GetID(),
                             tooltipText = tooltipText,
                             tooltipContext = tooltipContext,
                             type = OptionWidgetType.Dropdown,
                             value = value,
                             dropdownOptions = items,
+                            interactable = dropdown.IsInteractable(context),
                         };
                     }
                 case OptionButtonDefinition button:
                     {
                         return new OptionWidgetsViewData()
                         {
-                            label = Main.LanguageManager._p(LogicStrings.CONTEXT_OPTION_NAME, definition.GetLabel()),
+                            label = button.GetLabelText(context),
                             namespaceID = definition.GetID(),
                             tooltipText = tooltipText,
                             tooltipContext = tooltipContext,
                             type = OptionWidgetType.Button,
+                            interactable = button.IsInteractable(context),
+                        };
+                    }
+                case OptionLabelDefinition label:
+                    {
+                        return new OptionWidgetsViewData()
+                        {
+                            label = label.GetLabelText(context),
+                            namespaceID = definition.GetID(),
+                            tooltipText = tooltipText,
+                            tooltipContext = tooltipContext,
+                            type = OptionWidgetType.Label,
                         };
                     }
             }

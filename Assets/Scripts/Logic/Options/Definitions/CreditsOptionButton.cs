@@ -15,7 +15,7 @@ namespace MVZ2Logic.Contents.Options
         {
             return context is not IOptionContextLevel;
         }
-        public override void OnClick()
+        public override void OnClick(IOptionContext context)
         {
             Global.Scene.OpenCreditsPanel();
         }

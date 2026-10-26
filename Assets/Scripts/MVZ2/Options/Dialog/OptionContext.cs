@@ -1,5 +1,6 @@
 #nullable enable
 
+using System;
 using System.Collections.Generic;
 using MVZ2Logic.Games;
 using MVZ2Logic.Options;
@@ -86,6 +87,11 @@ namespace MVZ2.Options
         {
             return needReload;
         }
+        public void UpdateDialog()
+        {
+            OnDialogUpdateRequested?.Invoke(this);
+        }
+        public event Action<IOptionContext>? OnDialogUpdateRequested;
         private Dictionary<NamespaceID, bool> cacheOptionBool = new Dictionary<NamespaceID, bool>();
         private Dictionary<NamespaceID, int> cacheOptionInt = new Dictionary<NamespaceID, int>();
         private Dictionary<NamespaceID, float> cacheOptionFloat = new Dictionary<NamespaceID, float>();

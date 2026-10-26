@@ -16,5 +16,6 @@ namespace MVZ2Logic.Options
         public abstract void FillItems(IOptionContext context, List<string> items);
         public abstract int GetValue(IOptionContext context);
         public abstract void OnValueChanged(IOptionContext context, int index);
+        public virtual bool IsInteractable(IOptionContext context) => true;
     }
 }

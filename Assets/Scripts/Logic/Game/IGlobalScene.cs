@@ -21,5 +21,7 @@ namespace MVZ2Logic.Games
 
         void FadeScreenCoverColor(Color target, float duration);
         void SetScreenCoverColor(Color value);
+
+        void ShowPopup(string message);
     }
 }

@@ -121,16 +121,10 @@ namespace MVZ2.Managers
                 initTask = null;
             });
 
-            sponsorPipeline = new TaskPipeline();
-            sponsorPipeline.AddTask(new PipelineTask(TASK_LOAD_SPONSORS, async (p) =>
+            if (OptionsManager.AutoUpdateSponsors())
             {
-                await SponsorManager.PullSponsors(p);
-            }));
-            var sponsorTask = sponsorPipeline.Run();
-            sponsorTask.ContinueWith((t) =>
-            {
-                sponsorPipeline = null;
-            });
+                SponsorManager.StartUpdateSponsors();
+            }
         }
 
         #region 贴图
@@ -303,8 +297,6 @@ namespace MVZ2.Managers
 
         [TranslateMsg("初始化任务名称")]
         public const string TASK_LOAD_RESOURCES = "加载中……";
-        [TranslateMsg("初始化任务名称")]
-        public const string TASK_LOAD_SPONSORS = "获取赞助者列表……";
         public static MainManager Instance { get; private set; } = null!;
         public GlobalGame Game { get; private set; } = null!;
         public string BuiltinNamespace => builtinNamespace;
@@ -338,7 +330,6 @@ namespace MVZ2.Managers
 
         private Task? initTask;
         private TaskPipeline? loadPipeline;
-        private TaskPipeline? sponsorPipeline;
         private bool initialized = false;
 
         [SerializeField]

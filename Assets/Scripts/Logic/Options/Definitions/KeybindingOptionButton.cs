@@ -15,7 +15,7 @@ namespace MVZ2Logic.Contents.Options
         {
             return !Global.Game.IsMobile();
         }
-        public override void OnClick()
+        public override void OnClick(IOptionContext context)
         {
             Global.Scene.OpenKeybindingPanel();
         }

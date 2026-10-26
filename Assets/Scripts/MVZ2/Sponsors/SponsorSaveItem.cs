@@ -37,6 +37,7 @@ namespace MVZ2.Supporters
             sponsors = saveItems.ToArray();
         }
         public long lastUpdateTime;
+        public long lastAttemptTime;
         public SponsorSaveItem[] sponsors;
     }
     [Serializable]
