@@ -2,7 +2,6 @@
 
 using MVZ2Logic.Commands;
 using MVZ2Logic.Localization;
-using PVZEngine;
 
 namespace MVZ2Logic.Options
 {

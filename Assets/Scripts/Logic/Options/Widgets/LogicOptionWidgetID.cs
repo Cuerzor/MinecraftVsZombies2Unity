@@ -25,7 +25,7 @@ namespace MVZ2Logic.Options
         public const string autoUpdateSponsors = "auto_update_sponsors";
         public const string lastSponsorSuccessTime = "last_sponsor_success_time";
         public const string lastSponsorAttemptTime = "last_sponsor_attempt_time";
-        public const string updateSponsors = "update_sponsors"; 
+        public const string updateSponsors = "update_sponsors";
         public const string commandBlockMode = "command_block_mode";
         public const string skipTalks = "skip_talks";
         public const string vibration = "vibration";

@@ -307,13 +307,13 @@ namespace MVZ2.Supporters
             }
             catch (Exception ex)
             {
-                try 
-                { 
-                    if (File.Exists(tempPath)) 
-                        File.Delete(tempPath); 
-                } 
-                catch 
-                { 
+                try
+                {
+                    if (File.Exists(tempPath))
+                        File.Delete(tempPath);
+                }
+                catch
+                {
                 }
                 Debug.LogError($"保存赞助者缓存失败: {ex.Message}");
             }
@@ -324,7 +324,7 @@ namespace MVZ2.Supporters
                 return true;
 
             // 1. 如果数据不过期，直接返回 false
-            if (!IsDataExpired(infos)) 
+            if (!IsDataExpired(infos))
                 return false;
 
             // 2. 如果数据过期了，检查上次“尝试请求”的时间
@@ -332,7 +332,7 @@ namespace MVZ2.Supporters
             var now = DateTimeOffset.UtcNow;
 
             // 3. 如果距离上次尝试不到 1 小时（退避中），就不去请求
-            if ((now - lastAttempt).TotalHours < 1) 
+            if ((now - lastAttempt).TotalHours < 1)
                 return false;
 
             return true;
