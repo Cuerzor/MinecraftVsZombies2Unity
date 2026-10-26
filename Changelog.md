@@ -3,6 +3,7 @@
 - Added Command /cheat all.
 - In levels with water, if the player does not carry Lily Pad, a warning will now be displayed.
 - Wooden balls in the river of Youkai Mountain now drift with water.
+- Added some options for the list of sponsors.
 - Added the following tags for the Almanac:
   - Cold
   - Damage Type: Normal

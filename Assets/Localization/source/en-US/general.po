@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-26 03:19+0800\n"
-"PO-Revision-Date: 2026-10-26 15:21+0800\n"
+"POT-Creation-Date: 2026-10-26 03:42+0800\n"
+"PO-Revision-Date: 2026-10-26 15:42+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1677,17 +1677,17 @@ msgstr "{0}/{1}"
 msgid "<color=red>售罄</color>"
 msgstr "<color=red>Sold Out</color>"
 
-#: Scripts\MVZ2\Sponsors\SponsorManager.cs:361
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:381
 msgid "获取赞助者列表……"
 msgstr "Getting Sponsors..."
 
 # 赞助者名单更新提醒
-#: Scripts\MVZ2\Sponsors\SponsorManager.cs:363
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:383
 msgid "赞助者名单已成功更新。"
 msgstr "Successfully updated the list of sponsors."
 
 # 赞助者名单更新提醒
-#: Scripts\MVZ2\Sponsors\SponsorManager.cs:365
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:385
 msgid "赞助者名单更新失败。"
 msgstr "Failed to update the list of sponsors."
 
@@ -3384,29 +3384,30 @@ msgctxt "advice"
 msgid "点击以继续"
 msgstr "Click to continue"
 
-#: Scripts\Logic\Localization\LogicStrings.cs:273
-msgctxt "curse.name"
-msgid "？？？"
-msgstr "???"
-
-#: Scripts\Logic\Localization\LogicStrings.cs:275
-msgctxt "curse.tooltip"
-msgid "？？？"
-msgstr "???"
-
-#: Scripts\Logic\Localization\LogicStrings.cs:282
+#: Scripts\Logic\Localization\LogicStrings.cs:270
 msgid "无"
 msgstr "None"
 
 # 频繁点击更新赞助者名单按钮时的提醒
-#: Scripts\Logic\Localization\LogicStrings.cs:284
+#: Scripts\Logic\Localization\LogicStrings.cs:272
 msgid "请稍后再试。"
 msgstr "Try again later."
 
 # 正在更新赞助者时，按钮的显示文本
-#: Scripts\Logic\Localization\LogicStrings.cs:286
+#: Scripts\Logic\Localization\LogicStrings.cs:274
+msgctxt "option.name"
 msgid "更新中……"
 msgstr "Updating..."
+
+#: Scripts\Logic\Localization\LogicStrings.cs:279
+msgctxt "curse.name"
+msgid "？？？"
+msgstr "???"
+
+#: Scripts\Logic\Localization\LogicStrings.cs:281
+msgctxt "curse.tooltip"
+msgid "？？？"
+msgstr "???"
 
 # 命令方块模式
 #: Scripts\Logic\Options\Definitions\CommandBlockModeOptionDropdown.cs:37

@@ -267,6 +267,12 @@ namespace MVZ2Logic.Localization
         public const string CONTEXT_HP_BARS_AMOUNT_MODE = "options.hp_bars_amount_mode";
         public const string CONTEXT_TARGET_FRAMERATE = "option.target_framerate";
         public const string CONTEXT_SCREEN_LAYOUT = "option.screen_layout";
+        [TranslateMsg("无效的赞助者时间")]
+        public const string INVALID_SPONSOR_TIME = "无";
+        [TranslateMsg("频繁点击更新赞助者名单按钮时的提醒")]
+        public const string SPONSOR_UPDATE_COOLDOWNED = "请稍后再试。";
+        [TranslateMsg("正在更新赞助者时，按钮的显示文本", CONTEXT_OPTION_NAME)]
+        public const string SPONSORS_UPDATING = "更新中……";
         #endregion
 
         #region 诅咒
@@ -276,15 +282,6 @@ namespace MVZ2Logic.Localization
         public const string UNKNOWN_CURSE_TOOLTIP = "？？？";
         public const string CONTEXT_CURSE_NAME = "curse.name";
         public const string CONTEXT_CURSE_TOOLTIP = "curse.tooltip";
-        #endregion
-
-        #region 赞助者
-        [TranslateMsg("无效的赞助者时间")]
-        public const string INVALID_SPONSOR_TIME = "无";
-        [TranslateMsg("频繁点击更新赞助者名单按钮时的提醒")]
-        public const string SPONSOR_UPDATE_COOLDOWNED = "请稍后再试。";
-        [TranslateMsg("正在更新赞助者时，按钮的显示文本")]
-        public const string SPONSORS_UPDATING = "更新中……"; 
         #endregion
     }
 }

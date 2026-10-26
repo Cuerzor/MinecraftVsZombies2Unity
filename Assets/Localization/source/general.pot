@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-26 03:19+0800\n"
+"POT-Creation-Date: 2026-10-26 03:42+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1702,17 +1702,17 @@ msgid "<color=red>售罄</color>"
 msgstr ""
 
 # 初始化任务名称
-#: Scripts\MVZ2\Sponsors\SponsorManager.cs:361
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:381
 msgid "获取赞助者列表……"
 msgstr ""
 
 # 赞助者名单更新提醒
-#: Scripts\MVZ2\Sponsors\SponsorManager.cs:363
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:383
 msgid "赞助者名单已成功更新。"
 msgstr ""
 
 # 赞助者名单更新提醒
-#: Scripts\MVZ2\Sponsors\SponsorManager.cs:365
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:385
 msgid "赞助者名单更新失败。"
 msgstr ""
 
@@ -3451,31 +3451,32 @@ msgctxt "advice"
 msgid "点击以继续"
 msgstr ""
 
+# 无效的赞助者时间
+#: Scripts\Logic\Localization\LogicStrings.cs:270
+msgid "无"
+msgstr ""
+
+# 频繁点击更新赞助者名单按钮时的提醒
+#: Scripts\Logic\Localization\LogicStrings.cs:272
+msgid "请稍后再试。"
+msgstr ""
+
+# 正在更新赞助者时，按钮的显示文本
+#: Scripts\Logic\Localization\LogicStrings.cs:274
+msgctxt "option.name"
+msgid "更新中……"
+msgstr ""
+
 # 诅咒名称-未知
-#: Scripts\Logic\Localization\LogicStrings.cs:273
+#: Scripts\Logic\Localization\LogicStrings.cs:279
 msgctxt "curse.name"
 msgid "？？？"
 msgstr ""
 
 # 诅咒说明-未知
-#: Scripts\Logic\Localization\LogicStrings.cs:275
+#: Scripts\Logic\Localization\LogicStrings.cs:281
 msgctxt "curse.tooltip"
 msgid "？？？"
-msgstr ""
-
-# 无效的赞助者时间
-#: Scripts\Logic\Localization\LogicStrings.cs:282
-msgid "无"
-msgstr ""
-
-# 频繁点击更新赞助者名单按钮时的提醒
-#: Scripts\Logic\Localization\LogicStrings.cs:284
-msgid "请稍后再试。"
-msgstr ""
-
-# 正在更新赞助者时，按钮的显示文本
-#: Scripts\Logic\Localization\LogicStrings.cs:286
-msgid "更新中……"
 msgstr ""
 
 # 命令方块模式

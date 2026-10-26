@@ -85,13 +85,16 @@ namespace MVZ2.Supporters
         }
         public async Task<bool> ForcePullSponsors(TaskProgress progress)
         {
-            SponsorInfos? sponsorCache = null;
+            long now = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+            SponsorInfos sponsorCache = currentSponsors ?? new SponsorInfos();
+            sponsorCache.lastAttemptTime = now;
+
             try
             {
                 isUpdating = true;
                 var items = await GetAllSponsors(progress);
-                sponsorCache = new SponsorInfos(this, items);
-                sponsorCache.lastUpdateTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+                sponsorCache.UpdateSponsors(this, items);
+                sponsorCache.lastUpdateTime = now;
 
                 var msg = Main.LanguageManager._(SPONSOR_UPDATED_SUCCESSFULLY);
                 Main.Scene.ShowPopup(msg);
@@ -99,8 +102,6 @@ namespace MVZ2.Supporters
             }
             catch (Exception e)
             {
-                sponsorCache = currentSponsors ?? new SponsorInfos(this, Array.Empty<SponsorItem>());
-
                 Debug.LogError($"更新赞助者名单时出现错误：{e}");
                 var msg = Main.LanguageManager._(SPONSOR_UPDATE_FAILED);
                 Main.Scene.ShowPopup(msg);
@@ -109,12 +110,8 @@ namespace MVZ2.Supporters
             finally
             {
                 isUpdating = false;
-                if (sponsorCache != null)
-                {
-                    sponsorCache.lastAttemptTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-                    SetCurrentSponsorInfos(sponsorCache);
-                    SaveSponsorsCache(sponsorCache);
-                }
+                SetCurrentSponsorInfos(sponsorCache);
+                SaveSponsorsCache(sponsorCache);
             }
         }
         public string[] GetSponsorPlanNames(int rankType, int rank)
@@ -288,13 +285,36 @@ namespace MVZ2.Supporters
         {
             if (infos == null)
                 return true;
-            var lastTime = DateTimeOffset.FromUnixTimeSeconds(infos.lastUpdateTime).LocalDateTime;
-            var nowTime = DateTimeOffset.Now;
-            if (nowTime.Date != lastTime.Date)
-            {
+
+            // 1. 如果数据不过期，直接返回 false
+            if (!IsDataExpired(infos)) 
+                return false;
+
+            // 2. 如果数据过期了，检查上次“尝试请求”的时间
+            var lastAttempt = DateTimeOffset.FromUnixTimeSeconds(infos.lastAttemptTime);
+            var now = DateTimeOffset.UtcNow;
+
+            // 3. 如果距离上次尝试不到 1 小时（退避中），就不去请求
+            if ((now - lastAttempt).TotalHours < 1) 
+                return false;
+
+            return true;
+        }
+        private bool IsDataExpired(SponsorInfos infos)
+        {
+            // 将 Unix 时间戳转为 UTC 时间
+            var lastUpdateTime = DateTimeOffset.FromUnixTimeSeconds(infos.lastUpdateTime);
+            // 获取当前的 UTC 时间
+            var nowTime = DateTimeOffset.UtcNow;
+
+            var elapsed = nowTime - lastUpdateTime;
+
+            // 如果当前时间比上次更新时间早（比如玩家把系统时间往回调了），当作过期处理
+            if (elapsed.TotalHours < 0)
                 return true;
-            }
-            return false;
+
+            // 距离上次更新超过 24 小时，才需要更新
+            return elapsed.TotalHours >= 24;
         }
         private string GetSponsorCacheFilePath()
         {

@@ -8,7 +8,14 @@ namespace MVZ2.Supporters
     [Serializable]
     class SponsorInfos
     {
-        public SponsorInfos(SponsorManager manager, SponsorItem[] items)
+        public SponsorInfos()
+        {
+        }
+        public void UpdateSponsors(SponsorManager manager, SponsorItem[] items)
+        {
+            sponsors = GetUpdatedSponsors(manager, items);
+        }
+        public SponsorSaveItem[] GetUpdatedSponsors(SponsorManager manager, SponsorItem[] items)
         {
             List<SponsorSaveItem> saveItems = new List<SponsorSaveItem>();
             foreach (var sponsor in items)
@@ -34,11 +41,11 @@ namespace MVZ2.Supporters
                     saveItems.Add(new SponsorSaveItem(sponsor.User.Name ?? string.Empty, planSaveItems.ToArray()));
                 }
             }
-            sponsors = saveItems.ToArray();
+            return saveItems.ToArray();
         }
         public long lastUpdateTime;
         public long lastAttemptTime;
-        public SponsorSaveItem[] sponsors;
+        public SponsorSaveItem[] sponsors = Array.Empty<SponsorSaveItem>();
     }
     [Serializable]
     class SponsorSaveItem
