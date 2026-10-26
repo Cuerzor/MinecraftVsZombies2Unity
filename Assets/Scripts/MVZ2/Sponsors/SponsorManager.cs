@@ -279,7 +279,44 @@ namespace MVZ2.Supporters
             var path = GetSponsorCacheFilePath();
             FileHelper.ValidateDirectoryExists(path);
             var json = saveInfo.ToJson();
-            Main.FileManager.WriteStringFile(path, json);
+            var tempPath = path + ".tmp";
+
+            try
+            {
+                // 写入临时文件
+                Main.FileManager.WriteStringFile(tempPath, json);
+
+                // 降级兼容替换方案
+                if (File.Exists(path))
+                {
+                    // 尝试使用 File.Replace（Windows 完美原子，某些旧版 Mono 可能不支持）
+                    try
+                    {
+                        File.Replace(tempPath, path, null);
+                        return;
+                    }
+                    catch (PlatformNotSupportedException)
+                    {
+                        // 如果平台不支持 Replace，则退化为删除后移动
+                        File.Delete(path);
+                    }
+                }
+
+                // 如果原文件不存在，或替换降级，直接移动
+                File.Move(tempPath, path);
+            }
+            catch (Exception ex)
+            {
+                try 
+                { 
+                    if (File.Exists(tempPath)) 
+                        File.Delete(tempPath); 
+                } 
+                catch 
+                { 
+                }
+                Debug.LogError($"保存赞助者缓存失败: {ex.Message}");
+            }
         }
         private bool ShouldRepull([NotNullWhen(false)] SponsorInfos? infos)
         {
