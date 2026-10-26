@@ -112,7 +112,6 @@ namespace MVZ2.Managers
                 await ResourceManager.LoadAllModResourcesMain(p);
                 FontManager.InitFontSprites();
             }));
-            loadPipeline.AddTask(new PipelineTask(TASK_LOAD_SPONSORS, (p) => SponsorManager.PullSponsors(p)));
 
             var task = loadPipeline.Run();
             initTask = task;
@@ -120,6 +119,17 @@ namespace MVZ2.Managers
             {
                 loadPipeline = null;
                 initTask = null;
+            });
+
+            sponsorPipeline = new TaskPipeline();
+            sponsorPipeline.AddTask(new PipelineTask(TASK_LOAD_SPONSORS, async (p) =>
+            {
+                await SponsorManager.PullSponsors(p);
+            }));
+            var sponsorTask = sponsorPipeline.Run();
+            sponsorTask.ContinueWith((t) =>
+            {
+                sponsorPipeline = null;
             });
         }
 
@@ -328,6 +338,7 @@ namespace MVZ2.Managers
 
         private Task? initTask;
         private TaskPipeline? loadPipeline;
+        private TaskPipeline? sponsorPipeline;
         private bool initialized = false;
 
         [SerializeField]

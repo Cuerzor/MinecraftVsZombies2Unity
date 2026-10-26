@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-22 02:54+0800\n"
-"PO-Revision-Date: 2026-10-22 14:54+0800\n"
+"POT-Creation-Date: 2026-10-26 01:41+0800\n"
+"PO-Revision-Date: 2026-10-26 13:43+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -1677,6 +1677,16 @@ msgstr "{0}/{1}"
 msgid "<color=red>售罄</color>"
 msgstr "<color=red>Sold Out</color>"
 
+# 赞助者名单更新提醒
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:287
+msgid "赞助者名单已成功更新。"
+msgstr "Successfully updated the list of sponsors."
+
+# 赞助者名单更新提醒
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:289
+msgid "赞助者名单更新失败。"
+msgstr "Failed to update the list of sponsors."
+
 #: Scripts\MVZ2\Scene\AchievementHintController.cs:68
 msgid "完成成就！"
 msgstr "Achievement Earned!"
@@ -1953,7 +1963,7 @@ msgstr "Target area {0} does not exist."
 msgid "目标关卡{0}不存在。"
 msgstr "Target stage {0} does not exist."
 
-#: Scripts\MVZ2\Managers\MainManager.cs:296
+#: Scripts\MVZ2\Managers\MainManager.cs:306
 msgid "获取赞助者列表……"
 msgstr "Getting Sponsors..."
 
@@ -6358,6 +6368,14 @@ msgstr "Infinite starshards."
 msgctxt "command_variant.description"
 msgid "不会游戏结束。"
 msgstr "Won't game over."
+
+#. Description for command variant "mvz2:cheat all"
+#: Commands meta file
+msgctxt "command_variant.description"
+msgid "如果有没有启用的作弊选项，启用所有作弊选项；否则关闭所有作弊选项。"
+msgstr ""
+"If there are cheat options that are not enabled, enable all cheat options; "
+"Otherwise, disable all cheat options."
 
 #. Description for command "mvz2:repeat"
 #: Commands meta file

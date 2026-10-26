@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization;
+using MukioI18n;
 using MVZ2.IO;
 using MVZ2.Managers;
 using MVZ2Logic.Games;
@@ -26,28 +27,43 @@ namespace MVZ2.Supporters
             try
             {
                 sponserCache = LoadSponsorsCache();
+                if (sponserCache != null)
+                {
+                    SetCurrentSponsorInfos(sponserCache);
+                }
             }
             catch (Exception e)
             {
                 Debug.LogError($"加载赞助者名单缓存时出现错误：{e}");
             }
+
+            if (!ShouldRepull(sponserCache))
+            {
+                Debug.Log("赞助者名单无需更新。");
+                progress.SetProgress(1, "No need to pull");
+                return;
+            }
+
+            await ForcePullSponsors(progress);
+        }
+        public async Task ForcePullSponsors(TaskProgress progress)
+        {
             try
             {
-                if (!ShouldRepull(sponserCache))
-                {
-                    SetCurrentSponsorInfos(sponserCache);
-                    progress.SetProgress(1, "No need to pull");
-                    return;
-                }
                 var items = await GetAllSponsors(progress);
-                sponserCache = new SponsorInfos(this, items);
+                var sponserCache = new SponsorInfos(this, items);
                 sponserCache.lastUpdateTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 SetCurrentSponsorInfos(sponserCache);
                 SaveSponsorsCache(sponserCache);
+
+                var msg = Main.LanguageManager._(SPONSOR_UPDATED_SUCCESSFULLY);
+                Main.Scene.ShowPopup(msg);
             }
             catch (Exception e)
             {
                 Debug.LogError($"更新赞助者名单时出现错误：{e}");
+                var msg = Main.LanguageManager._(SPONSOR_UPDATE_FAILED);
+                Main.Scene.ShowPopup(msg);
             }
         }
         public string[] GetSponsorPlanNames(int rankType, int rank)
@@ -91,8 +107,10 @@ namespace MVZ2.Supporters
             if (resp.Result.List is SponsorItem[] items)
             {
                 sponsorList.AddRange(items);
+                Debug.Log("赞助者名单第1页下载成功。");
             }
             var totalPage = resp.Result.TotalPage;
+            Debug.Log($"赞助者名单共{totalPage}页。");
 
             for (int i = 2; i <= totalPage; i++)
             {
@@ -101,9 +119,11 @@ namespace MVZ2.Supporters
                 if (obj.Result?.List != null)
                 {
                     sponsorList.AddRange(obj.Result.List);
+                    Debug.Log($"赞助者名单第{i}页下载成功。");
                 }
             }
             progress.SetProgress(1, "Finished");
+            Debug.Log($"赞助者名单下载成功。");
 
             return sponsorList.ToArray();
         }
@@ -264,6 +284,10 @@ namespace MVZ2.Supporters
 
         public MainManager Main => MainManager.Instance;
         private SponsorInfos? currentSponsors;
+        [TranslateMsg("赞助者名单更新提醒")]
+        public const string SPONSOR_UPDATED_SUCCESSFULLY = "赞助者名单已成功更新。";
+        [TranslateMsg("赞助者名单更新提醒")]
+        public const string SPONSOR_UPDATE_FAILED = "赞助者名单更新失败。";
         [SerializeField]
         private string userID = string.Empty;
         [SerializeField]

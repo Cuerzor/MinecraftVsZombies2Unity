@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-22 02:54+0800\n"
+"POT-Creation-Date: 2026-10-26 01:41+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1701,6 +1701,16 @@ msgstr ""
 msgid "<color=red>售罄</color>"
 msgstr ""
 
+# 赞助者名单更新提醒
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:287
+msgid "赞助者名单已成功更新。"
+msgstr ""
+
+# 赞助者名单更新提醒
+#: Scripts\MVZ2\Sponsors\SponsorManager.cs:289
+msgid "赞助者名单更新失败。"
+msgstr ""
+
 # 成就完成提示
 #: Scripts\MVZ2\Scene\AchievementHintController.cs:68
 msgid "完成成就！"
@@ -1992,7 +2002,7 @@ msgid "目标关卡{0}不存在。"
 msgstr ""
 
 # 初始化任务名称
-#: Scripts\MVZ2\Managers\MainManager.cs:296
+#: Scripts\MVZ2\Managers\MainManager.cs:306
 msgid "获取赞助者列表……"
 msgstr ""
 
@@ -5992,6 +6002,12 @@ msgstr ""
 #: Commands meta file
 msgctxt "command_variant.description"
 msgid "不会游戏结束。"
+msgstr ""
+
+#. Description for command variant "mvz2:cheat all"
+#: Commands meta file
+msgctxt "command_variant.description"
+msgid "如果有没有启用的作弊选项，启用所有作弊选项；否则关闭所有作弊选项。"
 msgstr ""
 
 #. Description for command "mvz2:repeat"
