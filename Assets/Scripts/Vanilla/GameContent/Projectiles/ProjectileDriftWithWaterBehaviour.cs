@@ -4,7 +4,6 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Level;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
-using UnityEngine;
 
 namespace MVZ2.GameContent.Projectiles
 {

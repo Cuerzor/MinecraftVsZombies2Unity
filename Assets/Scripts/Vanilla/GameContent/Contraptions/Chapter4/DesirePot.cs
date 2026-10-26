@@ -119,7 +119,8 @@ namespace MVZ2.GameContent.Contraptions
                     var ySpeedRandom = entity.RNG.Next(0.5f, 2f);
                     var vel = new Vector3(xSpeed * xSpeedRandom, 7 * ySpeedRandom, 0);
                     pickup.Velocity = vel;
-                };
+                }
+                ;
 
 
                 if (seed is ClassicSeedPack)

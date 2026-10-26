@@ -186,7 +186,7 @@ namespace MVZ2.Vanilla.Entities
         public const string projectileRotating = "projectile_rotating";
         public const string projectilePointToDirection = "projectile_point_to_direction";
         public const string projectileChill = "projectile_chill";
-        public const string projectileDriftWithWater = "projectile_drift_with_water"; 
+        public const string projectileDriftWithWater = "projectile_drift_with_water";
 
         public const string hookshot_Skin = "hookshot/skin";
         #endregion
