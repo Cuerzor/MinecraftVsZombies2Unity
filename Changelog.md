@@ -1,3 +1,8 @@
+# Modified
+- Updated localization.
+
+---
+
 # 0.7.3
 ## Added
 - Added Command /cheat all.

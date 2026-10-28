@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-22 07:20+0800\n"
-"PO-Revision-Date: 2026-10-22 19:55+0800\n"
+"POT-Creation-Date: 2026-10-28 03:29+0800\n"
+"PO-Revision-Date: 2026-10-28 15:30+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -3449,8 +3449,8 @@ msgid ""
 msgstr ""
 "Toughness: <color=red><var id=\"mvz2:entity_health\" /></color>\n"
 "Speed: <color=red><var id=\"mvz2:entity_speed\" /></color>\n"
-"Self-Destruct Damage: <color=red><var local=\"easy_damage\"/> (Easy), <var local=\"normal_damage\"/> (Normal), <var "
-"local=\"hard_damage\"/> (Hard)<tag id=\"mvz2:damage_type\" enum=\"mvz2:explosion\"/></color>"
+"Damage: <color=red><var local=\"fire_charge_damage\" />, <var local=\"fire_charge_damage_hard\" /> (Hard) <tag id=\"mvz2:damage_type\" "
+"enum=\"mvz2:explosion\"/></color>"
 
 #. Flavor for enemies mvz2:ghast
 #: Almanac meta file
@@ -3778,13 +3778,13 @@ msgid ""
 "生命：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
 "竹杖耐久：<color=red><var local=\"staff_hp\" /></color>\n"
 "特点：<color=red>生命低于50%时将竹杖插入地面，竹杖会以自己的耐久为代价复活周围死亡并倒下的怪物</color>\n"
-"弱点：<color=red>火焰会直接烧掉竹杖</color>"
+"弱点：<color=red><tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/>伤害会直接烧掉竹杖</color>"
 msgstr ""
 "Toughness: <color=red><var id=\"mvz2:entity_health\" /></color>\n"
 "Staff Toughness: <color=red><var local=\"staff_hp\" /></color>\n"
 "Special: <color=red>Plunges its staff into the ground when health drops below 50%, reviving all nearby defeated monsters at the cost "
 "of its own toughness</color>\n"
-"Weakness: <color=red>Fire instantly burns the staff</color>"
+"Weakness: <color=red><tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/>damage instantly burns the staff</color>"
 
 #. Flavor for enemies mvz2:shikaisen_zombie
 #: Almanac meta file

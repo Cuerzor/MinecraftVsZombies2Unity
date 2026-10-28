@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-22 07:20+0800\n"
+"POT-Creation-Date: 2026-10-28 03:29+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3005,7 +3005,7 @@ msgid ""
 "生命：<color=red><var id=\"mvz2:entity_health\" /></color>\n"
 "竹杖耐久：<color=red><var local=\"staff_hp\" /></color>\n"
 "特点：<color=red>生命低于50%时将竹杖插入地面，竹杖会以自己的耐久为代价复活周围死亡并倒下的怪物</color>\n"
-"弱点：<color=red>火焰会直接烧掉竹杖</color>"
+"弱点：<color=red><tag id=\"mvz2:damage_type\" enum=\"mvz2:fire\"/>伤害会直接烧掉竹杖</color>"
 msgstr ""
 
 #. Flavor for enemies mvz2:shikaisen_zombie

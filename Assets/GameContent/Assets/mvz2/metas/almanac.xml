@@ -1892,7 +1892,7 @@
                 <p>生命：<![CDATA[<color=red><var id="mvz2:entity_health" /></color>]]></p>
                 <p>竹杖耐久：<![CDATA[<color=red><var local="staff_hp" /></color>]]></p>
                 <p>特点：<![CDATA[<color=red>生命低于50%时将竹杖插入地面，竹杖会以自己的耐久为代价复活周围死亡并倒下的怪物</color>]]></p>
-                <p>弱点：<![CDATA[<color=red>火焰会直接烧掉竹杖</color>]]></p>
+                <p>弱点：<![CDATA[<color=red><tag id="mvz2:damage_type" enum="mvz2:fire"/>伤害会直接烧掉竹杖</color>]]></p>
             </properties>
             <flavor>
                 <p>非常擅长做仰卧起坐。</p>
