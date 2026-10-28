@@ -182,8 +182,6 @@
         <script>action start_starshard_tutorial</script>
         <script>end</script>
       </onSkip>
-      <!--对话档案文本-->
-      <text>开始段落</text>
       <!--角色列表-->
       <characters>
         <character id="mvz2:crazy_villager" side="left" />
@@ -213,10 +211,15 @@
         </sentence>
       </sentences>
     </section>
-    <!--教程完成后-->
+  </group>
+  <!--万圣夜第2天入场-->
+  <group id="halloween_2" tags="mvz2:halloween;mvz2:intro">
+    <archive name="万圣夜第2天入场" background="mvz2:misc/eternal_night_swamp" music="mvz2:mainmenu">
+      <unlock>
+        <condition required="mvz2:level.halloween_2" />
+      </unlock>
+    </archive>
     <section>
-      <!--对话档案文本-->
-      <text>教程完成后</text>
       <!--角色列表-->
       <characters>
         <character id="mvz2:crazy_villager" side="left" />

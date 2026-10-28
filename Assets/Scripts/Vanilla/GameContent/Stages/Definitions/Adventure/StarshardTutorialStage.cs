@@ -166,7 +166,7 @@ namespace MVZ2.GameContent.Stages
                         level.SetStarshardActive(true);
                         Global.Saves.Unlock(VanillaUnlockID.starshard);
                         Global.Saves.SaveToFile(); // 解锁星之碎片后保存游戏。
-                        level.SimpleStartTalk(VanillaTalkID.starshardTutorial, 1, 2, onEnd: () => level.BeginLevel());
+                        level.SimpleStartTalk(VanillaTalkID.halloween2, 0, 2, onEnd: () => level.BeginLevel());
                     }
                     break;
             }

@@ -1,6 +1,9 @@
 # Modified
 - Updated localization.
 
+# Fixed
+- Fixed an issue where the second half of the “Starshard Tutorial” dialogue could not be viewed in the Archive.
+
 ---
 
 # 0.7.3
