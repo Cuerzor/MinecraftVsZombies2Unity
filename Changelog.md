@@ -3,6 +3,7 @@
 
 # Fixed
 - Fixed an issue where the second half of the “Starshard Tutorial” dialogue could not be viewed in the Archive.
+- Fixed an issue where the Furnace’s initial production time was sometimes slightly longer than that of the Gunpowder Barrel.
 
 ---
 
