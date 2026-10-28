@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minecraftvszombies2\n"
-"POT-Creation-Date: 2026-10-17 11:42+0800\n"
-"PO-Revision-Date: 2026-10-17 11:45+0800\n"
+"POT-Creation-Date: 2026-10-28 03:48+0800\n"
+"PO-Revision-Date: 2026-10-28 15:49+0800\n"
 "Last-Translator: \n"
 "Language-Team: English, United States\n"
 "Language: en_US\n"
@@ -5482,12 +5482,6 @@ msgctxt "archive"
 msgid "星之碎片教程"
 msgstr "Starshard Tutorial"
 
-#. Archive text for talk group starshard_tutorial's section 0
-#: Talk meta file
-msgctxt "archive"
-msgid "开始段落"
-msgstr "Start section"
-
 #. Text for talk sentence 0 in talk group starshard_tutorial's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:starshard_tutorial"
@@ -5516,27 +5510,27 @@ msgctxt "talk-mvz2:starshard_tutorial"
 msgid "好了，现在来试试吧！"
 msgstr "All right, let's try Magic Candy - the Starshard of this area!"
 
-#. Archive text for talk group starshard_tutorial's section 1
+#. Archive name for talk group halloween_2
 #: Talk meta file
 msgctxt "archive"
-msgid "教程完成后"
-msgstr "After tutorial"
+msgid "万圣夜第2天入场"
+msgstr "Halloween Day 2 Intro"
 
-#. Text for talk sentence 0 in talk group starshard_tutorial's section 1
+#. Text for talk sentence 0 in talk group halloween_2's section 0
 #: Talk meta file
-msgctxt "talk-mvz2:starshard_tutorial"
+msgctxt "talk-mvz2:halloween_2"
 msgid "干得不错！伙计！"
 msgstr "Good job, neighbor!"
 
-#. Text for talk sentence 1 in talk group starshard_tutorial's section 1
+#. Text for talk sentence 1 in talk group halloween_2's section 0
 #: Talk meta file
-msgctxt "talk-mvz2:starshard_tutorial"
+msgctxt "talk-mvz2:halloween_2"
 msgid "噢！天哪！看起来又有一大批客人来要我们招待了！"
 msgstr "Oh boy! Looks like more guests need to be entertained!"
 
-#. Text for talk sentence 2 in talk group starshard_tutorial's section 1
+#. Text for talk sentence 2 in talk group halloween_2's section 0
 #: Talk meta file
-msgctxt "talk-mvz2:starshard_tutorial"
+msgctxt "talk-mvz2:halloween_2"
 msgid "一起来吧！我——坑爹了！"
 msgstr "Let's go! I'M CRAZYYY!!!"
 
@@ -6285,6 +6279,12 @@ msgstr "If we have it, we can definitely go to Gensokyo!"
 msgctxt "archive"
 msgid "蓝图槽位交易"
 msgstr "Slot deal"
+
+#. Archive text for talk group seventh_slot's section 0
+#: Talk meta file
+msgctxt "archive"
+msgid "开始段落"
+msgstr "Start section"
 
 #. Text for talk sentence 0 in talk group seventh_slot's section 0
 #: Talk meta file
@@ -18680,6 +18680,12 @@ msgstr "If no"
 msgctxt "talk-mvz2:tutorial"
 msgid "记性不错嘛！朋友！"
 msgstr "You've got good memory, pal!"
+
+#. Archive text for talk group tutorial's section 3
+#: Talk meta file
+msgctxt "archive"
+msgid "教程完成后"
+msgstr "After tutorial"
 
 #. Text for talk sentence 0 in talk group tutorial's section 3
 #: Talk meta file

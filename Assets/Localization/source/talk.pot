@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 
 "Project-Id-Version: MinecraftVSZombies2\n"
-"POT-Creation-Date: 2026-10-17 11:42+0800\n"
+"POT-Creation-Date: 2026-10-28 03:48+0800\n"
 "Language-Team: Cuerzor\n"
 "Language: zh_CN\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -5111,12 +5111,6 @@ msgctxt "archive"
 msgid "星之碎片教程"
 msgstr ""
 
-#. Archive text for talk group starshard_tutorial's section 0
-#: Talk meta file
-msgctxt "archive"
-msgid "开始段落"
-msgstr ""
-
 #. Text for talk sentence 0 in talk group starshard_tutorial's section 0
 #: Talk meta file
 msgctxt "talk-mvz2:starshard_tutorial"
@@ -5141,27 +5135,27 @@ msgctxt "talk-mvz2:starshard_tutorial"
 msgid "好了，现在来试试吧！"
 msgstr ""
 
-#. Archive text for talk group starshard_tutorial's section 1
+#. Archive name for talk group halloween_2
 #: Talk meta file
 msgctxt "archive"
-msgid "教程完成后"
+msgid "万圣夜第2天入场"
 msgstr ""
 
-#. Text for talk sentence 0 in talk group starshard_tutorial's section 1
+#. Text for talk sentence 0 in talk group halloween_2's section 0
 #: Talk meta file
-msgctxt "talk-mvz2:starshard_tutorial"
+msgctxt "talk-mvz2:halloween_2"
 msgid "干得不错！伙计！"
 msgstr ""
 
-#. Text for talk sentence 1 in talk group starshard_tutorial's section 1
+#. Text for talk sentence 1 in talk group halloween_2's section 0
 #: Talk meta file
-msgctxt "talk-mvz2:starshard_tutorial"
+msgctxt "talk-mvz2:halloween_2"
 msgid "噢！天哪！看起来又有一大批客人来要我们招待了！"
 msgstr ""
 
-#. Text for talk sentence 2 in talk group starshard_tutorial's section 1
+#. Text for talk sentence 2 in talk group halloween_2's section 0
 #: Talk meta file
-msgctxt "talk-mvz2:starshard_tutorial"
+msgctxt "talk-mvz2:halloween_2"
 msgid "一起来吧！我——坑爹了！"
 msgstr ""
 
@@ -5859,6 +5853,12 @@ msgstr ""
 #: Talk meta file
 msgctxt "archive"
 msgid "蓝图槽位交易"
+msgstr ""
+
+#. Archive text for talk group seventh_slot's section 0
+#: Talk meta file
+msgctxt "archive"
+msgid "开始段落"
 msgstr ""
 
 #. Text for talk sentence 0 in talk group seventh_slot's section 0
@@ -17174,6 +17174,12 @@ msgstr ""
 #: Talk meta file
 msgctxt "talk-mvz2:tutorial"
 msgid "记性不错嘛！朋友！"
+msgstr ""
+
+#. Archive text for talk group tutorial's section 3
+#: Talk meta file
+msgctxt "archive"
+msgid "教程完成后"
 msgstr ""
 
 #. Text for talk sentence 0 in talk group tutorial's section 3
