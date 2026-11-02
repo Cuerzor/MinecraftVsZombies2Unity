@@ -34,7 +34,7 @@ namespace MVZ2.GameContent.Projectiles
 
             if (!blocksFire)
             {
-                var damageEffects = new DamageEffectList(VanillaDamageEffects.FIRE, VanillaDamageEffects.MUTE);
+                var damageEffects = new DamageEffectList(VanillaDamageEffects.FIRE, VanillaDamageEffects.SPLASH, VanillaDamageEffects.MUTE);
                 projectile.SplashDamage(hitResult.Collider, projectile.Position, 40, projectile.GetFaction(), projectile.GetDamage() / 4f, damageEffects);
                 projectile.Spawn(VanillaEffectID.fireburn, projectile.Position);
             }

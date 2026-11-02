@@ -6,6 +6,7 @@
 - Fixed an issue where the Furnace’s initial production time was sometimes slightly longer than that of the Gunpowder Barrel.
 - Fixed an issue where the texture would display incorrectly when modifying the slider handle texture using a resource pack.
 - Fixed an issue where the state textures of some UI components could not be modified by resource packs.
+- Fixed an issue where the splash damage of the Soul Furnace was considered explosion damage.
 
 ---
 

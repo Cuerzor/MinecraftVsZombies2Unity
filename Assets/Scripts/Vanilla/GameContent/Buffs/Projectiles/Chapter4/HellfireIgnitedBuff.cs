@@ -86,7 +86,7 @@ namespace MVZ2.GameContent.Buffs.Projectiles
                 var entity = projectile;
                 var level = entity.Level;
 
-                var damageEffects = new DamageEffectList(VanillaDamageEffects.FIRE, VanillaDamageEffects.MUTE);
+                var damageEffects = new DamageEffectList(VanillaDamageEffects.FIRE, VanillaDamageEffects.SPLASH, VanillaDamageEffects.MUTE);
                 var center = entity.GetCenter();
                 var radius = 40;
                 var faction = entity.GetFaction();

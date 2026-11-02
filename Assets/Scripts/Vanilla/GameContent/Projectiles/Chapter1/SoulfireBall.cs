@@ -50,7 +50,7 @@ namespace MVZ2.GameContent.Projectiles
 
             if (!blocksFire || blast)
             {
-                var damageEffects = new DamageEffectList(VanillaDamageEffects.FIRE, VanillaDamageEffects.EXPLOSION, VanillaDamageEffects.MUTE);
+                var damageEffects = new DamageEffectList(VanillaDamageEffects.FIRE, VanillaDamageEffects.SPLASH, VanillaDamageEffects.MUTE);
                 projectile.SplashDamage(hitResult.Collider, projectile.Position, 40, projectile.GetFaction(), projectile.GetDamage() / 4f, damageEffects);
             }
         }
