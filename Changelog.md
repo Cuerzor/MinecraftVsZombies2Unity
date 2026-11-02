@@ -7,6 +7,7 @@
 - Fixed an issue where the texture would display incorrectly when modifying the slider handle texture using a resource pack.
 - Fixed an issue where the state textures of some UI components could not be modified by resource packs.
 - Fixed an issue where the splash damage of the Soul Furnace was considered explosion damage.
+- Fixed an issue where carrying Kraken's Backplate caused rolling hay bales to be unable to be blown away.
 
 ---
 

@@ -3211,7 +3211,7 @@
                 <id name="mvz2:deathSound" value="mvz2:grass" />
                 <float name="mvz2:maxHealth" value="3000" />
                 <float name="mvz2:mass" value="1" />
-                <float name="mvz2:blow_mass_offset" value="-3" />
+                <float name="mvz2:blow_mass_offset" value="-100" />
                 <float name="mvz2:speed" value="2" />
                 <vector3 name="mvz2:size" x="100" y="100" z="40" />
                 <vector3 name="mvz2:shadowScale" x="4" y="4" z="4" />
