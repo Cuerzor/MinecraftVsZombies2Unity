@@ -58,6 +58,10 @@ namespace MVZ2.GameContent.Buffs.Projectiles
                 if (targetDir != Vector3.zero)
                 {
                     Vector3 currentDir = velocity.normalized;
+                    if (currentDir.sqrMagnitude < 0.5f)
+                    {
+                        currentDir = Vector3.right;
+                    }
                     float maxRadiansDelta = GetTurnRate(buff) * Mathf.Deg2Rad;
                     Vector3 newDir = Vector3.RotateTowards(currentDir, targetDir, maxRadiansDelta, 0.0f);
                     projectile.Velocity = newDir * speed;
