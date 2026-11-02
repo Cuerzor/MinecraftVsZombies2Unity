@@ -241,7 +241,10 @@ namespace MVZ2.GameContent.Contraptions
         public static readonly VanillaEntityPropertyMeta<float> PROP_TRAPPED_DAMAGE_INTERVAL = new VanillaEntityPropertyMeta<float>("trapped_damage_interval", 0.5f);
         public static readonly VanillaEntityPropertyMeta<float> PROP_EVOKED_DAMAGE_MULTIPLIER = new VanillaEntityPropertyMeta<float>("evoked_damage_multiplier", 18f);
 
-        public static Detector trapDetector = new AutotrapDetector(true);
+        public static Detector trapDetector = new AutotrapDetector(true)
+        {
+            mask = EntityCollisionHelper.MASK_ENEMY
+        };
         public const int CLOSING_FRAMES = 2;
         public const int OPENING_FRAMES = 2;
         public const int STATE_OPEN = VanillaContraptionStates.AUTOTRAP_OPEN;

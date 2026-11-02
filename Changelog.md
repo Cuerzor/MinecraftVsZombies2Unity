@@ -9,6 +9,7 @@
 - Fixed an issue where the splash damage of the Soul Furnace was considered explosion damage.
 - Fixed an issue where carrying Kraken's Backplate caused rolling hay bales to be unable to be blown away.
 - Fixed an issue where CAT-TL MK-II's projectiles would still disappear upon contact with the ground.
+- Fixed an issue where Autotraps would attack bosses.
 
 ---
 
