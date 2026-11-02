@@ -476,6 +476,7 @@ GameObject:
   - component: {fileID: 2516011582709255434}
   - component: {fileID: 4983331736246159351}
   - component: {fileID: 8015267216530878486}
+  - component: {fileID: 4741617704448831867}
   m_Layer: 14
   m_Name: Root
   m_TagString: Untagged
@@ -563,6 +564,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorType: 1
   trackSelectable: {fileID: 4983331736246159351}
+--- !u!114 &4741617704448831867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496075330361232169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d622e2086ee16c5468a1ab4fa9000c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7968234598210604498
 GameObject:
   m_ObjectHideFlags: 0

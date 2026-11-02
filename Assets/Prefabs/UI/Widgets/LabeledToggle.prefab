@@ -654,6 +654,7 @@ GameObject:
   - component: {fileID: 7271181044421750860}
   - component: {fileID: 3329907054566992034}
   - component: {fileID: 4600332400498090539}
+  - component: {fileID: 4153084113294856039}
   m_Layer: 0
   m_Name: LabeledToggle
   m_TagString: Untagged
@@ -806,6 +807,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 3706883719680688851}
   toggle: {fileID: 7271181044421750860}
+--- !u!114 &4153084113294856039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6078781765940570048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d622e2086ee16c5468a1ab4fa9000c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6922295752458524101
 GameObject:
   m_ObjectHideFlags: 0

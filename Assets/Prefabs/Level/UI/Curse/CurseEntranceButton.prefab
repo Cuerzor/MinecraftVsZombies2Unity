@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8188709599165398405}
   - component: {fileID: 7264046720709936829}
   - component: {fileID: 4788221498960451690}
+  - component: {fileID: 1221342764904794712}
   m_Layer: 5
   m_Name: CurseEntranceButton
   m_TagString: Untagged
@@ -190,6 +191,18 @@ MonoBehaviour:
   text: {fileID: 5651364139163013631}
   button: {fileID: 1411951969470179478}
   tooltipAnchor: {fileID: 788329136798600042}
+--- !u!114 &1221342764904794712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293971419648338490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d622e2086ee16c5468a1ab4fa9000c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2807515278419757856
 GameObject:
   m_ObjectHideFlags: 0

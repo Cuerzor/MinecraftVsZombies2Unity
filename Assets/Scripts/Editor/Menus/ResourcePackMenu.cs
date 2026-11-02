@@ -7,9 +7,9 @@ using System.Linq;
 using MVZ2.IO;
 using MVZ2.Localization;
 using MVZ2.Metas;
+using MVZ2.MusicRoom;
 using MVZ2.ResourcePacks;
 using MVZ2.Sprites;
-using MVZ2.MusicRoom;
 using MVZ2.Vanilla;
 using MVZ2Logic.Models;
 using MVZ2Logic.Resources;
@@ -20,6 +20,7 @@ using PVZEngine.Tools.Unity;
 using TMPro;
 using UnityEditor;
 using UnityEditor.PackageManager.UI;
+using UnityEditor.SceneManagement;
 using UnityEditor.U2D.Sprites;
 using UnityEngine;
 using UnityEngine.Profiling;
@@ -76,20 +77,21 @@ namespace MVZ2.Editor
             PrefabHelper.SearchPrefabPaths(prefabsDirectory, filePaths);
             PrefabHelper.SearchPrefabPaths(modelDirectory, filePaths);
 
+            var assetPaths = filePaths.Select(p => AssetsMenu.FileToAssetPath(p).Replace("\\", "/")).ToList();
+            filePaths = PrefabHelper.SortPrefabsByNesting(assetPaths);
+
             // 更新所有Resolver组件。
             var addedResolvers = 0;
             foreach (string path in filePaths)
             {
-                var fullPath = Path.Combine("Assets", Path.GetRelativePath(Application.dataPath, path));
-                UpdateResolverComponents(path);
+                addedResolvers += UpdateResolverComponents(path);
             }
 
             // 移除所有冗余的Resolver组件。
             var removedResolvers = 0;
             foreach (string path in filePaths)
             {
-                var fullPath = Path.Combine("Assets", Path.GetRelativePath(Application.dataPath, path));
-                CheckRedundantComponents(path);
+                removedResolvers += CheckRedundantComponents(path);
             }
             Debug.Log($"Update resolver components completed: added {addedResolvers}, removed {removedResolvers} duplicated, totally {addedResolvers - removedResolvers}.");
         }
@@ -112,6 +114,8 @@ namespace MVZ2.Editor
                 addedComponents += UpdateResolverComponent<SpriteRenderer, SpriteRendererResolver>(transform) ? 1 : 0;
                 // ImageResolver。
                 addedComponents += UpdateResolverComponent<Image, ImageResolver>(transform) ? 1 : 0;
+                // SelectableResolver。
+                addedComponents += UpdateResolverComponent<Selectable, SelectableResolver>(transform) ? 1 : 0;
                 // ParticleRendererResolver。
                 addedComponents += UpdateResolverComponent<ParticleSystem, ParticleRendererResolver>(transform) ? 1 : 0;
                 // MeshRendererResolver。
@@ -153,6 +157,8 @@ namespace MVZ2.Editor
             {
                 // SpriteRendererResolver。
                 removedComponents += CheckRedundantComponent<SpriteRendererResolver>(transform, transform.GetComponent<SpriteRenderer>() ? 1 : 0);
+                // SelectableResolver。
+                removedComponents += CheckRedundantComponent<SelectableResolver>(transform, transform.GetComponent<Selectable>() ? 1 : 0);
                 // ImageResolver。
                 removedComponents += CheckRedundantComponent<ImageResolver>(transform, transform.GetComponent<Image>() ? 1 : 0);
                 // ParticleRendererResolver。
@@ -173,13 +179,18 @@ namespace MVZ2.Editor
             var component = transform.GetComponent<T>();
             if (!component)
                 return 0;
-            var resolvers = component.gameObject.GetComponents<T>();
-            if (resolvers.Length <= targetCount)
+            List<T> list = new List<T>();
+            component.gameObject.GetComponents<T>(list);
+            if (list.Count <= targetCount)
                 return 0;
+            list.Sort(delegate (T t1, T t2) {
+                int t1Override = PrefabUtility.IsAddedComponentOverride(t1) ? 1 : 0;
+                int t2Override = PrefabUtility.IsAddedComponentOverride(t2) ? 1 : 0;
+                return t1Override.CompareTo(t2Override);
+            });
             int count = 0;
-            for (int i = resolvers.Length - 1; i >= targetCount; i--)
+            foreach (var resolver in list)
             {
-                var resolver = resolvers[i];
                 Object.DestroyImmediate(resolver, true);
                 count++;
             }

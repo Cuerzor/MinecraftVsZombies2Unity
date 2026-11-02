@@ -583,6 +583,7 @@ GameObject:
   - component: {fileID: 3521059955771717740}
   - component: {fileID: 1581652442698767129}
   - component: {fileID: 1860154589600099017}
+  - component: {fileID: 3734874205493345339}
   m_Layer: 5
   m_Name: CreateNewUserButton
   m_TagString: Untagged
@@ -689,6 +690,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorType: 1
   trackSelectable: {fileID: 1581652442698767129}
+--- !u!114 &3734874205493345339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123096836930127227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d622e2086ee16c5468a1ab4fa9000c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8040566229989550099
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +937,7 @@ GameObject:
   - component: {fileID: 5734674952710262488}
   - component: {fileID: 1402972554007957499}
   - component: {fileID: 8573280903798048350}
+  - component: {fileID: 3252309719859627910}
   m_Layer: 5
   m_Name: UserItem
   m_TagString: Untagged
@@ -1049,3 +1063,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorType: 1
   trackSelectable: {fileID: 1077847279165636174}
+--- !u!114 &3252309719859627910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9149054427239378571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d622e2086ee16c5468a1ab4fa9000c9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
