@@ -16,6 +16,11 @@ namespace MVZ2.GameContent.Contraptions
         {
         }
 
+        public override void Init(Entity entity)
+        {
+            base.Init(entity);
+            NextGravelCheck(entity);
+        }
         protected override void UpdateAI(Entity entity)
         {
             base.UpdateAI(entity);
@@ -30,7 +35,7 @@ namespace MVZ2.GameContent.Contraptions
         public override void OnThrownTimeout(Entity entity)
         {
             base.OnThrownTimeout(entity);
-            SetThrowsGravel(entity, entity.RNG.Next(100) < GRAVEL_CHANCE_PERCENTAGE);
+            NextGravelCheck(entity);
         }
         protected override void PreModifyShootParameters(Entity entity, ProjectileShootArgs param)
         {
@@ -41,6 +46,10 @@ namespace MVZ2.GameContent.Contraptions
                 param.projectileID = VanillaProjectileID.gravel;
             }
             param.spawnParam.SetProperty(VanillaProjectileProps.IGNORE_SHIELDS, true);
+        }
+        public static void NextGravelCheck(Entity entity)
+        {
+            SetThrowsGravel(entity, entity.RNG.Next(100) < GRAVEL_CHANCE_PERCENTAGE);
         }
 
         #region ÊôÐÔ
