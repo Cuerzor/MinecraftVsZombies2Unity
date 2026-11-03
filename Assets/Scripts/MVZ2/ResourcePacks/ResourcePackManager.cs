@@ -508,7 +508,7 @@ namespace MVZ2.ResourcePacks
         #endregion
 
         public MainManager Main => main;
-        public const int LATEST_DATA_VERSION = 1;
+        public const int LATEST_DATA_VERSION = 2;
         public const string RESOURCE_PACK_ICON_SPRITE_CATEGORY = "resource_pack_icon";
         public const string EXTERNAL_LANGAUGE_PACK_DIR_VER_0 = "language_packs";
         public const string ENABLED_PACK_LIST_FILE_NAME_VER_0 = "language_packs.json";

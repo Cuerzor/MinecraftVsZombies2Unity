@@ -1,5 +1,6 @@
 ## Modified
 - Updated localization.
+- Bumped the resource pack version to 2.
 
 ### Balance
 - Gravel-pult
