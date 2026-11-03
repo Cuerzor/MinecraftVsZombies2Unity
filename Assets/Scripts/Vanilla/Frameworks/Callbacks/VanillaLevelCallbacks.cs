@@ -233,17 +233,19 @@ namespace MVZ2.Vanilla.Callbacks
                 this.targetGrid = targetGrid;
             }
         }
-        public struct PostEjectedEntityLandParams
+        public struct EjectorTriggerEffectParams
         {
             public Entity entity;
             public int faction;
             public float damageMultiplier;
+            public Buff[] buffs;
 
-            public PostEjectedEntityLandParams(Entity entity, int faction, float damageMultiplier)
+            public EjectorTriggerEffectParams(Entity entity, int faction, float damageMultiplier, Buff[] buffs)
             {
                 this.entity = entity;
                 this.faction = faction;
                 this.damageMultiplier = damageMultiplier;
+                this.buffs = buffs;
             }
         }
         public struct PreCommandBlockTransformParams
@@ -324,6 +326,7 @@ namespace MVZ2.Vanilla.Callbacks
 
         public readonly static CallbackTypeFiltered<EntityCallbackParams, NamespaceID> POST_USE_STARSHARD = new();
         public readonly static CallbackTypeFiltered<PostEntityEjectParams, NamespaceID> POST_ENTITY_EJECT = new();
-        public readonly static CallbackTypeFiltered<PostEjectedEntityLandParams, NamespaceID> POST_EJECTED_ENTITY_LAND = new();
+        public readonly static CallbackTypeFiltered<EjectorTriggerEffectParams, NamespaceID> POST_EJECTED_ENTITY_LAND = new();
+        public readonly static CallbackTypeFiltered<EjectorTriggerEffectParams, bool, NamespaceID> POST_EJECTED_ENTITY_TRIGGER_EFFECT = new();
     }
 }

@@ -9,12 +9,14 @@ using MVZ2.Vanilla.Modifiers;
 using MVZ2.Vanilla.Properties;
 using MVZ2.Vanilla.Shells;
 using MVZ2Logic.Entities;
+using MVZ2Logic.Modding;
 using PVZEngine.Buffs;
 using PVZEngine.Callbacks;
 using PVZEngine.Damages;
 using PVZEngine.Definitions;
 using PVZEngine.Entities;
 using PVZEngine.Modifiers;
+using PVZEngine.Tools;
 
 namespace MVZ2.GameContent.Buffs.Contraptions
 {
@@ -28,6 +30,7 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             AddModifier(new IntModifier(VanillaEntityProps.VEHICLE_INTERACTION, IntegerOperator.Set, VehicleInteraction.IGNORE));
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_HOSTILE, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
             AddModifier(new IntModifier(EngineEntityProps.COLLISION_MASK_FRIENDLY, IntegerOperator.BitOr, EntityCollisionHelper.MASK_VULNERABLE));
+            AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEntityDeathCallback);
             AddTrigger(LevelCallbacks.POST_ENTITY_COLLISION, PostEntityCollisionCallback);
             AddTrigger(LevelCallbacks.POST_ENTITY_CONTACT_GROUND, PostEntityContactGroundCallback, priority: 1);
         }
@@ -38,36 +41,30 @@ namespace MVZ2.GameContent.Buffs.Contraptions
                 return;
             var collision = args.collision;
             var entity = collision.Entity;
-            var buffs = entity.GetBuffs<ThrownByEjectorBuff>();
-            if (buffs.Length <= 0)
+            var param = GetThrownParameter(entity);
+            if (param.buffs.Length <= 0)
                 return;
-            int faction = 0;
-            float multiplier = 1;
-            foreach (var buff in buffs)
-            {
-                faction = GetFaction(buff);
-                multiplier *= GetDamageMultiplier(buff);
-            }
             var other = collision.OtherCollider;
-            if (!EngineEntityExt.IsHostile(faction, other.Entity.GetFaction()))
+            if (!EngineEntityExt.IsHostile(param.faction, other.Entity.GetFaction()))
                 return;
-            var damage = GetSmashDamage(entity) * multiplier;
+            var damage = GetSmashDamage(entity) * param.damageMultiplier;
             other.TakeDamage(damage, SMASH_DAMAGE_EFFECTS, entity);
             other.Entity.PlaySound(VanillaSoundID.punch);
+        }
+        private void PostEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
+        {
+            var entity = param.entity;
+            var deathInfo = param.deathInfo;
+            if (!entity.ShouldTriggerDeathEffects(deathInfo))
+                return;
+            TriggerEffect(entity);
         }
         private void PostEntityContactGroundCallback(LevelCallbacks.PostEntityContactGroundParams args, CallbackResultVoid result)
         {
             var entity = args.entity;
-            var buffs = entity.GetBuffs<ThrownByEjectorBuff>();
-            if (buffs.Length <= 0)
+            var param = GetThrownParameter(entity);
+            if (param.buffs.Length <= 0)
                 return;
-            int faction = 0;
-            float multiplier = 1;
-            foreach (var buff in buffs)
-            {
-                faction = GetFaction(buff);
-                multiplier *= GetDamageMultiplier(buff);
-            }
             entity.Position = entity.Level.GetEntityGridPosition(entity.GetColumn(), entity.GetLane());
             var vel = entity.Velocity;
             vel.x = 0;
@@ -82,9 +79,31 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             {
                 entity.Die(entity);
             }
-            var callbackArgs = new VanillaLevelCallbacks.PostEjectedEntityLandParams(entity, faction, multiplier);
-            entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_EJECTED_ENTITY_LAND, callbackArgs, entity.GetDefinitionID());
+
+            TriggerEffect(entity);
+            entity.Level.Triggers.RunCallbackFiltered(VanillaLevelCallbacks.POST_EJECTED_ENTITY_LAND, param, entity.GetDefinitionID());
             entity.RemoveBuffs<ThrownByEjectorBuff>();
+        }
+        public static void TriggerEffect(Entity entity)
+        {
+            var effectArgs = GetThrownParameter(entity, true);
+            if (effectArgs.buffs.Length <= 0)
+                return;
+            TriggerEffect(entity, effectArgs.faction, effectArgs.damageMultiplier, effectArgs.buffs);
+        }
+        public static void TriggerEffect(Entity entity, int faction, float damageMultiplier, Buff[] buffs)
+        {
+            bool triggered = false;
+            var callbackArgs = new VanillaLevelCallbacks.EjectorTriggerEffectParams(entity, faction, damageMultiplier, buffs);
+            triggered = entity.Level.Triggers.RunCallbackWithResultFiltered(VanillaLevelCallbacks.POST_EJECTED_ENTITY_TRIGGER_EFFECT, callbackArgs, triggered, entity.GetDefinitionID());
+
+            if (triggered)
+            {
+                foreach (var buff in buffs)
+                {
+                    SetEffectTriggered(buff, true);
+                }
+            }
         }
         public static float CalculateSmashDamage(Entity entity)
         {
@@ -104,14 +123,36 @@ namespace MVZ2.GameContent.Buffs.Contraptions
             }
             return CalculateSmashDamage(entity);
         }
+        public static VanillaLevelCallbacks.EjectorTriggerEffectParams GetThrownParameter(Entity entity, bool effectBuffsOnly = false)
+        {
+            using var buffsItem = ListPool<Buff>.Rent();
+            var buffs = buffsItem.Value;
+            entity.GetBuffs<ThrownByEjectorBuff>(buffs);
+            if (effectBuffsOnly)
+            {
+                buffs.RemoveAll(b => IsEffectTriggered(b));
+            }
+
+            int faction = 0;
+            float damageMultiplier = 1;
+            foreach (var buff in buffs)
+            {
+                faction = GetFaction(buff);
+                damageMultiplier *= GetDamageMultiplier(buff);
+            }
+            return new VanillaLevelCallbacks.EjectorTriggerEffectParams(entity, faction, damageMultiplier, buffs.ToArray());
+        }
         public static int GetFaction(Buff buff) => buff.GetProperty<int>(PROP_FACTION);
         public static void SetFaction(Buff buff, int value) => buff.SetProperty(PROP_FACTION, value);
         public static float GetDamageMultiplier(Buff buff) => buff.GetProperty<float>(PROP_DAMAGE_MULTIPLIER);
         public static void SetDamageMultiplier(Buff buff, float value) => buff.SetProperty(PROP_DAMAGE_MULTIPLIER, value);
+        public static bool IsEffectTriggered(Buff buff) => buff.GetProperty<bool>(PROP_EFFECT_TRIGGERED);
+        public static void SetEffectTriggered(Buff buff, bool value) => buff.SetProperty(PROP_EFFECT_TRIGGERED, value);
         public const float VOLUME_DAMAGE_MULTIPLIER = 0.005f;
         public static readonly DamageEffectList SMASH_DAMAGE_EFFECTS = new DamageEffectList(
             VanillaDamageEffects.DAMAGE_BODY_AFTER_ARMOR_BROKEN,
             VanillaDamageEffects.THROWN);
+        public static readonly VanillaBuffPropertyMeta<bool> PROP_EFFECT_TRIGGERED = new VanillaBuffPropertyMeta<bool>("effect_triggered");
         public static readonly VanillaBuffPropertyMeta<int> PROP_FACTION = new VanillaBuffPropertyMeta<int>("faction");
         public static readonly VanillaBuffPropertyMeta<float> PROP_DAMAGE_MULTIPLIER = new VanillaBuffPropertyMeta<float>("damage_multiplier", 1);
     }

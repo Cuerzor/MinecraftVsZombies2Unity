@@ -14,6 +14,7 @@
 - Fixed an issue where carrying Kraken's Backplate caused rolling hay bales to be unable to be blown away.
 - Fixed an issue where CAT-TL MK-II's projectiles would still disappear upon contact with the ground.
 - Fixed an issue where Autotraps would attack bosses.
+- Fixed an issue where contraptions with on-landing effects thrown by the Ejector could not directly destroy Gargoyle Statues or Spawners like other contraptions.
 
 ---
 

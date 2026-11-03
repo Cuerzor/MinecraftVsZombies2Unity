@@ -33,77 +33,8 @@ namespace MVZ2.GameContent.GlobalCallbacks
     {
         public override void Apply(Mod mod)
         {
-            mod.AddTrigger(LevelCallbacks.POST_ENTITY_DEATH, PostEjectedEntityDeathCallback);
-            mod.AddTrigger(VanillaLevelCallbacks.POST_EJECTED_ENTITY_LAND, PostEjectedEntityLandCallback);
             mod.AddTrigger(VanillaLevelCallbacks.POST_COMMAND_BLOCK_TRANSFORM, PostCommandBlockTransformCallback);
-        }
-        private void PostEjectedEntityDeathCallback(LevelCallbacks.EntityDeathParams param, CallbackResultVoid result)
-        {
-            var entity = param.entity;
-            var deathInfo = param.deathInfo;
-            if (!entity.ShouldTriggerDeathEffects(deathInfo))
-                return;
-            using var buffsItem = ListPool<Buff>.Rent();
-            var buffs = buffsItem.Value;
-            entity.GetBuffs<ThrownByEjectorBuff>(buffs);
-            if (buffs.Count <= 0)
-                return;
-            int faction = 0;
-            float damageMultiplier = 1;
-            foreach (var buff in buffs)
-            {
-                faction = ThrownByEjectorBuff.GetFaction(buff);
-                damageMultiplier *= ThrownByEjectorBuff.GetDamageMultiplier(buff);
-            }
-
-            var shell = entity.GetShellID();
-            if (shell == VanillaShellID.ice)
-            {
-                // 冰落地时爆出冰锥
-                IceLand(entity, damageMultiplier);
-                entity.RemoveBuffs(buffs);
-            }
-
-            if (!entity.IsAIFrozen())
-            {
-                // 炸药落地后如果死亡，就引爆
-                if (entity.TryBehaviourExplodeAndRemove(entity.GetRange(), entity.GetDamage()))
-                {
-                    entity.RemoveBuffs(buffs);
-                }
-            }
-        }
-        private void PostEjectedEntityLandCallback(VanillaLevelCallbacks.PostEjectedEntityLandParams param, CallbackResultVoid result)
-        {
-            var entity = param.entity;
-            var damageMultiplier = param.damageMultiplier;
-            var shell = entity.GetShellID();
-            if (shell == VanillaShellID.cloud)
-            {
-                // 云落地时触发弹性云大招
-                ElasticCloudEvocationBuff.Explode(entity, 120f);
-            }
-            else if (shell == VanillaShellID.lightning)
-            {
-                // 闪电落地时对半径2.5格内的敌人造成200伤害
-                LightningLand(entity, damageMultiplier);
-            }
-            else if (shell == VanillaShellID.netherrack)
-            {
-                // 下界岩落地时爆出火焰
-                NetherrackLand(entity, damageMultiplier);
-            }
-            else if (shell == VanillaShellID.ice)
-            {
-                // 冰落地时爆出冰锥
-                IceLand(entity, damageMultiplier);
-            }
-
-            if (!entity.IsAIFrozen())
-            {
-                // 炸药落地后如果死亡，就引爆
-                entity.TryBehaviourExplodeAndRemove(entity.GetRange(), entity.GetDamage());
-            }
+            mod.AddTrigger(VanillaLevelCallbacks.POST_EJECTED_ENTITY_TRIGGER_EFFECT, PostEjectorTriggerEffectCallback);
         }
         private void PostCommandBlockTransformCallback(VanillaLevelCallbacks.PostCommandBlockTransformParams args, CallbackResultVoid result)
         {
@@ -114,6 +45,45 @@ namespace MVZ2.GameContent.GlobalCallbacks
             if (commandBlock.HasBuff<ThrownByEjectorBuff>())
             {
                 transformed.AddBuff<ThrownByEjectorBuff>();
+            }
+        }
+        public void PostEjectorTriggerEffectCallback(VanillaLevelCallbacks.EjectorTriggerEffectParams args, CallbackResult<bool> result)
+        {
+            var entity = args.entity;
+            var damageMultiplier = args.damageMultiplier;
+            var shell = entity.GetShellID();
+            if (shell == VanillaShellID.cloud)
+            {
+                // 云落地时触发弹性云大招
+                ElasticCloudEvocationBuff.Explode(entity, 120f);
+                result.SetValue(true);
+            }
+            else if (shell == VanillaShellID.lightning)
+            {
+                // 闪电落地时对半径2.5格内的敌人造成200伤害
+                LightningLand(entity, damageMultiplier);
+                result.SetValue(true);
+            }
+            else if (shell == VanillaShellID.netherrack)
+            {
+                // 下界岩落地时爆出火焰
+                NetherrackLand(entity, damageMultiplier);
+                result.SetValue(true);
+            }
+            else if (shell == VanillaShellID.ice)
+            {
+                // 冰落地时爆出冰锥
+                IceLand(entity, damageMultiplier);
+                result.SetValue(true);
+            }
+
+            if (!entity.IsAIFrozen())
+            {
+                // 炸药落地后如果死亡，就引爆
+                if (entity.TryBehaviourExplodeAndRemove(entity.GetRange(), entity.GetDamage()))
+                {
+                    result.SetValue(true);
+                }
             }
         }
         private void LightningLand(Entity entity, float damageMultiplier)
