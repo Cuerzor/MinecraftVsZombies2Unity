@@ -651,6 +651,7 @@ GameObject:
   - component: {fileID: 6052869287660944824}
   - component: {fileID: 84058822453381724}
   - component: {fileID: 7503776803210456767}
+  - component: {fileID: 1751632411141992229}
   m_Layer: 0
   m_Name: FireTrail
   m_TagString: Untagged
@@ -820,6 +821,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 176d4d84fc1a4b443a8890362320b0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1751632411141992229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4595363014561312011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6456251225687281096
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,6 +944,7 @@ GameObject:
   - component: {fileID: 7539095369157520085}
   - component: {fileID: 7566142892957206352}
   - component: {fileID: 6322118939231915533}
+  - component: {fileID: 7211326332780460777}
   m_Layer: 0
   m_Name: FireTrail
   m_TagString: Untagged
@@ -1098,6 +1112,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 176d4d84fc1a4b443a8890362320b0e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7211326332780460777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254854837470125036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &8952529334824888694

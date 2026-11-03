@@ -415,6 +415,7 @@ GameObject:
   - component: {fileID: 906962971057573013}
   - component: {fileID: 2873853960489750694}
   - component: {fileID: 6776990301830905590}
+  - component: {fileID: 5030000297074222635}
   m_Layer: 0
   m_Name: LeftTrail
   m_TagString: Untagged
@@ -586,6 +587,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &5030000297074222635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700675417243562617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1895536599066530001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,6 +1087,7 @@ GameObject:
   - component: {fileID: 1297930356760886951}
   - component: {fileID: 2315240370648666575}
   - component: {fileID: 4451331791769491255}
+  - component: {fileID: 6779556232355248867}
   m_Layer: 0
   m_Name: RightTrail
   m_TagString: Untagged
@@ -1245,6 +1259,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &6779556232355248867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3061227544044899762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3362449363903911613
 GameObject:
   m_ObjectHideFlags: 0

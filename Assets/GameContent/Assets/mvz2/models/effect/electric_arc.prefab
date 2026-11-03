@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8741517875275752646}
   - component: {fileID: 4171340428052393520}
   - component: {fileID: 4179855008940470190}
+  - component: {fileID: 680911231798576412}
   m_Layer: 0
   m_Name: Arc3
   m_TagString: Untagged
@@ -168,6 +169,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 8741517875275752646}
   amplitude: 0.2
+--- !u!114 &680911231798576412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778478847906162403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3584755067177443010
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,6 +193,7 @@ GameObject:
   - component: {fileID: 6140774338710732626}
   - component: {fileID: 4266046809850974776}
   - component: {fileID: 1060832095611580097}
+  - component: {fileID: 6453937876637271302}
   m_Layer: 0
   m_Name: Arc1
   m_TagString: Untagged
@@ -336,6 +350,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 6140774338710732626}
   amplitude: 0.2
+--- !u!114 &6453937876637271302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584755067177443010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4138345778242001660
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +374,7 @@ GameObject:
   - component: {fileID: 1415539171691193362}
   - component: {fileID: 8229738578377955344}
   - component: {fileID: 8475350778392508789}
+  - component: {fileID: 861540229999982635}
   m_Layer: 0
   m_Name: Arc2
   m_TagString: Untagged
@@ -504,6 +531,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 1415539171691193362}
   amplitude: 0.2
+--- !u!114 &861540229999982635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138345778242001660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4231787001980931174
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,6 +555,7 @@ GameObject:
   - component: {fileID: 7829424531370182319}
   - component: {fileID: 7558586396039785564}
   - component: {fileID: 7339319555481881514}
+  - component: {fileID: 5101488565649736192}
   m_Layer: 0
   m_Name: Arc0
   m_TagString: Untagged
@@ -672,6 +712,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 7829424531370182319}
   amplitude: 0.2
+--- !u!114 &5101488565649736192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231787001980931174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6216964306462155073
 GameObject:
   m_ObjectHideFlags: 0

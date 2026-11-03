@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 2480639299202435210}
   - component: {fileID: 2998648733224871394}
   - component: {fileID: 6845647134810519650}
+  - component: {fileID: 3373929931582575688}
   m_Layer: 0
   m_Name: String
   m_TagString: Untagged
@@ -248,6 +249,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &3373929931582575688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263837777161261063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5784010352569700422
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,6 +383,7 @@ GameObject:
   - component: {fileID: 4681635235137869882}
   - component: {fileID: 2313598282151251661}
   - component: {fileID: 528337772020149347}
+  - component: {fileID: 2146761070338931524}
   m_Layer: 0
   m_Name: Bow
   m_TagString: Untagged
@@ -534,3 +548,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   excludedInGroup: 0
+--- !u!114 &2146761070338931524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7700012399701255933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

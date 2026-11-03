@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 6635913629855306458}
   - component: {fileID: 8826908283641714462}
   - component: {fileID: 5160859584982036569}
+  - component: {fileID: 5500359573831821546}
   m_Layer: 0
   m_Name: Trail
   m_TagString: Untagged
@@ -304,6 +305,18 @@ MonoBehaviour:
   trail: {fileID: 6635913629855306458}
   velocity: {x: 0, y: 0, z: 0}
   scaleWithHierarchy: 1
+--- !u!114 &5500359573831821546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7215623030826523418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1582909008297826176
 PrefabInstance:
   m_ObjectHideFlags: 0

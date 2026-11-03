@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3705025930360460125}
   - component: {fileID: 1087098747425486713}
   - component: {fileID: 8121241140830122362}
+  - component: {fileID: 575758588677462643}
   m_Layer: 0
   m_Name: Trail1
   m_TagString: Untagged
@@ -183,6 +184,18 @@ MonoBehaviour:
   trail: {fileID: 3705025930360460125}
   velocity: {x: 0, y: 0, z: 0}
   scaleWithHierarchy: 0
+--- !u!114 &575758588677462643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102929242217150684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2594074999212346160
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,6 +208,7 @@ GameObject:
   - component: {fileID: 2015398632913057188}
   - component: {fileID: 5772714238706621795}
   - component: {fileID: 703492138266747094}
+  - component: {fileID: 796469438926426965}
   m_Layer: 0
   m_Name: Trail1
   m_TagString: Untagged
@@ -366,6 +380,18 @@ MonoBehaviour:
   trail: {fileID: 2015398632913057188}
   velocity: {x: 0, y: 0, z: 0}
   scaleWithHierarchy: 0
+--- !u!114 &796469438926426965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2594074999212346160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2912667289295703996
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +404,7 @@ GameObject:
   - component: {fileID: 4145209265954797182}
   - component: {fileID: 2494072787512627141}
   - component: {fileID: 7191333503051932409}
+  - component: {fileID: 3161462375729519525}
   m_Layer: 0
   m_Name: Trail2
   m_TagString: Untagged
@@ -549,6 +576,18 @@ MonoBehaviour:
   trail: {fileID: 4145209265954797182}
   velocity: {x: 0, y: 0, z: 0}
   scaleWithHierarchy: 0
+--- !u!114 &3161462375729519525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2912667289295703996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3988304836084035616
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +826,7 @@ GameObject:
   - component: {fileID: 1918951895810943556}
   - component: {fileID: 1843418515039100627}
   - component: {fileID: 8078335935561206390}
+  - component: {fileID: 1548842569517221308}
   m_Layer: 0
   m_Name: Trail2
   m_TagString: Untagged
@@ -958,6 +998,18 @@ MonoBehaviour:
   trail: {fileID: 1918951895810943556}
   velocity: {x: 0, y: 0, z: 0}
   scaleWithHierarchy: 0
+--- !u!114 &1548842569517221308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884055229404498750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92840f281687a7c40ab2f31a1b015392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8557933228855934110
 GameObject:
   m_ObjectHideFlags: 0

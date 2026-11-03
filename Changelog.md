@@ -10,7 +10,7 @@
 - Fixed an issue where the second half of the “Starshard Tutorial” dialogue could not be viewed in the Archive.
 - Fixed an issue where the Furnace’s initial production time was sometimes slightly longer than that of the Gunpowder Barrel.
 - Fixed an issue where the texture would display incorrectly when modifying the slider handle texture using a resource pack.
-- Fixed an issue where the state textures of some UI components could not be modified by resource packs.
+- Fixed an issue where the state textures of some UI components, and textures for curves could not be modified by resource packs.
 - Fixed an issue where the splash damage of the Soul Furnace was considered explosion damage.
 - Fixed an issue where carrying Kraken's Backplate caused rolling hay bales to be unable to be blown away.
 - Fixed an issue where CAT-TL MK-II's projectiles would still disappear upon contact with the ground.

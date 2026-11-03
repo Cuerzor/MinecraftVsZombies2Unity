@@ -123,6 +123,8 @@ namespace MVZ2.Editor
                 {
                     addedComponents += UpdateResolverComponent<MeshRenderer, MeshRendererResolver>(transform) ? 1 : 0;
                 }
+                // LineRendererResolver¡£
+                addedComponents += UpdateResolverComponent<LineRenderer, LineRendererResolver>(transform) ? 1 : 0;
             }
 
             var successfully = PrefabHelper.ModifyPrefabEnd(obj, path);
@@ -165,6 +167,8 @@ namespace MVZ2.Editor
                 removedComponents += CheckRedundantComponent<ParticleRendererResolver>(transform, transform.GetComponent<ParticleSystem>() ? 1 : 0);
                 // MeshRendererResolver¡£
                 removedComponents += CheckRedundantComponent<MeshRendererResolver>(transform, transform.GetComponent<MeshRenderer>() && !HasTextComponents(transform) ? 1 : 0);
+                // LineRendererResolver¡£
+                removedComponents += CheckRedundantComponent<LineRendererResolver>(transform, transform.GetComponent<LineRenderer>() ? 1 : 0);
             }
 
             var successfully = PrefabHelper.ModifyPrefabEnd(obj, path);
