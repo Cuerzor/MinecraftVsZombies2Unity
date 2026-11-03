@@ -164,6 +164,18 @@ namespace MVZ2.Vanilla.Enemies
             return enemy.GetProperty<Vector3>(PASSENGER_OFFSET);
         }
         #endregion
+
+        #region 进屋后移除
+        public static readonly VanillaEntityPropertyMeta<bool> REMOVE_WHEN_ENTER_HOUSE = new VanillaEntityPropertyMeta<bool>("remove_when_enter_house");
+        public static bool RemoveWhenEnterHouse(this Entity enemy)
+        {
+            return enemy.GetProperty<bool>(REMOVE_WHEN_ENTER_HOUSE);
+        }
+        public static void SetRemoveWhenEnterHouse(this Entity enemy, bool value)
+        {
+            enemy.SetProperty<bool>(REMOVE_WHEN_ENTER_HOUSE, value);
+        }
+        #endregion
     }
 }
 

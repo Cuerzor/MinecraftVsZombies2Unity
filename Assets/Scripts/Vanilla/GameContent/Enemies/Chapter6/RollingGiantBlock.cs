@@ -26,21 +26,6 @@ namespace MVZ2.GameContent.Enemies
             SetRotation(entity, rotation);
 
             entity.SetAnimationFloat("Rotation", rotation);
-
-
-            bool remove = false;
-            if (!entity.IsFacingLeft() && entity.IsEnemyOutsideRight())
-            {
-                remove = true;
-            }
-            else if (entity.IsFacingLeft() && entity.IsEnemyOutsideLeft())
-            {
-                remove = true;
-            }
-            if (remove)
-            {
-                entity.Remove();
-            }
         }
         public static float GetRotation(Entity entity) => entity.GetProperty<float>(PROP_ROTATION);
         public static void SetRotation(Entity entity, float value) => entity.SetProperty(PROP_ROTATION, value);

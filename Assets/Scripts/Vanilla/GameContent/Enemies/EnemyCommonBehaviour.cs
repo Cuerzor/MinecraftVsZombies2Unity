@@ -46,13 +46,31 @@ namespace MVZ2.GameContent.Enemies
         {
             base.Update(entity);
             bool remove = false;
-            if (!entity.IsFacingLeft() && entity.IsEnemyOutsideRight())
+            if (entity.IsEnemyOutsideRight())
             {
-                remove = true;
+                if (!entity.IsFacingLeft())
+                {
+                    remove = true;
+                }
             }
-            else if ((entity.Level.IsIZombie() || entity.Level.IsCleared || entity.Level.IsGodMode()) && entity.IsEnemyOutsideLeft())
+            else if (entity.IsEnemyOutsideLeft())
             {
-                remove = true;
+                if (entity.Level.IsIZombie())
+                {
+                    remove = true;
+                }
+                else if (entity.Level.IsCleared)
+                {
+                    remove = true;
+                }
+                else if (entity.Level.IsGodMode() && entity.CanEntityEnterHouse())
+                {
+                    remove = true;
+                }
+                else if (entity.RemoveWhenEnterHouse())
+                {
+                    remove = true;
+                }
             }
             if (remove)
             {
