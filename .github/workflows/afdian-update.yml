@@ -1,0 +1,68 @@
+name: Update Afdian Sponsors JSON
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 每天 UTC 0 点
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-sponsors:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch sponsors and generate JSON
+        env:
+          AFDIAN_USERID: ${{ secrets.AFDIAN_USERID }}
+          AFDIAN_TOKEN: ${{ secrets.AFDIAN_TOKEN }}
+        run: python scripts/fetch_sponsors.py
+
+      - name: Publish sponsors.json to sponsors-data branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          
+          # 1. 将生成好的 sponsors.json 暂存到安全位置
+          cp sponsors.json "$RUNNER_TEMP/sponsors.json"
+          
+          # 2. 在一个干净目录中初始化并拉取 sponsors-data 分支
+          mkdir publish && cd publish
+          git init --quiet --initial-branch sponsors-data
+          
+          # 尝试拉取远程分支的现有历史（如果分支已存在）
+          if git fetch --quiet "https://github.com/${REPO}.git" sponsors-data 2>/dev/null; then
+            git reset --quiet --soft FETCH_HEAD
+          fi
+          
+          # 3. 放入新的 JSON 文件
+          cp "$RUNNER_TEMP/sponsors.json" .
+          git add sponsors.json
+          
+          # 4. 仅当文件内容确实有变化时才提交
+          if git diff --cached --quiet; then
+            echo "sponsors.json 内容未变化，跳过提交"
+          else
+            git -c user.name="github-actions[bot]" \
+                -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+                commit --quiet --message "chore: update sponsors.json"
+          fi
+          
+          # 5. 推送到 sponsors-data 分支
+          git push --quiet "https://x-access-token:${GH_TOKEN}@github.com/${REPO}.git" \
+            "HEAD:refs/heads/sponsors-data"
