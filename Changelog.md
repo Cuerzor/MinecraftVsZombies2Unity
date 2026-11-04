@@ -1,6 +1,7 @@
 ## Modified
 - Updated localization.
 - Bumped the resource pack version to 2.
+- Split the sprite used by the three heads of the Triplenser into three separate sprites.
 
 ### Balance
 - Gravel-pult

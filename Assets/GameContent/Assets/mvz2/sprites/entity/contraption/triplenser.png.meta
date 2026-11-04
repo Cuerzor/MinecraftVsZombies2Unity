@@ -130,8 +130,8 @@ TextureImporter:
         y: 0
         width: 31
         height: 29
-      alignment: 9
-      pivot: {x: 0.48387095, y: 0.4827586}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -148,11 +148,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 6
-        width: 9
-        height: 23
+        y: 0
+        width: 31
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,6 +160,48 @@ TextureImporter:
       bones: []
       spriteID: 0235272b5a18c164eafda9450b6bd24a
       internalID: -637868653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triplenser_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f6c645c4ea9514299cadfb8af14cb0
+      internalID: -923847220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: triplenser_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 6
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94dcbea0e86fc5b448c256cc5b64c418
+      internalID: -621593334
       vertices: []
       indices: 
       edges: []
@@ -177,6 +219,8 @@ TextureImporter:
     nameFileIdTable:
       triplenser_0: 2131060664
       triplenser_1: -637868653
+      triplenser_2: -923847220
+      triplenser_3: -621593334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
