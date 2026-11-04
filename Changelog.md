@@ -1,3 +1,4 @@
+# 0.7.4
 ## Modified
 - Updated localization.
 - Bumped the resource pack version to 2.
