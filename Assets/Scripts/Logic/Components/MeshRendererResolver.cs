@@ -13,6 +13,10 @@ namespace MVZ2Logic.UI
         {
             UpdateResolver();
         }
+        private void OnDisable()
+        {
+            ResetResolver();
+        }
         public void UpdateResolver()
         {
             if (!spriteChanged)
@@ -44,6 +48,21 @@ namespace MVZ2Logic.UI
             GetPropertyBlock(propertyBlock);
             propertyBlock.SetTexture("_MainTex", final);
             SetPropertyBlock(propertyBlock);
+        }
+        public void ResetResolver()
+        {
+            if (spriteChanged)
+            {
+                spriteChanged = false;
+                if (BaseTexture.Exists())
+                {
+                    var propertyBlock = PropertyBlock;
+                    GetPropertyBlock(propertyBlock);
+                    propertyBlock.SetTexture("_MainTex", BaseTexture);
+                    SetPropertyBlock(propertyBlock);
+                }
+                BaseTexture = null;
+            }
         }
         public virtual Texture2D? GetTexture()
         {

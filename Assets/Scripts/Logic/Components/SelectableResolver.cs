@@ -14,6 +14,10 @@ namespace MVZ2Logic.UI
         {
             UpdateResolver();
         }
+        private void OnDisable()
+        {
+            ResetResolver();
+        }
         public void UpdateResolver()
         {
             if (!spriteChanged)
@@ -42,6 +46,15 @@ namespace MVZ2Logic.UI
             spriteChanged = true;
             BaseSpriteState = spriteState;
             Selectable.spriteState = final;
+        }
+        public void ResetResolver()
+        {
+            if (spriteChanged)
+            {
+                spriteChanged = false;
+                Selectable.spriteState = BaseSpriteState;
+                BaseSpriteState = default;
+            }
         }
         public virtual SpriteState GetSpriteState()
         {

@@ -2,6 +2,7 @@
 
 using PVZEngine.Tools.Unity;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MVZ2Logic.UI
 {
@@ -12,6 +13,10 @@ namespace MVZ2Logic.UI
         private void OnEnable()
         {
             UpdateResolver();
+        }
+        private void OnDisable()
+        {
+            ResetResolver();
         }
         public void UpdateResolver()
         {
@@ -40,6 +45,17 @@ namespace MVZ2Logic.UI
             BaseSprite = sprite;
             Renderer.sprite = final;
             Renderer.size = beforeSize;
+        }
+        public void ResetResolver()
+        {
+            if (spriteChanged)
+            {
+                spriteChanged = false;
+                var beforeSize = Renderer.size;
+                Renderer.sprite = BaseSprite;
+                Renderer.size = beforeSize;
+                BaseSprite = null;
+            }
         }
         public virtual Sprite? GetSprite()
         {

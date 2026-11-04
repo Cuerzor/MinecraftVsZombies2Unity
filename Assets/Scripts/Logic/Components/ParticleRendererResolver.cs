@@ -13,6 +13,10 @@ namespace MVZ2Logic.UI
         {
             UpdateResolver();
         }
+        private void OnDisable()
+        {
+            ResetResolver();
+        }
         public void UpdateResolver()
         {
             if (!spriteChanged)
@@ -52,6 +56,23 @@ namespace MVZ2Logic.UI
             }
             spriteChanged = true;
             BaseSprites = sprites;
+        }
+        public void ResetResolver()
+        {
+            if (spriteChanged)
+            {
+                spriteChanged = false;
+                if (Global.Resources != null && BaseSprites != null)
+                {
+                    var textures = System.textureSheetAnimation;
+                    for (int i = 0; i < BaseSprites.Length; i++)
+                    {
+                        var sprite = BaseSprites[i];
+                        textures.SetSprite(i, sprite);
+                    }
+                }
+                BaseSprites = null;
+            }
         }
         public Sprite?[]? BaseSprites { get; private set; }
         public ParticleSystem System
