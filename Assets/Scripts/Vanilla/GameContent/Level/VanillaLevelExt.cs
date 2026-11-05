@@ -15,6 +15,7 @@ using MVZ2.Vanilla.Entities;
 using MVZ2.Vanilla.Grids;
 using MVZ2.Vanilla.HeldItems;
 using MVZ2.Vanilla.Pickups;
+using MVZ2.Vanilla.Projectiles;
 using MVZ2Logic;
 using MVZ2Logic.Blueprints;
 using MVZ2Logic.Difficulties;
@@ -338,6 +339,25 @@ namespace MVZ2.Vanilla.Level
                 money = difficultyDef.GetBossMoney();
             }
             GemEffect.SpawnGemEffects(level, money, level.GetLawnCenter(), null);
+        }
+        #endregion
+
+        #region 子弹最低高度
+        public static Vector3 GetLimitedProjectilePosition(this LevelEngine level, Vector3 position, ProjectileShootArgs args, float minRelativeY)
+        {
+            return level.LimitProjectileMinGroundY(position, args.pivot, args.projectileID, minRelativeY);
+        }
+        public static Vector3 LimitProjectileMinGroundY(this LevelEngine level, Vector3 position, Vector3 pivot, NamespaceID? projID, float minRelativeY)
+        {
+            var def = level.Content.GetEntityDefinition(projID);
+            var groundY = level.GetGroundY(position.x, position.z);
+            float minY = groundY + minRelativeY;
+            if (def != null)
+            {
+                minY += def.GetSize().y * pivot.y;
+            }
+            position.y = Mathf.Max(position.y, minY);
+            return position;
         }
         #endregion
     }

@@ -33,7 +33,7 @@ namespace MVZ2.GameContent.Projectiles
                     var vector2 = Vector2.right.RotateClockwise(angle);
                     var param = entity.GetShootParams();
                     param.damage = entity.GetDamage() * 0.075f;
-                    param.position = entity.GetCenter();
+                    param.position = entity.Level.GetLimitedProjectilePosition(entity.GetCenter(), param, 24f);
                     param.velocity = new Vector3(vector2.x, 0, vector2.y) * 10;
                     param.projectileID = VanillaProjectileID.fireCharge;
                     entity.ShootProjectile(param);

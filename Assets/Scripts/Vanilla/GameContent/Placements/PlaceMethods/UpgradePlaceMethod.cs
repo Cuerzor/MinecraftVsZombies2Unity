@@ -24,6 +24,9 @@ namespace MVZ2.GameContent.Placements
         }
         public override NamespaceID? GetPlaceError(PlacementDefinition placement, LawnGrid grid, EntityDefinition entity)
         {
+            var terrainError = placement.GetTerrainSpawnErrorOfGrid(grid, entity);
+            if (NamespaceID.IsValid(terrainError))
+                return terrainError;
             using var gridEntities = grid.GetEntitiesDisposeable();
             var entities = gridEntities.Value;
             if (entities.Count <= 0)
