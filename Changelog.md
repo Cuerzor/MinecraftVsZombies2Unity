@@ -20,6 +20,7 @@
 - Fixed an issue where contraptions with on-landing effects thrown by the Ejector could not directly destroy Gargoyle Statues or Spawners like other contraptions.
 - Fixed an issue where special monsters such as Locked Chest's Balloon, rolling blocks, and bubbles would not disappear after flying past the left side.
 - Fixed an issue where contraptions on disabled tiles could be upgraded into upgrade contraptions.
+- Fixed an issue where the fallen texture of the Zombie Cat was missing stitch lines.
 
 ---
 
