@@ -123,12 +123,16 @@ namespace MVZ2.GameContent.Contraptions
 
             entity.Spawn(VanillaEffectID.amethystPylonLaser, sourcePosition, param);
         }
-        public static Vector3 GetLaserPosition(Entity entity)
+        public static Vector3 GetLaserPosition(Entity entity, bool offseted = true)
         {
             var laserScale = GetLaserScale(entity);
             var offset = entity.GetShotOffset();
             offset.x *= entity.GetFacingX();
-            offset.y += (laserScale.y - 1) * Y_OFFSET_PER_LASER_SCALE;
+            if (offseted)
+            {
+                // 为了不打中空中的怪物
+                offset.y += (laserScale.y - 1) * Y_OFFSET_PER_LASER_SCALE;
+            }
             return entity.Position + offset;
         }
         public static EntityID? GetMasterSparkID(Entity entity) => entity.GetBehaviourField<EntityID>(PROP_MASTER_SPARK_ID);

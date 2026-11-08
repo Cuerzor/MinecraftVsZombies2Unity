@@ -18,7 +18,7 @@ namespace MVZ2.GameContent.Contraptions
         public override void Evoke(Entity entity)
         {
             base.Evoke(entity);
-            var sourcePosition = AmethystPylon.GetLaserPosition(entity);
+            var sourcePosition = AmethystPylon.GetLaserPosition(entity, false);
             var param = entity.GetSpawnParams();
             param.SetProperty(VanillaEntityProps.DAMAGE, entity.GetDamage());
             param.SetProperty(EngineEntityProps.FLIP_X, entity.IsFacingLeft());

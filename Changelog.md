@@ -21,6 +21,7 @@
 - Fixed an issue where special monsters such as Locked Chest's Balloon, rolling blocks, and bubbles would not disappear after flying past the left side.
 - Fixed an issue where contraptions on disabled tiles could be upgraded into upgrade contraptions.
 - Fixed an issue where the fallen texture of the Zombie Cat was missing stitch lines.
+- Fixed an issue where the source height of the Amethyst Pylon's Hyperbeam would change depending on the intensity of the light source it receives.
 
 ---
 
